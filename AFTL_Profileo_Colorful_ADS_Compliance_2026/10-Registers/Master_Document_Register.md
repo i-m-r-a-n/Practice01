@@ -29,7 +29,8 @@
 |---|---|---|---|---|---|---|
 | Trade licence.pdf / 09.pdf | e-Trade License (DNCC) | Renewed 11 Feb 2025 (FY 2024-25) | **30 Jun 2025 — EXPIRED 1+ YEAR** | **TRAD/DNCC/037620/2023** | 🔴 Critical | Jun 2025-e renewal quote chilo 10,714 taka — **renewal kora hoy nai (chat evidence)**. Ekhon 2 bochorer fee + surcharge lagte pare |
 | Bin.pdf / Mushak-2.3 (12 Mar 2025) | BIN Certificate | 12 Mar 2025 | — | **BIN 006931437-0402** | ⚠️ Return backlog | e-TIN = Imran personal TIN. Activity: Services, Supplier. Agent fee chilo 4,500 (BIZTRADE invoice BIZ00572) |
-| statements.pdf | City Bank Statement | 26 Feb – 19 Nov 2025 | — | A/C **1254435280001**, Banani branch | ✅ Have | Deposits 50,06,657.85 / Withdrawals 49,99,567.35 / Closing **7,090.50**. Mostly cash deposits + bKash/Nagad out |
+| statements.pdf (old, IDLC-e pathano) | City Bank Statement | 26 Feb – 19 Nov 2025 | — | A/C **1254435280001**, Banani branch | ✅ | Deposits 50,06,657.85 / Withdrawals 49,99,567.35 / Closing 7,090.50 |
+| file_1783370004614.pdf (NEW, 07 Jul 2026) | City Bank Statement — **full 12+ month** | Activity 26 Feb 2025 – 06 Jul 2026 (17 pg) | Print 07 Jul 2026 | A/C 1254435280001 | ✅ **Loan-ready** | **Total Deposit 87,61,408.70 / Withdrawal 87,59,563.15 / Available bal 1,845.55.** Regular active account. Note: China purchase cards (CTRIP Shanghai Dec 2025, WEI XIN/WeChat merchant May 2026); Sazzad cash withdrawal 17,000 (cheque 7651212, Dec 2025) |
 
 ### Personal
 

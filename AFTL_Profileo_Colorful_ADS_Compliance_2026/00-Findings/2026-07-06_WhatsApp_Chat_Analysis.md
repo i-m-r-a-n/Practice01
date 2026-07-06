@@ -14,6 +14,19 @@ Sources: Abir lawyer chat (Sep 2025 – May 2026), BIZTRADE/Golpo chat (Aug 2024
 
 ---
 
+## B00. ADS Full City Bank Statement (uploaded 07 Jul 2026)
+
+Fresh statement — A/C 1254435280001, period 01 Nov 2023 – 06 Jul 2026 (activity actually 26 Feb 2025 onward, 17 pages).
+
+1. **Total Deposit: 87,61,408.70 / Total Withdrawal: 87,59,563.15 / Available balance 06 Jul 2026: 1,845.55.**
+2. Account **active ~17 month** (Feb 2025 – Jul 2026), regular in/out — SME loan-er jonno eta **strong 12-month statement**. IDLC/City Bank-ke etai dite hobe (old 9-month ta na).
+3. Deposit mix: boro cash deposits (2,000,000 on 16 Apr 2025; 1,000,000 on 08 Dec 2025; 500,000 on 07 Dec; 378,000; 383,000; 200,000×), RTGS in (ARA Interior Concept 150,000; Mst. Shameema Yasmin 197,551), NPSB/bKash/Nagad in.
+4. Withdrawal mix: bulk CT/FT-CBLTA + NPSB transfers out, bKash/Nagad, ATM, **China purchases** — "PURCHASE CARD CTRIP>SHANGHAI" (Dec 2025), "PURCHASE CARD WEI XIN merchant" (May 2026), ATM DEP Foreign Ex Br (Apr 2026). → **Colorful Lifestyle-er China sourcing ei account diyei hocche already.**
+5. **Closing balance barbar prai zero-te name** (1,845 ekhon) — loan apply korar age account-e healthy balance/regular closing rakhle bank-er kache better dekhabe.
+6. Sazzad-er naam-e cash withdrawal 17,000 (cheque 7651212, 17 Dec 2025) — director/family withdrawal, accounting-e note korun.
+
+⚠️ **Tax implication (critical):** ei ~87 lakh throughput (annualized ~50-60 lakh/yr) confirm kore je Imran-er **zero return (income 0) bank reality-r sathe direct conflict**. Bank loan verification-eo, NBR audit-eo eta dhora porbe. CA diye revised return **must** — deri korle risk bare (especially Dec 2025-er "7cr land share business" plan hole).
+
 ## B. Confirmed Facts
 
 ### AFTL — Ahmed Facade Technologies Limited

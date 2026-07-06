@@ -12,7 +12,7 @@ Strategy: **Track A — fast SME loan route.** Close korben na jotokkhon loan co
 | 2 | Imran NID + photo | ☐ | |
 | 3 | Imran TIN certificate | ☐ | Tin_Certificate_315112192747.pdf verify korun |
 | 4 | Imran personal tax return (latest ack.) | ☐ | Na thakle age file korun — `03-Personal-Tax/` |
-| 5 | City Bank 12-month statement | ☐ | Latest 12 months — Nov 2025-er porer ta o lagbe |
+| 5 | City Bank 12-month statement | ✅ **HAVE** | Full statement Feb 2025–Jul 2026 (07 Jul 2026 print). Deposit 87.6 lakh / Available 1,845.55. **File: file_1783370004614.pdf** |
 | 6 | BIN/VAT certificate | ☐ | BIN issued ~12 Mar 2025 |
 | 7 | VAT return / zero return status clean | ☐ | Backlog thakle age clear |
 | 8 | Stock list | ☐ | Simple Excel: item, qty, cost value |
@@ -47,5 +47,5 @@ Strategy: **Track A — fast SME loan route.** Close korben na jotokkhon loan co
 - [ ] Trade license expired thakle → renew first
 - [ ] VAT return backlog → clear first
 - [ ] Personal tax return missing → file first
-- [ ] Bank closing balance khub low (7,090 taka chilo) → apply-er age account-e healthy balance/regular transaction rakhun
+- [ ] Bank closing balance khub low (ekhon 1,845 taka) → apply-er age account-e healthy balance/regular closing rakhun (bank average balance dekhe)
 - [ ] Guarantor confirm na hole → age guarantor manage korun (IDLC-er requirement)
