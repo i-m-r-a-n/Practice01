@@ -99,6 +99,16 @@ Copy-paste kore [blank] fill korun. Banglish = informal/bank contacts. English =
 > Imran Ahmed, Managing Director
 > Ahmed Facade Technologies Limited, Dhaka, Bangladesh
 
+## 7B. Manik bhai (BRAC, Mohammadpur) — Pending Issue + Statement (Banglish)
+
+> Manik bhai, assalamu alaikum. Kotha bolar try kortesilam — busy chilen mone hoy.
+>
+> 1. Apni June/July-te ja janate chacchilen — seta ki company-r trade license renewal er bishoy? Trade license renew korte dicchi ei week-ei, hoye gele copy pathabo.
+> 2. Ahmed Facade Technologies Limited (A/C 2076403990001) er account opening theke ekhon porjonto full statement ta email-e pathale khub help hoy: ahmedfacadetechnologiesltd@gmail.com
+> 3. Account-er KYC-te ar kono document pending ache kina janaben — ekbare shob clear kore dei.
+>
+> Dhonnobad bhai.
+
 ## 8. BRAC Bank — First LC Questions (Banglish)
 
 > Assalamu alaikum. Ahmed Facade Technologies Limited er account ache apnader branch-e. Amra IRC process korchi; IRC pele China theke import er jonno first LC khulte chai.

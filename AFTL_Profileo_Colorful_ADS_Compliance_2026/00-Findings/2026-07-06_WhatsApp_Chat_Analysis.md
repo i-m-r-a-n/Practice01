@@ -1,6 +1,16 @@
 # WhatsApp Chat Analysis — 06 July 2026
 
-Sources: Abir lawyer chat (Sep 2025 – May 2026), BIZTRADE/Golpo chat (Aug 2024 – Aug 2025), Taufique IDLC chat (Oct – Nov 2025). Shob attached PDF/photo verify kora hoyeche.
+Sources: Abir lawyer chat (Sep 2025 – May 2026), BIZTRADE/Golpo chat (Aug 2024 – Aug 2025), Taufique IDLC chat (Oct – Nov 2025), **MH BRAC Manik chat (Nov 2025 – Jul 2026)**. Shob attached PDF/photo verify kora hoyeche.
+
+## B0. BRAC Bank Chat Findings (Manik — Monjurul Hasan Manik, BRAC Bank Mohammadpur)
+
+1. **AFTL BRAC account活 19 Nov 2025 theke:** A/C 2076403990001, name confirmed. Initial deposit 50,000 cash commit kora hoyechilo.
+2. **Signatory conflict RESOLVED:** bank-e jomma dewa version = "**account will be authorized by Imran Ahmed instead of previous signatory**" (Imran-alone). Manik-er pathano "Board resulation(4).pdf" ta onno company-r (Taj Power Ltd) **sample/template** chilo — AFTL-er document na, file confuse korben na.
+3. **Imran married — spouse: Homayra Islam** (bank KYC-te dewa). Loan form, tax return, guarantor form-e ei info consistent rakhben.
+4. Bank-ke business address dewa hoyechhe: **119 Shershahsuri Road** — অথচ trade license/BIN-e 202/C. Address conflict bank record-eo dhukeche.
+5. Cheque book request received 24 Nov 2025 (Ref 010001).
+6. Nov 2025: statement urgently lagchhilo ("amar bill atke ache") — mane AFTL-er ekta client payment/bill bank statement-er opekkhay chilo.
+7. **Jun 21 – Jul 4, 2026: Manik-er sathe active follow-up cholche (audio messages, missed calls, 😓)** — ki niye ta audio-te, text-e nai. Trade license 30 Jun-e expire howar sathe timing match kore — **bank KYC-r jonno renewed trade license chaite pare.** Manik-ke ki dorkar direct jiggesh korun (draft niche Section F-e).
 
 ---
 
@@ -49,7 +59,7 @@ Sources: Abir lawyer chat (Sep 2025 – May 2026), BIZTRADE/Golpo chat (Aug 2024
 
 ### 🟠 Important
 6. **Address inconsistency:** RJSC/Form XII/company TIN/rent deed = **119 Shershahsuri Road**; trade license/BIN = **202/C Mohammadia Housing**. Bank/IRC/loan verification-e problem korbe. Ek address-e standardize korun.
-7. **Tin-ta conflicting board resolution** (same date 15 Nov 2025): either-or / joint / Imran-alone signatory. BRAC-e konta jomma hoyechhe confirm korun; AoA Article 46-er sathe consistent version rakhun.
+7. ~~Tin-ta conflicting board resolution~~ **RESOLVED (BRAC chat theke):** bank-e Imran-alone signatory version jomma hoyeche. Baki 2 version-er copy destroy/archive korun jate future confusion na hoy. Note: AoA Article 46 default joint signature bole — board decision diye Imran-alone kora hoyeche, ekta signed final copy company records-e rakhun.
 8. **MOA-te software/IT/SaaS object NAI, e-commerce/garments object NAI.** Aluminium (Thai-Aluminium), construction, import-export/trading ache. Mane: **IRC/import possible, kintu Profileo revenue ba Colorful Lifestyle AFTL-e formally chalanor age MOA amendment lagbe.**
 9. **ADS BIN Imran-er personal TIN-er under-e** — ADS-er sob VAT liability personally Imran-er ghare.
 10. Sazzad-er kono tax return nai — loan guarantor/visa/IRC-te lagbe.
