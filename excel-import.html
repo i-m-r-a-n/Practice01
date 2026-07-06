@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Excel File Import</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+
+      #drop-zone {
+        border: 3px dashed #888;
+        border-radius: 10px;
+        padding: 40px;
+        text-align: center;
+        color: #555;
+        margin-bottom: 20px;
+        cursor: pointer;
+      }
+
+      #drop-zone.dragover {
+        border-color: #2e7d32;
+        background: #e8f5e9;
+      }
+
+      h2 {
+        margin-top: 30px;
+      }
+
+      h3 {
+        color: #555;
+      }
+
+      table {
+        border: 2px solid black;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+      }
+
+      td, th {
+        padding: 5px;
+        border: 1px solid black;
+        text-align: center;
+      }
+
+      th {
+        background: #f0f0f0;
+      }
+    </style>
+    <script src="xlsx.full.min.js"></script>
+  </head>
+  <body>
+    <h1>Excel File Import</h1>
+    <p>আপনার PC থেকে এক বা একাধিক Excel ফাইল (.xlsx, .xls, .csv) select করুন অথবা নিচের box-এ drag &amp; drop করুন।</p>
+
+    <div id="drop-zone">
+      এখানে Excel ফাইল drop করুন অথবা click করে select করুন
+      <br><br>
+      <input type="file" id="file-input" multiple accept=".xlsx,.xls,.csv">
+    </div>
+
+    <div id="output"></div>
+
+    <script>
+      var dropZone = document.getElementById('drop-zone');
+      var fileInput = document.getElementById('file-input');
+      var output = document.getElementById('output');
+
+      fileInput.addEventListener('change', function () {
+        importFiles(fileInput.files);
+      });
+
+      dropZone.addEventListener('dragover', function (e) {
+        e.preventDefault();
+        dropZone.classList.add('dragover');
+      });
+
+      dropZone.addEventListener('dragleave', function () {
+        dropZone.classList.remove('dragover');
+      });
+
+      dropZone.addEventListener('drop', function (e) {
+        e.preventDefault();
+        dropZone.classList.remove('dragover');
+        importFiles(e.dataTransfer.files);
+      });
+
+      function importFiles(files) {
+        for (var i = 0; i < files.length; i++) {
+          readFile(files[i]);
+        }
+      }
+
+      function readFile(file) {
+        var reader = new FileReader();
+        reader.onload = function (e) {
+          var workbook = XLSX.read(new Uint8Array(e.target.result), { type: 'array' });
+          showWorkbook(file.name, workbook);
+        };
+        reader.readAsArrayBuffer(file);
+      }
+
+      function showWorkbook(fileName, workbook) {
+        var title = document.createElement('h2');
+        title.textContent = fileName;
+        output.appendChild(title);
+
+        workbook.SheetNames.forEach(function (sheetName) {
+          var sheetTitle = document.createElement('h3');
+          sheetTitle.textContent = 'Sheet: ' + sheetName;
+          output.appendChild(sheetTitle);
+
+          var html = XLSX.utils.sheet_to_html(workbook.Sheets[sheetName]);
+          var container = document.createElement('div');
+          container.innerHTML = html;
+          output.appendChild(container.querySelector('table') || container);
+        });
+      }
+    </script>
+  </body>
+</html>
