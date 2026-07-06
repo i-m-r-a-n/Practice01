@@ -51,13 +51,16 @@ Trade license-e software, e-commerce, garments, POS hardware, import — kichui 
 
 Trade license expand korlei hobe na — **MOA-teo object thakte hobe**, na hole bank/RJSC/investor level-e problem.
 
-### Check korun (MOA scan upload korun, ami review korbo):
-- [ ] Software development / IT services / SaaS object ache?
-- [ ] Import/export/trading/e-commerce object ache?
-- [ ] Garments/clothing object ache?
-- [ ] POS/computer hardware object ache?
+### ✅ MOA REVIEWED (06 Jul 2026, chat-attached certified copy theke):
+- [x] Software development / IT services / SaaS object — **NAI** (shudhu "computer engineers" mention, software object na)
+- [x] Import/export/trading object — **ACHE** (clauses 1, 4) → IRC-r jonno enough
+- [x] E-commerce object — **NAI**
+- [x] Garments/clothing object — **NAI**
+- [x] Aluminium — **ACHE** (Thai-Aluminium, clause 1); glass explicitly nai (trade license-e ache)
 
-### Jodi missing:
+**Verdict: MOA amendment REQUIRED** Profileo (software/SaaS) ar Colorful Lifestyle (e-commerce/garments) AFTL-e formally chalanor age. Import/IRC-r jonno wait korte hobe na — existing objects-ei cholbe.
+
+### Amendment process:
 - MOA amendment lagbe → RJSC-te special resolution file korte hoy → **eta CA/RJSC professional diye korano bhalo** (per-task basis, full retainer na)
 - Draft clauses ready ache: `09-Message-Drafts/Message_Drafts.md` → "CA/RJSC — MOA Amendment" section
 

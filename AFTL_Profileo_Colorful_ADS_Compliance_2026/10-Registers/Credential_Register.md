@@ -8,8 +8,8 @@ Password rakhben shudhu: Apple Passwords/iCloud Keychain, Google Password Manage
 
 | # | Portal/Service | Entity | Login ID/Email | In Password Manager? | Exposed in WhatsApp? | Reset Done? | Last Reset |
 |---|---|---|---|---|---|---|---|
-| 1 | VAT Online | AFTL | | ☐ | ⚠️ Assume yes | ☐ | |
-| 2 | VAT Online | ADS | | ☐ | ⚠️ Assume yes | ☐ | |
+| 1 | VAT Online | AFTL | 01301224971 | ☐ | 🔴 **CONFIRMED — NBR SMS (password+OTP) Abir lawyer chat-e gechhe (Dec 2025)** | ☐ | |
+| 2 | VAT Online | ADS | 01639195158 | ☐ | 🔴 **CONFIRMED — password 2 bar chat-e (BIZTRADE Mar+Aug 2025, Abir Nov 2025); lawyer bolechhe "id pass amar kache ache"** | ☐ | |
 | 3 | DNCC e-trade | AFTL | | ☐ | ⚠️ Check | ☐ | |
 | 4 | DNCC e-trade | ADS | | ☐ | ⚠️ Check | ☐ | |
 | 5 | NBR eReturn | Imran | | ☐ | ⚠️ Check | ☐ | |
