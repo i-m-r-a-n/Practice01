@@ -39,8 +39,8 @@
 ## Step 4 — File
 
 - [ ] Shob data upore-r table-e complete
-- [ ] Simple hole: eReturn portal-e nije file korun (portal step-by-step guide kore)
-- [ ] Complex hole (company shareholding + proprietorship + assets): **per-task CA** diye final review — draft message `09-Message-Drafts/`
+- [ ] **CA afford na korle: nije eReturn-e file korun** — full DIY guide: `00-Findings/No_CA_Budget_Plan.md`. Zero-income na diye actual ADS business income diye revised return।
+- [ ] Je field bujhben na → screenshot diye amake jiggesh korben, ami explain korbo
 - [ ] Acknowledgement download → `Imran_Tax_Return_2025-26.pdf`
 
 ## Kobe Lagbe
