@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Excel File Import</title>
+    <title>Excel File Import &amp; Analysis</title>
     <style>
       body {
         font-family: Arial, sans-serif;
@@ -47,12 +47,29 @@
       th {
         background: #f0f0f0;
       }
+
+      .analysis {
+        background: #f5faff;
+        border: 1px solid #b3d4f5;
+        border-radius: 6px;
+        padding: 10px 15px;
+        margin-bottom: 25px;
+      }
+
+      .analysis h4 {
+        margin: 5px 0 10px 0;
+        color: #1a5c9e;
+      }
+
+      .analysis table {
+        border-color: #1a5c9e;
+      }
     </style>
     <script src="xlsx.full.min.js"></script>
   </head>
   <body>
-    <h1>Excel File Import</h1>
-    <p>আপনার PC থেকে এক বা একাধিক Excel ফাইল (.xlsx, .xls, .csv) select করুন অথবা নিচের box-এ drag &amp; drop করুন।</p>
+    <h1>Excel File Import &amp; Analysis</h1>
+    <p>আপনার PC থেকে এক বা একাধিক Excel ফাইল (.xlsx, .xls, .csv) select করুন অথবা নিচের box-এ drag &amp; drop করুন। প্রতিটি sheet টেবিল আকারে দেখাবে এবং নিচে স্বয়ংক্রিয় analysis (sum, average, min, max) আসবে।</p>
 
     <div id="drop-zone">
       এখানে Excel ফাইল drop করুন অথবা click করে select করুন
@@ -115,7 +132,71 @@
           var container = document.createElement('div');
           container.innerHTML = html;
           output.appendChild(container.querySelector('table') || container);
+
+          output.appendChild(analyzeSheet(workbook.Sheets[sheetName]));
         });
+      }
+
+      function analyzeSheet(sheet) {
+        var rows = XLSX.utils.sheet_to_json(sheet, { header: 1 });
+        var headers = rows.length ? rows[0] : [];
+        var dataRows = rows.slice(1);
+
+        var box = document.createElement('div');
+        box.className = 'analysis';
+
+        var title = document.createElement('h4');
+        title.textContent = 'Analysis — মোট data row: ' + dataRows.length +
+          ', মোট column: ' + headers.length;
+        box.appendChild(title);
+
+        var statsTable = document.createElement('table');
+        statsTable.innerHTML =
+          '<tr><th>Column</th><th>Type</th><th>Filled</th>' +
+          '<th>Sum</th><th>Average</th><th>Min</th><th>Max</th></tr>';
+
+        headers.forEach(function (header, col) {
+          var filled = 0;
+          var numbers = [];
+          dataRows.forEach(function (row) {
+            var value = row[col];
+            if (value === undefined || value === null || value === '') return;
+            filled++;
+            if (typeof value === 'number') numbers.push(value);
+          });
+
+          var isNumeric = numbers.length > 0 && numbers.length === filled;
+          var tr = document.createElement('tr');
+
+          function cell(text) {
+            var td = document.createElement('td');
+            td.textContent = text;
+            tr.appendChild(td);
+          }
+
+          cell(header);
+          cell(isNumeric ? 'Number' : 'Text');
+          cell(filled + ' / ' + dataRows.length);
+
+          if (isNumeric) {
+            var sum = numbers.reduce(function (a, b) { return a + b; }, 0);
+            cell(round2(sum));
+            cell(round2(sum / numbers.length));
+            cell(round2(Math.min.apply(null, numbers)));
+            cell(round2(Math.max.apply(null, numbers)));
+          } else {
+            cell('-'); cell('-'); cell('-'); cell('-');
+          }
+
+          statsTable.appendChild(tr);
+        });
+
+        box.appendChild(statsTable);
+        return box;
+      }
+
+      function round2(n) {
+        return Math.round(n * 100) / 100;
       }
     </script>
   </body>
