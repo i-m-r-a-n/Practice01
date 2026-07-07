@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Aluminium Slim Profile Glass Shutter Calculator</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+
+      fieldset {
+        border: 1px solid #aaa;
+        border-radius: 6px;
+        margin-bottom: 20px;
+        padding: 10px 15px;
+      }
+
+      legend {
+        font-weight: bold;
+        color: #2e7d32;
+      }
+
+      label {
+        display: inline-block;
+        margin: 5px 15px 5px 0;
+      }
+
+      input[type="number"], select {
+        width: 90px;
+        padding: 4px;
+      }
+
+      table {
+        border: 2px solid black;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+      }
+
+      td, th {
+        padding: 5px;
+        border: 1px solid black;
+        text-align: center;
+      }
+
+      th {
+        background: #f0f0f0;
+      }
+
+      tfoot td {
+        background: #e8f5e9;
+        font-weight: bold;
+      }
+
+      button {
+        padding: 6px 14px;
+        margin: 5px 5px 5px 0;
+        cursor: pointer;
+      }
+
+      #grand-total {
+        font-size: 1.3em;
+        color: #2e7d32;
+      }
+
+      .remove-btn {
+        color: #b00;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Aluminium Slim Profile Glass Shutter Calculator</h1>
+    <p>Cabinet/wardrobe-এর slim aluminium profile glass shutter-এর জন্য profile, glass আর accessories-এর হিসাব। প্রতিটা shutter-এর width, height আর quantity দিন — নিচে material আর cost breakdown চলে আসবে।</p>
+
+    <fieldset>
+      <legend>Settings / Rates</legend>
+      <label>Measurement unit:
+        <select id="unit">
+          <option value="mm" selected>mm</option>
+          <option value="inch">inch</option>
+        </select>
+      </label>
+      <label>Glass deduction (per side, mm): <input type="number" id="glass-deduction" value="9" min="0" step="0.5"></label>
+      <label>Profile wastage (%): <input type="number" id="wastage" value="5" min="0" step="1"></label>
+      <br>
+      <label>Profile rate (Tk/ft): <input type="number" id="rate-profile" value="120" min="0" step="1"></label>
+      <label>Glass rate (Tk/sqft): <input type="number" id="rate-glass" value="180" min="0" step="1"></label>
+      <label>Gasket rate (Tk/ft): <input type="number" id="rate-gasket" value="10" min="0" step="1"></label>
+      <br>
+      <label>Corner joint (Tk/pc): <input type="number" id="rate-corner" value="15" min="0" step="1"></label>
+      <label>Hinge (Tk/pc): <input type="number" id="rate-hinge" value="90" min="0" step="1"></label>
+      <label>Handle (Tk/pc): <input type="number" id="rate-handle" value="150" min="0" step="1"></label>
+    </fieldset>
+
+    <fieldset>
+      <legend>Shutters</legend>
+      <table id="shutter-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Width</th>
+            <th>Height</th>
+            <th>Qty</th>
+            <th>Glass size (mm)</th>
+            <th>Profile (ft)</th>
+            <th>Glass (sqft)</th>
+            <th>Hinges</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="shutter-rows"></tbody>
+      </table>
+      <button type="button" id="add-row">+ Add shutter</button>
+    </fieldset>
+
+    <h2>Material Summary</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Quantity</th>
+          <th>Rate (Tk)</th>
+          <th>Cost (Tk)</th>
+        </tr>
+      </thead>
+      <tbody id="summary-rows"></tbody>
+      <tfoot>
+        <tr>
+          <td colspan="3">Grand Total</td>
+          <td id="grand-total">0</td>
+        </tr>
+      </tfoot>
+    </table>
+
+    <p><small>
+      Note: Profile লাগে shutter-এর চারপাশে = 2 × (width + height), তার উপর wastage যোগ হয়।
+      Glass size = shutter size থেকে প্রতি পাশে glass deduction বাদ (profile-এর groove-এ glass ঢোকার জন্য) —
+      আপনার profile অনুযায়ী deduction বদলে নিন। Gasket glass-এর perimeter ধরে হিসাব করা হয়।
+      Hinge: height 1000mm পর্যন্ত 2টা, তার বেশি হলে 3টা। প্রতি shutter-এ 4টা corner joint আর 1টা handle ধরা হয়েছে।
+    </small></p>
+
+    <script>
+      var MM_PER_INCH = 25.4;
+      var MM_PER_FOOT = 304.8;
+
+      var shutterRows = document.getElementById('shutter-rows');
+
+      function addRow(width, height, qty) {
+        var tr = document.createElement('tr');
+        tr.innerHTML =
+          '<td class="row-no"></td>' +
+          '<td><input type="number" class="width" min="0" step="any" value="' + (width || '') + '"></td>' +
+          '<td><input type="number" class="height" min="0" step="any" value="' + (height || '') + '"></td>' +
+          '<td><input type="number" class="qty" min="1" step="1" value="' + (qty || 1) + '"></td>' +
+          '<td class="out-glass-size">-</td>' +
+          '<td class="out-profile">-</td>' +
+          '<td class="out-glass-area">-</td>' +
+          '<td class="out-hinges">-</td>' +
+          '<td><button type="button" class="remove-btn">✕</button></td>';
+        tr.querySelector('.remove-btn').addEventListener('click', function () {
+          tr.parentNode.removeChild(tr);
+          calculate();
+        });
+        shutterRows.appendChild(tr);
+      }
+
+      function toMm(value) {
+        return document.getElementById('unit').value === 'inch' ? value * MM_PER_INCH : value;
+      }
+
+      function num(id) {
+        return parseFloat(document.getElementById(id).value) || 0;
+      }
+
+      function calculate() {
+        var deduction = num('glass-deduction');
+        var wastage = num('wastage') / 100;
+
+        var totalProfileFt = 0;
+        var totalGlassSqft = 0;
+        var totalGasketFt = 0;
+        var totalCorners = 0;
+        var totalHinges = 0;
+        var totalHandles = 0;
+
+        var rows = shutterRows.querySelectorAll('tr');
+        for (var i = 0; i < rows.length; i++) {
+          var row = rows[i];
+          row.querySelector('.row-no').textContent = i + 1;
+
+          var w = toMm(parseFloat(row.querySelector('.width').value) || 0);
+          var h = toMm(parseFloat(row.querySelector('.height').value) || 0);
+          var qty = parseInt(row.querySelector('.qty').value, 10) || 0;
+
+          if (w <= 0 || h <= 0 || qty <= 0) {
+            row.querySelector('.out-glass-size').textContent = '-';
+            row.querySelector('.out-profile').textContent = '-';
+            row.querySelector('.out-glass-area').textContent = '-';
+            row.querySelector('.out-hinges').textContent = '-';
+            continue;
+          }
+
+          var glassW = Math.max(w - 2 * deduction, 0);
+          var glassH = Math.max(h - 2 * deduction, 0);
+
+          var profileFt = 2 * (w + h) / MM_PER_FOOT * qty;
+          var glassSqft = (glassW / MM_PER_FOOT) * (glassH / MM_PER_FOOT) * qty;
+          var gasketFt = 2 * (glassW + glassH) / MM_PER_FOOT * qty;
+          var hingesPerShutter = h > 1000 ? 3 : 2;
+
+          row.querySelector('.out-glass-size').textContent = glassW.toFixed(1) + ' × ' + glassH.toFixed(1);
+          row.querySelector('.out-profile').textContent = profileFt.toFixed(2);
+          row.querySelector('.out-glass-area').textContent = glassSqft.toFixed(2);
+          row.querySelector('.out-hinges').textContent = hingesPerShutter * qty;
+
+          totalProfileFt += profileFt;
+          totalGlassSqft += glassSqft;
+          totalGasketFt += gasketFt;
+          totalCorners += 4 * qty;
+          totalHinges += hingesPerShutter * qty;
+          totalHandles += qty;
+        }
+
+        var profileWithWastage = totalProfileFt * (1 + wastage);
+
+        var items = [
+          ['Aluminium profile (with ' + num('wastage') + '% wastage)', profileWithWastage.toFixed(2) + ' ft', num('rate-profile'), profileWithWastage * num('rate-profile')],
+          ['Glass', totalGlassSqft.toFixed(2) + ' sqft', num('rate-glass'), totalGlassSqft * num('rate-glass')],
+          ['Gasket', totalGasketFt.toFixed(2) + ' ft', num('rate-gasket'), totalGasketFt * num('rate-gasket')],
+          ['Corner joint', totalCorners + ' pcs', num('rate-corner'), totalCorners * num('rate-corner')],
+          ['Hinge', totalHinges + ' pcs', num('rate-hinge'), totalHinges * num('rate-hinge')],
+          ['Handle', totalHandles + ' pcs', num('rate-handle'), totalHandles * num('rate-handle')]
+        ];
+
+        var summary = document.getElementById('summary-rows');
+        summary.innerHTML = '';
+        var grand = 0;
+        items.forEach(function (item) {
+          grand += item[3];
+          var tr = document.createElement('tr');
+          tr.innerHTML =
+            '<td style="text-align:left">' + item[0] + '</td>' +
+            '<td>' + item[1] + '</td>' +
+            '<td>' + item[2] + '</td>' +
+            '<td>' + item[3].toFixed(2) + '</td>';
+          summary.appendChild(tr);
+        });
+        document.getElementById('grand-total').textContent = grand.toFixed(2) + ' Tk';
+      }
+
+      document.getElementById('add-row').addEventListener('click', function () {
+        addRow();
+        calculate();
+      });
+
+      document.body.addEventListener('input', calculate);
+      document.getElementById('unit').addEventListener('change', calculate);
+
+      addRow(450, 700, 1);
+      calculate();
+    </script>
+  </body>
+</html>
