@@ -90,13 +90,25 @@
         color: #555;
       }
 
+      .dim-grp {
+        display: inline-block;
+        white-space: nowrap;
+        margin: 1px 3px;
+      }
+
+      .dim-grp small {
+        color: #555;
+        margin-left: 2px;
+      }
+
       /* show only the boxes for the selected unit */
-      body.unit-mm .dim-ft, body.unit-mm .dim-in, body.unit-mm .dim-suta { display: none; }
-      body.unit-inch .dim-mm, body.unit-inch .dim-ft { display: none; }
-      body.unit-ft .dim-mm { display: none; }
+      body.unit-mm .grp-ft, body.unit-mm .grp-in, body.unit-mm .grp-suta { display: none; }
+      body.unit-inch .grp-mm, body.unit-inch .grp-ft { display: none; }
+      body.unit-ft .grp-mm { display: none; }
     </style>
   </head>
   <body class="unit-mm">
+    <noscript><p style="color:#b00"><b>এই page-টা চালাতে JavaScript লাগবে — file-টা download করে browser-এ খুলুন।</b></p></noscript>
     <h1>Aluminium Slim Profile Glass Shutter Calculator</h1>
     <p>Cabinet/wardrobe-এর slim aluminium profile glass shutter-এর জন্য profile, glass আর accessories-এর হিসাব। প্রতিটা shutter-এর width, height আর quantity দিন — নিচে material আর cost breakdown চলে আসবে।</p>
 
@@ -199,10 +211,10 @@
 
       function dimCell(cls, mmValue) {
         return '<td class="' + cls + '">' +
-          '<input type="number" class="dim-mm" min="0" step="any" placeholder="mm" value="' + (mmValue || '') + '">' +
-          '<input type="number" class="dim-ft" min="0" step="1" placeholder="ft">' +
-          '<input type="number" class="dim-in" min="0" step="any" placeholder="inch">' +
-          '<select class="dim-suta">' + sutaOptions() + '</select>' +
+          '<span class="dim-grp grp-mm"><input type="number" class="dim-mm" min="0" step="any" value="' + (mmValue || '') + '"><small>mm</small></span>' +
+          '<span class="dim-grp grp-ft"><input type="number" class="dim-ft" min="0" step="1"><small>ft</small></span>' +
+          '<span class="dim-grp grp-in"><input type="number" class="dim-in" min="0" step="any"><small>inch</small></span>' +
+          '<span class="dim-grp grp-suta"><select class="dim-suta">' + sutaOptions() + '</select></span>' +
           '</td>';
       }
 
