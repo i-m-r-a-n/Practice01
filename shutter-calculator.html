@@ -26,9 +26,28 @@
         margin: 5px 15px 5px 0;
       }
 
-      input[type="number"], input[type="text"], select {
-        width: 90px;
+      input[type="number"], select {
         padding: 4px;
+      }
+
+      fieldset input[type="number"] {
+        width: 90px;
+      }
+
+      .dim-mm {
+        width: 80px;
+      }
+
+      .dim-ft, .dim-in {
+        width: 55px;
+      }
+
+      .dim-suta {
+        width: 75px;
+      }
+
+      .qty {
+        width: 55px;
       }
 
       table {
@@ -70,9 +89,14 @@
       #format-hint {
         color: #555;
       }
+
+      /* show only the boxes for the selected unit */
+      body.unit-mm .dim-ft, body.unit-mm .dim-in, body.unit-mm .dim-suta { display: none; }
+      body.unit-inch .dim-mm, body.unit-inch .dim-ft { display: none; }
+      body.unit-ft .dim-mm { display: none; }
     </style>
   </head>
-  <body>
+  <body class="unit-mm">
     <h1>Aluminium Slim Profile Glass Shutter Calculator</h1>
     <p>Cabinet/wardrobe-এর slim aluminium profile glass shutter-এর জন্য profile, glass আর accessories-এর হিসাব। প্রতিটা shutter-এর width, height আর quantity দিন — নিচে material আর cost breakdown চলে আসবে।</p>
 
@@ -81,8 +105,8 @@
       <label>Measurement unit:
         <select id="unit">
           <option value="mm" selected>mm</option>
-          <option value="inch">inch (সুতা)</option>
-          <option value="ft">ft (ইঞ্চি-সুতা)</option>
+          <option value="inch">inch + সুতা</option>
+          <option value="ft">ft + inch + সুতা</option>
         </select>
       </label>
       <label>Glass deduction (per side, mm): <input type="number" id="glass-deduction" value="9" min="0" step="0.5"></label>
@@ -145,8 +169,8 @@
       আপনার profile অনুযায়ী deduction বদলে নিন। Gasket glass-এর perimeter ধরে হিসাব করা হয়।
       Hinge: height 1000mm পর্যন্ত 2টা, তার বেশি হলে 3টা। প্রতি shutter-এ 4টা corner joint আর 1টা handle ধরা হয়েছে।
       <br>
-      ১ সুতা = ১/৮ ইঞ্চি। inch mode-এ লিখুন: <b>2"3</b> বা <b>2-3</b> (২ ইঞ্চি ৩ সুতা), <b>2 3/8</b>, অথবা <b>2.375</b>।
-      ft mode-এ লিখুন: <b>4'6"3</b> (৪ ফুট ৬ ইঞ্চি ৩ সুতা), <b>4'6</b>, অথবা <b>4.5</b>।
+      1 সুতা = 1/8 ইঞ্চি। inch বা ft mode-এ inch-এর ঘরের পাশে সুতার ঘর থেকে 0–7 select করুন (default 0)।
+      যেমন: 3 inch 2 সুতা = inch-এর ঘরে 3, সুতার ঘরে 2।
     </small></p>
 
     <script>
@@ -156,47 +180,46 @@
       var shutterRows = document.getElementById('shutter-rows');
 
       var UNIT_INFO = {
-        mm:   { label: 'mm',            placeholder: '450',    hint: 'সরাসরি mm-এ লিখুন, যেমন: 450' },
-        inch: { label: 'inch-সুতা',     placeholder: '2"3',    hint: 'ইঞ্চি-সুতা format: 2"3 বা 2-3 = ২ ইঞ্চি ৩ সুতা (৩/৮"), 2 3/8 বা 2.375-ও চলবে' },
-        ft:   { label: "ft-inch-সুতা",  placeholder: "4'6\"3", hint: "ফুট-ইঞ্চি-সুতা format: 4'6\"3 = ৪ ফুট ৬ ইঞ্চি ৩ সুতা, 4'6 বা 4.5-ও চলবে" }
+        mm:   { label: 'mm',              hint: 'সরাসরি mm-এ লিখুন, যেমন: 450' },
+        inch: { label: 'inch + সুতা',     hint: 'inch-এর ঘরে inch লিখুন, পাশের ঘরে সুতা (0-7) select করুন। যেমন: 3 inch 2 সুতা' },
+        ft:   { label: 'ft + inch + সুতা', hint: 'ft, inch আর সুতা (0-7) আলাদা ঘরে দিন। যেমন: 4 ft 6 inch 3 সুতা' }
       };
 
       function currentUnit() {
         return document.getElementById('unit').value;
       }
 
-      // "2"3" / "2-3" / "2 3" => 2 inch 3 suta (suta = 1/8"), "2 3/8" => 2 + 3/8, "3/8" => 0.375, "2.375" => 2.375
-      function parseInches(str) {
-        str = String(str).trim();
-        if (!str) return 0;
-        var m = str.match(/^(?:(\d+(?:\.\d+)?)\s*["\s-]+)?(\d+(?:\.\d+)?)\s*\/\s*(\d+(?:\.\d+)?)\s*"?$/);
-        if (m) {
-          return (parseFloat(m[1]) || 0) + parseFloat(m[2]) / (parseFloat(m[3]) || 1);
+      function sutaOptions() {
+        var html = '';
+        for (var s = 0; s <= 7; s++) {
+          html += '<option value="' + s + '">' + s + ' সুতা</option>';
         }
-        m = str.match(/^(\d+(?:\.\d+)?)\s*["\s-]+\s*(\d+(?:\.\d+)?)\s*"?$/);
-        if (m) {
-          return parseFloat(m[1]) + parseFloat(m[2]) / 8;
-        }
-        return parseFloat(str) || 0;
+        return html;
       }
 
-      function parseDimToMm(str, unit) {
-        str = String(str).trim();
-        if (!str) return 0;
-        if (unit === 'mm') return parseFloat(str) || 0;
-        if (unit === 'inch') return parseInches(str) * MM_PER_INCH;
-        // ft: 4'6"3 = 4 ft + 6 inch 3 suta, plain number = decimal ft
-        var m = str.match(/^(\d+(?:\.\d+)?)\s*(?:'|ft)\s*(.*)$/);
-        if (m) {
-          var rest = m[2].replace(/^[\s-]+/, '');
-          return parseFloat(m[1]) * MM_PER_FOOT + (rest ? parseInches(rest) * MM_PER_INCH : 0);
+      function dimCell(cls, mmValue) {
+        return '<td class="' + cls + '">' +
+          '<input type="number" class="dim-mm" min="0" step="any" placeholder="mm" value="' + (mmValue || '') + '">' +
+          '<input type="number" class="dim-ft" min="0" step="1" placeholder="ft">' +
+          '<input type="number" class="dim-in" min="0" step="any" placeholder="inch">' +
+          '<select class="dim-suta">' + sutaOptions() + '</select>' +
+          '</td>';
+      }
+
+      // dimension of one cell in mm, based on the selected unit's visible boxes
+      function cellToMm(cell, unit) {
+        function v(sel) {
+          return parseFloat(cell.querySelector(sel).value) || 0;
         }
-        return (parseFloat(str) || 0) * MM_PER_FOOT;
+        if (unit === 'mm') return v('.dim-mm');
+        var inches = v('.dim-in') + v('.dim-suta') / 8;
+        if (unit === 'ft') inches += v('.dim-ft') * 12;
+        return inches * MM_PER_INCH;
       }
 
       // mm => display string in the current unit (inch/ft rounded to the nearest suta)
       function formatDim(mm, unit) {
-        if (unit === 'mm') return mm.toFixed(1);
+        if (unit === 'mm') return mm.toFixed(1) + ' mm';
         var totalIn = mm / MM_PER_INCH;
         var ft = 0;
         if (unit === 'ft') {
@@ -207,16 +230,19 @@
         var suta = Math.round((totalIn - whole) * 8);
         if (suta === 8) { whole++; suta = 0; }
         if (unit === 'ft' && whole === 12) { ft++; whole = 0; }
-        return (unit === 'ft' ? ft + "'" : '') + whole + '"' + suta;
+        var out = '';
+        if (unit === 'ft') out += ft + "' ";
+        out += whole + '"';
+        if (suta > 0) out += ' ' + suta + ' সুতা';
+        return out;
       }
 
-      function addRow(width, height, qty) {
-        var placeholder = UNIT_INFO[currentUnit()].placeholder;
+      function addRow(widthMm, heightMm, qty) {
         var tr = document.createElement('tr');
         tr.innerHTML =
           '<td class="row-no"></td>' +
-          '<td><input type="text" class="width" inputmode="decimal" placeholder="' + placeholder + '" value="' + (width || '') + '"></td>' +
-          '<td><input type="text" class="height" inputmode="decimal" placeholder="' + placeholder + '" value="' + (height || '') + '"></td>' +
+          dimCell('cell-width', widthMm) +
+          dimCell('cell-height', heightMm) +
           '<td><input type="number" class="qty" min="1" step="1" value="' + (qty || 1) + '"></td>' +
           '<td class="out-glass-size">-</td>' +
           '<td class="out-profile">-</td>' +
@@ -235,15 +261,13 @@
       }
 
       function updateUnitUi() {
-        var info = UNIT_INFO[currentUnit()];
+        var unit = currentUnit();
+        var info = UNIT_INFO[unit];
+        document.body.className = 'unit-' + unit;
         document.getElementById('th-width').textContent = 'Width (' + info.label + ')';
         document.getElementById('th-height').textContent = 'Height (' + info.label + ')';
         document.getElementById('th-glass-size').textContent = 'Glass size (' + info.label + ')';
         document.getElementById('format-hint').textContent = info.hint;
-        var inputs = shutterRows.querySelectorAll('.width, .height');
-        for (var i = 0; i < inputs.length; i++) {
-          inputs[i].placeholder = info.placeholder;
-        }
       }
 
       function calculate() {
@@ -263,8 +287,8 @@
           var row = rows[i];
           row.querySelector('.row-no').textContent = i + 1;
 
-          var w = parseDimToMm(row.querySelector('.width').value, unit);
-          var h = parseDimToMm(row.querySelector('.height').value, unit);
+          var w = cellToMm(row.querySelector('.cell-width'), unit);
+          var h = cellToMm(row.querySelector('.cell-height'), unit);
           var qty = parseInt(row.querySelector('.qty').value, 10) || 0;
 
           if (w <= 0 || h <= 0 || qty <= 0) {
@@ -329,10 +353,8 @@
       });
 
       document.body.addEventListener('input', calculate);
-      document.getElementById('unit').addEventListener('change', function () {
-        updateUnitUi();
-        calculate();
-      });
+      document.body.addEventListener('change', calculate);
+      document.getElementById('unit').addEventListener('change', updateUnitUi);
 
       addRow(450, 700, 1);
       updateUnitUi();
