@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Aluminium Slim Profile Glass Shutter Calculator</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+
+      fieldset {
+        border: 1px solid #aaa;
+        border-radius: 6px;
+        margin-bottom: 20px;
+        padding: 10px 15px;
+      }
+
+      legend {
+        font-weight: bold;
+        color: #2e7d32;
+      }
+
+      label {
+        display: inline-block;
+        margin: 5px 15px 5px 0;
+      }
+
+      input[type="number"], select {
+        padding: 4px;
+      }
+
+      fieldset input[type="number"] {
+        width: 90px;
+      }
+
+      .dim-mm {
+        width: 80px;
+      }
+
+      .dim-ft, .dim-in {
+        width: 55px;
+      }
+
+      .dim-suta {
+        width: 75px;
+      }
+
+      .qty {
+        width: 55px;
+      }
+
+      table {
+        border: 2px solid black;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+      }
+
+      td, th {
+        padding: 5px;
+        border: 1px solid black;
+        text-align: center;
+      }
+
+      th {
+        background: #f0f0f0;
+      }
+
+      tfoot td {
+        background: #e8f5e9;
+        font-weight: bold;
+      }
+
+      button {
+        padding: 6px 14px;
+        margin: 5px 5px 5px 0;
+        cursor: pointer;
+      }
+
+      #grand-total {
+        font-size: 1.3em;
+        color: #2e7d32;
+      }
+
+      .remove-btn {
+        color: #b00;
+      }
+
+      #format-hint {
+        color: #555;
+      }
+
+      .dim-grp {
+        display: inline-block;
+        white-space: nowrap;
+        margin: 1px 3px;
+      }
+
+      .dim-grp small {
+        color: #555;
+        margin-left: 2px;
+      }
+
+      /* show only the boxes for the selected unit */
+      body.unit-mm .grp-ft, body.unit-mm .grp-in, body.unit-mm .grp-suta { display: none; }
+      body.unit-inch .grp-mm, body.unit-inch .grp-ft { display: none; }
+      body.unit-ft .grp-mm { display: none; }
+    </style>
+  </head>
+  <body class="unit-mm">
+    <noscript><p style="color:#b00"><b>এই page-টা চালাতে JavaScript লাগবে — file-টা download করে browser-এ খুলুন।</b></p></noscript>
+    <h1>Aluminium Slim Profile Glass Shutter Calculator</h1>
+    <p>Cabinet/wardrobe-এর slim aluminium profile glass shutter-এর জন্য profile, glass আর accessories-এর হিসাব। প্রতিটা shutter-এর width, height আর quantity দিন — নিচে material আর cost breakdown চলে আসবে।</p>
+
+    <fieldset>
+      <legend>Settings / Rates</legend>
+      <label>Measurement unit:
+        <select id="unit">
+          <option value="mm" selected>mm</option>
+          <option value="inch">inch + সুতা</option>
+          <option value="ft">ft + inch + সুতা</option>
+        </select>
+      </label>
+      <label>Glass deduction (per side, mm): <input type="number" id="glass-deduction" value="9" min="0" step="0.5"></label>
+      <label>Profile wastage (%): <input type="number" id="wastage" value="5" min="0" step="1"></label>
+      <br>
+      <span id="format-hint"></span>
+      <br>
+      <label>Profile rate (Tk/ft): <input type="number" id="rate-profile" value="120" min="0" step="1"></label>
+      <label>Glass rate (Tk/sqft): <input type="number" id="rate-glass" value="180" min="0" step="1"></label>
+      <label>Gasket rate (Tk/ft): <input type="number" id="rate-gasket" value="10" min="0" step="1"></label>
+      <br>
+      <label>Corner joint (Tk/pc): <input type="number" id="rate-corner" value="15" min="0" step="1"></label>
+      <label>Hinge (Tk/pc): <input type="number" id="rate-hinge" value="90" min="0" step="1"></label>
+      <label>Handle (Tk/pc): <input type="number" id="rate-handle" value="150" min="0" step="1"></label>
+    </fieldset>
+
+    <fieldset>
+      <legend>Shutters</legend>
+      <table id="shutter-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th id="th-width">Width</th>
+            <th id="th-height">Height</th>
+            <th>Qty</th>
+            <th id="th-glass-size">Glass size</th>
+            <th>Profile (ft)</th>
+            <th>Glass (sqft)</th>
+            <th>Hinges</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="shutter-rows"></tbody>
+      </table>
+      <button type="button" id="add-row">+ Add shutter</button>
+    </fieldset>
+
+    <h2>Material Summary</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Quantity</th>
+          <th>Rate (Tk)</th>
+          <th>Cost (Tk)</th>
+        </tr>
+      </thead>
+      <tbody id="summary-rows"></tbody>
+      <tfoot>
+        <tr>
+          <td colspan="3">Grand Total</td>
+          <td id="grand-total">0</td>
+        </tr>
+      </tfoot>
+    </table>
+
+    <p><small>
+      Note: Profile লাগে shutter-এর চারপাশে = 2 × (width + height), তার উপর wastage যোগ হয়।
+      Glass size = shutter size থেকে প্রতি পাশে glass deduction বাদ (profile-এর groove-এ glass ঢোকার জন্য) —
+      আপনার profile অনুযায়ী deduction বদলে নিন। Gasket glass-এর perimeter ধরে হিসাব করা হয়।
+      Hinge: height 1000mm পর্যন্ত 2টা, তার বেশি হলে 3টা। প্রতি shutter-এ 4টা corner joint আর 1টা handle ধরা হয়েছে।
+      <br>
+      1 সুতা = 1/8 ইঞ্চি। inch বা ft mode-এ inch-এর ঘরের পাশে সুতার ঘর থেকে 0–7 select করুন (default 0)।
+      যেমন: 3 inch 2 সুতা = inch-এর ঘরে 3, সুতার ঘরে 2।
+    </small></p>
+
+    <script>
+      var MM_PER_INCH = 25.4;
+      var MM_PER_FOOT = 304.8;
+
+      var shutterRows = document.getElementById('shutter-rows');
+
+      var UNIT_INFO = {
+        mm:   { label: 'mm',              hint: 'সরাসরি mm-এ লিখুন, যেমন: 450' },
+        inch: { label: 'inch + সুতা',     hint: 'inch-এর ঘরে inch লিখুন, পাশের ঘরে সুতা (0-7) select করুন। যেমন: 3 inch 2 সুতা' },
+        ft:   { label: 'ft + inch + সুতা', hint: 'ft, inch আর সুতা (0-7) আলাদা ঘরে দিন। যেমন: 4 ft 6 inch 3 সুতা' }
+      };
+
+      function currentUnit() {
+        return document.getElementById('unit').value;
+      }
+
+      function sutaOptions() {
+        var html = '';
+        for (var s = 0; s <= 7; s++) {
+          html += '<option value="' + s + '">' + s + ' সুতা</option>';
+        }
+        return html;
+      }
+
+      function dimCell(cls, mmValue) {
+        return '<td class="' + cls + '">' +
+          '<span class="dim-grp grp-mm"><input type="number" class="dim-mm" min="0" step="any" value="' + (mmValue || '') + '"><small>mm</small></span>' +
+          '<span class="dim-grp grp-ft"><input type="number" class="dim-ft" min="0" step="1"><small>ft</small></span>' +
+          '<span class="dim-grp grp-in"><input type="number" class="dim-in" min="0" step="any"><small>inch</small></span>' +
+          '<span class="dim-grp grp-suta"><select class="dim-suta">' + sutaOptions() + '</select></span>' +
+          '</td>';
+      }
+
+      // dimension of one cell in mm, based on the selected unit's visible boxes
+      function cellToMm(cell, unit) {
+        function v(sel) {
+          return parseFloat(cell.querySelector(sel).value) || 0;
+        }
+        if (unit === 'mm') return v('.dim-mm');
+        var inches = v('.dim-in') + v('.dim-suta') / 8;
+        if (unit === 'ft') inches += v('.dim-ft') * 12;
+        return inches * MM_PER_INCH;
+      }
+
+      // mm => display string in the current unit (inch/ft rounded to the nearest suta)
+      function formatDim(mm, unit) {
+        if (unit === 'mm') return mm.toFixed(1) + ' mm';
+        var totalIn = mm / MM_PER_INCH;
+        var ft = 0;
+        if (unit === 'ft') {
+          ft = Math.floor(totalIn / 12);
+          totalIn -= ft * 12;
+        }
+        var whole = Math.floor(totalIn);
+        var suta = Math.round((totalIn - whole) * 8);
+        if (suta === 8) { whole++; suta = 0; }
+        if (unit === 'ft' && whole === 12) { ft++; whole = 0; }
+        var out = '';
+        if (unit === 'ft') out += ft + "' ";
+        out += whole + '"';
+        if (suta > 0) out += ' ' + suta + ' সুতা';
+        return out;
+      }
+
+      function addRow(widthMm, heightMm, qty) {
+        var tr = document.createElement('tr');
+        tr.innerHTML =
+          '<td class="row-no"></td>' +
+          dimCell('cell-width', widthMm) +
+          dimCell('cell-height', heightMm) +
+          '<td><input type="number" class="qty" min="1" step="1" value="' + (qty || 1) + '"></td>' +
+          '<td class="out-glass-size">-</td>' +
+          '<td class="out-profile">-</td>' +
+          '<td class="out-glass-area">-</td>' +
+          '<td class="out-hinges">-</td>' +
+          '<td><button type="button" class="remove-btn">✕</button></td>';
+        tr.querySelector('.remove-btn').addEventListener('click', function () {
+          tr.parentNode.removeChild(tr);
+          calculate();
+        });
+        shutterRows.appendChild(tr);
+      }
+
+      function num(id) {
+        return parseFloat(document.getElementById(id).value) || 0;
+      }
+
+      function updateUnitUi() {
+        var unit = currentUnit();
+        var info = UNIT_INFO[unit];
+        document.body.className = 'unit-' + unit;
+        document.getElementById('th-width').textContent = 'Width (' + info.label + ')';
+        document.getElementById('th-height').textContent = 'Height (' + info.label + ')';
+        document.getElementById('th-glass-size').textContent = 'Glass size (' + info.label + ')';
+        document.getElementById('format-hint').textContent = info.hint;
+      }
+
+      function calculate() {
+        var unit = currentUnit();
+        var deduction = num('glass-deduction');
+        var wastage = num('wastage') / 100;
+
+        var totalProfileFt = 0;
+        var totalGlassSqft = 0;
+        var totalGasketFt = 0;
+        var totalCorners = 0;
+        var totalHinges = 0;
+        var totalHandles = 0;
+
+        var rows = shutterRows.querySelectorAll('tr');
+        for (var i = 0; i < rows.length; i++) {
+          var row = rows[i];
+          row.querySelector('.row-no').textContent = i + 1;
+
+          var w = cellToMm(row.querySelector('.cell-width'), unit);
+          var h = cellToMm(row.querySelector('.cell-height'), unit);
+          var qty = parseInt(row.querySelector('.qty').value, 10) || 0;
+
+          if (w <= 0 || h <= 0 || qty <= 0) {
+            row.querySelector('.out-glass-size').textContent = '-';
+            row.querySelector('.out-profile').textContent = '-';
+            row.querySelector('.out-glass-area').textContent = '-';
+            row.querySelector('.out-hinges').textContent = '-';
+            continue;
+          }
+
+          var glassW = Math.max(w - 2 * deduction, 0);
+          var glassH = Math.max(h - 2 * deduction, 0);
+
+          var profileFt = 2 * (w + h) / MM_PER_FOOT * qty;
+          var glassSqft = (glassW / MM_PER_FOOT) * (glassH / MM_PER_FOOT) * qty;
+          var gasketFt = 2 * (glassW + glassH) / MM_PER_FOOT * qty;
+          var hingesPerShutter = h > 1000 ? 3 : 2;
+
+          row.querySelector('.out-glass-size').textContent = formatDim(glassW, unit) + ' × ' + formatDim(glassH, unit);
+          row.querySelector('.out-profile').textContent = profileFt.toFixed(2);
+          row.querySelector('.out-glass-area').textContent = glassSqft.toFixed(2);
+          row.querySelector('.out-hinges').textContent = hingesPerShutter * qty;
+
+          totalProfileFt += profileFt;
+          totalGlassSqft += glassSqft;
+          totalGasketFt += gasketFt;
+          totalCorners += 4 * qty;
+          totalHinges += hingesPerShutter * qty;
+          totalHandles += qty;
+        }
+
+        var profileWithWastage = totalProfileFt * (1 + wastage);
+
+        var items = [
+          ['Aluminium profile (with ' + num('wastage') + '% wastage)', profileWithWastage.toFixed(2) + ' ft', num('rate-profile'), profileWithWastage * num('rate-profile')],
+          ['Glass', totalGlassSqft.toFixed(2) + ' sqft', num('rate-glass'), totalGlassSqft * num('rate-glass')],
+          ['Gasket', totalGasketFt.toFixed(2) + ' ft', num('rate-gasket'), totalGasketFt * num('rate-gasket')],
+          ['Corner joint', totalCorners + ' pcs', num('rate-corner'), totalCorners * num('rate-corner')],
+          ['Hinge', totalHinges + ' pcs', num('rate-hinge'), totalHinges * num('rate-hinge')],
+          ['Handle', totalHandles + ' pcs', num('rate-handle'), totalHandles * num('rate-handle')]
+        ];
+
+        var summary = document.getElementById('summary-rows');
+        summary.innerHTML = '';
+        var grand = 0;
+        items.forEach(function (item) {
+          grand += item[3];
+          var tr = document.createElement('tr');
+          tr.innerHTML =
+            '<td style="text-align:left">' + item[0] + '</td>' +
+            '<td>' + item[1] + '</td>' +
+            '<td>' + item[2] + '</td>' +
+            '<td>' + item[3].toFixed(2) + '</td>';
+          summary.appendChild(tr);
+        });
+        document.getElementById('grand-total').textContent = grand.toFixed(2) + ' Tk';
+      }
+
+      document.getElementById('add-row').addEventListener('click', function () {
+        addRow();
+        calculate();
+      });
+
+      document.body.addEventListener('input', calculate);
+      document.body.addEventListener('change', calculate);
+      document.getElementById('unit').addEventListener('change', updateUnitUi);
+
+      addRow(450, 700, 1);
+      updateUnitUi();
+      calculate();
+    </script>
+  </body>
+</html>
