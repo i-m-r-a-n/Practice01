@@ -37,7 +37,9 @@
 | File | Person | Document Type | Date | Important Number | Status | Notes |
 |---|---|---|---|---|---|---|
 | Tin_Certificate_315112192747.pdf | Imran Ahmed | TIN Certificate | 18 Jan 2024 | **TIN 315112192747** | ✅ | Circle-202, Zone 10. NID 1033654367, DOB 01/07/2001 |
-| Return-315112192747.pdf | Imran Ahmed | Tax Return AY 2025-26 | Filed 08 Jul 2025 | Reg serial 5716711353 | 🔴 **FULL ZERO RETURN** | Income 0, tax 0, assets 0, lifestyle 0 — bank statement er sathe **conflict** (niche Risk section) |
+| NID image (BIZTRADE chat, 26 Feb 2025) | Imran Ahmed | **NID card — dui side** | Issue 28/04/2022 | NID 1033654367 | ✅ **HAVE** | Blood group B+. BizPay package-e attach kora hoyeche |
+| Return ack. AY 2024-25 (BIZTRADE chat photo) | Imran Ahmed | **Tax Return Acknowledgement AY 2024-2025** | Submitted 30 Dec 2024 | Circle 202, Zone 10 | ✅ **HAVE — loan file-e useful** | **Total income shown: Tk 3,30,000, tax NIL** (paper return). Mane ekta prior-year return income soho ache! |
+| Return-315112192747.pdf | Imran Ahmed | Tax Return AY 2025-26 | Filed 08 Jul 2025 | Reg serial 5716711353 | 🔴 **FULL ZERO RETURN** | Income 0, tax 0 — ager bochor 3.3 lakh dekhiye ei bochor 0 dekhano aro boro red flag; bank statement-er satheo conflict |
 | SAJJAD TIN.pdf | Md Sazzad Hossain | TIN Certificate | 28 Sep 2025 | **TIN 423585639787** | ✅ | Circle-493, Zone 23. NID 6482173454, DOB 01/08/2006 (chat) — **age ~19** |
 | — | Sazzad | Tax return | — | — | ❌ Missing | TIN Sep 2025-e — first return due |
 | imran_statement.pdf | Imran | Islami Bank statement | 01 Jul 2024 – 30 Jun 2025 | A/C 20506526700005402 | ✅ Have | Deposits ~4.21 lakh, closing 9.18 |
