@@ -1,0 +1,14 @@
+{
+  "name": "Stride 90",
+  "short_name": "Stride 90",
+  "description": "Walking-first 90-day weight tracker: weight, 10,000 steps, 80 g protein, calories.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f9f9f6",
+  "theme_color": "#0c7a55",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "icon-maskable.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "maskable" }
+  ]
+}
