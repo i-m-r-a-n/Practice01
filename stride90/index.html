@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0c7a55">
+<title>Stride 90</title>
+<link rel="manifest" href="./manifest.json">
+<link rel="icon" href="./icon.svg" type="image/svg+xml">
+<style>
+  :root {
+    color-scheme: light;
+    --page: #f9f9f6;
+    --surface: #fdfdfb;
+    --ink-1: #14140f;
+    --ink-2: #55544d;
+    --ink-3: #8b8a80;
+    --hairline: #e3e2d8;
+    --border: rgba(20,20,15,0.10);
+    --accent: #0c7a55;
+    --accent-ink: #ffffff;
+    --series: #2a78d6;
+    --good: #0ca30c;
+    --warn: #fab219;
+    --serious: #ec835a;
+    --success-text: #006300;
+    --cell-empty: #e3e2d8;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --page: #121311;
+      --surface: #1b1c1a;
+      --ink-1: #f4f4ef;
+      --ink-2: #c2c1b6;
+      --ink-3: #8b8a80;
+      --hairline: #2d2e2b;
+      --border: rgba(255,255,255,0.10);
+      --accent: #2fbd8a;
+      --accent-ink: #0c1410;
+      --series: #3987e5;
+      --success-text: #0ca30c;
+      --cell-empty: #2d2e2b;
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --page: #121311;
+    --surface: #1b1c1a;
+    --ink-1: #f4f4ef;
+    --ink-2: #c2c1b6;
+    --ink-3: #8b8a80;
+    --hairline: #2d2e2b;
+    --border: rgba(255,255,255,0.10);
+    --accent: #2fbd8a;
+    --accent-ink: #0c1410;
+    --series: #3987e5;
+    --success-text: #0ca30c;
+    --cell-empty: #2d2e2b;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    background: var(--page); color: var(--ink-1);
+    font-size: 16px; line-height: 1.45;
+    padding-bottom: calc(64px + env(safe-area-inset-bottom));
+  }
+  .wrap { max-width: 560px; margin: 0 auto; padding: 12px 12px 24px; }
+
+  .hdr { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; padding: 8px 2px 12px; }
+  .wordmark { font-size: 17px; font-weight: 800; letter-spacing: -0.01em; }
+  .wordmark .n { color: var(--accent); }
+  .hdr .date { color: var(--ink-3); font-size: 13px; text-align: right; }
+  .daychip { display: inline-block; font-size: 12.5px; font-weight: 700; border: 1px solid var(--border); border-radius: 999px; padding: 2px 10px; margin-top: 3px; }
+
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 14px; margin-bottom: 12px; }
+  .card h2 { font-size: 14px; font-weight: 700; margin-bottom: 10px; }
+  .eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-3); }
+  .muted { color: var(--ink-3); font-size: 13px; }
+  .small { font-size: 13px; color: var(--ink-2); }
+
+  /* Hero */
+  .hero { display: flex; align-items: flex-end; justify-content: space-between; gap: 12px; }
+  .hero .big { font-size: 42px; font-weight: 800; line-height: 1.05; letter-spacing: -0.02em; }
+  .hero .unit { font-size: 16px; font-weight: 600; color: var(--ink-3); }
+  .hero .side { text-align: right; padding-bottom: 4px; }
+  .hero .side b { font-size: 17px; }
+  .chip { display: inline-flex; align-items: center; gap: 6px; font-size: 12.5px; font-weight: 700; border-radius: 999px; padding: 3px 11px; border: 1px solid var(--border); }
+  .chip .dot { width: 9px; height: 9px; border-radius: 50%; }
+  .chip.good .dot { background: var(--good); }
+  .chip.warn .dot { background: var(--warn); }
+  .chip.serious .dot { background: var(--serious); }
+  .chip.plain .dot { background: var(--cell-empty); }
+
+  /* Inputs */
+  .row { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 9px 0; border-top: 1px solid var(--hairline); }
+  .row:first-of-type { border-top: none; }
+  .row .rlbl { font-size: 14.5px; }
+  .row .rhint { font-size: 12px; color: var(--ink-3); }
+  input[type="number"], input[type="date"] {
+    font-size: 17px; font-weight: 700; padding: 8px 10px; text-align: right;
+    border: 1px solid var(--hairline); border-radius: 9px; width: 128px;
+    background: transparent; color: var(--ink-1); font-family: inherit;
+    font-variant-numeric: tabular-nums;
+  }
+  input[type="date"] { font-weight: 600; font-size: 15px; width: 160px; }
+  input[type="text"] { width: 100%; font-size: 15px; padding: 9px 10px; border: 1px solid var(--hairline); border-radius: 9px; background: transparent; color: var(--ink-1); font-family: inherit; }
+
+  .btn { display: inline-block; width: 100%; text-align: center; font-size: 15px; font-weight: 700; padding: 12px; border-radius: 10px; border: 1px solid var(--border); background: transparent; color: var(--ink-1); cursor: pointer; font-family: inherit; }
+  .btn.primary { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+  .btn.slim { padding: 9px 14px; width: auto; font-size: 14px; }
+  .btnrow { display: flex; gap: 10px; margin-top: 10px; }
+  .btnrow .btn { flex: 1; }
+  button:focus-visible, input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+
+  /* Target bars */
+  .tgt { margin: 10px 0 2px; }
+  .tgt .tline { display: flex; justify-content: space-between; font-size: 13.5px; margin-bottom: 5px; }
+  .tgt .tline b { font-variant-numeric: tabular-nums; }
+  .bar { height: 10px; border-radius: 999px; background: var(--cell-empty); overflow: hidden; }
+  .bar > i { display: block; height: 100%; border-radius: 999px; background: var(--accent); transition: width 0.3s; }
+  .bar.hit > i { background: var(--good); }
+
+  /* Charts */
+  .chartbox { position: relative; }
+  .chartbox svg { width: 100%; height: auto; display: block; }
+  .tip {
+    position: absolute; pointer-events: none; display: none;
+    background: var(--ink-1); color: var(--page);
+    font-size: 12px; font-weight: 600; padding: 4px 8px; border-radius: 6px;
+    transform: translate(-50%, -130%); white-space: nowrap; z-index: 5;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Tables */
+  .scrollx { overflow-x: auto; }
+  table.wk { width: 100%; border-collapse: collapse; font-size: 13.5px; min-width: 460px; }
+  table.wk th { text-align: right; color: var(--ink-3); font-size: 11.5px; font-weight: 600; padding: 6px 6px; border-bottom: 1px solid var(--hairline); white-space: nowrap; }
+  table.wk th:first-child, table.wk td:first-child { text-align: left; }
+  table.wk td { padding: 7px 6px; border-bottom: 1px solid var(--hairline); text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .better { color: var(--success-text); font-weight: 700; }
+
+  /* Grid */
+  .grid90 { display: grid; grid-template-columns: repeat(7, 1fr); gap: 5px; }
+  .gcell { aspect-ratio: 1; border-radius: 6px; background: var(--cell-empty); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 800; color: rgba(11,11,11,0.85); border: none; cursor: pointer; font-family: inherit; padding: 0; }
+  .gcell.green { background: var(--good); }
+  .gcell.near { background: var(--warn); }
+  .gcell.low { background: var(--serious); }
+  .gcell.today { outline: 2px solid var(--series); outline-offset: 1px; }
+  .gcell.future { opacity: 0.35; cursor: default; }
+  .legend { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 10px; }
+  .legend span { display: inline-flex; align-items: center; gap: 6px; font-size: 12.5px; color: var(--ink-2); }
+  .legend .sw { width: 16px; height: 16px; border-radius: 4px; display: inline-flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 800; color: rgba(11,11,11,0.85); background: var(--cell-empty); }
+  .legend .sw.green { background: var(--good); } .legend .sw.near { background: var(--warn); } .legend .sw.low { background: var(--serious); }
+
+  nav { position: fixed; bottom: 0; left: 0; right: 0; background: var(--surface); border-top: 1px solid var(--border); display: flex; justify-content: space-around; padding: 6px 4px calc(6px + env(safe-area-inset-bottom)); z-index: 50; }
+  nav button { flex: 1; max-width: 140px; background: none; border: none; cursor: pointer; font-family: inherit; font-size: 12px; font-weight: 600; color: var(--ink-3); padding: 6px 2px; border-radius: 8px; }
+  nav button .ico { display: block; font-size: 17px; line-height: 1.2; }
+  nav button.active { color: var(--accent); }
+
+  .modal-bg { position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 100; display: flex; align-items: flex-end; justify-content: center; }
+  .modal { background: var(--surface); border-radius: 16px 16px 0 0; width: 100%; max-width: 560px; padding: 18px 16px calc(18px + env(safe-area-inset-bottom)); max-height: 88vh; overflow-y: auto; }
+  .modal h3 { font-size: 16px; margin-bottom: 10px; }
+  table.dd { width: 100%; border-collapse: collapse; font-size: 14px; }
+  table.dd td { padding: 7px 4px; border-bottom: 1px solid var(--hairline); }
+  table.dd td:last-child { text-align: right; font-variant-numeric: tabular-nums; font-weight: 700; }
+
+  .foot { text-align: center; color: var(--ink-3); font-size: 12.5px; margin: 18px 0 8px; }
+  @media (prefers-reduced-motion: reduce) { .bar > i { transition: none; } }
+</style>
+</head>
+<body>
+<div class="wrap" id="app"></div>
+<nav id="nav"></nav>
+<div id="modal-root"></div>
+
+<script>
+'use strict';
+
+/* ---------- constants & state ---------- */
+
+const LS_KEY = 'stride90_v1';
+const DAY_CUTOVER_H = 4; // day rolls over at 4 a.m. — a weigh-in logged at 1 a.m. belongs to the evening before
+
+function blankDay() { return { w: null, steps: null, protein: null, cal: null, note: '' }; }
+function defaultState() {
+  return {
+    settings: { start: null, startWeight: null, lossTarget: 5, stepTarget: 10000, proteinTarget: 80, theme: 'auto' },
+    days: {},
+  };
+}
+
+const DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
+function cleanNum(v) {
+  if (v == null || v === '') return null; // Number(null) is 0 — a phantom entry, not "unlogged"
+  const n = Number(v);
+  return Number.isFinite(n) && n >= 0 ? n : null;
+}
+function sanitize(raw) {
+  const d = defaultState();
+  if (!raw || typeof raw !== 'object') return d;
+  const rs = (raw.settings && typeof raw.settings === 'object') ? raw.settings : {};
+  d.settings.start = (typeof rs.start === 'string' && DATE_RE.test(rs.start)) ? rs.start : null;
+  d.settings.startWeight = cleanNum(rs.startWeight);
+  d.settings.lossTarget = cleanNum(rs.lossTarget) || 5;
+  d.settings.stepTarget = cleanNum(rs.stepTarget) || 10000;
+  d.settings.proteinTarget = cleanNum(rs.proteinTarget) || 80;
+  d.settings.theme = ['auto', 'light', 'dark'].includes(rs.theme) ? rs.theme : 'auto';
+  if (raw.days && typeof raw.days === 'object' && !Array.isArray(raw.days)) {
+    for (const k of Object.keys(raw.days)) {
+      if (!DATE_RE.test(k)) continue;
+      const rd = raw.days[k];
+      if (!rd || typeof rd !== 'object') continue;
+      const dd = blankDay();
+      dd.w = cleanNum(rd.w); dd.steps = cleanNum(rd.steps);
+      dd.protein = cleanNum(rd.protein); dd.cal = cleanNum(rd.cal);
+      dd.note = typeof rd.note === 'string' ? rd.note.slice(0, 1000) : '';
+      d.days[k] = dd;
+    }
+  }
+  return d;
+}
+
+let state = load();
+let tab = 'today';
+let renderedDay = null;
+let deferredInstall = null;
+
+function load() {
+  try {
+    const raw = localStorage.getItem(LS_KEY);
+    if (!raw) return defaultState();
+    return sanitize(JSON.parse(raw));
+  } catch (e) { return defaultState(); }
+}
+function save() { localStorage.setItem(LS_KEY, JSON.stringify(state)); }
+function day(k) { if (!state.days[k]) state.days[k] = blankDay(); return state.days[k]; }
+
+/* ---------- date helpers ---------- */
+
+const pad = n => String(n).padStart(2, '0');
+const fmtDate = d => `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
+const parseDate = s => { const [y, m, dd] = s.split('-').map(Number); return new Date(y, m - 1, dd); };
+function logicalToday() { const d = new Date(Date.now() - DAY_CUTOVER_H * 3600 * 1000); return fmtDate(d); }
+function addDays(s, n) { const d = parseDate(s); d.setDate(d.getDate() + n); return fmtDate(d); }
+function diffDays(a, b) { return Math.round((parseDate(b) - parseDate(a)) / 86400000); }
+function dayNumber(k) { return state.settings.start ? diffDays(state.settings.start, k) + 1 : null; }
+function niceDate(k) { return parseDate(k).toLocaleDateString(undefined, { weekday: 'short', day: 'numeric', month: 'short' }); }
+const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const f1 = v => (Math.round(v * 10) / 10).toFixed(1);
+
+/* ---------- derived ---------- */
+
+function anyData(d) {
+  return !!(d && (d.w != null || d.steps != null || d.protein != null || d.cal != null || (d.note && d.note.trim())));
+}
+function dayStatus(k) {
+  const d = state.days[k];
+  if (!anyData(d)) return 'empty';
+  const s = state.settings;
+  const hitSteps = d.steps != null && d.steps >= s.stepTarget;
+  const hitProt = d.protein != null && d.protein >= s.proteinTarget;
+  if (hitSteps && hitProt) return 'green';
+  if (hitSteps || hitProt) return 'near';
+  return 'low';
+}
+const STATUS_LBL = { green: 'Both targets hit', near: 'One target hit', low: 'Logged', empty: 'Not logged' };
+const STATUS_GLYPH = { green: '✓', near: '–', low: '·', empty: '' };
+
+function startWeight() {
+  if (state.settings.startWeight != null) return state.settings.startWeight;
+  const first = weightEntries()[0];
+  return first ? first.w : null;
+}
+function weightEntries() {
+  return Object.keys(state.days).sort()
+    .map(k => ({ k, n: dayNumber(k), w: state.days[k].w }))
+    .filter(e => e.w != null && e.n != null && e.n >= 1);
+}
+function latestWeight() { const es = weightEntries(); return es.length ? es[es.length - 1] : null; }
+
+/* On-track math: the target path is a straight line from start weight to
+   start − lossTarget at day 90. Judge against it kindly — weight zigzags. */
+function pace() {
+  const sw = startWeight();
+  const lw = latestWeight();
+  const n = Math.min(dayNumber(logicalToday()) || 1, 90);
+  if (sw == null || !lw) return null;
+  const s = state.settings;
+  const expected = sw - s.lossTarget * (n / 90);
+  const lost = sw - lw.w;
+  const diff = lw.w - expected; // negative = ahead of the path
+  const es = weightEntries();
+  let ratePerWeek = null;
+  if (es.length >= 6) {
+    const last7 = es.slice(-7), prev7 = es.slice(-14, -7);
+    if (prev7.length >= 2) {
+      const avg = a => a.reduce((x, y) => x + y.w, 0) / a.length;
+      const dDays = avg2Day(last7) - avg2Day(prev7);
+      if (dDays > 0) ratePerWeek = (avg(prev7) - avg(last7)) / dDays * 7;
+    }
+  }
+  function avg2Day(a) { return a.reduce((x, y) => x + y.n, 0) / a.length; }
+  let projected = null;
+  if (ratePerWeek != null) projected = lw.w - ratePerWeek * ((90 - n) / 7);
+  return { sw, lw, n, expected, lost, diff, ratePerWeek, projected };
+}
+
+function weekAgg(w) { // w is 0-based; week 13 is clamped to day 90
+  const from = w * 7 + 1, to = Math.min(w * 7 + 7, 90);
+  const days = [];
+  for (let i = from; i <= to; i++) {
+    const k = addDays(state.settings.start, i - 1);
+    const d = state.days[k];
+    if (d && anyData(d)) days.push(d);
+  }
+  const nums = (f) => days.map(f).filter(v => v != null);
+  const avg = a => a.length ? a.reduce((x, y) => x + y, 0) / a.length : null;
+  return {
+    logged: days.length,
+    avgW: avg(nums(d => d.w)),
+    avgSteps: avg(nums(d => d.steps)),
+    stepDays: days.filter(d => d.steps != null && d.steps >= state.settings.stepTarget).length,
+    protDays: days.filter(d => d.protein != null && d.protein >= state.settings.proteinTarget).length,
+    avgCal: avg(nums(d => d.cal)),
+  };
+}
+
+/* ---------- render ---------- */
+
+function render() {
+  renderedDay = logicalToday();
+  renderNav();
+  const el = document.getElementById('app');
+  if (!state.settings.start) { el.innerHTML = viewOnboard(); return; }
+  if (tab === 'today') el.innerHTML = viewToday();
+  else if (tab === 'trends') el.innerHTML = viewTrends();
+  else if (tab === 'days') el.innerHTML = viewDays();
+  else el.innerHTML = viewSetup();
+  if (tab === 'trends') initChartHover();
+}
+
+function renderNav() {
+  const tabs = [['today', '☐', 'Today'], ['trends', '↗', 'Trends'], ['days', '▦', '90 Days'], ['setup', '⚙', 'Setup']];
+  document.getElementById('nav').innerHTML = tabs.map(([id, ico, lbl]) =>
+    `<button class="${tab === id ? 'active' : ''}" data-action="tab" data-tab="${id}"><span class="ico">${ico}</span>${lbl}</button>`).join('');
+}
+
+function hdr(right) {
+  return `<div class="hdr"><div><div class="wordmark">STRIDE <span class="n">90</span></div>${right ? `<span class="daychip">${right}</span>` : ''}</div>
+    <div class="date">${niceDate(logicalToday())}</div></div>`;
+}
+
+function viewOnboard() {
+  return `${hdr('')}
+  <div class="card">
+    <div class="eyebrow">The goal</div>
+    <h2 style="font-size:18px;margin:6px 0 8px">−5 kg in 90 days.<br>10,000 steps. 80 g protein. Every day.</h2>
+    <p class="small" style="margin-bottom:10px">Walking does the heavy lifting, MyFitnessPal counts the calories, this app keeps the score. Your day rolls over at 4 a.m., so logging at 1 a.m. still counts for the evening before.</p>
+    <div class="row"><span class="rlbl">Day 1</span><input type="date" id="ob-date" value="${logicalToday()}"></div>
+    <div class="row"><span class="rlbl">Starting weight <span class="rhint">(kg)</span></span><input type="number" inputmode="decimal" step="0.1" min="0" id="ob-w" placeholder="82.0"></div>
+    <div class="row"><span class="rlbl">Loss target <span class="rhint">(kg, minimum)</span></span><input type="number" inputmode="decimal" step="0.5" min="1" id="ob-loss" value="5"></div>
+    <div class="row"><span class="rlbl">Daily steps</span><input type="number" inputmode="numeric" step="500" min="1000" id="ob-steps" value="10000"></div>
+    <div class="row"><span class="rlbl">Daily protein <span class="rhint">(g)</span></span><input type="number" inputmode="numeric" step="5" min="20" id="ob-prot" value="80"></div>
+    <div class="btnrow"><button class="btn primary" data-action="start">Start the 90 days</button></div>
+  </div>
+  <div class="card"><p class="small">Data stays on this device only. 5 kg over 90 days is ~0.4 kg a week — a safe, sustainable pace. Weight zigzags day to day; judge the week, not the morning.</p></div>`;
+}
+
+function viewToday() {
+  const k = logicalToday();
+  const d = day(k);
+  const n = dayNumber(k);
+  const s = state.settings;
+  const p = pace();
+  const st = dayStatus(k);
+  const stepPct = d.steps != null ? Math.min(100, d.steps / s.stepTarget * 100) : 0;
+  const protPct = d.protein != null ? Math.min(100, d.protein / s.proteinTarget * 100) : 0;
+
+  let paceChip = '<span class="chip plain"><span class="dot"></span>Log a weight to see your pace</span>';
+  if (p) {
+    const cls = p.diff <= 0 ? 'good' : p.diff <= 0.7 ? 'warn' : 'serious';
+    const lbl = p.diff <= 0 ? `On track — ahead of the path by ${f1(Math.abs(p.diff))} kg`
+      : p.diff <= 0.7 ? `Close — ${f1(p.diff)} kg above the path`
+      : `${f1(p.diff)} kg above the path — judge the week, adjust one thing`;
+    paceChip = `<span class="chip ${cls}"><span class="dot"></span>${lbl}</span>`;
+  }
+
+  return `${hdr(`Day ${Math.min(n, 90)} of 90`)}
+  <div class="card">
+    <div class="eyebrow">Current weight</div>
+    <div class="hero">
+      <div class="big">${p ? f1(p.lw.w) : '—'}<span class="unit"> kg</span></div>
+      <div class="side small">
+        ${p ? `<b class="${p.lost > 0 ? 'better' : ''}">${p.lost > 0 ? '−' : '+'}${f1(Math.abs(p.lost))} kg</b> so far<br>${f1(Math.max(0, s.lossTarget - p.lost))} kg to go` : 'no weigh-in yet'}
+      </div>
+    </div>
+    <div style="margin-top:10px">${paceChip}</div>
+  </div>
+
+  <div class="card">
+    <h2>Log today</h2>
+    <div class="row"><span class="rlbl">Weight <span class="rhint">(kg · morning, after waking)</span></span>
+      <input type="number" inputmode="decimal" step="0.1" min="0" id="w" value="${d.w == null ? '' : d.w}" data-action="w" placeholder="—"></div>
+    <div class="row"><span class="rlbl">Steps</span>
+      <input type="number" inputmode="numeric" step="100" min="0" id="steps" value="${d.steps == null ? '' : d.steps}" data-action="steps" placeholder="—"></div>
+    <div class="row"><span class="rlbl">Protein <span class="rhint">(g)</span></span>
+      <input type="number" inputmode="numeric" step="1" min="0" id="protein" value="${d.protein == null ? '' : d.protein}" data-action="protein" placeholder="—"></div>
+    <div class="row"><span class="rlbl">Calories <span class="rhint">(day total from MyFitnessPal)</span></span>
+      <input type="number" inputmode="numeric" step="10" min="0" id="cal" value="${d.cal == null ? '' : d.cal}" data-action="cal" placeholder="—"></div>
+    <div class="row" style="display:block"><span class="rlbl">Note <span class="rhint">(optional)</span></span>
+      <div style="margin-top:6px"><input type="text" id="note" value="${esc(d.note)}" data-action="note" placeholder="…"></div></div>
+  </div>
+
+  <div class="card">
+    <h2>Today’s targets <span class="muted">· ${STATUS_LBL[st]}</span></h2>
+    <div class="tgt">
+      <div class="tline"><span>Steps</span><b>${d.steps == null ? '—' : d.steps.toLocaleString()} / ${s.stepTarget.toLocaleString()}</b></div>
+      <div class="bar ${stepPct >= 100 ? 'hit' : ''}"><i style="width:${stepPct}%"></i></div>
+    </div>
+    <div class="tgt">
+      <div class="tline"><span>Protein</span><b>${d.protein == null ? '—' : d.protein + ' g'} / ${s.proteinTarget} g</b></div>
+      <div class="bar ${protPct >= 100 ? 'hit' : ''}"><i style="width:${protPct}%"></i></div>
+    </div>
+    <p class="muted" style="margin-top:8px">A short walk after dinner is the easiest 1,000 steps of the day.</p>
+  </div>
+
+  <p class="foot">Judge the week, not the morning.</p>`;
+}
+
+/* ---------- charts (Trends) ---------- */
+
+function viewTrends() {
+  const p = pace();
+  const s = state.settings;
+  const paceCard = !p ? `<div class="card"><h2>Pace</h2><p class="small">Log a few weigh-ins and the pace, path and projection appear here.</p></div>`
+    : `<div class="card">
+      <h2>Pace</h2>
+      <table class="dd">
+        <tr><td>Target path says today</td><td>${f1(p.expected)} kg</td></tr>
+        <tr><td>Latest weigh-in (day ${p.lw.n})</td><td>${f1(p.lw.w)} kg</td></tr>
+        <tr><td>Lost so far</td><td class="${p.lost > 0 ? 'better' : ''}">${p.lost > 0 ? '−' : '+'}${f1(Math.abs(p.lost))} kg</td></tr>
+        ${p.ratePerWeek != null ? `<tr><td>Recent pace</td><td>${p.ratePerWeek >= 0 ? '−' : '+'}${f1(Math.abs(p.ratePerWeek))} kg/wk</td></tr>` : ''}
+        ${p.projected != null ? `<tr><td>Projected at day 90</td><td>${f1(p.projected)} kg <span class="muted">(${f1(p.sw - p.projected)} kg down)</span></td></tr>` : ''}
+      </table>
+      <p class="muted" style="margin-top:8px">Projection is a straight line through a zigzag — direction matters, decimals don’t.</p>
+    </div>`;
+
+  return `${hdr(`Day ${Math.min(dayNumber(logicalToday()), 90)} of 90`)}
+  ${paceCard}
+  <div class="card">
+    <h2>Weight — actual vs target path</h2>
+    <div class="chartbox" id="wchart">${weightChartSVG()}<div class="tip" id="wtip"></div></div>
+  </div>
+  <div class="card">
+    <h2>Steps — last 14 days</h2>
+    <div class="chartbox" id="schart">${stepsChartSVG()}<div class="tip" id="stip"></div></div>
+  </div>
+  <div class="card">
+    <h2>Week by week</h2>
+    <div class="scrollx"><table class="wk">
+      <tr><th>Week</th><th>Avg kg</th><th>Δ kg</th><th>Avg steps</th><th>≥${(s.stepTarget / 1000)}k</th><th>≥${s.proteinTarget}g</th><th>Avg kcal</th></tr>
+      ${weekRows()}
+    </table></div>
+    <p class="muted" style="margin-top:8px">Δ compares each week’s average weight with the week before. Improvements show in green.</p>
+  </div>`;
+}
+
+function weekRows() {
+  const curW = Math.min(12, Math.floor((Math.min(dayNumber(logicalToday()), 90) - 1) / 7));
+  let rows = '', prevAvg = null;
+  for (let w = 0; w <= curW; w++) {
+    const a = weekAgg(w);
+    let delta = '—';
+    if (a.avgW != null && prevAvg != null) {
+      const d = a.avgW - prevAvg;
+      delta = `<span class="${d < 0 ? 'better' : ''}">${d < 0 ? '−' : '+'}${f1(Math.abs(d))}</span>`;
+    }
+    rows += `<tr><td>Wk ${w + 1}</td>
+      <td>${a.avgW == null ? '—' : f1(a.avgW)}</td><td>${delta}</td>
+      <td>${a.avgSteps == null ? '—' : Math.round(a.avgSteps).toLocaleString()}</td>
+      <td>${a.stepDays}/7</td><td>${a.protDays}/7</td>
+      <td>${a.avgCal == null ? '—' : Math.round(a.avgCal).toLocaleString()}</td></tr>`;
+    if (a.avgW != null) prevAvg = a.avgW;
+  }
+  return rows || '<tr><td colspan="7" class="muted">No data yet</td></tr>';
+}
+
+const CW = 340, CH = 190, ML = 36, MR = 12, MT = 12, MB = 24;
+
+function weightChartSVG() {
+  const sw = startWeight();
+  const es = weightEntries().filter(e => e.n <= 90);
+  if (sw == null && !es.length) return '<p class="small">Log a weigh-in to draw the chart.</p>';
+  const s = state.settings;
+  const target = (sw != null) ? sw - s.lossTarget : null;
+  const ys = es.map(e => e.w).concat(sw != null ? [sw, target] : []);
+  let yMin = Math.min(...ys) - 0.6, yMax = Math.max(...ys) + 0.6;
+  const X = n => ML + (n - 1) / 89 * (CW - ML - MR);
+  const Y = v => MT + (yMax - v) / (yMax - yMin) * (CH - MT - MB);
+  let g = '';
+  for (let i = 0; i <= 3; i++) {
+    const v = yMin + (yMax - yMin) * i / 3;
+    g += `<line x1="${ML}" y1="${Y(v)}" x2="${CW - MR}" y2="${Y(v)}" stroke="var(--hairline)" stroke-width="1"/>
+      <text x="${ML - 5}" y="${Y(v) + 3.5}" text-anchor="end" font-size="9.5" fill="var(--ink-3)">${f1(v)}</text>`;
+  }
+  [1, 30, 60, 90].forEach(dn => { g += `<text x="${X(dn)}" y="${CH - 8}" text-anchor="middle" font-size="9.5" fill="var(--ink-3)">d${dn}</text>`; });
+  let tpath = '';
+  if (sw != null) {
+    tpath = `<line x1="${X(1)}" y1="${Y(sw)}" x2="${X(90)}" y2="${Y(target)}" stroke="var(--ink-3)" stroke-width="1.5" stroke-dasharray="5 4"/>
+      <text x="${X(90) - 2}" y="${Y(target) - 5}" text-anchor="end" font-size="9.5" fill="var(--ink-3)">target ${f1(target)}</text>`;
+  }
+  let line = '', dots = '', endLbl = '';
+  if (es.length) {
+    line = `<polyline fill="none" stroke="var(--series)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"
+      points="${es.map(e => `${X(e.n)},${Y(e.w)}`).join(' ')}"/>`;
+    dots = es.map(e => `<circle cx="${X(e.n)}" cy="${Y(e.w)}" r="3" fill="var(--series)" stroke="var(--surface)" stroke-width="1.5"/>`).join('');
+    const last = es[es.length - 1];
+    dots += `<circle cx="${X(last.n)}" cy="${Y(last.w)}" r="4.5" fill="var(--series)" stroke="var(--surface)" stroke-width="2"/>`;
+    endLbl = `<text x="${Math.min(X(last.n) + 6, CW - MR - 2)}" y="${Y(last.w) - 7}" font-size="10.5" font-weight="700" fill="var(--ink-1)"
+      ${X(last.n) > CW - 60 ? 'text-anchor="end"' : ''}>${f1(last.w)}</text>`;
+  }
+  return `<svg viewBox="0 0 ${CW} ${CH}" role="img" aria-label="Weight over 90 days against the target path"
+    data-chart="weight" data-points="${esc(JSON.stringify(es.map(e => [e.n, e.w])))}"
+    data-ymin="${yMin}" data-ymax="${yMax}">
+    ${g}${tpath}${line}${dots}${endLbl}
+    <rect x="${ML}" y="${MT}" width="${CW - ML - MR}" height="${CH - MT - MB}" fill="transparent" id="wzone"/>
+  </svg>`;
+}
+
+function stepsChartSVG() {
+  const s = state.settings;
+  const today = logicalToday();
+  const ds = [];
+  for (let i = 13; i >= 0; i--) {
+    const k = addDays(today, -i);
+    const d = state.days[k];
+    ds.push({ k, steps: d && d.steps != null ? d.steps : null });
+  }
+  if (!ds.some(x => x.steps != null)) return '<p class="small">Log steps to draw the chart.</p>';
+  const H = 170, MB2 = 22;
+  const maxV = Math.max(s.stepTarget * 1.2, ...ds.map(x => x.steps || 0));
+  const Y = v => MT + (1 - v / maxV) * (H - MT - MB2);
+  const bw = (CW - ML - MR) / 14;
+  let bars = '', labels = '';
+  ds.forEach((x, i) => {
+    const cx = ML + i * bw;
+    if (x.steps != null) {
+      const y = Y(x.steps), h = Math.max(2, H - MB2 - y), r = Math.min(3, h);
+      bars += `<path d="M${(cx + 2).toFixed(1)} ${(H - MB2).toFixed(1)} v${-(h - r).toFixed(1)} q0 ${-r} ${r} ${-r} h${(bw - 4 - 2 * r).toFixed(1)} q${r} 0 ${r} ${r} v${(h - r).toFixed(1)} z"
+        fill="var(--series)" data-i="${i}"/>`;
+    }
+    if (i === 0 || i === 13 || i === 7) labels += `<text x="${cx + bw / 2}" y="${H - 7}" text-anchor="middle" font-size="9" fill="var(--ink-3)">${parseDate(x.k).getDate()}</text>`;
+  });
+  const last = ds[13];
+  const lastLbl = last.steps != null ? `<text x="${ML + 13 * bw + bw / 2}" y="${Y(last.steps) - 5}" text-anchor="middle" font-size="9.5" font-weight="700" fill="var(--ink-1)">${(last.steps / 1000).toFixed(1)}k</text>` : '';
+  return `<svg viewBox="0 0 ${CW} ${H}" role="img" aria-label="Steps in the last 14 days against the ${s.stepTarget.toLocaleString()} target"
+    data-chart="steps" data-days="${esc(JSON.stringify(ds.map(x => [x.k, x.steps])))}" data-maxv="${maxV}" data-h="${H}">
+    <line x1="${ML}" y1="${Y(s.stepTarget)}" x2="${CW - MR}" y2="${Y(s.stepTarget)}" stroke="var(--ink-3)" stroke-width="1.5" stroke-dasharray="5 4"/>
+    <text x="${ML + 2}" y="${Y(s.stepTarget) - 4}" font-size="9.5" fill="var(--ink-3)">${(s.stepTarget / 1000)}k target</text>
+    <line x1="${ML}" y1="${H - MB2}" x2="${CW - MR}" y2="${H - MB2}" stroke="var(--hairline)" stroke-width="1"/>
+    ${bars}${labels}${lastLbl}
+    <rect x="${ML}" y="${MT}" width="${CW - ML - MR}" height="${H - MT - MB2}" fill="transparent" id="szone"/>
+  </svg>`;
+}
+
+function initChartHover() {
+  const wbox = document.getElementById('wchart'), wtip = document.getElementById('wtip');
+  const wsvg = wbox && wbox.querySelector('svg[data-chart="weight"]');
+  if (wsvg && wtip) {
+    const pts = JSON.parse(wsvg.dataset.points || '[]');
+    if (pts.length) {
+      const rectFor = evt => wsvg.getBoundingClientRect();
+      wsvg.addEventListener('pointermove', evt => {
+        const r = rectFor(evt);
+        const px = (evt.clientX - r.left) / r.width * CW;
+        const n = 1 + (px - ML) / (CW - ML - MR) * 89;
+        let best = pts[0];
+        for (const p of pts) if (Math.abs(p[0] - n) < Math.abs(best[0] - n)) best = p;
+        const bx = (ML + (best[0] - 1) / 89 * (CW - ML - MR)) / CW * r.width;
+        const yMin = +wsvg.dataset.ymin, yMax = +wsvg.dataset.ymax;
+        const by = (MT + (yMax - best[1]) / (yMax - yMin) * (CH - MT - MB)) / CH * r.height;
+        wtip.style.display = 'block';
+        wtip.style.left = bx + 'px'; wtip.style.top = by + 'px';
+        wtip.textContent = `Day ${best[0]} · ${f1(best[1])} kg`;
+      });
+      wsvg.addEventListener('pointerleave', () => { wtip.style.display = 'none'; });
+    }
+  }
+  const sbox = document.getElementById('schart'), stip = document.getElementById('stip');
+  const ssvg = sbox && sbox.querySelector('svg[data-chart="steps"]');
+  if (ssvg && stip) {
+    const ds = JSON.parse(ssvg.dataset.days || '[]');
+    const H = +ssvg.dataset.h, maxV = +ssvg.dataset.maxv;
+    ssvg.addEventListener('pointermove', evt => {
+      const r = ssvg.getBoundingClientRect();
+      const px = (evt.clientX - r.left) / r.width * CW;
+      const i = Math.max(0, Math.min(13, Math.floor((px - ML) / ((CW - ML - MR) / 14))));
+      const [k, v] = ds[i];
+      if (v == null) { stip.style.display = 'none'; return; }
+      const bx = (ML + i * ((CW - ML - MR) / 14) + ((CW - ML - MR) / 28)) / CW * r.width;
+      const by = (MT + (1 - v / maxV) * (H - MT - 22)) / H * r.height;
+      stip.style.display = 'block';
+      stip.style.left = bx + 'px'; stip.style.top = by + 'px';
+      stip.textContent = `${niceDate(k)} · ${v.toLocaleString()} steps`;
+    });
+    ssvg.addEventListener('pointerleave', () => { stip.style.display = 'none'; });
+  }
+}
+
+/* ---------- Days & Setup ---------- */
+
+function viewDays() {
+  const today = logicalToday();
+  const n = dayNumber(today);
+  let cells = '';
+  for (let i = 1; i <= 90; i++) {
+    const k = addDays(state.settings.start, i - 1);
+    const st = dayStatus(k);
+    const future = i > n;
+    cells += `<button class="gcell ${st} ${k === today ? 'today' : ''} ${future ? 'future' : ''}"
+      data-action="${future ? '' : 'daydetail'}" data-k="${k}" title="Day ${i} · ${niceDate(k)} · ${STATUS_LBL[st]}"
+      aria-label="Day ${i}, ${STATUS_LBL[st]}">${future ? '' : STATUS_GLYPH[st] || i}</button>`;
+  }
+  const done = Math.max(0, Math.min(n, 90));
+  const greens = Array.from({ length: done }, (_, i) => addDays(state.settings.start, i)).filter(k => dayStatus(k) === 'green').length;
+  return `${hdr(`Day ${Math.min(n, 90)} of 90`)}
+  <div class="card">
+    <div class="grid90">${cells}</div>
+    <div class="legend">
+      <span><span class="sw green">✓</span> Steps + protein hit</span>
+      <span><span class="sw near">–</span> One of two</span>
+      <span><span class="sw low">·</span> Logged</span>
+      <span><span class="sw"></span> Not logged</span>
+    </div>
+    <p class="muted" style="margin-top:8px">${greens} green ${greens === 1 ? 'day' : 'days'} so far. Blank days are data, not shame — no streaks here, nothing to “break.”</p>
+  </div>`;
+}
+
+function viewSetup() {
+  const s = state.settings;
+  return `${hdr('')}
+  <div class="card">
+    <h2>Goal</h2>
+    <div class="row"><span class="rlbl">Day 1</span><input type="date" id="set-start" value="${s.start}" data-action="set-start"></div>
+    <div class="row"><span class="rlbl">Starting weight <span class="rhint">(kg)</span></span><input type="number" inputmode="decimal" step="0.1" min="0" id="set-sw" value="${s.startWeight == null ? '' : s.startWeight}" data-action="set-sw" placeholder="—"></div>
+    <div class="row"><span class="rlbl">Loss target <span class="rhint">(kg)</span></span><input type="number" inputmode="decimal" step="0.5" min="1" id="set-loss" value="${s.lossTarget}" data-action="set-loss"></div>
+    <div class="row"><span class="rlbl">Daily steps</span><input type="number" inputmode="numeric" step="500" min="1000" id="set-steps" value="${s.stepTarget}" data-action="set-steps"></div>
+    <div class="row"><span class="rlbl">Daily protein <span class="rhint">(g)</span></span><input type="number" inputmode="numeric" step="5" min="20" id="set-prot" value="${s.proteinTarget}" data-action="set-prot"></div>
+  </div>
+  <div class="card">
+    <h2>Use as an app</h2>
+    <p class="small" id="install-hint">On Android/Chrome: menu ⋮ → <b>Add to Home screen</b> (or the Install prompt). On iPhone/Safari: Share → <b>Add to Home Screen</b>. It then opens full-screen and works offline.</p>
+    <div class="btnrow" id="install-row" style="display:${deferredInstall ? 'flex' : 'none'}"><button class="btn primary" data-action="install">Install on this phone</button></div>
+  </div>
+  <div class="card">
+    <h2>Data</h2>
+    <div class="btnrow" style="margin-top:0">
+      <button class="btn slim" data-action="export">Export backup</button>
+      <button class="btn slim" data-action="importbtn">Import</button>
+    </div>
+    <input type="file" id="importfile" accept=".json,application/json" style="display:none">
+    <div class="row" style="margin-top:8px"><span class="rlbl">Theme</span>
+      <button class="btn slim" data-action="theme">${{ auto: 'Auto', light: 'Light', dark: 'Dark' }[s.theme || 'auto']}</button></div>
+    <p class="muted" style="margin-top:8px">Entries live only in this browser/phone — export a backup weekly. Calories come from MyFitnessPal; you enter the day’s total here so everything sits in one place.</p>
+  </div>
+  <p class="foot">Stride 90 · walking-first, judge-the-week weight loss</p>`;
+}
+
+function openDayDetail(k) {
+  const d = state.days[k];
+  const n = dayNumber(k);
+  const st = dayStatus(k);
+  const body = !anyData(d) ? '<p class="small">Nothing logged. Blank days are data, not shame.</p>'
+    : `<table class="dd">
+      ${d.w != null ? `<tr><td>Weight</td><td>${f1(d.w)} kg</td></tr>` : ''}
+      ${d.steps != null ? `<tr><td>Steps</td><td>${d.steps.toLocaleString()}</td></tr>` : ''}
+      ${d.protein != null ? `<tr><td>Protein</td><td>${d.protein} g</td></tr>` : ''}
+      ${d.cal != null ? `<tr><td>Calories</td><td>${d.cal.toLocaleString()}</td></tr>` : ''}
+    </table>
+    ${d.note ? `<p class="small" style="margin-top:8px">“${esc(d.note)}”</p>` : ''}`;
+  document.getElementById('modal-root').innerHTML = `
+  <div class="modal-bg" data-action="modalbg">
+    <div class="modal" data-stop="1">
+      <h3>Day ${n} · ${niceDate(k)} · <span class="chip ${st === 'green' ? 'good' : st === 'near' ? 'warn' : st === 'low' ? 'serious' : 'plain'}" style="font-size:12px"><span class="dot"></span>${STATUS_LBL[st]}</span></h3>
+      ${body}
+      <div class="btnrow"><button class="btn" data-action="closemodal">Close</button></div>
+    </div>
+  </div>`;
+}
+
+/* ---------- events ---------- */
+
+document.addEventListener('click', e => {
+  const t = e.target.closest('[data-action]');
+  if (!t) return;
+  const a = t.dataset.action;
+
+  if (a === 'tab') { tab = t.dataset.tab; render(); }
+  else if (a === 'start') {
+    const dv = document.getElementById('ob-date').value;
+    if (!dv || !DATE_RE.test(dv)) return;
+    const gn = id => { const v = document.getElementById(id).valueAsNumber; return Number.isFinite(v) && v > 0 ? v : null; };
+    state.settings.start = dv;
+    state.settings.startWeight = gn('ob-w');
+    state.settings.lossTarget = gn('ob-loss') || 5;
+    state.settings.stepTarget = gn('ob-steps') || 10000;
+    state.settings.proteinTarget = gn('ob-prot') || 80;
+    save(); render();
+  }
+  else if (a === 'daydetail') openDayDetail(t.dataset.k);
+  else if (a === 'closemodal') { document.getElementById('modal-root').innerHTML = ''; render(); }
+  else if (a === 'modalbg') { if (!e.target.closest('[data-stop]')) { document.getElementById('modal-root').innerHTML = ''; render(); } }
+  else if (a === 'install') {
+    if (deferredInstall) { deferredInstall.prompt(); deferredInstall = null; document.getElementById('install-row').style.display = 'none'; }
+  }
+  else if (a === 'export') {
+    const blob = new Blob([JSON.stringify(state, null, 1)], { type: 'application/json' });
+    const aEl = document.createElement('a');
+    aEl.href = URL.createObjectURL(blob);
+    aEl.download = `stride90-backup-${logicalToday()}.json`;
+    aEl.click();
+    setTimeout(() => URL.revokeObjectURL(aEl.href), 1000);
+  }
+  else if (a === 'importbtn') document.getElementById('importfile').click();
+  else if (a === 'theme') {
+    const order = ['auto', 'light', 'dark'];
+    state.settings.theme = order[(order.indexOf(state.settings.theme || 'auto') + 1) % 3];
+    applyTheme(); save(); render();
+  }
+});
+
+/* Save on change; re-render only on focusout so mobile inputs aren't destroyed mid-edit. */
+document.addEventListener('change', e => {
+  const t = e.target.closest('[data-action]');
+  const k = renderedDay || logicalToday();
+  const num = (el, int) => {
+    const v = el.valueAsNumber;
+    if (!Number.isFinite(v) || v < 0) return null;
+    return int ? Math.floor(v) : v;
+  };
+  if (t) {
+    const a = t.dataset.action;
+    if (a === 'w') { day(k).w = num(t, false); save(); }
+    else if (a === 'steps') { day(k).steps = num(t, true); save(); }
+    else if (a === 'protein') { day(k).protein = num(t, true); save(); }
+    else if (a === 'cal') { day(k).cal = num(t, true); save(); }
+    else if (a === 'note') { day(k).note = t.value.slice(0, 1000); save(); }
+    else if (a === 'set-start') { if (t.value && DATE_RE.test(t.value)) { state.settings.start = t.value; save(); } }
+    else if (a === 'set-sw') { state.settings.startWeight = num(t, false); save(); }
+    else if (a === 'set-loss') { const v = num(t, false); if (v) state.settings.lossTarget = v; save(); }
+    else if (a === 'set-steps') { const v = num(t, true); if (v) state.settings.stepTarget = v; save(); }
+    else if (a === 'set-prot') { const v = num(t, true); if (v) state.settings.proteinTarget = v; save(); }
+  }
+  if (e.target.id === 'importfile' && e.target.files && e.target.files[0]) {
+    const fr = new FileReader();
+    fr.onload = () => {
+      try {
+        const parsed = JSON.parse(fr.result);
+        if (!parsed || typeof parsed !== 'object' || !parsed.settings) throw new Error('bad');
+        if (confirm('Replace ALL current data with this backup?')) {
+          state = sanitize(parsed); save(); render();
+        }
+      } catch (err) { alert('That file doesn’t look like a Stride 90 backup.'); }
+      e.target.value = '';
+    };
+    fr.readAsText(e.target.files[0]);
+  }
+});
+
+document.addEventListener('focusout', e => {
+  const t = e.target && e.target.closest ? e.target.closest('[data-action]') : null;
+  if (!t) return;
+  if (['w', 'steps', 'protein', 'cal', 'note', 'set-start', 'set-sw', 'set-loss', 'set-steps', 'set-prot'].includes(t.dataset.action)) render();
+});
+
+/* Roll the UI over at the 4 a.m. cutover if left open — never mid-edit or under a modal. */
+setInterval(() => {
+  if (!renderedDay || logicalToday() === renderedDay) return;
+  const ae = document.activeElement;
+  if (ae && ['INPUT', 'TEXTAREA', 'SELECT'].includes(ae.tagName)) return;
+  if (document.getElementById('modal-root').innerHTML) return;
+  render();
+}, 60000);
+
+function applyTheme() {
+  const th = state.settings.theme || 'auto';
+  if (th === 'auto') delete document.documentElement.dataset.theme;
+  else document.documentElement.dataset.theme = th;
+}
+
+/* PWA */
+if ('serviceWorker' in navigator && /^https?:$/.test(location.protocol)) {
+  navigator.serviceWorker.register('./sw.js').catch(() => {});
+}
+window.addEventListener('beforeinstallprompt', e => {
+  e.preventDefault();
+  deferredInstall = e;
+  const row = document.getElementById('install-row');
+  if (row) row.style.display = 'flex';
+});
+
+applyTheme();
+render();
+</script>
+</body>
+</html>
