@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AFTL | Facebook</title>
+<style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+        font-family: Helvetica, Arial, sans-serif;
+        background-color: #f0f2f5;
+        color: #050505;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    /* ---------- top blue bar ---------- */
+    .topbar {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background-color: #1877f2;
+        padding: 8px 16px;
+    }
+
+    .logo {
+        color: white;
+        font-size: 26px;
+        font-weight: bold;
+        letter-spacing: -1px;
+    }
+
+    .search {
+        flex: 1;
+        max-width: 260px;
+        border: none;
+        border-radius: 16px;
+        padding: 8px 12px;
+        font-size: 14px;
+        outline: none;
+    }
+
+    .topbar-right {
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .circle-btn {
+        width: 36px;
+        height: 36px;
+        border: none;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.25);
+        color: white;
+        font-size: 15px;
+        cursor: pointer;
+    }
+
+    .me-chip {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        background-color: rgba(255, 255, 255, 0.25);
+        color: white;
+        border-radius: 16px;
+        padding: 4px 10px 4px 4px;
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+    .me-chip .avatar { width: 28px; height: 28px; font-size: 11px; }
+
+    /* ---------- avatars (no images, just initials) ---------- */
+    .avatar {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #1877f2, #0a3d80);
+        color: white;
+        font-weight: bold;
+        flex-shrink: 0;
+    }
+
+    /* ---------- profile header ---------- */
+    .header {
+        background-color: white;
+        border-bottom: 1px solid #dddfe2;
+    }
+
+    .header-inner {
+        max-width: 940px;
+        margin: 0 auto;
+        padding: 0 16px;
+    }
+
+    .cover {
+        height: 260px;
+        border-radius: 0 0 8px 8px;
+        background: linear-gradient(120deg, #1877f2, #4e9bff 45%, #9bc4ff);
+        position: relative;
+    }
+
+    .cover-btn {
+        position: absolute;
+        right: 16px;
+        bottom: 16px;
+        background-color: white;
+        border: none;
+        border-radius: 6px;
+        padding: 8px 12px;
+        font-size: 14px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .id-row {
+        display: flex;
+        align-items: flex-end;
+        gap: 16px;
+        padding-bottom: 16px;
+        margin-top: -84px;
+        position: relative;
+        z-index: 1;
+    }
+
+    .id-row .avatar {
+        width: 168px;
+        height: 168px;
+        font-size: 40px;
+        border: 4px solid white;
+    }
+
+    .id-text { padding-bottom: 12px; flex: 1; }
+
+    .id-text h1 { font-size: 32px; }
+
+    .id-text p { color: #65676b; font-size: 15px; margin-top: 4px; }
+
+    .id-actions {
+        display: flex;
+        gap: 8px;
+        padding-bottom: 16px;
+    }
+
+    .btn {
+        border: none;
+        border-radius: 6px;
+        padding: 8px 14px;
+        font-size: 15px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .btn-blue { background-color: #1877f2; color: white; }
+
+    .btn-grey { background-color: #e4e6eb; color: #050505; }
+
+    /* ---------- tabs ---------- */
+    .tabs {
+        display: flex;
+        gap: 4px;
+        border-top: 1px solid #dddfe2;
+        overflow-x: auto;
+    }
+
+    .tabs a {
+        padding: 14px 16px;
+        color: #65676b;
+        font-size: 15px;
+        font-weight: bold;
+        white-space: nowrap;
+        border-bottom: 3px solid transparent;
+    }
+
+    .tabs a.active { color: #1877f2; border-bottom-color: #1877f2; }
+
+    /* ---------- two column layout ---------- */
+    .content {
+        max-width: 940px;
+        margin: 16px auto;
+        padding: 0 16px;
+        display: flex;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .left { width: 380px; flex-shrink: 0; }
+
+    .right { flex: 1; }
+
+    .card {
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+        padding: 16px;
+        margin-bottom: 16px;
+    }
+
+    .card h2 { font-size: 20px; margin-bottom: 12px; }
+
+    .card-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 12px;
+    }
+
+    .card-head a { color: #1877f2; font-size: 15px; }
+
+    .intro-line {
+        display: flex;
+        gap: 10px;
+        padding: 6px 0;
+        font-size: 15px;
+    }
+
+    .intro-line span:first-child { width: 20px; text-align: center; }
+
+    .full-btn {
+        width: 100%;
+        margin-top: 12px;
+        background-color: #e4e6eb;
+        border: none;
+        border-radius: 6px;
+        padding: 9px;
+        font-size: 15px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    /* ---------- photo + friend grids ---------- */
+    .photo-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 4px;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .photo-grid div {
+        padding-top: 100%;
+        background: linear-gradient(135deg, #a3c9f7, #1877f2);
+    }
+
+    .photo-grid div:nth-child(2) { background: linear-gradient(135deg, #ffd68a, #f7a83c); }
+    .photo-grid div:nth-child(3) { background: linear-gradient(135deg, #b8e6c1, #3fa45b); }
+    .photo-grid div:nth-child(4) { background: linear-gradient(135deg, #f7b0b0, #d94f4f); }
+    .photo-grid div:nth-child(5) { background: linear-gradient(135deg, #d6bdf7, #7b4fd9); }
+    .photo-grid div:nth-child(6) { background: linear-gradient(135deg, #bfc6cc, #6b7480); }
+
+    .friend-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+
+    .friend-grid .avatar {
+        width: 100%;
+        padding-top: 100%;
+        height: 0;
+        border-radius: 8px;
+        font-size: 24px;
+        position: relative;
+    }
+
+    .friend-grid .avatar b {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .friend-grid p {
+        font-size: 13px;
+        font-weight: bold;
+        margin-top: 4px;
+    }
+
+    /* ---------- create post ---------- */
+    .composer {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+    }
+
+    .composer .avatar { width: 40px; height: 40px; font-size: 14px; }
+
+    .composer input {
+        flex: 1;
+        border: none;
+        border-radius: 20px;
+        background-color: #f0f2f5;
+        padding: 10px 14px;
+        font-size: 15px;
+        outline: none;
+    }
+
+    .composer-actions {
+        display: flex;
+        border-top: 1px solid #dddfe2;
+        margin-top: 12px;
+        padding-top: 8px;
+    }
+
+    .composer-actions button {
+        flex: 1;
+        border: none;
+        background: none;
+        padding: 8px;
+        border-radius: 6px;
+        font-size: 14px;
+        font-weight: bold;
+        color: #65676b;
+        cursor: pointer;
+    }
+
+    .composer-actions button:hover { background-color: #f0f2f5; }
+
+    /* ---------- posts ---------- */
+    .post-head {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    .post-head .avatar { width: 40px; height: 40px; font-size: 14px; }
+
+    .post-head b { font-size: 15px; }
+
+    .post-head small { color: #65676b; display: block; }
+
+    .post-text { font-size: 15px; line-height: 1.4; margin-bottom: 12px; }
+
+    .post-photo {
+        height: 320px;
+        margin: 0 -16px;
+        background: linear-gradient(135deg, #1877f2, #9bc4ff);
+    }
+
+    .post-photo.sunset { background: linear-gradient(135deg, #f7a83c, #d94f4f); }
+
+    .post-stats {
+        display: flex;
+        justify-content: space-between;
+        color: #65676b;
+        font-size: 14px;
+        padding: 10px 0;
+    }
+
+    .post-actions {
+        display: flex;
+        border-top: 1px solid #dddfe2;
+        padding-top: 4px;
+    }
+
+    .post-actions button {
+        flex: 1;
+        border: none;
+        background: none;
+        padding: 8px;
+        border-radius: 6px;
+        font-size: 14px;
+        font-weight: bold;
+        color: #65676b;
+        cursor: pointer;
+    }
+
+    .post-actions button:hover { background-color: #f0f2f5; }
+
+    /* ---------- small screens ---------- */
+    @media (max-width: 800px) {
+        .content { flex-direction: column; }
+
+        .left { width: 100%; }
+
+        .cover { height: 160px; }
+
+        .id-row {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin-top: -60px;
+        }
+
+        .id-row .avatar { width: 120px; height: 120px; font-size: 30px; }
+
+        .search { display: none; }
+
+        /* avatar sits in the middle on mobile, so shrink the button to an icon */
+        .cover-btn {
+            left: 12px;
+            right: auto;
+            bottom: 12px;
+            padding: 8px 10px;
+            font-size: 0;
+        }
+
+        .cover-btn::before { content: "\1F4F7"; font-size: 16px; }
+    }
+</style>
+</head>
+<body>
+
+    <div class="topbar">
+        <span class="logo">facebook</span>
+        <input class="search" type="text" placeholder="Search Facebook">
+        <div class="topbar-right">
+            <button class="circle-btn">+</button>
+            <button class="circle-btn">&#9993;</button>
+            <button class="circle-btn">&#9662;</button>
+            <span class="me-chip"><span class="avatar">AF</span>AFTL</span>
+        </div>
+    </div>
+
+    <div class="header">
+        <div class="header-inner">
+            <div class="cover">
+                <button class="cover-btn">&#128247; Edit cover photo</button>
+            </div>
+
+            <div class="id-row">
+                <span class="avatar">AFTL</span>
+                <div class="id-text">
+                    <h1>AFTL</h1>
+                    <p>1.2K friends &middot; 340 followers</p>
+                </div>
+                <div class="id-actions">
+                    <button class="btn btn-blue">+ Add to story</button>
+                    <button class="btn btn-grey">&#9998; Edit profile</button>
+                </div>
+            </div>
+
+            <div class="tabs">
+                <a href="#" class="active">Posts</a>
+                <a href="#">About</a>
+                <a href="#">Friends</a>
+                <a href="#">Photos</a>
+                <a href="#">Videos</a>
+                <a href="#">Reels</a>
+                <a href="#">More</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+
+        <div class="left">
+
+            <div class="card">
+                <h2>Intro</h2>
+                <p style="text-align: center; font-size: 15px;">Learning HTML, one page at a time.</p>
+                <button class="full-btn">Edit bio</button>
+                <div style="margin-top: 12px;">
+                    <div class="intro-line"><span>&#127891;</span><span>Studies Web Development</span></div>
+                    <div class="intro-line"><span>&#127968;</span><span>Lives in Dhaka, Bangladesh</span></div>
+                    <div class="intro-line"><span>&#128205;</span><span>From Chittagong, Bangladesh</span></div>
+                    <div class="intro-line"><span>&#128278;</span><span>Joined August 2026</span></div>
+                </div>
+                <button class="full-btn">Edit details</button>
+            </div>
+
+            <div class="card">
+                <div class="card-head">
+                    <h2>Photos</h2>
+                    <a href="#">See all photos</a>
+                </div>
+                <div class="photo-grid">
+                    <div></div><div></div><div></div>
+                    <div></div><div></div><div></div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-head">
+                    <h2>Friends</h2>
+                    <a href="#">See all friends</a>
+                </div>
+                <p style="color: #65676b; font-size: 15px; margin-top: -8px; margin-bottom: 12px;">1,204 friends</p>
+                <div class="friend-grid">
+                    <div><span class="avatar"><b>RA</b></span><p>Rafi Ahmed</p></div>
+                    <div><span class="avatar"><b>SK</b></span><p>Sadia Khan</p></div>
+                    <div><span class="avatar"><b>TH</b></span><p>Tanvir Hasan</p></div>
+                    <div><span class="avatar"><b>NI</b></span><p>Nusrat Islam</p></div>
+                    <div><span class="avatar"><b>MR</b></span><p>Mahin Rahman</p></div>
+                    <div><span class="avatar"><b>JA</b></span><p>Jarin Akter</p></div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="right">
+
+            <div class="card">
+                <div class="composer">
+                    <span class="avatar">AF</span>
+                    <input type="text" placeholder="What's on your mind, AFTL?">
+                </div>
+                <div class="composer-actions">
+                    <button>&#127909; Live video</button>
+                    <button>&#128247; Photo/video</button>
+                    <button>&#128512; Feeling/activity</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="post-head">
+                    <span class="avatar">AF</span>
+                    <div>
+                        <b>AFTL</b>
+                        <small>2 hours ago &middot; &#127758;</small>
+                    </div>
+                </div>
+                <p class="post-text">Aj nijer hate prothom Facebook profile page banalam, shudhu HTML ar CSS diye. Kono library nei! &#128640;</p>
+                <div class="post-photo"></div>
+                <div class="post-stats">
+                    <span>&#128077;&#10084;&#65039; 248</span>
+                    <span>36 comments &middot; 12 shares</span>
+                </div>
+                <div class="post-actions">
+                    <button>&#128077; Like</button>
+                    <button>&#128172; Comment</button>
+                    <button>&#10150; Share</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="post-head">
+                    <span class="avatar">AF</span>
+                    <div>
+                        <b>AFTL</b>
+                        <small>Yesterday at 7:14 PM &middot; &#127758;</small>
+                    </div>
+                </div>
+                <p class="post-text">Cox's Bazar-e sunset. Chobi tulte tulte phone-er charge shesh. &#127749;</p>
+                <div class="post-photo sunset"></div>
+                <div class="post-stats">
+                    <span>&#128077;&#128525; 512</span>
+                    <span>74 comments &middot; 30 shares</span>
+                </div>
+                <div class="post-actions">
+                    <button>&#128077; Like</button>
+                    <button>&#128172; Comment</button>
+                    <button>&#10150; Share</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="post-head">
+                    <span class="avatar">AF</span>
+                    <div>
+                        <b>AFTL</b>
+                        <small>3 days ago &middot; &#128274;</small>
+                    </div>
+                </div>
+                <p class="post-text">CSS flexbox finally bujhlam. Amar shob div ekhon thik jaygay boshe ache. Alhamdulillah.</p>
+                <div class="post-stats">
+                    <span>&#128077; 96</span>
+                    <span>18 comments</span>
+                </div>
+                <div class="post-actions">
+                    <button>&#128077; Like</button>
+                    <button>&#128172; Comment</button>
+                    <button>&#10150; Share</button>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
