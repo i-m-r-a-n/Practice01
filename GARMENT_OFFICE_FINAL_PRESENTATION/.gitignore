@@ -1,0 +1,6 @@
+*.blend1
+*.blend2
+01_EDITABLE_3D/logs/
+02_RENDERED_IMAGES/previews/*.png
+__pycache__/
+*.exr
