@@ -1,0 +1,103 @@
+id,group,element,written_on_sketch,value,unit,value_mm,value_m,status,source,note
+OV01,Overall,"Front width, outside faces","92'-4"" (derived)",1108,in,28143.2,28.1432,DERIVED,Derived from sketches,rooms 300 + 260 + 518 + assumed walls
+OV02,Overall,"Depth, west side (front facade to middle block north wall)","96'-6"" (derived)",1158,in,29413.2,29.4132,DERIVED,Survey reconstruction,
+OV03,Overall,"Depth, east side (front facade to room 8 north wall)","151'-3"" (derived)",1815,in,46101.0,46.101,DERIVED,Survey reconstruction,
+OV04,Overall,Gross floor area incl. walls,"12,888 sft (derived: sum of sketch dimensions)",12888,sft,,,DERIVED,Survey reconstruction,changes if room 8 width changes
+R1W,Room 1,Width,300,300,in,7620.0,7.62,MEASURED,Room 1 sketch,"lobby, main stair, main gate"
+R1D,Room 1,Depth,236 (room 1 sketch) / 249 (room 3 sketch),247,in,6273.8,6.2738,RESOLVED,Survey reconstruction,front-row line shared with rooms 3 and 4
+R2W,Room 2,Width,160,160,in,4064.0,4.064,MEASURED,Room 2 sketch,
+R2D,Room 2,Depth,211,211,in,5359.4,5.3594,MEASURED,Room 2 sketch,"221 on the room 7 side incl. 10"" wall"
+R2WC,Room 2,Washroom inside room 2,102 x 66,102,in,2590.8,2.5908,MEASURED,Room 2 sketch,"66"" deep"
+R3W,Room 3,Width,255 / 265,260,in,6604.0,6.604,RESOLVED,Room 3 sketch,mean of the two sides
+R3D,Room 3,Depth,247 - 249,247,in,6273.8,6.2738,RESOLVED,Room 3 sketch,
+R4W,Room 4,Width,518 / 518,518,in,13157.2,13.1572,MEASURED,Room 4 sketch,
+R4D,Room 4,Depth,244 / 242.5 (7.5 + 60 + 175),247,in,6273.8,6.2738,RESOLVED,Room 4 sketch,"drawn on the front-row line, 3 - 4.5"" over the measured depth"
+R5W,Room 5,Width,499 (49 + 450) / 504,499,in,12674.6,12.6746,RESOLVED,Room 5 sketch,aligned with room 6
+R5D,Room 5,Depth,42 + 114 + 48 = 204,204,in,5181.6,5.1816,MEASURED,Room 5 sketch,
+R6W,Room 6,Width,49 + 450 = 499,499,in,12674.6,12.6746,MEASURED,Room 6 sketch,
+R6D,Room 6,Depth,43 + 113 + 97 + 113 + 97 + 113 + 43 = 619,619,in,15722.6,15.7226,MEASURED,Room 6 sketch,
+R7WL,Room 7,"Width, lower part",195 + 57 = 252,252,in,6400.8,6.4008,DERIVED,Room 7 sketch,
+R7WU,Room 7,"Width, upper part",234 (written),316,in,8026.4,8.0264,RESOLVED,Room 7 sketch,"252 + 64"" jog; 234 does not fit the hallway (504) and rooms 5 / 6 (499)"
+R7J,Room 7,Jog at the washroom row,64,64,in,1625.6,1.6256,MEASURED,Room 7 sketch,
+R7WW,Room 7,Lower west wall,55 + 114 + 52 = 221,221,in,5613.4,5.6134,MEASURED,Room 7 sketch,
+R7D,Room 7,Depth,649 + 10 + 221 = 880 / 48 + 619 + 204 + walls = 881,881,in,22377.4,22.3774,DERIVED,"Room 5, 6, 7 sketches",
+HALW,Hallway,Width,48,48,in,1219.2,1.2192,MEASURED,Room 7 sketch,
+HALL,Hallway,Length,504,504,in,12801.6,12.8016,MEASURED,Survey reconstruction,"= room 6 width + 5"" wall"
+STW,Washroom row,Width,not measured,96,in,2438.4,2.4384,ASSUMED,Survey reconstruction,outer wall in line with room 2
+STL,Washroom row,Length,160 + 30 + 174 + 30 + 134 + 64 + 57 = 649,660,in,16764.0,16.764,RESOLVED,Room 7 sketch,"11"" added to the first piece"
+R8W,Room 8,Width,not measured,450,in,11430.0,11.43,ASSUMED,Survey reconstruction,north-east stair 273 + 5 + 172
+R8WN,Room 8,"West wall, north corner to hallway door",657,657,in,16687.8,16.6878,MEASURED,Room 8 sketch,
+R8L,Room 8,Length,657 + 881,1538,in,39065.2,39.0652,DERIVED,Room 8 sketch,
+NESW,North-east stair,Width,30 + 49 + 194 = 273,273,in,6934.2,6.9342,MEASURED,Room 8 sketch,
+NESD,North-east stair,Depth,not measured,103,in,2616.2,2.6162,ASSUMED,Survey reconstruction,east wall 1538 minus measured pieces = depth + 2 piers
+R8G1,Room 8,Wall between windows 3 and 4,not written,86,in,2184.4,2.1844,ASSUMED,Survey reconstruction,
+R8G2,Room 8,Wall between windows 4 and 5,not written,59,in,1498.6,1.4986,ASSUMED,Survey reconstruction,
+R8P1,Room 8,Stair wall to window 1,10,10,in,254.0,0.254,MEASURED,Room 8 sketch,
+R8P2,Room 8,Window 1 to window 2,16,16,in,406.4,0.4064,MEASURED,Room 8 sketch,
+R8P3,Room 8,Window 2 to window 3,49 + 10 + 48 = 107,107,in,2717.8,2.7178,MEASURED,Room 8 sketch,
+R8P4,Room 8,Window 5 to engine room,252,252,in,6400.8,6.4008,MEASURED,Room 8 sketch,
+ENGW,Engine room,Width,165,165,in,4191.0,4.191,MEASURED,Room 8 sketch,door sign reads SUB-STATION
+ENGD,Engine room,Depth,96 + 68 + 49 = 213,213,in,5410.2,5.4102,MEASURED,Room 8 sketch,
+SESW,South-east stair,Width,277,277,in,7035.8,7.0358,MEASURED,Room 8 sketch,north wall 26 + 52 + 34 + engine wall
+SESD,South-east stair,Depth,204,204,in,5181.6,5.1816,MEASURED,Room 8 sketch,an earlier draft drew 209; corrected to the sketch
+WT1,Walls,Inside wall thickness,not measured,5,in,127.0,0.127,ASSUMED,Survey reconstruction,
+WT2,Walls,Outside wall and row wall thickness,not measured,10,in,254.0,0.254,ASSUMED,Survey reconstruction,
+WH1,Walls,"Low wall height (rooms 3, 5, 6, 7, hallway)",Wall Height 48,48,in,1219.2,1.2192,MEASURED,"Room 5, 6, 7 sketches",confirmed in photos
+H01,Heights,Floor to underside of steel deck,not measured,114,in,2895.6,2.8956,PHOTO-EST,Site photos,"9'-6"""
+H02,Heights,Door and window head (lintel level),not measured,84,in,2133.6,2.1336,STANDARD,,"7'-0"""
+H03,Heights,Main gate head,not measured,96,in,2438.4,2.4384,PHOTO-EST,Site photos,
+H04,Heights,Secondary beam depth below deck,not measured,12,in,304.8,0.3048,PHOTO-EST,Site photos,
+H05,Heights,Main beam depth below deck,not measured,16,in,406.4,0.4064,PHOTO-EST,Site photos,
+H06,Heights,Floor to floor (stair rise),not measured,118,in,2997.2,2.9972,ASSUMED,,deck height + deck
+H07,Heights,"Gate steps (2), heights",not measured,14,in,355.6,0.3556,PHOTO-EST,Site photos,"7"" + 7"", treads 12"" and 24"""
+ST1,Stairs,Room 1 stair footprint,about 160 wide,160,in,4064.0,4.064,MEASURED,Room 1 sketch,"configuration: up from the back along the outer wall, landing at the front (owner + photos)"
+ST2,Stairs,Stair tread,not measured,11,in,279.4,0.2794,STANDARD,,risers = floor to floor / count
+ST3,Stairs,North-east and south-east stair layouts,not surveyed,0,,,,ASSUMED,,drawn as U-stairs inside the measured stair rooms
+STR1,Structure,Room 7 beam line,"drawn on the room 7 sketch, not dimensioned",300,in,7620.0,7.62,PHOTO-EST,Room 7 sketch + photos,x position approximate
+STR2,Structure,Steel columns,"seen in photos of rooms 5, 6, 7, 8",10,in,254.0,0.254,PHOTO-EST,Site photos,11 columns at estimated positions; measure on site
+STR3,Structure,"Main beams rooms 6 and 8, secondary beams",seen in photos,72,in,1828.8,1.8288,PHOTO-EST,Site photos,"secondaries at most 72"" apart"
+D01,Openings (existing),"Main gate 140"" (gate)",140,140,in,3556.0,3.556,MEASURED,Survey sketches,
+D02,Openings (existing),D42 room 1 - room 2 (door),42,42,in,1066.8,1.0668,MEASURED,Survey sketches,
+D03,Openings (existing),"57"" opening room 3 - room 7 (door)",57,57,in,1447.8,1.4478,MEASURED,Survey sketches,
+D04,Openings (existing),D47 room 1 - room 3 (door),47,47,in,1193.8,1.1938,MEASURED,Survey sketches,
+D05,Openings (existing),D60 room 3 - room 4 (door),7.5 (room 4 sketch) / 9 (derived: sum of sketch dimensions),60.0,in,1524.0,1.524,MEASURED,Survey sketches,room 4 sketch value used
+W01,Openings (existing),W114 room 2 - room 7 (win),"114, height 48 (room 2 sketch)",114,in,2895.6,2.8956,MEASURED,Survey sketches,"height 48"", sill 36"""
+D06,Openings (existing),D26.5 washroom (door),26.5,26.5,in,673.1,0.6731,MEASURED,Survey sketches,
+D07,Openings (existing),"64"" store opening (door)",64,64,in,1625.6,1.6256,MEASURED,Survey sketches,
+D08,Openings (existing),D30 washroom 2 (door),30,30,in,762.0,0.762,MEASURED,Survey sketches,
+D09,Openings (existing),D30 washroom 1 (door),30,30,in,762.0,0.762,MEASURED,Survey sketches,
+D10,Openings (existing),"48"" opening room 7 - room 5 (door)",48,48,in,1219.2,1.2192,MEASURED,Survey sketches,
+D11,Openings (existing),"52"" opening hallway - room 6 (door)",52,52,in,1320.8,1.3208,MEASURED,Survey sketches,
+D12,Openings (existing),"49"" opening room 5 - room 6 (door)",49,49,in,1244.6,1.2446,MEASURED,Survey sketches,
+D13,Openings (existing),"Hallway - room 8 (42"" standard) (door)",not written,42.0,in,1066.8,1.0668,STANDARD,Survey sketches,"photo shows jambs; earlier draft drew the full 48"" hallway end"
+W02,Openings (existing),W113 room 6 - room 8 (win),113,113,in,2870.2,2.8702,MEASURED,Survey sketches,"height 54"", sill 30"""
+W03,Openings (existing),W113 room 6 - room 8 (win),113,113,in,2870.2,2.8702,MEASURED,Survey sketches,"height 54"", sill 30"""
+W04,Openings (existing),W113 room 6 - room 8 (win),113,113,in,2870.2,2.8702,MEASURED,Survey sketches,"height 54"", sill 30"""
+W05,Openings (existing),W114 room 5 - room 8 (win),114,114,in,2895.6,2.8956,MEASURED,Survey sketches,"height 37"", sill 47"""
+W06,Openings (existing),W60 room 8 (win),60,60,in,1524.0,1.524,MEASURED,Survey sketches,"height 46"", sill 38"""
+W07,Openings (existing),W71 room 8 (win),71,71,in,1803.4,1.8034,MEASURED,Survey sketches,"height 54"", sill 30"""
+W08,Openings (existing),W114 room 8 (win),114,114,in,2895.6,2.8956,MEASURED,Survey sketches,"height 54"", sill 30"""
+W09,Openings (existing),W114 room 8 (win),114,114,in,2895.6,2.8956,MEASURED,Survey sketches,"height 54"", sill 30"""
+W10,Openings (existing),W114 room 8 (win),114,114,in,2895.6,2.8956,MEASURED,Survey sketches,"height 54"", sill 30"""
+D14,Openings (existing),D49 north-east stair (door),49,49,in,1244.6,1.2446,MEASURED,Survey sketches,
+D15,Openings (existing),D49 engine room (door),49,49,in,1244.6,1.2446,MEASURED,Survey sketches,
+D16,Openings (existing),D52 south-east stair (door),52,52,in,1320.8,1.3208,MEASURED,Survey sketches,
+W11,Openings (proposed),Lobby - reception glass (win),new,52,in,1320.8,1.3208,PROPOSED,Fit-out design,new opening in an existing wall - structural check required
+W12,Openings (proposed),Lobby - reception glass (win),new,52,in,1320.8,1.3208,PROPOSED,Fit-out design,new opening in an existing wall - structural check required
+D17,Openings (proposed),"Staff entrance: lobby - staff corridor 42"" (door)",new,42,in,1066.8,1.0668,PROPOSED,Fit-out design,new opening in an existing wall - structural check required
+D18,Openings (proposed),"Reception - visitor passage 42"" (door)",new,42,in,1066.8,1.0668,PROPOSED,Fit-out design,opening in existing 48 in wall
+D19,Openings (proposed),"Reception - boardroom 42"" (door)",new,42,in,1066.8,1.0668,PROPOSED,Fit-out design,opening in existing 48 in wall
+D20,Openings (proposed),"Executive suite - boardroom 42"" (door)",new,42,in,1066.8,1.0668,PROPOSED,Fit-out design,new opening in an existing wall - structural check required
+D21,Openings (proposed),"Experience centre - boardroom 42"" (door)",new,42,in,1066.8,1.0668,PROPOSED,Fit-out design,opening in existing 48 in wall
+D22,Openings (proposed),"Female prayer room door 36"" (door)",new,36,in,914.4,0.9144,PROPOSED,Fit-out design,new opening in an existing wall - structural check required
+COL01,Columns,"Steel column at plan (300, -217)",not measured,10,in,254.0,0.254,PHOTO-EST,Site photos,position estimated
+COL02,Columns,"Steel column at plan (300, -423)",not measured,10,in,254.0,0.254,PHOTO-EST,Site photos,position estimated
+COL03,Columns,"Steel column at plan (300, -633)",not measured,10,in,254.0,0.254,PHOTO-EST,Site photos,position estimated
+COL04,Columns,"Steel column at plan (300, -843)",not measured,10,in,254.0,0.254,PHOTO-EST,Site photos,position estimated
+COL05,Columns,"Steel column at plan (616, -217)",not measured,10,in,254.0,0.254,PHOTO-EST,Site photos,position estimated
+COL06,Columns,"Steel column at plan (616, -423)",not measured,10,in,254.0,0.254,PHOTO-EST,Site photos,position estimated
+COL07,Columns,"Steel column at plan (616, -633)",not measured,10,in,254.0,0.254,PHOTO-EST,Site photos,position estimated
+COL08,Columns,"Steel column at plan (616, -843)",not measured,10,in,254.0,0.254,PHOTO-EST,Site photos,position estimated
+COL09,Columns,"Steel column at plan (1101, -423)",not measured,10,in,254.0,0.254,PHOTO-EST,Site photos,position estimated
+COL10,Columns,"Steel column at plan (1101, -633)",not measured,10,in,254.0,0.254,PHOTO-EST,Site photos,position estimated
+COL11,Columns,"Steel column at plan (1101, -843)",not measured,10,in,254.0,0.254,PHOTO-EST,Site photos,position estimated

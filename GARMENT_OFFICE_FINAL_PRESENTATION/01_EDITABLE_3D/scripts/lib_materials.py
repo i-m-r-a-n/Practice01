@@ -38,6 +38,12 @@ def kelvin(t):
     return tuple(x / m for x in lin)
 
 
+def kelvin_soft(t, mix=0.55):
+    """LED colour as seen after camera white balance: kelvin tint pulled toward neutral white."""
+    k = kelvin(t)
+    return tuple(c * (1 - mix) + mix for c in k)
+
+
 M = {}
 
 
@@ -134,14 +140,15 @@ def textured(name, folder, tile_m, tint=None, tint_mix=0.0, hsv=(0.5, 1.0, 1.0),
         ck.inputs['Color1'].default_value = (1, 1, 1, 1)
         ck.inputs['Color2'].default_value = (0.86, 0.86, 0.86, 1)
         c_out = mix_rgb(nt, c_out, ck.outputs['Color'], loc=(-100, 50))
-    if grid:                           # tile joints
-        cell, line, dark = grid
+    if grid:                           # tile joints (cell_w, line, dark[, cell_h])
+        cell, line, dark = grid[:3]
+        cell_h = grid[3] if len(grid) > 3 else cell
         br = nt.nodes.new('ShaderNodeTexBrick'); br.location = (-400, -250)
         br.offset, br.offset_frequency, br.squash, br.squash_frequency = 0.0, 1, 1.0, 1
         br.inputs['Scale'].default_value = 1.0
         br.inputs['Mortar Size'].default_value = line
         br.inputs['Brick Width'].default_value = cell
-        br.inputs['Row Height'].default_value = cell
+        br.inputs['Row Height'].default_value = cell_h
         br.inputs['Color1'].default_value = (1, 1, 1, 1)
         br.inputs['Color2'].default_value = (1, 1, 1, 1)
         br.inputs['Mortar'].default_value = (dark, dark, dark, 1)
@@ -216,7 +223,7 @@ def glass(name, rough=0.0, tint='#F4FAF7', ior=1.45):
 
 def emission(name, temp_k=3500, strength=6.0, hexcol=None):
     m, nt, b = _new(name)
-    col = srgb(hexcol) if hexcol else kelvin(temp_k)
+    col = srgb(hexcol) if hexcol else kelvin_soft(temp_k)
     b.inputs['Base Color'].default_value = (*col, 1)
     b.inputs['Emission Color'].default_value = (*col, 1)
     b.inputs['Emission Strength'].default_value = strength
@@ -266,9 +273,9 @@ def build_library():
     W = '#EEEBE4'                       # warm white wall paint (approx. RAL 9010 / NCS S 0502-Y)
     # ---------------- floors
     textured('fl_terrazzo', 'Terrazzo019M', 0.65, hsv=(0.5, 0.75, 1.12), rough_mul=0.55, normal=0.25, grid=(0.8 / 0.65 * 0.65, 0.004, 0.72))
-    textured('fl_herringbone', 'herringbone_parquet', 3.4, hsv=(0.5, 0.8, 1.05), rough_mul=0.9, normal=0.5, coat=0.15)
-    textured('fl_carpet', 'Fabric030', 0.35, hsv=(0.5, 0.6, 0.62), rough=0.95, normal=1.0, quarter=0.5, sheen=0.3)
-    textured('fl_carpet_green', 'Fabric030', 0.35, tint=DEEP_GREEN, tint_mix=0.9, hsv=(0.5, 0.6, 1.4), rough=0.95, normal=1.0, sheen=0.3)
+    textured('fl_herringbone', 'herringbone_parquet', 3.4, hsv=(0.5, 0.78, 1.08), rough_mul=1.25, normal=0.5, coat=0.04)
+    textured('fl_carpet', 'Fabric030', 0.35, desat_to=('#2B2D2F', '#4A4D50'), rough=0.97, normal=1.0, quarter=0.5)
+    textured('fl_carpet_green', 'Fabric030', 0.35, desat_to=('#2A5539', '#3F6E50'), rough=0.97, normal=1.0, grid=(1.22, 0.05, 0.8, 50.0))
     textured('fl_oak_planks', 'laminate_floor_02', 1.7, hsv=(0.5, 0.75, 1.08), rough_mul=0.9, normal=0.4)
     textured('fl_concrete', 'smooth_concrete_floor', 2.0, desat_to=('#A9A6A0', '#CFCCC6'), rough_mul=0.5, normal=0.3)
     textured('fl_porcelain', 'Tiles040', 3.6, hsv=(0.5, 0.5, 1.0), rough_mul=0.5, normal=0.3)
@@ -300,10 +307,11 @@ def build_library():
     plain('mirror', '#E8EAEA', rough=0.02, metal=1.0)
     # ---------------- textiles / upholstery
     textured('fab_charcoal', 'Fabric030', 0.25, hsv=(0.5, 0.5, 0.75), rough=0.9, normal=0.8, sheen=0.4)
-    textured('fab_green', 'Fabric030', 0.25, tint=BRAND_GREEN, tint_mix=0.95, hsv=(0.5, 0.5, 1.9), rough=0.9, normal=0.8, sheen=0.4)
-    textured('fab_sand', 'Fabric030', 0.25, tint='#CDBB9E', tint_mix=1.0, hsv=(0.5, 0.3, 2.6), rough=0.92, normal=0.8, sheen=0.4)
-    textured('fab_grey', 'Fabric030', 0.25, hsv=(0.5, 0.4, 1.35), rough=0.92, normal=0.8, sheen=0.4)
-    textured('felt_green', 'Fabric034', 0.4, tint='#3E6B52', tint_mix=1.0, hsv=(0.5, 0.6, 1.0), rough=0.95, normal=0.6)
+    textured('fab_green', 'Fabric030', 0.25, desat_to=('#2E5A40', '#4E7D60'), rough=0.9, normal=0.8, sheen=0.2)
+    textured('fab_sand', 'Fabric030', 0.25, desat_to=('#B9A98E', '#DCCFB8'), rough=0.92, normal=0.8, sheen=0.2)
+    textured('fab_grey', 'Fabric030', 0.25, desat_to=('#5E5F60', '#8B8C8D'), rough=0.92, normal=0.8, sheen=0.4)
+    textured('rug_wool', 'Fabric030', 0.6, desat_to=('#8E877B', '#CBC4B7'), rough=0.95, normal=1.0, sheen=0.5)
+    textured('felt_green', 'Fabric034', 0.4, desat_to=('#2C5A3F', '#477A5B'), rough=0.95, normal=0.6)
     textured('felt_grey', 'Fabric034', 0.4, hsv=(0.5, 0.5, 0.95), rough=0.95, normal=0.6)
     textured('leather_cognac', 'leather_white', 0.3, tint='#8A5A36', tint_mix=1.0, hsv=(0.5, 1.0, 1.0), rough_mul=0.8, normal=0.5)
     textured('leather_black', 'leather_white', 0.3, tint='#202020', tint_mix=1.0, rough_mul=0.7, normal=0.5)

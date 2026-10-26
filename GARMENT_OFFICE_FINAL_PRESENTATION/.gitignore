@@ -4,3 +4,5 @@
 02_RENDERED_IMAGES/previews/*.png
 __pycache__/
 *.exr
+01_EDITABLE_3D/work/
+03_PRESENTATION/slide_png/

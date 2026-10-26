@@ -6,7 +6,7 @@ MEASURED / DERIVED / RESOLVED / ASSUMED / STANDARD / PHOTO-EST). Used by the Ble
 IN = 0.0254                                   # metres per inch                                   # metres per inch
 
 # =====================================================================================================
-# PARAMETERS - plan (inches), A-100
+# PARAMETERS - plan (inches), survey reconstruction
 # =====================================================================================================
 FRONT = 247            # front-row inner depth (rooms 1, 3, 4): RESOLVED from 236 / 249 / 244 / 242.5
 MID_S, MID_N = -10, -891   # middle block inner faces: depth 881 DERIVED (both sides of the block agree)
@@ -24,7 +24,7 @@ STAIR_T = 103              # north-east stair depth ASSUMED (one equation, three
 G1, G2 = 86, 59            # wall between room 8 windows 3-4 and 4-5 ASSUMED
 SE_N = MID_S - 204         # south-east stair 204" MEASURED
 ENG_S, ENG_N = SE_N - 5, SE_N - 5 - 213   # engine room (sub-station) 213" MEASURED
-D60_FROM_N = 7.5           # room 3 / 4 door: 7.5" from the corner on the room 4 sketch (A-100 drew 9)
+D60_FROM_N = 7.5           # room 3 / 4 door: 7.5" from the corner on the room 4 sketch (earlier draft drew 9)
 HALL_DOOR = 42             # hallway -> room 8 door: width not written; photo shows jambs; 3'-6" standard
 T_IN, T_OUT = 5, 10        # wall thickness ASSUMED (not measured)
 
@@ -43,7 +43,7 @@ TREAD = 11             # stair tread: STANDARD
 FLOOR_TO_FLOOR = DECK_H + DECK_T
 
 # =====================================================================================================
-# GEOMETRY - as-built walls (A-100). ops: (id, kind, a, b, label[, window height])
+# GEOMETRY - as-built walls (derived: sum of sketch dimensions). ops: (id, kind, a, b, label[, window height])
 # kind: "ext" outside wall, "int" full-height inside wall, "half" 48" wall, "part" light partition
 # =====================================================================================================
 
@@ -124,7 +124,7 @@ WALLS = [
 OUTLINE = [(-10, FRONT + 10), (1098, FRONT + 10), (1098, 0), (R8_E + 10, 0), (R8_E + 10, R8_N - 10),
            (866, R8_N - 10), (866, MID_N - 10), (-65, MID_N - 10), (-65, 0), (-10, 0)]
 
-ROOMS = {   # as-built rooms (A-100): polygon, label
+ROOMS = {   # as-built rooms (derived: sum of sketch dimensions): polygon, label
     "R1": ([(0, 0), (300, 0), (300, FRONT), (0, FRONT)], "ROOM 1  LOBBY"),
     "R2": ([(R2_W, R2_N), (R2_E, R2_N), (R2_E, MID_S), (R2_W, MID_S)], "ROOM 2"),
     "R3": ([(305, 0), (565, 0), (565, FRONT), (305, FRONT)], "ROOM 3"),
@@ -151,12 +151,12 @@ COLUMNS = [(300, -217), (300, -423), (300, -633), (300, -843),
 # MEASUREMENT SCHEDULE: (id, group, element, written on sketch, value, unit, status, source, note)
 # =====================================================================================================
 SCHEDULE = [
-    ("OV01", "Overall", "Front width, outside faces", "92'-4\" (A-100)", 1108, "in", "DERIVED", "A-100", "rooms 300 + 260 + 518 + walls"),
-    ("OV02", "Overall", "Depth, west side (front facade to middle block north wall)", "96'-6\" (A-100)", 1158, "in", "DERIVED", "A-100", ""),
-    ("OV03", "Overall", "Depth, east side (front facade to room 8 north wall)", "151'-3\" (A-100)", 1815, "in", "DERIVED", "A-100", ""),
-    ("OV04", "Overall", "Gross floor area incl. walls", "12,888 sft (A-100)", 12888, "sft", "DERIVED", "A-100", "changes if room 8 width changes"),
+    ("OV01", "Overall", "Front width, outside faces", "92'-4\" (derived)", 1108, "in", "DERIVED", "Derived from sketches", "rooms 300 + 260 + 518 + assumed walls"),
+    ("OV02", "Overall", "Depth, west side (front facade to middle block north wall)", "96'-6\" (derived)", 1158, "in", "DERIVED", "Survey reconstruction", ""),
+    ("OV03", "Overall", "Depth, east side (front facade to room 8 north wall)", "151'-3\" (derived)", 1815, "in", "DERIVED", "Survey reconstruction", ""),
+    ("OV04", "Overall", "Gross floor area incl. walls", "12,888 sft (derived: sum of sketch dimensions)", 12888, "sft", "DERIVED", "Survey reconstruction", "changes if room 8 width changes"),
     ("R1W", "Room 1", "Width", "300", 300, "in", "MEASURED", "Room 1 sketch", "lobby, main stair, main gate"),
-    ("R1D", "Room 1", "Depth", "236 (room 1 sketch) / 249 (room 3 sketch)", 247, "in", "RESOLVED", "A-100", "front-row line shared with rooms 3 and 4"),
+    ("R1D", "Room 1", "Depth", "236 (room 1 sketch) / 249 (room 3 sketch)", 247, "in", "RESOLVED", "Survey reconstruction", "front-row line shared with rooms 3 and 4"),
     ("R2W", "Room 2", "Width", "160", 160, "in", "MEASURED", "Room 2 sketch", ""),
     ("R2D", "Room 2", "Depth", "211", 211, "in", "MEASURED", "Room 2 sketch", "221 on the room 7 side incl. 10\" wall"),
     ("R2WC", "Room 2", "Washroom inside room 2", "102 x 66", 102, "in", "MEASURED", "Room 2 sketch", "66\" deep"),
@@ -174,16 +174,16 @@ SCHEDULE = [
     ("R7WW", "Room 7", "Lower west wall", "55 + 114 + 52 = 221", 221, "in", "MEASURED", "Room 7 sketch", ""),
     ("R7D", "Room 7", "Depth", "649 + 10 + 221 = 880 / 48 + 619 + 204 + walls = 881", 881, "in", "DERIVED", "Room 5, 6, 7 sketches", ""),
     ("HALW", "Hallway", "Width", "48", 48, "in", "MEASURED", "Room 7 sketch", ""),
-    ("HALL", "Hallway", "Length", "504", 504, "in", "MEASURED", "A-100", "= room 6 width + 5\" wall"),
-    ("STW", "Washroom row", "Width", "not measured", 96, "in", "ASSUMED", "A-100", "outer wall in line with room 2"),
+    ("HALL", "Hallway", "Length", "504", 504, "in", "MEASURED", "Survey reconstruction", "= room 6 width + 5\" wall"),
+    ("STW", "Washroom row", "Width", "not measured", 96, "in", "ASSUMED", "Survey reconstruction", "outer wall in line with room 2"),
     ("STL", "Washroom row", "Length", "160 + 30 + 174 + 30 + 134 + 64 + 57 = 649", 660, "in", "RESOLVED", "Room 7 sketch", "11\" added to the first piece"),
-    ("R8W", "Room 8", "Width", "not measured", 450, "in", "ASSUMED", "A-100", "north-east stair 273 + 5 + 172"),
+    ("R8W", "Room 8", "Width", "not measured", 450, "in", "ASSUMED", "Survey reconstruction", "north-east stair 273 + 5 + 172"),
     ("R8WN", "Room 8", "West wall, north corner to hallway door", "657", 657, "in", "MEASURED", "Room 8 sketch", ""),
     ("R8L", "Room 8", "Length", "657 + 881", 1538, "in", "DERIVED", "Room 8 sketch", ""),
     ("NESW", "North-east stair", "Width", "30 + 49 + 194 = 273", 273, "in", "MEASURED", "Room 8 sketch", ""),
-    ("NESD", "North-east stair", "Depth", "not measured", STAIR_T, "in", "ASSUMED", "A-100", "east wall 1538 minus measured pieces = depth + 2 piers"),
-    ("R8G1", "Room 8", "Wall between windows 3 and 4", "not written", G1, "in", "ASSUMED", "A-100", ""),
-    ("R8G2", "Room 8", "Wall between windows 4 and 5", "not written", G2, "in", "ASSUMED", "A-100", ""),
+    ("NESD", "North-east stair", "Depth", "not measured", STAIR_T, "in", "ASSUMED", "Survey reconstruction", "east wall 1538 minus measured pieces = depth + 2 piers"),
+    ("R8G1", "Room 8", "Wall between windows 3 and 4", "not written", G1, "in", "ASSUMED", "Survey reconstruction", ""),
+    ("R8G2", "Room 8", "Wall between windows 4 and 5", "not written", G2, "in", "ASSUMED", "Survey reconstruction", ""),
     ("R8P1", "Room 8", "Stair wall to window 1", "10", 10, "in", "MEASURED", "Room 8 sketch", ""),
     ("R8P2", "Room 8", "Window 1 to window 2", "16", 16, "in", "MEASURED", "Room 8 sketch", ""),
     ("R8P3", "Room 8", "Window 2 to window 3", "49 + 10 + 48 = 107", 107, "in", "MEASURED", "Room 8 sketch", ""),
@@ -191,9 +191,9 @@ SCHEDULE = [
     ("ENGW", "Engine room", "Width", "165", 165, "in", "MEASURED", "Room 8 sketch", "door sign reads SUB-STATION"),
     ("ENGD", "Engine room", "Depth", "96 + 68 + 49 = 213", 213, "in", "MEASURED", "Room 8 sketch", ""),
     ("SESW", "South-east stair", "Width", "277", 277, "in", "MEASURED", "Room 8 sketch", "north wall 26 + 52 + 34 + engine wall"),
-    ("SESD", "South-east stair", "Depth", "204", 204, "in", "MEASURED", "Room 8 sketch", "A-100 v3 drew 209; corrected"),
-    ("WT1", "Walls", "Inside wall thickness", "not measured", T_IN, "in", "ASSUMED", "A-100", ""),
-    ("WT2", "Walls", "Outside wall and row wall thickness", "not measured", T_OUT, "in", "ASSUMED", "A-100", ""),
+    ("SESD", "South-east stair", "Depth", "204", 204, "in", "MEASURED", "Room 8 sketch", "an earlier draft drew 209; corrected to the sketch"),
+    ("WT1", "Walls", "Inside wall thickness", "not measured", T_IN, "in", "ASSUMED", "Survey reconstruction", ""),
+    ("WT2", "Walls", "Outside wall and row wall thickness", "not measured", T_OUT, "in", "ASSUMED", "Survey reconstruction", ""),
     ("WH1", "Walls", "Low wall height (rooms 3, 5, 6, 7, hallway)", "Wall Height 48", HALF_H, "in", "MEASURED", "Room 5, 6, 7 sketches", "confirmed in photos"),
     ("H01", "Heights", "Floor to underside of steel deck", "not measured", DECK_H, "in", "PHOTO-EST", "Site photos", "9'-6\""),
     ("H02", "Heights", "Door and window head (lintel level)", "not measured", LINTEL, "in", "STANDARD", "", "7'-0\""),
@@ -209,9 +209,9 @@ SCHEDULE = [
     ("STR2", "Structure", "Steel columns", "seen in photos of rooms 5, 6, 7, 8", COL_W, "in", "PHOTO-EST", "Site photos", "11 columns at estimated positions; measure on site"),
     ("STR3", "Structure", "Main beams rooms 6 and 8, secondary beams", "seen in photos", 72, "in", "PHOTO-EST", "Site photos", "secondaries at most 72\" apart"),
 ]
-OPENING_STATUS = {"D05": ("7.5 (room 4 sketch) / 9 (A-100)", "MEASURED", "room 4 sketch value used"),
-                  "D13": ("not written", "STANDARD", "photo shows jambs; A-100 drew the full 48\" hallway end"),
-                  "W01": ("114, height 48 per A-100", "MEASURED", "height from A-100 (room 2 sketch)")}
+OPENING_STATUS = {"D05": ("7.5 (room 4 sketch) / 9 (earlier draft)", "MEASURED", "room 4 sketch value used"),
+                  "D13": ("not written", "STANDARD", "photo shows jambs; earlier draft drew the full 48\" hallway end"),
+                  "W01": ("114, height 48 (room 2 sketch)", "MEASURED", "height from the room 2 sketch")}
 
 
 

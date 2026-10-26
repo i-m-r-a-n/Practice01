@@ -461,13 +461,15 @@ def dress_form(cover='mannequin', stand='brass', h_top=64):
 
 
 def mannequin_garment(cover_mat, body='mannequin'):
-    """Dress form wearing a garment: the garment is a slightly larger shell over the torso."""
-    m = dress_form(body, 'metal_black', 64)
+    """Dress form wearing a knit top: a shell following the torso profile from below the hip to the neck."""
+    h_top = 64
+    m = dress_form(body, 'metal_black', h_top)
     shell = MB()
-    prof = [(7.4, 0), (7.2, 3), (6.6, 8), (6.1, 12.5), (6.4, 15.5), (7.3, 19), (7.4, 21), (6.6, 23.5), (3.8, 25.4), (2.6, 26)]
+    prof = [(7.7, -3.5), (7.45, 2.5), (7.4, 5), (6.7, 9), (5.75, 12.5), (6.1, 15.5), (7.1, 19), (7.3, 21), (6.55, 23.5),
+            (3.75, 25.2), (2.35, 25.95)]
     shell.lathe(prof, cover_mat, segs=28, close_top=False, close_bottom=False)
     import mathutils
-    _transform(shell, mathutils.Matrix.Diagonal((1.07, 0.76, 1.0, 1.0)), (0, 0, 64 - 28.6 - 6))
+    _transform(shell, mathutils.Matrix.Diagonal((1.05, 0.74, 1.0, 1.0)), (0, 0, h_top - 28.6))
     m.add(shell)
     return m
 
@@ -909,18 +911,19 @@ class Library:
         return self.masters[k]
 
     def place(self, key, coll, x_m, y_m, z_m=0.0, rot_deg=0.0, scale=1.0, objects=None, label=None):
+        """Linked duplicates of the master objects; the first object's origin goes to (x_m, y_m, z_m)."""
         out = []
-        masters = self.master(key, objects)
-        # place so that the group's footprint centre sits at the target (masters are near the origin)
+        masters = [o for o in self.master(key, objects) if o.type == 'MESH']
+        if not masters:
+            return out
+        ref = masters[0].location.copy()
+        ca, sa = math.cos(math.radians(rot_deg)), math.sin(math.radians(rot_deg))
         for o in masters:
-            if o.type not in ('MESH',):
-                continue
-            d = o.copy()          # linked duplicate (shares mesh data)
+            d = o.copy()                      # linked duplicate (shares mesh data)
             d.hide_render = False
             d.hide_viewport = False
-            d.location = (x_m + o.location.x * scale * math.cos(math.radians(rot_deg)) - o.location.y * scale * math.sin(math.radians(rot_deg)),
-                          y_m + o.location.x * scale * math.sin(math.radians(rot_deg)) + o.location.y * scale * math.cos(math.radians(rot_deg)),
-                          z_m + o.location.z * scale)
+            off = (o.location - ref) * scale
+            d.location = (x_m + off.x * ca - off.y * sa, y_m + off.x * sa + off.y * ca, z_m + off.z)
             d.rotation_euler = (o.rotation_euler.x, o.rotation_euler.y, o.rotation_euler.z + math.radians(rot_deg))
             d.scale = (o.scale.x * scale, o.scale.y * scale, o.scale.z * scale)
             d.parent = None

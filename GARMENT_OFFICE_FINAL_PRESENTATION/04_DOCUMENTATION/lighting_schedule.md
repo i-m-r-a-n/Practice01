@@ -1,0 +1,33 @@
+# Lighting & ceiling equipment schedule
+
+Concept: 4000 K task light in work areas, 3000-3500 K in visitor/executive areas, accent spots on product displays and brand walls. Lux levels and luminaire photometry to be verified by a lighting/electrical engineer (target about 500 lux on desks, 300 lux circulation).
+
+| type | description | CCT | qty | mounting height (in AFF, bottom) | zones |
+|---|---|---|---|---|---|
+| down | Surface cylinder downlight, matt black, 60-80 deg | 3000 K | 14 | 110 | Z10 Z11 Z13 Z23 Z25 |
+| down | Surface cylinder downlight, matt black, 60-80 deg | 3500 K | 39 | 110 | Z02 Z03 Z05 Z08 Z24 Z26 Z27 Z28 Z29 Z31 Z33 circulation |
+| halo | Brass ring (halo) pendant, LED, ring r 16 in | 3000 K | 1 | 82 | Z12 |
+| halo | Brass ring (halo) pendant, LED, ring r 18 in | 3000 K | 1 | 82 | Z21 |
+| halo | Brass ring (halo) pendant, LED, ring r 20 in | 3000 K | 1 | 80 | Z02 |
+| lin | Suspended linear LED profile, direct/indirect, opal diffuser, matt black, 100 in long | 4000 K | 2 | 80 | Z05 Z07 |
+| lin | Suspended linear LED profile, direct/indirect, opal diffuser, matt black, 110 in long | 4000 K | 2 | 82 | Z18 |
+| lin | Suspended linear LED profile, direct/indirect, opal diffuser, matt black, 120 in long | 3500 K | 1 | 76 | Z30 |
+| lin | Suspended linear LED profile, direct/indirect, opal diffuser, matt black, 120 in long | 4000 K | 1 | 82 | Z17 |
+| lin | Suspended linear LED profile, direct/indirect, opal diffuser, matt black, 130 in long | 4000 K | 1 | 80 | Z07 |
+| lin | Suspended linear LED profile, direct/indirect, opal diffuser, matt black, 150 in long | 4000 K | 4 | 80 | Z06 Z07 |
+| lin | Suspended linear LED profile, direct/indirect, opal diffuser, matt black, 200 in long | 4000 K | 1 | 84 | Z07 |
+| lin | Suspended linear LED profile, direct/indirect, opal diffuser, matt black, 60 in long | 3500 K | 2 | 82 | Z10 Z11 |
+| lin | Suspended linear LED profile, direct/indirect, opal diffuser, matt black, 60 in long | 4000 K | 6 | 80 / 82 | Z06 Z09 Z14 |
+| lin | Suspended linear LED profile, direct/indirect, opal diffuser, matt black, 72 in long | 3500 K | 2 | 84 | Z01 Z12 |
+| lin | Suspended linear LED profile, direct/indirect, opal diffuser, matt black, 72 in long | 4000 K | 1 | 80 | Z04 |
+| lin | Suspended linear LED profile, direct/indirect, opal diffuser, matt black, 80 in long | 4000 K | 1 | 84 | Z18 |
+| lin | Suspended linear LED profile, direct/indirect, opal diffuser, matt black, 96 in long | 3500 K | 7 | 80 / 82 / 84 / 86 | Z01 Z02 Z08 Z18 Z20 Z21 |
+| lin | Suspended linear LED profile, direct/indirect, opal diffuser, matt black, 96 in long | 4000 K | 3 | 82 / 90 | Z15 Z16 Z19 |
+| pendant_cc0 | Opal dome pendant (cafe) | 3500 K | 6 | 0 | Z20 |
+| spot | Track spot on 3-circuit track, adjustable, 24-40 deg | 3000 K | 32 | 100 / 110 | Z01 Z02 Z08 Z12 Z30 |
+| spot | Track spot on 3-circuit track, adjustable, 24-40 deg | 3500 K | 5 | 102 | Z18 |
+| track | 3-circuit track fixed to the beam soffit |  | 4 | 102 | Z30 |
+| track | 3-circuit track fixed to the beam soffit |  | 1 | 104 | Z18 |
+| AC | VRF under-ceiling indoor unit (capacity by MEP engineer) |  | 19 | fixed to deck |  |
+| SD | Smoke detector (connect to the existing fire alarm system) |  | 23 | deck |  |
+| EX | Exit sign with emergency battery |  | 4 | 88 in |  |

@@ -1,0 +1,36 @@
+zone,room / function,group,area_sft,area_m2,floor finish,ceiling,work seats,light fixtures,main furniture
+Z01,ENTRANCE LOBBY - security + visitor check-in,Reception,515,47.8,TZ-01 terrazzo-look porcelain / terrazzo tile,"exposed deck, linear pendants, brand-wall spots",1,5,"1 x Security / visitor desk, 1 x Ergonomic task chair, 1 x Planter (large), 1 x Planter (medium)"
+Z02,RECEPTION + VISITOR WAITING,Reception,446,41.4,TZ-01 terrazzo-look porcelain / terrazzo tile,"oak slat raft, brass halo, linear pendant on the beam",2,8,"2 x High-back executive chair, 2 x Lounge armchair, 1 x Reception counter 2750 mm, 1 x 3-seat sofa"
+Z03,VISITOR PASSAGE,Reception,75,7.0,TZ-01 terrazzo-look porcelain / terrazzo tile,downlights,,2,
+Z30,EXPERIENCE CENTRE - brand story + collection gallery,Experience Center,707,65.7,TZ-01 terrazzo-look porcelain / terrazzo tile,track lights fixed to the beams,,22,"1 x Garment display bay 2640 mm: oak frame, 1 x Garment display bay 2640 mm, 1 x Garment display bay 2180 mm, 1 x Garment display bay 2180 mm"
+Z08,BOARDROOM - 15 seats,Meeting Rooms,540,50.1,WD-01 oak herringbone,green felt rafts between beams,,11,"14 x Boardroom chair, 2 x Credenza 2440 mm, 1 x Boardroom table 6100 x 1370 mm, 1 x High-back executive chair"
+Z09,AUDIT ROOM,Meeting Rooms,153,14.2,CP-01 charcoal carpet tile,linear pendant,,1,"5 x Cantilever visitor chair, 1 x Meeting table 1500 x 900 mm, 1 x Tall document cabinets 2290 mm"
+Z10,EXECUTIVE RECEPTION - PA + waiting,Executive Area,223,20.7,WD-01 oak herringbone,linear pendant,1,2,"2 x modern_arm_chair_01 (CC0), 1 x Desk 1600 x 800 mm, 1 x High-back executive chair, 1 x Side table"
+Z11,DIRECTOR,Executive Area,205,19.0,WD-01 oak herringbone,linear pendant,1,2,"2 x Cantilever visitor chair, 1 x Director desk 1680 x 810 mm, 1 x High-back executive chair, 1 x Credenza 2440 mm"
+Z12,MANAGING DIRECTOR,Executive Area,300,27.8,WD-01 oak herringbone,oak slat raft + halo,1,5,"2 x Cantilever visitor chair, 1 x MD desk 2130 x 965 mm, 1 x High-back executive chair, 1 x Credenza 2440 mm"
+Z13,EXECUTIVE CORRIDOR,Executive Area,146,13.5,WD-01 oak herringbone,downlights,,5,
+Z04,GUEST WORKSPACE - 6 seats,Workstations,184,17.1,CP-01 charcoal carpet tile,linear pendant,,1,"6 x Cantilever chair, 1 x Work table 2130 x 1000 mm, 1 x 55 in display, 1 x Planter (medium)"
+Z05,HR & ADMIN,Workstations,301,28.0,CP-01 charcoal carpet tile,linear pendant,4,2,"4 x Ergonomic task chair, 3 x Cantilever visitor chair, 1 x Bench workstation 2 x 2 desks (1400 x 700 mm), 1 x Round meeting table 1070 mm"
+Z31,STAFF CORRIDOR,Workstations,76,7.0,TZ-01 terrazzo-look porcelain / terrazzo tile,downlights,,3,
+Z06,COMMERCIAL & ACCOUNTS - 12 workstations + manager,Workstations,1283,119.2,CP-01 charcoal carpet tile,linear pendants,13,3,"12 x Ergonomic task chair, 2 x Bench workstation 2 x 3 desks (1400 x 700 mm), 2 x Cantilever visitor chair, 1 x Desk 1600 x 800 mm"
+Z07,"MERCHANDISING - open office, 16 workstations",Workstations,1421,132.0,CP-01 charcoal carpet tile,felt baffles between beams,16,5,"16 x Ergonomic task chair, 8 x Ergonomic task chair, 2 x Bench workstation 2 x 3 desks (1400 x 700 mm), 2 x Low storage under window"
+Z14,CAD / TECHNICAL - DESIGN,Design Development,281,26.1,CP-01 charcoal carpet tile,linear pendants 4000K,3,4,"3 x CAD workstation 1600 x 800 mm, 3 x Ergonomic task chair, 1 x Large-format plotter, 1 x Layout / digitiser table"
+Z15,"FABRIC & TRIM LIBRARY - fabric, colour, print, trims",Design Development,203,18.8,PC-01 sealed light-grey concrete / epoxy,linear pendants,,1,"2 x Oak-top stool, 1 x Fabric & trim library shelving, 1 x Low swatch shelving under window, 1 x Swatch / garment rail bay"
+Z16,3D PRINTING LAB,Design Development,171,15.9,PC-01 sealed light-grey concrete / epoxy,linear pendants,1,1,"4 x Enclosed 3D printer, 1 x 3D printer bench, 1 x Post-processing bench with sink, 1 x Desk 1600 x 800 mm"
+Z17,SAMPLE DEVELOPMENT - pattern + cutting support,Design Development,271,25.2,PC-01 sealed light-grey concrete / epoxy,linear pendants,,1,"3 x Dress form, 2 x Sample machine station, 2 x Ergonomic task chair, 1 x Pattern & cutting table 2440 x 1220 mm"
+Z18,GLOBAL DESIGN STUDIO - (name as proposed in the master plan),Design Development,936,87.0,WD-02 oak-look plank,linear pendants + mood-board track,8,10,"8 x Ergonomic task chair, 8 x Cantilever visitor chair, 6 x Oak-top stool, 2 x Designer bench 2 x 2 desks (1600 x 800 mm)"
+Z19,SAMPLE & MATERIAL STORE,Design Development,135,12.5,PC-01 sealed light-grey concrete / epoxy,batten lights,,1,"3 x Store shelving (sample boxes), 1 x Store shelving"
+Z20,STAFF CAFE + PANTRY,Support Rooms,465,43.2,WD-02 oak-look plank,pendants,,7,"16 x Oak dining chair, 2 x Cafe table 2440 x 915 mm, 1 x Pantry 3660 mm: sink, 1 x Refrigerator"
+Z21,STAFF LOUNGE / TRAINING - (multipurpose),Support Rooms,389,36.1,WD-02 oak-look plank,halo + downlights,,2,"6 x Cantilever chair, 2 x Lounge armchair, 1 x 3-seat sofa, 1 x Coffee table 810 mm"
+Z22,CORRIDOR,Support Rooms,412,38.3,TZ-01 terrazzo-look porcelain / terrazzo tile,downlights,,0,
+Z32,NORTH CORRIDOR,Support Rooms,270,25.1,TZ-01 terrazzo-look porcelain / terrazzo tile,downlights,,0,
+Z33,HALLWAY,Support Rooms,168,15.6,TZ-01 terrazzo-look porcelain / terrazzo tile,downlights,,5,
+Z23,PRAYER (MALE),Prayer Rooms,186,17.3,CP-02 green prayer carpet,downlights 3000K,,4,1 x Shoe rack
+Z24,WUDU (MALE),Prayer Rooms,75,7.0,PT-01 matt porcelain tile,downlights,,2,1 x Wudu bench
+Z25,PRAYER (FEMALE),Prayer Rooms,87,8.1,CP-02 green prayer carpet,downlights 3000K,,3,1 x Shoe rack
+Z34,WUDU (FEMALE),Prayer Rooms,27,2.5,PT-01 matt porcelain tile,downlight,,0,1 x Wudu bench
+Z26,WASHROOM (FEMALE),Washrooms,131,12.1,PT-01 matt porcelain tile,downlights,,3,"2 x WC cubicle, 2 x Wall-hung WC, 1 x Vanity 1520 mm"
+Z27,WASHROOM (MALE),Washrooms,189,17.5,PT-01 matt porcelain tile,downlights,,4,"2 x WC cubicle, 2 x Wall-hung WC, 2 x Urinal, 1 x Vanity 1520 mm"
+Z28,GUEST WC (2),Washrooms,78,7.2,PT-01 matt porcelain tile,downlights,,2,"2 x Wall-hung WC, 2 x Vanity 760 mm"
+Z29,GUEST WORKSPACE WC,Washrooms,47,4.3,PT-01 matt porcelain tile,downlight,,1,"1 x Wall-hung WC, 1 x Vanity 760 mm"
+,"TOTAL (fit-out zones, net)",,11092,1030.5,,,48,,
