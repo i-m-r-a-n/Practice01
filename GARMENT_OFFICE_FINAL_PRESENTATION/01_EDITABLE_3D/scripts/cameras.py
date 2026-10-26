@@ -14,7 +14,7 @@ CAMERAS = [
     dict(name="CAM_07_MD_Office_A", room="MD office", priority=1, pos=(870, 64, 60), target=(1040, 225, 54), lens=18),
     dict(name="CAM_08_MD_Office_B", room="MD office", priority=1, pos=(1082, 212, 58), target=(875, 110, 46), lens=18),
     dict(name="CAM_09_Boardroom_A", room="Boardroom", priority=1, pos=(860, -200, 62), target=(490, -100, 56), lens=18),
-    dict(name="CAM_10_Boardroom_B", room="Boardroom", priority=1, pos=(494, -20, 62), target=(810, -160, 46), lens=18),
+    dict(name="CAM_10_Boardroom_B", room="Boardroom", priority=1, pos=(494, -45, 62), target=(810, -160, 46), lens=18),
     dict(name="CAM_11_Merchandising_A", room="Merchandising (open office)", priority=1, pos=(378, -440, 64), target=(720, -770, 40), lens=18),
     dict(name="CAM_12_Merchandising_B", room="Merchandising (open office)", priority=1, pos=(856, -832, 64), target=(440, -500, 44), lens=18),
     dict(name="CAM_13_Design_Studio_A", room="Global Design Studio", priority=1, pos=(1112, -538, 62), target=(1290, -900, 50), lens=18),

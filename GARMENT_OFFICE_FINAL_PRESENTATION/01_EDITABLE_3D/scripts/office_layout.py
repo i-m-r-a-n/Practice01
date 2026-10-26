@@ -240,6 +240,9 @@ ASSETS = {
     "whiteboard": ("whiteboard", {"w": 72, "h": 40}, (72, 1), "Whiteboard"),
     "pinboard_merch": ("pinboard_wall", {"w": 270, "h": 40, "seed": 31}, (270, 2), "Linen pinboard (trims / sample boards)"),
     "moodboard": ("pinboard_wall", {"w": 290, "h": 72, "seed": 32}, (290, 2), "Mood-board wall, linen pinboard"),
+    "pinboard_cad": ("pinboard_wall", {"w": 120, "h": 52, "seed": 7, "board": "felt_green", "palette": ["paper", "paper", "g_white"],
+                                       "card_w": (11, 15), "card_h": (8, 11), "gap_x": (5, 10), "gap_z": (4, 8)},
+                     (120, 2), "Felt pinboard for tech packs (acoustic), brand green"),
     "rug_reception": ("rug", {"w": 108, "d": 78, "mat": "rug_wool"}, (108, 78), "Rug, wool, grey"),
     "rug_md": ("rug", {"w": 96, "d": 72, "mat": "rug_wool"}, (96, 72), "Rug, wool, sand"),
     "rug_lounge": ("rug", {"w": 120, "d": 90, "mat": "rug_wool"}, (120, 90), "Rug, wool"),
@@ -401,6 +404,7 @@ P("plotter", 985, -24, N, "Z14")
 P("table_layout", 1000, -140, S, "Z14")
 P("plan_chest", 1028, -60, Wd, "Z14")
 P("screen_65", 990, -255.9, S, "Z14", z=42)
+P("pinboard_cad", 975, -10.8, N, "Z14", z=40)
 P("shelf_lib_150", 958, -433, S, "Z15")
 P("shelf_lib_low", 883, -318, E, "Z15")
 P("bay_110_white", 950, -274, N, "Z15")

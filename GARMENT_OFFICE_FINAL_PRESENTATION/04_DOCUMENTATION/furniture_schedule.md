@@ -49,6 +49,7 @@ Quantities are counted from the 3D model. Dimensions are typical commercial size
 | mfp | Multifunction printer | 2 | 610 x 610 | procedural (parametric Blender model) | Z06 Z07 |
 | moodboard | Mood-board wall, linen pinboard | 1 | 7366 x 51 | procedural (parametric Blender model) | Z18 |
 | pantry | Pantry 3660 mm: sink, upper cabinets, coffee, microwave | 1 | 3658 x 635 | procedural (parametric Blender model) | Z20 |
+| pinboard_cad | Felt pinboard for tech packs (acoustic), brand green | 1 | 3048 x 51 | procedural (parametric Blender model) | Z14 |
 | pinboard_merch | Linen pinboard (trims / sample boards) | 1 | 6858 x 51 | procedural (parametric Blender model) | Z07 |
 | plan_chest | Plan chest | 1 | 1524 x 610 | procedural (parametric Blender model) | Z14 |
 | planter_l | Planter (large) | 8 | 508 x 508 | procedural (parametric Blender model) | Z01 Z02 Z07 Z12 Z18 Z20 Z21 Z30 |

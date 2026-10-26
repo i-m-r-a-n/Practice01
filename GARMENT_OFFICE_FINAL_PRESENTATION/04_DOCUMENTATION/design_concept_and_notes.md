@@ -68,8 +68,8 @@ master plan's design-studio plan, used for the studio zoning.
 - **Commercial & accounts (12 desks + manager), HR & admin (4 desks + interview table), audit room, guest workspace:** same desk
   family and lighting for a consistent workplace.
 - **Global Design Studio (936 sft) + support:** creative workstations by the east windows, 7.4 m mood-board wall (trend research),
-  trend table, collection display and buyer-presentation table with 86 in screen; CAD / technical design room with plotter and
-  layout table; fabric, colour & trim library with D65 colour booth; 3D printing lab; sample development room (pattern & cutting
+  trend table, collection display and buyer-presentation table with 86 in screen; CAD / technical design room with plotter,
+  layout table and a brand-green felt pinboard for tech packs; fabric, colour & trim library with D65 colour booth; 3D printing lab; sample development room (pattern & cutting
   table, 2 sample machines, dress forms, steam station) - an office-grade sample studio, not production; sample & material store.
 - **Staff support:** staff cafe + pantry (16 seats), lounge / training room (sofa group + 6-seat workshop table + screen), male
   prayer + wudu, female prayer + wudu, staff washrooms (female 2 WC; male 2 WC + 2 urinals), 2 guest WCs.

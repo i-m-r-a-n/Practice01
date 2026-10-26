@@ -1,0 +1,17 @@
+# Views re-rendered by render_queue2.sh after render_queue.sh, one per line: camera [extra render_views.py arguments].
+# Read line by line while the queue runs, so views can be appended at any time.
+# rug fix (rugs lifted off the floor) and exposure change
+CAM_01_Reception_A
+# reception camera turned so the whole logo is in view
+CAM_02_Reception_B
+# plastered sloped soffit added under the lobby stair
+CAM_03_Entrance_Lobby
+# rug fix and exposure change
+CAM_07_MD_Office_A
+# boardroom camera moved away from the brass door pulls of D19
+CAM_10_Boardroom_B
+# full-bleed deck images (cover, closing) at 1920 x 1080; CAM_04 also had the exposure change
+CAM_04_Experience_Centre_A --res 1920x1080
+CAM_05_Experience_Centre_B --res 1920x1080
+# CAD room: green felt pinboard for tech packs added on the south wall
+CAM_15_CAD_Room

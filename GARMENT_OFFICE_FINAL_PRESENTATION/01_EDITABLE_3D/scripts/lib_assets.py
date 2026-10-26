@@ -723,21 +723,22 @@ def whiteboard(w=72, h=40):
     return m
 
 
-def pinboard_wall(w, h, seed=5):
-    """Linen-covered pinboard with mood-board swatches (plain colour cards, no imagery invented)."""
+def pinboard_wall(w, h, seed=5, board='pinboard_linen', palette=None, card_w=(7, 12), card_h=(6, 11), gap_x=(1.5, 4), gap_z=(1, 3)):
+    """Pinboard (linen by default) with plain cards: colour swatches for mood boards, blank sheets for tech packs
+    (no imagery invented)."""
     m = MB()
     rnd = random.Random(seed)
-    m.box(-w / 2, w / 2, -0.75, 0.75, 0, h, 'pinboard_linen', bevel=0.2)
-    palette = ['g_navy', 'g_white', 'g_heather', 'g_olive', 'g_sand', 'g_rust', 'g_sage', 'g_blush', 'g_green', 'g_denim', 'paper', 'g_black']
+    m.box(-w / 2, w / 2, -0.75, 0.75, 0, h, board, bevel=0.2)
+    palette = palette or ['g_navy', 'g_white', 'g_heather', 'g_olive', 'g_sand', 'g_rust', 'g_sage', 'g_blush', 'g_green', 'g_denim', 'paper', 'g_black']
     x = -w / 2 + 3
-    while x < w / 2 - 10:
-        col_w = rnd.uniform(7, 12)
+    while x < w / 2 - card_w[1] + 2:
+        col_w = rnd.uniform(*card_w)
         z = rnd.uniform(4, 9)
-        while z < h - 10:
-            ch = rnd.uniform(6, 11)
+        while z < h - card_h[1] + 1:
+            ch = rnd.uniform(*card_h)
             m.box(x, x + col_w, -0.9, -0.75, z, z + ch, rnd.choice(palette))
-            z += ch + rnd.uniform(1, 3)
-        x += col_w + rnd.uniform(1.5, 4)
+            z += ch + rnd.uniform(*gap_z)
+        x += col_w + rnd.uniform(*gap_x)
     return m
 
 
