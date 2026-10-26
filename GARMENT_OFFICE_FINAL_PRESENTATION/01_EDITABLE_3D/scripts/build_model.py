@@ -243,6 +243,24 @@ def flight(m, x0, x1, y0, y1, axis, direction, z0, risers, rise):
         else:
             a = x0 + i * S.TREAD if direction > 0 else x1 - (i + 1) * S.TREAD
             m.box(a, a + S.TREAD, -y1, -y0, max(0, top - 8), top, "terrazzo_counter")
+    # plastered waist slab under the steps (smooth sloped soffit instead of the stepped underside of the tread blocks);
+    # its top runs through the front-bottom corners of the treads, its underside 2 in below their back-bottom corners
+    # (0.5 in wider and longer than the treads, so no face is coplanar with a tread block: coplanar faces render black)
+    L, slope, e = risers * S.TREAD, rise / S.TREAD, 0.5
+    zu = (z0 + rise - 8 - slope * e, z0 + rise - 8 + slope * (L + e))
+    zl = (zu[0] - rise - 2, zu[1] - rise - 2)
+    if axis == "y":
+        p = (y0 - e, y0 + L + e) if direction > 0 else (y1 + e, y1 - L - e)
+        P_ = lambda c, k, z: (c, -p[k], z)                       # noqa: E731  c = across-flight coordinate
+        ca, cb = x0 - e, x1 + e
+    else:
+        p = (x0 - e, x0 + L + e) if direction > 0 else (x1 + e, x1 - L - e)
+        P_ = lambda c, k, z: (p[k], -c, z)                       # noqa: E731
+        ca, cb = y0 - e, y1 + e
+    v = [P_(ca, 0, zl[0]), P_(cb, 0, zl[0]), P_(cb, 0, zu[0]), P_(ca, 0, zu[0]),
+         P_(ca, 1, zl[1]), P_(cb, 1, zl[1]), P_(cb, 1, zu[1]), P_(ca, 1, zu[1])]
+    _, faces = m._add(v, [(0, 1, 2, 3), (4, 7, 6, 5), (0, 4, 5, 1), (3, 2, 6, 7), (0, 3, 7, 4), (1, 5, 6, 2)], "paint_white")
+    bmesh.ops.recalc_face_normals(m.bm, faces=faces)
 
 
 def build_stairs():

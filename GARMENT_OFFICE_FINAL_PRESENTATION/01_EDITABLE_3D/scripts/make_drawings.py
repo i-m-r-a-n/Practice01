@@ -412,7 +412,7 @@ def zoning_plan():
     svg.add('<polyline points="' + " ".join(f"{x},{y}" for x, y in exe) + '" fill="none" stroke="#7A4E2D" stroke-width="4" stroke-dasharray="6 6" opacity="0.9"/>')
     legend = [(f'<rect x="{{x}}" y="{{y}}" width="22" height="12" fill="{c}"/>', n) for n, c in
               [(v[0], v[1]) for v in ZONE_GROUP.values()]]
-    legend += [('<line x1="{x}" y1="{y}" x2="{x2}" y2="{y}" stroke="#B5462E" stroke-width="6"/>', "Visitor route: gate - lobby - reception - passage - experience centre - boardroom"),
+    legend += [('<line x1="{x}" y1="{y}" x2="{x2}" y2="{y}" stroke="#B5462E" stroke-width="6"/>', "Visitor route: gate - lobby - reception - experience centre - boardroom"),
                ('<line x1="{x}" y1="{y}" x2="{x2}" y2="{y}" stroke="#26673D" stroke-width="6"/>', "Staff route: gate - staff corridor - offices - hallway - design wing"),
                ('<line x1="{x}" y1="{y}" x2="{x2}" y2="{y}" stroke="#7A4E2D" stroke-width="6"/>', "Executive link: reception - executive suite - boardroom")]
     return svg.save("ID-02_zoning_plan.svg", legend, ["Zoning follows the client's office programme, the company profile departments and",

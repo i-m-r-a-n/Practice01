@@ -32,10 +32,11 @@ Scope: ground floor only, office use only (corporate headquarters + design devel
 | `render_queue.sh` | sequential final render queue (resumable, skips finished images) |
 | `render_queue2.sh` | second pass: re-renders views done before the last model fixes, then the Cycles top plan |
 | `verify_geometry.py` | checkpoint A: measures the model and compares with the survey values |
-| `verify_files.py`, `verify_all.sh` | reopen the delivered .blend (lone copy), re-import the .glb, run the geometry check; writes `verification_results.md` |
+| `verify_files.py`, `verify_deck.py`, `verify_all.sh` | reopen the delivered .blend (lone copy), re-import the .glb, run the geometry check, check the PDF / PPTX and that every deck image is one of this project's renders; writes `verification_results.md` |
 | `make_drawings.py` + `export_drawings.js` | 2D drawings (SVG) and their PNG / PDF export (Node + Playwright) |
 | `make_schedules.py`, `material_board.py` | schedules (CSV/MD) and the material board render |
-| `make_presentation.py` + `export_presentation.js` | 18-slide deck (HTML -> PDF) and editable PPTX |
+| `make_presentation.py` + `export_presentation.js` | 18-slide deck (HTML -> PDF) and editable PPTX (`deck_manifest.json` lists every render shown and its caption) |
+| `make_render_index.py` | `02_RENDERED_IMAGES/README.md` (index of all views) and `final_contact_sheet.jpg` |
 | `fetch_assets.py` | re-downloads the CC0 assets if the assets folder is missing |
 
 ## Resume in a new cloud session
@@ -47,7 +48,8 @@ Scope: ground floor only, office use only (corporate headquarters + design devel
    delivery files: `... build_model.py -- 01_EDITABLE_3D --pack`, then `01_EDITABLE_3D/scripts/verify_all.sh`
 4. Render: `01_EDITABLE_3D/scripts/render_queue.sh` (edit the paths at the top if the folder moved).
 5. Drawings / schedules / deck: `python3 make_drawings.py ../../02_RENDERED_IMAGES/plans && node export_drawings.js ../../02_RENDERED_IMAGES/plans`,
-   `python3 make_schedules.py ../../04_DOCUMENTATION`, `python3 make_presentation.py ../.. && node export_presentation.js ../../03_PRESENTATION`.
+   `python3 make_schedules.py ../../04_DOCUMENTATION`, `python3 make_presentation.py ../.. && node export_presentation.js ../../03_PRESENTATION`,
+   `python3 make_render_index.py ../..`, then `./verify_all.sh` (checks model files and deck, rewrites `verification_results.md`).
 
 ## To change a measurement
 
