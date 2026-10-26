@@ -53,6 +53,8 @@ plotter,Large-format plotter,1,1575 x 660,procedural (parametric Blender model),
 post_bench,Post-processing bench with sink,1,2794 x 610,procedural (parametric Blender model),Z16
 printer3d,Enclosed 3D printer,4,508 x 508,procedural (parametric Blender model),Z16
 printer_bench,3D printer bench,1,3302 x 610,procedural (parametric Blender model),Z16
+quran_shelf,"Book shelf, oak (prayer room)",1,1524 x 305,procedural (parametric Blender model),Z23
+quran_shelf_f,"Book shelf, oak (prayer room)",1,1016 x 254,procedural (parametric Blender model),Z25
 reception_desk,"Reception counter 2750 mm, fluted oak, terrazzo top, accessible low section",1,2794 x 940,procedural (parametric Blender model),Z02
 review_counter,"Sample review counter 6860 mm, terrazzo top",1,6858 x 457,procedural (parametric Blender model),Z07
 rug_lounge,"Rug, wool",1,3048 x 2286,procedural (parametric Blender model),Z21

@@ -331,96 +331,112 @@ try:
         f.solid()
         f.fore_color.rgb = color
 
+    def table(sl, rows, x, y, w, row_h=46, size=12):
+        tbl = sl.shapes.add_table(len(rows), len(rows[0]), Emu(x * PX), Emu(y * PX), Emu(w * PX), Emu(row_h * len(rows) * PX)).table
+        for r, row in enumerate(rows):
+            for c, val in enumerate(row):
+                cell = tbl.cell(r, c)
+                cell.fill.solid()
+                cell.fill.fore_color.rgb = RGBColor(0xFF, 0xFF, 0xFF) if r else RGBColor(0xEE, 0xEA, 0xE2)
+                cell.text = str(val)
+                for p in cell.text_frame.paragraphs:
+                    for run in p.runs:
+                        run.font.size = Pt(size if r else size - 2)
+                        run.font.bold = (r == 0) or (c == 0)
+                        run.font.name = "Inter"
+                        run.font.color.rgb = GREEN if (r == 0 or c == 0) else INK
+
+    def panel(sl, x, y, w, h, color):
+        shp = sl.shapes.add_shape(1, Emu(x * PX), Emu(y * PX), Emu(w * PX), Emu(h * PX))
+        shp.fill.solid()
+        shp.fill.fore_color.rgb = color
+        shp.line.fill.background()
+        return shp
+
     for n, s in enumerate(SPEC, 1):
         sl = prs.slides.add_slide(blank)
         bg(sl, LIGHT)
         t = s["type"]
-        if t in ("cover", "hero", "full"):
+        WHITE, MINT = RGBColor(0xFF, 0xFF, 0xFF), RGBColor(0x9F, 0xD3, 0xB0)
+        if t == "cover":
             pic(sl, s["image"], 0, 0, 1920, 1080)
-            tx, ty = (80, 330) if t == "cover" else ((80, 70) if t == "full" else (80, 640))
-            shape = sl.shapes.add_shape(1, Emu((tx - 30) * PX), Emu((ty - 30) * PX), Emu(980 * PX), Emu((520 if t == "cover" else 330) * PX))
-            shape.fill.solid()
-            shape.fill.fore_color.rgb = RGBColor(0x14, 0x24, 0x1B) if t != "full" else LIGHT
-            shape.line.fill.background()
-            col = RGBColor(0xFF, 0xFF, 0xFF) if t != "full" else INK
-            box(sl, tx, ty, 900, 40, s["eyebrow"].upper(), 14, True, RGBColor(0x9F, 0xD3, 0xB0) if t != "full" else GREEN)
-            box(sl, tx, ty + 40, 900, 220, s["title"], 40 if t == "cover" else 32, True, col)
-            if t == "cover":
-                box(sl, tx, ty + 300, 900, 120, s["sub"], 16, False, RGBColor(0xD9, 0xE2, 0xDC))
-                for i, lg in enumerate(("logo_zara_fashion_profile.png", "logo_stage2_ltd.png", "logo_stage2_unit1.png")):
-                    sl.shapes.add_picture(os.path.join(ASSET, lg), Emu((80 + i * 260) * PX), Emu(80 * PX), height=Emu(64 * PX))
+            panel(sl, 0, 0, 1040, 1080, RGBColor(0x14, 0x24, 0x1B))
+            panel(sl, 60, 60, 900, 110, WHITE)
+            for i, (lg, wpx) in enumerate((("logo_zara_fashion_profile.png", 250), ("logo_stage2_ltd.png", 250), ("logo_stage2_unit1.png", 250))):
+                sl.shapes.add_picture(os.path.join(ASSET, lg), Emu((80 + i * 290) * PX), Emu(78 * PX), width=Emu(wpx * PX))
+            box(sl, 80, 300, 900, 40, s["eyebrow"].upper(), 13, True, MINT)
+            box(sl, 80, 350, 900, 420, s["title"], 36, True, WHITE)
+            box(sl, 80, 790, 900, 120, s["sub"], 15, False, RGBColor(0xD9, 0xE2, 0xDC))
+            sl.shapes.add_picture(os.path.join(ASSET, "tagline_quality_compliance_commitment.png"), Emu(80 * PX), Emu(930 * PX), width=Emu(620 * PX))
+        elif t == "hero":
+            pic(sl, s["image"], 0, 0, 1920, 1080)
+            panel(sl, 0, 600, 1920, 480, RGBColor(0x14, 0x24, 0x1B))
+            box(sl, 80, 640, 1500, 40, s["eyebrow"].upper(), 13, True, MINT)
+            box(sl, 80, 690, 1600, 170, s["title"], 32, True, WHITE)
+            box(sl, 80, 870, 1500, 120, s["text"], 15, False, RGBColor(0xD9, 0xE2, 0xDC))
+        elif t == "full":
+            pic(sl, s["image"], 0, 0, 1920, 1080)
+            panel(sl, 50, 50, 720, 330, LIGHT)
+            box(sl, 80, 76, 660, 40, s["eyebrow"].upper(), 13, True, GREEN)
+            box(sl, 80, 120, 660, 130, s["title"], 26, True, INK)
+            box(sl, 80, 260, 660, 110, s["text"], 13, False, GREY)
+        elif t == "room":
+            box(sl, 80, 96, 580, 40, s["eyebrow"].upper(), 13, True, GREEN)
+            box(sl, 80, 136, 580, 240, s["title"], 24, True)
+            box(sl, 80, 400, 580, 620, [s["text"], ""] + ["- " + b for b in s["bullets"]], 14, False, GREY)
+            ims = s["images"]
+            lay = s.get("layout", "1+2")
+            if lay == "1":
+                pic(sl, ims[0], 700, 104, 1140, 896)
+            elif lay == "2":
+                pic(sl, ims[0], 700, 104, 1140, 440)
+                pic(sl, ims[1], 700, 560, 1140, 440)
             else:
-                box(sl, tx, ty + 200, 900, 120, s.get("text", ""), 16, False, col)
-        else:
-            box(sl, 80, 96, 1500, 40, s["eyebrow"].upper(), 14, True, GREEN)
-            box(sl, 80, 130, 1100 if t != "plan" else 1000, 140, s["title"], 30, True)
-            if t == "room":
-                body = [s["text"]] + ["- " + b for b in s["bullets"]]
-                box(sl, 80, 300, 560, 700, body, 15, False, GREY)
-                ims = s["images"]
-                lay = s.get("layout", "1+2")
-                if lay == "1":
-                    pic(sl, ims[0], 700, 104, 1140, 896)
-                elif lay == "2":
-                    pic(sl, ims[0], 700, 104, 1140, 440)
-                    pic(sl, ims[1], 700, 560, 1140, 440)
-                else:
-                    pic(sl, ims[0], 700, 104, 1140, 560)
-                    pic(sl, ims[1], 700, 680, 562, 320)
-                    pic(sl, ims[2], 1278, 680, 562, 320)
-            elif t == "cards":
-                for i, (ct, cd) in enumerate(s["cards"]):
-                    x, y = 80 + (i % 3) * 600, 320 + (i // 3) * 300
-                    shp = sl.shapes.add_shape(1, Emu(x * PX), Emu(y * PX), Emu(560 * PX), Emu(260 * PX))
-                    shp.fill.solid()
-                    shp.fill.fore_color.rgb = RGBColor(0xFF, 0xFF, 0xFF)
-                    shp.line.fill.background()
-                    box(sl, x + 24, y + 20, 510, 50, (f"{i + 1:02d}  " if s.get("numbered") else "") + ct, 20, True, GREEN)
-                    box(sl, x + 24, y + 80, 510, 170, cd, 14, False, GREY)
-                if s.get("image"):
-                    pic(sl, s["image"], 1280, 620, 560, 250)
-            elif t == "plan":
-                pic(sl, (s["plan"], ""), 80, 56, 680, 962)
-                y = 300
-                if s.get("text"):
-                    box(sl, 830, y, 1010, 120, s["text"], 15, False, GREY)
-                    y += 120
-                if s.get("table"):
-                    rows = s["table"]
-                    tbl = sl.shapes.add_table(len(rows), len(rows[0]), Emu(830 * PX), Emu(y * PX), Emu(1010 * PX), Emu(40 * len(rows) * PX)).table
-                    for r, row in enumerate(rows):
-                        for c, val in enumerate(row):
-                            cell = tbl.cell(r, c)
-                            cell.text = str(val)
-                            for p in cell.text_frame.paragraphs:
-                                for run in p.runs:
-                                    run.font.size = Pt(12)
-                    y += 40 * len(rows) + 20
-                if s.get("bullets"):
-                    box(sl, 830, y, 1010, 300, ["- " + b for b in s["bullets"]], 15, False, GREY)
-                if s.get("image"):
-                    pic(sl, s["image"], 830, 640, 1010, 360)
-                if s.get("note"):
-                    box(sl, 830, 930, 1010, 80, s["note"], 11, False, GREY)
-            elif t == "grid":
-                for i, im in enumerate(s["images"]):
-                    pic(sl, im, 80 + (i % 3) * 593, 280 + (i // 3) * 362, 573, 342)
-            elif t in ("materials", "table"):
-                rows = s["table"]
-                w = 620 if t == "materials" else 1760
-                tbl = sl.shapes.add_table(len(rows), len(rows[0]), Emu(80 * PX), Emu(300 * PX), Emu(w * PX), Emu(48 * len(rows) * PX)).table
-                for r, row in enumerate(rows):
-                    for c, val in enumerate(row):
-                        cell = tbl.cell(r, c)
-                        cell.text = str(val)
-                        for p in cell.text_frame.paragraphs:
-                            for run in p.runs:
-                                run.font.size = Pt(12)
-                box(sl, 80, 960, 1500, 50, s["note"], 11, False, GREY)
-                if t == "materials":
-                    pic(sl, s["image"], 760, 104, 1080, 896)
-        box(sl, 80, 1040, 1300, 30, "STAGE II KNITTING APPAREL / ZARA FASHION  |  Ground-floor corporate office - interior design proposal", 9, False, GREY)
-        box(sl, 1760, 1040, 100, 30, f"{n:02d} / {len(SPEC)}", 9, False, GREY)
+                pic(sl, ims[0], 700, 104, 1140, 560)
+                pic(sl, ims[1], 700, 680, 562, 320)
+                pic(sl, ims[2], 1278, 680, 562, 320)
+        elif t == "cards":
+            box(sl, 80, 96, 1500, 40, s["eyebrow"].upper(), 13, True, GREEN)
+            box(sl, 80, 136, 1500, 120, s["title"], 28, True)
+            for i, (ct, cd) in enumerate(s["cards"]):
+                x, y = 80 + (i % 3) * 600, 320 + (i // 3) * 300
+                panel(sl, x, y, 560, 270, WHITE)
+                box(sl, x + 24, y + 22, 510, 50, (f"{i + 1:02d}   " if s.get("numbered") else "") + ct, 19, True, GREEN)
+                box(sl, x + 24, y + 86, 510, 170, cd, 14, False, GREY)
+            if s.get("image"):
+                pic(sl, s["image"], 1280, 620, 560, 270)
+        elif t == "plan":
+            pic(sl, (s["plan"], ""), 80, 56, 680, 962)
+            box(sl, 830, 96, 1010, 40, s["eyebrow"].upper(), 13, True, GREEN)
+            box(sl, 830, 136, 1010, 130, s["title"], 26, True)
+            y = 290
+            if s.get("text"):
+                box(sl, 830, y, 1010, 110, s["text"], 14, False, GREY)
+                y += 120
+            if s.get("table"):
+                table(sl, s["table"], 830, y, 1010)
+                y += 46 * len(s["table"]) + 24
+            if s.get("bullets"):
+                box(sl, 830, y, 1010, 320, ["- " + b for b in s["bullets"]], 14, False, GREY)
+            if s.get("image"):
+                pic(sl, s["image"], 830, 640, 1010, 360)
+            if s.get("note"):
+                box(sl, 830, 940, 1010, 70, s["note"], 11, False, GREY)
+        elif t == "grid":
+            box(sl, 80, 96, 1500, 40, s["eyebrow"].upper(), 13, True, GREEN)
+            box(sl, 80, 136, 1700, 120, s["title"], 28, True)
+            for i, im in enumerate(s["images"]):
+                pic(sl, im, 80 + (i % 3) * 593, 280 + (i // 3) * 362, 573, 342)
+        elif t in ("materials", "table"):
+            w = 640 if t == "materials" else 1760
+            box(sl, 80, 96, w, 40, s["eyebrow"].upper(), 13, True, GREEN)
+            box(sl, 80, 136, w, 120, s["title"], 28, True)
+            table(sl, s["table"], 80, 290, w, 50 if t == "table" else 46, 12 if t == "materials" else 13)
+            box(sl, 80, 950, w, 60, s["note"], 11, False, GREY)
+            if t == "materials":
+                pic(sl, s["image"], 760, 104, 1080, 896)
+        box(sl, 80, 1036, 1300, 30, "STAGE II KNITTING APPAREL / ZARA FASHION  |  Ground-floor corporate office - interior design proposal", 9, False, GREY)
+        box(sl, 1740, 1036, 120, 30, f"{n:02d} / {len(SPEC)}", 9, False, GREY)
     prs.save(os.path.join(OUT, "Garment_Office_Design_Pitch.pptx"))
     print("pptx saved")
 except Exception as e:  # keep the PDF path working even if python-pptx fails

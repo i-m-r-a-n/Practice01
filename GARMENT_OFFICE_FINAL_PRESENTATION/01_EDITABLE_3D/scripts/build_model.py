@@ -664,6 +664,47 @@ def window_blinds():
             box_obj(f"{oid} blind cassette", C["Windows"], w["c0"] - 3.5, w["c0"] - 1, a, b, S.LINTEL + 2, S.LINTEL + 5, "alu_black")
 
 
+
+# ------------------------------------------------------------------------------------------ 3D dimensions (hidden in renders)
+def ftin(v):
+    v = round(v)
+    return f"{v // 12}'-{v % 12}\""
+
+
+def dim3d(tag, p, q, off, label, z=150):
+    D = C["Dimensions"]
+    t = 2.5
+    if abs(p[1] - q[1]) < 1e-6:
+        y = p[1] + off
+        box_obj(f"DIM {tag}", D, p[0], q[0], y - t / 2, y + t / 2, z, z + 1, "dim")
+        for x in (p[0], q[0]):
+            box_obj(f"DIM {tag} tick", D, x - t / 2, x + t / 2, y - 14, y + 14, z, z + 1, "dim")
+        text(f"DIM {tag} text", D, label, (p[0] + q[0]) / 2, y - 22, z, 20)
+    else:
+        x = p[0] + off
+        box_obj(f"DIM {tag}", D, x - t / 2, x + t / 2, p[1], q[1], z, z + 1, "dim")
+        for y in (p[1], q[1]):
+            box_obj(f"DIM {tag} tick", D, x - 14, x + 14, y - t / 2, y + t / 2, z, z + 1, "dim")
+        text(f"DIM {tag} text", D, label, x - 24, (p[1] + q[1]) / 2, z, 20, rot=math.pi / 2)
+
+
+def dimensions():
+    lab = lambda v, a=False: f'{ftin(v)} ({v:g}" = {v * 25.4:,.0f} mm)' + ("  ASSUMED" if a else "")
+    F = S.FRONT
+    dim3d("room 1 width", (0, F), (300, F), 70, lab(300))
+    dim3d("room 3 width", (305, F), (565, F), 70, lab(260))
+    dim3d("room 4 width", (570, F), (1088, F), 70, lab(518))
+    dim3d("front overall", (-10, F + 10), (1098, F + 10), 140, lab(1108))
+    dim3d("front row depth", (-10, 0), (-10, F), -110, lab(247))
+    dim3d("middle block depth", (-65, S.MID_N), (-65, S.MID_S), -60, lab(881))
+    dim3d("west overall", (-65, S.MID_N - 10), (-65, F + 10), -150, lab(1158))
+    dim3d("room 8 length", (S.R8_E + 10, S.R8_N), (S.R8_E + 10, S.MID_S), 70, lab(1538))
+    dim3d("east overall", (S.R8_E + 10, S.R8_N - 10), (S.R8_E + 10, F + 10), 150, lab(1815))
+    dim3d("room 8 width", (S.R8_W, S.R8_N - 10), (S.R8_E, S.R8_N - 10), -70, lab(450, True))
+    dim3d("rooms 5 6 width", (367, S.MID_N - 10), (866, S.MID_N - 10), -70, lab(499))
+    dim3d("room 7 upper width", (46, S.MID_N - 10), (S.R7_E, S.MID_N - 10), -150, lab(316))
+    C["Dimensions"].hide_render = True
+
 # ------------------------------------------------------------------------------------------ cameras
 def cameras():
     import cameras as CAM
@@ -751,6 +792,7 @@ def main():
         window_blinds()
         tile_linings()
         wall_clocks(lib)
+    dimensions()
     cams = cameras()
     render_settings()
     sc = bpy.context.scene
@@ -758,6 +800,8 @@ def main():
     C["Dimensions"].hide_render = True
     stem = "Final_Office_Interior" if not SHELL_ONLY else "Shell_Verified"
     blend = os.path.join(OUT, stem + ".blend")
+    if "--pack" in ARGV:                 # self-contained delivery file (all textures inside the .blend)
+        bpy.ops.file.pack_all()
     bpy.ops.wm.save_as_mainfile(filepath=blend, compress=True, relative_remap=True)
     log("saved", blend, round(os.path.getsize(blend) / 1e6, 1), "MB")
     if not NO_GLB:

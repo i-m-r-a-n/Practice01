@@ -90,7 +90,7 @@ def setup_engine(cam):
             sc.view_settings.look = "AgX - Base Contrast"
         except Exception:
             pass
-        sc.view_settings.exposure = float(arg("--exposure", cam.get("exposure") or "0.35"))
+        sc.view_settings.exposure = float(arg("--exposure", cam.get("exposure") or "0.6"))
     sc.render.film_transparent = False
 
 
