@@ -4,20 +4,20 @@ Source of all measured values: the client's hand-measured site sketches (overvie
 
 | id | element | written on sketch | value used | status | basis / note |
 |---|---|---|---|---|---|
-| R1D | Room 1: Depth | 236 (room 1 sketch) / 249 (room 3 sketch) | 247 in (6,274 mm) | RESOLVED | A-100 - front-row line shared with rooms 3 and 4 |
+| R1D | Room 1: Depth | 236 (room 1 sketch) / 249 (room 3 sketch) | 247 in (6,274 mm) | RESOLVED | Survey reconstruction - front-row line shared with rooms 3 and 4 |
 | R3W | Room 3: Width | 255 / 265 | 260 in (6,604 mm) | RESOLVED | Room 3 sketch - mean of the two sides |
 | R3D | Room 3: Depth | 247 - 249 | 247 in (6,274 mm) | RESOLVED | Room 3 sketch |
 | R4D | Room 4: Depth | 244 / 242.5 (7.5 + 60 + 175) | 247 in (6,274 mm) | RESOLVED | Room 4 sketch - drawn on the front-row line, 3 - 4.5" over the measured depth |
 | R5W | Room 5: Width | 499 (49 + 450) / 504 | 499 in (12,675 mm) | RESOLVED | Room 5 sketch - aligned with room 6 |
 | R7WU | Room 7: Width, upper part | 234 (written) | 316 in (8,026 mm) | RESOLVED | Room 7 sketch - 252 + 64" jog; 234 does not fit the hallway (504) and rooms 5 / 6 (499) |
-| STW | Washroom row: Width | not measured | 96 in (2,438 mm) | ASSUMED | A-100 - outer wall in line with room 2 |
+| STW | Washroom row: Width | not measured | 96 in (2,438 mm) | ASSUMED | Survey reconstruction - outer wall in line with room 2 |
 | STL | Washroom row: Length | 160 + 30 + 174 + 30 + 134 + 64 + 57 = 649 | 660 in (16,764 mm) | RESOLVED | Room 7 sketch - 11" added to the first piece |
-| R8W | Room 8: Width | not measured | 450 in (11,430 mm) | ASSUMED | A-100 - north-east stair 273 + 5 + 172 |
-| NESD | North-east stair: Depth | not measured | 103 in (2,616 mm) | ASSUMED | A-100 - east wall 1538 minus measured pieces = depth + 2 piers |
-| R8G1 | Room 8: Wall between windows 3 and 4 | not written | 86 in (2,184 mm) | ASSUMED | A-100 |
-| R8G2 | Room 8: Wall between windows 4 and 5 | not written | 59 in (1,499 mm) | ASSUMED | A-100 |
-| WT1 | Walls: Inside wall thickness | not measured | 5 in (127 mm) | ASSUMED | A-100 |
-| WT2 | Walls: Outside wall and row wall thickness | not measured | 10 in (254 mm) | ASSUMED | A-100 |
+| R8W | Room 8: Width | not measured | 450 in (11,430 mm) | ASSUMED | Survey reconstruction - north-east stair 273 + 5 + 172 |
+| NESD | North-east stair: Depth | not measured | 103 in (2,616 mm) | ASSUMED | Survey reconstruction - east wall 1538 minus measured pieces = depth + 2 piers |
+| R8G1 | Room 8: Wall between windows 3 and 4 | not written | 86 in (2,184 mm) | ASSUMED | Survey reconstruction |
+| R8G2 | Room 8: Wall between windows 4 and 5 | not written | 59 in (1,499 mm) | ASSUMED | Survey reconstruction |
+| WT1 | Walls: Inside wall thickness | not measured | 5 in (127 mm) | ASSUMED | Survey reconstruction |
+| WT2 | Walls: Outside wall and row wall thickness | not measured | 10 in (254 mm) | ASSUMED | Survey reconstruction |
 | H01 | Heights: Floor to underside of steel deck | not measured | 114 in (2,896 mm) | PHOTO-EST | Site photos - 9'-6" |
 | H02 | Heights: Door and window head (lintel level) | not measured | 84 in (2,134 mm) | STANDARD |  - 7'-0" |
 | H03 | Heights: Main gate head | not measured | 96 in (2,438 mm) | PHOTO-EST | Site photos |

@@ -6,3 +6,5 @@ __pycache__/
 *.exr
 01_EDITABLE_3D/work/
 03_PRESENTATION/slide_png/
+02_RENDERED_IMAGES/final/render_status_*.json
+02_RENDERED_IMAGES/final/superseded/*.png

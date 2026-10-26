@@ -112,7 +112,7 @@ for ob in bpy.data.objects:
     check(f"{oid} opening width", "Openings", expect[oid], span, "Survey sketches (see dimension_schedule.csv)",
           note="D13 width STANDARD (not written)" if oid == "D13" else "")
     if oid in heights:
-        check(f"{oid} window height", "Openings", heights[oid], b[5] - b[4], "Survey sketches / A-100 window heights")
+        check(f"{oid} window height", "Openings", heights[oid], b[5] - b[4], "Survey sketches (window heights)")
 # ---------------------------------------------------------------- structure + stairs
 cols = [o for o in bpy.data.objects if o.name.startswith("COL")]
 check("Steel columns modelled (PHOTO-EST positions)", "Structure", 11, len(cols), "Site photos", tol=0)

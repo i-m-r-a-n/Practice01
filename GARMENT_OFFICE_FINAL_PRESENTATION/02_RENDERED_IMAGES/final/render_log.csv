@@ -1,3 +1,7 @@
 camera,engine,quality,res,samples,seconds,file
 CAM_ISO_SE,cycles,final,1920x1080,96,249.2,/home/user/Practice01/GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_ISO_SE.png
 CAM_04_Experience_Centre_A,cycles,final,1600x900,128,438.3,/home/user/Practice01/GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_04_Experience_Centre_A.png
+CAM_01_Reception_A,cycles,final,1600x900,128,408.9,/home/user/Practice01/GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_01_Reception_A.png
+CAM_09_Boardroom_A,cycles,final,1600x900,128,407.9,/home/user/Practice01/GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_09_Boardroom_A.png
+CAM_07_MD_Office_A,cycles,final,1600x900,128,353.8,/home/user/Practice01/GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_07_MD_Office_A.png
+CAM_11_Merchandising_A,cycles,final,1600x900,128,385.2,/home/user/Practice01/GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_11_Merchandising_A.png

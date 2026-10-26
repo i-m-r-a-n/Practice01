@@ -7,7 +7,7 @@ Scope: ground floor only, office use only (corporate headquarters + design devel
 
 | Folder | Contents |
 |---|---|
-| `01_EDITABLE_3D/Final_Office_Interior.blend` | editable Blender 5.2 model (textures are external in `01_EDITABLE_3D/assets/`, relative paths - keep the folder structure) |
+| `01_EDITABLE_3D/Final_Office_Interior.blend` | editable Blender 5.2 model; all 67 textures are packed inside the file (a lone copy reopened in an empty folder finds every texture - `verification_results.md`) |
 | `01_EDITABLE_3D/Final_Office_Interior.glb` | glTF binary export (textures embedded, cameras included) |
 | `01_EDITABLE_3D/scripts/` | all generation scripts (see below) |
 | `01_EDITABLE_3D/assets/` | CC0 textures and models (`LICENSES.md`), client logos cropped from the supplied business card / profile |
@@ -15,9 +15,9 @@ Scope: ground floor only, office use only (corporate headquarters + design devel
 | `02_RENDERED_IMAGES/final/` | final Cycles renders (1600 x 900 or 1920 x 1080), `render_log.csv` with times |
 | `02_RENDERED_IMAGES/previews/` | 960 x 540 preview renders of all 33 interior views |
 | `02_RENDERED_IMAGES/plans/` | drawings ID-01 to ID-04 as SVG, PNG and A3 PDF |
-| `03_PRESENTATION/` | `Garment_Office_Design_Pitch.pdf`, editable `.pptx`, HTML source |
+| `03_PRESENTATION/` | `Garment_Office_Design_Pitch.pdf`, editable `.pptx`, HTML source, `assets/` (renders, drawings, logos, finish swatches cropped from the material board render) |
 | `04_DOCUMENTATION/` | schedules (rooms, furniture, materials, lighting, dimensions), design notes, assumptions, technical coordination, geometry verification |
-| `05_PROJECT_HANDOFF/` | this README, `PROJECT_STATUS.md` |
+| `05_PROJECT_HANDOFF/` | this README, `PROJECT_STATUS.md`, `verification_results.md` |
 
 ## Scripts (run from any folder; Blender 5.2.3)
 
@@ -26,11 +26,13 @@ Scope: ground floor only, office use only (corporate headquarters + design devel
 | `survey.py` | survey data from the client's hand-measured sketches (all walls, openings, rooms, measurement schedule) - edit values here |
 | `office_layout.py` | fit-out data: partitions, doors, zones + finishes, furniture placements, ceilings, lights, AC, fire safety |
 | `lib_mesh.py`, `lib_assets.py`, `lib_materials.py` | mesh builder, parametric furniture / fixtures, PBR material library |
-| `build_model.py` | builds the whole model: `blender -b --factory-startup --python build_model.py -- OUT_DIR` (add `--no-glb` to skip the export) |
+| `build_model.py` | builds the whole model: `blender -b --factory-startup --python build_model.py -- OUT_DIR` (add `--no-glb` to skip the export, `--pack` to pack the textures into the .blend for delivery) |
 | `cameras.py` | the 38 camera views |
 | `render_views.py` | renders cameras: `blender -b MODEL.blend --python render_views.py -- --out DIR --quality preview|final --cams CAM_01_Reception_A,...` |
 | `render_queue.sh` | sequential final render queue (resumable, skips finished images) |
+| `render_queue2.sh` | second pass: re-renders views done before the last model fixes, then the Cycles top plan |
 | `verify_geometry.py` | checkpoint A: measures the model and compares with the survey values |
+| `verify_files.py`, `verify_all.sh` | reopen the delivered .blend (lone copy), re-import the .glb, run the geometry check; writes `verification_results.md` |
 | `make_drawings.py` + `export_drawings.js` | 2D drawings (SVG) and their PNG / PDF export (Node + Playwright) |
 | `make_schedules.py`, `material_board.py` | schedules (CSV/MD) and the material board render |
 | `make_presentation.py` + `export_presentation.js` | 18-slide deck (HTML -> PDF) and editable PPTX |
@@ -41,7 +43,8 @@ Scope: ground floor only, office use only (corporate headquarters + design devel
 1. Get the files: `git clone` the repository `i-m-r-a-n/Practice01` and check out branch `claude/magical-hopper-74q4xq`; the project is in `GARMENT_OFFICE_FINAL_PRESENTATION/`.
 2. Install Blender 5.2.3 (if missing): download the Linux x64 tarball from download.blender.org, extract to `/opt`, link
    `/usr/local/bin/blender`; for Workbench/EEVEE previews install the Mesa EGL libraries (`libegl1 libgl1 libglx-mesa0`).
-3. Rebuild: `blender -b --factory-startup --python 01_EDITABLE_3D/scripts/build_model.py -- 01_EDITABLE_3D/work`
+3. Rebuild: `blender -b --factory-startup --python 01_EDITABLE_3D/scripts/build_model.py -- 01_EDITABLE_3D/work` (working copy);
+   delivery files: `... build_model.py -- 01_EDITABLE_3D --pack`, then `01_EDITABLE_3D/scripts/verify_all.sh`
 4. Render: `01_EDITABLE_3D/scripts/render_queue.sh` (edit the paths at the top if the folder moved).
 5. Drawings / schedules / deck: `python3 make_drawings.py ../../02_RENDERED_IMAGES/plans && node export_drawings.js ../../02_RENDERED_IMAGES/plans`,
    `python3 make_schedules.py ../../04_DOCUMENTATION`, `python3 make_presentation.py ../.. && node export_presentation.js ../../03_PRESENTATION`.

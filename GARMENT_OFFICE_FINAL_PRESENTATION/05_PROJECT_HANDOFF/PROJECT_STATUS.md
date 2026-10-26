@@ -8,7 +8,8 @@ _Last updated: see the git log of branch `claude/magical-hopper-74q4xq` in `i-m-
   (`04_DOCUMENTATION/geometry_verification.md`).
 - Furnished office design for every room (34 zones), office use only, with partitions, doors, finishes, ceilings, lighting,
   AC units, fire-safety devices, client logos, plants and decor; editable Blender model with named collections.
-- GLB export (re-import verified, `verification_results.md`).
+- Delivery files rebuilt from the current scripts: packed `.blend` (67 of 67 textures inside, reopened as a lone copy) and
+  `.glb` (re-import PASS); geometry 75 / 75 on the delivered `.blend` (`verification_results.md`).
 - Drawings ID-01 furnished + dimensioned plan, ID-02 zoning + routes, ID-03 reflected ceiling + lighting, ID-04 power / data
   / fire (SVG, PNG, A3 PDF).
 - Schedules: rooms, furniture, materials, lighting, dimensions; design notes; dimensional assumptions; technical coordination;
@@ -18,9 +19,11 @@ _Last updated: see the git log of branch `claude/magical-hopper-74q4xq` in `i-m-
 
 ## Render status
 
-See `02_RENDERED_IMAGES/final/render_log.csv` (one row per finished final render with time in seconds). Final renders are
-produced by `01_EDITABLE_3D/scripts/render_queue.sh` in this order: overall isometric, 16 key views, 17 other room views,
-3 more isometric views. Views without a final render use the preview image (captioned "preview render" in the deck).
+`02_RENDERED_IMAGES/final/render_log.csv` has one row per finished final render (camera, resolution, samples, seconds).
+Final renders come from `01_EDITABLE_3D/scripts/render_queue.sh` (overall isometric, 16 key views, 17 other room views,
+3 more isometric views), then `render_queue2.sh` (re-renders CAM_04, CAM_01 and CAM_07, which were rendered before the
+rug and exposure fixes, and the Cycles top plan). Superseded images are moved to `02_RENDERED_IMAGES/final/superseded/`.
+Views without a final render use the preview image, and the deck captions those "(preview render)".
 
 ## Remaining / next steps
 

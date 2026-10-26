@@ -23,6 +23,10 @@ PLANS = os.path.join(ROOT, "02_RENDERED_IMAGES", "plans")
 BRAND = os.path.join(ROOT, "01_EDITABLE_3D", "assets", "brand")
 USED = {}
 E = html.escape
+# finish codes and names as on the material board (material_board.py); swatches are crops of that render
+FIN = {"TZ-01": "Terrazzo floor", "WD-01": "Oak herringbone", "CP-01": "Carpet tile", "WD-02": "Oak-look plank", "PT-01": "Porcelain tile",
+       "WO-01": "White-oak slats", "WO-02": "Smoked walnut", "SS-01": "Quartz / terrazzo top", "PA-01": "Warm white paint", "PA-02": "Brand green",
+       "UP-01s": "Sand fabric", "UP-01g": "Green fabric", "UP-02": "Cognac leather", "AC-01": "Acoustic felt", "MT-02": "Brushed brass"}
 
 
 def img(cam):
@@ -62,11 +66,13 @@ SPEC = [
          title="Premium International Fashion Corporate Headquarters & Design Development Centre",
          sub=["Stage II Knitting Apparel Ltd.  ·  Stage II Knitting Apparel Unit-1  ·  Zara Fashion", "Holding 329/2, Ward 15, Vogra, Bason, Gazipur"]),
     dict(type="room", eyebrow="Project vision", title="One floor that tells the story from yarn to buyer-ready collection",
-         text="The ground floor becomes the face of the company: a calm, premium headquarters where international buyers meet the brand, management "
-              "works in comfort and the Global Design Studio turns trends into production-ready products - with no production on this floor.",
+         text="The face of the company: a calm, premium headquarters where buyers meet the brand, management works in comfort "
+              "and the design team turns trends into products - with no production on this floor.",
          bullets=["Visitor journey: lobby - reception - experience centre - boardroom", "Executive suite and administration beside the visitor zone",
-                  "Design-development wing: studio, CAD, fabric library, 3D lab, sample room", "Staff cafe, lounge / training, prayer rooms and washrooms"],
-         images=[("CAM_02_Reception_B", "Reception and visitor waiting")], layout="1"),
+                  "Design wing, staff cafe, lounge / training and prayer rooms behind"],
+         images=[("CAM_02_Reception_B", "Reception and visitor waiting")], layout="1",
+         stats=[("34", "rooms and zones designed"), ("54", "work seats incl. growth and guests"),
+                ("707 sft", "experience centre at the heart"), ("75 / 75", "survey dimension checks passed")]),
     dict(type="cards", eyebrow="Design philosophy", title="Six principles behind every decision", numbered=True,
          cards=[("Modernity", "Clean planes, slim black-aluminium glass, an exposed and painted structure - an honest contemporary shell."),
                 ("Functionality", "Clear zoning: visitors, executives, administration, design development and staff support each have their place."),
@@ -92,32 +98,38 @@ SPEC = [
          text="Guests step down from the gate into a terrazzo lobby with a security desk and the group's three logos on an oak brand wall, then into a warm reception.",
          bullets=["Fluted white-oak counter, terrazzo ledge, accessible 760 mm section", "Backlit logo plate on a fluted oak wall",
                   "Waiting lounge under an oak slat raft and a brass halo", "Glass between lobby and reception"],
-         images=[("CAM_01_Reception_A", "Reception"), ("CAM_02_Reception_B", "Reception - waiting"), ("CAM_03_Entrance_Lobby", "Entrance lobby - brand wall")]),
+         images=[("CAM_01_Reception_A", "Reception"), ("CAM_02_Reception_B", "Reception - waiting"), ("CAM_03_Entrance_Lobby", "Entrance lobby - brand wall")],
+         finishes=["TZ-01", "WO-01", "SS-01", "MT-02"]),
     dict(type="room", eyebrow="Experience centre", title="Where buyers meet the product",
          text="At the centre of the floor, between reception and boardroom, the experience centre tells the company story and shows the collection.",
          bullets=["Brand-story wall with the client's logos and tagline", "Four garment bays: deep green backs, brass rails, LED shelves",
                   "Mannequin plinth and 'yarn to garment' touch table", "Track lights fixed to the existing beams", "Glass views into boardroom and fabric library"],
-         images=[("CAM_04_Experience_Centre_A", "Experience centre"), ("CAM_05_Experience_Centre_B", "Experience centre - story wall"), ("CAM_06_Experience_Centre_Detail", "Display detail")]),
+         images=[("CAM_04_Experience_Centre_A", "Experience centre"), ("CAM_05_Experience_Centre_B", "Experience centre - story wall"), ("CAM_06_Experience_Centre_Detail", "Display detail")],
+         finishes=["TZ-01", "PA-02", "WO-01", "MT-02"]),
     dict(type="room", eyebrow="Executive office", title="Managing Director's office",
          text="A quiet, warm executive suite next to the reception, reached through the PA and executive waiting area and a glass executive corridor.",
          bullets=["2.1 m smoked-walnut desk, cognac leather chair", "Walnut feature wall with the company logo", "Lounge corner for informal meetings",
                   "Oak herringbone floor, oak slat raft and halo light", "Direct link from the executive suite to the boardroom"],
-         images=[("CAM_07_MD_Office_A", "MD office"), ("CAM_08_MD_Office_B", "MD office - lounge corner"), ("CAM_17_Executive_Reception", "Executive reception (PA)")]),
+         images=[("CAM_07_MD_Office_A", "MD office"), ("CAM_08_MD_Office_B", "MD office - lounge corner"), ("CAM_17_Executive_Reception", "Executive reception (PA)")],
+         finishes=["WD-01", "WO-02", "UP-02", "UP-01s"]),
     dict(type="room", eyebrow="Boardroom", title="A boardroom for international buyers",
          text="Fifteen seats around a 6.1 m walnut table, between the reception, the executive suite and the experience centre.",
          bullets=["86 in screen on an oak slat media wall", "Green felt acoustic rafts set between the existing beams", "Walnut acoustic slat wall, herringbone oak floor",
                   "Power/data trough in the table; privacy curtains recommended on the glass"],
-         images=[("CAM_09_Boardroom_A", "Boardroom"), ("CAM_10_Boardroom_B", "Boardroom - towards the experience centre")], layout="2"),
+         images=[("CAM_09_Boardroom_A", "Boardroom"), ("CAM_10_Boardroom_B", "Boardroom - towards the experience centre")], layout="2",
+         finishes=["WD-01", "WO-02", "AC-01", "WO-01"]),
     dict(type="room", eyebrow="Main office", title="Workplaces that work",
          text="Merchandising, commercial & accounts and HR & admin share one desk family and one light and acoustic language.",
          bullets=["48 dedicated workstations + 6 guest seats (about 50 % growth)", "1400 x 700 mm bench desks, green felt screens, task chairs",
                   "Team table and sample-review counter for merchandisers", "Felt baffles between the beams, 4000 K linear light"],
-         images=[("CAM_11_Merchandising_A", "Merchandising open office"), ("CAM_12_Merchandising_B", "Merchandising - team table"), ("CAM_16_Commercial_Accounts", "Commercial & accounts")]),
+         images=[("CAM_11_Merchandising_A", "Merchandising open office"), ("CAM_12_Merchandising_B", "Merchandising - team table"), ("CAM_16_Commercial_Accounts", "Commercial & accounts")],
+         finishes=["CP-01", "AC-01", "UP-01g", "PA-01"]),
     dict(type="room", eyebrow="Design studio & CAD", title="The Global Design Studio",
          text="Zones from the master plan (about 1,400 sft): creative desks, trend wall, collection presentation, technical design, fabric library and storage.",
          bullets=["Designer desks at the east windows", "7.4 m mood-board wall for trend research", "Buyer presentation table with 86 in screen",
                   "CAD room with plotter; fabric & trim library with D65 booth", "3D printing lab and sample room as office-grade support"],
-         images=[("CAM_13_Design_Studio_A", "Global Design Studio"), ("CAM_14_Design_Studio_B", "Design studio - workstations + mood board"), ("CAM_15_CAD_Room", "CAD / technical design")]),
+         images=[("CAM_13_Design_Studio_A", "Global Design Studio"), ("CAM_14_Design_Studio_B", "Design studio - workstations + mood board"), ("CAM_15_CAD_Room", "CAD / technical design")],
+         finishes=["WD-02", "UP-01g", "WO-02", "PA-01"]),
     dict(type="grid", eyebrow="Support spaces", title="Care for the people who make the product",
          images=[("CAM_20_Staff_Cafe", "Staff cafe + pantry"), ("CAM_21_Lounge_Training", "Lounge / training (multipurpose)"), ("CAM_22_Prayer_Male", "Prayer room (male)"),
                  ("CAM_23_Sample_Room", "Sample development"), ("CAM_25_Fabric_Library", "Fabric & trim library"), ("CAM_28_Washroom_Male", "Staff washroom")]),
@@ -219,6 +231,17 @@ def h_slide(n, s):
                  f'<h2>{E(s["title"])}</h2><p>{E(s["text"])}</p><ul>' + "".join(f"<li>{E(b)}</li>" for b in s["bullets"]) + "</ul></div>")
         ims = s["images"]
         lay = s.get("layout", "1+2")
+        if s.get("stats"):
+            st = "".join(f'<div style="display:inline-block;width:270px;margin:0 14px 18px 0;vertical-align:top"><div class="num" style="font-size:44px">{E(v)}</div>'
+                         f'<div style="font-size:17px;color:#5A574F;margin-top:6px">{E(k)}</div></div>' for v, k in s["stats"])
+            inner += f'<div style="position:absolute;left:80px;top:800px;width:600px">{st}</div>'
+        if s.get("finishes"):
+            sw = "".join(f'<div style="display:inline-block;width:125px;margin-right:20px;vertical-align:top;white-space:normal">'
+                         f'<img src="assets/swatches/swatch_{c}.jpg" style="width:125px;height:104px;object-fit:cover;display:block;border-radius:3px">'
+                         f'<div style="font-size:15px;font-weight:600;color:#26673D;margin-top:8px">{c[:5]}</div>'
+                         f'<div style="font-size:14px;color:#5A574F;line-height:1.3">{E(FIN[c])}</div></div>' for c in s["finishes"])
+            inner += (f'<div style="position:absolute;left:80px;top:800px;width:600px"><div class="eyebrow" style="font-size:14px;margin-bottom:12px">Key finishes</div>'
+                      f'<div style="white-space:nowrap">{sw}</div></div>')
         if lay == "1":
             inner += h_img(ims[0], 700, 104, 1140, 896)
         elif lay == "2":
@@ -383,9 +406,21 @@ try:
         elif t == "room":
             box(sl, 80, 96, 580, 40, s["eyebrow"].upper(), 13, True, GREEN)
             box(sl, 80, 136, 580, 240, s["title"], 24, True)
-            box(sl, 80, 400, 580, 620, [s["text"], ""] + ["- " + b for b in s["bullets"]], 14, False, GREY)
+            box(sl, 80, 400, 580, 370 if s.get("finishes") else 620, [s["text"], ""] + ["- " + b for b in s["bullets"]], 14, False, GREY)
             ims = s["images"]
             lay = s.get("layout", "1+2")
+            if s.get("stats"):
+                for i, (v, k) in enumerate(s["stats"][:4]):
+                    x, y = 80 + (i % 2) * 290, 790 + (i // 2) * 110
+                    box(sl, x, y, 280, 50, v, 24, True, GREEN)
+                    box(sl, x, y + 50, 280, 50, k, 11, False, GREY)
+            if s.get("finishes"):
+                box(sl, 80, 790, 580, 30, "KEY FINISHES", 10, True, GREEN)
+                for i, c in enumerate(s["finishes"]):
+                    x = 80 + i * 145
+                    sl.shapes.add_picture(os.path.join(ASSET, "swatches", f"swatch_{c}.jpg"), Emu(x * PX), Emu(826 * PX), Emu(125 * PX), Emu(104 * PX))
+                    box(sl, x - 6, 934, 140, 30, c[:5], 10, True, GREEN)
+                    box(sl, x - 6, 960, 140, 50, FIN[c], 9, False, GREY)
             if lay == "1":
                 pic(sl, ims[0], 700, 104, 1140, 896)
             elif lay == "2":
