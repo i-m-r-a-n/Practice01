@@ -44,3 +44,5 @@ finds must be packed inside the file.
 ## Geometry (checkpoint A)
 - `verify_geometry.py` on the delivered .blend: 75 of 75 measurements match the survey values (`04_DOCUMENTATION/geometry_verification.md`).
 
+## Persistence
+- 2026-10-27 03:41 Asia/Dhaka: the GitHub API listing of `GARMENT_OFFICE_FINAL_PRESENTATION/01_EDITABLE_3D` on branch `claude/magical-hopper-74q4xq` of `i-m-r-a-n/Practice01` returned `Final_Office_Interior.blend` (41,596,734 bytes, blob 775482b) and `Final_Office_Interior.glb` (41,830,624 bytes, blob 9a22940), the same blobs as the local commit 227245a.

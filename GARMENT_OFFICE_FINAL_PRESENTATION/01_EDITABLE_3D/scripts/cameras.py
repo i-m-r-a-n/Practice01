@@ -6,7 +6,7 @@ IN = 0.0254
 CAMERAS = [
     # ---------------- priority 1: key presentation spaces
     dict(name="CAM_01_Reception_A", room="Reception", priority=1, pos=(318, 26, 60), target=(520, 170, 50), lens=18),
-    dict(name="CAM_02_Reception_B", room="Reception", priority=1, pos=(442, 238, 58), target=(520, 40, 56), lens=19),
+    dict(name="CAM_02_Reception_B", room="Reception", priority=1, pos=(442, 238, 58), target=(573, 70, 56), lens=19),
     dict(name="CAM_03_Entrance_Lobby", room="Entrance lobby", priority=1, pos=(246, 226, 64), target=(222, 0, 60), lens=19),
     dict(name="CAM_04_Experience_Centre_A", room="Experience centre", priority=1, pos=(392, -226, 62), target=(700, -405, 50), lens=18),
     dict(name="CAM_05_Experience_Centre_B", room="Experience centre", priority=1, pos=(852, -232, 62), target=(430, -385, 56), lens=18),

@@ -1,0 +1,147 @@
+[
+ {
+  "cam": "CAM_04_Experience_Centre_A",
+  "status": "final",
+  "caption": "Experience centre - Blender Cycles render of the project model"
+ },
+ {
+  "cam": "CAM_02_Reception_B",
+  "status": "final",
+  "caption": "Reception desk and logo wall"
+ },
+ {
+  "cam": "CAM_ISO_SE",
+  "status": "final",
+  "caption": "Overall isometric cut-away of the furnished floor - Blender Cycles render"
+ },
+ {
+  "cam": "CAM_01_Reception_A",
+  "status": "final",
+  "caption": "Reception and visitor lounge"
+ },
+ {
+  "cam": "CAM_02_Reception_B",
+  "status": "final",
+  "caption": "Reception desk and logo wall"
+ },
+ {
+  "cam": "CAM_03_Entrance_Lobby",
+  "status": "preview",
+  "caption": "Entrance lobby - brand wall (preview render)"
+ },
+ {
+  "cam": "CAM_04_Experience_Centre_A",
+  "status": "final",
+  "caption": "Experience centre"
+ },
+ {
+  "cam": "CAM_05_Experience_Centre_B",
+  "status": "final",
+  "caption": "Experience centre - story wall"
+ },
+ {
+  "cam": "CAM_06_Experience_Centre_Detail",
+  "status": "preview",
+  "caption": "Display detail (preview render)"
+ },
+ {
+  "cam": "CAM_07_MD_Office_A",
+  "status": "final",
+  "caption": "MD office"
+ },
+ {
+  "cam": "CAM_08_MD_Office_B",
+  "status": "preview",
+  "caption": "MD office - lounge corner (preview render)"
+ },
+ {
+  "cam": "CAM_17_Executive_Reception",
+  "status": "preview",
+  "caption": "Executive reception (PA) (preview render)"
+ },
+ {
+  "cam": "CAM_09_Boardroom_A",
+  "status": "final",
+  "caption": "Boardroom"
+ },
+ {
+  "cam": "CAM_10_Boardroom_B",
+  "status": "preview",
+  "caption": "Boardroom - towards the experience centre (preview render)"
+ },
+ {
+  "cam": "CAM_11_Merchandising_A",
+  "status": "final",
+  "caption": "Merchandising open office"
+ },
+ {
+  "cam": "CAM_12_Merchandising_B",
+  "status": "preview",
+  "caption": "Merchandising - team table (preview render)"
+ },
+ {
+  "cam": "CAM_16_Commercial_Accounts",
+  "status": "preview",
+  "caption": "Commercial & accounts (preview render)"
+ },
+ {
+  "cam": "CAM_13_Design_Studio_A",
+  "status": "final",
+  "caption": "Global Design Studio"
+ },
+ {
+  "cam": "CAM_14_Design_Studio_B",
+  "status": "preview",
+  "caption": "Design studio - workstations + mood board (preview render)"
+ },
+ {
+  "cam": "CAM_15_CAD_Room",
+  "status": "preview",
+  "caption": "CAD / technical design (preview render)"
+ },
+ {
+  "cam": "CAM_20_Staff_Cafe",
+  "status": "preview",
+  "caption": "Staff cafe + pantry (preview render)"
+ },
+ {
+  "cam": "CAM_21_Lounge_Training",
+  "status": "preview",
+  "caption": "Lounge / training (multipurpose) (preview render)"
+ },
+ {
+  "cam": "CAM_22_Prayer_Male",
+  "status": "preview",
+  "caption": "Prayer room (male) (preview render)"
+ },
+ {
+  "cam": "CAM_23_Sample_Room",
+  "status": "preview",
+  "caption": "Sample development (preview render)"
+ },
+ {
+  "cam": "CAM_25_Fabric_Library",
+  "status": "preview",
+  "caption": "Fabric & trim library (preview render)"
+ },
+ {
+  "cam": "CAM_28_Washroom_Male",
+  "status": "preview",
+  "caption": "Staff washroom (preview render)"
+ },
+ {
+  "cam": "CAM_09_Boardroom_A",
+  "status": "final",
+  "caption": "Felt rafts between the beams - boardroom"
+ },
+ {
+  "cam": "CAM_13_Design_Studio_A",
+  "status": "final",
+  "caption": "Global Design Studio"
+ },
+ {
+  "cam": "CAM_05_Experience_Centre_B",
+  "status": "final",
+  "caption": "Experience centre towards the brand-story wall - Blender Cycles render"
+ }
+]

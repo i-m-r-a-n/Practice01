@@ -5,6 +5,7 @@ python3 make_presentation.py PROJECT_ROOT
 Images: 02_RENDERED_IMAGES/final/<CAM>.jpg if present, else 02_RENDERED_IMAGES/previews/<CAM>.jpg (caption says 'preview render').
 """
 import html
+import json
 import os
 import shutil
 import sys
@@ -22,6 +23,7 @@ PREV = os.path.join(ROOT, "02_RENDERED_IMAGES", "previews")
 PLANS = os.path.join(ROOT, "02_RENDERED_IMAGES", "plans")
 BRAND = os.path.join(ROOT, "01_EDITABLE_3D", "assets", "brand")
 USED = {}
+MANIFEST = []                # every render shown in the HTML deck with its status and displayed caption (checked by verify_deck.py)
 E = html.escape
 # finish codes and names as on the material board (material_board.py); swatches are crops of that render
 FIN = {"TZ-01": "Terrazzo floor", "WD-01": "Oak herringbone", "CP-01": "Carpet tile", "WD-02": "Oak-look plank", "PT-01": "Porcelain tile",
@@ -70,7 +72,7 @@ SPEC = [
               "and the design team turns trends into products - with no production on this floor.",
          bullets=["Visitor journey: lobby - reception - experience centre - boardroom", "Executive suite and administration beside the visitor zone",
                   "Design wing, staff cafe, lounge / training and prayer rooms behind"],
-         images=[("CAM_02_Reception_B", "Reception and visitor waiting")], layout="1",
+         images=[("CAM_02_Reception_B", "Reception desk and logo wall", 0.8)], layout="1",
          stats=[("34", "rooms and zones designed"), ("54", "work seats incl. growth and guests"),
                 ("707 sft", "experience centre at the heart"), ("75 / 75", "survey dimension checks passed")]),
     dict(type="cards", eyebrow="Design philosophy", title="Six principles behind every decision", numbered=True,
@@ -98,7 +100,7 @@ SPEC = [
          text="Guests step down from the gate into a terrazzo lobby with a security desk and the group's three logos on an oak brand wall, then into a warm reception.",
          bullets=["Fluted white-oak counter, terrazzo ledge, accessible 760 mm section", "Backlit logo plate on a fluted oak wall",
                   "Waiting lounge under an oak slat raft and a brass halo", "Glass between lobby and reception"],
-         images=[("CAM_01_Reception_A", "Reception"), ("CAM_02_Reception_B", "Reception - waiting"), ("CAM_03_Entrance_Lobby", "Entrance lobby - brand wall")],
+         images=[("CAM_01_Reception_A", "Reception and visitor lounge"), ("CAM_02_Reception_B", "Reception desk and logo wall"), ("CAM_03_Entrance_Lobby", "Entrance lobby - brand wall")],
          finishes=["TZ-01", "WO-01", "SS-01", "MT-02"]),
     dict(type="room", eyebrow="Experience centre", title="Where buyers meet the product",
          text="At the centre of the floor, between reception and boardroom, the experience centre tells the company story and shows the collection.",
@@ -159,7 +161,11 @@ SPEC = [
                 ("MEP", "VRF cooling, fresh air for windowless rooms, exhausts (WCs, pantry, 3D lab), power/data, UPS, DB location."),
                 ("Accessibility", "Ramp or lift at the two entrance steps; one accessible WC (door at least 36 in)."),
                 ("Approvals & branding", "Fire / building approvals as applicable; trademark check for 'Global Design Studio'; signage from original vector logos.")],
-         note="No budget or programme was supplied, so none is stated. Details: 04_DOCUMENTATION/technical_coordination_notes.md."),
+         note="No budget or programme was supplied, so none is stated. Details: 04_DOCUMENTATION/technical_coordination_notes.md.",
+         steps=[("Site measurement", "Floor-to-deck height, room 8 width, columns and beams; then update the survey data, rebuild and re-verify the model."),
+                ("Engineering reviews", "Structural check of the new openings, fire strategy and exits, HVAC, power and data design."),
+                ("Client decisions", "Head count per department, interior budget, experience-centre content and approval of this layout."),
+                ("Detailed design", "Construction drawings, finish samples, furniture selection and bill of quantities after approval.")]),
     dict(type="hero", image=("CAM_05_Experience_Centre_B", "Experience centre towards the brand-story wall - Blender Cycles render"), eyebrow="Closing",
          title="Quality, compliance and commitment - built into the space.",
          text="A ground floor that welcomes buyers, supports management and gives the design team room to create - ready for detailed design "
@@ -189,12 +195,14 @@ ul { padding-left: 24px; margin: 16px 0 0 } li { margin: 0 0 9px } li::marker { 
 .num { font-family: 'Inter Display','Inter'; font-size: 50px; font-weight: 600; color: #26673D; line-height: 1 }
 table { border-collapse: collapse; width: 100% } td, th { text-align: left; padding: 10px 12px; border-bottom: 1px solid #DDD7CB; font-size: 20px; vertical-align: top }
 th { font-size: 14px; letter-spacing: .14em; text-transform: uppercase; color: #6B675F; font-weight: 600 }
+.credit { position: absolute; right: 80px; bottom: 62px; font-size: 14px; letter-spacing: .03em; color: #C9D3CC }
 .logo-plate { position: absolute; background: #fff; border-radius: 4px; display: flex; align-items: center; gap: 26px; padding: 18px 26px }
 """
 
 
 def h_img(spec_img, x, y, w, h, fit="cover"):
-    name, caption = spec_img
+    name, caption = spec_img[:2]
+    posx = spec_img[2] if len(spec_img) > 2 else 0.5      # horizontal crop position for object-fit: cover
     if name.endswith(".jpg") or name.endswith(".png"):
         svg = os.path.join(PLANS, name[:-4] + ".svg")
         src = (asset(svg) if os.path.exists(svg) else None) or asset(os.path.join(ROOT, "02_RENDERED_IMAGES", name)) or asset(os.path.join(PLANS, name))
@@ -202,10 +210,21 @@ def h_img(spec_img, x, y, w, h, fit="cover"):
         tag = ""
     else:
         src, tag = img(name)
+        MANIFEST.append(dict(cam=name, status=USED[name], caption=caption + tag))
     if not src:
         return f'<div class="imgbox" style="left:{x}px;top:{y}px;width:{w}px;height:{h}px"></div>'
     cap = f'<div class="cap">{E(caption + tag)}</div>' if caption else ""
-    return f'<div class="imgbox" style="left:{x}px;top:{y}px;width:{w}px;height:{h}px"><img src="{src}" style="object-fit:{fit}">{cap}</div>'
+    return (f'<div class="imgbox" style="left:{x}px;top:{y}px;width:{w}px;height:{h}px">'
+            f'<img src="{src}" style="object-fit:{fit};object-position:{posx * 100:.0f}% 50%">{cap}</div>')
+
+
+def h_full(spec_img):
+    """Full-bleed slide image; its caption becomes a credit line above the footer (an overlay caption would collide with it)."""
+    name, caption = spec_img[:2]
+    src, tag = img(name)
+    MANIFEST.append(dict(cam=name, status=USED[name], caption=caption + tag))
+    bg = f'<div class="imgbox" style="left:0;top:0;width:1920px;height:1080px"><img src="{src}"></div>' if src else ""
+    return bg, f'<div class="credit">{E(caption + tag)}</div>'
 
 
 def h_table(rows, widths=None):
@@ -218,14 +237,16 @@ def h_slide(n, s):
     t, inner, dark = s["type"], "", False
     if t == "cover":
         dark = True
-        inner = (h_img(s["image"], 0, 0, 1920, 1080)
+        bg, cr = h_full(s["image"])
+        inner = (bg
                  + '<div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(15,30,21,.93) 0%,rgba(15,30,21,.8) 38%,rgba(15,30,21,0) 68%)"></div>'
+                 + '<div style="position:absolute;left:0;right:0;bottom:0;height:170px;background:linear-gradient(0deg,rgba(15,30,21,.85),rgba(15,30,21,0))"></div>'
                  + '<div class="logo-plate" style="left:80px;top:80px"><img src="assets/logo_zara_fashion_profile.png" style="height:62px">'
                    '<img src="assets/logo_stage2_ltd.png" style="height:50px"><img src="assets/logo_stage2_unit1.png" style="height:50px"></div>'
                  + f'<div style="position:absolute;left:80px;top:320px;width:930px;color:#F3F0EA"><div class="eyebrow" style="color:#9FD3B0">{E(s["eyebrow"])}</div>'
                    f'<h1 style="color:#fff;font-size:72px">{E(s["title"])}</h1>'
                    + "".join(f'<p style="color:#D9E2DC;font-size:25px;margin:{26 if i == 0 else 6}px 0 0">{E(l)}</p>' for i, l in enumerate(s["sub"]))
-                   + '<img src="assets/tagline_quality_compliance_commitment.png" style="height:40px;margin-top:34px;background:#fff;padding:10px 18px;border-radius:3px"></div>')
+                   + '<img src="assets/tagline_quality_compliance_commitment.png" style="height:40px;margin-top:34px;background:#fff;padding:10px 18px;border-radius:3px"></div>' + cr)
     elif t == "room":
         inner = (f'<div class="bar"></div><div style="position:absolute;left:80px;top:104px;width:560px"><div class="eyebrow">{E(s["eyebrow"])}</div>'
                  f'<h2>{E(s["title"])}</h2><p>{E(s["text"])}</p><ul>' + "".join(f"<li>{E(b)}</li>" for b in s["bullets"]) + "</ul></div>")
@@ -271,7 +292,9 @@ def h_slide(n, s):
         if s.get("image"):
             inner += h_img(s["image"], 830, 640, 1010, 360)
     elif t == "full":
-        inner = (h_img(s["image"], 0, 0, 1920, 1080)
+        dark = True
+        bg, cr = h_full(s["image"])
+        inner = (bg + '<div style="position:absolute;left:0;right:0;bottom:0;height:170px;background:linear-gradient(0deg,rgba(8,12,14,.9),rgba(8,12,14,0))"></div>' + cr
                  + f'<div style="position:absolute;left:80px;top:70px;background:rgba(246,243,238,.93);padding:26px 34px;width:640px">'
                    f'<div class="eyebrow">{E(s["eyebrow"])}</div><h2 style="font-size:40px">{E(s["title"])}</h2><p style="font-size:19px">{E(s["text"])}</p></div>')
     elif t == "grid":
@@ -285,12 +308,18 @@ def h_slide(n, s):
     elif t == "table":
         inner = (f'<div class="bar"></div><div style="position:absolute;left:80px;top:104px;width:1760px"><div class="eyebrow">{E(s["eyebrow"])}</div><h2>{E(s["title"])}</h2>'
                  f'<div style="margin-top:24px">{h_table(s["table"])}</div><p style="font-size:17px;color:#6B675F;margin-top:16px">{E(s["note"])}</p></div>')
+        if s.get("steps"):
+            inner += '<div class="eyebrow" style="position:absolute;left:80px;top:650px">Recommended next steps</div>'
+            for i, (st, sd) in enumerate(s["steps"]):
+                inner += (f'<div class="card" style="left:{80 + i * 445}px;top:700px;width:420px;height:270px"><div class="num" style="font-size:40px">{i + 1:02d}</div>'
+                          f'<h3 style="font-size:26px">{E(st)}</h3><p style="font-size:19px">{E(sd)}</p></div>')
     elif t == "hero":
         dark = True
-        inner = (h_img(s["image"], 0, 0, 1920, 1080)
+        bg, cr = h_full(s["image"])
+        inner = (bg
                  + '<div style="position:absolute;inset:0;background:linear-gradient(0deg,rgba(15,30,21,.9) 0%,rgba(15,30,21,.3) 45%,rgba(15,30,21,0) 70%)"></div>'
                  + f'<div style="position:absolute;left:80px;bottom:100px;width:1300px"><div class="eyebrow" style="color:#9FD3B0">{E(s["eyebrow"])}</div>'
-                   f'<h1 style="color:#fff">{E(s["title"])}</h1><p style="color:#D9E2DC;font-size:24px">{E(s["text"])}</p></div>')
+                   f'<h1 style="color:#fff">{E(s["title"])}</h1><p style="color:#D9E2DC;font-size:24px">{E(s["text"])}</p></div>' + cr)
     foot = (f'<div class="foot"><span><b>STAGE II KNITTING APPAREL / ZARA FASHION</b> &nbsp;|&nbsp; Ground-floor corporate office - interior design proposal</span>'
             f'<span>{n:02d} / {len(SPEC)}</span></div>')
     return f'<section class="slide{" dark" if dark else ""}">{inner}{foot}</section>'
@@ -300,11 +329,15 @@ html_doc = (f'<!doctype html><html><head><meta charset="utf-8"><title>Garment Of
             + "".join(h_slide(i + 1, s) for i, s in enumerate(SPEC)) + "</body></html>")
 with open(os.path.join(OUT, "Garment_Office_Design_Pitch.html"), "w") as f:
     f.write(html_doc)
+with open(os.path.join(OUT, "deck_manifest.json"), "w") as f:
+    json.dump(MANIFEST, f, indent=1)
 
 # ------------------------------------------------------------------------------------------ PPTX renderer (editable)
 try:
     from pptx import Presentation
     from pptx.dml.color import RGBColor
+    from pptx.oxml.ns import qn
+    from pptx.enum.text import PP_ALIGN
     from pptx.util import Emu, Pt
 
     PX = 6350                    # EMU per px for a 1920 x 1080 canvas on a 13.333 x 7.5 in slide
@@ -313,21 +346,24 @@ try:
     blank = prs.slide_layouts[6]
     GREEN, INK, GREY, LIGHT = RGBColor(0x26, 0x67, 0x3D), RGBColor(0x1E, 0x1E, 0x1C), RGBColor(0x5A, 0x57, 0x50), RGBColor(0xF6, 0xF3, 0xEE)
 
-    def box(sl, x, y, w, h, text, size=20, bold=False, color=INK, font="Inter"):
+    def box(sl, x, y, w, h, text, size=20, bold=False, color=INK, font="Inter", align=None):
         tb = sl.shapes.add_textbox(Emu(x * PX), Emu(y * PX), Emu(w * PX), Emu(h * PX))
         tf = tb.text_frame
         tf.word_wrap = True
         lines = text if isinstance(text, list) else [text]
         for i, ln in enumerate(lines):
             p = tf.paragraphs[0] if i == 0 else tf.add_paragraph()
+            if align:
+                p.alignment = align
             r = p.add_run()
             r.text = ln
             r.font.size, r.font.bold, r.font.name = Pt(size), bold, font
             r.font.color.rgb = color
         return tb
 
-    def pic(sl, spec_img, x, y, w, h):
-        name, caption = spec_img
+    def pic(sl, spec_img, x, y, w, h, overlay=True):
+        name, caption = spec_img[:2]
+        posx = spec_img[2] if len(spec_img) > 2 else 0.5
         if name.endswith((".jpg", ".png")):
             p = os.path.join(ASSET, name)
         else:
@@ -341,21 +377,26 @@ try:
         r_box, r_img = w / h, iw / ih
         shape = sl.shapes.add_picture(p, Emu(x * PX), Emu(y * PX), Emu(w * PX), Emu(h * PX))
         if r_img > r_box:
-            c = (1 - r_box / r_img) / 2
-            shape.crop_left = shape.crop_right = c
+            c = 1 - r_box / r_img
+            shape.crop_left, shape.crop_right = c * posx, c * (1 - posx)
         else:
             c = (1 - r_img / r_box) / 2
             shape.crop_top = shape.crop_bottom = c
-        if caption:
-            box(sl, x + 10, y + h - 34, w - 20, 30, caption + (" (preview render)" if USED.get(name) == "preview" else ""), 11, False, RGBColor(0xFF, 0xFF, 0xFF))
+        if caption and overlay:
+            text = caption + (" (preview render)" if USED.get(name) == "preview" else "")
+            band = panel(sl, x, y + h - 40, min(w, int(len(text) * 10.8) + 30), 40, RGBColor(0x14, 0x14, 0x12))
+            alpha(band, 62000)                                                     # 62 % opaque, as in the HTML captions
+            box(sl, x + 8, y + h - 38, w - 16, 34, text, 11, False, RGBColor(0xFF, 0xFF, 0xFF))
 
     def bg(sl, color):
         f = sl.background.fill
         f.solid()
         f.fore_color.rgb = color
 
-    def table(sl, rows, x, y, w, row_h=46, size=12):
+    def table(sl, rows, x, y, w, row_h=46, size=12, col_w=None):
         tbl = sl.shapes.add_table(len(rows), len(rows[0]), Emu(x * PX), Emu(y * PX), Emu(w * PX), Emu(row_h * len(rows) * PX)).table
+        for c, cw in enumerate(col_w or []):
+            tbl.columns[c].width = Emu(cw * PX)
         for r, row in enumerate(rows):
             for c, val in enumerate(row):
                 cell = tbl.cell(r, c)
@@ -376,13 +417,22 @@ try:
         shp.line.fill.background()
         return shp
 
+    def alpha(shp, val):
+        srgb = shp.fill._xPr.find(qn("a:solidFill")).find(qn("a:srgbClr"))
+        srgb.append(srgb.makeelement(qn("a:alpha"), {"val": str(val)}))
+
+    def credit(sl, spec_img):
+        name, caption = spec_img[:2]
+        text = caption + (" (preview render)" if USED.get(name) == "preview" else "")
+        box(sl, 900, 984, 940, 30, text, 9, False, RGBColor(0xC9, 0xD3, 0xCC), align=PP_ALIGN.RIGHT)
+
     for n, s in enumerate(SPEC, 1):
         sl = prs.slides.add_slide(blank)
         bg(sl, LIGHT)
         t = s["type"]
         WHITE, MINT = RGBColor(0xFF, 0xFF, 0xFF), RGBColor(0x9F, 0xD3, 0xB0)
         if t == "cover":
-            pic(sl, s["image"], 0, 0, 1920, 1080)
+            pic(sl, s["image"], 0, 0, 1920, 1080, overlay=False)
             panel(sl, 0, 0, 1040, 1080, RGBColor(0x14, 0x24, 0x1B))
             panel(sl, 60, 60, 900, 110, WHITE)
             for i, (lg, wpx) in enumerate((("logo_zara_fashion_profile.png", 250), ("logo_stage2_ltd.png", 250), ("logo_stage2_unit1.png", 250))):
@@ -392,21 +442,23 @@ try:
             box(sl, 80, 790, 900, 120, s["sub"], 15, False, RGBColor(0xD9, 0xE2, 0xDC))
             sl.shapes.add_picture(os.path.join(ASSET, "tagline_quality_compliance_commitment.png"), Emu(80 * PX), Emu(930 * PX), width=Emu(620 * PX))
         elif t == "hero":
-            pic(sl, s["image"], 0, 0, 1920, 1080)
+            pic(sl, s["image"], 0, 0, 1920, 1080, overlay=False)
             panel(sl, 0, 600, 1920, 480, RGBColor(0x14, 0x24, 0x1B))
             box(sl, 80, 640, 1500, 40, s["eyebrow"].upper(), 13, True, MINT)
             box(sl, 80, 690, 1600, 170, s["title"], 32, True, WHITE)
             box(sl, 80, 870, 1500, 120, s["text"], 15, False, RGBColor(0xD9, 0xE2, 0xDC))
         elif t == "full":
-            pic(sl, s["image"], 0, 0, 1920, 1080)
+            pic(sl, s["image"], 0, 0, 1920, 1080, overlay=False)
+            alpha(panel(sl, 0, 960, 1920, 120, RGBColor(0x08, 0x0C, 0x0E)), 80000)
             panel(sl, 50, 50, 720, 330, LIGHT)
             box(sl, 80, 76, 660, 40, s["eyebrow"].upper(), 13, True, GREEN)
             box(sl, 80, 120, 660, 130, s["title"], 26, True, INK)
             box(sl, 80, 260, 660, 110, s["text"], 13, False, GREY)
         elif t == "room":
             box(sl, 80, 96, 580, 40, s["eyebrow"].upper(), 13, True, GREEN)
-            box(sl, 80, 136, 580, 240, s["title"], 24, True)
-            box(sl, 80, 400, 580, 370 if s.get("finishes") else 620, [s["text"], ""] + ["- " + b for b in s["bullets"]], 14, False, GREY)
+            fin = s.get("finishes")
+            box(sl, 80, 136, 580, 150 if fin else 240, s["title"], 24, True)
+            box(sl, 80, 290 if fin else 400, 580, 480 if fin else 620, [s["text"], ""] + ["- " + b for b in s["bullets"]], 13 if fin else 14, False, GREY)
             ims = s["images"]
             lay = s.get("layout", "1+2")
             if s.get("stats"):
@@ -466,12 +518,27 @@ try:
             w = 640 if t == "materials" else 1760
             box(sl, 80, 96, w, 40, s["eyebrow"].upper(), 13, True, GREEN)
             box(sl, 80, 136, w, 120, s["title"], 28, True)
-            table(sl, s["table"], 80, 290, w, 50 if t == "table" else 46, 12 if t == "materials" else 13)
-            box(sl, 80, 950, w, 60, s["note"], 11, False, GREY)
+            if t == "materials":
+                table(sl, s["table"], 80, 290, w, 46, 12)
+                box(sl, 80, 950, w, 60, s["note"], 11, False, GREY)
+            else:
+                table(sl, s["table"], 80, 260, w, 46, 12, col_w=[340, w - 340])
+                box(sl, 80, 610, w, 40, s["note"], 11, False, GREY)
+            if s.get("steps"):
+                box(sl, 80, 700, 1000, 30, "RECOMMENDED NEXT STEPS", 11, True, GREEN)
+                for i, (st, sd) in enumerate(s["steps"]):
+                    x = 80 + i * 445
+                    panel(sl, x, 740, 420, 250, RGBColor(0xFF, 0xFF, 0xFF))
+                    box(sl, x + 22, 756, 380, 44, f"{i + 1:02d}", 20, True, GREEN)
+                    box(sl, x + 22, 810, 380, 40, st, 14, True, INK)
+                    box(sl, x + 22, 856, 380, 120, sd, 11, False, GREY)
             if t == "materials":
                 pic(sl, s["image"], 760, 104, 1080, 896)
-        box(sl, 80, 1036, 1300, 30, "STAGE II KNITTING APPAREL / ZARA FASHION  |  Ground-floor corporate office - interior design proposal", 9, False, GREY)
-        box(sl, 1740, 1036, 120, 30, f"{n:02d} / {len(SPEC)}", 9, False, GREY)
+        fc = RGBColor(0xA7, 0xB3, 0xAB) if t in ("cover", "hero", "full") else GREY
+        if t in ("cover", "hero", "full"):
+            credit(sl, s["image"])
+        box(sl, 80, 1036, 1300, 30, "STAGE II KNITTING APPAREL / ZARA FASHION  |  Ground-floor corporate office - interior design proposal", 9, False, fc)
+        box(sl, 1740, 1036, 120, 30, f"{n:02d} / {len(SPEC)}", 9, False, fc)
     prs.save(os.path.join(OUT, "Garment_Office_Design_Pitch.pptx"))
     print("pptx saved")
 except Exception as e:  # keep the PDF path working even if python-pptx fails

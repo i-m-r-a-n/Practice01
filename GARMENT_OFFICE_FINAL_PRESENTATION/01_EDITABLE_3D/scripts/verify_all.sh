@@ -4,6 +4,7 @@
 # 1. the packed .blend is copied ALONE into an empty temp folder and reopened there (self-containment test)
 # 2. the .glb is re-imported into an empty Blender session
 # 3. verify_geometry.py measures the .blend against the survey values (04_DOCUMENTATION/geometry_verification.*)
+# 4. verify_deck.py checks the PDF / PPTX and that the deck shows only this project's renders
 set -e
 P=${1:-$(cd "$(dirname "$0")/../.." && pwd)}
 S=$P/01_EDITABLE_3D/scripts
@@ -29,5 +30,6 @@ A=$(($(wc -l < "$P/04_DOCUMENTATION/geometry_verification.csv") - 1))
   echo "- \`verify_geometry.py\` on the delivered .blend: $N of $A measurements match the survey values (\`04_DOCUMENTATION/geometry_verification.md\`)."
   echo
 } >> "$R"
+python3 "$S/verify_deck.py" "$P" "$R" > "$T/deck.log" 2>&1
 rm -rf "$T"
 cat "$R"
