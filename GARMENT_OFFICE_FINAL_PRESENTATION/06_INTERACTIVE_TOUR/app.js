@@ -45,18 +45,21 @@ const TOUR=['Z01','Z02','Z30','Z08','Z10','Z12','Z06','Z07','Z14','Z15','Z17','Z
 let renderer,scene,camera,controls,office,box,frame,officeCenter,officeSize,ceilingMeshes=[],savedCameras=new Map(),markers=[],raycaster=new THREE.Raycaster(),pointer=new THREE.Vector2();
 let selected=null,viewMode='orbit',walkPitch=0,walkYaw=0,keys={},inTour=false,tourPlaying=false,tourIndex=0,tourElapsed=0,transition=null,prevTime=performance.now(),markerVisible=true,ceilingHidden=false;
 const modelPath='./model.glb';
+let fallbackMode=false,photosEnabled=true,fallbackTimer=null,collisionMeshes=[];
+const finalRender=name=>'/renders/'+encodeURIComponent(name)+'.jpg';
 const canvas=$('canvas');
 const loaderBox=$('progressBox');
 const loadText=$('loadText');
 const bar=$('progressBar');
 
 function init(){
- renderer=new THREE.WebGLRenderer({canvas,antialias:true,powerPreference:'high-performance'});
+ bindExtras();
+ try{renderer=new THREE.WebGLRenderer({canvas,antialias:true,powerPreference:'high-performance'});}catch(err){activateFallback(err);return;}
  renderer.setPixelRatio(Math.min(devicePixelRatio,1.7));
  renderer.setSize(innerWidth,innerHeight);
  renderer.outputColorSpace=THREE.SRGBColorSpace;
  renderer.toneMapping=THREE.ACESFilmicToneMapping;
- renderer.toneMappingExposure=1.32;
+ renderer.toneMappingExposure=1.05;
  renderer.setClearColor(0x15241f,1);
  scene=new THREE.Scene();
  scene.background=new THREE.Color('#182a25');
@@ -68,12 +71,18 @@ function init(){
  controls.minDistance=.25;
  controls.maxDistance=130;
  controls.maxPolarAngle=Math.PI*.495;
- scene.add(new THREE.HemisphereLight(0xf8ffff,0x5f6652,2.1));
- const ambient=new THREE.AmbientLight(0xffffff,1.02);scene.add(ambient);
- const sunlight=new THREE.DirectionalLight(0xfff6e4,3.2);sunlight.position.set(20,44,-14);scene.add(sunlight);
- const fill=new THREE.DirectionalLight(0xc8e0f1,1.5);fill.position.set(-20,25,35);scene.add(fill);
+ scene.add(new THREE.HemisphereLight(0xfdf7ed,0x7f9589,1.15));
+ const ambient=new THREE.AmbientLight(0xffffff,.52);scene.add(ambient);
+ const sunlight=new THREE.DirectionalLight(0xfff2dc,2.35);sunlight.position.set(20,44,-14);scene.add(sunlight);
+ const fill=new THREE.DirectionalLight(0xdceaff,.8);fill.position.set(-20,25,35);scene.add(fill);
+ // A neutral studio environment adds realistic reflections to metal, glass and wood PBR surfaces.
+ import('https://esm.sh/three@0.164.1/examples/jsm/environments/RoomEnvironment.js').then(({RoomEnvironment})=>{
+   try{const pmrem=new THREE.PMREMGenerator(renderer);scene.environment=pmrem.fromScene(new RoomEnvironment(),.045).texture;pmrem.dispose();}catch(e){console.warn('Environment reflection fallback:',e.message);}
+ }).catch(e=>console.warn('Optional reflections unavailable:',e.message));
  window.addEventListener('resize',onResize);
  canvas.addEventListener('pointerdown',onCanvasPointer);
+ canvas.addEventListener('click',()=>{if(viewMode==='walk'&&document.pointerLockElement!==canvas)canvas.requestPointerLock?.().catch(()=>{});});
+ document.addEventListener('mousemove',e=>{if(viewMode==='walk'&&document.pointerLockElement===canvas){walkYaw-=e.movementX*.002;walkPitch=Math.max(-1.3,Math.min(1.3,walkPitch-e.movementY*.002));}});
  document.addEventListener('keydown',e=>{keys[e.code]=true;if(e.code==='Escape'){if(inTour)stopTour();if(viewMode==='walk')setWalk(false)}});
  document.addEventListener('keyup',e=>keys[e.code]=false);
  $('tourBtn').onclick=startTour;
@@ -87,7 +96,7 @@ function init(){
  $('search').oninput=renderRooms;
  onResize();
  animate();
- new GLTFLoader().load(modelPath,onLoaded,ev=>{if(ev.total){const pct=Math.min(97,100*ev.loaded/ev.total);bar.style.width=pct+'%';loadText.textContent='Downloading the 3D office… '+Math.round(pct)+'%';}else{loadText.textContent='Downloading the 3D office… '+(ev.loaded/1048576).toFixed(1)+' MB';}},err=>{console.error(err);$('loadTitle').textContent='Model could not load';loadText.innerHTML='Please reload the page and check your connection. If this persists, contact the presenter; the 3D model source could not be retrieved.';bar.style.width='0%';});
+ new GLTFLoader().load(modelPath,onLoaded,ev=>{if(ev.total){const pct=Math.min(97,100*ev.loaded/ev.total);bar.style.width=pct+'%';loadText.textContent='Downloading the 3D office… '+Math.round(pct)+'%';}else{loadText.textContent='Downloading the 3D office… '+(ev.loaded/1048576).toFixed(1)+' MB';}},err=>{console.error(err);activateFallback(err);});
 }
 function onLoaded(gltf){
  office=gltf.scene;
@@ -101,7 +110,8 @@ function onLoaded(gltf){
    if(o.isCamera){savedCameras.set(o.name,o);o.visible=false;}
    if(o.isMesh){
      const n=o.name.toLowerCase();
-     if(/ceiling|ceil |clg |acoustic raft|felt baffle|wood raft|oak raft|slat raft/.test(n))ceilingMeshes.push(o);
+     if(/^cl\d{3}\b|ceiling|ceil |clg |steel deck \/ slab|acoustic raft|felt baffle|wood raft|oak raft|slat[_ ]raft/.test(n))ceilingMeshes.push(o);
+     if(/\bwall\b|partition|glass|steel column|^(?:iw|pw|np|col)\d{2}/.test(n))collisionMeshes.push(o);
      if(o.material && o.material.isMeshStandardMaterial){o.material.envMapIntensity=1.15;}
    }
  });
@@ -109,6 +119,7 @@ function onLoaded(gltf){
  controls.maxDistance=Math.max(90,frame*2.7);
  addMarkers();
  renderRooms();
+ toggleCeiling(true);
  overview(true);
  loaderBox.style.display='none';
  $('sidebar').classList.remove('closed');
@@ -134,10 +145,10 @@ function animate(now=performance.now()){
    const dir=new THREE.Vector3();
    camera.getWorldDirection(dir);dir.y=0;dir.normalize();
    const right=new THREE.Vector3().crossVectors(dir,new THREE.Vector3(0,1,0)).normalize();
-   if(keys.KeyW||keys.ArrowUp)camera.position.addScaledVector(dir,speed);
-   if(keys.KeyS||keys.ArrowDown)camera.position.addScaledVector(dir,-speed);
-   if(keys.KeyA)camera.position.addScaledVector(right,-speed);
-   if(keys.KeyD)camera.position.addScaledVector(right,speed);
+   if(keys.KeyW||keys.ArrowUp)moveWalk(dir.clone().multiplyScalar(speed));
+   if(keys.KeyS||keys.ArrowDown)moveWalk(dir.clone().multiplyScalar(-speed));
+   if(keys.KeyA)moveWalk(right.clone().multiplyScalar(-speed));
+   if(keys.KeyD)moveWalk(right.clone().multiplyScalar(speed));
    if(keys.ArrowLeft)walkYaw+=dt*1.3;
    if(keys.ArrowRight)walkYaw-=dt*1.3;
    camera.rotation.set(walkPitch,walkYaw,0,'YXZ');
@@ -190,19 +201,22 @@ function goToPose(pose,instant=false){
  transition={a:camera.position.clone(),b:pose.pos.clone(),ta:controls.target.clone(),tb:pose.target.clone(),qa:camera.quaternion.clone(),qb:pose.q.clone(),t:0,d:1.35};
 }
 function selectRoom(r,fromTour=false){
- if(!office)return;
+ if(!office&&!fallbackMode)return;
  if(!fromTour)stopTour();
  selected=r;
  updateHUD(r);
  renderRooms();
- const p=cameraPose(r);
- goToPose(p,false);
+ if(office){const p=cameraPose(r);goToPose(p,false);}
+ if(fallbackMode)showFallback(r);
+ else if(photosEnabled&&!fromTour)showReference(r);
  if(innerWidth<781)$('sidebar').classList.add('closed');
 }
 function overview(instant=false){
- if(!office)return;
- stopTour();setWalk(false);
+ if(!office&&!fallbackMode)return;
+ stopTour();if(office)setWalk(false);
  selected=null;renderRooms();updateHUD(null);
+ if(fallbackMode){showFallback(null);return;}
+ $('renderPanel').hidden=true;
  const centre=officeCenter.clone();
  const diag=Math.max(frame,30);
  const pos=centre.clone().add(new THREE.Vector3(diag*.63,diag*.64,diag*.74));
@@ -218,10 +232,12 @@ function setWalk(v){
  if(v){
   const e=new THREE.Euler().setFromQuaternion(camera.quaternion,'YXZ');walkYaw=e.y;walkPitch=e.x;
   transition=null;
+  $('renderPanel').hidden=true;
   $('walkBtn').classList.add('active');
   $('walkBtn').textContent='✓ Walk mode';
   $('roomDesc').textContent='Use W A S D to move through the design. Arrow keys turn your view. Press Esc to leave walk mode.';
  }else{
+  if(document.pointerLockElement===canvas)document.exitPointerLock?.();
   $('walkBtn').classList.remove('active');$('walkBtn').textContent='♙ Walk mode';
   if(selected)updateHUD(selected);
  }
@@ -263,23 +279,24 @@ function onCanvasPointer(event){
  if(hits.length){const r=ROOMS.find(x=>x.id===hits[0].object.userData.roomId);if(r)selectRoom(r);}
 }
 function startTour(){
- if(!office)return;
- setWalk(false);
+ if(!office&&!fallbackMode)return;
+ if(office)setWalk(false);
  inTour=true;tourPlaying=true;tourIndex=0;tourElapsed=0;transition=null;
+ $('renderPanel').hidden=true;
+ $('tourPause').textContent='Pause';
  $('tourbar').style.display='block';
  $('sidebar').classList.add('closed');
  $('tourBtn').textContent='◼ End tour';
  $('tourBtn').onclick=stopTour;
  setTourStep(0);
+ if(fallbackMode){clearInterval(fallbackTimer);fallbackTimer=setInterval(()=>{if(!inTour||!tourPlaying)return;tourElapsed+=.25;$('tourFill').style.width=((tourIndex+Math.min(tourElapsed/6,1))/TOUR.length*100)+'%';if(tourElapsed>6){if(tourIndex>=TOUR.length-1)stopTour();else setTourStep(tourIndex+1);}},250);}
 }
 function setTourStep(i){
  tourIndex=i;
  const id=TOUR[i],r=ROOMS.find(x=>x.id===id);
  selected=r;renderRooms();updateHUD(r);
- const pose=cameraPose(r);
- camera.position.copy(pose.pos);
- camera.quaternion.copy(pose.q);
- controls.target.copy(pose.target);
+ if(office){const pose=cameraPose(r);camera.position.copy(pose.pos);camera.quaternion.copy(pose.q);controls.target.copy(pose.target);}
+ if(fallbackMode)showFallback(r);
  $('tourLabel').textContent=r.name;
  $('tourCount').textContent=(i+1)+' / '+TOUR.length;
  $('tourFill').style.width=(((i)/TOUR.length)*100)+'%';
@@ -308,9 +325,57 @@ function tickTour(dt){
 function stopTour(){
  if(!inTour)return;
  inTour=false;tourPlaying=false;
+ clearInterval(fallbackTimer);fallbackTimer=null;
  $('tourbar').style.display='none';
  $('tourBtn').textContent='▶ Guided tour';$('tourBtn').onclick=startTour;
  const fade=document.getElementById('tourfade');if(fade)fade.style.opacity='0';
- controls.enabled=viewMode!=='walk';
+ if(controls)controls.enabled=viewMode!=='walk';
+}
+function moveWalk(delta){
+ if(!office||delta.lengthSq()<1e-8)return;
+ const length=delta.length();const direction=delta.clone().normalize();
+ // Respect actual wall meshes and door openings instead of blocking entire room bounds.
+ for(const h of [1.45,.73]){
+   const origin=camera.position.clone();origin.y=h;
+   raycaster.set(origin,direction);raycaster.far=length+.30;
+   const hits=raycaster.intersectObjects(collisionMeshes,false);
+   if(hits.length&&hits[0].distance<length+.30)return;
+ }
+ camera.position.add(delta);
+}
+function showReference(room){
+ const cam=room?.camera||'CAM_ISO_SE';
+ $('renderTitle').textContent=room?.name||'The complete office';
+ $('renderImg').src=finalRender(cam);
+ $('renderPanel').hidden=false;
+}
+function showFallback(room){
+ $('fallbackStage').hidden=false;
+ $('fallbackImg').src=finalRender(room?.camera||'CAM_ISO_SE');
+ $('fallbackInfo').querySelector('strong').textContent=room?.name||'Photorealistic design gallery';
+ $('roomDesc').textContent=room?room.desc:'Browse genuine Cycles images from this architectural model. For the full interactive 3D viewer, open this page in a WebGL-enabled Chrome or Safari browser.';
+}
+function activateFallback(error){
+ console.warn('Live WebGL unavailable, switching to original Cycles-rendered image gallery.',error?.message||error);
+ fallbackMode=true;
+ $('progressBox').style.display='none';
+ renderRooms();showFallback(null);
+ $('sidebar').classList.remove('closed');
+ $('tourBtn').onclick=startTour;
+ $('overviewBtn').onclick=()=>overview();
+ $('walkBtn').disabled=true;$('walkBtn').textContent='Walk needs WebGL';
+ $('ceilingBtn').disabled=true;$('ceilingBtn').textContent='Ceiling toggle needs WebGL';
+ $('resetBtn').onclick=()=>overview();$('labelsBtn').disabled=true;
+ $('search').oninput=renderRooms;
+ $('mobileMenu').onclick=()=>$('sidebar').classList.toggle('closed');
+}
+function bindExtras(){
+ $('photoBtn').onclick=()=>{photosEnabled=!photosEnabled;$('photoBtn').classList.toggle('active',photosEnabled);if(photosEnabled)showReference(selected);else $('renderPanel').hidden=true;};
+ $('photoBtn').classList.add('active');
+ $('closeRender').onclick=()=>{$('renderPanel').hidden=true;photosEnabled=false;$('photoBtn').classList.remove('active');};
+ $('fullBtn').onclick=()=>{if(!document.fullscreenElement)document.documentElement.requestFullscreen?.().catch(()=>{});else document.exitFullscreen?.();};
+ $('tourPrev').onclick=()=>{if(inTour)setTourStep(Math.max(0,tourIndex-1));};
+ $('tourNext').onclick=()=>{if(inTour){if(tourIndex>=TOUR.length-1)stopTour();else setTourStep(tourIndex+1);}};
+ $('tourPause').onclick=()=>{tourPlaying=!tourPlaying;$('tourPause').textContent=tourPlaying?'Pause':'Resume';};
 }
 init();
