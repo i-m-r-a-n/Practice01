@@ -45,7 +45,7 @@ async function route(req){
 
 
 // Isolated realism preview. The original route function above is preserved apart from its prefix dispatch.
-const REALISTIC_COMMIT = 'eaa953775ce0e9aac6ef8adc3947f3910ae35741';
+const REALISTIC_COMMIT = '8a01ddc7bd9d8b5acc3b99ef287f1263088f9e52';
 const REALISTIC_ROOT = 'https://raw.githubusercontent.com/i-m-r-a-n/Practice01/'+REALISTIC_COMMIT+'/';
 const REALISTIC_ASSETS = 'GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/';
 const REALISTIC_TYPES = {
