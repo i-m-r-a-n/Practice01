@@ -4,3 +4,7 @@ work/
 __pycache__/
 # local copy of the approved GLB used by the offline viewer (identical to 01_EDITABLE_3D/Final_Office_Interior.glb)
 03_INTERACTIVE_3D/model/Final_Office_Interior.glb
+# local links used by the offline viewer / camera QC page (targets live in 07_WEB_TOUR_ASSETS)
+03_INTERACTIVE_3D/model/
+03_INTERACTIVE_3D/data/office_web_metadata.json
+05_PRODUCTION/camera_qc/*.log

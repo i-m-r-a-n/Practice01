@@ -1,0 +1,35 @@
+{
+ "sheets": [
+  "camera_qc_sheet_1.jpg",
+  "camera_qc_sheet_2.jpg",
+  "camera_qc_sheet_3.jpg",
+  "camera_qc_sheet_4.jpg",
+  "camera_qc_sheet_5.jpg"
+ ],
+ "web_vs_original": {
+  "CAM_01_Reception_A": {
+   "mean_abs_diff_0_255": 0.201,
+   "pixels_diff_gt_16": 0.223
+  },
+  "CAM_04_Experience_Centre_A": {
+   "mean_abs_diff_0_255": 0.115,
+   "pixels_diff_gt_16": 0.102
+  },
+  "CAM_09_Boardroom_A": {
+   "mean_abs_diff_0_255": 0.242,
+   "pixels_diff_gt_16": 0.176
+  },
+  "CAM_13_Design_Studio_A": {
+   "mean_abs_diff_0_255": 0.164,
+   "pixels_diff_gt_16": 0.117
+  },
+  "CAM_07_MD_Office_A": {
+   "mean_abs_diff_0_255": 0.136,
+   "pixels_diff_gt_16": 0.031
+  },
+  "CAM_ISO_SE": {
+   "mean_abs_diff_0_255": 0.117,
+   "pixels_diff_gt_16": 0.214
+  }
+ }
+}

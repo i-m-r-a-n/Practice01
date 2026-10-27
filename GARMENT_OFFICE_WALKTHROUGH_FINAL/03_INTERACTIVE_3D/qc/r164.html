@@ -1,0 +1,21 @@
+<!doctype html><html><head><meta charset="utf-8"><title>r164 check</title><style>html,body{margin:0;background:#000}</style></head><body>
+<script type="module">
+// Same imports as the live GPT viewer (three 0.164.1 from esm.sh): does the web GLB load and render?
+import * as THREE from 'https://esm.sh/three@0.164.1';
+import { GLTFLoader } from 'https://esm.sh/three@0.164.1/examples/jsm/loaders/GLTFLoader.js';
+const r = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true });
+r.setSize(800, 450); r.outputColorSpace = THREE.SRGBColorSpace; document.body.appendChild(r.domElement);
+const scene = new THREE.Scene(); scene.add(new THREE.HemisphereLight(0xffffff, 0x444444, 2.2));
+const t0 = performance.now();
+const g = await new GLTFLoader().loadAsync('../model/Final_Office_Interior_web.glb');
+scene.add(g.scene);
+const meta = await (await fetch('../data/office_web_metadata.json')).json();
+const c = meta.cameras.find((x) => x.name === 'CAM_09_Boardroom_A');
+const cam = new THREE.PerspectiveCamera(c.vfov_deg_render, 16 / 9, 0.05, 300);
+cam.position.fromArray(c.position); cam.quaternion.set(...c.quaternion_xyzw);
+cam.setViewOffset(800, 450, 0, -c.shift_y * 800, 800, 450); cam.updateProjectionMatrix();
+r.render(scene, cam);
+let meshes = 0; g.scene.traverse((o) => { if (o.isMesh) meshes++; });
+window.__r164 = { ok: true, rev: THREE.REVISION, seconds: (performance.now() - t0) / 1000, meshes, cameras: g.cameras.length,
+  overhead: !!g.scene.getObjectByName('WEB_OVERHEAD'), webpTextures: g.parser.json.extensionsUsed };
+</script></body></html>

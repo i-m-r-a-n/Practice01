@@ -1,0 +1,196 @@
+{
+ "sheets": [
+  "camera_qc_sheet_1.jpg",
+  "camera_qc_sheet_2.jpg",
+  "camera_qc_sheet_3.jpg",
+  "camera_qc_sheet_4.jpg",
+  "camera_qc_sheet_5.jpg"
+ ],
+ "web_vs_original": {
+  "CAM_01_Reception_A": {
+   "mean_abs_diff_0_255": 9.11,
+   "pixels_diff_gt_16": 16.618
+  },
+  "CAM_04_Experience_Centre_A": {
+   "mean_abs_diff_0_255": 3.378,
+   "pixels_diff_gt_16": 2.352
+  },
+  "CAM_09_Boardroom_A": {
+   "mean_abs_diff_0_255": 16.67,
+   "pixels_diff_gt_16": 34.849
+  },
+  "CAM_13_Design_Studio_A": {
+   "mean_abs_diff_0_255": 5.274,
+   "pixels_diff_gt_16": 8.439
+  },
+  "CAM_07_MD_Office_A": {
+   "mean_abs_diff_0_255": 11.166,
+   "pixels_diff_gt_16": 29.267
+  },
+  "CAM_ISO_SE": {
+   "mean_abs_diff_0_255": 5.257,
+   "pixels_diff_gt_16": 10.191
+  }
+ },
+ "render_similarity_64px": {
+  "note": "mean abs RGB difference (0-255) between the final Cycles render and the real-time view, both reduced to 64 px wide; lower = closer",
+  "before_colour_fix": 52.31,
+  "after_colour_fix": 49.95,
+  "cameras_closer_after_fix": 25,
+  "per_camera": {
+   "CAM_01_Reception_A": [
+    35.8,
+    32.46
+   ],
+   "CAM_02_Reception_B": [
+    28.04,
+    28.72
+   ],
+   "CAM_03_Entrance_Lobby": [
+    19.38,
+    20.64
+   ],
+   "CAM_04_Experience_Centre_A": [
+    97.6,
+    99.19
+   ],
+   "CAM_05_Experience_Centre_B": [
+    53.47,
+    54.34
+   ],
+   "CAM_06_Experience_Centre_Detail": [
+    94.21,
+    95.3
+   ],
+   "CAM_07_MD_Office_A": [
+    37.9,
+    33.67
+   ],
+   "CAM_08_MD_Office_B": [
+    57.16,
+    54.92
+   ],
+   "CAM_09_Boardroom_A": [
+    66.04,
+    58.73
+   ],
+   "CAM_10_Boardroom_B": [
+    51.19,
+    47.42
+   ],
+   "CAM_11_Merchandising_A": [
+    41.65,
+    36.54
+   ],
+   "CAM_12_Merchandising_B": [
+    66.78,
+    53.4
+   ],
+   "CAM_13_Design_Studio_A": [
+    48.59,
+    49.65
+   ],
+   "CAM_14_Design_Studio_B": [
+    23.13,
+    22.23
+   ],
+   "CAM_15_CAD_Room": [
+    19.05,
+    15.7
+   ],
+   "CAM_16_Commercial_Accounts": [
+    60.13,
+    48.86
+   ],
+   "CAM_17_Executive_Reception": [
+    47.18,
+    42.05
+   ],
+   "CAM_18_Director": [
+    43.55,
+    42.96
+   ],
+   "CAM_19_HR_Admin": [
+    82.75,
+    73.94
+   ],
+   "CAM_20_Staff_Cafe": [
+    73.4,
+    73.12
+   ],
+   "CAM_21_Lounge_Training": [
+    36.46,
+    35.7
+   ],
+   "CAM_22_Prayer_Male": [
+    78.15,
+    73.06
+   ],
+   "CAM_23_Sample_Room": [
+    37.95,
+    33.31
+   ],
+   "CAM_24_3D_Printing_Lab": [
+    30.82,
+    26.92
+   ],
+   "CAM_25_Fabric_Library": [
+    32.81,
+    36.87
+   ],
+   "CAM_26_Guest_Workspace": [
+    49.89,
+    40.56
+   ],
+   "CAM_27_Audit_Room": [
+    51.24,
+    45.78
+   ],
+   "CAM_28_Washroom_Male": [
+    72.02,
+    73.15
+   ],
+   "CAM_29_Washroom_Female": [
+    90.33,
+    91.63
+   ],
+   "CAM_30_Prayer_Female": [
+    69.24,
+    63.84
+   ],
+   "CAM_31_Executive_Corridor": [
+    74.72,
+    77.72
+   ],
+   "CAM_32_Design_Corridor": [
+    73.83,
+    75.93
+   ],
+   "CAM_33_Wudu_Male": [
+    71.84,
+    72.83
+   ],
+   "CAM_ISO_Design_Wing": [
+    30.9,
+    32.02
+   ],
+   "CAM_ISO_Front_Zone": [
+    50.15,
+    49.27
+   ],
+   "CAM_ISO_SE": [
+    28.01,
+    27.34
+   ],
+   "CAM_ISO_SW": [
+    22.42,
+    21.9
+   ],
+   "CAM_TOP_Plan": [
+    40.02,
+    36.4
+   ]
+  }
+ },
+ "web_vs_original_note": "after the colour fix the web GLB differs from the original GLB on purpose (base colours now match the Blender materials); the compression-only check (before the fix) is in camera_qc_summary_compression_only.json"
+}

@@ -1,0 +1,291 @@
+{
+ "errors": [],
+ "runs": {
+  "web": {
+   "loadSeconds": 2.176199999999255,
+   "meshes": 2306,
+   "tris": 920497,
+   "overheadGroup": true,
+   "overheadNodes": 1,
+   "gl": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+   "pageSeconds": 2.355,
+   "shots": [
+    {
+     "name": "CAM_01_Reception_A",
+     "W": 800,
+     "H": 450,
+     "seconds": 7.453
+    },
+    {
+     "name": "CAM_02_Reception_B",
+     "W": 800,
+     "H": 450,
+     "seconds": 7.611
+    },
+    {
+     "name": "CAM_03_Entrance_Lobby",
+     "W": 800,
+     "H": 450,
+     "seconds": 4.521
+    },
+    {
+     "name": "CAM_04_Experience_Centre_A",
+     "W": 800,
+     "H": 450,
+     "seconds": 4.312
+    },
+    {
+     "name": "CAM_05_Experience_Centre_B",
+     "W": 800,
+     "H": 450,
+     "seconds": 3.767
+    },
+    {
+     "name": "CAM_06_Experience_Centre_Detail",
+     "W": 800,
+     "H": 450,
+     "seconds": 3.487
+    },
+    {
+     "name": "CAM_07_MD_Office_A",
+     "W": 800,
+     "H": 450,
+     "seconds": 1.154
+    },
+    {
+     "name": "CAM_08_MD_Office_B",
+     "W": 800,
+     "H": 450,
+     "seconds": 5.333
+    },
+    {
+     "name": "CAM_09_Boardroom_A",
+     "W": 800,
+     "H": 450,
+     "seconds": 3.642
+    },
+    {
+     "name": "CAM_10_Boardroom_B",
+     "W": 800,
+     "H": 450,
+     "seconds": 4.844
+    },
+    {
+     "name": "CAM_11_Merchandising_A",
+     "W": 800,
+     "H": 450,
+     "seconds": 3.871
+    },
+    {
+     "name": "CAM_12_Merchandising_B",
+     "W": 800,
+     "H": 450,
+     "seconds": 4.351
+    },
+    {
+     "name": "CAM_13_Design_Studio_A",
+     "W": 800,
+     "H": 450,
+     "seconds": 2.328
+    },
+    {
+     "name": "CAM_14_Design_Studio_B",
+     "W": 800,
+     "H": 450,
+     "seconds": 5.25
+    },
+    {
+     "name": "CAM_15_CAD_Room",
+     "W": 800,
+     "H": 450,
+     "seconds": 4.008
+    },
+    {
+     "name": "CAM_16_Commercial_Accounts",
+     "W": 800,
+     "H": 450,
+     "seconds": 1.65
+    },
+    {
+     "name": "CAM_17_Executive_Reception",
+     "W": 800,
+     "H": 450,
+     "seconds": 2.377
+    },
+    {
+     "name": "CAM_18_Director",
+     "W": 800,
+     "H": 450,
+     "seconds": 1.442
+    },
+    {
+     "name": "CAM_19_HR_Admin",
+     "W": 800,
+     "H": 450,
+     "seconds": 2.492
+    },
+    {
+     "name": "CAM_20_Staff_Cafe",
+     "W": 800,
+     "H": 450,
+     "seconds": 1.68
+    },
+    {
+     "name": "CAM_21_Lounge_Training",
+     "W": 800,
+     "H": 450,
+     "seconds": 1.088
+    },
+    {
+     "name": "CAM_22_Prayer_Male",
+     "W": 800,
+     "H": 450,
+     "seconds": 0.896
+    },
+    {
+     "name": "CAM_23_Sample_Room",
+     "W": 800,
+     "H": 450,
+     "seconds": 2.63
+    },
+    {
+     "name": "CAM_24_3D_Printing_Lab",
+     "W": 800,
+     "H": 450,
+     "seconds": 3.726
+    },
+    {
+     "name": "CAM_25_Fabric_Library",
+     "W": 800,
+     "H": 450,
+     "seconds": 4.697
+    },
+    {
+     "name": "CAM_26_Guest_Workspace",
+     "W": 800,
+     "H": 450,
+     "seconds": 1.47
+    },
+    {
+     "name": "CAM_27_Audit_Room",
+     "W": 800,
+     "H": 450,
+     "seconds": 1.085
+    },
+    {
+     "name": "CAM_28_Washroom_Male",
+     "W": 800,
+     "H": 450,
+     "seconds": 1.767
+    },
+    {
+     "name": "CAM_29_Washroom_Female",
+     "W": 800,
+     "H": 450,
+     "seconds": 1.356
+    },
+    {
+     "name": "CAM_30_Prayer_Female",
+     "W": 800,
+     "H": 450,
+     "seconds": 0.417
+    },
+    {
+     "name": "CAM_31_Executive_Corridor",
+     "W": 800,
+     "H": 450,
+     "seconds": 4.001
+    },
+    {
+     "name": "CAM_32_Design_Corridor",
+     "W": 800,
+     "H": 450,
+     "seconds": 2.522
+    },
+    {
+     "name": "CAM_33_Wudu_Male",
+     "W": 800,
+     "H": 450,
+     "seconds": 1.471
+    },
+    {
+     "name": "CAM_ISO_Design_Wing",
+     "W": 800,
+     "H": 450,
+     "seconds": 2.852
+    },
+    {
+     "name": "CAM_ISO_Front_Zone",
+     "W": 800,
+     "H": 450,
+     "seconds": 4.34
+    },
+    {
+     "name": "CAM_ISO_SE",
+     "W": 800,
+     "H": 450,
+     "seconds": 4.446
+    },
+    {
+     "name": "CAM_ISO_SW",
+     "W": 800,
+     "H": 600,
+     "seconds": 4.453
+    },
+    {
+     "name": "CAM_TOP_Plan",
+     "W": 800,
+     "H": 1040,
+     "seconds": 4.671
+    }
+   ]
+  },
+  "original": {
+   "loadSeconds": 2.2024000000003725,
+   "meshes": 2306,
+   "tris": 920497,
+   "overheadGroup": false,
+   "overheadNodes": 478,
+   "gl": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+   "pageSeconds": 2.375,
+   "shots": [
+    {
+     "name": "CAM_01_Reception_A",
+     "W": 800,
+     "H": 450,
+     "seconds": 6.873
+    },
+    {
+     "name": "CAM_04_Experience_Centre_A",
+     "W": 800,
+     "H": 450,
+     "seconds": 5.023
+    },
+    {
+     "name": "CAM_09_Boardroom_A",
+     "W": 800,
+     "H": 450,
+     "seconds": 3.856
+    },
+    {
+     "name": "CAM_13_Design_Studio_A",
+     "W": 800,
+     "H": 450,
+     "seconds": 2.279
+    },
+    {
+     "name": "CAM_07_MD_Office_A",
+     "W": 800,
+     "H": 450,
+     "seconds": 1.168
+    },
+    {
+     "name": "CAM_ISO_SE",
+     "W": 800,
+     "H": 450,
+     "seconds": 4.582
+    }
+   ]
+  }
+ }
+}

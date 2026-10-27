@@ -99,20 +99,20 @@ if tag:
     tp = Image.new("RGBA", (tag.width + 36, tag.height + 20), (255, 255, 255, 255))
     tp.alpha_composite(tag, (18, 10))
     img.alpha_composite(tp, ((W - tp.width) // 2, y + 150))
-centred(d, H - 150, "Visualization of the proposed interior design, rendered from the project's 3D model - not a photograph of a completed space.",
+centred(d, H - 150, "Proposed interior visualization. Final dimensions and technical details subject to site verification.",
         font("Regular", 23), (167, 179, 171))
-centred(d, H - 112, "Furniture is generic; some dimensions are provisional until measured on site.", font("Regular", 23), (167, 179, 171))
+centred(d, H - 112, "Rendered from the project's 3D model - not a photograph of a completed space. Furniture is generic.", font("Regular", 23), (167, 179, 171))
 img.convert("RGB").save(os.path.join(OUT, "closing_card.png"))
 
 # ---------------------------------------------------------------- opening overlay (over the orbit)
 ov = Image.new("RGBA", (W, H), (0, 0, 0, 0))
-grad = Image.new("L", (W, 420), 0)
+grad = Image.new("L", (W, 520), 0)
 gd = ImageDraw.Draw(grad)
-for i in range(420):
-    gd.line([(0, i), (W, i)], fill=int(200 * (i / 420) ** 1.6))
-shade = Image.new("RGBA", (W, 420), (8, 14, 10, 255))
+for i in range(520):
+    gd.line([(0, i), (W, i)], fill=int(236 * min(1.0, i / 330) ** 0.9))
+shade = Image.new("RGBA", (W, 520), (8, 14, 10, 255))
 shade.putalpha(grad)
-ov.alpha_composite(shade, (0, H - 420))
+ov.alpha_composite(shade, (0, H - 520))
 d = ImageDraw.Draw(ov)
 d.text((96, H - 268), "THE COMPLETE GROUND FLOOR", font=font("SemiBold", 24), fill=MINT)
 yy = H - 228
