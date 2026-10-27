@@ -1,0 +1,277 @@
+{
+  "scope": "Independent check of the saved static witness against exact original grid bytes. No viewer, new props or people tested.",
+  "witness_sha256": "120946a9107d780c1d94f076c4862b1ad78626c558b43b51e7c734faccf5161b",
+  "checks": [
+    {
+      "name": "source lock walk_grid.json",
+      "passed": true,
+      "detail": "54fe8950ae1789dae93d3160ce47b871f92ca9cc880547d0e30f3af4d87d85ed"
+    },
+    {
+      "name": "source lock office_web_metadata.json",
+      "passed": true,
+      "detail": "934c2e807eb9c203b3a8f8ac31b0166a20a36e22580342e868bc496a89d1bcc3"
+    },
+    {
+      "name": "ten ordered destinations",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Z01 to Z02 continuous endpoints",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Z01 to Z02 all authored centres free",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Z01 to Z02 four-connected increments",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Z01 to Z02 recorded length",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Z01 to Z02 interpolation at 0.02m samples",
+      "passed": true,
+      "detail": {
+        "blocked_samples": []
+      }
+    },
+    {
+      "name": "Z02 to Z30 continuous endpoints",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Z02 to Z30 all authored centres free",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Z02 to Z30 four-connected increments",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Z02 to Z30 recorded length",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Z02 to Z30 interpolation at 0.02m samples",
+      "passed": true,
+      "detail": {
+        "blocked_samples": []
+      }
+    },
+    {
+      "name": "Z30 to Z08 continuous endpoints",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Z30 to Z08 all authored centres free",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Z30 to Z08 four-connected increments",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Z30 to Z08 recorded length",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Z30 to Z08 interpolation at 0.02m samples",
+      "passed": true,
+      "detail": {
+        "blocked_samples": []
+      }
+    },
+    {
+      "name": "Z08 to Z12 continuous endpoints",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Z08 to Z12 all authored centres free",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Z08 to Z12 four-connected increments",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Z08 to Z12 recorded length",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Z08 to Z12 interpolation at 0.02m samples",
+      "passed": true,
+      "detail": {
+        "blocked_samples": []
+      }
+    },
+    {
+      "name": "Z12 to Z07 continuous endpoints",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Z12 to Z07 all authored centres free",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Z12 to Z07 four-connected increments",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Z12 to Z07 recorded length",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Z12 to Z07 interpolation at 0.02m samples",
+      "passed": true,
+      "detail": {
+        "blocked_samples": []
+      }
+    },
+    {
+      "name": "Z07 to Z18 continuous endpoints",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Z07 to Z18 all authored centres free",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Z07 to Z18 four-connected increments",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Z07 to Z18 recorded length",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Z07 to Z18 interpolation at 0.02m samples",
+      "passed": true,
+      "detail": {
+        "blocked_samples": []
+      }
+    },
+    {
+      "name": "Z18 to Z20 continuous endpoints",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Z18 to Z20 all authored centres free",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Z18 to Z20 four-connected increments",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Z18 to Z20 recorded length",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Z18 to Z20 interpolation at 0.02m samples",
+      "passed": true,
+      "detail": {
+        "blocked_samples": []
+      }
+    },
+    {
+      "name": "Z20 to Z23 continuous endpoints",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Z20 to Z23 all authored centres free",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Z20 to Z23 four-connected increments",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Z20 to Z23 recorded length",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Z20 to Z23 interpolation at 0.02m samples",
+      "passed": true,
+      "detail": {
+        "blocked_samples": []
+      }
+    },
+    {
+      "name": "Z23 to Z25 continuous endpoints",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Z23 to Z25 all authored centres free",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Z23 to Z25 four-connected increments",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Z23 to Z25 recorded length",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Z23 to Z25 interpolation at 0.02m samples",
+      "passed": true,
+      "detail": {
+        "blocked_samples": []
+      }
+    },
+    {
+      "name": "total length",
+      "passed": true,
+      "detail": 201.6
+    }
+  ],
+  "passed": 49,
+  "total": 49,
+  "sample_count": 12096,
+  "route_m": 201.6,
+  "limitations": [
+    "Raster collision uses inherited 0.15m walker radius; not a real body-clearance certification.",
+    "Browser movement, acceleration, default spawning, dynamic people and new props remain separate checks."
+  ]
+}

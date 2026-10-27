@@ -1,0 +1,4 @@
+{
+  "error": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at file:///workspace/office-offline-diagnostic/Office_Realistic_Tour.html?scale=0.4\nCall log:\n  - navigating to \"file:///workspace/office-offline-diagnostic/Office_Realistic_Tour.html?scale=0.4\", waiting until \"domcontentloaded\"\n",
+  "page_errors": []
+}

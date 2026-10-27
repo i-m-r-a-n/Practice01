@@ -1,0 +1,47 @@
+{
+  "offline": {
+    "requests": 4,
+    "decodedBytes": 34493562,
+    "missing": []
+  },
+  "lightmaps": {
+    "phase": 1,
+    "manifest": "http://127.0.0.1:8787/lighting/manifest.json",
+    "available": 2,
+    "loaded": [
+      "Z02"
+    ],
+    "rooms": {
+      "Z02": {
+        "state": "loaded",
+        "sourceObjects": 36,
+        "meshes": 37,
+        "triangles": 52769,
+        "intensity": 3.141592653589793,
+        "format": "ktx2"
+      },
+      "Z30": {
+        "state": "available",
+        "sourceObjects": 58
+      }
+    },
+    "error": null
+  },
+  "stats": {
+    "frame": 36,
+    "calls": 270,
+    "triangles": 1651842,
+    "points": 0,
+    "lines": 0,
+    "memory": {
+      "geometries": 141,
+      "textures": 68
+    },
+    "phase": 1,
+    "capturePostProcessing": false
+  },
+  "page_errors": [],
+  "url": "http://127.0.0.1:8787/Office_Realistic_Tour.html?scale=0.4",
+  "browser": "154.0.8037.57",
+  "scope": "HTTP test of offline resource-pack resolver only; file:// blocked by managed browser policy. Diagnostic lighting not visually accepted."
+}
