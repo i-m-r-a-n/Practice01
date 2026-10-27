@@ -74,6 +74,9 @@ button.ghost:hover { background: rgba(255, 255, 255, .14) }
 .bar button:hover { background: rgba(255, 255, 255, .15) }
 .bar button.on { background: var(--green); border-color: var(--green) }
 .bar .sep { width: 1px; height: 22px; background: var(--line); margin: 0 3px }
+.bar .q { display: flex; gap: 6px; align-items: center; font-size: 12.5px; color: var(--muted) }
+.bar select { background: rgba(255, 255, 255, .07); border: 1px solid var(--line); border-radius: 7px; padding: 6px 8px; font: inherit; font-size: 12.5px; color: var(--white) }
+.bar select option { color: #111 }
 #tourbar { bottom: 54px; width: min(640px, calc(100vw - 24px)); padding: 10px 12px 9px }
 .tb-row { display: flex; gap: 6px; align-items: center; flex-wrap: wrap }
 #tourbar button.wide { min-width: 104px }
@@ -155,6 +158,7 @@ button.ghost:hover { background: rgba(255, 255, 255, .14) }
     <button id="mRooms" title="Choose a room from the list (R)">Rooms</button>
     <button id="mWalk" title="Walk at eye level: W A S D / arrows, drag to look, Esc to leave (W)">Walk</button>
     <button id="mTour" class="primary" title="Guided tour of 16 stops (T, Space to pause)">&#9654; Guided tour</button>
+    <button id="mFull" title="Full screen for a projector or large display (F)">&#x26F6;</button>
   </nav>
 </header>
 
@@ -182,6 +186,9 @@ button.ghost:hover { background: rgba(255, 255, 255, .14) }
   <span class="sep"></span>
   <button id="vCeil" title="Show / hide deck, beams, ceilings and light fittings (C)">Ceilings</button>
   <button id="vLabels" class="on" title="Room names (L)">Labels</button>
+  <span class="sep"></span>
+  <label class="q" title="Graphics quality: High for desktops and projectors, Balanced for laptops, Low for phones and older computers">Quality
+    <select id="vQuality"><option value="high">High</option><option value="balanced">Balanced</option><option value="low">Low</option></select></label>
 </div>
 
 <div id="tourbar" class="bar hidden">

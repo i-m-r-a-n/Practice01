@@ -1,0 +1,41 @@
+{
+ "Final_Office_Interior.glb": {
+  "MB": 41.86,
+  "meshes": 563,
+  "primitives": 1063,
+  "unique_triangles": 374160,
+  "drawn_triangles": 920497,
+  "vertices": 338499,
+  "materials": 79,
+  "textures": 61,
+  "texture_megapixels": 61,
+  "max_texture": 1406,
+  "est_texture_vram_MB_rgba8_mips": 325
+ },
+ "Final_Office_Interior_web.glb": {
+  "MB": 16.57,
+  "meshes": 445,
+  "primitives": 932,
+  "unique_triangles": 314442,
+  "drawn_triangles": 920497,
+  "vertices": 296222,
+  "materials": 79,
+  "textures": 67,
+  "texture_megapixels": 67.3,
+  "max_texture": 1406,
+  "est_texture_vram_MB_rgba8_mips": 358
+ },
+ "Final_Office_Interior_web_realism.glb": {
+  "MB": 19.45,
+  "meshes": 269,
+  "primitives": 768,
+  "unique_triangles": 412800,
+  "drawn_triangles": 999775,
+  "vertices": 363529,
+  "materials": 79,
+  "textures": 67,
+  "texture_megapixels": 67.3,
+  "max_texture": 1406,
+  "est_texture_vram_MB_rgba8_mips": 358
+ }
+}
