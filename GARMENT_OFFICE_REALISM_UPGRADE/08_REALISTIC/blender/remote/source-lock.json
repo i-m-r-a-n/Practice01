@@ -1,0 +1,10 @@
+{
+  "scope": "Immutable remote bake snapshot; runtime results remain visually unreviewed",
+  "approved_blend_sha256": "fa3ed3d58f6d44c3554e3761307841b96115ff7816e4e541c8e6611cb363810d",
+  "metadata_sha256": "934c2e807eb9c203b3a8f8ac31b0166a20a36e22580342e868bc496a89d1bcc3",
+  "scripts": {
+    "bake_rooms.py": "0a64b0158faa9fab469484946819e27662d366ea3b3a2b03cf38481a26d3c9a9",
+    "doorway_repairs.py": "f8fe367f72b3339fdf97559c1c54a860ef001731e9317b00f782a03db3546c78",
+    "denoise_lightmap.py": "0c787931ea0b3337ac4ecabeaa3a29d974065d2057198f41eae7f3f2914994ae"
+  }
+}
