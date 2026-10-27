@@ -1,18 +1,22 @@
-## Current Reception increment
+## Reception and Boardroom increment
 
-The default build is configured by `release-config.json`. It retains the exact live vertex-lit shared shell from `Final_Office_Interior_web_baked.glb` and overlays only the named Reception furniture/fixture subset from `lighting-v2/manifest-hybrid.json`. This is a hybrid first-room improvement, not a claim that every wall/floor has a new high-resolution lightmap. The old production tour is not modified.
+The default build is configured by `release-config.json`, with release zones in order `Z02` (Reception), then `Z08` (Boardroom). It uses the exact approved `07_WEB_TOUR_ASSETS/Final_Office_Interior_web_baked.glb`. Reception retains its existing 25-target furniture/fixture overlay from `lighting-v2/manifest-hybrid.json`; Boardroom retains the original warm vertex lighting. No new lightmap bake is part of this increment.
 
-The original Claude HTML/CSS, room list, guided tour, photo comparison and overview are retained. Only a People toggle and “People shown are illustrative” note are added when the accepted static people gate is enabled. Reception has eight additive desk/table objects and readable screen artwork. Native PBR replacement, room reflection probes and post extras are disabled in this release; existing scene lighting is used for added props/static people. The later experimental modules remain archived in source, dormant.
+The original Claude HTML/CSS, room list, guided tour, cameras, furniture, client logos, photo comparison and overview are retained. The existing People toggle and “People shown are illustrative” note control the bounded population. The combined release manifest is `people/room-release/people-manifest.json`, containing the same four Reception actors followed by six Boardroom actors, with frozen poses and no locomotion or task animation. The archived 35-person population is not the release entrypoint. The bounded Boardroom contact review passed in [`qa/boardroom-contact-acceptance.md`](../qa/boardroom-contact-acceptance.md), including the final integrated camera frame and all 23 included Boardroom props.
 
-Strict walking retains the existing grid and exact source slab footprint. Because the live shell has joined node names, the eight original floor-top triangles are bundled in `approved-floor-footprint.json`, with the unchanged named-source hash and accessor provenance. No floor geometry is changed.
+Additive office props are limited to Reception and Boardroom. Boardroom excludes `PROP_0021`, an additive glass that overlapped the note-taking actor’s notebook; the source props manifest is unchanged. The existing `F047 screen_86` display receives the project-authored generic presentation artwork through cloned screen UV0/materials before render batching. Its position, normals, indices and physical dimensions stay exact. Reception retains its existing readable display artwork. Native PBR replacement, room reflection probes and post extras remain disabled; existing scene lighting illuminates added props and static people.
 
-The Reception-only people gate is enabled after the independent exact-mesh contact pass on poses16bb2498…; this does not enable the archived35-person population. The release uses `people/reception/people-manifest.json` and `reception/poses.json`, with frozen poses, no locomotion and no task animation. The archived35-person manifest is not the release entrypoint. Props/people helper code is statically bundled so offline playback has no native file:// module imports.
+Strict walking retains the existing grid and exact source slab footprint. Because the live shell has joined node names, the eight original floor-top triangles remain bundled in `approved-floor-footprint.json`, with the unchanged named-source hash and accessor provenance. No floor geometry is changed. Props/people helper code is statically bundled so offline playback has no native file:// module imports.
+
+The final two-room capture is recorded in [`qa/boardroom-rooms-final/capture.json`](../qa/boardroom-rooms-final/capture.json). Reception’s regression frame is effectively pixel-identical to the previously verified exact-base frame: no pixel differs by more than 8/255 in any RGB channel. The capture validates the ten frozen people, existing Reception atlas and Boardroom’s original lighting; it is not a Mac performance benchmark.
+
+`__viewer.api.officePropDiagnostics('Z08')` exports the actual generated additive prop vertices and original instance transforms for independent contact review, including instances culled from the current view. It does not move props or change the rendered scene.
 
 # Realistic viewer: phase 1 integration
 
 This directory is an isolated derivative of the approved tour viewer. The original tour source and approved models are unchanged. Phase 1 adds progressive per-room Cycles lightmaps. Later phase features are not implied by this build.
 
-The default remains `stage=1`. Later work is staged behind query flags for separate comparisons; functional implementation is not visual acceptance of the lighting candidates.
+The following phase documentation describes the archived staged experiments. The current default release is stage 4 with the bounded room configuration above; functional implementation is not visual acceptance of lighting candidates.
 
 ## Build and serve
 
@@ -24,7 +28,7 @@ npm run build
 python3 serve_preview.py --port 8783
 ```
 
-Open `http://127.0.0.1:8783/realistic/?welcome=0`. The bundle is `dist/index.html` and `dist/app.js`. The Worker must route `/realistic/model_web.glb` to the original **named** 16.6 MB web GLB from `07_WEB_TOUR_ASSETS/Final_Office_Interior_web.glb`; it must not use the older joined vertex-lit shell, whose source object names were removed. Routes below `/realistic/lighting`, `/realistic/textures` map to the corresponding sibling directories under `08_REALISTIC`. `/realistic/renders/` maps to the original approved Cycles JPGs.
+Open `http://127.0.0.1:8783/realistic/?welcome=0`. The bundle is `dist/index.html` and `dist/app.js`. The current release routes `/realistic/model_web_baked.glb` to the exact approved `07_WEB_TOUR_ASSETS/Final_Office_Interior_web_baked.glb`. The experimental `/realistic/model_web.glb` route uses the named `Final_Office_Interior_web.glb`; that alternative is not the current release model. Routes below `/realistic/lighting`, `/realistic/textures` map to the corresponding sibling directories under `08_REALISTIC`. `/realistic/renders/` maps to the original approved Cycles JPGs.
 
 ## Lighting contract
 

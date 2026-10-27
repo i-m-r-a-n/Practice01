@@ -1,0 +1,28 @@
+{
+  "reception_actors_unchanged": true,
+  "reception_props_unchanged": true,
+  "reception_used_poses_unchanged": true,
+  "boardroom_actors_props_poses_match_evaluated_preview": true,
+  "combined_actor_count": 10,
+  "active_zones": [
+    "Z02",
+    "Z08"
+  ],
+  "private_empty_zones_unchanged": true,
+  "combined_all_frozen_no_paths": true,
+  "asset_hashes_unchanged": true,
+  "source_locks": {
+    "people/reception/people-manifest.json": "d1ee7c8d88b22216aaea9c07283bc1c392ef9eae43359d4038ce3e734d349b7a",
+    "people/room-release/people-manifest.json": "58972aaffebab7c776ce72a6fe854b8962c2c636c5a40f3b84f18656fa403ecb",
+    "people/room-release/poses.json": "681c74052665993d137c7e046e9c64d168ea0954f5d2a7d0e80f3dbd0cd9b596",
+    "people/people-layer.js": "787c8e3fff8638a4ef62f7b8b0571ceb35be8bd999d56863d59e8c95efeeb18d"
+  },
+  "body_and_bones_unchanged_after_pen_addition": {
+    "office-person-08": true,
+    "office-person-09": true,
+    "office-person-10": true,
+    "office-person-11": true,
+    "office-person-12": true,
+    "office-person-13": true
+  }
+}

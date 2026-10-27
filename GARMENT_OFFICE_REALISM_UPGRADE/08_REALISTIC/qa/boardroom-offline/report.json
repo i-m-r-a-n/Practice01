@@ -1,0 +1,30 @@
+{
+  "status": "passed",
+  "scope": "Loopback HTTP offline-resource resolver; not native Mac/file protocol acceptance",
+  "errors": [],
+  "outside_requests": [],
+  "frame": {
+    "name": "CAM_09_Boardroom_A",
+    "type": "PERSP",
+    "lighting": null
+  },
+  "people": {
+    "enabled": true,
+    "loaded": true,
+    "frozen": true,
+    "total": 10,
+    "visible": 10,
+    "walkers": 0,
+    "illustrative": true,
+    "forbiddenZoneViolations": 0,
+    "status": "Reception accepted; Boardroom fixed contact review pending",
+    "nativeMacPerformanceTested": false
+  },
+  "offline": {
+    "requests": 9,
+    "decodedBytes": 38030662,
+    "missing": []
+  },
+  "image_sha256": "fbe56fb46bc5f0dad7538088df782ae87e204e81546583bf5131da7d9892c621",
+  "offline_manifest_sha256": "99725cd2d6f1254af992382258257b719f4b567d1bb409064b31e6f96126e67a"
+}

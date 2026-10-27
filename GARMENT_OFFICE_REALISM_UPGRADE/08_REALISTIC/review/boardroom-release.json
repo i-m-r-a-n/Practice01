@@ -1,0 +1,33 @@
+{
+  "room": "Boardroom",
+  "status": "Local native image, independent geometry and offline-resolver accepted; public hashes recorded after deployment",
+  "active_rooms": [
+    "Reception",
+    "Boardroom"
+  ],
+  "total_static_people": 10,
+  "boardroom_people": 6,
+  "boardroom_additive_props": 23,
+  "lighting": "Existing approved warm vertex lighting preserved; Reception25-target furniture lightmap preserved. No new Boardroom bake.",
+  "preservation": "Approved model/faaf09 source and furniture unchanged; Reception4 poses/assets/props deep-equal, native image effectively identical",
+  "note_scene": "Paper review with resting pens; no animated writing",
+  "tests": [
+    "6actualfrozenbody/furniture/floor/seat/hand-notebook-pen checks",
+    "23officeprops/98meshes noactor/handprop intersections",
+    "ActualBoardroom+Reception frames noJS/console/HTTP/viewer errors",
+    "Offline10frozenpeople and0external requests,0missingassets,0errors"
+  ],
+  "limitations": [
+    "Low-detail illustrative game characters, not photoreal humans; convincing people contact shadows remain limited",
+    "NativeMacBookFPS and Safari nottested; directfile protocol blocked inmanagedtestbrowser",
+    "LivebrowsercaptureblockedbyenvironmentCAtrust:ERR_CERT_AUTHORITY_INVALID; certificateimportpermissionwasaborted. PublicHTTPS/sourcehashverificationdone separately."
+  ],
+  "hashes": {
+    "viewer/dist/app.js": "4a21e69db0c9a966d379824afc426991b4d5b179c39eb8a1f590ca079a604783",
+    "viewer/dist/index.html": "c3fb3ba4ae201892c4451a5db43c6add6f50a70b80bd1833491290373c6f1545",
+    "viewer/dist/release-config.json": "a5ccd13c025b0dda9560777300f5612a0df8a7b939261b9e1affd7692f3b1366",
+    "people/room-release/people-manifest.json": "58972aaffebab7c776ce72a6fe854b8962c2c636c5a40f3b84f18656fa403ecb",
+    "people/room-release/poses.json": "681c74052665993d137c7e046e9c64d168ea0954f5d2a7d0e80f3dbd0cd9b596",
+    "review/boardroom-before-after.png": "1b346df9cbf273325802c636275f75dcd93df3d2e89c13690e5808c42226324c"
+  }
+}

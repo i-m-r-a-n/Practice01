@@ -1,0 +1,309 @@
+{
+  "phase": "boardroom-rooms-final",
+  "url": "http://127.0.0.1:8783/realistic/?welcome=0",
+  "viewport": [
+    1280,
+    720
+  ],
+  "people_requested": "on",
+  "require_lightmaps": false,
+  "shots": [
+    {
+      "camera": "CAM_09_Boardroom_A",
+      "type": "PERSP",
+      "frame_result": {
+        "name": "CAM_09_Boardroom_A",
+        "type": "PERSP",
+        "lighting": null
+      },
+      "state": {
+        "viewer": {
+          "mode": "capture",
+          "room": "Z08",
+          "atCam": "CAM_09_Boardroom_A",
+          "flying": false,
+          "flightT": null,
+          "fps": 0,
+          "overhead": true,
+          "tour": null,
+          "photo": null,
+          "aoFrames": 0,
+          "pos": [
+            21.844,
+            1.575,
+            -5.08
+          ]
+        },
+        "stats": {
+          "frame": 37,
+          "calls": 430,
+          "triangles": 2378488,
+          "points": 0,
+          "lines": 0,
+          "memory": {
+            "geometries": 219,
+            "textures": 168
+          },
+          "phase": 4,
+          "capturePostProcessing": false,
+          "post": null
+        },
+        "lighting": {
+          "regularAtlasBudgetBytes": 201326592,
+          "phase": 1,
+          "manifest": "http://127.0.0.1:8783/realistic/lighting-v2/manifest-hybrid.json",
+          "available": 1,
+          "loaded": [],
+          "requiredShared": [],
+          "rooms": {
+            "Z02": {
+              "state": "available",
+              "sourceObjects": 25
+            }
+          },
+          "error": null
+        },
+        "people": {
+          "enabled": true,
+          "loaded": true,
+          "frozen": true,
+          "total": 10,
+          "visible": 10,
+          "walkers": 0,
+          "illustrative": true,
+          "forbiddenZoneViolations": 0,
+          "status": "Reception accepted; Boardroom fixed contact review pending",
+          "nativeMacPerformanceTested": false
+        },
+        "viewer_errors": []
+      },
+      "file": "shots/after_CAM_09_Boardroom_A.png",
+      "sha256": "ad99de125eff0a4e8a70e599820f9daedcea294eb496e0b0621dd291bf5aab2a"
+    },
+    {
+      "camera": "CAM_01_Reception_A",
+      "type": "PERSP",
+      "frame_result": {
+        "name": "CAM_01_Reception_A",
+        "type": "PERSP",
+        "lighting": {
+          "state": "loaded",
+          "sourceObjects": 25,
+          "meshes": 29,
+          "triangles": 41717,
+          "intensity": 3.141592653589793,
+          "format": "ktx2",
+          "resolution": 2048,
+          "heroError": null
+        }
+      },
+      "state": {
+        "viewer": {
+          "mode": "capture",
+          "room": "Z02",
+          "atCam": "CAM_01_Reception_A",
+          "flying": false,
+          "flightT": null,
+          "fps": 0,
+          "overhead": true,
+          "tour": null,
+          "photo": null,
+          "aoFrames": 0,
+          "pos": [
+            8.077,
+            1.524,
+            0.66
+          ]
+        },
+        "stats": {
+          "frame": 39,
+          "calls": 294,
+          "triangles": 1955832,
+          "points": 0,
+          "lines": 0,
+          "memory": {
+            "geometries": 246,
+            "textures": 188
+          },
+          "phase": 4,
+          "capturePostProcessing": false,
+          "post": null
+        },
+        "lighting": {
+          "regularAtlasBudgetBytes": 201326592,
+          "phase": 1,
+          "manifest": "http://127.0.0.1:8783/realistic/lighting-v2/manifest-hybrid.json",
+          "available": 1,
+          "loaded": [
+            "Z02"
+          ],
+          "requiredShared": [],
+          "rooms": {
+            "Z02": {
+              "state": "loaded",
+              "sourceObjects": 25,
+              "meshes": 29,
+              "triangles": 41717,
+              "intensity": 3.141592653589793,
+              "format": "ktx2",
+              "resolution": 2048,
+              "heroError": null
+            }
+          },
+          "error": null,
+          "residentRegularBytes": 33554432,
+          "residentSharedBytes": 0,
+          "activeExceedsBudget": false
+        },
+        "people": {
+          "enabled": true,
+          "loaded": true,
+          "frozen": true,
+          "total": 10,
+          "visible": 5,
+          "walkers": 0,
+          "illustrative": true,
+          "forbiddenZoneViolations": 0,
+          "status": "Reception accepted; Boardroom fixed contact review pending",
+          "nativeMacPerformanceTested": false
+        },
+        "viewer_errors": []
+      },
+      "file": "shots/after_CAM_01_Reception_A.png",
+      "sha256": "e64974318782571ca7547ce8507529c63993809eca5dedfa38ca9f25cd868295"
+    }
+  ],
+  "console_errors": [],
+  "page_errors": [],
+  "http_errors": [],
+  "source_responses": [
+    {
+      "url": "http://127.0.0.1:8783/realistic/?welcome=0",
+      "status": 200,
+      "bytes": 70875,
+      "sha256": "c3fb3ba4ae201892c4451a5db43c6add6f50a70b80bd1833491290373c6f1545"
+    },
+    {
+      "url": "http://127.0.0.1:8783/realistic/app.js",
+      "status": 200,
+      "bytes": 1163143,
+      "sha256": "4a21e69db0c9a966d379824afc426991b4d5b179c39eb8a1f590ca079a604783"
+    }
+  ],
+  "source_response_method": "Actual browser navigation/asset response bodies, not a later refetch",
+  "status": "captured",
+  "scope": "Actual viewer frames; UI hidden through screenshot-only CSS. Original scene camera API, no synthetic edits.",
+  "limits": [
+    "Linux software-GPU capture, not a MacBook performance test",
+    "Local load timing is not a 50 Mbps WAN benchmark"
+  ],
+  "ready_seconds_local": 2.364,
+  "browser": "154.0.8037.57",
+  "gpu": {
+    "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+    "vendor": "Google Inc. (Google)",
+    "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+    "webgl": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+    "maxTextureSize": 8192,
+    "pixelRatio": 1,
+    "quality": "balanced",
+    "viewport": [
+      1280,
+      720
+    ]
+  },
+  "counts": {
+    "quality": "balanced",
+    "stage": 4,
+    "floorTopTriangles": 8,
+    "meshes": 130,
+    "drawCallsMerged": {
+      "before": 1823,
+      "after": 101,
+      "roomGroupsSeparate": true
+    },
+    "rooms": 34,
+    "cameras": 38,
+    "stops": 16,
+    "model": "web",
+    "bakedLight": true,
+    "shadows": false,
+    "ambientOcclusion": false
+  },
+  "seconds": 25.846,
+  "additional_source_responses": [
+    {
+      "url": "http://127.0.0.1:8783/realistic/?welcome=0",
+      "status": 200,
+      "bytes": 70875,
+      "sha256": "c3fb3ba4ae201892c4451a5db43c6add6f50a70b80bd1833491290373c6f1545"
+    },
+    {
+      "url": "http://127.0.0.1:8783/realistic/app.js",
+      "status": 200,
+      "bytes": 1163143,
+      "sha256": "4a21e69db0c9a966d379824afc426991b4d5b179c39eb8a1f590ca079a604783"
+    },
+    {
+      "url": "http://127.0.0.1:8783/realistic/lighting-v2/manifest-hybrid.json",
+      "status": 200,
+      "bytes": 25011,
+      "sha256": "2ea818b15323e03ec96949d5c74d7273f8568cedc31a560c61f115a37c698abd"
+    },
+    {
+      "url": "http://127.0.0.1:8783/realistic/props/office-props-manifest.json",
+      "status": 200,
+      "bytes": 167943,
+      "sha256": "4b93095d048f658bcdff957f56b41dac78e2287d727af9eb4312647593a9e3dd"
+    },
+    {
+      "url": "http://127.0.0.1:8783/realistic/people/room-release/people-manifest.json",
+      "status": 200,
+      "bytes": 10937,
+      "sha256": "58972aaffebab7c776ce72a6fe854b8962c2c636c5a40f3b84f18656fa403ecb"
+    },
+    {
+      "url": "http://127.0.0.1:8783/realistic/people/room-release/poses.json",
+      "status": 200,
+      "bytes": 14743,
+      "sha256": "681c74052665993d137c7e046e9c64d168ea0954f5d2a7d0e80f3dbd0cd9b596"
+    }
+  ],
+  "additional_source_errors": [
+    {
+      "url": "http://127.0.0.1:8783/realistic/model_web_baked.glb",
+      "error": "Response.body: Protocol error (Network.getResponseBody): Request content was evicted from inspector cache\nResponse body is not available for a response that was navigated away from. Read response.body() before triggering any navigation."
+    },
+    {
+      "url": "http://127.0.0.1:8783/realistic/people/assets/panjabi.glb",
+      "error": "Response.body: Protocol error (Network.getResponseBody): No data found for resource with given identifier\nResponse body is not available for a response that was navigated away from. Read response.body() before triggering any navigation."
+    },
+    {
+      "url": "http://127.0.0.1:8783/realistic/people/assets/salwar.glb",
+      "error": "Response.body: Protocol error (Network.getResponseBody): No data found for resource with given identifier\nResponse body is not available for a response that was navigated away from. Read response.body() before triggering any navigation."
+    },
+    {
+      "url": "http://127.0.0.1:8783/realistic/people/assets/salwar_braid.glb",
+      "error": "Response.body: Protocol error (Network.getResponseBody): No data found for resource with given identifier\nResponse body is not available for a response that was navigated away from. Read response.body() before triggering any navigation."
+    },
+    {
+      "url": "http://127.0.0.1:8783/realistic/people/assets/shirt.glb",
+      "error": "Response.body: Protocol error (Network.getResponseBody): No data found for resource with given identifier\nResponse body is not available for a response that was navigated away from. Read response.body() before triggering any navigation."
+    },
+    {
+      "url": "http://127.0.0.1:8783/realistic/lighting-v2/Z02-furniture.glb",
+      "error": "Response.body: Protocol error (Network.getResponseBody): No data found for resource with given identifier\nResponse body is not available for a response that was navigated away from. Read response.body() before triggering any navigation."
+    }
+  ],
+  "additional_source_method": "Actual response bodies collected during this same capture navigation, including people, props, model and lighting assets.",
+  "reception_existing_atlas_required": true,
+  "reception_regression_comparison": {
+    "reference": "qa/reception-offline-exact-base-verified/shots/after_CAM_01_Reception_A.png",
+    "reference_sha256": "38b1960aabd03adae5f61ef6654fb883452cbd0447a036b9424bb5df4e4a4675",
+    "current_sha256": "e64974318782571ca7547ce8507529c63993809eca5dedfa38ca9f25cd868295",
+    "method": "Exact1280x720RGB pixel comparison; no alignment, edits or colour adjustments.",
+    "mean_absolute_channel_difference_255": 5.4253472222222224e-06,
+    "pixels_with_any_channel_delta_above_8": 0,
+    "total_pixels": 921600
+  }
+}

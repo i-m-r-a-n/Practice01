@@ -1,0 +1,118 @@
+{
+  "status": "bounded actual notebook/contact review",
+  "method": "Accepted Reception exact triangle SAT for book/body; actual source table triangles clipped to notebook XZ footprint for highest supporting surface. Not a physical load or hand grip simulation.",
+  "actors": [
+    {
+      "id": "office-person-08",
+      "export_hash": "2e066310c134e0e4ba4b0b17a1b08747b82508f724201cb928904430f6c104bf",
+      "prop_meshes": [
+        "Generic_meeting_notebook_cover",
+        "Generic_blank_meeting_notes"
+      ],
+      "world_bounds": {
+        "min": [
+          15.3194,
+          0.75107,
+          -3.4412
+        ],
+        "max": [
+          15.7194,
+          0.76707,
+          -3.1912
+        ]
+      },
+      "notebook_table_support": {
+        "max_y": 0.7493000030517578,
+        "point": [
+          15.3194,
+          0.7493000030517578,
+          -3.4345879554748535
+        ],
+        "clipped_triangles": 18,
+        "notebook_bottom_y": 0.75107,
+        "vertical_gap_at_highest_table_point_m": 0.0017699969482422029
+      },
+      "body_triangle_contacts": [],
+      "skin_above_notebook": {
+        "point": [
+          15.428471,
+          0.767569,
+          -3.368167
+        ],
+        "clipped_triangles": 4656,
+        "minimum_skin_y_m": 0.767569,
+        "gap_above_paper_top_m": 0.0004989999999999162,
+        "paper_top_y_m": 0.76707,
+        "method": "Minimum continuous skin surface within notebook footprint; only skin triangles wholly above paperTopY-20mm so thighs below tabletop do not replace hands."
+      },
+      "wrist_bones": {
+        "wrist_L": [
+          15.670760300031198,
+          0.8285668715788845,
+          -3.4762012730003
+        ],
+        "wrist_R": [
+          15.368039016559841,
+          0.8285675354588096,
+          -3.476201383227449
+        ]
+      }
+    },
+    {
+      "id": "office-person-11",
+      "export_hash": "4f6b2c2f986c924d33b165e6343e9480c8442ce65d378698e5eb1f824f89dbe7",
+      "prop_meshes": [
+        "Generic_meeting_notebook_cover",
+        "Generic_blank_meeting_notes"
+      ],
+      "world_bounds": {
+        "min": [
+          18.570599,
+          0.75107,
+          -2.5684
+        ],
+        "max": [
+          18.970599,
+          0.76707,
+          -2.3184
+        ]
+      },
+      "notebook_table_support": {
+        "max_y": 0.7493000030517578,
+        "point": [
+          18.970599,
+          0.7493000030517578,
+          -2.3184
+        ],
+        "clipped_triangles": 5,
+        "notebook_bottom_y": 0.75107,
+        "vertical_gap_at_highest_table_point_m": 0.0017699969482422029
+      },
+      "body_triangle_contacts": [],
+      "skin_above_notebook": {
+        "point": [
+          18.873929,
+          0.769222,
+          -2.371216
+        ],
+        "clipped_triangles": 4614,
+        "minimum_skin_y_m": 0.769222,
+        "gap_above_paper_top_m": 0.0021519999999999317,
+        "paper_top_y_m": 0.76707,
+        "method": "Minimum continuous skin surface within notebook footprint; only skin triangles wholly above paperTopY-20mm so thighs below tabletop do not replace hands."
+      },
+      "wrist_bones": {
+        "wrist_L": [
+          18.613501914676686,
+          0.823501897711696,
+          -2.28124339041425
+        ],
+        "wrist_R": [
+          18.92769667238517,
+          0.8235021555199844,
+          -2.2812436012908406
+        ]
+      }
+    }
+  ]
+}

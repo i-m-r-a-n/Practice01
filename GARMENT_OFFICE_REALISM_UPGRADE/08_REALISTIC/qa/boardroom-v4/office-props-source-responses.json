@@ -1,0 +1,38 @@
+[
+  {
+    "url": "http://127.0.0.1:8783/realistic/?welcome=0",
+    "status": 200,
+    "bytes": 70875,
+    "sha256": "c3fb3ba4ae201892c4451a5db43c6add6f50a70b80bd1833491290373c6f1545"
+  },
+  {
+    "url": "http://127.0.0.1:8783/realistic/app.js",
+    "status": 200,
+    "bytes": 1163143,
+    "sha256": "4a21e69db0c9a966d379824afc426991b4d5b179c39eb8a1f590ca079a604783"
+  },
+  {
+    "url": "http://127.0.0.1:8783/realistic/lighting-v2/manifest-hybrid.json",
+    "status": 200,
+    "bytes": 25011,
+    "sha256": "2ea818b15323e03ec96949d5c74d7273f8568cedc31a560c61f115a37c698abd"
+  },
+  {
+    "url": "http://127.0.0.1:8783/realistic/props/office-props-manifest.json",
+    "status": 200,
+    "bytes": 167943,
+    "sha256": "4b93095d048f658bcdff957f56b41dac78e2287d727af9eb4312647593a9e3dd"
+  },
+  {
+    "url": "http://127.0.0.1:8783/realistic/people/room-release/people-manifest.json",
+    "status": 200,
+    "bytes": 10937,
+    "sha256": "58972aaffebab7c776ce72a6fe854b8962c2c636c5a40f3b84f18656fa403ecb"
+  },
+  {
+    "url": "http://127.0.0.1:8783/realistic/people/room-release/poses.json",
+    "status": 200,
+    "bytes": 14743,
+    "sha256": "681c74052665993d137c7e046e9c64d168ea0954f5d2a7d0e80f3dbd0cd9b596"
+  }
+]

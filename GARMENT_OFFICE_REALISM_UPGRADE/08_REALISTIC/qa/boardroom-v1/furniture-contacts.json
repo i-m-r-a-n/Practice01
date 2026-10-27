@@ -1,0 +1,1860 @@
+{
+  "status": "diagnostic actual frozen Boardroom contacts",
+  "source_glb_sha256": "3b883c0077541aa3c574c903cfad60a3b8ba410d12af6d6b476b7733230fc35d",
+  "export_manifest_sha256": "cca9daf679a3621acdc2e1d1994ea6a791f8feac90ef4f6e43696ec84e015c6d",
+  "method": "Reuses accepted source furniture triangle-SAT checker against actual browser-deformed visible LOD0 meshes, including standing presenter. Seat underside metric is referenced clothing vertices inside exact top-triangle footprint, above seatTopY-65mm; not a load simulation.",
+  "frozen_geometry": {
+    "checks": [
+      {
+        "id": "office-person-08",
+        "all_exported_fields_identical": true
+      },
+      {
+        "id": "office-person-09",
+        "all_exported_fields_identical": true
+      },
+      {
+        "id": "office-person-10",
+        "all_exported_fields_identical": true
+      },
+      {
+        "id": "office-person-11",
+        "all_exported_fields_identical": true
+      },
+      {
+        "id": "office-person-12",
+        "all_exported_fields_identical": true
+      },
+      {
+        "id": "office-person-13",
+        "all_exported_fields_identical": true
+      }
+    ],
+    "passed": true
+  },
+  "actors": [
+    {
+      "id": "office-person-08",
+      "zone": "Z08",
+      "pose": "notes__seat_50292",
+      "support": {
+        "sourceObject": "F034 board_chair",
+        "seatTopY": 0.50291997,
+        "note": "Pelvis aligned to approved chair; contact pose reviewed separately."
+      },
+      "actual_position": [
+        15.519399642944336,
+        0,
+        -3.886199951171875
+      ],
+      "meshes": [
+        "LOD0_Adult_skin",
+        "LOD0_Closed_shoes",
+        "LOD0_Eyes",
+        "LOD0_Hair",
+        "Office_clothing",
+        "Office_clothing_1"
+      ],
+      "triangles": 39732,
+      "contacts": [
+        {
+          "source_object": "F034 board_chair",
+          "source_material": "chrome",
+          "is_declared_seat_support": true,
+          "source_triangles_intersected": 1,
+          "actor_triangles_intersected": 21,
+          "transverse_triangle_pairs": 21,
+          "max_two_sided_actor_triangle_depth_across_source_plane_m": 0.01192902805709839,
+          "intersected_actor_triangle_bounds": {
+            "min": [
+              15.387541,
+              0.490459,
+              -3.709919
+            ],
+            "max": [
+              15.643039,
+              0.53112,
+              -3.641068
+            ]
+          },
+          "examples": [
+            {
+              "source_triangle": [
+                [
+                  15.289870396256447,
+                  0.5029199719429016,
+                  -3.6693706959486008
+                ],
+                [
+                  15.748928889632225,
+                  0.5029199719429016,
+                  -3.6693706959486008
+                ],
+                [
+                  15.748928889632225,
+                  0.5029199719429016,
+                  -4.090329200029373
+                ]
+              ],
+              "actor_triangle_index": 33498,
+              "actor_mesh": "Office_clothing_1",
+              "actor_triangle": [
+                [
+                  15.630804,
+                  0.508354,
+                  -3.695077
+                ],
+                [
+                  15.642953,
+                  0.512638,
+                  -3.684113
+                ],
+                [
+                  15.643039,
+                  0.499299,
+                  -3.65541
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "source_object": "F034 board_chair",
+          "source_material": "leather_black",
+          "is_declared_seat_support": true,
+          "source_triangles_intersected": 5,
+          "actor_triangles_intersected": 27,
+          "transverse_triangle_pairs": 41,
+          "max_two_sided_actor_triangle_depth_across_source_plane_m": 0.007760656911606636,
+          "intersected_actor_triangle_bounds": {
+            "min": [
+              15.387541,
+              0.473313,
+              -3.695077
+            ],
+            "max": [
+              15.64412,
+              0.514849,
+              -3.61295
+            ]
+          },
+          "examples": [
+            {
+              "source_triangle": [
+                [
+                  15.289870396256447,
+                  0.46574923396110535,
+                  -3.6321999430656433
+                ],
+                [
+                  15.748928889632225,
+                  0.4839935004711151,
+                  -3.637715294957161
+                ],
+                [
+                  15.289870396256447,
+                  0.4839935004711151,
+                  -3.637715294957161
+                ]
+              ],
+              "actor_triangle_index": 33628,
+              "actor_mesh": "Office_clothing_1",
+              "actor_triangle": [
+                [
+                  15.608317,
+                  0.484468,
+                  -3.640508
+                ],
+                [
+                  15.621413,
+                  0.483649,
+                  -3.64046
+                ],
+                [
+                  15.624311,
+                  0.473313,
+                  -3.617187
+                ]
+              ]
+            },
+            {
+              "source_triangle": [
+                [
+                  15.289870396256447,
+                  0.4839935004711151,
+                  -3.637715294957161
+                ],
+                [
+                  15.748928889632225,
+                  0.4839935004711151,
+                  -3.637715294957161
+                ],
+                [
+                  15.748928889632225,
+                  0.4974046051502228,
+                  -3.6511263847351074
+                ]
+              ],
+              "actor_triangle_index": 33572,
+              "actor_mesh": "Office_clothing_1",
+              "actor_triangle": [
+                [
+                  15.633574,
+                  0.497693,
+                  -3.660177
+                ],
+                [
+                  15.643039,
+                  0.499299,
+                  -3.65541
+                ],
+                [
+                  15.64412,
+                  0.488075,
+                  -3.629103
+                ]
+              ]
+            },
+            {
+              "source_triangle": [
+                [
+                  15.289870396256447,
+                  0.4839935004711151,
+                  -3.637715294957161
+                ],
+                [
+                  15.748928889632225,
+                  0.4974046051502228,
+                  -3.6511263847351074
+                ],
+                [
+                  15.289870396256447,
+                  0.4974046051502228,
+                  -3.6511263847351074
+                ]
+              ],
+              "actor_triangle_index": 33572,
+              "actor_mesh": "Office_clothing_1",
+              "actor_triangle": [
+                [
+                  15.633574,
+                  0.497693,
+                  -3.660177
+                ],
+                [
+                  15.643039,
+                  0.499299,
+                  -3.65541
+                ],
+                [
+                  15.64412,
+                  0.488075,
+                  -3.629103
+                ]
+              ]
+            },
+            {
+              "source_triangle": [
+                [
+                  15.289870396256447,
+                  0.4974046051502228,
+                  -3.6511263847351074
+                ],
+                [
+                  15.748928889632225,
+                  0.4974046051502228,
+                  -3.6511263847351074
+                ],
+                [
+                  15.748928889632225,
+                  0.5029199719429016,
+                  -3.6693706959486008
+                ]
+              ],
+              "actor_triangle_index": 33498,
+              "actor_mesh": "Office_clothing_1",
+              "actor_triangle": [
+                [
+                  15.630804,
+                  0.508354,
+                  -3.695077
+                ],
+                [
+                  15.642953,
+                  0.512638,
+                  -3.684113
+                ],
+                [
+                  15.643039,
+                  0.499299,
+                  -3.65541
+                ]
+              ]
+            },
+            {
+              "source_triangle": [
+                [
+                  15.289870396256447,
+                  0.4974046051502228,
+                  -3.6511263847351074
+                ],
+                [
+                  15.748928889632225,
+                  0.5029199719429016,
+                  -3.6693706959486008
+                ],
+                [
+                  15.289870396256447,
+                  0.5029199719429016,
+                  -3.6693706959486008
+                ]
+              ],
+              "actor_triangle_index": 33498,
+              "actor_mesh": "Office_clothing_1",
+              "actor_triangle": [
+                [
+                  15.630804,
+                  0.508354,
+                  -3.695077
+                ],
+                [
+                  15.642953,
+                  0.512638,
+                  -3.684113
+                ],
+                [
+                  15.643039,
+                  0.499299,
+                  -3.65541
+                ]
+              ]
+            }
+          ]
+        }
+      ],
+      "seat_volume_probe": {
+        "declared_seat_top_m": 0.50291997,
+        "exact_source_flat_top_triangles": 2,
+        "vertices_15_to_65mm_below_top_inside_exact_flat_top_footprint": 0,
+        "maximum_depth_in_queried_slab_m": 0,
+        "by_mesh": {},
+        "examples": [],
+        "limits": "15mm is a review threshold, not an ergonomic or clothing-compression standard. Query samples actual used posed vertices within the top footprint and a 50mm deep slab; it does not test every point of continuous cloth volume."
+      },
+      "export_actor_sha256": "6afad274291bef8d9693a7a8706914ff8d0cdafe47263115a979b3228f85c70a",
+      "seat_support_clothing_clearance": [
+        {
+          "mesh": "Office_clothing",
+          "lowest_clothing_y_m": 0.667353,
+          "seat_top_y_m": 0.50291997,
+          "clearance_m": 0.16443302999999998
+        },
+        {
+          "mesh": "Office_clothing_1",
+          "lowest_clothing_y_m": 0.495768,
+          "seat_top_y_m": 0.50291997,
+          "clearance_m": -0.0071519700000000075
+        }
+      ]
+    },
+    {
+      "id": "office-person-09",
+      "zone": "Z08",
+      "pose": "listening__seat_50292",
+      "support": {
+        "sourceObject": "F037 board_chair",
+        "seatTopY": 0.50291997,
+        "note": "Pelvis aligned to approved chair; contact pose reviewed separately."
+      },
+      "actual_position": [
+        16.33219909230855,
+        0,
+        -1.8534000396728514
+      ],
+      "meshes": [
+        "LOD0_Adult_skin",
+        "LOD0_Closed_shoes",
+        "LOD0_Eyes",
+        "LOD0_Hair",
+        "Office_clothing004",
+        "Office_clothing004_1"
+      ],
+      "triangles": 41860,
+      "contacts": [
+        {
+          "source_object": "F037 board_chair",
+          "source_material": "chrome",
+          "is_declared_seat_support": true,
+          "source_triangles_intersected": 2,
+          "actor_triangles_intersected": 29,
+          "transverse_triangle_pairs": 29,
+          "max_two_sided_actor_triangle_depth_across_source_plane_m": 0.009129028057098365,
+          "intersected_actor_triangle_bounds": {
+            "min": [
+              16.198791,
+              0.454687,
+              -2.084505
+            ],
+            "max": [
+              16.468099,
+              0.533183,
+              -1.977169
+            ]
+          },
+          "examples": [
+            {
+              "source_triangle": [
+                [
+                  16.56172832441176,
+                  0.5029199719429016,
+                  -2.0202293149622097
+                ],
+                [
+                  16.102669831035982,
+                  0.5029199719429016,
+                  -2.020229274830042
+                ],
+                [
+                  16.102669867837346,
+                  0.5029199719429016,
+                  -1.5992707707492693
+                ]
+              ],
+              "actor_triangle_index": 35398,
+              "actor_mesh": "Office_clothing004_1",
+              "actor_triangle": [
+                [
+                  16.221874,
+                  0.507308,
+                  -1.986788
+                ],
+                [
+                  16.209949,
+                  0.509706,
+                  -1.995641
+                ],
+                [
+                  16.216635,
+                  0.490816,
+                  -2.033187
+                ]
+              ]
+            },
+            {
+              "source_triangle": [
+                [
+                  16.561728321162192,
+                  0.4638907313346863,
+                  -2.057400067845167
+                ],
+                [
+                  16.102669827786414,
+                  0.46574923396110535,
+                  -2.0574000277129993
+                ],
+                [
+                  16.561728321162192,
+                  0.46574923396110535,
+                  -2.057400067845167
+                ]
+              ],
+              "actor_triangle_index": 35522,
+              "actor_mesh": "Office_clothing004_1",
+              "actor_triangle": [
+                [
+                  16.268448,
+                  0.474415,
+                  -2.053527
+                ],
+                [
+                  16.258187,
+                  0.467894,
+                  -2.051602
+                ],
+                [
+                  16.256174,
+                  0.454687,
+                  -2.084505
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "source_object": "F037 board_chair",
+          "source_material": "leather_black",
+          "is_declared_seat_support": true,
+          "source_triangles_intersected": 6,
+          "actor_triangles_intersected": 38,
+          "transverse_triangle_pairs": 57,
+          "max_two_sided_actor_triangle_depth_across_source_plane_m": 0.013290752204969202,
+          "intersected_actor_triangle_bounds": {
+            "min": [
+              16.198791,
+              0.454687,
+              -2.086277
+            ],
+            "max": [
+              16.477843,
+              0.522266,
+              -1.995641
+            ]
+          },
+          "examples": [
+            {
+              "source_triangle": [
+                [
+                  16.561728321162192,
+                  0.46574923396110535,
+                  -2.057400067845167
+                ],
+                [
+                  16.102669827786414,
+                  0.46574923396110535,
+                  -2.0574000277129993
+                ],
+                [
+                  16.10266982826858,
+                  0.4839935004711151,
+                  -2.0518846758214817
+                ]
+              ],
+              "actor_triangle_index": 35472,
+              "actor_mesh": "Office_clothing004_1",
+              "actor_triangle": [
+                [
+                  16.229391,
+                  0.487109,
+                  -2.025866
+                ],
+                [
+                  16.216635,
+                  0.490816,
+                  -2.033187
+                ],
+                [
+                  16.218955,
+                  0.475424,
+                  -2.061438
+                ]
+              ]
+            },
+            {
+              "source_triangle": [
+                [
+                  16.561728321162192,
+                  0.46574923396110535,
+                  -2.057400067845167
+                ],
+                [
+                  16.10266982826858,
+                  0.4839935004711151,
+                  -2.0518846758214817
+                ],
+                [
+                  16.56172832164436,
+                  0.4839935004711151,
+                  -2.0518847159536495
+                ]
+              ],
+              "actor_triangle_index": 35463,
+              "actor_mesh": "Office_clothing004_1",
+              "actor_triangle": [
+                [
+                  16.216635,
+                  0.490816,
+                  -2.033187
+                ],
+                [
+                  16.202095,
+                  0.481013,
+                  -2.066467
+                ],
+                [
+                  16.218955,
+                  0.475424,
+                  -2.061438
+                ]
+              ]
+            },
+            {
+              "source_triangle": [
+                [
+                  16.56172832164436,
+                  0.4839935004711151,
+                  -2.0518847159536495
+                ],
+                [
+                  16.10266982826858,
+                  0.4839935004711151,
+                  -2.0518846758214817
+                ],
+                [
+                  16.102669829441016,
+                  0.4974046051502228,
+                  -2.0384735860435352
+                ]
+              ],
+              "actor_triangle_index": 35462,
+              "actor_mesh": "Office_clothing004_1",
+              "actor_triangle": [
+                [
+                  16.216635,
+                  0.490816,
+                  -2.033187
+                ],
+                [
+                  16.198791,
+                  0.498603,
+                  -2.038458
+                ],
+                [
+                  16.202095,
+                  0.481013,
+                  -2.066467
+                ]
+              ]
+            },
+            {
+              "source_triangle": [
+                [
+                  16.56172832164436,
+                  0.4839935004711151,
+                  -2.0518847159536495
+                ],
+                [
+                  16.102669829441016,
+                  0.4974046051502228,
+                  -2.0384735860435352
+                ],
+                [
+                  16.561728322816794,
+                  0.4974046051502228,
+                  -2.038473626175703
+                ]
+              ],
+              "actor_triangle_index": 35462,
+              "actor_mesh": "Office_clothing004_1",
+              "actor_triangle": [
+                [
+                  16.216635,
+                  0.490816,
+                  -2.033187
+                ],
+                [
+                  16.198791,
+                  0.498603,
+                  -2.038458
+                ],
+                [
+                  16.202095,
+                  0.481013,
+                  -2.066467
+                ]
+              ]
+            },
+            {
+              "source_triangle": [
+                [
+                  16.561728322816794,
+                  0.4974046051502228,
+                  -2.038473626175703
+                ],
+                [
+                  16.102669829441016,
+                  0.4974046051502228,
+                  -2.0384735860435352
+                ],
+                [
+                  16.102669831035982,
+                  0.5029199719429016,
+                  -2.020229274830042
+                ]
+              ],
+              "actor_triangle_index": 35451,
+              "actor_mesh": "Office_clothing004_1",
+              "actor_triangle": [
+                [
+                  16.209949,
+                  0.509706,
+                  -1.995641
+                ],
+                [
+                  16.198791,
+                  0.498603,
+                  -2.038458
+                ],
+                [
+                  16.216635,
+                  0.490816,
+                  -2.033187
+                ]
+              ]
+            },
+            {
+              "source_triangle": [
+                [
+                  16.561728322816794,
+                  0.4974046051502228,
+                  -2.038473626175703
+                ],
+                [
+                  16.102669831035982,
+                  0.5029199719429016,
+                  -2.020229274830042
+                ],
+                [
+                  16.56172832441176,
+                  0.5029199719429016,
+                  -2.0202293149622097
+                ]
+              ],
+              "actor_triangle_index": 35451,
+              "actor_mesh": "Office_clothing004_1",
+              "actor_triangle": [
+                [
+                  16.209949,
+                  0.509706,
+                  -1.995641
+                ],
+                [
+                  16.198791,
+                  0.498603,
+                  -2.038458
+                ],
+                [
+                  16.216635,
+                  0.490816,
+                  -2.033187
+                ]
+              ]
+            }
+          ]
+        }
+      ],
+      "seat_volume_probe": {
+        "declared_seat_top_m": 0.50291997,
+        "exact_source_flat_top_triangles": 2,
+        "vertices_15_to_65mm_below_top_inside_exact_flat_top_footprint": 2,
+        "maximum_depth_in_queried_slab_m": 0.01723596999999999,
+        "by_mesh": {
+          "Office_clothing004_1": 2
+        },
+        "examples": [
+          [
+            16.257326,
+            0.486328,
+            -2.015406
+          ],
+          [
+            16.243101,
+            0.485684,
+            -2.014462
+          ]
+        ],
+        "limits": "15mm is a review threshold, not an ergonomic or clothing-compression standard. Query samples actual used posed vertices within the top footprint and a 50mm deep slab; it does not test every point of continuous cloth volume."
+      },
+      "export_actor_sha256": "7834426091735438f2e5f88072f34227b792a85c957d1fd2eae8911714350ac7",
+      "seat_support_clothing_clearance": [
+        {
+          "mesh": "Office_clothing004",
+          "lowest_clothing_y_m": 0.675073,
+          "seat_top_y_m": 0.50291997,
+          "clearance_m": 0.17215303000000004
+        },
+        {
+          "mesh": "Office_clothing004_1",
+          "lowest_clothing_y_m": 0.485684,
+          "seat_top_y_m": 0.50291997,
+          "clearance_m": -0.01723596999999999
+        }
+      ]
+    },
+    {
+      "id": "office-person-10",
+      "zone": "Z08",
+      "pose": "listening__seat_50292",
+      "support": {
+        "sourceObject": "F040 board_chair",
+        "seatTopY": 0.50291997,
+        "note": "Pelvis aligned to approved chair; contact pose reviewed separately."
+      },
+      "actual_position": [
+        17.957799911499023,
+        0,
+        -3.886199951171875
+      ],
+      "meshes": [
+        "LOD0_Adult_skin",
+        "LOD0_Closed_shoes",
+        "LOD0_Eyes",
+        "LOD0_Hair",
+        "Office_clothing002",
+        "Office_clothing002_1"
+      ],
+      "triangles": 37434,
+      "contacts": [
+        {
+          "source_object": "F040 board_chair",
+          "source_material": "chrome",
+          "is_declared_seat_support": true,
+          "source_triangles_intersected": 1,
+          "actor_triangles_intersected": 21,
+          "transverse_triangle_pairs": 21,
+          "max_two_sided_actor_triangle_depth_across_source_plane_m": 0.01151802805709834,
+          "intersected_actor_triangle_bounds": {
+            "min": [
+              17.802082,
+              0.490235,
+              -3.709803
+            ],
+            "max": [
+              18.103706,
+              0.530515,
+              -3.640779
+            ]
+          },
+          "examples": [
+            {
+              "source_triangle": [
+                [
+                  17.728270664811134,
+                  0.5029199719429016,
+                  -3.6693706959486008
+                ],
+                [
+                  18.187329158186913,
+                  0.5029199719429016,
+                  -3.6693706959486008
+                ],
+                [
+                  18.187329158186913,
+                  0.5029199719429016,
+                  -4.090329200029373
+                ]
+              ],
+              "actor_triangle_index": 31200,
+              "actor_mesh": "Office_clothing002_1",
+              "actor_triangle": [
+                [
+                  18.089292,
+                  0.508183,
+                  -3.694305
+                ],
+                [
+                  18.103683,
+                  0.512599,
+                  -3.683151
+                ],
+                [
+                  18.103706,
+                  0.499367,
+                  -3.654389
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "source_object": "F040 board_chair",
+          "source_material": "leather_black",
+          "is_declared_seat_support": true,
+          "source_triangles_intersected": 5,
+          "actor_triangles_intersected": 27,
+          "transverse_triangle_pairs": 41,
+          "max_two_sided_actor_triangle_depth_across_source_plane_m": 0.007313765105343004,
+          "intersected_actor_triangle_bounds": {
+            "min": [
+              17.802082,
+              0.473393,
+              -3.694305
+            ],
+            "max": [
+              18.104917,
+              0.514438,
+              -3.611923
+            ]
+          },
+          "examples": [
+            {
+              "source_triangle": [
+                [
+                  17.728270664811134,
+                  0.46574923396110535,
+                  -3.6321999430656433
+                ],
+                [
+                  18.187329158186913,
+                  0.4839935004711151,
+                  -3.637715294957161
+                ],
+                [
+                  17.728270664811134,
+                  0.4839935004711151,
+                  -3.637715294957161
+                ]
+              ],
+              "actor_triangle_index": 31330,
+              "actor_mesh": "Office_clothing002_1",
+              "actor_triangle": [
+                [
+                  18.062488,
+                  0.48434,
+                  -3.639989
+                ],
+                [
+                  18.078011,
+                  0.483616,
+                  -3.639728
+                ],
+                [
+                  18.081382,
+                  0.473393,
+                  -3.61636
+                ]
+              ]
+            },
+            {
+              "source_triangle": [
+                [
+                  17.728270664811134,
+                  0.4839935004711151,
+                  -3.637715294957161
+                ],
+                [
+                  18.187329158186913,
+                  0.4839935004711151,
+                  -3.637715294957161
+                ],
+                [
+                  18.187329158186913,
+                  0.4974046051502228,
+                  -3.6511263847351074
+                ]
+              ],
+              "actor_triangle_index": 31274,
+              "actor_mesh": "Office_clothing002_1",
+              "actor_triangle": [
+                [
+                  18.092492,
+                  0.497675,
+                  -3.659306
+                ],
+                [
+                  18.103706,
+                  0.499367,
+                  -3.654389
+                ],
+                [
+                  18.104917,
+                  0.48825,
+                  -3.628013
+                ]
+              ]
+            },
+            {
+              "source_triangle": [
+                [
+                  17.728270664811134,
+                  0.4839935004711151,
+                  -3.637715294957161
+                ],
+                [
+                  18.187329158186913,
+                  0.4974046051502228,
+                  -3.6511263847351074
+                ],
+                [
+                  17.728270664811134,
+                  0.4974046051502228,
+                  -3.6511263847351074
+                ]
+              ],
+              "actor_triangle_index": 31274,
+              "actor_mesh": "Office_clothing002_1",
+              "actor_triangle": [
+                [
+                  18.092492,
+                  0.497675,
+                  -3.659306
+                ],
+                [
+                  18.103706,
+                  0.499367,
+                  -3.654389
+                ],
+                [
+                  18.104917,
+                  0.48825,
+                  -3.628013
+                ]
+              ]
+            },
+            {
+              "source_triangle": [
+                [
+                  17.728270664811134,
+                  0.4974046051502228,
+                  -3.6511263847351074
+                ],
+                [
+                  18.187329158186913,
+                  0.4974046051502228,
+                  -3.6511263847351074
+                ],
+                [
+                  18.187329158186913,
+                  0.5029199719429016,
+                  -3.6693706959486008
+                ]
+              ],
+              "actor_triangle_index": 31201,
+              "actor_mesh": "Office_clothing002_1",
+              "actor_triangle": [
+                [
+                  18.089292,
+                  0.508183,
+                  -3.694305
+                ],
+                [
+                  18.103706,
+                  0.499367,
+                  -3.654389
+                ],
+                [
+                  18.092492,
+                  0.497675,
+                  -3.659306
+                ]
+              ]
+            },
+            {
+              "source_triangle": [
+                [
+                  17.728270664811134,
+                  0.4974046051502228,
+                  -3.6511263847351074
+                ],
+                [
+                  18.187329158186913,
+                  0.5029199719429016,
+                  -3.6693706959486008
+                ],
+                [
+                  17.728270664811134,
+                  0.5029199719429016,
+                  -3.6693706959486008
+                ]
+              ],
+              "actor_triangle_index": 31200,
+              "actor_mesh": "Office_clothing002_1",
+              "actor_triangle": [
+                [
+                  18.089292,
+                  0.508183,
+                  -3.694305
+                ],
+                [
+                  18.103683,
+                  0.512599,
+                  -3.683151
+                ],
+                [
+                  18.103706,
+                  0.499367,
+                  -3.654389
+                ]
+              ]
+            }
+          ]
+        }
+      ],
+      "seat_volume_probe": {
+        "declared_seat_top_m": 0.50291997,
+        "exact_source_flat_top_triangles": 2,
+        "vertices_15_to_65mm_below_top_inside_exact_flat_top_footprint": 0,
+        "maximum_depth_in_queried_slab_m": 0,
+        "by_mesh": {},
+        "examples": [],
+        "limits": "15mm is a review threshold, not an ergonomic or clothing-compression standard. Query samples actual used posed vertices within the top footprint and a 50mm deep slab; it does not test every point of continuous cloth volume."
+      },
+      "export_actor_sha256": "365781d83f526b90a35deccd1c24031180c7dc4c113e281844db17c0406f7716",
+      "seat_support_clothing_clearance": [
+        {
+          "mesh": "Office_clothing002",
+          "lowest_clothing_y_m": 0.66629,
+          "seat_top_y_m": 0.50291997,
+          "clearance_m": 0.16337003000000005
+        },
+        {
+          "mesh": "Office_clothing002_1",
+          "lowest_clothing_y_m": 0.495517,
+          "seat_top_y_m": 0.50291997,
+          "clearance_m": -0.007402970000000009
+        }
+      ]
+    },
+    {
+      "id": "office-person-11",
+      "zone": "Z08",
+      "pose": "notes__seat_50292",
+      "support": {
+        "sourceObject": "F043 board_chair",
+        "seatTopY": 0.50291997,
+        "note": "Pelvis aligned to approved chair; contact pose reviewed separately."
+      },
+      "actual_position": [
+        18.770599360863237,
+        0,
+        -1.8534000396728514
+      ],
+      "meshes": [
+        "LOD0_Adult_skin",
+        "LOD0_Closed_shoes",
+        "LOD0_Eyes",
+        "LOD0_Hair",
+        "Office_clothing006",
+        "Office_clothing006_1"
+      ],
+      "triangles": 42026,
+      "contacts": [
+        {
+          "source_object": "F043 board_chair",
+          "source_material": "chrome",
+          "is_declared_seat_support": true,
+          "source_triangles_intersected": 2,
+          "actor_triangles_intersected": 29,
+          "transverse_triangle_pairs": 29,
+          "max_two_sided_actor_triangle_depth_across_source_plane_m": 0.009129028057098365,
+          "intersected_actor_triangle_bounds": {
+            "min": [
+              18.639593,
+              0.454687,
+              -2.084505
+            ],
+            "max": [
+              18.904053,
+              0.533183,
+              -1.977169
+            ]
+          },
+          "examples": [
+            {
+              "source_triangle": [
+                [
+                  19.000128592966448,
+                  0.5029199719429016,
+                  -2.0202293149622097
+                ],
+                [
+                  18.54107009959067,
+                  0.5029199719429016,
+                  -2.020229274830042
+                ],
+                [
+                  18.541070136392033,
+                  0.5029199719429016,
+                  -1.5992707707492693
+                ]
+              ],
+              "actor_triangle_index": 35564,
+              "actor_mesh": "Office_clothing006_1",
+              "actor_triangle": [
+                [
+                  18.66226,
+                  0.507308,
+                  -1.986788
+                ],
+                [
+                  18.65055,
+                  0.509706,
+                  -1.995641
+                ],
+                [
+                  18.657116,
+                  0.490816,
+                  -2.033187
+                ]
+              ]
+            },
+            {
+              "source_triangle": [
+                [
+                  19.00012858971688,
+                  0.4638907313346863,
+                  -2.057400067845167
+                ],
+                [
+                  18.5410700963411,
+                  0.46574923396110535,
+                  -2.0574000277129993
+                ],
+                [
+                  19.00012858971688,
+                  0.46574923396110535,
+                  -2.057400067845167
+                ]
+              ],
+              "actor_triangle_index": 35688,
+              "actor_mesh": "Office_clothing006_1",
+              "actor_triangle": [
+                [
+                  18.707996,
+                  0.474415,
+                  -2.053527
+                ],
+                [
+                  18.697919,
+                  0.467894,
+                  -2.051602
+                ],
+                [
+                  18.695943,
+                  0.454687,
+                  -2.084505
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "source_object": "F043 board_chair",
+          "source_material": "leather_black",
+          "is_declared_seat_support": true,
+          "source_triangles_intersected": 6,
+          "actor_triangles_intersected": 38,
+          "transverse_triangle_pairs": 57,
+          "max_two_sided_actor_triangle_depth_across_source_plane_m": 0.013290752130012127,
+          "intersected_actor_triangle_bounds": {
+            "min": [
+              18.639593,
+              0.454687,
+              -2.086277
+            ],
+            "max": [
+              18.913621,
+              0.522266,
+              -1.995641
+            ]
+          },
+          "examples": [
+            {
+              "source_triangle": [
+                [
+                  19.00012858971688,
+                  0.46574923396110535,
+                  -2.057400067845167
+                ],
+                [
+                  18.5410700963411,
+                  0.46574923396110535,
+                  -2.0574000277129993
+                ],
+                [
+                  18.54107009682327,
+                  0.4839935004711151,
+                  -2.0518846758214817
+                ]
+              ],
+              "actor_triangle_index": 35638,
+              "actor_mesh": "Office_clothing006_1",
+              "actor_triangle": [
+                [
+                  18.669642,
+                  0.487109,
+                  -2.025866
+                ],
+                [
+                  18.657116,
+                  0.490816,
+                  -2.033187
+                ],
+                [
+                  18.659393,
+                  0.475424,
+                  -2.061438
+                ]
+              ]
+            },
+            {
+              "source_triangle": [
+                [
+                  19.00012858971688,
+                  0.46574923396110535,
+                  -2.057400067845167
+                ],
+                [
+                  18.54107009682327,
+                  0.4839935004711151,
+                  -2.0518846758214817
+                ],
+                [
+                  19.000128590199047,
+                  0.4839935004711151,
+                  -2.0518847159536495
+                ]
+              ],
+              "actor_triangle_index": 35629,
+              "actor_mesh": "Office_clothing006_1",
+              "actor_triangle": [
+                [
+                  18.657116,
+                  0.490816,
+                  -2.033187
+                ],
+                [
+                  18.642837,
+                  0.481013,
+                  -2.066467
+                ],
+                [
+                  18.659393,
+                  0.475424,
+                  -2.061438
+                ]
+              ]
+            },
+            {
+              "source_triangle": [
+                [
+                  19.000128590199047,
+                  0.4839935004711151,
+                  -2.0518847159536495
+                ],
+                [
+                  18.54107009682327,
+                  0.4839935004711151,
+                  -2.0518846758214817
+                ],
+                [
+                  18.541070097995703,
+                  0.4974046051502228,
+                  -2.0384735860435352
+                ]
+              ],
+              "actor_triangle_index": 35628,
+              "actor_mesh": "Office_clothing006_1",
+              "actor_triangle": [
+                [
+                  18.657116,
+                  0.490816,
+                  -2.033187
+                ],
+                [
+                  18.639593,
+                  0.498603,
+                  -2.038458
+                ],
+                [
+                  18.642837,
+                  0.481013,
+                  -2.066467
+                ]
+              ]
+            },
+            {
+              "source_triangle": [
+                [
+                  19.000128590199047,
+                  0.4839935004711151,
+                  -2.0518847159536495
+                ],
+                [
+                  18.541070097995703,
+                  0.4974046051502228,
+                  -2.0384735860435352
+                ],
+                [
+                  19.00012859137148,
+                  0.4974046051502228,
+                  -2.038473626175703
+                ]
+              ],
+              "actor_triangle_index": 35628,
+              "actor_mesh": "Office_clothing006_1",
+              "actor_triangle": [
+                [
+                  18.657116,
+                  0.490816,
+                  -2.033187
+                ],
+                [
+                  18.639593,
+                  0.498603,
+                  -2.038458
+                ],
+                [
+                  18.642837,
+                  0.481013,
+                  -2.066467
+                ]
+              ]
+            },
+            {
+              "source_triangle": [
+                [
+                  19.00012859137148,
+                  0.4974046051502228,
+                  -2.038473626175703
+                ],
+                [
+                  18.541070097995703,
+                  0.4974046051502228,
+                  -2.0384735860435352
+                ],
+                [
+                  18.54107009959067,
+                  0.5029199719429016,
+                  -2.020229274830042
+                ]
+              ],
+              "actor_triangle_index": 35617,
+              "actor_mesh": "Office_clothing006_1",
+              "actor_triangle": [
+                [
+                  18.65055,
+                  0.509706,
+                  -1.995641
+                ],
+                [
+                  18.639593,
+                  0.498603,
+                  -2.038458
+                ],
+                [
+                  18.657116,
+                  0.490816,
+                  -2.033187
+                ]
+              ]
+            },
+            {
+              "source_triangle": [
+                [
+                  19.00012859137148,
+                  0.4974046051502228,
+                  -2.038473626175703
+                ],
+                [
+                  18.54107009959067,
+                  0.5029199719429016,
+                  -2.020229274830042
+                ],
+                [
+                  19.000128592966448,
+                  0.5029199719429016,
+                  -2.0202293149622097
+                ]
+              ],
+              "actor_triangle_index": 35617,
+              "actor_mesh": "Office_clothing006_1",
+              "actor_triangle": [
+                [
+                  18.65055,
+                  0.509706,
+                  -1.995641
+                ],
+                [
+                  18.639593,
+                  0.498603,
+                  -2.038458
+                ],
+                [
+                  18.657116,
+                  0.490816,
+                  -2.033187
+                ]
+              ]
+            }
+          ]
+        }
+      ],
+      "seat_volume_probe": {
+        "declared_seat_top_m": 0.50291997,
+        "exact_source_flat_top_triangles": 2,
+        "vertices_15_to_65mm_below_top_inside_exact_flat_top_footprint": 2,
+        "maximum_depth_in_queried_slab_m": 0.01723596999999999,
+        "by_mesh": {
+          "Office_clothing006_1": 2
+        },
+        "examples": [
+          [
+            18.697074,
+            0.486328,
+            -2.015406
+          ],
+          [
+            18.683105,
+            0.485684,
+            -2.014462
+          ]
+        ],
+        "limits": "15mm is a review threshold, not an ergonomic or clothing-compression standard. Query samples actual used posed vertices within the top footprint and a 50mm deep slab; it does not test every point of continuous cloth volume."
+      },
+      "export_actor_sha256": "ef801d826d71828bfef64d394704dc227616565722ceb90371cd26ef41619817",
+      "seat_support_clothing_clearance": [
+        {
+          "mesh": "Office_clothing006",
+          "lowest_clothing_y_m": 0.704155,
+          "seat_top_y_m": 0.50291997,
+          "clearance_m": 0.20123502999999998
+        },
+        {
+          "mesh": "Office_clothing006_1",
+          "lowest_clothing_y_m": 0.485684,
+          "seat_top_y_m": 0.50291997,
+          "clearance_m": -0.01723596999999999
+        }
+      ]
+    },
+    {
+      "id": "office-person-12",
+      "zone": "Z08",
+      "pose": "listening__seat_50292",
+      "support": {
+        "sourceObject": "F046 exec_chair_black",
+        "seatTopY": 0.50291997,
+        "note": "Pelvis aligned to approved chair; contact pose reviewed separately."
+      },
+      "actual_position": [
+        20.624799728393555,
+        0,
+        -2.8447999954223633
+      ],
+      "meshes": [
+        "LOD0_Adult_skin",
+        "LOD0_Closed_shoes",
+        "LOD0_Eyes",
+        "LOD0_Hair",
+        "Office_clothing",
+        "Office_clothing_1"
+      ],
+      "triangles": 39732,
+      "contacts": [
+        {
+          "source_object": "F046 exec_chair_black",
+          "source_material": "chrome",
+          "is_declared_seat_support": true,
+          "source_triangles_intersected": 1,
+          "actor_triangles_intersected": 21,
+          "transverse_triangle_pairs": 21,
+          "max_two_sided_actor_triangle_depth_across_source_plane_m": 0.01192902805709839,
+          "intersected_actor_triangle_bounds": {
+            "min": [
+              20.379667,
+              0.490459,
+              -2.989203
+            ],
+            "max": [
+              20.448518,
+              0.53112,
+              -2.709398
+            ]
+          },
+          "examples": [
+            {
+              "source_triangle": [
+                [
+                  20.407970474876638,
+                  0.5029199719429016,
+                  -3.0743293020824702
+                ],
+                [
+                  20.40797041319806,
+                  0.5029199719429016,
+                  -2.615270747028118
+                ],
+                [
+                  20.828928973838337,
+                  0.5029199719429016,
+                  -2.6152706904686145
+                ]
+              ],
+              "actor_triangle_index": 33498,
+              "actor_mesh": "Office_clothing_1",
+              "actor_triangle": [
+                [
+                  20.433677,
+                  0.508354,
+                  -2.722797
+                ],
+                [
+                  20.422712,
+                  0.512638,
+                  -2.709492
+                ],
+                [
+                  20.39401,
+                  0.499299,
+                  -2.709398
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "source_object": "F046 exec_chair_black",
+          "source_material": "leather_black",
+          "is_declared_seat_support": true,
+          "source_triangles_intersected": 5,
+          "actor_triangles_intersected": 27,
+          "transverse_triangle_pairs": 41,
+          "max_two_sided_actor_triangle_depth_across_source_plane_m": 0.007760118248498068,
+          "intersected_actor_triangle_bounds": {
+            "min": [
+              20.35155,
+              0.473313,
+              -2.989203
+            ],
+            "max": [
+              20.433677,
+              0.514849,
+              -2.708214
+            ]
+          },
+          "examples": [
+            {
+              "source_triangle": [
+                [
+                  20.37079971699946,
+                  0.46574923396110535,
+                  -3.07432930707669
+                ],
+                [
+                  20.37631500795344,
+                  0.4839935004711151,
+                  -2.6152707512813014
+                ],
+                [
+                  20.376315069632014,
+                  0.4839935004711151,
+                  -3.074329306335654
+                ]
+              ],
+              "actor_triangle_index": 33628,
+              "actor_mesh": "Office_clothing_1",
+              "actor_triangle": [
+                [
+                  20.379107,
+                  0.484468,
+                  -2.747423
+                ],
+                [
+                  20.379059,
+                  0.483649,
+                  -2.733081
+                ],
+                [
+                  20.355787,
+                  0.473313,
+                  -2.729908
+                ]
+              ]
+            },
+            {
+              "source_triangle": [
+                [
+                  20.376315069632014,
+                  0.4839935004711151,
+                  -3.074329306335654
+                ],
+                [
+                  20.37631500795344,
+                  0.4839935004711151,
+                  -2.6152707512813014
+                ],
+                [
+                  20.389726099533284,
+                  0.4974046051502228,
+                  -2.6152707494794027
+                ]
+              ],
+              "actor_triangle_index": 33572,
+              "actor_mesh": "Office_clothing_1",
+              "actor_triangle": [
+                [
+                  20.398777,
+                  0.497693,
+                  -2.719763
+                ],
+                [
+                  20.39401,
+                  0.499299,
+                  -2.709398
+                ],
+                [
+                  20.367703,
+                  0.488075,
+                  -2.708214
+                ]
+              ]
+            },
+            {
+              "source_triangle": [
+                [
+                  20.376315069632014,
+                  0.4839935004711151,
+                  -3.074329306335654
+                ],
+                [
+                  20.389726099533284,
+                  0.4974046051502228,
+                  -2.6152707494794027
+                ],
+                [
+                  20.389726161211858,
+                  0.4974046051502228,
+                  -3.074329304533755
+                ]
+              ],
+              "actor_triangle_index": 33572,
+              "actor_mesh": "Office_clothing_1",
+              "actor_triangle": [
+                [
+                  20.398777,
+                  0.497693,
+                  -2.719763
+                ],
+                [
+                  20.39401,
+                  0.499299,
+                  -2.709398
+                ],
+                [
+                  20.367703,
+                  0.488075,
+                  -2.708214
+                ]
+              ]
+            },
+            {
+              "source_triangle": [
+                [
+                  20.389726161211858,
+                  0.4974046051502228,
+                  -3.074329304533755
+                ],
+                [
+                  20.389726099533284,
+                  0.4974046051502228,
+                  -2.6152707494794027
+                ],
+                [
+                  20.40797041319806,
+                  0.5029199719429016,
+                  -2.615270747028118
+                ]
+              ],
+              "actor_triangle_index": 33498,
+              "actor_mesh": "Office_clothing_1",
+              "actor_triangle": [
+                [
+                  20.433677,
+                  0.508354,
+                  -2.722797
+                ],
+                [
+                  20.422712,
+                  0.512638,
+                  -2.709492
+                ],
+                [
+                  20.39401,
+                  0.499299,
+                  -2.709398
+                ]
+              ]
+            },
+            {
+              "source_triangle": [
+                [
+                  20.389726161211858,
+                  0.4974046051502228,
+                  -3.074329304533755
+                ],
+                [
+                  20.40797041319806,
+                  0.5029199719429016,
+                  -2.615270747028118
+                ],
+                [
+                  20.407970474876638,
+                  0.5029199719429016,
+                  -3.0743293020824702
+                ]
+              ],
+              "actor_triangle_index": 33498,
+              "actor_mesh": "Office_clothing_1",
+              "actor_triangle": [
+                [
+                  20.433677,
+                  0.508354,
+                  -2.722797
+                ],
+                [
+                  20.422712,
+                  0.512638,
+                  -2.709492
+                ],
+                [
+                  20.39401,
+                  0.499299,
+                  -2.709398
+                ]
+              ]
+            }
+          ]
+        }
+      ],
+      "seat_volume_probe": {
+        "declared_seat_top_m": 0.50291997,
+        "exact_source_flat_top_triangles": 2,
+        "vertices_15_to_65mm_below_top_inside_exact_flat_top_footprint": 0,
+        "maximum_depth_in_queried_slab_m": 0,
+        "by_mesh": {},
+        "examples": [],
+        "limits": "15mm is a review threshold, not an ergonomic or clothing-compression standard. Query samples actual used posed vertices within the top footprint and a 50mm deep slab; it does not test every point of continuous cloth volume."
+      },
+      "export_actor_sha256": "1bf6eeeb8dac5be72376ccde87ccb0ee064031316ce0bef27c7f032ed83876f3",
+      "seat_support_clothing_clearance": [
+        {
+          "mesh": "Office_clothing",
+          "lowest_clothing_y_m": 0.662296,
+          "seat_top_y_m": 0.50291997,
+          "clearance_m": 0.15937603
+        },
+        {
+          "mesh": "Office_clothing_1",
+          "lowest_clothing_y_m": 0.495768,
+          "seat_top_y_m": 0.50291997,
+          "clearance_m": -0.0071519700000000075
+        }
+      ]
+    },
+    {
+      "id": "office-person-13",
+      "zone": "Z08",
+      "pose": "presenting",
+      "support": {},
+      "actual_position": [
+        13.199,
+        0,
+        -3.7232
+      ],
+      "meshes": [
+        "LOD0_Adult_skin",
+        "LOD0_Closed_shoes",
+        "LOD0_Eyes",
+        "LOD0_Hair",
+        "LOD0_Long_modest_tunic",
+        "Office_clothing004",
+        "Office_clothing004_1"
+      ],
+      "triangles": 42740,
+      "contacts": [],
+      "seat_volume_probe": {},
+      "export_actor_sha256": "23e7611cece94749fa43e0de4fcafa196cf3046023af2a26c2311784aa5d9cb5"
+    }
+  ],
+  "wall_seconds": 5.873354434967041
+}

@@ -1,0 +1,24 @@
+{
+  "phase": "reception-live",
+  "url": "https://stage2-office-virtual-tour.imranahmedjh611.workers.dev/realistic/?welcome=0",
+  "viewport": [
+    1280,
+    720
+  ],
+  "people_requested": "on",
+  "require_lightmaps": true,
+  "shots": [],
+  "console_errors": [],
+  "page_errors": [],
+  "http_errors": [],
+  "source_responses": [],
+  "source_response_method": "Actual browser navigation/asset response bodies, not a later refetch",
+  "status": "failed",
+  "scope": "Actual viewer frames; UI hidden through screenshot-only CSS. Original scene camera API, no synthetic edits.",
+  "limits": [
+    "Linux software-GPU capture, not a MacBook performance test",
+    "Local load timing is not a 50 Mbps WAN benchmark"
+  ],
+  "failure": "Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://stage2-office-virtual-tour.imranahmedjh611.workers.dev/realistic/?welcome=0\nCall log:\n  - navigating to \"https://stage2-office-virtual-tour.imranahmedjh611.workers.dev/realistic/?welcome=0\", waiting until \"domcontentloaded\"\n",
+  "seconds": 0.364
+}

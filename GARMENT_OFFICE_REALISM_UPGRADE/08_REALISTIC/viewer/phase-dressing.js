@@ -6,12 +6,13 @@ import { createPeopleLayer } from '../people/people-layer.js';
 
 // Phase 4 is deliberately dormant in stages 1–3. Source objects remain untouched;
 // additive props, screen artwork and fictional actors have separate provenance.
-export async function createOfficeDressing({ scene, renderer, metadata, grid, probes, staticBlocked, changed, peopleAccepted = false, activeZones = null, frozenPeople = false }) {
+export async function createOfficeDressing({ scene, renderer, metadata, grid, probes, staticBlocked, changed, peopleAccepted = false, activeZones = null, frozenPeople = false, peopleManifest = null, excludedProps = [] }) {
   const base = new URL('./', location.href);
   const response = await fetch(new URL('props/office-props-manifest.json', base));
   if (!response.ok) throw new Error(`Props manifest HTTP ${response.status}`);
   const manifest = await response.json();
   if (activeZones) manifest.props = manifest.props.filter(p => activeZones.includes(p.zone));
+  if (excludedProps.length) manifest.props = manifest.props.filter(p => !excludedProps.includes(p.id));
   const props = buildOfficeProps(THREE, manifest, { anisotropy: Math.min(8, renderer.capabilities.getMaxAnisotropy()) });
   scene.add(props.group);
   props.group.traverse(mesh => { if (mesh.isMesh) { mesh.castShadow = false; mesh.receiveShadow = false; } });
@@ -58,6 +59,11 @@ vec3 officeSH(vec3 n){
     };
     material.customProgramCacheKey = () => oldKey() + '|office-instanced-room-sh-v1'; material.needsUpdate = true;
   });
+  function prepareSourceScreen(root, zone) {
+    const review = applyOfficeScreenContent(THREE, root, { zone, atlasTexture: atlas, anisotropy: Math.min(8, renderer.capabilities.getMaxAnisotropy()), emissiveIntensity: .25 });
+    atlas ||= review.texture;
+    status.screens[zone] = { touched: review.touched, skipped: review.skipped };
+  }
   function prepareRoom(room) {
     const previousGeometry = new Set(), previousMaterials = new Set(room.ownedMaterials);
     room.groups.forEach(root => root.traverse(o => { if (o.isMesh) previousGeometry.add(o.geometry); }));
@@ -90,10 +96,27 @@ vec3 officeSH(vec3 n){
     }
     status.visiblePropInstances = visible; status.visiblePropBatches = calls;
   }
+  // Independent contact review reads the actual generated geometry and original
+  // instance matrices, including instances currently culled from the view.
+  function propDiagnostics(zone) {
+    props.group.updateMatrixWorld(true);
+    const meshes = [], world = new THREE.Matrix4(), vertex = new THREE.Vector3();
+    for (const batch of batches) {
+      const { mesh, matrices, count } = batch, positions = mesh.geometry.attributes.position;
+      for (let i = 0; i < count; i++) {
+        if (zone && mesh.userData.propZones[i] !== zone) continue;
+        world.fromArray(matrices, i * 16).premultiply(mesh.matrixWorld);
+        const vertices = Array.from({ length: positions.count }, (_, n) => vertex.fromBufferAttribute(positions, n).applyMatrix4(world).toArray());
+        const indices = mesh.geometry.index ? Array.from(mesh.geometry.index.array) : Array.from({ length: positions.count }, (_, n) => n);
+        meshes.push({ name: `${mesh.name}_${i}`, zone: mesh.userData.propZones[i], materials: [mesh.material.name], vertices, indices });
+      }
+    }
+    return { props: manifest.props.filter(p => !zone || p.zone === zone), bounds: props.propBounds, meshes };
+  }
   async function ensurePeople() {
     if (!peopleAccepted) throw new Error('People assets await the independent contact review; the layer is not enabled.');
     if (!peoplePromise) peoplePromise = (async () => {
-      people = await createPeopleLayer({ THREE, loader: new GLTFLoader(), scene, metadata, walkGrid: grid, assetBase: './people/', extraBlocked: staticBlocked, frozen: frozenPeople, activeZones, manifestFile: frozenPeople ? 'reception/people-manifest.json' : 'people-manifest.json' });
+      people = await createPeopleLayer({ THREE, loader: new GLTFLoader(), scene, metadata, walkGrid: grid, assetBase: './people/', extraBlocked: staticBlocked, frozen: frozenPeople, activeZones, manifestFile: peopleManifest || (frozenPeople ? 'reception/people-manifest.json' : 'people-manifest.json') });
       return people;
     })();
     return peoplePromise;
@@ -105,7 +128,7 @@ vec3 officeSH(vec3 n){
     changed(); return layer.stats();
   }
   function update(dt, options) { if (people?.stats().enabled) { people.update(frozenPeople ? 0 : dt, options); if (!frozenPeople) changed(); } }
-  return { status, props, prepareRoom, applyProbe, prepareView, textures: () => [shTexture, atlas].filter(Boolean), setPeopleEnabled, update,
+  return { status, props, prepareRoom, prepareSourceScreen, applyProbe, prepareView, propDiagnostics, textures: () => [shTexture, atlas].filter(Boolean), setPeopleEnabled, update,
     peopleStats: () => people?.stats() || { enabled: false, loaded: false, total: 0, visible: 0, illustrative: true, accepted: peopleAccepted },
     peopleDiagnostics: () => people?.diagnostics() || [], blocksMovement: (x, z, radius) => people?.blocksMovement(x, z, radius) || false,
     hiddenDuringProbe: () => people ? [people.group] : [],

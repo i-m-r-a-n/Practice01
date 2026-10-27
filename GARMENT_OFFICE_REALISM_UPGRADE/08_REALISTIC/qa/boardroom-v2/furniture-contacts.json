@@ -1,0 +1,371 @@
+{
+  "status": "diagnostic actual frozen Boardroom contacts",
+  "source_glb_sha256": "3b883c0077541aa3c574c903cfad60a3b8ba410d12af6d6b476b7733230fc35d",
+  "export_manifest_sha256": "e29ee686bc95f68930621e15f3bbebc8592a6dd3d3fbc532682e43a78dd7799e",
+  "method": "Reuses accepted source furniture triangle-SAT checker against actual browser-deformed visible LOD0 meshes, including standing presenter. Seat underside metric is referenced clothing vertices inside exact top-triangle footprint, above seatTopY-65mm; not a load simulation.",
+  "frozen_geometry": {
+    "checks": [
+      {
+        "id": "office-person-08",
+        "all_exported_fields_identical": true
+      },
+      {
+        "id": "office-person-09",
+        "all_exported_fields_identical": true
+      },
+      {
+        "id": "office-person-10",
+        "all_exported_fields_identical": true
+      },
+      {
+        "id": "office-person-11",
+        "all_exported_fields_identical": true
+      },
+      {
+        "id": "office-person-12",
+        "all_exported_fields_identical": true
+      },
+      {
+        "id": "office-person-13",
+        "all_exported_fields_identical": true
+      }
+    ],
+    "passed": true
+  },
+  "actors": [
+    {
+      "id": "office-person-08",
+      "zone": "Z08",
+      "pose": "notes__seat_50292",
+      "support": {
+        "sourceObject": "F034 board_chair",
+        "seatTopY": 0.50291997,
+        "note": "Pelvis aligned to approved chair; contact pose reviewed separately."
+      },
+      "actual_position": [
+        15.519399642944336,
+        0,
+        -3.856199951171875
+      ],
+      "meshes": [
+        "LOD0_Adult_skin",
+        "LOD0_Closed_shoes",
+        "LOD0_Eyes",
+        "LOD0_Hair",
+        "Office_clothing",
+        "Office_clothing_1",
+        "Generic_meeting_notebook_cover",
+        "Generic_blank_meeting_notes"
+      ],
+      "triangles": 39756,
+      "contacts": [],
+      "seat_volume_probe": {
+        "declared_seat_top_m": 0.50291997,
+        "exact_source_flat_top_triangles": 2,
+        "vertices_15_to_65mm_below_top_inside_exact_flat_top_footprint": 0,
+        "maximum_depth_in_queried_slab_m": 0,
+        "by_mesh": {},
+        "examples": [],
+        "limits": "15mm is a review threshold, not an ergonomic or clothing-compression standard. Query samples actual used posed vertices within the top footprint and a 50mm deep slab; it does not test every point of continuous cloth volume."
+      },
+      "export_actor_sha256": "8b9d5706c902d3ef2f1f3e914b2cc8d259d81f0075ef97b96a1e0b19d9ad3a21",
+      "seat_support_clothing_clearance": [
+        {
+          "mesh": "Office_clothing",
+          "lowest_clothing_y_m": 0.667353,
+          "seat_top_y_m": 0.50291997,
+          "clearance_m": 0.16443302999999998
+        },
+        {
+          "mesh": "Office_clothing_1",
+          "lowest_clothing_y_m": 0.505216,
+          "seat_top_y_m": 0.50291997,
+          "clearance_m": 0.0022960300000000045
+        }
+      ],
+      "seat_support_continuous_clearance": {
+        "point": [
+          15.604814633001546,
+          0.503649221618468,
+          -3.6693706959486008
+        ],
+        "clipped_triangles": 1929,
+        "lowest_clothing_y_m": 0.503649221618468,
+        "clearance_m": 0.0007292516184680409,
+        "top_triangle_count": 2,
+        "method": "Continuous trouser triangles clipped to the source seat flat-top rectangle; only triangles entirely above seatTopY-65mm. Two source triangles cover this near-axis-aligned rectangle; yaw roundoff below0.1micrometre."
+      }
+    },
+    {
+      "id": "office-person-09",
+      "zone": "Z08",
+      "pose": "listening__seat_50292",
+      "support": {
+        "sourceObject": "F037 board_chair",
+        "seatTopY": 0.50291997,
+        "note": "Pelvis aligned to approved chair; contact pose reviewed separately."
+      },
+      "actual_position": [
+        16.33219908793741,
+        0,
+        -1.9034000396728512
+      ],
+      "meshes": [
+        "LOD0_Adult_skin",
+        "LOD0_Closed_shoes",
+        "LOD0_Eyes",
+        "LOD0_Hair",
+        "Office_clothing004",
+        "Office_clothing004_1"
+      ],
+      "triangles": 41860,
+      "contacts": [],
+      "seat_volume_probe": {
+        "declared_seat_top_m": 0.50291997,
+        "exact_source_flat_top_triangles": 2,
+        "vertices_15_to_65mm_below_top_inside_exact_flat_top_footprint": 0,
+        "maximum_depth_in_queried_slab_m": 0,
+        "by_mesh": {},
+        "examples": [],
+        "limits": "15mm is a review threshold, not an ergonomic or clothing-compression standard. Query samples actual used posed vertices within the top footprint and a 50mm deep slab; it does not test every point of continuous cloth volume."
+      },
+      "export_actor_sha256": "63367d7e1f862409e855ca0fb393ad5f14a8c5fd2fa2426d88fe969c4b12e487",
+      "seat_support_clothing_clearance": [
+        {
+          "mesh": "Office_clothing004",
+          "lowest_clothing_y_m": 0.704155,
+          "seat_top_y_m": 0.50291997,
+          "clearance_m": 0.20123502999999998
+        },
+        {
+          "mesh": "Office_clothing004_1",
+          "lowest_clothing_y_m": 0.514404,
+          "seat_top_y_m": 0.50291997,
+          "clearance_m": 0.011484029999999978
+        }
+      ],
+      "seat_support_continuous_clearance": {
+        "point": [
+          16.242743855840867,
+          0.5077656650722199,
+          -2.0202293149622097
+        ],
+        "clipped_triangles": 1594,
+        "lowest_clothing_y_m": 0.5077656650722199,
+        "clearance_m": 0.00484569507221988,
+        "top_triangle_count": 2,
+        "method": "Continuous trouser triangles clipped to the source seat flat-top rectangle; only triangles entirely above seatTopY-65mm. Two source triangles cover this near-axis-aligned rectangle; yaw roundoff below0.1micrometre."
+      }
+    },
+    {
+      "id": "office-person-10",
+      "zone": "Z08",
+      "pose": "listening__seat_50292",
+      "support": {
+        "sourceObject": "F040 board_chair",
+        "seatTopY": 0.50291997,
+        "note": "Pelvis aligned to approved chair; contact pose reviewed separately."
+      },
+      "actual_position": [
+        17.957799911499023,
+        0,
+        -3.856199951171875
+      ],
+      "meshes": [
+        "LOD0_Adult_skin",
+        "LOD0_Closed_shoes",
+        "LOD0_Eyes",
+        "LOD0_Hair",
+        "Office_clothing002",
+        "Office_clothing002_1"
+      ],
+      "triangles": 37434,
+      "contacts": [],
+      "seat_volume_probe": {
+        "declared_seat_top_m": 0.50291997,
+        "exact_source_flat_top_triangles": 2,
+        "vertices_15_to_65mm_below_top_inside_exact_flat_top_footprint": 0,
+        "maximum_depth_in_queried_slab_m": 0,
+        "by_mesh": {},
+        "examples": [],
+        "limits": "15mm is a review threshold, not an ergonomic or clothing-compression standard. Query samples actual used posed vertices within the top footprint and a 50mm deep slab; it does not test every point of continuous cloth volume."
+      },
+      "export_actor_sha256": "a27bee35a94de35ce19dd6f4a8d389f0f3bf08720b5000143acb2c462199225e",
+      "seat_support_clothing_clearance": [
+        {
+          "mesh": "Office_clothing002",
+          "lowest_clothing_y_m": 0.66629,
+          "seat_top_y_m": 0.50291997,
+          "clearance_m": 0.16337003000000005
+        },
+        {
+          "mesh": "Office_clothing002_1",
+          "lowest_clothing_y_m": 0.50493,
+          "seat_top_y_m": 0.50291997,
+          "clearance_m": 0.002010029999999996
+        }
+      ],
+      "seat_support_continuous_clearance": {
+        "point": [
+          18.05844474713607,
+          0.5033747879576627,
+          -3.6693706959486008
+        ],
+        "clipped_triangles": 1929,
+        "lowest_clothing_y_m": 0.5033747879576627,
+        "clearance_m": 0.00045481795766266764,
+        "top_triangle_count": 2,
+        "method": "Continuous trouser triangles clipped to the source seat flat-top rectangle; only triangles entirely above seatTopY-65mm. Two source triangles cover this near-axis-aligned rectangle; yaw roundoff below0.1micrometre."
+      }
+    },
+    {
+      "id": "office-person-11",
+      "zone": "Z08",
+      "pose": "notes__seat_50292",
+      "support": {
+        "sourceObject": "F043 board_chair",
+        "seatTopY": 0.50291997,
+        "note": "Pelvis aligned to approved chair; contact pose reviewed separately."
+      },
+      "actual_position": [
+        18.7705993564921,
+        0,
+        -1.9034000396728512
+      ],
+      "meshes": [
+        "LOD0_Adult_skin",
+        "LOD0_Closed_shoes",
+        "LOD0_Eyes",
+        "LOD0_Hair",
+        "Office_clothing006",
+        "Office_clothing006_1",
+        "Generic_meeting_notebook_cover",
+        "Generic_blank_meeting_notes"
+      ],
+      "triangles": 42050,
+      "contacts": [],
+      "seat_volume_probe": {
+        "declared_seat_top_m": 0.50291997,
+        "exact_source_flat_top_triangles": 2,
+        "vertices_15_to_65mm_below_top_inside_exact_flat_top_footprint": 0,
+        "maximum_depth_in_queried_slab_m": 0,
+        "by_mesh": {},
+        "examples": [],
+        "limits": "15mm is a review threshold, not an ergonomic or clothing-compression standard. Query samples actual used posed vertices within the top footprint and a 50mm deep slab; it does not test every point of continuous cloth volume."
+      },
+      "export_actor_sha256": "88791a7bc70ae20e610ed42f32096aeef4515e3785c14963841cae1950c30450",
+      "seat_support_clothing_clearance": [
+        {
+          "mesh": "Office_clothing006",
+          "lowest_clothing_y_m": 0.704155,
+          "seat_top_y_m": 0.50291997,
+          "clearance_m": 0.20123502999999998
+        },
+        {
+          "mesh": "Office_clothing006_1",
+          "lowest_clothing_y_m": 0.514404,
+          "seat_top_y_m": 0.50291997,
+          "clearance_m": 0.011484029999999978
+        }
+      ],
+      "seat_support_continuous_clearance": {
+        "point": [
+          18.682754656438334,
+          0.5077656650722199,
+          -2.0202293149622097
+        ],
+        "clipped_triangles": 1594,
+        "lowest_clothing_y_m": 0.5077656650722199,
+        "clearance_m": 0.00484569507221988,
+        "top_triangle_count": 2,
+        "method": "Continuous trouser triangles clipped to the source seat flat-top rectangle; only triangles entirely above seatTopY-65mm. Two source triangles cover this near-axis-aligned rectangle; yaw roundoff below0.1micrometre."
+      }
+    },
+    {
+      "id": "office-person-12",
+      "zone": "Z08",
+      "pose": "listening__seat_50292",
+      "support": {
+        "sourceObject": "F046 exec_chair_black",
+        "seatTopY": 0.50291997,
+        "note": "Pelvis aligned to approved chair; contact pose reviewed separately."
+      },
+      "actual_position": [
+        20.594799728393554,
+        0,
+        -2.844799995064617
+      ],
+      "meshes": [
+        "LOD0_Adult_skin",
+        "LOD0_Closed_shoes",
+        "LOD0_Eyes",
+        "LOD0_Hair",
+        "Office_clothing",
+        "Office_clothing_1"
+      ],
+      "triangles": 39732,
+      "contacts": [],
+      "seat_volume_probe": {
+        "declared_seat_top_m": 0.50291997,
+        "exact_source_flat_top_triangles": 2,
+        "vertices_15_to_65mm_below_top_inside_exact_flat_top_footprint": 0,
+        "maximum_depth_in_queried_slab_m": 0,
+        "by_mesh": {},
+        "examples": [],
+        "limits": "15mm is a review threshold, not an ergonomic or clothing-compression standard. Query samples actual used posed vertices within the top footprint and a 50mm deep slab; it does not test every point of continuous cloth volume."
+      },
+      "export_actor_sha256": "73345b647c57489448e15db13e96d80f68e34761fb9fafce0392b3e7c15bd0aa",
+      "seat_support_clothing_clearance": [
+        {
+          "mesh": "Office_clothing",
+          "lowest_clothing_y_m": 0.667353,
+          "seat_top_y_m": 0.50291997,
+          "clearance_m": 0.16443302999999998
+        },
+        {
+          "mesh": "Office_clothing_1",
+          "lowest_clothing_y_m": 0.505216,
+          "seat_top_y_m": 0.50291997,
+          "clearance_m": 0.0022960300000000045
+        }
+      ],
+      "seat_support_continuous_clearance": {
+        "point": [
+          20.40797041319806,
+          0.5036491423031288,
+          -2.751258813523238
+        ],
+        "clipped_triangles": 1929,
+        "lowest_clothing_y_m": 0.5036491423031288,
+        "clearance_m": 0.0007291723031288555,
+        "top_triangle_count": 2,
+        "method": "Continuous trouser triangles clipped to the source seat flat-top rectangle; only triangles entirely above seatTopY-65mm. Two source triangles cover this near-axis-aligned rectangle; yaw roundoff below0.1micrometre."
+      }
+    },
+    {
+      "id": "office-person-13",
+      "zone": "Z08",
+      "pose": "boardroom_presenting",
+      "support": {},
+      "actual_position": [
+        13.199,
+        0,
+        -3.7232
+      ],
+      "meshes": [
+        "LOD0_Adult_skin",
+        "LOD0_Closed_shoes",
+        "LOD0_Eyes",
+        "LOD0_Hair",
+        "LOD0_Long_modest_tunic",
+        "Office_clothing004",
+        "Office_clothing004_1"
+      ],
+      "triangles": 42740,
+      "contacts": [],
+      "seat_volume_probe": {},
+      "export_actor_sha256": "314f2125e6ad59a1091c50df23ba988af0c5ac462cc14a367a5a78d8d497897c"
+    }
+  ],
+  "wall_seconds": 5.96262001991272
+}

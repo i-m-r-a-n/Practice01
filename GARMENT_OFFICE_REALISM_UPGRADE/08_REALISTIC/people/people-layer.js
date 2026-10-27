@@ -53,6 +53,10 @@ export async function createPeopleLayer({THREE:T,loader,scene,metadata,walkGrid,
     if(def.type==='badge'){
      const card=new T.Mesh(new T.BoxGeometry(...def.size),new T.MeshStandardMaterial({color:0xe7e9e5,roughness:.45}));card.name='Generic_blank_visitor_badge';holder.add(card);
      const strip=new T.Mesh(new T.BoxGeometry(def.size[0],.0008,.010),new T.MeshStandardMaterial({color:0x326b68,roughness:.6}));strip.position.set(0,def.size[1]/2+.0004,-def.size[2]/2+.007);holder.add(strip);
+    }else if(def.type==='notebook'){
+     const cover=new T.Mesh(new T.BoxGeometry(...def.size),new T.MeshStandardMaterial({color:0x3e5359,roughness:.86}));cover.name='Generic_meeting_notebook_cover';holder.add(cover);
+     const paper=new T.Mesh(new T.BoxGeometry(def.size[0]-.012,.004,def.size[2]-.012),new T.MeshStandardMaterial({color:0xe5dfd1,roughness:.94}));paper.name='Generic_blank_meeting_notes';paper.position.y=def.size[1]/2+.002;holder.add(paper);
+     if(def.pen){const pen=new T.Mesh(new T.CylinderGeometry(.0023,.0023,.12,8),new T.MeshStandardMaterial({color:0x303a43,roughness:.55}));pen.name='Generic_unbranded_meeting_pen';pen.rotation.z=Math.PI/2;pen.position.set(0,def.size[1]/2+.0068,.085);holder.add(pen);}
     }else if(def.type==='fabric_book'){
      const cover=new T.Mesh(new T.BoxGeometry(...def.size),new T.MeshStandardMaterial({color:0x465b60,roughness:.85}));holder.add(cover);
      const paper=new T.Mesh(new T.BoxGeometry(def.size[0]-.012,.006,def.size[2]-.012),new T.MeshStandardMaterial({color:0xded8ca,roughness:.95}));paper.position.y=def.size[1]/2+.003;holder.add(paper);

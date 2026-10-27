@@ -1,0 +1,24 @@
+{
+  "phase": "reception-offline-exact-base",
+  "url": "http://127.0.0.1:8789/Office_Realistic_Tour.html?welcome=0",
+  "viewport": [
+    1280,
+    720
+  ],
+  "people_requested": "on",
+  "require_lightmaps": true,
+  "shots": [],
+  "console_errors": [],
+  "page_errors": [],
+  "http_errors": [],
+  "source_responses": [],
+  "source_response_method": "Actual browser navigation/asset response bodies, not a later refetch",
+  "status": "failed",
+  "scope": "Actual viewer frames; UI hidden through screenshot-only CSS. Original scene camera API, no synthetic edits.",
+  "limits": [
+    "Linux software-GPU capture, not a MacBook performance test",
+    "Local load timing is not a 50 Mbps WAN benchmark"
+  ],
+  "failure": "Page.goto: net::ERR_EMPTY_RESPONSE at http://127.0.0.1:8789/Office_Realistic_Tour.html?welcome=0\nCall log:\n  - navigating to \"http://127.0.0.1:8789/Office_Realistic_Tour.html?welcome=0\", waiting until \"domcontentloaded\"\n",
+  "seconds": 0.015
+}

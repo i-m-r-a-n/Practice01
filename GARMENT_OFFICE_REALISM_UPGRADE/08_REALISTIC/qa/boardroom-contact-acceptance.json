@@ -1,0 +1,124 @@
+{
+  "status": "PASS \u2014 bounded final static Boardroom contact acceptance",
+  "scope": "Second incremental room: six frozen fictional actors in Z08; one presenter, two seated with notes, three seated listening. Includes actual integrated additive Z08 office props and final rendered frame. Existing four-person Reception preserved.",
+  "actors": [
+    "office-person-08",
+    "office-person-09",
+    "office-person-10",
+    "office-person-11",
+    "office-person-12",
+    "office-person-13"
+  ],
+  "source_furniture_glb_sha256": "3b883c0077541aa3c574c903cfad60a3b8ba410d12af6d6b476b7733230fc35d",
+  "source_locks": {
+    "people/people-layer.js": "787c8e3fff8638a4ef62f7b8b0571ceb35be8bd999d56863d59e8c95efeeb18d",
+    "people/boardroom/people-manifest.json": "e12e216618b8ab9c31afb0ee552abcf525c436f4a71261bcbd2f970ac4a1d7b2",
+    "people/boardroom/poses.json": "609493e7d1ebea01a57b2db3fe77ecbaf3a982d78345e3adf4096f8b0d5f05a2",
+    "people/room-release/people-manifest.json": "58972aaffebab7c776ce72a6fe854b8962c2c636c5a40f3b84f18656fa403ecb",
+    "people/room-release/poses.json": "681c74052665993d137c7e046e9c64d168ea0954f5d2a7d0e80f3dbd0cd9b596",
+    "people/boardroom/source-lock.json": "a174f5079a7abf088699f66514dbaa7cf957fcc795a4624cee937f6c5666ad73"
+  },
+  "measured_results": {
+    "furniture_contact_primitives_by_actor": {
+      "office-person-08": 0,
+      "office-person-09": 0,
+      "office-person-10": 0,
+      "office-person-11": 0,
+      "office-person-12": 0,
+      "office-person-13": 0
+    },
+    "seat_clothing_continuous_clearance_m": {
+      "office-person-08": 0.0007292516184680409,
+      "office-person-09": 0.00484569507221988,
+      "office-person-10": 0.00045481795766266764,
+      "office-person-11": 0.00484569507221988,
+      "office-person-12": 0.0007291723031288555
+    },
+    "shoe_minimum_clearance_range_m": [
+      0.0004959999365210539,
+      0.0005079999365210537
+    ],
+    "grounded_actor_snapshots": 12,
+    "private_empty_zone_hull_passed": 12,
+    "private_empty_zone_minimum_separation_m": 0.4079990000000002,
+    "notebook_support_gap_m": {
+      "office-person-08": 0.0017699969482422029,
+      "office-person-11": 0.0017699969482422029
+    },
+    "skin_to_paper_minimum_gap_m": {
+      "office-person-08": 0.0004989999999999162,
+      "office-person-11": 0.0021519999999999317
+    },
+    "pen_to_paper_gap_m": {
+      "office-person-08": 0.0004999999999999449,
+      "office-person-11": 0.0004999999999999449
+    },
+    "handprop_body_triangle_contacts": 0,
+    "pen_notebook_triangle_contacts": 0,
+    "integrated_office_props": 23,
+    "integrated_office_prop_meshes": 98,
+    "integrated_officeprop_actor_triangle_contacts": 0,
+    "all_six_exported_geometry_exactly_unchanged_after_ten_updates_total_0_5s": true
+  },
+  "invariance": {
+    "captured_integrated_people_manifest_matches_final_source": true,
+    "captured_integrated_poses_match_final_source": true,
+    "combined_release_reception_actors_props_and_used_poses_unchanged": true,
+    "existing_cc0_character_assets_unchanged": true,
+    "all_final_body_meshes_and_bones_unchanged_by_pen_addition": true,
+    "active_zones": [
+      "Z02",
+      "Z08"
+    ],
+    "combined_frozen_actor_count": 10
+  },
+  "visual_review": {
+    "frame": "qa/boardroom-rooms-final/shots/after_CAM_09_Boardroom_A.png",
+    "sha256": "ad99de125eff0a4e8a70e599820f9daedcea294eb496e0b0621dd291bf5aab2a",
+    "observed": "One presenter stands at the presentation screen, five people occupy approved chairs, two notebooks sit on the table with nearby hands and resting pens; no visible intersections in this frame. Approved room geometry and camera composition remain intact.",
+    "scope_limit": "Independent visual inspection of final CAM_09 Boardroom frame; original UI/control regression belongs to the separate viewer report."
+  },
+  "resolved_blockers": [
+    "Initial inherited seated poses crossed the front chair cushions; moving actor anchors forward 30 mm (08/10/12) and 50 mm (09/11) cleared surfaces without moving furniture.",
+    "Reduced notebook depth to 250 mm to remove table-edge overhang; solved hands closer to paper.",
+    "Omitted new additive glass PROP_0021 because it occupied actor 08 notebook footprint."
+  ],
+  "evidence": {
+    "qa/boardroom-v4/export-manifest.json": {
+      "sha256": "efbd843e6086409ea9568064725715daa8ee0eb0fde3f8ab5affb1e7a2205e4c"
+    },
+    "qa/boardroom-v4/furniture-contacts.json": {
+      "sha256": "862201a9488c50b315bb1ceba1bb762cff6795210106bb8ff14dd9463020efb8"
+    },
+    "qa/boardroom-v4/floor-privacy.json": {
+      "sha256": "7ea2c6c090b6df45ed394b65fda7f1b95ddf0b9961d1eccdbb614dcdb4d331c0"
+    },
+    "qa/boardroom-v4/prop-contacts.json": {
+      "sha256": "33bf4fed341e6e9824823869eaf5504ffbe2af9833e725c0ba53c83351bff3a4"
+    },
+    "qa/boardroom-v4/office-prop-contacts.json": {
+      "sha256": "f6f98e29d0f79dd46b0521bd7d28f9fb08f885563ca3511ebf45d85c1c50bf90"
+    },
+    "qa/boardroom-v4/reception-preservation.json": {
+      "sha256": "7afdbf604a3b811c8240e0ed9751076cca6d64a7abb0ace4cb9f7937b0161748"
+    },
+    "qa/boardroom-v4/office-props-source-responses.json": {
+      "sha256": "1948be1662e82f3a6bbd0b3bdae7d153764c5f18ae58d63abbe12595afe9a2e9"
+    },
+    "qa/boardroom-v4/viewer-dressing.json": {
+      "sha256": "fab6b277e5ca643aa2a310d69826f3ab8425c54c44adc0a5af69ffed8cfccaed"
+    },
+    "qa/boardroom-rooms-final/capture.json": {
+      "sha256": "6832949e56d9a3491d57890f034235dbc086f5357a804b7870d9fd619ba12324"
+    }
+  },
+  "external_workspace_mesh_export": "/workspace/office-boardroom-contact-v4",
+  "limitations": [
+    "Static illustrative contact approximation, not a physical cushion compression, writing, grip, cloth or gesture simulation.",
+    "Actual evaluated LOD0 vertices rounded to 1 micrometre; source furniture triangle SAT separation tolerance 1e-7 m.",
+    "Seat support uses continuous trouser triangles clipped to the exact two-triangle, nearly axis-aligned seat-top footprint; gaps 0.455\u20134.846mm.",
+    "The two hands are 0.499 mm and 2.152 mm above paper; resting pens are 0.500 mm above paper. These small nonzero gaps avoid interpenetration.",
+    "Linux Chromium with SwiftShader only; target Mac native FPS/Safari and animation remain outside acceptance.",
+    "Inspector did not retain optional large GLB response bodies in integrated capture; this is explicitly preserved in viewer capture evidence. Character/source furniture locks and captured manifest/poses are independently verified."
+  ]
+}

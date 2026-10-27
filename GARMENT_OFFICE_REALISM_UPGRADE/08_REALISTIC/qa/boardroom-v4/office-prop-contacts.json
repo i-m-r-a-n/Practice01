@@ -1,0 +1,64 @@
+{
+  "status": "passed",
+  "scope": "Actual integrated generated Z08 office-prop triangles (including original instance transforms regardless of view culling) against six actual runtime evaluated body/clothing/handprops. Reuses accepted triangle-SAT narrow phase.",
+  "office_props_sha256": "f044071190b0e74e658437912e15c4981fbe2fce202edf3a009e0d5c3434e81c",
+  "prop_ids": [
+    "PROP_0018",
+    "PROP_0019",
+    "PROP_0020",
+    "PROP_0022",
+    "PROP_0023",
+    "PROP_0024",
+    "PROP_0025",
+    "PROP_0026",
+    "PROP_0027",
+    "PROP_0028",
+    "PROP_0029",
+    "PROP_0030",
+    "PROP_0031",
+    "PROP_0032",
+    "PROP_0033",
+    "PROP_0034",
+    "PROP_0035",
+    "PROP_0036",
+    "PROP_0037",
+    "PROP_0038",
+    "PROP_0039",
+    "PROP_0040",
+    "PROP_0041"
+  ],
+  "excluded_conflicting_glass_21": true,
+  "generated_mesh_count": 98,
+  "actors": [
+    {
+      "id": "office-person-08",
+      "actor_export_sha256": "7ebe29d5c8c93591eac020e0e04aecad9d2912b8687b16e66841c7a0165b39e4",
+      "triangle_intersections": []
+    },
+    {
+      "id": "office-person-09",
+      "actor_export_sha256": "7997acb7a536b3fe0a54952a3353d4e8e11edc6a2614274afa8b69ab17b8a816",
+      "triangle_intersections": []
+    },
+    {
+      "id": "office-person-10",
+      "actor_export_sha256": "07d59ce119c1ab2528ac27b0ac796ec2c089df23e2cd5483112e38c3f97e8a3f",
+      "triangle_intersections": []
+    },
+    {
+      "id": "office-person-11",
+      "actor_export_sha256": "d6738e130dd9c12d9b26bc24b3440f5374641e710ec76bda63a5476109d35264",
+      "triangle_intersections": []
+    },
+    {
+      "id": "office-person-12",
+      "actor_export_sha256": "7fdd86b8d52d31bdffd6f6cd1e1720ebfe8209a2a677e726e754073eb6b27f9d",
+      "triangle_intersections": []
+    },
+    {
+      "id": "office-person-13",
+      "actor_export_sha256": "58d5bf276798c8216579053f9e67c6f5bc7995defcc98f041711a5a8ef78c152",
+      "triangle_intersections": []
+    }
+  ]
+}

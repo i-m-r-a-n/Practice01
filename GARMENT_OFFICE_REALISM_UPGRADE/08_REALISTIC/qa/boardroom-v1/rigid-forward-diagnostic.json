@@ -1,0 +1,450 @@
+{
+  "status": "diagnostic rigid transforms only; must re-export final actual runtime before acceptance",
+  "actors": [
+    {
+      "id": "office-person-08",
+      "candidates": [
+        {
+          "forward_mm": 0,
+          "position": [
+            15.519399642944336,
+            0.0,
+            -3.886199951171875
+          ],
+          "contacts": [
+            {
+              "object": "F034 board_chair",
+              "material": "chrome",
+              "triangles": 21
+            },
+            {
+              "object": "F034 board_chair",
+              "material": "leather_black",
+              "triangles": 27
+            }
+          ]
+        },
+        {
+          "forward_mm": 10,
+          "position": [
+            15.519399642944336,
+            0.0,
+            -3.876199951171875
+          ],
+          "contacts": [
+            {
+              "object": "F034 board_chair",
+              "material": "chrome",
+              "triangles": 9
+            },
+            {
+              "object": "F034 board_chair",
+              "material": "leather_black",
+              "triangles": 21
+            }
+          ]
+        },
+        {
+          "forward_mm": 20,
+          "position": [
+            15.519399642944336,
+            0.0,
+            -3.866199951171875
+          ],
+          "contacts": [
+            {
+              "object": "F034 board_chair",
+              "material": "chrome",
+              "triangles": 5
+            },
+            {
+              "object": "F034 board_chair",
+              "material": "leather_black",
+              "triangles": 9
+            }
+          ]
+        },
+        {
+          "forward_mm": 30,
+          "position": [
+            15.519399642944336,
+            0.0,
+            -3.856199951171875
+          ],
+          "contacts": []
+        }
+      ],
+      "first_zero_contact_forward_mm": 30
+    },
+    {
+      "id": "office-person-09",
+      "candidates": [
+        {
+          "forward_mm": 0,
+          "position": [
+            16.33219909230855,
+            0.0,
+            -1.8534000396728514
+          ],
+          "contacts": [
+            {
+              "object": "F037 board_chair",
+              "material": "chrome",
+              "triangles": 29
+            },
+            {
+              "object": "F037 board_chair",
+              "material": "leather_black",
+              "triangles": 38
+            }
+          ]
+        },
+        {
+          "forward_mm": 10,
+          "position": [
+            16.332199091434322,
+            0.0,
+            -1.8634000396728514
+          ],
+          "contacts": [
+            {
+              "object": "F037 board_chair",
+              "material": "chrome",
+              "triangles": 24
+            },
+            {
+              "object": "F037 board_chair",
+              "material": "leather_black",
+              "triangles": 30
+            }
+          ]
+        },
+        {
+          "forward_mm": 20,
+          "position": [
+            16.332199090560096,
+            0.0,
+            -1.8734000396728514
+          ],
+          "contacts": [
+            {
+              "object": "F037 board_chair",
+              "material": "chrome",
+              "triangles": 16
+            },
+            {
+              "object": "F037 board_chair",
+              "material": "leather_black",
+              "triangles": 27
+            }
+          ]
+        },
+        {
+          "forward_mm": 30,
+          "position": [
+            16.332199089685865,
+            0.0,
+            -1.8834000396728512
+          ],
+          "contacts": [
+            {
+              "object": "F037 board_chair",
+              "material": "chrome",
+              "triangles": 6
+            },
+            {
+              "object": "F037 board_chair",
+              "material": "leather_black",
+              "triangles": 16
+            }
+          ]
+        },
+        {
+          "forward_mm": 40,
+          "position": [
+            16.332199088811638,
+            0.0,
+            -1.8934000396728512
+          ],
+          "contacts": [
+            {
+              "object": "F037 board_chair",
+              "material": "leather_black",
+              "triangles": 5
+            }
+          ]
+        },
+        {
+          "forward_mm": 50,
+          "position": [
+            16.33219908793741,
+            0.0,
+            -1.9034000396728512
+          ],
+          "contacts": []
+        }
+      ],
+      "first_zero_contact_forward_mm": 50
+    },
+    {
+      "id": "office-person-10",
+      "candidates": [
+        {
+          "forward_mm": 0,
+          "position": [
+            17.957799911499023,
+            0.0,
+            -3.886199951171875
+          ],
+          "contacts": [
+            {
+              "object": "F040 board_chair",
+              "material": "chrome",
+              "triangles": 21
+            },
+            {
+              "object": "F040 board_chair",
+              "material": "leather_black",
+              "triangles": 27
+            }
+          ]
+        },
+        {
+          "forward_mm": 10,
+          "position": [
+            17.957799911499023,
+            0.0,
+            -3.876199951171875
+          ],
+          "contacts": [
+            {
+              "object": "F040 board_chair",
+              "material": "chrome",
+              "triangles": 7
+            },
+            {
+              "object": "F040 board_chair",
+              "material": "leather_black",
+              "triangles": 19
+            }
+          ]
+        },
+        {
+          "forward_mm": 20,
+          "position": [
+            17.957799911499023,
+            0.0,
+            -3.866199951171875
+          ],
+          "contacts": [
+            {
+              "object": "F040 board_chair",
+              "material": "chrome",
+              "triangles": 5
+            },
+            {
+              "object": "F040 board_chair",
+              "material": "leather_black",
+              "triangles": 9
+            }
+          ]
+        },
+        {
+          "forward_mm": 30,
+          "position": [
+            17.957799911499023,
+            0.0,
+            -3.856199951171875
+          ],
+          "contacts": []
+        }
+      ],
+      "first_zero_contact_forward_mm": 30
+    },
+    {
+      "id": "office-person-11",
+      "candidates": [
+        {
+          "forward_mm": 0,
+          "position": [
+            18.770599360863237,
+            0.0,
+            -1.8534000396728514
+          ],
+          "contacts": [
+            {
+              "object": "F043 board_chair",
+              "material": "chrome",
+              "triangles": 29
+            },
+            {
+              "object": "F043 board_chair",
+              "material": "leather_black",
+              "triangles": 38
+            }
+          ]
+        },
+        {
+          "forward_mm": 10,
+          "position": [
+            18.77059935998901,
+            0.0,
+            -1.8634000396728514
+          ],
+          "contacts": [
+            {
+              "object": "F043 board_chair",
+              "material": "chrome",
+              "triangles": 24
+            },
+            {
+              "object": "F043 board_chair",
+              "material": "leather_black",
+              "triangles": 30
+            }
+          ]
+        },
+        {
+          "forward_mm": 20,
+          "position": [
+            18.770599359114783,
+            0.0,
+            -1.8734000396728514
+          ],
+          "contacts": [
+            {
+              "object": "F043 board_chair",
+              "material": "chrome",
+              "triangles": 16
+            },
+            {
+              "object": "F043 board_chair",
+              "material": "leather_black",
+              "triangles": 27
+            }
+          ]
+        },
+        {
+          "forward_mm": 30,
+          "position": [
+            18.770599358240553,
+            0.0,
+            -1.8834000396728512
+          ],
+          "contacts": [
+            {
+              "object": "F043 board_chair",
+              "material": "chrome",
+              "triangles": 6
+            },
+            {
+              "object": "F043 board_chair",
+              "material": "leather_black",
+              "triangles": 16
+            }
+          ]
+        },
+        {
+          "forward_mm": 40,
+          "position": [
+            18.770599357366326,
+            0.0,
+            -1.8934000396728512
+          ],
+          "contacts": [
+            {
+              "object": "F043 board_chair",
+              "material": "leather_black",
+              "triangles": 5
+            }
+          ]
+        },
+        {
+          "forward_mm": 50,
+          "position": [
+            18.7705993564921,
+            0.0,
+            -1.9034000396728512
+          ],
+          "contacts": []
+        }
+      ],
+      "first_zero_contact_forward_mm": 50
+    },
+    {
+      "id": "office-person-12",
+      "candidates": [
+        {
+          "forward_mm": 0,
+          "position": [
+            20.624799728393555,
+            0.0,
+            -2.8447999954223633
+          ],
+          "contacts": [
+            {
+              "object": "F046 exec_chair_black",
+              "material": "chrome",
+              "triangles": 21
+            },
+            {
+              "object": "F046 exec_chair_black",
+              "material": "leather_black",
+              "triangles": 27
+            }
+          ]
+        },
+        {
+          "forward_mm": 10,
+          "position": [
+            20.614799728393553,
+            0.0,
+            -2.8447999953031147
+          ],
+          "contacts": [
+            {
+              "object": "F046 exec_chair_black",
+              "material": "chrome",
+              "triangles": 9
+            },
+            {
+              "object": "F046 exec_chair_black",
+              "material": "leather_black",
+              "triangles": 21
+            }
+          ]
+        },
+        {
+          "forward_mm": 20,
+          "position": [
+            20.604799728393555,
+            0.0,
+            -2.8447999951838656
+          ],
+          "contacts": [
+            {
+              "object": "F046 exec_chair_black",
+              "material": "chrome",
+              "triangles": 5
+            },
+            {
+              "object": "F046 exec_chair_black",
+              "material": "leather_black",
+              "triangles": 9
+            }
+          ]
+        },
+        {
+          "forward_mm": 30,
+          "position": [
+            20.594799728393554,
+            0.0,
+            -2.844799995064617
+          ],
+          "contacts": []
+        }
+      ],
+      "first_zero_contact_forward_mm": 30
+    }
+  ]
+}

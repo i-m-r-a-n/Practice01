@@ -1,0 +1,18 @@
+{
+  "count": 10,
+  "activeZones": [
+    "Z02",
+    "Z08"
+  ],
+  "frozen": true,
+  "noPaths": true,
+  "acceptedReceptionHashes": {
+    "reception/people-manifest.json": true,
+    "reception/poses.json": true
+  },
+  "receptionActorsEqual": true,
+  "receptionPropsEqual": true,
+  "receptionPosesEqual": true,
+  "allAssetsMatchOriginalHashes": true,
+  "minimalPoseCount": 10
+}

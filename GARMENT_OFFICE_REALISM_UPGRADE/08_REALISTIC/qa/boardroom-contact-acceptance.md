@@ -1,0 +1,5 @@
+Boardroom static 6 passes the bounded contact review. One presenter and five seated people remain frozen; the combined release keeps the four accepted Reception people unchanged.
+
+Actual evaluated meshes have no intersections with approved furniture, notebooks, pens, or the 23 integrated Boardroom props. Shoes clear the floor by 0.496–0.508mm; continuous seat-support gaps are0.455–4.846mm. Both notebooks clear the table by 1.770mm, hands clear paper by 0.499mm/2.152mm, and resting pens clear paper by 0.500mm. All six exports are identical after ten runtime updates totalling 0.5 seconds, and visible mesh hulls remain at least 0.408 m from excluded private rooms.
+
+The final integrated CAM_09 frame was inspected. Earlier chair-edge clipping, notebook overhang, and a conflicting additive glass were corrected; approved furniture did not move. See boardroom-contact-acceptance.json for source locks, evidence, and limits. This is a static visual approximation; native Mac performance and original UI controls are separate checks.

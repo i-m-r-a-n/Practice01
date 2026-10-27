@@ -1,0 +1,22 @@
+{
+  "status": "bounded static people contact checks passed; integrated viewer and office-props review separate",
+  "actorIds": [
+    "office-person-08",
+    "office-person-09",
+    "office-person-10",
+    "office-person-11",
+    "office-person-12",
+    "office-person-13"
+  ],
+  "zone": "Z08",
+  "count": 6,
+  "frozen": true,
+  "sourceLock": "source-lock.json",
+  "evidence": "ACCEPTANCE.md",
+  "approvedBlendSha256": "fa3ed3d58f6d44c3554e3761307841b96115ff7816e4e541c8e6611cb363810d",
+  "approvedGlbSha256": "3b883c0077541aa3c574c903cfad60a3b8ba410d12af6d6b476b7733230fc35d",
+  "newCharacterAssets": false,
+  "furnitureMutations": false,
+  "notesMeaning": "Fixed notebook review with resting pen; no active handwriting or held grip",
+  "nativeMacPerformanceTested": false
+}
