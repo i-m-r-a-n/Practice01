@@ -1,0 +1,28 @@
+# Views re-rendered by render_queue2.sh after render_queue.sh, one per line: camera [extra render_views.py arguments].
+# Read line by line while the queue runs, so views can be appended at any time.
+# rug fix (rugs lifted off the floor) and exposure change
+CAM_01_Reception_A
+# reception camera turned so the whole logo is in view
+CAM_02_Reception_B
+# plastered sloped soffit added under the lobby stair
+CAM_03_Entrance_Lobby
+# rug fix and exposure change
+CAM_07_MD_Office_A
+# boardroom camera moved away from the brass door pulls of D19
+CAM_10_Boardroom_B
+# full-bleed deck images (cover, closing) at 1920 x 1080; CAM_04 also had the exposure change
+CAM_04_Experience_Centre_A --res 1920x1080
+CAM_05_Experience_Centre_B --res 1920x1080
+# CAD room: green felt pinboard for tech packs added on the south wall
+CAM_15_CAD_Room
+# prayer rooms: wider, brighter 3000 K downlights (room was underlit)
+CAM_22_Prayer_Male
+# design corridor camera moved north of the store (the store wall filled the right side in black)
+CAM_32_Design_Corridor
+# overall isometric: rendered before the rug fix (black rug visible in the lounge) and the later fixes
+CAM_ISO_SE --res 1920x1080 --samples 96
+# Cycles top plan, portrait so the whole 46 m north-south length fits (ortho scale = frame height)
+CAM_TOP_Plan --res 1240x1600 --samples 64
+# overall isometric from the south-west, 4:3 so the whole L-shaped plan fits
+CAM_ISO_SW --res 1600x1200 --samples 96
+# top plan once more at exposure 0.0 (the -0.3 version was too dark), rendered directly after queue 2

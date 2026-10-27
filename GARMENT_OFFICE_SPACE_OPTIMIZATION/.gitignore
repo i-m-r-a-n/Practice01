@@ -1,0 +1,4 @@
+__pycache__/
+*.blend1
+02_IMPROVED_BLENDER_MODEL/logs/
+03_ROOM_RENDERS/**/*.png
