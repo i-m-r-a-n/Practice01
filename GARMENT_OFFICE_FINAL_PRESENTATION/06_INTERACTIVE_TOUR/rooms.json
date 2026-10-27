@@ -1,0 +1,206 @@
+[
+  {
+    "id": "Z01",
+    "name": "Entrance lobby",
+    "group": "Arrival",
+    "camera": "CAM_03_Entrance_Lobby"
+  },
+  {
+    "id": "Z02",
+    "name": "Reception & waiting",
+    "group": "Arrival",
+    "camera": "CAM_01_Reception_A"
+  },
+  {
+    "id": "Z30",
+    "name": "Experience centre",
+    "group": "Arrival",
+    "camera": "CAM_04_Experience_Centre_A"
+  },
+  {
+    "id": "Z03",
+    "name": "Visitor passage",
+    "group": "Arrival",
+    "camera": "CAM_02_Reception_B"
+  },
+  {
+    "id": "Z08",
+    "name": "Boardroom",
+    "group": "Meeting",
+    "camera": "CAM_09_Boardroom_A"
+  },
+  {
+    "id": "Z10",
+    "name": "Executive reception",
+    "group": "Executive",
+    "camera": "CAM_17_Executive_Reception"
+  },
+  {
+    "id": "Z11",
+    "name": "Director",
+    "group": "Executive",
+    "camera": "CAM_18_Director"
+  },
+  {
+    "id": "Z12",
+    "name": "Managing director",
+    "group": "Executive",
+    "camera": "CAM_07_MD_Office_A"
+  },
+  {
+    "id": "Z13",
+    "name": "Executive corridor",
+    "group": "Executive",
+    "camera": "CAM_31_Executive_Corridor"
+  },
+  {
+    "id": "Z05",
+    "name": "HR & administration",
+    "group": "Operations",
+    "camera": "CAM_19_HR_Admin"
+  },
+  {
+    "id": "Z06",
+    "name": "Commercial & accounts",
+    "group": "Operations",
+    "camera": "CAM_16_Commercial_Accounts"
+  },
+  {
+    "id": "Z07",
+    "name": "Merchandising",
+    "group": "Operations",
+    "camera": "CAM_11_Merchandising_A"
+  },
+  {
+    "id": "Z09",
+    "name": "Audit room",
+    "group": "Operations",
+    "camera": "CAM_27_Audit_Room"
+  },
+  {
+    "id": "Z04",
+    "name": "Guest workspace",
+    "group": "Operations",
+    "camera": "CAM_26_Guest_Workspace"
+  },
+  {
+    "id": "Z14",
+    "name": "CAD & technical",
+    "group": "Design",
+    "camera": "CAM_15_CAD_Room"
+  },
+  {
+    "id": "Z15",
+    "name": "Fabric & trim library",
+    "group": "Design",
+    "camera": "CAM_25_Fabric_Library"
+  },
+  {
+    "id": "Z16",
+    "name": "3D printing lab",
+    "group": "Design",
+    "camera": "CAM_24_3D_Printing_Lab"
+  },
+  {
+    "id": "Z17",
+    "name": "Sample development",
+    "group": "Design",
+    "camera": "CAM_23_Sample_Room"
+  },
+  {
+    "id": "Z18",
+    "name": "Global Design Studio",
+    "group": "Design",
+    "camera": "CAM_13_Design_Studio_A"
+  },
+  {
+    "id": "Z19",
+    "name": "Sample & material store",
+    "group": "Design",
+    "camera": "CAM_23_Sample_Room"
+  },
+  {
+    "id": "Z20",
+    "name": "Staff cafe & pantry",
+    "group": "Staff facilities",
+    "camera": "CAM_20_Staff_Cafe"
+  },
+  {
+    "id": "Z21",
+    "name": "Lounge & training",
+    "group": "Staff facilities",
+    "camera": "CAM_21_Lounge_Training"
+  },
+  {
+    "id": "Z23",
+    "name": "Prayer (male)",
+    "group": "Staff facilities",
+    "camera": "CAM_22_Prayer_Male"
+  },
+  {
+    "id": "Z24",
+    "name": "Wudu (male)",
+    "group": "Staff facilities",
+    "camera": "CAM_33_Wudu_Male"
+  },
+  {
+    "id": "Z25",
+    "name": "Prayer (female)",
+    "group": "Staff facilities",
+    "camera": "CAM_30_Prayer_Female"
+  },
+  {
+    "id": "Z34",
+    "name": "Wudu (female)",
+    "group": "Staff facilities",
+    "camera": "CAM_30_Prayer_Female"
+  },
+  {
+    "id": "Z26",
+    "name": "Washroom (female)",
+    "group": "Staff facilities",
+    "camera": "CAM_29_Washroom_Female"
+  },
+  {
+    "id": "Z27",
+    "name": "Washroom (male)",
+    "group": "Staff facilities",
+    "camera": "CAM_28_Washroom_Male"
+  },
+  {
+    "id": "Z28",
+    "name": "Guest WC",
+    "group": "Staff facilities",
+    "camera": "CAM_02_Reception_B"
+  },
+  {
+    "id": "Z29",
+    "name": "Guest workspace WC",
+    "group": "Staff facilities",
+    "camera": "CAM_26_Guest_Workspace"
+  },
+  {
+    "id": "Z31",
+    "name": "Staff corridor",
+    "group": "Circulation",
+    "camera": "CAM_19_HR_Admin"
+  },
+  {
+    "id": "Z32",
+    "name": "North corridor",
+    "group": "Circulation",
+    "camera": "CAM_32_Design_Corridor"
+  },
+  {
+    "id": "Z33",
+    "name": "Central hallway",
+    "group": "Circulation",
+    "camera": "CAM_32_Design_Corridor"
+  },
+  {
+    "id": "Z22",
+    "name": "Design corridor",
+    "group": "Circulation",
+    "camera": "CAM_32_Design_Corridor"
+  }
+]
