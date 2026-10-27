@@ -1,0 +1,313 @@
+{
+  "status": "exported",
+  "url": "http://127.0.0.1:8792/GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/people/experience/office-preview.html",
+  "sources": [
+    {
+      "url": "http://127.0.0.1:8792/GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/people/people-layer.js",
+      "bytes": 17461,
+      "sha256": "59e74aee90ab26658ee5d867498c85267be1215dca2bc15737b9ddbcbb50d1b9"
+    },
+    {
+      "url": "http://127.0.0.1:8792/GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/people/experience/people-manifest.json",
+      "bytes": 4155,
+      "sha256": "67345fec823b84a1f26f7409b50e9cc91cbcc164de9cf53882d0fcdd83f16b59"
+    },
+    {
+      "url": "http://127.0.0.1:8792/GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/people/experience/poses.json",
+      "bytes": 3560,
+      "sha256": "b0ab8a7a95e5ba93a2c3f7b2ffc41686e989cdf46fc0abc196882bdaf0265117"
+    },
+    {
+      "url": "http://127.0.0.1:8792/GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/people/assets/shirt.glb",
+      "bytes": 4411128,
+      "sha256": "7430996e4368aa3e54d39c77f93d69a7ce31a089977714e2e7ed56dd846f7c1e"
+    },
+    {
+      "url": "http://127.0.0.1:8792/GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/people/assets/salwar_braid.glb",
+      "bytes": 4689540,
+      "sha256": "68f3384b625f59d8d4a9c1ddce671126dba394f7ca9aaae383ac0d5aa08e398d"
+    },
+    {
+      "url": "http://127.0.0.1:8792/GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/people/assets/panjabi.glb",
+      "bytes": 4099060,
+      "sha256": "31f9e208986c064a3776991690d12925ed5fda59889765df06930d66c054d257"
+    },
+    {
+      "url": "http://127.0.0.1:8792/GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/people/assets/salwar.glb",
+      "bytes": 5159776,
+      "sha256": "cd2c4c458dd59532cc28408b98ae8d544a971fe4e069fab2413bbf4f4d90b5e4"
+    }
+  ],
+  "snapshots": [
+    {
+      "seconds": 0,
+      "all_actors": true,
+      "actors": [
+        {
+          "id": "office-person-05",
+          "file": "t0/office-person-05.json.gz",
+          "sha256": "d23cbf1d5f141869d0ec746fff9cf6d560d092c44eadf0de34b739d38902d75e",
+          "meshes": 7,
+          "vertices": 33162,
+          "minimum_vertex_y": 0.010664
+        },
+        {
+          "id": "office-person-06",
+          "file": "t0/office-person-06.json.gz",
+          "sha256": "a4781159ff31af05ec903ad7fdb22e006f539f50b577efa64b6671920f966fb8",
+          "meshes": 6,
+          "vertices": 21774,
+          "minimum_vertex_y": 0.010648
+        },
+        {
+          "id": "office-person-07",
+          "file": "t0/office-person-07.json.gz",
+          "sha256": "7e42180e9cf3e2fc89609d7c6d458172e662cf92d4d3348979730983401cfe20",
+          "meshes": 6,
+          "vertices": 20961,
+          "minimum_vertex_y": 0.010676
+        }
+      ],
+      "runtime_stats": {
+        "enabled": true,
+        "loaded": true,
+        "frozen": true,
+        "total": 3,
+        "visible": 3,
+        "walkers": 0,
+        "illustrative": true,
+        "forbiddenZoneViolations": 0,
+        "status": "Experience Centre fixed contact review pending",
+        "nativeMacPerformanceTested": false
+      }
+    },
+    {
+      "seconds": 0.5,
+      "all_actors": true,
+      "actors": [
+        {
+          "id": "office-person-05",
+          "file": "t0_5/office-person-05.json.gz",
+          "sha256": "7f36fc30148f5fb7bcb810afc27649168747525bfe7810099ad23d5917a6913d",
+          "meshes": 7,
+          "vertices": 33162,
+          "minimum_vertex_y": 0.010664
+        },
+        {
+          "id": "office-person-06",
+          "file": "t0_5/office-person-06.json.gz",
+          "sha256": "8e6418025dc1ba85a76e2f520591c73d7d8215d79a1d00c74136ae1b452efada",
+          "meshes": 6,
+          "vertices": 21774,
+          "minimum_vertex_y": 0.010648
+        },
+        {
+          "id": "office-person-07",
+          "file": "t0_5/office-person-07.json.gz",
+          "sha256": "fc3e38f3ffd5570a0b3b76ad0f8d4d4b75bd5653586505fc078c8e90bc085ed2",
+          "meshes": 6,
+          "vertices": 20961,
+          "minimum_vertex_y": 0.010676
+        }
+      ],
+      "runtime_stats": {
+        "enabled": true,
+        "loaded": true,
+        "frozen": true,
+        "total": 3,
+        "visible": 3,
+        "walkers": 0,
+        "illustrative": true,
+        "forbiddenZoneViolations": 0,
+        "status": "Experience Centre fixed contact review pending",
+        "nativeMacPerformanceTested": false
+      }
+    }
+  ],
+  "errors": [],
+  "scope": "Actual runtime posed visible LOD0 world vertices/indices plus hand props; current manifest actors at t0. Preflight, not full cycle, rendered realism or Mac performance acceptance. A second export follows ten actual runtime updates totalling0.5seconds, to test frozen geometry.",
+  "source_capture_errors": [
+    {
+      "url": "http://127.0.0.1:8792/GARMENT_OFFICE_WALKTHROUGH_FINAL/07_WEB_TOUR_ASSETS/Final_Office_Interior_web.glb",
+      "error": "Response.body: Protocol error (Network.getResponseBody): Request content was evicted from inspector cache\nResponse body is not available for a response that was navigated away from. Read response.body() before triggering any navigation."
+    }
+  ],
+  "browser": "154.0.8037.57",
+  "people_manifest": {
+    "version": "experience-static-1",
+    "count": 3,
+    "note": "People shown are illustrative",
+    "defaultEnabled": false,
+    "status": "Experience Centre fixed contact review pending",
+    "approvedLayoutChanged": false,
+    "axes": "metres; x east, y up, z south; characters face +z at yaw 0",
+    "emptyZones": [
+      "Z23",
+      "Z24",
+      "Z25",
+      "Z26",
+      "Z27",
+      "Z28",
+      "Z29",
+      "Z34"
+    ],
+    "assets": {
+      "shirt": {
+        "file": "assets/shirt.glb",
+        "license": "CC0-1.0 plus self-made drape",
+        "sha256": "7430996e4368aa3e54d39c77f93d69a7ce31a089977714e2e7ed56dd846f7c1e"
+      },
+      "panjabi": {
+        "file": "assets/panjabi.glb",
+        "license": "CC0-1.0 plus self-made drape",
+        "sha256": "31f9e208986c064a3776991690d12925ed5fda59889765df06930d66c054d257"
+      },
+      "salwar": {
+        "file": "assets/salwar.glb",
+        "license": "CC0-1.0 plus self-made drape",
+        "sha256": "cd2c4c458dd59532cc28408b98ae8d544a971fe4e069fab2413bbf4f4d90b5e4"
+      },
+      "salwar_braid": {
+        "file": "assets/salwar_braid.glb",
+        "license": "CC0-1.0 plus self-made drape",
+        "sha256": "68f3384b625f59d8d4a9c1ddce671126dba394f7ca9aaae383ac0d5aa08e398d"
+      }
+    },
+    "poses": "experience/poses.json",
+    "actors": [
+      {
+        "id": "office-person-05",
+        "zone": "Z30",
+        "task": "holding_sample",
+        "outfit": "salwar",
+        "pose": "experience_holding_sample",
+        "heightScale": 1.008,
+        "bodyWidth": 1.036,
+        "skinTint": "#d5b6a0",
+        "garmentTint": "#8a9bb2",
+        "lowerTint": "#30363d",
+        "phase": 6.47214,
+        "radius": 0.25,
+        "fictional": true,
+        "faceMorph": [
+          0.857,
+          0.75,
+          0.611
+        ],
+        "position": [
+          18.499,
+          0,
+          -7.3232
+        ],
+        "yaw": 3.141592653589793,
+        "seated": false,
+        "hideLongDrape": true,
+        "wardrobeMode": "Modest long-sleeve shirt and trousers; overlapping long drape disabled for this standing pose.",
+        "frozen": true
+      },
+      {
+        "id": "office-person-06",
+        "zone": "Z30",
+        "task": "explaining_sample",
+        "outfit": "shirt",
+        "pose": "experience_explaining_sample",
+        "heightScale": 0.976,
+        "bodyWidth": 0.964,
+        "skinTint": "#c69d7b",
+        "garmentTint": "#9e7788",
+        "lowerTint": "#424039",
+        "phase": 8.09017,
+        "radius": 0.25,
+        "fictional": true,
+        "faceMorph": [
+          0.143,
+          0.25,
+          0.056
+        ],
+        "position": [
+          20.299,
+          0,
+          -7.3232
+        ],
+        "yaw": -1.5707963267948966,
+        "seated": false,
+        "frozen": true
+      },
+      {
+        "id": "office-person-07",
+        "zone": "Z30",
+        "task": "touching_rail_fabric",
+        "outfit": "panjabi",
+        "pose": "experience_touching_rail",
+        "heightScale": 1.032,
+        "bodyWidth": 1.018,
+        "skinTint": "#b88b69",
+        "garmentTint": "#738866",
+        "lowerTint": "#25313c",
+        "phase": 9.7082,
+        "radius": 0.25,
+        "fictional": true,
+        "faceMorph": [
+          0.357,
+          0.667,
+          0.444
+        ],
+        "position": [
+          19.61352417999506,
+          0,
+          -9.67
+        ],
+        "yaw": 3.141592653589793,
+        "seated": false,
+        "hideLongDrape": true,
+        "wardrobeMode": "Modest long-sleeve shirt and trousers; overlapping long drape disabled for this standing pose.",
+        "frozen": true
+      }
+    ],
+    "navigation": {
+      "mode": "No actor locomotion or gesture animation; fixed posed people with visitor collision"
+    },
+    "limitations": [
+      "Frozen illustrative people, not live animation.",
+      "Generic sample tee supported at shoulders; no pinching hand-grip simulation.",
+      "Native Mac performance has not been tested."
+    ],
+    "frozen": true,
+    "activeZones": [
+      "Z30"
+    ],
+    "props": [
+      {
+        "id": "experience_buyer_sample",
+        "owner": "office-person-05",
+        "type": "held_garment",
+        "position": [
+          18.499,
+          1.36,
+          -7.832955641222
+        ],
+        "yaw": 3.141592653589793,
+        "color": "#b39b79",
+        "provenance": "Self-made project display tee silhouette with shallow drape; supported at both shoulder edges."
+      }
+    ]
+  },
+  "frozen_geometry": {
+    "checks": [
+      {
+        "id": "office-person-05",
+        "all_exported_fields_identical": true
+      },
+      {
+        "id": "office-person-06",
+        "all_exported_fields_identical": true
+      },
+      {
+        "id": "office-person-07",
+        "all_exported_fields_identical": true
+      }
+    ],
+    "passed": true
+  },
+  "wall_seconds": 15.362
+}

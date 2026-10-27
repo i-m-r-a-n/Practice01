@@ -1,0 +1,30 @@
+{
+  "status": "passed",
+  "scope": "Loopback HTTP offline-resource resolver; not native Mac/file protocol acceptance",
+  "errors": [],
+  "outside_requests": [],
+  "frame": {
+    "name": "CAM_04_Experience_Centre_A",
+    "type": "PERSP",
+    "lighting": null
+  },
+  "people": {
+    "enabled": true,
+    "loaded": true,
+    "frozen": true,
+    "total": 13,
+    "visible": 7,
+    "walkers": 0,
+    "illustrative": true,
+    "forbiddenZoneViolations": 0,
+    "status": "Reception and Boardroom accepted; Experience Centre contact review pending",
+    "nativeMacPerformanceTested": false
+  },
+  "offline": {
+    "requests": 9,
+    "decodedBytes": 38036770,
+    "missing": []
+  },
+  "image_sha256": "0ed086d4541684b967bcf067faad490cf0417d30a433a1f16f379b91162c78f3",
+  "offline_manifest_sha256": "343626c0e8c77353bac74acbac95c9afc766dbc659a466d74322167ee62efe6f"
+}

@@ -1,0 +1,96 @@
+{
+  "status": "diagnostic actual frozen Experience Centre contacts",
+  "source_glb_sha256": "3b883c0077541aa3c574c903cfad60a3b8ba410d12af6d6b476b7733230fc35d",
+  "export_manifest_sha256": "0175a586767ba460f5e72eebda8ea73e2f4b606e6727ad812a751db5ce4d7a4d",
+  "method": "Accepted source furniture triangle-SAT checker against actual browser-deformed visible LOD0 meshes, including held garment props. Intentional fabric touch is reported separately from penetration. No original source furniture moved.",
+  "frozen_geometry": {
+    "checks": [
+      {
+        "id": "office-person-05",
+        "all_exported_fields_identical": true
+      },
+      {
+        "id": "office-person-06",
+        "all_exported_fields_identical": true
+      },
+      {
+        "id": "office-person-07",
+        "all_exported_fields_identical": true
+      }
+    ],
+    "passed": true
+  },
+  "actors": [
+    {
+      "id": "office-person-05",
+      "zone": "Z30",
+      "pose": "experience_holding_sample",
+      "support": {},
+      "actual_position": [
+        18.499,
+        0,
+        -7.3232
+      ],
+      "meshes": [
+        "LOD0_Adult_skin",
+        "LOD0_Closed_shoes",
+        "LOD0_Eyes",
+        "LOD0_Hair",
+        "Office_clothing004",
+        "Office_clothing004_1",
+        "Generic_project_authored_sample_tee"
+      ],
+      "triangles": 44932,
+      "contacts": [],
+      "seat_volume_probe": {},
+      "export_actor_sha256": "d23cbf1d5f141869d0ec746fff9cf6d560d092c44eadf0de34b739d38902d75e"
+    },
+    {
+      "id": "office-person-06",
+      "zone": "Z30",
+      "pose": "experience_explaining_sample",
+      "support": {},
+      "actual_position": [
+        20.299,
+        0,
+        -7.3232
+      ],
+      "meshes": [
+        "LOD0_Adult_skin",
+        "LOD0_Closed_shoes",
+        "LOD0_Eyes",
+        "LOD0_Hair",
+        "Office_clothing",
+        "Office_clothing_1"
+      ],
+      "triangles": 39732,
+      "contacts": [],
+      "seat_volume_probe": {},
+      "export_actor_sha256": "a4781159ff31af05ec903ad7fdb22e006f539f50b577efa64b6671920f966fb8"
+    },
+    {
+      "id": "office-person-07",
+      "zone": "Z30",
+      "pose": "experience_touching_rail",
+      "support": {},
+      "actual_position": [
+        19.61352417999506,
+        0,
+        -9.67
+      ],
+      "meshes": [
+        "LOD0_Adult_skin",
+        "LOD0_Closed_shoes",
+        "LOD0_Eyes",
+        "LOD0_Hair",
+        "Office_clothing002",
+        "Office_clothing002_1"
+      ],
+      "triangles": 37434,
+      "contacts": [],
+      "seat_volume_probe": {},
+      "export_actor_sha256": "7e42180e9cf3e2fc89609d7c6d458172e662cf92d4d3348979730983401cfe20"
+    }
+  ],
+  "wall_seconds": 0.5163753032684326
+}

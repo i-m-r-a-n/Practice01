@@ -8,7 +8,8 @@
   "stage": 4,
   "releaseZones": [
     "Z02",
-    "Z08"
+    "Z08",
+    "Z30"
   ],
   "peopleManifest": "room-release/people-manifest.json",
   "excludedProps": [

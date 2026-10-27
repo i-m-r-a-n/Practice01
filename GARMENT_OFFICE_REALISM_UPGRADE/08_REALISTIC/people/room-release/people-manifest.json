@@ -1,9 +1,9 @@
 {
-  "version": "reception4-boardroom6-static-1",
-  "count": 10,
+  "version": "reception4-boardroom6-experience3-static-1",
+  "count": 13,
   "note": "People shown are illustrative",
   "defaultEnabled": false,
-  "status": "Reception accepted; Boardroom fixed contact review pending",
+  "status": "Reception and Boardroom accepted; Experience Centre contact review pending",
   "approvedLayoutChanged": false,
   "axes": "metres; x east, y up, z south; characters face +z at yaw 0",
   "emptyZones": [
@@ -362,20 +362,109 @@
       "yaw": -1.5707963267948966,
       "seated": false,
       "frozen": true
+    },
+    {
+      "id": "office-person-05",
+      "zone": "Z30",
+      "task": "holding_sample",
+      "outfit": "salwar",
+      "pose": "experience_holding_sample",
+      "heightScale": 1.008,
+      "bodyWidth": 1.036,
+      "skinTint": "#d5b6a0",
+      "garmentTint": "#8a9bb2",
+      "lowerTint": "#30363d",
+      "phase": 6.47214,
+      "radius": 0.25,
+      "fictional": true,
+      "faceMorph": [
+        0.857,
+        0.75,
+        0.611
+      ],
+      "position": [
+        18.499,
+        0,
+        -7.3232
+      ],
+      "yaw": 3.141592653589793,
+      "seated": false,
+      "hideLongDrape": true,
+      "wardrobeMode": "Modest long-sleeve shirt and trousers; overlapping long drape disabled for this standing pose.",
+      "frozen": true
+    },
+    {
+      "id": "office-person-06",
+      "zone": "Z30",
+      "task": "explaining_sample",
+      "outfit": "shirt",
+      "pose": "experience_explaining_sample",
+      "heightScale": 0.976,
+      "bodyWidth": 0.964,
+      "skinTint": "#c69d7b",
+      "garmentTint": "#9e7788",
+      "lowerTint": "#424039",
+      "phase": 8.09017,
+      "radius": 0.25,
+      "fictional": true,
+      "faceMorph": [
+        0.143,
+        0.25,
+        0.056
+      ],
+      "position": [
+        20.299,
+        0,
+        -7.3232
+      ],
+      "yaw": -1.5707963267948966,
+      "seated": false,
+      "frozen": true
+    },
+    {
+      "id": "office-person-07",
+      "zone": "Z30",
+      "task": "touching_rail_fabric",
+      "outfit": "panjabi",
+      "pose": "experience_touching_rail",
+      "heightScale": 1.032,
+      "bodyWidth": 1.018,
+      "skinTint": "#b88b69",
+      "garmentTint": "#738866",
+      "lowerTint": "#25313c",
+      "phase": 9.7082,
+      "radius": 0.25,
+      "fictional": true,
+      "faceMorph": [
+        0.357,
+        0.667,
+        0.444
+      ],
+      "position": [
+        19.61352417999506,
+        0,
+        -9.67
+      ],
+      "yaw": 3.141592653589793,
+      "seated": false,
+      "hideLongDrape": true,
+      "wardrobeMode": "Modest long-sleeve shirt and trousers; overlapping long drape disabled for this standing pose.",
+      "frozen": true
     }
   ],
   "navigation": {
     "mode": "No actor locomotion or gesture animation; fixed posed people with visitor collision"
   },
   "limitations": [
-    "Frozen fictional illustrative people.",
-    "Reception accepted; bounded Boardroom review pending.",
+    "Frozen illustrative people, not live animation.",
+    "Generic sample tee supported at shoulders; no pinching hand-grip simulation.",
     "Native Mac performance has not been tested."
   ],
   "frozen": true,
   "activeZones": [
     "Z02",
-    "Z08"
+    "Z08",
+    "Z30"
   ],
   "props": [
     {
@@ -442,6 +531,19 @@
         0.25
       ],
       "pen": true
+    },
+    {
+      "id": "experience_buyer_sample",
+      "owner": "office-person-05",
+      "type": "held_garment",
+      "position": [
+        18.499,
+        1.36,
+        -7.832955641222
+      ],
+      "yaw": 3.141592653589793,
+      "color": "#b39b79",
+      "provenance": "Self-made project display tee silhouette with shallow drape; supported at both shoulder edges."
     }
   ]
 }

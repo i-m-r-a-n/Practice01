@@ -1,0 +1,62 @@
+[
+  {
+    "url": "http://127.0.0.1:8783/realistic/lighting-v2/manifest-hybrid.json",
+    "status": 200,
+    "bytes": 25011,
+    "sha256": "2ea818b15323e03ec96949d5c74d7273f8568cedc31a560c61f115a37c698abd"
+  },
+  {
+    "url": "http://127.0.0.1:8783/realistic/model_web_baked.glb",
+    "status": 200,
+    "bytes": 19452524,
+    "sha256": "faaf09d1a61d2136a96a8b2eb4146be1f29135483dd7f94e67e6f3a54596d20a"
+  },
+  {
+    "url": "http://127.0.0.1:8783/realistic/props/office-props-manifest.json",
+    "status": 200,
+    "bytes": 167943,
+    "sha256": "4b93095d048f658bcdff957f56b41dac78e2287d727af9eb4312647593a9e3dd"
+  },
+  {
+    "url": "http://127.0.0.1:8783/realistic/people/room-release/people-manifest.json",
+    "status": 200,
+    "bytes": 13516,
+    "sha256": "e08b31f48b313c460c8f4509db14ee14911afd343002315fd89198cf8ef245b0"
+  },
+  {
+    "url": "http://127.0.0.1:8783/realistic/people/room-release/poses.json",
+    "status": 200,
+    "bytes": 18269,
+    "sha256": "091a77ef1012a4a433232881a278300e7e85cda6e1a53385d7182a1ecf039033"
+  },
+  {
+    "url": "http://127.0.0.1:8783/realistic/people/assets/salwar.glb",
+    "status": 200,
+    "bytes": 5159776,
+    "sha256": "cd2c4c458dd59532cc28408b98ae8d544a971fe4e069fab2413bbf4f4d90b5e4"
+  },
+  {
+    "url": "http://127.0.0.1:8783/realistic/people/assets/panjabi.glb",
+    "status": 200,
+    "bytes": 4099060,
+    "sha256": "31f9e208986c064a3776991690d12925ed5fda59889765df06930d66c054d257"
+  },
+  {
+    "url": "http://127.0.0.1:8783/realistic/people/assets/shirt.glb",
+    "status": 200,
+    "bytes": 4411128,
+    "sha256": "7430996e4368aa3e54d39c77f93d69a7ce31a089977714e2e7ed56dd846f7c1e"
+  },
+  {
+    "url": "http://127.0.0.1:8783/realistic/people/assets/salwar_braid.glb",
+    "status": 200,
+    "bytes": 4689540,
+    "sha256": "68f3384b625f59d8d4a9c1ddce671126dba394f7ca9aaae383ac0d5aa08e398d"
+  },
+  {
+    "url": "http://127.0.0.1:8783/realistic/lighting-v2/Z02-furniture.glb",
+    "status": 200,
+    "bytes": 1725000,
+    "sha256": "a0d6b957d815402d750b3037a09707557974f130a28fc3fc562266617df314c8"
+  }
+]

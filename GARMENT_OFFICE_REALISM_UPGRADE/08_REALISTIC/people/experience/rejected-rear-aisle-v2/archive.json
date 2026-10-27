@@ -1,0 +1,14 @@
+{
+  "reason": "Actual rear rail/table loop connected with People off but disconnected with People on; actor07 repair required.",
+  "sourceFiles": {
+    "people-layer.js": "59e74aee90ab26658ee5d867498c85267be1215dca2bc15737b9ddbcbb50d1b9",
+    "experience/people-manifest.json": "21d9aa68c8f46dc6ea2720dbb5178709b18003db41b3478c768d0d0ad6fa56ab",
+    "experience/poses.json": "e14d644b02f1457a2acdc21c086c72c9397eca37bf21b91a415f1656beacc4ff",
+    "experience/source-lock.json": "f47c95fe98c324d77ec99f0be0c6ddcd3fa91ffcd8b369c235f17cdedfe06360",
+    "experience/pose-contact-targets.json": "a8bcd2ad86c843f5f293be2834ad37b7f7573d29668922c09c4467f1556106d7",
+    "room-release/people-manifest.json": "17474b56c63afc2e324612c7e7cba124d6fdfd9a1afa56d8b2c72acabe4f159b",
+    "room-release/poses.json": "2c6118005432aa643afd8aeef78fb7c4ec3f5f240f1497c05742c934de09b80e",
+    "room-release/source-lock.json": "9a987697a36f43dc08bb7242c4226f161fc163c64a598c657f95691a5bc61c9e"
+  },
+  "report": "../../../qa/experience-v2/aisle-connectivity.json"
+}

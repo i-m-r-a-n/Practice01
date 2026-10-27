@@ -1,0 +1,64 @@
+{
+  "baseline_commit": "039091d5d35ea97adf95ff439231f6336ed05381",
+  "prior_actor_count": 10,
+  "actors": {
+    "office-person-01": {
+      "definition_sha256": "75c2e8c187512d7a25f258af4499538802adb87e361219c594272df95aea6f06",
+      "used_pose_sha256": "04f20c43d4b3b640705c247bea981776aaa6c6fec7703ffae4cfa305639573dc"
+    },
+    "office-person-02": {
+      "definition_sha256": "4c70b5600da72122e52c60ea2a61e18a10158ec7ec25637c2be399d81511b865",
+      "used_pose_sha256": "0e75d0771b71e0feff2f8bb61ef485b3163249bd152d736aef9d325df757a470"
+    },
+    "office-person-03": {
+      "definition_sha256": "a6102cf698d3e2c775e8bad5a762bc1fa0feb18fbeb49d8dd407102627a2b26f",
+      "used_pose_sha256": "a9ece515b50897b9086c14e07d48bb899df1a11ac2e247647183efc8bd2df975"
+    },
+    "office-person-04": {
+      "definition_sha256": "07c953251915cbbbc6229c51e3f94d1e5599d8e8614aa43c8daa851dee6d7598",
+      "used_pose_sha256": "18713d3de1251fb0ff5956893d10ef7bb87ad9c6618edf74098e7a7ed1f8c063"
+    },
+    "office-person-08": {
+      "definition_sha256": "7d1bd7bf9a751419d7147b0b133b844b28ff87caf16f73d2c0c9fc7413d01e5b",
+      "used_pose_sha256": "2a07ad3bf45faf413a4c56e863f4f7207b3ef1af4be17cd27d2bdad5f8c363d5"
+    },
+    "office-person-09": {
+      "definition_sha256": "3983406e3eb92038f95730b774a7a5ba42a1eca69b51c73fa7ce3bfef51ebc74",
+      "used_pose_sha256": "f32ca66d2ff6e41ccc5b425f63cada8a3eb903bfb81f14c8adf5976097398e52"
+    },
+    "office-person-10": {
+      "definition_sha256": "2224a7153ad76a8ab408a9c1d180312b1737b3084d75c09f8e46e3587285f9b4",
+      "used_pose_sha256": "5251e401391e05bf82d0f2f822872866c1a0a9734b2343e2e588910c184ed708"
+    },
+    "office-person-11": {
+      "definition_sha256": "ff7799b1778ea20fe272a7a9d0754abb290775bbbadb3994cdd90531b361c17e",
+      "used_pose_sha256": "10a9c640159f78a34fae9bf9ccd432cb6a1fa1882af19d229250b5d99457441a"
+    },
+    "office-person-12": {
+      "definition_sha256": "32a9ec1f11eb16c1e326bff967bbd356d752f727e6ebcacbad2ac1365f0fbdaf",
+      "used_pose_sha256": "395c4628ff4581c5a3b93029171e333277683c78c0e76c79ec0b3ad29efd9ea3"
+    },
+    "office-person-13": {
+      "definition_sha256": "ddd46182e31798f85034b42a040926ea30f36bb43b79b7d22bc000b0a3a7eb75",
+      "used_pose_sha256": "ffab47aa2682917397a0d1ca7d76f172924553028e008107b555bf3445cad9aa"
+    }
+  },
+  "props": {
+    "reception_visitor_badge": "5e2abdc3e7ca46f7244e9d081fc2c733106c3ce3160acd99270c76c05d391ef4",
+    "reception_fabric_book": "753453445cf45d7270205a5bdc2110f84f2072e362444288d6a16e119525eaf9",
+    "boardroom_notes_08": "64949605ae92be3283418dc36f22bc9b1d24dde02b1c69e51d91e85f814951f9",
+    "boardroom_notes_11": "e81505638669f40b957f98d39d94c3f11badb85847c9d17787303d2149723852"
+  },
+  "assets_sha256": "eb4673be742d6a24752a99886dfe2b7947297228c5866f818b90df7be620f5fc",
+  "empty_zones": [
+    "Z23",
+    "Z24",
+    "Z25",
+    "Z26",
+    "Z27",
+    "Z28",
+    "Z29",
+    "Z34"
+  ],
+  "source_furniture_glb_sha256": "3b883c0077541aa3c574c903cfad60a3b8ba410d12af6d6b476b7733230fc35d"
+}

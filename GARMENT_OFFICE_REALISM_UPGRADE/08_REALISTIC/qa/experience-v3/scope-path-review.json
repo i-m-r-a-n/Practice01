@@ -1,0 +1,128 @@
+{
+  "scope": "Three frozen Z30 actors only. Entire visible body/held-prop bounds checked against rectangular room footprint; actor pair bounds conservatively separated. No actor locomotion paths. Actual visitor rear-loop preservation is recorded separately in aisle-connectivity.json.",
+  "actors": [
+    {
+      "id": "office-person-05",
+      "world_bounds": {
+        "min": [
+          18.181402,
+          0.010664,
+          -7.845318
+        ],
+        "max": [
+          18.820359,
+          1.668202,
+          -7.201618
+        ]
+      },
+      "whole_visible_geometry_inside_Z30": true,
+      "minimum_room_boundary_margin_m": 1.639018,
+      "path_present": false,
+      "frozen": true,
+      "hidden_meshes": [
+        "LOD0_Long_modest_tunic"
+      ]
+    },
+    {
+      "id": "office-person-06",
+      "world_bounds": {
+        "min": [
+          19.77538,
+          0.010648,
+          -7.880855
+        ],
+        "max": [
+          20.432057,
+          1.709006,
+          -7.050079
+        ]
+      },
+      "whole_visible_geometry_inside_Z30": true,
+      "minimum_room_boundary_margin_m": 1.4874790000000004,
+      "path_present": false,
+      "frozen": true,
+      "hidden_meshes": []
+    },
+    {
+      "id": "office-person-07",
+      "world_bounds": {
+        "min": [
+          19.309607,
+          0.010676,
+          -10.112474
+        ],
+        "max": [
+          19.968189,
+          1.793423,
+          -9.537042
+        ]
+      },
+      "whole_visible_geometry_inside_Z30": true,
+      "minimum_room_boundary_margin_m": 0.6317259999999987,
+      "path_present": false,
+      "frozen": true,
+      "hidden_meshes": [
+        "LOD0_Long_modest_tunic"
+      ]
+    }
+  ],
+  "pairs": [
+    {
+      "actors": [
+        "office-person-05",
+        "office-person-06"
+      ],
+      "axis_aligned_bounds_separated": true,
+      "lower_bound_on_geometry_distance_m": 0.9550209999999986
+    },
+    {
+      "actors": [
+        "office-person-05",
+        "office-person-07"
+      ],
+      "axis_aligned_bounds_separated": true,
+      "lower_bound_on_geometry_distance_m": 1.7610490332980508
+    },
+    {
+      "actors": [
+        "office-person-06",
+        "office-person-07"
+      ],
+      "axis_aligned_bounds_separated": true,
+      "lower_bound_on_geometry_distance_m": 1.6561869999999992
+    }
+  ],
+  "frozen_runtime": {
+    "checks": [
+      {
+        "id": "office-person-05",
+        "all_exported_fields_identical": true
+      },
+      {
+        "id": "office-person-06",
+        "all_exported_fields_identical": true
+      },
+      {
+        "id": "office-person-07",
+        "all_exported_fields_identical": true
+      }
+    ],
+    "passed": true
+  },
+  "runtime_stats": {
+    "enabled": true,
+    "loaded": true,
+    "frozen": true,
+    "total": 3,
+    "visible": 3,
+    "walkers": 0,
+    "illustrative": true,
+    "forbiddenZoneViolations": 0,
+    "status": "Experience Centre fixed contact review pending",
+    "nativeMacPerformanceTested": false
+  },
+  "actual_buyer_and_merchandiser_exports_unchanged_by_route_repair": {
+    "office-person-05": true,
+    "office-person-06": true
+  }
+}

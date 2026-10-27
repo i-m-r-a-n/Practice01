@@ -1,0 +1,32 @@
+{
+  "status": "passed",
+  "scope": "Actual integrated generated Z30 office-prop triangles (including original instance transforms regardless of view culling) against three actual runtime evaluated body/clothing/handprops. Reuses accepted triangle-SAT narrow phase.",
+  "office_props_sha256": "b4cb1395a76d3c0f0a126726affc1d66affa53c0b42875dd6a334398d652dedd",
+  "prop_ids": [
+    "PROP_0011",
+    "PROP_0012",
+    "PROP_0013",
+    "PROP_0014",
+    "PROP_0015",
+    "PROP_0016",
+    "PROP_0017"
+  ],
+  "generated_mesh_count": 34,
+  "actors": [
+    {
+      "id": "office-person-05",
+      "actor_export_sha256": "3d11d501370c1920d88f0bd3e4a7288ada154fb6c377b63d24e520c0b92aa166",
+      "triangle_intersections": []
+    },
+    {
+      "id": "office-person-06",
+      "actor_export_sha256": "d33f0b5c7cc5ea58cf87a2cfada5b864b898823bf6ba4f9cb226ac31b9961a5d",
+      "triangle_intersections": []
+    },
+    {
+      "id": "office-person-07",
+      "actor_export_sha256": "f8d9cf0710a2c11f0e62b2a2eb93083c682fe3273ea752004ef95f3faf2fde18",
+      "triangle_intersections": []
+    }
+  ]
+}

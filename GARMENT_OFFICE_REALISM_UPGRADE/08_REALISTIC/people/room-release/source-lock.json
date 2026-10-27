@@ -1,9 +1,7 @@
 {
-  "people-layer.js": "787c8e3fff8638a4ef62f7b8b0571ceb35be8bd999d56863d59e8c95efeeb18d",
-  "room-release/people-manifest.json": "58972aaffebab7c776ce72a6fe854b8962c2c636c5a40f3b84f18656fa403ecb",
-  "room-release/poses.json": "681c74052665993d137c7e046e9c64d168ea0954f5d2a7d0e80f3dbd0cd9b596",
-  "reception/people-manifest.json": "d1ee7c8d88b22216aaea9c07283bc1c392ef9eae43359d4038ce3e734d349b7a",
-  "reception/poses.json": "16bb2498fd8b86fe8dcc57e27b606aee4d48dba8dcaee10b110fda66e65f8fc3",
+  "people-layer.js": "59e74aee90ab26658ee5d867498c85267be1215dca2bc15737b9ddbcbb50d1b9",
+  "room-release/people-manifest.json": "e08b31f48b313c460c8f4509db14ee14911afd343002315fd89198cf8ef245b0",
+  "room-release/poses.json": "091a77ef1012a4a433232881a278300e7e85cda6e1a53385d7182a1ecf039033",
   "assets/shirt.glb": "7430996e4368aa3e54d39c77f93d69a7ce31a089977714e2e7ed56dd846f7c1e",
   "assets/panjabi.glb": "31f9e208986c064a3776991690d12925ed5fda59889765df06930d66c054d257",
   "assets/salwar.glb": "cd2c4c458dd59532cc28408b98ae8d544a971fe4e069fab2413bbf4f4d90b5e4",

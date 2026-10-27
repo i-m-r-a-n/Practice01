@@ -1,0 +1,19 @@
+{
+  "status": "bounded static people contact checks passed; integrated viewer, office props and visitor navigation separate",
+  "actorIds": [
+    "office-person-05",
+    "office-person-06",
+    "office-person-07"
+  ],
+  "zone": "Z30",
+  "count": 3,
+  "frozen": true,
+  "sourceLock": "source-lock.json",
+  "evidence": "ACCEPTANCE.md",
+  "priorPublishedCommit": "039091d5d35ea97adf95ff439231f6336ed05381",
+  "prior10ActorPosePropPreservation": "preservation-check.json",
+  "newCharacterAssets": false,
+  "furnitureMutations": false,
+  "heldGarment": "Self-made sample tee supported at both shoulders; no pinching or live cloth simulation",
+  "nativeMacPerformanceTested": false
+}

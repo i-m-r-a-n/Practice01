@@ -1,0 +1,38 @@
+{
+  "active_task": "Six-room static office tour increments",
+  "live_url": "https://stage2-office-virtual-tour.imranahmedjh611.workers.dev/realistic/",
+  "runtime_commit": "039091d5d35ea97adf95ff439231f6336ed05381",
+  "latest_pushed_evidence_commit": "f675fb03cb7f3f94f196c33b30d8d102f4d49915",
+  "branch": "chatgpt/office-realistic-20261027",
+  "completed_rooms": [
+    "Reception",
+    "Boardroom"
+  ],
+  "current_work": "Experience Centre",
+  "remaining_order": [
+    "Experience Centre",
+    "MD Office",
+    "Merchandising",
+    "Design Studio"
+  ],
+  "static_people_live": 10,
+  "no_animation": true,
+  "source_model_sha256": "faaf09d1a61d2136a96a8b2eb4146be1f29135483dd7f94e67e6f3a54596d20a",
+  "approved_blend_sha256": "fa3ed3d58f6d44c3554e3761307841b96115ff7816e4e541c8e6611cb363810d",
+  "bakes_active": 0,
+  "preserved_inactive_bake": "lighting-v2/SHELL_WALLS; unreviewed, not loaded by hybrid manifest",
+  "limits": [
+    "Game-style fictional people, not photoreal scans; contact shadows limited",
+    "NativeMacFPS/Safari/file opening unverified",
+    "LivebrowserTLS fails ERR_CERT_AUTHORITY_INVALID; aborted NSS permission request; publicHTTP hashes/localGPU/offline tests separate"
+  ],
+  "publication_workflow": [
+    "Freeze local source after contact/native-image acceptance",
+    "Package offline, run qa/check_offline_package.py",
+    "Commit and push, verify exact remote SHA",
+    "Build guarded Worker for pushed SHA; test_worker39checks",
+    "Guard original Worker against concurrent change, PUT via Cloudflare",
+    "Run deploy/verify_release.py and record public file hashes",
+    "Send brief link +actualbeforeafter image; continue nextroom"
+  ]
+}

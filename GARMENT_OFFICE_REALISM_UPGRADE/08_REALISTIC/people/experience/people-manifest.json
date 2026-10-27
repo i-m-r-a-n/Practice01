@@ -1,0 +1,159 @@
+{
+  "version": "experience-static-1",
+  "count": 3,
+  "note": "People shown are illustrative",
+  "defaultEnabled": false,
+  "status": "Experience Centre fixed contact review pending",
+  "approvedLayoutChanged": false,
+  "axes": "metres; x east, y up, z south; characters face +z at yaw 0",
+  "emptyZones": [
+    "Z23",
+    "Z24",
+    "Z25",
+    "Z26",
+    "Z27",
+    "Z28",
+    "Z29",
+    "Z34"
+  ],
+  "assets": {
+    "shirt": {
+      "file": "assets/shirt.glb",
+      "license": "CC0-1.0 plus self-made drape",
+      "sha256": "7430996e4368aa3e54d39c77f93d69a7ce31a089977714e2e7ed56dd846f7c1e"
+    },
+    "panjabi": {
+      "file": "assets/panjabi.glb",
+      "license": "CC0-1.0 plus self-made drape",
+      "sha256": "31f9e208986c064a3776991690d12925ed5fda59889765df06930d66c054d257"
+    },
+    "salwar": {
+      "file": "assets/salwar.glb",
+      "license": "CC0-1.0 plus self-made drape",
+      "sha256": "cd2c4c458dd59532cc28408b98ae8d544a971fe4e069fab2413bbf4f4d90b5e4"
+    },
+    "salwar_braid": {
+      "file": "assets/salwar_braid.glb",
+      "license": "CC0-1.0 plus self-made drape",
+      "sha256": "68f3384b625f59d8d4a9c1ddce671126dba394f7ca9aaae383ac0d5aa08e398d"
+    }
+  },
+  "poses": "experience/poses.json",
+  "actors": [
+    {
+      "id": "office-person-05",
+      "zone": "Z30",
+      "task": "holding_sample",
+      "outfit": "salwar",
+      "pose": "experience_holding_sample",
+      "heightScale": 1.008,
+      "bodyWidth": 1.036,
+      "skinTint": "#d5b6a0",
+      "garmentTint": "#8a9bb2",
+      "lowerTint": "#30363d",
+      "phase": 6.47214,
+      "radius": 0.25,
+      "fictional": true,
+      "faceMorph": [
+        0.857,
+        0.75,
+        0.611
+      ],
+      "position": [
+        18.499,
+        0,
+        -7.3232
+      ],
+      "yaw": 3.141592653589793,
+      "seated": false,
+      "hideLongDrape": true,
+      "wardrobeMode": "Modest long-sleeve shirt and trousers; overlapping long drape disabled for this standing pose.",
+      "frozen": true
+    },
+    {
+      "id": "office-person-06",
+      "zone": "Z30",
+      "task": "explaining_sample",
+      "outfit": "shirt",
+      "pose": "experience_explaining_sample",
+      "heightScale": 0.976,
+      "bodyWidth": 0.964,
+      "skinTint": "#c69d7b",
+      "garmentTint": "#9e7788",
+      "lowerTint": "#424039",
+      "phase": 8.09017,
+      "radius": 0.25,
+      "fictional": true,
+      "faceMorph": [
+        0.143,
+        0.25,
+        0.056
+      ],
+      "position": [
+        20.299,
+        0,
+        -7.3232
+      ],
+      "yaw": -1.5707963267948966,
+      "seated": false,
+      "frozen": true
+    },
+    {
+      "id": "office-person-07",
+      "zone": "Z30",
+      "task": "touching_rail_fabric",
+      "outfit": "panjabi",
+      "pose": "experience_touching_rail",
+      "heightScale": 1.032,
+      "bodyWidth": 1.018,
+      "skinTint": "#b88b69",
+      "garmentTint": "#738866",
+      "lowerTint": "#25313c",
+      "phase": 9.7082,
+      "radius": 0.25,
+      "fictional": true,
+      "faceMorph": [
+        0.357,
+        0.667,
+        0.444
+      ],
+      "position": [
+        19.61352417999506,
+        0,
+        -9.67
+      ],
+      "yaw": 3.141592653589793,
+      "seated": false,
+      "hideLongDrape": true,
+      "wardrobeMode": "Modest long-sleeve shirt and trousers; overlapping long drape disabled for this standing pose.",
+      "frozen": true
+    }
+  ],
+  "navigation": {
+    "mode": "No actor locomotion or gesture animation; fixed posed people with visitor collision"
+  },
+  "limitations": [
+    "Frozen illustrative people, not live animation.",
+    "Generic sample tee supported at shoulders; no pinching hand-grip simulation.",
+    "Native Mac performance has not been tested."
+  ],
+  "frozen": true,
+  "activeZones": [
+    "Z30"
+  ],
+  "props": [
+    {
+      "id": "experience_buyer_sample",
+      "owner": "office-person-05",
+      "type": "held_garment",
+      "position": [
+        18.499,
+        1.36,
+        -7.832955641222
+      ],
+      "yaw": 3.141592653589793,
+      "color": "#b39b79",
+      "provenance": "Self-made project display tee silhouette with shallow drape; supported at both shoulder edges."
+    }
+  ]
+}

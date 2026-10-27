@@ -1,0 +1,87 @@
+{
+  "status": "bounded static garment contact measurements",
+  "held_garment": {
+    "bounds": {
+      "min": [
+        18.199,
+        0.72,
+        -7.800276
+      ],
+      "max": [
+        18.799,
+        1.36,
+        -7.78607
+      ]
+    },
+    "body_triangle_intersections": [],
+    "hands": {
+      "L": {
+        "minimum_sampled_skin_vertex_to_surface_m": 0.0004999999999999449,
+        "skin_point": [
+          18.358885,
+          1.3605,
+          -7.793172
+        ],
+        "surface_point": [
+          18.358885,
+          1.36,
+          -7.793172
+        ],
+        "target_triangle_index": 31,
+        "sampled_vertices": 1868
+      },
+      "R": {
+        "minimum_sampled_skin_vertex_to_surface_m": 0.0004999999999999449,
+        "skin_point": [
+          18.639115,
+          1.3605,
+          -7.793172
+        ],
+        "surface_point": [
+          18.639115,
+          1.36,
+          -7.793172
+        ],
+        "target_triangle_index": 36,
+        "sampled_vertices": 1868
+      }
+    }
+  },
+  "rail_touch": {
+    "source_object": "F020 bay_86b",
+    "source_material": "g_sage",
+    "hands": {
+      "L": {
+        "minimum_sampled_skin_vertex_to_surface_m": 0.5506641346626755,
+        "skin_point": [
+          19.421249,
+          0.791811,
+          -9.700681
+        ],
+        "surface_point": [
+          19.540175329893827,
+          0.9982200860977173,
+          -10.197151347994804
+        ],
+        "target_triangle_index": 0,
+        "sampled_vertices": 1830
+      },
+      "R": {
+        "minimum_sampled_skin_vertex_to_surface_m": 0.0017142957297074843,
+        "skin_point": [
+          19.738952,
+          1.385715,
+          -10.111426
+        ],
+        "surface_point": [
+          19.738993567645707,
+          1.3856372773270291,
+          -10.113138028377636
+        ],
+        "target_triangle_index": 160,
+        "sampled_vertices": 1856
+      }
+    }
+  },
+  "limits": "Uses accepted full triangle-SAT to detect body/held-garment surface crossings. Distances are sampled actual skin vertices near each wrist to continuous target triangles; they are upper bounds on full surface distance, not a hand-grip, fabric compression or physical load simulation."
+}

@@ -1,0 +1,39 @@
+{
+  "room": "Experience Centre",
+  "status": "Finalv3 actualnative image,3actor/7prop geometry, rear-aisle and offline13actor resolver passed; public verification recorded after deploy",
+  "active_rooms": [
+    "Reception",
+    "Boardroom",
+    "Experience Centre"
+  ],
+  "total_static_people": 13,
+  "new_people": 3,
+  "scenes": [
+    "Buyer holding folded sample tee",
+    "Merchandiser discussing sample",
+    "Buyer touching an existing rail garment"
+  ],
+  "lighting": "Existing warm vertex-lit source retained; Reception hybrid lightmap retained",
+  "preservation": "Prior10 actors, usedposes, props and four CC0assets preserved exactly; unchanged architecture/furniture/cameras/logos",
+  "limits": [
+    "Low-detail illustrative game assets; notphotorealpeople; contactshadowslimited",
+    "NativeMacFPS/Safari/directfile opening unverified",
+    "LivebrowserblockedbyenvironmentCAtrust; publicHTTPSbytesverifiedseparately"
+  ],
+  "hashes": {
+    "viewer/dist/app.js": "f7d6c951571ee6dda1859a8bd3cd006253bc46af7ac23664c4b49b6390ff20d9",
+    "viewer/dist/release-config.json": "f5d544e50ee50beddca989156a59cae1560362e616622593e6314f238378bd85",
+    "people/room-release/people-manifest.json": "e08b31f48b313c460c8f4509db14ee14911afd343002315fd89198cf8ef245b0",
+    "people/room-release/poses.json": "091a77ef1012a4a433232881a278300e7e85cda6e1a53385d7182a1ecf039033",
+    "review/experience-before-after.png": "7fec096e20295633dd9285b3cefe7de5d60904b8d60439b05b62c91d15857708"
+  },
+  "rear_aisle": {
+    "old_candidate": "Peopleon disconnected, rejected/archived",
+    "fix": "Onlyactor07moved0.10m towardrail; armre-solved tosamefabricpoint",
+    "off_route_m": 3.7,
+    "on_route_m": 4.3,
+    "max_sample_spacing_m": 0.01,
+    "on_clear_samples": 584,
+    "scope": "Actualviewer collisionpredicate; frontdetoursexcluded"
+  }
+}

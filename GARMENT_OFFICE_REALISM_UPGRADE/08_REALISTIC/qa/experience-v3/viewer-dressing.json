@@ -1,0 +1,69 @@
+{
+  "enabled": true,
+  "props": {
+    "props": 38,
+    "instances": 177,
+    "drawCalls": 29,
+    "triangles": 15572,
+    "atlasSize": [
+      2048,
+      2048
+    ],
+    "rooms": 3
+  },
+  "screens": {
+    "Z08": {
+      "touched": [
+        {
+          "mesh": "A_screen_86_1",
+          "zone": "Z08",
+          "component": 0,
+          "vertices": 24,
+          "worldBounds": {
+            "min": [
+              12.449820165392495,
+              1.0261020566992434,
+              -3.787184141479294
+            ],
+            "max": [
+              12.45237848039733,
+              2.0726980064339964,
+              -1.9024158568787122
+            ]
+          },
+          "content": "presentation"
+        }
+      ],
+      "skipped": []
+    },
+    "Z30": {
+      "touched": [
+        {
+          "mesh": "A_totem_1",
+          "zone": "Z30",
+          "component": 0,
+          "vertices": 24,
+          "worldBounds": {
+            "min": [
+              9.790435522188398,
+              0.010154728690534576,
+              -7.9654545052772665
+            ],
+            "max": [
+              9.792993676787718,
+              1.259845252235979,
+              -7.2745452760829314
+            ]
+          },
+          "content": "portrait-sample-guide"
+        }
+      ],
+      "skipped": []
+    }
+  },
+  "peopleAccepted": true,
+  "errors": [],
+  "dynamicLighting": "Existing scene hemisphere/directional lighting for added props and static people; not a calibrated dynamic-lighting bake.",
+  "visiblePropInstances": 50,
+  "visiblePropBatches": 15
+}

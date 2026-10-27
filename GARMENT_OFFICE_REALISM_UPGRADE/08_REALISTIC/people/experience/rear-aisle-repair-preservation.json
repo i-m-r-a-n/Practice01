@@ -1,0 +1,18 @@
+{
+  "repairedActor": "office-person-07",
+  "oldPosition": [
+    19.613524058640003,
+    0,
+    -9.57
+  ],
+  "newPosition": [
+    19.61352417999506,
+    0,
+    -9.67
+  ],
+  "other12DefinitionsUnchanged": true,
+  "other12UsedPosesUnchanged": true,
+  "allPropsUnchanged": true,
+  "sharedPeopleModuleUnchanged": true,
+  "allCharacterAssetsMatchManifest": true
+}

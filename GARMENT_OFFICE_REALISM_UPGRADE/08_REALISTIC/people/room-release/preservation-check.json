@@ -1,18 +1,35 @@
 {
-  "count": 10,
+  "baselineCommit": "039091d5d35ea97adf95ff439231f6336ed05381",
+  "count": 13,
   "activeZones": [
     "Z02",
-    "Z08"
+    "Z08",
+    "Z30"
   ],
   "frozen": true,
   "noPaths": true,
-  "acceptedReceptionHashes": {
-    "reception/people-manifest.json": true,
-    "reception/poses.json": true
+  "prior10ActorsEqual": true,
+  "prior4PropsEqual": true,
+  "prior10PosesEqual": true,
+  "minimalPoseCount": 13,
+  "baselineFilesMatchPublishedCommit": {
+    "people-manifest.json": true,
+    "poses.json": true
   },
-  "receptionActorsEqual": true,
-  "receptionPropsEqual": true,
-  "receptionPosesEqual": true,
-  "allAssetsMatchOriginalHashes": true,
-  "minimalPoseCount": 10
+  "all4AssetsMatchPublishedCommit": {
+    "assets/shirt.glb": true,
+    "assets/panjabi.glb": true,
+    "assets/salwar.glb": true,
+    "assets/salwar_braid.glb": true
+  },
+  "acceptedRoomInputsUnchanged": {
+    "reception/people-manifest.json": true,
+    "reception/poses.json": true,
+    "boardroom/people-manifest.json": true,
+    "boardroom/poses.json": true
+  },
+  "hideLongDrapeActors": [
+    "office-person-05",
+    "office-person-07"
+  ]
 }

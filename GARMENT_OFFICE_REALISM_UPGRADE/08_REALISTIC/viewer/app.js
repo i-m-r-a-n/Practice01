@@ -315,12 +315,15 @@ function updateLightingStatus() {
   element.title = room?.state === 'loaded' && sharedReady ? 'This room uses a Cycles diffuse lightmap; other surfaces may retain preview lighting.'
     : sharedError?.error || (room?.state === 'error' ? room.error : 'This area retains the original geometry with preview lighting until its bake is verified.');
 }
-// Boardroom retains its original vertex lighting. Apply artwork to the exact
-// existing display before material batching removes its source node name.
-if (USE_DRESSING && SIMPLE_RELEASE && CFG.releaseZones?.includes('Z08')) {
-  const display = model.getObjectByName(THREE.PropertyBinding.sanitizeNodeName('F047 screen_86'));
-  if (display?.userData.zone === 'Z08') (await ensureDressing()).prepareSourceScreen(display, 'Z08');
-  else S.errors.push('Boardroom display artwork skipped: exact source F047 screen_86 was not found.');
+// These rooms retain their original vertex lighting. Apply existing artwork to
+// exact source displays before material batching removes their node names.
+if (USE_DRESSING && SIMPLE_RELEASE) {
+  for (const [zone, name] of [['Z08', 'F047 screen_86'], ['Z30', 'F028 totem']]) {
+    if (!CFG.releaseZones?.includes(zone)) continue;
+    const display = model.getObjectByName(THREE.PropertyBinding.sanitizeNodeName(name));
+    if (display?.userData.zone === zone) (await ensureDressing()).prepareSourceScreen(display, zone);
+    else S.errors.push(`${zone} display artwork skipped: exact source ${name} was not found.`);
+  }
 }
 let drawCalls = null;
 if (qs.get('merge') !== '0') {

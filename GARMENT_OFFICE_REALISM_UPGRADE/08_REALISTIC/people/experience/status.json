@@ -1,0 +1,29 @@
+{
+  "status": "Static people, contact/freeze and actual rear-aisle route gates passed; final integrated viewer recapture separate",
+  "actorIds": [
+    "office-person-05",
+    "office-person-06",
+    "office-person-07"
+  ],
+  "zone": "Z30",
+  "count": 3,
+  "frozen": true,
+  "sourceLock": "source-lock.json",
+  "evidence": "ACCEPTANCE.md",
+  "priorPublishedCommit": "039091d5d35ea97adf95ff439231f6336ed05381",
+  "prior10ActorPosePropPreservation": "preservation-check.json",
+  "newCharacterAssets": false,
+  "furnitureMutations": false,
+  "heldGarment": "Self-made sample tee supported at both shoulders; no pinching or live cloth simulation",
+  "nativeMacPerformanceTested": false,
+  "repairPreservation": "rear-aisle-repair-preservation.json",
+  "failedCandidateArchive": "rejected-rear-aisle-v2",
+  "rearLoopGate": {
+    "status": "passed",
+    "length_m": 4.3,
+    "samples": 584,
+    "maximum_sample_spacing_m": 0.01,
+    "blocked_samples": 0,
+    "report": "../../qa/experience-v3/aisle-connectivity.json"
+  }
+}

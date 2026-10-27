@@ -1,0 +1,346 @@
+{
+  "stats": {
+    "enabled": true,
+    "loaded": true,
+    "frozen": true,
+    "total": 3,
+    "visible": 1,
+    "walkers": 0,
+    "illustrative": true,
+    "forbiddenZoneViolations": 0,
+    "status": "Experience Centre fixed contact review pending",
+    "nativeMacPerformanceTested": false
+  },
+  "actors": [
+    {
+      "id": "office-person-05",
+      "zone": "Z30",
+      "task": "holding_sample",
+      "radius": 0.25,
+      "seated": false,
+      "pathIndex": 0,
+      "pathDir": 1,
+      "moving": false,
+      "hiddenForVisitor": false,
+      "wait": 0,
+      "walkDistance": 0,
+      "position": [
+        18.499,
+        0,
+        -7.3232
+      ],
+      "visible": false,
+      "low": false,
+      "parts": [
+        {
+          "name": "LOD0_Adult_skin",
+          "lod": 0,
+          "materials": [
+            "Skin_CC0_MakeHuman.002"
+          ],
+          "skinned": true,
+          "vertices": 8484
+        },
+        {
+          "name": "LOD0_Closed_shoes",
+          "lod": 0,
+          "materials": [
+            "Shoes_CC0.002"
+          ],
+          "skinned": true,
+          "vertices": 2510
+        },
+        {
+          "name": "LOD0_Eyes",
+          "lod": 0,
+          "materials": [
+            "Eyes_CC0.002"
+          ],
+          "skinned": true,
+          "vertices": 96
+        },
+        {
+          "name": "LOD0_Hair",
+          "lod": 0,
+          "materials": [
+            "Hair_CC0.002"
+          ],
+          "skinned": true,
+          "vertices": 3902
+        },
+        {
+          "name": "Office_clothing004",
+          "lod": 0,
+          "materials": [
+            "Garment_drape.002"
+          ],
+          "skinned": true,
+          "vertices": 4367
+        },
+        {
+          "name": "Office_clothing004_1",
+          "lod": 0,
+          "materials": [
+            "Garment_trousers.003"
+          ],
+          "skinned": true,
+          "vertices": 4587
+        }
+      ],
+      "phone": false,
+      "pose": "experience_holding_sample",
+      "bones": {
+        "root": [
+          18.499,
+          0.8781614661767483,
+          -7.26020747191906
+        ],
+        "upperleg01_L": [
+          18.400064825266597,
+          0.8642521780259348,
+          -7.341046424847292
+        ],
+        "lowerleg01_L": [
+          18.358792653098686,
+          0.4881839382076641,
+          -7.372675493036487
+        ],
+        "foot_L": [
+          18.32894582239616,
+          0.09955362807507889,
+          -7.35547693830222
+        ],
+        "head": [
+          18.499000000048245,
+          1.519854317807111,
+          -7.368392099787405
+        ],
+        "wrist_R": [
+          18.680299955857723,
+          1.4663533690374122,
+          -7.70319996096151
+        ]
+      }
+    },
+    {
+      "id": "office-person-06",
+      "zone": "Z30",
+      "task": "explaining_sample",
+      "radius": 0.25,
+      "seated": false,
+      "pathIndex": 0,
+      "pathDir": 1,
+      "moving": false,
+      "hiddenForVisitor": false,
+      "wait": 0,
+      "walkDistance": 0,
+      "position": [
+        20.299,
+        0,
+        -7.3232
+      ],
+      "visible": false,
+      "low": false,
+      "parts": [
+        {
+          "name": "LOD0_Adult_skin",
+          "lod": 0,
+          "materials": [
+            "Skin_CC0_MakeHuman"
+          ],
+          "skinned": true,
+          "vertices": 8416
+        },
+        {
+          "name": "LOD0_Closed_shoes",
+          "lod": 0,
+          "materials": [
+            "Shoes_CC0"
+          ],
+          "skinned": true,
+          "vertices": 2510
+        },
+        {
+          "name": "LOD0_Eyes",
+          "lod": 0,
+          "materials": [
+            "Eyes_CC0"
+          ],
+          "skinned": true,
+          "vertices": 96
+        },
+        {
+          "name": "LOD0_Hair",
+          "lod": 0,
+          "materials": [
+            "Hair_CC0"
+          ],
+          "skinned": true,
+          "vertices": 1794
+        },
+        {
+          "name": "Office_clothing",
+          "lod": 0,
+          "materials": [
+            "Garment_top"
+          ],
+          "skinned": true,
+          "vertices": 4824
+        },
+        {
+          "name": "Office_clothing_1",
+          "lod": 0,
+          "materials": [
+            "Garment_trousers"
+          ],
+          "skinned": true,
+          "vertices": 4134
+        }
+      ],
+      "phone": false,
+      "pose": "experience_explaining_sample",
+      "bones": {
+        "root": [
+          20.371758704423904,
+          0.897863859413147,
+          -7.3232
+        ],
+        "upperleg01_L": [
+          20.314691828115976,
+          0.903493709107376,
+          -7.220678135808706
+        ],
+        "lowerleg01_L": [
+          20.280155035477048,
+          0.5001852840707792,
+          -7.178596008532798
+        ],
+        "foot_L": [
+          20.290161945010958,
+          0.1019411465283056,
+          -7.141692050100277
+        ],
+        "head": [
+          20.250087198647602,
+          1.5384741397154598,
+          -7.323199999999971
+        ],
+        "wrist_R": [
+          19.94696072633247,
+          1.3216931957297926,
+          -7.7569116533159255
+        ]
+      }
+    },
+    {
+      "id": "office-person-07",
+      "zone": "Z30",
+      "task": "touching_rail_fabric",
+      "radius": 0.25,
+      "seated": false,
+      "pathIndex": 0,
+      "pathDir": 1,
+      "moving": false,
+      "hiddenForVisitor": false,
+      "wait": 0,
+      "walkDistance": 0,
+      "position": [
+        19.61352417999506,
+        0,
+        -9.67
+      ],
+      "visible": true,
+      "low": false,
+      "parts": [
+        {
+          "name": "LOD0_Adult_skin",
+          "lod": 0,
+          "materials": [
+            "Skin_CC0_MakeHuman.001"
+          ],
+          "skinned": true,
+          "vertices": 8414
+        },
+        {
+          "name": "LOD0_Closed_shoes",
+          "lod": 0,
+          "materials": [
+            "Shoes_CC0.001"
+          ],
+          "skinned": true,
+          "vertices": 2510
+        },
+        {
+          "name": "LOD0_Eyes",
+          "lod": 0,
+          "materials": [
+            "Eyes_CC0.001"
+          ],
+          "skinned": true,
+          "vertices": 96
+        },
+        {
+          "name": "LOD0_Hair",
+          "lod": 0,
+          "materials": [
+            "Hair_CC0.001"
+          ],
+          "skinned": true,
+          "vertices": 983
+        },
+        {
+          "name": "Office_clothing002",
+          "lod": 0,
+          "materials": [
+            "Garment_drape.001"
+          ],
+          "skinned": true,
+          "vertices": 4824
+        },
+        {
+          "name": "Office_clothing002_1",
+          "lod": 0,
+          "materials": [
+            "Garment_trousers.001"
+          ],
+          "skinned": true,
+          "vertices": 4134
+        }
+      ],
+      "phone": false,
+      "pose": "experience_touching_rail",
+      "bones": {
+        "root": [
+          19.61352417999506,
+          0.948797677801013,
+          -9.597241295576096
+        ],
+        "upperleg01_L": [
+          19.498222176922884,
+          0.9547505518281161,
+          -9.654308171855625
+        ],
+        "lowerleg01_L": [
+          19.45089417428535,
+          0.5283013363162601,
+          -9.688844922968283
+        ],
+        "foot_L": [
+          19.409389899408247,
+          0.10720715735798647,
+          -9.678837965072615
+        ],
+        "head": [
+          19.613524179995053,
+          1.6261642856616565,
+          -9.718912801352396
+        ],
+        "wrist_R": [
+          19.71532425896503,
+          1.4057905397739376,
+          -9.91396925335408
+        ]
+      }
+    }
+  ]
+}

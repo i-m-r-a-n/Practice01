@@ -1,0 +1,158 @@
+{
+  "status": "PASS \u2014 bounded final Experience Centre static-three contact and rear-loop acceptance",
+  "scope": "Only new actors 05\u201307 in Z30: buyer holding a sample, merchandiser explaining, and a third person touching rail fabric. Three frozen actors added to the previously accepted ten. No other-room geometry tests or lighting bakes repeated.",
+  "actors": [
+    "office-person-05",
+    "office-person-06",
+    "office-person-07"
+  ],
+  "prior_release_commit": "039091d5d35ea97adf95ff439231f6336ed05381",
+  "source_furniture_glb_sha256": "3b883c0077541aa3c574c903cfad60a3b8ba410d12af6d6b476b7733230fc35d",
+  "actual_integrated_base_model": {
+    "url": "http://127.0.0.1:8783/realistic/model_web_baked.glb",
+    "status": 200,
+    "bytes": 19452524,
+    "sha256": "faaf09d1a61d2136a96a8b2eb4146be1f29135483dd7f94e67e6f3a54596d20a"
+  },
+  "source_locks": {
+    "people/people-layer.js": "59e74aee90ab26658ee5d867498c85267be1215dca2bc15737b9ddbcbb50d1b9",
+    "people/experience/people-manifest.json": "67345fec823b84a1f26f7409b50e9cc91cbcc164de9cf53882d0fcdd83f16b59",
+    "people/experience/poses.json": "b0ab8a7a95e5ba93a2c3f7b2ffc41686e989cdf46fc0abc196882bdaf0265117",
+    "people/room-release/people-manifest.json": "e08b31f48b313c460c8f4509db14ee14911afd343002315fd89198cf8ef245b0",
+    "people/room-release/poses.json": "091a77ef1012a4a433232881a278300e7e85cda6e1a53385d7182a1ecf039033"
+  },
+  "measured_results": {
+    "source_furniture_or_rail_contact_primitives_by_actor": {
+      "office-person-05": 0,
+      "office-person-06": 0,
+      "office-person-07": 0
+    },
+    "held_garment_body_triangle_intersections": 0,
+    "held_garment_shoulder_to_hand_sampled_surface_distances_m": {
+      "L": 0.0004999999999999449,
+      "R": 0.0004999999999999449
+    },
+    "rail_fabric_right_hand_sampled_surface_distance_m": 0.0017143202688474786,
+    "shoe_minimum_clearance_range_m": [
+      0.0004879999365210528,
+      0.000515999936521053
+    ],
+    "grounded_actor_snapshots": 6,
+    "private_empty_zone_hull_snapshots_passed": 6,
+    "minimum_private_zone_separation_m": 6.34734361722951,
+    "minimum_whole_visible_geometry_margin_inside_Z30_m": 0.6317259999999987,
+    "all_three_mutually_separated": true,
+    "integrated_Z30_office_props": 7,
+    "integrated_Z30_office_prop_meshes": 34,
+    "integrated_officeprop_actor_intersections": 0,
+    "exact_frozen_geometry_after_ten_updates_total_0_5s": true
+  },
+  "rear_aisle_witness": {
+    "status": "passed",
+    "region_xz": {
+      "min": [
+        16.1,
+        -10
+      ],
+      "max": [
+        20.9,
+        -9.1
+      ]
+    },
+    "front_detours_excluded": true,
+    "actual_runtime_actor 07_position": [
+      19.61352417999506,
+      0,
+      -9.67
+    ],
+    "actual_position_matches_current_source": true,
+    "method": "Five-centimetre four-neighbour path search restricted to the original rear rail/table aisle, followed by reconstructed-edge checks at no more than 1 cm spacing through the actual viewer blocked() predicate. That predicate includes static walk grid, visitor radius, actor bodies and arm segments.",
+    "people_off": {
+      "path_length_m": 3.7,
+      "edge_samples": 504,
+      "blocked_edge_samples": 0
+    },
+    "people_on": {
+      "path_length_m": 4.3,
+      "edge_samples": 584,
+      "blocked_edge_samples": 0
+    },
+    "limits": "Bounded game-collision connectivity witness, not a physical-accessibility, ergonomic-clearance or whole-floor continuous movement certification."
+  },
+  "invariance": {
+    "captured_integrated_manifest_matches_final_source": true,
+    "captured_integrated_poses_match_final_source": true,
+    "prior_ten_actor_definitions_and_used_poses_unchanged": true,
+    "prior_hand_props_unchanged": true,
+    "existing_character_assets_hashes_unchanged": true,
+    "actual_buyer_and_merchandiser_exports_unchanged_by_route_repair": {
+      "office-person-05": true,
+      "office-person-06": true
+    },
+    "private_empty_zones_unchanged": true,
+    "combined_count": 13,
+    "active_zones": [
+      "Z02",
+      "Z08",
+      "Z30"
+    ],
+    "all_frozen_no_paths": true
+  },
+  "visual_review": {
+    "final_integrated_frame": "qa/experience-rooms-v3-final/shots/after_CAM_04_Experience_Centre_A.png",
+    "sha256": "9737ca43dbb3989e0eaa1a2e0a105fd2f7893db06594cbcb44a4001aaf174f0e",
+    "observed": "Three distinct static interactions read in the existing CAM_04 composition. The rail visitor stands closer to the rail after the 100 mm correction. The table, rail bays, mannequins, lights and room geometry remain intact. Final close views show the sample folds and revised fingertip placement; overlapping long-tunic layers on 05/07 are hidden, leaving long-sleeve shirts and trousers.",
+    "limits": "Illustrative static figures and project-authored garment; no physical gripping or cloth simulation. Original UI/control regression remains the separate viewer report."
+  },
+  "resolved_blockers": [
+    "Initial held tee was too flat and hands appeared to hover; shallow folds and 30 degree wrist tilt improved the frozen interaction while maintaining 0.500 mm fingertip-to-shoulder gaps.",
+    "Existing long-tunic overlaps were exposed on new actors 05/07; their optional visibility flags hide those layers without editing shared character assets or earlier actors.",
+    "Candidate v2 disconnected the original rear loop with People on. Moving only actor 07 exactly 100 mm toward the rail and re-solving its right arm restores the rear path. Failed v2 evidence is retained."
+  ],
+  "evidence": {
+    "qa/experience-v3/export-manifest.json": {
+      "sha256": "862f7f664f7088908212ad7080a231cfe9b4796971557b4af44acc2da4907c74"
+    },
+    "qa/experience-v3/furniture-contacts.json": {
+      "sha256": "401c580ff5c8671d9eebea0ad2e3e667784a91078ca7c26796581988b7211c5e"
+    },
+    "qa/experience-v3/floor-privacy.json": {
+      "sha256": "c3eed4638284934b004ad9a0f66cb042eace10c1869dbe6b22f90592d58d30ba"
+    },
+    "qa/experience-v3/prop-contacts.json": {
+      "sha256": "7e8d2d1b831668a7f31d43c48ddfa54ba9457353b345fb821bca5498c0c844d1"
+    },
+    "qa/experience-v3/office-prop-contacts.json": {
+      "sha256": "97ba79294f484de1acd2ab501b669494ca774413f1257bea5286ecfe9fb70476"
+    },
+    "qa/experience-v3/prior10-preservation.json": {
+      "sha256": "99686f066e74f324884c3e9a6c3c711e38f73b5ed6592cedf7382df4fd3d4c45"
+    },
+    "qa/experience-v3/scope-path-review.json": {
+      "sha256": "e859f2cfa47d11c9d5700ddad531da85bc0f530b2e0186bdf200f3e214847884"
+    },
+    "qa/experience-v3/aisle-connectivity.json": {
+      "sha256": "5d6bee1cf25b58f0194d58a16b4f263603c82def452bf6cea71ceaa7e4beb722"
+    },
+    "qa/experience-v3/office-props-source-responses.json": {
+      "sha256": "1f850645ec8232528ee5d972d7998e30f1c1f15adc8b9af1888393f9b71e17f9"
+    },
+    "qa/experience-v3/viewer-dressing.json": {
+      "sha256": "6cccba81e4a0fa1373f06fbefa5d42685b0b6348373c644face3e105cd923f23"
+    },
+    "qa/experience-rooms-v3-final/capture.json": {
+      "sha256": "2732f7d411a18ab3d74c1e654ae803b0b52c01d3407763cd2f5f951dccaf5545"
+    },
+    "qa/experience-prior10-preservation-lock.json": {
+      "sha256": "6fc3b734009e57a29b86d6833ccdebe8f0622dbf5092d12cf01ec77b2c659a1f"
+    }
+  },
+  "external_workspace_mesh_export": "/workspace/office-experience-contact-v3",
+  "external_integrated_export": "/workspace/office-experience-integrated-v3",
+  "limitations": [
+    "Actual evaluated visible LOD0 vertices are rounded to 1 micrometre. Source-furniture triangle SAT separation tolerance is 1e-7 m.",
+    "Hand proximity measures actual skin vertices near each wrist against continuous target triangles; these sampled distances are upper bounds on the complete surface distance. Full triangle tests separately found no interpenetration.",
+    "The sample is supported near its shoulder edges with 0.500 mm gaps; the rail touch is a static near-touch at 1.714 mm sampled clearance. No pinching, pressure, physical load or fabric simulation is claimed.",
+    "Linux Chromium with SwiftShader only; native Mac FPS and Safari remain untested."
+  ]
+}
