@@ -1,0 +1,4789 @@
+{
+ "version": "2026-10-27",
+ "note": "Generated from the space-optimisation model (GARMENT_OFFICE_SPACE_OPTIMIZATION/02_IMPROVED_BLENDER_MODEL/Optimized_Office_Interior.blend: approved design with Z06 / Z07 replaced by the proposed option B) by scripts/web/export_web_metadata.py + make_web_metadata.py. Proposed interior visualization; final dimensions and technical details subject to site verification.",
+ "axes": "glTF / three.js world: metres, x east, y up, z south (Blender (x, y, z) -> (x, z, -y)). Floor at y = 0, underside of the steel deck at 2.90 m.",
+ "eye_height_m": 1.6,
+ "web_glb": {
+  "path": "GARMENT_OFFICE_SPACE_OPTIMIZATION/04_SIMPLE_VIEWER/assets/Optimized_Office_Interior_web_baked.glb",
+  "groups": {
+   "WEB_INTERIOR": "walls, floors, glazing, doors, furniture, plants, branding",
+   "WEB_OVERHEAD": "steel deck, beams, ceiling rafts / baffles, light fittings, AC and fire devices (hide for the dollhouse view)",
+   "WEB_CAMERAS": "the render cameras (same names as the renders)"
+  }
+ },
+ "cameras": [
+  {
+   "name": "CAM_01_Reception_A",
+   "room": "Reception",
+   "priority": 1,
+   "type": "PERSP",
+   "position": [
+    8.0772,
+    1.524,
+    0.6604
+   ],
+   "direction": [
+    0.814278,
+    0.0,
+    0.580475
+   ],
+   "up": [
+    -0.0,
+    1.0,
+    -0.0
+   ],
+   "quaternion_xyzw": [
+    0.0,
+    -0.888953,
+    0.0,
+    0.457998
+   ],
+   "clip": [
+    0.05000000074505806,
+    300.0
+   ],
+   "shift_x": 0.0,
+   "shift_y": -0.019148,
+   "sensor_fit": "AUTO",
+   "lens": 18.0,
+   "sensor_width": 36.0,
+   "render": {
+    "file": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_01_Reception_A.jpg",
+    "worker_path": "/renders/CAM_01_Reception_A.jpg",
+    "width": 1600,
+    "height": 900
+   },
+   "hfov_deg_render": 90.0,
+   "vfov_deg_render": 58.7155,
+   "zone": "Z02"
+  },
+  {
+   "name": "CAM_02_Reception_B",
+   "room": "Reception",
+   "priority": 1,
+   "type": "PERSP",
+   "position": [
+    11.2268,
+    1.4732,
+    6.0452
+   ],
+   "direction": [
+    0.614915,
+    0.0,
+    -0.788593
+   ],
+   "up": [
+    -0.0,
+    1.0,
+    0.0
+   ],
+   "quaternion_xyzw": [
+    0.0,
+    -0.325121,
+    0.0,
+    0.945673
+   ],
+   "clip": [
+    0.05000000074505806,
+    300.0
+   ],
+   "shift_x": 0.0,
+   "shift_y": -0.004707,
+   "sensor_fit": "AUTO",
+   "lens": 19.0,
+   "sensor_width": 36.0,
+   "render": {
+    "file": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_02_Reception_B.jpg",
+    "worker_path": "/renders/CAM_02_Reception_B.jpg",
+    "width": 1600,
+    "height": 900
+   },
+   "hfov_deg_render": 86.9037,
+   "vfov_deg_render": 56.1058,
+   "zone": "Z02"
+  },
+  {
+   "name": "CAM_03_Entrance_Lobby",
+   "room": "Entrance lobby",
+   "priority": 1,
+   "type": "PERSP",
+   "position": [
+    6.2484,
+    1.6256,
+    5.7404
+   ],
+   "direction": [
+    -0.105601,
+    0.0,
+    -0.994409
+   ],
+   "up": [
+    0.0,
+    1.0,
+    0.0
+   ],
+   "quaternion_xyzw": [
+    0.0,
+    0.052874,
+    -0.0,
+    0.998601
+   ],
+   "clip": [
+    0.05000000074505806,
+    300.0
+   ],
+   "shift_x": 0.0,
+   "shift_y": -0.008825,
+   "sensor_fit": "AUTO",
+   "lens": 19.0,
+   "sensor_width": 36.0,
+   "render": {
+    "file": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_03_Entrance_Lobby.jpg",
+    "worker_path": "/renders/CAM_03_Entrance_Lobby.jpg",
+    "width": 1600,
+    "height": 900
+   },
+   "hfov_deg_render": 86.9037,
+   "vfov_deg_render": 56.1058,
+   "zone": "Z01"
+  },
+  {
+   "name": "CAM_04_Experience_Centre_A",
+   "room": "Experience centre",
+   "priority": 1,
+   "type": "PERSP",
+   "position": [
+    9.9568,
+    1.5748,
+    -5.7404
+   ],
+   "direction": [
+    0.864592,
+    0.0,
+    -0.502474
+   ],
+   "up": [
+    -0.0,
+    1.0,
+    0.0
+   ],
+   "quaternion_xyzw": [
+    0.0,
+    -0.498761,
+    0.0,
+    0.866739
+   ],
+   "clip": [
+    0.05000000074505806,
+    300.0
+   ],
+   "shift_x": 0.0,
+   "shift_y": -0.016001,
+   "sensor_fit": "AUTO",
+   "lens": 18.0,
+   "sensor_width": 36.0,
+   "render": {
+    "file": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_04_Experience_Centre_A.jpg",
+    "worker_path": "/renders/CAM_04_Experience_Centre_A.jpg",
+    "width": 1920,
+    "height": 1080
+   },
+   "hfov_deg_render": 90.0,
+   "vfov_deg_render": 58.7155,
+   "zone": "Z30"
+  },
+  {
+   "name": "CAM_05_Experience_Centre_B",
+   "room": "Experience centre",
+   "priority": 1,
+   "type": "PERSP",
+   "position": [
+    21.6408,
+    1.5748,
+    -5.8928
+   ],
+   "direction": [
+    -0.940118,
+    0.0,
+    -0.340849
+   ],
+   "up": [
+    0.0,
+    1.0,
+    0.0
+   ],
+   "quaternion_xyzw": [
+    0.0,
+    0.574087,
+    -0.0,
+    0.818794
+   ],
+   "clip": [
+    0.05000000074505806,
+    300.0
+   ],
+   "shift_x": 0.0,
+   "shift_y": -0.006349,
+   "sensor_fit": "AUTO",
+   "lens": 18.0,
+   "sensor_width": 36.0,
+   "render": {
+    "file": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_05_Experience_Centre_B.jpg",
+    "worker_path": "/renders/CAM_05_Experience_Centre_B.jpg",
+    "width": 1920,
+    "height": 1080
+   },
+   "hfov_deg_render": 90.0,
+   "vfov_deg_render": 58.7155,
+   "zone": "Z30"
+  },
+  {
+   "name": "CAM_06_Experience_Centre_Detail",
+   "room": "Experience centre",
+   "priority": 1,
+   "type": "PERSP",
+   "position": [
+    14.605,
+    1.27,
+    -6.6548
+   ],
+   "direction": [
+    -0.536412,
+    0.0,
+    -0.843956
+   ],
+   "up": [
+    0.0,
+    1.0,
+    0.0
+   ],
+   "quaternion_xyzw": [
+    0.0,
+    0.279324,
+    -0.0,
+    0.960197
+   ],
+   "clip": [
+    0.05000000074505806,
+    300.0
+   ],
+   "shift_x": 0.0,
+   "shift_y": -0.009814,
+   "sensor_fit": "AUTO",
+   "lens": 26.0,
+   "sensor_width": 36.0,
+   "render": {
+    "file": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_06_Experience_Centre_Detail.jpg",
+    "worker_path": "/renders/CAM_06_Experience_Centre_Detail.jpg",
+    "width": 1600,
+    "height": 900
+   },
+   "hfov_deg_render": 69.3903,
+   "vfov_deg_render": 42.5542,
+   "zone": "Z30"
+  },
+  {
+   "name": "CAM_07_MD_Office_A",
+   "room": "MD office",
+   "priority": 1,
+   "type": "PERSP",
+   "position": [
+    22.098,
+    1.524,
+    1.6256
+   ],
+   "direction": [
+    0.726065,
+    0.0,
+    0.687626
+   ],
+   "up": [
+    -0.0,
+    1.0,
+    -0.0
+   ],
+   "quaternion_xyzw": [
+    0.0,
+    -0.918593,
+    0.0,
+    0.395205
+   ],
+   "clip": [
+    0.05000000074505806,
+    300.0
+   ],
+   "shift_x": 0.0,
+   "shift_y": -0.012172,
+   "sensor_fit": "AUTO",
+   "lens": 18.0,
+   "sensor_width": 36.0,
+   "render": {
+    "file": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_07_MD_Office_A.jpg",
+    "worker_path": "/renders/CAM_07_MD_Office_A.jpg",
+    "width": 1600,
+    "height": 900
+   },
+   "hfov_deg_render": 90.0,
+   "vfov_deg_render": 58.7155,
+   "zone": "Z12"
+  },
+  {
+   "name": "CAM_08_MD_Office_B",
+   "room": "MD office",
+   "priority": 1,
+   "type": "PERSP",
+   "position": [
+    27.4828,
+    1.4732,
+    5.3848
+   ],
+   "direction": [
+    -0.897012,
+    0.0,
+    -0.442006
+   ],
+   "up": [
+    0.0,
+    1.0,
+    0.0
+   ],
+   "quaternion_xyzw": [
+    0.0,
+    0.528202,
+    -0.0,
+    0.849119
+   ],
+   "clip": [
+    0.05000000074505806,
+    300.0
+   ],
+   "shift_x": 0.0,
+   "shift_y": -0.0247,
+   "sensor_fit": "AUTO",
+   "lens": 18.0,
+   "sensor_width": 36.0,
+   "render": {
+    "file": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_08_MD_Office_B.jpg",
+    "worker_path": "/renders/CAM_08_MD_Office_B.jpg",
+    "width": 1600,
+    "height": 900
+   },
+   "hfov_deg_render": 90.0,
+   "vfov_deg_render": 58.7155,
+   "zone": "Z12"
+  },
+  {
+   "name": "CAM_09_Boardroom_A",
+   "room": "Boardroom",
+   "priority": 1,
+   "type": "PERSP",
+   "position": [
+    21.844,
+    1.5748,
+    -5.08
+   ],
+   "direction": [
+    -0.965363,
+    0.0,
+    0.260909
+   ],
+   "up": [
+    0.0,
+    1.0,
+    -0.0
+   ],
+   "quaternion_xyzw": [
+    0.0,
+    0.794012,
+    -0.0,
+    0.607903
+   ],
+   "clip": [
+    0.05000000074505806,
+    300.0
+   ],
+   "shift_x": 0.0,
+   "shift_y": -0.007436,
+   "sensor_fit": "AUTO",
+   "lens": 18.0,
+   "sensor_width": 36.0,
+   "render": {
+    "file": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_09_Boardroom_A.jpg",
+    "worker_path": "/renders/CAM_09_Boardroom_A.jpg",
+    "width": 1600,
+    "height": 900
+   },
+   "hfov_deg_render": 90.0,
+   "vfov_deg_render": 58.7155,
+   "zone": "Z08"
+  },
+  {
+   "name": "CAM_10_Boardroom_B",
+   "room": "Boardroom",
+   "priority": 1,
+   "type": "PERSP",
+   "position": [
+    12.5476,
+    1.5748,
+    -1.143
+   ],
+   "direction": [
+    0.939707,
+    0.0,
+    -0.341982
+   ],
+   "up": [
+    -0.0,
+    1.0,
+    0.0
+   ],
+   "quaternion_xyzw": [
+    0.0,
+    -0.573593,
+    0.0,
+    0.81914
+   ],
+   "clip": [
+    0.05000000074505806,
+    300.0
+   ],
+   "shift_x": 0.0,
+   "shift_y": -0.022601,
+   "sensor_fit": "AUTO",
+   "lens": 18.0,
+   "sensor_width": 36.0,
+   "render": {
+    "file": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_10_Boardroom_B.jpg",
+    "worker_path": "/renders/CAM_10_Boardroom_B.jpg",
+    "width": 1600,
+    "height": 900
+   },
+   "hfov_deg_render": 90.0,
+   "vfov_deg_render": 58.7155,
+   "zone": "Z08"
+  },
+  {
+   "name": "CAM_11_Merchandising_A",
+   "room": "Merchandising (open office)",
+   "priority": 1,
+   "type": "PERSP",
+   "position": [
+    9.6012,
+    1.6256,
+    -11.176
+   ],
+   "direction": [
+    0.719619,
+    0.0,
+    -0.694369
+   ],
+   "up": [
+    -0.0,
+    1.0,
+    0.0
+   ],
+   "quaternion_xyzw": [
+    0.0,
+    -0.390916,
+    0.0,
+    0.920426
+   ],
+   "clip": [
+    0.05000000074505806,
+    300.0
+   ],
+   "shift_x": 0.0,
+   "shift_y": -0.023987,
+   "sensor_fit": "AUTO",
+   "lens": 18.0,
+   "sensor_width": 36.0,
+   "render": {
+    "file": "GARMENT_OFFICE_SPACE_OPTIMIZATION/03_ROOM_RENDERS/after_with_people/CAM_11_Merchandising_A.jpg",
+    "worker_path": "/renders/CAM_11_Merchandising_A.jpg",
+    "width": 1600,
+    "height": 900
+   },
+   "hfov_deg_render": 90.0,
+   "vfov_deg_render": 58.7155,
+   "zone": "Z07"
+  },
+  {
+   "name": "CAM_12_Merchandising_B",
+   "room": "Merchandising (open office)",
+   "priority": 1,
+   "type": "PERSP",
+   "position": [
+    21.7424,
+    1.6256,
+    -21.1328
+   ],
+   "direction": [
+    -0.781601,
+    0.0,
+    0.623778
+   ],
+   "up": [
+    0.0,
+    1.0,
+    -0.0
+   ],
+   "quaternion_xyzw": [
+    0.0,
+    0.901049,
+    -0.0,
+    0.433718
+   ],
+   "clip": [
+    0.05000000074505806,
+    300.0
+   ],
+   "shift_x": 0.0,
+   "shift_y": -0.017849,
+   "sensor_fit": "AUTO",
+   "lens": 18.0,
+   "sensor_width": 36.0,
+   "render": {
+    "file": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_12_Merchandising_B.jpg",
+    "worker_path": "/renders/CAM_12_Merchandising_B.jpg",
+    "width": 1600,
+    "height": 900
+   },
+   "hfov_deg_render": 90.0,
+   "vfov_deg_render": 58.7155,
+   "zone": "Z07"
+  },
+  {
+   "name": "CAM_13_Design_Studio_A",
+   "room": "Global Design Studio",
+   "priority": 1,
+   "type": "PERSP",
+   "position": [
+    28.2448,
+    1.5748,
+    -13.6652
+   ],
+   "direction": [
+    0.441254,
+    0.0,
+    -0.897382
+   ],
+   "up": [
+    -0.0,
+    1.0,
+    0.0
+   ],
+   "quaternion_xyzw": [
+    0.0,
+    -0.226515,
+    0.0,
+    0.974008
+   ],
+   "clip": [
+    0.05000000074505806,
+    300.0
+   ],
+   "shift_x": 0.0,
+   "shift_y": -0.01413,
+   "sensor_fit": "AUTO",
+   "lens": 18.0,
+   "sensor_width": 36.0,
+   "render": {
+    "file": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_13_Design_Studio_A.jpg",
+    "worker_path": "/renders/CAM_13_Design_Studio_A.jpg",
+    "width": 1600,
+    "height": 900
+   },
+   "hfov_deg_render": 90.0,
+   "vfov_deg_render": 58.7155,
+   "zone": "Z18"
+  },
+  {
+   "name": "CAM_14_Design_Studio_B",
+   "room": "Global Design Studio",
+   "priority": 1,
+   "type": "PERSP",
+   "position": [
+    33.4772,
+    1.5748,
+    -30.48
+   ],
+   "direction": [
+    -0.460405,
+    0.0,
+    0.887709
+   ],
+   "up": [
+    0.0,
+    1.0,
+    -0.0
+   ],
+   "quaternion_xyzw": [
+    0.0,
+    0.971522,
+    -0.0,
+    0.23695
+   ],
+   "clip": [
+    0.05000000074505806,
+    300.0
+   ],
+   "shift_x": 0.0,
+   "shift_y": -0.020011,
+   "sensor_fit": "AUTO",
+   "lens": 18.0,
+   "sensor_width": 36.0,
+   "render": {
+    "file": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_14_Design_Studio_B.jpg",
+    "worker_path": "/renders/CAM_14_Design_Studio_B.jpg",
+    "width": 1600,
+    "height": 900
+   },
+   "hfov_deg_render": 90.0,
+   "vfov_deg_render": 58.7155,
+   "zone": "Z18"
+  },
+  {
+   "name": "CAM_15_CAD_Room",
+   "room": "CAD / technical design",
+   "priority": 1,
+   "type": "PERSP",
+   "position": [
+    26.2382,
+    1.524,
+    -6.223
+   ],
+   "direction": [
+    -0.604565,
+    0.0,
+    0.796556
+   ],
+   "up": [
+    0.0,
+    1.0,
+    -0.0
+   ],
+   "quaternion_xyzw": [
+    0.0,
+    0.947775,
+    -0.0,
+    0.318939
+   ],
+   "clip": [
+    0.05000000074505806,
+    300.0
+   ],
+   "shift_x": 0.0,
+   "shift_y": -0.031045,
+   "sensor_fit": "AUTO",
+   "lens": 18.0,
+   "sensor_width": 36.0,
+   "render": {
+    "file": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_15_CAD_Room.jpg",
+    "worker_path": "/renders/CAM_15_CAD_Room.jpg",
+    "width": 1600,
+    "height": 900
+   },
+   "hfov_deg_render": 90.0,
+   "vfov_deg_render": 58.7155,
+   "zone": "Z14"
+  },
+  {
+   "name": "CAM_16_Commercial_Accounts",
+   "room": "Commercial & accounts",
+   "priority": 1,
+   "type": "PERSP",
+   "position": [
+    8.9408,
+    1.5748,
+    -10.287
+   ],
+   "direction": [
+    -0.72798,
+    0.0,
+    -0.685598
+   ],
+   "up": [
+    0.0,
+    1.0,
+    0.0
+   ],
+   "quaternion_xyzw": [
+    0.0,
+    0.396486,
+    -0.0,
+    0.918041
+   ],
+   "clip": [
+    0.05000000074505806,
+    300.0
+   ],
+   "shift_x": 0.0,
+   "shift_y": -0.026053,
+   "sensor_fit": "AUTO",
+   "lens": 18.0,
+   "sensor_width": 36.0,
+   "render": {
+    "file": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_16_Commercial_Accounts.jpg",
+    "worker_path": "/renders/CAM_16_Commercial_Accounts.jpg",
+    "width": 1600,
+    "height": 900
+   },
+   "hfov_deg_render": 90.0,
+   "vfov_deg_render": 58.7155,
+   "zone": "Z06"
+  },
+  {
+   "name": "CAM_17_Executive_Reception",
+   "room": "Executive reception (PA)",
+   "priority": 2,
+   "type": "PERSP",
+   "position": [
+    17.6784,
+    1.524,
+    0.2032
+   ],
+   "direction": [
+    -0.513855,
+    0.0,
+    0.857877
+   ],
+   "up": [
+    0.0,
+    1.0,
+    -0.0
+   ],
+   "quaternion_xyzw": [
+    0.0,
+    0.963814,
+    -0.0,
+    0.266574
+   ],
+   "clip": [
+    0.05000000074505806,
+    300.0
+   ],
+   "shift_x": 0.0,
+   "shift_y": -0.028959,
+   "sensor_fit": "AUTO",
+   "lens": 18.0,
+   "sensor_width": 36.0,
+   "render": {
+    "file": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_17_Executive_Reception.jpg",
+    "worker_path": "/renders/CAM_17_Executive_Reception.jpg",
+    "width": 1600,
+    "height": 900
+   },
+   "hfov_deg_render": 90.0,
+   "vfov_deg_render": 58.7155,
+   "zone": "Z10"
+  },
+  {
+   "name": "CAM_18_Director",
+   "room": "Director",
+   "priority": 2,
+   "type": "PERSP",
+   "position": [
+    17.9832,
+    1.4732,
+    1.6256
+   ],
+   "direction": [
+    0.603953,
+    0.0,
+    0.79702
+   ],
+   "up": [
+    -0.0,
+    1.0,
+    -0.0
+   ],
+   "quaternion_xyzw": [
+    0.0,
+    -0.947898,
+    0.0,
+    0.318575
+   ],
+   "clip": [
+    0.05000000074505806,
+    300.0
+   ],
+   "shift_x": 0.0,
+   "shift_y": -0.028217,
+   "sensor_fit": "AUTO",
+   "lens": 18.0,
+   "sensor_width": 36.0,
+   "render": {
+    "file": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_18_Director.jpg",
+    "worker_path": "/renders/CAM_18_Director.jpg",
+    "width": 1600,
+    "height": 900
+   },
+   "hfov_deg_render": 90.0,
+   "vfov_deg_render": 58.7155,
+   "zone": "Z11"
+  },
+  {
+   "name": "CAM_19_HR_Admin",
+   "room": "HR & admin",
+   "priority": 2,
+   "type": "PERSP",
+   "position": [
+    9.0424,
+    1.524,
+    -0.4064
+   ],
+   "direction": [
+    -0.672858,
+    0.0,
+    -0.739772
+   ],
+   "up": [
+    0.0,
+    1.0,
+    0.0
+   ],
+   "quaternion_xyzw": [
+    0.0,
+    0.360713,
+    -0.0,
+    0.932677
+   ],
+   "clip": [
+    0.05000000074505806,
+    300.0
+   ],
+   "shift_x": 0.0,
+   "shift_y": -0.035316,
+   "sensor_fit": "AUTO",
+   "lens": 18.0,
+   "sensor_width": 36.0,
+   "render": {
+    "file": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_19_HR_Admin.jpg",
+    "worker_path": "/renders/CAM_19_HR_Admin.jpg",
+    "width": 1600,
+    "height": 900
+   },
+   "hfov_deg_render": 90.0,
+   "vfov_deg_render": 58.7155,
+   "zone": "Z05"
+  },
+  {
+   "name": "CAM_20_Staff_Cafe",
+   "room": "Staff cafe + pantry",
+   "priority": 2,
+   "type": "PERSP",
+   "position": [
+    27.0764,
+    1.5748,
+    -23.1648
+   ],
+   "direction": [
+    -0.508535,
+    0.0,
+    -0.861042
+   ],
+   "up": [
+    0.0,
+    1.0,
+    0.0
+   ],
+   "quaternion_xyzw": [
+    0.0,
+    0.263589,
+    -0.0,
+    0.964635
+   ],
+   "clip": [
+    0.05000000074505806,
+    300.0
+   ],
+   "shift_x": 0.0,
+   "shift_y": -0.030194,
+   "sensor_fit": "AUTO",
+   "lens": 18.0,
+   "sensor_width": 36.0,
+   "render": {
+    "file": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_20_Staff_Cafe.jpg",
+    "worker_path": "/renders/CAM_20_Staff_Cafe.jpg",
+    "width": 1600,
+    "height": 900
+   },
+   "hfov_deg_render": 90.0,
+   "vfov_deg_render": 58.7155,
+   "zone": "Z20"
+  },
+  {
+   "name": "CAM_21_Lounge_Training",
+   "room": "Staff lounge / training",
+   "priority": 2,
+   "type": "PERSP",
+   "position": [
+    27.0764,
+    1.5748,
+    -31.9532
+   ],
+   "direction": [
+    -0.557621,
+    0.0,
+    -0.830096
+   ],
+   "up": [
+    0.0,
+    1.0,
+    0.0
+   ],
+   "quaternion_xyzw": [
+    0.0,
+    0.291466,
+    -0.0,
+    0.956581
+   ],
+   "clip": [
+    0.05000000074505806,
+    300.0
+   ],
+   "shift_x": 0.0,
+   "shift_y": -0.033109,
+   "sensor_fit": "AUTO",
+   "lens": 18.0,
+   "sensor_width": 36.0,
+   "render": {
+    "file": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_21_Lounge_Training.jpg",
+    "worker_path": "/renders/CAM_21_Lounge_Training.jpg",
+    "width": 1600,
+    "height": 900
+   },
+   "hfov_deg_render": 90.0,
+   "vfov_deg_render": 58.7155,
+   "zone": "Z21"
+  },
+  {
+   "name": "CAM_22_Prayer_Male",
+   "room": "Prayer (male)",
+   "priority": 2,
+   "type": "PERSP",
+   "position": [
+    29.5148,
+    1.524,
+    -32.8168
+   ],
+   "direction": [
+    0.748454,
+    0.0,
+    -0.663187
+   ],
+   "up": [
+    -0.0,
+    1.0,
+    0.0
+   ],
+   "quaternion_xyzw": [
+    0.0,
+    -0.410374,
+    0.0,
+    0.911917
+   ],
+   "clip": [
+    0.05000000074505806,
+    300.0
+   ],
+   "shift_x": 0.0,
+   "shift_y": -0.072003,
+   "sensor_fit": "AUTO",
+   "lens": 18.0,
+   "sensor_width": 36.0,
+   "render": {
+    "file": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_22_Prayer_Male.jpg",
+    "worker_path": "/renders/CAM_22_Prayer_Male.jpg",
+    "width": 1600,
+    "height": 900
+   },
+   "hfov_deg_render": 90.0,
+   "vfov_deg_render": 58.7155,
+   "zone": "Z23"
+  },
+  {
+   "name": "CAM_23_Sample_Room",
+   "room": "Sample development",
+   "priority": 2,
+   "type": "PERSP",
+   "position": [
+    26.1874,
+    1.524,
+    -16.383
+   ],
+   "direction": [
+    -0.685658,
+    0.0,
+    -0.727924
+   ],
+   "up": [
+    0.0,
+    1.0,
+    0.0
+   ],
+   "quaternion_xyzw": [
+    0.0,
+    0.368833,
+    -0.0,
+    0.929496
+   ],
+   "clip": [
+    0.05000000074505806,
+    300.0
+   ],
+   "shift_x": 0.0,
+   "shift_y": -0.044615,
+   "sensor_fit": "AUTO",
+   "lens": 18.0,
+   "sensor_width": 36.0,
+   "render": {
+    "file": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_23_Sample_Room.jpg",
+    "worker_path": "/renders/CAM_23_Sample_Room.jpg",
+    "width": 1600,
+    "height": 900
+   },
+   "hfov_deg_render": 90.0,
+   "vfov_deg_render": 58.7155,
+   "zone": "Z17"
+  },
+  {
+   "name": "CAM_24_3D_Printing_Lab",
+   "room": "3D printing lab",
+   "priority": 2,
+   "type": "PERSP",
+   "position": [
+    26.1874,
+    1.524,
+    -12.4968
+   ],
+   "direction": [
+    -0.82503,
+    0.0,
+    -0.565089
+   ],
+   "up": [
+    0.0,
+    1.0,
+    0.0
+   ],
+   "quaternion_xyzw": [
+    0.0,
+    0.466321,
+    -0.0,
+    0.884615
+   ],
+   "clip": [
+    0.05000000074505806,
+    300.0
+   ],
+   "shift_x": 0.0,
+   "shift_y": -0.053683,
+   "sensor_fit": "AUTO",
+   "lens": 18.0,
+   "sensor_width": 36.0,
+   "render": {
+    "file": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_24_3D_Printing_Lab.jpg",
+    "worker_path": "/renders/CAM_24_3D_Printing_Lab.jpg",
+    "width": 1600,
+    "height": 900
+   },
+   "hfov_deg_render": 90.0,
+   "vfov_deg_render": 58.7155,
+   "zone": "Z16"
+  },
+  {
+   "name": "CAM_25_Fabric_Library",
+   "room": "Fabric, colour & trim library",
+   "priority": 2,
+   "type": "PERSP",
+   "position": [
+    26.162,
+    1.524,
+    -10.8712
+   ],
+   "direction": [
+    -0.699294,
+    0.0,
+    0.714834
+   ],
+   "up": [
+    0.0,
+    1.0,
+    -0.0
+   ],
+   "quaternion_xyzw": [
+    0.0,
+    0.925968,
+    -0.0,
+    0.377602
+   ],
+   "clip": [
+    0.05000000074505806,
+    300.0
+   ],
+   "shift_x": 0.0,
+   "shift_y": -0.044289,
+   "sensor_fit": "AUTO",
+   "lens": 18.0,
+   "sensor_width": 36.0,
+   "render": {
+    "file": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_25_Fabric_Library.jpg",
+    "worker_path": "/renders/CAM_25_Fabric_Library.jpg",
+    "width": 1600,
+    "height": 900
+   },
+   "hfov_deg_render": 90.0,
+   "vfov_deg_render": 58.7155,
+   "zone": "Z15"
+  },
+  {
+   "name": "CAM_26_Guest_Workspace",
+   "room": "Guest workspace",
+   "priority": 2,
+   "type": "PERSP",
+   "position": [
+    2.4892,
+    1.524,
+    -0.4064
+   ],
+   "direction": [
+    -0.742519,
+    0.0,
+    -0.669825
+   ],
+   "up": [
+    0.0,
+    1.0,
+    0.0
+   ],
+   "quaternion_xyzw": [
+    0.0,
+    0.40631,
+    -0.0,
+    0.913736
+   ],
+   "clip": [
+    0.05000000074505806,
+    300.0
+   ],
+   "shift_x": 0.0,
+   "shift_y": -0.049328,
+   "sensor_fit": "AUTO",
+   "lens": 18.0,
+   "sensor_width": 36.0,
+   "render": {
+    "file": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_26_Guest_Workspace.jpg",
+    "worker_path": "/renders/CAM_26_Guest_Workspace.jpg",
+    "width": 1600,
+    "height": 900
+   },
+   "hfov_deg_render": 90.0,
+   "vfov_deg_render": 58.7155,
+   "zone": "Z04"
+  },
+  {
+   "name": "CAM_27_Audit_Room",
+   "room": "Audit room",
+   "priority": 2,
+   "type": "PERSP",
+   "position": [
+    6.1976,
+    1.4732,
+    -19.05
+   ],
+   "direction": [
+    -0.709711,
+    0.0,
+    -0.704493
+   ],
+   "up": [
+    0.0,
+    1.0,
+    0.0
+   ],
+   "quaternion_xyzw": [
+    0.0,
+    0.384387,
+    -0.0,
+    0.923172
+   ],
+   "clip": [
+    0.05000000074505806,
+    300.0
+   ],
+   "shift_x": 0.0,
+   "shift_y": -0.044618,
+   "sensor_fit": "AUTO",
+   "lens": 18.0,
+   "sensor_width": 36.0,
+   "render": {
+    "file": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_27_Audit_Room.jpg",
+    "worker_path": "/renders/CAM_27_Audit_Room.jpg",
+    "width": 1600,
+    "height": 900
+   },
+   "hfov_deg_render": 90.0,
+   "vfov_deg_render": 58.7155,
+   "zone": "Z09"
+  },
+  {
+   "name": "CAM_28_Washroom_Male",
+   "room": "Washroom (male)",
+   "priority": 2,
+   "type": "PERSP",
+   "position": [
+    0.9144,
+    1.524,
+    -6.0452
+   ],
+   "direction": [
+    -0.391719,
+    0.0,
+    -0.920085
+   ],
+   "up": [
+    0.0,
+    1.0,
+    0.0
+   ],
+   "quaternion_xyzw": [
+    0.0,
+    0.199894,
+    -0.0,
+    0.979818
+   ],
+   "clip": [
+    0.05000000074505806,
+    300.0
+   ],
+   "shift_x": 0.0,
+   "shift_y": -0.043271,
+   "sensor_fit": "AUTO",
+   "lens": 18.0,
+   "sensor_width": 36.0,
+   "render": {
+    "file": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_28_Washroom_Male.jpg",
+    "worker_path": "/renders/CAM_28_Washroom_Male.jpg",
+    "width": 1600,
+    "height": 900
+   },
+   "hfov_deg_render": 90.0,
+   "vfov_deg_render": 58.7155,
+   "zone": "Z27"
+  },
+  {
+   "name": "CAM_29_Washroom_Female",
+   "room": "Washroom (female)",
+   "priority": 2,
+   "type": "PERSP",
+   "position": [
+    0.9144,
+    1.524,
+    -13.335
+   ],
+   "direction": [
+    -0.441049,
+    0.0,
+    -0.897483
+   ],
+   "up": [
+    0.0,
+    1.0,
+    0.0
+   ],
+   "quaternion_xyzw": [
+    0.0,
+    0.226403,
+    -0.0,
+    0.974034
+   ],
+   "clip": [
+    0.05000000074505806,
+    300.0
+   ],
+   "shift_x": 0.0,
+   "shift_y": -0.048721,
+   "sensor_fit": "AUTO",
+   "lens": 18.0,
+   "sensor_width": 36.0,
+   "render": {
+    "file": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_29_Washroom_Female.jpg",
+    "worker_path": "/renders/CAM_29_Washroom_Female.jpg",
+    "width": 1600,
+    "height": 900
+   },
+   "hfov_deg_render": 90.0,
+   "vfov_deg_render": 58.7155,
+   "zone": "Z26"
+  },
+  {
+   "name": "CAM_30_Prayer_Female",
+   "room": "Prayer (female)",
+   "priority": 2,
+   "type": "PERSP",
+   "position": [
+    0.8636,
+    1.4732,
+    -19.5072
+   ],
+   "direction": [
+    -0.576397,
+    0.0,
+    -0.81717
+   ],
+   "up": [
+    0.0,
+    1.0,
+    0.0
+   ],
+   "quaternion_xyzw": [
+    0.0,
+    0.302349,
+    -0.0,
+    0.953197
+   ],
+   "clip": [
+    0.05000000074505806,
+    300.0
+   ],
+   "shift_x": 0.0,
+   "shift_y": -0.10474,
+   "sensor_fit": "AUTO",
+   "lens": 16.0,
+   "sensor_width": 36.0,
+   "render": {
+    "file": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_30_Prayer_Female.jpg",
+    "worker_path": "/renders/CAM_30_Prayer_Female.jpg",
+    "width": 1600,
+    "height": 900
+   },
+   "hfov_deg_render": 96.7329,
+   "vfov_deg_render": 64.6523,
+   "zone": "Z25"
+  },
+  {
+   "name": "CAM_31_Executive_Corridor",
+   "room": "Executive corridor",
+   "priority": 2,
+   "type": "PERSP",
+   "position": [
+    17.9324,
+    1.524,
+    0.7112
+   ],
+   "direction": [
+    1.0,
+    0.0,
+    0.0
+   ],
+   "up": [
+    -0.0,
+    1.0,
+    -0.0
+   ],
+   "quaternion_xyzw": [
+    0.0,
+    -0.707107,
+    0.0,
+    0.707107
+   ],
+   "clip": [
+    0.05000000074505806,
+    300.0
+   ],
+   "shift_x": 0.0,
+   "shift_y": -0.011053,
+   "sensor_fit": "AUTO",
+   "lens": 20.0,
+   "sensor_width": 36.0,
+   "render": {
+    "file": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_31_Executive_Corridor.jpg",
+    "worker_path": "/renders/CAM_31_Executive_Corridor.jpg",
+    "width": 1600,
+    "height": 900
+   },
+   "hfov_deg_render": 83.9744,
+   "vfov_deg_render": 53.7016,
+   "zone": "Z13"
+  },
+  {
+   "name": "CAM_32_Design_Corridor",
+   "room": "Corridor (design wing)",
+   "priority": 2,
+   "type": "PERSP",
+   "position": [
+    27.178,
+    1.5748,
+    -14.224
+   ],
+   "direction": [
+    0.0,
+    0.0,
+    -1.0
+   ],
+   "up": [
+    0.0,
+    1.0,
+    0.0
+   ],
+   "quaternion_xyzw": [
+    0.0,
+    -0.0,
+    -0.0,
+    1.0
+   ],
+   "clip": [
+    0.05000000074505806,
+    300.0
+   ],
+   "shift_x": 0.0,
+   "shift_y": -0.019792,
+   "sensor_fit": "AUTO",
+   "lens": 20.0,
+   "sensor_width": 36.0,
+   "render": {
+    "file": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_32_Design_Corridor.jpg",
+    "worker_path": "/renders/CAM_32_Design_Corridor.jpg",
+    "width": 1600,
+    "height": 900
+   },
+   "hfov_deg_render": 83.9744,
+   "vfov_deg_render": 53.7016,
+   "zone": "Z22"
+  },
+  {
+   "name": "CAM_33_Wudu_Male",
+   "room": "Wudu (male)",
+   "priority": 2,
+   "type": "PERSP",
+   "position": [
+    29.464,
+    1.524,
+    -30.988
+   ],
+   "direction": [
+    0.982872,
+    0.0,
+    -0.184288
+   ],
+   "up": [
+    -0.0,
+    1.0,
+    0.0
+   ],
+   "quaternion_xyzw": [
+    0.0,
+    -0.638636,
+    0.0,
+    0.769509
+   ],
+   "clip": [
+    0.05000000074505806,
+    300.0
+   ],
+   "shift_x": 0.0,
+   "shift_y": -0.087537,
+   "sensor_fit": "AUTO",
+   "lens": 18.0,
+   "sensor_width": 36.0,
+   "render": {
+    "file": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_33_Wudu_Male.jpg",
+    "worker_path": "/renders/CAM_33_Wudu_Male.jpg",
+    "width": 1600,
+    "height": 900
+   },
+   "hfov_deg_render": 90.0,
+   "vfov_deg_render": 58.7155,
+   "zone": "Z24"
+  },
+  {
+   "name": "CAM_34_Merchandising_Sample_Hub",
+   "room": "Merchandising (sample hub)",
+   "priority": 1,
+   "type": "PERSP",
+   "position": [
+    21.2852,
+    1.5748,
+    -11.4808
+   ],
+   "direction": [
+    -0.528558,
+    0.0,
+    -0.848897
+   ],
+   "up": [
+    0.0,
+    1.0,
+    0.0
+   ],
+   "quaternion_xyzw": [
+    0.0,
+    0.274866,
+    -0.0,
+    0.961482
+   ],
+   "clip": [
+    0.05000000074505806,
+    300.0
+   ],
+   "shift_x": 0.0,
+   "shift_y": -0.022824,
+   "sensor_fit": "AUTO",
+   "lens": 18.0,
+   "sensor_width": 36.0,
+   "render": null,
+   "zone": "Z07"
+  },
+  {
+   "name": "CAM_35_Merchandising_Desks",
+   "room": "Merchandising (team desks)",
+   "priority": 1,
+   "type": "PERSP",
+   "position": [
+    19.558,
+    1.5748,
+    -17.526
+   ],
+   "direction": [
+    -0.991882,
+    0.0,
+    0.127164
+   ],
+   "up": [
+    0.0,
+    1.0,
+    -0.0
+   ],
+   "quaternion_xyzw": [
+    0.0,
+    0.750721,
+    -0.0,
+    0.660619
+   ],
+   "clip": [
+    0.05000000074505806,
+    300.0
+   ],
+   "shift_x": 0.0,
+   "shift_y": -0.028054,
+   "sensor_fit": "AUTO",
+   "lens": 19.0,
+   "sensor_width": 36.0,
+   "render": null,
+   "zone": "Z07"
+  },
+  {
+   "name": "CAM_36_Accounts_Suite",
+   "room": "Commercial & accounts (finance suite)",
+   "priority": 1,
+   "type": "PERSP",
+   "position": [
+    3.0988,
+    1.5748,
+    -7.62
+   ],
+   "direction": [
+    0.453315,
+    0.0,
+    -0.89135
+   ],
+   "up": [
+    -0.0,
+    1.0,
+    0.0
+   ],
+   "quaternion_xyzw": [
+    0.0,
+    -0.233077,
+    0.0,
+    0.972458
+   ],
+   "clip": [
+    0.05000000074505806,
+    300.0
+   ],
+   "shift_x": 0.0,
+   "shift_y": -0.024194,
+   "sensor_fit": "AUTO",
+   "lens": 18.0,
+   "sensor_width": 36.0,
+   "render": null,
+   "zone": "Z06"
+  },
+  {
+   "name": "CAM_37_Accounts_Records_Discussion",
+   "room": "Commercial & accounts (records + discussion room)",
+   "priority": 1,
+   "type": "PERSP",
+   "position": [
+    8.5344,
+    1.524,
+    -17.272
+   ],
+   "direction": [
+    -0.223838,
+    0.0,
+    0.974627
+   ],
+   "up": [
+    0.0,
+    1.0,
+    -0.0
+   ],
+   "quaternion_xyzw": [
+    0.0,
+    0.993636,
+    -0.0,
+    0.112636
+   ],
+   "clip": [
+    0.05000000074505806,
+    300.0
+   ],
+   "shift_x": 0.0,
+   "shift_y": -0.022151,
+   "sensor_fit": "AUTO",
+   "lens": 18.0,
+   "sensor_width": 36.0,
+   "render": null,
+   "zone": "Z06"
+  },
+  {
+   "name": "CAM_38_Accounts_Public_Corridor",
+   "room": "Commercial & accounts (public corridor)",
+   "priority": 2,
+   "type": "PERSP",
+   "position": [
+    2.032,
+    1.524,
+    -6.6548
+   ],
+   "direction": [
+    0.0,
+    0.0,
+    -1.0
+   ],
+   "up": [
+    0.0,
+    1.0,
+    0.0
+   ],
+   "quaternion_xyzw": [
+    0.0,
+    -0.0,
+    -0.0,
+    1.0
+   ],
+   "clip": [
+    0.05000000074505806,
+    300.0
+   ],
+   "shift_x": 0.0,
+   "shift_y": -0.012709,
+   "sensor_fit": "AUTO",
+   "lens": 18.0,
+   "sensor_width": 36.0,
+   "render": null,
+   "zone": "Z06"
+  },
+  {
+   "name": "CAM_ISO_Design_Wing",
+   "room": "Design development wing + staff support",
+   "priority": 1,
+   "type": "ORTHO",
+   "position": [
+    77.24039,
+    64.27876,
+    -78.48241
+   ],
+   "direction": [
+    -0.492404,
+    -0.642788,
+    0.586824
+   ],
+   "up": [
+    -0.413176,
+    0.766045,
+    0.492404
+   ],
+   "quaternion_xyzw": [
+    -0.116978,
+    0.883022,
+    0.321394,
+    0.321394
+   ],
+   "clip": [
+    0.05000000074505806,
+    300.0
+   ],
+   "shift_x": 0.0,
+   "shift_y": 0.0,
+   "sensor_fit": "AUTO",
+   "ortho_scale": 26.0,
+   "render": {
+    "file": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_ISO_Design_Wing.jpg",
+    "worker_path": "/renders/CAM_ISO_Design_Wing.jpg",
+    "width": 1920,
+    "height": 1080
+   },
+   "zone": null
+  },
+  {
+   "name": "CAM_ISO_Front_Zone",
+   "room": "Visitor zone (lobby, reception, experience centre, boardroom, executive suite)",
+   "priority": 1,
+   "type": "ORTHO",
+   "position": [
+    54.39417,
+    64.27876,
+    62.76425
+   ],
+   "direction": [
+    -0.405942,
+    -0.642788,
+    -0.649643
+   ],
+   "up": [
+    -0.340626,
+    0.766044,
+    -0.545115
+   ],
+   "quaternion_xyzw": [
+    -0.328771,
+    0.259014,
+    0.094274,
+    0.903291
+   ],
+   "clip": [
+    0.05000000074505806,
+    300.0
+   ],
+   "shift_x": 0.0,
+   "shift_y": 0.0,
+   "sensor_fit": "AUTO",
+   "ortho_scale": 24.0,
+   "render": {
+    "file": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_ISO_Front_Zone.jpg",
+    "worker_path": "/renders/CAM_ISO_Front_Zone.jpg",
+    "width": 1920,
+    "height": 1080
+   },
+   "zone": null
+  },
+  {
+   "name": "CAM_ISO_SE",
+   "room": "Whole floor",
+   "priority": 1,
+   "type": "ORTHO",
+   "position": [
+    72.01366,
+    81.01981,
+    54.09505
+   ],
+   "direction": [
+    -0.450266,
+    -0.681998,
+    -0.576315
+   ],
+   "up": [
+    -0.41988,
+    0.731354,
+    -0.537422
+   ],
+   "quaternion_xyzw": [
+    -0.346534,
+    0.302914,
+    0.119321,
+    0.879727
+   ],
+   "clip": [
+    0.05000000074505806,
+    300.0
+   ],
+   "shift_x": 0.0,
+   "shift_y": 0.0,
+   "sensor_fit": "AUTO",
+   "ortho_scale": 58.6,
+   "render": {
+    "file": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_ISO_SE.jpg",
+    "worker_path": "/renders/CAM_ISO_SE.jpg",
+    "width": 1920,
+    "height": 1080
+   },
+   "zone": null
+  },
+  {
+   "name": "CAM_ISO_SW",
+   "room": "Whole floor",
+   "priority": 1,
+   "type": "ORTHO",
+   "position": [
+    -35.36026,
+    83.58981,
+    54.47505
+   ],
+   "direction": [
+    0.450266,
+    -0.681998,
+    -0.576315
+   ],
+   "up": [
+    0.41988,
+    0.731354,
+    -0.537422
+   ],
+   "quaternion_xyzw": [
+    -0.346534,
+    -0.302914,
+    -0.119321,
+    0.879727
+   ],
+   "clip": [
+    0.05000000074505806,
+    300.0
+   ],
+   "shift_x": 0.0,
+   "shift_y": 0.0,
+   "sensor_fit": "AUTO",
+   "ortho_scale": 59.0,
+   "render": {
+    "file": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_ISO_SW.jpg",
+    "worker_path": "/renders/CAM_ISO_SW.jpg",
+    "width": 1600,
+    "height": 1200
+   },
+   "zone": null
+  },
+  {
+   "name": "CAM_ISO_Z06_Z07",
+   "room": "Merchandising + Commercial & accounts",
+   "priority": 1,
+   "type": "ORTHO",
+   "position": [
+    46.47094,
+    66.91306,
+    51.34099
+   ],
+   "direction": [
+    -0.348885,
+    -0.669131,
+    -0.656158
+   ],
+   "up": [
+    -0.314138,
+    0.743145,
+    -0.590807
+   ],
+   "quaternion_xyzw": [
+    -0.347723,
+    0.225854,
+    0.086697,
+    0.905849
+   ],
+   "clip": [
+    0.05000000074505806,
+    300.0
+   ],
+   "shift_x": 0.0,
+   "shift_y": 0.0,
+   "sensor_fit": "AUTO",
+   "ortho_scale": 19.5,
+   "render": null,
+   "zone": null
+  },
+  {
+   "name": "CAM_TOP_Plan",
+   "room": "Whole floor",
+   "priority": 1,
+   "type": "ORTHO",
+   "position": [
+    16.1417,
+    60.0,
+    -16.5227
+   ],
+   "direction": [
+    0.0,
+    -1.0,
+    0.0
+   ],
+   "up": [
+    0.0,
+    0.0,
+    -1.0
+   ],
+   "quaternion_xyzw": [
+    -0.707107,
+    -0.0,
+    0.0,
+    0.707107
+   ],
+   "clip": [
+    0.05000000074505806,
+    300.0
+   ],
+   "shift_x": 0.0,
+   "shift_y": 0.0,
+   "sensor_fit": "AUTO",
+   "ortho_scale": 49.0,
+   "render": {
+    "file": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_TOP_Plan.jpg",
+    "worker_path": "/renders/CAM_TOP_Plan.jpg",
+    "width": 1240,
+    "height": 1612
+   },
+   "zone": null
+  },
+  {
+   "name": "CAM_TOP_Z06_Z07",
+   "room": "Merchandising + Commercial & accounts (plan)",
+   "priority": 1,
+   "type": "ORTHO",
+   "position": [
+    11.5824,
+    60.0,
+    -14.2748
+   ],
+   "direction": [
+    0.0,
+    -1.0,
+    0.0
+   ],
+   "up": [
+    0.0,
+    0.0,
+    -1.0
+   ],
+   "quaternion_xyzw": [
+    -0.707107,
+    -0.0,
+    0.0,
+    0.707107
+   ],
+   "clip": [
+    0.05000000074505806,
+    300.0
+   ],
+   "shift_x": 0.0,
+   "shift_y": 0.0,
+   "sensor_fit": "AUTO",
+   "ortho_scale": 21.6,
+   "render": null,
+   "zone": null
+  }
+ ],
+ "camera_notes": "position / direction / up / quaternion are the exact Blender camera matrices converted to glTF axes (checked against the camera nodes in the GLB: <= 0.005 mm, <= 0.12 deg). Perspective cameras are level; the renders frame the view with a vertical lens shift (shift_y, fraction of the larger image side). In three.js: camera.fov = vfov for the window aspect (keep the horizontal fov of the render on landscape windows), then camera.setViewOffset(W, H, 0, -shift_y * max(W, H), W, H).",
+ "rooms": [
+  {
+   "zone": "Z01",
+   "name": "Entrance lobby",
+   "group": "Arrival & visitors",
+   "schedule_label": "ENTRANCE LOBBY security + visitor check-in",
+   "area_sft": 515,
+   "area_m2": 47.8,
+   "description": "Security / visitor check-in desk in walnut facing the main gate; oak-slat brand wall with the three client logos and the tagline, lit by track spots. The existing stair is kept.",
+   "floor_finish": "fl_terrazzo",
+   "ceiling": "exposed deck, linear pendants, brand-wall spots",
+   "cameras": [
+    "CAM_03_Entrance_Lobby"
+   ],
+   "primary_camera": "CAM_03_Entrance_Lobby",
+   "polygon_xz": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     7.62,
+     0.0
+    ],
+    [
+     7.62,
+     6.2738
+    ],
+    [
+     0.0,
+     6.2738
+    ]
+   ],
+   "centroid_xz": [
+    3.81,
+    3.1369
+   ]
+  },
+  {
+   "zone": "Z02",
+   "name": "Reception & visitor waiting",
+   "group": "Arrival & visitors",
+   "schedule_label": "RECEPTION + VISITOR WAITING",
+   "area_sft": 446,
+   "area_m2": 41.4,
+   "description": "Fluted-oak reception counter with a terrazzo ledge and an accessible lower section; backlit logo plate on a fluted oak wall; waiting lounge (sofa, green armchairs, walnut table, wool rug) under a suspended oak slat raft with a brass halo pendant.",
+   "floor_finish": "fl_terrazzo",
+   "ceiling": "oak slat raft, brass halo, linear pendant on the beam",
+   "cameras": [
+    "CAM_01_Reception_A",
+    "CAM_02_Reception_B"
+   ],
+   "primary_camera": "CAM_01_Reception_A",
+   "polygon_xz": [
+    [
+     7.747,
+     0.0
+    ],
+    [
+     14.351,
+     0.0
+    ],
+    [
+     14.351,
+     6.2738
+    ],
+    [
+     7.747,
+     6.2738
+    ]
+   ],
+   "centroid_xz": [
+    11.049,
+    3.1369
+   ]
+  },
+  {
+   "zone": "Z03",
+   "name": "Visitor passage",
+   "group": "Arrival & visitors",
+   "schedule_label": "VISITOR PASSAGE",
+   "area_sft": 75,
+   "area_m2": 7.0,
+   "description": "Links the reception with the experience centre and the guest WCs, so visitors never cross the office areas.",
+   "floor_finish": "fl_terrazzo",
+   "ceiling": "downlights",
+   "cameras": [],
+   "primary_camera": null,
+   "polygon_xz": [
+    [
+     9.3218,
+     -5.4356
+    ],
+    [
+     10.668,
+     -5.4356
+    ],
+    [
+     10.668,
+     -0.254
+    ],
+    [
+     9.3218,
+     -0.254
+    ]
+   ],
+   "centroid_xz": [
+    9.9949,
+    -2.8448
+   ]
+  },
+  {
+   "zone": "Z28",
+   "name": "Guest WCs",
+   "group": "Arrival & visitors",
+   "schedule_label": "GUEST WC (2)",
+   "area_sft": 78,
+   "area_m2": 7.2,
+   "description": "Two guest WCs with vanities off the visitor passage.",
+   "floor_finish": "fl_porcelain",
+   "ceiling": "downlights",
+   "cameras": [],
+   "primary_camera": null,
+   "polygon_xz": [
+    [
+     10.795,
+     -5.4356
+    ],
+    [
+     12.192,
+     -5.4356
+    ],
+    [
+     12.192,
+     -0.254
+    ],
+    [
+     10.795,
+     -0.254
+    ]
+   ],
+   "centroid_xz": [
+    11.4935,
+    -2.8448
+   ]
+  },
+  {
+   "zone": "Z08",
+   "name": "Boardroom",
+   "group": "Experience & meeting",
+   "schedule_label": "BOARDROOM 15 seats",
+   "area_sft": 540,
+   "area_m2": 50.1,
+   "description": "15 seats: 6.1 m walnut table with a power/data trough, black leather chairs, 86 in screen on an oak slat media wall, walnut acoustic slats, green felt rafts between the existing beams and linear pendants over the table.",
+   "floor_finish": "fl_herringbone",
+   "ceiling": "green felt rafts between beams",
+   "cameras": [
+    "CAM_09_Boardroom_A",
+    "CAM_10_Boardroom_B"
+   ],
+   "primary_camera": "CAM_09_Boardroom_A",
+   "polygon_xz": [
+    [
+     12.319,
+     -5.4356
+    ],
+    [
+     21.9964,
+     -5.4356
+    ],
+    [
+     21.9964,
+     -0.254
+    ],
+    [
+     12.319,
+     -0.254
+    ]
+   ],
+   "centroid_xz": [
+    17.1577,
+    -2.8448
+   ]
+  },
+  {
+   "zone": "Z09",
+   "name": "Audit room",
+   "group": "Experience & meeting",
+   "schedule_label": "AUDIT ROOM",
+   "area_sft": 153,
+   "area_m2": 14.2,
+   "description": "Meeting table (1500 x 900 mm) for 5 with tall document cabinets.",
+   "floor_finish": "fl_carpet",
+   "ceiling": "linear pendant",
+   "cameras": [
+    "CAM_27_Audit_Room"
+   ],
+   "primary_camera": "CAM_27_Audit_Room",
+   "polygon_xz": [
+    [
+     2.54,
+     -22.6314
+    ],
+    [
+     6.35,
+     -22.6314
+    ],
+    [
+     6.35,
+     -18.8976
+    ],
+    [
+     2.54,
+     -18.8976
+    ]
+   ],
+   "centroid_xz": [
+    4.445,
+    -20.7645
+   ]
+  },
+  {
+   "zone": "Z30",
+   "name": "Experience centre",
+   "group": "Experience & meeting",
+   "schedule_label": "EXPERIENCE CENTRE brand story + collection gallery",
+   "area_sft": 707,
+   "area_m2": 65.7,
+   "description": "Brand-story wall with the logos and tagline, four garment display bays with deep-green backs, brass rails and LED shelves, a mannequin plinth, a 'yarn to garment' touch table, a long terrazzo display counter and a digital totem. Track lights on the existing beams; glass to the boardroom and the fabric library.",
+   "floor_finish": "fl_terrazzo",
+   "ceiling": "track lights fixed to the beams",
+   "cameras": [
+    "CAM_04_Experience_Centre_A",
+    "CAM_05_Experience_Centre_B",
+    "CAM_06_Experience_Centre_Detail"
+   ],
+   "primary_camera": "CAM_04_Experience_Centre_A",
+   "polygon_xz": [
+    [
+     9.3218,
+     -10.7442
+    ],
+    [
+     21.9964,
+     -10.7442
+    ],
+    [
+     21.9964,
+     -5.5626
+    ],
+    [
+     9.3218,
+     -5.5626
+    ]
+   ],
+   "centroid_xz": [
+    15.6591,
+    -8.1534
+   ]
+  },
+  {
+   "zone": "Z10",
+   "name": "Executive reception",
+   "group": "Executive suite",
+   "schedule_label": "EXECUTIVE RECEPTION PA + waiting",
+   "area_sft": 223,
+   "area_m2": 20.7,
+   "description": "PA desk and executive waiting on the executive link, oak herringbone floor.",
+   "floor_finish": "fl_herringbone",
+   "ceiling": "linear pendant",
+   "cameras": [
+    "CAM_17_Executive_Reception"
+   ],
+   "primary_camera": "CAM_17_Executive_Reception",
+   "polygon_xz": [
+    [
+     14.478,
+     0.0
+    ],
+    [
+     17.78,
+     0.0
+    ],
+    [
+     17.78,
+     6.2738
+    ],
+    [
+     14.478,
+     6.2738
+    ]
+   ],
+   "centroid_xz": [
+    16.129,
+    3.1369
+   ]
+  },
+  {
+   "zone": "Z11",
+   "name": "Director",
+   "group": "Executive suite",
+   "schedule_label": "DIRECTOR",
+   "area_sft": 205,
+   "area_m2": 19.0,
+   "description": "Director desk (1680 x 810 mm), credenza and two visitor chairs; glass front on the oak-lined executive corridor.",
+   "floor_finish": "fl_herringbone",
+   "ceiling": "linear pendant",
+   "cameras": [
+    "CAM_18_Director"
+   ],
+   "primary_camera": "CAM_18_Director",
+   "polygon_xz": [
+    [
+     17.8562,
+     1.4478
+    ],
+    [
+     21.7932,
+     1.4478
+    ],
+    [
+     21.7932,
+     6.2738
+    ],
+    [
+     17.8562,
+     6.2738
+    ]
+   ],
+   "centroid_xz": [
+    19.8247,
+    3.8608
+   ]
+  },
+  {
+   "zone": "Z12",
+   "name": "Managing Director",
+   "group": "Executive suite",
+   "schedule_label": "MANAGING DIRECTOR",
+   "area_sft": 300,
+   "area_m2": 27.8,
+   "description": "2.1 m walnut desk with leather pad, cognac executive chair, walnut feature wall with the logo, lounge corner (sofa, armchair, coffee table, rug), oak slat raft with a halo pendant, oak herringbone floor.",
+   "floor_finish": "fl_herringbone",
+   "ceiling": "oak slat raft + halo",
+   "cameras": [
+    "CAM_07_MD_Office_A",
+    "CAM_08_MD_Office_B"
+   ],
+   "primary_camera": "CAM_07_MD_Office_A",
+   "polygon_xz": [
+    [
+     21.8694,
+     1.4478
+    ],
+    [
+     27.6352,
+     1.4478
+    ],
+    [
+     27.6352,
+     6.2738
+    ],
+    [
+     21.8694,
+     6.2738
+    ]
+   ],
+   "centroid_xz": [
+    24.7523,
+    3.8608
+   ]
+  },
+  {
+   "zone": "Z13",
+   "name": "Executive corridor",
+   "group": "Executive suite",
+   "schedule_label": "EXECUTIVE CORRIDOR",
+   "area_sft": 146,
+   "area_m2": 13.5,
+   "description": "Glass-fronted, oak-lined corridor linking the executive reception with the Director and Managing Director; direct door from the executive suite to the boardroom.",
+   "floor_finish": "fl_herringbone",
+   "ceiling": "downlights",
+   "cameras": [
+    "CAM_31_Executive_Corridor"
+   ],
+   "primary_camera": "CAM_31_Executive_Corridor",
+   "polygon_xz": [
+    [
+     17.78,
+     0.0
+    ],
+    [
+     27.6352,
+     0.0
+    ],
+    [
+     27.6352,
+     1.3716
+    ],
+    [
+     17.78,
+     1.3716
+    ]
+   ],
+   "centroid_xz": [
+    22.7076,
+    0.6858
+   ]
+  },
+  {
+   "zone": "Z04",
+   "name": "Guest workspace",
+   "group": "Workplace",
+   "schedule_label": "GUEST WORKSPACE 6 seats",
+   "area_sft": 184,
+   "area_m2": 17.1,
+   "description": "Six work seats at a 2130 x 1000 mm table with a 55 in display for visiting staff.",
+   "floor_finish": "fl_carpet",
+   "ceiling": "linear pendant",
+   "cameras": [
+    "CAM_26_Guest_Workspace"
+   ],
+   "primary_camera": "CAM_26_Guest_Workspace",
+   "polygon_xz": [
+    [
+     -1.397,
+     -3.8608
+    ],
+    [
+     1.27,
+     -3.8608
+    ],
+    [
+     1.27,
+     -5.6134
+    ],
+    [
+     2.667,
+     -5.6134
+    ],
+    [
+     2.667,
+     -0.254
+    ],
+    [
+     -1.397,
+     -0.254
+    ]
+   ],
+   "centroid_xz": [
+    0.8259,
+    -2.4409
+   ]
+  },
+  {
+   "zone": "Z05",
+   "name": "HR & admin",
+   "group": "Workplace",
+   "schedule_label": "HR & ADMIN",
+   "area_sft": 301,
+   "area_m2": 28.0,
+   "description": "Four desks and a round meeting table; the room also opens to the reception for candidates and vendors.",
+   "floor_finish": "fl_carpet",
+   "ceiling": "linear pendant",
+   "cameras": [
+    "CAM_19_HR_Admin"
+   ],
+   "primary_camera": "CAM_19_HR_Admin",
+   "polygon_xz": [
+    [
+     4.1402,
+     -5.7912
+    ],
+    [
+     9.1948,
+     -5.7912
+    ],
+    [
+     9.1948,
+     -0.254
+    ],
+    [
+     4.1402,
+     -0.254
+    ]
+   ],
+   "centroid_xz": [
+    6.6675,
+    -3.0226
+   ]
+  },
+  {
+   "zone": "Z06",
+   "name": "Commercial & accounts",
+   "group": "Workplace",
+   "schedule_label": "COMMERCIAL & ACCOUNTS finance suite: 12 desks + manager",
+   "area_sft": 1283,
+   "area_m2": 119.2,
+   "description": "Proposed revised concept: a finance suite behind privacy glass with 12 finance desks, the manager's desk facing the team, a document processing counter with scanner and printer, lockable records filing, a small finance discussion room and archive cabinets by the audit room. A clear corridor keeps the route to the washrooms and the prayer room outside the suite.",
+   "floor_finish": "fl_carpet",
+   "ceiling": "linear pendants",
+   "cameras": [
+    "CAM_16_Commercial_Accounts",
+    "CAM_36_Accounts_Suite",
+    "CAM_37_Accounts_Records_Discussion",
+    "CAM_38_Accounts_Public_Corridor"
+   ],
+   "primary_camera": "CAM_36_Accounts_Suite",
+   "polygon_xz": [
+    [
+     1.1684,
+     -5.8674
+    ],
+    [
+     9.1948,
+     -5.8674
+    ],
+    [
+     9.1948,
+     -22.6314
+    ],
+    [
+     6.4516,
+     -22.6314
+    ],
+    [
+     6.4516,
+     -18.796
+    ],
+    [
+     2.4384,
+     -18.796
+    ],
+    [
+     2.4384,
+     -22.6314
+    ],
+    [
+     1.1684,
+     -22.6314
+    ]
+   ],
+   "centroid_xz": [
+    5.2767,
+    -13.4144
+   ]
+  },
+  {
+   "zone": "Z07",
+   "name": "Merchandising",
+   "group": "Workplace",
+   "schedule_label": "MERCHANDISING 16 desks + sample hub",
+   "area_sft": 1421,
+   "area_m2": 132.0,
+   "description": "Proposed revised concept: 16 merchandiser desks, a sample hub with an inspection island, rolling sample rails, dress forms and a fitting mirror, a buyer review table with a 65 in screen, lockable sample storage, a trim and colour approval wall and a sample dispatch counter. The four ceiling AC positions are unchanged.",
+   "floor_finish": "fl_carpet",
+   "ceiling": "felt baffles between beams",
+   "cameras": [
+    "CAM_11_Merchandising_A",
+    "CAM_12_Merchandising_B",
+    "CAM_34_Merchandising_Sample_Hub",
+    "CAM_35_Merchandising_Desks"
+   ],
+   "primary_camera": "CAM_34_Merchandising_Sample_Hub",
+   "polygon_xz": [
+    [
+     9.3218,
+     -21.2852
+    ],
+    [
+     21.9964,
+     -21.2852
+    ],
+    [
+     21.9964,
+     -10.8712
+    ],
+    [
+     9.3218,
+     -10.8712
+    ]
+   ],
+   "centroid_xz": [
+    15.6591,
+    -16.0782
+   ]
+  },
+  {
+   "zone": "Z31",
+   "name": "Staff corridor",
+   "group": "Workplace",
+   "schedule_label": "STAFF CORRIDOR",
+   "area_sft": 76,
+   "area_m2": 7.0,
+   "description": "Staff route from the lobby staff door to HR & admin and commercial & accounts.",
+   "floor_finish": "fl_terrazzo",
+   "ceiling": "downlights",
+   "cameras": [],
+   "primary_camera": null,
+   "polygon_xz": [
+    [
+     2.794,
+     -5.7912
+    ],
+    [
+     4.064,
+     -5.7912
+    ],
+    [
+     4.064,
+     -0.254
+    ],
+    [
+     2.794,
+     -0.254
+    ]
+   ],
+   "centroid_xz": [
+    3.429,
+    -3.0226
+   ]
+  },
+  {
+   "zone": "Z14",
+   "name": "CAD / technical design",
+   "group": "Design development",
+   "schedule_label": "CAD / TECHNICAL DESIGN",
+   "area_sft": 281,
+   "area_m2": 26.1,
+   "description": "Three CAD workstations, a large-format plotter, a layout / digitiser table and a brand-green felt pinboard for tech packs.",
+   "floor_finish": "fl_carpet",
+   "ceiling": "linear pendants 4000K",
+   "cameras": [
+    "CAM_15_CAD_Room"
+   ],
+   "primary_camera": "CAM_15_CAD_Room",
+   "polygon_xz": [
+    [
+     22.2504,
+     -6.5278
+    ],
+    [
+     26.416,
+     -6.5278
+    ],
+    [
+     26.416,
+     -0.254
+    ],
+    [
+     22.2504,
+     -0.254
+    ]
+   ],
+   "centroid_xz": [
+    24.3332,
+    -3.3909
+   ]
+  },
+  {
+   "zone": "Z15",
+   "name": "Fabric & trim library",
+   "group": "Design development",
+   "schedule_label": "FABRIC & TRIM LIBRARY fabric, colour, print, trims",
+   "area_sft": 203,
+   "area_m2": 18.8,
+   "description": "Fabric, colour, print and trim library: shelving, low swatch shelving, a swatch / garment rail and a D65 colour booth.",
+   "floor_finish": "fl_concrete",
+   "ceiling": "linear pendants",
+   "cameras": [
+    "CAM_25_Fabric_Library"
+   ],
+   "primary_camera": "CAM_25_Fabric_Library",
+   "polygon_xz": [
+    [
+     22.2504,
+     -11.176
+    ],
+    [
+     26.416,
+     -11.176
+    ],
+    [
+     26.416,
+     -6.6548
+    ],
+    [
+     22.2504,
+     -6.6548
+    ]
+   ],
+   "centroid_xz": [
+    24.3332,
+    -8.9154
+   ]
+  },
+  {
+   "zone": "Z16",
+   "name": "3D printing lab",
+   "group": "Design development",
+   "schedule_label": "3D PRINTING LAB",
+   "area_sft": 171,
+   "area_m2": 15.9,
+   "description": "Four enclosed 3D printers, a printer bench, a post-processing bench with sink and a desk.",
+   "floor_finish": "fl_concrete",
+   "ceiling": "linear pendants",
+   "cameras": [
+    "CAM_24_3D_Printing_Lab"
+   ],
+   "primary_camera": "CAM_24_3D_Printing_Lab",
+   "polygon_xz": [
+    [
+     22.2504,
+     -15.113
+    ],
+    [
+     26.416,
+     -15.113
+    ],
+    [
+     26.416,
+     -11.303
+    ],
+    [
+     22.2504,
+     -11.303
+    ]
+   ],
+   "centroid_xz": [
+    24.3332,
+    -13.208
+   ]
+  },
+  {
+   "zone": "Z17",
+   "name": "Sample development",
+   "group": "Design development",
+   "schedule_label": "SAMPLE DEVELOPMENT pattern + cutting support",
+   "area_sft": 271,
+   "area_m2": 25.2,
+   "description": "Pattern & cutting table (2440 x 1220 mm), two sample machine stations, dress forms and a steam station - an office-grade sample studio, not production.",
+   "floor_finish": "fl_concrete",
+   "ceiling": "linear pendants",
+   "cameras": [
+    "CAM_23_Sample_Room"
+   ],
+   "primary_camera": "CAM_23_Sample_Room",
+   "polygon_xz": [
+    [
+     22.2504,
+     -21.2852
+    ],
+    [
+     26.416,
+     -21.2852
+    ],
+    [
+     26.416,
+     -15.24
+    ],
+    [
+     22.2504,
+     -15.24
+    ]
+   ],
+   "centroid_xz": [
+    24.3332,
+    -18.2626
+   ]
+  },
+  {
+   "zone": "Z18",
+   "name": "Global Design Studio",
+   "group": "Design development",
+   "schedule_label": "GLOBAL DESIGN STUDIO (name as proposed in the master plan)",
+   "area_sft": 936,
+   "area_m2": 87.0,
+   "description": "Creative workstations by the east windows, a 7.4 m mood-board wall, trend table, collection display and buyer-presentation table with an 86 in screen. 'Global Design Studio' is the name proposed in the master plan.",
+   "floor_finish": "fl_oak_planks",
+   "ceiling": "linear pendants + mood-board track",
+   "cameras": [
+    "CAM_13_Design_Studio_A",
+    "CAM_14_Design_Studio_B"
+   ],
+   "primary_camera": "CAM_13_Design_Studio_A",
+   "polygon_xz": [
+    [
+     29.337,
+     -30.734
+    ],
+    [
+     33.6804,
+     -30.734
+    ],
+    [
+     33.6804,
+     -13.462
+    ],
+    [
+     28.067,
+     -13.462
+    ],
+    [
+     28.067,
+     -22.86
+    ],
+    [
+     29.337,
+     -22.86
+    ]
+   ],
+   "centroid_xz": [
+    31.1235,
+    -21.5576
+   ]
+  },
+  {
+   "zone": "Z19",
+   "name": "Sample & material store",
+   "group": "Design development",
+   "schedule_label": "SAMPLE & MATERIAL STORE",
+   "area_sft": 135,
+   "area_m2": 12.5,
+   "description": "Store shelving for sample boxes and materials.",
+   "floor_finish": "fl_concrete",
+   "ceiling": "batten lights",
+   "cameras": [],
+   "primary_camera": null,
+   "polygon_xz": [
+    [
+     28.067,
+     -13.335
+    ],
+    [
+     33.6804,
+     -13.335
+    ],
+    [
+     33.6804,
+     -11.0998
+    ],
+    [
+     28.067,
+     -11.0998
+    ]
+   ],
+   "centroid_xz": [
+    30.8737,
+    -12.2174
+   ]
+  },
+  {
+   "zone": "Z22",
+   "name": "Design-wing corridor",
+   "group": "Design development",
+   "schedule_label": "CORRIDOR",
+   "area_sft": 412,
+   "area_m2": 38.3,
+   "description": "Corridor through the design-development wing.",
+   "floor_finish": "fl_terrazzo",
+   "ceiling": "downlights",
+   "cameras": [
+    "CAM_32_Design_Corridor"
+   ],
+   "primary_camera": "CAM_32_Design_Corridor",
+   "polygon_xz": [
+    [
+     22.2504,
+     -22.86
+    ],
+    [
+     27.94,
+     -22.86
+    ],
+    [
+     27.94,
+     -11.0998
+    ],
+    [
+     29.3624,
+     -11.0998
+    ],
+    [
+     29.3624,
+     -5.5626
+    ],
+    [
+     26.543,
+     -5.5626
+    ],
+    [
+     26.543,
+     -21.4122
+    ],
+    [
+     22.2504,
+     -21.4122
+    ]
+   ],
+   "centroid_xz": [
+    27.0696,
+    -14.2881
+   ]
+  },
+  {
+   "zone": "Z20",
+   "name": "Staff cafe & pantry",
+   "group": "Staff facilities",
+   "schedule_label": "STAFF CAFE + PANTRY",
+   "area_sft": 465,
+   "area_m2": 43.2,
+   "description": "16 seats at two 2440 mm cafe tables and a 3660 mm pantry with sink and refrigerator.",
+   "floor_finish": "fl_oak_planks",
+   "ceiling": "pendants",
+   "cameras": [
+    "CAM_20_Staff_Cafe"
+   ],
+   "primary_camera": "CAM_20_Staff_Cafe",
+   "polygon_xz": [
+    [
+     22.2504,
+     -31.623
+    ],
+    [
+     27.2542,
+     -31.623
+    ],
+    [
+     27.2542,
+     -22.987
+    ],
+    [
+     22.2504,
+     -22.987
+    ]
+   ],
+   "centroid_xz": [
+    24.7523,
+    -27.305
+   ]
+  },
+  {
+   "zone": "Z21",
+   "name": "Staff lounge / training",
+   "group": "Staff facilities",
+   "schedule_label": "STAFF LOUNGE / TRAINING (multipurpose)",
+   "area_sft": 389,
+   "area_m2": 36.1,
+   "description": "Multipurpose room: sofa group, 6-seat workshop table and screen.",
+   "floor_finish": "fl_oak_planks",
+   "ceiling": "halo + downlights",
+   "cameras": [
+    "CAM_21_Lounge_Training"
+   ],
+   "primary_camera": "CAM_21_Lounge_Training",
+   "polygon_xz": [
+    [
+     22.2504,
+     -39.3192
+    ],
+    [
+     26.6192,
+     -39.3192
+    ],
+    [
+     26.6192,
+     -36.576
+    ],
+    [
+     27.2542,
+     -36.576
+    ],
+    [
+     27.2542,
+     -31.75
+    ],
+    [
+     22.2504,
+     -31.75
+    ]
+   ],
+   "centroid_xz": [
+    24.647,
+    -35.4183
+   ]
+  },
+  {
+   "zone": "Z32",
+   "name": "North corridor",
+   "group": "Staff facilities",
+   "schedule_label": "NORTH CORRIDOR",
+   "area_sft": 270,
+   "area_m2": 25.1,
+   "description": "Circulation to the staff cafe, lounge / training and prayer rooms.",
+   "floor_finish": "fl_terrazzo",
+   "ceiling": "downlights",
+   "cameras": [],
+   "primary_camera": null,
+   "polygon_xz": [
+    [
+     27.3812,
+     -36.576
+    ],
+    [
+     29.21,
+     -36.576
+    ],
+    [
+     29.21,
+     -22.86
+    ],
+    [
+     27.3812,
+     -22.86
+    ]
+   ],
+   "centroid_xz": [
+    28.2956,
+    -29.718
+   ]
+  },
+  {
+   "zone": "Z33",
+   "name": "Hallway",
+   "group": "Staff facilities",
+   "schedule_label": "HALLWAY",
+   "area_sft": 168,
+   "area_m2": 15.6,
+   "description": "Staff hallway between the workplace and the design wing.",
+   "floor_finish": "fl_terrazzo",
+   "ceiling": "downlights",
+   "cameras": [],
+   "primary_camera": null,
+   "polygon_xz": [
+    [
+     9.1948,
+     -22.6314
+    ],
+    [
+     21.9964,
+     -22.6314
+    ],
+    [
+     21.9964,
+     -21.4122
+    ],
+    [
+     9.1948,
+     -21.4122
+    ]
+   ],
+   "centroid_xz": [
+    15.5956,
+    -22.0218
+   ]
+  },
+  {
+   "zone": "Z23",
+   "name": "Prayer room (male)",
+   "group": "Prayer & wudu",
+   "schedule_label": "PRAYER (MALE)",
+   "area_sft": 186,
+   "area_m2": 17.3,
+   "description": "Prayer room with green prayer carpet, shoe rack and book shelf under 3000 K downlights.",
+   "floor_finish": "fl_carpet_green",
+   "ceiling": "downlights 3000K",
+   "cameras": [
+    "CAM_22_Prayer_Male"
+   ],
+   "primary_camera": "CAM_22_Prayer_Male",
+   "polygon_xz": [
+    [
+     29.337,
+     -36.576
+    ],
+    [
+     33.6804,
+     -36.576
+    ],
+    [
+     33.6804,
+     -32.5882
+    ],
+    [
+     29.337,
+     -32.5882
+    ]
+   ],
+   "centroid_xz": [
+    31.5087,
+    -34.5821
+   ]
+  },
+  {
+   "zone": "Z24",
+   "name": "Wudu (male)",
+   "group": "Prayer & wudu",
+   "schedule_label": "WUDU (MALE)",
+   "area_sft": 75,
+   "area_m2": 7.0,
+   "description": "Ablution room with a wudu bench next to the male prayer room.",
+   "floor_finish": "fl_porcelain",
+   "ceiling": "downlights",
+   "cameras": [
+    "CAM_33_Wudu_Male"
+   ],
+   "primary_camera": "CAM_33_Wudu_Male",
+   "polygon_xz": [
+    [
+     29.337,
+     -32.4612
+    ],
+    [
+     33.6804,
+     -32.4612
+    ],
+    [
+     33.6804,
+     -30.861
+    ],
+    [
+     29.337,
+     -30.861
+    ]
+   ],
+   "centroid_xz": [
+    31.5087,
+    -31.6611
+   ]
+  },
+  {
+   "zone": "Z25",
+   "name": "Prayer room (female)",
+   "group": "Prayer & wudu",
+   "schedule_label": "PRAYER (FEMALE)",
+   "area_sft": 87,
+   "area_m2": 8.1,
+   "description": "Separate prayer room with green prayer carpet, shoe rack and book shelf.",
+   "floor_finish": "fl_carpet_green",
+   "ceiling": "downlights 3000K",
+   "cameras": [
+    "CAM_30_Prayer_Female"
+   ],
+   "primary_camera": "CAM_30_Prayer_Female",
+   "polygon_xz": [
+    [
+     -1.397,
+     -22.6314
+    ],
+    [
+     1.0414,
+     -22.6314
+    ],
+    [
+     1.0414,
+     -19.304
+    ],
+    [
+     -1.397,
+     -19.304
+    ]
+   ],
+   "centroid_xz": [
+    -0.1778,
+    -20.9677
+   ]
+  },
+  {
+   "zone": "Z34",
+   "name": "Wudu (female)",
+   "group": "Prayer & wudu",
+   "schedule_label": "WUDU (FEMALE)",
+   "area_sft": 27,
+   "area_m2": 2.5,
+   "description": "Ablution space with a wudu bench next to the female prayer room.",
+   "floor_finish": "fl_porcelain",
+   "ceiling": "downlight",
+   "cameras": [],
+   "primary_camera": null,
+   "polygon_xz": [
+    [
+     -1.397,
+     -19.304
+    ],
+    [
+     1.0414,
+     -19.304
+    ],
+    [
+     1.0414,
+     -18.288
+    ],
+    [
+     -1.397,
+     -18.288
+    ]
+   ],
+   "centroid_xz": [
+    -0.1778,
+    -18.796
+   ]
+  },
+  {
+   "zone": "Z26",
+   "name": "Washroom (female)",
+   "group": "Washrooms",
+   "schedule_label": "WASHROOM (FEMALE)",
+   "area_sft": 131,
+   "area_m2": 12.1,
+   "description": "Two WC cubicles and a 1520 mm vanity.",
+   "floor_finish": "fl_porcelain",
+   "ceiling": "downlights",
+   "cameras": [
+    "CAM_29_Washroom_Female"
+   ],
+   "primary_camera": "CAM_29_Washroom_Female",
+   "polygon_xz": [
+    [
+     -1.397,
+     -18.161
+    ],
+    [
+     1.0414,
+     -18.161
+    ],
+    [
+     1.0414,
+     -13.1826
+    ],
+    [
+     -1.397,
+     -13.1826
+    ]
+   ],
+   "centroid_xz": [
+    -0.1778,
+    -15.6718
+   ]
+  },
+  {
+   "zone": "Z27",
+   "name": "Washroom (male)",
+   "group": "Washrooms",
+   "schedule_label": "WASHROOM (MALE)",
+   "area_sft": 189,
+   "area_m2": 17.5,
+   "description": "Two WC cubicles, two urinals and a 1520 mm vanity.",
+   "floor_finish": "fl_porcelain",
+   "ceiling": "downlights",
+   "cameras": [
+    "CAM_28_Washroom_Male"
+   ],
+   "primary_camera": "CAM_28_Washroom_Male",
+   "polygon_xz": [
+    [
+     -1.397,
+     -13.0556
+    ],
+    [
+     1.0414,
+     -13.0556
+    ],
+    [
+     1.0414,
+     -5.8674
+    ],
+    [
+     -1.397,
+     -5.8674
+    ]
+   ],
+   "centroid_xz": [
+    -0.1778,
+    -9.4615
+   ]
+  },
+  {
+   "zone": "Z29",
+   "name": "Guest workspace WC",
+   "group": "Washrooms",
+   "schedule_label": "GUEST WORKSPACE WC",
+   "area_sft": 47,
+   "area_m2": 4.3,
+   "description": "WC with vanity for the guest workspace.",
+   "floor_finish": "fl_porcelain",
+   "ceiling": "downlight",
+   "cameras": [],
+   "primary_camera": null,
+   "polygon_xz": [
+    [
+     -1.397,
+     -5.6134
+    ],
+    [
+     1.1938,
+     -5.6134
+    ],
+    [
+     1.1938,
+     -3.937
+    ],
+    [
+     -1.397,
+     -3.937
+    ]
+   ],
+   "centroid_xz": [
+    -0.1016,
+    -4.7752
+   ]
+  }
+ ],
+ "room_groups": [
+  "Arrival & visitors",
+  "Experience & meeting",
+  "Executive suite",
+  "Workplace",
+  "Design development",
+  "Staff facilities",
+  "Prayer & wudu",
+  "Washrooms"
+ ],
+ "tour": [
+  {
+   "stop": 1,
+   "zone": null,
+   "camera": "CAM_ISO_SE",
+   "title": "The complete ground floor",
+   "description": "Ground floor of the proposed corporate headquarters & design development centre: visitor zone at the front, executive suite, workplace, design wing and staff facilities."
+  },
+  {
+   "stop": 2,
+   "zone": "Z01",
+   "camera": "CAM_03_Entrance_Lobby",
+   "title": "Entrance lobby",
+   "description": "Security / visitor check-in desk in walnut facing the main gate; oak-slat brand wall with the three client logos and the tagline, lit by track spots. The existing stair is kept."
+  },
+  {
+   "stop": 3,
+   "zone": "Z02",
+   "camera": "CAM_01_Reception_A",
+   "title": "Reception & visitor waiting",
+   "description": "Fluted-oak reception counter with a terrazzo ledge and an accessible lower section; backlit logo plate on a fluted oak wall; waiting lounge (sofa, green armchairs, walnut table, wool rug) under a suspended oak slat raft with a brass halo pendant."
+  },
+  {
+   "stop": 4,
+   "zone": "Z30",
+   "camera": "CAM_04_Experience_Centre_A",
+   "title": "Experience centre",
+   "description": "Brand-story wall with the logos and tagline, four garment display bays with deep-green backs, brass rails and LED shelves, a mannequin plinth, a 'yarn to garment' touch table, a long terrazzo display counter and a digital totem. Track lights on the existing beams; glass to the boardroom and the fabric library."
+  },
+  {
+   "stop": 5,
+   "zone": "Z08",
+   "camera": "CAM_09_Boardroom_A",
+   "title": "Boardroom",
+   "description": "15 seats: 6.1 m walnut table with a power/data trough, black leather chairs, 86 in screen on an oak slat media wall, walnut acoustic slats, green felt rafts between the existing beams and linear pendants over the table."
+  },
+  {
+   "stop": 6,
+   "zone": "Z10",
+   "camera": "CAM_17_Executive_Reception",
+   "title": "Executive reception & Managing Director",
+   "description": "PA desk and executive waiting on the executive link, oak herringbone floor.",
+   "also_zone": "Z12",
+   "also_camera": "CAM_07_MD_Office_A"
+  },
+  {
+   "stop": 7,
+   "zone": "Z06",
+   "camera": "CAM_36_Accounts_Suite",
+   "title": "Commercial & accounts",
+   "description": "Proposed revised concept: a finance suite behind privacy glass with 12 finance desks, the manager's desk facing the team, a document processing counter with scanner and printer, lockable records filing, a small finance discussion room and archive cabinets by the audit room. A clear corridor keeps the route to the washrooms and the prayer room outside the suite."
+  },
+  {
+   "stop": 8,
+   "zone": "Z05",
+   "camera": "CAM_19_HR_Admin",
+   "title": "HR & admin",
+   "description": "Four desks and a round meeting table; the room also opens to the reception for candidates and vendors."
+  },
+  {
+   "stop": 9,
+   "zone": "Z07",
+   "camera": "CAM_34_Merchandising_Sample_Hub",
+   "title": "Merchandising",
+   "description": "Proposed revised concept: 16 merchandiser desks, a sample hub with an inspection island, rolling sample rails, dress forms and a fitting mirror, a buyer review table with a 65 in screen, lockable sample storage, a trim and colour approval wall and a sample dispatch counter. The four ceiling AC positions are unchanged."
+  },
+  {
+   "stop": 10,
+   "zone": "Z14",
+   "camera": "CAM_15_CAD_Room",
+   "title": "CAD / technical design",
+   "description": "Three CAD workstations, a large-format plotter, a layout / digitiser table and a brand-green felt pinboard for tech packs."
+  },
+  {
+   "stop": 11,
+   "zone": "Z18",
+   "camera": "CAM_13_Design_Studio_A",
+   "title": "Global Design Studio",
+   "description": "Creative workstations by the east windows, a 7.4 m mood-board wall, trend table, collection display and buyer-presentation table with an 86 in screen. 'Global Design Studio' is the name proposed in the master plan."
+  },
+  {
+   "stop": 12,
+   "zone": "Z17",
+   "camera": "CAM_23_Sample_Room",
+   "title": "Sample development",
+   "description": "Pattern & cutting table (2440 x 1220 mm), two sample machine stations, dress forms and a steam station - an office-grade sample studio, not production."
+  },
+  {
+   "stop": 13,
+   "zone": "Z20",
+   "camera": "CAM_20_Staff_Cafe",
+   "title": "Staff cafe & pantry",
+   "description": "16 seats at two 2440 mm cafe tables and a 3660 mm pantry with sink and refrigerator."
+  },
+  {
+   "stop": 14,
+   "zone": "Z21",
+   "camera": "CAM_21_Lounge_Training",
+   "title": "Staff lounge / training",
+   "description": "Multipurpose room: sofa group, 6-seat workshop table and screen."
+  },
+  {
+   "stop": 15,
+   "zone": "Z23",
+   "camera": "CAM_22_Prayer_Male",
+   "title": "Prayer & wudu",
+   "description": "Prayer room with green prayer carpet, shoe rack and book shelf under 3000 K downlights.",
+   "also_zone": "Z24",
+   "also_camera": "CAM_33_Wudu_Male"
+  },
+  {
+   "stop": 16,
+   "zone": null,
+   "camera": "CAM_ISO_SW",
+   "title": "The complete ground floor",
+   "description": "Proposed interior visualization. Final dimensions and technical details subject to site verification."
+  }
+ ],
+ "quick_tour": [
+  {
+   "stop": 1,
+   "zone": null,
+   "camera": "CAM_ISO_SE",
+   "title": "The complete ground floor",
+   "description": "Ground floor of the proposed corporate headquarters & design development centre: visitor zone at the front, executive suite, workplace, design wing and staff facilities."
+  },
+  {
+   "stop": 2,
+   "zone": "Z02",
+   "camera": "CAM_01_Reception_A",
+   "title": "Reception & visitor waiting",
+   "description": "Fluted-oak reception counter with a terrazzo ledge and an accessible lower section; backlit logo plate on a fluted oak wall; waiting lounge (sofa, green armchairs, walnut table, wool rug) under a suspended oak slat raft with a brass halo pendant."
+  },
+  {
+   "stop": 3,
+   "zone": "Z30",
+   "camera": "CAM_04_Experience_Centre_A",
+   "title": "Experience centre",
+   "description": "Brand-story wall with the logos and tagline, four garment display bays with deep-green backs, brass rails and LED shelves, a mannequin plinth, a 'yarn to garment' touch table, a long terrazzo display counter and a digital totem. Track lights on the existing beams; glass to the boardroom and the fabric library."
+  },
+  {
+   "stop": 4,
+   "zone": "Z08",
+   "camera": "CAM_09_Boardroom_A",
+   "title": "Boardroom",
+   "description": "15 seats: 6.1 m walnut table with a power/data trough, black leather chairs, 86 in screen on an oak slat media wall, walnut acoustic slats, green felt rafts between the existing beams and linear pendants over the table."
+  },
+  {
+   "stop": 5,
+   "zone": "Z12",
+   "camera": "CAM_07_MD_Office_A",
+   "title": "Managing Director",
+   "description": "2.1 m walnut desk with leather pad, cognac executive chair, walnut feature wall with the logo, lounge corner (sofa, armchair, coffee table, rug), oak slat raft with a halo pendant, oak herringbone floor."
+  },
+  {
+   "stop": 6,
+   "zone": "Z07",
+   "camera": "CAM_34_Merchandising_Sample_Hub",
+   "title": "Merchandising",
+   "description": "Proposed revised concept: 16 merchandiser desks, a sample hub with an inspection island, rolling sample rails, dress forms and a fitting mirror, a buyer review table with a 65 in screen, lockable sample storage, a trim and colour approval wall and a sample dispatch counter. The four ceiling AC positions are unchanged."
+  },
+  {
+   "stop": 7,
+   "zone": "Z06",
+   "camera": "CAM_36_Accounts_Suite",
+   "title": "Commercial & accounts",
+   "description": "Proposed revised concept: a finance suite behind privacy glass with 12 finance desks, the manager's desk facing the team, a document processing counter with scanner and printer, lockable records filing, a small finance discussion room and archive cabinets by the audit room. A clear corridor keeps the route to the washrooms and the prayer room outside the suite."
+  },
+  {
+   "stop": 8,
+   "zone": "Z18",
+   "camera": "CAM_13_Design_Studio_A",
+   "title": "Global Design Studio",
+   "description": "Creative workstations by the east windows, a 7.4 m mood-board wall, trend table, collection display and buyer-presentation table with an 86 in screen. 'Global Design Studio' is the name proposed in the master plan."
+  },
+  {
+   "stop": 9,
+   "zone": null,
+   "camera": "CAM_ISO_SW",
+   "title": "The complete ground floor",
+   "description": "Proposed interior visualization. Final dimensions and technical details subject to site verification."
+  }
+ ],
+ "names": {
+  "overhead": [
+   "AC01 VRF indoor unit, under-ceiling (Z07) - capacity by MEP",
+   "AC02 VRF indoor unit, under-ceiling (Z07) - capacity by MEP",
+   "AC03 VRF indoor unit, under-ceiling (Z07) - capacity by MEP",
+   "AC04 VRF indoor unit, under-ceiling (Z07) - capacity by MEP",
+   "AC05 VRF indoor unit, under-ceiling (Z06) - capacity by MEP",
+   "AC06 VRF indoor unit, under-ceiling (Z06) - capacity by MEP",
+   "AC07 VRF indoor unit, under-ceiling (Z05) - capacity by MEP",
+   "AC08 VRF indoor unit, under-ceiling (Z30) - capacity by MEP",
+   "AC09 VRF indoor unit, under-ceiling (Z08) - capacity by MEP",
+   "AC10 VRF indoor unit, under-ceiling (Z02) - capacity by MEP",
+   "AC11 VRF indoor unit, under-ceiling (Z12) - capacity by MEP",
+   "AC12 VRF indoor unit, under-ceiling (Z11) - capacity by MEP",
+   "AC13 VRF indoor unit, under-ceiling (Z14) - capacity by MEP",
+   "AC14 VRF indoor unit, under-ceiling (Z18) - capacity by MEP",
+   "AC15 VRF indoor unit, under-ceiling (Z18) - capacity by MEP",
+   "AC16 VRF indoor unit, under-ceiling (Z20) - capacity by MEP",
+   "AC17 VRF indoor unit, under-ceiling (Z21) - capacity by MEP",
+   "AC18 VRF indoor unit, under-ceiling (Z23) - capacity by MEP",
+   "AC19 VRF indoor unit, under-ceiling (Z01) - capacity by MEP",
+   "BM001 Room 7 main beam (sketch line)",
+   "BM002 Room 6 - 5 main beam",
+   "BM003 Room 8 main beam",
+   "BM004 Room 1 secondary",
+   "BM005 Room 1 secondary",
+   "BM006 Room 1 secondary",
+   "BM007 Room 1 secondary",
+   "BM008 Room 3 secondary",
+   "BM009 Room 3 secondary",
+   "BM010 Room 3 secondary",
+   "BM011 Room 4 secondary",
+   "BM012 Room 4 secondary",
+   "BM013 Room 4 secondary",
+   "BM014 Room 4 secondary",
+   "BM015 Room 4 secondary",
+   "BM016 Room 4 secondary",
+   "BM017 Room 4 secondary",
+   "BM018 Room 2 secondary",
+   "BM019 Room 2 secondary",
+   "BM020 Room 7 secondary",
+   "BM021 Room 7 secondary",
+   "BM022 Room 7 secondary",
+   "BM023 Room 7 secondary",
+   "BM024 Room 7 secondary",
+   "BM025 Room 7 secondary",
+   "BM026 Room 7 secondary",
+   "BM027 Room 7 secondary",
+   "BM028 Room 7 secondary",
+   "BM029 Room 7 secondary",
+   "BM030 Room 7 secondary",
+   "BM031 Room 7 secondary",
+   "BM032 Hallway secondary",
+   "BM033 Hallway secondary",
+   "BM034 Hallway secondary",
+   "BM035 Hallway secondary",
+   "BM036 Hallway secondary",
+   "BM037 Hallway secondary",
+   "BM038 Hallway secondary",
+   "BM039 Room 5 secondary",
+   "BM040 Room 5 secondary",
+   "BM041 Room 5 secondary",
+   "BM042 Room 5 secondary",
+   "BM043 Room 5 secondary",
+   "BM044 Room 5 secondary",
+   "BM045 Room 6 secondary",
+   "BM046 Room 6 secondary",
+   "BM047 Room 6 secondary",
+   "BM048 Room 6 secondary",
+   "BM049 Room 6 secondary",
+   "BM050 Room 6 secondary",
+   "BM051 Room 6 secondary",
+   "BM052 Room 6 secondary",
+   "BM053 Room 6 secondary",
+   "BM054 Room 6 secondary",
+   "BM055 Room 6 secondary",
+   "BM056 Room 6 secondary",
+   "BM057 Room 6 secondary",
+   "BM058 Room 6 secondary",
+   "BM059 Room 6 secondary",
+   "BM060 Room 6 secondary",
+   "BM061 Room 8 secondary",
+   "BM062 Room 8 secondary",
+   "BM063 Room 8 secondary",
+   "BM064 Room 8 secondary",
+   "BM065 Room 8 secondary",
+   "BM066 Room 8 secondary",
+   "BM067 Room 8 secondary",
+   "BM068 Room 8 secondary",
+   "BM069 Room 8 secondary",
+   "BM070 Room 8 secondary",
+   "BM071 Room 8 secondary",
+   "BM072 Room 8 secondary",
+   "BM073 Room 8 secondary",
+   "BM074 Room 8 secondary",
+   "BM075 Room 8 secondary",
+   "BM076 Room 8 secondary",
+   "BM077 Room 8 secondary",
+   "BM078 Room 8 secondary",
+   "BM079 Room 8 secondary",
+   "BM080 Room 8 secondary",
+   "BM081 Room 8 secondary",
+   "BM082 Room 8 secondary",
+   "BM083 Room 8 secondary",
+   "BM084 Room 8 secondary",
+   "BM085 Room 8 secondary",
+   "BM086 Room 8 secondary",
+   "BM087 Room 8 secondary",
+   "BM088 Room 8 secondary",
+   "BM089 Room 8 secondary",
+   "BM090 Room 8 secondary",
+   "BM091 Room 8 secondary",
+   "BM092 Room 8 secondary",
+   "BM093 Room 8 secondary",
+   "BM094 Room 8 secondary",
+   "BM095 Room 8 secondary",
+   "BM096 Room 8 secondary",
+   "BM097 Room 8 secondary",
+   "BM098 Room 8 secondary",
+   "BM099 Room 8 secondary",
+   "BM100 Room 8 secondary",
+   "BM101 Room 8 secondary",
+   "BM102 Room 8 secondary",
+   "CL000 slat_raft (Z02)",
+   "CL001 slat_raft (Z12)",
+   "CL002 raft (Z08)",
+   "CL003 raft (Z08)",
+   "CL004 raft (Z08)",
+   "CL005 raft (Z08)",
+   "CL006 baffle (Z07)",
+   "CL007 baffle (Z07)",
+   "CL008 baffle (Z07)",
+   "CL009 baffle (Z07)",
+   "CL010 baffle (Z07)",
+   "CL011 baffle (Z07)",
+   "CL012 baffle (Z07)",
+   "CL013 baffle (Z07)",
+   "CL014 baffle (Z07)",
+   "CL015 baffle (Z07)",
+   "CL016 baffle (Z07)",
+   "CL017 baffle (Z07)",
+   "CL018 baffle (Z07)",
+   "CL019 baffle (Z07)",
+   "CL020 baffle (Z07)",
+   "CL021 baffle (Z07)",
+   "CL022 baffle (Z07)",
+   "CL023 baffle (Z07)",
+   "CL024 baffle (Z07)",
+   "CL025 baffle (Z07)",
+   "CL026 baffle (Z07)",
+   "CL027 baffle (Z07)",
+   "CL028 baffle (Z07)",
+   "CL029 baffle (Z07)",
+   "CL030 baffle (Z07)",
+   "CL031 baffle (Z07)",
+   "CL032 baffle (Z07)",
+   "CL033 baffle (Z07)",
+   "CL034 baffle (Z07)",
+   "CL035 baffle (Z07)",
+   "CL036 baffle (Z07)",
+   "CL037 baffle (Z07)",
+   "CL038 baffle (Z07)",
+   "CL039 baffle (Z07)",
+   "CL040 baffle (Z07)",
+   "CL041 baffle (Z07)",
+   "CL042 baffle (Z07)",
+   "CL043 baffle (Z07)",
+   "CL044 baffle (Z07)",
+   "CL045 baffle (Z07)",
+   "CL046 baffle (Z07)",
+   "CL047 baffle (Z07)",
+   "CL048 baffle (Z07)",
+   "CL049 baffle (Z07)",
+   "CL050 baffle (Z07)",
+   "CL051 baffle (Z07)",
+   "CL052 baffle (Z07)",
+   "CL053 baffle (Z07)",
+   "CL054 baffle (Z07)",
+   "CL055 baffle (Z07)",
+   "CL056 baffle (Z07)",
+   "CL057 baffle (Z07)",
+   "CL058 baffle (Z07)",
+   "CL059 baffle (Z07)",
+   "CL060 baffle (Z07)",
+   "CL061 baffle (Z07)",
+   "CL062 baffle (Z07)",
+   "CL063 baffle (Z07)",
+   "CL064 baffle (Z07)",
+   "CL065 baffle (Z07)",
+   "CL066 baffle (Z07)",
+   "CL067 baffle (Z07)",
+   "CL068 baffle (Z07)",
+   "CL069 baffle (Z07)",
+   "CL070 baffle (Z07)",
+   "CL071 baffle (Z07)",
+   "CL072 baffle (Z07)",
+   "CL073 baffle (Z07)",
+   "CL074 baffle (Z07)",
+   "CL075 baffle (Z07)",
+   "CL076 baffle (Z07)",
+   "CL077 baffle (Z07)",
+   "CL078 baffle (Z07)",
+   "CL079 baffle (Z07)",
+   "CL080 baffle (Z07)",
+   "CL081 baffle (Z07)",
+   "CL082 baffle (Z07)",
+   "CL083 baffle (Z07)",
+   "CL084 baffle (Z07)",
+   "CL085 baffle (Z07)",
+   "CL086 baffle (Z07)",
+   "CL087 baffle (Z07)",
+   "CL088 baffle (Z07)",
+   "CL089 baffle (Z07)",
+   "CL090 baffle (Z07)",
+   "CL091 baffle (Z07)",
+   "CL092 baffle (Z07)",
+   "CL093 baffle (Z07)",
+   "CL094 baffle (Z07)",
+   "CL095 baffle (Z07)",
+   "CL096 baffle (Z07)",
+   "CL097 baffle (Z07)",
+   "CL098 baffle (Z07)",
+   "CL099 baffle (Z07)",
+   "CL100 baffle (Z07)",
+   "CL101 baffle (Z07)",
+   "CL102 baffle (Z07)",
+   "CL103 baffle (Z07)",
+   "CL104 baffle (Z07)",
+   "CL105 baffle (Z07)",
+   "CL106 baffle (Z07)",
+   "CL107 baffle (Z07)",
+   "CL108 baffle (Z07)",
+   "CL109 baffle (Z07)",
+   "CL110 baffle (Z07)",
+   "CL111 baffle (Z07)",
+   "CL112 baffle (Z07)",
+   "CL113 baffle (Z07)",
+   "CL114 baffle (Z07)",
+   "CL115 baffle (Z07)",
+   "CL116 baffle (Z07)",
+   "CL117 baffle (Z07)",
+   "CL118 baffle (Z07)",
+   "CL119 baffle (Z07)",
+   "CL120 baffle (Z07)",
+   "CL121 baffle (Z07)",
+   "CL122 baffle (Z07)",
+   "CL123 baffle (Z07)",
+   "CL124 baffle (Z07)",
+   "CL125 baffle (Z07)",
+   "CL126 baffle (Z07)",
+   "CL127 baffle (Z07)",
+   "CL128 baffle (Z07)",
+   "CL129 baffle (Z07)",
+   "CL130 baffle (Z07)",
+   "CL131 baffle (Z07)",
+   "CL132 baffle (Z07)",
+   "CL133 baffle (Z07)",
+   "CL134 baffle (Z07)",
+   "CL135 baffle (Z07)",
+   "CL136 baffle (Z07)",
+   "CL137 baffle (Z07)",
+   "CL138 baffle (Z07)",
+   "CL139 baffle (Z07)",
+   "CL140 baffle (Z07)",
+   "CL141 baffle (Z07)",
+   "CL142 baffle (Z07)",
+   "CL143 baffle (Z07)",
+   "CL144 baffle (Z07)",
+   "CL145 baffle (Z07)",
+   "CL146 baffle (Z07)",
+   "CL147 baffle (Z07)",
+   "CL148 baffle (Z07)",
+   "CL149 baffle (Z07)",
+   "CL150 baffle (Z07)",
+   "CL151 baffle (Z07)",
+   "CL152 baffle (Z07)",
+   "CL153 baffle (Z07)",
+   "CL154 baffle (Z07)",
+   "CL155 baffle (Z07)",
+   "CL156 baffle (Z07)",
+   "CL157 baffle (Z07)",
+   "CL158 baffle (Z07)",
+   "CL159 baffle (Z07)",
+   "CL160 baffle (Z07)",
+   "CL161 baffle (Z07)",
+   "CL162 baffle (Z07)",
+   "CL163 baffle (Z07)",
+   "CL164 baffle (Z07)",
+   "CL165 baffle (Z07)",
+   "CL166 baffle (Z07)",
+   "CL167 baffle (Z07)",
+   "CL168 baffle (Z07)",
+   "CL169 baffle (Z07)",
+   "CL170 baffle (Z07)",
+   "CL171 baffle (Z07)",
+   "CL172 baffle (Z07)",
+   "CL173 baffle (Z07)",
+   "EX01 exit sign",
+   "EX02 exit sign",
+   "EX03 exit sign",
+   "EX04 exit sign",
+   "LT001 linear pendant 96in (Z01)",
+   "LT002 linear pendant 72in (Z01)",
+   "LT003 track spot (Z01)",
+   "LT004 track spot (Z01)",
+   "LT005 track spot (Z01)",
+   "LT006 halo pendant (Z02)",
+   "LT007 linear pendant 96in (Z02)",
+   "LT008 track spot (Z02)",
+   "LT009 track spot (Z02)",
+   "LT010 track spot (Z02)",
+   "LT011 track spot (Z02)",
+   "LT012 downlight (Z02)",
+   "LT013 downlight (Z02)",
+   "LT014 downlight (Z03)",
+   "LT015 downlight (Z03)",
+   "LT016 track rail (Z30)",
+   "LT017 track rail (Z30)",
+   "LT018 track rail (Z30)",
+   "LT019 track rail (Z30)",
+   "LT020 track spot (Z30)",
+   "LT021 track spot (Z30)",
+   "LT022 track spot (Z30)",
+   "LT023 track spot (Z30)",
+   "LT024 track spot (Z30)",
+   "LT025 track spot (Z30)",
+   "LT026 track spot (Z30)",
+   "LT027 track spot (Z30)",
+   "LT028 track spot (Z30)",
+   "LT029 track spot (Z30)",
+   "LT030 track spot (Z30)",
+   "LT031 track spot (Z30)",
+   "LT032 track spot (Z30)",
+   "LT033 track spot (Z30)",
+   "LT034 track spot (Z30)",
+   "LT035 track spot (Z30)",
+   "LT036 track spot (Z30)",
+   "LT037 linear pendant 120in (Z30)",
+   "LT038 linear pendant 96in (Z08)",
+   "LT039 linear pendant 96in (Z08)",
+   "LT040 downlight (Z08)",
+   "LT041 downlight (Z08)",
+   "LT042 downlight (Z08)",
+   "LT043 downlight (Z08)",
+   "LT044 track spot (Z08)",
+   "LT045 track spot (Z08)",
+   "LT046 track spot (Z08)",
+   "LT047 track spot (Z08)",
+   "LT048 track spot (Z08)",
+   "LT049 linear pendant 60in (Z10)",
+   "LT050 downlight (Z10)",
+   "LT051 linear pendant 60in (Z11)",
+   "LT052 downlight (Z11)",
+   "LT053 linear pendant 72in (Z12)",
+   "LT054 halo pendant (Z12)",
+   "LT055 track spot (Z12)",
+   "LT056 track spot (Z12)",
+   "LT057 track spot (Z12)",
+   "LT058 downlight (Z13)",
+   "LT059 downlight (Z13)",
+   "LT060 downlight (Z13)",
+   "LT061 downlight (Z13)",
+   "LT062 downlight (Z13)",
+   "LT063 linear pendant 60in (Z09)",
+   "LT064 linear pendant 100in (Z05)",
+   "LT065 downlight (Z05)",
+   "LT066 linear pendant 72in (Z04)",
+   "LT067 downlight (Z31)",
+   "LT068 downlight (Z31)",
+   "LT069 downlight (Z31)",
+   "LT070 linear pendant 60in (Z14)",
+   "LT071 linear pendant 60in (Z14)",
+   "LT072 linear pendant 60in (Z14)",
+   "LT073 linear pendant 60in (Z14)",
+   "LT074 linear pendant 96in (Z15)",
+   "LT075 linear pendant 96in (Z16)",
+   "LT076 linear pendant 120in (Z17)",
+   "LT077 linear pendant 110in (Z18)",
+   "LT078 linear pendant 110in (Z18)",
+   "LT079 linear pendant 80in (Z18)",
+   "LT080 linear pendant 96in (Z18)",
+   "LT081 track rail (Z18)",
+   "LT082 track spot (Z18)",
+   "LT083 track spot (Z18)",
+   "LT084 track spot (Z18)",
+   "LT085 track spot (Z18)",
+   "LT086 track spot (Z18)",
+   "LT087 linear pendant 96in (Z19)",
+   "LT088 cafe pendant (CC0) (modern_ceiling_lamp_01)",
+   "LT089 cafe pendant (CC0) (modern_ceiling_lamp_01)",
+   "LT090 cafe pendant (CC0) (modern_ceiling_lamp_01)",
+   "LT091 cafe pendant (CC0) (modern_ceiling_lamp_01)",
+   "LT092 cafe pendant (CC0) (modern_ceiling_lamp_01)",
+   "LT093 cafe pendant (CC0) (modern_ceiling_lamp_01)",
+   "LT094 linear pendant 96in (Z20)",
+   "LT095 halo pendant (Z21)",
+   "LT096 linear pendant 96in (Z21)",
+   "LT097 downlight (Z23)",
+   "LT098 downlight (Z23)",
+   "LT099 downlight (Z23)",
+   "LT100 downlight (Z23)",
+   "LT101 downlight (Z24)",
+   "LT102 downlight (Z24)",
+   "LT103 downlight (Z25)",
+   "LT104 downlight (Z25)",
+   "LT105 downlight (Z25)",
+   "LT106 downlight (Z26)",
+   "LT107 downlight (Z26)",
+   "LT108 downlight (Z26)",
+   "LT109 downlight (Z27)",
+   "LT110 downlight (Z27)",
+   "LT111 downlight (Z27)",
+   "LT112 downlight (Z27)",
+   "LT113 downlight (Z28)",
+   "LT114 downlight (Z28)",
+   "LT115 downlight (Z29)",
+   "LT116 downlight (Z33)",
+   "LT117 downlight (Z33)",
+   "LT118 downlight (Z33)",
+   "LT119 downlight (Z33)",
+   "LT120 downlight (Z33)",
+   "LT121 downlight (Z22)",
+   "LT122 downlight (Z22)",
+   "LT123 downlight (Z22)",
+   "LT124 downlight (Z22)",
+   "LT125 downlight (Z22)",
+   "LT126 downlight (Z22)",
+   "LT127 downlight (Z22)",
+   "LT128 downlight (Z32)",
+   "LT129 downlight (Z32)",
+   "LT130 downlight (Z32)",
+   "LT131 linear pendant 200in (Z07)",
+   "LT132 linear pendant 200in (Z07)",
+   "LT133 linear pendant 90in (Z07)",
+   "LT134 linear pendant 72in (Z07)",
+   "LT135 linear pendant 96in (Z07)",
+   "LT136 downlight (Z07)",
+   "LT137 downlight (Z07)",
+   "LT138 downlight (Z07)",
+   "LT139 downlight (Z07)",
+   "LT140 downlight (Z07)",
+   "LT141 downlight (Z07)",
+   "LT142 downlight (Z07)",
+   "LT143 linear pendant 130in (Z06)",
+   "LT144 linear pendant 130in (Z06)",
+   "LT145 linear pendant 60in (Z06)",
+   "LT146 linear pendant 48in (Z06)",
+   "LT147 linear pendant 72in (Z06)",
+   "LT148 downlight (Z06)",
+   "LT149 downlight (Z06)",
+   "LT150 downlight (Z06)",
+   "LT151 downlight (Z06)",
+   "LT152 downlight (Z06)",
+   "LT153 downlight (Z06)",
+   "LT154 downlight (Z06)",
+   "LT155 downlight (Z06)",
+   "LT156 downlight (Z06)",
+   "LT157 downlight (Z06)",
+   "LT158 downlight (Z06)",
+   "LT159 downlight (Z06)",
+   "LT160 downlight (Z06)",
+   "SD01 smoke detector",
+   "SD02 smoke detector",
+   "SD03 smoke detector",
+   "SD04 smoke detector",
+   "SD05 smoke detector",
+   "SD06 smoke detector",
+   "SD07 smoke detector",
+   "SD08 smoke detector",
+   "SD09 smoke detector",
+   "SD10 smoke detector",
+   "SD11 smoke detector",
+   "SD12 smoke detector",
+   "SD13 smoke detector",
+   "SD14 smoke detector",
+   "SD15 smoke detector",
+   "SD16 smoke detector",
+   "SD17 smoke detector",
+   "SD18 smoke detector",
+   "SD19 smoke detector",
+   "SD20 smoke detector",
+   "SD21 smoke detector",
+   "SD22 smoke detector",
+   "SD23 smoke detector",
+   "Steel deck / slab above (soffit painted)"
+  ],
+  "overhead_threejs": [
+   "AC01_VRF_indoor_unit,_under-ceiling_(Z07)_-_capacity_by_MEP",
+   "AC02_VRF_indoor_unit,_under-ceiling_(Z07)_-_capacity_by_MEP",
+   "AC03_VRF_indoor_unit,_under-ceiling_(Z07)_-_capacity_by_MEP",
+   "AC04_VRF_indoor_unit,_under-ceiling_(Z07)_-_capacity_by_MEP",
+   "AC05_VRF_indoor_unit,_under-ceiling_(Z06)_-_capacity_by_MEP",
+   "AC06_VRF_indoor_unit,_under-ceiling_(Z06)_-_capacity_by_MEP",
+   "AC07_VRF_indoor_unit,_under-ceiling_(Z05)_-_capacity_by_MEP",
+   "AC08_VRF_indoor_unit,_under-ceiling_(Z30)_-_capacity_by_MEP",
+   "AC09_VRF_indoor_unit,_under-ceiling_(Z08)_-_capacity_by_MEP",
+   "AC10_VRF_indoor_unit,_under-ceiling_(Z02)_-_capacity_by_MEP",
+   "AC11_VRF_indoor_unit,_under-ceiling_(Z12)_-_capacity_by_MEP",
+   "AC12_VRF_indoor_unit,_under-ceiling_(Z11)_-_capacity_by_MEP",
+   "AC13_VRF_indoor_unit,_under-ceiling_(Z14)_-_capacity_by_MEP",
+   "AC14_VRF_indoor_unit,_under-ceiling_(Z18)_-_capacity_by_MEP",
+   "AC15_VRF_indoor_unit,_under-ceiling_(Z18)_-_capacity_by_MEP",
+   "AC16_VRF_indoor_unit,_under-ceiling_(Z20)_-_capacity_by_MEP",
+   "AC17_VRF_indoor_unit,_under-ceiling_(Z21)_-_capacity_by_MEP",
+   "AC18_VRF_indoor_unit,_under-ceiling_(Z23)_-_capacity_by_MEP",
+   "AC19_VRF_indoor_unit,_under-ceiling_(Z01)_-_capacity_by_MEP",
+   "BM001_Room_7_main_beam_(sketch_line)",
+   "BM002_Room_6_-_5_main_beam",
+   "BM003_Room_8_main_beam",
+   "BM004_Room_1_secondary",
+   "BM005_Room_1_secondary",
+   "BM006_Room_1_secondary",
+   "BM007_Room_1_secondary",
+   "BM008_Room_3_secondary",
+   "BM009_Room_3_secondary",
+   "BM010_Room_3_secondary",
+   "BM011_Room_4_secondary",
+   "BM012_Room_4_secondary",
+   "BM013_Room_4_secondary",
+   "BM014_Room_4_secondary",
+   "BM015_Room_4_secondary",
+   "BM016_Room_4_secondary",
+   "BM017_Room_4_secondary",
+   "BM018_Room_2_secondary",
+   "BM019_Room_2_secondary",
+   "BM020_Room_7_secondary",
+   "BM021_Room_7_secondary",
+   "BM022_Room_7_secondary",
+   "BM023_Room_7_secondary",
+   "BM024_Room_7_secondary",
+   "BM025_Room_7_secondary",
+   "BM026_Room_7_secondary",
+   "BM027_Room_7_secondary",
+   "BM028_Room_7_secondary",
+   "BM029_Room_7_secondary",
+   "BM030_Room_7_secondary",
+   "BM031_Room_7_secondary",
+   "BM032_Hallway_secondary",
+   "BM033_Hallway_secondary",
+   "BM034_Hallway_secondary",
+   "BM035_Hallway_secondary",
+   "BM036_Hallway_secondary",
+   "BM037_Hallway_secondary",
+   "BM038_Hallway_secondary",
+   "BM039_Room_5_secondary",
+   "BM040_Room_5_secondary",
+   "BM041_Room_5_secondary",
+   "BM042_Room_5_secondary",
+   "BM043_Room_5_secondary",
+   "BM044_Room_5_secondary",
+   "BM045_Room_6_secondary",
+   "BM046_Room_6_secondary",
+   "BM047_Room_6_secondary",
+   "BM048_Room_6_secondary",
+   "BM049_Room_6_secondary",
+   "BM050_Room_6_secondary",
+   "BM051_Room_6_secondary",
+   "BM052_Room_6_secondary",
+   "BM053_Room_6_secondary",
+   "BM054_Room_6_secondary",
+   "BM055_Room_6_secondary",
+   "BM056_Room_6_secondary",
+   "BM057_Room_6_secondary",
+   "BM058_Room_6_secondary",
+   "BM059_Room_6_secondary",
+   "BM060_Room_6_secondary",
+   "BM061_Room_8_secondary",
+   "BM062_Room_8_secondary",
+   "BM063_Room_8_secondary",
+   "BM064_Room_8_secondary",
+   "BM065_Room_8_secondary",
+   "BM066_Room_8_secondary",
+   "BM067_Room_8_secondary",
+   "BM068_Room_8_secondary",
+   "BM069_Room_8_secondary",
+   "BM070_Room_8_secondary",
+   "BM071_Room_8_secondary",
+   "BM072_Room_8_secondary",
+   "BM073_Room_8_secondary",
+   "BM074_Room_8_secondary",
+   "BM075_Room_8_secondary",
+   "BM076_Room_8_secondary",
+   "BM077_Room_8_secondary",
+   "BM078_Room_8_secondary",
+   "BM079_Room_8_secondary",
+   "BM080_Room_8_secondary",
+   "BM081_Room_8_secondary",
+   "BM082_Room_8_secondary",
+   "BM083_Room_8_secondary",
+   "BM084_Room_8_secondary",
+   "BM085_Room_8_secondary",
+   "BM086_Room_8_secondary",
+   "BM087_Room_8_secondary",
+   "BM088_Room_8_secondary",
+   "BM089_Room_8_secondary",
+   "BM090_Room_8_secondary",
+   "BM091_Room_8_secondary",
+   "BM092_Room_8_secondary",
+   "BM093_Room_8_secondary",
+   "BM094_Room_8_secondary",
+   "BM095_Room_8_secondary",
+   "BM096_Room_8_secondary",
+   "BM097_Room_8_secondary",
+   "BM098_Room_8_secondary",
+   "BM099_Room_8_secondary",
+   "BM100_Room_8_secondary",
+   "BM101_Room_8_secondary",
+   "BM102_Room_8_secondary",
+   "CL000_slat_raft_(Z02)",
+   "CL001_slat_raft_(Z12)",
+   "CL002_raft_(Z08)",
+   "CL003_raft_(Z08)",
+   "CL004_raft_(Z08)",
+   "CL005_raft_(Z08)",
+   "CL006_baffle_(Z07)",
+   "CL007_baffle_(Z07)",
+   "CL008_baffle_(Z07)",
+   "CL009_baffle_(Z07)",
+   "CL010_baffle_(Z07)",
+   "CL011_baffle_(Z07)",
+   "CL012_baffle_(Z07)",
+   "CL013_baffle_(Z07)",
+   "CL014_baffle_(Z07)",
+   "CL015_baffle_(Z07)",
+   "CL016_baffle_(Z07)",
+   "CL017_baffle_(Z07)",
+   "CL018_baffle_(Z07)",
+   "CL019_baffle_(Z07)",
+   "CL020_baffle_(Z07)",
+   "CL021_baffle_(Z07)",
+   "CL022_baffle_(Z07)",
+   "CL023_baffle_(Z07)",
+   "CL024_baffle_(Z07)",
+   "CL025_baffle_(Z07)",
+   "CL026_baffle_(Z07)",
+   "CL027_baffle_(Z07)",
+   "CL028_baffle_(Z07)",
+   "CL029_baffle_(Z07)",
+   "CL030_baffle_(Z07)",
+   "CL031_baffle_(Z07)",
+   "CL032_baffle_(Z07)",
+   "CL033_baffle_(Z07)",
+   "CL034_baffle_(Z07)",
+   "CL035_baffle_(Z07)",
+   "CL036_baffle_(Z07)",
+   "CL037_baffle_(Z07)",
+   "CL038_baffle_(Z07)",
+   "CL039_baffle_(Z07)",
+   "CL040_baffle_(Z07)",
+   "CL041_baffle_(Z07)",
+   "CL042_baffle_(Z07)",
+   "CL043_baffle_(Z07)",
+   "CL044_baffle_(Z07)",
+   "CL045_baffle_(Z07)",
+   "CL046_baffle_(Z07)",
+   "CL047_baffle_(Z07)",
+   "CL048_baffle_(Z07)",
+   "CL049_baffle_(Z07)",
+   "CL050_baffle_(Z07)",
+   "CL051_baffle_(Z07)",
+   "CL052_baffle_(Z07)",
+   "CL053_baffle_(Z07)",
+   "CL054_baffle_(Z07)",
+   "CL055_baffle_(Z07)",
+   "CL056_baffle_(Z07)",
+   "CL057_baffle_(Z07)",
+   "CL058_baffle_(Z07)",
+   "CL059_baffle_(Z07)",
+   "CL060_baffle_(Z07)",
+   "CL061_baffle_(Z07)",
+   "CL062_baffle_(Z07)",
+   "CL063_baffle_(Z07)",
+   "CL064_baffle_(Z07)",
+   "CL065_baffle_(Z07)",
+   "CL066_baffle_(Z07)",
+   "CL067_baffle_(Z07)",
+   "CL068_baffle_(Z07)",
+   "CL069_baffle_(Z07)",
+   "CL070_baffle_(Z07)",
+   "CL071_baffle_(Z07)",
+   "CL072_baffle_(Z07)",
+   "CL073_baffle_(Z07)",
+   "CL074_baffle_(Z07)",
+   "CL075_baffle_(Z07)",
+   "CL076_baffle_(Z07)",
+   "CL077_baffle_(Z07)",
+   "CL078_baffle_(Z07)",
+   "CL079_baffle_(Z07)",
+   "CL080_baffle_(Z07)",
+   "CL081_baffle_(Z07)",
+   "CL082_baffle_(Z07)",
+   "CL083_baffle_(Z07)",
+   "CL084_baffle_(Z07)",
+   "CL085_baffle_(Z07)",
+   "CL086_baffle_(Z07)",
+   "CL087_baffle_(Z07)",
+   "CL088_baffle_(Z07)",
+   "CL089_baffle_(Z07)",
+   "CL090_baffle_(Z07)",
+   "CL091_baffle_(Z07)",
+   "CL092_baffle_(Z07)",
+   "CL093_baffle_(Z07)",
+   "CL094_baffle_(Z07)",
+   "CL095_baffle_(Z07)",
+   "CL096_baffle_(Z07)",
+   "CL097_baffle_(Z07)",
+   "CL098_baffle_(Z07)",
+   "CL099_baffle_(Z07)",
+   "CL100_baffle_(Z07)",
+   "CL101_baffle_(Z07)",
+   "CL102_baffle_(Z07)",
+   "CL103_baffle_(Z07)",
+   "CL104_baffle_(Z07)",
+   "CL105_baffle_(Z07)",
+   "CL106_baffle_(Z07)",
+   "CL107_baffle_(Z07)",
+   "CL108_baffle_(Z07)",
+   "CL109_baffle_(Z07)",
+   "CL110_baffle_(Z07)",
+   "CL111_baffle_(Z07)",
+   "CL112_baffle_(Z07)",
+   "CL113_baffle_(Z07)",
+   "CL114_baffle_(Z07)",
+   "CL115_baffle_(Z07)",
+   "CL116_baffle_(Z07)",
+   "CL117_baffle_(Z07)",
+   "CL118_baffle_(Z07)",
+   "CL119_baffle_(Z07)",
+   "CL120_baffle_(Z07)",
+   "CL121_baffle_(Z07)",
+   "CL122_baffle_(Z07)",
+   "CL123_baffle_(Z07)",
+   "CL124_baffle_(Z07)",
+   "CL125_baffle_(Z07)",
+   "CL126_baffle_(Z07)",
+   "CL127_baffle_(Z07)",
+   "CL128_baffle_(Z07)",
+   "CL129_baffle_(Z07)",
+   "CL130_baffle_(Z07)",
+   "CL131_baffle_(Z07)",
+   "CL132_baffle_(Z07)",
+   "CL133_baffle_(Z07)",
+   "CL134_baffle_(Z07)",
+   "CL135_baffle_(Z07)",
+   "CL136_baffle_(Z07)",
+   "CL137_baffle_(Z07)",
+   "CL138_baffle_(Z07)",
+   "CL139_baffle_(Z07)",
+   "CL140_baffle_(Z07)",
+   "CL141_baffle_(Z07)",
+   "CL142_baffle_(Z07)",
+   "CL143_baffle_(Z07)",
+   "CL144_baffle_(Z07)",
+   "CL145_baffle_(Z07)",
+   "CL146_baffle_(Z07)",
+   "CL147_baffle_(Z07)",
+   "CL148_baffle_(Z07)",
+   "CL149_baffle_(Z07)",
+   "CL150_baffle_(Z07)",
+   "CL151_baffle_(Z07)",
+   "CL152_baffle_(Z07)",
+   "CL153_baffle_(Z07)",
+   "CL154_baffle_(Z07)",
+   "CL155_baffle_(Z07)",
+   "CL156_baffle_(Z07)",
+   "CL157_baffle_(Z07)",
+   "CL158_baffle_(Z07)",
+   "CL159_baffle_(Z07)",
+   "CL160_baffle_(Z07)",
+   "CL161_baffle_(Z07)",
+   "CL162_baffle_(Z07)",
+   "CL163_baffle_(Z07)",
+   "CL164_baffle_(Z07)",
+   "CL165_baffle_(Z07)",
+   "CL166_baffle_(Z07)",
+   "CL167_baffle_(Z07)",
+   "CL168_baffle_(Z07)",
+   "CL169_baffle_(Z07)",
+   "CL170_baffle_(Z07)",
+   "CL171_baffle_(Z07)",
+   "CL172_baffle_(Z07)",
+   "CL173_baffle_(Z07)",
+   "EX01_exit_sign",
+   "EX02_exit_sign",
+   "EX03_exit_sign",
+   "EX04_exit_sign",
+   "LT001_linear_pendant_96in_(Z01)",
+   "LT002_linear_pendant_72in_(Z01)",
+   "LT003_track_spot_(Z01)",
+   "LT004_track_spot_(Z01)",
+   "LT005_track_spot_(Z01)",
+   "LT006_halo_pendant_(Z02)",
+   "LT007_linear_pendant_96in_(Z02)",
+   "LT008_track_spot_(Z02)",
+   "LT009_track_spot_(Z02)",
+   "LT010_track_spot_(Z02)",
+   "LT011_track_spot_(Z02)",
+   "LT012_downlight_(Z02)",
+   "LT013_downlight_(Z02)",
+   "LT014_downlight_(Z03)",
+   "LT015_downlight_(Z03)",
+   "LT016_track_rail_(Z30)",
+   "LT017_track_rail_(Z30)",
+   "LT018_track_rail_(Z30)",
+   "LT019_track_rail_(Z30)",
+   "LT020_track_spot_(Z30)",
+   "LT021_track_spot_(Z30)",
+   "LT022_track_spot_(Z30)",
+   "LT023_track_spot_(Z30)",
+   "LT024_track_spot_(Z30)",
+   "LT025_track_spot_(Z30)",
+   "LT026_track_spot_(Z30)",
+   "LT027_track_spot_(Z30)",
+   "LT028_track_spot_(Z30)",
+   "LT029_track_spot_(Z30)",
+   "LT030_track_spot_(Z30)",
+   "LT031_track_spot_(Z30)",
+   "LT032_track_spot_(Z30)",
+   "LT033_track_spot_(Z30)",
+   "LT034_track_spot_(Z30)",
+   "LT035_track_spot_(Z30)",
+   "LT036_track_spot_(Z30)",
+   "LT037_linear_pendant_120in_(Z30)",
+   "LT038_linear_pendant_96in_(Z08)",
+   "LT039_linear_pendant_96in_(Z08)",
+   "LT040_downlight_(Z08)",
+   "LT041_downlight_(Z08)",
+   "LT042_downlight_(Z08)",
+   "LT043_downlight_(Z08)",
+   "LT044_track_spot_(Z08)",
+   "LT045_track_spot_(Z08)",
+   "LT046_track_spot_(Z08)",
+   "LT047_track_spot_(Z08)",
+   "LT048_track_spot_(Z08)",
+   "LT049_linear_pendant_60in_(Z10)",
+   "LT050_downlight_(Z10)",
+   "LT051_linear_pendant_60in_(Z11)",
+   "LT052_downlight_(Z11)",
+   "LT053_linear_pendant_72in_(Z12)",
+   "LT054_halo_pendant_(Z12)",
+   "LT055_track_spot_(Z12)",
+   "LT056_track_spot_(Z12)",
+   "LT057_track_spot_(Z12)",
+   "LT058_downlight_(Z13)",
+   "LT059_downlight_(Z13)",
+   "LT060_downlight_(Z13)",
+   "LT061_downlight_(Z13)",
+   "LT062_downlight_(Z13)",
+   "LT063_linear_pendant_60in_(Z09)",
+   "LT064_linear_pendant_100in_(Z05)",
+   "LT065_downlight_(Z05)",
+   "LT066_linear_pendant_72in_(Z04)",
+   "LT067_downlight_(Z31)",
+   "LT068_downlight_(Z31)",
+   "LT069_downlight_(Z31)",
+   "LT070_linear_pendant_60in_(Z14)",
+   "LT071_linear_pendant_60in_(Z14)",
+   "LT072_linear_pendant_60in_(Z14)",
+   "LT073_linear_pendant_60in_(Z14)",
+   "LT074_linear_pendant_96in_(Z15)",
+   "LT075_linear_pendant_96in_(Z16)",
+   "LT076_linear_pendant_120in_(Z17)",
+   "LT077_linear_pendant_110in_(Z18)",
+   "LT078_linear_pendant_110in_(Z18)",
+   "LT079_linear_pendant_80in_(Z18)",
+   "LT080_linear_pendant_96in_(Z18)",
+   "LT081_track_rail_(Z18)",
+   "LT082_track_spot_(Z18)",
+   "LT083_track_spot_(Z18)",
+   "LT084_track_spot_(Z18)",
+   "LT085_track_spot_(Z18)",
+   "LT086_track_spot_(Z18)",
+   "LT087_linear_pendant_96in_(Z19)",
+   "LT088_cafe_pendant_(CC0)_(modern_ceiling_lamp_01)",
+   "LT089_cafe_pendant_(CC0)_(modern_ceiling_lamp_01)",
+   "LT090_cafe_pendant_(CC0)_(modern_ceiling_lamp_01)",
+   "LT091_cafe_pendant_(CC0)_(modern_ceiling_lamp_01)",
+   "LT092_cafe_pendant_(CC0)_(modern_ceiling_lamp_01)",
+   "LT093_cafe_pendant_(CC0)_(modern_ceiling_lamp_01)",
+   "LT094_linear_pendant_96in_(Z20)",
+   "LT095_halo_pendant_(Z21)",
+   "LT096_linear_pendant_96in_(Z21)",
+   "LT097_downlight_(Z23)",
+   "LT098_downlight_(Z23)",
+   "LT099_downlight_(Z23)",
+   "LT100_downlight_(Z23)",
+   "LT101_downlight_(Z24)",
+   "LT102_downlight_(Z24)",
+   "LT103_downlight_(Z25)",
+   "LT104_downlight_(Z25)",
+   "LT105_downlight_(Z25)",
+   "LT106_downlight_(Z26)",
+   "LT107_downlight_(Z26)",
+   "LT108_downlight_(Z26)",
+   "LT109_downlight_(Z27)",
+   "LT110_downlight_(Z27)",
+   "LT111_downlight_(Z27)",
+   "LT112_downlight_(Z27)",
+   "LT113_downlight_(Z28)",
+   "LT114_downlight_(Z28)",
+   "LT115_downlight_(Z29)",
+   "LT116_downlight_(Z33)",
+   "LT117_downlight_(Z33)",
+   "LT118_downlight_(Z33)",
+   "LT119_downlight_(Z33)",
+   "LT120_downlight_(Z33)",
+   "LT121_downlight_(Z22)",
+   "LT122_downlight_(Z22)",
+   "LT123_downlight_(Z22)",
+   "LT124_downlight_(Z22)",
+   "LT125_downlight_(Z22)",
+   "LT126_downlight_(Z22)",
+   "LT127_downlight_(Z22)",
+   "LT128_downlight_(Z32)",
+   "LT129_downlight_(Z32)",
+   "LT130_downlight_(Z32)",
+   "LT131_linear_pendant_200in_(Z07)",
+   "LT132_linear_pendant_200in_(Z07)",
+   "LT133_linear_pendant_90in_(Z07)",
+   "LT134_linear_pendant_72in_(Z07)",
+   "LT135_linear_pendant_96in_(Z07)",
+   "LT136_downlight_(Z07)",
+   "LT137_downlight_(Z07)",
+   "LT138_downlight_(Z07)",
+   "LT139_downlight_(Z07)",
+   "LT140_downlight_(Z07)",
+   "LT141_downlight_(Z07)",
+   "LT142_downlight_(Z07)",
+   "LT143_linear_pendant_130in_(Z06)",
+   "LT144_linear_pendant_130in_(Z06)",
+   "LT145_linear_pendant_60in_(Z06)",
+   "LT146_linear_pendant_48in_(Z06)",
+   "LT147_linear_pendant_72in_(Z06)",
+   "LT148_downlight_(Z06)",
+   "LT149_downlight_(Z06)",
+   "LT150_downlight_(Z06)",
+   "LT151_downlight_(Z06)",
+   "LT152_downlight_(Z06)",
+   "LT153_downlight_(Z06)",
+   "LT154_downlight_(Z06)",
+   "LT155_downlight_(Z06)",
+   "LT156_downlight_(Z06)",
+   "LT157_downlight_(Z06)",
+   "LT158_downlight_(Z06)",
+   "LT159_downlight_(Z06)",
+   "LT160_downlight_(Z06)",
+   "SD01_smoke_detector",
+   "SD02_smoke_detector",
+   "SD03_smoke_detector",
+   "SD04_smoke_detector",
+   "SD05_smoke_detector",
+   "SD06_smoke_detector",
+   "SD07_smoke_detector",
+   "SD08_smoke_detector",
+   "SD09_smoke_detector",
+   "SD10_smoke_detector",
+   "SD11_smoke_detector",
+   "SD12_smoke_detector",
+   "SD13_smoke_detector",
+   "SD14_smoke_detector",
+   "SD15_smoke_detector",
+   "SD16_smoke_detector",
+   "SD17_smoke_detector",
+   "SD18_smoke_detector",
+   "SD19_smoke_detector",
+   "SD20_smoke_detector",
+   "SD21_smoke_detector",
+   "SD22_smoke_detector",
+   "SD23_smoke_detector",
+   "Steel_deck__slab_above_(soffit_painted)"
+  ],
+  "walls_glazing_doors_structure": [
+   "COL01 steel column (position PHOTO-EST)",
+   "COL02 steel column (position PHOTO-EST)",
+   "COL03 steel column (position PHOTO-EST)",
+   "COL04 steel column (position PHOTO-EST)",
+   "COL05 steel column (position PHOTO-EST)",
+   "COL06 steel column (position PHOTO-EST)",
+   "COL07 steel column (position PHOTO-EST)",
+   "COL08 steel column (position PHOTO-EST)",
+   "COL09 steel column (position PHOTO-EST)",
+   "COL10 steel column (position PHOTO-EST)",
+   "COL11 steel column (position PHOTO-EST)",
+   "D01 Main gate 140\"",
+   "D02 D42 room 1 - room 2",
+   "D03 57\" opening room 3 - room 7",
+   "D04 D47 room 1 - room 3",
+   "D05 D60 room 3 - room 4",
+   "D06 D26.5 washroom",
+   "D08 D30 washroom 2",
+   "D09 D30 washroom 1",
+   "D10 48\" opening room 7 - room 5",
+   "D10 head cut PW05",
+   "D11 52\" opening hallway - room 6",
+   "D11 head cut PW06",
+   "D12 49\" opening room 5 - room 6",
+   "D12 head cut PW07",
+   "D13 Hallway - room 8 (42\" standard)",
+   "D14 D49 north-east stair",
+   "D15 D49 engine room",
+   "D16 D52 south-east stair",
+   "D17 Staff entrance: lobby - staff corridor 42\"",
+   "D18 Reception - visitor passage 42\"",
+   "D18 head cut PW01",
+   "D19 Reception - boardroom 42\"",
+   "D19 head cut PW01",
+   "D20 Executive suite - boardroom 42\"",
+   "D21 Experience centre - boardroom 42\"",
+   "D21 head cut PW07",
+   "D22 Female prayer room door 36\"",
+   "D31 Audit room (sliding)",
+   "D32 Guest WC",
+   "D33 Guest WC",
+   "D34 Sample room",
+   "D35 3D printing lab",
+   "D36 Fabric & trim library",
+   "D37 CAD / technical design",
+   "D38 Global Design Studio",
+   "D39 Sample & material store",
+   "D40 Staff cafe 60\"",
+   "D41 Lounge / training",
+   "D42 Staff cafe",
+   "D43 Prayer (male)",
+   "D44 Wudu (male)",
+   "D45 Prayer - wudu",
+   "D46 Director",
+   "D47 Managing Director",
+   "D48 HR & admin",
+   "D49 Merchandising - experience centre",
+   "D50 Accounts suite entrance 42\"",
+   "D51 Accounts suite - north corridor 42\"",
+   "D52 Finance discussion room (sliding) 40\"",
+   "Deck opening over north-east stair",
+   "Deck opening over room 1 stair",
+   "Deck opening over south-east stair",
+   "EW01 Front facade with main gate",
+   "EW02 Room 1 west wall",
+   "EW03 Room 4 east wall",
+   "EW04 South wall of the east stair",
+   "EW05 Middle block north wall",
+   "EW06 Washroom row west wall",
+   "EW07 Room 2 west wall",
+   "EW08 Room 8 west wall, north part",
+   "EW09 Room 8 north wall",
+   "EW10 Room 8 east wall",
+   "FIN01 Lobby brand wall: vertical oak slats",
+   "FIN02 Lobby brand panel (white solid surface)",
+   "FIN03 Reception feature wall: fluted oak",
+   "FIN04 Experience centre story wall frame",
+   "FIN05 Experience centre story panel",
+   "FIN06 Boardroom media wall",
+   "FIN07 Boardroom acoustic walnut slats",
+   "FIN08 MD feature wall, walnut",
+   "FIN09 MD logo plate",
+   "FIN10 Executive corridor oak wall",
+   "FIN11 Reception logo plate (backlit)",
+   "FIN12 Mood-board wall backing",
+   "Floor slab (existing, finished floor = 0)",
+   "IW01 Row wall, rooms 1 and 2",
+   "IW02 Row wall over the room 3 - room 7 opening",
+   "IW03 Row wall, room 4 - rooms 5 and 8",
+   "IW04 Room 1 - room 3",
+   "IW05 Room 3 - room 4",
+   "IW06 Room 2 north wall (64 in jog)",
+   "IW07 Room 2 - room 7",
+   "IW08 Washroom row - room 7",
+   "IW09 Rooms 5, 6, hallway - room 8",
+   "IW10 North-east stair, south wall",
+   "IW11 North-east stair, west wall",
+   "IW12 Engine room (sub-station), north wall",
+   "IW13 Engine room (sub-station), west wall",
+   "IW14 South-east stair, north wall",
+   "IW15 South-east stair, west wall",
+   "NI01 frame above PW01",
+   "NI01 glass above 48in wall PW01",
+   "NI02 solid infill above 48in wall PW01",
+   "NI03 frame above PW01",
+   "NI03 glass above 48in wall PW01",
+   "NI04 frame above PW05",
+   "NI04 glass above 48in wall PW05",
+   "NI05 solid infill above 48in wall PW05",
+   "NI06 frame above PW05",
+   "NI06 glass above 48in wall PW05",
+   "NI07 frame above PW06",
+   "NI07 glass above 48in wall PW06",
+   "NI08 frame above PW07",
+   "NI08 glass above 48in wall PW07",
+   "NI09 solid infill above 48in wall PW07",
+   "NI10 frame above PW07",
+   "NI10 glass above 48in wall PW07",
+   "NP01 HR & admin - commercial, glass",
+   "NP01 frame + mullions",
+   "NP01 manifestation band",
+   "NP02 Audit room west",
+   "NP03 Audit room east",
+   "NP04 Audit room front, glass",
+   "NP04 frame + mullions",
+   "NP04 manifestation band",
+   "NP05 Visitor passage - guest WCs",
+   "NP06 Guest WC divider",
+   "NP07 Guest WCs - boardroom",
+   "NP08 Female prayer - female washroom",
+   "NP09 Store opening infill",
+   "NP10 Sample room north",
+   "NP11 Sample room front, glass",
+   "NP11 frame + mullions",
+   "NP11 manifestation band",
+   "NP12 Sample room - 3D lab",
+   "NP13 3D lab front, glass",
+   "NP13 frame + mullions",
+   "NP13 manifestation band",
+   "NP14 3D lab - fabric library",
+   "NP15 Fabric library front, glass",
+   "NP15 frame + mullions",
+   "NP15 manifestation band",
+   "NP16 Fabric library - CAD",
+   "NP17 CAD room front, glass",
+   "NP17 frame + mullions",
+   "NP17 manifestation band",
+   "NP18 Design studio front, glass",
+   "NP18 frame + mullions",
+   "NP18 manifestation band",
+   "NP19 Store west",
+   "NP20 Design studio - store",
+   "NP21 Store south",
+   "NP22 Staff cafe - corridor, glass",
+   "NP22 frame + mullions",
+   "NP22 manifestation band",
+   "NP23 Lounge and cafe - north corridor, glass",
+   "NP23 frame + mullions",
+   "NP23 manifestation band",
+   "NP24 Lounge - cafe, glass",
+   "NP24 frame + mullions",
+   "NP24 manifestation band",
+   "NP25 Prayer and wudu - north corridor",
+   "NP26 Design studio - north corridor (mood-board wall)",
+   "NP27 Prayer - wudu",
+   "NP28 Wudu - design studio",
+   "NP29 Executive offices front, glass",
+   "NP29 frame + mullions",
+   "NP29 manifestation band",
+   "NP30 Executive reception - director, glass",
+   "NP30 frame + mullions",
+   "NP30 manifestation band",
+   "NP31 Director - MD, glass",
+   "NP31 frame + mullions",
+   "NP31 manifestation band",
+   "NP32 Staff corridor - HR & admin, glass",
+   "NP32 frame + mullions",
+   "NP32 manifestation band",
+   "NP33 Experience centre - merchandising (display wall)",
+   "NP34 Accounts suite - public corridor (privacy glass)",
+   "NP34 frame + mullions",
+   "NP34 manifestation band",
+   "NP35 Accounts suite - staff arrival (privacy glass)",
+   "NP35 frame + mullions",
+   "NP35 manifestation band",
+   "NP36 Staff corridor - accounts suite, glass",
+   "NP36 frame + mullions",
+   "NP36 manifestation band",
+   "NP37 Accounts suite - north corridor (privacy glass)",
+   "NP37 frame + mullions",
+   "NP37 manifestation band",
+   "NP38 Finance discussion room west, glass",
+   "NP38 frame + mullions",
+   "NP38 manifestation band",
+   "NP39 Finance discussion room north, glass",
+   "NP39 frame + mullions",
+   "NP39 manifestation band",
+   "PW01 Row wall, room 3 - room 5 (48 in)",
+   "PW02 Room 2 washroom, east",
+   "PW03 Room 2 washroom, south",
+   "PW04 Washroom 1 - washroom 2",
+   "PW05 Room 7 - rooms 5 and 6 (48 in)",
+   "PW06 Hallway - room 6 (48 in)",
+   "PW07 Room 5 - room 6 (48 in)",
+   "ST1 handrail (proposed)",
+   "ST1 room 1 stair, flight 1 (from the back along the outer wall)",
+   "ST1 room 1 stair, flight 2 (return to the floor above)",
+   "ST1 room 1 stair, landing at the front wall",
+   "ST2 north-east stair, flight 1 (layout ASSUMED)",
+   "ST2 north-east stair, flight 2 (layout ASSUMED)",
+   "ST2 north-east stair, landing (layout ASSUMED)",
+   "ST3 south-east stair, flight 1 (layout ASSUMED)",
+   "ST3 south-east stair, flight 2 (layout ASSUMED)",
+   "ST3 south-east stair, landing (layout ASSUMED)",
+   "ST4 entrance steps inside room 1 (2 steps, PHOTO-EST)",
+   "TL000 wall tiles Z24",
+   "TL001 wall tiles Z24",
+   "TL002 wall tiles Z24",
+   "TL003 wall tiles Z24",
+   "TL004 wall tiles Z24",
+   "TL005 wall tiles Z24",
+   "TL006 wall tiles Z26",
+   "TL007 wall tiles Z26",
+   "TL008 wall tiles Z26",
+   "TL009 wall tiles Z26",
+   "TL010 wall tiles Z26",
+   "TL011 wall tiles Z27",
+   "TL012 wall tiles Z27",
+   "TL013 wall tiles Z27",
+   "TL014 wall tiles Z27",
+   "TL015 wall tiles Z27",
+   "TL016 wall tiles Z28",
+   "TL017 wall tiles Z28",
+   "TL018 wall tiles Z28",
+   "TL019 wall tiles Z28",
+   "TL020 wall tiles Z28",
+   "TL021 wall tiles Z28",
+   "TL022 wall tiles Z29",
+   "TL023 wall tiles Z29",
+   "TL024 wall tiles Z29",
+   "TL025 wall tiles Z29",
+   "TL026 wall tiles Z34",
+   "TL027 wall tiles Z34",
+   "TL028 wall tiles Z34",
+   "TL029 wall tiles Z34",
+   "W01 W114 room 2 - room 7",
+   "W01 frame",
+   "W01 glass",
+   "W02 W113 room 6 - room 8",
+   "W02 frame",
+   "W02 glass",
+   "W03 W113 room 6 - room 8",
+   "W03 frame",
+   "W03 glass",
+   "W04 W113 room 6 - room 8",
+   "W04 frame",
+   "W04 glass",
+   "W05 W114 room 5 - room 8",
+   "W05 frame",
+   "W05 glass",
+   "W06 W60 room 8",
+   "W06 blind cassette",
+   "W06 frame",
+   "W06 glass",
+   "W06 roller blind",
+   "W07 W71 room 8",
+   "W07 blind cassette",
+   "W07 frame",
+   "W07 glass",
+   "W07 roller blind",
+   "W08 W114 room 8",
+   "W08 blind cassette",
+   "W08 frame",
+   "W08 glass",
+   "W08 roller blind",
+   "W09 W114 room 8",
+   "W09 blind cassette",
+   "W09 frame",
+   "W09 glass",
+   "W09 roller blind",
+   "W10 W114 room 8",
+   "W10 blind cassette",
+   "W10 frame",
+   "W10 glass",
+   "W10 roller blind",
+   "W11 Lobby - reception glass",
+   "W11 frame",
+   "W11 glass",
+   "W12 Lobby - reception glass",
+   "W12 frame",
+   "W12 glass"
+  ],
+  "door_leaves": [
+   "D01 door (glass2) Main gate 140\"",
+   "D02 door (solid) D42 room 1 - room 2",
+   "D03 door (glass2) 57\" opening room 3 - room 7",
+   "D04 door (glass) D47 room 1 - room 3",
+   "D05 door (solid2) D60 room 3 - room 4",
+   "D06 door (solid) D26.5 washroom",
+   "D08 door (solid) D30 washroom 2",
+   "D09 door (solid) D30 washroom 1",
+   "D10 door (glass) 48\" opening room 7 - room 5",
+   "D13 door (glass) Hallway - room 8 (42\" standard)",
+   "D14 door (fire) D49 north-east stair",
+   "D15 door (fire) D49 engine room",
+   "D16 door (fire) D52 south-east stair",
+   "D17 door (solid) Staff entrance: lobby - staff corridor 42\"",
+   "D18 door (glass) Reception - visitor passage 42\"",
+   "D19 door (glass) Reception - boardroom 42\"",
+   "D20 door (solid) Executive suite - boardroom 42\"",
+   "D21 door (glass) Experience centre - boardroom 42\"",
+   "D22 door (solid) Female prayer room door 36\"",
+   "D31 door (slide) Audit room (sliding)",
+   "D32 door (solid) Guest WC",
+   "D33 door (solid) Guest WC",
+   "D34 door (glass) Sample room",
+   "D35 door (glass) 3D printing lab",
+   "D36 door (glass) Fabric & trim library",
+   "D37 door (glass) CAD / technical design",
+   "D38 door (glass2) Global Design Studio",
+   "D39 door (solid) Sample & material store",
+   "D40 door (glass2) Staff cafe 60\"",
+   "D41 door (glass) Lounge / training",
+   "D42 door (glass) Staff cafe",
+   "D43 door (solid) Prayer (male)",
+   "D44 door (solid) Wudu (male)",
+   "D46 door (glass) Director",
+   "D47 door (glass) Managing Director",
+   "D48 door (glass) HR & admin",
+   "D49 door (solid) Merchandising - experience centre",
+   "D50 door (glass) Accounts suite entrance 42\"",
+   "D51 door (glass) Accounts suite - north corridor 42\"",
+   "D52 door (slide) Finance discussion room (sliding) 40\""
+  ]
+ },
+ "walk_grid": "walk_grid.json"
+}

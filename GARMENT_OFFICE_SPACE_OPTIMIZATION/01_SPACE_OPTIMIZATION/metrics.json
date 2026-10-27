@@ -1,0 +1,654 @@
+{
+ "original": {
+  "name": "Original",
+  "zones": {
+   "Z07": {
+    "label": "MERCHANDISING",
+    "gross_sft": 1420.8,
+    "columns_sft": 0.7,
+    "new_partitions_sft": 0.0,
+    "net_floor_sft": 1420.1,
+    "footprint_sft": {
+     "activity": 50.0,
+     "equipment": 4.0,
+     "plant": 4.6,
+     "seat": 115.6,
+     "storage": 72.5,
+     "workstation": 168.1
+    },
+    "free_floor_sft": 1005.4,
+    "idle_floor_sft": 152.7,
+    "workstations": 16,
+    "seats_total": 24,
+    "other_seats": 8,
+    "net_sft_per_workstation": 88.8,
+    "storage_linear_in": 580,
+    "storage_volume_cuft": 206.7,
+    "routes": [
+     {
+      "from": "D11 hallway opening",
+      "to": "D49 to experience centre",
+      "clear_width_in": 47,
+      "target_in": 48,
+      "ok": false
+     }
+    ],
+    "keep_clear": [
+     {
+      "zone": "D49 door swing",
+      "blocked_sq_in": 0,
+      "ok": true
+     },
+     {
+      "zone": "D11 approach",
+      "blocked_sq_in": 0,
+      "ok": true
+     }
+    ],
+    "seat_access_min_in": 47,
+    "seats_below_36in": 0,
+    "seats_unreachable": 0,
+    "seats_below_36in_at": [],
+    "clashes": [],
+    "functions": []
+   },
+   "Z06": {
+    "label": "COMMERCIAL & ACCOUNTS",
+    "gross_sft": 1282.7,
+    "columns_sft": 2.1,
+    "new_partitions_sft": 0.0,
+    "net_floor_sft": 1280.6,
+    "footprint_sft": {
+     "equipment": 4.0,
+     "plant": 1.8,
+     "seat": 71.8,
+     "storage": 16.7,
+     "workstation": 141.4
+    },
+    "free_floor_sft": 1044.9,
+    "idle_floor_sft": 190.3,
+    "workstations": 13,
+    "seats_total": 15,
+    "other_seats": 2,
+    "net_sft_per_workstation": 98.5,
+    "storage_linear_in": 120,
+    "storage_volume_cuft": 58.3,
+    "routes": [
+     {
+      "from": "Staff corridor (south)",
+      "to": "D09 male washroom",
+      "clear_width_in": 67,
+      "target_in": 48,
+      "ok": true
+     },
+     {
+      "from": "Staff corridor (south)",
+      "to": "D08 female washroom",
+      "clear_width_in": 41,
+      "target_in": 48,
+      "ok": false
+     },
+     {
+      "from": "Staff corridor (south)",
+      "to": "D22 female prayer",
+      "clear_width_in": 41,
+      "target_in": 48,
+      "ok": false
+     },
+     {
+      "from": "Staff corridor (south)",
+      "to": "D31 audit room",
+      "clear_width_in": 41,
+      "target_in": 36,
+      "ok": true
+     },
+     {
+      "from": "Hallway (north-east)",
+      "to": "D08 female washroom",
+      "clear_width_in": 41,
+      "target_in": 48,
+      "ok": false
+     },
+     {
+      "from": "Hallway (north-east)",
+      "to": "Staff corridor (south)",
+      "clear_width_in": 47,
+      "target_in": 48,
+      "ok": false
+     }
+    ],
+    "keep_clear": [
+     {
+      "zone": "D09 approach",
+      "blocked_sq_in": 0,
+      "ok": true
+     },
+     {
+      "zone": "D08 approach",
+      "blocked_sq_in": 0,
+      "ok": true
+     },
+     {
+      "zone": "D22 approach",
+      "blocked_sq_in": 0,
+      "ok": true
+     },
+     {
+      "zone": "D31 approach",
+      "blocked_sq_in": 0,
+      "ok": true
+     },
+     {
+      "zone": "Staff corridor arrival",
+      "blocked_sq_in": 0,
+      "ok": true
+     }
+    ],
+    "seat_access_min_in": 45,
+    "seats_below_36in": 0,
+    "seats_unreachable": 0,
+    "seats_below_36in_at": [],
+    "clashes": [],
+    "functions": []
+   }
+  }
+ },
+ "A": {
+  "name": "A - Operational efficiency",
+  "zones": {
+   "Z07": {
+    "label": "MERCHANDISING",
+    "gross_sft": 1420.8,
+    "columns_sft": 0.7,
+    "new_partitions_sft": 0.0,
+    "net_floor_sft": 1420.1,
+    "footprint_sft": {
+     "activity": 23.3,
+     "equipment": 4.0,
+     "seat": 126.4,
+     "storage": 105.1,
+     "workstation": 210.8
+    },
+    "free_floor_sft": 950.4,
+    "idle_floor_sft": 221.5,
+    "workstations": 20,
+    "seats_total": 26,
+    "other_seats": 6,
+    "net_sft_per_workstation": 71.0,
+    "storage_linear_in": 862,
+    "storage_volume_cuft": 338.3,
+    "routes": [
+     {
+      "from": "D11 hallway opening",
+      "to": "D49 to experience centre",
+      "clear_width_in": 67,
+      "target_in": 48,
+      "ok": true
+     }
+    ],
+    "keep_clear": [
+     {
+      "zone": "D49 door swing",
+      "blocked_sq_in": 0,
+      "ok": true
+     },
+     {
+      "zone": "D11 approach",
+      "blocked_sq_in": 0,
+      "ok": true
+     }
+    ],
+    "seat_access_min_in": 47,
+    "seats_below_36in": 0,
+    "seats_unreachable": 0,
+    "seats_below_36in_at": [],
+    "clashes": [],
+    "functions": [
+     "16 desks",
+     "4 touchdown",
+     "team table",
+     "review counter"
+    ]
+   },
+   "Z06": {
+    "label": "COMMERCIAL & ACCOUNTS",
+    "gross_sft": 1282.7,
+    "columns_sft": 2.1,
+    "new_partitions_sft": 0.0,
+    "net_floor_sft": 1280.6,
+    "footprint_sft": {
+     "equipment": 4.0,
+     "seat": 83.4,
+     "storage": 71.0,
+     "workstation": 157.8
+    },
+    "free_floor_sft": 964.3,
+    "idle_floor_sft": 206.7,
+    "workstations": 17,
+    "seats_total": 17,
+    "other_seats": 0,
+    "net_sft_per_workstation": 75.3,
+    "storage_linear_in": 498,
+    "storage_volume_cuft": 243.0,
+    "routes": [
+     {
+      "from": "Staff corridor (south)",
+      "to": "D09 male washroom",
+      "clear_width_in": 67,
+      "target_in": 48,
+      "ok": true
+     },
+     {
+      "from": "Staff corridor (south)",
+      "to": "D08 female washroom",
+      "clear_width_in": 65,
+      "target_in": 48,
+      "ok": true
+     },
+     {
+      "from": "Staff corridor (south)",
+      "to": "D22 female prayer",
+      "clear_width_in": 49,
+      "target_in": 48,
+      "ok": true
+     },
+     {
+      "from": "Staff corridor (south)",
+      "to": "D31 audit room",
+      "clear_width_in": 61,
+      "target_in": 36,
+      "ok": true
+     },
+     {
+      "from": "Hallway (north-east)",
+      "to": "D08 female washroom",
+      "clear_width_in": 57,
+      "target_in": 48,
+      "ok": true
+     },
+     {
+      "from": "Hallway (north-east)",
+      "to": "Staff corridor (south)",
+      "clear_width_in": 57,
+      "target_in": 48,
+      "ok": true
+     }
+    ],
+    "keep_clear": [
+     {
+      "zone": "D09 approach",
+      "blocked_sq_in": 0,
+      "ok": true
+     },
+     {
+      "zone": "D08 approach",
+      "blocked_sq_in": 0,
+      "ok": true
+     },
+     {
+      "zone": "D22 approach",
+      "blocked_sq_in": 0,
+      "ok": true
+     },
+     {
+      "zone": "D31 approach",
+      "blocked_sq_in": 0,
+      "ok": true
+     },
+     {
+      "zone": "Staff corridor arrival",
+      "blocked_sq_in": 0,
+      "ok": true
+     }
+    ],
+    "seat_access_min_in": 57,
+    "seats_below_36in": 0,
+    "seats_unreachable": 0,
+    "seats_below_36in_at": [],
+    "clashes": [],
+    "functions": [
+     "16 desks",
+     "manager",
+     "records"
+    ]
+   }
+  }
+ },
+ "B": {
+  "name": "B - Balanced premium (selected)",
+  "zones": {
+   "Z07": {
+    "label": "MERCHANDISING",
+    "gross_sft": 1420.8,
+    "columns_sft": 0.7,
+    "new_partitions_sft": 0.0,
+    "net_floor_sft": 1420.1,
+    "footprint_sft": {
+     "activity": 77.2,
+     "equipment": 4.0,
+     "plant": 3.6,
+     "seat": 106.2,
+     "storage": 103.4,
+     "workstation": 168.1
+    },
+    "free_floor_sft": 958.4,
+    "idle_floor_sft": 189.1,
+    "workstations": 16,
+    "seats_total": 22,
+    "other_seats": 6,
+    "net_sft_per_workstation": 88.8,
+    "storage_linear_in": 796,
+    "storage_volume_cuft": 381.1,
+    "routes": [
+     {
+      "from": "D11 hallway opening",
+      "to": "D49 to experience centre",
+      "clear_width_in": 67,
+      "target_in": 48,
+      "ok": true
+     }
+    ],
+    "keep_clear": [
+     {
+      "zone": "D49 door swing",
+      "blocked_sq_in": 0,
+      "ok": true
+     },
+     {
+      "zone": "D11 approach",
+      "blocked_sq_in": 0,
+      "ok": true
+     }
+    ],
+    "seat_access_min_in": 41,
+    "seats_below_36in": 0,
+    "seats_unreachable": 0,
+    "seats_below_36in_at": [],
+    "clashes": [],
+    "functions": [
+     "16 merchandiser desks",
+     "tech-pack + swatch shelves",
+     "sample storage + approval wall",
+     "sample rails",
+     "dispatch",
+     "inspection island",
+     "buyer review + screen",
+     "circulation spine D11 - D49"
+    ]
+   },
+   "Z06": {
+    "label": "COMMERCIAL & ACCOUNTS",
+    "gross_sft": 1282.7,
+    "columns_sft": 2.1,
+    "new_partitions_sft": 17.7,
+    "net_floor_sft": 1262.8,
+    "footprint_sft": {
+     "activity": 9.0,
+     "equipment": 4.0,
+     "seat": 79.6,
+     "storage": 70.4,
+     "workstation": 123.9
+    },
+    "free_floor_sft": 976.5,
+    "idle_floor_sft": 37.7,
+    "workstations": 13,
+    "seats_total": 17,
+    "other_seats": 4,
+    "net_sft_per_workstation": 97.1,
+    "storage_linear_in": 504,
+    "storage_volume_cuft": 283.3,
+    "routes": [
+     {
+      "from": "Staff corridor (south)",
+      "to": "D09 male washroom",
+      "clear_width_in": 59,
+      "target_in": 48,
+      "ok": true
+     },
+     {
+      "from": "Staff corridor (south)",
+      "to": "D08 female washroom",
+      "clear_width_in": 59,
+      "target_in": 48,
+      "ok": true
+     },
+     {
+      "from": "Staff corridor (south)",
+      "to": "D22 female prayer",
+      "clear_width_in": 49,
+      "target_in": 48,
+      "ok": true
+     },
+     {
+      "from": "Staff corridor (south)",
+      "to": "D31 audit room",
+      "clear_width_in": 49,
+      "target_in": 36,
+      "ok": true
+     },
+     {
+      "from": "Hallway (north-east)",
+      "to": "D08 female washroom",
+      "clear_width_in": 49,
+      "target_in": 48,
+      "ok": true
+     },
+     {
+      "from": "Hallway (north-east)",
+      "to": "Staff corridor (south)",
+      "clear_width_in": 49,
+      "target_in": 48,
+      "ok": true
+     }
+    ],
+    "keep_clear": [
+     {
+      "zone": "D09 approach",
+      "blocked_sq_in": 0,
+      "ok": true
+     },
+     {
+      "zone": "D08 approach",
+      "blocked_sq_in": 0,
+      "ok": true
+     },
+     {
+      "zone": "D22 approach",
+      "blocked_sq_in": 0,
+      "ok": true
+     },
+     {
+      "zone": "D31 approach",
+      "blocked_sq_in": 0,
+      "ok": true
+     },
+     {
+      "zone": "Staff corridor arrival",
+      "blocked_sq_in": 0,
+      "ok": true
+     }
+    ],
+    "seat_access_min_in": 33,
+    "seats_below_36in": 4,
+    "seats_unreachable": 0,
+    "seats_below_36in_at": [
+     "visitor_chair (311, -312): 33 in",
+     "visitor_chair (311, -256): 33 in",
+     "visitor_chair (283, -284): 33 in",
+     "visitor_chair (339, -284): 33 in"
+    ],
+    "clashes": [],
+    "functions": [
+     "archive",
+     "12 finance desks",
+     "manager",
+     "secure records",
+     "document processing",
+     "finance discussion",
+     "public corridor",
+     "public corridor"
+    ]
+   }
+  }
+ },
+ "C": {
+  "name": "C - Flexible growth",
+  "zones": {
+   "Z07": {
+    "label": "MERCHANDISING",
+    "gross_sft": 1420.8,
+    "columns_sft": 0.7,
+    "new_partitions_sft": 0.0,
+    "net_floor_sft": 1420.1,
+    "footprint_sft": {
+     "activity": 75.6,
+     "equipment": 4.0,
+     "seat": 112.7,
+     "storage": 93.4,
+     "workstation": 169.6
+    },
+    "free_floor_sft": 964.9,
+    "idle_floor_sft": 151.9,
+    "workstations": 16,
+    "seats_total": 24,
+    "other_seats": 8,
+    "net_sft_per_workstation": 88.8,
+    "storage_linear_in": 736,
+    "storage_volume_cuft": 351.1,
+    "routes": [
+     {
+      "from": "D11 hallway opening",
+      "to": "D49 to experience centre",
+      "clear_width_in": 67,
+      "target_in": 48,
+      "ok": true
+     }
+    ],
+    "keep_clear": [
+     {
+      "zone": "D49 door swing",
+      "blocked_sq_in": 0,
+      "ok": true
+     },
+     {
+      "zone": "D11 approach",
+      "blocked_sq_in": 0,
+      "ok": true
+     }
+    ],
+    "seat_access_min_in": 37,
+    "seats_below_36in": 0,
+    "seats_unreachable": 0,
+    "seats_below_36in_at": [],
+    "clashes": [],
+    "functions": [
+     "16 desks (mobile)",
+     "project zone: 8 seats / growth",
+     "sample rails"
+    ]
+   },
+   "Z06": {
+    "label": "COMMERCIAL & ACCOUNTS",
+    "gross_sft": 1282.7,
+    "columns_sft": 2.1,
+    "new_partitions_sft": 8.3,
+    "net_floor_sft": 1272.3,
+    "footprint_sft": {
+     "activity": 12.5,
+     "equipment": 4.0,
+     "seat": 72.9,
+     "storage": 54.3,
+     "workstation": 123.9
+    },
+    "free_floor_sft": 1004.7,
+    "idle_floor_sft": 121.4,
+    "workstations": 13,
+    "seats_total": 15,
+    "other_seats": 2,
+    "net_sft_per_workstation": 97.9,
+    "storage_linear_in": 378,
+    "storage_volume_cuft": 184.7,
+    "routes": [
+     {
+      "from": "Staff corridor (south)",
+      "to": "D09 male washroom",
+      "clear_width_in": 59,
+      "target_in": 48,
+      "ok": true
+     },
+     {
+      "from": "Staff corridor (south)",
+      "to": "D08 female washroom",
+      "clear_width_in": 59,
+      "target_in": 48,
+      "ok": true
+     },
+     {
+      "from": "Staff corridor (south)",
+      "to": "D22 female prayer",
+      "clear_width_in": 49,
+      "target_in": 48,
+      "ok": true
+     },
+     {
+      "from": "Staff corridor (south)",
+      "to": "D31 audit room",
+      "clear_width_in": 53,
+      "target_in": 36,
+      "ok": true
+     },
+     {
+      "from": "Hallway (north-east)",
+      "to": "D08 female washroom",
+      "clear_width_in": 53,
+      "target_in": 48,
+      "ok": true
+     },
+     {
+      "from": "Hallway (north-east)",
+      "to": "Staff corridor (south)",
+      "clear_width_in": 53,
+      "target_in": 48,
+      "ok": true
+     }
+    ],
+    "keep_clear": [
+     {
+      "zone": "D09 approach",
+      "blocked_sq_in": 0,
+      "ok": true
+     },
+     {
+      "zone": "D08 approach",
+      "blocked_sq_in": 0,
+      "ok": true
+     },
+     {
+      "zone": "D22 approach",
+      "blocked_sq_in": 0,
+      "ok": true
+     },
+     {
+      "zone": "D31 approach",
+      "blocked_sq_in": 0,
+      "ok": true
+     },
+     {
+      "zone": "Staff corridor arrival",
+      "blocked_sq_in": 0,
+      "ok": true
+     }
+    ],
+    "seat_access_min_in": 37,
+    "seats_below_36in": 0,
+    "seats_unreachable": 0,
+    "seats_below_36in_at": [],
+    "clashes": [],
+    "functions": [
+     "12 desks (mobile)",
+     "flex table / 4 growth"
+    ]
+   }
+  }
+ }
+}

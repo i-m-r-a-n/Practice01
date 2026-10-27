@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Stage II - Interactive Office Experience</title>
+<meta name="theme-color" content="#16201b">
+<link rel="stylesheet" href="style.css">
+<script type="importmap">
+{ "imports": { "three": "./vendor/three/build/three.module.js", "three/addons/": "./vendor/three/examples/jsm/" } }
+</script>
+</head>
+<body data-mode="loading">
+<div id="app"></div>
+<canvas id="dissolve"></canvas>
+
+<!-- one stable header: brand left, a few plain-word buttons right -->
+<header id="top">
+  <button id="brand" class="brand" title="Home" aria-label="Home">
+    <span class="logos">
+      <img src="assets/logo_zara_fashion_profile.png" alt="Zara Fashion">
+      <img src="assets/logo_stage2_ltd.png" alt="Stage II Knitting Apparel Ltd.">
+      <img src="assets/logo_stage2_unit1.png" alt="Stage II Knitting Apparel Unit-1">
+    </span>
+    <span class="ttl">Stage II &middot; Interactive Office Experience</span>
+  </button>
+  <nav class="nav" aria-label="Main">
+    <button id="nRooms">Rooms</button>
+    <button id="nPlan">Floor plan</button>
+    <button id="nPresent" title="Large buttons for a TV or projector">Presentation mode</button>
+    <button id="nHelp" class="icon" title="Help" aria-label="Help">?</button>
+    <button id="nFull" class="icon" title="Full screen" aria-label="Full screen">&#x26F6;</button>
+  </nav>
+  <button id="exitPresent" class="hidden">Exit presentation</button>
+</header>
+
+<!-- opening screen: three obvious choices -->
+<section id="home" class="hidden" aria-labelledby="homeTitle">
+  <div class="home-in">
+    <div class="eyebrow">Ground floor &middot; proposed interior design</div>
+    <h1 id="homeTitle">Stage II &mdash; Interactive Office Experience</h1>
+    <p class="lead">Corporate headquarters &amp; design development centre, Zara Fashion / Stage II Knitting Apparel.</p>
+    <div class="choices">
+      <button class="choice primary" id="hTour"><b>&#9654;&ensp;Start guided tour</b><span>Automatically explore the important rooms.</span></button>
+      <button class="choice" id="hRooms"><b>Explore rooms</b><span>Choose a room from a simple menu.</span></button>
+      <button class="choice" id="hPlan"><b>View floor plan</b><span>Understand the layout from above.</span></button>
+    </div>
+  </div>
+</section>
+
+<!-- tour choice: names and durations come from the configured timings -->
+<section id="tourPick" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="tpTitle">
+  <div class="box">
+    <h2 id="tpTitle">Choose a guided tour</h2>
+    <div class="choices two">
+      <button class="choice primary" id="tpQuick"><b>Quick presentation</b><span id="tpQuickInfo"></span></button>
+      <button class="choice" id="tpFull"><b>Complete office tour</b><span id="tpFullInfo"></span></button>
+    </div>
+    <p class="small">The tour plays by itself. You can pause, go back or skip at any time.</p>
+    <button class="ghost" id="tpCancel">Cancel</button>
+  </div>
+</section>
+
+<!-- room menu: slides out, closes when a room is chosen -->
+<aside id="menu" aria-label="Rooms">
+  <div class="menu-head">
+    <b>Rooms</b>
+    <button id="menuClose" aria-label="Close the room menu">&times;</button>
+  </div>
+  <div id="roomGroups"></div>
+  <input id="search" type="search" placeholder="Find a room" autocomplete="off" aria-label="Find a room">
+</aside>
+<div id="scrim" class="hidden"></div>
+
+<!-- inside a room: one discreet card -->
+<section id="card" class="panel hidden" aria-live="polite">
+  <div class="eyebrow" id="cKicker"></div>
+  <h2 id="cTitle"></h2>
+  <p id="cText"></p>
+  <div class="row">
+    <button id="cLook" class="ghost">Look around</button>
+    <button id="cPhoto" class="ghost gold">Photorealistic view</button>
+    <button id="cPlan" class="ghost">Back to floor plan</button>
+  </div>
+  <button id="cWalk" class="link">Explore freely (walk)</button>
+</section>
+
+<!-- floor plan / overview: a single small bar -->
+<section id="planbar" class="panel hidden">
+  <span id="pbText">Click a room to visit it</span>
+  <button id="pbToggle" class="ghost">3D view</button>
+</section>
+
+<!-- guided tour: room name, progress, Back / Pause / Next / Exit -->
+<section id="tourbar" class="panel hidden" aria-live="polite">
+  <div class="tb-head"><span class="eyebrow" id="tName"></span><span id="tCount"></span></div>
+  <h2 id="tTitle"></h2>
+  <p id="tText"></p>
+  <div id="tSegs" class="segs" aria-hidden="true"></div>
+  <div class="tb-row">
+    <button id="tPrev">&#8249;&ensp;Back</button>
+    <button id="tPlay" class="play">&#10073;&#10073;&ensp;Pause</button>
+    <button id="tNext">Next&ensp;&#8250;</button>
+    <button id="tExit" class="exit">Exit tour</button>
+  </div>
+</section>
+
+<section id="done" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="doneTitle">
+  <div class="box">
+    <h2 id="doneTitle">Tour complete</h2>
+    <div class="choices three">
+      <button class="choice" id="dRooms"><b>Explore rooms</b></button>
+      <button class="choice primary" id="dAgain"><b>&#8635;&ensp;Play again</b></button>
+      <button class="choice" id="dHome"><b>Return to overview</b></button>
+    </div>
+  </div>
+</section>
+
+<!-- explore freely -->
+<div id="walkhint" class="panel hidden"></div>
+<div id="pad" class="hidden" aria-label="Walk"><button data-k="KeyW" aria-label="Forward">&#9650;</button><button data-k="KeyA" aria-label="Left">&#9664;</button><button data-k="KeyS" aria-label="Back">&#9660;</button><button data-k="KeyD" aria-label="Right">&#9654;</button></div>
+<canvas id="minimap" class="hidden" width="150" height="190" title="Floor map: click to go there"></canvas>
+<button id="resetView" class="ghost hidden">Reset view</button>
+<div id="toast" class="hidden"></div>
+
+<div id="photo" class="hidden">
+  <img id="photoImg" alt="">
+  <div class="photo-tag"><b>Photorealistic Blender render &mdash; still image.</b> <span id="photoNote"></span></div>
+  <button id="photoClose">&larr;&ensp;Back to the 3D room</button>
+</div>
+
+<div id="labels"></div>
+
+<section id="help" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="helpTitle">
+  <div class="box">
+    <h2 id="helpTitle">How to use this tour</h2>
+    <ul class="helplist">
+      <li><b>Start guided tour</b> plays the presentation by itself.</li>
+      <li><b>Rooms</b> opens the room menu. Choose a room and you are taken inside.</li>
+      <li>Inside a room, <b>drag</b> to look around and <b>scroll</b> to zoom. <b>Double-click</b> or <b>Reset view</b> returns to the original view.</li>
+      <li><b>Floor plan</b> shows the whole floor from above. Click any room on it.</li>
+      <li>Optional keys: <b>&rarr; / &larr;</b> next / previous stop, <b>Space</b> pause, <b>Esc</b> exit, <b>H</b> overview.</li>
+    </ul>
+    <label class="q">Display quality
+      <select id="vQuality"><option value="high">High</option><option value="balanced">Balanced</option><option value="low">Low</option></select></label>
+    <button class="ghost" id="helpClose">Close</button>
+  </div>
+</section>
+
+<footer id="disclaimer">Proposed interior visualization. Final dimensions and technical details subject to site verification.</footer>
+
+<div id="loading">
+  <div class="box">
+    <div class="eyebrow">Stage II &middot; Interactive Office Experience</div>
+    <div class="t" id="loadTitle">Loading the 3D model&hellip;</div>
+    <div class="track"><div id="loadBar"></div></div>
+    <div id="loadText">Starting&hellip;</div>
+    <div id="loadError" class="hidden"></div>
+    <div id="fallback" class="hidden"></div>
+  </div>
+</div>
+<noscript><div class="noscript">This 3D tour needs JavaScript and WebGL.</div></noscript>
+<script>
+  // anything that fails before or while the module runs is shown instead of an endless loading screen
+  window.__fail = function (msg) {
+    var e = document.getElementById('loadError'); if (!e) return;
+    document.getElementById('loading').style.display = 'flex';
+    e.className = ''; e.textContent = msg;
+    document.getElementById('loadTitle').textContent = 'The 3D model could not be shown';
+    if (window.__fallback) window.__fallback();
+  };
+  window.addEventListener('error', function (ev) { if (!window.__viewerReady) window.__fail('Error: ' + (ev.message || ev.type) + (ev.filename ? ' (' + ev.filename.split('/').pop() + ':' + ev.lineno + ')' : '')); });
+  window.addEventListener('unhandledrejection', function (ev) { if (!window.__viewerReady) window.__fail('Error: ' + (ev.reason && ev.reason.message || ev.reason)); });
+  setTimeout(function () { if (!window.__viewerStarted) window.__fail('The viewer script did not start. Use a current Chrome, Safari, Edge or Firefox and open the page through a web server (see README).'); }, 15000);
+</script>
+<script type="module" src="app.js"></script>
+</body>
+</html>
