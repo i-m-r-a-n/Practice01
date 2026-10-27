@@ -147,7 +147,7 @@ function onLoaded(gltf){
  }
  loaderBox.style.display='none';
  $('sidebar').classList.remove('closed');
- updateHUD(null);
+ if(!selected)updateHUD(null);
  console.info('Loaded office model:',{nodes:office.children.length,cameras:savedCameras.size,zones:zoneFloors.length,ceilingMeshes:ceilingMeshes.length,bounds:officeSize.toArray()});
 }
 function onResize(){
