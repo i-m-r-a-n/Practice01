@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stage II · Ground-Floor Office | Interactive 3D Tour</title>
+<meta name="theme-color" content="#101a18">
+<style>
+:root{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#f1f4ed;background:#101a18}
+*{box-sizing:border-box}body{margin:0;overflow:hidden}button,input{font:inherit}button{cursor:pointer}
+#stage{position:fixed;inset:0;background:radial-gradient(ellipse at 65% 45%,#233b34 0%,#121d1b 55%,#0b1212 100%)}
+#canvas{width:100%;height:100%;display:block;touch-action:none}
+#vignette{position:fixed;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(6,12,12,.36),transparent 45%),linear-gradient(0deg,rgba(6,12,12,.55),transparent 26%)}
+#header{position:absolute;top:0;left:0;right:0;height:82px;display:flex;align-items:center;justify-content:space-between;padding:17px 25px;background:linear-gradient(180deg,rgba(6,13,13,.88),transparent);z-index:3}
+.brand{display:flex;align-items:center;gap:12px}.brand-mark{width:39px;height:39px;display:grid;place-items:center;background:#bdad88;border-radius:9px;color:#17231e;font-family:Georgia,serif;font-weight:900;font-size:18px}.eyebrow{font-size:10px;letter-spacing:.21em;text-transform:uppercase;color:#d3c19c;font-weight:750}.brand-title{font-size:15px;font-weight:700;letter-spacing:.015em;margin-top:3px}
+.top-tag{border:1px solid #bacab04a;border-radius:30px;background:#122a24a8;padding:9px 14px;font-size:11px;color:#e6eadd;letter-spacing:.06em}
+#sidebar{position:absolute;top:96px;left:20px;bottom:76px;width:306px;display:flex;flex-direction:column;border:1px solid #cde1ce29;background:linear-gradient(155deg,#142721ed,#12221fdf);border-radius:18px;box-shadow:0 20px 65px #05120b7a;backdrop-filter:blur(18px);overflow:hidden;z-index:4}
+.panel-title{padding:23px 21px 13px}.panel-title h1{font-family:Georgia,serif;font-weight:400;font-size:29px;line-height:1.03;letter-spacing:-.03em;margin:6px 0 9px}.panel-title p{font-size:11px;line-height:1.55;color:#b1c0b8;margin:0}
+.actions{padding:12px 15px;display:grid;grid-template-columns:1fr 1fr;gap:7px}
+.action{background:#ffffff0c;color:#f4f3e9;border:1px solid #cbd7c02d;border-radius:9px;padding:10px 8px;font-size:12px;text-align:center}
+.action:hover,.action.active{background:#baab872e;border-color:#d1b88080}.action.primary{background:#d1b880;color:#18302a;font-weight:800;border-color:#d1b880}
+#search{margin:11px 15px 8px;width:calc(100% - 30px);border:1px solid #d6e6d329;border-radius:9px;background:#0815118a;color:#fff;outline:none;padding:12px 12px;font-size:12px}
+#search::placeholder{color:#80958b}.rooms-title{padding:9px 19px;font-size:10px;text-transform:uppercase;letter-spacing:.16em;color:#a2b4a8;font-weight:700}
+#rooms{overflow-y:auto;flex:1;padding:0 10px 11px;scrollbar-color:#66807560 transparent;scrollbar-width:thin}
+.group{margin:5px 9px 8px;font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:#caba92;font-weight:750}
+.room{width:100%;display:flex;align-items:center;gap:11px;background:transparent;color:#e3ebe2;text-align:left;border:1px solid transparent;padding:10px 9px;border-radius:10px}
+.room:hover{background:#e6e8cc10}.room.selected{background:#bba87f28;border-color:#c8b58d65}
+.room .dot{width:7px;height:7px;border-radius:50%;background:#adbcac;flex:0 0 auto}.room.selected .dot{background:#e7c17c}
+.room strong{font-size:12px;font-weight:570}.room small{margin-left:auto;color:#9aa99c;font-size:10px}
+#hud{position:absolute;bottom:20px;left:340px;right:20px;display:flex;justify-content:space-between;gap:14px;align-items:end;z-index:3;pointer-events:none}
+.hud-card{max-width:500px;background:#0b1a17d9;border:1px solid #d3d8b929;backdrop-filter:blur(12px);padding:14px 18px;border-radius:14px;pointer-events:auto}
+.hud-card h2{font-family:Georgia,serif;font-weight:400;line-height:1.1;font-size:22px;margin:2px 0 6px}
+.hud-card p{color:#b6c7bf;font-size:11px;line-height:1.5;margin:0}
+.hud-right{display:flex;gap:7px;align-items:center}
+.chip{padding:10px 12px;border:1px solid #d6dfd234;background:#0b1b18d8;backdrop-filter:blur(12px);border-radius:10px;font-size:11px;color:#d6e1d4;white-space:nowrap}
+#progressBox{position:absolute;top:43%;left:50%;transform:translate(-50%,-50%);min-width:min(350px,87vw);border:1px solid #c9d2be45;border-radius:17px;padding:25px;background:#0b1b18f0;text-align:center;box-shadow:0 18px 70px #0008;z-index:9}
+#loadTitle{font:25px Georgia,serif}#loadText{font-size:12px;color:#c2c9b8;margin:12px 0}
+.track{height:5px;border-radius:9px;background:#ffffff23;overflow:hidden}.bar{height:100%;width:0%;background:linear-gradient(90deg,#b7a274,#e6cea1);transition:width .3s}
+#tourbar{position:absolute;bottom:21px;left:50%;transform:translateX(-50%);z-index:5;display:none;min-width:min(550px,calc(100vw - 32px));background:#10231edf;border:1px solid #d1c09559;padding:12px 15px;border-radius:15px;backdrop-filter:blur(20px)}
+.tourrow{display:flex;align-items:center;gap:12px}#tourLabel{font-size:12px;flex:1}#tourCount{font-size:11px;color:#a3b6a9}#tourStop{padding:8px 13px;color:#172b23;background:#dbbf8d;border:0;border-radius:9px;font-weight:700}.timeline{margin-top:10px;height:4px;background:#ffffff33;border-radius:4px;overflow:hidden}#tourFill{height:100%;width:0%;background:#d6bf94}
+#warning{position:absolute;right:20px;top:94px;max-width:340px;padding:10px 14px;border-radius:10px;background:#191f19ce;border:1px solid #d2bd7d65;color:#eee5ce;font-size:11px;line-height:1.45;z-index:4}
+#help{position:absolute;right:25px;bottom:70px;padding:11px 13px;background:#101b19be;border-radius:11px;color:#c3d4c7;font-size:11px;line-height:1.9;pointer-events:none}
+kbd{border:1px solid #bacbb24a;border-radius:4px;padding:1px 4px;color:#f7f3e7}
+#mobileMenu{display:none}
+@media(max-width:780px){#header{height:71px;padding:12px 13px}.brand-title{font-size:12px}.top-tag{display:none}#mobileMenu{display:block;position:absolute;top:78px;left:14px;z-index:8;background:#c7ae7e;color:#13271f;border:0;border-radius:9px;padding:10px 13px;font-weight:700}#sidebar{left:12px;top:124px;bottom:70px;width:min(308px,calc(100vw - 24px));transition:transform .25s}#sidebar.closed{transform:translateX(calc(-100% - 20px))}#hud{left:12px;right:12px;bottom:9px}.hud-card{max-width:74vw;padding:11px 12px}.hud-card h2{font-size:17px}.hud-right{display:none}#help{display:none}#warning{right:12px;top:76px;max-width:65%;font-size:10px}#tourbar{bottom:75px}}
+</style>
+<script type="importmap">
+{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.164.1/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.164.1/examples/jsm/"}}
+</script>
+</head>
+<body>
+<div id="stage"><canvas id="canvas"></canvas></div><div id="vignette"></div>
+<header id="header"><div class="brand"><span class="brand-mark">II</span><div><div class="eyebrow">Stage II · Zara Fashion</div><div class="brand-title">Ground Floor · Design Vision</div></div></div><div class="top-tag">INTERACTIVE ARCHITECTURAL EXPERIENCE · CONCEPT</div></header>
+<button id="mobileMenu">☰ Explore</button>
+<aside id="sidebar" class="closed"><div class="panel-title"><div class="eyebrow">Virtual design tour</div><h1>Explore the<br>future office.</h1><p>Walk through the complete proposed corporate office and fashion design centre. Choose a room or follow the guided experience.</p></div>
+<div class="actions"><button class="action primary" id="tourBtn">▶ Guided tour</button><button class="action" id="overviewBtn">◇ Full floor</button><button class="action" id="walkBtn">♙ Walk mode</button><button class="action" id="ceilingBtn">◱ Hide ceilings</button><button class="action" id="resetBtn">↺ Reset</button><button class="action" id="labelsBtn">◉ Room markers</button></div>
+<input type="search" id="search" placeholder="Search 34 spaces…" autocomplete="off"><div class="rooms-title">Explore by department</div><div id="rooms"></div></aside>
+<div id="warning">Concept visualization — site dimensions, exits, HVAC and structure require verification before construction.</div>
+<div id="hud"><div class="hud-card"><div class="eyebrow" id="zoneTag">Full-floor view</div><h2 id="roomTitle">A new vision of work.</h2><p id="roomDesc">Drag to orbit · scroll to zoom · select a space to explore. Designed for Stage II Knitting Apparel / Zara Fashion.</p></div><div class="hud-right"><div class="chip">34 designed zones</div><div class="chip">Interactive 3D</div></div></div>
+<div id="help">Drag to orbit · Scroll to zoom · <kbd>W A S D</kbd> move in Walk Mode<br>Arrow keys turn · <kbd>Esc</kbd> exit walkthrough</div>
+<div id="tourbar"><div class="tourrow"><div class="eyebrow">Guided tour</div><div id="tourLabel">Beginning tour…</div><span id="tourCount"></span><button id="tourStop">Stop</button></div><div class="timeline"><div id="tourFill"></div></div></div>
+<div id="progressBox"><div class="eyebrow">Opening office experience</div><div style="height:10px"></div><div id="loadTitle">Preparing your virtual tour</div><div id="loadText">Loading the 3D office model (approximately 42 MB)…</div><div class="track"><div class="bar" id="progressBar"></div></div></div>
+<script type="module" src="./app.js"></script>
+</body></html>
