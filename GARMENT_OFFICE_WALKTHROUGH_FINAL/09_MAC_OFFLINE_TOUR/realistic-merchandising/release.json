@@ -1,0 +1,128 @@
+{
+  "room_completed": "Merchandising",
+  "file": "Merchandising_Realistic_Offline.zip",
+  "bytes": 73033272,
+  "sha256": "029c17d037f71ee30b43404fb4d2c5872ef8254088a47ad273fb5e28e536ed19",
+  "base_model_sha256": "06f13e5311f4f78008a15ab8b7d97c3284d52411cf22c231d522d2c26ed196c3",
+  "runtime_manifest": {
+    "source_files": [
+      {
+        "path": "lighting-v2/Z02-furniture.glb",
+        "bytes": 1725000,
+        "sha256": "a0d6b957d815402d750b3037a09707557974f130a28fc3fc562266617df314c8"
+      },
+      {
+        "path": "lighting-v2/Z02.exr",
+        "bytes": 14345283,
+        "sha256": "966513336c6de93ec2e7a1e3c567269bb845db9f28a312c047f4074c9076f6dd"
+      },
+      {
+        "path": "lighting-v2/Z02.ktx2",
+        "bytes": 18938140,
+        "sha256": "1eec0b7f3e08f42d7bde75c49a7716e1d520c90beb96ee0c7998daf5402c02d0"
+      },
+      {
+        "path": "lighting-v2/manifest-hybrid.json",
+        "bytes": 25011,
+        "sha256": "2ea818b15323e03ec96949d5c74d7273f8568cedc31a560c61f115a37c698abd"
+      },
+      {
+        "path": "model_web_baked.glb",
+        "bytes": 19973644,
+        "sha256": "06f13e5311f4f78008a15ab8b7d97c3284d52411cf22c231d522d2c26ed196c3"
+      },
+      {
+        "path": "people/assets/panjabi.glb",
+        "bytes": 4099060,
+        "sha256": "31f9e208986c064a3776991690d12925ed5fda59889765df06930d66c054d257"
+      },
+      {
+        "path": "people/assets/salwar.glb",
+        "bytes": 5159776,
+        "sha256": "cd2c4c458dd59532cc28408b98ae8d544a971fe4e069fab2413bbf4f4d90b5e4"
+      },
+      {
+        "path": "people/assets/salwar_braid.glb",
+        "bytes": 4689540,
+        "sha256": "68f3384b625f59d8d4a9c1ddce671126dba394f7ca9aaae383ac0d5aa08e398d"
+      },
+      {
+        "path": "people/assets/shirt.glb",
+        "bytes": 4411128,
+        "sha256": "7430996e4368aa3e54d39c77f93d69a7ce31a089977714e2e7ed56dd846f7c1e"
+      },
+      {
+        "path": "people/room-release/people-manifest.json",
+        "bytes": 22330,
+        "sha256": "df20c7a2c2d9a37c2b9e6c20f41431374563ad4403108fc9a3e5c49bbbe35840"
+      },
+      {
+        "path": "people/room-release/poses.json",
+        "bytes": 31913,
+        "sha256": "7c30405b74faa62d5ef1844b7b7620e91cc46bcae93ad2994a63a3b6c0d748c5"
+      },
+      {
+        "path": "props/office-props-manifest.json",
+        "bytes": 167943,
+        "sha256": "4b93095d048f658bcdff957f56b41dac78e2287d727af9eb4312647593a9e3dd"
+      },
+      {
+        "path": "release-config.json",
+        "bytes": 1831,
+        "sha256": "cdd53c42b63837076124c70238e0c49560a528fc665e96c39568b3eaaaa118c9"
+      },
+      {
+        "path": "textures/codecs/third_party_licenses/sources.json",
+        "bytes": 922,
+        "sha256": "70ac590a05a7fe2ccb830d994dcbdbc7d4b6e309fe07fdad60c9910d049dad8a"
+      },
+      {
+        "path": "textures/codecs/three_r169/examples/jsm/libs/basis/basis_transcoder.js",
+        "bytes": 57529,
+        "sha256": "8478b5b6d6b74e7d3082b89f6417321d8d1dc0307f2b30d4484bb11b441696a1"
+      },
+      {
+        "path": "textures/codecs/three_r169/examples/jsm/libs/basis/basis_transcoder.wasm",
+        "bytes": 527333,
+        "sha256": "6cf17dc889352c42e9acf8897107978d127005fe3386c36a0e3845e27967630a"
+      },
+      {
+        "path": "textures/codecs/three_r169/examples/jsm/libs/ktx-parse.module.js",
+        "bytes": 19440,
+        "sha256": "34a3a68f08db30a353802c5a762c5dcd89a168a1b56567019ef4a7563ceaf4d4"
+      },
+      {
+        "path": "textures/codecs/three_r169/examples/jsm/libs/zstddec.module.js",
+        "bytes": 39754,
+        "sha256": "5cbf818e842628a4464e748594a6deae18ceddda3c2f541e7b3a0ff5fc7611e2"
+      },
+      {
+        "path": "textures/codecs/three_r169/examples/jsm/loaders/KTX2Loader.js",
+        "bytes": 23627,
+        "sha256": "68a9bc3a01170cf4c840ae025715fd661f0a929019231e61128a64fa12608fd7"
+      },
+      {
+        "path": "textures/codecs/three_r169/examples/jsm/utils/WorkerPool.js",
+        "bytes": 1712,
+        "sha256": "94ff7b608caf3b827ffa95bd6092b9d174732b856915b38ed006b4f049f95675"
+      },
+      {
+        "path": "textures/codecs/three_r169/manifest.json",
+        "bytes": 2125,
+        "sha256": "8d9947f6d69b53233b38a9254191a96224ca39ff6006e057a6c3551b603f64c6"
+      }
+    ],
+    "source_bytes": 74263041,
+    "resource_packs": [
+      "asset-pack-000.js",
+      "asset-pack-001.js",
+      "asset-pack-002.js",
+      "asset-pack-003.js",
+      "asset-pack-004.js",
+      "asset-pack-005.js"
+    ],
+    "camera_renders": 45,
+    "status": "Built package; see external file-protocol QA before claiming acceptance."
+  },
+  "validation": "See accompanying room QA; native MacBook performance and file:// opening unverified."
+}

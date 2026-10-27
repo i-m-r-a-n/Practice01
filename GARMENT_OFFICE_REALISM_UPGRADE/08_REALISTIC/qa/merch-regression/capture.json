@@ -1,0 +1,411 @@
+{
+  "phase": "merch-regression",
+  "url": "http://127.0.0.1:8783/realistic/?welcome=0&ao=0&shadows=0",
+  "viewport": [
+    1280,
+    720
+  ],
+  "people_requested": "on",
+  "require_lightmaps": false,
+  "shots": [
+    {
+      "camera": "CAM_01_Reception_A",
+      "type": "PERSP",
+      "frame_result": {
+        "name": "CAM_01_Reception_A",
+        "type": "PERSP",
+        "lighting": {
+          "state": "loaded",
+          "sourceObjects": 25,
+          "meshes": 29,
+          "triangles": 41717,
+          "intensity": 3.141592653589793,
+          "format": "ktx2",
+          "resolution": 2048,
+          "heroError": null
+        }
+      },
+      "state": {
+        "viewer": {
+          "mode": "capture",
+          "room": "Z02",
+          "atCam": "CAM_01_Reception_A",
+          "flying": false,
+          "flightT": null,
+          "fps": 0,
+          "overhead": true,
+          "tour": null,
+          "photo": null,
+          "aoFrames": 0,
+          "pos": [
+            8.077,
+            1.524,
+            0.66
+          ]
+        },
+        "stats": {
+          "frame": 38,
+          "calls": 326,
+          "triangles": 2041264,
+          "points": 0,
+          "lines": 0,
+          "memory": {
+            "geometries": 234,
+            "textures": 138
+          },
+          "phase": 4,
+          "capturePostProcessing": false,
+          "post": null
+        },
+        "lighting": {
+          "regularAtlasBudgetBytes": 201326592,
+          "phase": 1,
+          "manifest": "http://127.0.0.1:8783/realistic/lighting-v2/manifest-hybrid.json",
+          "available": 1,
+          "loaded": [
+            "Z02"
+          ],
+          "requiredShared": [],
+          "rooms": {
+            "Z02": {
+              "state": "loaded",
+              "sourceObjects": 25,
+              "meshes": 29,
+              "triangles": 41717,
+              "intensity": 3.141592653589793,
+              "format": "ktx2",
+              "resolution": 2048,
+              "heroError": null
+            }
+          },
+          "error": null,
+          "residentRegularBytes": 33554432,
+          "residentSharedBytes": 0,
+          "activeExceedsBudget": false
+        },
+        "people": {
+          "enabled": true,
+          "loaded": true,
+          "frozen": true,
+          "total": 23,
+          "visible": 7,
+          "walkers": 0,
+          "illustrative": true,
+          "forbiddenZoneViolations": 0,
+          "status": "Reception, Boardroom, Experience Centre, MD Office; Merchandising shown as the proposed option B redesign",
+          "nativeMacPerformanceTested": false
+        },
+        "viewer_errors": []
+      },
+      "file": "shots/after_CAM_01_Reception_A.png",
+      "sha256": "ea4eb5870d2960bf3e994a572ed475ba31dfe44b9ff68ccf85194175adccc0d3"
+    },
+    {
+      "camera": "CAM_09_Boardroom_A",
+      "type": "PERSP",
+      "frame_result": {
+        "name": "CAM_09_Boardroom_A",
+        "type": "PERSP",
+        "lighting": null
+      },
+      "state": {
+        "viewer": {
+          "mode": "capture",
+          "room": "Z08",
+          "atCam": "CAM_09_Boardroom_A",
+          "flying": false,
+          "flightT": null,
+          "fps": 0.638325035107839,
+          "overhead": true,
+          "tour": null,
+          "photo": null,
+          "aoFrames": 0,
+          "pos": [
+            21.844,
+            1.575,
+            -5.08
+          ]
+        },
+        "stats": {
+          "frame": 39,
+          "calls": 444,
+          "triangles": 2407156,
+          "points": 0,
+          "lines": 0,
+          "memory": {
+            "geometries": 258,
+            "textures": 203
+          },
+          "phase": 4,
+          "capturePostProcessing": false,
+          "post": null
+        },
+        "lighting": {
+          "regularAtlasBudgetBytes": 201326592,
+          "phase": 1,
+          "manifest": "http://127.0.0.1:8783/realistic/lighting-v2/manifest-hybrid.json",
+          "available": 1,
+          "loaded": [
+            "Z02"
+          ],
+          "requiredShared": [],
+          "rooms": {
+            "Z02": {
+              "state": "loaded",
+              "sourceObjects": 25,
+              "meshes": 29,
+              "triangles": 41717,
+              "intensity": 3.141592653589793,
+              "format": "ktx2",
+              "resolution": 2048,
+              "heroError": null
+            }
+          },
+          "error": null,
+          "residentRegularBytes": 33554432,
+          "residentSharedBytes": 0,
+          "activeExceedsBudget": false
+        },
+        "people": {
+          "enabled": true,
+          "loaded": true,
+          "frozen": true,
+          "total": 23,
+          "visible": 11,
+          "walkers": 0,
+          "illustrative": true,
+          "forbiddenZoneViolations": 0,
+          "status": "Reception, Boardroom, Experience Centre, MD Office; Merchandising shown as the proposed option B redesign",
+          "nativeMacPerformanceTested": false
+        },
+        "viewer_errors": []
+      },
+      "file": "shots/after_CAM_09_Boardroom_A.png",
+      "sha256": "c4207ec27f5410ffe55875af1eebd610402665735830e74598e29393a689e534"
+    },
+    {
+      "camera": "CAM_04_Experience_Centre_A",
+      "type": "PERSP",
+      "frame_result": {
+        "name": "CAM_04_Experience_Centre_A",
+        "type": "PERSP",
+        "lighting": null
+      },
+      "state": {
+        "viewer": {
+          "mode": "capture",
+          "room": "Z30",
+          "atCam": "CAM_04_Experience_Centre_A",
+          "flying": false,
+          "flightT": null,
+          "fps": 0.7601094557618449,
+          "overhead": true,
+          "tour": null,
+          "photo": null,
+          "aoFrames": 0,
+          "pos": [
+            9.957,
+            1.575,
+            -5.74
+          ]
+        },
+        "stats": {
+          "frame": 40,
+          "calls": 367,
+          "triangles": 2277590,
+          "points": 0,
+          "lines": 0,
+          "memory": {
+            "geometries": 262,
+            "textures": 275
+          },
+          "phase": 4,
+          "capturePostProcessing": false,
+          "post": null
+        },
+        "lighting": {
+          "regularAtlasBudgetBytes": 201326592,
+          "phase": 1,
+          "manifest": "http://127.0.0.1:8783/realistic/lighting-v2/manifest-hybrid.json",
+          "available": 1,
+          "loaded": [
+            "Z02"
+          ],
+          "requiredShared": [],
+          "rooms": {
+            "Z02": {
+              "state": "loaded",
+              "sourceObjects": 25,
+              "meshes": 29,
+              "triangles": 41717,
+              "intensity": 3.141592653589793,
+              "format": "ktx2",
+              "resolution": 2048,
+              "heroError": null
+            }
+          },
+          "error": null,
+          "residentRegularBytes": 33554432,
+          "residentSharedBytes": 0,
+          "activeExceedsBudget": false
+        },
+        "people": {
+          "enabled": true,
+          "loaded": true,
+          "frozen": true,
+          "total": 23,
+          "visible": 15,
+          "walkers": 0,
+          "illustrative": true,
+          "forbiddenZoneViolations": 0,
+          "status": "Reception, Boardroom, Experience Centre, MD Office; Merchandising shown as the proposed option B redesign",
+          "nativeMacPerformanceTested": false
+        },
+        "viewer_errors": []
+      },
+      "file": "shots/after_CAM_04_Experience_Centre_A.png",
+      "sha256": "8a44db937dbcdea77854dd05499ce096416c5416d45981c01c20aca34b412906"
+    },
+    {
+      "camera": "CAM_07_MD_Office_A",
+      "type": "PERSP",
+      "frame_result": {
+        "name": "CAM_07_MD_Office_A",
+        "type": "PERSP",
+        "lighting": null
+      },
+      "state": {
+        "viewer": {
+          "mode": "capture",
+          "room": "Z12",
+          "atCam": "CAM_07_MD_Office_A",
+          "flying": false,
+          "flightT": null,
+          "fps": 0.805088157153148,
+          "overhead": true,
+          "tour": null,
+          "photo": null,
+          "aoFrames": 0,
+          "pos": [
+            22.098,
+            1.524,
+            1.626
+          ]
+        },
+        "stats": {
+          "frame": 41,
+          "calls": 174,
+          "triangles": 1686556,
+          "points": 0,
+          "lines": 0,
+          "memory": {
+            "geometries": 265,
+            "textures": 291
+          },
+          "phase": 4,
+          "capturePostProcessing": false,
+          "post": null
+        },
+        "lighting": {
+          "regularAtlasBudgetBytes": 201326592,
+          "phase": 1,
+          "manifest": "http://127.0.0.1:8783/realistic/lighting-v2/manifest-hybrid.json",
+          "available": 1,
+          "loaded": [
+            "Z02"
+          ],
+          "requiredShared": [],
+          "rooms": {
+            "Z02": {
+              "state": "loaded",
+              "sourceObjects": 25,
+              "meshes": 29,
+              "triangles": 41717,
+              "intensity": 3.141592653589793,
+              "format": "ktx2",
+              "resolution": 2048,
+              "heroError": null
+            }
+          },
+          "error": null,
+          "residentRegularBytes": 33554432,
+          "residentSharedBytes": 0,
+          "activeExceedsBudget": false
+        },
+        "people": {
+          "enabled": true,
+          "loaded": true,
+          "frozen": true,
+          "total": 23,
+          "visible": 2,
+          "walkers": 0,
+          "illustrative": true,
+          "forbiddenZoneViolations": 0,
+          "status": "Reception, Boardroom, Experience Centre, MD Office; Merchandising shown as the proposed option B redesign",
+          "nativeMacPerformanceTested": false
+        },
+        "viewer_errors": []
+      },
+      "file": "shots/after_CAM_07_MD_Office_A.png",
+      "sha256": "89344b0dc53bf9cef18311e143582a139e9851133bce1db90a620b0460766934"
+    }
+  ],
+  "console_errors": [],
+  "page_errors": [],
+  "http_errors": [],
+  "source_responses": [
+    {
+      "url": "http://127.0.0.1:8783/realistic/?welcome=0&ao=0&shadows=0",
+      "status": 200,
+      "bytes": 70875,
+      "sha256": "c3fb3ba4ae201892c4451a5db43c6add6f50a70b80bd1833491290373c6f1545"
+    },
+    {
+      "url": "http://127.0.0.1:8783/realistic/app.js",
+      "status": 200,
+      "bytes": 1174931,
+      "sha256": "054c6da75f8ce4b98973d954b3e5ac9a4a0387ad4e766d598ced4c69512fb283"
+    }
+  ],
+  "source_response_method": "Actual browser navigation/asset response bodies, not a later refetch",
+  "status": "captured",
+  "scope": "Actual viewer frames; UI hidden through screenshot-only CSS. Original scene camera API, no synthetic edits.",
+  "limits": [
+    "Linux software-GPU capture, not a MacBook performance test",
+    "Local load timing is not a 50 Mbps WAN benchmark"
+  ],
+  "ready_seconds_local": 4.588,
+  "browser": "153.0.8010.12",
+  "gpu": {
+    "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+    "vendor": "Google Inc. (Google)",
+    "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+    "webgl": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+    "maxTextureSize": 8192,
+    "pixelRatio": 1,
+    "quality": "balanced",
+    "viewport": [
+      1280,
+      720
+    ]
+  },
+  "counts": {
+    "quality": "balanced",
+    "stage": 4,
+    "floorTopTriangles": 8,
+    "meshes": 133,
+    "drawCallsMerged": {
+      "before": 2015,
+      "after": 104,
+      "roomGroupsSeparate": true
+    },
+    "rooms": 34,
+    "cameras": 45,
+    "stops": 16,
+    "model": "web",
+    "bakedLight": true,
+    "shadows": false,
+    "ambientOcclusion": false
+  },
+  "seconds": 60.149
+}

@@ -1,0 +1,32 @@
+{
+  "room": "Merchandising",
+  "status": "Option B redesign model + 8 static people; browser capture, released-room regression (1-3 % pixel change, bake noise), offline resolver passed; public verification after deploy",
+  "base_model": {
+    "file": "revised-model/Optimized_Office_Interior_web_baked.glb",
+    "sha256": "06f13e5311f4f78008a15ab8b7d97c3284d52411cf22c231d522d2c26ed196c3",
+    "source": "claude/space-optimization (Z06/Z07 option B, proposed revised concept)"
+  },
+  "active_rooms": [
+    "Reception",
+    "Boardroom",
+    "Experience Centre",
+    "MD Office",
+    "Merchandising"
+  ],
+  "total_static_people": 23,
+  "new_people": 8,
+  "excluded_props": "76 GPT Z07 props (old desk layout)",
+  "limits": [
+    "Proposed revised concept, not an approved layout",
+    "Visual contact review only",
+    "Mirror renders dark in WebGL",
+    "Native Mac FPS / Safari / file opening unverified"
+  ],
+  "hashes": {
+    "viewer/dist/app.js": "054c6da75f8ce4b98973d954b3e5ac9a4a0387ad4e766d598ced4c69512fb283",
+    "viewer/dist/release-config.json": "cdd53c42b63837076124c70238e0c49560a528fc665e96c39568b3eaaaa118c9",
+    "people/room-release/people-manifest.json": "df20c7a2c2d9a37c2b9e6c20f41431374563ad4403108fc9a3e5c49bbbe35840",
+    "people/room-release/poses.json": "7c30405b74faa62d5ef1844b7b7620e91cc46bcae93ad2994a63a3b6c0d748c5",
+    "review/merchandising-before-after.png": "862fa23e6cd5322069f614fa04bbe5f9f172a537324ff169ac2a0cf8896bd6e9"
+  }
+}

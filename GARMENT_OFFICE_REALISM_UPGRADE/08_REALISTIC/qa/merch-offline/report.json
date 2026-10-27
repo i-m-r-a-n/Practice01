@@ -1,0 +1,30 @@
+{
+  "status": "passed",
+  "scope": "Loopback HTTP offline-resource resolver; not native Mac/file protocol acceptance",
+  "errors": [],
+  "outside_requests": [],
+  "frame": {
+    "name": "CAM_34_Merchandising_Sample_Hub",
+    "type": "PERSP",
+    "lighting": null
+  },
+  "people": {
+    "enabled": true,
+    "loaded": true,
+    "frozen": true,
+    "total": 23,
+    "visible": 8,
+    "walkers": 0,
+    "illustrative": true,
+    "forbiddenZoneViolations": 0,
+    "status": "Reception, Boardroom, Experience Centre, MD Office; Merchandising shown as the proposed option B redesign",
+    "nativeMacPerformanceTested": false
+  },
+  "offline": {
+    "requests": 9,
+    "decodedBytes": 38580345,
+    "missing": []
+  },
+  "image_sha256": "08af51451991bf6a6c5efa8165e2f902ffb9e4928e642aadc21433f3e7662f51",
+  "offline_manifest_sha256": "9b396508785b478f04e04d88f1be939b1d7d41358c5c36c8c6be9ca08474ff55"
+}

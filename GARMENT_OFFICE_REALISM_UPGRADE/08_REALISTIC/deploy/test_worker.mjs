@@ -29,7 +29,7 @@ for(const [path,type] of [['/realistic/','text/html'],['/realistic/app.js','text
   const res=await b.run(new Request('https://tour.example'+path));assert.equal(res.status,200);assert.ok(res.headers.get('content-type').startsWith(type));assert.equal(res.headers.get('x-realistic-source').length,40);count++;
 }
 const partial=await b.run(new Request('https://tour.example/realistic/room.glb',{headers:{Range:'bytes=0-31'}}));assert.equal(partial.status,206);assert.equal(b.calls.at(-1).range,'bytes=0-31');count++;
-for(const [name,target] of [['model_web_baked.glb','GARMENT_OFFICE_WALKTHROUGH_FINAL/07_WEB_TOUR_ASSETS/Final_Office_Interior_web_baked.glb'],['release-config.json','GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/viewer/dist/release-config.json']]) {
+for(const [name,target] of [['model_web_baked.glb','GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/revised-model/Optimized_Office_Interior_web_baked.glb'],['renders/CAM_34_Merchandising_Sample_Hub.jpg','GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/revised-model/renders/CAM_34_Merchandising_Sample_Hub.jpg'],['renders/CAM_09_Boardroom_A.jpg','GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_09_Boardroom_A.jpg'],['release-config.json','GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/viewer/dist/release-config.json']]) {
   const result=await b.run(new Request('https://tour.example/realistic/'+name));
   assert.equal(result.status,200);assert.ok(b.calls.at(-1).url.endsWith(target));count++;
 }

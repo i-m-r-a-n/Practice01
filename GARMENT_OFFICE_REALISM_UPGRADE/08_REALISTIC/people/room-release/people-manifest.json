@@ -1,9 +1,9 @@
 {
-  "version": "reception4-boardroom6-experience3-md2-static-1",
-  "count": 15,
+  "version": "reception4-boardroom6-experience3-md2-merch8-static-1",
+  "count": 23,
   "note": "People shown are illustrative",
   "defaultEnabled": false,
-  "status": "Reception, Boardroom and Experience Centre accepted; MD Office static people added",
+  "status": "Reception, Boardroom, Experience Centre, MD Office; Merchandising shown as the proposed option B redesign",
   "approvedLayoutChanged": false,
   "axes": "metres; x east, y up, z south; characters face +z at yaw 0",
   "emptyZones": [
@@ -518,6 +518,270 @@
       "seated": true,
       "wardrobeMode": "modest long-sleeve top and trousers; long drape disabled for seated role",
       "frozen": true
+    },
+    {
+      "id": "office-person-37",
+      "zone": "Z07",
+      "task": "typing",
+      "outfit": "shirt",
+      "pose": "typing__seat_49022",
+      "heightScale": 1.0,
+      "bodyWidth": 1.0,
+      "skinTint": "#b88b69",
+      "garmentTint": "#637b76",
+      "lowerTint": "#25313c",
+      "phase": 0.0,
+      "radius": 0.25,
+      "fictional": true,
+      "faceMorph": [
+        0.0,
+        0.5,
+        0.333
+      ],
+      "position": [
+        11.7221,
+        0,
+        -14.3764
+      ],
+      "yaw": 3.141592653589793,
+      "seated": true,
+      "wardrobeMode": "modest long-sleeve top and trousers; long drape hidden",
+      "frozen": true,
+      "placement": "Option B layout: bench 2 south chair (plan 461.5, -566.0 in)",
+      "support": {
+        "sourceObject": "bench 2 south chair",
+        "seatTopY": 0.49022,
+        "note": "Pelvis on the redesigned layout's task chair; existing seat-specific pose."
+      }
+    },
+    {
+      "id": "office-person-38",
+      "zone": "Z07",
+      "task": "notes",
+      "outfit": "salwar",
+      "pose": "notes__seat_49022",
+      "heightScale": 1.0,
+      "bodyWidth": 1.0,
+      "skinTint": "#ddbaa4",
+      "garmentTint": "#ad9271",
+      "lowerTint": "#30363d",
+      "phase": 3.7,
+      "radius": 0.25,
+      "fictional": true,
+      "faceMorph": [
+        0.0,
+        0.5,
+        0.333
+      ],
+      "position": [
+        14.5161,
+        0,
+        -14.3764
+      ],
+      "yaw": 3.141592653589793,
+      "seated": true,
+      "wardrobeMode": "modest long-sleeve top and trousers; long drape hidden",
+      "frozen": true,
+      "placement": "Option B layout: bench 2 south chair (plan 571.5, -566.0 in)",
+      "support": {
+        "sourceObject": "bench 2 south chair",
+        "seatTopY": 0.49022,
+        "note": "Pelvis on the redesigned layout's task chair; existing seat-specific pose."
+      }
+    },
+    {
+      "id": "office-person-39",
+      "zone": "Z07",
+      "task": "typing",
+      "outfit": "panjabi",
+      "pose": "typing__seat_49022",
+      "heightScale": 1.0,
+      "bodyWidth": 1.0,
+      "skinTint": "#d5b6a0",
+      "garmentTint": "#8a9bb2",
+      "lowerTint": "#424039",
+      "phase": 7.4,
+      "radius": 0.25,
+      "fictional": true,
+      "faceMorph": [
+        0.0,
+        0.5,
+        0.333
+      ],
+      "position": [
+        13.1191,
+        0,
+        -19.507199999999997
+      ],
+      "yaw": 0.0,
+      "seated": true,
+      "wardrobeMode": "modest long-sleeve top and trousers; long drape hidden",
+      "frozen": true,
+      "placement": "Option B layout: bench 1 north chair (plan 516.5, -768.0 in)",
+      "support": {
+        "sourceObject": "bench 1 north chair",
+        "seatTopY": 0.49022,
+        "note": "Pelvis on the redesigned layout's task chair; existing seat-specific pose."
+      }
+    },
+    {
+      "id": "office-person-40",
+      "zone": "Z07",
+      "task": "show_sample",
+      "outfit": "salwar_braid",
+      "pose": "show_sample",
+      "heightScale": 1.0,
+      "bodyWidth": 1.0,
+      "skinTint": "#c69d7b",
+      "garmentTint": "#9e7788",
+      "lowerTint": "#25313c",
+      "phase": 11.100000000000001,
+      "radius": 0.25,
+      "fictional": true,
+      "faceMorph": [
+        0.0,
+        0.5,
+        0.333
+      ],
+      "position": [
+        16.5608,
+        0,
+        -16.637
+      ],
+      "yaw": 1.5707963267948966,
+      "seated": false,
+      "wardrobeMode": "modest long-sleeve top and trousers; long drape hidden",
+      "frozen": true,
+      "placement": "Option B layout: inspection island (west side) (plan 652.0, -655.0 in)",
+      "hideLongDrape": true
+    },
+    {
+      "id": "office-person-41",
+      "zone": "Z07",
+      "task": "browsing",
+      "outfit": "shirt",
+      "pose": "browsing",
+      "heightScale": 1.0,
+      "bodyWidth": 1.0,
+      "skinTint": "#c69d7b",
+      "garmentTint": "#9e7788",
+      "lowerTint": "#424039",
+      "phase": 14.8,
+      "radius": 0.25,
+      "fictional": true,
+      "faceMorph": [
+        0.0,
+        0.5,
+        0.333
+      ],
+      "position": [
+        18.9992,
+        0,
+        -16.256
+      ],
+      "yaw": 4.71238898038469,
+      "seated": false,
+      "wardrobeMode": "modest long-sleeve top and trousers; long drape hidden",
+      "frozen": true,
+      "placement": "Option B layout: inspection island (east side) (plan 748.0, -640.0 in)",
+      "hideLongDrape": true
+    },
+    {
+      "id": "office-person-42",
+      "zone": "Z07",
+      "task": "listening",
+      "outfit": "panjabi",
+      "pose": "listening__seat_49022",
+      "heightScale": 1.0,
+      "bodyWidth": 1.0,
+      "skinTint": "#b88b69",
+      "garmentTint": "#738866",
+      "lowerTint": "#25313c",
+      "phase": 18.5,
+      "radius": 0.25,
+      "fictional": true,
+      "faceMorph": [
+        0.0,
+        0.5,
+        0.333
+      ],
+      "position": [
+        18.694399999999998,
+        0,
+        -12.572999999999999
+      ],
+      "yaw": 4.71238898038469,
+      "seated": true,
+      "wardrobeMode": "modest long-sleeve top and trousers; long drape hidden",
+      "frozen": true,
+      "placement": "Option B layout: buyer review table, east chair (plan 736.0, -495.0 in)",
+      "support": {
+        "sourceObject": "buyer review table, east chair",
+        "seatTopY": 0.49022,
+        "note": "Pelvis on the redesigned layout's task chair; existing seat-specific pose."
+      }
+    },
+    {
+      "id": "office-person-43",
+      "zone": "Z07",
+      "task": "presenting",
+      "outfit": "salwar",
+      "pose": "presenting",
+      "heightScale": 1.0,
+      "bodyWidth": 1.0,
+      "skinTint": "#d5b6a0",
+      "garmentTint": "#8a9bb2",
+      "lowerTint": "#30363d",
+      "phase": 22.200000000000003,
+      "radius": 0.25,
+      "fictional": true,
+      "faceMorph": [
+        0.0,
+        0.5,
+        0.333
+      ],
+      "position": [
+        16.8656,
+        0,
+        -11.937999999999999
+      ],
+      "yaw": 2.356194490192345,
+      "seated": false,
+      "wardrobeMode": "modest long-sleeve top and trousers; long drape hidden",
+      "frozen": true,
+      "placement": "Option B layout: beside the buyer review screen (plan 664.0, -470.0 in)",
+      "hideLongDrape": true
+    },
+    {
+      "id": "office-person-44",
+      "zone": "Z07",
+      "task": "fabric",
+      "outfit": "shirt",
+      "pose": "fabric",
+      "heightScale": 1.0,
+      "bodyWidth": 1.0,
+      "skinTint": "#ddbaa4",
+      "garmentTint": "#b9a895",
+      "lowerTint": "#424039",
+      "phase": 25.900000000000002,
+      "radius": 0.25,
+      "fictional": true,
+      "faceMorph": [
+        0.0,
+        0.5,
+        0.333
+      ],
+      "position": [
+        17.779999999999998,
+        0,
+        -19.7104
+      ],
+      "yaw": 3.141592653589793,
+      "seated": false,
+      "wardrobeMode": "modest long-sleeve top and trousers; long drape hidden",
+      "frozen": true,
+      "placement": "Option B layout: sample rails (plan 700.0, -776.0 in)",
+      "hideLongDrape": true
     }
   ],
   "navigation": {
@@ -533,7 +797,8 @@
     "Z02",
     "Z08",
     "Z30",
-    "Z12"
+    "Z12",
+    "Z07"
   ],
   "props": [
     {

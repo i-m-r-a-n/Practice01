@@ -9,7 +9,7 @@ import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 
 const here = process.env.TOUR_SRC || path.dirname(new URL(import.meta.url).pathname);   // TOUR_SRC: run a copy from elsewhere
-const assets = path.resolve(here, '../../../GARMENT_OFFICE_WALKTHROUGH_FINAL/07_WEB_TOUR_ASSETS');
+const assets = path.resolve(here, '../revised-model');   // Z06 / Z07 option B model data (Claude, claude/space-optimization); was 07_WEB_TOUR_ASSETS
 const release = JSON.parse(fs.readFileSync(path.join(here, 'release-config.json'), 'utf8'));
 const out = path.resolve(process.argv[2] || path.join(here, 'dist'));
 fs.mkdirSync(out, { recursive: true });

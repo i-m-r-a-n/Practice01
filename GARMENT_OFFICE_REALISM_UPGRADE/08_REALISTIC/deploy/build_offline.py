@@ -18,7 +18,7 @@ html=(bundle/'index.html').read_text()
 app=(bundle/'app.js').read_text().replace('</script','<\\/script')
 hybrid=(REAL/'lighting-v2/manifest-hybrid.json').exists()
 model_name='model_web_baked.glb' if hybrid else 'model_web.glb'
-model_path='GARMENT_OFFICE_WALKTHROUGH_FINAL/07_WEB_TOUR_ASSETS/Final_Office_Interior_web_baked.glb' if hybrid else 'GARMENT_OFFICE_WALKTHROUGH_FINAL/07_WEB_TOUR_ASSETS/Final_Office_Interior_web.glb'
+model_path='GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/revised-model/Optimized_Office_Interior_web_baked.glb' if hybrid else 'GARMENT_OFFICE_WALKTHROUGH_FINAL/07_WEB_TOUR_ASSETS/Final_Office_Interior_web.glb'
 assets={model_name:REPO/model_path}
 lighting_folder='lighting-v2' if (REAL/'lighting-v2/manifest.json').exists() else 'lighting'
 manifest_rel=lighting_folder+('/manifest-hybrid.json' if hybrid else '/manifest.json')
@@ -93,9 +93,12 @@ html=html.replace(tag,bootstrap+'\n<script type="module">\n'+app+'\n</script>')
 (OUT/'Office_Realistic_Tour.html').write_text(html)
 renderdir=REPO/'GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final'
 (OUT/'renders').mkdir(exist_ok=True)
-meta=json.loads((REPO/'GARMENT_OFFICE_WALKTHROUGH_FINAL/07_WEB_TOUR_ASSETS/office_web_metadata.json').read_text())
+meta=json.loads((REAL/'revised-model/office_web_metadata.json').read_text())
 for c in meta['cameras']:
-    p=renderdir/(c['name']+'.jpg');assert p.exists(),p
+    p=REAL/'revised-model/renders'/(c['name']+'.jpg')
+    if not p.exists():p=renderdir/(c['name']+'.jpg')
+    if not p.exists() and c['name'].endswith('Z06_Z07'):continue   # plan / cutaway of the redesign: no still in the tour
+    assert p.exists(),p
     shutil.copyfile(p,OUT/'renders'/p.name)
 license_paths=[
     REAL/'viewer/vendor/three/LICENSE',REAL/'textures/LICENSES.md',

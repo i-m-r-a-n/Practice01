@@ -14,7 +14,7 @@ folder=a.staging/name
 subprocess.run([sys.executable,str(here/'build_offline.py'),str(folder)],check=True)
 manifest=json.loads((folder/'offline-manifest.json').read_text())
 model=next(x for x in manifest['source_files'] if x['path']=='model_web_baked.glb')
-assert model['sha256']=='faaf09d1a61d2136a96a8b2eb4146be1f29135483dd7f94e67e6f3a54596d20a','Unreviewed baseline model'
+assert model['sha256'] in ('faaf09d1a61d2136a96a8b2eb4146be1f29135483dd7f94e67e6f3a54596d20a','06f13e5311f4f78008a15ab8b7d97c3284d52411cf22c231d522d2c26ed196c3'),'Unreviewed baseline model'   # original / Z06-Z07 option B
 used={'Office_Realistic_Tour.html','offline-manifest.json','READ_ME.txt',*manifest['resource_packs']}
 out=repo/'GARMENT_OFFICE_WALKTHROUGH_FINAL/09_MAC_OFFLINE_TOUR'/('realistic-'+a.room.lower())
 out.mkdir(parents=True,exist_ok=True)

@@ -44,7 +44,8 @@ async function realisticRoute(req) {
   let path;
   if(rel==='index.html'||rel==='app.js'||rel==='release-config.json')path=REALISTIC_ASSETS+'viewer/dist/'+rel;
   else if(rel==='model_web.glb')path='GARMENT_OFFICE_WALKTHROUGH_FINAL/07_WEB_TOUR_ASSETS/Final_Office_Interior_web.glb';
-  else if(rel==='model_web_baked.glb')path='GARMENT_OFFICE_WALKTHROUGH_FINAL/07_WEB_TOUR_ASSETS/Final_Office_Interior_web_baked.glb';
+  else if(rel==='model_web_baked.glb')path=REALISTIC_ASSETS+'revised-model/Optimized_Office_Interior_web_baked.glb';   // Z06/Z07 option B base model
+  else if(/^renders\/CAM_(11|12|16|3[4-8])_[A-Za-z0-9_]+\.jpg$/.test(rel))path=REALISTIC_ASSETS+'revised-model/'+rel;   // redesign renders
   else if(/^renders\/CAM_[A-Za-z0-9_]+\.jpg$/.test(rel))path='GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/'+rel.slice(8);
   else path=REALISTIC_ASSETS+rel;
   const forward=new Headers();

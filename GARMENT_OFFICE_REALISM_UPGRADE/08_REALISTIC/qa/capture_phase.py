@@ -36,7 +36,7 @@ def main():
     output = args.output.resolve()
     shots = output / "shots"
     shots.mkdir(parents=True, exist_ok=True)
-    meta = json.loads((ROOT / "GARMENT_OFFICE_WALKTHROUGH_FINAL/07_WEB_TOUR_ASSETS/office_web_metadata.json").read_text())
+    meta = json.loads((QA.parent / "revised-model/office_web_metadata.json").read_text())
     cameras = meta["cameras"] if args.cameras == "all" else [next(c for c in meta["cameras"] if c["name"] == name) for name in KEYS]
     if args.camera:
         cameras = [next(c for c in meta["cameras"] if c["name"] == name) for name in args.camera]
