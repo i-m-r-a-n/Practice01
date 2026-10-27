@@ -52,3 +52,9 @@ finds must be packed inside the file.
 - every preview image is captioned '(preview render)' where it is shown: PASS (no previews left in the deck)
 - other images in the deck: ID-01_furnished_plan.svg, ID-02_zoning_plan.svg, ID-03_ceiling_lighting_plan.svg, logo_stage2_ltd.png, logo_stage2_unit1.png, logo_zara_fashion_profile.png, material_board.jpg, swatches/swatch_AC-01.jpg, swatches/swatch_CP-01.jpg, swatches/swatch_MT-02.jpg, swatches/swatch_PA-01.jpg, swatches/swatch_PA-02.jpg, swatches/swatch_SS-01.jpg, swatches/swatch_TZ-01.jpg, swatches/swatch_UP-01g.jpg, swatches/swatch_UP-01s.jpg, swatches/swatch_UP-02.jpg, swatches/swatch_WD-01.jpg, swatches/swatch_WD-02.jpg, swatches/swatch_WO-01.jpg, swatches/swatch_WO-02.jpg, tagline_quality_compliance_commitment.png (drawings ID-01..03, material board and swatches from this project, client logos and tagline cropped from the client's business card and company profile)
 
+## Persistence (GitHub)
+- 2026-10-27 08:05 Asia/Dhaka, after pushing commit 9446c30 to branch `claude/magical-hopper-74q4xq` of `i-m-r-a-n/Practice01`: the GitHub API
+  listings returned the same git blobs and sizes as the local commit for `Final_Office_Interior.blend` (41,606,768 bytes,
+  blob 1832d7e), `Final_Office_Interior.glb` (41,857,588 bytes, blob 59a9830), `Garment_Office_Design_Pitch.pdf`
+  (5,916,648 bytes, blob bd924c4), `Garment_Office_Design_Pitch.pptx` (6,398,464 bytes, blob 0d7cf05) and this report before
+  this section (blob f3d98d7); `02_RENDERED_IMAGES/final` listed all 38 final renders (PNG + JPG) and `render_log.csv`.
