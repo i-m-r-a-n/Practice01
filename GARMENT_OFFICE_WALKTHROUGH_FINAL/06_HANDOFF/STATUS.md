@@ -5,8 +5,8 @@
 ## Done and checked
 - Web GLB, metadata, walk map, 38-camera browser check - `07_WEB_TOUR_ASSETS/`, `05_PRODUCTION/camera_qc/`
 - Real-WebGL check of the live GPT tour (commit 50923eb) - `05_PRODUCTION/live_site_qa/LIVE_SITE_QA.md`, posted on issue #12
-- Offline 3D tour + Mac guide - `03_INTERACTIVE_3D/`
-- Worker-ready 2-file bundle (not deployed) - `08_WORKER_READY_TOUR/`
+- Offline 3D tour + Mac guide - `03_INTERACTIVE_3D/` (load + first steps checked; full 20-check browser test pending)
+- Worker-ready 2-file bundle (not deployed; load checked) - `08_WORKER_READY_TOUR/`
 - Blender animation file + scripts, storyboard, benchmarks, encoding settings
 
 ## Videos
