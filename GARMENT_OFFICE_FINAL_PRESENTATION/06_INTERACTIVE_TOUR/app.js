@@ -46,7 +46,9 @@ const tourRoom=i=>TOUR[i]==='__OVERVIEW__'?{id:'__OVERVIEW__',name:'Complete Gro
 let renderer,scene,camera,controls,office,box,frame,officeCenter,officeSize,ceilingMeshes=[],savedCameras=new Map(),markers=[],raycaster=new THREE.Raycaster(),pointer=new THREE.Vector2();
 let selected=null,viewMode='orbit',walkPitch=0,walkYaw=0,keys={},inTour=false,tourPlaying=false,tourIndex=0,tourElapsed=0,transition=null,prevTime=performance.now(),markerVisible=true,ceilingHidden=false;
 const modelPath='./model.glb';
-let fallbackMode=false,photosEnabled=true,fallbackTimer=null,collisionMeshes=[];
+let fallbackMode=false,photosEnabled=true,fallbackTimer=null,collisionMeshes=[],collisionBoxes=[],webglReady=false,loadWatchdog=null,navSequence=0,interiorLights=[];
+const setStatus=t=>{const p=$('statusPill');if(p)p.textContent=t;};
+const isMobile=matchMedia('(max-width: 780px)').matches;
 const finalRender=name=>'/renders/'+encodeURIComponent(name)+'.jpg';
 const canvas=$('canvas');
 const loaderBox=$('progressBox');
@@ -56,7 +58,8 @@ const bar=$('progressBar');
 function init(){
  bindExtras();
  try{renderer=new THREE.WebGLRenderer({canvas,antialias:true,powerPreference:'high-performance'});}catch(err){activateFallback(err);return;}
- renderer.setPixelRatio(Math.min(devicePixelRatio,1.7));
+ canvas.addEventListener('webglcontextlost',event=>{event.preventDefault();activateFallback(new Error('Graphics context lost; showing original Cycles renders.'));});
+ renderer.setPixelRatio(Math.min(devicePixelRatio,isMobile?1.1:1.65));
  renderer.setSize(innerWidth,innerHeight);
  renderer.outputColorSpace=THREE.SRGBColorSpace;
  renderer.toneMapping=THREE.ACESFilmicToneMapping;
@@ -76,6 +79,8 @@ function init(){
  const ambient=new THREE.AmbientLight(0xffffff,.52);scene.add(ambient);
  const sunlight=new THREE.DirectionalLight(0xfff2dc,2.35);sunlight.position.set(20,44,-14);scene.add(sunlight);
  const fill=new THREE.DirectionalLight(0xdceaff,.8);fill.position.set(-20,25,35);scene.add(fill);
+ // Real-time interior fill lighting complements (but cannot replace) baked Cycles lighting.
+ for(let i=0;i<4;i++){const p=new THREE.PointLight(i%2?0xffe8d0:0xf6fff7,0,9,2);p.name='web-visitor-interior-fill';scene.add(p);interiorLights.push(p);}
  // A neutral studio environment adds realistic reflections to metal, glass and wood PBR surfaces.
  import('https://esm.sh/three@0.164.1/examples/jsm/environments/RoomEnvironment.js').then(({RoomEnvironment})=>{
    try{const pmrem=new THREE.PMREMGenerator(renderer);scene.environment=pmrem.fromScene(new RoomEnvironment(),.045).texture;pmrem.dispose();}catch(e){console.warn('Environment reflection fallback:',e.message);}
@@ -84,7 +89,7 @@ function init(){
  canvas.addEventListener('pointerdown',onCanvasPointer);
  canvas.addEventListener('click',()=>{if(viewMode==='walk'&&document.pointerLockElement!==canvas)canvas.requestPointerLock?.().catch(()=>{});});
  document.addEventListener('mousemove',e=>{if(viewMode==='walk'&&document.pointerLockElement===canvas){walkYaw-=e.movementX*.002;walkPitch=Math.max(-1.3,Math.min(1.3,walkPitch-e.movementY*.002));}});
- document.addEventListener('keydown',e=>{keys[e.code]=true;if(e.code==='Escape'){if(inTour)stopTour();if(viewMode==='walk')setWalk(false)}});
+ document.addEventListener('keydown',e=>{if(e.code==='Escape'){if(inTour)stopTour();if(viewMode==='walk')setWalk(false);}if(e.target?.matches?.('input,textarea,[contenteditable]'))return;keys[e.code]=true;if(viewMode==='walk'&&['ArrowLeft','ArrowRight','ArrowUp','ArrowDown','Space'].includes(e.code))e.preventDefault();});
  document.addEventListener('keyup',e=>keys[e.code]=false);
  $('tourBtn').onclick=startTour;
  $('tourStop').onclick=stopTour;
@@ -97,9 +102,14 @@ function init(){
  $('search').oninput=renderRooms;
  onResize();
  animate();
- new GLTFLoader().load(modelPath,onLoaded,ev=>{if(ev.total){const pct=Math.min(97,100*ev.loaded/ev.total);bar.style.width=pct+'%';loadText.textContent='Downloading the 3D office… '+Math.round(pct)+'%';}else{loadText.textContent='Downloading the 3D office… '+(ev.loaded/1048576).toFixed(1)+' MB';}},err=>{console.error(err);activateFallback(err);});
+ loadWatchdog=setTimeout(()=>{if(!webglReady&&!fallbackMode)activateFallback(new Error('3D model loading exceeded 90 seconds.'));},90000);
+ new GLTFLoader().load(modelPath,onLoaded,ev=>{
+   // Loading progress is best-effort; some browsers do not provide a total size.
+   setStatus('Loading 3D geometry…');if(ev.total){const pct=Math.min(97,100*ev.loaded/ev.total);bar.style.width=pct+'%';loadText.textContent='Downloading the 3D office… '+Math.round(pct)+'%';}else{loadText.textContent='Downloading the 3D office… '+(ev.loaded/1048576).toFixed(1)+' MB';}},err=>{console.error(err);activateFallback(err);});
 }
 function onLoaded(gltf){
+ clearTimeout(loadWatchdog);
+ webglReady=true;
  office=gltf.scene;
  scene.add(office);
  office.updateMatrixWorld(true);
@@ -116,12 +126,19 @@ function onLoaded(gltf){
      if(o.material && o.material.isMeshStandardMaterial){o.material.envMapIntensity=1.15;}
    }
  });
+ collisionBoxes=collisionMeshes.map(obj=>({obj,bounds:new THREE.Box3().setFromObject(obj)}));
  frame=Math.max(officeSize.x,officeSize.z);
  controls.maxDistance=Math.max(90,frame*2.7);
  addMarkers();
  renderRooms();
  toggleCeiling(true);
- overview(true);
+ if(fallbackMode){
+   const b=$('switchTo3D');b.hidden=false;
+   setStatus('Live 3D ready · Enter interactive 3D');
+ }else{
+   overview(true);
+   setStatus('3D model ready · 34 rooms');
+ }
  loaderBox.style.display='none';
  $('sidebar').classList.remove('closed');
  updateHUD(null);
@@ -135,12 +152,7 @@ function onResize(){
 function animate(now=performance.now()){
  requestAnimationFrame(animate);
  const dt=Math.min(.075,(now-prevTime)/1000||.016);prevTime=now;
- if(transition && !inTour){transition.t+=dt;const t=Math.min(1,transition.t/transition.d);const smooth=t*t*(3-2*t);
-    camera.position.copy(transition.a).lerp(transition.b,smooth);
-    controls.target.copy(transition.ta).lerp(transition.tb,smooth);
-    camera.quaternion.slerpQuaternions(transition.qa,transition.qb,smooth);
-    if(t>=1){transition=null;}
- }
+ // Room navigation uses an architectural cut behind a short fade, never a flight through solid walls.
  if(viewMode==='walk' && !inTour){
    const speed=(keys.ShiftLeft||keys.ShiftRight?5.5:2.6)*dt;
    const dir=new THREE.Vector3();
@@ -156,7 +168,7 @@ function animate(now=performance.now()){
    camera.position.y=1.62;
  }else if(inTour){tickTour(dt)}else{controls.update();}
  markers.forEach(m=>{const distant=camera.position.distanceTo(m.position)>10;m.visible=markerVisible&&distant;});
- renderer.render(scene,camera);
+ if(!fallbackMode)renderer.render(scene,camera);
 }
 function updateHUD(room){
  $('zoneTag').textContent=room?room.group:'Entire ground floor';
@@ -204,8 +216,12 @@ function cameraPose(r){
 function goToPose(pose,instant=false){
  setWalk(false);
  controls.enabled=true;
- if(instant){camera.position.copy(pose.pos);camera.quaternion.copy(pose.q);controls.target.copy(pose.target);controls.update();return;}
- transition={a:camera.position.clone(),b:pose.pos.clone(),ta:controls.target.clone(),tb:pose.target.clone(),qa:camera.quaternion.clone(),qb:pose.q.clone(),t:0,d:1.35};
+ const apply=()=>{camera.position.copy(pose.pos);camera.quaternion.copy(pose.q);controls.target.copy(pose.target);controls.update();};
+ const id=++navSequence;
+ const fade=$('sceneFade');
+ if(instant){apply();fade?.classList.remove('opaque');return;}
+ fade.classList.add('opaque');
+ setTimeout(()=>{if(id!==navSequence)return;apply();requestAnimationFrame(()=>fade.classList.remove('opaque'));},255);
 }
 function selectRoom(r,fromTour=false){
  if(!office&&!fallbackMode)return;
@@ -213,7 +229,7 @@ function selectRoom(r,fromTour=false){
  selected=r;
  updateHUD(r);
  renderRooms();
- if(office){const p=cameraPose(r);goToPose(p,false);}
+ if(office){const p=cameraPose(r);goToPose(p,false);updateInteriorLighting(r);}
  if(fallbackMode)showFallback(r);
  else if(photosEnabled&&!fromTour)showReference(r);
  if(innerWidth<781)$('sidebar').classList.add('closed');
@@ -230,6 +246,7 @@ function overview(instant=false){
  const target=centre.clone();
  const q=new THREE.Quaternion().setFromRotationMatrix(new THREE.Matrix4().lookAt(pos,target,new THREE.Vector3(0,1,0)));
  goToPose({pos,target,q},instant===true);
+ updateInteriorLighting(null);
 }
 function setWalk(v){
  if(v && !office)return;
@@ -287,7 +304,7 @@ function onCanvasPointer(event){
 }
 function startTour(){
  if(!office&&!fallbackMode)return;
- if(office)setWalk(false);
+ if(office){setWalk(false);controls.enabled=false;}
  inTour=true;tourPlaying=true;tourIndex=0;tourElapsed=0;transition=null;
  $('renderPanel').hidden=true;
  $('tourPause').textContent='Pause';
@@ -302,7 +319,7 @@ function setTourStep(i){
  tourIndex=i;
  const r=tourRoom(i);
  selected=r;renderRooms();updateHUD(r);
- if(office){const pose=cameraPose(r);camera.position.copy(pose.pos);camera.quaternion.copy(pose.q);controls.target.copy(pose.target);}
+ if(office){const pose=cameraPose(r);camera.position.copy(pose.pos);camera.quaternion.copy(pose.q);controls.target.copy(pose.target);updateInteriorLighting(r.id==='__OVERVIEW__'?null:r);}
  if(fallbackMode)showFallback(r);
  $('tourLabel').textContent=r.name;
  $('tourCount').textContent=(i+1)+' / '+TOUR.length;
@@ -341,12 +358,13 @@ function stopTour(){
 function moveWalk(delta){
  if(!office||delta.lengthSq()<1e-8)return;
  const length=delta.length();const direction=delta.clone().normalize();
- // Respect actual wall meshes and door openings instead of blocking entire room bounds.
+ // Broad-phase nearby-object filtering avoids raycasting the entire building every frame.
+ const near=collisionBoxes.filter(c=>c.bounds.distanceToPoint(camera.position)<length+2).map(c=>c.obj);
  for(const h of [1.45,.73]){
    const origin=camera.position.clone();origin.y=h;
-   raycaster.set(origin,direction);raycaster.far=length+.30;
-   const hits=raycaster.intersectObjects(collisionMeshes,false);
-   if(hits.length&&hits[0].distance<length+.30)return;
+   raycaster.set(origin,direction);raycaster.far=length+.32;
+   const hits=raycaster.intersectObjects(near,false);
+   if(hits.length&&hits[0].distance<length+.32)return;
  }
  camera.position.add(delta);
 }
@@ -365,6 +383,8 @@ function showFallback(room){
 function activateFallback(error){
  console.warn('Live WebGL unavailable, switching to original Cycles-rendered image gallery.',error?.message||error);
  fallbackMode=true;
+ setStatus(webglReady?'Photo view · 3D ready':'Photorealistic Cycles image view');
+ if(webglReady)$('switchTo3D').hidden=false;
  $('progressBox').style.display='none';
  renderRooms();showFallback(null);
  $('sidebar').classList.remove('closed');
@@ -377,6 +397,19 @@ function activateFallback(error){
  $('mobileMenu').onclick=()=>$('sidebar').classList.toggle('closed');
 }
 function bindExtras(){
+ $('previewNow').onclick=()=>activateFallback(new Error('Photo previews selected while 3D loads'));
+ $('switchTo3D').onclick=()=>{
+   if(!webglReady)return;
+   fallbackMode=false;$('fallbackStage').hidden=true;
+   $('walkBtn').disabled=false;$('ceilingBtn').disabled=false;$('labelsBtn').disabled=false;
+   $('walkBtn').textContent='♙ Walk mode';
+   $('ceilingBtn').textContent=ceilingHidden?'▤ Show ceilings':'◱ Hide ceilings';
+   $('resetBtn').onclick=()=>{stopTour();setWalk(false);showMarkers(true);toggleCeiling(false);overview()};
+   $('labelsBtn').onclick=()=>showMarkers(!markerVisible);
+   $('overviewBtn').onclick=overview;
+   overview(true);
+   setStatus('3D model ready · 34 rooms');
+ };
  $('photoBtn').onclick=()=>{photosEnabled=!photosEnabled;$('photoBtn').classList.toggle('active',photosEnabled);if(photosEnabled)showReference(selected);else $('renderPanel').hidden=true;};
  $('photoBtn').classList.add('active');
  $('closeRender').onclick=()=>{$('renderPanel').hidden=true;photosEnabled=false;$('photoBtn').classList.remove('active');};
@@ -385,5 +418,14 @@ function bindExtras(){
  $('tourPrev').onclick=()=>{if(inTour)setTourStep(Math.max(0,tourIndex-1));};
  $('tourNext').onclick=()=>{if(inTour){if(tourIndex>=TOUR.length-1)stopTour();else setTourStep(tourIndex+1);}};
  $('tourPause').onclick=()=>{tourPlaying=!tourPlaying;$('tourPause').textContent=tourPlaying?'Pause':'Resume';};
+}
+function updateInteriorLighting(room){
+ if(!interiorLights.length)return;
+ if(!room){for(const l of interiorLights)l.intensity=0;return;}
+ const a=room.x,b=room.z;
+ for(let i=0;i<interiorLights.length;i++){
+   const dx=(i%2?1.7:-1.7),dz=(i<2?1.7:-1.7),light=interiorLights[i];
+   light.position.set(a+dx,2.25,b+dz);light.intensity=250;
+ }
 }
 init();
