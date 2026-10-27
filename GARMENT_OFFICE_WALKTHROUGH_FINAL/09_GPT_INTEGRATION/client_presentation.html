@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#14251e">
+<title>Stage II | Ground Floor Design Presentation</title>
+<meta name="description" content="Stage II Knitting Apparel and Zara Fashion — client presentation with cinematic architectural walkthrough, interactive 3D office model, drawings and realistic renders.">
+<style>
+:root{--bg:#0c1511;--panel:#14241c;--panel2:#1a3024;--line:#ffffff26;--ink:#f7f4ea;--muted:#b7c8bd;--gold:#d2b982;--green:#8dbd95;--shadow:#0009}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+button,a{font:inherit}a{text-decoration:none;color:inherit}
+button{cursor:pointer}
+.shell{max-width:1380px;margin:auto;padding:22px 30px 60px}
+header{display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:56px}
+.brand{display:flex;align-items:center;gap:14px}.monogram{width:44px;height:44px;display:grid;place-items:center;border:1px solid #dbca93;border-radius:12px;font:24px Georgia,serif;color:var(--gold)}
+.tag{font-size:10px;color:var(--gold);letter-spacing:.19em;text-transform:uppercase;font-weight:740}.brand-name{font-size:15px;font-weight:750;letter-spacing:.008em;margin-top:3px}
+.header-right{display:flex;gap:10px;align-items:center}.status{color:#dce9dc;font-size:12px;border:1px solid #90a99460;background:#1631268c;border-radius:99px;padding:10px 14px}
+.small-link{font-size:12px;border:1px solid var(--line);padding:10px 14px;border-radius:9px;color:#e7eadf}
+.hero{margin-top:28px;min-height:470px;display:grid;grid-template-columns:minmax(360px,46%) 1fr;overflow:hidden;background:#18251e;border:1px solid #d2b98244;border-radius:23px;box-shadow:0 18px 66px #0007}
+.hero-body{padding:58px 44px 45px;position:relative;z-index:2;background:linear-gradient(120deg,#102019,#13281d)}
+.hero h1{font:normal clamp(36px,4vw,60px)/1.04 Georgia,"Times New Roman",serif;letter-spacing:-.038em;margin:20px 0}
+.hero p{font-size:15px;color:#c5d4ca;line-height:1.67;max-width:475px}
+.hero-cta{display:flex;gap:11px;flex-wrap:wrap;margin-top:35px}
+.btn{border-radius:11px;padding:14px 20px;font-size:13px;font-weight:750;border:1px solid #d1ba8f59;background:#ffffff09;color:#f7f3e7;display:inline-flex;align-items:center;gap:9px;justify-content:center;min-height:47px}
+.btn:hover,.card:hover{border-color:#dac59499;background:#ffffff14}
+.btn.primary{background:#d4bd8a;border-color:#d4bd8a;color:#183125}
+.btn.primary:hover{background:#e8d09d}
+.hero-photo{position:relative;background:#19261c;min-height:410px}
+.hero-photo img{width:100%;height:100%;position:absolute;inset:0;object-fit:cover;object-position:center;filter:brightness(.93)}
+.hero-photo::before{position:absolute;inset:0;content:"";z-index:1;background:linear-gradient(90deg,#13241e 0%,transparent 28%),linear-gradient(0deg,#101c17b8,transparent 50%)}
+.photo-note{position:absolute;bottom:22px;right:22px;color:#f1efddbb;font-size:11px;z-index:2;background:#13201b9c;padding:9px 11px;border-radius:7px}
+.metrics{display:flex;gap:28px;margin-top:40px;flex-wrap:wrap}
+.metrics div{border-left:2px solid #acb89385;padding-left:12px}.metrics strong{display:block;font-size:25px;font-weight:650}.metrics span{display:block;color:#b7c2b9;font-size:10px;letter-spacing:.04em;margin-top:2px}
+.section-head{display:flex;justify-content:space-between;gap:16px;align-items:end;margin:43px 0 17px}
+.section-head h2{font:normal 29px Georgia,serif;margin:4px 0}.section-head p{margin:0;color:var(--muted);font-size:12px;max-width:420px;line-height:1.55;text-align:right}
+.cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.card{min-height:191px;border:1px solid #d0c29635;border-radius:15px;background:#18261fa8;padding:22px 20px;display:flex;flex-direction:column;transition:background .2s,border-color .2s}
+.card .num{font:25px Georgia,serif;color:#cfbc8e;margin-bottom:20px}
+.card strong{font-weight:690;font-size:15px}.card p{font-size:12px;line-height:1.5;color:#b7c9bc;margin:9px 0 14px}
+.card .open{margin-top:auto;color:#ddcca6;font-size:12px;font-weight:730}
+.path{margin-top:32px;background:#121f19;border:1px solid #ffffff24;border-radius:15px;padding:24px 26px}
+.path header{min-height:0;display:block}.path h3{font:normal 23px Georgia,serif;margin:5px 0}.path p{font-size:12px;color:#b7c9bc;line-height:1.55}
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:20px}
+.step{border-top:2px solid #d2b9827e;padding-top:12px}
+.step span{font-size:10px;color:var(--gold);font-weight:700;text-transform:uppercase;letter-spacing:.08em}.step strong{display:block;margin:5px 0;font-size:13px}.step small{font-size:11px;color:#acc0b4;line-height:1.4}
+footer{padding:32px 0 0;color:#91a89a;font-size:11px;line-height:1.65;display:flex;justify-content:space-between;gap:20px;border-top:1px solid #fff2;margin-top:34px}
+.overlay{position:fixed;inset:0;background:#020705f0;z-index:20;display:none;align-items:center;justify-content:center;padding:24px;backdrop-filter:blur(14px)}
+.overlay.active{display:flex}
+.player{width:min(1200px,100%);background:#101b16;border:1px solid #d1bc9160;border-radius:17px;padding:14px 14px 19px;box-shadow:0 24px 90px #000a}
+.player-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:5px 6px 15px}
+.player h2{font:normal 22px Georgia,serif;margin:0}.player-head p{font-size:11px;margin:5px 0 0;color:#adbfb1}
+.x{width:42px;height:38px;border:1px solid #dacaa254;border-radius:8px;background:#203125;color:white}
+video{display:block;width:100%;aspect-ratio:16/9;max-height:70vh;background:#000;border-radius:10px}
+.player-bottom{display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap;margin-top:14px}
+.player-bottom small{color:#adbdad;max-width:600px;line-height:1.5}
+@media(max-width:1050px){.hero{grid-template-columns:50% 50%}.hero-body{padding:38px 30px}.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.steps{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:690px){.shell{padding:16px 14px 42px}.header-right .status{display:none}.brand-name{font-size:12px}.hero{display:flex;flex-direction:column-reverse;margin-top:14px}.hero-photo{min-height:245px}.hero-body{padding:27px 22px 28px}.hero h1{font-size:36px}.hero p{font-size:13px}.metrics{gap:15px}.metrics strong{font-size:22px}.section-head{display:block;margin-top:29px}.section-head p{text-align:left}.cards{grid-template-columns:1fr 1fr;gap:9px}.card{padding:15px;min-height:200px}.card strong{font-size:13px}.card p{font-size:11px}.steps{grid-template-columns:repeat(2,1fr)}.path{padding:17px}.player{padding:9px}.overlay{padding:10px}footer{display:block}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="shell">
+<header>
+  <div class="brand"><span class="monogram">II</span><div><div class="tag">Architectural concept proposal</div><div class="brand-name">STAGE II KNITTING APPAREL / ZARA FASHION</div></div></div>
+  <nav class="header-right"><span class="status">Ground floor · Interactive design</span><a class="small-link" href="/">Launch 3D model ↗</a></nav>
+</header>
+<main>
+<section class="hero">
+  <div class="hero-body">
+    <div class="tag">The future workplace · Design vision</div>
+    <h1>A new experience<br>of work, design<br>& possibility.</h1>
+    <p>A guided presentation of the proposed ground-floor corporate headquarters and fashion design-development centre. Explore the actual 3D design, watch the architectural films, and review materials and drawings.</p>
+    <div class="hero-cta">
+      <button id="startPitch" class="btn primary" type="button">▶ Start cinematic presentation</button>
+      <a href="/" class="btn">◇ Explore interactive 3D</a>
+    </div>
+    <div class="metrics">
+      <div><strong>34</strong><span>DESIGNED ZONES</span></div>
+      <div><strong>38</strong><span>FINAL RENDER VIEWS</span></div>
+      <div><strong>18</strong><span>PITCH SLIDES</span></div>
+    </div>
+  </div>
+  <div class="hero-photo">
+    <img src="/renders/CAM_04_Experience_Centre_A.jpg" alt="Photorealistic Blender Cycles architectural render of the Stage II office experience centre">
+    <span class="photo-note">Actual project render · Proposed interior</span>
+  </div>
+</section>
+<section aria-labelledby="explore-heading">
+  <div class="section-head"><div><div class="tag">Presentation library</div><h2 id="explore-heading">Everything in one place.</h2></div><p>For the recommended presentation, begin with the opening film, discuss the layout, then demonstrate the interactive model.</p></div>
+  <div class="cards">
+    <button class="card" type="button" id="pitchCard" style="color:inherit;text-align:left"><span class="num">01</span><strong>Cinematic opening</strong><p>The 77-second film introduces the atmosphere and design vision.</p><span class="open">Play film ↗</span></button>
+    <a class="card" href="/" target="_self"><span class="num">02</span><strong>Interactive 3D office</strong><p>Explore the full furnished floor, room cameras and guided tour.</p><span class="open">Launch 3D ↗</span></a>
+    <a class="card" href="/presentation.pdf" target="_blank" rel="noopener"><span class="num">03</span><strong>18-slide proposal</strong><p>Design vision, room layouts, materials and approval considerations.</p><span class="open">Open pitch PDF ↗</span></a>
+    <a class="card" href="/render-book.pdf" target="_blank" rel="noopener"><span class="num">04</span><strong>Photoreal render book</strong><p>Full architectural views captured directly from the Blender model.</p><span class="open">Open render book ↗</span></a>
+    <button class="card" type="button" id="fullCard" style="color:inherit;text-align:left"><span class="num">05</span><strong>Complete floor walkthrough</strong><p>A two-minute cinematic tour through the proposed workplace.</p><span class="open">Play full tour ↗</span></button>
+  </div>
+</section>
+<section class="path" aria-labelledby="path-heading">
+ <header><div class="tag">Recommended run of show</div><h3 id="path-heading">A focused 20-minute presentation</h3><p>Lead with the vision, demonstrate the real layout, and close with design approval and technical next steps.</p></header>
+ <div class="steps">
+   <div class="step"><span>01 · 1.5 min</span><strong>Cinematic introduction</strong><small>Introduce the proposed office without interrupting the film.</small></div>
+   <div class="step"><span>02 · 4 min</span><strong>Concept & floor plan</strong><small>Slides 1–6: brand identity, departments and circulation.</small></div>
+   <div class="step"><span>03 · 7 min</span><strong>Interactive 3D experience</strong><small>Reception, experience centre, boardroom, MD and design studio.</small></div>
+   <div class="step"><span>04 · 5 min</span><strong>Realistic room visualizations</strong><small>Compare Cycles images with the live interactive model.</small></div>
+   <div class="step"><span>05 · 2.5 min</span><strong>Decisions & next steps</strong><small>Concept approval, site survey, budget and engineering review.</small></div>
+ </div>
+</section>
+</main>
+<footer><span>Stage II Knitting Apparel Ltd. / Unit-1 / Zara Fashion · Ground-floor corporate office proposal</span><span>Concept visualization only. Dimensions, structure, fire and services subject to site and engineering verification.</span></footer>
+</div>
+<div id="videoOverlay" class="overlay" role="dialog" aria-modal="true" aria-label="Architectural walkthrough video">
+ <div class="player"><div class="player-head"><div><h2 id="movieName">Stage II · Cinematic tour</h2><p>Original architectural animation from the approved office model</p></div><button class="x" type="button" id="closeVideo" aria-label="Close video">✕</button></div>
+ <video id="movie" controls playsinline preload="none" poster="/renders/CAM_04_Experience_Centre_A.jpg"></video>
+ <div class="player-bottom"><small id="movieHint">720p web presentation version. For maximum quality, use Claude's original 1080p files.</small><a class="btn primary" href="/">Continue to interactive 3D ↗</a></div></div>
+</div>
+<script>
+const overlay=document.getElementById('videoOverlay'),video=document.getElementById('movie'),name=document.getElementById('movieName'),hint=document.getElementById('movieHint');
+let previousFocus=null;
+function startVideo(kind){previousFocus=document.activeElement;const full=kind==='full';name.textContent=full?'Complete ground-floor cinematic walkthrough':'Cinematic introduction — Stage II';hint.textContent=full?'Two-minute 720p web version · Proposed design walkthrough':'77-second 720p web version · Proposed design vision';video.src=full?'/tour.mp4':'/pitch.mp4';overlay.classList.add('active');document.body.style.overflow='hidden';video.load();video.play().catch(()=>{});document.getElementById('closeVideo').focus();}
+function closeVideo(){video.pause();video.removeAttribute('src');video.load();overlay.classList.remove('active');document.body.style.overflow='';previousFocus?.focus?.();}
+document.getElementById('startPitch').onclick=()=>startVideo('pitch');
+document.getElementById('pitchCard').onclick=()=>startVideo('pitch');
+document.getElementById('fullCard').onclick=()=>startVideo('full');
+document.getElementById('closeVideo').onclick=closeVideo;
+overlay.addEventListener('click',e=>{if(e.target===overlay)closeVideo()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&overlay.classList.contains('active'))closeVideo()});
+</script>
+</body>
+</html>
