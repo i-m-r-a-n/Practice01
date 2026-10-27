@@ -18,7 +18,7 @@
   https://stage2-office-virtual-tour.imranahmedjh611.workers.dev/realistic/review/reception-before-after.png
 - Live composite HTML:
   https://stage2-office-virtual-tour.imranahmedjh611.workers.dev/realistic/review/reception-before-after.html
-- Browser testing caveat: native Firefox test is handled independently by GitHub Actions workflow `Reception Realistic Firefox QA`, started on test branch `chatgpt/office-realistic-reception-firefox-qa` at run https://github.com/i-m-r-a-n/Practice01/actions/runs/40561080378 . Do not claim Firefox pass until the run passes.
+- **Actual Firefox smoke test: PASS** on GitHub Actions Linux with Playwright Firefox in Xvfb/llvmpipe software WebGL. Evidence: https://github.com/i-m-r-a-n/Practice01/actions/runs/40561479093 . HTTP 200, WebGL available, Reception Z02 selected, viewer ready, overlay hidden, 34 rooms and 38 cameras; zero page errors, zero console errors, zero failed requests; People control present; comparison PNG HTTP 200. Firefox screenshot + JSON: https://github.com/i-m-r-a-n/Practice01/actions/runs/40561479093/artifacts/12761990804 . This is actual Firefox but not physical Apple Silicon/macOS validation.
 - Future rooms: do not publish Z30/Z08/Z12/Z07/Z18 as 'realistic' before their individual lightmaps, props, complete checks and before/after evidence are ready. Each subsequent release should be individually pinned and individually linked.
 
 ## Rollback
@@ -29,3 +29,10 @@ Keep the currently verified `/` as stable even if a future /realistic incrementa
 ## Honest visual limitations
 
 The initial 4 frozen receptionist/visitor figures remain stylized real-time people and may not resemble real employees. Neither identical offline Cycles realism nor Mac GPU frame rate is claimed. User-visible floor paths/doors and material/lighting need per-room acceptance before further rollouts.
+
+## Final Firefox & rollout note
+
+- Exact `/realistic` (without trailing slash) redirects and loads successfully: HTTP 200 page, no 404.
+- The non-realistic part of the Worker was compared to the pre-Reception snapshot and was byte-identical after removing only the dispatch and appended route.
+- Next candidate is Z30 Experience Centre, NOT yet released: lightmap/materials/visual QA must pass first.
+- See `deploy/release-sequence.json` for live Reception link and pending rooms.
