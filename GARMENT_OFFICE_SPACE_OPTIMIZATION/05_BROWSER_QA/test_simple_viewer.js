@@ -220,8 +220,11 @@ async function open() {
   await P.click('#cWalk'); await P.wait(500);
   s = await st(); ok('explore freely: walk mode with a minimal hint', s.mode === 'walk' && /W A S D/.test(await P.evaluate(() => document.getElementById('walkhint').textContent)));
   const pA = s.pos;
-  await P.keyboard.down('KeyW'); await P.wait(4000); await P.keyboard.up('KeyW');   // software WebGL draws about 1 frame / s
-  const pB = (await st()).pos;
+  // software WebGL can take several seconds per frame here: hold W until the camera moves (at most 30 s)
+  await P.keyboard.down('KeyW');
+  let pB = pA;
+  for (let t = 0; t < 30 && Math.hypot(pB[0] - pA[0], pB[2] - pA[2]) <= 0.3; t++) { await P.wait(1000); pB = (await st()).pos; }
+  await P.keyboard.up('KeyW');
   ok('W moves forward', Math.hypot(pB[0] - pA[0], pB[2] - pA[2]) > 0.3, `${pA} -> ${pB}`);
   await P.keyboard.down('KeyW'); await P.wait(9000); await P.keyboard.up('KeyW');
   const pC = (await st()).pos;
@@ -236,8 +239,8 @@ async function open() {
   await P.click('#nPresent'); await still();
   s = await st();
   ok('presentation mode: quick tour, menus hidden, exit button shown', s.present && s.mode === 'tour' && !(await vis('nRooms')) && (await vis('exitPresent')));
-  const fs = await P.evaluate(() => !!(document.fullscreenElement || document.webkitFullscreenElement));
-  ok('presentation mode asks for full screen on the click', fs);
+  const isFull = await P.evaluate(() => !!(document.fullscreenElement || document.webkitFullscreenElement));
+  ok('presentation mode asks for full screen on the click', isFull);
   await P.evaluate(() => document.exitFullscreen && document.fullscreenElement ? document.exitFullscreen() : null); await P.wait(1500);   // the test needs a normal window to resize
   await sweep('l_present', [[1920, 1080], [1440, 900]]);
   await P.keyboard.press('Escape'); await P.wait(800); if ((await st()).present) { await P.keyboard.press('Escape'); await P.wait(800); }
