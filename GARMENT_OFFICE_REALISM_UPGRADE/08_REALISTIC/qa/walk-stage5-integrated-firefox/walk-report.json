@@ -1,0 +1,455 @@
+{
+  "status": "passed",
+  "url": "http://127.0.0.1:8783/realistic/?stage=5&welcome=0&ao=0&shadows=0&scale=0.25",
+  "browser_requested": "firefox",
+  "people_requested": "unchanged",
+  "route_sha256": "120946a9107d780c1d94f076c4862b1ad78626c558b43b51e7c734faccf5161b",
+  "route_m": 201.6,
+  "scope": "One initial verified spawn, then actual browser movement-controller steps. No intermediate camera-position assignment. Real rendering only at requested checkpoints.",
+  "limitations": [
+    "Automated proportional movement inputs, not a manual keyboard/mouse walkthrough.",
+    "Linux software rendering, not MacBook FPS, hardware, Safari or accessibility evidence.",
+    "Inherited raster radius is 0.15m; this is not a human-body clearance certification.",
+    "No new atlas or visual-quality pass is inferred from movement checks."
+  ],
+  "legs": [
+    {
+      "from": "Z01",
+      "to": "Z02",
+      "requestedMetres": 6.4,
+      "goalsReached": 64,
+      "inputs": 904,
+      "failures": [],
+      "maxStepMetres": 0.00867013032624986,
+      "maxEyeError": 0,
+      "finalState": {
+        "position": [
+          8.088942048266677,
+          1.6,
+          0.6767503772944429
+        ],
+        "velocity": [
+          0.275178703694361,
+          0
+        ],
+        "steps": 1809,
+        "collisions": 0,
+        "distance": 6.37950745783065,
+        "eye": 1.6,
+        "blocked": false,
+        "room": "Z02",
+        "startCount": 1
+      },
+      "simulatedSeconds": 15.066666666666995,
+      "passed": true,
+      "trace_file": "trace-01-Z01-Z02.json.gz",
+      "trace_sha256": "962750fcbde7fa546cc70d46c04aea284f34924a9281cb9ed0bdc51bbbb6fe3a"
+    },
+    {
+      "from": "Z02",
+      "to": "Z30",
+      "requestedMetres": 8.3,
+      "goalsReached": 83,
+      "inputs": 1174,
+      "failures": [],
+      "maxStepMetres": 0.008701544193050156,
+      "maxEyeError": 0,
+      "finalState": {
+        "position": [
+          9.988941002853506,
+          1.6,
+          -5.723249622705557
+        ],
+        "velocity": [
+          0.2750499376126495,
+          0
+        ],
+        "steps": 4158,
+        "collisions": 0,
+        "distance": 14.652213631306825,
+        "eye": 1.6,
+        "blocked": false,
+        "room": "Z30",
+        "startCount": 1
+      },
+      "simulatedSeconds": 19.566666666666837,
+      "passed": true,
+      "trace_file": "trace-02-Z02-Z30.json.gz",
+      "trace_sha256": "9cd5b620b370dd89d7e243671833ab02f40a9e503568988bae89f90eb90e0855"
+    },
+    {
+      "from": "Z30",
+      "to": "Z08",
+      "requestedMetres": 13.6,
+      "goalsReached": 136,
+      "inputs": 1916,
+      "failures": [],
+      "maxStepMetres": 0.008670132857356187,
+      "maxEyeError": 0,
+      "finalState": {
+        "position": [
+          21.78894204935399,
+          1.6,
+          -5.123150381055843
+        ],
+        "velocity": [
+          0.2751786914533532,
+          0
+        ],
+        "steps": 7991,
+        "collisions": 0,
+        "distance": 28.231672148205547,
+        "eye": 1.6,
+        "blocked": false,
+        "room": "Z08",
+        "startCount": 1
+      },
+      "simulatedSeconds": 31.9333333333328,
+      "passed": true,
+      "trace_file": "trace-03-Z30-Z08.json.gz",
+      "trace_sha256": "a83abb18a6ad23d7dee71c44e9baa7cfcb32504cdb0c64712372c3ddf7af4823"
+    },
+    {
+      "from": "Z08",
+      "to": "Z12",
+      "requestedMetres": 18.2,
+      "goalsReached": 182,
+      "inputs": 2570,
+      "failures": [],
+      "maxStepMetres": 0.008670129950018916,
+      "maxEyeError": 0,
+      "finalState": {
+        "position": [
+          22.092450956045113,
+          1.6,
+          1.585801879989165
+        ],
+        "velocity": [
+          0.037023734340692976,
+          -0.23959843830164443
+        ],
+        "steps": 13132,
+        "collisions": 0,
+        "distance": 46.38732561203744,
+        "eye": 1.6,
+        "blocked": false,
+        "room": "Z12",
+        "startCount": 1
+      },
+      "simulatedSeconds": 42.833333333332185,
+      "passed": true,
+      "trace_file": "trace-04-Z08-Z12.json.gz",
+      "trace_sha256": "121eefad5e32cf583761397c845605e029ab41a7e4ade10dce8877bb408b322c"
+    },
+    {
+      "from": "Z12",
+      "to": "Z07",
+      "requestedMetres": 37.7,
+      "goalsReached": 377,
+      "inputs": 5329,
+      "failures": [],
+      "maxStepMetres": 0.008701867511023078,
+      "maxEyeError": 0,
+      "finalState": {
+        "position": [
+          9.598957536791225,
+          1.6,
+          -11.233257973853625
+        ],
+        "velocity": [
+          0,
+          0.27517894139299387
+        ],
+        "steps": 23791,
+        "collisions": 0,
+        "distance": 83.93614113617092,
+        "eye": 1.6,
+        "blocked": false,
+        "room": "Z07",
+        "startCount": 1
+      },
+      "simulatedSeconds": 88.81666666666291,
+      "passed": true,
+      "trace_file": "trace-05-Z12-Z07.json.gz",
+      "trace_sha256": "df6cd59b6d4aa7bec72c10d31150bccc2024cc8b35cd5942586e879cae42e804"
+    },
+    {
+      "from": "Z07",
+      "to": "Z18",
+      "requestedMetres": 37.2,
+      "goalsReached": 372,
+      "inputs": 5245,
+      "failures": [],
+      "maxStepMetres": 0.008701543293673394,
+      "maxEyeError": 0,
+      "finalState": {
+        "position": [
+          28.20798605726483,
+          1.6,
+          -13.616646649886102
+        ],
+        "velocity": [
+          -0.23950971759755832,
+          -0.03694273762719876
+        ],
+        "steps": 34282,
+        "collisions": 0,
+        "distance": 121.02181158503029,
+        "eye": 1.6,
+        "blocked": false,
+        "room": "Z18",
+        "startCount": 1
+      },
+      "simulatedSeconds": 87.41666666666299,
+      "passed": true,
+      "trace_file": "trace-06-Z07-Z18.json.gz",
+      "trace_sha256": "5cfaa7396762531599da0755a20e6938df098e06ede72ce1af04d35f8f7b7ef4"
+    },
+    {
+      "from": "Z18",
+      "to": "Z20",
+      "requestedMetres": 14.4,
+      "goalsReached": 144,
+      "inputs": 2028,
+      "failures": [],
+      "maxStepMetres": 0.008701543294949085,
+      "maxEyeError": 0,
+      "finalState": {
+        "position": [
+          27.088942048248903,
+          1.6,
+          -23.12324970248684
+        ],
+        "velocity": [
+          0.27517870368708347,
+          0
+        ],
+        "steps": 38339,
+        "collisions": 0,
+        "distance": 135.39947573576308,
+        "eye": 1.6,
+        "blocked": false,
+        "room": "Z20",
+        "startCount": 1
+      },
+      "simulatedSeconds": 33.799999999999365,
+      "passed": true,
+      "trace_file": "trace-07-Z18-Z20.json.gz",
+      "trace_sha256": "4288c0a527558badf6f3c13c70810ac182a197da94a6ef2dcace21ae8fe3d288"
+    },
+    {
+      "from": "Z20",
+      "to": "Z23",
+      "requestedMetres": 16.3,
+      "goalsReached": 163,
+      "inputs": 2298,
+      "failures": [],
+      "maxStepMetres": 0.008670130327832586,
+      "maxEyeError": 0,
+      "finalState": {
+        "position": [
+          29.509057951750922,
+          1.6,
+          -32.82324961902093
+        ],
+        "velocity": [
+          -0.27517870368347896,
+          0
+        ],
+        "steps": 42936,
+        "collisions": 0,
+        "distance": 151.6710722719318,
+        "eye": 1.6,
+        "blocked": false,
+        "room": "Z23",
+        "startCount": 1
+      },
+      "simulatedSeconds": 38.29999999999911,
+      "passed": true,
+      "trace_file": "trace-08-Z20-Z23.json.gz",
+      "trace_sha256": "999a194065503543d069720a0deae371a9d0d3d71ce894dfab8ce5834e47ae59"
+    },
+    {
+      "from": "Z23",
+      "to": "Z25",
+      "requestedMetres": 49.5,
+      "goalsReached": 495,
+      "inputs": 6969,
+      "failures": [],
+      "maxStepMetres": 0.008701543237224434,
+      "maxEyeError": 0,
+      "finalState": {
+        "position": [
+          0.9090579519765746,
+          1.6,
+          -19.723249622717873
+        ],
+        "velocity": [
+          -0.27517870299460895,
+          0
+        ],
+        "steps": 56875,
+        "collisions": 0,
+        "distance": 201.07483323070798,
+        "eye": 1.6,
+        "blocked": false,
+        "room": "Z25",
+        "startCount": 1
+      },
+      "simulatedSeconds": 116.14999999999469,
+      "passed": true,
+      "trace_file": "trace-09-Z23-Z25.json.gz",
+      "trace_sha256": "7e8d11ede80e8520190a47c179bc50a0486f45f31e9b5e2d1757d04eb66c0063"
+    }
+  ],
+  "console_errors": [],
+  "page_errors": [],
+  "source_responses": [
+    {
+      "url": "http://127.0.0.1:8783/realistic/?stage=5&welcome=0&ao=0&shadows=0&scale=0.25",
+      "status": 200,
+      "bytes": 70998,
+      "sha256": "77be4478c6e364dfd4c8d57517a303d15a42954863ac2c46a514cbff30bb2c25"
+    },
+    {
+      "url": "http://127.0.0.1:8783/realistic/app.js",
+      "status": 200,
+      "bytes": 893555,
+      "sha256": "511f9c9f17e38b979977e5e7461746f0019801603a1579b689e26bcb1c3a811d"
+    },
+    {
+      "url": "http://127.0.0.1:8783/realistic/lighting/manifest.json",
+      "status": 200,
+      "bytes": 38249,
+      "sha256": "fdff7f6ac55790908185035ba63caee86c629b81439d2f26ce8141de1763ad14"
+    }
+  ],
+  "ready_seconds_local": 3.118,
+  "browser_version": "153.0",
+  "gpu": {
+    "userAgent": "Mozilla/5.0 (X11; Linux x86_64; rv:153.0) Gecko/20100101 Firefox/153.0",
+    "vendor": "Mesa",
+    "renderer": "llvmpipe, or similar",
+    "webgl": "WebGL 2.0",
+    "maxTextureSize": 16384,
+    "pixelRatio": 0.25,
+    "quality": "balanced",
+    "viewport": [
+      1280,
+      720
+    ]
+  },
+  "people_initial": null,
+  "preflight": {
+    "blockedPoints": 0,
+    "firstBlocked": []
+  },
+  "initial_spawn": {
+    "position": [
+      6.199,
+      1.6,
+      5.1768
+    ],
+    "velocity": [
+      0,
+      0
+    ],
+    "steps": 0,
+    "collisions": 0,
+    "distance": 0,
+    "eye": 1.6,
+    "startCount": 1
+  },
+  "spawn_assignments": 1,
+  "release_and_collision_probe": {
+    "release": {
+      "initialVelocity": [
+        -0.27517870299460895,
+        0
+      ],
+      "finalVelocity": [
+        0,
+        0
+      ],
+      "coastMetres": 0.021796003377263173,
+      "simulatedSeconds": 1.5,
+      "passed": true
+    },
+    "obstacle": {
+      "target": {
+        "dx": 0,
+        "dz": -1,
+        "d": 0.6600000000000003,
+        "x": 0.8872619485993114,
+        "z": -20.383249622717873
+      },
+      "travelledMetres": 0.6497900315440184,
+      "requestedUnobstructedMetres": 4.2,
+      "collisionsAdded": 293,
+      "position": [
+        0.8872619485993114,
+        1.6,
+        -20.37303965426189
+      ],
+      "blockedSamples": 0,
+      "maxEyeError": 0,
+      "scope": "Nearest actual grid/floor blocker; not an exhaustive fixture collision proof.",
+      "passed": true
+    },
+    "finalState": {
+      "position": [
+        0.8872619485993114,
+        1.6,
+        -20.37303965426189
+      ],
+      "velocity": [
+        0,
+        0
+      ],
+      "steps": 57596,
+      "collisions": 293,
+      "distance": 201.74641926562927,
+      "eye": 1.6,
+      "blocked": false,
+      "room": "Z25",
+      "startCount": 1
+    },
+    "passed": true
+  },
+  "final_state": {
+    "walk": {
+      "position": [
+        0.8872619485993114,
+        1.6,
+        -20.37303965426189
+      ],
+      "velocity": [
+        0,
+        0
+      ],
+      "steps": 57596,
+      "collisions": 293,
+      "distance": 201.74641926562927,
+      "eye": 1.6
+    },
+    "viewer": {
+      "mode": "walk",
+      "room": "Z25",
+      "atCam": null,
+      "flying": false,
+      "flightT": null,
+      "fps": 2.82220131702728,
+      "overhead": true,
+      "tour": null,
+      "photo": null,
+      "aoFrames": 0,
+      "pos": [
+        0.887,
+        1.6,
+        -20.373
+      ]
+    },
+    "people": null
+  },
+  "wall_seconds": 15.314
+}

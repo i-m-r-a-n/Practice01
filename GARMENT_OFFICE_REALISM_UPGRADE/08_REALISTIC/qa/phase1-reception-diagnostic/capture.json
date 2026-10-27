@@ -1,0 +1,146 @@
+{
+  "phase": "phase1-reception-diagnostic",
+  "url": "http://127.0.0.1:8783/realistic/?welcome=0&ao=0&shadows=0",
+  "viewport": [
+    1280,
+    720
+  ],
+  "people_requested": "unchanged",
+  "require_lightmaps": true,
+  "shots": [
+    {
+      "camera": "CAM_01_Reception_A",
+      "type": "PERSP",
+      "frame_result": {
+        "name": "CAM_01_Reception_A",
+        "type": "PERSP",
+        "lighting": {
+          "state": "loaded",
+          "sourceObjects": 36,
+          "meshes": 37,
+          "triangles": 52769,
+          "intensity": 3.141592653589793,
+          "format": "ktx2"
+        }
+      },
+      "state": {
+        "viewer": {
+          "mode": "capture",
+          "room": "Z02",
+          "atCam": "CAM_01_Reception_A",
+          "flying": false,
+          "flightT": null,
+          "fps": 0,
+          "overhead": true,
+          "tour": null,
+          "photo": null,
+          "aoFrames": 0,
+          "pos": [
+            8.077,
+            1.524,
+            0.66
+          ]
+        },
+        "stats": {
+          "frame": 37,
+          "calls": 198,
+          "triangles": 1525426,
+          "points": 0,
+          "lines": 0,
+          "memory": {
+            "geometries": 162,
+            "textures": 69
+          },
+          "phase": 1,
+          "capturePostProcessing": false
+        },
+        "lighting": {
+          "phase": 1,
+          "manifest": "http://127.0.0.1:8783/realistic/lighting/manifest.json",
+          "available": 1,
+          "loaded": [
+            "Z02"
+          ],
+          "rooms": {
+            "Z02": {
+              "state": "loaded",
+              "sourceObjects": 36,
+              "meshes": 37,
+              "triangles": 52769,
+              "intensity": 3.141592653589793,
+              "format": "ktx2"
+            }
+          },
+          "error": null
+        },
+        "people": null
+      },
+      "file": "shots/after_CAM_01_Reception_A.png",
+      "sha256": "ff9651c65df5e4fc6a65467aee992c667759d1be941f3745a2f596cd4fe92066"
+    }
+  ],
+  "console_errors": [
+    "Failed to load resource: the server responded with a status of 404 (File not found)"
+  ],
+  "page_errors": [],
+  "http_errors": [],
+  "source_responses": [
+    {
+      "url": "http://127.0.0.1:8783/realistic/?welcome=0&ao=0&shadows=0",
+      "status": 200,
+      "bytes": 70966,
+      "sha256": "c3c304c2f2c0645e3a8fb1900117a43afeaed48e4b0e1a7659eefbbaf5e78276"
+    },
+    {
+      "url": "http://127.0.0.1:8783/realistic/app.js",
+      "status": 200,
+      "bytes": 888396,
+      "sha256": "38a5c024a4776fd3d3592711fc456fe443760f0bf815ef11480a29ff6877e695"
+    },
+    {
+      "url": "http://127.0.0.1:8783/realistic/lighting/manifest.json",
+      "status": 200,
+      "bytes": 15571,
+      "sha256": "1a60851eb77a6ca047710dcd57caa1d598c732f88c857bcc213f7e8e44a7056a"
+    }
+  ],
+  "status": "captured",
+  "scope": "Actual viewer frames; UI hidden through screenshot-only CSS. Original scene camera API, no synthetic edits.",
+  "limits": [
+    "Linux software-GPU capture, not a MacBook performance test",
+    "Local load timing is not a 50 Mbps WAN benchmark"
+  ],
+  "ready_seconds_local": 4.98,
+  "browser": "154.0.8037.57",
+  "gpu": {
+    "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+    "vendor": "Google Inc. (Google)",
+    "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+    "webgl": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+    "maxTextureSize": 8192,
+    "pixelRatio": 1,
+    "quality": "balanced",
+    "viewport": [
+      1280,
+      720
+    ]
+  },
+  "counts": {
+    "quality": "balanced",
+    "meshes": 129,
+    "drawCallsMerged": {
+      "before": 2233,
+      "after": 92,
+      "roomGroupsSeparate": true
+    },
+    "rooms": 34,
+    "cameras": 38,
+    "stops": 16,
+    "model": "web",
+    "bakedLight": false,
+    "shadows": false,
+    "ambientOcclusion": false
+  },
+  "seconds": 34.897,
+  "source_response_method": "Source HTML/JS/manifest fetched immediately after viewer ready; near-capture snapshots, not an immutable lock to the original loaded request. Later QA script now records exact original response bodies."
+}

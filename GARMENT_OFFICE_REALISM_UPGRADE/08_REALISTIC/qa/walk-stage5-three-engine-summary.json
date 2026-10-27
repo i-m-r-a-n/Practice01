@@ -1,0 +1,81 @@
+{
+  "scope": "Actual shared browser movement-controller and post-movement room update replay, one initial verified spawn, no intermediate teleport. Same route and braking/obstacle assertions across three Linux browser engines.",
+  "results": [
+    {
+      "browser": "chromium",
+      "version": "154.0.8037.57",
+      "status": "passed",
+      "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "route_legs_passed": 9,
+      "destinations": 10,
+      "input_steps": 28433,
+      "release_and_collision_probe": true,
+      "console_errors": [],
+      "page_errors": [],
+      "final_room": "Z25",
+      "actual_travel_including_probe_m": 201.74641926562927,
+      "wall_seconds": 13.522,
+      "report": "walk-stage5-integrated-chromium/walk-report.json",
+      "sha256": "6a709d16693ac72ebb8722811e3bacd3ab5b6392462dbe4feee4a645f257f3e1",
+      "loaded_app": {
+        "url": "http://127.0.0.1:8783/realistic/app.js",
+        "status": 200,
+        "bytes": 893555,
+        "sha256": "511f9c9f17e38b979977e5e7461746f0019801603a1579b689e26bcb1c3a811d"
+      }
+    },
+    {
+      "browser": "firefox",
+      "version": "153.0",
+      "status": "passed",
+      "renderer": "llvmpipe, or similar",
+      "route_legs_passed": 9,
+      "destinations": 10,
+      "input_steps": 28433,
+      "release_and_collision_probe": true,
+      "console_errors": [],
+      "page_errors": [],
+      "final_room": "Z25",
+      "actual_travel_including_probe_m": 201.74641926562927,
+      "wall_seconds": 15.314,
+      "report": "walk-stage5-integrated-firefox/walk-report.json",
+      "sha256": "d03e46510f166d1a43998db35984e25f7a636a104a2338506c6621c449f5d4e2",
+      "loaded_app": {
+        "url": "http://127.0.0.1:8783/realistic/app.js",
+        "status": 200,
+        "bytes": 893555,
+        "sha256": "511f9c9f17e38b979977e5e7461746f0019801603a1579b689e26bcb1c3a811d"
+      }
+    },
+    {
+      "browser": "webkit",
+      "version": "26.5",
+      "status": "passed",
+      "renderer": "Apple GPU",
+      "route_legs_passed": 9,
+      "destinations": 10,
+      "input_steps": 28433,
+      "release_and_collision_probe": true,
+      "console_errors": [],
+      "page_errors": [],
+      "final_room": "Z25",
+      "actual_travel_including_probe_m": 201.74641926562927,
+      "wall_seconds": 11.671,
+      "report": "walk-stage5-integrated-webkit/walk-report.json",
+      "sha256": "e8b4b9d1d468f5f7517dc863188e208fea5f500e7c571fc3df36c6b7a3ff240b",
+      "loaded_app": {
+        "url": "http://127.0.0.1:8783/realistic/app.js",
+        "status": 200,
+        "bytes": 893555,
+        "sha256": "511f9c9f17e38b979977e5e7461746f0019801603a1579b689e26bcb1c3a811d"
+      }
+    }
+  ],
+  "acceptance_limits": [
+    "People layer absent in these runs.",
+    "Rendering scale0.25 and simulated controller time: not a frame-rate or visual-quality benchmark.",
+    "WebKit privacy-masked AppleGPU name is not physical Apple hardware; this is DebianLinux with softwareGL, not macOS Safari.",
+    "Keyboard/pointer-lock UX and default UI spawn are separate checks.",
+    "Individual lightmaps are requested through normal room changes, but loaded image quality and all streaming completions are not established by route success."
+  ]
+}

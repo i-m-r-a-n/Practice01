@@ -1,0 +1,12 @@
+PHASE 1 RECEPTION DIAGNOSTIC — NOT A VISUAL ACCEPTANCE PASS
+
+Actually inspected: comparisons/CAM_01_Reception_A.jpg, a three-column Cycles / current production BEFORE / real Phase1 AFTER sheet.
+Actual capture: Chromium154 / ANGLE SwiftShader,1280x720, same approved perspective camera and lens shift, UI hidden only for screenshot. No synthetic image replacement. Post-processing deliberately disabled to review the atlas itself.
+Genuine Cycles room atlas loaded: Z02,36 source objects,37 meshes,52,769 replacement triangles,KTX2,2048px/256 samples per pipeline manifest,intensity pi. Renderer counted198 calls and1,525,426 triangles including rendering/transmission passes.
+
+Observed improvement: furniture now has directional shading and contact shadows, especially under the sofa/table and on the reception counter. Some wood detail reads more strongly.
+Blocking differences: visible shared walls and ceiling remain uniform grey fallback; mottled dark/brown patches on ceiling beams and the green armchair are conspicuous and absent from the target Cycles still. The rug/floor reflection and overall warmth also do not match the reference. This image is useful diagnostic evidence, not a completed realism upgrade or accepted Phase1.
+Requested next check: include visible shared shell in its own non-overlapping lightmap ownership group; compare raw versus denoised atlas and verify UV orientation/dilation before duplicating the result across other rooms.
+
+Zero page errors; one console404, subsequently identified by viewer engineer as favicon and fixed in a later index build. This captured snapshot still records the404. No Mac, Firefox, Safari or real-device FPS claims. Local4.98s readiness is not a WAN load benchmark. No people layer was loaded.
+Source-response hashes are near-capture snapshots fetched after readiness; they are not a cryptographic lock to the originally loaded request if another agent rebuilt during capture. Subsequent capture_phase.py now records the actual original browser response bodies.
