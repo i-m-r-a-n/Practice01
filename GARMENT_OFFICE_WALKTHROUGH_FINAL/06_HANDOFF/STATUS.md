@@ -10,8 +10,11 @@
 - Blender animation file + scripts, storyboard, benchmarks, encoding settings
 
 ## Videos
-- `Client_Pitch_Cinematic_Tour.mp4`: frames rendering (Cycles); the edit starts automatically when the 12 pitch shots are complete. Not yet available.
-- `Complete_Ground_Floor_Tour.mp4`: waits for the 16 additional shots (rendered after the pitch shots). Not yet available.
+- `01_CLIENT_PITCH_VIDEO/Client_Pitch_Cinematic_Tour.mp4` - **done**: 77.0 s, 1920 x 1080, 24 fps, H.264 High, BT.709, 73.8 MB,
+  12 path-traced camera moves + title / closing cards. QC (`05_PRODUCTION/video_qc/`): no decode errors, no black frames,
+  only intended still frames (title and closing cards), faststart. Download from GitHub tested: identical file
+  (SHA-256 b54b173ee41fe497a1a293d8cf61a33a75e36a84147702dbcaa66ac36488dad5).
+- `Complete_Ground_Floor_Tour.mp4`: the 16 additional shots are rendering (pitch shots reused). Not yet available.
 
 ## Not done / open
 - Live website: unchanged by Claude (GPT owns the frontend and the Worker; integration via issue #12)
