@@ -78,3 +78,10 @@ The simple viewer uses that grab behaviour. To match it on the live site, in the
 - `qe.pitch-(dy)*.0035` → `qe.pitch+(dy)*.0035`
 
 Keyboard turning stays the same: the right arrow turns right.
+
+## Six-room `/realistic/` release (separate branch, not deployed)
+
+- The rooms GPT had left (MD Office, Merchandising on the option B model, Design Studio) are on the branch `claude/realistic-rooms`, commit `cdf0e3e`. That branch is based on GPT's `chatgpt/office-realistic-20261027` at `07d9623`.
+- The worker built from source `bcb92b0` is `GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/deploy/worker-realistic.js`. Its `test_worker.mjs` passes 41 of 41 checks; the checks cover both `/` and `/realistic/`.
+- Deploy, verification and rollback (back to the `07d9623` worker) are in `GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/deploy/DEPLOY_SIX_ROOMS.md`.
+- **It is not deployed.** The Cloudflare account this session can reach has no Workers, so the owner of `stage2-office-virtual-tour` has to run the deploy.
