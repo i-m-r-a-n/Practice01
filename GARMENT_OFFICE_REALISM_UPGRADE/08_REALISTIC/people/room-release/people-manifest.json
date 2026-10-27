@@ -1,9 +1,9 @@
 {
-  "version": "reception4-boardroom6-experience3-md2-merch8-static-1",
-  "count": 23,
+  "version": "reception4-boardroom6-experience3-md2-merch8-studio4-static-1",
+  "count": 27,
   "note": "People shown are illustrative",
   "defaultEnabled": false,
-  "status": "Reception, Boardroom, Experience Centre, MD Office; Merchandising shown as the proposed option B redesign",
+  "status": "Six-room release: Reception, Boardroom, Experience Centre, MD Office, Merchandising (proposed option B), Global Design Studio",
   "approvedLayoutChanged": false,
   "axes": "metres; x east, y up, z south; characters face +z at yaw 0",
   "emptyZones": [
@@ -782,6 +782,138 @@
       "frozen": true,
       "placement": "Option B layout: sample rails (plan 700.0, -776.0 in)",
       "hideLongDrape": true
+    },
+    {
+      "id": "office-person-28",
+      "zone": "Z18",
+      "task": "typing",
+      "outfit": "shirt",
+      "pose": "typing__seat_49022",
+      "heightScale": 1.0,
+      "bodyWidth": 1.0,
+      "skinTint": "#b88b69",
+      "garmentTint": "#738866",
+      "lowerTint": "#30363d",
+      "phase": 0.0,
+      "radius": 0.25,
+      "fictional": true,
+      "faceMorph": [
+        0.0,
+        0.5,
+        0.333
+      ],
+      "position": [
+        31.0261,
+        0,
+        -23.1775
+      ],
+      "yaw": 3.141592653589793,
+      "seated": true,
+      "wardrobeMode": "modest long-sleeve top and trousers; long drape hidden",
+      "frozen": true,
+      "placement": "F222 task_chair_green (approved source actor position) (plan 1221.5, -912.5 in)",
+      "support": {
+        "sourceObject": "F222 task_chair_green (approved source actor position)",
+        "seatTopY": 0.49022,
+        "note": "Pelvis on the redesigned layout's task chair; existing seat-specific pose."
+      }
+    },
+    {
+      "id": "office-person-29",
+      "zone": "Z18",
+      "task": "notes",
+      "outfit": "salwar",
+      "pose": "notes__seat_49022",
+      "heightScale": 1.0,
+      "bodyWidth": 1.0,
+      "skinTint": "#ddbaa4",
+      "garmentTint": "#a98a76",
+      "lowerTint": "#424039",
+      "phase": 3.7,
+      "radius": 0.25,
+      "fictional": true,
+      "faceMorph": [
+        0.0,
+        0.5,
+        0.333
+      ],
+      "position": [
+        32.6263,
+        0,
+        -25.5905
+      ],
+      "yaw": 0.0,
+      "seated": true,
+      "wardrobeMode": "modest long-sleeve top and trousers; long drape hidden",
+      "frozen": true,
+      "placement": "F225 task_chair_green (approved source actor position) (plan 1284.5, -1007.5 in)",
+      "support": {
+        "sourceObject": "F225 task_chair_green (approved source actor position)",
+        "seatTopY": 0.49022,
+        "note": "Pelvis on the redesigned layout's task chair; existing seat-specific pose."
+      }
+    },
+    {
+      "id": "office-person-45",
+      "zone": "Z18",
+      "task": "browsing",
+      "outfit": "salwar_braid",
+      "pose": "browsing",
+      "heightScale": 1.0,
+      "bodyWidth": 1.0,
+      "skinTint": "#c69d7b",
+      "garmentTint": "#8a9bb2",
+      "lowerTint": "#25313c",
+      "phase": 7.4,
+      "radius": 0.25,
+      "fictional": true,
+      "faceMorph": [
+        0.0,
+        0.5,
+        0.333
+      ],
+      "position": [
+        30.099,
+        0,
+        -26.797
+      ],
+      "yaw": 4.71238898038469,
+      "seated": false,
+      "wardrobeMode": "modest long-sleeve top and trousers; long drape hidden",
+      "frozen": true,
+      "placement": "in front of the mood-board wall (plan 1185.0, -1055.0 in)",
+      "hideLongDrape": true
+    },
+    {
+      "id": "office-person-46",
+      "zone": "Z18",
+      "task": "fabric",
+      "outfit": "shirt",
+      "pose": "fabric",
+      "heightScale": 1.0,
+      "bodyWidth": 1.0,
+      "skinTint": "#d5b6a0",
+      "garmentTint": "#9e7788",
+      "lowerTint": "#424039",
+      "phase": 11.100000000000001,
+      "radius": 0.25,
+      "fictional": true,
+      "faceMorph": [
+        0.0,
+        0.5,
+        0.333
+      ],
+      "position": [
+        33.147,
+        0,
+        -20.32
+      ],
+      "yaw": 4.71238898038469,
+      "seated": false,
+      "wardrobeMode": "modest long-sleeve top and trousers; long drape hidden",
+      "frozen": true,
+      "placement": "end of the trend table (plan 1305.0, -800.0 in)",
+      "hideLongDrape": true
     }
   ],
   "navigation": {
@@ -798,7 +930,8 @@
     "Z08",
     "Z30",
     "Z12",
-    "Z07"
+    "Z07",
+    "Z18"
   ],
   "props": [
     {

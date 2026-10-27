@@ -9,13 +9,12 @@
     "Boardroom",
     "Experience Centre",
     "MD Office",
-    "Merchandising"
-  ],
-  "current_work": "Design Studio",
-  "remaining_order": [
+    "Merchandising",
     "Design Studio"
   ],
-  "static_people_live": 23,
+  "current_work": "Six-room release complete; awaiting deployment by the Worker owner",
+  "remaining_order": [],
+  "static_people_live": 27,
   "no_animation": true,
   "source_model_sha256": "06f13e5311f4f78008a15ab8b7d97c3284d52411cf22c231d522d2c26ed196c3",
   "approved_blend_sha256": "fa3ed3d58f6d44c3554e3761307841b96115ff7816e4e541c8e6611cb363810d",

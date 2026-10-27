@@ -1,0 +1,25 @@
+{
+  "room": "Global Design Studio",
+  "status": "4 static people + GPT Z18 props; browser capture, offline resolver passed; public verification after deploy",
+  "active_rooms": [
+    "Reception",
+    "Boardroom",
+    "Experience Centre",
+    "MD Office",
+    "Merchandising",
+    "Global Design Studio"
+  ],
+  "total_static_people": 27,
+  "new_people": 4,
+  "limits": [
+    "Visual contact review only",
+    "Native Mac FPS / Safari / file opening unverified"
+  ],
+  "hashes": {
+    "viewer/dist/app.js": "0a7c8eea858bbf9c5ab34d971cf6727c51d33c5fef54a67823d04a6c2e9442fc",
+    "viewer/dist/release-config.json": "ca2cbbf76a0ea4c5303a65c4ddc52b41559c17c211e4829aaf033390b467d884",
+    "people/room-release/people-manifest.json": "be4556ac5fd1057a5d7fe19e15b0f25c7d6ca2eae0b6a87eb8122bdc06dd0884",
+    "people/room-release/poses.json": "500e30099762c78a20f4d151e060478e886b98779ebf1cfa09a6fa2e4861ccd2",
+    "review/design_studio-before-after.png": "9be9c4a6de660108e24092dff35cf70e9d6d26456f3913fa17a3946ec831c471"
+  }
+}

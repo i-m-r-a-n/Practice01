@@ -45,7 +45,7 @@ async function route(req){
 
 
 // Isolated realism preview. The original route function above is preserved apart from its prefix dispatch.
-const REALISTIC_COMMIT = 'a8b70390698b028246b460695184c7656a32bdcd';
+const REALISTIC_COMMIT = '7a9230ed6f93a00812c2c2f463461af2347cae25';
 const REALISTIC_ROOT = 'https://raw.githubusercontent.com/i-m-r-a-n/Practice01/'+REALISTIC_COMMIT+'/';
 const REALISTIC_ASSETS = 'GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/';
 const REALISTIC_TYPES = {
@@ -73,7 +73,8 @@ async function realisticRoute(req) {
   let path;
   if(rel==='index.html'||rel==='app.js'||rel==='release-config.json')path=REALISTIC_ASSETS+'viewer/dist/'+rel;
   else if(rel==='model_web.glb')path='GARMENT_OFFICE_WALKTHROUGH_FINAL/07_WEB_TOUR_ASSETS/Final_Office_Interior_web.glb';
-  else if(rel==='model_web_baked.glb')path='GARMENT_OFFICE_WALKTHROUGH_FINAL/07_WEB_TOUR_ASSETS/Final_Office_Interior_web_baked.glb';
+  else if(rel==='model_web_baked.glb')path=REALISTIC_ASSETS+'revised-model/Optimized_Office_Interior_web_baked.glb';   // Z06/Z07 option B base model
+  else if(/^renders\/CAM_(11|12|16|3[4-8])_[A-Za-z0-9_]+\.jpg$/.test(rel))path=REALISTIC_ASSETS+'revised-model/'+rel;   // redesign renders
   else if(/^renders\/CAM_[A-Za-z0-9_]+\.jpg$/.test(rel))path='GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/'+rel.slice(8);
   else path=REALISTIC_ASSETS+rel;
   const forward=new Headers();

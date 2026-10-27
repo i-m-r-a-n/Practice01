@@ -1,0 +1,214 @@
+{
+  "phase": "studio-rooms-final",
+  "url": "http://127.0.0.1:8783/realistic/?welcome=0&ao=0&shadows=0",
+  "viewport": [
+    1280,
+    720
+  ],
+  "people_requested": "on",
+  "require_lightmaps": false,
+  "shots": [
+    {
+      "camera": "CAM_13_Design_Studio_A",
+      "type": "PERSP",
+      "frame_result": {
+        "name": "CAM_13_Design_Studio_A",
+        "type": "PERSP",
+        "lighting": null
+      },
+      "state": {
+        "viewer": {
+          "mode": "capture",
+          "room": "Z18",
+          "atCam": "CAM_13_Design_Studio_A",
+          "flying": false,
+          "flightT": null,
+          "fps": 0,
+          "overhead": true,
+          "tour": null,
+          "photo": null,
+          "aoFrames": 0,
+          "pos": [
+            28.245,
+            1.575,
+            -13.665
+          ]
+        },
+        "stats": {
+          "frame": 37,
+          "calls": 236,
+          "triangles": 1775966,
+          "points": 0,
+          "lines": 0,
+          "memory": {
+            "geometries": 188,
+            "textures": 116
+          },
+          "phase": 4,
+          "capturePostProcessing": false,
+          "post": null
+        },
+        "lighting": {
+          "regularAtlasBudgetBytes": 201326592,
+          "phase": 1,
+          "manifest": "http://127.0.0.1:8783/realistic/lighting-v2/manifest-hybrid.json",
+          "available": 1,
+          "loaded": [],
+          "requiredShared": [],
+          "rooms": {
+            "Z02": {
+              "state": "available",
+              "sourceObjects": 25
+            }
+          },
+          "error": null
+        },
+        "people": {
+          "enabled": true,
+          "loaded": true,
+          "frozen": true,
+          "total": 27,
+          "visible": 4,
+          "walkers": 0,
+          "illustrative": true,
+          "forbiddenZoneViolations": 0,
+          "status": "Six-room release: Reception, Boardroom, Experience Centre, MD Office, Merchandising (proposed option B), Global Design Studio",
+          "nativeMacPerformanceTested": false
+        },
+        "viewer_errors": []
+      },
+      "file": "shots/after_CAM_13_Design_Studio_A.png",
+      "sha256": "b30874f3fec79a18f7fd4f7591f18b0a9d6cff4dde5e24aaf135eca8e6b80420"
+    },
+    {
+      "camera": "CAM_14_Design_Studio_B",
+      "type": "PERSP",
+      "frame_result": {
+        "name": "CAM_14_Design_Studio_B",
+        "type": "PERSP",
+        "lighting": null
+      },
+      "state": {
+        "viewer": {
+          "mode": "capture",
+          "room": "Z18",
+          "atCam": "CAM_14_Design_Studio_B",
+          "flying": false,
+          "flightT": null,
+          "fps": 0.769289945380469,
+          "overhead": true,
+          "tour": null,
+          "photo": null,
+          "aoFrames": 0,
+          "pos": [
+            33.477,
+            1.575,
+            -30.48
+          ]
+        },
+        "stats": {
+          "frame": 38,
+          "calls": 416,
+          "triangles": 2406742,
+          "points": 0,
+          "lines": 0,
+          "memory": {
+            "geometries": 210,
+            "textures": 153
+          },
+          "phase": 4,
+          "capturePostProcessing": false,
+          "post": null
+        },
+        "lighting": {
+          "regularAtlasBudgetBytes": 201326592,
+          "phase": 1,
+          "manifest": "http://127.0.0.1:8783/realistic/lighting-v2/manifest-hybrid.json",
+          "available": 1,
+          "loaded": [],
+          "requiredShared": [],
+          "rooms": {
+            "Z02": {
+              "state": "available",
+              "sourceObjects": 25
+            }
+          },
+          "error": null
+        },
+        "people": {
+          "enabled": true,
+          "loaded": true,
+          "frozen": true,
+          "total": 27,
+          "visible": 7,
+          "walkers": 0,
+          "illustrative": true,
+          "forbiddenZoneViolations": 0,
+          "status": "Six-room release: Reception, Boardroom, Experience Centre, MD Office, Merchandising (proposed option B), Global Design Studio",
+          "nativeMacPerformanceTested": false
+        },
+        "viewer_errors": []
+      },
+      "file": "shots/after_CAM_14_Design_Studio_B.png",
+      "sha256": "0d7f692e04c7c4811188ad72a400e6f3275b2942ca9ce54a5b701df2b4b43139"
+    }
+  ],
+  "console_errors": [],
+  "page_errors": [],
+  "http_errors": [],
+  "source_responses": [
+    {
+      "url": "http://127.0.0.1:8783/realistic/?welcome=0&ao=0&shadows=0",
+      "status": 200,
+      "bytes": 70875,
+      "sha256": "c3fb3ba4ae201892c4451a5db43c6add6f50a70b80bd1833491290373c6f1545"
+    },
+    {
+      "url": "http://127.0.0.1:8783/realistic/app.js",
+      "status": 200,
+      "bytes": 1174937,
+      "sha256": "0a7c8eea858bbf9c5ab34d971cf6727c51d33c5fef54a67823d04a6c2e9442fc"
+    }
+  ],
+  "source_response_method": "Actual browser navigation/asset response bodies, not a later refetch",
+  "status": "captured",
+  "scope": "Actual viewer frames; UI hidden through screenshot-only CSS. Original scene camera API, no synthetic edits.",
+  "limits": [
+    "Linux software-GPU capture, not a MacBook performance test",
+    "Local load timing is not a 50 Mbps WAN benchmark"
+  ],
+  "ready_seconds_local": 4.514,
+  "browser": "153.0.8010.12",
+  "gpu": {
+    "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+    "vendor": "Google Inc. (Google)",
+    "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+    "webgl": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+    "maxTextureSize": 8192,
+    "pixelRatio": 1,
+    "quality": "balanced",
+    "viewport": [
+      1280,
+      720
+    ]
+  },
+  "counts": {
+    "quality": "balanced",
+    "stage": 4,
+    "floorTopTriangles": 8,
+    "meshes": 133,
+    "drawCallsMerged": {
+      "before": 2015,
+      "after": 104,
+      "roomGroupsSeparate": true
+    },
+    "rooms": 34,
+    "cameras": 45,
+    "stops": 16,
+    "model": "web",
+    "bakedLight": true,
+    "shadows": false,
+    "ambientOcclusion": false
+  },
+  "seconds": 40.5
+}

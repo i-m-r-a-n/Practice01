@@ -1,0 +1,30 @@
+{
+  "status": "passed",
+  "scope": "Loopback HTTP offline-resource resolver; not native Mac/file protocol acceptance",
+  "errors": [],
+  "outside_requests": [],
+  "frame": {
+    "name": "CAM_13_Design_Studio_A",
+    "type": "PERSP",
+    "lighting": null
+  },
+  "people": {
+    "enabled": true,
+    "loaded": true,
+    "frozen": true,
+    "total": 27,
+    "visible": 4,
+    "walkers": 0,
+    "illustrative": true,
+    "forbiddenZoneViolations": 0,
+    "status": "Six-room release: Reception, Boardroom, Experience Centre, MD Office, Merchandising (proposed option B), Global Design Studio",
+    "nativeMacPerformanceTested": false
+  },
+  "offline": {
+    "requests": 9,
+    "decodedBytes": 38585004,
+    "missing": []
+  },
+  "image_sha256": "b30874f3fec79a18f7fd4f7591f18b0a9d6cff4dde5e24aaf135eca8e6b80420",
+  "offline_manifest_sha256": "2a021167f7c49b19a8c9a7985a0dc8e773aaf2ab78129ec141ed1c130d3a9c27"
+}

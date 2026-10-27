@@ -11,7 +11,8 @@
     "Z08",
     "Z30",
     "Z12",
-    "Z07"
+    "Z07",
+    "Z18"
   ],
   "peopleManifest": "room-release/people-manifest.json",
   "excludedProps": [
