@@ -19,7 +19,7 @@ const ROOMS = [['Z02', 'CAM_01_Reception_A'], ['Z30', 'CAM_04_Experience_Centre_
   log.loadSeconds = (Date.now() - t0) / 1000;
   log.counts = await page.evaluate(() => window.__viewer.counts);
   // hide the interface so only the 3D view is compared (the page itself is unchanged)
-  await page.addStyleTag({ content: '#top,#side,#sideOpen,#info,#viewbar,#tourbar,#disclaimer,#labels,#minimap,#walkhint,#pad,#dock,#welcome{display:none!important}' });
+  await page.addStyleTag({ content: '#top,#side,#sideOpen,#info,#viewbar,#tourbar,#disclaimer,#labels,#minimap,#walkhint,#pad,#dock,#welcome,#dissolve{display:none!important}' });
   for (const [zone, cam] of ROOMS) {
     await page.evaluate((z) => window.__viewer.api.selectRoom(z), zone);
     await page.waitForFunction((c) => { const s = window.__viewer.api.state(); return !s.flying && s.atCam === c; }, cam, { timeout: 400000 });

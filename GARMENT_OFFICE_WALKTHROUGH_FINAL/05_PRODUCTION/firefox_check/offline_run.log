@@ -4,6 +4,6 @@ loaded {"ready":true,"err":"","counts":{"quality":"balanced","meshes":100,"drawC
 room {"mode":"rooms","room":"Z08","atCam":"CAM_09_Boardroom_A","flying":false,"flightT":null,"fps":0,"overhead":true,"tour":null,"pos":[21.844,1.575,-5.08]}
 photo {"photo":"CAM_09_Boardroom_A","w":1600}
 tour {"mode":"tour","room":"Z02","atCam":"CAM_01_Reception_A","flying":false,"flightT":null,"fps":0,"overhead":true,"tour":{"i":2,"phase":"hold","playing":false,"sub":0},"photo":null,"pos":[8.077,1.524,0.66],"card":"Reception & visitor waiting","info":"hidden"}
-walk {"p0":[6.248,1.626,5.74],"p1":[5.945,1.626,3.538],"moved":2.22}
-FF_CHECK_END {"errors":[],"seconds":42.142}
+walk {"p0":[6.248,1.626,5.74],"p1":[5.974,1.626,3.536],"moved":2.22}
+FF_CHECK_END {"errors":[],"seconds":36.955}
 EXIT 0

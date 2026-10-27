@@ -747,7 +747,7 @@ function startTour(i = 0) {
 function goStop(i) {
   const T = S.tour; if (!T) return;
   hidePhoto();
-  T.i = THREE.MathUtils.clamp(i, 0, stops.length - 1); T.sub = 0; T.phase = 'fly'; T.t = 0; T.photoSkip = false;
+  T.i = THREE.MathUtils.clamp(i, 0, stops.length - 1); T.sub = 0; T.phase = 'fly'; T.t = 0; T.photoSkip = false; T.done = false;
   const st = stops[T.i];
   S.room = st.zone ? byZone[st.zone] : null;
   $('tCount').textContent = `Stop ${T.i + 1} of ${stops.length}`;
@@ -766,8 +766,15 @@ function stopTour(toOverview = true) {
   S.tour = null; hidePhoto(); flight = null;
   if (toOverview) goOverview();
 }
-function togglePlay() { if (!S.tour) return; S.tour.playing = !S.tour.playing; updatePlay(); }
-function updatePlay() { $('tPlay').innerHTML = S.tour && !S.tour.playing ? '&#9654; Resume' : '&#10073;&#10073; Pause'; }
+function togglePlay() {
+  if (!S.tour) return;
+  if (S.tour.done) { S.tour.playing = true; goStop(0); return; }      // the end card: play the tour again
+  S.tour.playing = !S.tour.playing; updatePlay();
+}
+function updatePlay() {
+  const T = S.tour;
+  $('tPlay').innerHTML = T && T.done ? '&#8635; Play again' : T && !T.playing ? '&#9654; Resume' : '&#10073;&#10073; Pause';
+}
 function updateSegs() {
   const T = S.tour; if (!T) return;
   segs.forEach((s, i) => { s.style.width = i < T.i ? '100%' : i > T.i ? '0%' : `${Math.round(Math.min(1, (T.phase === 'hold' ? 0.3 + 0.7 * (T.t / HOLD) : 0.3 * (flight ? flight.t : 0))) * 100)}%`; });
@@ -790,7 +797,7 @@ function tourStep(dt) {
       const z2 = byZone[st.also_zone]; if (z2) { S.room = z2; }
       flyTo(stopPose(st, 'also_camera'), { inside: true, onDone: () => { if (S.tour) { setOverhead(true, true); S.tour.phase = 'hold'; S.tour.t = 0; } } });
     } else if (T.i + 1 < stops.length) goStop(T.i + 1);
-    else { S.tour = null; updatePlay(); goOverview(); }
+    else { T.playing = false; T.done = true; T.t = HOLD; updatePlay(); }       // stay on the final view; End tour / Play again
   }
 }
 $('tPrev').onclick = () => nextStop(-1);

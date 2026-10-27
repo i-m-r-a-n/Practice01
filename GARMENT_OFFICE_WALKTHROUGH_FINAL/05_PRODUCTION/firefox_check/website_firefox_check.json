@@ -10,13 +10,13 @@
   },
   {
    "name": "webgl",
-   "t": 3,
+   "t": 2.7,
    "webgl2": true,
    "renderer": "llvmpipe, or similar"
   },
   {
    "name": "loaded",
-   "t": 6.4,
+   "t": 6.2,
    "ready": true,
    "err": "",
    "counts": {
@@ -37,7 +37,7 @@
   },
   {
    "name": "room",
-   "t": 14.8,
+   "t": 14.5,
    "mode": "rooms",
    "room": "Z08",
    "atCam": "CAM_09_Boardroom_A",
@@ -54,13 +54,13 @@
   },
   {
    "name": "photo",
-   "t": 16.5,
+   "t": 16.2,
    "photo": "CAM_09_Boardroom_A",
    "w": 1600
   },
   {
    "name": "tour",
-   "t": 22,
+   "t": 22.1,
    "mode": "tour",
    "room": "Z02",
    "atCam": "CAM_01_Reception_A",
@@ -85,19 +85,19 @@
   },
   {
    "name": "walk",
-   "t": 36.9,
+   "t": 37.5,
    "p0": [
     6.248,
     1.626,
     5.74
    ],
    "p1": [
-    5.952,
+    5.932,
     1.626,
-    3.542
+    3.546
    ],
    "moved": 2.22
   }
  ],
- "seconds": 37.658
+ "seconds": 38.472
 }
