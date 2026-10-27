@@ -868,13 +868,13 @@ $('dHome').onclick = () => { stopTour(false); if (S.present) endPresentation(); 
 
 // ------------------------------------------------------------------ presentation mode
 function startPresentation() {
-  S.present = true; document.body.classList.add('present');
+  S.present = true; document.body.classList.add('present'); $('exitPresent').classList.remove('hidden');
   toggleFullscreen(true);                             // inside the click: browsers allow full screen only on a user gesture
   startTour('quick');
 }
 function endPresentation(home = true) {
   if (!S.present) return;
-  S.present = false; document.body.classList.remove('present');
+  S.present = false; document.body.classList.remove('present'); $('exitPresent').classList.add('hidden');
   if (document.fullscreenElement || document.webkitFullscreenElement) toggleFullscreen(false);
   if (S.tour) { S.tour = null; flight = null; cut = null; $('done').classList.add('hidden'); }
   if (home) goHome();
@@ -958,7 +958,7 @@ S.ready = true; window.__viewerReady = true;
   if (z && byZone[z]) selectRoom(byZone[z]);
   else if (t === 'quick' || t === 'full' || t === '1') startTour(t === 'full' ? 'full' : 'quick');
   else if (qs.get('plan') === '1') showPlan('top');
-  else if (qs.get('present') === '1') { S.present = true; document.body.classList.add('present'); startTour('quick'); }
+  else if (qs.get('present') === '1') { S.present = true; document.body.classList.add('present'); $('exitPresent').classList.remove('hidden'); startTour('quick'); }
 }
 let meshes = 0; model.traverse((o) => { if (o.isMesh) meshes++; });
 S.counts = { quality, meshes, drawCallsMerged: drawCalls, rooms: rooms.length, cameras: meta.cameras.length, quickStops: TOURS.quick.stops.length,
