@@ -66,7 +66,7 @@ External ESM dependencies are pinned to Three.js 0.164.1. A tested production bu
 ## Verified QA release — 2026-10-27
 
 - **Production URL:** https://stage2-office-virtual-tour.imranahmedjh611.workers.dev/
-- **Production source revision:** `92860bb4fd777b7b9161804b3d5bff9b5a4d5684` from QA branch `chatgpt/office-viewer-qa-v2`
+- **Production source revision:** `72f1087e0ce47cb17396174ced2f04cec1d01903` from QA branch `chatgpt/office-viewer-qa-v2`
 - **Staging worker:** `stage2-office-tour-preview` on the same Cloudflare account; original Blender scene and Claude's branch remain unchanged.
 - The Worker now serves HTML with no-store and revisions both `app.js` and `fallback.js` as cache-busting URLs, preventing stale JavaScript after releases.
 - Normal Cloudflare Chromium browser-rendering validation of the **production** URL with `?room=Z08&photo=0`: HTML reported `3D model ready · 34 rooms`, `Boardroom` and 34 clickable sidebar buttons, HTTP 200.
@@ -87,3 +87,11 @@ External ESM dependencies are pinned to Three.js 0.164.1. A tested production bu
 ### Claude / GPT integration contract
 
 Claude should work on a distinct **Blender asset branch** and post the optimized GLB and tested camera metadata with a commit reference to GitHub issue #12. Do not force-push the GPT QA frontend branch or change the existing Cloudflare Worker without coordination. GPT can integrate the verified GLB after reviewing its material accuracy and WebGL performance.
+
+### Production visual-polish follow-up
+
+- Removed floating room-name sprites from eye-level interior views; room markers remain available when exploring the overall floor.
+- Fixed view-dependent ceiling behavior: whole-floor view hides the steel deck and decorative ceiling pieces to reveal the layout; interior cameras restore the decorative ceiling/raft features while keeping the opaque deck hidden.
+- Adjusted WebGL illumination and tone mapping to reduce overexposed white surfaces; still not claimed to be identical to Cycles.
+- Live Cloudflare Chromium test after the production update at source revision `72f1087e0ce4` returned `3D model ready · 34 rooms` for the Boardroom deep link.
+- Frame screenshots were inspected at the Boardroom viewpoint; live rendering confirmed visually, and the previous distracting interior room markers were absent.
