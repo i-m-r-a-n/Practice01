@@ -183,9 +183,11 @@ async function open() {
   s = await st();
   ok('drag right turns the view so the room follows the pointer (grab, like a 360 photo)', s.looking && s.yaw > y0 + 0.05, `yaw ${y0} -> ${s.yaw}`);
   ok('reset view button appears after looking around', await vis('resetView'));
-  await P.raw.mouse.wheel ? await P.raw.mouse.wheel({ deltaY: -400 }) : null; await P.wait(300);
+  const f0 = (await st()).fov;
+  if (engine === 'firefox') await P.raw.mouse.wheel({ deltaY: -400 }); else await P.raw.mouse.wheel(0, -400);
+  await P.wait(300);
   const f1 = (await st()).fov;
-  ok('scroll zooms within limits', f1 > 10 && f1 < 85, `fov ${f1}`);
+  ok('scroll zooms in within limits', f1 < f0 && f1 > 10 && f1 < 85, `fov ${f0} -> ${f1}`);
   await P.mouse.dblclick ? await P.mouse.dblclick(700, 450) : await P.mouse.click(700, 450, { clickCount: 2 }); await still();
   s = await st(); ok('double-click resets to the architectural camera', s.atCam === 'CAM_34_Merchandising_Sample_Hub', JSON.stringify(s));
   await P.click('#cPhoto'); await P.waitFor(() => document.getElementById('photo').classList.contains('show'), null, 60000);
