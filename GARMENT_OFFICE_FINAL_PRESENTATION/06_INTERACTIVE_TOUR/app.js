@@ -43,7 +43,7 @@ const ROOMS=[
 const FEATURED=['Z01','Z02','Z30','Z08','Z12','Z07','Z06','Z05','Z14','Z15','Z17','Z18','Z20','Z21','Z23'];
 const TOUR=['__OVERVIEW__','Z01','Z02','Z30','Z08','Z10','Z12','Z06','Z07','Z14','Z15','Z17','Z18','Z20','Z21','Z23','__OVERVIEW__'];
 const tourRoom=i=>TOUR[i]==='__OVERVIEW__'?{id:'__OVERVIEW__',name:'Complete Ground Floor',group:'Architectural overview',camera:'CAM_ISO_SE',desc:'A furnished, coordinated corporate headquarters and design development centre.'}:ROOMS.find(r=>r.id===TOUR[i]);
-let renderer,scene,camera,controls,office,box,frame,officeCenter,officeSize,ceilingMeshes=[],savedCameras=new Map(),markers=[],raycaster=new THREE.Raycaster(),pointer=new THREE.Vector2();
+let renderer,scene,camera,controls,office,box,frame,officeCenter,officeSize,ceilingMeshes=[],roofMeshes=[],savedCameras=new Map(),markers=[],raycaster=new THREE.Raycaster(),pointer=new THREE.Vector2();
 let selected=null,viewMode='orbit',walkPitch=0,walkYaw=0,keys={},inTour=false,tourPlaying=false,tourIndex=0,tourElapsed=0,transition=null,prevTime=performance.now(),markerVisible=true,ceilingHidden=false;
 const modelPath='./model.glb';
 let fallbackMode=false,photosEnabled=new URLSearchParams(location.search).get('photo')!=='0',fallbackTimer=null,collisionMeshes=[],collisionBoxes=[],zoneFloors=[],pointerDown=null,webglReady=false,loadWatchdog=null,navSequence=0,interiorLights=[];
@@ -66,7 +66,7 @@ function init(){
  renderer.setSize(innerWidth,innerHeight);
  renderer.outputColorSpace=THREE.SRGBColorSpace;
  renderer.toneMapping=THREE.ACESFilmicToneMapping;
- renderer.toneMappingExposure=1.05;
+ renderer.toneMappingExposure=.91;
  renderer.setClearColor(0x15241f,1);
  scene=new THREE.Scene();
  scene.background=new THREE.Color('#182a25');
@@ -78,10 +78,10 @@ function init(){
  controls.minDistance=.25;
  controls.maxDistance=130;
  controls.maxPolarAngle=Math.PI*.495;
- scene.add(new THREE.HemisphereLight(0xfdf7ed,0x7f9589,1.15));
- const ambient=new THREE.AmbientLight(0xffffff,.52);scene.add(ambient);
- const sunlight=new THREE.DirectionalLight(0xfff2dc,2.35);sunlight.position.set(20,44,-14);scene.add(sunlight);
- const fill=new THREE.DirectionalLight(0xdceaff,.8);fill.position.set(-20,25,35);scene.add(fill);
+ scene.add(new THREE.HemisphereLight(0xfdf7ed,0x7f9589,.78));
+ const ambient=new THREE.AmbientLight(0xffffff,.30);scene.add(ambient);
+ const sunlight=new THREE.DirectionalLight(0xfff2dc,1.75);sunlight.position.set(20,44,-14);scene.add(sunlight);
+ const fill=new THREE.DirectionalLight(0xdceaff,.48);fill.position.set(-20,25,35);scene.add(fill);
  // Real-time interior fill lighting complements (but cannot replace) baked Cycles lighting.
  for(let i=0;i<4;i++){const p=new THREE.PointLight(i%2?0xffe8d0:0xf6fff7,0,9,2);p.name='web-visitor-interior-fill';scene.add(p);interiorLights.push(p);}
  // A neutral studio environment adds realistic reflections to metal, glass and wood PBR surfaces.
@@ -127,7 +127,7 @@ function onLoaded(gltf){
    if(o.isMesh){
      if(o.userData?.zone_id)zoneFloors.push(o);
      const n=o.name.toLowerCase();
-     if(/^cl\d{3}(?:_|\b)|ceiling|ceil |clg |steel[_ ]deck|acoustic[_ ]raft|felt[_ ]baffle|wood[_ ]raft|oak[_ ]raft|slat[_ ]raft/.test(n))ceilingMeshes.push(o);
+     if(/^cl\d{3}(?:_|\b)|ceiling|ceil |clg |steel[_ ]deck|acoustic[_ ]raft|felt[_ ]baffle|wood[_ ]raft|oak[_ ]raft|slat[_ ]raft/.test(n)){ceilingMeshes.push(o);if(/steel[_ ]deck/.test(n))roofMeshes.push(o);}
      if(/\bwall\b|partition|glass|steel column|^(?:iw|pw|np|col)\d{2}/.test(n))collisionMeshes.push(o);
      if(o.material && o.material.isMeshStandardMaterial){o.material.envMapIntensity=1.15;}
    }
@@ -173,7 +173,7 @@ function animate(now=performance.now()){
    camera.rotation.set(walkPitch,walkYaw,0,'YXZ');
    camera.position.y=1.62;
  }else if(inTour){tickTour(dt)}else{controls.update();}
- markers.forEach(m=>{const distant=camera.position.distanceTo(m.position)>10;m.visible=markerVisible&&distant;});
+ markers.forEach(m=>{const distant=camera.position.distanceTo(m.position)>10;const overview=!selected||selected.id==='__OVERVIEW__';m.visible=markerVisible&&overview&&distant;});
  if(!fallbackMode)renderer.render(scene,camera);
 }
 function syncRoomURL(id){const u=new URL(location.href);if(id)u.searchParams.set('room',id);else u.searchParams.delete('room');history.replaceState(null,'',u.pathname+u.search+u.hash);}
@@ -237,6 +237,7 @@ function selectRoom(r,fromTour=false){
  selected=r;
  updateHUD(r);
  renderRooms();
+ syncCeilingVisibility();
  if(office){const p=cameraPose(r);goToPose(p,false);updateInteriorLighting(r);}
  if(fallbackMode)showFallback(r);
  else if(photosEnabled&&!fromTour)showReference(r);
@@ -246,6 +247,7 @@ function overview(instant=false){
  if(!office&&!fallbackMode)return;
  stopTour();if(office)setWalk(false);
  selected=null;syncRoomURL(null);renderRooms();updateHUD(null);
+ syncCeilingVisibility();
  if(fallbackMode){showFallback(null);return;}
  $('renderPanel').hidden=true;
  const centre=officeCenter.clone();
@@ -274,10 +276,14 @@ function setWalk(v){
   if(selected)updateHUD(selected);
  }
 }
+function syncCeilingVisibility(){
+ const interior=selected&&selected.id!=='__OVERVIEW__';
+ for(const x of ceilingMeshes)x.visible=!ceilingHidden||(interior&&!roofMeshes.includes(x));
+}
 function toggleCeiling(force){
  if(!office)return;
  ceilingHidden=typeof force==='boolean'?force:!ceilingHidden;
- ceilingMeshes.forEach(x=>x.visible=!ceilingHidden);
+ syncCeilingVisibility();
  $('ceilingBtn').textContent=ceilingHidden?'▤ Show ceilings':'◱ Hide ceilings';
  $('ceilingBtn').classList.toggle('active',ceilingHidden);
 }
@@ -329,6 +335,7 @@ function setTourStep(i){
  tourIndex=i;
  const r=tourRoom(i);
  selected=r;renderRooms();updateHUD(r);
+ syncCeilingVisibility();
  if(office){const pose=cameraPose(r);camera.position.copy(pose.pos);camera.quaternion.copy(pose.q);controls.target.copy(pose.target);updateInteriorLighting(r.id==='__OVERVIEW__'?null:r);}
  if(fallbackMode)showFallback(r);
  $('tourLabel').textContent=r.name;
@@ -438,7 +445,7 @@ function updateInteriorLighting(room){
  const a=room.x,b=room.z;
  for(let i=0;i<interiorLights.length;i++){
    const dx=(i%2?1.7:-1.7),dz=(i<2?1.7:-1.7),light=interiorLights[i];
-   light.position.set(a+dx,2.25,b+dz);light.intensity=250;
+   light.position.set(a+dx,2.25,b+dz);light.intensity=115;
  }
 }
 init();
