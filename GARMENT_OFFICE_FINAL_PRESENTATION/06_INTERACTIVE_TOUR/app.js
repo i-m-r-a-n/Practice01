@@ -50,6 +50,7 @@ let fallbackMode=false,photosEnabled=true,fallbackTimer=null,collisionMeshes=[],
 const setStatus=t=>{const p=$('statusPill');if(p)p.textContent=t;};
 const isMobile=matchMedia('(max-width: 780px)').matches;
 const finalRender=name=>'/renders/'+encodeURIComponent(name)+'.jpg';
+const NEARBY_RENDER_ZONES=new Set(['Z03','Z19','Z34','Z28','Z29','Z31','Z32','Z33']);
 const canvas=$('canvas');
 const loaderBox=$('progressBox');
 const loadText=$('loadText');
@@ -375,14 +376,17 @@ function moveWalk(delta){
 }
 function showReference(room){
  const cam=room?.camera||'CAM_ISO_SE';
+ const nearby=room&&NEARBY_RENDER_ZONES.has(room.id);
  $('renderTitle').textContent=room?.name||'The complete office';
  $('renderImg').src=finalRender(cam);
+ $('renderNote').textContent=nearby?'This is a verified Blender Cycles render of the nearest available area, not this exact room. Explore the actual room in live 3D.':'Original Blender Cycles render from this project. Real-time WebGL lighting is an approximation of the intended finish.';
  $('renderPanel').hidden=false;
 }
 function showFallback(room){
  $('fallbackStage').hidden=false;
  $('fallbackImg').src=finalRender(room?.camera||'CAM_ISO_SE');
  $('fallbackInfo').querySelector('strong').textContent=room?.name||'Photorealistic design gallery';
+ $('fallbackInfo').querySelector('span').textContent=(room&&NEARBY_RENDER_ZONES.has(room.id))?'Closest available room render — the exact room is visible in interactive 3D.':'Actual Blender Cycles render of the proposed interior design.';
  $('roomDesc').textContent=room?room.desc:'Browse genuine Cycles images from this architectural model. For the full interactive 3D viewer, open this page in a WebGL-enabled Chrome or Safari browser.';
 }
 function activateFallback(error){
