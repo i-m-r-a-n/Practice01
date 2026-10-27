@@ -55,3 +55,17 @@ Claude's `claude/realism-upgrade` commit `cc2bd270c896adba1a127ad2a2216a8a4cdf10
 - Exact Cycles realism is not promised in real-time WebGL.
 - Site dimensions, egress, structural and MEP details remain concept-stage assumptions pending verification.
 - Final new Claude bundle can be integrated only from a tested commit on Claude's asset branch; do not force-push or overwrite the existing production Worker during the client meeting.
+
+
+## Critical geometry repair — final production revision (15:52 Dhaka)
+
+**Supersedes the original Worker deployment data above.** Claude independently discovered that the previous GPT bundle's direct `COLOR_0.array` modification corrupted a shared interleaved 16-bit buffer, shifting walls/ceilings/floors and normals.
+
+- The patched frontend bundle is `6be2c0f4a8994681c1327c6a5222340cf249ca67`, same branch `chatgpt/stage2-video-ready-client`.
+- It uses `BufferAttribute.getX/getY/getZ` and `setXYZ` on the actual color accessor, not index arithmetic over the shared raw buffer, and marks `attribute.data.needsUpdate` when interleaved.
+- The final production Worker source is `worker_video_delivery.js` with cache-busting `app.js?v=6be2c0f4a899` (GitHub Worker commit `33d5c9c11a58a3c62ff304662a5cdda8b31e5483`).
+- Cloudflare deployment **`7066e29a4ba047479ed47442afe91ac9`**, at 2026-10-27 09:51:57 UTC (15:51:57 Asia/Dhaka).
+- Separate-preview 3D visualization showed the architectural floor layout aligned with furniture; production Cloudflare Chromium HTTP 200, 19.5 MB model loaded, overlay dismissed and JS query version `6be2c0f4a899` validated.
+- This code-level geometry repair does **not** constitute a complete verified physical Mac camera/first-person test. It is still advisable to open the site before meeting and inspect Reception/Boardroom/Studio; use the MP4 and Cycles render book if the live model misbehaves.
+- The new Claude `claude/realism-upgrade` UI remains **undepoyed** pending Cloudflare preview startup issue resolution, despite Claude's successful local Firefox/Chromium checks.
+- Collaboration report with full root cause and exact pins posted on GitHub issue #12.
