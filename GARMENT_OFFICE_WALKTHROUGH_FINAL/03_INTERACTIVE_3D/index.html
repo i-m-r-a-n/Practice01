@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Office 3D Tour</title>
+<link rel="stylesheet" href="style.css">
+<script type="importmap">
+{ "imports": { "three": "./vendor/three/build/three.module.js", "three/addons/": "./vendor/three/examples/jsm/" } }
+</script>
+</head>
+<body>
+<div id="app"></div>
+<div id="fade"></div>
+
+<header id="brand">
+  <div class="logos">
+    <img src="assets/logo_zara_fashion_profile.png" alt="Zara Fashion logo">
+    <img src="assets/logo_stage2_ltd.png" alt="Stage II Knitting Apparel Ltd. logo">
+    <img src="assets/logo_stage2_unit1.png" alt="Stage II Knitting Apparel Unit-1 logo">
+  </div>
+  <div class="title">Premium International Fashion Corporate Headquarters &amp; Design Development Centre</div>
+  <div class="sub">Ground floor &middot; proposed interior design &middot; interactive 3D model</div>
+</header>
+
+<aside id="panel">
+  <div class="panel-head"><span>Rooms</span><button id="panelToggle" title="Hide / show the room list">&#8211;</button></div>
+  <div id="roomList"></div>
+</aside>
+
+<div id="caption"><div class="scene"></div><div class="label"></div></div>
+<div id="roomInfo"></div>
+
+<nav id="toolbar">
+  <button id="btnOverview" class="on" title="Orbit around the whole floor (drag to rotate, scroll to zoom)">Overview</button>
+  <button id="btnWalk" title="Eye-level view: drag to look around, W A S D or arrow keys to walk, Shift to walk faster">Walk</button>
+  <span class="sep"></span>
+  <button id="btnTour" title="Guided animated tour of the floor">&#9654; Guided tour</button>
+  <button id="btnPrev" title="Previous tour stop" disabled>&#8249;</button>
+  <button id="btnNext" title="Next tour stop" disabled>&#8250;</button>
+  <span class="sep"></span>
+  <button id="btnCeil" title="Show or hide deck, beams, ceilings and light fittings">Ceilings</button>
+  <button id="btnLabels" class="on" title="Room names">Labels</button>
+</nav>
+
+<div id="help">Overview: drag to rotate &middot; right-drag to pan &middot; scroll to zoom &middot; click a room in the list<br>
+Walk: drag to look &middot; W A S D / arrows to move &middot; Shift faster &middot; double-click the floor to go there</div>
+<div id="disclaimer">Proposed interior design &ndash; real-time view of the project&rsquo;s 3D model, not a photograph. Furniture is generic; some dimensions are provisional.</div>
+
+<div id="loading"><div class="box"><div class="t">Loading the 3D model&hellip;</div><div class="bar"><div id="loadBar"></div></div><div id="loadText">0 %</div></div></div>
+<script type="module" src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+Cycles (Blender 5.2.3, CPU, 4 cores), CAM_04 experience centre, persistent data, OpenImageDenoise (albedo + normal),
+bounces 4 (diffuse 2, glossy 2), fixed seed. Seconds per frame (first frame includes building the scene):
+- 960 x 540, 8 samples:  14.0 / 9.3 / 9.2
+- 1280 x 720, 6 samples: 15.3 / 12.7 / 12.4
+- 1280 x 720, 4 samples: 11.6 / 8.7 / 8.5   <- chosen (exposure +1.0 stop to match the final stills; mean brightness checked)
+For comparison: final stills 1600 x 900, 128 samples: about 405 s per frame. EEVEE (software OpenGL): about 240 s per frame.
+
+Decision: Cycles 1280 x 720, 4 samples + denoise, rendered at 12 fps, motion-interpolated to 24 fps and upscaled to
+1920 x 1080 in FFmpeg. Budget about 8.7 s x 12 frames per second of footage = 104 s of rendering per second of video.

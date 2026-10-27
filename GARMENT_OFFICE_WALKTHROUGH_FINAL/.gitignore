@@ -1,0 +1,6 @@
+# render frames, scratch and backups stay local; finished videos and source files are committed
+work/
+*.blend1
+__pycache__/
+# local copy of the approved GLB used by the offline viewer (identical to 01_EDITABLE_3D/Final_Office_Interior.glb)
+03_INTERACTIVE_3D/model/Final_Office_Interior.glb

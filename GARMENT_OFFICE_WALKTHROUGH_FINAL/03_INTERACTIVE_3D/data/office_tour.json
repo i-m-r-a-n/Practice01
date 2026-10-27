@@ -1,0 +1,2529 @@
+{
+ "note": "Generated from the approved model data (office_layout.py, cameras.py) and the walkthrough shot list (shots.py).",
+ "units": "metres, glTF axes (x east, y up, z south)",
+ "centre": [
+  16.383,
+  0.0,
+  -11.186
+ ],
+ "bounds": [
+  [
+   -1.651,
+   0.0,
+   -39.573
+  ],
+  [
+   33.934,
+   2.896,
+   6.528
+  ]
+ ],
+ "eye_height": 1.6,
+ "overhead": [
+  "AC01 VRF indoor unit, under-ceiling (Z07) - capacity by MEP",
+  "AC02 VRF indoor unit, under-ceiling (Z07) - capacity by MEP",
+  "AC03 VRF indoor unit, under-ceiling (Z07) - capacity by MEP",
+  "AC04 VRF indoor unit, under-ceiling (Z07) - capacity by MEP",
+  "AC05 VRF indoor unit, under-ceiling (Z06) - capacity by MEP",
+  "AC06 VRF indoor unit, under-ceiling (Z06) - capacity by MEP",
+  "AC07 VRF indoor unit, under-ceiling (Z05) - capacity by MEP",
+  "AC08 VRF indoor unit, under-ceiling (Z30) - capacity by MEP",
+  "AC09 VRF indoor unit, under-ceiling (Z08) - capacity by MEP",
+  "AC10 VRF indoor unit, under-ceiling (Z02) - capacity by MEP",
+  "AC11 VRF indoor unit, under-ceiling (Z12) - capacity by MEP",
+  "AC12 VRF indoor unit, under-ceiling (Z11) - capacity by MEP",
+  "AC13 VRF indoor unit, under-ceiling (Z14) - capacity by MEP",
+  "AC14 VRF indoor unit, under-ceiling (Z18) - capacity by MEP",
+  "AC15 VRF indoor unit, under-ceiling (Z18) - capacity by MEP",
+  "AC16 VRF indoor unit, under-ceiling (Z20) - capacity by MEP",
+  "AC17 VRF indoor unit, under-ceiling (Z21) - capacity by MEP",
+  "AC18 VRF indoor unit, under-ceiling (Z23) - capacity by MEP",
+  "AC19 VRF indoor unit, under-ceiling (Z01) - capacity by MEP",
+  "BM001 Room 7 main beam (sketch line)",
+  "BM002 Room 6 - 5 main beam",
+  "BM003 Room 8 main beam",
+  "BM004 Room 1 secondary",
+  "BM005 Room 1 secondary",
+  "BM006 Room 1 secondary",
+  "BM007 Room 1 secondary",
+  "BM008 Room 3 secondary",
+  "BM009 Room 3 secondary",
+  "BM010 Room 3 secondary",
+  "BM011 Room 4 secondary",
+  "BM012 Room 4 secondary",
+  "BM013 Room 4 secondary",
+  "BM014 Room 4 secondary",
+  "BM015 Room 4 secondary",
+  "BM016 Room 4 secondary",
+  "BM017 Room 4 secondary",
+  "BM018 Room 2 secondary",
+  "BM019 Room 2 secondary",
+  "BM020 Room 7 secondary",
+  "BM021 Room 7 secondary",
+  "BM022 Room 7 secondary",
+  "BM023 Room 7 secondary",
+  "BM024 Room 7 secondary",
+  "BM025 Room 7 secondary",
+  "BM026 Room 7 secondary",
+  "BM027 Room 7 secondary",
+  "BM028 Room 7 secondary",
+  "BM029 Room 7 secondary",
+  "BM030 Room 7 secondary",
+  "BM031 Room 7 secondary",
+  "BM032 Hallway secondary",
+  "BM033 Hallway secondary",
+  "BM034 Hallway secondary",
+  "BM035 Hallway secondary",
+  "BM036 Hallway secondary",
+  "BM037 Hallway secondary",
+  "BM038 Hallway secondary",
+  "BM039 Room 5 secondary",
+  "BM040 Room 5 secondary",
+  "BM041 Room 5 secondary",
+  "BM042 Room 5 secondary",
+  "BM043 Room 5 secondary",
+  "BM044 Room 5 secondary",
+  "BM045 Room 6 secondary",
+  "BM046 Room 6 secondary",
+  "BM047 Room 6 secondary",
+  "BM048 Room 6 secondary",
+  "BM049 Room 6 secondary",
+  "BM050 Room 6 secondary",
+  "BM051 Room 6 secondary",
+  "BM052 Room 6 secondary",
+  "BM053 Room 6 secondary",
+  "BM054 Room 6 secondary",
+  "BM055 Room 6 secondary",
+  "BM056 Room 6 secondary",
+  "BM057 Room 6 secondary",
+  "BM058 Room 6 secondary",
+  "BM059 Room 6 secondary",
+  "BM060 Room 6 secondary",
+  "BM061 Room 8 secondary",
+  "BM062 Room 8 secondary",
+  "BM063 Room 8 secondary",
+  "BM064 Room 8 secondary",
+  "BM065 Room 8 secondary",
+  "BM066 Room 8 secondary",
+  "BM067 Room 8 secondary",
+  "BM068 Room 8 secondary",
+  "BM069 Room 8 secondary",
+  "BM070 Room 8 secondary",
+  "BM071 Room 8 secondary",
+  "BM072 Room 8 secondary",
+  "BM073 Room 8 secondary",
+  "BM074 Room 8 secondary",
+  "BM075 Room 8 secondary",
+  "BM076 Room 8 secondary",
+  "BM077 Room 8 secondary",
+  "BM078 Room 8 secondary",
+  "BM079 Room 8 secondary",
+  "BM080 Room 8 secondary",
+  "BM081 Room 8 secondary",
+  "BM082 Room 8 secondary",
+  "BM083 Room 8 secondary",
+  "BM084 Room 8 secondary",
+  "BM085 Room 8 secondary",
+  "BM086 Room 8 secondary",
+  "BM087 Room 8 secondary",
+  "BM088 Room 8 secondary",
+  "BM089 Room 8 secondary",
+  "BM090 Room 8 secondary",
+  "BM091 Room 8 secondary",
+  "BM092 Room 8 secondary",
+  "BM093 Room 8 secondary",
+  "BM094 Room 8 secondary",
+  "BM095 Room 8 secondary",
+  "BM096 Room 8 secondary",
+  "BM097 Room 8 secondary",
+  "BM098 Room 8 secondary",
+  "BM099 Room 8 secondary",
+  "BM100 Room 8 secondary",
+  "BM101 Room 8 secondary",
+  "BM102 Room 8 secondary",
+  "CL000 slat_raft (Z02)",
+  "CL001 slat_raft (Z12)",
+  "CL002 raft (Z08)",
+  "CL003 raft (Z08)",
+  "CL004 raft (Z08)",
+  "CL005 raft (Z08)",
+  "CL006 baffle (Z07)",
+  "CL007 baffle (Z07)",
+  "CL008 baffle (Z07)",
+  "CL009 baffle (Z07)",
+  "CL010 baffle (Z07)",
+  "CL011 baffle (Z07)",
+  "CL012 baffle (Z07)",
+  "CL013 baffle (Z07)",
+  "CL014 baffle (Z07)",
+  "CL015 baffle (Z07)",
+  "CL016 baffle (Z07)",
+  "CL017 baffle (Z07)",
+  "CL018 baffle (Z07)",
+  "CL019 baffle (Z07)",
+  "CL020 baffle (Z07)",
+  "CL021 baffle (Z07)",
+  "CL022 baffle (Z07)",
+  "CL023 baffle (Z07)",
+  "CL024 baffle (Z07)",
+  "CL025 baffle (Z07)",
+  "CL026 baffle (Z07)",
+  "CL027 baffle (Z07)",
+  "CL028 baffle (Z07)",
+  "CL029 baffle (Z07)",
+  "CL030 baffle (Z07)",
+  "CL031 baffle (Z07)",
+  "CL032 baffle (Z07)",
+  "CL033 baffle (Z07)",
+  "CL034 baffle (Z07)",
+  "CL035 baffle (Z07)",
+  "CL036 baffle (Z07)",
+  "CL037 baffle (Z07)",
+  "CL038 baffle (Z07)",
+  "CL039 baffle (Z07)",
+  "CL040 baffle (Z07)",
+  "CL041 baffle (Z07)",
+  "CL042 baffle (Z07)",
+  "CL043 baffle (Z07)",
+  "CL044 baffle (Z07)",
+  "CL045 baffle (Z07)",
+  "CL046 baffle (Z07)",
+  "CL047 baffle (Z07)",
+  "CL048 baffle (Z07)",
+  "CL049 baffle (Z07)",
+  "CL050 baffle (Z07)",
+  "CL051 baffle (Z07)",
+  "CL052 baffle (Z07)",
+  "CL053 baffle (Z07)",
+  "CL054 baffle (Z07)",
+  "CL055 baffle (Z07)",
+  "CL056 baffle (Z07)",
+  "CL057 baffle (Z07)",
+  "CL058 baffle (Z07)",
+  "CL059 baffle (Z07)",
+  "CL060 baffle (Z07)",
+  "CL061 baffle (Z07)",
+  "CL062 baffle (Z07)",
+  "CL063 baffle (Z07)",
+  "CL064 baffle (Z07)",
+  "CL065 baffle (Z07)",
+  "CL066 baffle (Z07)",
+  "CL067 baffle (Z07)",
+  "CL068 baffle (Z07)",
+  "CL069 baffle (Z07)",
+  "CL070 baffle (Z07)",
+  "CL071 baffle (Z07)",
+  "CL072 baffle (Z07)",
+  "CL073 baffle (Z07)",
+  "CL074 baffle (Z07)",
+  "CL075 baffle (Z07)",
+  "CL076 baffle (Z07)",
+  "CL077 baffle (Z07)",
+  "CL078 baffle (Z07)",
+  "CL079 baffle (Z07)",
+  "CL080 baffle (Z07)",
+  "CL081 baffle (Z07)",
+  "CL082 baffle (Z07)",
+  "CL083 baffle (Z07)",
+  "CL084 baffle (Z07)",
+  "CL085 baffle (Z07)",
+  "CL086 baffle (Z07)",
+  "CL087 baffle (Z07)",
+  "CL088 baffle (Z07)",
+  "CL089 baffle (Z07)",
+  "CL090 baffle (Z07)",
+  "CL091 baffle (Z07)",
+  "CL092 baffle (Z07)",
+  "CL093 baffle (Z07)",
+  "CL094 baffle (Z07)",
+  "CL095 baffle (Z07)",
+  "CL096 baffle (Z07)",
+  "CL097 baffle (Z07)",
+  "CL098 baffle (Z07)",
+  "CL099 baffle (Z07)",
+  "CL100 baffle (Z07)",
+  "CL101 baffle (Z07)",
+  "CL102 baffle (Z07)",
+  "CL103 baffle (Z07)",
+  "CL104 baffle (Z07)",
+  "CL105 baffle (Z07)",
+  "CL106 baffle (Z07)",
+  "CL107 baffle (Z07)",
+  "CL108 baffle (Z07)",
+  "CL109 baffle (Z07)",
+  "CL110 baffle (Z07)",
+  "CL111 baffle (Z07)",
+  "CL112 baffle (Z07)",
+  "CL113 baffle (Z07)",
+  "CL114 baffle (Z07)",
+  "CL115 baffle (Z07)",
+  "CL116 baffle (Z07)",
+  "CL117 baffle (Z07)",
+  "CL118 baffle (Z07)",
+  "CL119 baffle (Z07)",
+  "CL120 baffle (Z07)",
+  "CL121 baffle (Z07)",
+  "CL122 baffle (Z07)",
+  "CL123 baffle (Z07)",
+  "CL124 baffle (Z07)",
+  "CL125 baffle (Z07)",
+  "CL126 baffle (Z07)",
+  "CL127 baffle (Z07)",
+  "CL128 baffle (Z07)",
+  "CL129 baffle (Z07)",
+  "CL130 baffle (Z07)",
+  "CL131 baffle (Z07)",
+  "CL132 baffle (Z07)",
+  "CL133 baffle (Z07)",
+  "CL134 baffle (Z07)",
+  "CL135 baffle (Z07)",
+  "CL136 baffle (Z07)",
+  "CL137 baffle (Z07)",
+  "CL138 baffle (Z07)",
+  "CL139 baffle (Z07)",
+  "CL140 baffle (Z07)",
+  "CL141 baffle (Z07)",
+  "CL142 baffle (Z07)",
+  "CL143 baffle (Z07)",
+  "CL144 baffle (Z07)",
+  "CL145 baffle (Z07)",
+  "CL146 baffle (Z07)",
+  "CL147 baffle (Z07)",
+  "CL148 baffle (Z07)",
+  "CL149 baffle (Z07)",
+  "CL150 baffle (Z07)",
+  "CL151 baffle (Z07)",
+  "CL152 baffle (Z07)",
+  "CL153 baffle (Z07)",
+  "CL154 baffle (Z07)",
+  "CL155 baffle (Z07)",
+  "CL156 baffle (Z07)",
+  "CL157 baffle (Z07)",
+  "CL158 baffle (Z07)",
+  "CL159 baffle (Z07)",
+  "CL160 baffle (Z07)",
+  "CL161 baffle (Z07)",
+  "CL162 baffle (Z07)",
+  "CL163 baffle (Z07)",
+  "CL164 baffle (Z07)",
+  "CL165 baffle (Z07)",
+  "CL166 baffle (Z07)",
+  "CL167 baffle (Z07)",
+  "CL168 baffle (Z07)",
+  "CL169 baffle (Z07)",
+  "CL170 baffle (Z07)",
+  "CL171 baffle (Z07)",
+  "CL172 baffle (Z07)",
+  "CL173 baffle (Z07)",
+  "EX01 exit sign",
+  "EX02 exit sign",
+  "EX03 exit sign",
+  "EX04 exit sign",
+  "LT001 linear pendant 96in (Z01)",
+  "LT002 linear pendant 72in (Z01)",
+  "LT003 track spot (Z01)",
+  "LT004 track spot (Z01)",
+  "LT005 track spot (Z01)",
+  "LT006 halo pendant (Z02)",
+  "LT007 linear pendant 96in (Z02)",
+  "LT008 track spot (Z02)",
+  "LT009 track spot (Z02)",
+  "LT010 track spot (Z02)",
+  "LT011 track spot (Z02)",
+  "LT012 downlight (Z02)",
+  "LT013 downlight (Z02)",
+  "LT014 downlight (Z03)",
+  "LT015 downlight (Z03)",
+  "LT016 track rail (Z30)",
+  "LT017 track rail (Z30)",
+  "LT018 track rail (Z30)",
+  "LT019 track rail (Z30)",
+  "LT020 track spot (Z30)",
+  "LT021 track spot (Z30)",
+  "LT022 track spot (Z30)",
+  "LT023 track spot (Z30)",
+  "LT024 track spot (Z30)",
+  "LT025 track spot (Z30)",
+  "LT026 track spot (Z30)",
+  "LT027 track spot (Z30)",
+  "LT028 track spot (Z30)",
+  "LT029 track spot (Z30)",
+  "LT030 track spot (Z30)",
+  "LT031 track spot (Z30)",
+  "LT032 track spot (Z30)",
+  "LT033 track spot (Z30)",
+  "LT034 track spot (Z30)",
+  "LT035 track spot (Z30)",
+  "LT036 track spot (Z30)",
+  "LT037 linear pendant 120in (Z30)",
+  "LT038 linear pendant 96in (Z08)",
+  "LT039 linear pendant 96in (Z08)",
+  "LT040 downlight (Z08)",
+  "LT041 downlight (Z08)",
+  "LT042 downlight (Z08)",
+  "LT043 downlight (Z08)",
+  "LT044 track spot (Z08)",
+  "LT045 track spot (Z08)",
+  "LT046 track spot (Z08)",
+  "LT047 track spot (Z08)",
+  "LT048 track spot (Z08)",
+  "LT049 linear pendant 60in (Z10)",
+  "LT050 downlight (Z10)",
+  "LT051 linear pendant 60in (Z11)",
+  "LT052 downlight (Z11)",
+  "LT053 linear pendant 72in (Z12)",
+  "LT054 halo pendant (Z12)",
+  "LT055 track spot (Z12)",
+  "LT056 track spot (Z12)",
+  "LT057 track spot (Z12)",
+  "LT058 downlight (Z13)",
+  "LT059 downlight (Z13)",
+  "LT060 downlight (Z13)",
+  "LT061 downlight (Z13)",
+  "LT062 downlight (Z13)",
+  "LT063 linear pendant 150in (Z07)",
+  "LT064 linear pendant 150in (Z07)",
+  "LT065 linear pendant 100in (Z07)",
+  "LT066 linear pendant 130in (Z07)",
+  "LT067 linear pendant 200in (Z07)",
+  "LT068 linear pendant 150in (Z06)",
+  "LT069 linear pendant 150in (Z06)",
+  "LT070 linear pendant 60in (Z06)",
+  "LT071 downlight (Z06)",
+  "LT072 downlight (Z06)",
+  "LT073 downlight (Z06)",
+  "LT074 downlight (Z06)",
+  "LT075 downlight (Z06)",
+  "LT076 downlight (Z06)",
+  "LT077 downlight (Z06)",
+  "LT078 downlight (Z06)",
+  "LT079 downlight (Z06)",
+  "LT080 downlight (Z06)",
+  "LT081 downlight (Z06)",
+  "LT082 downlight (Z07)",
+  "LT083 downlight (Z07)",
+  "LT084 downlight (Z07)",
+  "LT085 downlight (Z07)",
+  "LT086 downlight (Z07)",
+  "LT087 downlight (Z07)",
+  "LT088 linear pendant 60in (Z09)",
+  "LT089 linear pendant 100in (Z05)",
+  "LT090 downlight (Z05)",
+  "LT091 linear pendant 72in (Z04)",
+  "LT092 downlight (Z31)",
+  "LT093 downlight (Z31)",
+  "LT094 downlight (Z31)",
+  "LT095 linear pendant 60in (Z14)",
+  "LT096 linear pendant 60in (Z14)",
+  "LT097 linear pendant 60in (Z14)",
+  "LT098 linear pendant 60in (Z14)",
+  "LT099 linear pendant 96in (Z15)",
+  "LT100 linear pendant 96in (Z16)",
+  "LT101 linear pendant 120in (Z17)",
+  "LT102 linear pendant 110in (Z18)",
+  "LT103 linear pendant 110in (Z18)",
+  "LT104 linear pendant 80in (Z18)",
+  "LT105 linear pendant 96in (Z18)",
+  "LT106 track rail (Z18)",
+  "LT107 track spot (Z18)",
+  "LT108 track spot (Z18)",
+  "LT109 track spot (Z18)",
+  "LT110 track spot (Z18)",
+  "LT111 track spot (Z18)",
+  "LT112 linear pendant 96in (Z19)",
+  "LT113 cafe pendant (CC0) (modern_ceiling_lamp_01)",
+  "LT114 cafe pendant (CC0) (modern_ceiling_lamp_01)",
+  "LT115 cafe pendant (CC0) (modern_ceiling_lamp_01)",
+  "LT116 cafe pendant (CC0) (modern_ceiling_lamp_01)",
+  "LT117 cafe pendant (CC0) (modern_ceiling_lamp_01)",
+  "LT118 cafe pendant (CC0) (modern_ceiling_lamp_01)",
+  "LT119 linear pendant 96in (Z20)",
+  "LT120 halo pendant (Z21)",
+  "LT121 linear pendant 96in (Z21)",
+  "LT122 downlight (Z23)",
+  "LT123 downlight (Z23)",
+  "LT124 downlight (Z23)",
+  "LT125 downlight (Z23)",
+  "LT126 downlight (Z24)",
+  "LT127 downlight (Z24)",
+  "LT128 downlight (Z25)",
+  "LT129 downlight (Z25)",
+  "LT130 downlight (Z25)",
+  "LT131 downlight (Z26)",
+  "LT132 downlight (Z26)",
+  "LT133 downlight (Z26)",
+  "LT134 downlight (Z27)",
+  "LT135 downlight (Z27)",
+  "LT136 downlight (Z27)",
+  "LT137 downlight (Z27)",
+  "LT138 downlight (Z28)",
+  "LT139 downlight (Z28)",
+  "LT140 downlight (Z29)",
+  "LT141 downlight (Z33)",
+  "LT142 downlight (Z33)",
+  "LT143 downlight (Z33)",
+  "LT144 downlight (Z33)",
+  "LT145 downlight (Z33)",
+  "LT146 downlight (Z22)",
+  "LT147 downlight (Z22)",
+  "LT148 downlight (Z22)",
+  "LT149 downlight (Z22)",
+  "LT150 downlight (Z22)",
+  "LT151 downlight (Z22)",
+  "LT152 downlight (Z22)",
+  "LT153 downlight (Z32)",
+  "LT154 downlight (Z32)",
+  "LT155 downlight (Z32)",
+  "SD01 smoke detector",
+  "SD02 smoke detector",
+  "SD03 smoke detector",
+  "SD04 smoke detector",
+  "SD05 smoke detector",
+  "SD06 smoke detector",
+  "SD07 smoke detector",
+  "SD08 smoke detector",
+  "SD09 smoke detector",
+  "SD10 smoke detector",
+  "SD11 smoke detector",
+  "SD12 smoke detector",
+  "SD13 smoke detector",
+  "SD14 smoke detector",
+  "SD15 smoke detector",
+  "SD16 smoke detector",
+  "SD17 smoke detector",
+  "SD18 smoke detector",
+  "SD19 smoke detector",
+  "SD20 smoke detector",
+  "SD21 smoke detector",
+  "SD22 smoke detector",
+  "SD23 smoke detector",
+  "Steel deck / slab above (soffit painted)"
+ ],
+ "solid": [
+  "COL01 steel column (position PHOTO-EST)",
+  "COL02 steel column (position PHOTO-EST)",
+  "COL03 steel column (position PHOTO-EST)",
+  "COL04 steel column (position PHOTO-EST)",
+  "COL05 steel column (position PHOTO-EST)",
+  "COL06 steel column (position PHOTO-EST)",
+  "COL07 steel column (position PHOTO-EST)",
+  "COL08 steel column (position PHOTO-EST)",
+  "COL09 steel column (position PHOTO-EST)",
+  "COL10 steel column (position PHOTO-EST)",
+  "COL11 steel column (position PHOTO-EST)",
+  "D01 Main gate 140\"",
+  "D02 D42 room 1 - room 2",
+  "D03 57\" opening room 3 - room 7",
+  "D04 D47 room 1 - room 3",
+  "D05 D60 room 3 - room 4",
+  "D06 D26.5 washroom",
+  "D08 D30 washroom 2",
+  "D09 D30 washroom 1",
+  "D10 48\" opening room 7 - room 5",
+  "D10 head cut PW05",
+  "D11 52\" opening hallway - room 6",
+  "D11 head cut PW06",
+  "D12 49\" opening room 5 - room 6",
+  "D12 head cut PW07",
+  "D13 Hallway - room 8 (42\" standard)",
+  "D14 D49 north-east stair",
+  "D15 D49 engine room",
+  "D16 D52 south-east stair",
+  "D17 Staff entrance: lobby - staff corridor 42\"",
+  "D18 Reception - visitor passage 42\"",
+  "D18 head cut PW01",
+  "D19 Reception - boardroom 42\"",
+  "D19 head cut PW01",
+  "D20 Executive suite - boardroom 42\"",
+  "D21 Experience centre - boardroom 42\"",
+  "D21 head cut PW07",
+  "D22 Female prayer room door 36\"",
+  "D31 Audit room (sliding)",
+  "D32 Guest WC",
+  "D33 Guest WC",
+  "D34 Sample room",
+  "D35 3D printing lab",
+  "D36 Fabric & trim library",
+  "D37 CAD / technical design",
+  "D38 Global Design Studio",
+  "D39 Sample & material store",
+  "D40 Staff cafe 60\"",
+  "D41 Lounge / training",
+  "D42 Staff cafe",
+  "D43 Prayer (male)",
+  "D44 Wudu (male)",
+  "D45 Prayer - wudu",
+  "D46 Director",
+  "D47 Managing Director",
+  "D48 HR & admin",
+  "D49 Merchandising - experience centre",
+  "Deck opening over north-east stair",
+  "Deck opening over room 1 stair",
+  "Deck opening over south-east stair",
+  "EW01 Front facade with main gate",
+  "EW02 Room 1 west wall",
+  "EW03 Room 4 east wall",
+  "EW04 South wall of the east stair",
+  "EW05 Middle block north wall",
+  "EW06 Washroom row west wall",
+  "EW07 Room 2 west wall",
+  "EW08 Room 8 west wall, north part",
+  "EW09 Room 8 north wall",
+  "EW10 Room 8 east wall",
+  "FIN01 Lobby brand wall: vertical oak slats",
+  "FIN02 Lobby brand panel (white solid surface)",
+  "FIN03 Reception feature wall: fluted oak",
+  "FIN04 Experience centre story wall frame",
+  "FIN05 Experience centre story panel",
+  "FIN06 Boardroom media wall",
+  "FIN07 Boardroom acoustic walnut slats",
+  "FIN08 MD feature wall, walnut",
+  "FIN09 MD logo plate",
+  "FIN10 Executive corridor oak wall",
+  "FIN11 Reception logo plate (backlit)",
+  "FIN12 Mood-board wall backing",
+  "Floor slab (existing, finished floor = 0)",
+  "IW01 Row wall, rooms 1 and 2",
+  "IW02 Row wall over the room 3 - room 7 opening",
+  "IW03 Row wall, room 4 - rooms 5 and 8",
+  "IW04 Room 1 - room 3",
+  "IW05 Room 3 - room 4",
+  "IW06 Room 2 north wall (64 in jog)",
+  "IW07 Room 2 - room 7",
+  "IW08 Washroom row - room 7",
+  "IW09 Rooms 5, 6, hallway - room 8",
+  "IW10 North-east stair, south wall",
+  "IW11 North-east stair, west wall",
+  "IW12 Engine room (sub-station), north wall",
+  "IW13 Engine room (sub-station), west wall",
+  "IW14 South-east stair, north wall",
+  "IW15 South-east stair, west wall",
+  "NI01 frame above PW01",
+  "NI01 glass above 48in wall PW01",
+  "NI02 solid infill above 48in wall PW01",
+  "NI03 frame above PW01",
+  "NI03 glass above 48in wall PW01",
+  "NI04 frame above PW05",
+  "NI04 glass above 48in wall PW05",
+  "NI05 solid infill above 48in wall PW05",
+  "NI06 frame above PW05",
+  "NI06 glass above 48in wall PW05",
+  "NI07 frame above PW06",
+  "NI07 glass above 48in wall PW06",
+  "NI08 frame above PW07",
+  "NI08 glass above 48in wall PW07",
+  "NI09 solid infill above 48in wall PW07",
+  "NI10 frame above PW07",
+  "NI10 glass above 48in wall PW07",
+  "NP01 HR & admin - commercial, glass",
+  "NP01 frame + mullions",
+  "NP01 manifestation band",
+  "NP02 Audit room west",
+  "NP03 Audit room east",
+  "NP04 Audit room front, glass",
+  "NP04 frame + mullions",
+  "NP04 manifestation band",
+  "NP05 Visitor passage - guest WCs",
+  "NP06 Guest WC divider",
+  "NP07 Guest WCs - boardroom",
+  "NP08 Female prayer - female washroom",
+  "NP09 Store opening infill",
+  "NP10 Sample room north",
+  "NP11 Sample room front, glass",
+  "NP11 frame + mullions",
+  "NP11 manifestation band",
+  "NP12 Sample room - 3D lab",
+  "NP13 3D lab front, glass",
+  "NP13 frame + mullions",
+  "NP13 manifestation band",
+  "NP14 3D lab - fabric library",
+  "NP15 Fabric library front, glass",
+  "NP15 frame + mullions",
+  "NP15 manifestation band",
+  "NP16 Fabric library - CAD",
+  "NP17 CAD room front, glass",
+  "NP17 frame + mullions",
+  "NP17 manifestation band",
+  "NP18 Design studio front, glass",
+  "NP18 frame + mullions",
+  "NP18 manifestation band",
+  "NP19 Store west",
+  "NP20 Design studio - store",
+  "NP21 Store south",
+  "NP22 Staff cafe - corridor, glass",
+  "NP22 frame + mullions",
+  "NP22 manifestation band",
+  "NP23 Lounge and cafe - north corridor, glass",
+  "NP23 frame + mullions",
+  "NP23 manifestation band",
+  "NP24 Lounge - cafe, glass",
+  "NP24 frame + mullions",
+  "NP24 manifestation band",
+  "NP25 Prayer and wudu - north corridor",
+  "NP26 Design studio - north corridor (mood-board wall)",
+  "NP27 Prayer - wudu",
+  "NP28 Wudu - design studio",
+  "NP29 Executive offices front, glass",
+  "NP29 frame + mullions",
+  "NP29 manifestation band",
+  "NP30 Executive reception - director, glass",
+  "NP30 frame + mullions",
+  "NP30 manifestation band",
+  "NP31 Director - MD, glass",
+  "NP31 frame + mullions",
+  "NP31 manifestation band",
+  "NP32 Staff corridor - HR & admin, glass",
+  "NP32 frame + mullions",
+  "NP32 manifestation band",
+  "NP33 Experience centre - merchandising (display wall)",
+  "PW01 Row wall, room 3 - room 5 (48 in)",
+  "PW02 Room 2 washroom, east",
+  "PW03 Room 2 washroom, south",
+  "PW04 Washroom 1 - washroom 2",
+  "PW05 Room 7 - rooms 5 and 6 (48 in)",
+  "PW06 Hallway - room 6 (48 in)",
+  "PW07 Room 5 - room 6 (48 in)",
+  "ST1 handrail (proposed)",
+  "ST1 room 1 stair, flight 1 (from the back along the outer wall)",
+  "ST1 room 1 stair, flight 2 (return to the floor above)",
+  "ST1 room 1 stair, landing at the front wall",
+  "ST2 north-east stair, flight 1 (layout ASSUMED)",
+  "ST2 north-east stair, flight 2 (layout ASSUMED)",
+  "ST2 north-east stair, landing (layout ASSUMED)",
+  "ST3 south-east stair, flight 1 (layout ASSUMED)",
+  "ST3 south-east stair, flight 2 (layout ASSUMED)",
+  "ST3 south-east stair, landing (layout ASSUMED)",
+  "ST4 entrance steps inside room 1 (2 steps, PHOTO-EST)",
+  "TL000 wall tiles Z24",
+  "TL001 wall tiles Z24",
+  "TL002 wall tiles Z24",
+  "TL003 wall tiles Z24",
+  "TL004 wall tiles Z24",
+  "TL005 wall tiles Z24",
+  "TL006 wall tiles Z26",
+  "TL007 wall tiles Z26",
+  "TL008 wall tiles Z26",
+  "TL009 wall tiles Z26",
+  "TL010 wall tiles Z26",
+  "TL011 wall tiles Z27",
+  "TL012 wall tiles Z27",
+  "TL013 wall tiles Z27",
+  "TL014 wall tiles Z27",
+  "TL015 wall tiles Z27",
+  "TL016 wall tiles Z28",
+  "TL017 wall tiles Z28",
+  "TL018 wall tiles Z28",
+  "TL019 wall tiles Z28",
+  "TL020 wall tiles Z28",
+  "TL021 wall tiles Z28",
+  "TL022 wall tiles Z29",
+  "TL023 wall tiles Z29",
+  "TL024 wall tiles Z29",
+  "TL025 wall tiles Z29",
+  "TL026 wall tiles Z34",
+  "TL027 wall tiles Z34",
+  "TL028 wall tiles Z34",
+  "TL029 wall tiles Z34",
+  "W01 W114 room 2 - room 7",
+  "W01 frame",
+  "W01 glass",
+  "W02 W113 room 6 - room 8",
+  "W02 frame",
+  "W02 glass",
+  "W03 W113 room 6 - room 8",
+  "W03 frame",
+  "W03 glass",
+  "W04 W113 room 6 - room 8",
+  "W04 frame",
+  "W04 glass",
+  "W05 W114 room 5 - room 8",
+  "W05 frame",
+  "W05 glass",
+  "W06 W60 room 8",
+  "W06 blind cassette",
+  "W06 frame",
+  "W06 glass",
+  "W06 roller blind",
+  "W07 W71 room 8",
+  "W07 blind cassette",
+  "W07 frame",
+  "W07 glass",
+  "W07 roller blind",
+  "W08 W114 room 8",
+  "W08 blind cassette",
+  "W08 frame",
+  "W08 glass",
+  "W08 roller blind",
+  "W09 W114 room 8",
+  "W09 blind cassette",
+  "W09 frame",
+  "W09 glass",
+  "W09 roller blind",
+  "W10 W114 room 8",
+  "W10 blind cassette",
+  "W10 frame",
+  "W10 glass",
+  "W10 roller blind",
+  "W11 Lobby - reception glass",
+  "W11 frame",
+  "W11 glass",
+  "W12 Lobby - reception glass",
+  "W12 frame",
+  "W12 glass"
+ ],
+ "rooms": [
+  {
+   "id": "Z01",
+   "name": "Entrance Lobby",
+   "group": "Reception",
+   "area_sft": 515,
+   "centre": [
+    3.81,
+    2.438,
+    3.137
+   ],
+   "view": "CAM_03_Entrance_Lobby"
+  },
+  {
+   "id": "Z02",
+   "name": "Reception + Visitor Waiting",
+   "group": "Reception",
+   "area_sft": 446,
+   "centre": [
+    11.049,
+    2.438,
+    3.137
+   ],
+   "view": "CAM_01_Reception_A"
+  },
+  {
+   "id": "Z03",
+   "name": "Visitor Passage",
+   "group": "Reception",
+   "area_sft": 75,
+   "centre": [
+    9.995,
+    2.438,
+    -2.845
+   ],
+   "view": null
+  },
+  {
+   "id": "Z30",
+   "name": "Experience Centre",
+   "group": "Experience Center",
+   "area_sft": 707,
+   "centre": [
+    15.659,
+    2.438,
+    -8.153
+   ],
+   "view": "CAM_04_Experience_Centre_A"
+  },
+  {
+   "id": "Z08",
+   "name": "Boardroom",
+   "group": "Meeting Rooms",
+   "area_sft": 540,
+   "centre": [
+    17.158,
+    2.438,
+    -2.845
+   ],
+   "view": "CAM_09_Boardroom_A"
+  },
+  {
+   "id": "Z09",
+   "name": "Audit Room",
+   "group": "Meeting Rooms",
+   "area_sft": 153,
+   "centre": [
+    4.445,
+    2.438,
+    -20.764
+   ],
+   "view": "CAM_27_Audit_Room"
+  },
+  {
+   "id": "Z10",
+   "name": "Executive Reception",
+   "group": "Executive Area",
+   "area_sft": 223,
+   "centre": [
+    16.129,
+    2.438,
+    3.137
+   ],
+   "view": "CAM_17_Executive_Reception"
+  },
+  {
+   "id": "Z11",
+   "name": "Director",
+   "group": "Executive Area",
+   "area_sft": 205,
+   "centre": [
+    19.825,
+    2.438,
+    3.861
+   ],
+   "view": "CAM_18_Director"
+  },
+  {
+   "id": "Z12",
+   "name": "Managing Director",
+   "group": "Executive Area",
+   "area_sft": 300,
+   "centre": [
+    24.752,
+    2.438,
+    3.861
+   ],
+   "view": "CAM_07_MD_Office_A"
+  },
+  {
+   "id": "Z13",
+   "name": "Executive Corridor",
+   "group": "Executive Area",
+   "area_sft": 146,
+   "centre": [
+    22.708,
+    2.438,
+    0.686
+   ],
+   "view": "CAM_31_Executive_Corridor"
+  },
+  {
+   "id": "Z04",
+   "name": "Guest Workspace",
+   "group": "Workstations",
+   "area_sft": 184,
+   "centre": [
+    0.826,
+    2.438,
+    -2.441
+   ],
+   "view": "CAM_26_Guest_Workspace"
+  },
+  {
+   "id": "Z05",
+   "name": "HR & Admin",
+   "group": "Workstations",
+   "area_sft": 301,
+   "centre": [
+    6.667,
+    2.438,
+    -3.023
+   ],
+   "view": "CAM_19_HR_Admin"
+  },
+  {
+   "id": "Z31",
+   "name": "Staff Corridor",
+   "group": "Workstations",
+   "area_sft": 76,
+   "centre": [
+    3.429,
+    2.438,
+    -3.023
+   ],
+   "view": null
+  },
+  {
+   "id": "Z06",
+   "name": "Commercial & Accounts",
+   "group": "Workstations",
+   "area_sft": 1283,
+   "centre": [
+    5.277,
+    2.438,
+    -13.414
+   ],
+   "view": "CAM_16_Commercial_Accounts"
+  },
+  {
+   "id": "Z07",
+   "name": "Merchandising",
+   "group": "Workstations",
+   "area_sft": 1421,
+   "centre": [
+    15.659,
+    2.438,
+    -16.078
+   ],
+   "view": "CAM_11_Merchandising_A"
+  },
+  {
+   "id": "Z14",
+   "name": "CAD / Technical",
+   "group": "Design Development",
+   "area_sft": 281,
+   "centre": [
+    24.333,
+    2.438,
+    -3.391
+   ],
+   "view": "CAM_15_CAD_Room"
+  },
+  {
+   "id": "Z15",
+   "name": "Fabric & Trim Library",
+   "group": "Design Development",
+   "area_sft": 203,
+   "centre": [
+    24.333,
+    2.438,
+    -8.915
+   ],
+   "view": "CAM_25_Fabric_Library"
+  },
+  {
+   "id": "Z16",
+   "name": "3D Printing Lab",
+   "group": "Design Development",
+   "area_sft": 171,
+   "centre": [
+    24.333,
+    2.438,
+    -13.208
+   ],
+   "view": "CAM_24_3D_Printing_Lab"
+  },
+  {
+   "id": "Z17",
+   "name": "Sample Development",
+   "group": "Design Development",
+   "area_sft": 271,
+   "centre": [
+    24.333,
+    2.438,
+    -18.263
+   ],
+   "view": "CAM_23_Sample_Room"
+  },
+  {
+   "id": "Z18",
+   "name": "Global Design Studio",
+   "group": "Design Development",
+   "area_sft": 936,
+   "centre": [
+    31.123,
+    2.438,
+    -21.558
+   ],
+   "view": "CAM_13_Design_Studio_A"
+  },
+  {
+   "id": "Z19",
+   "name": "Sample & Material Store",
+   "group": "Design Development",
+   "area_sft": 135,
+   "centre": [
+    30.874,
+    2.438,
+    -12.217
+   ],
+   "view": null
+  },
+  {
+   "id": "Z20",
+   "name": "Staff Cafe + Pantry",
+   "group": "Support Rooms",
+   "area_sft": 465,
+   "centre": [
+    24.752,
+    2.438,
+    -27.305
+   ],
+   "view": "CAM_20_Staff_Cafe"
+  },
+  {
+   "id": "Z21",
+   "name": "Staff Lounge / Training",
+   "group": "Support Rooms",
+   "area_sft": 389,
+   "centre": [
+    24.647,
+    2.438,
+    -35.418
+   ],
+   "view": "CAM_21_Lounge_Training"
+  },
+  {
+   "id": "Z22",
+   "name": "Corridor",
+   "group": "Support Rooms",
+   "area_sft": 412,
+   "centre": [
+    27.07,
+    2.438,
+    -14.288
+   ],
+   "view": "CAM_32_Design_Corridor"
+  },
+  {
+   "id": "Z32",
+   "name": "North Corridor",
+   "group": "Support Rooms",
+   "area_sft": 270,
+   "centre": [
+    28.296,
+    2.438,
+    -29.718
+   ],
+   "view": null
+  },
+  {
+   "id": "Z33",
+   "name": "Hallway",
+   "group": "Support Rooms",
+   "area_sft": 168,
+   "centre": [
+    15.596,
+    2.438,
+    -22.022
+   ],
+   "view": null
+  },
+  {
+   "id": "Z23",
+   "name": "Prayer (Male)",
+   "group": "Prayer Rooms",
+   "area_sft": 186,
+   "centre": [
+    31.509,
+    2.438,
+    -34.582
+   ],
+   "view": "CAM_22_Prayer_Male"
+  },
+  {
+   "id": "Z24",
+   "name": "Wudu (Male)",
+   "group": "Prayer Rooms",
+   "area_sft": 75,
+   "centre": [
+    31.509,
+    2.438,
+    -31.661
+   ],
+   "view": "CAM_33_Wudu_Male"
+  },
+  {
+   "id": "Z25",
+   "name": "Prayer (Female)",
+   "group": "Prayer Rooms",
+   "area_sft": 87,
+   "centre": [
+    -0.178,
+    2.438,
+    -20.968
+   ],
+   "view": "CAM_30_Prayer_Female"
+  },
+  {
+   "id": "Z34",
+   "name": "Wudu (Female)",
+   "group": "Prayer Rooms",
+   "area_sft": 27,
+   "centre": [
+    -0.178,
+    2.438,
+    -18.796
+   ],
+   "view": null
+  },
+  {
+   "id": "Z26",
+   "name": "Washroom (Female)",
+   "group": "Washrooms",
+   "area_sft": 131,
+   "centre": [
+    -0.178,
+    2.438,
+    -15.672
+   ],
+   "view": "CAM_29_Washroom_Female"
+  },
+  {
+   "id": "Z27",
+   "name": "Washroom (Male)",
+   "group": "Washrooms",
+   "area_sft": 189,
+   "centre": [
+    -0.178,
+    2.438,
+    -9.461
+   ],
+   "view": "CAM_28_Washroom_Male"
+  },
+  {
+   "id": "Z28",
+   "name": "Guest WC (2)",
+   "group": "Washrooms",
+   "area_sft": 78,
+   "centre": [
+    11.493,
+    2.438,
+    -2.845
+   ],
+   "view": null
+  },
+  {
+   "id": "Z29",
+   "name": "Guest Workspace WC",
+   "group": "Washrooms",
+   "area_sft": 47,
+   "centre": [
+    -0.102,
+    2.438,
+    -4.775
+   ],
+   "view": null
+  }
+ ],
+ "views": [
+  {
+   "id": "CAM_01_Reception_A",
+   "room": "Reception",
+   "pos": [
+    8.077,
+    1.524,
+    0.66
+   ],
+   "target": [
+    13.208,
+    1.27,
+    4.318
+   ],
+   "lens": 18
+  },
+  {
+   "id": "CAM_02_Reception_B",
+   "room": "Reception",
+   "pos": [
+    11.227,
+    1.473,
+    6.045
+   ],
+   "target": [
+    14.554,
+    1.422,
+    1.778
+   ],
+   "lens": 19
+  },
+  {
+   "id": "CAM_03_Entrance_Lobby",
+   "room": "Entrance lobby",
+   "pos": [
+    6.248,
+    1.626,
+    5.74
+   ],
+   "target": [
+    5.639,
+    1.524,
+    0.0
+   ],
+   "lens": 19
+  },
+  {
+   "id": "CAM_04_Experience_Centre_A",
+   "room": "Experience centre",
+   "pos": [
+    9.957,
+    1.575,
+    -5.74
+   ],
+   "target": [
+    17.78,
+    1.27,
+    -10.287
+   ],
+   "lens": 18
+  },
+  {
+   "id": "CAM_05_Experience_Centre_B",
+   "room": "Experience centre",
+   "pos": [
+    21.641,
+    1.575,
+    -5.893
+   ],
+   "target": [
+    10.922,
+    1.422,
+    -9.779
+   ],
+   "lens": 18
+  },
+  {
+   "id": "CAM_06_Experience_Centre_Detail",
+   "room": "Experience centre",
+   "pos": [
+    14.605,
+    1.27,
+    -6.655
+   ],
+   "target": [
+    12.7,
+    1.219,
+    -9.652
+   ],
+   "lens": 26
+  },
+  {
+   "id": "CAM_07_MD_Office_A",
+   "room": "MD office",
+   "pos": [
+    22.098,
+    1.524,
+    1.626
+   ],
+   "target": [
+    26.416,
+    1.372,
+    5.715
+   ],
+   "lens": 18
+  },
+  {
+   "id": "CAM_08_MD_Office_B",
+   "room": "MD office",
+   "pos": [
+    27.483,
+    1.473,
+    5.385
+   ],
+   "target": [
+    22.225,
+    1.168,
+    2.794
+   ],
+   "lens": 18
+  },
+  {
+   "id": "CAM_09_Boardroom_A",
+   "room": "Boardroom",
+   "pos": [
+    21.844,
+    1.575,
+    -5.08
+   ],
+   "target": [
+    12.446,
+    1.422,
+    -2.54
+   ],
+   "lens": 18
+  },
+  {
+   "id": "CAM_10_Boardroom_B",
+   "room": "Boardroom",
+   "pos": [
+    12.548,
+    1.575,
+    -1.143
+   ],
+   "target": [
+    20.574,
+    1.168,
+    -4.064
+   ],
+   "lens": 18
+  },
+  {
+   "id": "CAM_11_Merchandising_A",
+   "room": "Merchandising (open office)",
+   "pos": [
+    9.601,
+    1.626,
+    -11.176
+   ],
+   "target": [
+    18.288,
+    1.016,
+    -19.558
+   ],
+   "lens": 18
+  },
+  {
+   "id": "CAM_12_Merchandising_B",
+   "room": "Merchandising (open office)",
+   "pos": [
+    21.742,
+    1.626,
+    -21.133
+   ],
+   "target": [
+    11.176,
+    1.118,
+    -12.7
+   ],
+   "lens": 18
+  },
+  {
+   "id": "CAM_13_Design_Studio_A",
+   "room": "Global Design Studio",
+   "pos": [
+    28.245,
+    1.575,
+    -13.665
+   ],
+   "target": [
+    32.766,
+    1.27,
+    -22.86
+   ],
+   "lens": 18
+  },
+  {
+   "id": "CAM_14_Design_Studio_B",
+   "room": "Global Design Studio",
+   "pos": [
+    33.477,
+    1.575,
+    -30.48
+   ],
+   "target": [
+    29.591,
+    1.219,
+    -22.987
+   ],
+   "lens": 18
+  },
+  {
+   "id": "CAM_15_CAD_Room",
+   "room": "CAD / technical design",
+   "pos": [
+    26.238,
+    1.524,
+    -6.223
+   ],
+   "target": [
+    22.479,
+    1.118,
+    -1.27
+   ],
+   "lens": 18
+  },
+  {
+   "id": "CAM_16_Commercial_Accounts",
+   "room": "Commercial & accounts",
+   "pos": [
+    8.941,
+    1.575,
+    -10.287
+   ],
+   "target": [
+    1.524,
+    1.016,
+    -17.272
+   ],
+   "lens": 18
+  },
+  {
+   "id": "CAM_17_Executive_Reception",
+   "room": "Executive reception (PA)",
+   "pos": [
+    17.678,
+    1.524,
+    0.203
+   ],
+   "target": [
+    14.681,
+    1.168,
+    5.207
+   ],
+   "lens": 18
+  },
+  {
+   "id": "CAM_18_Director",
+   "room": "Director",
+   "pos": [
+    17.983,
+    1.473,
+    1.626
+   ],
+   "target": [
+    21.082,
+    1.168,
+    5.715
+   ],
+   "lens": 18
+  },
+  {
+   "id": "CAM_19_HR_Admin",
+   "room": "HR & admin",
+   "pos": [
+    9.042,
+    1.524,
+    -0.406
+   ],
+   "target": [
+    4.445,
+    1.016,
+    -5.461
+   ],
+   "lens": 18
+  },
+  {
+   "id": "CAM_20_Staff_Cafe",
+   "room": "Staff cafe + pantry",
+   "pos": [
+    27.076,
+    1.575,
+    -23.165
+   ],
+   "target": [
+    22.606,
+    1.016,
+    -30.734
+   ],
+   "lens": 18
+  },
+  {
+   "id": "CAM_21_Lounge_Training",
+   "room": "Staff lounge / training",
+   "pos": [
+    27.076,
+    1.575,
+    -31.953
+   ],
+   "target": [
+    22.606,
+    1.016,
+    -38.608
+   ],
+   "lens": 18
+  },
+  {
+   "id": "CAM_22_Prayer_Male",
+   "room": "Prayer (male)",
+   "pos": [
+    29.515,
+    1.524,
+    -32.817
+   ],
+   "target": [
+    33.528,
+    0.711,
+    -36.373
+   ],
+   "lens": 18
+  },
+  {
+   "id": "CAM_23_Sample_Room",
+   "room": "Sample development",
+   "pos": [
+    26.187,
+    1.524,
+    -16.383
+   ],
+   "target": [
+    22.479,
+    1.016,
+    -20.32
+   ],
+   "lens": 18
+  },
+  {
+   "id": "CAM_24_3D_Printing_Lab",
+   "room": "3D printing lab",
+   "pos": [
+    26.187,
+    1.524,
+    -12.497
+   ],
+   "target": [
+    22.479,
+    1.016,
+    -15.037
+   ],
+   "lens": 18
+  },
+  {
+   "id": "CAM_25_Fabric_Library",
+   "room": "Fabric, colour & trim library",
+   "pos": [
+    26.162,
+    1.524,
+    -10.871
+   ],
+   "target": [
+    22.733,
+    1.067,
+    -7.366
+   ],
+   "lens": 18
+  },
+  {
+   "id": "CAM_26_Guest_Workspace",
+   "room": "Guest workspace",
+   "pos": [
+    2.489,
+    1.524,
+    -0.406
+   ],
+   "target": [
+    -1.143,
+    1.016,
+    -3.683
+   ],
+   "lens": 18
+  },
+  {
+   "id": "CAM_27_Audit_Room",
+   "room": "Audit room",
+   "pos": [
+    6.198,
+    1.473,
+    -19.05
+   ],
+   "target": [
+    2.743,
+    1.016,
+    -22.479
+   ],
+   "lens": 18
+  },
+  {
+   "id": "CAM_28_Washroom_Male",
+   "room": "Washroom (male)",
+   "pos": [
+    0.914,
+    1.524,
+    -6.045
+   ],
+   "target": [
+    -1.27,
+    1.016,
+    -11.176
+   ],
+   "lens": 18
+  },
+  {
+   "id": "CAM_29_Washroom_Female",
+   "room": "Washroom (female)",
+   "pos": [
+    0.914,
+    1.524,
+    -13.335
+   ],
+   "target": [
+    -1.27,
+    1.016,
+    -17.78
+   ],
+   "lens": 18
+  },
+  {
+   "id": "CAM_30_Prayer_Female",
+   "room": "Prayer (female)",
+   "pos": [
+    0.864,
+    1.473,
+    -19.507
+   ],
+   "target": [
+    -1.143,
+    0.61,
+    -22.352
+   ],
+   "lens": 16
+  },
+  {
+   "id": "CAM_31_Executive_Corridor",
+   "room": "Executive corridor",
+   "pos": [
+    17.932,
+    1.524,
+    0.711
+   ],
+   "target": [
+    27.635,
+    1.321,
+    0.711
+   ],
+   "lens": 20
+  },
+  {
+   "id": "CAM_32_Design_Corridor",
+   "room": "Corridor (design wing)",
+   "pos": [
+    27.178,
+    1.575,
+    -14.224
+   ],
+   "target": [
+    27.178,
+    1.27,
+    -22.352
+   ],
+   "lens": 20
+  },
+  {
+   "id": "CAM_33_Wudu_Male",
+   "room": "Wudu (male)",
+   "pos": [
+    29.464,
+    1.524,
+    -30.988
+   ],
+   "target": [
+    33.528,
+    0.762,
+    -31.75
+   ],
+   "lens": 18
+  }
+ ],
+ "tour": [
+  {
+   "id": "A01_overview_orbit",
+   "scene": "Overview",
+   "label": "The complete ground floor",
+   "kind": "overview",
+   "dur": 8.0
+  },
+  {
+   "id": "A02_entrance_lobby",
+   "scene": "Main entrance",
+   "label": "Entrance lobby",
+   "kind": "dolly",
+   "dur": 6.0,
+   "pos": [
+    [
+     6.35,
+     1.575,
+     5.842
+    ],
+    [
+     6.045,
+     1.575,
+     4.47
+    ]
+   ],
+   "target": [
+    [
+     5.639,
+     1.524,
+     0.0
+    ],
+    [
+     5.334,
+     1.524,
+     0.0
+    ]
+   ],
+   "lens": 20
+  },
+  {
+   "id": "A03_reception",
+   "scene": "Reception",
+   "label": "Reception",
+   "kind": "dolly",
+   "dur": 6.0,
+   "pos": [
+    [
+     8.179,
+     1.524,
+     0.813
+    ],
+    [
+     8.941,
+     1.524,
+     0.457
+    ]
+   ],
+   "target": [
+    [
+     13.208,
+     1.27,
+     4.445
+    ],
+    [
+     13.843,
+     1.321,
+     3.81
+    ]
+   ],
+   "lens": 18
+  },
+  {
+   "id": "A04_reception_logo",
+   "scene": "Reception",
+   "label": "Reception",
+   "kind": "dolly",
+   "dur": 5.0,
+   "pos": [
+    [
+     11.227,
+     1.473,
+     6.045
+    ],
+    [
+     11.633,
+     1.448,
+     5.486
+    ]
+   ],
+   "target": [
+    [
+     14.554,
+     1.422,
+     1.778
+    ],
+    [
+     14.554,
+     1.422,
+     1.88
+    ]
+   ],
+   "lens": 19
+  },
+  {
+   "id": "A05_experience_centre",
+   "scene": "Experience centre",
+   "label": "Experience centre",
+   "kind": "dolly",
+   "dur": 7.0,
+   "pos": [
+    [
+     9.754,
+     1.575,
+     -5.791
+    ],
+    [
+     11.176,
+     1.575,
+     -6.248
+    ]
+   ],
+   "target": [
+    [
+     17.78,
+     1.27,
+     -10.287
+    ],
+    [
+     18.542,
+     1.27,
+     -10.033
+    ]
+   ],
+   "lens": 18
+  },
+  {
+   "id": "A06_experience_story_wall",
+   "scene": "Experience centre",
+   "label": "Experience centre",
+   "kind": "dolly",
+   "dur": 6.0,
+   "pos": [
+    [
+     21.742,
+     1.575,
+     -5.944
+    ],
+    [
+     20.32,
+     1.575,
+     -6.248
+    ]
+   ],
+   "target": [
+    [
+     10.922,
+     1.422,
+     -9.779
+    ],
+    [
+     10.668,
+     1.372,
+     -9.525
+    ]
+   ],
+   "lens": 18
+  },
+  {
+   "id": "B01_experience_detail",
+   "scene": "Experience centre",
+   "label": "Experience centre - display",
+   "kind": "dolly",
+   "dur": 3.0,
+   "pos": [
+    [
+     14.783,
+     1.27,
+     -6.655
+    ],
+    [
+     14.376,
+     1.27,
+     -6.655
+    ]
+   ],
+   "target": [
+    [
+     12.7,
+     1.219,
+     -9.652
+    ],
+    [
+     12.497,
+     1.219,
+     -9.652
+    ]
+   ],
+   "lens": 26
+  },
+  {
+   "id": "A07_boardroom",
+   "scene": "Boardroom",
+   "label": "Boardroom",
+   "kind": "dolly",
+   "dur": 6.0,
+   "pos": [
+    [
+     21.793,
+     1.575,
+     -5.029
+    ],
+    [
+     20.066,
+     1.575,
+     -5.08
+    ]
+   ],
+   "target": [
+    [
+     12.446,
+     1.422,
+     -2.54
+    ],
+    [
+     12.573,
+     1.372,
+     -2.794
+    ]
+   ],
+   "lens": 18
+  },
+  {
+   "id": "B02_boardroom_east",
+   "scene": "Boardroom",
+   "label": "Boardroom",
+   "kind": "dolly",
+   "dur": 3.0,
+   "pos": [
+    [
+     12.548,
+     1.575,
+     -1.143
+    ],
+    [
+     13.056,
+     1.575,
+     -1.321
+    ]
+   ],
+   "target": [
+    [
+     20.574,
+     1.168,
+     -4.064
+    ],
+    [
+     20.676,
+     1.168,
+     -4.064
+    ]
+   ],
+   "lens": 18
+  },
+  {
+   "id": "B03_executive_reception",
+   "scene": "Executive suite",
+   "label": "Executive reception",
+   "kind": "dolly",
+   "dur": 3.0,
+   "pos": [
+    [
+     17.678,
+     1.524,
+     0.254
+    ],
+    [
+     17.526,
+     1.524,
+     0.66
+    ]
+   ],
+   "target": [
+    [
+     14.681,
+     1.168,
+     5.207
+    ],
+    [
+     14.783,
+     1.168,
+     5.207
+    ]
+   ],
+   "lens": 18
+  },
+  {
+   "id": "B05_executive_corridor",
+   "scene": "Executive suite",
+   "label": "Executive corridor",
+   "kind": "dolly",
+   "dur": 3.5,
+   "pos": [
+    [
+     17.932,
+     1.524,
+     0.711
+    ],
+    [
+     19.101,
+     1.524,
+     0.711
+    ]
+   ],
+   "target": [
+    [
+     27.635,
+     1.321,
+     0.711
+    ],
+    [
+     27.635,
+     1.321,
+     0.711
+    ]
+   ],
+   "lens": 20
+  },
+  {
+   "id": "B04_director",
+   "scene": "Executive suite",
+   "label": "Director's office",
+   "kind": "dolly",
+   "dur": 3.0,
+   "pos": [
+    [
+     18.186,
+     1.473,
+     1.88
+    ],
+    [
+     18.466,
+     1.473,
+     2.235
+    ]
+   ],
+   "target": [
+    [
+     21.082,
+     1.168,
+     5.715
+    ],
+    [
+     21.184,
+     1.168,
+     5.639
+    ]
+   ],
+   "lens": 18
+  },
+  {
+   "id": "A08_md_office",
+   "scene": "Executive suite",
+   "label": "Managing Director's office",
+   "kind": "dolly",
+   "dur": 6.0,
+   "pos": [
+    [
+     22.047,
+     1.524,
+     1.829
+    ],
+    [
+     22.809,
+     1.473,
+     2.489
+    ]
+   ],
+   "target": [
+    [
+     26.416,
+     1.372,
+     5.715
+    ],
+    [
+     26.568,
+     1.321,
+     5.537
+    ]
+   ],
+   "lens": 18
+  },
+  {
+   "id": "B07_hr_admin",
+   "scene": "Corporate workspaces",
+   "label": "HR & administration",
+   "kind": "dolly",
+   "dur": 3.0,
+   "pos": [
+    [
+     9.042,
+     1.524,
+     -0.457
+    ],
+    [
+     8.738,
+     1.524,
+     -0.864
+    ]
+   ],
+   "target": [
+    [
+     4.445,
+     1.016,
+     -5.461
+    ],
+    [
+     4.445,
+     1.016,
+     -5.461
+    ]
+   ],
+   "lens": 18
+  },
+  {
+   "id": "B06_commercial",
+   "scene": "Corporate workspaces",
+   "label": "Commercial & accounts",
+   "kind": "dolly",
+   "dur": 3.0,
+   "pos": [
+    [
+     8.941,
+     1.575,
+     -10.287
+    ],
+    [
+     8.534,
+     1.575,
+     -10.77
+    ]
+   ],
+   "target": [
+    [
+     1.524,
+     1.016,
+     -17.272
+    ],
+    [
+     1.524,
+     1.016,
+     -17.526
+    ]
+   ],
+   "lens": 18
+  },
+  {
+   "id": "A09_merchandising",
+   "scene": "Corporate workspaces",
+   "label": "Merchandising",
+   "kind": "dolly",
+   "dur": 5.0,
+   "pos": [
+    [
+     9.652,
+     1.626,
+     -11.278
+    ],
+    [
+     11.074,
+     1.626,
+     -11.887
+    ]
+   ],
+   "target": [
+    [
+     18.288,
+     1.016,
+     -19.558
+    ],
+    [
+     19.202,
+     1.067,
+     -19.558
+    ]
+   ],
+   "lens": 18
+  },
+  {
+   "id": "B08_merchandising_team",
+   "scene": "Corporate workspaces",
+   "label": "Merchandising",
+   "kind": "dolly",
+   "dur": 3.0,
+   "pos": [
+    [
+     21.742,
+     1.626,
+     -21.082
+    ],
+    [
+     21.234,
+     1.626,
+     -20.676
+    ]
+   ],
+   "target": [
+    [
+     11.176,
+     1.118,
+     -12.7
+    ],
+    [
+     11.176,
+     1.118,
+     -12.7
+    ]
+   ],
+   "lens": 18
+  },
+  {
+   "id": "B09_cad",
+   "scene": "Design & development",
+   "label": "CAD / technical design",
+   "kind": "dolly",
+   "dur": 3.0,
+   "pos": [
+    [
+     26.238,
+     1.524,
+     -6.274
+    ],
+    [
+     25.959,
+     1.524,
+     -5.842
+    ]
+   ],
+   "target": [
+    [
+     22.479,
+     1.118,
+     -1.27
+    ],
+    [
+     22.479,
+     1.118,
+     -1.27
+    ]
+   ],
+   "lens": 18
+  },
+  {
+   "id": "B11_fabric_library",
+   "scene": "Design & development",
+   "label": "Fabric & trim library",
+   "kind": "dolly",
+   "dur": 3.0,
+   "pos": [
+    [
+     25.959,
+     1.524,
+     -10.516
+    ],
+    [
+     25.654,
+     1.524,
+     -10.211
+    ]
+   ],
+   "target": [
+    [
+     22.733,
+     1.067,
+     -7.366
+    ],
+    [
+     22.733,
+     1.067,
+     -7.366
+    ]
+   ],
+   "lens": 18
+  },
+  {
+   "id": "B12_3d_lab",
+   "scene": "Design & development",
+   "label": "3D printing lab",
+   "kind": "dolly",
+   "dur": 3.0,
+   "pos": [
+    [
+     26.187,
+     1.524,
+     -12.548
+    ],
+    [
+     25.908,
+     1.524,
+     -12.802
+    ]
+   ],
+   "target": [
+    [
+     22.479,
+     1.016,
+     -15.037
+    ],
+    [
+     22.479,
+     1.016,
+     -15.037
+    ]
+   ],
+   "lens": 18
+  },
+  {
+   "id": "B10_sample_room",
+   "scene": "Design & development",
+   "label": "Sample development",
+   "kind": "dolly",
+   "dur": 3.0,
+   "pos": [
+    [
+     26.187,
+     1.524,
+     -16.383
+    ],
+    [
+     25.908,
+     1.524,
+     -16.764
+    ]
+   ],
+   "target": [
+    [
+     22.479,
+     1.016,
+     -20.32
+    ],
+    [
+     22.479,
+     1.016,
+     -20.32
+    ]
+   ],
+   "lens": 18
+  },
+  {
+   "id": "B13_design_corridor",
+   "scene": "Design & development",
+   "label": "Design wing corridor",
+   "kind": "dolly",
+   "dur": 3.5,
+   "pos": [
+    [
+     27.178,
+     1.575,
+     -14.351
+    ],
+    [
+     27.178,
+     1.575,
+     -15.443
+    ]
+   ],
+   "target": [
+    [
+     27.178,
+     1.27,
+     -22.352
+    ],
+    [
+     27.178,
+     1.27,
+     -22.352
+    ]
+   ],
+   "lens": 20
+  },
+  {
+   "id": "A10_design_studio",
+   "scene": "Design & development",
+   "label": "Global Design Studio",
+   "kind": "dolly",
+   "dur": 6.0,
+   "pos": [
+    [
+     28.245,
+     1.575,
+     -13.767
+    ],
+    [
+     28.702,
+     1.575,
+     -14.986
+    ]
+   ],
+   "target": [
+    [
+     32.766,
+     1.27,
+     -22.86
+    ],
+    [
+     32.969,
+     1.27,
+     -22.606
+    ]
+   ],
+   "lens": 18
+  },
+  {
+   "id": "B14_studio_workstations",
+   "scene": "Design & development",
+   "label": "Global Design Studio",
+   "kind": "dolly",
+   "dur": 3.5,
+   "pos": [
+    [
+     33.477,
+     1.575,
+     -30.429
+    ],
+    [
+     33.172,
+     1.575,
+     -29.769
+    ]
+   ],
+   "target": [
+    [
+     29.591,
+     1.219,
+     -22.987
+    ],
+    [
+     29.591,
+     1.219,
+     -22.987
+    ]
+   ],
+   "lens": 18
+  },
+  {
+   "id": "A11_staff_cafe",
+   "scene": "Staff facilities",
+   "label": "Staff cafe",
+   "kind": "dolly",
+   "dur": 5.0,
+   "pos": [
+    [
+     27.076,
+     1.575,
+     -23.216
+    ],
+    [
+     26.518,
+     1.575,
+     -24.257
+    ]
+   ],
+   "target": [
+    [
+     22.606,
+     1.016,
+     -30.734
+    ],
+    [
+     22.454,
+     1.067,
+     -30.378
+    ]
+   ],
+   "lens": 18
+  },
+  {
+   "id": "B15_lounge",
+   "scene": "Staff facilities",
+   "label": "Staff lounge / training",
+   "kind": "dolly",
+   "dur": 3.0,
+   "pos": [
+    [
+     27.076,
+     1.575,
+     -32.004
+    ],
+    [
+     26.721,
+     1.575,
+     -32.614
+    ]
+   ],
+   "target": [
+    [
+     22.606,
+     1.016,
+     -38.608
+    ],
+    [
+     22.606,
+     1.016,
+     -38.608
+    ]
+   ],
+   "lens": 18
+  },
+  {
+   "id": "B16_prayer_male",
+   "scene": "Staff facilities",
+   "label": "Prayer room",
+   "kind": "dolly",
+   "dur": 3.0,
+   "pos": [
+    [
+     29.566,
+     1.524,
+     -32.868
+    ],
+    [
+     29.87,
+     1.524,
+     -33.172
+    ]
+   ],
+   "target": [
+    [
+     33.528,
+     0.711,
+     -36.373
+    ],
+    [
+     33.528,
+     0.711,
+     -36.373
+    ]
+   ],
+   "lens": 18
+  },
+  {
+   "id": "A12_overview_final",
+   "scene": "Final reveal",
+   "label": "The complete ground floor",
+   "kind": "overview",
+   "dur": 8.0
+  }
+ ]
+}

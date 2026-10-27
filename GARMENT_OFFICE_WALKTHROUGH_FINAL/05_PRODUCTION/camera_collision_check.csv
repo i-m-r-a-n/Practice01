@@ -1,0 +1,29 @@
+shot,result,geometry within 0.20 m of the lens,geometry crossed by the path,free view ahead (min)
+A01_overview_orbit,overview,,,"n/a (outside the building, cut-away view)"
+A02_entrance_lobby,PASS,none,none,4.4 m
+A03_reception,PASS,none,none,6.4 m
+A04_reception_logo,PASS,none,none,4.2 m
+A05_experience_centre,PASS,none,none,8.7 m
+A06_experience_story_wall,PASS,none,none,6.8 m
+A07_boardroom,PASS,none,none,8.0 m
+A08_md_office,PASS,none,none,6.0 m
+A09_merchandising,PASS,none,none,6.1 m
+A10_design_studio,PASS,none,none,10.1 m
+A11_staff_cafe,PASS,none,none,7.1 m
+A12_overview_final,overview,,,"n/a (outside the building, cut-away view)"
+B01_experience_detail,PASS,none,none,2.2 m
+B02_boardroom_east,PASS,none,none,9.5 m
+B03_executive_reception,PASS,none,none,5.9 m
+B04_director,PASS,none,none,5.2 m
+B05_executive_corridor,PASS,none,none,8.5 m
+B06_commercial,PASS,none,none,10.2 m
+B07_hr_admin,PASS,none,none,6.8 m
+B08_merchandising_team,PASS,none,none,7.2 m
+B09_cad,PASS,none,none,6.1 m
+B10_sample_room,PASS,none,none,5.3 m
+B11_fabric_library,PASS,none,none,1.3 m
+B12_3d_lab,PASS,none,none,4.2 m
+B13_design_corridor,PASS,none,none,7.5 m
+B14_studio_workstations,PASS,none,none,11.1 m
+B15_lounge,PASS,none,none,7.9 m
+B16_prayer_male,PASS,none,none,5.1 m

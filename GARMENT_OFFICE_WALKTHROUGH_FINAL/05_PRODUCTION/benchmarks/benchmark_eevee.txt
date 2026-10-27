@@ -1,0 +1,4 @@
+EEVEE (Blender 5.2, software OpenGL via EGL/llvmpipe, 4 CPU cores), CAM_04, 1280x720, 16 samples, screen-space ray tracing + fast GI:
+- first frame incl. shader compilation: 280 s (probe run), 256 s (benchmark run)
+- second frame (shaders already compiled): 239 s
+=> about 240 s per frame: not feasible for animation (1,800 frames would take about 120 h). The test frame is kept as probe_eevee_cam04.png.
