@@ -125,7 +125,7 @@ function onLoaded(gltf){
    if(o.isMesh){
      if(o.userData?.zone_id)zoneFloors.push(o);
      const n=o.name.toLowerCase();
-     if(/^cl\d{3}\b|ceiling|ceil |clg |steel deck \/ slab|acoustic raft|felt baffle|wood raft|oak raft|slat[_ ]raft/.test(n))ceilingMeshes.push(o);
+     if(/^cl\d{3}(?:_|\b)|ceiling|ceil |clg |steel[_ ]deck|acoustic[_ ]raft|felt[_ ]baffle|wood[_ ]raft|oak[_ ]raft|slat[_ ]raft/.test(n))ceilingMeshes.push(o);
      if(/\bwall\b|partition|glass|steel column|^(?:iw|pw|np|col)\d{2}/.test(n))collisionMeshes.push(o);
      if(o.material && o.material.isMeshStandardMaterial){o.material.envMapIntensity=1.15;}
    }
