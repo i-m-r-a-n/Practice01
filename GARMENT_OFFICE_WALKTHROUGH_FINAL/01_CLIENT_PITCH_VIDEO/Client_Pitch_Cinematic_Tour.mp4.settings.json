@@ -1,0 +1,39 @@
+{
+ "video": "/home/user/Practice01/GARMENT_OFFICE_WALKTHROUGH_FINAL/01_CLIENT_PITCH_VIDEO/Client_Pitch_Cinematic_Tour.mp4",
+ "shots": [
+  "A01_overview_orbit",
+  "A02_entrance_lobby",
+  "A03_reception",
+  "A04_reception_logo",
+  "A05_experience_centre",
+  "A06_experience_story_wall",
+  "A07_boardroom",
+  "A08_md_office",
+  "A09_merchandising",
+  "A10_design_studio",
+  "A11_staff_cafe",
+  "A12_overview_final"
+ ],
+ "clip_seconds": {
+  "title_pitch.mp4": 4.0,
+  "clip_A01_overview_orbit.mp4": 7.958333,
+  "clip_A02_entrance_lobby.mp4": 5.958333,
+  "clip_A03_reception.mp4": 5.958333,
+  "clip_A04_reception_logo.mp4": 4.958333,
+  "clip_A05_experience_centre.mp4": 6.958333,
+  "clip_A06_experience_story_wall.mp4": 5.958333,
+  "clip_A07_boardroom.mp4": 5.958333,
+  "clip_A08_md_office.mp4": 5.958333,
+  "clip_A09_merchandising.mp4": 4.958333,
+  "clip_A10_design_studio.mp4": 5.958333,
+  "clip_A11_staff_cafe.mp4": 4.958333,
+  "clip_A12_overview_final.mp4": 7.958333,
+  "closing_pitch.mp4": 6.0
+ },
+ "crossfade_s": 0.5,
+ "duration_s": 77.0,
+ "render": "Cycles 1280x720, 4 spp + OpenImageDenoise, every 2nd frame of 24 fps (12 fps)",
+ "interpolation": "ffmpeg minterpolate mci/aobmc/bidir/vsbmc to 24 fps",
+ "scale": "Lanczos to 1920x1080, unsharp 0.35",
+ "encode": "-c:v libx264 -preset slow -crf 18 -profile:v high -level 4.1 -pix_fmt yuv420p -g 48 -colorspace bt709 -color_primaries bt709 -color_trc bt709 -movflags +faststart -c:a aac -b:a 96k -ar 48000"
+}

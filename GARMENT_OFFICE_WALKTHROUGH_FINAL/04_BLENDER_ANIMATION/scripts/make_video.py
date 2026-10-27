@@ -103,7 +103,7 @@ def shot_clip(name):
               f"shadowcolor=black@0.45:shadowx=1:shadowy=2,{tag},format=yuv420p[v]")
         inputs = ["-f", "concat", "-safe", "0", "-i", lst, "-loop", "1", "-framerate", str(FPS), "-t", f"{D:.3f}", "-i", shade]
     else:
-        fc = f"{base},{tag},format=yuv420p[v]"
+        fc = f"{base};[v0]{tag},format=yuv420p[v]"
         inputs = ["-f", "concat", "-safe", "0", "-i", lst]
     run(["ffmpeg", "-y", "-v", "error", *inputs, "-filter_complex", fc, "-map", "[v]", "-r", str(FPS), *X264_CLIP, out])
     return out

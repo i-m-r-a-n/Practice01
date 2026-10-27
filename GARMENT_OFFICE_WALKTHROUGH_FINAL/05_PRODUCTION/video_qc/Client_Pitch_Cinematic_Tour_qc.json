@@ -1,0 +1,25 @@
+{
+ "file": "01_CLIENT_PITCH_VIDEO/Client_Pitch_Cinematic_Tour.mp4",
+ "bytes": 73813604,
+ "duration_s": 77.0,
+ "codec": "h264",
+ "profile": "High",
+ "size": "1920x1080",
+ "fps": 24.0,
+ "pix_fmt": "yuv420p",
+ "color": {
+  "space": "bt709",
+  "primaries": "bt709",
+  "transfer": "bt709"
+ },
+ "bitrate_kbps": 7669,
+ "audio": "aac 48000 Hz 2 ch",
+ "faststart_moov_before_mdat": true,
+ "decode_errors": null,
+ "black_segments": [],
+ "frozen_segments_start": [
+  0.791667,
+  71.5
+ ],
+ "contact_sheet": "Client_Pitch_Cinematic_Tour_contact_sheet.jpg"
+}
