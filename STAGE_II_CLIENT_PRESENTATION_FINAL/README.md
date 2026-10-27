@@ -3,6 +3,9 @@
 Concept proposal for the ground-floor corporate office (Holding 329/2, Ward 15, Vogra, Bason, Gazipur).
 Final dimensions and technical details are subject to site verification; no engineering or authority approvals are implied.
 
+**One-page summary to print or open:** [`Presentation_Files_and_Run_of_Show.pdf`](Presentation_Files_and_Run_of_Show.pdf) (2 pages: all links,
+run-of-show, Mac + projector checklist, fallback; source `presentation_links.html`).
+
 Nothing large is copied into this folder: the table points to the files in this repository (branch `claude/web-tour-assets`).
 Every download link below was fetched and checked on 27 Oct 2026 (HTTP 200, byte size equal to the repository file).
 
