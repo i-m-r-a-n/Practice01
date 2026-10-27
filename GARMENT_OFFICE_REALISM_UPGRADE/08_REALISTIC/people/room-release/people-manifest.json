@@ -1,9 +1,9 @@
 {
-  "version": "reception4-boardroom6-experience3-static-1",
-  "count": 13,
+  "version": "reception4-boardroom6-experience3-md2-static-1",
+  "count": 15,
   "note": "People shown are illustrative",
   "defaultEnabled": false,
-  "status": "Reception and Boardroom accepted; Experience Centre contact review pending",
+  "status": "Reception, Boardroom and Experience Centre accepted; MD Office static people added",
   "approvedLayoutChanged": false,
   "axes": "metres; x east, y up, z south; characters face +z at yaw 0",
   "emptyZones": [
@@ -450,6 +450,74 @@
       "hideLongDrape": true,
       "wardrobeMode": "Modest long-sleeve shirt and trousers; overlapping long drape disabled for this standing pose.",
       "frozen": true
+    },
+    {
+      "id": "office-person-14",
+      "zone": "Z12",
+      "task": "phone_seated",
+      "outfit": "shirt",
+      "pose": "phone_seated__seat_50292",
+      "heightScale": 1.0,
+      "bodyWidth": 1.018,
+      "skinTint": "#c69d7b",
+      "garmentTint": "#9e7788",
+      "lowerTint": "#30363d",
+      "phase": 21.03444,
+      "radius": 0.25,
+      "fictional": true,
+      "faceMorph": [
+        0.0,
+        0.833,
+        0.333
+      ],
+      "position": [
+        26.16200065612793,
+        0,
+        4.953000068664551
+      ],
+      "yaw": 3.1415927410125732,
+      "support": {
+        "sourceObject": "F064 exec_chair_cognac",
+        "seatTopY": 0.50291997,
+        "note": "Pelvis aligned to approved chair; contact pose reviewed separately."
+      },
+      "seated": true,
+      "wardrobeMode": "modest long-sleeve shirt and trousers; long drape disabled for seated role",
+      "frozen": true
+    },
+    {
+      "id": "office-person-36",
+      "zone": "Z12",
+      "task": "notes",
+      "outfit": "salwar",
+      "pose": "notes__seat_48768",
+      "heightScale": 1.0,
+      "bodyWidth": 0.964,
+      "skinTint": "#ddbaa4",
+      "garmentTint": "#8a9bb2",
+      "lowerTint": "#30363d",
+      "phase": 7.1,
+      "radius": 0.25,
+      "fictional": true,
+      "faceMorph": [
+        0.0,
+        0.5,
+        0.333
+      ],
+      "position": [
+        25.654,
+        0,
+        2.9972
+      ],
+      "yaw": 0.0,
+      "support": {
+        "sourceObject": "F065 visitor_leather",
+        "seatTopY": 0.48768,
+        "note": "Pelvis aligned to the approved visitor chair (seat top 19.2 in); existing seat-specific pose."
+      },
+      "seated": true,
+      "wardrobeMode": "modest long-sleeve top and trousers; long drape disabled for seated role",
+      "frozen": true
     }
   ],
   "navigation": {
@@ -464,7 +532,8 @@
   "activeZones": [
     "Z02",
     "Z08",
-    "Z30"
+    "Z30",
+    "Z12"
   ],
   "props": [
     {

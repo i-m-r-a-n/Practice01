@@ -1,0 +1,30 @@
+{
+  "status": "passed",
+  "scope": "Loopback HTTP offline-resource resolver; not native Mac/file protocol acceptance",
+  "errors": [],
+  "outside_requests": [],
+  "frame": {
+    "name": "CAM_07_MD_Office_A",
+    "type": "PERSP",
+    "lighting": null
+  },
+  "people": {
+    "enabled": true,
+    "loaded": true,
+    "frozen": true,
+    "total": 15,
+    "visible": 2,
+    "walkers": 0,
+    "illustrative": true,
+    "forbiddenZoneViolations": 0,
+    "status": "Reception, Boardroom and Experience Centre accepted; MD Office static people added",
+    "nativeMacPerformanceTested": false
+  },
+  "offline": {
+    "requests": 9,
+    "decodedBytes": 38041626,
+    "missing": []
+  },
+  "image_sha256": "d9b27cfa440fa60dfd8cb74fdb89be4a26d793dc167b2d47ed37626400d2f7db",
+  "offline_manifest_sha256": "a6b4fe1b1cc2f3fc05c5baa374e419acadec4150dbb5fbba68ddb84ff4bbf83b"
+}

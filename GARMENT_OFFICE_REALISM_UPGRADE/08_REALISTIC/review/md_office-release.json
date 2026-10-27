@@ -1,0 +1,30 @@
+{
+  "room": "MD Office",
+  "status": "Static people + existing Z12 props; browser capture, offline resolver check passed; public verification recorded after deploy",
+  "active_rooms": [
+    "Reception",
+    "Boardroom",
+    "Experience Centre",
+    "MD Office"
+  ],
+  "total_static_people": 15,
+  "new_people": 2,
+  "scenes": [
+    "MD on the phone at the desk (approved source actor, frozen)",
+    "Visitor taking notes across the desk"
+  ],
+  "preservation": "Prior 13 actors and their poses preserved exactly (asserted by people/md/prepare_md.py); architecture, furniture, cameras, logos unchanged",
+  "build": "viewer/dist rebuilt with esbuild 0.24.0; rebuild of the unchanged config reproduced GPT's dist/app.js byte-for-byte (f7d6c951...) before the change",
+  "limits": [
+    "Low-detail illustrative game assets; not photoreal people",
+    "Finger-level contact distances not measured for this room",
+    "Native Mac FPS / Safari / direct file opening unverified"
+  ],
+  "hashes": {
+    "viewer/dist/app.js": "65ee2a32d0ba590d965b334af647d0e36e280f9e12460b406752a6cba7d68728",
+    "viewer/dist/release-config.json": "8347476c43cd1c6f31c2c78012929e85caace5f48c35991f2357bd8b9ba238a9",
+    "people/room-release/people-manifest.json": "ba08e2d42b8d14b05d3c670354c2f45be59e3c0324cb9a9b7ab183732a6bafac",
+    "people/room-release/poses.json": "4a9d4c59a2c863cf503db478fd3ce79188738e2d5d2d3d7a10b436eeb856cce5",
+    "review/md_office-before-after.png": "016abcf5067f98e57dc7b69f3ddb3e193d959cfd8bf7f71d91e67001f86f8281"
+  }
+}

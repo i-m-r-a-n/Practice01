@@ -1,5 +1,5 @@
 {
-  "active_task": "Six-room static office tour increments",
+  "active_task": "Six-room static office tour increments (continued by Claude on claude/realistic-rooms after GPT environment loss)",
   "live_url": "https://stage2-office-virtual-tour.imranahmedjh611.workers.dev/realistic/",
   "runtime_commit": "102d5e9444a17072f39f345d8865f34f4934cf5c",
   "latest_pushed_evidence_commit": "102d5e9444a17072f39f345d8865f34f4934cf5c",
@@ -7,15 +7,15 @@
   "completed_rooms": [
     "Reception",
     "Boardroom",
-    "Experience Centre"
+    "Experience Centre",
+    "MD Office"
   ],
-  "current_work": "MD Office",
+  "current_work": "Merchandising",
   "remaining_order": [
-    "MD Office",
     "Merchandising",
     "Design Studio"
   ],
-  "static_people_live": 13,
+  "static_people_live": 15,
   "no_animation": true,
   "source_model_sha256": "faaf09d1a61d2136a96a8b2eb4146be1f29135483dd7f94e67e6f3a54596d20a",
   "approved_blend_sha256": "fa3ed3d58f6d44c3554e3761307841b96115ff7816e4e541c8e6611cb363810d",

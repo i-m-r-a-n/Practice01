@@ -1,0 +1,125 @@
+{
+  "version": "md-static-1",
+  "count": 2,
+  "note": "People shown are illustrative",
+  "defaultEnabled": false,
+  "status": "MD Office static people",
+  "approvedLayoutChanged": false,
+  "axes": "metres; x east, y up, z south; characters face +z at yaw 0",
+  "emptyZones": [
+    "Z23",
+    "Z24",
+    "Z25",
+    "Z26",
+    "Z27",
+    "Z28",
+    "Z29",
+    "Z34"
+  ],
+  "assets": {
+    "shirt": {
+      "file": "assets/shirt.glb",
+      "license": "CC0-1.0 plus self-made drape",
+      "sha256": "7430996e4368aa3e54d39c77f93d69a7ce31a089977714e2e7ed56dd846f7c1e"
+    },
+    "panjabi": {
+      "file": "assets/panjabi.glb",
+      "license": "CC0-1.0 plus self-made drape",
+      "sha256": "31f9e208986c064a3776991690d12925ed5fda59889765df06930d66c054d257"
+    },
+    "salwar": {
+      "file": "assets/salwar.glb",
+      "license": "CC0-1.0 plus self-made drape",
+      "sha256": "cd2c4c458dd59532cc28408b98ae8d544a971fe4e069fab2413bbf4f4d90b5e4"
+    },
+    "salwar_braid": {
+      "file": "assets/salwar_braid.glb",
+      "license": "CC0-1.0 plus self-made drape",
+      "sha256": "68f3384b625f59d8d4a9c1ddce671126dba394f7ca9aaae383ac0d5aa08e398d"
+    }
+  },
+  "poses": "md/poses.json",
+  "actors": [
+    {
+      "id": "office-person-14",
+      "zone": "Z12",
+      "task": "phone_seated",
+      "outfit": "shirt",
+      "pose": "phone_seated__seat_50292",
+      "heightScale": 1.0,
+      "bodyWidth": 1.018,
+      "skinTint": "#c69d7b",
+      "garmentTint": "#9e7788",
+      "lowerTint": "#30363d",
+      "phase": 21.03444,
+      "radius": 0.25,
+      "fictional": true,
+      "faceMorph": [
+        0.0,
+        0.833,
+        0.333
+      ],
+      "position": [
+        26.16200065612793,
+        0,
+        4.953000068664551
+      ],
+      "yaw": 3.1415927410125732,
+      "support": {
+        "sourceObject": "F064 exec_chair_cognac",
+        "seatTopY": 0.50291997,
+        "note": "Pelvis aligned to approved chair; contact pose reviewed separately."
+      },
+      "seated": true,
+      "wardrobeMode": "modest long-sleeve shirt and trousers; long drape disabled for seated role",
+      "frozen": true
+    },
+    {
+      "id": "office-person-36",
+      "zone": "Z12",
+      "task": "notes",
+      "outfit": "salwar",
+      "pose": "notes__seat_48768",
+      "heightScale": 1.0,
+      "bodyWidth": 0.964,
+      "skinTint": "#ddbaa4",
+      "garmentTint": "#8a9bb2",
+      "lowerTint": "#30363d",
+      "phase": 7.1,
+      "radius": 0.25,
+      "fictional": true,
+      "faceMorph": [
+        0.0,
+        0.5,
+        0.333
+      ],
+      "position": [
+        25.654,
+        0,
+        2.9972
+      ],
+      "yaw": 0.0,
+      "support": {
+        "sourceObject": "F065 visitor_leather",
+        "seatTopY": 0.48768,
+        "note": "Pelvis aligned to the approved visitor chair (seat top 19.2 in); existing seat-specific pose."
+      },
+      "seated": true,
+      "wardrobeMode": "modest long-sleeve top and trousers; long drape disabled for seated role",
+      "frozen": true
+    }
+  ],
+  "navigation": {
+    "mode": "No actor locomotion or gesture animation; fixed posed people with visitor collision"
+  },
+  "limitations": [
+    "Frozen illustrative people, not live animation.",
+    "Generic sample tee supported at shoulders; no pinching hand-grip simulation.",
+    "Native Mac performance has not been tested."
+  ],
+  "frozen": true,
+  "activeZones": [
+    "Z12"
+  ],
+  "props": []
+}

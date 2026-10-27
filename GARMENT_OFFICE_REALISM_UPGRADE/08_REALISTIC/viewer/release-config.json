@@ -9,7 +9,8 @@
   "releaseZones": [
     "Z02",
     "Z08",
-    "Z30"
+    "Z30",
+    "Z12"
   ],
   "peopleManifest": "room-release/people-manifest.json",
   "excludedProps": [

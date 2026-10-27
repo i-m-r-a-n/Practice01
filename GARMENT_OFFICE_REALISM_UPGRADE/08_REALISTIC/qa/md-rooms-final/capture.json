@@ -1,0 +1,214 @@
+{
+  "phase": "md-rooms-final",
+  "url": "http://127.0.0.1:8783/realistic/?welcome=0&ao=0&shadows=0",
+  "viewport": [
+    1280,
+    720
+  ],
+  "people_requested": "on",
+  "require_lightmaps": false,
+  "shots": [
+    {
+      "camera": "CAM_07_MD_Office_A",
+      "type": "PERSP",
+      "frame_result": {
+        "name": "CAM_07_MD_Office_A",
+        "type": "PERSP",
+        "lighting": null
+      },
+      "state": {
+        "viewer": {
+          "mode": "capture",
+          "room": "Z12",
+          "atCam": "CAM_07_MD_Office_A",
+          "flying": false,
+          "flightT": null,
+          "fps": 0,
+          "overhead": true,
+          "tour": null,
+          "photo": null,
+          "aoFrames": 0,
+          "pos": [
+            22.098,
+            1.524,
+            1.626
+          ]
+        },
+        "stats": {
+          "frame": 37,
+          "calls": 174,
+          "triangles": 1691062,
+          "points": 0,
+          "lines": 0,
+          "memory": {
+            "geometries": 176,
+            "textures": 93
+          },
+          "phase": 4,
+          "capturePostProcessing": false,
+          "post": null
+        },
+        "lighting": {
+          "regularAtlasBudgetBytes": 201326592,
+          "phase": 1,
+          "manifest": "http://127.0.0.1:8783/realistic/lighting-v2/manifest-hybrid.json",
+          "available": 1,
+          "loaded": [],
+          "requiredShared": [],
+          "rooms": {
+            "Z02": {
+              "state": "available",
+              "sourceObjects": 25
+            }
+          },
+          "error": null
+        },
+        "people": {
+          "enabled": true,
+          "loaded": true,
+          "frozen": true,
+          "total": 15,
+          "visible": 2,
+          "walkers": 0,
+          "illustrative": true,
+          "forbiddenZoneViolations": 0,
+          "status": "Reception, Boardroom and Experience Centre accepted; MD Office static people added",
+          "nativeMacPerformanceTested": false
+        },
+        "viewer_errors": []
+      },
+      "file": "shots/after_CAM_07_MD_Office_A.png",
+      "sha256": "d9b27cfa440fa60dfd8cb74fdb89be4a26d793dc167b2d47ed37626400d2f7db"
+    },
+    {
+      "camera": "CAM_08_MD_Office_B",
+      "type": "PERSP",
+      "frame_result": {
+        "name": "CAM_08_MD_Office_B",
+        "type": "PERSP",
+        "lighting": null
+      },
+      "state": {
+        "viewer": {
+          "mode": "capture",
+          "room": "Z12",
+          "atCam": "CAM_08_MD_Office_B",
+          "flying": false,
+          "flightT": null,
+          "fps": 0.5985873338919815,
+          "overhead": true,
+          "tour": null,
+          "photo": null,
+          "aoFrames": 0,
+          "pos": [
+            27.483,
+            1.473,
+            5.385
+          ]
+        },
+        "stats": {
+          "frame": 38,
+          "calls": 522,
+          "triangles": 2524082,
+          "points": 0,
+          "lines": 0,
+          "memory": {
+            "geometries": 225,
+            "textures": 196
+          },
+          "phase": 4,
+          "capturePostProcessing": false,
+          "post": null
+        },
+        "lighting": {
+          "regularAtlasBudgetBytes": 201326592,
+          "phase": 1,
+          "manifest": "http://127.0.0.1:8783/realistic/lighting-v2/manifest-hybrid.json",
+          "available": 1,
+          "loaded": [],
+          "requiredShared": [],
+          "rooms": {
+            "Z02": {
+              "state": "available",
+              "sourceObjects": 25
+            }
+          },
+          "error": null
+        },
+        "people": {
+          "enabled": true,
+          "loaded": true,
+          "frozen": true,
+          "total": 15,
+          "visible": 15,
+          "walkers": 0,
+          "illustrative": true,
+          "forbiddenZoneViolations": 0,
+          "status": "Reception, Boardroom and Experience Centre accepted; MD Office static people added",
+          "nativeMacPerformanceTested": false
+        },
+        "viewer_errors": []
+      },
+      "file": "shots/after_CAM_08_MD_Office_B.png",
+      "sha256": "89a598ddc64a0c890ae13c6f7612e41006efd086a3ca624e8d2d6dd085f4ef4b"
+    }
+  ],
+  "console_errors": [],
+  "page_errors": [],
+  "http_errors": [],
+  "source_responses": [
+    {
+      "url": "http://127.0.0.1:8783/realistic/?welcome=0&ao=0&shadows=0",
+      "status": 200,
+      "bytes": 70875,
+      "sha256": "c3fb3ba4ae201892c4451a5db43c6add6f50a70b80bd1833491290373c6f1545"
+    },
+    {
+      "url": "http://127.0.0.1:8783/realistic/app.js",
+      "status": 200,
+      "bytes": 1164868,
+      "sha256": "65ee2a32d0ba590d965b334af647d0e36e280f9e12460b406752a6cba7d68728"
+    }
+  ],
+  "source_response_method": "Actual browser navigation/asset response bodies, not a later refetch",
+  "status": "captured",
+  "scope": "Actual viewer frames; UI hidden through screenshot-only CSS. Original scene camera API, no synthetic edits.",
+  "limits": [
+    "Linux software-GPU capture, not a MacBook performance test",
+    "Local load timing is not a 50 Mbps WAN benchmark"
+  ],
+  "ready_seconds_local": 4.049,
+  "browser": "153.0.8010.12",
+  "gpu": {
+    "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+    "vendor": "Google Inc. (Google)",
+    "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+    "webgl": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+    "maxTextureSize": 8192,
+    "pixelRatio": 1,
+    "quality": "balanced",
+    "viewport": [
+      1280,
+      720
+    ]
+  },
+  "counts": {
+    "quality": "balanced",
+    "stage": 4,
+    "floorTopTriangles": 8,
+    "meshes": 131,
+    "drawCallsMerged": {
+      "before": 1823,
+      "after": 102,
+      "roomGroupsSeparate": true
+    },
+    "rooms": 34,
+    "cameras": 38,
+    "stops": 16,
+    "model": "web",
+    "bakedLight": true,
+    "shadows": false,
+    "ambientOcclusion": false
+  },
+  "seconds": 37.748
+}
