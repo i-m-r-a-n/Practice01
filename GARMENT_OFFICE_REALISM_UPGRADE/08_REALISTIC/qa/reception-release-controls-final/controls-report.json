@@ -1,0 +1,223 @@
+{
+  "status": "failed",
+  "url": "http://127.0.0.1:8783/realistic/?welcome=0",
+  "checks": [
+    {
+      "name": "original control elements retained",
+      "passed": true,
+      "detail": [
+        "mTour",
+        "mOverview",
+        "mRooms",
+        "mWalk",
+        "mHelp",
+        "mFull",
+        "search",
+        "bPhoto",
+        "bWalkHere",
+        "bBack",
+        "vReset",
+        "vIso",
+        "vTop",
+        "vCeil",
+        "vLabels",
+        "tPrev",
+        "tPlay",
+        "tNext",
+        "tPhoto",
+        "tStop",
+        "minimap",
+        "photoClose",
+        "vQuality"
+      ]
+    },
+    {
+      "name": "People control visible",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "real People button turns layer off",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "real People button enables exactly four",
+      "passed": true,
+      "detail": {
+        "enabled": true,
+        "loaded": true,
+        "frozen": true,
+        "total": 4,
+        "visible": 0,
+        "walkers": 0,
+        "illustrative": true,
+        "forbiddenZoneViolations": 0,
+        "status": "Reception-only frozen pose contact review pending",
+        "nativeMacPerformanceTested": false
+      }
+    },
+    {
+      "name": "illustrative disclosure is visible",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "original room search finds Reception only",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "actual room-list click reaches Reception",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "original photo control opens exact Reception Cycles still",
+      "passed": true,
+      "detail": "./renders/CAM_01_Reception_A.jpg"
+    },
+    {
+      "name": "Back to3D closes offline Cycles still",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "four people remain frozen during normal RAF",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "original Help dialog opens",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "original guided-tour Pause works",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "original End tour works",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Walk from here keeps1.6m eye on free floor",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "real W input moves and release brakes",
+      "passed": true,
+      "detail": {
+        "distance_m": 0.3499095241015771,
+        "state": {
+          "position": [
+            8.36212359301589,
+            1.6,
+            0.8635138134148138
+          ],
+          "velocity": [
+            0.0009441263898814761,
+            0.0006730404785527746
+          ],
+          "steps": 77,
+          "collisions": 0,
+          "distance": 0.3499095241015772,
+          "eye": 1.6
+        }
+      }
+    },
+    {
+      "name": "walk pad and minimap remain available",
+      "passed": false,
+      "detail": null
+    },
+    {
+      "name": "Escape returns to overview",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "sources": [
+    {
+      "url": "http://127.0.0.1:8783/realistic/?welcome=0",
+      "status": 200,
+      "sha256": "c3fb3ba4ae201892c4451a5db43c6add6f50a70b80bd1833491290373c6f1545",
+      "bytes": 70875
+    },
+    {
+      "url": "http://127.0.0.1:8783/realistic/app.js",
+      "status": 200,
+      "sha256": "1fa75488491ac301562f03d2e5ce86dcf896120ead7a8a56c0d39bc76875ba1a",
+      "bytes": 1160817
+    },
+    {
+      "url": "http://127.0.0.1:8783/realistic/people/reception/people-manifest.json",
+      "status": 200,
+      "sha256": "d1ee7c8d88b22216aaea9c07283bc1c392ef9eae43359d4038ce3e734d349b7a",
+      "bytes": 5206
+    },
+    {
+      "url": "http://127.0.0.1:8783/realistic/people/reception/poses.json",
+      "status": 200,
+      "sha256": "16bb2498fd8b86fe8dcc57e27b606aee4d48dba8dcaee10b110fda66e65f8fc3",
+      "bytes": 326699
+    }
+  ],
+  "page_errors": [],
+  "console_errors": [],
+  "scope": "Reception only: real original UI buttons/search/photo/help/tour start-stop/walk, People on/off, bounded keys. No full-floor tour, native Mac FPS or file:// acceptance.",
+  "browser": "154.0.8037.57",
+  "gpu": {
+    "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+    "vendor": "Google Inc. (Google)",
+    "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+    "webgl": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+    "maxTextureSize": 8192,
+    "pixelRatio": 1,
+    "quality": "balanced",
+    "viewport": [
+      1280,
+      720
+    ]
+  },
+  "software_render_timing": {
+    "samples_ms": [
+      4474.5,
+      2383.5,
+      4284.299999998882,
+      2204.5,
+      2237.4000000003725
+    ],
+    "median_ms": 2383.5,
+    "scope": "Five repeated exact-camera frame requests on Linux software WebGL; includes framing and two RAF waits. This is not display FPS, MacBook performance or WAN loading.",
+    "stats": {
+      "frame": 80,
+      "calls": 296,
+      "triangles": 1955928,
+      "points": 0,
+      "lines": 0,
+      "memory": {
+        "geometries": 240,
+        "textures": 164
+      },
+      "phase": 4,
+      "capturePostProcessing": false,
+      "post": null
+    }
+  },
+  "viewer_errors": [],
+  "gpu_memory_estimate": {
+    "estimatedTotalBytes": 713834324,
+    "geometryBytes": 51945854,
+    "textureBytes": 661888470,
+    "attachmentBytes": 0,
+    "textureSources": 137,
+    "attributeBuffers": 1182,
+    "renderTargets": 0,
+    "method": "Scene/cached allocation estimate including hidden fallback, compressed mip payload and render attachments; not measured driver VRAM. Probe peak allocations and browser overhead are excluded."
+  },
+  "wall_seconds": 112.589
+}

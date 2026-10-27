@@ -18,7 +18,7 @@ html=(bundle/'index.html').read_text()
 app=(bundle/'app.js').read_text().replace('</script','<\\/script')
 hybrid=(REAL/'lighting-v2/manifest-hybrid.json').exists()
 model_name='model_web_baked.glb' if hybrid else 'model_web.glb'
-model_path='GARMENT_OFFICE_REALISM_UPGRADE/01_IMPROVED_MODEL/Final_Office_Interior_web_realism.glb' if hybrid else 'GARMENT_OFFICE_WALKTHROUGH_FINAL/07_WEB_TOUR_ASSETS/Final_Office_Interior_web.glb'
+model_path='GARMENT_OFFICE_WALKTHROUGH_FINAL/07_WEB_TOUR_ASSETS/Final_Office_Interior_web_baked.glb' if hybrid else 'GARMENT_OFFICE_WALKTHROUGH_FINAL/07_WEB_TOUR_ASSETS/Final_Office_Interior_web.glb'
 assets={model_name:REPO/model_path}
 lighting_folder='lighting-v2' if (REAL/'lighting-v2/manifest.json').exists() else 'lighting'
 manifest_rel=lighting_folder+('/manifest-hybrid.json' if hybrid else '/manifest.json')
@@ -29,8 +29,15 @@ for room in lighting['rooms']:
     if room['lightMap'].get('fallbackUrl'):names.append(room['lightMap']['fallbackUrl'])
     for name in names:
         rel=lighting_folder+'/'+name;assets[rel]=REAL/rel
-if (REAL/'viewer/dist/release-config.json').exists():assets['release-config.json']=REAL/'viewer/dist/release-config.json'
-for folder in ['textures/codecs','people','props']:
+release=json.loads((REAL/'viewer/dist/release-config.json').read_text())
+assets['release-config.json']=REAL/'viewer/dist/release-config.json'
+people_rel='people/'+release.get('peopleManifest','reception/people-manifest.json')
+people_manifest=json.loads((REAL/people_rel).read_text())
+assets[people_rel]=REAL/people_rel
+for name in [people_manifest.get('poses','poses.json')]+[v['file'] for v in people_manifest['assets'].values()]:
+    rel='people/'+name;assets[rel]=REAL/rel
+assets['props/office-props-manifest.json']=REAL/'props/office-props-manifest.json'
+for folder in ['textures/codecs']:
     for p in (REAL/folder).rglob('*'):
         if not p.is_file(): continue
         rel=p.relative_to(REAL).as_posix()

@@ -1,0 +1,156 @@
+{
+  "phase": "reception-offline-exact-base",
+  "url": "http://127.0.0.1:43395/Office_Realistic_Tour.html?welcome=0",
+  "viewport": [
+    1280,
+    720
+  ],
+  "people_requested": "on",
+  "require_lightmaps": true,
+  "shots": [
+    {
+      "camera": "CAM_01_Reception_A",
+      "type": "PERSP",
+      "frame_result": {
+        "name": "CAM_01_Reception_A",
+        "type": "PERSP",
+        "lighting": {
+          "state": "loaded",
+          "sourceObjects": 25,
+          "meshes": 29,
+          "triangles": 41717,
+          "intensity": 3.141592653589793,
+          "format": "ktx2",
+          "resolution": 2048,
+          "heroError": null
+        }
+      },
+      "state": {
+        "viewer": {
+          "mode": "capture",
+          "room": "Z02",
+          "atCam": "CAM_01_Reception_A",
+          "flying": false,
+          "flightT": null,
+          "fps": 0,
+          "overhead": true,
+          "tour": null,
+          "photo": null,
+          "aoFrames": 0,
+          "pos": [
+            8.077,
+            1.524,
+            0.66
+          ]
+        },
+        "stats": {
+          "frame": 38,
+          "calls": 296,
+          "triangles": 1955928,
+          "points": 0,
+          "lines": 0,
+          "memory": {
+            "geometries": 209,
+            "textures": 123
+          },
+          "phase": 4,
+          "capturePostProcessing": false,
+          "post": null
+        },
+        "lighting": {
+          "regularAtlasBudgetBytes": 201326592,
+          "phase": 1,
+          "manifest": "http://127.0.0.1:43395/lighting-v2/manifest-hybrid.json",
+          "available": 1,
+          "loaded": [
+            "Z02"
+          ],
+          "requiredShared": [],
+          "rooms": {
+            "Z02": {
+              "state": "loaded",
+              "sourceObjects": 25,
+              "meshes": 29,
+              "triangles": 41717,
+              "intensity": 3.141592653589793,
+              "format": "ktx2",
+              "resolution": 2048,
+              "heroError": null
+            }
+          },
+          "error": null,
+          "residentRegularBytes": 33554432,
+          "residentSharedBytes": 0,
+          "activeExceedsBudget": false
+        },
+        "people": {
+          "enabled": true,
+          "loaded": true,
+          "frozen": true,
+          "total": 4,
+          "visible": 4,
+          "walkers": 0,
+          "illustrative": true,
+          "forbiddenZoneViolations": 0,
+          "status": "Reception-only frozen pose contact review pending",
+          "nativeMacPerformanceTested": false
+        },
+        "viewer_errors": []
+      },
+      "file": "shots/after_CAM_01_Reception_A.png",
+      "sha256": "38b1960aabd03adae5f61ef6654fb883452cbd0447a036b9424bb5df4e4a4675"
+    }
+  ],
+  "console_errors": [],
+  "page_errors": [],
+  "http_errors": [],
+  "source_responses": [
+    {
+      "url": "http://127.0.0.1:43395/Office_Realistic_Tour.html?welcome=0",
+      "status": 200,
+      "bytes": 1233219,
+      "sha256": "2db045bfc5babbc88a8eeeccbde05468744fb8d68872bca8557865eec396cc23"
+    }
+  ],
+  "source_response_method": "Actual browser navigation/asset response bodies, not a later refetch",
+  "status": "captured",
+  "scope": "Actual viewer frames; UI hidden through screenshot-only CSS. Original scene camera API, no synthetic edits.",
+  "limits": [
+    "Linux software-GPU capture, not a MacBook performance test",
+    "Local load timing is not a 50 Mbps WAN benchmark"
+  ],
+  "ready_seconds_local": 2.262,
+  "browser": "154.0.8037.57",
+  "gpu": {
+    "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+    "vendor": "Google Inc. (Google)",
+    "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+    "webgl": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+    "maxTextureSize": 8192,
+    "pixelRatio": 1,
+    "quality": "balanced",
+    "viewport": [
+      1280,
+      720
+    ]
+  },
+  "counts": {
+    "quality": "balanced",
+    "stage": 4,
+    "floorTopTriangles": 8,
+    "meshes": 129,
+    "drawCallsMerged": {
+      "before": 1823,
+      "after": 100,
+      "roomGroupsSeparate": true
+    },
+    "rooms": 34,
+    "cameras": 38,
+    "stops": 16,
+    "model": "web",
+    "bakedLight": true,
+    "shadows": false,
+    "ambientOcclusion": false
+  },
+  "seconds": 17.923
+}

@@ -1,0 +1,83 @@
+{
+  "status": "passed",
+  "scope": "Bounded Reception original controls plus four frozen people collision acceptance; no runtime changes.",
+  "runtime_commit": "8a01ddc7bd9d8b5acc3b99ef287f1263088f9e52",
+  "served_app_sha256": "1fa75488491ac301562f03d2e5ce86dcf896120ead7a8a56c0d39bc76875ba1a",
+  "served_url": "http://127.0.0.1:8783/realistic/?welcome=0",
+  "browser": "154.0.8037.57",
+  "controls": {
+    "retained_prior_passes": 16,
+    "corrected_check_passes": 1,
+    "initial_failed_report_preserved": true,
+    "explanation": "Original interface shows #pad only for pointer:coarse in walk mode. The initial assertion incorrectly required it on pointer:fine desktop. Corrected bounded rerun confirms #pad hidden and #minimap visible at 1280x720.",
+    "observed": {
+      "mode": "walk",
+      "viewport": [
+        1280,
+        720
+      ],
+      "coarsePointer": false,
+      "finePointer": true,
+      "pad": {
+        "hiddenClass": true,
+        "display": "none",
+        "visibility": "visible",
+        "visible": false
+      },
+      "minimap": {
+        "hiddenClass": false,
+        "display": "block",
+        "visibility": "visible",
+        "visible": true
+      }
+    },
+    "source_evidence": [
+      "viewer/app.js:590",
+      "viewer/app.js:624",
+      "viewer/app.js:625",
+      "viewer/style.css:12",
+      "viewer/style.css:175",
+      "GARMENT_OFFICE_WALKTHROUGH_FINAL/03_INTERACTIVE_3D/app.js:480",
+      "GARMENT_OFFICE_WALKTHROUGH_FINAL/03_INTERACTIVE_3D/app.js:509",
+      "GARMENT_OFFICE_WALKTHROUGH_FINAL/03_INTERACTIVE_3D/app.js:510"
+    ]
+  },
+  "people_collisions": {
+    "passed_scenarios": [
+      "stationary_actor",
+      "enable_occupied_anchor"
+    ],
+    "expected_people": 4,
+    "frozen": true,
+    "walkers": 0,
+    "stationary_actor": {
+      "minimum_center_distance_m": 0.49054578448833563,
+      "combined_radii_m": 0.4,
+      "collision_responses": 414,
+      "final_blocked": false,
+      "initial_spawns": 1
+    },
+    "enable_occupied_anchor": {
+      "hidden_for_visitor": true,
+      "visitor_not_trapped": true
+    }
+  },
+  "evidence": {
+    "reception-release-controls-final/controls-report.json": {
+      "sha256": "3ce968fd7187c879c0be42cca0ec85060392fad09198d269874bf477b5ef5d8b"
+    },
+    "reception-release-controls-corrected/controls-report.json": {
+      "sha256": "0768eaa760286169f4f35c3d579622c92c30d51636ba47e269c28c8d66edba1e"
+    },
+    "reception-release-collisions/collision-report.json": {
+      "sha256": "9b98e3471e780f06d873cabfdff3689341890f167fcb78b442f8f37275c207e3"
+    }
+  },
+  "existing_contact_acceptance": "props-independent/reception-static4-contact-acceptance.json",
+  "limitations": [
+    "Linux Chromium with SwiftShader only; native Mac FPS and Safari remain untested.",
+    "Prior software frame request timings include camera framing and RAF waits and are not display FPS.",
+    "No walking-actor scenario was run because the accepted Reception people are frozen.",
+    "Existing geometry/prop/floor/freeze acceptance was retained; no broad geometry tests were repeated."
+  ]
+}

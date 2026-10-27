@@ -1,0 +1,269 @@
+{
+  "status": "passed",
+  "browser": "chromium",
+  "url": "http://127.0.0.1:8783/realistic/?welcome=0",
+  "scenarios": [
+    {
+      "scenario": "stationary_actor",
+      "id": "office-person-02",
+      "passed": true,
+      "initialActor": [
+        12.08,
+        0,
+        3.75
+      ],
+      "initialVisitor": [
+        12.08,
+        4.85
+      ],
+      "minimumCenterDistance": 0.49054578448833563,
+      "combinedRadii": 0.4,
+      "collisionsAdded": 414,
+      "final": {
+        "position": [
+          12.08,
+          1.6,
+          4.240545784488336
+        ],
+        "velocity": [
+          0,
+          0
+        ],
+        "steps": 481,
+        "collisions": 414,
+        "distance": 0.609454215511664,
+        "eye": 1.6,
+        "blocked": false,
+        "room": "Z02",
+        "startCount": 1
+      },
+      "viewer_errors": []
+    },
+    {
+      "scenario": "enable_occupied_anchor",
+      "id": "office-person-02",
+      "passed": true,
+      "visitor": [
+        12.08,
+        3.75
+      ],
+      "actor": {
+        "id": "office-person-02",
+        "zone": "Z02",
+        "task": "badge_receiver",
+        "radius": 0.25,
+        "seated": false,
+        "pathIndex": 0,
+        "pathDir": 1,
+        "moving": false,
+        "hiddenForVisitor": true,
+        "wait": 0,
+        "walkDistance": 0,
+        "position": [
+          12.08,
+          0,
+          3.75
+        ],
+        "visible": true,
+        "low": true,
+        "parts": [
+          {
+            "name": "LOD0_Adult_skin",
+            "lod": 0,
+            "materials": [
+              "Skin_CC0_MakeHuman"
+            ],
+            "skinned": true,
+            "vertices": 8416
+          },
+          {
+            "name": "LOD0_Closed_shoes",
+            "lod": 0,
+            "materials": [
+              "Shoes_CC0"
+            ],
+            "skinned": true,
+            "vertices": 2510
+          },
+          {
+            "name": "LOD0_Eyes",
+            "lod": 0,
+            "materials": [
+              "Eyes_CC0"
+            ],
+            "skinned": true,
+            "vertices": 96
+          },
+          {
+            "name": "LOD0_Hair",
+            "lod": 0,
+            "materials": [
+              "Hair_CC0"
+            ],
+            "skinned": true,
+            "vertices": 1794
+          },
+          {
+            "name": "Office_clothing",
+            "lod": 0,
+            "materials": [
+              "Garment_top"
+            ],
+            "skinned": true,
+            "vertices": 4824
+          },
+          {
+            "name": "Office_clothing_1",
+            "lod": 0,
+            "materials": [
+              "Garment_trousers"
+            ],
+            "skinned": true,
+            "vertices": 4134
+          },
+          {
+            "name": "LOD1_Adult_skin",
+            "lod": 1,
+            "materials": [
+              "Skin_CC0_MakeHuman"
+            ],
+            "skinned": true,
+            "vertices": 3325
+          },
+          {
+            "name": "LOD1_Closed_shoes",
+            "lod": 1,
+            "materials": [
+              "Shoes_CC0"
+            ],
+            "skinned": true,
+            "vertices": 1123
+          },
+          {
+            "name": "LOD1_Eyes",
+            "lod": 1,
+            "materials": [
+              "Eyes_CC0"
+            ],
+            "skinned": true,
+            "vertices": 42
+          },
+          {
+            "name": "LOD1_Hair",
+            "lod": 1,
+            "materials": [
+              "Hair_CC0"
+            ],
+            "skinned": true,
+            "vertices": 728
+          },
+          {
+            "name": "Office_clothing001",
+            "lod": 1,
+            "materials": [
+              "Garment_top"
+            ],
+            "skinned": true,
+            "vertices": 2059
+          },
+          {
+            "name": "Office_clothing001_1",
+            "lod": 1,
+            "materials": [
+              "Garment_trousers"
+            ],
+            "skinned": true,
+            "vertices": 1540
+          }
+        ],
+        "phone": false,
+        "pose": "reception_badge_receiver",
+        "bones": {
+          "root": [
+            12.007241295576096,
+            0.9196926428413391,
+            3.75
+          ],
+          "upperleg01_L": [
+            12.064308171884024,
+            0.9254609314624754,
+            3.643649518473761
+          ],
+          "lowerleg01_L": [
+            12.098844964522954,
+            0.5122350861380935,
+            3.599995859473857
+          ],
+          "foot_L": [
+            12.088838054989045,
+            0.10419805996752624,
+            3.5617137449172995
+          ],
+          "head": [
+            12.128912801352397,
+            1.5760556349543644,
+            3.7499999999999707
+          ],
+          "wrist_R": [
+            12.519999175065005,
+            1.3050001589705569,
+            3.9200006285251465
+          ]
+        }
+      },
+      "stats": {
+        "enabled": true,
+        "loaded": true,
+        "frozen": true,
+        "total": 4,
+        "visible": 4,
+        "walkers": 0,
+        "illustrative": true,
+        "forbiddenZoneViolations": 0,
+        "status": "Reception-only frozen pose contact review pending",
+        "nativeMacPerformanceTested": false
+      },
+      "viewer_errors": []
+    }
+  ],
+  "page_errors": [],
+  "console_errors": [],
+  "source_responses": [
+    {
+      "url": "http://127.0.0.1:8783/realistic/app.js",
+      "status": 200,
+      "sha256": "1fa75488491ac301562f03d2e5ce86dcf896120ead7a8a56c0d39bc76875ba1a",
+      "bytes": 1160817
+    },
+    {
+      "url": "http://127.0.0.1:8783/realistic/people/reception/people-manifest.json",
+      "status": 200,
+      "sha256": "d1ee7c8d88b22216aaea9c07283bc1c392ef9eae43359d4038ce3e734d349b7a",
+      "bytes": 5206
+    },
+    {
+      "url": "http://127.0.0.1:8783/realistic/people/reception/poses.json",
+      "status": 200,
+      "sha256": "16bb2498fd8b86fe8dcc57e27b606aee4d48dba8dcaee10b110fda66e65f8fc3",
+      "bytes": 326699
+    }
+  ],
+  "limitations": [
+    "Linux software rendering, not native Mac FPS or Safari evidence.",
+    "Capsule/segment collision checks are runtime movement evidence, separate from actual skinned-mesh furniture contact review.",
+    "Authored walker trajectories do not necessarily produce actor/actor encounters; absence of overlaps does not prove an unexercised avoidance branch."
+  ],
+  "gpu": {
+    "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+    "vendor": "Google Inc. (Google)",
+    "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+    "webgl": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+    "maxTextureSize": 8192,
+    "pixelRatio": 1,
+    "quality": "balanced",
+    "viewport": [
+      640,
+      360
+    ]
+  }
+}

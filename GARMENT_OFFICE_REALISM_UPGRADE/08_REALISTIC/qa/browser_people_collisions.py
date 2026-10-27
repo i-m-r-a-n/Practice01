@@ -22,13 +22,15 @@ def main():
     parser.add_argument("--url", default="http://127.0.0.1:8783/realistic/?stage=5&welcome=0&post=0&materials=0&probes=0&scale=0.25&lighting=./lighting-v2/manifest.json")
     parser.add_argument("--browser", choices=["chromium", "firefox", "webkit"], default="chromium")
     parser.add_argument("--output", required=True, type=Path)
+    parser.add_argument("--scenario", action="append", choices=["stationary_actor", "walking_actor_yields", "enable_occupied_anchor"], help="Run only selected bounded scenarios.")
+    parser.add_argument("--expected-people", type=int, default=35)
     args = parser.parse_args()
     args.output.mkdir(parents=True, exist_ok=True)
     report = {"status": "running", "browser": args.browser, "url": args.url, "scenarios": [], "page_errors": [], "console_errors": [], "source_responses": [], "limitations": ["Linux software rendering, not native Mac FPS or Safari evidence.", "Capsule/segment collision checks are runtime movement evidence, separate from actual skinned-mesh furniture contact review.", "Authored walker trajectories do not necessarily produce actor/actor encounters; absence of overlaps does not prove an unexercised avoidance branch."]}
     with sync_playwright() as p:
         browser = launch(p, args.browser)
         try:
-            for scenario in ["stationary_actor", "walking_actor_yields", "enable_occupied_anchor"]:
+            for scenario in args.scenario or ["stationary_actor", "walking_actor_yields", "enable_occupied_anchor"]:
                 page = browser.new_page(viewport={"width": 640, "height": 360})
                 page.on("pageerror", lambda e: report["page_errors"].append(str(e)))
                 page.on("console", lambda m: report["console_errors"].append(m.text) if m.type == "error" else None)
@@ -46,10 +48,10 @@ def main():
                 page.goto(args.url, wait_until="domcontentloaded", timeout=240000)
                 page.wait_for_function("window.__viewer?.ready && !!__viewer.api.peopleDiagnostics", timeout=600000)
                 report["gpu"] = page.evaluate("__viewer.api.gpuInfo()")
-                result = page.evaluate("""async scenario => {
+                result = page.evaluate("""async ({scenario,expected}) => {
                     const api=__viewer.api, trace=[], check=(ok,message)=>{if(!ok)throw new Error(message)};
                     await api.setPeopleEnabled(true);
-                    check(api.peopleStats().loaded && api.peopleStats().enabled && api.peopleStats().total>=25,'People not accepted/loaded/enabled');
+                    check(api.peopleStats().loaded && api.peopleStats().enabled && api.peopleStats().total===expected,'People not accepted/loaded/enabled or unexpected actor count');
                     const diagnostics=()=>api.peopleDiagnostics();
                     const find=id=>diagnostics().find(a=>a.id===id);
                     const position=a=>a.position;
@@ -121,7 +123,7 @@ def main():
                     check(actor.hiddenForVisitor===true,'Enabling at occupied anchor did not separate actor from visitor');
                     check(!api.blocked(...start),'Visitor trapped by newly enabled actor');
                     return {scenario,id,passed:true,visitor:start,actor,stats:api.peopleStats(),trace};
-                }""", scenario)
+                }""", {"scenario": scenario, "expected": args.expected_people})
                 trace = result.pop("trace")
                 (args.output / (scenario + "-trace.json")).write_text(json.dumps(trace, separators=(",", ":")))
                 result["viewer_errors"] = page.evaluate("__viewer.errors||[]")

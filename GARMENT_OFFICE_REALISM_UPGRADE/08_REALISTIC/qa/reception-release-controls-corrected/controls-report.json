@@ -1,0 +1,76 @@
+{
+  "status": "passed",
+  "url": "http://127.0.0.1:8783/realistic/?welcome=0",
+  "checks": [
+    {
+      "name": "original pointer-specific walk pad and desktop minimap behavior",
+      "passed": true,
+      "detail": {
+        "mode": "walk",
+        "viewport": [
+          1280,
+          720
+        ],
+        "coarsePointer": false,
+        "finePointer": true,
+        "pad": {
+          "hiddenClass": true,
+          "display": "none",
+          "visibility": "visible",
+          "visible": false
+        },
+        "minimap": {
+          "hiddenClass": false,
+          "display": "block",
+          "visibility": "visible",
+          "visible": true
+        }
+      }
+    }
+  ],
+  "sources": [
+    {
+      "url": "http://127.0.0.1:8783/realistic/?welcome=0",
+      "status": 200,
+      "sha256": "c3fb3ba4ae201892c4451a5db43c6add6f50a70b80bd1833491290373c6f1545",
+      "bytes": 70875
+    },
+    {
+      "url": "http://127.0.0.1:8783/realistic/app.js",
+      "status": 200,
+      "sha256": "1fa75488491ac301562f03d2e5ce86dcf896120ead7a8a56c0d39bc76875ba1a",
+      "bytes": 1160817
+    },
+    {
+      "url": "http://127.0.0.1:8783/realistic/people/reception/people-manifest.json",
+      "status": 200,
+      "sha256": "d1ee7c8d88b22216aaea9c07283bc1c392ef9eae43359d4038ce3e734d349b7a",
+      "bytes": 5206
+    },
+    {
+      "url": "http://127.0.0.1:8783/realistic/people/reception/poses.json",
+      "status": 200,
+      "sha256": "16bb2498fd8b86fe8dcc57e27b606aee4d48dba8dcaee10b110fda66e65f8fc3",
+      "bytes": 326699
+    }
+  ],
+  "page_errors": [],
+  "console_errors": [],
+  "scope": "Reception only: corrected original pointer-specific walk pad/minimap assertion at 1280x720. Previous passing controls are not rerun. No native Mac FPS claim.",
+  "browser": "154.0.8037.57",
+  "gpu": {
+    "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+    "vendor": "Google Inc. (Google)",
+    "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+    "webgl": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+    "maxTextureSize": 8192,
+    "pixelRatio": 1,
+    "quality": "balanced",
+    "viewport": [
+      1280,
+      720
+    ]
+  },
+  "viewer_errors": [],
+  "wall_seconds": 38.565
+}

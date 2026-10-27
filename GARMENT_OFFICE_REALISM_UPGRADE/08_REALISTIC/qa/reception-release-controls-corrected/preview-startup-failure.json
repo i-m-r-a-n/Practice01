@@ -1,0 +1,11 @@
+{
+  "status": "failed",
+  "url": "http://127.0.0.1:8783/realistic/?welcome=0",
+  "checks": [],
+  "sources": [],
+  "page_errors": [],
+  "console_errors": [],
+  "scope": "Reception only: real original UI buttons/search/photo/help/tour start-stop/walk, People on/off, bounded keys. No full-floor tour, native Mac FPS or file:// acceptance.",
+  "exception": "Page.goto: net::ERR_EMPTY_RESPONSE at http://127.0.0.1:8783/realistic/?welcome=0\nCall log:\n  - navigating to \"http://127.0.0.1:8783/realistic/?welcome=0\", waiting until \"domcontentloaded\"\n",
+  "wall_seconds": 0.015
+}

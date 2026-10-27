@@ -1,0 +1,74 @@
+[
+  {
+    "path": "/",
+    "status": 200,
+    "bytes": 63353,
+    "sha256": "ff75beb54b3134b3e1eee7d29d0f6016ed1bf5895777c715f3815ebe3dcd2675",
+    "source": null,
+    "type": "text/html; charset=utf-8",
+    "body": null
+  },
+  {
+    "path": "/app.js",
+    "status": 200,
+    "bytes": 747798,
+    "sha256": "c6af8144c56302bf92a975179d847b89c6e4eac63068ecc16a96c7c0c02e9bc4",
+    "source": null,
+    "type": "text/javascript; charset=utf-8",
+    "body": null
+  },
+  {
+    "path": "/health",
+    "status": 200,
+    "bytes": 205,
+    "sha256": "5118ed4955892545f48d6edf7fee295fdd0e8963fe1c7704041534fc04de378b",
+    "source": null,
+    "type": "application/json",
+    "body": "{\"ok\":true,\"environment\":\"production\",\"model\":\"baked\",\"source\":\"GPT 6a65b7d + Claude ddf99eee\",\"videos\":\"Claude cc2bd270\",\"films\":[\"/pitch.mp4\",\"/tour.mp4\"],\"pdfs\":[\"/presentation.pdf\",\"/render-book.pdf\"]}"
+  },
+  {
+    "path": "/realistic/",
+    "status": 200,
+    "bytes": 70875,
+    "sha256": "c3fb3ba4ae201892c4451a5db43c6add6f50a70b80bd1833491290373c6f1545",
+    "source": "8a01ddc7bd9d8b5acc3b99ef287f1263088f9e52",
+    "type": "text/html; charset=utf-8",
+    "body": null
+  },
+  {
+    "path": "/realistic/health",
+    "status": 200,
+    "bytes": 148,
+    "sha256": "ee0107a24b9bb905adea0192e115b6ebf0c5f4f8b6e741dd4e54751930dfdf3d",
+    "source": null,
+    "type": "application/json",
+    "body": "{\"ok\":true,\"source\":\"8a01ddc7bd9d8b5acc3b99ef287f1263088f9e52\",\"route\":\"/realistic\",\"fallback\":\"/\",\"status\":\"review preview; see acceptance report\"}"
+  },
+  {
+    "path": "/realistic/app.js",
+    "status": 200,
+    "bytes": 1160817,
+    "sha256": "1fa75488491ac301562f03d2e5ce86dcf896120ead7a8a56c0d39bc76875ba1a",
+    "source": "8a01ddc7bd9d8b5acc3b99ef287f1263088f9e52",
+    "type": "text/javascript; charset=utf-8",
+    "body": null
+  },
+  {
+    "path": "/realistic/release-config.json",
+    "status": 200,
+    "bytes": 242,
+    "sha256": "bc7cfd653fe6ec9919c61a0eced48ef9bde399fc4c08cb449f665dee0c60b633",
+    "source": "8a01ddc7bd9d8b5acc3b99ef287f1263088f9e52",
+    "type": "application/json",
+    "body": null
+  },
+  {
+    "path": "/realistic/review/reception-before-after.png",
+    "status": 200,
+    "bytes": 603325,
+    "sha256": "e7bd92032c5f053ee71c0a6083e962018a12116285f55444fc9e48dedeca912c",
+    "source": "8a01ddc7bd9d8b5acc3b99ef287f1263088f9e52",
+    "type": "image/png",
+    "body": null
+  }
+]

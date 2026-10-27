@@ -1,7 +1,9 @@
 {
   "file": "Reception_Realistic_Offline.zip",
-  "bytes": 72103243,
-  "sha256": "0d5fb569b3695e7732355e87439f2ada025cf66d8e1b06bd35c66bde148c7948",
+  "bytes": 71963275,
+  "sha256": "868914f8ad2a5ab70ac0836abeb96b2f712506989eca04c8975fff6fcd59edc5",
   "scope": "Reception static people and hybrid furniture lighting; original tour preserved",
-  "status": "Local HTTP-served offline asset resolver smoke passed with4 static people and25 lightmapped targets; no browser/HTTP errors. Native Mac/file-protocol test unavailable."
+  "status": "Corrected exact-preview model offline resolver verified:4 frozenpeople,25 lightmapped objects,zero browser/HTTP errors. NativeMac/file opening unverified.",
+  "base_model_sha256": "faaf09d1a61d2136a96a8b2eb4146be1f29135483dd7f94e67e6f3a54596d20a",
+  "qa": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/qa/reception-offline-exact-base-verified/capture.json"
 }
