@@ -27,7 +27,18 @@ if (!(probe.getContext('webgl2') || probe.getContext('webgl'))) {
 }
 const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, powerPreference: 'high-performance' });
 const scale = Math.min(1, Math.max(0.25, parseFloat(qs.get('scale')) || 1));
-renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.5) * scale);
+const QUALITY = { high: 2, balanced: 1.5, low: 1 };                 // device-pixel-ratio cap per quality profile
+let quality = 'balanced';
+try { quality = localStorage.getItem('tourQuality') || (matchMedia('(pointer: coarse)').matches && innerWidth < 900 ? 'low' : 'balanced'); } catch (e) { /* storage blocked */ }
+if (!QUALITY[quality]) quality = 'balanced';
+function applyQuality(q) {
+  quality = q;
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, QUALITY[q]) * scale);
+  renderer.setSize(innerWidth, innerHeight);
+  try { localStorage.setItem('tourQuality', q); } catch (e) { /* storage blocked */ }
+  needsRender = true;
+}
+renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, QUALITY[quality]) * scale);
 renderer.setSize(innerWidth, innerHeight);
 renderer.setClearColor(0x000000, 0);
 renderer.outputColorSpace = THREE.SRGBColorSpace;
@@ -473,6 +484,16 @@ $('vIso').onclick = () => goOverview(orthoCamPose(cams.CAM_ISO_SE, 24));
 $('vTop').onclick = () => goOverview(overviewPose(-90, 89.5, 1.0));
 $('vCeil').onclick = () => { S.ceilUser = !S.ceilUser; $('vCeil').classList.toggle('on', S.ceilUser); setOverhead(S.ceilUser, true); };
 $('vLabels').onclick = () => { S.labels = !S.labels; $('vLabels').classList.toggle('on', S.labels); needsRender = true; };
+$('vQuality').value = quality;
+$('vQuality').onchange = (e) => applyQuality(e.target.value);
+function toggleFullscreen() {
+  const d = document;
+  try {
+    if (d.fullscreenElement || d.webkitFullscreenElement) (d.exitFullscreen || d.webkitExitFullscreen).call(d);
+    else (d.documentElement.requestFullscreen || d.documentElement.webkitRequestFullscreen).call(d.documentElement);
+  } catch (e) { S.errors.push('fullscreen: ' + e.message); }
+}
+$('mFull').onclick = toggleFullscreen;
 
 // click a room on the model (overview)
 const ray = new THREE.Raycaster(), floor = new THREE.Plane(new THREE.Vector3(0, 1, 0), 0), ndc = new THREE.Vector2();
@@ -573,6 +594,7 @@ addEventListener('keydown', (e) => {
   else if (S.mode === 'tour' && e.code === 'ArrowLeft') nextStop(-1);
   else if (S.mode !== 'walk' && S.mode !== 'tour') {
     if (e.code === 'KeyO') goOverview(); else if (e.code === 'KeyT') startTour(0); else if (e.code === 'KeyW') startWalk();
+    else if (e.code === 'KeyF') toggleFullscreen();
     else if (e.code === 'KeyC' && S.mode === 'overview') $('vCeil').click(); else if (e.code === 'KeyL') $('vLabels').click();
     else if (e.code === 'KeyP' && S.atCam) showPhoto(S.atCam);
   }
@@ -759,7 +781,7 @@ applyPose(start); controls.target.copy(C); controls.update(); look('outside');
 $('loading').style.display = 'none';
 S.ready = true; window.__viewerReady = true;
 let meshes = 0; model.traverse((o) => { if (o.isMesh) meshes++; });
-S.counts = { meshes, drawCallsMerged: drawCalls, rooms: rooms.length, cameras: meta.cameras.length, stops: stops.length, model: gltf.scene.getObjectByName('WEB_INTERIOR') ? 'web' : 'original', bakedLight: BAKED, shadows: SHADOWS };
+S.counts = { quality, meshes, drawCallsMerged: drawCalls, rooms: rooms.length, cameras: meta.cameras.length, stops: stops.length, model: gltf.scene.getObjectByName('WEB_INTERIOR') ? 'web' : 'original', bakedLight: BAKED, shadows: SHADOWS };
 S.api = { selectRoom: (z) => selectRoom(byZone[z]), goOverview, startWalk, startTour, goStop, nextStop, togglePlay, stopTour, showPhoto, hidePhoto,
   blocked, state: () => ({ mode: S.mode, room: S.room && S.room.zone, atCam: S.atCam, flying: !!flight, flightT: flight ? +flight.t.toFixed(3) : null, fps: S.fps, overhead: overhead.visible,
     tour: S.tour && { i: S.tour.i, phase: S.tour.phase, playing: S.tour.playing, sub: S.tour.sub }, photo: S.photo, pos: camera.position.toArray().map((v) => +v.toFixed(3)) }) };

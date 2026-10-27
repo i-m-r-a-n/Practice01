@@ -2,7 +2,7 @@
 //   node build_worker_bundle.mjs OUT_DIR          (esbuild 0.24 must be resolvable, e.g. NODE_PATH or a local node_modules)
 // OUT_DIR/index.html  page with inline CSS and the three client logos inline (small PNG data URIs)
 // OUT_DIR/app.js      one ES module: three.js r169 (vendored) + the app + office_web_metadata.json + walk_grid.json
-// The page then needs only:  ./model_web.glb (falls back to ./model.glb = the original GLB)  and  ./renders/<camera>.jpg
+// The page then needs only:  ./model_web_baked.glb (falls back to ./model_web.glb, then ./model.glb = the original GLB)  and  ./renders/<camera>.jpg
 import { build } from 'esbuild';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -17,7 +17,7 @@ fs.writeFileSync(path.join(tmp, 'data.js'), [
   `import meta from ${JSON.stringify(path.join(assets, 'office_web_metadata.json'))};`,
   `import grid from ${JSON.stringify(path.join(assets, 'walk_grid.json'))};`,
   'window.__TOUR_DATA = { meta, grid };',
-  "window.__TOUR_CONFIG = Object.assign({ models: ['./model_web.glb', './model.glb'], renders: './renders/' }, window.__TOUR_CONFIG || {});",
+  "window.__TOUR_CONFIG = Object.assign({ models: ['./model_web_baked.glb', './model_web.glb', './model.glb'], renders: './renders/' }, window.__TOUR_CONFIG || {});",
 ].join('\n'));
 fs.writeFileSync(path.join(tmp, 'entry.js'), `import './data.js';\nimport ${JSON.stringify(path.join(here, 'app.js'))};\n`);
 const vendor = path.join(here, 'vendor/three');

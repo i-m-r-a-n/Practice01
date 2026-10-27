@@ -44,6 +44,38 @@ def bakeable(o):
 
 
 t0 = time.time()
+
+
+def cut_frame_rails():
+    """Model fix (documented in GARMENT_OFFICE_REALISM_UPGRADE/01_IMPROVED_MODEL/MODEL_FIXES.md): the aluminium frame on top of
+    the 48 in existing walls ("NIxx frame above PWyy") has a bottom rail at 1.22-1.26 m that runs straight across the door
+    openings cut into those walls. Cut it with the same hidden door cutters that open the walls. Applied to this export copy
+    only; the approved .blend is not saved."""
+    from mathutils import Vector
+    cutters = [o for o in bpy.data.collections["Doors"].all_objects if o.type == "MESH" and "head cut" not in o.name]
+    def box(o):
+        pts = [o.matrix_world @ Vector(c) for c in o.bound_box]
+        return [min(p[i] for p in pts) for i in range(3)], [max(p[i] for p in pts) for i in range(3)]
+    done = []
+    for f in [o for o in bpy.data.objects if o.type == "MESH" and " frame above PW" in o.name]:
+        flo, fhi = box(f)
+        for c in cutters:
+            clo, chi = box(c)
+            if all(clo[i] < fhi[i] and chi[i] > flo[i] for i in range(3)) and chi[2] > 1.25:
+                if f.data.users > 1:
+                    f.data = f.data.copy()
+                m = f.modifiers.new("door cut " + c.name.split()[0], "BOOLEAN")
+                m.operation, m.object = "DIFFERENCE", c
+                try:
+                    m.solver = "EXACT"
+                except Exception:
+                    pass
+                done.append((f.name, c.name))
+    return done
+
+
+rail_cuts = cut_frame_rails()
+print("RAIL_CUTS", len(rail_cuts), [(a.split()[0], b.split()[0]) for a, b in rail_cuts], flush=True)
 targets = [o for o in bpy.data.objects if in_shell(o) and bakeable(o)]
 if LIMIT:
     targets = targets[:LIMIT]
@@ -59,6 +91,20 @@ for o in targets:
     o.select_set(True)
 bpy.context.view_layer.objects.active = targets[0]
 bpy.ops.object.convert(target="MESH")
+
+# verify the rail cut: no frame geometry left inside a door opening at rail height
+from mathutils import Vector
+left = 0
+for fname, cname in rail_cuts:
+    f, c = bpy.data.objects[fname], bpy.data.objects[cname]
+    pts = [c.matrix_world @ Vector(v) for v in c.bound_box]
+    lo = [min(p[i] for p in pts) + 0.02 for i in range(2)]
+    hi = [max(p[i] for p in pts) - 0.02 for i in range(2)]
+    for v in f.data.vertices:
+        w = f.matrix_world @ v.co
+        if lo[0] < w.x < hi[0] and lo[1] < w.y < hi[1] and 1.20 < w.z < 1.27:
+            left += 1
+print("RAIL_CHECK vertices left inside door openings at 1.20-1.27 m:", left, flush=True)
 
 # split long edges so the light varies across large floors and walls
 tris = 0
