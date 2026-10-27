@@ -16,10 +16,9 @@ jobs:
       MOZ_WEBRENDER: "1"
       MOZ_DISABLE_RDD_SANDBOX: "1"
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: "22"
+      # Standalone smoke test: do not clone the large asset repository.
+      - name: Check runtime
+        run: node --version && npm --version
       - name: Install Playwright Firefox and Linux dependencies
         run: |
           npm install --no-save playwright@1.58.2
