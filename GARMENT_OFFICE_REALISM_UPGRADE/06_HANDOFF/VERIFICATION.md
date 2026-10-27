@@ -16,6 +16,8 @@ virtual display). They prove behaviour and layout, not the frame rate of a real 
 | Videos | QC: no decode errors, no black frames, still only on title / closing cards, faststart; GitHub downloads byte-identical (SHA-256) | `.../05_PRODUCTION/video_qc/`, `../../GARMENT_OFFICE_WALKTHROUGH_FINAL/06_HANDOFF/STATUS.md` |
 | Mac ZIP on GitHub | downloaded, SHA-256 identical, unzips to the HTML + README + 38 renders | this file's commit |
 
-Open items (not done or not verifiable here): Safari and macOS itself; frame rate on the client's Mac; the live website still
-runs `f9048ef` until GPT integrates this handoff (the Worker is GPT's; nothing was changed on it from here); `/pitch.mp4`
-returns 404 on the live site until the video routes are added (see `README.md`).
+Open items (not done or not verifiable here): Safari and macOS itself; frame rate on the client's Mac; the live website
+(frontend `6a65b7d`, assets `ddf99ee`, checked 09:16 UTC) shows offset walls in room views because its light-floor loop writes
+into the interleaved position / normal data (evidence `GARMENT_OFFICE_WALKTHROUGH_FINAL/05_PRODUCTION/live_site_qa/run_6a65b7d/`,
+fix on issue #12; the Worker is GPT's, nothing was changed on it from here); `/pitch.mp4` and `/tour.mp4` return 404 on the live
+site until the video routes are added (see `README.md`).
