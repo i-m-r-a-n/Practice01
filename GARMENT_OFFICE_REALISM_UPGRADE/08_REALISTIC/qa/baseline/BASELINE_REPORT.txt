@@ -1,0 +1,46 @@
+OFFICE REALISM UPGRADE — PHASE 0 BASELINE
+Captured 2026-10-27. No approved model, material, room, wall, door or viewer source was modified.
+
+PRIMARY EVIDENCE
+six-key-rooms-before-contact.jpg: six inspected Cycles | current live WebGL comparisons.
+comparisons/: all 38 camera comparison JPGs.
+shots/: all 38 current live production scene PNGs, 1280 x 720.
+capture.json: camera poses, render counters, browser/GPU, production-response hashes and capture scope.
+comparison-metrics.json: sheet hashes and coarse RGB comparison diagnostic.
+asset-reference-tests/viewer_test.json: unchanged repository viewer interaction test, 25/25 checks.
+
+PROVENANCE AND CAPTURE METHOD
+Current production origin: https://stage2-office-virtual-tour.imranahmedjh611.workers.dev/
+Current live app version query: app.js?v=6be2c0f4a899. This deployed application differs from the claude/web-tour-assets branch viewer.
+HTML SHA256 ff75beb54b3134b3e1eee7d29d0f6016ed1bf5895777c715f3815ebe3dcd2675
+JS SHA256 c6af8144c56302bf92a975179d847b89c6e4eac63068ecc16a96c7c0c02e9bc4
+GLB SHA256 faaf09d1a61d2136a96a8b2eb4146be1f29135483dd7f94e67e6f3a54596d20a
+Exact fetched responses are retained in production-responses/. HTTPS was verified by Python urllib using the environment trust store and configured HTTPS proxy. Chromium could not directly trust the managed proxy certificate; Python fetched and passed verified responses to the browser. TLS verification was never disabled.
+A QA-only export was appended to the delivered JavaScript in the capture browser, exposing its existing renderer, camera and scene. UI was hidden and animation frozen for deterministic snapshots. Meshes, materials and lights were not changed. The source repository application was not edited.
+33 perspective views use the original application pose function with metadata camera transforms, FOV and lens shift. Five orthographic comparison views use the exact metadata orthographic projection on a cloned camera because the existing live UI approximates these with perspective stand-ins. These five are production-scene comparisons, not screenshots of the existing UI projection. Original orthographic aspect ratios are letterboxed.
+No people have been added in this baseline.
+
+FRESH EXECUTED CHECKS
+Production capture: all 38 scenes rendered; zero browser page errors and zero console errors.
+Maximum recorded render counters: 200 draw calls and 1,999,630 rendered triangles. These counters include repeat rendering/transmission passes and are not the count of unique model triangles.
+Ready time 2.951 seconds is a cached local response replay time, NOT a 50 Mbps network-load benchmark.
+Unchanged asset-branch test_viewer.js: 25/25 interaction checks passed at 1280 x 720 (script also checks 1470 x 956 overflow), 310.883 seconds total. Tested room selection, look-around, render toggle, overview/ceilings, keyboard walking and collision endpoint, tour navigation/pause/end, search and basic layout. The lone console404 was /favicon.ico; the server log confirmed scripts, model and requested Cycles renders returned 200.
+The asset-branch test ran the repository viewer at ?scale=0.3; it is not evidence that the deployed production bundle passed those same interaction tests. Production has an independently reported info/tourbar overlap that the asset-branch viewer fixes.
+Full 42-case asset-reference responsive layout sweep is pending at this report revision; do not claim it passed from historical reports.
+
+ACTUAL VISUAL REVIEW — SIX REQUESTED ROOMS
+Reception / CAM_01_Reception_A: framing aligns with Cycles. Live furniture and counter are flatter/darker; contact shadow below furniture and the warm ceiling falloff are weaker. Floor highlights are less convincing.
+Experience Centre / CAM_04_Experience_Centre_A: same dress forms, garments and circulation. Live ceiling and walls are over-uniform/bright compared with Cycles; dress-form and platform contacts lack depth; floor highlight is broad and poorly localized.
+Boardroom / CAM_09_Boardroom_A: same room and furniture placement. Live table/chairs read dark and uniform; Cycles shows richer material response, glass/floor reflections and under-table contact. Screen appearance differs (live white, reference green) and must be reviewed as a material/light mismatch, not geometry improvement.
+MD Office / CAM_07_MD_Office_A: approved framing and furniture remain. Live chairs/desk are much greyer, ceiling too evenly bright, and wall spot-light pools from Cycles are weak/absent. Floor reflection lacks the reference definition.
+Merchandising / CAM_11_Merchandising_A: workstation/ceiling layout aligns. Live seating is much darker and under-desk contact is weak; desk surfaces are uniform with little daily-use detail. Reference has stronger tonal separation across the room.
+Design Studio / CAM_13_Design_Studio_A: layout/camera aligns. Live table/chairs are dark and flat, garment colours muted, wall display differs, and warm indirect lighting/contact depth is reduced.
+All six comparisons were actually viewed in the contact sheet. Reception source and reference were additionally inspected individually.
+The mean 64 x 36 RGB MAE of 34.447 is only a coarse tonal diagnostic; it is not a photorealism, structural preservation or acceptance score.
+
+TEST LIMITS
+Browser: Linux system Chromium 154.0.8037.57, WebGL2 via ANGLE Vulkan SwiftShader Device (Subzero), a software renderer.
+No physical MacBook was available. Firefox and WebKit were not installed for this run. Native Safari, Mac GPU, Metal, display scaling, power/thermal behaviour and real-device 60/30 fps targets remain untested.
+The scripts' reported ~1 fps during software rendering must not be interpreted as MacBook FPS. No 60 fps claim is made.
+Collision test is an endpoint witness, not exhaustive proof for every fixture or doorway. A stronger room-by-room route and occupied-scene test is required after the upgrade.
+Screenshots are baseline evidence only; they do not claim new lightmaps, PBR, props, people, bloom or deployment are complete.

@@ -1,0 +1,1013 @@
+{
+  "origin": "https://stage2-office-virtual-tour.imranahmedjh611.workers.dev/",
+  "viewport": [
+    1280,
+    720
+  ],
+  "source": "deployed production bytes; QA-only renderer export appended",
+  "shots": [
+    {
+      "camera": "CAM_01_Reception_A",
+      "type": "PERSP",
+      "position": [
+        8.0772,
+        1.524,
+        0.6604
+      ],
+      "quaternion": [
+        -0.0,
+        -0.888953,
+        -0.0,
+        0.457998
+      ],
+      "viewport": [
+        1280,
+        720
+      ],
+      "drawCalls": 142,
+      "triangles": 1723508,
+      "textureCount": 61,
+      "geometryCount": 108,
+      "exposure": 1,
+      "file": "shots/before_CAM_01_Reception_A.png"
+    },
+    {
+      "camera": "CAM_02_Reception_B",
+      "type": "PERSP",
+      "position": [
+        11.2268,
+        1.4732,
+        6.0452
+      ],
+      "quaternion": [
+        -0.0,
+        -0.325121,
+        -0.0,
+        0.945673
+      ],
+      "viewport": [
+        1280,
+        720
+      ],
+      "drawCalls": 200,
+      "triangles": 1999630,
+      "textureCount": 64,
+      "geometryCount": 112,
+      "exposure": 1,
+      "file": "shots/before_CAM_02_Reception_B.png"
+    },
+    {
+      "camera": "CAM_03_Entrance_Lobby",
+      "type": "PERSP",
+      "position": [
+        6.2484,
+        1.6256,
+        5.7404
+      ],
+      "quaternion": [
+        -0.0,
+        0.052874,
+        -0.0,
+        0.998601
+      ],
+      "viewport": [
+        1280,
+        720
+      ],
+      "drawCalls": 188,
+      "triangles": 1948478,
+      "textureCount": 64,
+      "geometryCount": 112,
+      "exposure": 1,
+      "file": "shots/before_CAM_03_Entrance_Lobby.png"
+    },
+    {
+      "camera": "CAM_04_Experience_Centre_A",
+      "type": "PERSP",
+      "position": [
+        9.9568,
+        1.5748,
+        -5.7404
+      ],
+      "quaternion": [
+        -0.0,
+        -0.498761,
+        -0.0,
+        0.866739
+      ],
+      "viewport": [
+        1280,
+        720
+      ],
+      "drawCalls": 194,
+      "triangles": 1962734,
+      "textureCount": 64,
+      "geometryCount": 112,
+      "exposure": 1,
+      "file": "shots/before_CAM_04_Experience_Centre_A.png"
+    },
+    {
+      "camera": "CAM_05_Experience_Centre_B",
+      "type": "PERSP",
+      "position": [
+        21.6408,
+        1.5748,
+        -5.8928
+      ],
+      "quaternion": [
+        -0.0,
+        0.574087,
+        -0.0,
+        0.818794
+      ],
+      "viewport": [
+        1280,
+        720
+      ],
+      "drawCalls": 174,
+      "triangles": 1873926,
+      "textureCount": 64,
+      "geometryCount": 112,
+      "exposure": 1,
+      "file": "shots/before_CAM_05_Experience_Centre_B.png"
+    },
+    {
+      "camera": "CAM_06_Experience_Centre_Detail",
+      "type": "PERSP",
+      "position": [
+        14.605,
+        1.27,
+        -6.6548
+      ],
+      "quaternion": [
+        -0.0,
+        0.279324,
+        -0.0,
+        0.960197
+      ],
+      "viewport": [
+        1280,
+        720
+      ],
+      "drawCalls": 170,
+      "triangles": 1870550,
+      "textureCount": 64,
+      "geometryCount": 112,
+      "exposure": 1,
+      "file": "shots/before_CAM_06_Experience_Centre_Detail.png"
+    },
+    {
+      "camera": "CAM_07_MD_Office_A",
+      "type": "PERSP",
+      "position": [
+        22.098,
+        1.524,
+        1.6256
+      ],
+      "quaternion": [
+        -0.0,
+        -0.918593,
+        -0.0,
+        0.395205
+      ],
+      "viewport": [
+        1280,
+        720
+      ],
+      "drawCalls": 120,
+      "triangles": 1605156,
+      "textureCount": 64,
+      "geometryCount": 112,
+      "exposure": 1,
+      "file": "shots/before_CAM_07_MD_Office_A.png"
+    },
+    {
+      "camera": "CAM_08_MD_Office_B",
+      "type": "PERSP",
+      "position": [
+        27.4828,
+        1.4732,
+        5.3848
+      ],
+      "quaternion": [
+        -0.0,
+        0.528202,
+        -0.0,
+        0.849119
+      ],
+      "viewport": [
+        1280,
+        720
+      ],
+      "drawCalls": 184,
+      "triangles": 1931118,
+      "textureCount": 64,
+      "geometryCount": 112,
+      "exposure": 1,
+      "file": "shots/before_CAM_08_MD_Office_B.png"
+    },
+    {
+      "camera": "CAM_09_Boardroom_A",
+      "type": "PERSP",
+      "position": [
+        21.844,
+        1.5748,
+        -5.08
+      ],
+      "quaternion": [
+        -0.0,
+        0.794012,
+        -0.0,
+        0.607903
+      ],
+      "viewport": [
+        1280,
+        720
+      ],
+      "drawCalls": 174,
+      "triangles": 1901202,
+      "textureCount": 64,
+      "geometryCount": 112,
+      "exposure": 1,
+      "file": "shots/before_CAM_09_Boardroom_A.png"
+    },
+    {
+      "camera": "CAM_10_Boardroom_B",
+      "type": "PERSP",
+      "position": [
+        12.5476,
+        1.5748,
+        -1.143
+      ],
+      "quaternion": [
+        -0.0,
+        -0.573593,
+        -0.0,
+        0.81914
+      ],
+      "viewport": [
+        1280,
+        720
+      ],
+      "drawCalls": 188,
+      "triangles": 1963918,
+      "textureCount": 64,
+      "geometryCount": 112,
+      "exposure": 1,
+      "file": "shots/before_CAM_10_Boardroom_B.png"
+    },
+    {
+      "camera": "CAM_11_Merchandising_A",
+      "type": "PERSP",
+      "position": [
+        9.6012,
+        1.6256,
+        -11.176
+      ],
+      "quaternion": [
+        -0.0,
+        -0.390916,
+        -0.0,
+        0.920426
+      ],
+      "viewport": [
+        1280,
+        720
+      ],
+      "drawCalls": 174,
+      "triangles": 1933990,
+      "textureCount": 64,
+      "geometryCount": 112,
+      "exposure": 1,
+      "file": "shots/before_CAM_11_Merchandising_A.png"
+    },
+    {
+      "camera": "CAM_12_Merchandising_B",
+      "type": "PERSP",
+      "position": [
+        21.7424,
+        1.6256,
+        -21.1328
+      ],
+      "quaternion": [
+        -0.0,
+        0.901049,
+        -0.0,
+        0.433718
+      ],
+      "viewport": [
+        1280,
+        720
+      ],
+      "drawCalls": 182,
+      "triangles": 1929886,
+      "textureCount": 64,
+      "geometryCount": 112,
+      "exposure": 1,
+      "file": "shots/before_CAM_12_Merchandising_B.png"
+    },
+    {
+      "camera": "CAM_13_Design_Studio_A",
+      "type": "PERSP",
+      "position": [
+        28.2448,
+        1.5748,
+        -13.6652
+      ],
+      "quaternion": [
+        -0.0,
+        -0.226515,
+        -0.0,
+        0.974008
+      ],
+      "viewport": [
+        1280,
+        720
+      ],
+      "drawCalls": 150,
+      "triangles": 1675206,
+      "textureCount": 64,
+      "geometryCount": 112,
+      "exposure": 1,
+      "file": "shots/before_CAM_13_Design_Studio_A.png"
+    },
+    {
+      "camera": "CAM_14_Design_Studio_B",
+      "type": "PERSP",
+      "position": [
+        33.4772,
+        1.5748,
+        -30.48
+      ],
+      "quaternion": [
+        -0.0,
+        0.971522,
+        -0.0,
+        0.23695
+      ],
+      "viewport": [
+        1280,
+        720
+      ],
+      "drawCalls": 198,
+      "triangles": 1999606,
+      "textureCount": 64,
+      "geometryCount": 112,
+      "exposure": 1,
+      "file": "shots/before_CAM_14_Design_Studio_B.png"
+    },
+    {
+      "camera": "CAM_15_CAD_Room",
+      "type": "PERSP",
+      "position": [
+        26.2382,
+        1.524,
+        -6.223
+      ],
+      "quaternion": [
+        -0.0,
+        0.947775,
+        -0.0,
+        0.318939
+      ],
+      "viewport": [
+        1280,
+        720
+      ],
+      "drawCalls": 166,
+      "triangles": 1816996,
+      "textureCount": 64,
+      "geometryCount": 112,
+      "exposure": 1,
+      "file": "shots/before_CAM_15_CAD_Room.png"
+    },
+    {
+      "camera": "CAM_16_Commercial_Accounts",
+      "type": "PERSP",
+      "position": [
+        8.9408,
+        1.5748,
+        -10.287
+      ],
+      "quaternion": [
+        -0.0,
+        0.396486,
+        -0.0,
+        0.918041
+      ],
+      "viewport": [
+        1280,
+        720
+      ],
+      "drawCalls": 154,
+      "triangles": 1847774,
+      "textureCount": 64,
+      "geometryCount": 112,
+      "exposure": 1,
+      "file": "shots/before_CAM_16_Commercial_Accounts.png"
+    },
+    {
+      "camera": "CAM_17_Executive_Reception",
+      "type": "PERSP",
+      "position": [
+        17.6784,
+        1.524,
+        0.2032
+      ],
+      "quaternion": [
+        -0.0,
+        0.963814,
+        -0.0,
+        0.266574
+      ],
+      "viewport": [
+        1280,
+        720
+      ],
+      "drawCalls": 128,
+      "triangles": 1657596,
+      "textureCount": 64,
+      "geometryCount": 112,
+      "exposure": 1,
+      "file": "shots/before_CAM_17_Executive_Reception.png"
+    },
+    {
+      "camera": "CAM_18_Director",
+      "type": "PERSP",
+      "position": [
+        17.9832,
+        1.4732,
+        1.6256
+      ],
+      "quaternion": [
+        -0.0,
+        -0.947898,
+        -0.0,
+        0.318575
+      ],
+      "viewport": [
+        1280,
+        720
+      ],
+      "drawCalls": 122,
+      "triangles": 1605460,
+      "textureCount": 64,
+      "geometryCount": 112,
+      "exposure": 1,
+      "file": "shots/before_CAM_18_Director.png"
+    },
+    {
+      "camera": "CAM_19_HR_Admin",
+      "type": "PERSP",
+      "position": [
+        9.0424,
+        1.524,
+        -0.4064
+      ],
+      "quaternion": [
+        -0.0,
+        0.360713,
+        -0.0,
+        0.932677
+      ],
+      "viewport": [
+        1280,
+        720
+      ],
+      "drawCalls": 166,
+      "triangles": 1857558,
+      "textureCount": 64,
+      "geometryCount": 112,
+      "exposure": 1,
+      "file": "shots/before_CAM_19_HR_Admin.png"
+    },
+    {
+      "camera": "CAM_20_Staff_Cafe",
+      "type": "PERSP",
+      "position": [
+        27.0764,
+        1.5748,
+        -23.1648
+      ],
+      "quaternion": [
+        -0.0,
+        0.263589,
+        -0.0,
+        0.964635
+      ],
+      "viewport": [
+        1280,
+        720
+      ],
+      "drawCalls": 146,
+      "triangles": 1673454,
+      "textureCount": 64,
+      "geometryCount": 112,
+      "exposure": 1,
+      "file": "shots/before_CAM_20_Staff_Cafe.png"
+    },
+    {
+      "camera": "CAM_21_Lounge_Training",
+      "type": "PERSP",
+      "position": [
+        27.0764,
+        1.5748,
+        -31.9532
+      ],
+      "quaternion": [
+        -0.0,
+        0.291466,
+        -0.0,
+        0.956581
+      ],
+      "viewport": [
+        1280,
+        720
+      ],
+      "drawCalls": 122,
+      "triangles": 1532774,
+      "textureCount": 64,
+      "geometryCount": 112,
+      "exposure": 1,
+      "file": "shots/before_CAM_21_Lounge_Training.png"
+    },
+    {
+      "camera": "CAM_22_Prayer_Male",
+      "type": "PERSP",
+      "position": [
+        29.5148,
+        1.524,
+        -32.8168
+      ],
+      "quaternion": [
+        -0.0,
+        -0.410374,
+        -0.0,
+        0.911917
+      ],
+      "viewport": [
+        1280,
+        720
+      ],
+      "drawCalls": 104,
+      "triangles": 1374544,
+      "textureCount": 64,
+      "geometryCount": 112,
+      "exposure": 1,
+      "file": "shots/before_CAM_22_Prayer_Male.png"
+    },
+    {
+      "camera": "CAM_23_Sample_Room",
+      "type": "PERSP",
+      "position": [
+        26.1874,
+        1.524,
+        -16.383
+      ],
+      "quaternion": [
+        -0.0,
+        0.368833,
+        -0.0,
+        0.929496
+      ],
+      "viewport": [
+        1280,
+        720
+      ],
+      "drawCalls": 158,
+      "triangles": 1723806,
+      "textureCount": 64,
+      "geometryCount": 112,
+      "exposure": 1,
+      "file": "shots/before_CAM_23_Sample_Room.png"
+    },
+    {
+      "camera": "CAM_24_3D_Printing_Lab",
+      "type": "PERSP",
+      "position": [
+        26.1874,
+        1.524,
+        -12.4968
+      ],
+      "quaternion": [
+        -0.0,
+        0.466321,
+        -0.0,
+        0.884615
+      ],
+      "viewport": [
+        1280,
+        720
+      ],
+      "drawCalls": 174,
+      "triangles": 1932790,
+      "textureCount": 64,
+      "geometryCount": 112,
+      "exposure": 1,
+      "file": "shots/before_CAM_24_3D_Printing_Lab.png"
+    },
+    {
+      "camera": "CAM_25_Fabric_Library",
+      "type": "PERSP",
+      "position": [
+        26.162,
+        1.524,
+        -10.8712
+      ],
+      "quaternion": [
+        -0.0,
+        0.925968,
+        -0.0,
+        0.377602
+      ],
+      "viewport": [
+        1280,
+        720
+      ],
+      "drawCalls": 182,
+      "triangles": 1903130,
+      "textureCount": 64,
+      "geometryCount": 112,
+      "exposure": 1,
+      "file": "shots/before_CAM_25_Fabric_Library.png"
+    },
+    {
+      "camera": "CAM_26_Guest_Workspace",
+      "type": "PERSP",
+      "position": [
+        2.4892,
+        1.524,
+        -0.4064
+      ],
+      "quaternion": [
+        -0.0,
+        0.40631,
+        -0.0,
+        0.913736
+      ],
+      "viewport": [
+        1280,
+        720
+      ],
+      "drawCalls": 126,
+      "triangles": 1667472,
+      "textureCount": 64,
+      "geometryCount": 112,
+      "exposure": 1,
+      "file": "shots/before_CAM_26_Guest_Workspace.png"
+    },
+    {
+      "camera": "CAM_27_Audit_Room",
+      "type": "PERSP",
+      "position": [
+        6.1976,
+        1.4732,
+        -19.05
+      ],
+      "quaternion": [
+        -0.0,
+        0.384387,
+        -0.0,
+        0.923172
+      ],
+      "viewport": [
+        1280,
+        720
+      ],
+      "drawCalls": 118,
+      "triangles": 1517678,
+      "textureCount": 64,
+      "geometryCount": 112,
+      "exposure": 1,
+      "file": "shots/before_CAM_27_Audit_Room.png"
+    },
+    {
+      "camera": "CAM_28_Washroom_Male",
+      "type": "PERSP",
+      "position": [
+        0.9144,
+        1.524,
+        -6.0452
+      ],
+      "quaternion": [
+        -0.0,
+        0.199894,
+        -0.0,
+        0.979818
+      ],
+      "viewport": [
+        1280,
+        720
+      ],
+      "drawCalls": 128,
+      "triangles": 1624814,
+      "textureCount": 64,
+      "geometryCount": 112,
+      "exposure": 1,
+      "file": "shots/before_CAM_28_Washroom_Male.png"
+    },
+    {
+      "camera": "CAM_29_Washroom_Female",
+      "type": "PERSP",
+      "position": [
+        0.9144,
+        1.524,
+        -13.335
+      ],
+      "quaternion": [
+        -0.0,
+        0.226403,
+        -0.0,
+        0.974034
+      ],
+      "viewport": [
+        1280,
+        720
+      ],
+      "drawCalls": 118,
+      "triangles": 1511446,
+      "textureCount": 64,
+      "geometryCount": 112,
+      "exposure": 1,
+      "file": "shots/before_CAM_29_Washroom_Female.png"
+    },
+    {
+      "camera": "CAM_30_Prayer_Female",
+      "type": "PERSP",
+      "position": [
+        0.8636,
+        1.4732,
+        -19.5072
+      ],
+      "quaternion": [
+        -0.0,
+        0.302349,
+        -0.0,
+        0.953197
+      ],
+      "viewport": [
+        1280,
+        720
+      ],
+      "drawCalls": 108,
+      "triangles": 1456168,
+      "textureCount": 64,
+      "geometryCount": 112,
+      "exposure": 1,
+      "file": "shots/before_CAM_30_Prayer_Female.png"
+    },
+    {
+      "camera": "CAM_31_Executive_Corridor",
+      "type": "PERSP",
+      "position": [
+        17.9324,
+        1.524,
+        0.7112
+      ],
+      "quaternion": [
+        -0.0,
+        -0.707107,
+        -0.0,
+        0.707107
+      ],
+      "viewport": [
+        1280,
+        720
+      ],
+      "drawCalls": 152,
+      "triangles": 1776236,
+      "textureCount": 64,
+      "geometryCount": 112,
+      "exposure": 1,
+      "file": "shots/before_CAM_31_Executive_Corridor.png"
+    },
+    {
+      "camera": "CAM_32_Design_Corridor",
+      "type": "PERSP",
+      "position": [
+        27.178,
+        1.5748,
+        -14.224
+      ],
+      "quaternion": [
+        -0.0,
+        -0.0,
+        -0.0,
+        1
+      ],
+      "viewport": [
+        1280,
+        720
+      ],
+      "drawCalls": 154,
+      "triangles": 1713030,
+      "textureCount": 64,
+      "geometryCount": 112,
+      "exposure": 1,
+      "file": "shots/before_CAM_32_Design_Corridor.png"
+    },
+    {
+      "camera": "CAM_33_Wudu_Male",
+      "type": "PERSP",
+      "position": [
+        29.464,
+        1.524,
+        -30.988
+      ],
+      "quaternion": [
+        -0.0,
+        -0.638636,
+        -0.0,
+        0.769509
+      ],
+      "viewport": [
+        1280,
+        720
+      ],
+      "drawCalls": 116,
+      "triangles": 1434454,
+      "textureCount": 64,
+      "geometryCount": 112,
+      "exposure": 1,
+      "file": "shots/before_CAM_33_Wudu_Male.png"
+    },
+    {
+      "camera": "CAM_ISO_Design_Wing",
+      "type": "ORTHO",
+      "position": [
+        77.24039,
+        64.27876,
+        -78.48241
+      ],
+      "quaternion": [
+        -0.116978,
+        0.883022,
+        0.321394,
+        0.321394
+      ],
+      "viewport": [
+        1280,
+        720
+      ],
+      "drawCalls": 146,
+      "triangles": 1724230,
+      "textureCount": 65,
+      "geometryCount": 112,
+      "exposure": 0.95,
+      "file": "shots/before_CAM_ISO_Design_Wing.png"
+    },
+    {
+      "camera": "CAM_ISO_Front_Zone",
+      "type": "ORTHO",
+      "position": [
+        54.39417,
+        64.27876,
+        62.76425
+      ],
+      "quaternion": [
+        -0.328771,
+        0.259014,
+        0.094274,
+        0.903291
+      ],
+      "viewport": [
+        1280,
+        720
+      ],
+      "drawCalls": 154,
+      "triangles": 1774398,
+      "textureCount": 66,
+      "geometryCount": 112,
+      "exposure": 0.95,
+      "file": "shots/before_CAM_ISO_Front_Zone.png"
+    },
+    {
+      "camera": "CAM_ISO_SE",
+      "type": "ORTHO",
+      "position": [
+        72.01366,
+        81.01981,
+        54.09505
+      ],
+      "quaternion": [
+        -0.346534,
+        0.302914,
+        0.119321,
+        0.879727
+      ],
+      "viewport": [
+        1280,
+        720
+      ],
+      "drawCalls": 164,
+      "triangles": 1775686,
+      "textureCount": 67,
+      "geometryCount": 112,
+      "exposure": 0.95,
+      "file": "shots/before_CAM_ISO_SE.png"
+    },
+    {
+      "camera": "CAM_ISO_SW",
+      "type": "ORTHO",
+      "position": [
+        -35.36026,
+        83.58981,
+        54.47505
+      ],
+      "quaternion": [
+        -0.346534,
+        -0.302914,
+        -0.119321,
+        0.879727
+      ],
+      "viewport": [
+        960,
+        720
+      ],
+      "drawCalls": 164,
+      "triangles": 1775686,
+      "textureCount": 68,
+      "geometryCount": 112,
+      "exposure": 0.95,
+      "file": "shots/before_CAM_ISO_SW.png"
+    },
+    {
+      "camera": "CAM_TOP_Plan",
+      "type": "ORTHO",
+      "position": [
+        16.1417,
+        60,
+        -16.5227
+      ],
+      "quaternion": [
+        -0.707107,
+        -0.0,
+        -0.0,
+        0.707107
+      ],
+      "viewport": [
+        553.8461538461539,
+        720
+      ],
+      "drawCalls": 164,
+      "triangles": 1775686,
+      "textureCount": 69,
+      "geometryCount": 112,
+      "exposure": 0.95,
+      "file": "shots/before_CAM_TOP_Plan.png"
+    }
+  ],
+  "errors": [],
+  "responses": [
+    {
+      "url": "https://stage2-office-virtual-tour.imranahmedjh611.workers.dev/?welcome=0",
+      "status": 200,
+      "bytes": 63353,
+      "sha256": "ff75beb54b3134b3e1eee7d29d0f6016ed1bf5895777c715f3815ebe3dcd2675",
+      "cached_verified_production_response": true
+    },
+    {
+      "url": "https://stage2-office-virtual-tour.imranahmedjh611.workers.dev/app.js?v=6be2c0f4a899",
+      "status": 200,
+      "bytes": 747798,
+      "sha256": "c6af8144c56302bf92a975179d847b89c6e4eac63068ecc16a96c7c0c02e9bc4",
+      "cached_verified_production_response": true
+    },
+    {
+      "url": "https://stage2-office-virtual-tour.imranahmedjh611.workers.dev/model_web.glb",
+      "status": 200,
+      "bytes": 19452524,
+      "sha256": "faaf09d1a61d2136a96a8b2eb4146be1f29135483dd7f94e67e6f3a54596d20a",
+      "cached_verified_production_response": true
+    }
+  ],
+  "not_verified": [
+    "Real MacBook GPU",
+    "Chrome macOS",
+    "Firefox macOS",
+    "Safari",
+    "60fps target"
+  ],
+  "note": "Five orthographic captures use exact metadata projections rather than the current UI perspective stand-ins.",
+  "load_seconds": 2.951,
+  "browser": "154.0.8037.57",
+  "counts": {
+    "meshes": 100,
+    "drawCallsMerged": {
+      "before": 1880,
+      "after": 100
+    },
+    "rooms": 34,
+    "cameras": 38,
+    "stops": 16,
+    "model": "web",
+    "bakedLight": true,
+    "shadows": false
+  },
+  "gpu": {
+    "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+    "vendor": "Google Inc. (Google)",
+    "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)"
+  },
+  "seconds": 122.469
+}

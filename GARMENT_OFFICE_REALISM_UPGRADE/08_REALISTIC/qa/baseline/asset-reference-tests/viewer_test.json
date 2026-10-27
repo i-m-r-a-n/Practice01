@@ -1,0 +1,264 @@
+{
+ "viewport": [
+  1280,
+  720
+ ],
+ "errors": [
+  "Failed to load resource: the server responded with a status of 404 (File not found)"
+ ],
+ "console": [
+  "error: Failed to load resource: the server responded with a status of 404 (File not found)"
+ ],
+ "checks": [
+  {
+   "name": "model loaded, loading screen gone",
+   "ok": true,
+   "detail": {
+    "seconds": 4.875,
+    "counts": {
+     "quality": "balanced",
+     "meshes": 100,
+     "drawCallsMerged": {
+      "before": 1880,
+      "after": 100
+     },
+     "rooms": 34,
+     "cameras": 38,
+     "stops": 16,
+     "model": "web",
+     "bakedLight": true,
+     "shadows": false,
+     "ambientOcclusion": true
+    }
+   }
+  },
+  {
+   "name": "help card shown on the first visit",
+   "ok": true
+  },
+  {
+   "name": "help card closes",
+   "ok": true
+  },
+  {
+   "name": "room list: 34 rooms in 8 groups",
+   "ok": true
+  },
+  {
+   "name": "room selection flies to the boardroom render camera",
+   "ok": true,
+   "detail": {
+    "mode": "rooms",
+    "room": "Z08",
+    "atCam": "CAM_09_Boardroom_A",
+    "flying": false,
+    "flightT": null,
+    "fps": 1,
+    "overhead": true,
+    "tour": null,
+    "aoFrames": 1,
+    "pos": [
+     21.844,
+     1.575,
+     -5.08
+    ]
+   }
+  },
+  {
+   "name": "room: drag looks around without moving or leaving the room",
+   "ok": true,
+   "detail": {
+    "mode": "rooms",
+    "room": "Z08",
+    "atCam": null,
+    "flying": false,
+    "flightT": null,
+    "fps": 0.988924050632843,
+    "overhead": true,
+    "tour": null,
+    "aoFrames": 2,
+    "pos": [
+     21.844,
+     1.575,
+     -5.08
+    ]
+   }
+  },
+  {
+   "name": "photoreal render shown for the same camera",
+   "ok": true
+  },
+  {
+   "name": "ceilings on in overview",
+   "ok": true
+  },
+  {
+   "name": "ceilings off again",
+   "ok": true
+  },
+  {
+   "name": "walk: W moves forward at eye height",
+   "ok": true,
+   "detail": {
+    "p0": [
+     6.248,
+     1.626,
+     5.74
+    ],
+    "p1": [
+     6.101,
+     1.626,
+     4.348
+    ]
+   }
+  },
+  {
+   "name": "walk: collision stops at walls / furniture (eye point never inside an obstacle)",
+   "ok": true,
+   "detail": {
+    "p2": [
+     5.221,
+     1.626,
+     3.539
+    ]
+   }
+  },
+  {
+   "name": "Esc leaves walk mode",
+   "ok": true
+  },
+  {
+   "name": "tour starts at stop 1",
+   "ok": true,
+   "detail": {
+    "mode": "tour",
+    "room": null,
+    "atCam": null,
+    "flying": true,
+    "flightT": 0,
+    "fps": 0,
+    "overhead": false,
+    "tour": {
+     "i": 0,
+     "phase": "fly",
+     "playing": true,
+     "sub": 0,
+     "done": false
+    },
+    "photo": null,
+    "aoFrames": 13,
+    "pos": [
+     64.659,
+     58.971,
+     41.298
+    ]
+   }
+  },
+  {
+   "name": "pause holds the tour",
+   "ok": true,
+   "detail": {
+    "i": 0,
+    "phase": "hold",
+    "playing": false,
+    "sub": 0,
+    "done": false
+   }
+  },
+  {
+   "name": "next while paused: flies to stop 2, entrance lobby, at its render camera",
+   "ok": true,
+   "detail": {
+    "mode": "tour",
+    "room": "Z01",
+    "atCam": "CAM_03_Entrance_Lobby",
+    "flying": false,
+    "flightT": null,
+    "fps": 1,
+    "overhead": true,
+    "tour": {
+     "i": 1,
+     "phase": "hold",
+     "playing": false,
+     "sub": 0,
+     "done": false
+    },
+    "photo": null,
+    "aoFrames": 14,
+    "pos": [
+     6.248,
+     1.626,
+     5.74
+    ]
+   }
+  },
+  {
+   "name": "tour card shows the stop; no separate room card on top of it",
+   "ok": true
+  },
+  {
+   "name": "resume",
+   "ok": true
+  },
+  {
+   "name": "photoreal stop: the render dissolves in at the stop",
+   "ok": true
+  },
+  {
+   "name": "next x2 (from the stop shown): two stops further",
+   "ok": true,
+   "detail": {
+    "from": {
+     "i": 1,
+     "phase": "hold",
+     "playing": false,
+     "sub": 0,
+     "done": false
+    },
+    "to": {
+     "i": 3,
+     "phase": "hold",
+     "playing": false,
+     "sub": 0,
+     "done": false
+    },
+    "atCam": "CAM_04_Experience_Centre_A"
+   }
+  },
+  {
+   "name": "back: one stop earlier",
+   "ok": true
+  },
+  {
+   "name": "last stop (16) final reveal",
+   "ok": true
+  },
+  {
+   "name": "tour ends on the final view with Play again (no jump away)",
+   "ok": true
+  },
+  {
+   "name": "stop ends the tour",
+   "ok": true
+  },
+  {
+   "name": "search filters the room list",
+   "ok": true,
+   "detail": [
+    "North corridor270 sft",
+    "Prayer room (male)186 sft",
+    "Wudu (male)75 sft",
+    "Prayer room (female)87 sft",
+    "Wudu (female)27 sft"
+   ]
+  },
+  {
+   "name": "MacBook Air size (1470 x 956): no horizontal overflow",
+   "ok": true
+  }
+ ],
+ "page": "/GARMENT_OFFICE_WALKTHROUGH_FINAL/03_INTERACTIVE_3D/index.html",
+ "seconds": 310.883,
+ "passed": 25,
+ "total": 25
+}

@@ -1,0 +1,765 @@
+{
+  "description": "Same camera comparisons. RGB MAE is a coarse tonal diagnostic, not a photorealism score. Orthographic images use exact metadata projections in a QA-only production scene harness.",
+  "cameras": [
+    {
+      "camera": "CAM_01_Reception_A",
+      "room": "Reception",
+      "type": "PERSP",
+      "reference": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_01_Reception_A.jpg",
+      "before": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/qa/baseline/shots/before_CAM_01_Reception_A.png",
+      "rgb_mae_64x36": 29.114,
+      "reference_mean_rgb": [
+        152.74,
+        134.68,
+        119.97
+      ],
+      "before_mean_rgb": [
+        163.08,
+        152.05,
+        141.62
+      ],
+      "sheet": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/qa/baseline/comparisons/CAM_01_Reception_A.jpg",
+      "sha256": "5ab859b2a5d10e9e7d4e7d35678e9f338400b8c1aba9c3f2e7e36925887c3319"
+    },
+    {
+      "camera": "CAM_02_Reception_B",
+      "room": "Reception",
+      "type": "PERSP",
+      "reference": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_02_Reception_B.jpg",
+      "before": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/qa/baseline/shots/before_CAM_02_Reception_B.png",
+      "rgb_mae_64x36": 25.009,
+      "reference_mean_rgb": [
+        153.74,
+        133.78,
+        117.74
+      ],
+      "before_mean_rgb": [
+        152.1,
+        140.27,
+        128.93
+      ],
+      "sheet": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/qa/baseline/comparisons/CAM_02_Reception_B.jpg",
+      "sha256": "d2feac9ab3756993178cbcb475fa83d9e5fa1b2e99bab03ee668ad2b9ae315d6"
+    },
+    {
+      "camera": "CAM_03_Entrance_Lobby",
+      "room": "Entrance lobby",
+      "type": "PERSP",
+      "reference": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_03_Entrance_Lobby.jpg",
+      "before": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/qa/baseline/shots/before_CAM_03_Entrance_Lobby.png",
+      "rgb_mae_64x36": 24.104,
+      "reference_mean_rgb": [
+        169.67,
+        159.19,
+        148.81
+      ],
+      "before_mean_rgb": [
+        174.11,
+        166.1,
+        157.1
+      ],
+      "sheet": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/qa/baseline/comparisons/CAM_03_Entrance_Lobby.jpg",
+      "sha256": "f769481d85b8eba6ccc7ec9ee1533c2f6379cc7abd6530db932eaf831a0f172c"
+    },
+    {
+      "camera": "CAM_04_Experience_Centre_A",
+      "room": "Experience centre",
+      "type": "PERSP",
+      "reference": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_04_Experience_Centre_A.jpg",
+      "before": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/qa/baseline/shots/before_CAM_04_Experience_Centre_A.png",
+      "rgb_mae_64x36": 71.153,
+      "reference_mean_rgb": [
+        85.3,
+        69.64,
+        54.73
+      ],
+      "before_mean_rgb": [
+        143.41,
+        140.04,
+        131.74
+      ],
+      "sheet": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/qa/baseline/comparisons/CAM_04_Experience_Centre_A.jpg",
+      "sha256": "b5cec15ae4f2a369266de9eaa4f01bedaa66cab7612e807b64cc3ac36b48dc8d"
+    },
+    {
+      "camera": "CAM_05_Experience_Centre_B",
+      "room": "Experience centre",
+      "type": "PERSP",
+      "reference": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_05_Experience_Centre_B.jpg",
+      "before": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/qa/baseline/shots/before_CAM_05_Experience_Centre_B.png",
+      "rgb_mae_64x36": 35.713,
+      "reference_mean_rgb": [
+        126.86,
+        111.83,
+        96.37
+      ],
+      "before_mean_rgb": [
+        148.3,
+        142.47,
+        133.81
+      ],
+      "sheet": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/qa/baseline/comparisons/CAM_05_Experience_Centre_B.jpg",
+      "sha256": "12d397fa985aaaec36a3eb4b47e0a0aea9f3a737f5e8e87beeda1b116a170a3c"
+    },
+    {
+      "camera": "CAM_06_Experience_Centre_Detail",
+      "room": "Experience centre",
+      "type": "PERSP",
+      "reference": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_06_Experience_Centre_Detail.jpg",
+      "before": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/qa/baseline/shots/before_CAM_06_Experience_Centre_Detail.png",
+      "rgb_mae_64x36": 58.847,
+      "reference_mean_rgb": [
+        67.19,
+        56.2,
+        42.46
+      ],
+      "before_mean_rgb": [
+        115.71,
+        118.53,
+        106.18
+      ],
+      "sheet": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/qa/baseline/comparisons/CAM_06_Experience_Centre_Detail.jpg",
+      "sha256": "64c289af6d2e0eea0c0090e09d56c3f9ed40ecd1894894ba3ebf7c79962ee49a"
+    },
+    {
+      "camera": "CAM_07_MD_Office_A",
+      "room": "MD office",
+      "type": "PERSP",
+      "reference": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_07_MD_Office_A.jpg",
+      "before": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/qa/baseline/shots/before_CAM_07_MD_Office_A.png",
+      "rgb_mae_64x36": 31.912,
+      "reference_mean_rgb": [
+        151.12,
+        132.0,
+        118.56
+      ],
+      "before_mean_rgb": [
+        164.96,
+        152.51,
+        142.73
+      ],
+      "sheet": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/qa/baseline/comparisons/CAM_07_MD_Office_A.jpg",
+      "sha256": "e82599b0007465150ac9293dd40feef665f6da90b0e2a640ee2fe2bb65feb51e"
+    },
+    {
+      "camera": "CAM_08_MD_Office_B",
+      "room": "MD office",
+      "type": "PERSP",
+      "reference": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_08_MD_Office_B.jpg",
+      "before": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/qa/baseline/shots/before_CAM_08_MD_Office_B.png",
+      "rgb_mae_64x36": 37.643,
+      "reference_mean_rgb": [
+        123.23,
+        104.15,
+        90.26
+      ],
+      "before_mean_rgb": [
+        132.84,
+        121.62,
+        111.54
+      ],
+      "sheet": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/qa/baseline/comparisons/CAM_08_MD_Office_B.jpg",
+      "sha256": "746acd7d6609f069e7077909141b5cd7a131a348a4bf440c93cb3faa02fce4a7"
+    },
+    {
+      "camera": "CAM_09_Boardroom_A",
+      "room": "Boardroom",
+      "type": "PERSP",
+      "reference": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_09_Boardroom_A.jpg",
+      "before": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/qa/baseline/shots/before_CAM_09_Boardroom_A.png",
+      "rgb_mae_64x36": 38.072,
+      "reference_mean_rgb": [
+        105.19,
+        91.75,
+        75.71
+      ],
+      "before_mean_rgb": [
+        123.39,
+        119.85,
+        109.22
+      ],
+      "sheet": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/qa/baseline/comparisons/CAM_09_Boardroom_A.jpg",
+      "sha256": "db214a8f6d9db8046b4ae4a3b594e357c7a8aa32ec8b8a89fbe1228998402ddb"
+    },
+    {
+      "camera": "CAM_10_Boardroom_B",
+      "room": "Boardroom",
+      "type": "PERSP",
+      "reference": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_10_Boardroom_B.jpg",
+      "before": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/qa/baseline/shots/before_CAM_10_Boardroom_B.png",
+      "rgb_mae_64x36": 36.601,
+      "reference_mean_rgb": [
+        127.04,
+        114.49,
+        99.69
+      ],
+      "before_mean_rgb": [
+        145.41,
+        141.11,
+        130.65
+      ],
+      "sheet": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/qa/baseline/comparisons/CAM_10_Boardroom_B.jpg",
+      "sha256": "2797e6a0ab7c88cd85712d74b67608acd6e4315f98f21b82b26dc2f5c7210110"
+    },
+    {
+      "camera": "CAM_11_Merchandising_A",
+      "room": "Merchandising (open office)",
+      "type": "PERSP",
+      "reference": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_11_Merchandising_A.jpg",
+      "before": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/qa/baseline/shots/before_CAM_11_Merchandising_A.png",
+      "rgb_mae_64x36": 25.042,
+      "reference_mean_rgb": [
+        135.55,
+        128.84,
+        121.54
+      ],
+      "before_mean_rgb": [
+        139.01,
+        136.86,
+        132.16
+      ],
+      "sheet": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/qa/baseline/comparisons/CAM_11_Merchandising_A.jpg",
+      "sha256": "feb0e5553b3f471cfdc51a6554395bae4353fe6a1fc027348a209ab23555aa08"
+    },
+    {
+      "camera": "CAM_12_Merchandising_B",
+      "room": "Merchandising (open office)",
+      "type": "PERSP",
+      "reference": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_12_Merchandising_B.jpg",
+      "before": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/qa/baseline/shots/before_CAM_12_Merchandising_B.png",
+      "rgb_mae_64x36": 37.156,
+      "reference_mean_rgb": [
+        103.42,
+        96.71,
+        89.71
+      ],
+      "before_mean_rgb": [
+        121.6,
+        120.67,
+        117.02
+      ],
+      "sheet": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/qa/baseline/comparisons/CAM_12_Merchandising_B.jpg",
+      "sha256": "f66d348694a6c96baa10446ad3dcbaa5bb63a802614f6a0d017d232b6f83ffd0"
+    },
+    {
+      "camera": "CAM_13_Design_Studio_A",
+      "room": "Global Design Studio",
+      "type": "PERSP",
+      "reference": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_13_Design_Studio_A.jpg",
+      "before": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/qa/baseline/shots/before_CAM_13_Design_Studio_A.png",
+      "rgb_mae_64x36": 34.974,
+      "reference_mean_rgb": [
+        147.91,
+        133.19,
+        121.01
+      ],
+      "before_mean_rgb": [
+        159.32,
+        151.33,
+        143.59
+      ],
+      "sheet": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/qa/baseline/comparisons/CAM_13_Design_Studio_A.jpg",
+      "sha256": "ae0c337bebf7c60c0a58c1812b1e0ff42927193592cb1c0cfa69492530a1da9c"
+    },
+    {
+      "camera": "CAM_14_Design_Studio_B",
+      "room": "Global Design Studio",
+      "type": "PERSP",
+      "reference": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_14_Design_Studio_B.jpg",
+      "before": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/qa/baseline/shots/before_CAM_14_Design_Studio_B.png",
+      "rgb_mae_64x36": 36.388,
+      "reference_mean_rgb": [
+        170.98,
+        162.41,
+        154.81
+      ],
+      "before_mean_rgb": [
+        151.49,
+        145.44,
+        138.92
+      ],
+      "sheet": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/qa/baseline/comparisons/CAM_14_Design_Studio_B.jpg",
+      "sha256": "898f2246af1fcb3636f418427a7759412b5581e9ad1820d217f97393634a28c5"
+    },
+    {
+      "camera": "CAM_15_CAD_Room",
+      "room": "CAD / technical design",
+      "type": "PERSP",
+      "reference": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_15_CAD_Room.jpg",
+      "before": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/qa/baseline/shots/before_CAM_15_CAD_Room.png",
+      "rgb_mae_64x36": 24.557,
+      "reference_mean_rgb": [
+        158.41,
+        154.92,
+        149.08
+      ],
+      "before_mean_rgb": [
+        159.87,
+        157.29,
+        152.89
+      ],
+      "sheet": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/qa/baseline/comparisons/CAM_15_CAD_Room.jpg",
+      "sha256": "0bc466542abbd18702518308c011b30530f7f1be2712afe4d6cfb273f8bdc127"
+    },
+    {
+      "camera": "CAM_16_Commercial_Accounts",
+      "room": "Commercial & accounts",
+      "type": "PERSP",
+      "reference": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_16_Commercial_Accounts.jpg",
+      "before": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/qa/baseline/shots/before_CAM_16_Commercial_Accounts.png",
+      "rgb_mae_64x36": 32.079,
+      "reference_mean_rgb": [
+        128.64,
+        120.46,
+        113.11
+      ],
+      "before_mean_rgb": [
+        147.64,
+        143.96,
+        140.23
+      ],
+      "sheet": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/qa/baseline/comparisons/CAM_16_Commercial_Accounts.jpg",
+      "sha256": "8164e744f2ba2b9bd297447c9d41ceb14f1af7c7b529f68e10060a391c2b6560"
+    },
+    {
+      "camera": "CAM_17_Executive_Reception",
+      "room": "Executive reception (PA)",
+      "type": "PERSP",
+      "reference": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_17_Executive_Reception.jpg",
+      "before": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/qa/baseline/shots/before_CAM_17_Executive_Reception.png",
+      "rgb_mae_64x36": 29.792,
+      "reference_mean_rgb": [
+        136.47,
+        119.1,
+        106.42
+      ],
+      "before_mean_rgb": [
+        153.5,
+        143.86,
+        136.01
+      ],
+      "sheet": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/qa/baseline/comparisons/CAM_17_Executive_Reception.jpg",
+      "sha256": "8e3d3fd37f1702aeb765d9c89925f7d2fa7b8c78ba0730df7a9c0570b318709a"
+    },
+    {
+      "camera": "CAM_18_Director",
+      "room": "Director",
+      "type": "PERSP",
+      "reference": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_18_Director.jpg",
+      "before": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/qa/baseline/shots/before_CAM_18_Director.png",
+      "rgb_mae_64x36": 32.254,
+      "reference_mean_rgb": [
+        135.28,
+        118.64,
+        105.87
+      ],
+      "before_mean_rgb": [
+        151.6,
+        142.27,
+        133.66
+      ],
+      "sheet": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/qa/baseline/comparisons/CAM_18_Director.jpg",
+      "sha256": "e6269d422e26002608443e833a7ddf0e9b53284025bd8281e20adc696ba913f8"
+    },
+    {
+      "camera": "CAM_19_HR_Admin",
+      "room": "HR & admin",
+      "type": "PERSP",
+      "reference": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_19_HR_Admin.jpg",
+      "before": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/qa/baseline/shots/before_CAM_19_HR_Admin.png",
+      "rgb_mae_64x36": 44.314,
+      "reference_mean_rgb": [
+        99.16,
+        90.92,
+        82.69
+      ],
+      "before_mean_rgb": [
+        134.91,
+        132.84,
+        128.62
+      ],
+      "sheet": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/qa/baseline/comparisons/CAM_19_HR_Admin.jpg",
+      "sha256": "50f9cad876667842ea219135e568a7c5787d2b645c3b9614aec47cbfc277bcf6"
+    },
+    {
+      "camera": "CAM_20_Staff_Cafe",
+      "room": "Staff cafe + pantry",
+      "type": "PERSP",
+      "reference": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_20_Staff_Cafe.jpg",
+      "before": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/qa/baseline/shots/before_CAM_20_Staff_Cafe.png",
+      "rgb_mae_64x36": 48.696,
+      "reference_mean_rgb": [
+        120.52,
+        103.07,
+        87.78
+      ],
+      "before_mean_rgb": [
+        148.51,
+        142.95,
+        134.56
+      ],
+      "sheet": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/qa/baseline/comparisons/CAM_20_Staff_Cafe.jpg",
+      "sha256": "b65bccc499658af8a67e12f58ed2966676a684f9929364c4969e72cbe9b92bd3"
+    },
+    {
+      "camera": "CAM_21_Lounge_Training",
+      "room": "Staff lounge / training",
+      "type": "PERSP",
+      "reference": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_21_Lounge_Training.jpg",
+      "before": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/qa/baseline/shots/before_CAM_21_Lounge_Training.png",
+      "rgb_mae_64x36": 26.408,
+      "reference_mean_rgb": [
+        161.95,
+        152.09,
+        140.79
+      ],
+      "before_mean_rgb": [
+        175.1,
+        168.86,
+        160.25
+      ],
+      "sheet": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/qa/baseline/comparisons/CAM_21_Lounge_Training.jpg",
+      "sha256": "a65537118fdbbc48a73f59c5d99da1f393f1e86a619dee89511048b8b685d2d9"
+    },
+    {
+      "camera": "CAM_22_Prayer_Male",
+      "room": "Prayer (male)",
+      "type": "PERSP",
+      "reference": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_22_Prayer_Male.jpg",
+      "before": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/qa/baseline/shots/before_CAM_22_Prayer_Male.png",
+      "rgb_mae_64x36": 45.148,
+      "reference_mean_rgb": [
+        111.41,
+        108.65,
+        89.61
+      ],
+      "before_mean_rgb": [
+        131.4,
+        138.01,
+        123.8
+      ],
+      "sheet": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/qa/baseline/comparisons/CAM_22_Prayer_Male.jpg",
+      "sha256": "f2154f154704f1c79c0bd29cd3986851e9f1d4d3ba4206b9d7c85c38aac6a287"
+    },
+    {
+      "camera": "CAM_23_Sample_Room",
+      "room": "Sample development",
+      "type": "PERSP",
+      "reference": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_23_Sample_Room.jpg",
+      "before": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/qa/baseline/shots/before_CAM_23_Sample_Room.png",
+      "rgb_mae_64x36": 21.808,
+      "reference_mean_rgb": [
+        168.26,
+        161.57,
+        154.92
+      ],
+      "before_mean_rgb": [
+        183.47,
+        178.51,
+        173.34
+      ],
+      "sheet": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/qa/baseline/comparisons/CAM_23_Sample_Room.jpg",
+      "sha256": "3e183611f1ebef7631c4143fb21e265302af639533b0e85190e68d852144edfb"
+    },
+    {
+      "camera": "CAM_24_3D_Printing_Lab",
+      "room": "3D printing lab",
+      "type": "PERSP",
+      "reference": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_24_3D_Printing_Lab.jpg",
+      "before": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/qa/baseline/shots/before_CAM_24_3D_Printing_Lab.png",
+      "rgb_mae_64x36": 23.191,
+      "reference_mean_rgb": [
+        168.38,
+        162.67,
+        156.93
+      ],
+      "before_mean_rgb": [
+        174.11,
+        170.32,
+        165.54
+      ],
+      "sheet": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/qa/baseline/comparisons/CAM_24_3D_Printing_Lab.jpg",
+      "sha256": "649cd8b0989d6d0fbdb514cf81c9317a080cc64c56cf25f748e62949bb6a043d"
+    },
+    {
+      "camera": "CAM_25_Fabric_Library",
+      "room": "Fabric, colour & trim library",
+      "type": "PERSP",
+      "reference": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_25_Fabric_Library.jpg",
+      "before": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/qa/baseline/shots/before_CAM_25_Fabric_Library.png",
+      "rgb_mae_64x36": 27.604,
+      "reference_mean_rgb": [
+        152.16,
+        141.3,
+        131.61
+      ],
+      "before_mean_rgb": [
+        165.56,
+        159.2,
+        152.78
+      ],
+      "sheet": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/qa/baseline/comparisons/CAM_25_Fabric_Library.jpg",
+      "sha256": "204e929f2d09fd699ef14521aea14214aaeeef3fbc74b0a1c951fcc5f9cb9370"
+    },
+    {
+      "camera": "CAM_26_Guest_Workspace",
+      "room": "Guest workspace",
+      "type": "PERSP",
+      "reference": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_26_Guest_Workspace.jpg",
+      "before": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/qa/baseline/shots/before_CAM_26_Guest_Workspace.png",
+      "rgb_mae_64x36": 27.566,
+      "reference_mean_rgb": [
+        145.48,
+        139.55,
+        131.98
+      ],
+      "before_mean_rgb": [
+        162.83,
+        159.49,
+        153.64
+      ],
+      "sheet": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/qa/baseline/comparisons/CAM_26_Guest_Workspace.jpg",
+      "sha256": "cd0143d012fb830a80606e474b5ccb94c15517284142561425c5c6345ad99ed4"
+    },
+    {
+      "camera": "CAM_27_Audit_Room",
+      "room": "Audit room",
+      "type": "PERSP",
+      "reference": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_27_Audit_Room.jpg",
+      "before": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/qa/baseline/shots/before_CAM_27_Audit_Room.png",
+      "rgb_mae_64x36": 35.882,
+      "reference_mean_rgb": [
+        152.95,
+        144.87,
+        137.53
+      ],
+      "before_mean_rgb": [
+        177.97,
+        173.44,
+        169.18
+      ],
+      "sheet": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/qa/baseline/comparisons/CAM_27_Audit_Room.jpg",
+      "sha256": "13349f1f1cd1f4d8e68329d6fab84b8ffbbd32112394ed693b7e360cc9fd8ef1"
+    },
+    {
+      "camera": "CAM_28_Washroom_Male",
+      "room": "Washroom (male)",
+      "type": "PERSP",
+      "reference": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_28_Washroom_Male.jpg",
+      "before": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/qa/baseline/shots/before_CAM_28_Washroom_Male.png",
+      "rgb_mae_64x36": 47.881,
+      "reference_mean_rgb": [
+        133.25,
+        119.59,
+        110.92
+      ],
+      "before_mean_rgb": [
+        173.1,
+        168.45,
+        165.49
+      ],
+      "sheet": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/qa/baseline/comparisons/CAM_28_Washroom_Male.jpg",
+      "sha256": "e472840d394bb0503fabe3bf5c316c8d543278346173da8a1dbd6fcc84c1ac66"
+    },
+    {
+      "camera": "CAM_29_Washroom_Female",
+      "room": "Washroom (female)",
+      "type": "PERSP",
+      "reference": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_29_Washroom_Female.jpg",
+      "before": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/qa/baseline/shots/before_CAM_29_Washroom_Female.png",
+      "rgb_mae_64x36": 59.643,
+      "reference_mean_rgb": [
+        114.16,
+        100.63,
+        91.73
+      ],
+      "before_mean_rgb": [
+        165.13,
+        161.17,
+        158.4
+      ],
+      "sheet": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/qa/baseline/comparisons/CAM_29_Washroom_Female.jpg",
+      "sha256": "56b4a6b2e82efc60effaa190926201d6cb83143fe2e157c2d63e145a362ab3df"
+    },
+    {
+      "camera": "CAM_30_Prayer_Female",
+      "room": "Prayer (female)",
+      "type": "PERSP",
+      "reference": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_30_Prayer_Female.jpg",
+      "before": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/qa/baseline/shots/before_CAM_30_Prayer_Female.png",
+      "rgb_mae_64x36": 34.363,
+      "reference_mean_rgb": [
+        128.07,
+        120.94,
+        105.5
+      ],
+      "before_mean_rgb": [
+        154.43,
+        156.7,
+        145.53
+      ],
+      "sheet": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/qa/baseline/comparisons/CAM_30_Prayer_Female.jpg",
+      "sha256": "2b5c5d0784985acafb3d8cd706945cb5b54673167c48da0b4baab13394d0e80b"
+    },
+    {
+      "camera": "CAM_31_Executive_Corridor",
+      "room": "Executive corridor",
+      "type": "PERSP",
+      "reference": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_31_Executive_Corridor.jpg",
+      "before": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/qa/baseline/shots/before_CAM_31_Executive_Corridor.png",
+      "rgb_mae_64x36": 43.496,
+      "reference_mean_rgb": [
+        87.1,
+        64.5,
+        47.18
+      ],
+      "before_mean_rgb": [
+        116.61,
+        105.2,
+        94.36
+      ],
+      "sheet": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/qa/baseline/comparisons/CAM_31_Executive_Corridor.jpg",
+      "sha256": "21fb0297410c226a8e5a512b5a9ef7814554d5f521605f31e03d3b92d53d18f7"
+    },
+    {
+      "camera": "CAM_32_Design_Corridor",
+      "room": "Corridor (design wing)",
+      "type": "PERSP",
+      "reference": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_32_Design_Corridor.jpg",
+      "before": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/qa/baseline/shots/before_CAM_32_Design_Corridor.png",
+      "rgb_mae_64x36": 48.414,
+      "reference_mean_rgb": [
+        104.75,
+        93.83,
+        83.11
+      ],
+      "before_mean_rgb": [
+        140.52,
+        135.94,
+        129.2
+      ],
+      "sheet": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/qa/baseline/comparisons/CAM_32_Design_Corridor.jpg",
+      "sha256": "1c9625a49a96af5d3f15082cd601b381bc6b4b820dce4e908746643ac757b336"
+    },
+    {
+      "camera": "CAM_33_Wudu_Male",
+      "room": "Wudu (male)",
+      "type": "PERSP",
+      "reference": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_33_Wudu_Male.jpg",
+      "before": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/qa/baseline/shots/before_CAM_33_Wudu_Male.png",
+      "rgb_mae_64x36": 48.782,
+      "reference_mean_rgb": [
+        131.47,
+        117.96,
+        108.98
+      ],
+      "before_mean_rgb": [
+        169.36,
+        165.52,
+        162.41
+      ],
+      "sheet": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/qa/baseline/comparisons/CAM_33_Wudu_Male.jpg",
+      "sha256": "eb719487ec97fd7d46f6369cb045d48aaed8a044d3f7139588905551f8deeb8e"
+    },
+    {
+      "camera": "CAM_ISO_Design_Wing",
+      "room": "Design development wing + staff support",
+      "type": "ORTHO",
+      "reference": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_ISO_Design_Wing.jpg",
+      "before": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/qa/baseline/shots/before_CAM_ISO_Design_Wing.png",
+      "rgb_mae_64x36": 23.804,
+      "reference_mean_rgb": [
+        105.11,
+        105.13,
+        105.01
+      ],
+      "before_mean_rgb": [
+        125.95,
+        123.36,
+        117.64
+      ],
+      "sheet": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/qa/baseline/comparisons/CAM_ISO_Design_Wing.jpg",
+      "sha256": "a3fc90b88c6e32612e7af499fe36b39fd19791debde6efff71701bff28059214"
+    },
+    {
+      "camera": "CAM_ISO_Front_Zone",
+      "room": "Visitor zone (lobby, reception, experience centre, boardroom, executive suite)",
+      "type": "ORTHO",
+      "reference": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_ISO_Front_Zone.jpg",
+      "before": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/qa/baseline/shots/before_CAM_ISO_Front_Zone.png",
+      "rgb_mae_64x36": 29.309,
+      "reference_mean_rgb": [
+        115.57,
+        111.75,
+        109.0
+      ],
+      "before_mean_rgb": [
+        143.34,
+        137.35,
+        130.17
+      ],
+      "sheet": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/qa/baseline/comparisons/CAM_ISO_Front_Zone.jpg",
+      "sha256": "8de1bddf7483fb725aa27a5a9080e1d430888b44598c8c85fbfee3eb5e7f53c7"
+    },
+    {
+      "camera": "CAM_ISO_SE",
+      "room": "Whole floor",
+      "type": "ORTHO",
+      "reference": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_ISO_SE.jpg",
+      "before": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/qa/baseline/shots/before_CAM_ISO_SE.png",
+      "rgb_mae_64x36": 16.232,
+      "reference_mean_rgb": [
+        67.76,
+        70.08,
+        72.28
+      ],
+      "before_mean_rgb": [
+        85.4,
+        85.44,
+        80.5
+      ],
+      "sheet": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/qa/baseline/comparisons/CAM_ISO_SE.jpg",
+      "sha256": "e20442fa33fd1674f755c224fc25a36909c9911b6b4610849df82d49fddcf77f"
+    },
+    {
+      "camera": "CAM_ISO_SW",
+      "room": "Whole floor",
+      "type": "ORTHO",
+      "reference": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_ISO_SW.jpg",
+      "before": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/qa/baseline/shots/before_CAM_ISO_SW.png",
+      "rgb_mae_64x36": 10.187,
+      "reference_mean_rgb": [
+        41.76,
+        45.79,
+        47.32
+      ],
+      "before_mean_rgb": [
+        53.69,
+        55.98,
+        51.49
+      ],
+      "sheet": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/qa/baseline/comparisons/CAM_ISO_SW.jpg",
+      "sha256": "d5cdd20c0f51c4a0524b513e2d7c26674c71a6a6d01967211e4b6cfbec40adcd"
+    },
+    {
+      "camera": "CAM_TOP_Plan",
+      "room": "Whole floor",
+      "type": "ORTHO",
+      "reference": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_TOP_Plan.jpg",
+      "before": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/qa/baseline/shots/before_CAM_TOP_Plan.png",
+      "rgb_mae_64x36": 5.863,
+      "reference_mean_rgb": [
+        46.86,
+        49.68,
+        47.88
+      ],
+      "before_mean_rgb": [
+        51.4,
+        52.6,
+        47.17
+      ],
+      "sheet": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/qa/baseline/comparisons/CAM_TOP_Plan.jpg",
+      "sha256": "fc6dbe8c217023c441523ed9f145748467227b8cbce6f6e493fc11b5d68d1616"
+    }
+  ]
+}
