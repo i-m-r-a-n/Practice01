@@ -36,7 +36,7 @@ async function route(req){
   if(type.startsWith('text/html') && req.method==='GET'){
     h.delete('content-length');
     let html=await remote.text();
-    html=html.replace('src="./app.js"','src="./app.js?v=6a65b7d10982"');
+    html=html.replace('src="./app.js"','src="./app.js?v=6be2c0f4a899"');
     return new Response(html,{status:200,headers:h});
   }
   return new Response(req.method==='HEAD'?null:remote.body,{status:remote.status,headers:h});
