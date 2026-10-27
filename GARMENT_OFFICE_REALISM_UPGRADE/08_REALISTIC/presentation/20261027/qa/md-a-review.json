@@ -1,0 +1,26 @@
+{
+  "room": "MD Office",
+  "variant": "A",
+  "source": "/workspace/office-presentation-20261027/source/CAM_07_MD_Office_A.png",
+  "candidate": "/workspace/generated_images/exec-5a45a542-da1e-46d5-8fc8-c8ae047fee9c.png",
+  "candidate_sha256": "2fb07bab42faeeab75b0edb4b5cac249fd399e9be3dc85971bcd0b90ed960476",
+  "candidate_dimensions": [
+    1672,
+    941
+  ],
+  "actually_viewed": true,
+  "decision": "rejected-human-anatomy",
+  "major_architecture_camera_furniture_drift_seen": false,
+  "people_count": 1,
+  "label": "AI-enhanced concept visual",
+  "label_readable": true,
+  "observations": [
+    "Major room/desk/lounge/canopy/ring-pendant/logo composition is retained.",
+    "REJECT: man has three visible hands: phone hand at ear, extra pen-holding hand over paper, and separate watch-wearing resting hand near desk center.",
+    "Repair must retain only two connected arms/hands while keeping source geometry unchanged."
+  ],
+  "limits": [
+    "Quick one-frame visual comparison against exact source; no pixel-identity or hidden-geometry certification.",
+    "Surface grain and lighting are generated."
+  ]
+}

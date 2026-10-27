@@ -1,0 +1,25 @@
+{
+  "room": "Boardroom",
+  "variant": "A",
+  "source": "/workspace/office-presentation-20261027/source/CAM_09_Boardroom_A.png",
+  "candidate": "/workspace/generated_images/exec-1d796a4f-819b-459c-8cc9-daec3ce0c67d.png",
+  "candidate_sha256": "0a4d1b01105e380cd77a2628d43cc815643c66422b0f2710880289ea49f5c3f9",
+  "candidate_dimensions": [
+    1672,
+    941
+  ],
+  "actually_viewed": true,
+  "decision": "visual-pass-for-concept-presentation",
+  "major_architecture_camera_furniture_drift_seen": false,
+  "people_count": 5,
+  "label": "AI-enhanced concept visual",
+  "label_readable": true,
+  "observations": [
+    "Original long rounded table, existing chair rows, green ceiling panels, slat walls, door, glass mullions and neighboring showroom remain in the source composition.",
+    "Five fictional people conduct a meeting; the existing green display has an unbranded chart, and small table props are plausible."
+  ],
+  "limits": [
+    "Quick one-frame visual comparison against exact source; no pixel-identity or hidden-geometry certification.",
+    "Surface grain and lighting are generated."
+  ]
+}

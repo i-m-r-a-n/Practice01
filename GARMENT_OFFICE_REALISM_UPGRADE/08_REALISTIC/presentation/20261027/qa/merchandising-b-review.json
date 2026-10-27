@@ -1,0 +1,26 @@
+{
+  "room": "Merchandising",
+  "variant": "B",
+  "source": "/workspace/office-presentation-20261027/source/CAM_11_Merchandising_A.png",
+  "candidate": "/workspace/generated_images/exec-ee5fb843-5a12-4520-80d6-3e5594439924.png",
+  "candidate_sha256": "3285e5dc4ac86a7d6369b017c100cf8fd6f487b2b4698296faa572b977f87dd6",
+  "candidate_dimensions": [
+    1672,
+    941
+  ],
+  "actually_viewed": true,
+  "decision": "visual-pass-for-concept-presentation",
+  "major_architecture_camera_furniture_drift_seen": false,
+  "people_count": 4,
+  "label": "AI-enhanced concept visual",
+  "label_readable": true,
+  "observations": [
+    "Major desk banks, dividing screens, chair positions, rear meeting table/cabinets, glazed partitions, central column and suspended acoustic-baffle/linear-light pattern retain the source composition.",
+    "Four fictional people work at the existing desk/meeting zones. Monitors and small work props are more detailed/active; fine desktop content is not a pixel-preserved copy.",
+    "Gray flooring and green ceiling/chair accents remain; stronger warm daylight changes surface appearance."
+  ],
+  "limits": [
+    "Quick one-frame visual comparison; no pixel-identity, hidden geometry or exact furnishing inventory certification.",
+    "Generated still, not a native real-time render or changed approved model."
+  ]
+}

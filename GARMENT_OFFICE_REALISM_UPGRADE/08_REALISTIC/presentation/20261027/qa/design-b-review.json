@@ -1,0 +1,25 @@
+{
+  "room": "Design Studio",
+  "variant": "B",
+  "source": "/workspace/office-presentation-20261027/source/CAM_13_Design_Studio_A.png",
+  "candidate": "/workspace/generated_images/exec-1803623a-d07d-4a59-9ba7-db77e92a5100.png",
+  "candidate_sha256": "b8dc82dd4ab5606e3acb6c4afb0f576e45ec61816ba6e56519103b9becc0b0c2",
+  "candidate_dimensions": [
+    1672,
+    941
+  ],
+  "actually_viewed": true,
+  "decision": "visual-pass-for-concept-presentation",
+  "major_architecture_camera_furniture_drift_seen": false,
+  "people_count": 3,
+  "label": "AI-enhanced concept visual",
+  "label_readable": true,
+  "observations": [
+    "Source table/chairs, rear workstation rows, garment display, window/blind positions, glazed corridor and overhead lights remain in the original composition.",
+    "Three people work with small sample/paper props; visible hands are plausible; label readable."
+  ],
+  "limits": [
+    "Quick one-frame visual comparison; no exact pixel identity or hidden contact certification.",
+    "Generated still, not a native real-time rendering or alteration to the approved model."
+  ]
+}

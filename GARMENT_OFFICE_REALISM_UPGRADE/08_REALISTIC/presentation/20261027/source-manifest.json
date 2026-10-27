@@ -1,0 +1,68 @@
+[
+  {
+    "url": "https://raw.githubusercontent.com/i-m-r-a-n/Practice01/claude/web-tour-assets/GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_01_Reception_A.png",
+    "path": "/workspace/office-presentation-20261027/source/CAM_01_Reception_A.png",
+    "http_status": 200,
+    "bytes": 2034493,
+    "sha256": "7a5635169b1e68ee4bf13ff5aabe3fb39cc50f1b05c632fffe4d9244cdbb6d3c",
+    "dimensions": [
+      1600,
+      900
+    ]
+  },
+  {
+    "url": "https://raw.githubusercontent.com/i-m-r-a-n/Practice01/claude/web-tour-assets/GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_04_Experience_Centre_A.png",
+    "path": "/workspace/office-presentation-20261027/source/CAM_04_Experience_Centre_A.png",
+    "http_status": 200,
+    "bytes": 2627973,
+    "sha256": "286b3e226e655dcc5f800f0984b660e5287525f06c0e8190712247732d27cab8",
+    "dimensions": [
+      1920,
+      1080
+    ]
+  },
+  {
+    "url": "https://raw.githubusercontent.com/i-m-r-a-n/Practice01/claude/web-tour-assets/GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_09_Boardroom_A.png",
+    "path": "/workspace/office-presentation-20261027/source/CAM_09_Boardroom_A.png",
+    "http_status": 200,
+    "bytes": 2036901,
+    "sha256": "39ae2fc0e640675659db31c46d72335e1a08a284e6af1e68ce5bfcaddca84f33",
+    "dimensions": [
+      1600,
+      900
+    ]
+  },
+  {
+    "url": "https://raw.githubusercontent.com/i-m-r-a-n/Practice01/claude/web-tour-assets/GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_07_MD_Office_A.png",
+    "path": "/workspace/office-presentation-20261027/source/CAM_07_MD_Office_A.png",
+    "http_status": 200,
+    "bytes": 1906124,
+    "sha256": "ad434a5f0de59c8e960c5be649cad0b8a11887ae630751a2fdfb49e51dc44321",
+    "dimensions": [
+      1600,
+      900
+    ]
+  },
+  {
+    "url": "https://raw.githubusercontent.com/i-m-r-a-n/Practice01/claude/web-tour-assets/GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_11_Merchandising_A.png",
+    "path": "/workspace/office-presentation-20261027/source/CAM_11_Merchandising_A.png",
+    "http_status": 200,
+    "bytes": 2054345,
+    "sha256": "5c44e6a62a9913ed66b525ba3e1d917f10cb50b82d5fe2a9a250254b37c66321",
+    "dimensions": [
+      1600,
+      900
+    ]
+  },
+  {
+    "url": "https://raw.githubusercontent.com/i-m-r-a-n/Practice01/claude/web-tour-assets/GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_13_Design_Studio_A.png",
+    "path": "/workspace/office-presentation-20261027/source/CAM_13_Design_Studio_A.png",
+    "http_status": 200,
+    "bytes": 1873454,
+    "sha256": "b4a39aa532f935600f715858bfaf5936d6a909667bae9fa98228403ebaae6c86",
+    "dimensions": [
+      1600,
+      900
+    ]
+  }
+]

@@ -1,0 +1,26 @@
+{
+  "room": "Design Studio",
+  "variant": "A",
+  "source": "/workspace/office-presentation-20261027/source/CAM_13_Design_Studio_A.png",
+  "candidate": "/workspace/generated_images/exec-68d0cddc-dce5-4613-92d5-86ece53e29bd.png",
+  "candidate_sha256": "6094642b057e5688bd46fe489a69135822a63506af5fa6bfa78f76ff81d6b552",
+  "candidate_dimensions": [
+    1672,
+    941
+  ],
+  "actually_viewed": true,
+  "decision": "visual-pass-for-concept-presentation",
+  "major_architecture_camera_furniture_drift_seen": false,
+  "people_count": 3,
+  "label": "AI-enhanced concept visual",
+  "label_readable": true,
+  "observations": [
+    "Original foreground table and cantilever chairs, rear workstations/stools, right garment display, windows/blinds, left glazed corridor and overhead linear lights retain the source composition.",
+    "Three fictional people discuss samples/work on existing furniture; small swatches, notebooks and unbranded screen content are plausible.",
+    "Visible exterior skyline becomes more detailed while window positions remain; no major architectural or furniture drift seen."
+  ],
+  "limits": [
+    "Quick one-frame visual comparison; no pixel-identity, hidden geometry or exact furnishing inventory certification.",
+    "Generated still, not a native real-time render or changed approved model."
+  ]
+}

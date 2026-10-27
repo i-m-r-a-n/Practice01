@@ -1,0 +1,25 @@
+{
+  "room": "MD Office",
+  "variant": "B",
+  "source": "/workspace/office-presentation-20261027/source/CAM_07_MD_Office_A.png",
+  "candidate": "/workspace/generated_images/exec-d4179adc-e68a-4fe6-9813-81274f114f1d.png",
+  "candidate_sha256": "7c5a9d7f47b5d7ec1e29ca93a3658a7bc698f6d3979991e2386de1664e151954",
+  "candidate_dimensions": [
+    1672,
+    941
+  ],
+  "actually_viewed": true,
+  "decision": "visual-pass-for-concept-presentation",
+  "major_architecture_camera_furniture_drift_seen": false,
+  "people_count": 2,
+  "label": "AI-enhanced concept visual",
+  "label_readable": true,
+  "observations": [
+    "Source desk, orange executive chair, two dark guest chairs, cream lounge seating/oval table/rug, left plant, logo wall/cabinet, canopy and ring pendant remain in place.",
+    "Two fictional men review paperwork with plausible visible hands and seating; small books/sample props are added."
+  ],
+  "limits": [
+    "Quick one-frame visual comparison against exact source; no pixel-identity or hidden-geometry certification.",
+    "Surface grain and lighting are generated."
+  ]
+}

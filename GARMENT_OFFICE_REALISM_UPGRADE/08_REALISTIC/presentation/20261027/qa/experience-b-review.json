@@ -1,0 +1,26 @@
+{
+  "room": "Experience Centre",
+  "variant": "B",
+  "source": "/workspace/office-presentation-20261027/source/CAM_04_Experience_Centre_A.png",
+  "candidate": "/workspace/generated_images/exec-2df972c2-de81-4fb2-b759-6136e5ec291f.png",
+  "candidate_sha256": "9d82d25b0039f32c822089ba9d1de68bf1d9bd111539317fa83c72e84092b2f6",
+  "candidate_dimensions": [
+    1672,
+    941
+  ],
+  "actually_viewed": true,
+  "decision": "visual-pass-for-concept-presentation",
+  "major_architecture_camera_furniture_drift_seen": false,
+  "people_count": 3,
+  "label": "AI-enhanced concept visual",
+  "label_readable": true,
+  "observations": [
+    "All four original torso forms, their colors, poles/bases and shared platform remain in the original diagonal order.",
+    "Green-backed wood display bays, original sample table, right ledge/glazing, far window/plant and ceiling/track lights retain the source composition.",
+    "Three people browse existing garments/discuss samples; no new large rack, furniture or opening is apparent."
+  ],
+  "limits": [
+    "Quick one-frame visual comparison against the exact source; no pixel-identical or hidden-geometry claim.",
+    "Surface grain and fine details are generated; output requires mechanical1920x1080 delivery resize."
+  ]
+}

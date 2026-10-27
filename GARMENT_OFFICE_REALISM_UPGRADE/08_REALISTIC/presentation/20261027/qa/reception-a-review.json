@@ -1,0 +1,34 @@
+{
+  "room": "Reception",
+  "variant": "A",
+  "source": "/workspace/office-presentation-20261027/source/CAM_01_Reception_A.png",
+  "candidate": "/workspace/generated_images/exec-78f565f6-8108-41aa-b977-2b95737b694e.png",
+  "candidate_sha256": "24c1e8cb04ea7e32f13849b29875a04f9b918812bb027b27224268200c3c1d28",
+  "candidate_dimensions": [
+    1672,
+    941
+  ],
+  "actually_viewed": true,
+  "decision": "visual-pass-for-concept-presentation",
+  "major_architecture_camera_furniture_drift_seen": false,
+  "preserved_visible_checkpoints": [
+    "dark wood double door and black surround",
+    "vertical slat logo wall and original ZF ZARA FASHION sign",
+    "reception counter and lower front-left cabinet",
+    "cream sofa, green armchairs, oval pedestal table and rug footprint",
+    "ceiling beams, boxed projection, wood-slat canopy and ring pendant",
+    "left foreground cabinet and source perspective/crop"
+  ],
+  "people_count": 4,
+  "label": "AI-enhanced concept visual",
+  "observations": [
+    "Four fictional people and small daily props are plausible at this view.",
+    "Floor/rug surface texture and daylight/reflections are stronger than the source.",
+    "Fine grain, edges and appearance are regenerated; no pixel-identical preservation claim.",
+    "Mechanical1920x1080 resize can fulfill delivery dimensions; generative source is1672x941."
+  ],
+  "limits": [
+    "One-frame visual review, not geometric or construction verification.",
+    "Does not certify hidden body contacts or exact typography/pixel identity."
+  ]
+}

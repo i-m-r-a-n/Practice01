@@ -1,0 +1,25 @@
+{
+  "room": "Merchandising",
+  "variant": "A",
+  "source": "/workspace/office-presentation-20261027/source/CAM_11_Merchandising_A.png",
+  "candidate": "/workspace/generated_images/exec-3787817b-5e2a-4886-a3d8-6ecd165b8b2f.png",
+  "candidate_sha256": "2f0ec78507f8bfc3ce5ebd9f32a09d163b873eee7ef0d44e63ff975eb186c909",
+  "candidate_dimensions": [
+    1672,
+    941
+  ],
+  "actually_viewed": true,
+  "decision": "visual-pass-for-concept-presentation",
+  "major_architecture_camera_furniture_drift_seen": false,
+  "people_count": 4,
+  "label": "AI-enhanced concept visual",
+  "label_readable": true,
+  "observations": [
+    "Major workstation/partition banks, meeting table/cabinets, glazed walls, column and gray/green ceiling baffles remain in source composition.",
+    "Four people occupy existing work zones with small unbranded props and detailed screens; label readable."
+  ],
+  "limits": [
+    "Quick one-frame visual comparison; no exact pixel identity or hidden contact certification.",
+    "Generated still, not a native real-time rendering or alteration to the approved model."
+  ]
+}

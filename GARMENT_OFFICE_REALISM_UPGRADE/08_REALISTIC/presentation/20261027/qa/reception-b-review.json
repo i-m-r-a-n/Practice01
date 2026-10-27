@@ -1,0 +1,26 @@
+{
+  "room": "Reception",
+  "variant": "B",
+  "source": "/workspace/office-presentation-20261027/source/CAM_01_Reception_A.png",
+  "candidate": "/workspace/generated_images/exec-b6ac5efe-2fdf-48bd-8f05-98000a59b4f5.png",
+  "candidate_sha256": "ea34ce1887d7e4989288cff49717d9f3f79d957cc3f8cc3130f5774358d80576",
+  "candidate_dimensions": [
+    1672,
+    941
+  ],
+  "actually_viewed": true,
+  "decision": "visual-pass-for-concept-presentation",
+  "major_architecture_camera_furniture_drift_seen": false,
+  "people_count": 3,
+  "label": "AI-enhanced concept visual",
+  "label_readable": true,
+  "observations": [
+    "Door, slat/logo wall, counter, seating, oval table, beams/canopy and ring pendant retain the source composition.",
+    "Original ZF ZARA FASHION signage remains readable; added plants, paperwork and cups are small props.",
+    "Lighting is warmer with stronger sunlight; fine surfaces are regenerated."
+  ],
+  "limits": [
+    "Quick one-frame visual comparison against the exact source; no pixel-identical or hidden-geometry claim.",
+    "Surface grain and fine details are generated; output requires mechanical1920x1080 delivery resize."
+  ]
+}

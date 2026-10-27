@@ -1,0 +1,26 @@
+{
+  "room": "MD Office",
+  "variant": "A corrected",
+  "source": "/workspace/office-presentation-20261027/source/CAM_07_MD_Office_A.png",
+  "candidate": "/workspace/generated_images/exec-c7524086-8d7d-4883-be44-3ee3cd58e104.png",
+  "candidate_sha256": "f01d9a61de9cf80bbba935d272e1b9ebf131142db6488c5664b896762844f921",
+  "candidate_dimensions": [
+    1672,
+    941
+  ],
+  "actually_viewed": true,
+  "decision": "visual-pass-for-concept-presentation",
+  "major_architecture_camera_furniture_drift_seen": false,
+  "people_count": 1,
+  "label": "AI-enhanced concept visual",
+  "label_readable": true,
+  "observations": [
+    "Previous extra pen-holding hand is removed; only phone-at-ear hand and desk-resting watch hand remain visible.",
+    "Original room/furniture/canopy/logo composition remains; required label readable.",
+    "Supersedes rejected initial MDA candidate; original rejection report retained."
+  ],
+  "limits": [
+    "Quick one-frame visual comparison; no exact pixel identity or hidden contact certification.",
+    "Generated still, not a native real-time rendering or alteration to the approved model."
+  ]
+}

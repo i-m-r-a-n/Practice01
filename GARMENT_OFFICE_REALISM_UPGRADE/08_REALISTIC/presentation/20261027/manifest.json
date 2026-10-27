@@ -1,0 +1,146 @@
+[
+  {
+    "id": "reception_a",
+    "path": "/workspace/generated_images/exec-78f565f6-8108-41aa-b977-2b95737b694e.png",
+    "final_path": "01_reception_a.png",
+    "final_sha256": "86653ad35e91821103df3b9d4190e7368e5847a233820e3771a359480269e854",
+    "dimensions": [
+      1920,
+      1080
+    ],
+    "sizing": "Mechanical full-frame resampling only; no crop; all generative editing via image generation tool",
+    "qa_status": "Visually reviewed: no major architecture/furniture/camera drift observed; AI detail regeneration is not pixel-identical preservation."
+  },
+  {
+    "id": "reception_b",
+    "path": "/workspace/generated_images/exec-b6ac5efe-2fdf-48bd-8f05-98000a59b4f5.png",
+    "final_path": "01_reception_b.png",
+    "final_sha256": "8d3c4eec714c232052bfd6f9f2fcd5a14328e32d3f48f5faf81da05a9aeba1b2",
+    "dimensions": [
+      1920,
+      1080
+    ],
+    "sizing": "Mechanical full-frame resampling only; no crop; all generative editing via image generation tool",
+    "qa_status": "Visually reviewed: no major architecture/furniture/camera drift observed; AI detail regeneration is not pixel-identical preservation."
+  },
+  {
+    "id": "experience_a",
+    "path": "/workspace/generated_images/exec-4cb46a5b-304e-4b3c-bc64-0bb3b56b3e34.png",
+    "final_path": "02_experience_a.png",
+    "final_sha256": "81f4f72494e026d1af94af355c7d413e65b74d5cd3f9b42690f9f388e579d81f",
+    "dimensions": [
+      1920,
+      1080
+    ],
+    "sizing": "Mechanical full-frame resampling only; no crop; all generative editing via image generation tool",
+    "qa_status": "Visually reviewed: no major architecture/furniture/camera drift observed; AI detail regeneration is not pixel-identical preservation."
+  },
+  {
+    "id": "experience_b",
+    "path": "/workspace/generated_images/exec-2df972c2-de81-4fb2-b759-6136e5ec291f.png",
+    "final_path": "02_experience_b.png",
+    "final_sha256": "ebdaae2bdd3f697366f06a29fd10d3992a36b9c7a1bc3790a31b27f4c7925396",
+    "dimensions": [
+      1920,
+      1080
+    ],
+    "sizing": "Mechanical full-frame resampling only; no crop; all generative editing via image generation tool",
+    "qa_status": "Visually reviewed: no major architecture/furniture/camera drift observed; AI detail regeneration is not pixel-identical preservation."
+  },
+  {
+    "id": "boardroom_a",
+    "path": "/workspace/generated_images/exec-1d796a4f-819b-459c-8cc9-daec3ce0c67d.png",
+    "final_path": "03_boardroom_a.png",
+    "final_sha256": "0a55dc2e9fe84cdeb24581b087425f6ca99ea4543f68f6ddc58cabd009c6886a",
+    "dimensions": [
+      1920,
+      1080
+    ],
+    "sizing": "Mechanical full-frame resampling only; no crop; all generative editing via image generation tool",
+    "qa_status": "Visually reviewed: no major architecture/furniture/camera drift observed; AI detail regeneration is not pixel-identical preservation."
+  },
+  {
+    "id": "boardroom_b",
+    "path": "/workspace/generated_images/exec-857faf2a-b7f1-47cb-bf90-1c118bc145ad.png",
+    "final_path": "03_boardroom_b.png",
+    "final_sha256": "1e254cc3599d9896ad2ff87528aa63221173eba8eed463dd19960c160a68ec17",
+    "dimensions": [
+      1920,
+      1080
+    ],
+    "sizing": "Mechanical full-frame resampling only; no crop; all generative editing via image generation tool",
+    "qa_status": "Visually reviewed: no major architecture/furniture/camera drift observed; AI detail regeneration is not pixel-identical preservation."
+  },
+  {
+    "id": "md_office_a_fixed",
+    "path": "/workspace/generated_images/exec-c7524086-8d7d-4883-be44-3ee3cd58e104.png",
+    "final_path": "04_md_office_a.png",
+    "final_sha256": "94de23c67e93e75c445f3370f39fd94189431940905d2848717434514f06c9ce",
+    "dimensions": [
+      1920,
+      1080
+    ],
+    "sizing": "Mechanical full-frame resampling only; no crop; all generative editing via image generation tool",
+    "qa_status": "Visually reviewed: no major architecture/furniture/camera drift observed; AI detail regeneration is not pixel-identical preservation."
+  },
+  {
+    "id": "md_office_b",
+    "path": "/workspace/generated_images/exec-d4179adc-e68a-4fe6-9813-81274f114f1d.png",
+    "final_path": "04_md_office_b.png",
+    "final_sha256": "c86ec2819cdb3c250a6b2477e134b8b5a5f8b0d01d501fab8d290af63b323d6f",
+    "dimensions": [
+      1920,
+      1080
+    ],
+    "sizing": "Mechanical full-frame resampling only; no crop; all generative editing via image generation tool",
+    "qa_status": "Visually reviewed: no major architecture/furniture/camera drift observed; AI detail regeneration is not pixel-identical preservation."
+  },
+  {
+    "id": "merchandising_a",
+    "path": "/workspace/generated_images/exec-3787817b-5e2a-4886-a3d8-6ecd165b8b2f.png",
+    "final_path": "05_merchandising_a.png",
+    "final_sha256": "177d8567001cb30ab24f9c5e4b7a6cfa70d7a8936a969bf09ac354718cbef87a",
+    "dimensions": [
+      1920,
+      1080
+    ],
+    "sizing": "Mechanical full-frame resampling only; no crop; all generative editing via image generation tool",
+    "qa_status": "Visually reviewed: no major architecture/furniture/camera drift observed; AI detail regeneration is not pixel-identical preservation."
+  },
+  {
+    "id": "merchandising_b",
+    "path": "/workspace/generated_images/exec-ee5fb843-5a12-4520-80d6-3e5594439924.png",
+    "final_path": "05_merchandising_b.png",
+    "final_sha256": "12b8cc8521ab0446523cfc5cd9f3a02f415c01f124eb75b2fdd149daee33b823",
+    "dimensions": [
+      1920,
+      1080
+    ],
+    "sizing": "Mechanical full-frame resampling only; no crop; all generative editing via image generation tool",
+    "qa_status": "Visually reviewed: no major architecture/furniture/camera drift observed; AI detail regeneration is not pixel-identical preservation."
+  },
+  {
+    "id": "design_studio_a",
+    "path": "/workspace/generated_images/exec-68d0cddc-dce5-4613-92d5-86ece53e29bd.png",
+    "final_path": "06_design_studio_a.png",
+    "final_sha256": "4a08b262028a235d87abfe337a49e1c3ba6068ff19327f3aefbe8843b3077a2b",
+    "dimensions": [
+      1920,
+      1080
+    ],
+    "sizing": "Mechanical full-frame resampling only; no crop; all generative editing via image generation tool",
+    "qa_status": "Visually reviewed: no major architecture/furniture/camera drift observed; AI detail regeneration is not pixel-identical preservation."
+  },
+  {
+    "id": "design_studio_b",
+    "path": "/workspace/generated_images/exec-1803623a-d07d-4a59-9ba7-db77e92a5100.png",
+    "final_path": "06_design_studio_b.png",
+    "final_sha256": "46a12c2802dd011718d6ca388d05684a17bb6bb65145188284b82ccc3bd0ca3c",
+    "dimensions": [
+      1920,
+      1080
+    ],
+    "sizing": "Mechanical full-frame resampling only; no crop; all generative editing via image generation tool",
+    "qa_status": "Visually reviewed: no major architecture/furniture/camera drift observed; AI detail regeneration is not pixel-identical preservation."
+  }
+]
