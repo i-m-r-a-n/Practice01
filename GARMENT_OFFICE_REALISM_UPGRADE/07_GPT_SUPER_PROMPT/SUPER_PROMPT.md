@@ -49,7 +49,7 @@ normal / roughness detail at close range, and the rooms have furniture but almos
    (Fresnel), brushed brass and black aluminium read as metal.
 3. **Materials up close**: at 0.5 m from any surface you can see wood grain, fabric weave, carpet pile, terrazzo aggregate,
    brushed metal lines, leather grain, felt texture; edges are bevelled (no razor-sharp CG edges).
-4. **A working office**: every workplace looks like someone works there today (see Phase 4).
+4. **A working office**: every workplace looks like someone works there today, and people are busy everywhere (see Phases 4 and 4b).
 5. **Camera feel**: first-person at 1.60 m eye height, smooth acceleration, mouse/trackpad look, collision with walls and
    furniture, no clipping through objects, no floating objects, nothing hovering above the floor.
 6. **Image quality**: no aliasing shimmer, no texture blur at normal viewing distance, no light leaks at wall/floor joints,
@@ -73,8 +73,9 @@ reach a point, say so and offer the engine route (Phase 7).
 - **Brands**: only the client's own logos from `assets/brand/`. All other objects are generic and unbranded: no Apple,
   Dell, HP, Microsoft, Adobe, Pantone, Zara (the Inditex brand) or other third-party marks or UI. Garments are plain samples,
   not real collections; do not label anything as an actual product line.
-- **No fake people and no fake proof**: no people, avatars or mannequin "staff" posing as employees; no testimonials, awards,
-  certificates or fake notices. "Functional" comes from objects and wear, not from people.
+- **People: illustrative only**: the office is full of animated characters (Phase 4b), but they are generic, fictional
+  people: not real or identifiable persons, not the client's actual staff, no celebrities. Show a small note "People shown are
+  illustrative". No testimonials, awards, certificates or fake notices.
 - **Readable text only**: any visible text (labels, binders, whiteboards, screens, signs) is short, real, generic English
   ("Q4 samples", "Fabric approvals", "Trims - buttons"), never gibberish or AI-looking pseudo-text. Screens show simple
   generic content (spreadsheet grid, CAD line drawing, colour palette, e-mail list without names), not real software logos.
@@ -150,6 +151,28 @@ papers not perfectly aligned). Use instancing for repeats. Per zone:
 Rules for props: real-world scale, resting on surfaces (no floating), shadows from the lightmap or AO, low poly with good
 normal maps, total prop budget about 300k triangles, everything instanced or merged by material.
 
+### Phase 4b: a living office (animated characters)
+The client wants the office to feel alive, like a game world: **everyone is busy with something**.
+- About 25-40 realistic characters across the floor, varied in age, build, skin tone and clothing (modest business wear and
+  traditional Bangladeshi office wear such as shirt-trousers, salwar kameez, saree, panjabi), each with a natural looping activity:
+  - Reception: receptionist greeting and handing a visitor badge; two visitors waiting on the sofa, one looking at a phone.
+  - Experience centre: two buyers browsing garments on the rails with a merchandiser holding a sample and talking.
+  - Boardroom: a meeting of 5-7 people, one presenting at the screen, others listening, taking notes, nodding.
+  - Executive suite: the MD on a phone call at the desk; an assistant at the executive reception typing.
+  - Workplaces (commercial, merchandising, HR): staff typing, on calls with headsets, two discussing a printout, one at the
+    printer, one carrying files.
+  - Design wing: CAD designers drawing on dual monitors, a designer pinning swatches on a board, a tailor at the sewing
+    machine, a technician checking fabric in the colour booth, one person watching the 3D printer.
+  - Cafe and lounge: people having tea, chatting at a table, one at the water dispenser.
+  - Corridors: a few people walking between rooms along set paths.
+  - Keep prayer rooms, wudu and washrooms empty (respect and privacy).
+- Natural motion: idle variation, different animation start times, no identical clones next to each other, feet on the
+  floor, hands on keyboards and cups; walkers follow paths on the walk grid, avoid furniture and step aside or pause when the
+  visitor comes close. No uncanny close-ups: characters face their work, not the camera.
+- Assets: free or properly licensed for real-time web use (for example CC0 characters, or royalty-free animation libraries),
+  each recorded in `LICENSES.md`. Performance: GPU skinning, LODs (simplified rigs or baked vertex animation far away), at most
+  about 15 animated characters drawn at full detail at once, a **"People on/off" toggle**, people off in the Low quality setting.
+
 ### Phase 5: camera, post-processing, game feel
 - First-person controls: pointer lock with mouse/trackpad look, W A S D / arrows, Shift to walk faster, eye height 1.60 m,
   smooth acceleration and stopping, collision against walls and furniture (extend `walk_grid.json` or use a navmesh), no
@@ -186,7 +209,11 @@ web tour as the lightweight version. Plan this as a separate deliverable with it
    overlapping interface panels.
 6. Performance numbers measured on a real Mac (fps, load time, memory) in Firefox, Chrome and Safari; if you cannot test on
    a real Mac, say so and list what remains to verify.
-7. Licence list complete; design unchanged (approved file hashes unchanged); disclaimer visible.
+7. Living-office check: in each key room the characters are doing their activity, look natural from 2 m and from the tour
+   cameras, never walk through walls, furniture or the visitor, and the "People on/off" toggle works; the frame rate is
+   measured with people on and off.
+8. Licence list complete (props and characters); design unchanged (approved file hashes unchanged); disclaimer and
+   "People shown are illustrative" note visible.
 
 ## 7. Known pitfalls in this project (avoid them)
 
