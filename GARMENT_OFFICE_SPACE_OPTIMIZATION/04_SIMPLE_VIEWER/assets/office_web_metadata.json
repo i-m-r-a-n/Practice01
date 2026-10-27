@@ -543,7 +543,7 @@
    "lens": 18.0,
    "sensor_width": 36.0,
    "render": {
-    "file": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_12_Merchandising_B.jpg",
+    "file": "GARMENT_OFFICE_SPACE_OPTIMIZATION/03_ROOM_RENDERS/after_with_people/CAM_12_Merchandising_B.jpg",
     "worker_path": "/renders/CAM_12_Merchandising_B.jpg",
     "width": 1600,
     "height": 900
@@ -723,7 +723,7 @@
    "lens": 18.0,
    "sensor_width": 36.0,
    "render": {
-    "file": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_16_Commercial_Accounts.jpg",
+    "file": "GARMENT_OFFICE_SPACE_OPTIMIZATION/03_ROOM_RENDERS/after_with_people/CAM_16_Commercial_Accounts.jpg",
     "worker_path": "/renders/CAM_16_Commercial_Accounts.jpg",
     "width": 1600,
     "height": 900
@@ -1532,7 +1532,14 @@
    "sensor_fit": "AUTO",
    "lens": 18.0,
    "sensor_width": 36.0,
-   "render": null,
+   "render": {
+    "file": "GARMENT_OFFICE_SPACE_OPTIMIZATION/03_ROOM_RENDERS/after_with_people/CAM_34_Merchandising_Sample_Hub.jpg",
+    "worker_path": "/renders/CAM_34_Merchandising_Sample_Hub.jpg",
+    "width": 1600,
+    "height": 900
+   },
+   "hfov_deg_render": 90.0,
+   "vfov_deg_render": 58.7155,
    "zone": "Z07"
   },
   {
@@ -1570,7 +1577,14 @@
    "sensor_fit": "AUTO",
    "lens": 19.0,
    "sensor_width": 36.0,
-   "render": null,
+   "render": {
+    "file": "GARMENT_OFFICE_SPACE_OPTIMIZATION/03_ROOM_RENDERS/after_with_people/CAM_35_Merchandising_Desks.jpg",
+    "worker_path": "/renders/CAM_35_Merchandising_Desks.jpg",
+    "width": 1600,
+    "height": 900
+   },
+   "hfov_deg_render": 86.9037,
+   "vfov_deg_render": 56.1058,
    "zone": "Z07"
   },
   {
@@ -1608,7 +1622,14 @@
    "sensor_fit": "AUTO",
    "lens": 18.0,
    "sensor_width": 36.0,
-   "render": null,
+   "render": {
+    "file": "GARMENT_OFFICE_SPACE_OPTIMIZATION/03_ROOM_RENDERS/after_with_people/CAM_36_Accounts_Suite.jpg",
+    "worker_path": "/renders/CAM_36_Accounts_Suite.jpg",
+    "width": 1600,
+    "height": 900
+   },
+   "hfov_deg_render": 90.0,
+   "vfov_deg_render": 58.7155,
    "zone": "Z06"
   },
   {
@@ -1646,7 +1667,14 @@
    "sensor_fit": "AUTO",
    "lens": 18.0,
    "sensor_width": 36.0,
-   "render": null,
+   "render": {
+    "file": "GARMENT_OFFICE_SPACE_OPTIMIZATION/03_ROOM_RENDERS/after_with_people/CAM_37_Accounts_Records_Discussion.jpg",
+    "worker_path": "/renders/CAM_37_Accounts_Records_Discussion.jpg",
+    "width": 1600,
+    "height": 900
+   },
+   "hfov_deg_render": 90.0,
+   "vfov_deg_render": 58.7155,
    "zone": "Z06"
   },
   {
@@ -1684,7 +1712,14 @@
    "sensor_fit": "AUTO",
    "lens": 18.0,
    "sensor_width": 36.0,
-   "render": null,
+   "render": {
+    "file": "GARMENT_OFFICE_SPACE_OPTIMIZATION/03_ROOM_RENDERS/after_with_people/CAM_38_Accounts_Public_Corridor.jpg",
+    "worker_path": "/renders/CAM_38_Accounts_Public_Corridor.jpg",
+    "width": 1600,
+    "height": 900
+   },
+   "hfov_deg_render": 90.0,
+   "vfov_deg_render": 58.7155,
    "zone": "Z06"
   },
   {
@@ -1889,7 +1924,12 @@
    "shift_y": 0.0,
    "sensor_fit": "AUTO",
    "ortho_scale": 19.5,
-   "render": null,
+   "render": {
+    "file": "GARMENT_OFFICE_SPACE_OPTIMIZATION/03_ROOM_RENDERS/after_no_people/CAM_ISO_Z06_Z07.jpg",
+    "worker_path": "/renders/CAM_ISO_Z06_Z07.jpg",
+    "width": 1600,
+    "height": 900
+   },
    "zone": null
   },
   {
@@ -1968,7 +2008,12 @@
    "shift_y": 0.0,
    "sensor_fit": "AUTO",
    "ortho_scale": 21.6,
-   "render": null,
+   "render": {
+    "file": "GARMENT_OFFICE_SPACE_OPTIMIZATION/03_ROOM_RENDERS/after_no_people/CAM_TOP_Z06_Z07.jpg",
+    "worker_path": "/renders/CAM_TOP_Z06_Z07.jpg",
+    "width": 1600,
+    "height": 1312
+   },
    "zone": null
   }
  ],
