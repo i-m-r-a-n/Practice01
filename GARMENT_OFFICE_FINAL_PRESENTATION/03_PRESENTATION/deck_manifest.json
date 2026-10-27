@@ -26,8 +26,8 @@
  },
  {
   "cam": "CAM_03_Entrance_Lobby",
-  "status": "preview",
-  "caption": "Entrance lobby - brand wall (preview render)"
+  "status": "final",
+  "caption": "Entrance lobby - brand wall"
  },
  {
   "cam": "CAM_04_Experience_Centre_A",
@@ -41,8 +41,8 @@
  },
  {
   "cam": "CAM_06_Experience_Centre_Detail",
-  "status": "preview",
-  "caption": "Display detail (preview render)"
+  "status": "final",
+  "caption": "Display detail"
  },
  {
   "cam": "CAM_07_MD_Office_A",
@@ -51,13 +51,13 @@
  },
  {
   "cam": "CAM_08_MD_Office_B",
-  "status": "preview",
-  "caption": "MD office - lounge corner (preview render)"
+  "status": "final",
+  "caption": "MD office - lounge corner"
  },
  {
   "cam": "CAM_17_Executive_Reception",
-  "status": "preview",
-  "caption": "Executive reception (PA) (preview render)"
+  "status": "final",
+  "caption": "Executive reception (PA)"
  },
  {
   "cam": "CAM_09_Boardroom_A",
@@ -66,8 +66,8 @@
  },
  {
   "cam": "CAM_10_Boardroom_B",
-  "status": "preview",
-  "caption": "Boardroom - towards the experience centre (preview render)"
+  "status": "final",
+  "caption": "Boardroom - towards the experience centre"
  },
  {
   "cam": "CAM_11_Merchandising_A",
@@ -76,13 +76,13 @@
  },
  {
   "cam": "CAM_12_Merchandising_B",
-  "status": "preview",
-  "caption": "Merchandising - team table (preview render)"
+  "status": "final",
+  "caption": "Merchandising - team table"
  },
  {
   "cam": "CAM_16_Commercial_Accounts",
-  "status": "preview",
-  "caption": "Commercial & accounts (preview render)"
+  "status": "final",
+  "caption": "Commercial & accounts"
  },
  {
   "cam": "CAM_13_Design_Studio_A",
@@ -91,43 +91,43 @@
  },
  {
   "cam": "CAM_14_Design_Studio_B",
-  "status": "preview",
-  "caption": "Design studio - workstations + mood board (preview render)"
+  "status": "final",
+  "caption": "Design studio - workstations + mood board"
  },
  {
   "cam": "CAM_15_CAD_Room",
-  "status": "preview",
-  "caption": "CAD / technical design (preview render)"
+  "status": "final",
+  "caption": "CAD / technical design"
  },
  {
   "cam": "CAM_20_Staff_Cafe",
-  "status": "preview",
-  "caption": "Staff cafe + pantry (preview render)"
+  "status": "final",
+  "caption": "Staff cafe + pantry"
  },
  {
   "cam": "CAM_21_Lounge_Training",
-  "status": "preview",
-  "caption": "Lounge / training (multipurpose) (preview render)"
+  "status": "final",
+  "caption": "Lounge / training (multipurpose)"
  },
  {
   "cam": "CAM_22_Prayer_Male",
-  "status": "preview",
-  "caption": "Prayer room (male) (preview render)"
+  "status": "final",
+  "caption": "Prayer room (male)"
  },
  {
   "cam": "CAM_23_Sample_Room",
-  "status": "preview",
-  "caption": "Sample development (preview render)"
+  "status": "final",
+  "caption": "Sample development"
  },
  {
   "cam": "CAM_25_Fabric_Library",
-  "status": "preview",
-  "caption": "Fabric & trim library (preview render)"
+  "status": "final",
+  "caption": "Fabric & trim library"
  },
  {
   "cam": "CAM_28_Washroom_Male",
-  "status": "preview",
-  "caption": "Staff washroom (preview render)"
+  "status": "final",
+  "caption": "Staff washroom"
  },
  {
   "cam": "CAM_09_Boardroom_A",

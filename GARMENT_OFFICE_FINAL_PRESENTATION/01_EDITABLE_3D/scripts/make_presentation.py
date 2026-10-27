@@ -295,8 +295,9 @@ def h_slide(n, s):
         dark = True
         bg, cr = h_full(s["image"])
         inner = (bg + '<div style="position:absolute;left:0;right:0;bottom:0;height:170px;background:linear-gradient(0deg,rgba(8,12,14,.9),rgba(8,12,14,0))"></div>' + cr
-                 + f'<div style="position:absolute;left:80px;top:70px;background:rgba(246,243,238,.93);padding:26px 34px;width:640px">'
-                   f'<div class="eyebrow">{E(s["eyebrow"])}</div><h2 style="font-size:40px">{E(s["title"])}</h2><p style="font-size:19px">{E(s["text"])}</p></div>')
+                 + f'<div style="position:absolute;left:60px;top:50px;background:rgba(246,243,238,.92);padding:20px 26px;width:500px">'
+                   f'<div class="eyebrow" style="font-size:15px">{E(s["eyebrow"])}</div><h2 style="font-size:32px;margin-top:8px">{E(s["title"])}</h2>'
+                   f'<p style="font-size:16px;line-height:1.4;margin:10px 0 0">{E(s["text"])}</p></div>')
     elif t == "grid":
         inner = f'<div class="bar"></div><div style="position:absolute;left:80px;top:104px;width:1700px"><div class="eyebrow">{E(s["eyebrow"])}</div><h2>{E(s["title"])}</h2></div>'
         for i, im in enumerate(s["images"]):
@@ -450,15 +451,16 @@ try:
         elif t == "full":
             pic(sl, s["image"], 0, 0, 1920, 1080, overlay=False)
             alpha(panel(sl, 0, 960, 1920, 120, RGBColor(0x08, 0x0C, 0x0E)), 80000)
-            panel(sl, 50, 50, 720, 330, LIGHT)
-            box(sl, 80, 76, 660, 40, s["eyebrow"].upper(), 13, True, GREEN)
-            box(sl, 80, 120, 660, 130, s["title"], 26, True, INK)
-            box(sl, 80, 260, 660, 110, s["text"], 13, False, GREY)
+            panel(sl, 50, 50, 540, 250, LIGHT)
+            box(sl, 72, 66, 500, 34, s["eyebrow"].upper(), 11, True, GREEN)
+            box(sl, 72, 102, 500, 100, s["title"], 21, True, INK)
+            box(sl, 72, 196, 500, 100, s["text"], 11, False, GREY)
         elif t == "room":
             box(sl, 80, 96, 580, 40, s["eyebrow"].upper(), 13, True, GREEN)
-            fin = s.get("finishes")
+            fin = s.get("finishes") or s.get("stats")            # lower block in use: keep the text above it
             box(sl, 80, 136, 580, 150 if fin else 240, s["title"], 24, True)
-            box(sl, 80, 290 if fin else 400, 580, 480 if fin else 620, [s["text"], ""] + ["- " + b for b in s["bullets"]], 13 if fin else 14, False, GREY)
+            ty = (290 if len(s["title"]) <= 45 else 345) if fin else 400          # 3-line titles push the text down
+            box(sl, 80, ty, 580, 780 - ty if fin else 620, [s["text"], ""] + ["- " + b for b in s["bullets"]], 13 if fin else 14, False, GREY)
             ims = s["images"]
             lay = s.get("layout", "1+2")
             if s.get("stats"):
@@ -489,7 +491,7 @@ try:
                 x, y = 80 + (i % 3) * 600, 320 + (i // 3) * 300
                 panel(sl, x, y, 560, 270, WHITE)
                 box(sl, x + 24, y + 22, 510, 50, (f"{i + 1:02d}   " if s.get("numbered") else "") + ct, 19, True, GREEN)
-                box(sl, x + 24, y + 86, 510, 170, cd, 14, False, GREY)
+                box(sl, x + 24, y + 80, 510, 180, cd, 13, False, GREY)
             if s.get("image"):
                 pic(sl, s["image"], 1280, 620, 560, 270)
         elif t == "plan":

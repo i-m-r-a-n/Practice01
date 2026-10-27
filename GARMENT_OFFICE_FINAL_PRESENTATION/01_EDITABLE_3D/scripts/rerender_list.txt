@@ -25,3 +25,4 @@ CAM_ISO_SE --res 1920x1080 --samples 96
 CAM_TOP_Plan --res 1240x1600 --samples 64
 # overall isometric from the south-west, 4:3 so the whole L-shaped plan fits
 CAM_ISO_SW --res 1600x1200 --samples 96
+# top plan once more at exposure 0.0 (the -0.3 version was too dark), rendered directly after queue 2

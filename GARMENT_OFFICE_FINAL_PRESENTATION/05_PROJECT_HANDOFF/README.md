@@ -12,7 +12,7 @@ Scope: ground floor only, office use only (corporate headquarters + design devel
 | `01_EDITABLE_3D/scripts/` | all generation scripts (see below) |
 | `01_EDITABLE_3D/assets/` | CC0 textures and models (`LICENSES.md`), client logos cropped from the supplied business card / profile |
 | `01_EDITABLE_3D/phase1_shell_reference/` | phase 1 shell model, shell views and the original dimension schedule |
-| `02_RENDERED_IMAGES/final/` | final Cycles renders (1600 x 900 or 1920 x 1080), `render_log.csv` with times |
+| `02_RENDERED_IMAGES/final/` | final Cycles renders of all 38 views (PNG + JPG), `render_log.csv` with times, `superseded/` first versions; index in `02_RENDERED_IMAGES/README.md`, all finals on `final_contact_sheet.jpg` |
 | `02_RENDERED_IMAGES/previews/` | 960 x 540 preview renders of all 33 interior views |
 | `02_RENDERED_IMAGES/plans/` | drawings ID-01 to ID-04 as SVG, PNG and A3 PDF |
 | `03_PRESENTATION/` | `Garment_Office_Design_Pitch.pdf`, editable `.pptx`, HTML source, `assets/` (renders, drawings, logos, finish swatches cropped from the material board render) |
@@ -30,7 +30,7 @@ Scope: ground floor only, office use only (corporate headquarters + design devel
 | `cameras.py` | the 38 camera views |
 | `render_views.py` | renders cameras: `blender -b MODEL.blend --python render_views.py -- --out DIR --quality preview|final --cams CAM_01_Reception_A,...` |
 | `render_queue.sh` | sequential final render queue (resumable, skips finished images) |
-| `render_queue2.sh` | second pass: re-renders views done before the last model fixes, then the Cycles top plan |
+| `render_queue2.sh` + `rerender_list.txt` | second pass after the first queue: re-renders the views listed (with the reason) in `rerender_list.txt` |
 | `verify_geometry.py` | checkpoint A: measures the model and compares with the survey values |
 | `verify_files.py`, `verify_deck.py`, `verify_all.sh` | reopen the delivered .blend (lone copy), re-import the .glb, run the geometry check, check the PDF / PPTX and that every deck image is one of this project's renders; writes `verification_results.md` |
 | `make_drawings.py` + `export_drawings.js` | 2D drawings (SVG) and their PNG / PDF export (Node + Playwright) |
