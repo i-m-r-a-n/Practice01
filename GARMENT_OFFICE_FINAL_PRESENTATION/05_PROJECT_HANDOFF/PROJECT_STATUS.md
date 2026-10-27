@@ -60,4 +60,7 @@ rendered a second time (the QC fixes below, and the cover and closing images at 
 - Git: the whole folder (scripts, docs, drawings, renders, presentation, .blend, .glb, CC0 assets) is committed to
   `i-m-r-a-n/Practice01`, branch `claude/magical-hopper-74q4xq`; retrieval is checked through the GitHub API after each push
   (see `verification_results.md`, section Persistence).
-- Nothing was uploaded to Google Drive or any other service.
+- Chat: on 2026-10-27 the deck (PDF + PPTX), the .blend and .glb, key renders with the contact sheet, drawings ID-01 to
+  ID-04 and the handoff documents were sent as attachments in the Claude conversation (the send tool confirmed delivery;
+  downloading them again could not be tested from the cloud session).
+- Nothing was uploaded to Google Drive or any other outside service.
