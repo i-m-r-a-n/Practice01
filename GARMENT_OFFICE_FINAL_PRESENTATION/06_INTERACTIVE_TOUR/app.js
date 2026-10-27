@@ -57,6 +57,8 @@ const loadText=$('loadText');
 const bar=$('progressBar');
 
 function init(){
+ window.__stage2MainStarted=true;
+ window.__stage2EmergencyStop?.();
  bindExtras();
  try{renderer=new THREE.WebGLRenderer({canvas,antialias:true,powerPreference:'high-performance'});}catch(err){activateFallback(err);return;}
  canvas.addEventListener('webglcontextlost',event=>{event.preventDefault();activateFallback(new Error('Graphics context lost; showing original Cycles renders.'));});
