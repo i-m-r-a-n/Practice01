@@ -123,7 +123,7 @@ function onResize(){
 function animate(now=performance.now()){
  requestAnimationFrame(animate);
  const dt=Math.min(.075,(now-prevTime)/1000||.016);prevTime=now;
- if(transition){transition.t+=dt;const t=Math.min(1,transition.t/transition.d);const smooth=t*t*(3-2*t);
+ if(transition && !inTour){transition.t+=dt;const t=Math.min(1,transition.t/transition.d);const smooth=t*t*(3-2*t);
     camera.position.copy(transition.a).lerp(transition.b,smooth);
     controls.target.copy(transition.ta).lerp(transition.tb,smooth);
     camera.quaternion.slerpQuaternions(transition.qa,transition.qb,smooth);
@@ -196,7 +196,7 @@ function selectRoom(r,fromTour=false){
  updateHUD(r);
  renderRooms();
  const p=cameraPose(r);
- goToPose(p,true);
+ goToPose(p,false);
  if(innerWidth<781)$('sidebar').classList.add('closed');
 }
 function overview(instant=false){
@@ -212,11 +212,12 @@ function overview(instant=false){
 }
 function setWalk(v){
  if(v && !office)return;
+ if(v && !selected){const r=ROOMS.find(x=>x.id==='Z02');selectRoom(r);}
  viewMode=v?'walk':'orbit';
  controls.enabled=!v;
  if(v){
-  if(!selected){const r=ROOMS.find(x=>x.id==='Z02');selectRoom(r);}
   const e=new THREE.Euler().setFromQuaternion(camera.quaternion,'YXZ');walkYaw=e.y;walkPitch=e.x;
+  transition=null;
   $('walkBtn').classList.add('active');
   $('walkBtn').textContent='✓ Walk mode';
   $('roomDesc').textContent='Use W A S D to move through the design. Arrow keys turn your view. Press Esc to leave walk mode.';
