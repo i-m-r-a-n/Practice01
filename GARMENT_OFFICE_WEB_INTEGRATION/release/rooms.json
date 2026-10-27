@@ -1,0 +1,341 @@
+{
+  "version": "2026-10-27",
+  "rooms": [
+    {
+      "id": "Z01",
+      "name": "Entrance lobby",
+      "group": "Arrival & visitors",
+      "camera": "CAM_03_Entrance_Lobby",
+      "description": "Security / visitor check-in desk in walnut facing the main gate; oak-slat brand wall with the three client logos and the tagline, lit by track spots. The existing stair is kept."
+    },
+    {
+      "id": "Z02",
+      "name": "Reception & visitor waiting",
+      "group": "Arrival & visitors",
+      "camera": "CAM_01_Reception_A",
+      "description": "Fluted-oak reception counter with a terrazzo ledge and an accessible lower section; backlit logo plate on a fluted oak wall; waiting lounge (sofa, green armchairs, walnut table, wool rug) under a suspended oak slat raft with a brass halo pendant."
+    },
+    {
+      "id": "Z03",
+      "name": "Visitor passage",
+      "group": "Arrival & visitors",
+      "camera": null,
+      "description": "Links the reception with the experience centre and the guest WCs, so visitors never cross the office areas."
+    },
+    {
+      "id": "Z28",
+      "name": "Guest WCs",
+      "group": "Arrival & visitors",
+      "camera": null,
+      "description": "Two guest WCs with vanities off the visitor passage."
+    },
+    {
+      "id": "Z08",
+      "name": "Boardroom",
+      "group": "Experience & meeting",
+      "camera": "CAM_09_Boardroom_A",
+      "description": "15 seats: 6.1 m walnut table with a power/data trough, black leather chairs, 86 in screen on an oak slat media wall, walnut acoustic slats, green felt rafts between the existing beams and linear pendants over the table."
+    },
+    {
+      "id": "Z09",
+      "name": "Audit room",
+      "group": "Experience & meeting",
+      "camera": "CAM_27_Audit_Room",
+      "description": "Meeting table (1500 x 900 mm) for 5 with tall document cabinets."
+    },
+    {
+      "id": "Z30",
+      "name": "Experience centre",
+      "group": "Experience & meeting",
+      "camera": "CAM_04_Experience_Centre_A",
+      "description": "Brand-story wall with the logos and tagline, four garment display bays with deep-green backs, brass rails and LED shelves, a mannequin plinth, a 'yarn to garment' touch table, a long terrazzo display counter and a digital totem. Track lights on the existing beams; glass to the boardroom and the fabric library."
+    },
+    {
+      "id": "Z10",
+      "name": "Executive reception",
+      "group": "Executive suite",
+      "camera": "CAM_17_Executive_Reception",
+      "description": "PA desk and executive waiting on the executive link, oak herringbone floor."
+    },
+    {
+      "id": "Z11",
+      "name": "Director",
+      "group": "Executive suite",
+      "camera": "CAM_18_Director",
+      "description": "Director desk (1680 x 810 mm), credenza and two visitor chairs; glass front on the oak-lined executive corridor."
+    },
+    {
+      "id": "Z12",
+      "name": "Managing Director",
+      "group": "Executive suite",
+      "camera": "CAM_07_MD_Office_A",
+      "description": "2.1 m walnut desk with leather pad, cognac executive chair, walnut feature wall with the logo, lounge corner (sofa, armchair, coffee table, rug), oak slat raft with a halo pendant, oak herringbone floor."
+    },
+    {
+      "id": "Z13",
+      "name": "Executive corridor",
+      "group": "Executive suite",
+      "camera": "CAM_31_Executive_Corridor",
+      "description": "Glass-fronted, oak-lined corridor linking the executive reception with the Director and Managing Director; direct door from the executive suite to the boardroom."
+    },
+    {
+      "id": "Z04",
+      "name": "Guest workspace",
+      "group": "Workplace",
+      "camera": "CAM_26_Guest_Workspace",
+      "description": "Six work seats at a 2130 x 1000 mm table with a 55 in display for visiting staff."
+    },
+    {
+      "id": "Z05",
+      "name": "HR & admin",
+      "group": "Workplace",
+      "camera": "CAM_19_HR_Admin",
+      "description": "Four desks and a round meeting table; the room also opens to the reception for candidates and vendors."
+    },
+    {
+      "id": "Z06",
+      "name": "Commercial & accounts",
+      "group": "Workplace",
+      "camera": "CAM_16_Commercial_Accounts",
+      "description": "12 workstations and a manager's desk with dedicated storage, same desk family and 4000 K linear pendants as the rest of the workplace."
+    },
+    {
+      "id": "Z07",
+      "name": "Merchandising",
+      "group": "Workplace",
+      "camera": "CAM_11_Merchandising_A",
+      "description": "Open office with 16 bench desks with green felt screens and an 8-seat team table, a sample-review counter with pinboard, lockers and low storage under the windows, felt baffles between the beams."
+    },
+    {
+      "id": "Z31",
+      "name": "Staff corridor",
+      "group": "Workplace",
+      "camera": null,
+      "description": "Staff route from the lobby staff door to HR & admin and commercial & accounts."
+    },
+    {
+      "id": "Z14",
+      "name": "CAD / technical design",
+      "group": "Design development",
+      "camera": "CAM_15_CAD_Room",
+      "description": "Three CAD workstations, a large-format plotter, a layout / digitiser table and a brand-green felt pinboard for tech packs."
+    },
+    {
+      "id": "Z15",
+      "name": "Fabric & trim library",
+      "group": "Design development",
+      "camera": "CAM_25_Fabric_Library",
+      "description": "Fabric, colour, print and trim library: shelving, low swatch shelving, a swatch / garment rail and a D65 colour booth."
+    },
+    {
+      "id": "Z16",
+      "name": "3D printing lab",
+      "group": "Design development",
+      "camera": "CAM_24_3D_Printing_Lab",
+      "description": "Four enclosed 3D printers, a printer bench, a post-processing bench with sink and a desk."
+    },
+    {
+      "id": "Z17",
+      "name": "Sample development",
+      "group": "Design development",
+      "camera": "CAM_23_Sample_Room",
+      "description": "Pattern & cutting table (2440 x 1220 mm), two sample machine stations, dress forms and a steam station - an office-grade sample studio, not production."
+    },
+    {
+      "id": "Z18",
+      "name": "Global Design Studio",
+      "group": "Design development",
+      "camera": "CAM_13_Design_Studio_A",
+      "description": "Creative workstations by the east windows, a 7.4 m mood-board wall, trend table, collection display and buyer-presentation table with an 86 in screen. 'Global Design Studio' is the name proposed in the master plan."
+    },
+    {
+      "id": "Z19",
+      "name": "Sample & material store",
+      "group": "Design development",
+      "camera": null,
+      "description": "Store shelving for sample boxes and materials."
+    },
+    {
+      "id": "Z22",
+      "name": "Design-wing corridor",
+      "group": "Design development",
+      "camera": "CAM_32_Design_Corridor",
+      "description": "Corridor through the design-development wing."
+    },
+    {
+      "id": "Z20",
+      "name": "Staff cafe & pantry",
+      "group": "Staff facilities",
+      "camera": "CAM_20_Staff_Cafe",
+      "description": "16 seats at two 2440 mm cafe tables and a 3660 mm pantry with sink and refrigerator."
+    },
+    {
+      "id": "Z21",
+      "name": "Staff lounge / training",
+      "group": "Staff facilities",
+      "camera": "CAM_21_Lounge_Training",
+      "description": "Multipurpose room: sofa group, 6-seat workshop table and screen."
+    },
+    {
+      "id": "Z32",
+      "name": "North corridor",
+      "group": "Staff facilities",
+      "camera": null,
+      "description": "Circulation to the staff cafe, lounge / training and prayer rooms."
+    },
+    {
+      "id": "Z33",
+      "name": "Hallway",
+      "group": "Staff facilities",
+      "camera": null,
+      "description": "Staff hallway between the workplace and the design wing."
+    },
+    {
+      "id": "Z23",
+      "name": "Prayer room (male)",
+      "group": "Prayer & wudu",
+      "camera": "CAM_22_Prayer_Male",
+      "description": "Prayer room with green prayer carpet, shoe rack and book shelf under 3000 K downlights."
+    },
+    {
+      "id": "Z24",
+      "name": "Wudu (male)",
+      "group": "Prayer & wudu",
+      "camera": "CAM_33_Wudu_Male",
+      "description": "Ablution room with a wudu bench next to the male prayer room."
+    },
+    {
+      "id": "Z25",
+      "name": "Prayer room (female)",
+      "group": "Prayer & wudu",
+      "camera": "CAM_30_Prayer_Female",
+      "description": "Separate prayer room with green prayer carpet, shoe rack and book shelf."
+    },
+    {
+      "id": "Z34",
+      "name": "Wudu (female)",
+      "group": "Prayer & wudu",
+      "camera": null,
+      "description": "Ablution space with a wudu bench next to the female prayer room."
+    },
+    {
+      "id": "Z26",
+      "name": "Washroom (female)",
+      "group": "Washrooms",
+      "camera": "CAM_29_Washroom_Female",
+      "description": "Two WC cubicles and a 1520 mm vanity."
+    },
+    {
+      "id": "Z27",
+      "name": "Washroom (male)",
+      "group": "Washrooms",
+      "camera": "CAM_28_Washroom_Male",
+      "description": "Two WC cubicles, two urinals and a 1520 mm vanity."
+    },
+    {
+      "id": "Z29",
+      "name": "Guest workspace WC",
+      "group": "Washrooms",
+      "camera": null,
+      "description": "WC with vanity for the guest workspace."
+    }
+  ],
+  "tour": [
+    {
+      "zone": null,
+      "title": "The complete ground floor",
+      "camera": "CAM_ISO_SE",
+      "description": "Ground floor of the proposed corporate headquarters & design development centre: visitor zone at the front, executive suite, workplace, design wing and staff facilities."
+    },
+    {
+      "zone": "Z01",
+      "title": "Entrance lobby",
+      "camera": "CAM_03_Entrance_Lobby",
+      "description": "Security / visitor check-in desk in walnut facing the main gate; oak-slat brand wall with the three client logos and the tagline, lit by track spots. The existing stair is kept."
+    },
+    {
+      "zone": "Z02",
+      "title": "Reception & visitor waiting",
+      "camera": "CAM_01_Reception_A",
+      "description": "Fluted-oak reception counter with a terrazzo ledge and an accessible lower section; backlit logo plate on a fluted oak wall; waiting lounge (sofa, green armchairs, walnut table, wool rug) under a suspended oak slat raft with a brass halo pendant."
+    },
+    {
+      "zone": "Z30",
+      "title": "Experience centre",
+      "camera": "CAM_04_Experience_Centre_A",
+      "description": "Brand-story wall with the logos and tagline, four garment display bays with deep-green backs, brass rails and LED shelves, a mannequin plinth, a 'yarn to garment' touch table, a long terrazzo display counter and a digital totem. Track lights on the existing beams; glass to the boardroom and the fabric library."
+    },
+    {
+      "zone": "Z08",
+      "title": "Boardroom",
+      "camera": "CAM_09_Boardroom_A",
+      "description": "15 seats: 6.1 m walnut table with a power/data trough, black leather chairs, 86 in screen on an oak slat media wall, walnut acoustic slats, green felt rafts between the existing beams and linear pendants over the table."
+    },
+    {
+      "zone": "Z10",
+      "title": "Executive reception & Managing Director",
+      "camera": "CAM_17_Executive_Reception",
+      "description": "PA desk and executive waiting on the executive link, oak herringbone floor."
+    },
+    {
+      "zone": "Z06",
+      "title": "Commercial & accounts",
+      "camera": "CAM_16_Commercial_Accounts",
+      "description": "12 workstations and a manager's desk with dedicated storage, same desk family and 4000 K linear pendants as the rest of the workplace."
+    },
+    {
+      "zone": "Z05",
+      "title": "HR & admin",
+      "camera": "CAM_19_HR_Admin",
+      "description": "Four desks and a round meeting table; the room also opens to the reception for candidates and vendors."
+    },
+    {
+      "zone": "Z07",
+      "title": "Merchandising",
+      "camera": "CAM_11_Merchandising_A",
+      "description": "Open office with 16 bench desks with green felt screens and an 8-seat team table, a sample-review counter with pinboard, lockers and low storage under the windows, felt baffles between the beams."
+    },
+    {
+      "zone": "Z14",
+      "title": "CAD / technical design",
+      "camera": "CAM_15_CAD_Room",
+      "description": "Three CAD workstations, a large-format plotter, a layout / digitiser table and a brand-green felt pinboard for tech packs."
+    },
+    {
+      "zone": "Z18",
+      "title": "Global Design Studio",
+      "camera": "CAM_13_Design_Studio_A",
+      "description": "Creative workstations by the east windows, a 7.4 m mood-board wall, trend table, collection display and buyer-presentation table with an 86 in screen. 'Global Design Studio' is the name proposed in the master plan."
+    },
+    {
+      "zone": "Z17",
+      "title": "Sample development",
+      "camera": "CAM_23_Sample_Room",
+      "description": "Pattern & cutting table (2440 x 1220 mm), two sample machine stations, dress forms and a steam station - an office-grade sample studio, not production."
+    },
+    {
+      "zone": "Z20",
+      "title": "Staff cafe & pantry",
+      "camera": "CAM_20_Staff_Cafe",
+      "description": "16 seats at two 2440 mm cafe tables and a 3660 mm pantry with sink and refrigerator."
+    },
+    {
+      "zone": "Z21",
+      "title": "Staff lounge / training",
+      "camera": "CAM_21_Lounge_Training",
+      "description": "Multipurpose room: sofa group, 6-seat workshop table and screen."
+    },
+    {
+      "zone": "Z23",
+      "title": "Prayer & wudu",
+      "camera": "CAM_22_Prayer_Male",
+      "description": "Prayer room with green prayer carpet, shoe rack and book shelf under 3000 K downlights."
+    },
+    {
+      "zone": null,
+      "title": "The complete ground floor",
+      "camera": "CAM_ISO_SW",
+      "description": "Proposed interior visualization. Final dimensions and technical details subject to site verification."
+    }
+  ]
+}
