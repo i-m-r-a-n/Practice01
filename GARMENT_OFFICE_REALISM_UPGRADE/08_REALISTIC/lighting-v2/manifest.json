@@ -778,6 +778,3881 @@
         }
       },
       "status": "baked-unreviewed"
+    },
+    {
+      "id": "SHELL_WALLS",
+      "name": "Shared shell",
+      "glb": "SHELL_WALLS.glb",
+      "lightMap": {
+        "url": "SHELL_WALLS.exr",
+        "format": "exr",
+        "channel": 1,
+        "intensity": 3.141592653589793,
+        "linear": true,
+        "samples": 256,
+        "size": 4096,
+        "denoised": true,
+        "denoiser": "OIDN2.3.3 RTLightmap HDR"
+      },
+      "objects": [
+        "EW01 Front facade with main gate",
+        "EW02 Room 1 west wall",
+        "EW03 Room 4 east wall",
+        "IW01 Row wall, rooms 1 and 2",
+        "IW02 Row wall over the room 3 - room 7 opening",
+        "IW03 Row wall, room 4 - rooms 5 and 8",
+        "EW04 South wall of the east stair",
+        "IW05 Room 3 - room 4",
+        "EW05 Middle block north wall",
+        "EW06 Washroom row west wall",
+        "EW07 Room 2 west wall",
+        "IW06 Room 2 north wall (64 in jog)",
+        "IW07 Room 2 - room 7",
+        "IW08 Washroom row - room 7",
+        "IW09 Rooms 5, 6, hallway - room 8",
+        "EW08 Room 8 west wall, north part",
+        "EW09 Room 8 north wall",
+        "EW10 Room 8 east wall",
+        "IW10 North-east stair, south wall",
+        "IW11 North-east stair, west wall",
+        "IW12 Engine room (sub-station), north wall",
+        "IW13 Engine room (sub-station), west wall",
+        "IW14 South-east stair, north wall",
+        "IW15 South-east stair, west wall",
+        "PW01 Row wall, room 3 - room 5 (48 in)",
+        "PW02 Room 2 washroom, east",
+        "PW03 Room 2 washroom, south",
+        "PW04 Washroom 1 - washroom 2",
+        "PW05 Room 7 - rooms 5 and 6 (48 in)",
+        "PW06 Hallway - room 6 (48 in)",
+        "PW07 Room 5 - room 6 (48 in)",
+        "NI02 solid infill above 48in wall PW01",
+        "NI05 solid infill above 48in wall PW05",
+        "NI09 solid infill above 48in wall PW07",
+        "NP02 Audit room west",
+        "NP03 Audit room east",
+        "NP05 Visitor passage - guest WCs",
+        "NP06 Guest WC divider",
+        "NP07 Guest WCs - boardroom",
+        "NP08 Female prayer - female washroom",
+        "NP09 Store opening infill",
+        "NP33 Experience centre - merchandising (display wall)",
+        "NP10 Sample room north",
+        "NP12 Sample room - 3D lab",
+        "NP14 3D lab - fabric library",
+        "NP16 Fabric library - CAD",
+        "NP19 Store west",
+        "NP20 Design studio - store",
+        "NP21 Store south",
+        "NP25 Prayer and wudu - north corridor",
+        "NP26 Design studio - north corridor (mood-board wall)",
+        "NP27 Prayer - wudu",
+        "NP28 Wudu - design studio"
+      ],
+      "materials": [
+        "paint_white",
+        "cutter"
+      ],
+      "bounds": [],
+      "bake": {
+        "type": "DIFFUSE",
+        "passes": [
+          "DIRECT",
+          "INDIRECT"
+        ],
+        "target_uv_layer": "LightmapUV",
+        "source_shader_uv_layer": "UVMap",
+        "albedo_included": false,
+        "source_sha256": "fa3ed3d58f6d44c3554e3761307841b96115ff7816e4e541c8e6611cb363810d",
+        "loaded_copy_sha256": "fa3ed3d58f6d44c3554e3761307841b96115ff7816e4e541c8e6611cb363810d",
+        "executed_script_sha256": "5bea676996f981a5776ec7a5c3af2d298ba1ca09fc20adde4a13a79ae5a9ada9",
+        "postprocess_script_sha256": "0c787931ea0b3337ac4ecabeaa3a29d974065d2057198f41eae7f3f2914994ae",
+        "blender": "5.2.3 LTS",
+        "cpu_threads": 4,
+        "adaptive_sampling": false,
+        "preserved_emitter_groups": false,
+        "emitter_source_objects": [],
+        "seconds": 4322.150339006,
+        "total_seconds": 4323.911378348,
+        "stats": {
+          "min": 0.0,
+          "max": 21.971250534057617,
+          "p99": 15.072880744934082,
+          "covered_nonzero_pixels": 8823654,
+          "finite": true,
+          "raw_exr": "SHELL_WALLS_raw.exr",
+          "denoised_max": 20.578125,
+          "denoised_finite": true
+        },
+        "uv_metrics": {
+          "uv1_loop_coordinates_sha256": "468f078cf67deef538b772403ac06cfdfdd5dcfd45b924d29c26517c8f49d7e2",
+          "uv0_world_loop_signature": "1c21396e9bd590a9525521c505eb9ca716fafb6834ba58ba42d9c761825cd5cd",
+          "uv0_and_evaluated_geometry_preserved": true,
+          "max_world_loop_error_m": 5.394796517066425e-06,
+          "max_world_corner_normal_error_degrees": 180.0,
+          "world_surface_area_m2": 2316.8956107819586,
+          "summed_uv_island_area": 0.5538124774485493,
+          "mean_linear_texels_per_metre": 63.32687868945106,
+          "floor_uv_weight": 1.0,
+          "packing_margin_uv": 0.004,
+          "bake_dilation_px": 16,
+          "objects": {
+            "EW01 Front facade with main gate": {
+              "world_area_m2": 162.64739418750386,
+              "uv_area": 0.038877978974604675,
+              "texels_per_metre": 63.32690066526267
+            },
+            "EW02 Room 1 west wall": {
+              "world_area_m2": 42.59088051932693,
+              "uv_area": 0.010180593287532957,
+              "texels_per_metre": 63.32689324890175
+            },
+            "EW03 Room 4 east wall": {
+              "world_area_m2": 42.59084455845468,
+              "uv_area": 0.010180594044643776,
+              "texels_per_metre": 63.326922338150965
+            },
+            "IW01 Row wall, rooms 1 and 2": {
+              "world_area_m2": 53.734073235786916,
+              "uv_area": 0.012844172625800399,
+              "texels_per_metre": 63.32688609360663
+            },
+            "IW02 Row wall over the room 3 - room 7 opening": {
+              "world_area_m2": 3.3290238226267235,
+              "uv_area": 0.0007957431601308684,
+              "texels_per_metre": 63.32685987198569
+            },
+            "IW03 Row wall, room 4 - rooms 5 and 8": {
+              "world_area_m2": 83.28241072725349,
+              "uv_area": 0.019907171227480758,
+              "texels_per_metre": 63.326878296282324
+            },
+            "EW04 South wall of the east stair": {
+              "world_area_m2": 39.55089865841262,
+              "uv_area": 0.009453933953962435,
+              "texels_per_metre": 63.32687422441336
+            },
+            "IW05 Room 3 - room 4": {
+              "world_area_m2": 32.70059719505192,
+              "uv_area": 0.007816490705442547,
+              "texels_per_metre": 63.32686865456787
+            },
+            "EW05 Middle block north wall": {
+              "world_area_m2": 152.030767419957,
+              "uv_area": 0.0363402555540215,
+              "texels_per_metre": 63.32689472284849
+            },
+            "EW06 Washroom row west wall": {
+              "world_area_m2": 108.67073975373023,
+              "uv_area": 0.025975820301148644,
+              "texels_per_metre": 63.3269062753691
+            },
+            "EW07 Room 2 west wall": {
+              "world_area_m2": 38.43088160542283,
+              "uv_area": 0.009186226289082722,
+              "texels_per_metre": 63.326916798918134
+            },
+            "IW06 Room 2 north wall (64 in jog)": {
+              "world_area_m2": 27.870908906404274,
+              "uv_area": 0.0066620414470968115,
+              "texels_per_metre": 63.32687351471869
+            },
+            "IW07 Room 2 - room 7": {
+              "world_area_m2": 28.654154958531286,
+              "uv_area": 0.0068492830630404455,
+              "texels_per_metre": 63.326969114257686
+            },
+            "IW08 Washroom row - room 7": {
+              "world_area_m2": 93.29791193548333,
+              "uv_area": 0.022301194041780548,
+              "texels_per_metre": 63.32687307665201
+            },
+            "IW09 Rooms 5, 6, hallway - room 8": {
+              "world_area_m2": 118.31216395535306,
+              "uv_area": 0.028280363600389227,
+              "texels_per_metre": 63.32682923654517
+            },
+            "EW08 Room 8 west wall, north part": {
+              "world_area_m2": 106.59081750188938,
+              "uv_area": 0.02547860646964553,
+              "texels_per_metre": 63.326850145451715
+            },
+            "EW09 Room 8 north wall": {
+              "world_area_m2": 76.6707661051095,
+              "uv_area": 0.018326795232048262,
+              "texels_per_metre": 63.32691187937666
+            },
+            "EW10 Room 8 east wall": {
+              "world_area_m2": 227.89698227499255,
+              "uv_area": 0.0544746125741961,
+              "texels_per_metre": 63.32682811697553
+            },
+            "IW10 North-east stair, south wall": {
+              "world_area_m2": 38.65279103678064,
+              "uv_area": 0.009239265460017299,
+              "texels_per_metre": 63.32690180392375
+            },
+            "IW11 North-east stair, west wall": {
+              "world_area_m2": 16.550985011096216,
+              "uv_area": 0.003956214703646238,
+              "texels_per_metre": 63.326859583141996
+            },
+            "IW12 Engine room (sub-station), north wall": {
+              "world_area_m2": 26.83864542122958,
+              "uv_area": 0.006415292001300088,
+              "texels_per_metre": 63.32684709242391
+            },
+            "IW13 Engine room (sub-station), west wall": {
+              "world_area_m2": 29.43992395370769,
+              "uv_area": 0.007037091849769417,
+              "texels_per_metre": 63.3268981073466
+            },
+            "IW14 South-east stair, north wall": {
+              "world_area_m2": 38.941875147655786,
+              "uv_area": 0.00930835709437261,
+              "texels_per_metre": 63.32687185292393
+            },
+            "IW15 South-east stair, west wall": {
+              "world_area_m2": 32.8270109635991,
+              "uv_area": 0.007846718677355535,
+              "texels_per_metre": 63.326913163255696
+            },
+            "PW01 Row wall, room 3 - room 5 (48 in)": {
+              "world_area_m2": 10.76384602865186,
+              "uv_area": 0.0025729049136640203,
+              "texels_per_metre": 63.32687797463882
+            },
+            "PW02 Room 2 washroom, east": {
+              "world_area_m2": 7.8580531082649845,
+              "uv_area": 0.0018783238898736343,
+              "texels_per_metre": 63.32682423931103
+            },
+            "PW03 Room 2 washroom, south": {
+              "world_area_m2": 16.29287486434131,
+              "uv_area": 0.0038945240288281724,
+              "texels_per_metre": 63.32690758734803
+            },
+            "PW04 Washroom 1 - washroom 2": {
+              "world_area_m2": 15.476088865659076,
+              "uv_area": 0.0036992908482407216,
+              "texels_per_metre": 63.32695114748683
+            },
+            "PW05 Room 7 - rooms 5 and 6 (48 in)": {
+              "world_area_m2": 53.993472582741994,
+              "uv_area": 0.01290616937972909,
+              "texels_per_metre": 63.32686637531872
+            },
+            "PW06 Hallway - room 6 (48 in)": {
+              "world_area_m2": 31.530223865586365,
+              "uv_area": 0.007536726121197407,
+              "texels_per_metre": 63.326835671495694
+            },
+            "PW07 Room 5 - room 6 (48 in)": {
+              "world_area_m2": 28.83093149977344,
+              "uv_area": 0.006891529100004873,
+              "texels_per_metre": 63.326926128955634
+            },
+            "NI02 solid infill above 48in wall PW01": {
+              "world_area_m2": 7.22579335388286,
+              "uv_area": 0.0017271986040539034,
+              "texels_per_metre": 63.326913075560206
+            },
+            "NI05 solid infill above 48in wall PW05": {
+              "world_area_m2": 18.290290824794,
+              "uv_area": 0.004371963733509787,
+              "texels_per_metre": 63.32685465046004
+            },
+            "NI09 solid infill above 48in wall PW07": {
+              "world_area_m2": 6.3806408781553,
+              "uv_area": 0.0015251801020728095,
+              "texels_per_metre": 63.32691947486756
+            },
+            "NP02 Audit room west": {
+              "world_area_m2": 22.970279109434347,
+              "uv_area": 0.005490638486659094,
+              "texels_per_metre": 63.326901162472254
+            },
+            "NP03 Audit room east": {
+              "world_area_m2": 22.970266453428277,
+              "uv_area": 0.005490626284387901,
+              "texels_per_metre": 63.326848239991996
+            },
+            "NP05 Visitor passage - guest WCs": {
+              "world_area_m2": 26.639970470417573,
+              "uv_area": 0.006367806576345281,
+              "texels_per_metre": 63.32686809100435
+            },
+            "NP06 Guest WC divider": {
+              "world_area_m2": 8.962564306098235,
+              "uv_area": 0.002142346042250054,
+              "texels_per_metre": 63.3269565113341
+            },
+            "NP07 Guest WCs - boardroom": {
+              "world_area_m2": 32.059308423820234,
+              "uv_area": 0.00766321025388228,
+              "texels_per_metre": 63.32690219110383
+            },
+            "NP08 Female prayer - female washroom": {
+              "world_area_m2": 15.476088865659076,
+              "uv_area": 0.003699281595415105,
+              "texels_per_metre": 63.3268719493883
+            },
+            "NP09 Store opening infill": {
+              "world_area_m2": 5.034839051202984,
+              "uv_area": 0.0012034883966571819,
+              "texels_per_metre": 63.32688204321831
+            },
+            "NP33 Experience centre - merchandising (display wall)": {
+              "world_area_m2": 73.34561769767242,
+              "uv_area": 0.017531963859523894,
+              "texels_per_metre": 63.326887940178324
+            },
+            "NP10 Sample room north": {
+              "world_area_m2": 26.68508569373997,
+              "uv_area": 0.006378593895394857,
+              "texels_per_metre": 63.3268846461618
+            },
+            "NP12 Sample room - 3D lab": {
+              "world_area_m2": 26.68508569373997,
+              "uv_area": 0.006378596235737,
+              "texels_per_metre": 63.326896263656636
+            },
+            "NP14 3D lab - fabric library": {
+              "world_area_m2": 26.68508569373997,
+              "uv_area": 0.0063785977921918535,
+              "texels_per_metre": 63.32690398992159
+            },
+            "NP16 Fabric library - CAD": {
+              "world_area_m2": 26.68511300622098,
+              "uv_area": 0.006378604315827069,
+              "texels_per_metre": 63.32690396544738
+            },
+            "NP19 Store west": {
+              "world_area_m2": 15.783227332244515,
+              "uv_area": 0.0037726984456314394,
+              "texels_per_metre": 63.32687955333958
+            },
+            "NP20 Design studio - store": {
+              "world_area_m2": 31.309585198182745,
+              "uv_area": 0.007484001871629786,
+              "texels_per_metre": 63.3269008597415
+            },
+            "NP21 Store south": {
+              "world_area_m2": 8.56641747826142,
+              "uv_area": 0.0020476557962257336,
+              "texels_per_metre": 63.32698440909132
+            },
+            "NP25 Prayer and wudu - north corridor": {
+              "world_area_m2": 28.681303921301584,
+              "uv_area": 0.006855739028694741,
+              "texels_per_metre": 63.3268142686893
+            },
+            "NP26 Design studio - north corridor (mood-board wall)": {
+              "world_area_m2": 48.335452513906425,
+              "uv_area": 0.011553706026147026,
+              "texels_per_metre": 63.326824366963145
+            },
+            "NP27 Prayer - wudu": {
+              "world_area_m2": 24.282483008148194,
+              "uv_area": 0.005804292633133645,
+              "texels_per_metre": 63.32687410298041
+            },
+            "NP28 Wudu - design studio": {
+              "world_area_m2": 26.992172137535892,
+              "uv_area": 0.006452002853131411,
+              "texels_per_metre": 63.326911241160936
+            }
+          }
+        },
+        "smoke_only": false,
+        "original_object_bboxes": {
+          "EW01 Front facade with main gate": [
+            [
+              -0.2539997100830078,
+              -6.5278000831604,
+              0.0
+            ],
+            [
+              27.88920021057129,
+              -6.273800373077393,
+              2.8956000804901123
+            ]
+          ],
+          "EW02 Room 1 west wall": [
+            [
+              -0.2540000081062317,
+              -6.5278000831604,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              2.8956000804901123
+            ]
+          ],
+          "EW03 Room 4 east wall": [
+            [
+              27.63519859313965,
+              -6.5278000831604,
+              0.0
+            ],
+            [
+              27.88920021057129,
+              0.0,
+              2.8956000804901123
+            ]
+          ],
+          "IW01 Row wall, rooms 1 and 2": [
+            [
+              -1.6509997844696045,
+              0.0,
+              0.0
+            ],
+            [
+              7.746999740600586,
+              0.2540000081062317,
+              2.8956000804901123
+            ]
+          ],
+          "IW02 Row wall over the room 3 - room 7 opening": [
+            [
+              7.746999740600586,
+              0.0,
+              2.1335999965667725
+            ],
+            [
+              9.194799423217773,
+              0.2540000081062317,
+              2.8956000804901123
+            ]
+          ],
+          "IW03 Row wall, room 4 - rooms 5 and 8": [
+            [
+              14.35099983215332,
+              0.0,
+              0.0
+            ],
+            [
+              27.88920021057129,
+              0.2540000081062317,
+              2.8956000804901123
+            ]
+          ],
+          "EW04 South wall of the east stair": [
+            [
+              27.88920021057129,
+              0.0,
+              0.0
+            ],
+            [
+              33.93439865112305,
+              0.2540000081062317,
+              2.8956000804901123
+            ]
+          ],
+          "IW05 Room 3 - room 4": [
+            [
+              14.35099983215332,
+              -6.273799896240234,
+              0.0
+            ],
+            [
+              14.47800064086914,
+              0.0,
+              2.8956000804901123
+            ]
+          ],
+          "EW05 Middle block north wall": [
+            [
+              -1.6510000228881836,
+              22.631399154663086,
+              0.0
+            ],
+            [
+              22.25040054321289,
+              22.885400772094727,
+              2.8956000804901123
+            ]
+          ],
+          "EW06 Washroom row west wall": [
+            [
+              -1.6510000228881836,
+              5.867400169372559,
+              0.0
+            ],
+            [
+              -1.3970000743865967,
+              22.885398864746094,
+              2.8956000804901123
+            ]
+          ],
+          "EW07 Room 2 west wall": [
+            [
+              -1.6510000228881836,
+              2.384185791015625e-07,
+              0.0
+            ],
+            [
+              -1.3970000743865967,
+              5.867400169372559,
+              2.8956000804901123
+            ]
+          ],
+          "IW06 Room 2 north wall (64 in jog)": [
+            [
+              -1.3970000743865967,
+              5.613399982452393,
+              0.0
+            ],
+            [
+              2.7939999103546143,
+              5.8673996925354,
+              2.8956000804901123
+            ]
+          ],
+          "IW07 Room 2 - room 7": [
+            [
+              2.6670000553131104,
+              0.2539999485015869,
+              0.0
+            ],
+            [
+              2.7939999103546143,
+              5.867400169372559,
+              2.8956000804901123
+            ]
+          ],
+          "IW08 Washroom row - room 7": [
+            [
+              1.0413999557495117,
+              5.867400169372559,
+              0.0
+            ],
+            [
+              1.1684000492095947,
+              22.63140106201172,
+              2.8956000804901123
+            ]
+          ],
+          "IW09 Rooms 5, 6, hallway - room 8": [
+            [
+              21.99639892578125,
+              0.2540006637573242,
+              0.0
+            ],
+            [
+              22.25040054321289,
+              22.63140106201172,
+              2.8956000804901123
+            ]
+          ],
+          "EW08 Room 8 west wall, north part": [
+            [
+              21.99639892578125,
+              22.885398864746094,
+              0.0
+            ],
+            [
+              22.25040054321289,
+              39.57320022583008,
+              2.8956000804901123
+            ]
+          ],
+          "EW09 Room 8 north wall": [
+            [
+              21.996400833129883,
+              39.3192024230957,
+              0.0
+            ],
+            [
+              33.93440246582031,
+              39.57320022583008,
+              2.8956000804901123
+            ]
+          ],
+          "EW10 Room 8 east wall": [
+            [
+              33.68040084838867,
+              0.0,
+              0.0
+            ],
+            [
+              33.93439865112305,
+              39.57320022583008,
+              2.8956000804901123
+            ]
+          ],
+          "IW10 North-east stair, south wall": [
+            [
+              26.619199752807617,
+              36.57600021362305,
+              0.0
+            ],
+            [
+              33.68040084838867,
+              36.702999114990234,
+              2.8956000804901123
+            ]
+          ],
+          "IW11 North-east stair, west wall": [
+            [
+              26.619199752807617,
+              36.702999114990234,
+              0.0
+            ],
+            [
+              26.746198654174805,
+              39.3192024230957,
+              2.8956000804901123
+            ]
+          ],
+          "IW12 Engine room (sub-station), north wall": [
+            [
+              29.36240005493164,
+              10.972799301147461,
+              0.0
+            ],
+            [
+              33.68040084838867,
+              11.099800109863281,
+              2.8956000804901123
+            ]
+          ],
+          "IW13 Engine room (sub-station), west wall": [
+            [
+              29.36240005493164,
+              5.5625996589660645,
+              0.0
+            ],
+            [
+              29.489398956298828,
+              11.099800109863281,
+              2.8956000804901123
+            ]
+          ],
+          "IW14 South-east stair, north wall": [
+            [
+              26.517601013183594,
+              5.435600280761719,
+              0.0
+            ],
+            [
+              33.68040084838867,
+              5.562600135803223,
+              2.8956000804901123
+            ]
+          ],
+          "IW15 South-east stair, west wall": [
+            [
+              26.517601013183594,
+              0.2539999485015869,
+              0.0
+            ],
+            [
+              26.64459991455078,
+              5.562600135803223,
+              2.8956000804901123
+            ]
+          ],
+          "PW01 Row wall, room 3 - room 5 (48 in)": [
+            [
+              9.194799423217773,
+              0.0,
+              0.0
+            ],
+            [
+              14.35099983215332,
+              0.2540000081062317,
+              1.2192000150680542
+            ]
+          ],
+          "PW02 Room 2 washroom, east": [
+            [
+              1.1937999725341797,
+              3.936999797821045,
+              0.0
+            ],
+            [
+              1.2699999809265137,
+              5.613399982452393,
+              2.8956000804901123
+            ]
+          ],
+          "PW03 Room 2 washroom, south": [
+            [
+              -1.3970000743865967,
+              3.86080002784729,
+              0.0
+            ],
+            [
+              1.2699999809265137,
+              3.937000036239624,
+              2.8956000804901123
+            ]
+          ],
+          "PW04 Washroom 1 - washroom 2": [
+            [
+              -1.3970000743865967,
+              13.055599212646484,
+              0.0
+            ],
+            [
+              1.0413999557495117,
+              13.182600021362305,
+              2.8956000804901123
+            ]
+          ],
+          "PW05 Room 7 - rooms 5 and 6 (48 in)": [
+            [
+              9.194799423217773,
+              1.4731998443603516,
+              0.0
+            ],
+            [
+              9.321800231933594,
+              21.412200927734375,
+              1.2192000150680542
+            ]
+          ],
+          "PW06 Hallway - room 6 (48 in)": [
+            [
+              9.19480037689209,
+              21.285200119018555,
+              0.0
+            ],
+            [
+              21.99639892578125,
+              21.412199020385742,
+              1.2192000150680542
+            ]
+          ],
+          "PW07 Room 5 - room 6 (48 in)": [
+            [
+              9.321800231933594,
+              5.435600280761719,
+              0.0
+            ],
+            [
+              21.99639892578125,
+              5.562600135803223,
+              1.2192000150680542
+            ]
+          ],
+          "NI02 solid infill above 48in wall PW01": [
+            [
+              10.667999267578125,
+              0.0,
+              1.2192000150680542
+            ],
+            [
+              12.319000244140625,
+              0.2540000081062317,
+              2.895599842071533
+            ]
+          ],
+          "NI05 solid infill above 48in wall PW05": [
+            [
+              9.194799423217773,
+              5.791200160980225,
+              1.2192000150680542
+            ],
+            [
+              9.321800231933594,
+              10.744199752807617,
+              2.895599842071533
+            ]
+          ],
+          "NI09 solid infill above 48in wall PW07": [
+            [
+              10.667999267578125,
+              5.435600280761719,
+              1.2192000150680542
+            ],
+            [
+              12.319000244140625,
+              5.562600135803223,
+              2.895599842071533
+            ]
+          ],
+          "NP02 Audit room west": [
+            [
+              2.4384000301361084,
+              18.897600173950195,
+              0.0
+            ],
+            [
+              2.5400002002716064,
+              22.631399154663086,
+              2.8956000804901123
+            ]
+          ],
+          "NP03 Audit room east": [
+            [
+              6.350000381469727,
+              18.897600173950195,
+              0.0
+            ],
+            [
+              6.451600074768066,
+              22.631399154663086,
+              2.8956000804901123
+            ]
+          ],
+          "NP05 Visitor passage - guest WCs": [
+            [
+              10.667999267578125,
+              0.2539999485015869,
+              0.0
+            ],
+            [
+              10.795000076293945,
+              5.435600280761719,
+              2.8956000804901123
+            ]
+          ],
+          "NP06 Guest WC divider": [
+            [
+              10.795000076293945,
+              2.7939999103546143,
+              0.0
+            ],
+            [
+              12.191999435424805,
+              2.8956000804901123,
+              2.8956000804901123
+            ]
+          ],
+          "NP07 Guest WCs - boardroom": [
+            [
+              12.191999435424805,
+              0.2539999485015869,
+              0.0
+            ],
+            [
+              12.319000244140625,
+              5.435600280761719,
+              2.8956000804901123
+            ]
+          ],
+          "NP08 Female prayer - female washroom": [
+            [
+              -1.3970000743865967,
+              18.161001205444336,
+              0.0
+            ],
+            [
+              1.0413999557495117,
+              18.288000106811523,
+              2.8956000804901123
+            ]
+          ],
+          "NP09 Store opening infill": [
+            [
+              1.0413999557495117,
+              20.47239875793457,
+              0.0
+            ],
+            [
+              1.1684000492095947,
+              21.1835994720459,
+              2.8956000804901123
+            ]
+          ],
+          "NP33 Experience centre - merchandising (display wall)": [
+            [
+              9.321800231933594,
+              10.744199752807617,
+              0.0
+            ],
+            [
+              21.99639892578125,
+              10.871200561523438,
+              2.8956000804901123
+            ]
+          ],
+          "NP10 Sample room north": [
+            [
+              22.25040054321289,
+              21.285200119018555,
+              0.0
+            ],
+            [
+              26.542999267578125,
+              21.412199020385742,
+              2.8956000804901123
+            ]
+          ],
+          "NP12 Sample room - 3D lab": [
+            [
+              22.25040054321289,
+              15.11299991607666,
+              0.0
+            ],
+            [
+              26.542999267578125,
+              15.24000072479248,
+              2.8956000804901123
+            ]
+          ],
+          "NP14 3D lab - fabric library": [
+            [
+              22.25040054321289,
+              11.175999641418457,
+              0.0
+            ],
+            [
+              26.542999267578125,
+              11.303000450134277,
+              2.8956000804901123
+            ]
+          ],
+          "NP16 Fabric library - CAD": [
+            [
+              22.25040054321289,
+              6.5278000831604,
+              0.0
+            ],
+            [
+              26.542999267578125,
+              6.654799938201904,
+              2.8956000804901123
+            ]
+          ],
+          "NP19 Store west": [
+            [
+              27.940000534057617,
+              10.972799301147461,
+              0.0
+            ],
+            [
+              28.066999435424805,
+              13.461999893188477,
+              2.8956000804901123
+            ]
+          ],
+          "NP20 Design studio - store": [
+            [
+              28.066999435424805,
+              13.335000038146973,
+              0.0
+            ],
+            [
+              33.68040084838867,
+              13.462000846862793,
+              2.8956000804901123
+            ]
+          ],
+          "NP21 Store south": [
+            [
+              28.067001342773438,
+              10.972799301147461,
+              0.0
+            ],
+            [
+              29.36240005493164,
+              11.099800109863281,
+              2.8956000804901123
+            ]
+          ],
+          "NP25 Prayer and wudu - north corridor": [
+            [
+              29.21000099182129,
+              30.733999252319336,
+              0.0
+            ],
+            [
+              29.336999893188477,
+              36.57600021362305,
+              2.8956000804901123
+            ]
+          ],
+          "NP26 Design studio - north corridor (mood-board wall)": [
+            [
+              29.21000099182129,
+              22.860000610351562,
+              0.0
+            ],
+            [
+              29.336999893188477,
+              30.73400115966797,
+              2.8956000804901123
+            ]
+          ],
+          "NP27 Prayer - wudu": [
+            [
+              29.336999893188477,
+              32.46120071411133,
+              0.0
+            ],
+            [
+              33.68040084838867,
+              32.588199615478516,
+              2.8956000804901123
+            ]
+          ],
+          "NP28 Wudu - design studio": [
+            [
+              29.336999893188477,
+              30.73400115966797,
+              0.0
+            ],
+            [
+              33.68040084838867,
+              30.861000061035156,
+              2.8956000804901123
+            ]
+          ]
+        },
+        "documented_doorway_repairs": [
+          {
+            "frame": "NI01 frame above PW01",
+            "cutter": "D18 Reception - visitor passage 42\"",
+            "frameBoundsBefore": [
+              [
+                9.194799423217773,
+                0.0,
+                1.2192000150680542
+              ],
+              [
+                10.668000221252441,
+                0.2540000081062317,
+                2.8956000804901123
+              ]
+            ],
+            "cutterBounds": [
+              [
+                9.448800086975098,
+                -0.05079999566078186,
+                -0.02539999969303608
+              ],
+              [
+                10.515599250793457,
+                0.30480000376701355,
+                1.2699999809265137
+              ]
+            ],
+            "testRays": [
+              {
+                "origin": [
+                  9.470136070251465,
+                  -0.15079999566078187,
+                  1.225
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.5555999994277954
+              },
+              {
+                "origin": [
+                  9.470136070251465,
+                  -0.15079999566078187,
+                  1.24
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.5555999994277954
+              },
+              {
+                "origin": [
+                  9.470136070251465,
+                  -0.15079999566078187,
+                  1.255
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.5555999994277954
+              },
+              {
+                "origin": [
+                  9.555480003356934,
+                  -0.15079999566078187,
+                  1.225
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.5555999994277954
+              },
+              {
+                "origin": [
+                  9.555480003356934,
+                  -0.15079999566078187,
+                  1.24
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.5555999994277954
+              },
+              {
+                "origin": [
+                  9.555480003356934,
+                  -0.15079999566078187,
+                  1.255
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.5555999994277954
+              },
+              {
+                "origin": [
+                  9.66215991973877,
+                  -0.15079999566078187,
+                  1.225
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.5555999994277954
+              },
+              {
+                "origin": [
+                  9.66215991973877,
+                  -0.15079999566078187,
+                  1.24
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.5555999994277954
+              },
+              {
+                "origin": [
+                  9.66215991973877,
+                  -0.15079999566078187,
+                  1.255
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.5555999994277954
+              },
+              {
+                "origin": [
+                  9.768839836120605,
+                  -0.15079999566078187,
+                  1.225
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.5555999994277954
+              },
+              {
+                "origin": [
+                  9.768839836120605,
+                  -0.15079999566078187,
+                  1.24
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.5555999994277954
+              },
+              {
+                "origin": [
+                  9.768839836120605,
+                  -0.15079999566078187,
+                  1.255
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.5555999994277954
+              },
+              {
+                "origin": [
+                  9.875519752502441,
+                  -0.15079999566078187,
+                  1.225
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.5555999994277954
+              },
+              {
+                "origin": [
+                  9.875519752502441,
+                  -0.15079999566078187,
+                  1.24
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.5555999994277954
+              },
+              {
+                "origin": [
+                  9.875519752502441,
+                  -0.15079999566078187,
+                  1.255
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.5555999994277954
+              },
+              {
+                "origin": [
+                  9.982199668884277,
+                  -0.15079999566078187,
+                  1.225
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.5555999994277954
+              },
+              {
+                "origin": [
+                  9.982199668884277,
+                  -0.15079999566078187,
+                  1.24
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.5555999994277954
+              },
+              {
+                "origin": [
+                  9.982199668884277,
+                  -0.15079999566078187,
+                  1.255
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.5555999994277954
+              },
+              {
+                "origin": [
+                  10.088879585266113,
+                  -0.15079999566078187,
+                  1.225
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.5555999994277954
+              },
+              {
+                "origin": [
+                  10.088879585266113,
+                  -0.15079999566078187,
+                  1.24
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.5555999994277954
+              },
+              {
+                "origin": [
+                  10.088879585266113,
+                  -0.15079999566078187,
+                  1.255
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.5555999994277954
+              },
+              {
+                "origin": [
+                  10.19555950164795,
+                  -0.15079999566078187,
+                  1.225
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.5555999994277954
+              },
+              {
+                "origin": [
+                  10.19555950164795,
+                  -0.15079999566078187,
+                  1.24
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.5555999994277954
+              },
+              {
+                "origin": [
+                  10.19555950164795,
+                  -0.15079999566078187,
+                  1.255
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.5555999994277954
+              },
+              {
+                "origin": [
+                  10.302239418029785,
+                  -0.15079999566078187,
+                  1.225
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.5555999994277954
+              },
+              {
+                "origin": [
+                  10.302239418029785,
+                  -0.15079999566078187,
+                  1.24
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.5555999994277954
+              },
+              {
+                "origin": [
+                  10.302239418029785,
+                  -0.15079999566078187,
+                  1.255
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.5555999994277954
+              },
+              {
+                "origin": [
+                  10.408919334411621,
+                  -0.15079999566078187,
+                  1.225
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.5555999994277954
+              },
+              {
+                "origin": [
+                  10.408919334411621,
+                  -0.15079999566078187,
+                  1.24
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.5555999994277954
+              },
+              {
+                "origin": [
+                  10.408919334411621,
+                  -0.15079999566078187,
+                  1.255
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.5555999994277954
+              },
+              {
+                "origin": [
+                  10.49426326751709,
+                  -0.15079999566078187,
+                  1.225
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.5555999994277954
+              },
+              {
+                "origin": [
+                  10.49426326751709,
+                  -0.15079999566078187,
+                  1.24
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.5555999994277954
+              },
+              {
+                "origin": [
+                  10.49426326751709,
+                  -0.15079999566078187,
+                  1.255
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.5555999994277954
+              }
+            ],
+            "railRayHitsBefore": 33,
+            "railRayHitsAfter": 0,
+            "frameBoundsAfter": [
+              [
+                9.194799423217773,
+                0.0,
+                1.2192000150680542
+              ],
+              [
+                10.668000221252441,
+                0.2540000081062317,
+                2.8956000804901123
+              ]
+            ]
+          },
+          {
+            "frame": "NI03 frame above PW01",
+            "cutter": "D19 Reception - boardroom 42\"",
+            "frameBoundsBefore": [
+              [
+                12.319000244140625,
+                0.0,
+                1.2192000150680542
+              ],
+              [
+                14.35099983215332,
+                0.2540000081062317,
+                2.8956000804901123
+              ]
+            ],
+            "cutterBounds": [
+              [
+                12.700000762939453,
+                -0.05079999566078186,
+                -0.02539999969303608
+              ],
+              [
+                13.766799926757812,
+                0.30480000376701355,
+                1.2699999809265137
+              ]
+            ],
+            "testRays": [
+              {
+                "origin": [
+                  12.72133674621582,
+                  -0.15079999566078187,
+                  1.225
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.5555999994277954
+              },
+              {
+                "origin": [
+                  12.72133674621582,
+                  -0.15079999566078187,
+                  1.24
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.5555999994277954
+              },
+              {
+                "origin": [
+                  12.72133674621582,
+                  -0.15079999566078187,
+                  1.255
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.5555999994277954
+              },
+              {
+                "origin": [
+                  12.806680679321289,
+                  -0.15079999566078187,
+                  1.225
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.5555999994277954
+              },
+              {
+                "origin": [
+                  12.806680679321289,
+                  -0.15079999566078187,
+                  1.24
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.5555999994277954
+              },
+              {
+                "origin": [
+                  12.806680679321289,
+                  -0.15079999566078187,
+                  1.255
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.5555999994277954
+              },
+              {
+                "origin": [
+                  12.913360595703125,
+                  -0.15079999566078187,
+                  1.225
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.5555999994277954
+              },
+              {
+                "origin": [
+                  12.913360595703125,
+                  -0.15079999566078187,
+                  1.24
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.5555999994277954
+              },
+              {
+                "origin": [
+                  12.913360595703125,
+                  -0.15079999566078187,
+                  1.255
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.5555999994277954
+              },
+              {
+                "origin": [
+                  13.020040512084961,
+                  -0.15079999566078187,
+                  1.225
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.5555999994277954
+              },
+              {
+                "origin": [
+                  13.020040512084961,
+                  -0.15079999566078187,
+                  1.24
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.5555999994277954
+              },
+              {
+                "origin": [
+                  13.020040512084961,
+                  -0.15079999566078187,
+                  1.255
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.5555999994277954
+              },
+              {
+                "origin": [
+                  13.126720428466797,
+                  -0.15079999566078187,
+                  1.225
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.5555999994277954
+              },
+              {
+                "origin": [
+                  13.126720428466797,
+                  -0.15079999566078187,
+                  1.24
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.5555999994277954
+              },
+              {
+                "origin": [
+                  13.126720428466797,
+                  -0.15079999566078187,
+                  1.255
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.5555999994277954
+              },
+              {
+                "origin": [
+                  13.233400344848633,
+                  -0.15079999566078187,
+                  1.225
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.5555999994277954
+              },
+              {
+                "origin": [
+                  13.233400344848633,
+                  -0.15079999566078187,
+                  1.24
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.5555999994277954
+              },
+              {
+                "origin": [
+                  13.233400344848633,
+                  -0.15079999566078187,
+                  1.255
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.5555999994277954
+              },
+              {
+                "origin": [
+                  13.340080261230469,
+                  -0.15079999566078187,
+                  1.225
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.5555999994277954
+              },
+              {
+                "origin": [
+                  13.340080261230469,
+                  -0.15079999566078187,
+                  1.24
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.5555999994277954
+              },
+              {
+                "origin": [
+                  13.340080261230469,
+                  -0.15079999566078187,
+                  1.255
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.5555999994277954
+              },
+              {
+                "origin": [
+                  13.446760177612305,
+                  -0.15079999566078187,
+                  1.225
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.5555999994277954
+              },
+              {
+                "origin": [
+                  13.446760177612305,
+                  -0.15079999566078187,
+                  1.24
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.5555999994277954
+              },
+              {
+                "origin": [
+                  13.446760177612305,
+                  -0.15079999566078187,
+                  1.255
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.5555999994277954
+              },
+              {
+                "origin": [
+                  13.55344009399414,
+                  -0.15079999566078187,
+                  1.225
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.5555999994277954
+              },
+              {
+                "origin": [
+                  13.55344009399414,
+                  -0.15079999566078187,
+                  1.24
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.5555999994277954
+              },
+              {
+                "origin": [
+                  13.55344009399414,
+                  -0.15079999566078187,
+                  1.255
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.5555999994277954
+              },
+              {
+                "origin": [
+                  13.660120010375977,
+                  -0.15079999566078187,
+                  1.225
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.5555999994277954
+              },
+              {
+                "origin": [
+                  13.660120010375977,
+                  -0.15079999566078187,
+                  1.24
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.5555999994277954
+              },
+              {
+                "origin": [
+                  13.660120010375977,
+                  -0.15079999566078187,
+                  1.255
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.5555999994277954
+              },
+              {
+                "origin": [
+                  13.745463943481445,
+                  -0.15079999566078187,
+                  1.225
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.5555999994277954
+              },
+              {
+                "origin": [
+                  13.745463943481445,
+                  -0.15079999566078187,
+                  1.24
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.5555999994277954
+              },
+              {
+                "origin": [
+                  13.745463943481445,
+                  -0.15079999566078187,
+                  1.255
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.5555999994277954
+              }
+            ],
+            "railRayHitsBefore": 33,
+            "railRayHitsAfter": 0,
+            "frameBoundsAfter": [
+              [
+                12.319000244140625,
+                0.0,
+                1.2192000150680542
+              ],
+              [
+                14.35099983215332,
+                0.2540000081062317,
+                2.8956000804901123
+              ]
+            ]
+          },
+          {
+            "frame": "NI04 frame above PW05",
+            "cutter": "D10 48\" opening room 7 - room 5",
+            "frameBoundsBefore": [
+              [
+                9.194799423217773,
+                0.2540000081062317,
+                1.2192000150680542
+              ],
+              [
+                9.321800231933594,
+                5.791200160980225,
+                2.8956000804901123
+              ]
+            ],
+            "cutterBounds": [
+              [
+                9.144000053405762,
+                0.2540000081062317,
+                -0.02539999969303608
+              ],
+              [
+                9.372599601745605,
+                1.4732000827789307,
+                1.2699999809265137
+              ]
+            ],
+            "testRays": [
+              {
+                "origin": [
+                  9.044000053405762,
+                  0.2783840095996857,
+                  1.225
+                ],
+                "direction": [
+                  1.0,
+                  0.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  9.044000053405762,
+                  0.2783840095996857,
+                  1.24
+                ],
+                "direction": [
+                  1.0,
+                  0.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  9.044000053405762,
+                  0.2783840095996857,
+                  1.255
+                ],
+                "direction": [
+                  1.0,
+                  0.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  9.044000053405762,
+                  0.3759200155735016,
+                  1.225
+                ],
+                "direction": [
+                  1.0,
+                  0.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  9.044000053405762,
+                  0.3759200155735016,
+                  1.24
+                ],
+                "direction": [
+                  1.0,
+                  0.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  9.044000053405762,
+                  0.3759200155735016,
+                  1.255
+                ],
+                "direction": [
+                  1.0,
+                  0.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  9.044000053405762,
+                  0.49784002304077146,
+                  1.225
+                ],
+                "direction": [
+                  1.0,
+                  0.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  9.044000053405762,
+                  0.49784002304077146,
+                  1.24
+                ],
+                "direction": [
+                  1.0,
+                  0.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  9.044000053405762,
+                  0.49784002304077146,
+                  1.255
+                ],
+                "direction": [
+                  1.0,
+                  0.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  9.044000053405762,
+                  0.6197600305080413,
+                  1.225
+                ],
+                "direction": [
+                  1.0,
+                  0.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  9.044000053405762,
+                  0.6197600305080413,
+                  1.24
+                ],
+                "direction": [
+                  1.0,
+                  0.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  9.044000053405762,
+                  0.6197600305080413,
+                  1.255
+                ],
+                "direction": [
+                  1.0,
+                  0.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  9.044000053405762,
+                  0.7416800379753112,
+                  1.225
+                ],
+                "direction": [
+                  1.0,
+                  0.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  9.044000053405762,
+                  0.7416800379753112,
+                  1.24
+                ],
+                "direction": [
+                  1.0,
+                  0.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  9.044000053405762,
+                  0.7416800379753112,
+                  1.255
+                ],
+                "direction": [
+                  1.0,
+                  0.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  9.044000053405762,
+                  0.8636000454425812,
+                  1.225
+                ],
+                "direction": [
+                  1.0,
+                  0.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  9.044000053405762,
+                  0.8636000454425812,
+                  1.24
+                ],
+                "direction": [
+                  1.0,
+                  0.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  9.044000053405762,
+                  0.8636000454425812,
+                  1.255
+                ],
+                "direction": [
+                  1.0,
+                  0.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  9.044000053405762,
+                  0.985520052909851,
+                  1.225
+                ],
+                "direction": [
+                  1.0,
+                  0.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  9.044000053405762,
+                  0.985520052909851,
+                  1.24
+                ],
+                "direction": [
+                  1.0,
+                  0.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  9.044000053405762,
+                  0.985520052909851,
+                  1.255
+                ],
+                "direction": [
+                  1.0,
+                  0.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  9.044000053405762,
+                  1.107440060377121,
+                  1.225
+                ],
+                "direction": [
+                  1.0,
+                  0.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  9.044000053405762,
+                  1.107440060377121,
+                  1.24
+                ],
+                "direction": [
+                  1.0,
+                  0.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  9.044000053405762,
+                  1.107440060377121,
+                  1.255
+                ],
+                "direction": [
+                  1.0,
+                  0.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  9.044000053405762,
+                  1.2293600678443908,
+                  1.225
+                ],
+                "direction": [
+                  1.0,
+                  0.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  9.044000053405762,
+                  1.2293600678443908,
+                  1.24
+                ],
+                "direction": [
+                  1.0,
+                  0.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  9.044000053405762,
+                  1.2293600678443908,
+                  1.255
+                ],
+                "direction": [
+                  1.0,
+                  0.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  9.044000053405762,
+                  1.3512800753116607,
+                  1.225
+                ],
+                "direction": [
+                  1.0,
+                  0.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  9.044000053405762,
+                  1.3512800753116607,
+                  1.24
+                ],
+                "direction": [
+                  1.0,
+                  0.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  9.044000053405762,
+                  1.3512800753116607,
+                  1.255
+                ],
+                "direction": [
+                  1.0,
+                  0.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  9.044000053405762,
+                  1.4488160812854767,
+                  1.225
+                ],
+                "direction": [
+                  1.0,
+                  0.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  9.044000053405762,
+                  1.4488160812854767,
+                  1.24
+                ],
+                "direction": [
+                  1.0,
+                  0.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  9.044000053405762,
+                  1.4488160812854767,
+                  1.255
+                ],
+                "direction": [
+                  1.0,
+                  0.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              }
+            ],
+            "railRayHitsBefore": 33,
+            "railRayHitsAfter": 0,
+            "frameBoundsAfter": [
+              [
+                9.194799423217773,
+                0.2540000081062317,
+                1.2192000150680542
+              ],
+              [
+                9.321800231933594,
+                5.791200160980225,
+                2.8956000804901123
+              ]
+            ]
+          },
+          {
+            "frame": "NI07 frame above PW06",
+            "cutter": "D11 52\" opening hallway - room 6",
+            "frameBoundsBefore": [
+              [
+                9.194799423217773,
+                21.285200119018555,
+                1.2192000150680542
+              ],
+              [
+                21.99639892578125,
+                21.412199020385742,
+                2.8956000804901123
+              ]
+            ],
+            "cutterBounds": [
+              [
+                19.888198852539062,
+                21.234399795532227,
+                -0.02539999969303608
+              ],
+              [
+                21.208999633789062,
+                21.46299934387207,
+                1.2699999809265137
+              ]
+            ],
+            "testRays": [
+              {
+                "origin": [
+                  19.914614868164062,
+                  21.134399795532225,
+                  1.225
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  19.914614868164062,
+                  21.134399795532225,
+                  1.24
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  19.914614868164062,
+                  21.134399795532225,
+                  1.255
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  20.020278930664062,
+                  21.134399795532225,
+                  1.225
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  20.020278930664062,
+                  21.134399795532225,
+                  1.24
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  20.020278930664062,
+                  21.134399795532225,
+                  1.255
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  20.152359008789062,
+                  21.134399795532225,
+                  1.225
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  20.152359008789062,
+                  21.134399795532225,
+                  1.24
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  20.152359008789062,
+                  21.134399795532225,
+                  1.255
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  20.284439086914062,
+                  21.134399795532225,
+                  1.225
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  20.284439086914062,
+                  21.134399795532225,
+                  1.24
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  20.284439086914062,
+                  21.134399795532225,
+                  1.255
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  20.416519165039062,
+                  21.134399795532225,
+                  1.225
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  20.416519165039062,
+                  21.134399795532225,
+                  1.24
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  20.416519165039062,
+                  21.134399795532225,
+                  1.255
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  20.548599243164062,
+                  21.134399795532225,
+                  1.225
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  20.548599243164062,
+                  21.134399795532225,
+                  1.24
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  20.548599243164062,
+                  21.134399795532225,
+                  1.255
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  20.680679321289062,
+                  21.134399795532225,
+                  1.225
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  20.680679321289062,
+                  21.134399795532225,
+                  1.24
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  20.680679321289062,
+                  21.134399795532225,
+                  1.255
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  20.812759399414062,
+                  21.134399795532225,
+                  1.225
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  20.812759399414062,
+                  21.134399795532225,
+                  1.24
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  20.812759399414062,
+                  21.134399795532225,
+                  1.255
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  20.944839477539062,
+                  21.134399795532225,
+                  1.225
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  20.944839477539062,
+                  21.134399795532225,
+                  1.24
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  20.944839477539062,
+                  21.134399795532225,
+                  1.255
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  21.076919555664062,
+                  21.134399795532225,
+                  1.225
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  21.076919555664062,
+                  21.134399795532225,
+                  1.24
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  21.076919555664062,
+                  21.134399795532225,
+                  1.255
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  21.182583618164063,
+                  21.134399795532225,
+                  1.225
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  21.182583618164063,
+                  21.134399795532225,
+                  1.24
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  21.182583618164063,
+                  21.134399795532225,
+                  1.255
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              }
+            ],
+            "railRayHitsBefore": 33,
+            "railRayHitsAfter": 0,
+            "frameBoundsAfter": [
+              [
+                9.194799423217773,
+                21.285200119018555,
+                1.2192000150680542
+              ],
+              [
+                21.99639892578125,
+                21.412199020385742,
+                2.8956000804901123
+              ]
+            ]
+          },
+          {
+            "frame": "NI08 frame above PW07",
+            "cutter": "D12 49\" opening room 5 - room 6",
+            "frameBoundsBefore": [
+              [
+                9.321800231933594,
+                5.4355998039245605,
+                1.2192000150680542
+              ],
+              [
+                10.668000221252441,
+                5.562600135803223,
+                2.8956000804901123
+              ]
+            ],
+            "cutterBounds": [
+              [
+                9.321800231933594,
+                5.384800434112549,
+                -0.02539999969303608
+              ],
+              [
+                10.566400527954102,
+                5.613399982452393,
+                1.2699999809265137
+              ]
+            ],
+            "testRays": [
+              {
+                "origin": [
+                  9.346692237854004,
+                  5.284800434112549,
+                  1.225
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  9.346692237854004,
+                  5.284800434112549,
+                  1.24
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  9.346692237854004,
+                  5.284800434112549,
+                  1.255
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  9.446260261535645,
+                  5.284800434112549,
+                  1.225
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  9.446260261535645,
+                  5.284800434112549,
+                  1.24
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  9.446260261535645,
+                  5.284800434112549,
+                  1.255
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  9.570720291137695,
+                  5.284800434112549,
+                  1.225
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  9.570720291137695,
+                  5.284800434112549,
+                  1.24
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  9.570720291137695,
+                  5.284800434112549,
+                  1.255
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  9.695180320739746,
+                  5.284800434112549,
+                  1.225
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  9.695180320739746,
+                  5.284800434112549,
+                  1.24
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  9.695180320739746,
+                  5.284800434112549,
+                  1.255
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  9.819640350341796,
+                  5.284800434112549,
+                  1.225
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  9.819640350341796,
+                  5.284800434112549,
+                  1.24
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  9.819640350341796,
+                  5.284800434112549,
+                  1.255
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  9.944100379943848,
+                  5.284800434112549,
+                  1.225
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  9.944100379943848,
+                  5.284800434112549,
+                  1.24
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  9.944100379943848,
+                  5.284800434112549,
+                  1.255
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  10.0685604095459,
+                  5.284800434112549,
+                  1.225
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  10.0685604095459,
+                  5.284800434112549,
+                  1.24
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  10.0685604095459,
+                  5.284800434112549,
+                  1.255
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  10.193020439147949,
+                  5.284800434112549,
+                  1.225
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  10.193020439147949,
+                  5.284800434112549,
+                  1.24
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  10.193020439147949,
+                  5.284800434112549,
+                  1.255
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  10.31748046875,
+                  5.284800434112549,
+                  1.225
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  10.31748046875,
+                  5.284800434112549,
+                  1.24
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  10.31748046875,
+                  5.284800434112549,
+                  1.255
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  10.44194049835205,
+                  5.284800434112549,
+                  1.225
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  10.44194049835205,
+                  5.284800434112549,
+                  1.24
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  10.44194049835205,
+                  5.284800434112549,
+                  1.255
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  10.541508522033691,
+                  5.284800434112549,
+                  1.225
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  10.541508522033691,
+                  5.284800434112549,
+                  1.24
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  10.541508522033691,
+                  5.284800434112549,
+                  1.255
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              }
+            ],
+            "railRayHitsBefore": 33,
+            "railRayHitsAfter": 0,
+            "frameBoundsAfter": [
+              [
+                9.321800231933594,
+                5.4355998039245605,
+                1.2192000150680542
+              ],
+              [
+                10.668000221252441,
+                5.562600135803223,
+                2.8956000804901123
+              ]
+            ]
+          },
+          {
+            "frame": "NI10 frame above PW07",
+            "cutter": "D21 Experience centre - boardroom 42\"",
+            "frameBoundsBefore": [
+              [
+                12.319000244140625,
+                5.4355998039245605,
+                1.2192000150680542
+              ],
+              [
+                21.99639892578125,
+                5.562600135803223,
+                2.8956000804901123
+              ]
+            ],
+            "cutterBounds": [
+              [
+                20.44700050354004,
+                5.384800434112549,
+                -0.02539999969303608
+              ],
+              [
+                21.5137996673584,
+                5.613399982452393,
+                1.2699999809265137
+              ]
+            ],
+            "testRays": [
+              {
+                "origin": [
+                  20.468336486816405,
+                  5.284800434112549,
+                  1.225
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  20.468336486816405,
+                  5.284800434112549,
+                  1.24
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  20.468336486816405,
+                  5.284800434112549,
+                  1.255
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  20.553680419921875,
+                  5.284800434112549,
+                  1.225
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  20.553680419921875,
+                  5.284800434112549,
+                  1.24
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  20.553680419921875,
+                  5.284800434112549,
+                  1.255
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  20.66036033630371,
+                  5.284800434112549,
+                  1.225
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  20.66036033630371,
+                  5.284800434112549,
+                  1.24
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  20.66036033630371,
+                  5.284800434112549,
+                  1.255
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  20.767040252685547,
+                  5.284800434112549,
+                  1.225
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  20.767040252685547,
+                  5.284800434112549,
+                  1.24
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  20.767040252685547,
+                  5.284800434112549,
+                  1.255
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  20.873720169067383,
+                  5.284800434112549,
+                  1.225
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  20.873720169067383,
+                  5.284800434112549,
+                  1.24
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  20.873720169067383,
+                  5.284800434112549,
+                  1.255
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  20.98040008544922,
+                  5.284800434112549,
+                  1.225
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  20.98040008544922,
+                  5.284800434112549,
+                  1.24
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  20.98040008544922,
+                  5.284800434112549,
+                  1.255
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  21.087080001831055,
+                  5.284800434112549,
+                  1.225
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  21.087080001831055,
+                  5.284800434112549,
+                  1.24
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  21.087080001831055,
+                  5.284800434112549,
+                  1.255
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  21.19375991821289,
+                  5.284800434112549,
+                  1.225
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  21.19375991821289,
+                  5.284800434112549,
+                  1.24
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  21.19375991821289,
+                  5.284800434112549,
+                  1.255
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  21.300439834594727,
+                  5.284800434112549,
+                  1.225
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  21.300439834594727,
+                  5.284800434112549,
+                  1.24
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  21.300439834594727,
+                  5.284800434112549,
+                  1.255
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  21.407119750976562,
+                  5.284800434112549,
+                  1.225
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  21.407119750976562,
+                  5.284800434112549,
+                  1.24
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  21.407119750976562,
+                  5.284800434112549,
+                  1.255
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  21.492463684082033,
+                  5.284800434112549,
+                  1.225
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  21.492463684082033,
+                  5.284800434112549,
+                  1.24
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              },
+              {
+                "origin": [
+                  21.492463684082033,
+                  5.284800434112549,
+                  1.255
+                ],
+                "direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "distance": 0.42859954833984376
+              }
+            ],
+            "railRayHitsBefore": 33,
+            "railRayHitsAfter": 0,
+            "frameBoundsAfter": [
+              [
+                12.319000244140625,
+                5.4355998039245605,
+                1.2192000150680542
+              ],
+              [
+                21.99639892578125,
+                5.562600135803223,
+                2.8956000804901123
+              ]
+            ]
+          }
+        ],
+        "derivative_geometry_exception": "Six pre-existing documented doorway-rail corrections only; see MODEL_FIXES.md"
+      },
+      "status": "baked-unreviewed",
+      "guides": {
+        "normal": "SHELL_WALLS_normal.exr",
+        "albedo": "SHELL_WALLS_albedo.exr",
+        "normalMetadata": "SHELL_WALLS_normal.json",
+        "uvReference": "SHELL_WALLS_normal_uv_reference.npz"
+      },
+      "alwaysLoad": true
     }
   ],
   "limitations": [

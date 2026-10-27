@@ -1,0 +1,71 @@
+{
+  "recorded_utc": "2026-10-27T18:03:32.424905+00:00",
+  "current_authorization": "Reception hybrid increment only. The previously active SHELL_WALLS job has completed; no new atlases are authorized.",
+  "active_process_pid": null,
+  "driver_pid": null,
+  "exec_session_id": null,
+  "active_log": "/workspace/office-bake-work/SHELL_WALLS-v2.log",
+  "stop_file": "/workspace/office-bake-work/STOP_BAKES",
+  "output_directory": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/lighting-v2",
+  "active_snapshot": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/blender/run-snapshots/20261027T164533Z-SHELL_WALLS-0c2d66",
+  "source_sha256": "fa3ed3d58f6d44c3554e3761307841b96115ff7816e4e541c8e6611cb363810d",
+  "completed_reception": {
+    "size": 2048,
+    "samples": 512,
+    "seconds": 861.44,
+    "glb_sha256": "319d201d8e6282acae523640924281573b5082d19573c60c5759f984660e899a",
+    "raw_and_actual_guides_retained": true,
+    "guide_uv_match_passed": true,
+    "visual_acceptance": false
+  },
+  "doorway_repairs": {
+    "file": "lighting-v2/doorway-repairs.glb",
+    "six_named_nodes": true,
+    "source_original_rail_hits": 198,
+    "new_repair_hits": 0,
+    "retained_live_shell_hits": 0,
+    "report": "lighting-v2/doorway-live-parity.json"
+  },
+  "active_wall_note": "Its maximum180degree corner-normal warning is solely4corners of one9.08e-9m\u00b2 Boolean sliver collapsing tozero, not a visible wall flip; see wall-normal-sliver-audit.json. Job was brieflypaused for this diagnosis andresumed; elapsedwalltimeincludespause.",
+  "next_allowed_finalization": "No further bake, codec or preview work is running. Shared-wall candidate is retained unreviewed and is not activated in the hybrid manifest.",
+  "remaining_incomplete": "DECK, STRUCTURE, FLOOR and other five keyrooms notbakedinV2; no final tour visual acceptance, no nativeMac60fps claim. No remoteXL job launched at the time of this handoff.",
+  "hybrid_reception": {
+    "manifest": "lighting-v2/manifest-hybrid.json",
+    "glb": "lighting-v2/Z02-furniture.glb",
+    "glb_sha256": "a0d6b957d815402d750b3037a09707557974f130a28fc3fc562266617df314c8",
+    "retained_live_nodes": 25,
+    "excluded_shared_shell_objects": 8,
+    "verified_vertices": 36056,
+    "max_world_coordinate_delta_metres": 0,
+    "max_uv1_delta": 2.9802322387695312e-08,
+    "same_2k_512_atlas": true,
+    "visual_acceptance": "pending separate actual browser review",
+    "excluded_live_fallback_objects": [
+      "AC10 VRF indoor unit, under-ceiling (Z02) - capacity by MEP",
+      "F011 lounge_green",
+      "F012 lounge_green"
+    ]
+  },
+  "completed_shared_walls": {
+    "size": 4096,
+    "samples": 256,
+    "objects": 53,
+    "seconds": 4323.911378348,
+    "status": "baked-unreviewed",
+    "normal_albedo_and_raw_retained": true,
+    "source_sha256_verified": true,
+    "guide_uv_check": "lighting-v2/SHELL_WALLS-uv-check.json",
+    "denoised_exr": "lighting-v2/SHELL_WALLS.exr",
+    "ktx_conversion": {
+      "file": "lighting-v2/SHELL_WALLS.ktx2",
+      "bytes": 64448782,
+      "sha256": "791a5398e12240081a725c0b870aa9df86eb3bfb150156398ccfa0e0ae93ee37",
+      "decoded_pixel_equality": true,
+      "linear_range": [
+        0,
+        20.578125
+      ],
+      "decoded_gpu_bytes": 134217728
+    }
+  }
+}

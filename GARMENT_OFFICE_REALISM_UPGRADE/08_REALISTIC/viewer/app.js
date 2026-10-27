@@ -19,14 +19,17 @@ import { createRoomProbes } from './room-probes.js';
 import { createPostProcessing } from './phase-post.js';
 import { createOfficeDressing } from './phase-dressing.js';
 import { estimateGpuMemory } from './gpu-memory.js';
+import approvedFloor from './approved-floor-footprint.json';
 
 window.__viewerStarted = true;
 const $ = (id) => document.getElementById(id);
 const qs = new URLSearchParams(location.search);
 // Paths: repository layout by default; a deployment bundle sets window.__TOUR_CONFIG (and window.__TOUR_DATA = { meta, grid }).
 const CFG = window.__TOUR_CONFIG || {};
-const STAGE = Math.max(1, Math.min(5, Number(qs.get('stage') || CFG.stage || 1)));
-const USE_PBR = STAGE >= 2 && qs.get('materials') !== '0', USE_PROBES = STAGE >= 3 && qs.get('probes') !== '0', USE_POST = STAGE >= 5 && qs.get('post') !== '0';
+const SIMPLE_RELEASE = CFG.releaseMode === 'reception' || qs.get('release') === 'reception';
+const STAGE = Math.max(1, Math.min(5, Number(qs.get('stage') || CFG.stage || (SIMPLE_RELEASE ? 4 : 1))));
+const USE_WALKING = SIMPLE_RELEASE || STAGE >= 5;
+const USE_PBR = !SIMPLE_RELEASE && STAGE >= 2 && qs.get('materials') !== '0', USE_PROBES = !SIMPLE_RELEASE && STAGE >= 3 && qs.get('probes') !== '0', USE_POST = !SIMPLE_RELEASE && STAGE >= 5 && qs.get('post') !== '0';
 const USE_DRESSING = STAGE >= 4 && qs.get('props') !== '0';
 // This flag is set only after the independently reviewed people asset lock is accepted.
 const PEOPLE_ACCEPTED = !!CFG.peopleAccepted;
@@ -37,7 +40,7 @@ const RENDERS = qs.get('renders') || CFG.renders || '../../../GARMENT_OFFICE_FIN
 const lightingManifest = await readLightingManifest(qs.get('lighting') || CFG.lightmapManifest || '../lighting/manifest.json');
 const S = { mode: 'loading', ready: false, ceilUser: false, labels: true, room: null, atCam: null, tour: null, errors: [], counts: {} };
 S.stage = STAGE;
-S.features = { materials: USE_PBR, probes: USE_PROBES, post: USE_POST, gameWalking: STAGE >= 5, props: USE_DRESSING, peopleAccepted: PEOPLE_ACCEPTED };
+S.features = { materials: USE_PBR, probes: USE_PROBES, post: USE_POST, gameWalking: USE_WALKING, props: USE_DRESSING, peopleAccepted: PEOPLE_ACCEPTED };
 S.timings = { moduleStartedMs: performance.now(), baseFirstViewMs: null, atlasDecodedByRoomMs: {}, atlasVisibleByRoomMs: {}, atlasFullVisibleByRoomMs: {}, heroMapsReadyByRoomMs: {} };
 window.__viewer = S;
 
@@ -178,6 +181,7 @@ function insideSourceFloor(x, z) {
     return !((d1 < -1e-8 || d2 < -1e-8 || d3 < -1e-8) && (d1 > 1e-8 || d2 > 1e-8 || d3 > 1e-8));
   });
 }
+if (!floorTriangles.length) floorTriangles.push(...approvedFloor.triangles_xz);
 let overhead = model.getObjectByName('WEB_OVERHEAD');
 if (!overhead) {                                       // original GLB: collect the overhead objects by name
   overhead = new THREE.Group(); overhead.name = 'WEB_OVERHEAD';
@@ -218,7 +222,7 @@ let BAKED = false;
     BAKED = true;
   });
 }
-if (!BAKED && qs.get('shadows') !== '0') enableShadows();
+if (!SIMPLE_RELEASE && !BAKED && qs.get('shadows') !== '0') enableShadows();
 if (BAKED && qs.get('shadows') === '1') enableShadows();
 for (const m of new Set(collectMaterials(model))) {
   if (m.transmission > 0) m.envMapIntensity = 1.0;   // keep glass reflective; transmission pass stays enabled
@@ -284,13 +288,13 @@ const probes = USE_PROBES ? createRoomProbes({ scene, renderer, metadata: meta, 
 S.probes = probes?.status || { enabled: false };
 async function loadVisualRoom(id) {
   const room = await lightmaps.request(id);
-  if (materialUpgrade) await Promise.all([room?.heroPromise, ...lightmaps.status.requiredShared.map(key => lightmaps.rooms.get(key)?.heroPromise)]);
+  if (materialUpgrade || USE_DRESSING) await Promise.all([room?.heroPromise, ...lightmaps.status.requiredShared.map(key => lightmaps.rooms.get(key)?.heroPromise)]);
   if (probes) { dressing?.prepareView(null); await probes.ensure(id); dressing?.applyProbe(id); }
   return room;
 }
 async function ensureDressing() {
   if (!USE_DRESSING) return null;
-  if (!dressingPromise) dressingPromise = createOfficeDressing({ scene, renderer, metadata: meta, grid, probes, staticBlocked, changed: () => { needsRender = true; }, peopleAccepted: PEOPLE_ACCEPTED }).then(value => { dressing = value; S.dressing = value.status; return value; });
+  if (!dressingPromise) dressingPromise = createOfficeDressing({ scene, renderer, metadata: meta, grid, probes, staticBlocked, changed: () => { needsRender = true; }, peopleAccepted: PEOPLE_ACCEPTED, activeZones: SIMPLE_RELEASE ? (CFG.releaseZones || ['Z02']) : null, frozenPeople: SIMPLE_RELEASE }).then(value => { dressing = value; S.dressing = value.status; return value; });
   return dressingPromise;
 }
 async function setPeopleEnabled(enabled) {
@@ -334,7 +338,7 @@ if (SHADOWS) {
 // Moving frames render directly (smooth on any GPU); 0.25 s after the last movement one AO frame replaces it.
 let AO = null;
 let POST = null;
-const aoWanted = () => STAGE < 5 && (qs.get('ao') ? qs.get('ao') !== '0' : quality !== 'low');
+const aoWanted = () => !SIMPLE_RELEASE && STAGE < 5 && (qs.get('ao') ? qs.get('ao') !== '0' : quality !== 'low');
 function setupAO() {
   try {
     const size = renderer.getDrawingBufferSize(new THREE.Vector2());
@@ -371,7 +375,7 @@ const RADIUS = Math.hypot(maxX - minX, maxZ - minZ) / 2;
 const gbits = Uint8Array.from(atob(grid.blocked_bits_base64), (ch) => ch.charCodeAt(0));
 function blocked(x, z) { return staticBlocked(x, z) || !!dressing?.blocksMovement(x, z, .15); }
 function staticBlocked(x, z, radius = .15) {
-  if (STAGE >= 5) {
+  if (USE_WALKING) {
     if (!insideSourceFloor(x, z)) return true;
     for (let i = 0; i < 8; i++) if (!insideSourceFloor(x + radius * Math.cos(i * Math.PI / 4), z + radius * Math.sin(i * Math.PI / 4))) return true;
   }
@@ -601,7 +605,7 @@ function updateInfoButtons() {
 }
 
 // ------------------------------------------------------------------ modes
-const WALK_HINT = STAGE >= 5 && !COARSE ? 'W A S D to walk · click to capture mouse · Shift = faster · Esc releases mouse / leaves walk' : COARSE ? 'Use the arrows below to walk  ·  drag to look around  ·  tap the map to jump'
+const WALK_HINT = USE_WALKING && !COARSE ? 'W A S D to walk · click to capture mouse · Shift = faster · Esc releases mouse / leaves walk' : COARSE ? 'Use the arrows below to walk  ·  drag to look around  ·  tap the map to jump'
   : 'W A S D or arrow keys to walk  ·  drag to look  ·  Shift = faster  ·  double-click the floor to go there  ·  Esc to leave';
 function setMode(m) {
   if (m !== 'walk' && document.pointerLockElement) document.exitPointerLock();
@@ -681,7 +685,7 @@ const el = renderer.domElement;
 const eyeLevel = () => !flight && camera.position.y < 2.4;
 el.addEventListener('pointerdown', (e) => {
   down = { x: e.clientX, y: e.clientY, t: performance.now() };
-  if (STAGE >= 5 && S.mode === 'walk' && !COARSE && !document.pointerLockElement && !S.pointerLockUnavailable && el.requestPointerLock) {
+  if (USE_WALKING && S.mode === 'walk' && !COARSE && !document.pointerLockElement && !S.pointerLockUnavailable && el.requestPointerLock) {
     try {
       const request = el.requestPointerLock();
       request?.catch?.(error => { S.pointerLockUnavailable = true; S.errors.push('Mouse capture unavailable; drag to look: ' + error.message); });
@@ -704,7 +708,7 @@ el.addEventListener('pointerup', (e) => {
   }
 });
 el.addEventListener('pointermove', (e) => {
-  if (STAGE >= 5 && document.pointerLockElement === el && S.mode === 'walk') {
+  if (USE_WALKING && document.pointerLockElement === el && S.mode === 'walk') {
     walk.yaw -= e.movementX * 0.0022; walk.pitch = THREE.MathUtils.clamp(walk.pitch - e.movementY * 0.0022, -1.35, 1.35);
     applyWalkLook(); return;
   }
@@ -738,8 +742,8 @@ function lookFromCamera() {                           // yaw / pitch from the cu
   applyWalkLook();
 }
 function enterWalkFromCamera() {
-  walk.eye = STAGE >= 5 ? 1.6 : THREE.MathUtils.clamp(camera.position.y, 1.2, 1.7);
-  if (STAGE >= 5) {
+  walk.eye = USE_WALKING ? 1.6 : THREE.MathUtils.clamp(camera.position.y, 1.2, 1.7);
+  if (USE_WALKING) {
     const safe = nearestWalkPoint(camera.position.x, camera.position.z, S.room);
     if (!safe) { S.errors.push('No verified walking start in this room.'); goOverview(); return; }
     camera.position.x = safe[0]; camera.position.z = safe[1]; walking.reset();
@@ -761,7 +765,7 @@ function startWalk(here = false) {
   flyTo(start, { onDone: () => { setOverhead(true, true); enterWalkFromCamera(); } });
 }
 function walkStep(dt) {
-  if (STAGE >= 5) {
+  if (USE_WALKING) {
     const k = walk.keys;
     const previousX = camera.position.x, previousZ = camera.position.z;
     walking.step({ forward: (k.KeyW || k.ArrowUp ? 1 : 0) - (k.KeyS || k.ArrowDown ? 1 : 0), strafe: (k.KeyD || k.ArrowRight ? 1 : 0) - (k.KeyA || k.ArrowLeft ? 1 : 0), yaw: walk.yaw, dt, fast: k.ShiftLeft || k.ShiftRight });
@@ -799,7 +803,7 @@ function walkStep(dt) {
   needsRender = true;
 }
 el.addEventListener('dblclick', (e) => {
-  if (S.mode !== 'walk' || STAGE >= 5) return;
+  if (S.mode !== 'walk' || USE_WALKING) return;
   const p = floorPoint(e); if (!p) return;
   const to = new THREE.Vector3(p.x, walk.eye, p.z);
   if (blocked(to.x, to.z) || !pathClear(camera.position, to)) return;
@@ -1137,7 +1141,7 @@ function afterWalking() {
   if (room && room !== S.room) { S.room = room; walkCard(room); }
 }
 function setWalkQAStart(x, z) {
-  if (STAGE < 5) throw new Error('Movement review requires stage=5');
+  if (!USE_WALKING) throw new Error('Movement review requires stage=5');
   if (blocked(x, z)) throw new Error('QA start is blocked or outside the floor');
   stopTour(false); hidePhoto(); closeWelcome(); setMode('walk'); flight = null; pendingSwap = null;
   camera.position.set(x, 1.6, z); camera.clearViewOffset(); walking.reset();
@@ -1146,7 +1150,7 @@ function setWalkQAStart(x, z) {
   return { ...walking.state(), startCount: S.qaStartCount };
 }
 function stepWalkQA(input) {
-  if (STAGE < 5 || !S.qaWalking) throw new Error('Start a stage=5 movement review first');
+  if (!USE_WALKING || !S.qaWalking) throw new Error('Start a stage=5 movement review first');
   walk.yaw = input.yaw || 0; applyWalkLook();
   const state = walking.step(input);
   afterWalking();

@@ -1,0 +1,40 @@
+{
+  "actor_export_hashes": {
+    "office-person-01.json.gz": "d85c8acacf5a13ef7256700b74c03ed0103ee5ce5a4fdd1a2be998932523df4d",
+    "office-person-03.json.gz": "9ae00b80334520f702343e4b6c7e2a08445284fb3f6984743cafee0f0f911f9f",
+    "office-person-02.json.gz": "499c19f64f670f7f8521771602144e423dda93388dc9891103afdc13dbf40778",
+    "office-person-04.json.gz": "3df050794564b3def8da0500f35f30c3362555bd8002c23c50878144c1b21d2c"
+  },
+  "book_world_bounds": {
+    "min": [
+      9.892,
+      0.638,
+      5.1812
+    ],
+    "max": [
+      10.252,
+      0.6665,
+      5.4212
+    ]
+  },
+  "book_trousers_support": {
+    "max_y": 0.6360199396111386,
+    "point": [
+      9.975418213544241,
+      0.6360199396111386,
+      5.4212
+    ],
+    "clipped_triangles": 6251,
+    "book_bottom_y": 0.638,
+    "vertical_gap_at_highest_trousers_point_m": 0.0019800603888614488
+  },
+  "book_body_triangle_contacts": [],
+  "checked_actor_ids": [
+    "office-person-01",
+    "office-person-02",
+    "office-person-03",
+    "office-person-04"
+  ],
+  "badge_body_triangle_contacts": [],
+  "limits": "Triangle surface intersections do not alone distinguish intentional finger contact from clipping. Book support compares its lowest plane with the continuous highest trouser triangle clipped to the book XZ footprint; held-book support would need hands instead. Frozen t0 only; baseline proved0.5s geometry invariance."
+}

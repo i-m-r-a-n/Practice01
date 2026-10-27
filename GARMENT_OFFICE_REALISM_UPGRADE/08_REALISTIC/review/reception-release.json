@@ -1,0 +1,39 @@
+{
+  "room": "Reception",
+  "status": "First bounded increment; final occupied UI collision check and public verification recorded separately",
+  "base_branch": "claude/web-tour-assets",
+  "base_branch_latest_verified": "972805be489fb246233a72f2d757846a5ec6ff90",
+  "work_branch": "chatgpt/office-realistic-20261027",
+  "approved_blend_sha256": "fa3ed3d58f6d44c3554e3761307841b96115ff7816e4e541c8e6611cb363810d",
+  "changes": [
+    "25 source furniture objects use512-sample Cycles/OIDN lightmap; shared shell, AC and green chairs retain original live shading",
+    "8 additive everyday props",
+    "4 fictional frozen people with People on/off and illustrative note",
+    "Separate offline package; original tour preserved"
+  ],
+  "qa": [
+    "Root and independent native1280x720 image comparison",
+    "Exact furniture geometry/UV source lock",
+    "Final4 character mesh/furniture/hand-prop/floor and invariance checks",
+    "Offline-pack asset resolver load:4 people,25 lightmapped objects,0 JS/console/HTTP errors",
+    "Worker39 dispatch/preservation checks;28 old-route requests unchanged"
+  ],
+  "limits": [
+    "This increment is not Cycles-equivalent photorealism; people have low-detail game-style faces/hair and their contact shadows need improvement",
+    "Native MacBook FPS, genuine Safari and direct file:// offline opening are unverified; managed browser blocks file:// by administrator policy",
+    "Other five rooms have not received this increment",
+    "Finished4K WALLS bake is preserved but unreviewed/inactive; no active bake remains"
+  ],
+  "files": {
+    "viewer/dist/app.js": "1fa75488491ac301562f03d2e5ce86dcf896120ead7a8a56c0d39bc76875ba1a",
+    "viewer/dist/index.html": "c3fb3ba4ae201892c4451a5db43c6add6f50a70b80bd1833491290373c6f1545",
+    "viewer/dist/release-config.json": "bc7cfd653fe6ec9919c61a0eced48ef9bde399fc4c08cb449f665dee0c60b633",
+    "lighting-v2/manifest-hybrid.json": "2ea818b15323e03ec96949d5c74d7273f8568cedc31a560c61f115a37c698abd",
+    "lighting-v2/Z02-furniture.glb": "a0d6b957d815402d750b3037a09707557974f130a28fc3fc562266617df314c8",
+    "lighting-v2/Z02.ktx2": "1eec0b7f3e08f42d7bde75c49a7716e1d520c90beb96ee0c7998daf5402c02d0",
+    "people/people-layer.js": "f39399db80fe64a0a901302f5f59a283bbec17e422d01d4b3d37f5eb34b7ce42",
+    "people/reception/people-manifest.json": "d1ee7c8d88b22216aaea9c07283bc1c392ef9eae43359d4038ce3e734d349b7a",
+    "people/reception/poses.json": "16bb2498fd8b86fe8dcc57e27b606aee4d48dba8dcaee10b110fda66e65f8fc3",
+    "review/reception-before-after.png": "e7bd92032c5f053ee71c0a6083e962018a12116285f55444fc9e48dedeca912c"
+  }
+}

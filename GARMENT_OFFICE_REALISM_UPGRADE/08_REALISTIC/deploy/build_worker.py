@@ -20,7 +20,7 @@ const REALISTIC_COMMIT = '__COMMIT__';
 const REALISTIC_ROOT = 'https://raw.githubusercontent.com/i-m-r-a-n/Practice01/'+REALISTIC_COMMIT+'/';
 const REALISTIC_ASSETS = 'GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/';
 const REALISTIC_TYPES = {
-  html:'text/html; charset=utf-8', js:'text/javascript; charset=utf-8', css:'text/css; charset=utf-8',
+  html:'text/html; charset=utf-8', js:'text/javascript; charset=utf-8', mjs:'text/javascript; charset=utf-8', css:'text/css; charset=utf-8',
   json:'application/json', glb:'model/gltf-binary', gltf:'model/gltf+json', bin:'application/octet-stream',
   ktx2:'image/ktx2', exr:'image/x-exr', hdr:'image/vnd.radiance',
   wasm:'application/wasm', png:'image/png', jpg:'image/jpeg', jpeg:'image/jpeg', webp:'image/webp',
@@ -42,8 +42,9 @@ async function realisticRoute(req) {
   const type=REALISTIC_TYPES[ext];
   if(!type)return new Response('Not found',{status:404});
   let path;
-  if(rel==='index.html'||rel==='app.js')path=REALISTIC_ASSETS+'viewer/dist/'+rel;
+  if(rel==='index.html'||rel==='app.js'||rel==='release-config.json')path=REALISTIC_ASSETS+'viewer/dist/'+rel;
   else if(rel==='model_web.glb')path='GARMENT_OFFICE_WALKTHROUGH_FINAL/07_WEB_TOUR_ASSETS/Final_Office_Interior_web.glb';
+  else if(rel==='model_web_baked.glb')path='GARMENT_OFFICE_REALISM_UPGRADE/01_IMPROVED_MODEL/Final_Office_Interior_web_realism.glb';
   else if(/^renders\/CAM_[A-Za-z0-9_]+\.jpg$/.test(rel))path='GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/'+rel.slice(8);
   else path=REALISTIC_ASSETS+rel;
   const forward=new Headers();

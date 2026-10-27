@@ -1,0 +1,388 @@
+{
+  "status": "exported",
+  "url": "http://127.0.0.1:8770/GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/people/review/office-preview.html",
+  "sources": [
+    {
+      "url": "http://127.0.0.1:8770/GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/people/people-layer.js",
+      "bytes": 14640,
+      "sha256": "f39399db80fe64a0a901302f5f59a283bbec17e422d01d4b3d37f5eb34b7ce42"
+    },
+    {
+      "url": "http://127.0.0.1:8770/GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/people/reception/people-manifest.json",
+      "bytes": 5206,
+      "sha256": "d1ee7c8d88b22216aaea9c07283bc1c392ef9eae43359d4038ce3e734d349b7a"
+    },
+    {
+      "url": "http://127.0.0.1:8770/GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/people/reception/poses.json",
+      "bytes": 326695,
+      "sha256": "54f975e5a82cab591d2fb55e01538297b136baf8ff2d2838b3dfc724244169ee"
+    },
+    {
+      "url": "http://127.0.0.1:8770/GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/people/assets/panjabi.glb",
+      "bytes": 4099060,
+      "sha256": "31f9e208986c064a3776991690d12925ed5fda59889765df06930d66c054d257"
+    },
+    {
+      "url": "http://127.0.0.1:8770/GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/people/assets/salwar_braid.glb",
+      "bytes": 4689540,
+      "sha256": "68f3384b625f59d8d4a9c1ddce671126dba394f7ca9aaae383ac0d5aa08e398d"
+    },
+    {
+      "url": "http://127.0.0.1:8770/GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/people/assets/shirt.glb",
+      "bytes": 4411128,
+      "sha256": "7430996e4368aa3e54d39c77f93d69a7ce31a089977714e2e7ed56dd846f7c1e"
+    },
+    {
+      "url": "http://127.0.0.1:8770/GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/people/assets/salwar.glb",
+      "bytes": 5159776,
+      "sha256": "cd2c4c458dd59532cc28408b98ae8d544a971fe4e069fab2413bbf4f4d90b5e4"
+    }
+  ],
+  "snapshots": [
+    {
+      "seconds": 0,
+      "all_actors": true,
+      "actors": [
+        {
+          "id": "office-person-01",
+          "file": "t0/office-person-01.json.gz",
+          "sha256": "39ed3ae37b70f99460f1007c8f74e405e4192d0e6079ad10f7e268d49bc6fba8",
+          "meshes": 9,
+          "vertices": 24474,
+          "minimum_vertex_y": 0.01066
+        },
+        {
+          "id": "office-person-02",
+          "file": "t0/office-person-02.json.gz",
+          "sha256": "6d387f6fced9a33926f3387b9147c44ba8f1fc6724929a34d58b0dfdee586184",
+          "meshes": 6,
+          "vertices": 21774,
+          "minimum_vertex_y": 0.01066
+        },
+        {
+          "id": "office-person-03",
+          "file": "t0/office-person-03.json.gz",
+          "sha256": "531c5f378ce2e0d8c58ae5fe2e190038f49950b263b077ede4713d13b768daaf",
+          "meshes": 6,
+          "vertices": 20961,
+          "minimum_vertex_y": 0.02209
+        },
+        {
+          "id": "office-person-04",
+          "file": "t0/office-person-04.json.gz",
+          "sha256": "605deb4d144b6ed7c77b1a1242d2e40a25e41d8e898e8e55906225a4585ff964",
+          "meshes": 13,
+          "vertices": 24875,
+          "minimum_vertex_y": 0.022093
+        }
+      ],
+      "runtime_stats": {
+        "enabled": true,
+        "loaded": true,
+        "frozen": true,
+        "total": 4,
+        "visible": 4,
+        "walkers": 0,
+        "illustrative": true,
+        "forbiddenZoneViolations": 0,
+        "status": "Reception-only frozen pose contact review pending",
+        "nativeMacPerformanceTested": false
+      }
+    },
+    {
+      "seconds": 0.5,
+      "all_actors": true,
+      "actors": [
+        {
+          "id": "office-person-01",
+          "file": "t0_5/office-person-01.json.gz",
+          "sha256": "a072138d8ebbc5c7e6e9f48725ff338563579fd9075b97ef8b138a98cc857dc6",
+          "meshes": 9,
+          "vertices": 24474,
+          "minimum_vertex_y": 0.01066
+        },
+        {
+          "id": "office-person-02",
+          "file": "t0_5/office-person-02.json.gz",
+          "sha256": "ef254d38bae9e6f9aeeaf03527562379be6aa6f3cb02ca7a8762d578e36b3fa6",
+          "meshes": 6,
+          "vertices": 21774,
+          "minimum_vertex_y": 0.01066
+        },
+        {
+          "id": "office-person-03",
+          "file": "t0_5/office-person-03.json.gz",
+          "sha256": "c89045af6d358183d038bd82efbe78fc1bb3d46eba5673196522064efee2df77",
+          "meshes": 6,
+          "vertices": 20961,
+          "minimum_vertex_y": 0.02209
+        },
+        {
+          "id": "office-person-04",
+          "file": "t0_5/office-person-04.json.gz",
+          "sha256": "255815e523cbe72fff2aead8b08580753525d367714369afb814be9a5bc2687d",
+          "meshes": 13,
+          "vertices": 24875,
+          "minimum_vertex_y": 0.022093
+        }
+      ],
+      "runtime_stats": {
+        "enabled": true,
+        "loaded": true,
+        "frozen": true,
+        "total": 4,
+        "visible": 4,
+        "walkers": 0,
+        "illustrative": true,
+        "forbiddenZoneViolations": 0,
+        "status": "Reception-only frozen pose contact review pending",
+        "nativeMacPerformanceTested": false
+      }
+    }
+  ],
+  "errors": [],
+  "scope": "Actual runtime posed visible LOD0 world vertices/indices plus hand props; current manifest actors at t0. Preflight, not full cycle, rendered realism or Mac performance acceptance. A second export follows ten actual runtime updates totalling0.5seconds, to test frozen geometry.",
+  "source_capture_errors": [
+    {
+      "url": "http://127.0.0.1:8770/GARMENT_OFFICE_WALKTHROUGH_FINAL/07_WEB_TOUR_ASSETS/Final_Office_Interior_web.glb",
+      "error": "Response.body: Protocol error (Network.getResponseBody): Request content was evicted from inspector cache\nResponse body is not available for a response that was navigated away from. Read response.body() before triggering any navigation."
+    }
+  ],
+  "browser": "154.0.8037.57",
+  "people_manifest": {
+    "version": "reception-static-1",
+    "count": 4,
+    "note": "People shown are illustrative",
+    "defaultEnabled": false,
+    "status": "Reception-only frozen pose contact review pending",
+    "approvedLayoutChanged": false,
+    "axes": "metres; x east, y up, z south; characters face +z at yaw 0",
+    "emptyZones": [
+      "Z23",
+      "Z24",
+      "Z25",
+      "Z26",
+      "Z27",
+      "Z28",
+      "Z29",
+      "Z34"
+    ],
+    "assets": {
+      "shirt": {
+        "file": "assets/shirt.glb",
+        "license": "CC0-1.0 plus self-made drape",
+        "sha256": "7430996e4368aa3e54d39c77f93d69a7ce31a089977714e2e7ed56dd846f7c1e"
+      },
+      "panjabi": {
+        "file": "assets/panjabi.glb",
+        "license": "CC0-1.0 plus self-made drape",
+        "sha256": "31f9e208986c064a3776991690d12925ed5fda59889765df06930d66c054d257"
+      },
+      "salwar": {
+        "file": "assets/salwar.glb",
+        "license": "CC0-1.0 plus self-made drape",
+        "sha256": "cd2c4c458dd59532cc28408b98ae8d544a971fe4e069fab2413bbf4f4d90b5e4"
+      },
+      "salwar_braid": {
+        "file": "assets/salwar_braid.glb",
+        "license": "CC0-1.0 plus self-made drape",
+        "sha256": "68f3384b625f59d8d4a9c1ddce671126dba394f7ca9aaae383ac0d5aa08e398d"
+      }
+    },
+    "poses": "reception/poses.json",
+    "actors": [
+      {
+        "id": "office-person-01",
+        "zone": "Z02",
+        "task": "badge_giver",
+        "outfit": "salwar",
+        "pose": "reception_badge_giver",
+        "heightScale": 1,
+        "bodyWidth": 1,
+        "skinTint": "#d5b6a0",
+        "garmentTint": "#a8bbcd",
+        "lowerTint": "#25313c",
+        "phase": 0,
+        "radius": 0.25,
+        "fictional": true,
+        "faceMorph": [
+          0,
+          0,
+          0
+        ],
+        "position": [
+          13.32,
+          0,
+          3.75
+        ],
+        "yaw": -1.5707963267948966,
+        "seated": false,
+        "frozen": true
+      },
+      {
+        "id": "office-person-02",
+        "zone": "Z02",
+        "task": "badge_receiver",
+        "outfit": "shirt",
+        "pose": "reception_badge_receiver",
+        "heightScale": 1,
+        "bodyWidth": 1,
+        "skinTint": "#c69d7b",
+        "garmentTint": "#a98a76",
+        "lowerTint": "#30363d",
+        "phase": 1.61803,
+        "radius": 0.25,
+        "fictional": true,
+        "faceMorph": [
+          0.214,
+          0.417,
+          0.389
+        ],
+        "position": [
+          12.08,
+          0,
+          3.75
+        ],
+        "yaw": 1.5707963267948966,
+        "seated": false,
+        "frozen": true,
+        "handGrip": 0.12
+      },
+      {
+        "id": "office-person-03",
+        "zone": "Z02",
+        "task": "listening",
+        "outfit": "panjabi",
+        "pose": "listening__seat_44450",
+        "heightScale": 1,
+        "bodyWidth": 1.054,
+        "skinTint": "#b88b69",
+        "garmentTint": "#637b76",
+        "lowerTint": "#424039",
+        "phase": 3.23607,
+        "radius": 0.25,
+        "fictional": true,
+        "faceMorph": [
+          0.429,
+          0.833,
+          0.778
+        ],
+        "position": [
+          9.252000411509993,
+          0,
+          5.611200160980225
+        ],
+        "yaw": 3.1415927410125732,
+        "support": {
+          "sourceObject": "F009 sofa_84_sand",
+          "seatTopY": 0.4445,
+          "note": "Pelvis aligned to approved chair; contact pose reviewed separately."
+        },
+        "seated": true,
+        "wardrobeMode": "modest long-sleeve shirt and trousers; long drape disabled for seated role",
+        "frozen": true
+      },
+      {
+        "id": "office-person-04",
+        "zone": "Z02",
+        "task": "fabric_book",
+        "outfit": "salwar_braid",
+        "pose": "reception_fabric_book",
+        "heightScale": 1,
+        "bodyWidth": 0.982,
+        "skinTint": "#ddbaa4",
+        "garmentTint": "#ad9271",
+        "lowerTint": "#25313c",
+        "phase": 4.8541,
+        "radius": 0.25,
+        "fictional": true,
+        "faceMorph": [
+          0.643,
+          0.333,
+          0.222
+        ],
+        "position": [
+          10.072000411509993,
+          0,
+          5.611200160980225
+        ],
+        "yaw": 3.1415927410125732,
+        "support": {
+          "sourceObject": "F009 sofa_84_sand",
+          "seatTopY": 0.4445,
+          "note": "Pelvis aligned to approved chair; contact pose reviewed separately."
+        },
+        "seated": true,
+        "wardrobeMode": "modest long-sleeve shirt and trousers; long drape disabled for seated role",
+        "frozen": true
+      }
+    ],
+    "navigation": {
+      "mode": "No actor locomotion or gesture animation; fixed posed people with visitor collision"
+    },
+    "limitations": [
+      "Frozen illustrative people, not live animation.",
+      "Current Reception pose and hand-prop contacts require final review.",
+      "Native Mac performance has not been tested."
+    ],
+    "frozen": true,
+    "activeZones": [
+      "Z02"
+    ],
+    "props": [
+      {
+        "id": "reception_visitor_badge",
+        "owner": "office-person-01",
+        "type": "badge",
+        "position": [
+          12.7,
+          1.2728,
+          3.92
+        ],
+        "size": [
+          0.085,
+          0.003,
+          0.055
+        ]
+      },
+      {
+        "id": "reception_fabric_book",
+        "owner": "office-person-04",
+        "type": "fabric_book",
+        "position": [
+          10.072000411509993,
+          0.647,
+          5.301200160980225
+        ],
+        "yaw": 3.141592653589793,
+        "size": [
+          0.36,
+          0.018,
+          0.24
+        ]
+      }
+    ]
+  },
+  "frozen_geometry": {
+    "checks": [
+      {
+        "id": "office-person-01",
+        "all_exported_fields_identical": true
+      },
+      {
+        "id": "office-person-02",
+        "all_exported_fields_identical": true
+      },
+      {
+        "id": "office-person-03",
+        "all_exported_fields_identical": true
+      },
+      {
+        "id": "office-person-04",
+        "all_exported_fields_identical": true
+      }
+    ],
+    "passed": true
+  },
+  "wall_seconds": 25.666
+}

@@ -1,0 +1,81 @@
+{
+  "actor_export_hashes": {
+    "office-person-01.json.gz": "2a9a39cbc0dd1a117537d57cf52921a3dcbbf7f432f10526b779ba2a1176a179",
+    "office-person-03.json.gz": "8d45461d2270ca9d395fef7c77123d11e99803e72ab9b841dd7e1daefe7dfa44",
+    "office-person-02.json.gz": "5243590bfded0fc82d2d4a66b766802bffce04b3c510f15a8edc11d1262bf2d5",
+    "office-person-04.json.gz": "2c91776ae97085a16d739cc644e87f97d30cf1607c63c694bda5804aa81ad5ba"
+  },
+  "book_world_bounds": {
+    "min": [
+      9.892,
+      0.638,
+      5.1812
+    ],
+    "max": [
+      10.252,
+      0.6665,
+      5.4212
+    ]
+  },
+  "book_trousers_support": {
+    "max_y": 0.6360199396111386,
+    "point": [
+      9.975418213544241,
+      0.6360199396111386,
+      5.4212
+    ],
+    "clipped_triangles": 6251,
+    "book_bottom_y": 0.638,
+    "vertical_gap_at_highest_trousers_point_m": 0.0019800603888614488
+  },
+  "book_body_triangle_contacts": [
+    {
+      "prop_mesh": "",
+      "body_mesh": "LOD0_Adult_skin",
+      "triangle_pairs": 634
+    },
+    {
+      "prop_mesh": "",
+      "body_mesh": "LOD0_Adult_skin",
+      "triangle_pairs": 1182
+    },
+    {
+      "prop_mesh": "Unbranded_fabric_swatch_0",
+      "body_mesh": "LOD0_Adult_skin",
+      "triangle_pairs": 115
+    },
+    {
+      "prop_mesh": "Unbranded_fabric_swatch_1",
+      "body_mesh": "LOD0_Adult_skin",
+      "triangle_pairs": 115
+    },
+    {
+      "prop_mesh": "Unbranded_fabric_swatch_2",
+      "body_mesh": "LOD0_Adult_skin",
+      "triangle_pairs": 382
+    },
+    {
+      "prop_mesh": "Unbranded_fabric_swatch_3",
+      "body_mesh": "LOD0_Adult_skin",
+      "triangle_pairs": 382
+    }
+  ],
+  "badge_body_triangle_contacts": [
+    {
+      "prop_mesh": "Generic_blank_visitor_badge",
+      "body_mesh": "LOD0_Adult_skin",
+      "triangle_pairs": 102
+    },
+    {
+      "prop_mesh": "Generic_blank_visitor_badge",
+      "body_mesh": "LOD0_Adult_skin",
+      "triangle_pairs": 230
+    },
+    {
+      "prop_mesh": "",
+      "body_mesh": "LOD0_Adult_skin",
+      "triangle_pairs": 28
+    }
+  ],
+  "limits": "Triangle surface intersections do not alone distinguish intentional finger contact from clipping. Book support compares its lowest plane with the continuous highest trouser triangle clipped to the book XZ footprint; held-book support would need hands instead. Frozen t0 only; baseline proved0.5s geometry invariance."
+}

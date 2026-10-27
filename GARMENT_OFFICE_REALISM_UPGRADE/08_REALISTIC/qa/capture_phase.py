@@ -31,6 +31,7 @@ def main():
     parser.add_argument("--camera", action="append", help="Capture this named camera only; repeat for several.")
     parser.add_argument("--require-lightmaps", action="store_true")
     parser.add_argument("--people", choices=["on", "off", "unchanged"], default="unchanged")
+    parser.add_argument("--expected-people", type=int, help="Exact count required for a bounded occupied capture, e.g.4 for the Reception release.")
     args = parser.parse_args()
     output = args.output.resolve()
     shots = output / "shots"
@@ -87,12 +88,12 @@ def main():
             }""")
             report["counts"] = page.evaluate("__viewer.counts")
             if args.people != "unchanged":
-                page.evaluate("""async enabled => {
+                page.evaluate("""async ({enabled,expected}) => {
                     if (!__viewer.api.setPeopleEnabled || !__viewer.api.peopleStats) throw new Error('People capture requires setPeopleEnabled and peopleStats APIs');
                     await __viewer.api.setPeopleEnabled(enabled);
                     const state=__viewer.api.peopleStats();
-                    if(state.enabled!==enabled || (enabled && (!state.loaded || state.total<25)))throw new Error('People assets/count are not ready for requested capture');
-                }""", args.people == "on")
+                    if(state.enabled!==enabled || (enabled && (!state.loaded || state.total<1 || (expected!==null && state.total!==expected))))throw new Error('People assets/count are not ready for requested capture');
+                }""", {"enabled": args.people == "on", "expected": args.expected_people})
             page.add_style_tag(content=HIDE)
             for camera in cameras:
                 result = page.evaluate("name => __viewer.api.frameCamera(name)", camera["name"])

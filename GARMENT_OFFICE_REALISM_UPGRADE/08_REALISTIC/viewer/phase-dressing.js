@@ -1,21 +1,22 @@
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { buildOfficeProps } from '../props/office-props.mjs';
+import { applyOfficeScreenContent } from '../props/screen-content.mjs';
+import { createPeopleLayer } from '../people/people-layer.js';
 
 // Phase 4 is deliberately dormant in stages 1–3. Source objects remain untouched;
 // additive props, screen artwork and fictional actors have separate provenance.
-export async function createOfficeDressing({ scene, renderer, metadata, grid, probes, staticBlocked, changed, peopleAccepted = false }) {
+export async function createOfficeDressing({ scene, renderer, metadata, grid, probes, staticBlocked, changed, peopleAccepted = false, activeZones = null, frozenPeople = false }) {
   const base = new URL('./', location.href);
-  const moduleAt = path => import(new URL(path, base).href);
-  const [{ buildOfficeProps }, screenModule, response] = await Promise.all([
-    moduleAt('props/office-props.mjs'), moduleAt('props/screen-content.mjs'), fetch(new URL('props/office-props-manifest.json', base)),
-  ]);
+  const response = await fetch(new URL('props/office-props-manifest.json', base));
   if (!response.ok) throw new Error(`Props manifest HTTP ${response.status}`);
   const manifest = await response.json();
+  if (activeZones) manifest.props = manifest.props.filter(p => activeZones.includes(p.zone));
   const props = buildOfficeProps(THREE, manifest, { anisotropy: Math.min(8, renderer.capabilities.getMaxAnisotropy()) });
   scene.add(props.group);
   props.group.traverse(mesh => { if (mesh.isMesh) { mesh.castShadow = false; mesh.receiveShadow = false; } });
   let atlas, people = null, peoplePromise = null;
-  const status = { enabled: true, props: props.stats, screens: {}, peopleAccepted, errors: [], dynamicLighting: 'Room SH for actors; instance SH for additive props; static lightmaps exclude both.' };
+  const status = { enabled: true, props: props.stats, screens: {}, peopleAccepted, errors: [], dynamicLighting: probes ? 'Room SH for actors; instance SH for additive props; static lightmaps exclude both.' : 'Existing scene hemisphere/directional lighting for added props and static people; not a calibrated dynamic-lighting bake.' };
   const zones = metadata.rooms.map(r => r.zone), rows = new Float32Array(9 * zones.length * 4);
   const shTexture = new THREE.DataTexture(rows, 9, zones.length, THREE.RGBAFormat, THREE.FloatType);
   shTexture.minFilter = shTexture.magFilter = THREE.NearestFilter; shTexture.generateMipmaps = false;
@@ -34,6 +35,7 @@ export async function createOfficeDressing({ scene, renderer, metadata, grid, pr
     const spheres = []; for (let i = 0; i < mesh.count; i++) { mesh.getMatrixAt(i, matrix); spheres.push(mesh.geometry.boundingSphere.clone().applyMatrix4(matrix)); }
     batches.push({ mesh, matrices: mesh.instanceMatrix.array.slice(), rows: mesh.geometry.attributes.officeProbeRow.array.slice(), spheres, count: mesh.count });
     const material = mesh.material;
+    if (!probes) return;
     if (materialHooks.has(material)) return; materialHooks.add(material);
     const oldCompile = material.onBeforeCompile, oldKey = material.customProgramCacheKey.bind(material);
     material.onBeforeCompile = shader => {
@@ -60,7 +62,7 @@ vec3 officeSH(vec3 n){
     const previousGeometry = new Set(), previousMaterials = new Set(room.ownedMaterials);
     room.groups.forEach(root => root.traverse(o => { if (o.isMesh) previousGeometry.add(o.geometry); }));
     const reviews = [];
-    for (const root of room.groups) { const review = screenModule.applyOfficeScreenContent(THREE, root, { zone: room.id, atlasTexture: atlas, anisotropy: Math.min(8, renderer.capabilities.getMaxAnisotropy()), emissiveIntensity: .25 }); atlas ||= review.texture; reviews.push(review); }
+    for (const root of room.groups) { const review = applyOfficeScreenContent(THREE, root, { zone: room.id, atlasTexture: atlas, anisotropy: Math.min(8, renderer.capabilities.getMaxAnisotropy()), emissiveIntensity: .25 }); atlas ||= review.texture; reviews.push(review); }
     // The helper may clone a screen material. Keep atlas refinement, probes and LRU
     // ownership bound to the actual materials now used by the mesh.
     room.ownedMaterials.clear(); const liveGeometry = new Set();
@@ -91,8 +93,7 @@ vec3 officeSH(vec3 n){
   async function ensurePeople() {
     if (!peopleAccepted) throw new Error('People assets await the independent contact review; the layer is not enabled.');
     if (!peoplePromise) peoplePromise = (async () => {
-      const { createPeopleLayer } = await moduleAt('people/people-layer.js');
-      people = await createPeopleLayer({ THREE, loader: new GLTFLoader(), scene, metadata, walkGrid: grid, assetBase: './people/', extraBlocked: staticBlocked });
+      people = await createPeopleLayer({ THREE, loader: new GLTFLoader(), scene, metadata, walkGrid: grid, assetBase: './people/', extraBlocked: staticBlocked, frozen: frozenPeople, activeZones, manifestFile: frozenPeople ? 'reception/people-manifest.json' : 'people-manifest.json' });
       return people;
     })();
     return peoplePromise;
@@ -103,7 +104,7 @@ vec3 officeSH(vec3 n){
     if (enabled) zones.forEach(applyProbe);
     changed(); return layer.stats();
   }
-  function update(dt, options) { if (people?.stats().enabled) { people.update(dt, options); changed(); } }
+  function update(dt, options) { if (people?.stats().enabled) { people.update(frozenPeople ? 0 : dt, options); if (!frozenPeople) changed(); } }
   return { status, props, prepareRoom, applyProbe, prepareView, textures: () => [shTexture, atlas].filter(Boolean), setPeopleEnabled, update,
     peopleStats: () => people?.stats() || { enabled: false, loaded: false, total: 0, visible: 0, illustrative: true, accepted: peopleAccepted },
     peopleDiagnostics: () => people?.diagnostics() || [], blocksMovement: (x, z, radius) => people?.blocksMovement(x, z, radius) || false,

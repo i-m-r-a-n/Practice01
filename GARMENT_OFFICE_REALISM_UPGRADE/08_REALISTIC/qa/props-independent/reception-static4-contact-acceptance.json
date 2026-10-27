@@ -1,0 +1,59 @@
+{
+  "status": "PASS \u2014 bounded static Reception contact acceptance",
+  "actors": [
+    "office-person-01",
+    "office-person-02",
+    "office-person-03",
+    "office-person-04"
+  ],
+  "source_lock": {
+    "people-layer.js": "f39399db80fe64a0a901302f5f59a283bbec17e422d01d4b3d37f5eb34b7ce42",
+    "reception/people-manifest.json": "d1ee7c8d88b22216aaea9c07283bc1c392ef9eae43359d4038ce3e734d349b7a",
+    "reception/poses.json": "16bb2498fd8b86fe8dcc57e27b606aee4d48dba8dcaee10b110fda66e65f8fc3",
+    "assets/shirt.glb": "7430996e4368aa3e54d39c77f93d69a7ce31a089977714e2e7ed56dd846f7c1e",
+    "assets/panjabi.glb": "31f9e208986c064a3776991690d12925ed5fda59889765df06930d66c054d257",
+    "assets/salwar.glb": "cd2c4c458dd59532cc28408b98ae8d544a971fe4e069fab2413bbf4f4d90b5e4",
+    "assets/salwar_braid.glb": "68f3384b625f59d8d4a9c1ddce671126dba394f7ca9aaae383ac0d5aa08e398d"
+  },
+  "source_furniture_glb_sha256": "3b883c0077541aa3c574c903cfad60a3b8ba410d12af6d6b476b7733230fc35d",
+  "measured_results": {
+    "exact_source_furniture_contact_count_by_actor": {
+      "office-person-01": 0,
+      "office-person-02": 0,
+      "office-person-03": 0,
+      "office-person-04": 0
+    },
+    "badge_skin_triangle_intersections": 0,
+    "book_skin_or_clothing_triangle_intersections": 0,
+    "book_to_highest_lap_vertical_gap_m": 0.0019800603888614488
+  },
+  "evidence": {
+    "qa/props-independent/reception-static4-final2-furniture-contacts.json": {
+      "sha256": "40c2f6a273fe7c8e22330c30a941c8ee570d0b7ae759f9dc771ae6b4f8e165f4"
+    },
+    "qa/props-independent/reception-static4-final2-prop-contacts.json": {
+      "sha256": "4f590beff520b85dd58ca0c30e2856b56e5e00fcd3edda42f26f1c282301177f"
+    },
+    "qa/reception-static-contact-final2/floor-privacy-review.json": {
+      "sha256": "eac6d4cba839305fb7f585e8552edba866a6057d12f6e0b955c196ad335efdb9"
+    },
+    "qa/reception-static-contact-final2/previous-candidate-preservation.json": {
+      "sha256": "7829d492e84655a43ce150ed332e2d477f267da088f84a6bf5978d3ddceb1d5f"
+    },
+    "qa/reception-static-contact-final2/export-manifest.json": {
+      "sha256": "f2807d89f54f77362e743bf1bb02abc4fdf2f1807a516b3a800d08ab64318784"
+    },
+    "people/reception/source-lock.json": {
+      "sha256": "3bbf05853e59393e51eb5b93be37e7c217ed3acb53369f8a97488dd4884c7e66"
+    }
+  },
+  "tolerances_and_assumptions": [
+    "Actual visible browser-deformed LOD0 mesh vertices were exported in world metres, rounded to1e-6m.",
+    "Source triangles come from the approved furniture GLB with original transforms; triangle-SAT separation tolerance is1e-7m along normalized projection axes.",
+    "Book/lap support is a static visual approximation with1.98006mm vertical gap; it is not a physical load-bearing/contact simulation.",
+    "Baseline reviewer separately measured approximately0.5mm sole clearance over actual floor/rug surfaces, checked private/excluded-zone boundaries, and proved exact frozen geometry after ten updates totalling0.5s.",
+    "Badge and book hand poses are frozen. No walking, reaching, cloth simulation, moving-person collision or continuous handover validation is claimed.",
+    "Final integrated lighting/material appearance and target-Mac/browser performance are outside this contact acceptance."
+  ],
+  "preserved": "No approved furniture, wall, floor, door or room geometry moved. Earlier failed candidates remain archived."
+}

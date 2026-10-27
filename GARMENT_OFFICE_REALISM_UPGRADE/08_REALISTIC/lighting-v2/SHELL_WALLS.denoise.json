@@ -1,0 +1,25 @@
+{
+  "purpose": "RTLightmap postprocess of retained raw scene-linear EXR; visual acceptance is a separate review",
+  "filter": "RTLightmap",
+  "directional": false,
+  "inputScale": "automatic",
+  "source": "/workspace/office-realism/GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/lighting-v2/SHELL_WALLS_raw.exr",
+  "sourceSHA256": "5b96c5adebc75bfe70fb1d067deaee5870b12a356f66ea79232670540cd8a2f8",
+  "output": "/workspace/office-realism/GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/lighting-v2/SHELL_WALLS.exr",
+  "outputSHA256": "125ec9f9c61b79dc5df0eaf991dbe8f9deee21cfbe0e47161009f6f5f9aa8948",
+  "shape": [
+    4096,
+    4096,
+    3
+  ],
+  "sourceMax": 21.96875,
+  "outputMax": 20.578125,
+  "negativeOutputChannelsClamped": 0,
+  "seconds": 5.719237368999529,
+  "threads": 4,
+  "documentation": "https://github.com/RenderKit/oidn/blob/v2.3.3/README.md#rtlightmap",
+  "library": "/workspace/tools/oidn/oidn-2.3.3.x86_64.linux/lib/libOpenImageDenoise.so",
+  "librarySHA256": "9ac9dcd18318cae879efb01c14cff72c2c4275428a15e5ab6e94c8ff8a43c4dc",
+  "numpyVersion": "2.3.5",
+  "openEXRVersion": "3.5.2"
+}

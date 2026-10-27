@@ -29,6 +29,10 @@ for(const [path,type] of [['/realistic/','text/html'],['/realistic/app.js','text
   const res=await b.run(new Request('https://tour.example'+path));assert.equal(res.status,200);assert.ok(res.headers.get('content-type').startsWith(type));assert.equal(res.headers.get('x-realistic-source').length,40);count++;
 }
 const partial=await b.run(new Request('https://tour.example/realistic/room.glb',{headers:{Range:'bytes=0-31'}}));assert.equal(partial.status,206);assert.equal(b.calls.at(-1).range,'bytes=0-31');count++;
+for(const [name,target] of [['model_web_baked.glb','GARMENT_OFFICE_REALISM_UPGRADE/01_IMPROVED_MODEL/Final_Office_Interior_web_realism.glb'],['release-config.json','GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/viewer/dist/release-config.json']]) {
+  const result=await b.run(new Request('https://tour.example/realistic/'+name));
+  assert.equal(result.status,200);assert.ok(b.calls.at(-1).url.endsWith(target));count++;
+}
 assert.equal((await b.run(new Request('https://tour.example/realistic/app.js',{method:'POST'}))).status,405);count++;
 assert.equal((await b.run(new Request('https://tour.example/realistic/%2e%2e%2fsecret.txt'))).status,400);count++;
 console.log(JSON.stringify({checks:count,unchanged_original_requests:routes.length*2,passed:true}));

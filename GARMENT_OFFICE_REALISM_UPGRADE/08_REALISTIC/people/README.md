@@ -1,3 +1,5 @@
+**Current authoritative scope:** Reception-only, four frozen posed people; no animation or walking. See [reception/README.md](reception/README.md). The 35-person work below is preserved prototype history, not the current release entrypoint.
+
 # Optional illustrative office people layer
 
 This module adds 35 fictional adult characters and 3 conservative corridor routes. It never modifies the approved office source, room boundaries, furniture or the old tour. The current status is **prototype awaiting final contact/visual acceptance**, not a photorealism claim.

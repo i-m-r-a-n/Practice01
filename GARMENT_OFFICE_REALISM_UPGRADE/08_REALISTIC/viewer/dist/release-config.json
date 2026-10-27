@@ -1,0 +1,13 @@
+{
+  "models": [
+    "./model_web_baked.glb"
+  ],
+  "renders": "./renders/",
+  "lightmapManifest": "./lighting-v2/manifest-hybrid.json",
+  "releaseMode": "reception",
+  "stage": 4,
+  "releaseZones": [
+    "Z02"
+  ],
+  "peopleAccepted": true
+}

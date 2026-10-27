@@ -31,5 +31,6 @@
     "doorway_repairs.py": "f8fe367f72b3339fdf97559c1c54a860ef001731e9317b00f782a03db3546c78"
   },
   "source_sha256": "fa3ed3d58f6d44c3554e3761307841b96115ff7816e4e541c8e6611cb363810d",
-  "status": "running"
+  "status": "completed",
+  "returncode": 0
 }

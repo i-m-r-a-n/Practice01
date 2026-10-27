@@ -1,0 +1,132 @@
+{
+  "scope": "Final same-source static furniture check for exactly four Reception actors; no other room or animation work.",
+  "source_glb_sha256": "3b883c0077541aa3c574c903cfad60a3b8ba410d12af6d6b476b7733230fc35d",
+  "actors": [
+    {
+      "id": "office-person-01",
+      "zone": "Z02",
+      "pose": "reception_badge_giver",
+      "support": {},
+      "actual_position": [
+        13.32,
+        0,
+        3.75
+      ],
+      "meshes": [
+        "LOD0_Adult_skin",
+        "LOD0_Closed_shoes",
+        "LOD0_Eyes",
+        "LOD0_Hair",
+        "LOD0_Long_modest_tunic",
+        "Office_clothing004",
+        "Office_clothing004_1",
+        "Generic_blank_visitor_badge",
+        ""
+      ],
+      "triangles": 42764,
+      "contacts": [],
+      "seat_volume_probe": {},
+      "export_sha256": "d85c8acacf5a13ef7256700b74c03ed0103ee5ce5a4fdd1a2be998932523df4d"
+    },
+    {
+      "id": "office-person-02",
+      "zone": "Z02",
+      "pose": "reception_badge_receiver",
+      "support": {},
+      "actual_position": [
+        12.08,
+        0,
+        3.75
+      ],
+      "meshes": [
+        "LOD0_Adult_skin",
+        "LOD0_Closed_shoes",
+        "LOD0_Eyes",
+        "LOD0_Hair",
+        "Office_clothing",
+        "Office_clothing_1"
+      ],
+      "triangles": 39732,
+      "contacts": [],
+      "seat_volume_probe": {},
+      "export_sha256": "499c19f64f670f7f8521771602144e423dda93388dc9891103afdc13dbf40778"
+    },
+    {
+      "id": "office-person-03",
+      "zone": "Z02",
+      "pose": "listening__seat_44450",
+      "support": {
+        "sourceObject": "F009 sofa_84_sand",
+        "seatTopY": 0.4445,
+        "note": "Pelvis aligned to approved chair; contact pose reviewed separately."
+      },
+      "actual_position": [
+        9.252000411509993,
+        0,
+        5.611200160980225
+      ],
+      "meshes": [
+        "LOD0_Adult_skin",
+        "LOD0_Closed_shoes",
+        "LOD0_Eyes",
+        "LOD0_Hair",
+        "Office_clothing002",
+        "Office_clothing002_1"
+      ],
+      "triangles": 37434,
+      "contacts": [],
+      "seat_volume_probe": {
+        "declared_seat_top_m": 0.4445,
+        "exact_source_flat_top_triangles": 8,
+        "vertices_15_to_65mm_below_top_inside_exact_flat_top_footprint": 0,
+        "maximum_depth_in_queried_slab_m": 0,
+        "by_mesh": {},
+        "examples": [],
+        "limits": "15mm is a review threshold, not an ergonomic or clothing-compression standard. Query samples actual used posed vertices within the top footprint and a 50mm deep slab; it does not test every point of continuous cloth volume."
+      },
+      "export_sha256": "9ae00b80334520f702343e4b6c7e2a08445284fb3f6984743cafee0f0f911f9f"
+    },
+    {
+      "id": "office-person-04",
+      "zone": "Z02",
+      "pose": "reception_fabric_book",
+      "support": {
+        "sourceObject": "F009 sofa_84_sand",
+        "seatTopY": 0.4445,
+        "note": "Pelvis aligned to approved chair; contact pose reviewed separately."
+      },
+      "actual_position": [
+        10.072000411509993,
+        0,
+        5.611200160980225
+      ],
+      "meshes": [
+        "LOD0_Adult_skin",
+        "LOD0_Closed_shoes",
+        "LOD0_Eyes",
+        "LOD0_Hair",
+        "Office_clothing006",
+        "Office_clothing006_1",
+        "",
+        "",
+        "",
+        "Unbranded_fabric_swatch_0",
+        "Unbranded_fabric_swatch_1",
+        "Unbranded_fabric_swatch_2",
+        "Unbranded_fabric_swatch_3"
+      ],
+      "triangles": 42110,
+      "contacts": [],
+      "seat_volume_probe": {
+        "declared_seat_top_m": 0.4445,
+        "exact_source_flat_top_triangles": 8,
+        "vertices_15_to_65mm_below_top_inside_exact_flat_top_footprint": 0,
+        "maximum_depth_in_queried_slab_m": 0,
+        "by_mesh": {},
+        "examples": [],
+        "limits": "15mm is a review threshold, not an ergonomic or clothing-compression standard. Query samples actual used posed vertices within the top footprint and a 50mm deep slab; it does not test every point of continuous cloth volume."
+      },
+      "export_sha256": "3df050794564b3def8da0500f35f30c3362555bd8002c23c50878144c1b21d2c"
+    }
+  ]
+}

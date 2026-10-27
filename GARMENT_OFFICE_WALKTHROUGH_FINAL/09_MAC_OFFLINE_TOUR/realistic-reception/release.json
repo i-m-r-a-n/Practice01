@@ -1,0 +1,7 @@
+{
+  "file": "Reception_Realistic_Offline.zip",
+  "bytes": 72103243,
+  "sha256": "0d5fb569b3695e7732355e87439f2ada025cf66d8e1b06bd35c66bde148c7948",
+  "scope": "Reception static people and hybrid furniture lighting; original tour preserved",
+  "status": "Local HTTP-served offline asset resolver smoke passed with4 static people and25 lightmapped targets; no browser/HTTP errors. Native Mac/file-protocol test unavailable."
+}

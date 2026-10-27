@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Ground Floor - Realistic Office Tour</title>
+<title>Ground Floor - Interactive Design Experience</title>
 <meta name="theme-color" content="#16201b">
 <link rel="icon" href="data:,">
 <style>
@@ -200,7 +200,6 @@ body.side-open #dock { left: calc(var(--gap) + var(--side-w) + 14px) }
 }
 .tb-row button:disabled { opacity: .38; cursor: default; background: rgba(255, 255, 255, .04) }
 
-#lightingStatus { display:inline-block; padding:.15rem .4rem; margin-left:.35rem; border:1px solid currentColor; border-radius:4px; font-size:10px; font-weight:500; vertical-align:middle; opacity:.72; }
 body[data-mode="capture"] > :not(#app):not(script) { display:none !important; }
 </style>
 </head>
@@ -217,7 +216,7 @@ body[data-mode="capture"] > :not(#app):not(script) { display:none !important; }
     </div>
     <div class="ttl">
       <div class="eyebrow">Corporate headquarters &amp; design development centre</div>
-      <h1>Ground floor &middot; realistic tour <span id="lightingStatus">Lighting preview</span></h1>
+      <h1>Ground floor &middot; interactive design experience</h1>
     </div>
   </div>
   <nav class="modes" aria-label="Ways to explore">
@@ -298,7 +297,7 @@ body[data-mode="capture"] > :not(#app):not(script) { display:none !important; }
 
 <div id="welcome" class="hidden" role="dialog" aria-modal="true" aria-labelledby="wTitle">
   <div class="wbox">
-    <div class="eyebrow">Ground floor &middot; realistic tour <span id="lightingStatus">Lighting preview</span></div>
+    <div class="eyebrow">Ground floor &middot; interactive design experience</div>
     <h2 id="wTitle">Three ways to explore the office</h2>
     <div class="ways">
       <button class="way primary" id="wTour"><b>&#9654; Guided tour</b><span>16 stops through the floor. It plays by itself: pause, go back or skip at any time.</span></button>
@@ -316,7 +315,7 @@ body[data-mode="capture"] > :not(#app):not(script) { display:none !important; }
 
 <div id="loading">
   <div class="box">
-    <div class="eyebrow">Ground floor &middot; realistic tour <span id="lightingStatus">Lighting preview</span></div>
+    <div class="eyebrow">Ground floor &middot; interactive design experience</div>
     <div class="t" id="loadTitle">Loading the 3D model&hellip;</div>
     <div class="track"><div id="loadBar"></div></div>
     <div id="loadText">Starting&hellip;</div>

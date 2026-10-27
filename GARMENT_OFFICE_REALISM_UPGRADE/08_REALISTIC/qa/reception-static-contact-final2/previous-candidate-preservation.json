@@ -1,0 +1,47 @@
+{
+  "previous_export": "/workspace/office-reception-static-contact-final",
+  "final_export": "/workspace/office-reception-static-contact-final2",
+  "comparison": [
+    {
+      "id": "office-person-01",
+      "all_fields_identical": true,
+      "position_identical": true
+    },
+    {
+      "id": "office-person-02",
+      "all_fields_identical": true,
+      "position_identical": true
+    },
+    {
+      "id": "office-person-03",
+      "all_fields_identical": true,
+      "position_identical": true
+    },
+    {
+      "id": "office-person-04",
+      "all_fields_identical": false,
+      "position_identical": true
+    }
+  ],
+  "freeze": {
+    "checks": [
+      {
+        "id": "office-person-01",
+        "all_exported_fields_identical": true
+      },
+      {
+        "id": "office-person-02",
+        "all_exported_fields_identical": true
+      },
+      {
+        "id": "office-person-03",
+        "all_exported_fields_identical": true
+      },
+      {
+        "id": "office-person-04",
+        "all_exported_fields_identical": true
+      }
+    ],
+    "passed": true
+  }
+}

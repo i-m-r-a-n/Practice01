@@ -21,7 +21,9 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--url", default="http://127.0.0.1:8770/GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/people/review/office-preview.html")
     parser.add_argument("--output", required=True, type=Path)
-    parser.add_argument("--preflight", action="store_true", help="Export all35 actors only at t0 before an expensive full-cycle review.")
+    parser.add_argument("--preflight", action="store_true", help="Export current manifest actors only at t0 before a longer-cycle review.")
+    parser.add_argument("--maximum-actors", type=int, help="Fail before exporting if a reduced-scope manifest contains more actors than expected.")
+    parser.add_argument("--freeze-check", action="store_true", help="With preflight, export again after ten real runtime updates to verify frozen geometry.")
     args = parser.parse_args()
     output = args.output.resolve()
     if (output / "export-manifest.json").exists():
@@ -29,7 +31,9 @@ def main():
     output.mkdir(parents=True, exist_ok=True)
     report = {"status": "running", "url": args.url, "sources": [], "snapshots": [], "errors": [], "scope": "Actual runtime posed LOD0 world vertices/indices plus hand props. All actors at0/3/6/9seconds; moving actors additionally at0.35/0.75/1.3seconds. No rendering/material realism or Mac performance claim."}
     if args.preflight:
-        report["scope"] = "Actual runtime posed visible LOD0 world vertices/indices plus hand props; all35 actors at t0 only. Preflight, not full cycle, rendered realism or Mac performance acceptance."
+        report["scope"] = "Actual runtime posed visible LOD0 world vertices/indices plus hand props; current manifest actors at t0. Preflight, not full cycle, rendered realism or Mac performance acceptance."
+        if args.freeze_check:
+            report["scope"] += " A second export follows ten actual runtime updates totalling0.5seconds, to test frozen geometry."
 
     def save():
         (output / "export-manifest.json").write_text(json.dumps(report, indent=2))
@@ -55,6 +59,8 @@ def main():
             page.evaluate("window.frozen=true")
             report["browser"] = browser.version
             report["people_manifest"] = page.evaluate("window.people.manifest")
+            if args.maximum_actors is not None and len(report["people_manifest"]["actors"]) > args.maximum_actors:
+                raise RuntimeError("People manifest exceeds the explicitly bounded actor scope")
             page.evaluate("""() => {
                 const Vec = camera.position.constructor;
                 window.__contactExport = id => {
@@ -85,6 +91,8 @@ def main():
             }""")
             elapsed = 0
             schedule = [(0, True)] if args.preflight else [(0, True), (.35, False), (.75, False), (1.3, False), (3, True), (6, True), (9, True)]
+            if args.preflight and args.freeze_check:
+                schedule.append((.5, True))
             for target, all_actors in schedule:
                 remaining = target - elapsed
                 page.evaluate("""seconds => {
@@ -110,6 +118,15 @@ def main():
                 save()
                 print(json.dumps({"seconds": target, "actors": len(entry["actors"])}), flush=True)
             report["status"] = "exported"
+            if args.preflight and args.freeze_check:
+                comparisons = []
+                for first, second in zip(report["snapshots"][0]["actors"], report["snapshots"][1]["actors"]):
+                    with gzip.open(output / first["file"], "rt") as stream:
+                        a = json.load(stream)
+                    with gzip.open(output / second["file"], "rt") as stream:
+                        b = json.load(stream)
+                    comparisons.append({"id": first["id"], "all_exported_fields_identical": a == b})
+                report["frozen_geometry"] = {"checks": comparisons, "passed": all(c["all_exported_fields_identical"] for c in comparisons)}
         except Exception as error:
             report["status"] = "failed"
             report["failure"] = str(error)

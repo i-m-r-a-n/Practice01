@@ -8,7 +8,7 @@ from mathutils import Vector
 import numpy as np
 
 
-ap=argparse.ArgumentParser();ap.add_argument('--room',default='Z02');ap.add_argument('--size',type=int,default=2048);ap.add_argument('--samples',type=int,default=256);ap.add_argument('--smoke',action='store_true');ap.add_argument('--shared-shell',action='store_true');ap.add_argument('--floor-uv-weight',type=float,default=1.0);ap.add_argument('--export-only',action='store_true');ap.add_argument('--assignment-only',action='store_true');ap.add_argument('--guide-only',action='store_true');ap.add_argument('--save-guides',action='store_true');ap.add_argument('--skip-doorway-repairs',action='store_true');ap.add_argument('--preserve-emitter-groups',action='store_true');ap.add_argument('--out',default=None)
+ap=argparse.ArgumentParser();ap.add_argument('--room',default='Z02');ap.add_argument('--size',type=int,default=2048);ap.add_argument('--samples',type=int,default=256);ap.add_argument('--smoke',action='store_true');ap.add_argument('--shared-shell',action='store_true');ap.add_argument('--floor-uv-weight',type=float,default=1.0);ap.add_argument('--export-only',action='store_true');ap.add_argument('--assignment-only',action='store_true');ap.add_argument('--guide-only',action='store_true');ap.add_argument('--save-guides',action='store_true');ap.add_argument('--skip-doorway-repairs',action='store_true');ap.add_argument('--preserve-emitter-groups',action='store_true');ap.add_argument('--export-allowlist',default=None);ap.add_argument('--out',default=None)
 a=ap.parse_args(sys.argv[sys.argv.index('--')+1:])
 ROOT=Path(os.environ.get('OFFICE_PROJECT_ROOT',str(Path(__file__).resolve().parents[3])))
 OUT=Path(a.out) if a.out else Path(__file__).resolve().parents[1]/'lighting-v2'
@@ -297,9 +297,12 @@ if emitter_bake_objects:
 # Export two stable batches with an explicit overhead marker, retaining packed UVs.
 base_mesh=joined.data
 exports=[]
+export_allowed=set(json.loads(Path(a.export_allowlist).read_text())['keep']) if a.export_allowlist else set(source_names)
+assert export_allowed.issubset(set(source_names))
 for overhead,label in ((0,'INTERIOR'),(1,'OVERHEAD')):
  mesh=base_mesh.copy();bm=bmesh.new();bm.from_mesh(mesh);layer=bm.faces.layers.int.get('realistic_overhead')
- remove=[f for f in bm.faces if int(f[layer])!=overhead]
+ source_layer=bm.faces.layers.int.get('realistic_source_id')
+ remove=[f for f in bm.faces if int(f[layer])!=overhead or source_names[int(f[source_layer])] not in export_allowed]
  bmesh.ops.delete(bm,geom=remove,context='FACES');bmesh.ops.remove_doubles(bm,verts=[],dist=0.0)
  bm.to_mesh(mesh);bm.free()
  if not len(mesh.polygons):bpy.data.meshes.remove(mesh);continue
@@ -328,6 +331,10 @@ for obj in exports:
 bpy.ops.export_scene.gltf(filepath=str(OUT/(a.room+'.glb')),export_format='GLB',use_selection=True,export_apply=True,export_extras=True,export_cameras=False,export_lights=False,export_yup=True,export_materials='EXPORT',export_texcoords=True,export_normals=True)
 room=rooms.get(a.room,{'name':'Shared shell','polygon_xz':[]})
 entry={'id':a.room,'name':room['name'],'glb':a.room+'.glb','lightMap':{'url':a.room+'.exr','format':'exr','channel':1,'intensity':math.pi,'linear':True,'samples':a.samples,'size':a.size,'denoised':not a.smoke,'denoiser':'OIDN2.3.3 RTLightmap HDR' if not a.smoke else None},'objects':raw_names,'materials':source_material_names,'bounds':room['polygon_xz'],'bake':{'type':'DIFFUSE','passes':['DIRECT','INDIRECT'],'target_uv_layer':'LightmapUV','source_shader_uv_layer':'UVMap','albedo_included':False,'source_sha256':source_hash,'loaded_copy_sha256':loaded_copy_hash,'executed_script_sha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),'postprocess_script_sha256':hashlib.sha256(Path(__file__).with_name('denoise_lightmap.py').read_bytes()).hexdigest(),'blender':bpy.app.version_string,'cpu_threads':scene.render.threads,'adaptive_sampling':scene.cycles.use_adaptive_sampling,'preserved_emitter_groups':a.preserve_emitter_groups,'emitter_source_objects':[source_names[i] for i in sorted(emitter_source_ids)],'seconds':time.monotonic()-bake_start,'total_seconds':time.monotonic()-start,'stats':stats,'uv_metrics':uv_metrics,'smoke_only':a.smoke,'original_object_bboxes':source_bboxes,'documented_doorway_repairs':doorway_repairs,'derivative_geometry_exception':'Six pre-existing documented doorway-rail corrections only; see MODEL_FIXES.md' if doorway_repairs else None},'status':'smoke-only' if a.smoke else 'baked-unreviewed'}
+if a.export_allowlist:
+ entry['objects']=[name for name in raw_names if name in export_allowed]
+ entry['excluded_original_atlas_objects']=[name for name in raw_names if name not in export_allowed]
+ entry['geometry_scope']='Exact whole-object subset of the unchanged packed atlas; no re-UV or new lighting bake.'
 if a.save_guides:entry['guides']={'normal':a.room+'_normal.exr','albedo':a.room+'_albedo.exr','normalMetadata':a.room+'_normal.json','uvReference':a.room+'_normal_uv_reference.npz'}
 if a.export_only:
  entry['status']='geometry-only-no-lightmap';entry['bake']['export_only']=True

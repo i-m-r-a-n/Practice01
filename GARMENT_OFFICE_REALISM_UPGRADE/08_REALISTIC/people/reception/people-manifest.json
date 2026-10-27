@@ -1,0 +1,214 @@
+{
+  "version": "reception-static-1",
+  "count": 4,
+  "note": "People shown are illustrative",
+  "defaultEnabled": false,
+  "status": "Reception-only frozen pose contact review pending",
+  "approvedLayoutChanged": false,
+  "axes": "metres; x east, y up, z south; characters face +z at yaw 0",
+  "emptyZones": [
+    "Z23",
+    "Z24",
+    "Z25",
+    "Z26",
+    "Z27",
+    "Z28",
+    "Z29",
+    "Z34"
+  ],
+  "assets": {
+    "shirt": {
+      "file": "assets/shirt.glb",
+      "license": "CC0-1.0 plus self-made drape",
+      "sha256": "7430996e4368aa3e54d39c77f93d69a7ce31a089977714e2e7ed56dd846f7c1e"
+    },
+    "panjabi": {
+      "file": "assets/panjabi.glb",
+      "license": "CC0-1.0 plus self-made drape",
+      "sha256": "31f9e208986c064a3776991690d12925ed5fda59889765df06930d66c054d257"
+    },
+    "salwar": {
+      "file": "assets/salwar.glb",
+      "license": "CC0-1.0 plus self-made drape",
+      "sha256": "cd2c4c458dd59532cc28408b98ae8d544a971fe4e069fab2413bbf4f4d90b5e4"
+    },
+    "salwar_braid": {
+      "file": "assets/salwar_braid.glb",
+      "license": "CC0-1.0 plus self-made drape",
+      "sha256": "68f3384b625f59d8d4a9c1ddce671126dba394f7ca9aaae383ac0d5aa08e398d"
+    }
+  },
+  "poses": "reception/poses.json",
+  "actors": [
+    {
+      "id": "office-person-01",
+      "zone": "Z02",
+      "task": "badge_giver",
+      "outfit": "salwar",
+      "pose": "reception_badge_giver",
+      "heightScale": 1,
+      "bodyWidth": 1,
+      "skinTint": "#d5b6a0",
+      "garmentTint": "#a8bbcd",
+      "lowerTint": "#25313c",
+      "phase": 0.0,
+      "radius": 0.25,
+      "fictional": true,
+      "faceMorph": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "position": [
+        13.32,
+        0,
+        3.75
+      ],
+      "yaw": -1.5707963267948966,
+      "seated": false,
+      "frozen": true
+    },
+    {
+      "id": "office-person-02",
+      "zone": "Z02",
+      "task": "badge_receiver",
+      "outfit": "shirt",
+      "pose": "reception_badge_receiver",
+      "heightScale": 1,
+      "bodyWidth": 1,
+      "skinTint": "#c69d7b",
+      "garmentTint": "#a98a76",
+      "lowerTint": "#30363d",
+      "phase": 1.61803,
+      "radius": 0.25,
+      "fictional": true,
+      "faceMorph": [
+        0.214,
+        0.417,
+        0.389
+      ],
+      "position": [
+        12.08,
+        0,
+        3.75
+      ],
+      "yaw": 1.5707963267948966,
+      "seated": false,
+      "frozen": true,
+      "handGrip": 0.12
+    },
+    {
+      "id": "office-person-03",
+      "zone": "Z02",
+      "task": "listening",
+      "outfit": "panjabi",
+      "pose": "listening__seat_44450",
+      "heightScale": 1.0,
+      "bodyWidth": 1.054,
+      "skinTint": "#b88b69",
+      "garmentTint": "#637b76",
+      "lowerTint": "#424039",
+      "phase": 3.23607,
+      "radius": 0.25,
+      "fictional": true,
+      "faceMorph": [
+        0.429,
+        0.833,
+        0.778
+      ],
+      "position": [
+        9.252000411509993,
+        0,
+        5.611200160980225
+      ],
+      "yaw": 3.1415927410125732,
+      "support": {
+        "sourceObject": "F009 sofa_84_sand",
+        "seatTopY": 0.4445,
+        "note": "Pelvis aligned to approved chair; contact pose reviewed separately."
+      },
+      "seated": true,
+      "wardrobeMode": "modest long-sleeve shirt and trousers; long drape disabled for seated role",
+      "frozen": true
+    },
+    {
+      "id": "office-person-04",
+      "zone": "Z02",
+      "task": "fabric_book",
+      "outfit": "salwar_braid",
+      "pose": "reception_fabric_book",
+      "heightScale": 1.0,
+      "bodyWidth": 0.982,
+      "skinTint": "#ddbaa4",
+      "garmentTint": "#ad9271",
+      "lowerTint": "#25313c",
+      "phase": 4.8541,
+      "radius": 0.25,
+      "fictional": true,
+      "faceMorph": [
+        0.643,
+        0.333,
+        0.222
+      ],
+      "position": [
+        10.072000411509993,
+        0,
+        5.611200160980225
+      ],
+      "yaw": 3.1415927410125732,
+      "support": {
+        "sourceObject": "F009 sofa_84_sand",
+        "seatTopY": 0.4445,
+        "note": "Pelvis aligned to approved chair; contact pose reviewed separately."
+      },
+      "seated": true,
+      "wardrobeMode": "modest long-sleeve shirt and trousers; long drape disabled for seated role",
+      "frozen": true
+    }
+  ],
+  "navigation": {
+    "mode": "No actor locomotion or gesture animation; fixed posed people with visitor collision"
+  },
+  "limitations": [
+    "Frozen illustrative people, not live animation.",
+    "Current Reception pose and hand-prop contacts require final review.",
+    "Native Mac performance has not been tested."
+  ],
+  "frozen": true,
+  "activeZones": [
+    "Z02"
+  ],
+  "props": [
+    {
+      "id": "reception_visitor_badge",
+      "owner": "office-person-01",
+      "type": "badge",
+      "position": [
+        12.7,
+        1.2728,
+        3.92
+      ],
+      "size": [
+        0.085,
+        0.003,
+        0.055
+      ]
+    },
+    {
+      "id": "reception_fabric_book",
+      "owner": "office-person-04",
+      "type": "fabric_book",
+      "position": [
+        10.072000411509993,
+        0.647,
+        5.301200160980225
+      ],
+      "yaw": 3.141592653589793,
+      "size": [
+        0.36,
+        0.018,
+        0.24
+      ]
+    }
+  ]
+}

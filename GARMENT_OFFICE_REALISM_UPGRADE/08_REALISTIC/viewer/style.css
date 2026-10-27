@@ -191,5 +191,4 @@ body.side-open #dock { left: calc(var(--gap) + var(--side-w) + 14px) }
 }
 .tb-row button:disabled { opacity: .38; cursor: default; background: rgba(255, 255, 255, .04) }
 
-#lightingStatus { display:inline-block; padding:.15rem .4rem; margin-left:.35rem; border:1px solid currentColor; border-radius:4px; font-size:10px; font-weight:500; vertical-align:middle; opacity:.72; }
 body[data-mode="capture"] > :not(#app):not(script) { display:none !important; }

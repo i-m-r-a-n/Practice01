@@ -1,0 +1,451 @@
+{
+  "status": "sampled-floor-pass",
+  "scope": "Actual runtime-deformed visible LOD0 shoe vertices against measured source horizontal finish/rug tops; all visible mesh projected hulls against eight empty-zone polygons.",
+  "source_hashes": {
+    "/workspace/office-reception-static-contact-final/export-manifest.json": "d6dbca7427e7e9d9e9badc36a47f30335d9262b95f1653ff217f84f515ff0c03",
+    "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/qa/props-independent/source-floor-heights.json": "10b2d55e441eafb5e49c1ee52ffd2177a48a438914e96fb73b450b9b50244e5f",
+    "GARMENT_OFFICE_WALKTHROUGH_FINAL/07_WEB_TOUR_ASSETS/office_web_metadata.json": "934c2e807eb9c203b3a8f8ac31b0166a20a36e22580342e868bc496a89d1bcc3"
+  },
+  "loaded_people_source_hashes": [
+    {
+      "url": "http://127.0.0.1:8770/GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/people/people-layer.js",
+      "bytes": 14640,
+      "sha256": "f39399db80fe64a0a901302f5f59a283bbec17e422d01d4b3d37f5eb34b7ce42"
+    },
+    {
+      "url": "http://127.0.0.1:8770/GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/people/reception/people-manifest.json",
+      "bytes": 5206,
+      "sha256": "d1ee7c8d88b22216aaea9c07283bc1c392ef9eae43359d4038ce3e734d349b7a"
+    },
+    {
+      "url": "http://127.0.0.1:8770/GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/people/reception/poses.json",
+      "bytes": 326695,
+      "sha256": "54f975e5a82cab591d2fb55e01538297b136baf8ff2d2838b3dfc724244169ee"
+    },
+    {
+      "url": "http://127.0.0.1:8770/GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/people/assets/panjabi.glb",
+      "bytes": 4099060,
+      "sha256": "31f9e208986c064a3776991690d12925ed5fda59889765df06930d66c054d257"
+    },
+    {
+      "url": "http://127.0.0.1:8770/GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/people/assets/salwar_braid.glb",
+      "bytes": 4689540,
+      "sha256": "68f3384b625f59d8d4a9c1ddce671126dba394f7ca9aaae383ac0d5aa08e398d"
+    },
+    {
+      "url": "http://127.0.0.1:8770/GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/people/assets/shirt.glb",
+      "bytes": 4411128,
+      "sha256": "7430996e4368aa3e54d39c77f93d69a7ce31a089977714e2e7ed56dd846f7c1e"
+    },
+    {
+      "url": "http://127.0.0.1:8770/GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/people/assets/salwar.glb",
+      "bytes": 5159776,
+      "sha256": "cd2c4c458dd59532cc28408b98ae8d544a971fe4e069fab2413bbf4f4d90b5e4"
+    }
+  ],
+  "verified_export_files": 8,
+  "actor_count": 4,
+  "floor_snapshot_passed": 8,
+  "floor_snapshot_total": 8,
+  "actors_with_penetration_more_than_2mm": 0,
+  "maximum_floor_penetration_m": 0,
+  "empty_zone_hull_passed": 8,
+  "empty_zone_hull_total": 8,
+  "per_actor_worst": [
+    {
+      "id": "office-person-01",
+      "zone": "Z02",
+      "outfit": "salwar",
+      "pose": "reception_badge_giver",
+      "seated": false,
+      "walking": false,
+      "seconds": 0,
+      "minimum_clearance_m": 0.0004999999365210527,
+      "support_source": "Z02 RECEPTION + VISITOR WAITING - floor finish",
+      "deepest_point_xyz": [
+        13.159093,
+        0.01066,
+        3.875689
+      ]
+    },
+    {
+      "id": "office-person-02",
+      "zone": "Z02",
+      "outfit": "shirt",
+      "pose": "reception_badge_receiver",
+      "seated": false,
+      "walking": false,
+      "seconds": 0,
+      "minimum_clearance_m": 0.0004999999365210527,
+      "support_source": "Z02 RECEPTION + VISITOR WAITING - floor finish",
+      "deepest_point_xyz": [
+        12.202854,
+        0.01066,
+        3.613933
+      ]
+    },
+    {
+      "id": "office-person-03",
+      "zone": "Z02",
+      "outfit": "panjabi",
+      "pose": "listening__seat_44450",
+      "seated": true,
+      "walking": false,
+      "seconds": 0,
+      "minimum_clearance_m": 0.0004999999815225586,
+      "support_source": "F013 rug_reception",
+      "deepest_point_xyz": [
+        9.08769,
+        0.02209,
+        5.246875
+      ]
+    },
+    {
+      "id": "office-person-04",
+      "zone": "Z02",
+      "outfit": "salwar_braid",
+      "pose": "reception_fabric_book",
+      "seated": true,
+      "walking": false,
+      "seconds": 0,
+      "minimum_clearance_m": 0.0005029999815225616,
+      "support_source": "F013 rug_reception",
+      "deepest_point_xyz": [
+        9.92512,
+        0.022093,
+        5.238451
+      ]
+    }
+  ],
+  "floor_snapshots": [
+    {
+      "id": "office-person-01",
+      "seconds": 0,
+      "zone": "Z02",
+      "outfit": "salwar",
+      "pose": "reception_badge_giver",
+      "task": "badge_giver",
+      "seated": false,
+      "walking": false,
+      "minimum_clearance_m": 0.0004999999365210527,
+      "deepest_point_xyz": [
+        13.159093,
+        0.01066,
+        3.875689
+      ],
+      "support_source": "Z02 RECEPTION + VISITOR WAITING - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 0,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": 0.0004999999365210527,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": 0.0004999999365210527,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": true,
+      "standing_or_seated_grounded_check_passed": true
+    },
+    {
+      "id": "office-person-02",
+      "seconds": 0,
+      "zone": "Z02",
+      "outfit": "shirt",
+      "pose": "reception_badge_receiver",
+      "task": "badge_receiver",
+      "seated": false,
+      "walking": false,
+      "minimum_clearance_m": 0.0004999999365210527,
+      "deepest_point_xyz": [
+        12.202854,
+        0.01066,
+        3.613933
+      ],
+      "support_source": "Z02 RECEPTION + VISITOR WAITING - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 0,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": 0.0004999999365210527,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": 0.0004999999365210527,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": true,
+      "standing_or_seated_grounded_check_passed": true
+    },
+    {
+      "id": "office-person-03",
+      "seconds": 0,
+      "zone": "Z02",
+      "outfit": "panjabi",
+      "pose": "listening__seat_44450",
+      "task": "listening",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": 0.0004999999815225586,
+      "deepest_point_xyz": [
+        9.08769,
+        0.02209,
+        5.246875
+      ],
+      "support_source": "F013 rug_reception",
+      "support_top_y_m": 0.02159000001847744,
+      "shoe_vertices_below_surface_by_more_than_2mm": 0,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": 0.0004999999815225586,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": 0.0004999999815225586,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": true,
+      "standing_or_seated_grounded_check_passed": true
+    },
+    {
+      "id": "office-person-04",
+      "seconds": 0,
+      "zone": "Z02",
+      "outfit": "salwar_braid",
+      "pose": "reception_fabric_book",
+      "task": "fabric_book",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": 0.0005029999815225616,
+      "deepest_point_xyz": [
+        9.92512,
+        0.022093,
+        5.238451
+      ],
+      "support_source": "F013 rug_reception",
+      "support_top_y_m": 0.02159000001847744,
+      "shoe_vertices_below_surface_by_more_than_2mm": 0,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": 0.0005029999815225616,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": 0.0005029999815225616,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": true,
+      "standing_or_seated_grounded_check_passed": true
+    },
+    {
+      "id": "office-person-01",
+      "seconds": 0.5,
+      "zone": "Z02",
+      "outfit": "salwar",
+      "pose": "reception_badge_giver",
+      "task": "badge_giver",
+      "seated": false,
+      "walking": false,
+      "minimum_clearance_m": 0.0004999999365210527,
+      "deepest_point_xyz": [
+        13.159093,
+        0.01066,
+        3.875689
+      ],
+      "support_source": "Z02 RECEPTION + VISITOR WAITING - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 0,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": 0.0004999999365210527,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": 0.0004999999365210527,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": true,
+      "standing_or_seated_grounded_check_passed": true
+    },
+    {
+      "id": "office-person-02",
+      "seconds": 0.5,
+      "zone": "Z02",
+      "outfit": "shirt",
+      "pose": "reception_badge_receiver",
+      "task": "badge_receiver",
+      "seated": false,
+      "walking": false,
+      "minimum_clearance_m": 0.0004999999365210527,
+      "deepest_point_xyz": [
+        12.202854,
+        0.01066,
+        3.613933
+      ],
+      "support_source": "Z02 RECEPTION + VISITOR WAITING - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 0,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": 0.0004999999365210527,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": 0.0004999999365210527,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": true,
+      "standing_or_seated_grounded_check_passed": true
+    },
+    {
+      "id": "office-person-03",
+      "seconds": 0.5,
+      "zone": "Z02",
+      "outfit": "panjabi",
+      "pose": "listening__seat_44450",
+      "task": "listening",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": 0.0004999999815225586,
+      "deepest_point_xyz": [
+        9.08769,
+        0.02209,
+        5.246875
+      ],
+      "support_source": "F013 rug_reception",
+      "support_top_y_m": 0.02159000001847744,
+      "shoe_vertices_below_surface_by_more_than_2mm": 0,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": 0.0004999999815225586,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": 0.0004999999815225586,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": true,
+      "standing_or_seated_grounded_check_passed": true
+    },
+    {
+      "id": "office-person-04",
+      "seconds": 0.5,
+      "zone": "Z02",
+      "outfit": "salwar_braid",
+      "pose": "reception_fabric_book",
+      "task": "fabric_book",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": 0.0005029999815225616,
+      "deepest_point_xyz": [
+        9.92512,
+        0.022093,
+        5.238451
+      ],
+      "support_source": "F013 rug_reception",
+      "support_top_y_m": 0.02159000001847744,
+      "shoe_vertices_below_surface_by_more_than_2mm": 0,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": 0.0005029999815225616,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": 0.0005029999815225616,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": true,
+      "standing_or_seated_grounded_check_passed": true
+    }
+  ],
+  "empty_zone_snapshots": [
+    {
+      "id": "office-person-01",
+      "seconds": 0,
+      "visible_mesh_count": 9,
+      "hull_vertex_count": 21,
+      "minimum_hull_to_empty_zone_m": 3.905903404058144,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-02",
+      "seconds": 0,
+      "visible_mesh_count": 6,
+      "hull_vertex_count": 33,
+      "minimum_hull_to_empty_zone_m": 3.720679,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-03",
+      "seconds": 0,
+      "visible_mesh_count": 6,
+      "hull_vertex_count": 50,
+      "minimum_hull_to_empty_zone_m": 5.4605940447614305,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-04",
+      "seconds": 0,
+      "visible_mesh_count": 13,
+      "hull_vertex_count": 46,
+      "minimum_hull_to_empty_zone_m": 5.338974430722439,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-01",
+      "seconds": 0.5,
+      "visible_mesh_count": 9,
+      "hull_vertex_count": 21,
+      "minimum_hull_to_empty_zone_m": 3.905903404058144,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-02",
+      "seconds": 0.5,
+      "visible_mesh_count": 6,
+      "hull_vertex_count": 33,
+      "minimum_hull_to_empty_zone_m": 3.720679,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-03",
+      "seconds": 0.5,
+      "visible_mesh_count": 6,
+      "hull_vertex_count": 50,
+      "minimum_hull_to_empty_zone_m": 5.4605940447614305,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-04",
+      "seconds": 0.5,
+      "visible_mesh_count": 13,
+      "hull_vertex_count": 46,
+      "minimum_hull_to_empty_zone_m": 5.338974430722439,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    }
+  ],
+  "limitations": [
+    "Finite actual animation snapshots, not proof of every time in a continuous animation cycle.",
+    "Rug tops use source rectangular footprints; no failure located near a rug border should be accepted without exact triangle follow-up.",
+    "Used shoe vertices can demonstrate penetration; no all-mesh floor collision or physiological gait certification is claimed.",
+    "Empty-zone convex hull separation is conservative and covers every displayed triangle at each exported time, including hand props, but does not alone cover every time or every path location.",
+    "Furniture, hair/eye intersections, rendered realism and mutual visitor/actor interaction remain separate reviews."
+  ]
+}

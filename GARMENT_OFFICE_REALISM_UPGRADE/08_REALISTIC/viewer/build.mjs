@@ -10,14 +10,16 @@ import { execFileSync } from 'node:child_process';
 
 const here = process.env.TOUR_SRC || path.dirname(new URL(import.meta.url).pathname);   // TOUR_SRC: run a copy from elsewhere
 const assets = path.resolve(here, '../../../GARMENT_OFFICE_WALKTHROUGH_FINAL/07_WEB_TOUR_ASSETS');
+const release = JSON.parse(fs.readFileSync(path.join(here, 'release-config.json'), 'utf8'));
 const out = path.resolve(process.argv[2] || path.join(here, 'dist'));
 fs.mkdirSync(out, { recursive: true });
+fs.copyFileSync(path.join(here, 'release-config.json'), path.join(out, 'release-config.json'));
 const tmp = fs.mkdtempSync(path.join(out, '.build-'));
 fs.writeFileSync(path.join(tmp, 'data.js'), [
   `import meta from ${JSON.stringify(path.join(assets, 'office_web_metadata.json'))};`,
   `import grid from ${JSON.stringify(path.join(assets, 'walk_grid.json'))};`,
   'window.__TOUR_DATA = { meta, grid };',
-  "window.__TOUR_CONFIG = Object.assign({ models: ['./model_web.glb'], renders: './renders/', lightmapManifest: './lighting/manifest.json' }, window.__TOUR_CONFIG || {});",
+  `window.__TOUR_CONFIG = Object.assign(${JSON.stringify(release)}, window.__TOUR_CONFIG || {});`,
 ].join('\n'));
 fs.writeFileSync(path.join(tmp, 'entry.js'), `import './data.js';\nimport ${JSON.stringify(path.join(here, 'app.js'))};\n`);
 const vendor = path.join(here, 'vendor/three');

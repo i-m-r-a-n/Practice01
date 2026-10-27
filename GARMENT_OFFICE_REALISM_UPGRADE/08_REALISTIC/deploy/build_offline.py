@@ -16,13 +16,26 @@ OUT.mkdir(parents=True,exist_ok=True)
 bundle=REAL/'viewer/dist'
 html=(bundle/'index.html').read_text()
 app=(bundle/'app.js').read_text().replace('</script','<\\/script')
-assets={'model_web.glb':REPO/'GARMENT_OFFICE_WALKTHROUGH_FINAL/07_WEB_TOUR_ASSETS/Final_Office_Interior_web.glb'}
+hybrid=(REAL/'lighting-v2/manifest-hybrid.json').exists()
+model_name='model_web_baked.glb' if hybrid else 'model_web.glb'
+model_path='GARMENT_OFFICE_REALISM_UPGRADE/01_IMPROVED_MODEL/Final_Office_Interior_web_realism.glb' if hybrid else 'GARMENT_OFFICE_WALKTHROUGH_FINAL/07_WEB_TOUR_ASSETS/Final_Office_Interior_web.glb'
+assets={model_name:REPO/model_path}
 lighting_folder='lighting-v2' if (REAL/'lighting-v2/manifest.json').exists() else 'lighting'
-for folder in [lighting_folder,'textures','people','props']:
+manifest_rel=lighting_folder+('/manifest-hybrid.json' if hybrid else '/manifest.json')
+lighting=json.loads((REAL/manifest_rel).read_text())
+assets[manifest_rel]=REAL/manifest_rel
+for room in lighting['rooms']:
+    names=[room['glb'],room['lightMap']['url']]
+    if room['lightMap'].get('fallbackUrl'):names.append(room['lightMap']['fallbackUrl'])
+    for name in names:
+        rel=lighting_folder+'/'+name;assets[rel]=REAL/rel
+if (REAL/'viewer/dist/release-config.json').exists():assets['release-config.json']=REAL/'viewer/dist/release-config.json'
+for folder in ['textures/codecs','people','props']:
     for p in (REAL/folder).rglob('*'):
         if not p.is_file(): continue
         rel=p.relative_to(REAL).as_posix()
-        if any(v in p.relative_to(REAL).parts for v in ['qa','source','sources','smoke','node_modules','__pycache__']): continue
+        if any(v in p.relative_to(REAL).parts for v in ['qa','source','sources','smoke','review','node_modules','__pycache__']): continue
+        if 'reception' in p.relative_to(REAL).parts and p.suffix.lower() in ['.png','.jpg']: continue
         if p.suffix.lower() not in ['.glb','.bin','.ktx2','.wasm','.js','.json','.exr','.hdr','.png','.jpg','.webp']: continue
         if p.suffix=='.exr' and p.with_suffix('.ktx2').exists(): continue
         assets[rel]=p
@@ -64,9 +77,9 @@ __PACKS__
   if(url.protocol==='file:')window.__OFFLINE_STATS.missing.push(key||url.pathname);
   return originalFetch(input,init);
  };
- window.__TOUR_CONFIG=Object.assign({},window.__TOUR_CONFIG,{models:['./model_web.glb'],renders:'./renders/',lightmapManifest:'./__LIGHTING__/manifest.json'});
+ window.__TOUR_CONFIG=Object.assign({},window.__TOUR_CONFIG,{models:['./__MODEL__'],renders:'./renders/',lightmapManifest:'./__MANIFEST__'});
 })();
-</script>'''.replace('__PACKS__','\n'.join(f'<script src="./{p}"></script>' for p in packs)).replace('__LIGHTING__',lighting_folder)
+</script>'''.replace('__PACKS__','\n'.join(f'<script src="./{p}"></script>' for p in packs)).replace('__MODEL__',model_name).replace('__MANIFEST__',manifest_rel)
 tag='<script type="module" src="./app.js"></script>'
 assert tag in html,'expected built module script not found'
 html=html.replace(tag,bootstrap+'\n<script type="module">\n'+app+'\n</script>')

@@ -9,11 +9,12 @@ function cloneSkeleton(source) {
  source.traverse(original=>{if(!original.isSkinnedMesh)return;const mesh=mapping.get(original);const skeleton=original.skeleton.clone();skeleton.bones=original.skeleton.bones.map(b=>mapping.get(b));if(skeleton.bones.some(b=>!b))throw Error('Character bone outside asset hierarchy');mesh.bind(skeleton,original.bindMatrix.clone());mesh.bindMode=original.bindMode;});
  return copy;
 }
-export async function createPeopleLayer({THREE:T,loader,scene,metadata,walkGrid,assetBase='./people/',extraBlocked=null}) {
+export async function createPeopleLayer({THREE:T,loader,scene,metadata,walkGrid,assetBase='./people/',extraBlocked=null,frozen=true,activeZones=['Z02'],manifestFile='reception/people-manifest.json'}) {
  const url=p=>new URL(p,new URL(assetBase,location.href)).href;
- const [manifest,poses]=await Promise.all([fetch(url('people-manifest.json')).then(r=>{if(!r.ok)throw Error('People manifest HTTP '+r.status);return r.json()}),fetch(url('poses.json')).then(r=>r.json())]);
+ const manifest=await fetch(url(manifestFile)).then(r=>{if(!r.ok)throw Error('People manifest HTTP '+r.status);return r.json()});const poses=await fetch(url(manifest.poses||'poses.json')).then(r=>r.json());if(activeZones?.length)manifest.actors=manifest.actors.filter(a=>activeZones.includes(a.zone));manifest.count=manifest.actors.length;frozen=frozen||!!manifest.frozen;
  const group=new T.Group();group.name='Illustrative_office_people';group.userData.disclaimer=manifest.note;scene.add(group);
  let enabled=false,loaded=false,loading=null,clock=0,disposed=false;let actors=[];const originals=[];const colors=[];const axisX=new T.Vector3(1,0,0),axisZ=new T.Vector3(0,0,1),q=new T.Quaternion(),qa=new T.Quaternion(),qb=new T.Quaternion();
+ const viewFrustum=new T.Frustum(),viewMatrix=new T.Matrix4(),actorSphere=new T.Sphere();
  const bits=Uint8Array.from(atob(walkGrid.blocked_bits_base64),c=>c.charCodeAt(0)),W=walkGrid.cols,H=walkGrid.rows,R=walkGrid.res,[OX,OZ]=walkGrid.origin_xz;
  function inPoly(x,z,p){let v=false;for(let i=0,j=p.length-1;i<p.length;j=i++){const a=p[i],b=p[j];if((a[1]>z)!=(b[1]>z)&&x<(b[0]-a[0])*(z-a[1])/(b[1]-a[1])+a[0])v=!v}return v}
  const noPeople=(metadata.rooms||[]).filter(r=>manifest.emptyZones.includes(r.zone)).map(r=>r.polygon_xz);
@@ -29,7 +30,7 @@ export async function createPeopleLayer({THREE:T,loader,scene,metadata,walkGrid,
     root.traverse(o=>{
      if(o.isBone){bones[o.name]=o;base[o.name]=o.quaternion.clone()}
      if(o.isMesh){
-      if(o.morphTargetInfluences){for(let mi=0;mi<Math.min(3,o.morphTargetInfluences.length);mi++)o.morphTargetInfluences[mi]=(def.faceMorph||[])[mi]||0;const grip=o.morphTargetDictionary?.Phone_grip_R;if(grip!==undefined)o.morphTargetInfluences[grip]=['phone','phone_seated'].includes(def.task)?1:def.task==='tea'?.65:0;}
+      if(o.morphTargetInfluences){for(let mi=0;mi<Math.min(3,o.morphTargetInfluences.length);mi++)o.morphTargetInfluences[mi]=(def.faceMorph||[])[mi]||0;const grip=o.morphTargetDictionary?.Phone_grip_R;if(grip!==undefined)o.morphTargetInfluences[grip]=def.handGrip??(['phone','phone_seated'].includes(def.task)?1:def.task==='tea'?.65:0);}
       o.castShadow=false;o.receiveShadow=true;o.frustumCulled=true;o.userData.illustrativePerson=def.id;let owner=o;while(owner.parent&&owner!==root&&!/^LOD[01]_/.test(owner.name))owner=owner.parent;const isLow=owner.name.startsWith('LOD1');(isLow?lod1:lod0).push(o);o.userData.peopleLOD=isLow?1:0;o.userData.peopleAllowed=!(def.seated&&owner.name.includes('Long_modest_tunic'));
       const mats=Array.isArray(o.material)?o.material:[o.material];const copies=mats.map(m=>{const n=m.clone();colors.push(n);if(n.name.includes('Skin'))n.color.multiply(skinTint(def.skinTint));if(n.name.includes('Hair'))n.color.multiply(new T.Color(['#6b5547','#29282a','#473931'][Number(def.id.slice(-2))%3]));if(n.name.includes('Garment_top'))n.color.multiply(new T.Color(def.garmentTint));if(n.name.includes('Garment_drape'))n.color.set(def.garmentTint);if(n.name.includes('Garment_trousers'))n.color.multiply(new T.Color(def.lowerTint));n.envMapIntensity=.65;return n});o.material=Array.isArray(o.material)?copies:copies[0];
      }
@@ -47,6 +48,19 @@ export async function createPeopleLayer({THREE:T,loader,scene,metadata,walkGrid,
     }
     const a={def,root,pivot,bones,base,lod0,lod1,pathIndex:0,pathDir:1,wait:0,lastPose:-1,hiddenForVisitor:false,moving:false,walkDistance:0};actors.push(a);applyPose(a,clock,0);
    }
+   for(const def of manifest.props||[]){
+    const holder=new T.Group();holder.name=def.id;holder.position.fromArray(def.position);holder.rotation.y=def.yaw||0;holder.userData.illustrativeHandProp=true;group.add(holder);
+    if(def.type==='badge'){
+     const card=new T.Mesh(new T.BoxGeometry(...def.size),new T.MeshStandardMaterial({color:0xe7e9e5,roughness:.45}));card.name='Generic_blank_visitor_badge';holder.add(card);
+     const strip=new T.Mesh(new T.BoxGeometry(def.size[0],.0008,.010),new T.MeshStandardMaterial({color:0x326b68,roughness:.6}));strip.position.set(0,def.size[1]/2+.0004,-def.size[2]/2+.007);holder.add(strip);
+    }else if(def.type==='fabric_book'){
+     const cover=new T.Mesh(new T.BoxGeometry(...def.size),new T.MeshStandardMaterial({color:0x465b60,roughness:.85}));holder.add(cover);
+     const paper=new T.Mesh(new T.BoxGeometry(def.size[0]-.012,.006,def.size[2]-.012),new T.MeshStandardMaterial({color:0xded8ca,roughness:.95}));paper.position.y=def.size[1]/2+.003;holder.add(paper);
+     const spine=new T.Mesh(new T.BoxGeometry(.005,.007,def.size[2]-.015),new T.MeshStandardMaterial({color:0x8c887b,roughness:.9}));spine.position.y=def.size[1]/2+.007;holder.add(spine);
+     for(let i=0;i<4;i++){const swatch=new T.Mesh(new T.BoxGeometry(.105,.002,.078),new T.MeshStandardMaterial({color:[0x737d67,0x86705e,0x596d81,0x9a8074][i],roughness:.96}));swatch.name='Unbranded_fabric_swatch_'+i;swatch.position.set(i%2? .095:-.095,def.size[1]/2+.007, i<2?-.055:.055);holder.add(swatch);}
+    }
+    if(def.owner){group.updateMatrixWorld(true);const owner=group.getObjectByName(def.owner+'_placement');if(owner)owner.attach(holder);}
+   }
    loaded=true;group.visible=enabled;
   })();return loading;
  }
@@ -60,10 +74,10 @@ export async function createPeopleLayer({THREE:T,loader,scene,metadata,walkGrid,
    b.quaternion.copy(a.base[n]).multiply(qa);
    const t=time+a.def.phase;
    // Small bounded task gestures; no random whole-body wandering.
-   if(n==='head'){q.setFromAxisAngle(axisZ,Math.sin(t*.7)*.022);b.quaternion.multiply(q)}
-   if(n==='spine01'){q.setFromAxisAngle(axisX,Math.sin(t*1.2)*(a.def.seated?.003:.006));b.quaternion.multiply(q)}
-   if(/lowerarm01_[LR]/.test(n)&&['typing','sewing','notes'].includes(a.def.task)){q.setFromAxisAngle(axisX,Math.sin(t*(a.def.task==='sewing'?5:3.2)+(n.endsWith('L')?0:1.5))*.006);b.quaternion.multiply(q)}
-   if(n==='wrist_R'&&['greeting','presenting','show_sample'].includes(a.def.task)){q.setFromAxisAngle(axisX,Math.sin(t*.9)*.06);b.quaternion.multiply(q)}
+   if(!frozen&&n==='head'){q.setFromAxisAngle(axisZ,Math.sin(t*.7)*.022);b.quaternion.multiply(q)}
+   if(!frozen&&n==='spine01'){q.setFromAxisAngle(axisX,Math.sin(t*1.2)*(a.def.seated?.003:.006));b.quaternion.multiply(q)}
+   if(!frozen&&/lowerarm01_[LR]/.test(n)&&['typing','sewing','notes'].includes(a.def.task)){q.setFromAxisAngle(axisX,Math.sin(t*(a.def.task==='sewing'?5:3.2)+(n.endsWith('L')?0:1.5))*.006);b.quaternion.multiply(q)}
+   if(!frozen&&n==='wrist_R'&&['greeting','presenting','show_sample'].includes(a.def.task)){q.setFromAxisAngle(axisX,Math.sin(t*.9)*.06);b.quaternion.multiply(q)}
   }
   rootHeight(a,w0?{...p,rootY:w0.rootY+(w1.rootY-w0.rootY)*blend}:p);a.root.updateMatrixWorld(true);a.armSegments=[];for(const side of ['L','R']){const ns=['upperarm01_','lowerarm01_','wrist_'].map(n=>a.bones[n+side]?.getWorldPosition(new T.Vector3()));if(ns.every(Boolean)){const tip=a.bones['wrist_'+side].localToWorld(new T.Vector3(0,.18,0));a.armSegments.push([ns[0],ns[1]],[ns[1],ns[2]],[ns[2],tip]);}}
  }
@@ -83,20 +97,20 @@ export async function createPeopleLayer({THREE:T,loader,scene,metadata,walkGrid,
   p.x=nx;p.z=nz;a.walkDistance+=step;a.moving=step>0;let target=Math.atan2(dx,dz),d=target-a.pivot.rotation.y;while(d>Math.PI)d-=2*Math.PI;while(d<-Math.PI)d+=2*Math.PI;a.pivot.rotation.y+=d*Math.min(1,dt*8);
  }
  function update(dt,{camera,playerPosition,quality='balanced'}={}){
-  if(disposed||!enabled||!loaded)return;dt=Math.min(.05,Math.max(0,dt));clock+=dt;const player=playerPosition||camera?.position;
+  if(disposed||!enabled||!loaded)return;dt=Math.min(.05,Math.max(0,dt));clock+=dt;const player=playerPosition||camera?.position;if(camera){camera.updateMatrixWorld();viewMatrix.multiplyMatrices(camera.projectionMatrix,camera.matrixWorldInverse);viewFrustum.setFromProjectionMatrix(viewMatrix);}
   for(const a of actors){
    const d=camera?camera.position.distanceTo(a.pivot.position):0;
    // A newly enabled character yields if the visitor already occupies its anchor.
    if(a.hiddenForVisitor&&player&&Math.hypot(a.pivot.position.x-player.x,a.pivot.position.z-player.z)>.62&&!overlapsActor(a,player.x,player.z,.18))a.hiddenForVisitor=false;
-   moveActor(a,dt,player);a.pivot.visible=!a.hiddenForVisitor&&d<(quality==='low'?14:22);
+   if(!frozen)moveActor(a,dt,player);actorSphere.center.copy(a.pivot.position);actorSphere.center.y+=.85;actorSphere.radius=1.15;a.pivot.visible=!a.hiddenForVisitor&&d<(quality==='low'?14:22)&&(!camera||viewFrustum.intersectsSphere(actorSphere));
    const near=d<(quality==='high'?8:6);for(const o of a.lod0)o.visible=near&&o.userData.peopleAllowed;for(const o of a.lod1)o.visible=!near&&o.userData.peopleAllowed;
-   if(a.pivot.visible&&(clock-a.lastPose>(d<7?1/30:1/12))){applyPose(a,clock,dt);a.lastPose=clock}
+   if(!frozen&&a.pivot.visible&&(clock-a.lastPose>(d<7?1/30:1/12))){applyPose(a,clock,dt);a.lastPose=clock}
   }
  }
  async function setEnabled(value,playerPosition){enabled=!!value;group.visible=enabled;if(enabled){await load();if(playerPosition)for(const a of actors)a.hiddenForVisitor=overlapsActor(a,playerPosition.x,playerPosition.z,.18);}return stats()}
  function blocksMovement(x,z,radius=.15){return enabled&&loaded&&occupied(x,z,radius,null)}
  function diagnostics(){return actors.map(a=>({id:a.def.id,zone:a.def.zone,task:a.def.task,radius:a.def.radius,seated:a.def.seated,pathIndex:a.pathIndex,pathDir:a.pathDir,moving:a.moving,hiddenForVisitor:a.hiddenForVisitor,wait:a.wait,walkDistance:a.walkDistance,position:a.pivot.position.toArray(),visible:a.pivot.visible,low:a.lod1.some(o=>o.visible),parts:[...a.lod0,...a.lod1].filter(o=>o.visible).map(o=>({name:o.name,lod:o.userData.peopleLOD,materials:(Array.isArray(o.material)?o.material:[o.material]).map(m=>m.name),skinned:!!o.isSkinnedMesh,vertices:o.geometry.attributes.position.count})),phone:!!a.root.getObjectByName('Generic_phone'),pose:a.def.pose,bones:Object.fromEntries(['root','upperleg01_L','lowerleg01_L','foot_L','head','wrist_R'].map(n=>[n,a.bones[n]?.getWorldPosition(new T.Vector3()).toArray()]))}));}
- function stats(){return{enabled,loaded,total:manifest.count,visible:actors.filter(a=>a.pivot.visible).length,walkers:manifest.actors.filter(a=>a.path).length,illustrative:true,forbiddenZoneViolations:actors.filter(a=>noPeople.some(p=>inPoly(a.pivot.position.x,a.pivot.position.z,p))).length,status:manifest.status,nativeMacPerformanceTested:false}}
+ function stats(){return{enabled,loaded,frozen,total:manifest.count,visible:actors.filter(a=>a.pivot.visible).length,walkers:manifest.actors.filter(a=>a.path).length,illustrative:true,forbiddenZoneViolations:actors.filter(a=>noPeople.some(p=>inPoly(a.pivot.position.x,a.pivot.position.z,p))).length,status:manifest.status,nativeMacPerformanceTested:false}}
  function dispose(){disposed=true;scene.remove(group);colors.forEach(m=>m.dispose());for(const root of originals)root.traverse(o=>{if(o.geometry)o.geometry.dispose()});actors=[]}
  return{update,setEnabled,blocksMovement,stats,diagnostics,dispose,manifest,group,ready:()=>loading||Promise.resolve()};
 }

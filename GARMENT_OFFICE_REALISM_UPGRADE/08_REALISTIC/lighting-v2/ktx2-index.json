@@ -16,5 +16,23 @@
     "sourceEXRSha256": "966513336c6de93ec2e7a1e3c567269bb845db9f28a312c047f4074c9076f6dd",
     "sourceMax": 14.2109375,
     "decodedLevelBitExact": true
+  },
+  "SHELL_WALLS": {
+    "url": "SHELL_WALLS.ktx2",
+    "format": "ktx2",
+    "textureFormat": "RGBA16F",
+    "supercompression": "zstd",
+    "linear": true,
+    "channel": 1,
+    "mipLevels": 1,
+    "flipY": false,
+    "sourceRowOrder": "top-left",
+    "bytes": 64448782,
+    "gpuBytes": 134217728,
+    "sha256": "791a5398e12240081a725c0b870aa9df86eb3bfb150156398ccfa0e0ae93ee37",
+    "sourceEXR": "SHELL_WALLS.exr",
+    "sourceEXRSha256": "125ec9f9c61b79dc5df0eaf991dbe8f9deee21cfbe0e47161009f6f5f9aa8948",
+    "sourceMax": 20.578125,
+    "decodedLevelBitExact": true
   }
 }

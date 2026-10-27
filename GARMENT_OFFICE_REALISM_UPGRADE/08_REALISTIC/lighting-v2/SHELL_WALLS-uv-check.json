@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "glbSHA256": "df901c032e58063ba01aad3a367cb46a55deb5ec0a8b80f00d9fb30c4daa10c0",
+  "guideReferenceSHA256": "f08778455f7211d0f376745a9832ad45ffc6841e1315e79c2ecff4cab70a72f0",
+  "sourceGuideLoops": 2200,
+  "exportedVertices": 2120,
+  "maxWorldPositionDifferenceMetres": 9.5367431640625e-07,
+  "maxUV0Difference": 2.384185791015625e-07,
+  "maxUV1Difference": 2.9802322387695312e-08,
+  "unmatchedVertices": [],
+  "scope": "Actual exported world positions and UV0/UV1 match the normal-guide bake reference; this is not lighting visual acceptance."
+}

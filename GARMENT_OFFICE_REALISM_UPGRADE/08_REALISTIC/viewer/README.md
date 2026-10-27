@@ -1,3 +1,13 @@
+## Current Reception increment
+
+The default build is configured by `release-config.json`. It retains the exact live vertex-lit shared shell from `Final_Office_Interior_web_baked.glb` and overlays only the named Reception furniture/fixture subset from `lighting-v2/manifest-hybrid.json`. This is a hybrid first-room improvement, not a claim that every wall/floor has a new high-resolution lightmap. The old production tour is not modified.
+
+The original Claude HTML/CSS, room list, guided tour, photo comparison and overview are retained. Only a People toggle and “People shown are illustrative” note are added when the accepted static people gate is enabled. Reception has eight additive desk/table objects and readable screen artwork. Native PBR replacement, room reflection probes and post extras are disabled in this release; existing scene lighting is used for added props/static people. The later experimental modules remain archived in source, dormant.
+
+Strict walking retains the existing grid and exact source slab footprint. Because the live shell has joined node names, the eight original floor-top triangles are bundled in `approved-floor-footprint.json`, with the unchanged named-source hash and accessor provenance. No floor geometry is changed.
+
+The Reception-only people gate is enabled after the independent exact-mesh contact pass on poses16bb2498…; this does not enable the archived35-person population. The release uses `people/reception/people-manifest.json` and `reception/poses.json`, with frozen poses, no locomotion and no task animation. The archived35-person manifest is not the release entrypoint. Props/people helper code is statically bundled so offline playback has no native file:// module imports.
+
 # Realistic viewer: phase 1 integration
 
 This directory is an isolated derivative of the approved tour viewer. The original tour source and approved models are unchanged. Phase 1 adds progressive per-room Cycles lightmaps. Later phase features are not implied by this build.
@@ -83,3 +93,5 @@ Three r169 and its examples: MIT, Three.js authors. EXRLoader includes the origi
 Phase 4 functional Chromium smoke loaded 323 props / 1,473 instances / 49 instanced batches with zero page, console or application errors. This low-resolution unbaked-base smoke only verifies integration/shaders; it does not accept lighting or prop contacts. People were disabled.
 
 A second actual Chromium stage4 smoke loaded the full Reception atlas and room SH/probe, projected two readable screen components with zero skipped faces, and rendered 255 calls / 1.771M triangles in its diagnostic frame. The one-time probe capture cost 1,412 calls / 10.525M triangles across all cube/PMREM passes; it is not a per-frame count. Shared-wall coverage was intentionally absent in this functional test, and guided512 remained an unaccepted diagnostic.
+
+Final Reception contact evidence: `../qa/props-independent/reception-static4-final2-prop-contacts.json` reports zero reader hand/book and badge/skin intersections and1.98006mm book/lap clearance. Runtime uses fixed poses; no task gestures or walking actors.

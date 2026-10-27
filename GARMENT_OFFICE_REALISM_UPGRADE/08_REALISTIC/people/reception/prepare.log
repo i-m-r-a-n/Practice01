@@ -1,0 +1,9 @@
+Failed to create secure directory (/home/agent/.config/pulse): Read-only file system
+00:00.403  blend            | Read blend: "/workspace/office-realism/GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/people/assets/shirt-source.blend"
+00:00.465  blend            | Read blend: "/workspace/office-realism/GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/people/assets/panjabi-source.blend"
+00:00.493  blend            | Read blend: "/workspace/office-realism/GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/people/assets/salwar-source.blend"
+00:00.544  blend            | Read blend: "/workspace/office-realism/GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/people/assets/salwar_braid-source.blend"
+STATIC_READY [('office-person-01', 'reception_badge_giver'), ('office-person-02', 'reception_badge_receiver'), ('office-person-03', 'listening__seat_44450'), ('office-person-04', 'reception_fabric_book')]
+Blender 5.2.3 LTS (hash e13b728c6880 built 2026-10-22 01:35:05)
+
+Blender quit

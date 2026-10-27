@@ -1,0 +1,46 @@
+{
+  "keep": [
+    "W11 frame",
+    "W12 frame",
+    "D04 door (glass) D47 room 1 - room 3",
+    "F006 reception_desk",
+    "F007 exec_chair_black",
+    "F008 exec_chair_black",
+    "F009 sofa_84_sand",
+    "F010 coffee_round",
+    "F013 rug_reception",
+    "F014 console",
+    "F015 planter_l",
+    "F016 planter_m",
+    "LT006 halo pendant (Z02)",
+    "LT007 linear pendant 96in (Z02)",
+    "LT008 track spot (Z02)",
+    "LT009 track spot (Z02)",
+    "LT010 track spot (Z02)",
+    "LT011 track spot (Z02)",
+    "LT012 downlight (Z02)",
+    "LT013 downlight (Z02)",
+    "SD02 smoke detector",
+    "BR05 client logo (logo_zf)",
+    "PL015 pachira (CC0) (pachira_aquatica_01_leaves_a)",
+    "PL015 pachira (CC0) (pachira_aquatica_01_bark_a)",
+    "PL016 calathea (CC0) (calathea_orbifolia_01_a)"
+  ],
+  "excluded_shared_shell": [
+    "BM008 Room 3 secondary",
+    "BM009 Room 3 secondary",
+    "BM010 Room 3 secondary",
+    "IW04 Room 1 - room 3",
+    "FIN03 Reception feature wall: fluted oak",
+    "FIN11 Reception logo plate (backlit)",
+    "Z02 RECEPTION + VISITOR WAITING - floor finish",
+    "CL000 slat_raft (Z02)"
+  ],
+  "live_reference": "GARMENT_OFFICE_REALISM_UPGRADE/01_IMPROVED_MODEL/Final_Office_Interior_web_realism.glb",
+  "excluded_live_fallback": [
+    "AC10 VRF indoor unit, under-ceiling (Z02) - capacity by MEP",
+    "F011 lounge_green",
+    "F012 lounge_green"
+  ],
+  "reason": "Preserve exact existing live geometry and shading for AC10 and the two green lounge chairs because their candidate UV lightmap has visible mottling."
+}
