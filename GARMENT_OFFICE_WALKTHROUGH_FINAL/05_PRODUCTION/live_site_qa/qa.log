@@ -1,0 +1,5 @@
+QA FAILED page.waitForTimeout: Target page, context or browser has been closed
+    at step (/home/user/Practice01/GARMENT_OFFICE_WALKTHROUGH_FINAL/05_PRODUCTION/live_site_qa/qa_live_site.js:18:16)
+    at async /home/user/Practice01/GARMENT_OFFICE_WALKTHROUGH_FINAL/05_PRODUCTION/live_site_qa/qa_live_site.js:37:3 {
+  log: []
+}

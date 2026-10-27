@@ -1,44 +1,107 @@
-// Headless test of the interactive viewer: node test_viewer.js URL OUT_DIR
-// Loads the page in Chromium, waits for the model, exercises overview / room / walk / ceilings / tour, saves screenshots
-// and writes viewer_test.json with console errors and timings.
+// Browser test of the offline 3D tour (Chromium, WebGL 2 via SwiftShader): node test_viewer.js BASE_URL OUT_DIR [WIDTHxHEIGHT]
+// BASE_URL = the repository root served over http, e.g. http://127.0.0.1:8770
+// Checks: loading, overview, room selection (camera = render camera), photoreal panel, ceilings, walk + collision,
+// minimap, guided tour (start, pause, resume, next, previous, stop), search, resize, console errors.
 const { chromium } = require('playwright');
 const fs = require('fs');
 const path = require('path');
 (async () => {
-  const url = process.argv[2], out = path.resolve(process.argv[3]);
+  const base = process.argv[2], out = path.resolve(process.argv[3]);
+  const [vw, vh] = (process.argv[4] || '1280x720').split('x').map(Number);
   fs.mkdirSync(out, { recursive: true });
   const browser = await chromium.launch({ args: ['--use-gl=angle', '--use-angle=swiftshader', '--enable-unsafe-swiftshader', '--ignore-gpu-blocklist'] });
-  const page = await browser.newPage({ viewport: { width: 960, height: 540 } });
-  const log = { errors: [], console: [], steps: [] };
+  const page = await browser.newPage({ viewport: { width: vw, height: vh } });
+  const log = { viewport: [vw, vh], errors: [], console: [], checks: [] };
   page.on('console', (m) => { log.console.push(`${m.type()}: ${m.text()}`.slice(0, 300)); if (m.type() === 'error') log.errors.push(m.text().slice(0, 300)); });
   page.on('pageerror', (e) => log.errors.push('pageerror: ' + String(e).slice(0, 300)));
   const t0 = Date.now();
-  await page.goto(url, { waitUntil: 'load' });
-  await page.waitForFunction(() => window.__viewer && window.__viewer.ready, null, { timeout: 420000 });
-  log.steps.push({ step: 'model loaded', seconds: (Date.now() - t0) / 1000, counts: await page.evaluate(() => window.__viewer.counts) });
-  const shot = async (name, wait = 4000) => { await page.waitForTimeout(wait); await page.screenshot({ path: path.join(out, name + '.png'), timeout: 300000 }); log.steps.push({ step: name, mode: await page.evaluate(() => window.__viewer.mode) }); };
-  await shot('01_overview', 6000);
-  await page.click('.room[data-id="Z30"]');                    // experience centre from the room list
-  await shot('02_room_experience_centre', 7000);
-  await page.keyboard.down('KeyW'); await page.waitForTimeout(1500); await page.keyboard.up('KeyW');
-  await shot('03_walk_forward', 3000);
-  await page.click('#btnOverview');
-  await page.waitForTimeout(2500);
-  await page.click('#btnCeil');                                // ceilings on in overview
-  await shot('04_overview_ceilings_on', 5000);
-  await page.click('#btnCeil');
-  await page.click('#btnTour');                                // guided tour, step 1 (overview orbit)
-  await shot('05_tour_step1', 6000);
-  await page.click('#btnNext'); await page.click('#btnNext');   // skip to the reception
-  await shot('06_tour_step3_reception', 7000);
-  await page.click('#btnTour');                                // pause
-  const paused = await page.evaluate(() => window.__viewer.tour && !window.__viewer.tour.playing);
-  log.steps.push({ step: 'pause works', ok: paused });
-  await page.click('#btnTour');                                // resume
-  const resumed = await page.evaluate(() => window.__viewer.tour && window.__viewer.tour.playing);
-  log.steps.push({ step: 'resume works', ok: resumed });
-  log.seconds_total = (Date.now() - t0) / 1000;
+  const st = () => page.evaluate(() => window.__viewer.api.state());
+  const check = (name, ok, detail) => { log.checks.push({ name, ok: !!ok, detail }); };
+  const shot = (n) => page.screenshot({ path: path.join(out, n + '.jpg'), quality: 82, timeout: 300000 });
+  const idle = async (ms = 420000) => { await page.waitForFunction(() => !window.__viewer.api.state().flying, null, { timeout: ms }); await page.waitForTimeout(700); };
+
+  await page.goto(`${base}/GARMENT_OFFICE_WALKTHROUGH_FINAL/03_INTERACTIVE_3D/index.html?scale=0.3`, { waitUntil: 'load' });
+  await page.waitForFunction(() => window.__viewer && window.__viewer.ready, null, { timeout: 400000 });
+  const counts = await page.evaluate(() => window.__viewer.counts);
+  check('model loaded, loading screen gone', await page.evaluate(() => getComputedStyle(document.getElementById('loading')).display === 'none'), { seconds: (Date.now() - t0) / 1000, counts });
+  await page.waitForTimeout(1500); await shot('01_overview');
+  check('room list: 34 rooms in 8 groups', (await page.$$eval('.room', (b) => b.length)) === 34 && (await page.$$eval('.grp', (g) => g.length)) === 8);
+
+  await page.click('.room[data-zone="Z08"]'); await idle();
+  let s = await st();
+  check('room selection flies to the boardroom render camera', s.room === 'Z08' && s.atCam === 'CAM_09_Boardroom_A' && s.overhead, s);
+  await shot('02_room_boardroom');
+  await page.click('#bPhoto'); await page.waitForFunction(() => document.getElementById('photo').classList.contains('show'), null, { timeout: 120000 }).catch(() => {});
+  check('photoreal render shown for the same camera', (await st()).photo === 'CAM_09_Boardroom_A' && await page.evaluate(() => document.getElementById('photoImg').naturalWidth === 1600));
+  await shot('03_photoreal_boardroom');
+  await page.click('#photoClose'); await page.waitForTimeout(1000);
+
+  await page.click('#bBack'); await idle();
+  await page.click('#vCeil'); await page.waitForTimeout(1200);
+  check('ceilings on in overview', (await st()).overhead === true);
+  await shot('04_overview_ceilings_on');
+  await page.click('#vCeil'); await page.waitForTimeout(800);
+  check('ceilings off again', (await st()).overhead === false);
+  await page.click('#vIso'); await idle(); await shot('05_isometric');
+  await page.click('#vTop'); await idle(); await shot('06_plan');
+
+  await page.click('#mWalk'); await idle(); await page.waitForTimeout(800);
+  const p0 = (await st()).pos;
+  await page.keyboard.down('KeyW'); await page.waitForTimeout(2500); await page.keyboard.up('KeyW');
+  const p1 = (await st()).pos;
+  check('walk: W moves forward at eye height', Math.hypot(p1[0] - p0[0], p1[2] - p0[2]) > 0.5 && Math.abs(p1[1] - p0[1]) < 0.01, { p0, p1 });
+  await shot('07_walk_forward');
+  // walk straight into the lobby wall for 8 s: the eye point must stay in free floor cells
+  await page.keyboard.down('KeyW'); await page.waitForTimeout(8000); await page.keyboard.up('KeyW');
+  const p2 = (await st()).pos;
+  const inWall = await page.evaluate(([x, z]) => window.__viewer.api.blocked(x, z), [p2[0], p2[2]]);
+  check('walk: collision stops at walls / furniture (eye point never inside an obstacle)', !inWall, { p2 });
+  await shot('08_walk_collision');
+  await page.keyboard.press('Escape'); await idle();
+  check('Esc leaves walk mode', (await st()).mode === 'overview');
+
+  await page.click('#mTour'); await page.waitForTimeout(1000);
+  s = await st();
+  check('tour starts at stop 1', s.mode === 'tour' && s.tour && s.tour.i === 0, s);
+  await idle(); await page.waitForTimeout(1500); await shot('09_tour_stop01_overview');
+  await page.click('#tNext'); await idle(); await page.waitForTimeout(500);
+  s = await st();
+  check('tour next: stop 2 entrance lobby at its render camera', s.tour.i === 1 && s.atCam === 'CAM_03_Entrance_Lobby', s);
+  await shot('10_tour_stop02_lobby');
+  await page.waitForFunction(() => window.__viewer.api.state().photo === 'CAM_03_Entrance_Lobby', null, { timeout: 120000 }).catch(() => {});
+  await page.waitForTimeout(1200);
+  check('photoreal stop: the render dissolves in at the stop', (await st()).photo === 'CAM_03_Entrance_Lobby');
+  await shot('11_tour_stop02_photoreal');
+  await page.click('#tPlay');
+  const paused = await st();
+  await page.waitForTimeout(3000);
+  const stillPaused = await st();
+  check('pause holds the tour', paused.tour.playing === false && stillPaused.tour.i === paused.tour.i && stillPaused.tour.phase === paused.tour.phase, stillPaused.tour);
+  await page.click('#tPlay');
+  check('resume', (await st()).tour.playing === true);
+  await page.click('#tNext'); await page.click('#tNext'); await idle(); await page.waitForTimeout(1200);
+  s = await st();
+  check('next x2: stop 4 experience centre', s.tour.i === 3 && s.atCam === 'CAM_04_Experience_Centre_A', s);
+  await shot('12_tour_stop04_experience');
+  await page.click('#tPrev'); await idle();
+  check('previous: stop 3 reception', (await st()).tour.i === 2);
+  await page.evaluate(() => window.__viewer.api.goStop(15)); await idle(); await page.waitForTimeout(1500);
+  check('last stop (16) final reveal', (await st()).tour.i === 15);
+  await shot('13_tour_stop16_final');
+  await page.click('#tStop'); await idle();
+  check('stop ends the tour', (await st()).mode === 'overview' && !(await st()).tour);
+
+  await page.fill('#search', 'prayer');
+  check('search filters the room list', (await page.$$eval('.room', (b) => b.length)) === 2);
+  await page.fill('#search', '');
+  await page.setViewportSize({ width: 390, height: 844 }); await page.waitForTimeout(1500);
+  check('phone width: no horizontal overflow', await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1));
+  await shot('14_phone_390');
+  await page.setViewportSize({ width: vw, height: vh });
+
+  log.seconds = (Date.now() - t0) / 1000;
+  log.passed = log.checks.filter((c) => c.ok).length; log.total = log.checks.length;
   fs.writeFileSync(path.join(out, 'viewer_test.json'), JSON.stringify(log, null, 1));
-  console.log(JSON.stringify({ errors: log.errors, steps: log.steps }, null, 1));
+  console.log(JSON.stringify({ passed: `${log.passed}/${log.total}`, failed: log.checks.filter((c) => !c.ok), errors: log.errors, seconds: log.seconds }, null, 1));
   await browser.close();
 })().catch((e) => { console.error('TEST FAILED', e); process.exit(1); });

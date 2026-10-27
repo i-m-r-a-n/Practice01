@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Office 3D Tour</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ground Floor - Interactive Design Experience</title>
+<meta name="theme-color" content="#16201b">
 <link rel="stylesheet" href="style.css">
 <script type="importmap">
 { "imports": { "three": "./vendor/three/build/three.module.js", "three/addons/": "./vendor/three/examples/jsm/" } }
@@ -11,43 +12,101 @@
 </head>
 <body>
 <div id="app"></div>
-<div id="fade"></div>
+<canvas id="dissolve"></canvas>
 
-<header id="brand">
-  <div class="logos">
-    <img src="assets/logo_zara_fashion_profile.png" alt="Zara Fashion logo">
-    <img src="assets/logo_stage2_ltd.png" alt="Stage II Knitting Apparel Ltd. logo">
-    <img src="assets/logo_stage2_unit1.png" alt="Stage II Knitting Apparel Unit-1 logo">
+<header id="top">
+  <div class="brand">
+    <div class="logos">
+      <img src="assets/logo_zara_fashion_profile.png" alt="Zara Fashion">
+      <img src="assets/logo_stage2_ltd.png" alt="Stage II Knitting Apparel Ltd.">
+      <img src="assets/logo_stage2_unit1.png" alt="Stage II Knitting Apparel Unit-1">
+    </div>
+    <div class="ttl">
+      <div class="eyebrow">Corporate headquarters &amp; design development centre</div>
+      <h1>GROUND FLOOR &mdash; INTERACTIVE DESIGN EXPERIENCE</h1>
+    </div>
   </div>
-  <div class="title">Premium International Fashion Corporate Headquarters &amp; Design Development Centre</div>
-  <div class="sub">Ground floor &middot; proposed interior design &middot; interactive 3D model</div>
+  <nav class="modes" aria-label="Viewing mode">
+    <button id="mOverview" class="on" title="Whole floor: drag to orbit, right-drag to pan, scroll to zoom (O)">Overview</button>
+    <button id="mRooms" title="Choose a room from the list (R)">Rooms</button>
+    <button id="mWalk" title="Walk at eye level: W A S D / arrows, drag to look, Esc to leave (W)">Walk</button>
+    <button id="mTour" class="primary" title="Guided tour of 16 stops (T, Space to pause)">&#9654; Guided tour</button>
+  </nav>
 </header>
 
-<aside id="panel">
-  <div class="panel-head"><span>Rooms</span><button id="panelToggle" title="Hide / show the room list">&#8211;</button></div>
+<aside id="side" class="open" aria-label="Rooms">
+  <div class="side-head"><input id="search" type="search" placeholder="Search rooms, e.g. boardroom, prayer, CAD" autocomplete="off"><button id="sideClose" title="Hide the room list">&times;</button></div>
   <div id="roomList"></div>
 </aside>
+<button id="sideOpen" class="hidden" title="Show the room list">&#9776; Rooms</button>
 
-<div id="caption"><div class="scene"></div><div class="label"></div></div>
-<div id="roomInfo"></div>
+<section id="info" class="card hidden" aria-live="polite">
+  <div class="eyebrow" id="infoKicker"></div>
+  <h2 id="infoTitle"></h2>
+  <p id="infoText"></p>
+  <div class="row">
+    <button id="bPhoto" class="ghost hidden" title="Show the offline Cycles render of exactly this viewpoint (P)">Photoreal render</button>
+    <button id="bWalkHere" class="ghost hidden">Walk from here</button>
+    <button id="bBack" class="ghost">Back to overview</button>
+  </div>
+</section>
 
-<nav id="toolbar">
-  <button id="btnOverview" class="on" title="Orbit around the whole floor (drag to rotate, scroll to zoom)">Overview</button>
-  <button id="btnWalk" title="Eye-level view: drag to look around, W A S D or arrow keys to walk, Shift to walk faster">Walk</button>
+<div id="viewbar" class="bar">
+  <button id="vReset" title="Reset the overview">Reset</button>
+  <button id="vIso" title="Isometric view">Isometric</button>
+  <button id="vTop" title="Top plan view">Plan</button>
   <span class="sep"></span>
-  <button id="btnTour" title="Guided animated tour of the floor">&#9654; Guided tour</button>
-  <button id="btnPrev" title="Previous tour stop" disabled>&#8249;</button>
-  <button id="btnNext" title="Next tour stop" disabled>&#8250;</button>
-  <span class="sep"></span>
-  <button id="btnCeil" title="Show or hide deck, beams, ceilings and light fittings">Ceilings</button>
-  <button id="btnLabels" class="on" title="Room names">Labels</button>
-</nav>
+  <button id="vCeil" title="Show / hide deck, beams, ceilings and light fittings (C)">Ceilings</button>
+  <button id="vLabels" class="on" title="Room names (L)">Labels</button>
+</div>
 
-<div id="help">Overview: drag to rotate &middot; right-drag to pan &middot; scroll to zoom &middot; click a room in the list<br>
-Walk: drag to look &middot; W A S D / arrows to move &middot; Shift faster &middot; double-click the floor to go there</div>
-<div id="disclaimer">Proposed interior design &ndash; real-time view of the project&rsquo;s 3D model, not a photograph. Furniture is generic; some dimensions are provisional.</div>
+<div id="tourbar" class="bar hidden">
+  <div class="tb-row">
+    <button id="tPrev" title="Previous stop">&#8249;</button>
+    <button id="tPlay" class="wide" title="Pause / resume (Space)">&#10073;&#10073; Pause</button>
+    <button id="tNext" title="Next stop">&#8250;</button>
+    <button id="tStop" title="End the tour">&#9632; Stop</button>
+    <label class="chk" title="At each stop, dissolve into the photoreal render of the same viewpoint"><input type="checkbox" id="tPhoto" checked> Photoreal stops</label>
+  </div>
+  <div id="tSegs" class="segs"></div>
+  <div class="tb-cap"><span id="tCount"></span> <b id="tTitle"></b></div>
+</div>
 
-<div id="loading"><div class="box"><div class="t">Loading the 3D model&hellip;</div><div class="bar"><div id="loadBar"></div></div><div id="loadText">0 %</div></div></div>
+<div id="photo" class="hidden">
+  <img id="photoImg" alt="">
+  <div class="photo-tag">PHOTOREAL RENDER &middot; offline Cycles still of this exact viewpoint &middot; not real-time</div>
+  <button id="photoClose" title="Back to the real-time 3D model (Esc)">Back to 3D</button>
+</div>
+
+<div id="walkhint" class="hidden">W A S D / arrows to walk &middot; drag to look &middot; Shift faster &middot; double-click the floor to go there &middot; Esc to leave</div>
+<div id="pad" class="hidden"><button data-k="KeyW">&#9650;</button><button data-k="KeyA">&#9664;</button><button data-k="KeyS">&#9660;</button><button data-k="KeyD">&#9654;</button></div>
+<canvas id="minimap" class="hidden" width="180" height="230" title="Click to go there"></canvas>
+<div id="labels"></div>
+
+<footer id="disclaimer">Proposed interior visualization. Final dimensions and technical details subject to site verification.</footer>
+
+<div id="loading">
+  <div class="box">
+    <div class="eyebrow">Ground floor &middot; interactive design experience</div>
+    <div class="t" id="loadTitle">Loading the 3D model&hellip;</div>
+    <div class="track"><div id="loadBar"></div></div>
+    <div id="loadText">Starting&hellip;</div>
+    <div id="loadError" class="hidden"></div>
+  </div>
+</div>
+<noscript><div class="noscript">This 3D tour needs JavaScript and WebGL.</div></noscript>
+<script>
+  // anything that fails before or while the module runs is shown instead of an endless loading screen
+  window.__fail = function (msg) {
+    var e = document.getElementById('loadError'); if (!e) return;
+    document.getElementById('loading').style.display = 'flex';
+    e.className = ''; e.textContent = msg;
+    document.getElementById('loadTitle').textContent = 'The 3D model could not be shown';
+  };
+  window.addEventListener('error', function (ev) { if (!window.__viewerReady) window.__fail('Error: ' + (ev.message || ev.type) + (ev.filename ? ' (' + ev.filename.split('/').pop() + ':' + ev.lineno + ')' : '')); });
+  window.addEventListener('unhandledrejection', function (ev) { if (!window.__viewerReady) window.__fail('Error: ' + (ev.reason && ev.reason.message || ev.reason)); });
+  setTimeout(function () { if (!window.__viewerStarted) window.__fail('The viewer script did not start. Use a current Chrome, Safari, Edge or Firefox and open the page through a web server (see README).'); }, 15000);
+</script>
 <script type="module" src="app.js"></script>
 </body>
 </html>
