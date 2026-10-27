@@ -1,0 +1,390 @@
+{
+  "scope": "Independent actor count, asset lock and whole authored-path privacy/capsule audit. Actual posed body vertices, contacts and visitor interaction are separate tests.",
+  "source_hashes": {
+    "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/people/people-manifest.json": "8bf7eeab839407f5fcdca6d9076b9a8b4fcba09d4efff5d25eee8a76094b3859",
+    "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/people/people-layer.js": "eed6830c1ffdc2407bd227b4dad578b97068ac0cca81f8360c96de8aefe2ad30",
+    "GARMENT_OFFICE_WALKTHROUGH_FINAL/07_WEB_TOUR_ASSETS/office_web_metadata.json": "934c2e807eb9c203b3a8f8ac31b0166a20a36e22580342e868bc496a89d1bcc3",
+    "GARMENT_OFFICE_WALKTHROUGH_FINAL/07_WEB_TOUR_ASSETS/walk_grid.json": "54fe8950ae1789dae93d3160ce47b871f92ca9cc880547d0e30f3af4d87d85ed"
+  },
+  "checks": [
+    {
+      "name": "25 to40 illustrative actors with uniqueIDs",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fictional metadata and visible disclosure text supplied",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "all eight reserved empty zones declared",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "asset source hash shirt",
+      "passed": true,
+      "detail": "1ad870ca2eb18f7cfec870977f4929cfdb940fbaa6407a0b1d3976abcf8909ad"
+    },
+    {
+      "name": "asset source hash panjabi",
+      "passed": true,
+      "detail": "8a54f94988b31142aab090a49a60c11efec6909cfb90204ceed14529d59df121"
+    },
+    {
+      "name": "asset source hash salwar",
+      "passed": true,
+      "detail": "019c82bdf8c36410f200400837215ba0c2c1a3336c46bdd2f8bf16cd5f775784"
+    },
+    {
+      "name": "asset source hash salwar_braid",
+      "passed": true,
+      "detail": "07015f14834520715c91e7822e4c9ddfb7bcb9d6e278cf1995453c38644e9497"
+    },
+    {
+      "name": "office-person-01 entire authored capsule path avoids empty rooms",
+      "passed": true,
+      "detail": {
+        "minimum_centerline_to_empty_room_m": 3.6420446136570117,
+        "declared_radius_m": 0.25,
+        "offending": []
+      }
+    },
+    {
+      "name": "office-person-02 entire authored capsule path avoids empty rooms",
+      "passed": true,
+      "detail": {
+        "minimum_centerline_to_empty_room_m": 3.4308,
+        "declared_radius_m": 0.25,
+        "offending": []
+      }
+    },
+    {
+      "name": "office-person-03 entire authored capsule path avoids empty rooms",
+      "passed": true,
+      "detail": {
+        "minimum_centerline_to_empty_room_m": 6.064768805028167,
+        "declared_radius_m": 0.25,
+        "offending": []
+      }
+    },
+    {
+      "name": "office-person-04 entire authored capsule path avoids empty rooms",
+      "passed": true,
+      "detail": {
+        "minimum_centerline_to_empty_room_m": 5.9095940074864,
+        "declared_radius_m": 0.25,
+        "offending": []
+      }
+    },
+    {
+      "name": "office-person-05 entire authored capsule path avoids empty rooms",
+      "passed": true,
+      "detail": {
+        "minimum_centerline_to_empty_room_m": 6.583409660654575,
+        "declared_radius_m": 0.25,
+        "offending": []
+      }
+    },
+    {
+      "name": "office-person-06 entire authored capsule path avoids empty rooms",
+      "passed": true,
+      "detail": {
+        "minimum_centerline_to_empty_room_m": 6.604350290528206,
+        "declared_radius_m": 0.25,
+        "offending": []
+      }
+    },
+    {
+      "name": "office-person-07 entire authored capsule path avoids empty rooms",
+      "passed": true,
+      "detail": {
+        "minimum_centerline_to_empty_room_m": 8.371470764447546,
+        "declared_radius_m": 0.25,
+        "offending": []
+      }
+    },
+    {
+      "name": "office-person-08 entire authored capsule path avoids empty rooms",
+      "passed": true,
+      "detail": {
+        "minimum_centerline_to_empty_room_m": 3.3273996429443358,
+        "declared_radius_m": 0.25,
+        "offending": []
+      }
+    },
+    {
+      "name": "office-person-09 entire authored capsule path avoids empty rooms",
+      "passed": true,
+      "detail": {
+        "minimum_centerline_to_empty_room_m": 4.140199096679687,
+        "declared_radius_m": 0.25,
+        "offending": []
+      }
+    },
+    {
+      "name": "office-person-10 entire authored capsule path avoids empty rooms",
+      "passed": true,
+      "detail": {
+        "minimum_centerline_to_empty_room_m": 5.765799911499023,
+        "declared_radius_m": 0.25,
+        "offending": []
+      }
+    },
+    {
+      "name": "office-person-11 entire authored capsule path avoids empty rooms",
+      "passed": true,
+      "detail": {
+        "minimum_centerline_to_empty_room_m": 6.578599365234375,
+        "declared_radius_m": 0.25,
+        "offending": []
+      }
+    },
+    {
+      "name": "office-person-12 entire authored capsule path avoids empty rooms",
+      "passed": true,
+      "detail": {
+        "minimum_centerline_to_empty_room_m": 8.432799728393555,
+        "declared_radius_m": 0.25,
+        "offending": []
+      }
+    },
+    {
+      "name": "office-person-13 entire authored capsule path avoids empty rooms",
+      "passed": true,
+      "detail": {
+        "minimum_centerline_to_empty_room_m": 1.0069999999999997,
+        "declared_radius_m": 0.25,
+        "offending": []
+      }
+    },
+    {
+      "name": "office-person-14 entire authored capsule path avoids empty rooms",
+      "passed": true,
+      "detail": {
+        "minimum_centerline_to_empty_room_m": 14.908848649285009,
+        "declared_radius_m": 0.25,
+        "offending": []
+      }
+    },
+    {
+      "name": "office-person-15 entire authored capsule path avoids empty rooms",
+      "passed": true,
+      "detail": {
+        "minimum_centerline_to_empty_room_m": 4.563702410422482,
+        "declared_radius_m": 0.25,
+        "offending": []
+      }
+    },
+    {
+      "name": "office-person-16 entire authored capsule path avoids empty rooms",
+      "passed": true,
+      "detail": {
+        "minimum_centerline_to_empty_room_m": 3.7464999389648437,
+        "declared_radius_m": 0.25,
+        "offending": []
+      }
+    },
+    {
+      "name": "office-person-17 entire authored capsule path avoids empty rooms",
+      "passed": true,
+      "detail": {
+        "minimum_centerline_to_empty_room_m": 3.2892999206542965,
+        "declared_radius_m": 0.25,
+        "offending": []
+      }
+    },
+    {
+      "name": "office-person-18 entire authored capsule path avoids empty rooms",
+      "passed": true,
+      "detail": {
+        "minimum_centerline_to_empty_room_m": 3.2892999206542965,
+        "declared_radius_m": 0.25,
+        "offending": []
+      }
+    },
+    {
+      "name": "office-person-19 entire authored capsule path avoids empty rooms",
+      "passed": true,
+      "detail": {
+        "minimum_centerline_to_empty_room_m": 9.94410033569336,
+        "declared_radius_m": 0.25,
+        "offending": []
+      }
+    },
+    {
+      "name": "office-person-20 entire authored capsule path avoids empty rooms",
+      "passed": true,
+      "detail": {
+        "minimum_centerline_to_empty_room_m": 15.4552313611305,
+        "declared_radius_m": 0.25,
+        "offending": []
+      }
+    },
+    {
+      "name": "office-person-21 entire authored capsule path avoids empty rooms",
+      "passed": true,
+      "detail": {
+        "minimum_centerline_to_empty_room_m": 9.86648554641418,
+        "declared_radius_m": 0.25,
+        "offending": []
+      }
+    },
+    {
+      "name": "office-person-22 entire authored capsule path avoids empty rooms",
+      "passed": true,
+      "detail": {
+        "minimum_centerline_to_empty_room_m": 11.655923934206157,
+        "declared_radius_m": 0.25,
+        "offending": []
+      }
+    },
+    {
+      "name": "office-person-23 entire authored capsule path avoids empty rooms",
+      "passed": true,
+      "detail": {
+        "minimum_centerline_to_empty_room_m": 11.84990982075391,
+        "declared_radius_m": 0.25,
+        "offending": []
+      }
+    },
+    {
+      "name": "office-person-24 entire authored capsule path avoids empty rooms",
+      "passed": true,
+      "detail": {
+        "minimum_centerline_to_empty_room_m": 6.3876,
+        "declared_radius_m": 0.25,
+        "offending": []
+      }
+    },
+    {
+      "name": "office-person-25 entire authored capsule path avoids empty rooms",
+      "passed": true,
+      "detail": {
+        "minimum_centerline_to_empty_room_m": 11.264899642944336,
+        "declared_radius_m": 0.25,
+        "offending": []
+      }
+    },
+    {
+      "name": "office-person-26 entire authored capsule path avoids empty rooms",
+      "passed": true,
+      "detail": {
+        "minimum_centerline_to_empty_room_m": 12.711830802100138,
+        "declared_radius_m": 0.25,
+        "offending": []
+      }
+    },
+    {
+      "name": "office-person-27 entire authored capsule path avoids empty rooms",
+      "passed": true,
+      "detail": {
+        "minimum_centerline_to_empty_room_m": 12.457889177545288,
+        "declared_radius_m": 0.25,
+        "offending": []
+      }
+    },
+    {
+      "name": "office-person-28 entire authored capsule path avoids empty rooms",
+      "passed": true,
+      "detail": {
+        "minimum_centerline_to_empty_room_m": 7.683500228881837,
+        "declared_radius_m": 0.25,
+        "offending": []
+      }
+    },
+    {
+      "name": "office-person-29 entire authored capsule path avoids empty rooms",
+      "passed": true,
+      "detail": {
+        "minimum_centerline_to_empty_room_m": 5.270500122070313,
+        "declared_radius_m": 0.25,
+        "offending": []
+      }
+    },
+    {
+      "name": "office-person-30 entire authored capsule path avoids empty rooms",
+      "passed": true,
+      "detail": {
+        "minimum_centerline_to_empty_room_m": 6.573154786918958,
+        "declared_radius_m": 0.25,
+        "offending": []
+      }
+    },
+    {
+      "name": "office-person-31 entire authored capsule path avoids empty rooms",
+      "passed": true,
+      "detail": {
+        "minimum_centerline_to_empty_room_m": 7.311407059596139,
+        "declared_radius_m": 0.25,
+        "offending": []
+      }
+    },
+    {
+      "name": "office-person-32 entire authored capsule path avoids empty rooms",
+      "passed": true,
+      "detail": {
+        "minimum_centerline_to_empty_room_m": 5.279901535981827,
+        "declared_radius_m": 0.25,
+        "offending": []
+      }
+    },
+    {
+      "name": "office-person-33 entire authored capsule path avoids empty rooms",
+      "passed": true,
+      "detail": {
+        "minimum_centerline_to_empty_room_m": 9.957600000000001,
+        "declared_radius_m": 0.25,
+        "offending": []
+      }
+    },
+    {
+      "name": "office-person-33 sampled grown-grid path",
+      "passed": true,
+      "detail": {
+        "violations": []
+      }
+    },
+    {
+      "name": "office-person-34 entire authored capsule path avoids empty rooms",
+      "passed": true,
+      "detail": {
+        "minimum_centerline_to_empty_room_m": 11.144797568372427,
+        "declared_radius_m": 0.25,
+        "offending": []
+      }
+    },
+    {
+      "name": "office-person-34 sampled grown-grid path",
+      "passed": true,
+      "detail": {
+        "violations": []
+      }
+    },
+    {
+      "name": "office-person-35 entire authored capsule path avoids empty rooms",
+      "passed": true,
+      "detail": {
+        "minimum_centerline_to_empty_room_m": 2.2052,
+        "declared_radius_m": 0.25,
+        "offending": []
+      }
+    },
+    {
+      "name": "office-person-35 sampled grown-grid path",
+      "passed": true,
+      "detail": {
+        "violations": []
+      }
+    }
+  ],
+  "passed": 45,
+  "total": 45,
+  "path_sample_count": 1350,
+  "limitations": [
+    "Capsule radius is a runtime model, not proof that animated hands, clothes or feet remain inside it.",
+    "Grid sampling is not a continuous source-triangle collision proof.",
+    "The disclosure text is checked in data here; actual visibility is verified in screenshots/UI separately."
+  ]
+}

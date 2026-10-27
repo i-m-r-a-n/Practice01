@@ -1,0 +1,16 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import {fileURLToPath} from 'node:url';
+import {buildOfficeProps} from './office-props.mjs';
+const here=path.dirname(fileURLToPath(import.meta.url)),root=path.resolve(here,'../../..');
+const threeSource=fs.readFileSync(path.join(root,'GARMENT_OFFICE_WALKTHROUGH_FINAL/03_INTERACTIVE_3D/vendor/three/build/three.module.js'));
+const THREE=await import('data:text/javascript;base64,'+threeSource.toString('base64'));
+globalThis.document={createElement:()=>({width:0,height:0,getContext:()=>new Proxy({},{get:()=>()=>{}})})};
+const manifest=JSON.parse(fs.readFileSync(path.join(here,'office-props-manifest.json')));
+const result=buildOfficeProps(THREE,manifest);
+let finite=true;for(const mesh of result.group.children)for(const x of mesh.instanceMatrix.array)if(!Number.isFinite(x))finite=false;
+const stats={...result.stats,allMatricesFinite:finite,environment:'Node.js using the real r169 Three.js geometry implementation and a canvas API stub. No screenshot, browser performance or visual acceptance claim.'};
+fs.writeFileSync(path.join(here,'build-stats.json'),JSON.stringify(stats,null,2)+'\n');
+fs.writeFileSync(path.join(here,'prop-world-bounds.json'),JSON.stringify(result.propBounds,null,2)+'\n');
+if(!finite||stats.triangles>300000)throw new Error('Invalid or over-budget prop geometry');
+console.log(JSON.stringify(stats));

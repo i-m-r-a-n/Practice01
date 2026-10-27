@@ -1,0 +1,361 @@
+{
+  "source_sha256": "fa3ed3d58f6d44c3554e3761307841b96115ff7816e4e541c8e6611cb363810d",
+  "source_material_script_sha256": "8129438c75b7256d0ae94bf81f2a015589b79a247ed79a3878e320bbe982730d",
+  "bake_script_sha256": "1305a48d0f2cc1370221741e6deb276642abb4d252c0c9905889e31c3e511ba1",
+  "beams": [
+    {
+      "name": "BM008 Room 3 secondary",
+      "material": [
+        "steel_painted"
+      ],
+      "source_nodes": [
+        {
+          "type": "OUTPUT_MATERIAL",
+          "name": "Material Output",
+          "image": null
+        },
+        {
+          "type": "BSDF_PRINCIPLED",
+          "name": "Principled BSDF",
+          "image": null
+        }
+      ],
+      "foreign_coplanar_long_side_triangles": [],
+      "source_bbox_contacts": [
+        {
+          "object": "Steel deck / slab above (soffit painted)",
+          "bbox_overlap_xyz_m": [
+            0.1270008087158203,
+            6.273799896240234,
+            0.0
+          ],
+          "kind": "touching_boundaries"
+        },
+        {
+          "object": "EW01 Front facade with main gate",
+          "bbox_overlap_xyz_m": [
+            0.1270008087158203,
+            -4.76837158203125e-07,
+            0.30480003356933594
+          ],
+          "kind": "touching_boundaries"
+        },
+        {
+          "object": "NI01 frame above PW01",
+          "bbox_overlap_xyz_m": [
+            0.1270008087158203,
+            0.0,
+            0.30480003356933594
+          ],
+          "kind": "touching_boundaries"
+        },
+        {
+          "object": "CL000 slat_raft (Z02)",
+          "bbox_overlap_xyz_m": [
+            0.1270008087158203,
+            2.4384002685546875,
+            0.0
+          ],
+          "kind": "touching_boundaries"
+        },
+        {
+          "object": "LT006 halo pendant (Z02)",
+          "bbox_overlap_xyz_m": [
+            0.1270008087158203,
+            1.0769596099853516,
+            0.30480003356933594
+          ],
+          "kind": "volume_bbox_overlap"
+        }
+      ]
+    },
+    {
+      "name": "BM009 Room 3 secondary",
+      "material": [
+        "steel_painted"
+      ],
+      "source_nodes": [
+        {
+          "type": "OUTPUT_MATERIAL",
+          "name": "Material Output",
+          "image": null
+        },
+        {
+          "type": "BSDF_PRINCIPLED",
+          "name": "Principled BSDF",
+          "image": null
+        }
+      ],
+      "foreign_coplanar_long_side_triangles": [],
+      "source_bbox_contacts": [
+        {
+          "object": "Steel deck / slab above (soffit painted)",
+          "bbox_overlap_xyz_m": [
+            0.1270008087158203,
+            6.273799896240234,
+            0.0
+          ],
+          "kind": "touching_boundaries"
+        },
+        {
+          "object": "EW01 Front facade with main gate",
+          "bbox_overlap_xyz_m": [
+            0.1270008087158203,
+            -4.76837158203125e-07,
+            0.30480003356933594
+          ],
+          "kind": "touching_boundaries"
+        },
+        {
+          "object": "NI02 solid infill above 48in wall PW01",
+          "bbox_overlap_xyz_m": [
+            0.1270008087158203,
+            0.0,
+            0.30479979515075684
+          ],
+          "kind": "touching_boundaries"
+        },
+        {
+          "object": "CL000 slat_raft (Z02)",
+          "bbox_overlap_xyz_m": [
+            0.1270008087158203,
+            2.4384002685546875,
+            0.0
+          ],
+          "kind": "touching_boundaries"
+        },
+        {
+          "object": "AC10 VRF indoor unit, under-ceiling (Z02) - capacity by MEP",
+          "bbox_overlap_xyz_m": [
+            0.1270008087158203,
+            1.1937999725341797,
+            0.2425699234008789
+          ],
+          "kind": "volume_bbox_overlap"
+        },
+        {
+          "object": "SD02 smoke detector",
+          "bbox_overlap_xyz_m": [
+            0.12191963195800781,
+            0.12192010879516602,
+            0.04064011573791504
+          ],
+          "kind": "volume_bbox_overlap"
+        }
+      ]
+    },
+    {
+      "name": "BM010 Room 3 secondary",
+      "material": [
+        "steel_painted"
+      ],
+      "source_nodes": [
+        {
+          "type": "OUTPUT_MATERIAL",
+          "name": "Material Output",
+          "image": null
+        },
+        {
+          "type": "BSDF_PRINCIPLED",
+          "name": "Principled BSDF",
+          "image": null
+        }
+      ],
+      "foreign_coplanar_long_side_triangles": [],
+      "source_bbox_contacts": [
+        {
+          "object": "Steel deck / slab above (soffit painted)",
+          "bbox_overlap_xyz_m": [
+            0.1270008087158203,
+            6.273799896240234,
+            0.0
+          ],
+          "kind": "touching_boundaries"
+        },
+        {
+          "object": "EW01 Front facade with main gate",
+          "bbox_overlap_xyz_m": [
+            0.1270008087158203,
+            -4.76837158203125e-07,
+            0.30480003356933594
+          ],
+          "kind": "touching_boundaries"
+        },
+        {
+          "object": "NI03 frame above PW01",
+          "bbox_overlap_xyz_m": [
+            0.1270008087158203,
+            0.0,
+            0.30480003356933594
+          ],
+          "kind": "touching_boundaries"
+        },
+        {
+          "object": "LT007 linear pendant 96in (Z02)",
+          "bbox_overlap_xyz_m": [
+            0.07111930847167969,
+            2.4384002685546875,
+            0.2539999485015869
+          ],
+          "kind": "volume_bbox_overlap"
+        }
+      ]
+    }
+  ],
+  "material_coordinate_mechanisms": {
+    "source_material_UV0": "All ordinary PBR textures use Texture Coordinate UV through mapped UV0; bake sets active_render layer0 and explicit target LightmapUV. Geometry+UV0 preservation is measured by baker.",
+    "source_multiple_uv_targets": [],
+    "paint_Object_coordinates": "Joining changes object-coordinate origin for paint_white noise, but source strength .05 and distance .001m with Noise scale200/detail6; no Object/Generated node on the plain beam material.",
+    "fabric_normal": "Fabric030 tile0.25m, strength0.8, roughness0.9 and sheen0.2. It cannot explain noise on steel_painted."
+  },
+  "mixed_emissive_bake_objects": [
+    {
+      "object": "LT011 track spot (Z02)",
+      "materials": [
+        "alu_black",
+        "led_3000"
+      ]
+    },
+    {
+      "object": "LT013 downlight (Z02)",
+      "materials": [
+        "alu_black",
+        "led_3500"
+      ]
+    },
+    {
+      "object": "LT006 halo pendant (Z02)",
+      "materials": [
+        "brass",
+        "led_3000",
+        "alu_silver"
+      ]
+    },
+    {
+      "object": "LT010 track spot (Z02)",
+      "materials": [
+        "alu_black",
+        "led_3000"
+      ]
+    },
+    {
+      "object": "LT012 downlight (Z02)",
+      "materials": [
+        "alu_black",
+        "led_3500"
+      ]
+    },
+    {
+      "object": "LT007 linear pendant 96in (Z02)",
+      "materials": [
+        "alu_black",
+        "led_3500",
+        "alu_silver"
+      ]
+    },
+    {
+      "object": "F006 reception_desk",
+      "materials": [
+        "plinth",
+        "oak",
+        "terrazzo_counter",
+        "brass",
+        "plastic_white",
+        "led_soft",
+        "plastic_dark",
+        "screen_ui"
+      ]
+    },
+    {
+      "object": "LT008 track spot (Z02)",
+      "materials": [
+        "alu_black",
+        "led_3000"
+      ]
+    },
+    {
+      "object": "LT009 track spot (Z02)",
+      "materials": [
+        "alu_black",
+        "led_3000"
+      ]
+    }
+  ],
+  "sampling_hypothesis": "Join changes mesh-light grouping when emitter material and diffuse receiver become one mesh. That could alter light-tree/MIS behaviour despite position/normal preservation; this is untested, not a diagnosis. Separate explicit source area/spot lights remain.",
+  "runtime_encoding": {
+    "actual": "RGBA16F+lossless Zstd, not RGBM",
+    "noColorSpace": true,
+    "lightmapIntensity": 3.141592653589793,
+    "interpretation": "Constant pi scale plus no extra diffuse term cannot generate spatial blotches. Codec reports bit-exact decoded float16 pixels; source max28.40625 is representable.",
+    "codec_report": {
+      "vkFormat": 97,
+      "typeSize": 2,
+      "width": 2048,
+      "height": 2048,
+      "depth": 0,
+      "layerCount": 0,
+      "faceCount": 1,
+      "levelCount": 1,
+      "supercompression": 2,
+      "dfdOffset": 104,
+      "dfdLength": 92,
+      "kvdOffset": 196,
+      "kvdLength": 104,
+      "sgdOffset": 0,
+      "sgdLength": 0,
+      "kind": "lightmap",
+      "encoding": "RGBA16F + lossless Zstd",
+      "colorSpace": "linear-sRGB",
+      "origin": "top-left",
+      "flipSourceRows": false,
+      "mipLevels": 1,
+      "gpuBaseLevelBytes": 33554432,
+      "sourceMin": 0.0,
+      "sourceMax": 28.40625,
+      "tinyNegativeChannelValuesClamped": 0,
+      "halfFloatMaxAbsoluteError": 0.0,
+      "halfFloatMeanAbsoluteError": 0.0,
+      "decodedLevelBitExact": true,
+      "command": [
+        "/tmp/office-ktx-tools/KTX-Software-4.4.2-Linux-x86_64/bin/ktx",
+        "create",
+        "--raw",
+        "--format",
+        "R16G16B16A16_SFLOAT",
+        "--width",
+        "2048",
+        "--height",
+        "2048",
+        "--assign-tf",
+        "linear",
+        "--assign-primaries",
+        "bt709",
+        "--assign-texcoord-origin",
+        "top-left",
+        "--zstd",
+        "9",
+        "<temporary RGBA16F raw input>",
+        "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/lighting/Z02.ktx2"
+      ],
+      "source": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/lighting/Z02.exr",
+      "sourceSha256": "76f6919eaff3a08b9e2d26d77cb84ffa807a4820a7fb83d1f94baaccfdb0e415",
+      "output": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/lighting/Z02.ktx2",
+      "outputSha256": "d954e72aa185783277408ff9341a9ffa3b57d3d4ad630f8dbbf5c20eaac8c63b",
+      "outputBytes": 15673981,
+      "toolVersion": "ktx version: v4.4.2"
+    }
+  },
+  "packing": {
+    "atlas_size": 2048,
+    "reported_margin_uv": 0.004,
+    "nominal_uv_margin_texels": 8.192,
+    "bake_dilation_px": 16,
+    "note": "Configured nominal margin8.192px is smaller than16px dilation; actual pairwise chart distances depend on packing semantics. Chart-isolated denoising is already under test by bake/codec agents. Do not infer overlap from configured margin alone."
+  },
+  "limitations": [
+    "No scene changes or new bake performed",
+    "Coplanar long-side test rules out exact foreign overlays on visible long beam faces, not all object intersections",
+    "Some original fixture/beam volumes overlap in source; those localized overlaps are inherited and not evidence that joining introduced them",
+    "Noise statistics include real spatial illumination gradients and cannot alone prove a sampling bug"
+  ]
+}

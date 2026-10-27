@@ -1,0 +1,8903 @@
+{
+  "version": 1,
+  "status": "Prepared additive Phase 4 manifest; geometry audit only, integration and visual checks pending",
+  "units": "metres; viewer y-up, original approved coordinate origin",
+  "source_layout_sha256": "831066f8f07875b02a06ed4b6afd6c77cfd26d4ecc0faca6ca7d0ad23444717b",
+  "seed": 20261027,
+  "source_rules": "No original mesh transforms, chairs, doors, lighting or furniture altered. All additions rest on recorded source surfaces. No staff, game assets or third-party brands.",
+  "props": [
+    {
+      "id": "PROP_0001",
+      "type": "notebook",
+      "zone": "Z01",
+      "position": [
+        6.2484,
+        0.7493,
+        2.9464
+      ],
+      "rotationY": 3.0368729,
+      "label": "Visitors",
+      "support": {
+        "asset": "security_desk",
+        "origin_plan_inches": [
+          229,
+          120,
+          0.0
+        ],
+        "source_rotation_deg": 180,
+        "local_inches": [
+          -17.0,
+          -4.0,
+          29.5
+        ]
+      },
+      "width": 0.18,
+      "depth": 0.22
+    },
+    {
+      "id": "PROP_0002",
+      "type": "mug",
+      "zone": "Z01",
+      "position": [
+        5.334,
+        0.7493,
+        3.048
+      ],
+      "rotationY": 3.4906585,
+      "label": null,
+      "support": {
+        "asset": "security_desk",
+        "origin_plan_inches": [
+          229,
+          120,
+          0.0
+        ],
+        "source_rotation_deg": 180,
+        "local_inches": [
+          19.0,
+          0,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0003",
+      "type": "notebook",
+      "zone": "Z02",
+      "position": [
+        12.446,
+        1.0668,
+        4.3688
+      ],
+      "rotationY": 4.64257581,
+      "label": "Visitors",
+      "support": {
+        "asset": "reception_desk",
+        "origin_plan_inches": [
+          500,
+          150,
+          0.0
+        ],
+        "source_rotation_deg": 270,
+        "local_inches": [
+          22,
+          -10,
+          42
+        ]
+      },
+      "width": 0.22,
+      "depth": 0.16
+    },
+    {
+      "id": "PROP_0004",
+      "type": "pen",
+      "zone": "Z02",
+      "position": [
+        12.4714,
+        1.0668,
+        4.7498
+      ],
+      "rotationY": 4.85201532,
+      "label": null,
+      "support": {
+        "asset": "reception_desk",
+        "origin_plan_inches": [
+          500,
+          150,
+          0.0
+        ],
+        "source_rotation_deg": 270,
+        "local_inches": [
+          37,
+          -9,
+          42
+        ]
+      }
+    },
+    {
+      "id": "PROP_0005",
+      "type": "phone",
+      "zone": "Z02",
+      "position": [
+        12.8016,
+        0.75438,
+        2.921
+      ],
+      "rotationY": 4.71238898,
+      "label": null,
+      "support": {
+        "asset": "reception_desk",
+        "origin_plan_inches": [
+          500,
+          150,
+          0.0
+        ],
+        "source_rotation_deg": 270,
+        "local_inches": [
+          -35,
+          4,
+          29.7
+        ]
+      }
+    },
+    {
+      "id": "PROP_0006",
+      "type": "tray",
+      "zone": "Z02",
+      "position": [
+        12.446,
+        1.0668,
+        3.6068
+      ],
+      "rotationY": 4.71238898,
+      "label": "Visitor badges",
+      "support": {
+        "asset": "reception_desk",
+        "origin_plan_inches": [
+          500,
+          150,
+          0.0
+        ],
+        "source_rotation_deg": 270,
+        "local_inches": [
+          -8,
+          -10,
+          42
+        ]
+      },
+      "width": 0.21,
+      "depth": 0.15
+    },
+    {
+      "id": "PROP_0007",
+      "type": "notebook",
+      "zone": "Z02",
+      "position": [
+        9.538208,
+        0.4064,
+        4.699
+      ],
+      "rotationY": 0.20943951,
+      "label": "Company profile",
+      "support": {
+        "asset": "coffee_round",
+        "origin_plan_inches": [
+          380,
+          185,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -4.48,
+          0,
+          16
+        ]
+      },
+      "width": 0.21,
+      "depth": 0.22
+    },
+    {
+      "id": "PROP_0008",
+      "type": "teacup",
+      "zone": "Z02",
+      "position": [
+        9.830816,
+        0.4064,
+        4.699
+      ],
+      "rotationY": 0.0,
+      "label": null,
+      "support": {
+        "asset": "coffee_round",
+        "origin_plan_inches": [
+          380,
+          185,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          7.04,
+          0,
+          16
+        ]
+      }
+    },
+    {
+      "id": "PROP_0009",
+      "type": "books",
+      "zone": "Z02",
+      "position": [
+        11.05916,
+        0.7874,
+        0.2286
+      ],
+      "rotationY": 0.0,
+      "label": "Reference",
+      "support": {
+        "asset": "console",
+        "origin_plan_inches": [
+          457,
+          9,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -21.599999999999998,
+          0,
+          31
+        ]
+      }
+    },
+    {
+      "id": "PROP_0010",
+      "type": "landscapeframe",
+      "zone": "Z02",
+      "position": [
+        12.101576,
+        0.7874,
+        0.2286
+      ],
+      "rotationY": 0.0,
+      "label": null,
+      "support": {
+        "asset": "console",
+        "origin_plan_inches": [
+          457,
+          9,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          19.44,
+          0,
+          31
+        ]
+      }
+    },
+    {
+      "id": "PROP_0011",
+      "type": "notebook",
+      "zone": "Z30",
+      "position": [
+        19.1516,
+        0.8636,
+        -8.8646
+      ],
+      "rotationY": 0.03490659,
+      "label": "Fabric samples",
+      "support": {
+        "asset": "material_table",
+        "origin_plan_inches": [
+          722,
+          -335,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          32,
+          14,
+          34
+        ]
+      },
+      "width": 0.24,
+      "depth": 0.18
+    },
+    {
+      "id": "PROP_0012",
+      "type": "tapemeasure",
+      "zone": "Z30",
+      "position": [
+        19.7866,
+        0.8636,
+        -8.8646
+      ],
+      "rotationY": 0.0,
+      "label": null,
+      "support": {
+        "asset": "material_table",
+        "origin_plan_inches": [
+          722,
+          -335,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          57,
+          14,
+          34
+        ]
+      }
+    },
+    {
+      "id": "PROP_0013",
+      "type": "swatches",
+      "zone": "Z30",
+      "position": [
+        18.796,
+        0.889,
+        -5.8166
+      ],
+      "rotationY": 3.14159265,
+      "label": null,
+      "support": {
+        "asset": "ec_counter",
+        "origin_plan_inches": [
+          610,
+          -229,
+          0.0
+        ],
+        "source_rotation_deg": 180,
+        "local_inches": [
+          -130,
+          0,
+          35
+        ]
+      }
+    },
+    {
+      "id": "PROP_0014",
+      "type": "swatches",
+      "zone": "Z30",
+      "position": [
+        16.764,
+        0.889,
+        -5.8166
+      ],
+      "rotationY": 3.14159265,
+      "label": null,
+      "support": {
+        "asset": "ec_counter",
+        "origin_plan_inches": [
+          610,
+          -229,
+          0.0
+        ],
+        "source_rotation_deg": 180,
+        "local_inches": [
+          -50,
+          0,
+          35
+        ]
+      }
+    },
+    {
+      "id": "PROP_0015",
+      "type": "swatches",
+      "zone": "Z30",
+      "position": [
+        14.605,
+        0.889,
+        -5.8166
+      ],
+      "rotationY": 3.14159265,
+      "label": null,
+      "support": {
+        "asset": "ec_counter",
+        "origin_plan_inches": [
+          610,
+          -229,
+          0.0
+        ],
+        "source_rotation_deg": 180,
+        "local_inches": [
+          35,
+          0,
+          35
+        ]
+      }
+    },
+    {
+      "id": "PROP_0016",
+      "type": "swatches",
+      "zone": "Z30",
+      "position": [
+        12.319,
+        0.889,
+        -5.8166
+      ],
+      "rotationY": 3.14159265,
+      "label": null,
+      "support": {
+        "asset": "ec_counter",
+        "origin_plan_inches": [
+          610,
+          -229,
+          0.0
+        ],
+        "source_rotation_deg": 180,
+        "local_inches": [
+          125,
+          0,
+          35
+        ]
+      }
+    },
+    {
+      "id": "PROP_0017",
+      "type": "notebook",
+      "zone": "Z30",
+      "position": [
+        17.907,
+        0.889,
+        -5.8166
+      ],
+      "rotationY": 3.14159265,
+      "label": "Knit samples",
+      "support": {
+        "asset": "ec_counter",
+        "origin_plan_inches": [
+          610,
+          -229,
+          0.0
+        ],
+        "source_rotation_deg": 180,
+        "local_inches": [
+          -95,
+          0,
+          35
+        ]
+      },
+      "width": 0.22,
+      "depth": 0.24
+    },
+    {
+      "id": "PROP_0018",
+      "type": "notebook",
+      "zone": "Z08",
+      "position": [
+        15.113,
+        0.7493,
+        -2.4384
+      ],
+      "rotationY": -0.03490659,
+      "label": "Meeting notes",
+      "support": {
+        "asset": "board_table",
+        "origin_plan_inches": [
+          675,
+          -112,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -80,
+          -16,
+          29.5
+        ]
+      },
+      "width": 0.19,
+      "depth": 0.23
+    },
+    {
+      "id": "PROP_0019",
+      "type": "glass",
+      "zone": "Z08",
+      "position": [
+        15.4432,
+        0.7493,
+        -2.4384
+      ],
+      "rotationY": 0.0,
+      "label": null,
+      "support": {
+        "asset": "board_table",
+        "origin_plan_inches": [
+          675,
+          -112,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -67,
+          -16,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0020",
+      "type": "notebook",
+      "zone": "Z08",
+      "position": [
+        15.113,
+        0.7493,
+        -3.2512
+      ],
+      "rotationY": 0.03490659,
+      "label": "Meeting notes",
+      "support": {
+        "asset": "board_table",
+        "origin_plan_inches": [
+          675,
+          -112,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -80,
+          16,
+          29.5
+        ]
+      },
+      "width": 0.19,
+      "depth": 0.23
+    },
+    {
+      "id": "PROP_0021",
+      "type": "glass",
+      "zone": "Z08",
+      "position": [
+        15.4432,
+        0.7493,
+        -3.2512
+      ],
+      "rotationY": 0.0,
+      "label": null,
+      "support": {
+        "asset": "board_table",
+        "origin_plan_inches": [
+          675,
+          -112,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -67,
+          16,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0022",
+      "type": "notebook",
+      "zone": "Z08",
+      "position": [
+        16.3322,
+        0.7493,
+        -2.4384
+      ],
+      "rotationY": -0.03490659,
+      "label": "Meeting notes",
+      "support": {
+        "asset": "board_table",
+        "origin_plan_inches": [
+          675,
+          -112,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -32,
+          -16,
+          29.5
+        ]
+      },
+      "width": 0.19,
+      "depth": 0.23
+    },
+    {
+      "id": "PROP_0023",
+      "type": "glass",
+      "zone": "Z08",
+      "position": [
+        16.6624,
+        0.7493,
+        -2.4384
+      ],
+      "rotationY": 0.0,
+      "label": null,
+      "support": {
+        "asset": "board_table",
+        "origin_plan_inches": [
+          675,
+          -112,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -19,
+          -16,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0024",
+      "type": "notebook",
+      "zone": "Z08",
+      "position": [
+        16.3322,
+        0.7493,
+        -3.2512
+      ],
+      "rotationY": 0.03490659,
+      "label": "Meeting notes",
+      "support": {
+        "asset": "board_table",
+        "origin_plan_inches": [
+          675,
+          -112,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -32,
+          16,
+          29.5
+        ]
+      },
+      "width": 0.19,
+      "depth": 0.23
+    },
+    {
+      "id": "PROP_0025",
+      "type": "glass",
+      "zone": "Z08",
+      "position": [
+        16.6624,
+        0.7493,
+        -3.2512
+      ],
+      "rotationY": 0.0,
+      "label": null,
+      "support": {
+        "asset": "board_table",
+        "origin_plan_inches": [
+          675,
+          -112,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -19,
+          16,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0026",
+      "type": "notebook",
+      "zone": "Z08",
+      "position": [
+        17.9578,
+        0.7493,
+        -2.4384
+      ],
+      "rotationY": -0.03490659,
+      "label": "Meeting notes",
+      "support": {
+        "asset": "board_table",
+        "origin_plan_inches": [
+          675,
+          -112,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          32,
+          -16,
+          29.5
+        ]
+      },
+      "width": 0.19,
+      "depth": 0.23
+    },
+    {
+      "id": "PROP_0027",
+      "type": "glass",
+      "zone": "Z08",
+      "position": [
+        18.288,
+        0.7493,
+        -2.4384
+      ],
+      "rotationY": 0.0,
+      "label": null,
+      "support": {
+        "asset": "board_table",
+        "origin_plan_inches": [
+          675,
+          -112,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          45,
+          -16,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0028",
+      "type": "notebook",
+      "zone": "Z08",
+      "position": [
+        17.9578,
+        0.7493,
+        -3.2512
+      ],
+      "rotationY": 0.03490659,
+      "label": "Meeting notes",
+      "support": {
+        "asset": "board_table",
+        "origin_plan_inches": [
+          675,
+          -112,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          32,
+          16,
+          29.5
+        ]
+      },
+      "width": 0.19,
+      "depth": 0.23
+    },
+    {
+      "id": "PROP_0029",
+      "type": "glass",
+      "zone": "Z08",
+      "position": [
+        18.288,
+        0.7493,
+        -3.2512
+      ],
+      "rotationY": 0.0,
+      "label": null,
+      "support": {
+        "asset": "board_table",
+        "origin_plan_inches": [
+          675,
+          -112,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          45,
+          16,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0030",
+      "type": "notebook",
+      "zone": "Z08",
+      "position": [
+        19.177,
+        0.7493,
+        -2.4384
+      ],
+      "rotationY": -0.03490659,
+      "label": "Meeting notes",
+      "support": {
+        "asset": "board_table",
+        "origin_plan_inches": [
+          675,
+          -112,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          80,
+          -16,
+          29.5
+        ]
+      },
+      "width": 0.19,
+      "depth": 0.23
+    },
+    {
+      "id": "PROP_0031",
+      "type": "glass",
+      "zone": "Z08",
+      "position": [
+        19.5072,
+        0.7493,
+        -2.4384
+      ],
+      "rotationY": 0.0,
+      "label": null,
+      "support": {
+        "asset": "board_table",
+        "origin_plan_inches": [
+          675,
+          -112,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          93,
+          -16,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0032",
+      "type": "notebook",
+      "zone": "Z08",
+      "position": [
+        19.177,
+        0.7493,
+        -3.2512
+      ],
+      "rotationY": 0.03490659,
+      "label": "Meeting notes",
+      "support": {
+        "asset": "board_table",
+        "origin_plan_inches": [
+          675,
+          -112,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          80,
+          16,
+          29.5
+        ]
+      },
+      "width": 0.19,
+      "depth": 0.23
+    },
+    {
+      "id": "PROP_0033",
+      "type": "glass",
+      "zone": "Z08",
+      "position": [
+        19.5072,
+        0.7493,
+        -3.2512
+      ],
+      "rotationY": 0.0,
+      "label": null,
+      "support": {
+        "asset": "board_table",
+        "origin_plan_inches": [
+          675,
+          -112,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          93,
+          16,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0034",
+      "type": "conferencephone",
+      "zone": "Z08",
+      "position": [
+        17.145,
+        0.7493,
+        -2.8448
+      ],
+      "rotationY": 0.0,
+      "label": null,
+      "support": {
+        "asset": "board_table",
+        "origin_plan_inches": [
+          675,
+          -112,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          0,
+          0,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0035",
+      "type": "jug",
+      "zone": "Z08",
+      "position": [
+        15.494,
+        0.7493,
+        -2.8448
+      ],
+      "rotationY": 0.0,
+      "label": null,
+      "support": {
+        "asset": "board_table",
+        "origin_plan_inches": [
+          675,
+          -112,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -65,
+          0,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0036",
+      "type": "remote",
+      "zone": "Z08",
+      "position": [
+        18.796,
+        0.7493,
+        -2.8448
+      ],
+      "rotationY": 0.0,
+      "label": null,
+      "support": {
+        "asset": "board_table",
+        "origin_plan_inches": [
+          675,
+          -112,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          65,
+          0,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0037",
+      "type": "cable",
+      "zone": "Z08",
+      "position": [
+        17.8562,
+        0.7493,
+        -2.8448
+      ],
+      "rotationY": 0.0,
+      "label": null,
+      "support": {
+        "asset": "board_table",
+        "origin_plan_inches": [
+          675,
+          -112,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          28,
+          0,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0038",
+      "type": "books",
+      "zone": "Z08",
+      "position": [
+        12.6492,
+        0.762,
+        -2.11328
+      ],
+      "rotationY": 1.57079633,
+      "label": "Reference",
+      "support": {
+        "asset": "credenza_walnut",
+        "origin_plan_inches": [
+          498,
+          -112,
+          0.0
+        ],
+        "source_rotation_deg": 90,
+        "local_inches": [
+          -28.799999999999997,
+          0,
+          30
+        ]
+      }
+    },
+    {
+      "id": "PROP_0039",
+      "type": "landscapeframe",
+      "zone": "Z08",
+      "position": [
+        12.6492,
+        0.762,
+        -3.503168
+      ],
+      "rotationY": 1.57079633,
+      "label": null,
+      "support": {
+        "asset": "credenza_walnut",
+        "origin_plan_inches": [
+          498,
+          -112,
+          0.0
+        ],
+        "source_rotation_deg": 90,
+        "local_inches": [
+          25.92,
+          0,
+          30
+        ]
+      }
+    },
+    {
+      "id": "PROP_0040",
+      "type": "books",
+      "zone": "Z08",
+      "position": [
+        21.7424,
+        0.762,
+        -3.57632
+      ],
+      "rotationY": 4.71238898,
+      "label": "Reference",
+      "support": {
+        "asset": "credenza_walnut",
+        "origin_plan_inches": [
+          856,
+          -112,
+          0.0
+        ],
+        "source_rotation_deg": 270,
+        "local_inches": [
+          -28.799999999999997,
+          0,
+          30
+        ]
+      }
+    },
+    {
+      "id": "PROP_0041",
+      "type": "landscapeframe",
+      "zone": "Z08",
+      "position": [
+        21.7424,
+        0.762,
+        -2.186432
+      ],
+      "rotationY": 4.71238898,
+      "label": null,
+      "support": {
+        "asset": "credenza_walnut",
+        "origin_plan_inches": [
+          856,
+          -112,
+          0.0
+        ],
+        "source_rotation_deg": 270,
+        "local_inches": [
+          25.92,
+          0,
+          30
+        ]
+      }
+    },
+    {
+      "id": "PROP_0042",
+      "type": "notebook",
+      "zone": "Z10",
+      "position": [
+        16.14805,
+        0.7493,
+        3.4671
+      ],
+      "rotationY": 1.46607657,
+      "label": "Notes",
+      "support": {
+        "asset": "desk_single",
+        "origin_plan_inches": [
+          628,
+          112,
+          0.0
+        ],
+        "source_rotation_deg": 90,
+        "local_inches": [
+          -24.5,
+          -7.75,
+          29.5
+        ]
+      },
+      "width": 0.18,
+      "depth": 0.22
+    },
+    {
+      "id": "PROP_0043",
+      "type": "mug",
+      "zone": "Z10",
+      "position": [
+        15.9512,
+        0.7493,
+        2.1717
+      ],
+      "rotationY": 1.91986218,
+      "label": null,
+      "support": {
+        "asset": "desk_single",
+        "origin_plan_inches": [
+          628,
+          112,
+          0.0
+        ],
+        "source_rotation_deg": 90,
+        "local_inches": [
+          26.5,
+          0,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0044",
+      "type": "tray",
+      "zone": "Z10",
+      "position": [
+        15.70355,
+        0.7493,
+        2.2733
+      ],
+      "rotationY": 1.57079633,
+      "label": "Approvals",
+      "support": {
+        "asset": "desk_single",
+        "origin_plan_inches": [
+          628,
+          112,
+          0.0
+        ],
+        "source_rotation_deg": 90,
+        "local_inches": [
+          22.5,
+          9.75,
+          29.5
+        ]
+      },
+      "width": 0.23,
+      "depth": 0.18
+    },
+    {
+      "id": "PROP_0045",
+      "type": "teacup",
+      "zone": "Z10",
+      "position": [
+        15.98676,
+        0.508,
+        5.7404
+      ],
+      "rotationY": 0.0,
+      "label": null,
+      "support": {
+        "asset": "side_round",
+        "origin_plan_inches": [
+          625,
+          226,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          4.4,
+          0,
+          20
+        ]
+      }
+    },
+    {
+      "id": "PROP_0046",
+      "type": "teacup",
+      "zone": "Z11",
+      "position": [
+        20.3962,
+        0.7493,
+        4.3688
+      ],
+      "rotationY": 0.0,
+      "label": null,
+      "support": {
+        "asset": "exec_desk_dir",
+        "origin_plan_inches": [
+          780,
+          164,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          23.0,
+          -8.0,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0047",
+      "type": "tray",
+      "zone": "Z11",
+      "position": [
+        20.3454,
+        0.7493,
+        3.9624
+      ],
+      "rotationY": 0.0,
+      "label": "Documents",
+      "support": {
+        "asset": "exec_desk_dir",
+        "origin_plan_inches": [
+          780,
+          164,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          21.0,
+          8.0,
+          29.5
+        ]
+      },
+      "width": 0.25,
+      "depth": 0.28
+    },
+    {
+      "id": "PROP_0048",
+      "type": "books",
+      "zone": "Z11",
+      "position": [
+        20.54352,
+        0.762,
+        6.0452
+      ],
+      "rotationY": 3.14159265,
+      "label": "Reference",
+      "support": {
+        "asset": "credenza_oak",
+        "origin_plan_inches": [
+          780,
+          238,
+          0.0
+        ],
+        "source_rotation_deg": 180,
+        "local_inches": [
+          -28.799999999999997,
+          0,
+          30
+        ]
+      }
+    },
+    {
+      "id": "PROP_0049",
+      "type": "landscapeframe",
+      "zone": "Z11",
+      "position": [
+        19.153632,
+        0.762,
+        6.0452
+      ],
+      "rotationY": 3.14159265,
+      "label": null,
+      "support": {
+        "asset": "credenza_oak",
+        "origin_plan_inches": [
+          780,
+          238,
+          0.0
+        ],
+        "source_rotation_deg": 180,
+        "local_inches": [
+          25.92,
+          0,
+          30
+        ]
+      }
+    },
+    {
+      "id": "PROP_0050",
+      "type": "teacup",
+      "zone": "Z12",
+      "position": [
+        26.9748,
+        0.7493,
+        4.2926
+      ],
+      "rotationY": 0.0,
+      "label": null,
+      "support": {
+        "asset": "exec_desk_md",
+        "origin_plan_inches": [
+          1030,
+          158,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          32.0,
+          -11.0,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0051",
+      "type": "tray",
+      "zone": "Z12",
+      "position": [
+        26.924,
+        0.7493,
+        3.7338
+      ],
+      "rotationY": 0.0,
+      "label": "Documents",
+      "support": {
+        "asset": "exec_desk_md",
+        "origin_plan_inches": [
+          1030,
+          158,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          30.0,
+          11.0,
+          29.5
+        ]
+      },
+      "width": 0.25,
+      "depth": 0.28
+    },
+    {
+      "id": "PROP_0052",
+      "type": "books",
+      "zone": "Z12",
+      "position": [
+        26.89352,
+        0.762,
+        6.0198
+      ],
+      "rotationY": 3.14159265,
+      "label": "Reference",
+      "support": {
+        "asset": "credenza_walnut",
+        "origin_plan_inches": [
+          1030,
+          237,
+          0.0
+        ],
+        "source_rotation_deg": 180,
+        "local_inches": [
+          -28.799999999999997,
+          0,
+          30
+        ]
+      }
+    },
+    {
+      "id": "PROP_0053",
+      "type": "landscapeframe",
+      "zone": "Z12",
+      "position": [
+        25.503632,
+        0.762,
+        6.0198
+      ],
+      "rotationY": 3.14159265,
+      "label": null,
+      "support": {
+        "asset": "credenza_walnut",
+        "origin_plan_inches": [
+          1030,
+          237,
+          0.0
+        ],
+        "source_rotation_deg": 180,
+        "local_inches": [
+          25.92,
+          0,
+          30
+        ]
+      }
+    },
+    {
+      "id": "PROP_0054",
+      "type": "notebook",
+      "zone": "Z12",
+      "position": [
+        23.152608,
+        0.4064,
+        4.064
+      ],
+      "rotationY": 0.20943951,
+      "label": "Notes",
+      "support": {
+        "asset": "coffee_round",
+        "origin_plan_inches": [
+          916,
+          160,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -4.48,
+          0,
+          16
+        ]
+      },
+      "width": 0.21,
+      "depth": 0.22
+    },
+    {
+      "id": "PROP_0055",
+      "type": "teacup",
+      "zone": "Z12",
+      "position": [
+        23.445216,
+        0.4064,
+        4.064
+      ],
+      "rotationY": 0.0,
+      "label": null,
+      "support": {
+        "asset": "coffee_round",
+        "origin_plan_inches": [
+          916,
+          160,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          7.04,
+          0,
+          16
+        ]
+      }
+    },
+    {
+      "id": "PROP_0056",
+      "type": "mug",
+      "zone": "Z07",
+      "position": [
+        11.557,
+        0.7493,
+        -18.6817
+      ],
+      "rotationY": -0.26179939,
+      "label": null,
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          487.5,
+          -742.5,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -32.5,
+          -7,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0057",
+      "type": "notebook",
+      "zone": "Z07",
+      "position": [
+        11.4808,
+        0.7493,
+        -18.3642
+      ],
+      "rotationY": -0.08726646,
+      "label": "Approvals",
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          487.5,
+          -742.5,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -35.5,
+          -19.5,
+          29.5
+        ]
+      },
+      "width": 0.16,
+      "depth": 0.2
+    },
+    {
+      "id": "PROP_0058",
+      "type": "bottle",
+      "zone": "Z07",
+      "position": [
+        10.4013,
+        0.7493,
+        -18.669
+      ],
+      "rotationY": 0.0,
+      "label": null,
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          487.5,
+          -742.5,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -78.0,
+          -7.5,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0059",
+      "type": "cable",
+      "zone": "Z07",
+      "position": [
+        11.1633,
+        0.7493,
+        -18.7198
+      ],
+      "rotationY": -0.34906585,
+      "label": null,
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          487.5,
+          -742.5,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -48.0,
+          -5.5,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0060",
+      "type": "mug",
+      "zone": "Z07",
+      "position": [
+        11.557,
+        0.7493,
+        -19.0373
+      ],
+      "rotationY": 0.26179939,
+      "label": null,
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          487.5,
+          -742.5,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -32.5,
+          7,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0061",
+      "type": "notebook",
+      "zone": "Z07",
+      "position": [
+        11.4808,
+        0.7493,
+        -19.3548
+      ],
+      "rotationY": 0.08726646,
+      "label": "Approvals",
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          487.5,
+          -742.5,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -35.5,
+          19.5,
+          29.5
+        ]
+      },
+      "width": 0.16,
+      "depth": 0.2
+    },
+    {
+      "id": "PROP_0062",
+      "type": "bottle",
+      "zone": "Z07",
+      "position": [
+        10.4013,
+        0.7493,
+        -19.05
+      ],
+      "rotationY": 0.0,
+      "label": null,
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          487.5,
+          -742.5,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -78.0,
+          7.5,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0063",
+      "type": "cable",
+      "zone": "Z07",
+      "position": [
+        11.1633,
+        0.7493,
+        -18.9992
+      ],
+      "rotationY": 0.34906585,
+      "label": null,
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          487.5,
+          -742.5,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -48.0,
+          5.5,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0064",
+      "type": "mug",
+      "zone": "Z07",
+      "position": [
+        12.954,
+        0.7493,
+        -18.6817
+      ],
+      "rotationY": -0.26179939,
+      "label": null,
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          487.5,
+          -742.5,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          22.5,
+          -7,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0065",
+      "type": "notebook",
+      "zone": "Z07",
+      "position": [
+        12.8778,
+        0.7493,
+        -18.3642
+      ],
+      "rotationY": -0.08726646,
+      "label": "Approvals",
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          487.5,
+          -742.5,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          19.5,
+          -19.5,
+          29.5
+        ]
+      },
+      "width": 0.16,
+      "depth": 0.2
+    },
+    {
+      "id": "PROP_0066",
+      "type": "bottle",
+      "zone": "Z07",
+      "position": [
+        11.7983,
+        0.7493,
+        -18.669
+      ],
+      "rotationY": 0.0,
+      "label": null,
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          487.5,
+          -742.5,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -23.0,
+          -7.5,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0067",
+      "type": "cable",
+      "zone": "Z07",
+      "position": [
+        12.5603,
+        0.7493,
+        -18.7198
+      ],
+      "rotationY": -0.34906585,
+      "label": null,
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          487.5,
+          -742.5,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          7.0,
+          -5.5,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0068",
+      "type": "mug",
+      "zone": "Z07",
+      "position": [
+        12.954,
+        0.7493,
+        -19.0373
+      ],
+      "rotationY": 0.26179939,
+      "label": null,
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          487.5,
+          -742.5,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          22.5,
+          7,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0069",
+      "type": "notebook",
+      "zone": "Z07",
+      "position": [
+        12.8778,
+        0.7493,
+        -19.3548
+      ],
+      "rotationY": 0.08726646,
+      "label": "Approvals",
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          487.5,
+          -742.5,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          19.5,
+          19.5,
+          29.5
+        ]
+      },
+      "width": 0.16,
+      "depth": 0.2
+    },
+    {
+      "id": "PROP_0070",
+      "type": "bottle",
+      "zone": "Z07",
+      "position": [
+        11.7983,
+        0.7493,
+        -19.05
+      ],
+      "rotationY": 0.0,
+      "label": null,
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          487.5,
+          -742.5,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -23.0,
+          7.5,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0071",
+      "type": "cable",
+      "zone": "Z07",
+      "position": [
+        12.5603,
+        0.7493,
+        -18.9992
+      ],
+      "rotationY": 0.34906585,
+      "label": null,
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          487.5,
+          -742.5,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          7.0,
+          5.5,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0072",
+      "type": "mug",
+      "zone": "Z07",
+      "position": [
+        14.351,
+        0.7493,
+        -18.6817
+      ],
+      "rotationY": -0.26179939,
+      "label": null,
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          487.5,
+          -742.5,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          77.5,
+          -7,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0073",
+      "type": "notebook",
+      "zone": "Z07",
+      "position": [
+        14.2748,
+        0.7493,
+        -18.3642
+      ],
+      "rotationY": -0.08726646,
+      "label": "Approvals",
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          487.5,
+          -742.5,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          74.5,
+          -19.5,
+          29.5
+        ]
+      },
+      "width": 0.16,
+      "depth": 0.2
+    },
+    {
+      "id": "PROP_0074",
+      "type": "bottle",
+      "zone": "Z07",
+      "position": [
+        13.1953,
+        0.7493,
+        -18.669
+      ],
+      "rotationY": 0.0,
+      "label": null,
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          487.5,
+          -742.5,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          32.0,
+          -7.5,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0075",
+      "type": "cable",
+      "zone": "Z07",
+      "position": [
+        13.9573,
+        0.7493,
+        -18.7198
+      ],
+      "rotationY": -0.34906585,
+      "label": null,
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          487.5,
+          -742.5,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          62.0,
+          -5.5,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0076",
+      "type": "mug",
+      "zone": "Z07",
+      "position": [
+        14.351,
+        0.7493,
+        -19.0373
+      ],
+      "rotationY": 0.26179939,
+      "label": null,
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          487.5,
+          -742.5,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          77.5,
+          7,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0077",
+      "type": "notebook",
+      "zone": "Z07",
+      "position": [
+        14.2748,
+        0.7493,
+        -19.3548
+      ],
+      "rotationY": 0.08726646,
+      "label": "Approvals",
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          487.5,
+          -742.5,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          74.5,
+          19.5,
+          29.5
+        ]
+      },
+      "width": 0.16,
+      "depth": 0.2
+    },
+    {
+      "id": "PROP_0078",
+      "type": "bottle",
+      "zone": "Z07",
+      "position": [
+        13.1953,
+        0.7493,
+        -19.05
+      ],
+      "rotationY": 0.0,
+      "label": null,
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          487.5,
+          -742.5,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          32.0,
+          7.5,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0079",
+      "type": "cable",
+      "zone": "Z07",
+      "position": [
+        13.9573,
+        0.7493,
+        -18.9992
+      ],
+      "rotationY": 0.34906585,
+      "label": null,
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          487.5,
+          -742.5,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          62.0,
+          5.5,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0080",
+      "type": "mug",
+      "zone": "Z07",
+      "position": [
+        11.557,
+        0.7493,
+        -14.6177
+      ],
+      "rotationY": -0.26179939,
+      "label": null,
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          487.5,
+          -582.5,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -32.5,
+          -7,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0081",
+      "type": "notebook",
+      "zone": "Z07",
+      "position": [
+        11.4808,
+        0.7493,
+        -14.3002
+      ],
+      "rotationY": -0.08726646,
+      "label": "Approvals",
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          487.5,
+          -582.5,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -35.5,
+          -19.5,
+          29.5
+        ]
+      },
+      "width": 0.16,
+      "depth": 0.2
+    },
+    {
+      "id": "PROP_0082",
+      "type": "bottle",
+      "zone": "Z07",
+      "position": [
+        10.4013,
+        0.7493,
+        -14.605
+      ],
+      "rotationY": 0.0,
+      "label": null,
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          487.5,
+          -582.5,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -78.0,
+          -7.5,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0083",
+      "type": "cable",
+      "zone": "Z07",
+      "position": [
+        11.1633,
+        0.7493,
+        -14.6558
+      ],
+      "rotationY": -0.34906585,
+      "label": null,
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          487.5,
+          -582.5,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -48.0,
+          -5.5,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0084",
+      "type": "mug",
+      "zone": "Z07",
+      "position": [
+        11.557,
+        0.7493,
+        -14.9733
+      ],
+      "rotationY": 0.26179939,
+      "label": null,
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          487.5,
+          -582.5,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -32.5,
+          7,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0085",
+      "type": "notebook",
+      "zone": "Z07",
+      "position": [
+        11.4808,
+        0.7493,
+        -15.2908
+      ],
+      "rotationY": 0.08726646,
+      "label": "Approvals",
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          487.5,
+          -582.5,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -35.5,
+          19.5,
+          29.5
+        ]
+      },
+      "width": 0.16,
+      "depth": 0.2
+    },
+    {
+      "id": "PROP_0086",
+      "type": "bottle",
+      "zone": "Z07",
+      "position": [
+        10.4013,
+        0.7493,
+        -14.986
+      ],
+      "rotationY": 0.0,
+      "label": null,
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          487.5,
+          -582.5,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -78.0,
+          7.5,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0087",
+      "type": "cable",
+      "zone": "Z07",
+      "position": [
+        11.1633,
+        0.7493,
+        -14.9352
+      ],
+      "rotationY": 0.34906585,
+      "label": null,
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          487.5,
+          -582.5,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -48.0,
+          5.5,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0088",
+      "type": "mug",
+      "zone": "Z07",
+      "position": [
+        12.954,
+        0.7493,
+        -14.6177
+      ],
+      "rotationY": -0.26179939,
+      "label": null,
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          487.5,
+          -582.5,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          22.5,
+          -7,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0089",
+      "type": "notebook",
+      "zone": "Z07",
+      "position": [
+        12.8778,
+        0.7493,
+        -14.3002
+      ],
+      "rotationY": -0.08726646,
+      "label": "Approvals",
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          487.5,
+          -582.5,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          19.5,
+          -19.5,
+          29.5
+        ]
+      },
+      "width": 0.16,
+      "depth": 0.2
+    },
+    {
+      "id": "PROP_0090",
+      "type": "bottle",
+      "zone": "Z07",
+      "position": [
+        11.7983,
+        0.7493,
+        -14.605
+      ],
+      "rotationY": 0.0,
+      "label": null,
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          487.5,
+          -582.5,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -23.0,
+          -7.5,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0091",
+      "type": "cable",
+      "zone": "Z07",
+      "position": [
+        12.5603,
+        0.7493,
+        -14.6558
+      ],
+      "rotationY": -0.34906585,
+      "label": null,
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          487.5,
+          -582.5,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          7.0,
+          -5.5,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0092",
+      "type": "mug",
+      "zone": "Z07",
+      "position": [
+        12.954,
+        0.7493,
+        -14.9733
+      ],
+      "rotationY": 0.26179939,
+      "label": null,
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          487.5,
+          -582.5,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          22.5,
+          7,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0093",
+      "type": "notebook",
+      "zone": "Z07",
+      "position": [
+        12.8778,
+        0.7493,
+        -15.2908
+      ],
+      "rotationY": 0.08726646,
+      "label": "Approvals",
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          487.5,
+          -582.5,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          19.5,
+          19.5,
+          29.5
+        ]
+      },
+      "width": 0.16,
+      "depth": 0.2
+    },
+    {
+      "id": "PROP_0094",
+      "type": "bottle",
+      "zone": "Z07",
+      "position": [
+        11.7983,
+        0.7493,
+        -14.986
+      ],
+      "rotationY": 0.0,
+      "label": null,
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          487.5,
+          -582.5,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -23.0,
+          7.5,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0095",
+      "type": "cable",
+      "zone": "Z07",
+      "position": [
+        12.5603,
+        0.7493,
+        -14.9352
+      ],
+      "rotationY": 0.34906585,
+      "label": null,
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          487.5,
+          -582.5,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          7.0,
+          5.5,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0096",
+      "type": "mug",
+      "zone": "Z07",
+      "position": [
+        14.351,
+        0.7493,
+        -14.6177
+      ],
+      "rotationY": -0.26179939,
+      "label": null,
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          487.5,
+          -582.5,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          77.5,
+          -7,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0097",
+      "type": "notebook",
+      "zone": "Z07",
+      "position": [
+        14.2748,
+        0.7493,
+        -14.3002
+      ],
+      "rotationY": -0.08726646,
+      "label": "Approvals",
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          487.5,
+          -582.5,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          74.5,
+          -19.5,
+          29.5
+        ]
+      },
+      "width": 0.16,
+      "depth": 0.2
+    },
+    {
+      "id": "PROP_0098",
+      "type": "bottle",
+      "zone": "Z07",
+      "position": [
+        13.1953,
+        0.7493,
+        -14.605
+      ],
+      "rotationY": 0.0,
+      "label": null,
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          487.5,
+          -582.5,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          32.0,
+          -7.5,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0099",
+      "type": "cable",
+      "zone": "Z07",
+      "position": [
+        13.9573,
+        0.7493,
+        -14.6558
+      ],
+      "rotationY": -0.34906585,
+      "label": null,
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          487.5,
+          -582.5,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          62.0,
+          -5.5,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0100",
+      "type": "mug",
+      "zone": "Z07",
+      "position": [
+        14.351,
+        0.7493,
+        -14.9733
+      ],
+      "rotationY": 0.26179939,
+      "label": null,
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          487.5,
+          -582.5,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          77.5,
+          7,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0101",
+      "type": "notebook",
+      "zone": "Z07",
+      "position": [
+        14.2748,
+        0.7493,
+        -15.2908
+      ],
+      "rotationY": 0.08726646,
+      "label": "Approvals",
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          487.5,
+          -582.5,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          74.5,
+          19.5,
+          29.5
+        ]
+      },
+      "width": 0.16,
+      "depth": 0.2
+    },
+    {
+      "id": "PROP_0102",
+      "type": "bottle",
+      "zone": "Z07",
+      "position": [
+        13.1953,
+        0.7493,
+        -14.986
+      ],
+      "rotationY": 0.0,
+      "label": null,
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          487.5,
+          -582.5,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          32.0,
+          7.5,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0103",
+      "type": "cable",
+      "zone": "Z07",
+      "position": [
+        13.9573,
+        0.7493,
+        -14.9352
+      ],
+      "rotationY": 0.34906585,
+      "label": null,
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          487.5,
+          -582.5,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          62.0,
+          5.5,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0104",
+      "type": "mug",
+      "zone": "Z07",
+      "position": [
+        18.034,
+        0.7493,
+        -18.6817
+      ],
+      "rotationY": -0.26179939,
+      "label": null,
+      "support": {
+        "asset": "bench2",
+        "origin_plan_inches": [
+          715,
+          -742.5,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -5.0,
+          -7,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0105",
+      "type": "notebook",
+      "zone": "Z07",
+      "position": [
+        17.9578,
+        0.7493,
+        -18.3642
+      ],
+      "rotationY": -0.08726646,
+      "label": "Approvals",
+      "support": {
+        "asset": "bench2",
+        "origin_plan_inches": [
+          715,
+          -742.5,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -8.0,
+          -19.5,
+          29.5
+        ]
+      },
+      "width": 0.16,
+      "depth": 0.2
+    },
+    {
+      "id": "PROP_0106",
+      "type": "bottle",
+      "zone": "Z07",
+      "position": [
+        16.8783,
+        0.7493,
+        -18.669
+      ],
+      "rotationY": 0.0,
+      "label": null,
+      "support": {
+        "asset": "bench2",
+        "origin_plan_inches": [
+          715,
+          -742.5,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -50.5,
+          -7.5,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0107",
+      "type": "cable",
+      "zone": "Z07",
+      "position": [
+        17.6403,
+        0.7493,
+        -18.7198
+      ],
+      "rotationY": -0.34906585,
+      "label": null,
+      "support": {
+        "asset": "bench2",
+        "origin_plan_inches": [
+          715,
+          -742.5,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -20.5,
+          -5.5,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0108",
+      "type": "mug",
+      "zone": "Z07",
+      "position": [
+        18.034,
+        0.7493,
+        -19.0373
+      ],
+      "rotationY": 0.26179939,
+      "label": null,
+      "support": {
+        "asset": "bench2",
+        "origin_plan_inches": [
+          715,
+          -742.5,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -5.0,
+          7,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0109",
+      "type": "notebook",
+      "zone": "Z07",
+      "position": [
+        17.9578,
+        0.7493,
+        -19.3548
+      ],
+      "rotationY": 0.08726646,
+      "label": "Approvals",
+      "support": {
+        "asset": "bench2",
+        "origin_plan_inches": [
+          715,
+          -742.5,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -8.0,
+          19.5,
+          29.5
+        ]
+      },
+      "width": 0.16,
+      "depth": 0.2
+    },
+    {
+      "id": "PROP_0110",
+      "type": "bottle",
+      "zone": "Z07",
+      "position": [
+        16.8783,
+        0.7493,
+        -19.05
+      ],
+      "rotationY": 0.0,
+      "label": null,
+      "support": {
+        "asset": "bench2",
+        "origin_plan_inches": [
+          715,
+          -742.5,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -50.5,
+          7.5,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0111",
+      "type": "cable",
+      "zone": "Z07",
+      "position": [
+        17.6403,
+        0.7493,
+        -18.9992
+      ],
+      "rotationY": 0.34906585,
+      "label": null,
+      "support": {
+        "asset": "bench2",
+        "origin_plan_inches": [
+          715,
+          -742.5,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -20.5,
+          5.5,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0112",
+      "type": "mug",
+      "zone": "Z07",
+      "position": [
+        19.431,
+        0.7493,
+        -18.6817
+      ],
+      "rotationY": -0.26179939,
+      "label": null,
+      "support": {
+        "asset": "bench2",
+        "origin_plan_inches": [
+          715,
+          -742.5,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          50.0,
+          -7,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0113",
+      "type": "notebook",
+      "zone": "Z07",
+      "position": [
+        19.3548,
+        0.7493,
+        -18.3642
+      ],
+      "rotationY": -0.08726646,
+      "label": "Approvals",
+      "support": {
+        "asset": "bench2",
+        "origin_plan_inches": [
+          715,
+          -742.5,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          47.0,
+          -19.5,
+          29.5
+        ]
+      },
+      "width": 0.16,
+      "depth": 0.2
+    },
+    {
+      "id": "PROP_0114",
+      "type": "bottle",
+      "zone": "Z07",
+      "position": [
+        18.2753,
+        0.7493,
+        -18.669
+      ],
+      "rotationY": 0.0,
+      "label": null,
+      "support": {
+        "asset": "bench2",
+        "origin_plan_inches": [
+          715,
+          -742.5,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          4.5,
+          -7.5,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0115",
+      "type": "cable",
+      "zone": "Z07",
+      "position": [
+        19.0373,
+        0.7493,
+        -18.7198
+      ],
+      "rotationY": -0.34906585,
+      "label": null,
+      "support": {
+        "asset": "bench2",
+        "origin_plan_inches": [
+          715,
+          -742.5,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          34.5,
+          -5.5,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0116",
+      "type": "mug",
+      "zone": "Z07",
+      "position": [
+        19.431,
+        0.7493,
+        -19.0373
+      ],
+      "rotationY": 0.26179939,
+      "label": null,
+      "support": {
+        "asset": "bench2",
+        "origin_plan_inches": [
+          715,
+          -742.5,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          50.0,
+          7,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0117",
+      "type": "notebook",
+      "zone": "Z07",
+      "position": [
+        19.3548,
+        0.7493,
+        -19.3548
+      ],
+      "rotationY": 0.08726646,
+      "label": "Approvals",
+      "support": {
+        "asset": "bench2",
+        "origin_plan_inches": [
+          715,
+          -742.5,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          47.0,
+          19.5,
+          29.5
+        ]
+      },
+      "width": 0.16,
+      "depth": 0.2
+    },
+    {
+      "id": "PROP_0118",
+      "type": "bottle",
+      "zone": "Z07",
+      "position": [
+        18.2753,
+        0.7493,
+        -19.05
+      ],
+      "rotationY": 0.0,
+      "label": null,
+      "support": {
+        "asset": "bench2",
+        "origin_plan_inches": [
+          715,
+          -742.5,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          4.5,
+          7.5,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0119",
+      "type": "cable",
+      "zone": "Z07",
+      "position": [
+        19.0373,
+        0.7493,
+        -18.9992
+      ],
+      "rotationY": 0.34906585,
+      "label": null,
+      "support": {
+        "asset": "bench2",
+        "origin_plan_inches": [
+          715,
+          -742.5,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          34.5,
+          5.5,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0120",
+      "type": "notebook",
+      "zone": "Z07",
+      "position": [
+        17.3482,
+        0.7493,
+        -14.61516
+      ],
+      "rotationY": 0.08726646,
+      "label": "Samples",
+      "support": {
+        "asset": "table_team",
+        "origin_plan_inches": [
+          725,
+          -585,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -42.00000000000001,
+          -9.600000000000001,
+          29.5
+        ]
+      },
+      "width": 0.2,
+      "depth": 0.23
+    },
+    {
+      "id": "PROP_0121",
+      "type": "mug",
+      "zone": "Z07",
+      "position": [
+        17.3482,
+        0.7493,
+        -15.139416
+      ],
+      "rotationY": 0.0,
+      "label": null,
+      "support": {
+        "asset": "table_team",
+        "origin_plan_inches": [
+          725,
+          -585,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -42.00000000000001,
+          11.040000000000001,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0122",
+      "type": "notebook",
+      "zone": "Z07",
+      "position": [
+        19.4818,
+        0.7493,
+        -14.61516
+      ],
+      "rotationY": 0.08726646,
+      "label": "Samples",
+      "support": {
+        "asset": "table_team",
+        "origin_plan_inches": [
+          725,
+          -585,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          42.00000000000001,
+          -9.600000000000001,
+          29.5
+        ]
+      },
+      "width": 0.2,
+      "depth": 0.23
+    },
+    {
+      "id": "PROP_0123",
+      "type": "mug",
+      "zone": "Z07",
+      "position": [
+        19.4818,
+        0.7493,
+        -15.139416
+      ],
+      "rotationY": 0.0,
+      "label": null,
+      "support": {
+        "asset": "table_team",
+        "origin_plan_inches": [
+          725,
+          -585,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          42.00000000000001,
+          11.040000000000001,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0124",
+      "type": "swatches",
+      "zone": "Z07",
+      "position": [
+        16.637,
+        0.9398,
+        -11.0998
+      ],
+      "rotationY": 3.14159265,
+      "label": null,
+      "support": {
+        "asset": "review_counter",
+        "origin_plan_inches": [
+          555,
+          -437,
+          0.0
+        ],
+        "source_rotation_deg": 180,
+        "local_inches": [
+          -100,
+          0,
+          37
+        ]
+      }
+    },
+    {
+      "id": "PROP_0125",
+      "type": "swatches",
+      "zone": "Z07",
+      "position": [
+        15.113,
+        0.9398,
+        -11.0998
+      ],
+      "rotationY": 3.14159265,
+      "label": null,
+      "support": {
+        "asset": "review_counter",
+        "origin_plan_inches": [
+          555,
+          -437,
+          0.0
+        ],
+        "source_rotation_deg": 180,
+        "local_inches": [
+          -40,
+          0,
+          37
+        ]
+      }
+    },
+    {
+      "id": "PROP_0126",
+      "type": "swatches",
+      "zone": "Z07",
+      "position": [
+        13.335,
+        0.9398,
+        -11.0998
+      ],
+      "rotationY": 3.14159265,
+      "label": null,
+      "support": {
+        "asset": "review_counter",
+        "origin_plan_inches": [
+          555,
+          -437,
+          0.0
+        ],
+        "source_rotation_deg": 180,
+        "local_inches": [
+          30,
+          0,
+          37
+        ]
+      }
+    },
+    {
+      "id": "PROP_0127",
+      "type": "swatches",
+      "zone": "Z07",
+      "position": [
+        11.557,
+        0.9398,
+        -11.0998
+      ],
+      "rotationY": 3.14159265,
+      "label": null,
+      "support": {
+        "asset": "review_counter",
+        "origin_plan_inches": [
+          555,
+          -437,
+          0.0
+        ],
+        "source_rotation_deg": 180,
+        "local_inches": [
+          100,
+          0,
+          37
+        ]
+      }
+    },
+    {
+      "id": "PROP_0128",
+      "type": "books",
+      "zone": "Z07",
+      "position": [
+        21.7678,
+        0.7366,
+        -19.52752
+      ],
+      "rotationY": 4.71238898,
+      "label": "Orders",
+      "support": {
+        "asset": "under_window_110",
+        "origin_plan_inches": [
+          857,
+          -738,
+          0.0
+        ],
+        "source_rotation_deg": 270,
+        "local_inches": [
+          -30.800000000000004,
+          0,
+          29
+        ]
+      }
+    },
+    {
+      "id": "PROP_0129",
+      "type": "tray",
+      "zone": "Z07",
+      "position": [
+        21.7678,
+        0.7366,
+        -18.0467
+      ],
+      "rotationY": 4.71238898,
+      "label": "Approvals",
+      "support": {
+        "asset": "under_window_110",
+        "origin_plan_inches": [
+          857,
+          -738,
+          0.0
+        ],
+        "source_rotation_deg": 270,
+        "local_inches": [
+          27.5,
+          0,
+          29
+        ]
+      },
+      "width": 0.27,
+      "depth": 0.28
+    },
+    {
+      "id": "PROP_0130",
+      "type": "books",
+      "zone": "Z07",
+      "position": [
+        21.7678,
+        0.7366,
+        -14.19352
+      ],
+      "rotationY": 4.71238898,
+      "label": "Orders",
+      "support": {
+        "asset": "under_window_110",
+        "origin_plan_inches": [
+          857,
+          -528,
+          0.0
+        ],
+        "source_rotation_deg": 270,
+        "local_inches": [
+          -30.800000000000004,
+          0,
+          29
+        ]
+      }
+    },
+    {
+      "id": "PROP_0131",
+      "type": "tray",
+      "zone": "Z07",
+      "position": [
+        21.7678,
+        0.7366,
+        -12.7127
+      ],
+      "rotationY": 4.71238898,
+      "label": "Approvals",
+      "support": {
+        "asset": "under_window_110",
+        "origin_plan_inches": [
+          857,
+          -528,
+          0.0
+        ],
+        "source_rotation_deg": 270,
+        "local_inches": [
+          27.5,
+          0,
+          29
+        ]
+      },
+      "width": 0.27,
+      "depth": 0.28
+    },
+    {
+      "id": "PROP_0132",
+      "type": "mug",
+      "zone": "Z06",
+      "position": [
+        3.5052,
+        0.7493,
+        -16.0909
+      ],
+      "rotationY": -0.26179939,
+      "label": null,
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          170.5,
+          -640.5,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -32.5,
+          -7,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0133",
+      "type": "notebook",
+      "zone": "Z06",
+      "position": [
+        3.429,
+        0.7493,
+        -15.7734
+      ],
+      "rotationY": -0.08726646,
+      "label": "Notes",
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          170.5,
+          -640.5,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -35.5,
+          -19.5,
+          29.5
+        ]
+      },
+      "width": 0.16,
+      "depth": 0.2
+    },
+    {
+      "id": "PROP_0134",
+      "type": "bottle",
+      "zone": "Z06",
+      "position": [
+        2.3495,
+        0.7493,
+        -16.0782
+      ],
+      "rotationY": 0.0,
+      "label": null,
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          170.5,
+          -640.5,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -78.0,
+          -7.5,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0135",
+      "type": "cable",
+      "zone": "Z06",
+      "position": [
+        3.1115,
+        0.7493,
+        -16.129
+      ],
+      "rotationY": -0.34906585,
+      "label": null,
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          170.5,
+          -640.5,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -48.0,
+          -5.5,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0136",
+      "type": "mug",
+      "zone": "Z06",
+      "position": [
+        3.5052,
+        0.7493,
+        -16.4465
+      ],
+      "rotationY": 0.26179939,
+      "label": null,
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          170.5,
+          -640.5,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -32.5,
+          7,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0137",
+      "type": "notebook",
+      "zone": "Z06",
+      "position": [
+        3.429,
+        0.7493,
+        -16.764
+      ],
+      "rotationY": 0.08726646,
+      "label": "Notes",
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          170.5,
+          -640.5,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -35.5,
+          19.5,
+          29.5
+        ]
+      },
+      "width": 0.16,
+      "depth": 0.2
+    },
+    {
+      "id": "PROP_0138",
+      "type": "bottle",
+      "zone": "Z06",
+      "position": [
+        2.3495,
+        0.7493,
+        -16.4592
+      ],
+      "rotationY": 0.0,
+      "label": null,
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          170.5,
+          -640.5,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -78.0,
+          7.5,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0139",
+      "type": "cable",
+      "zone": "Z06",
+      "position": [
+        3.1115,
+        0.7493,
+        -16.4084
+      ],
+      "rotationY": 0.34906585,
+      "label": null,
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          170.5,
+          -640.5,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -48.0,
+          5.5,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0140",
+      "type": "mug",
+      "zone": "Z06",
+      "position": [
+        4.9022,
+        0.7493,
+        -16.0909
+      ],
+      "rotationY": -0.26179939,
+      "label": null,
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          170.5,
+          -640.5,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          22.5,
+          -7,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0141",
+      "type": "notebook",
+      "zone": "Z06",
+      "position": [
+        4.826,
+        0.7493,
+        -15.7734
+      ],
+      "rotationY": -0.08726646,
+      "label": "Notes",
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          170.5,
+          -640.5,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          19.5,
+          -19.5,
+          29.5
+        ]
+      },
+      "width": 0.16,
+      "depth": 0.2
+    },
+    {
+      "id": "PROP_0142",
+      "type": "bottle",
+      "zone": "Z06",
+      "position": [
+        3.7465,
+        0.7493,
+        -16.0782
+      ],
+      "rotationY": 0.0,
+      "label": null,
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          170.5,
+          -640.5,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -23.0,
+          -7.5,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0143",
+      "type": "cable",
+      "zone": "Z06",
+      "position": [
+        4.5085,
+        0.7493,
+        -16.129
+      ],
+      "rotationY": -0.34906585,
+      "label": null,
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          170.5,
+          -640.5,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          7.0,
+          -5.5,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0144",
+      "type": "mug",
+      "zone": "Z06",
+      "position": [
+        4.9022,
+        0.7493,
+        -16.4465
+      ],
+      "rotationY": 0.26179939,
+      "label": null,
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          170.5,
+          -640.5,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          22.5,
+          7,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0145",
+      "type": "notebook",
+      "zone": "Z06",
+      "position": [
+        4.826,
+        0.7493,
+        -16.764
+      ],
+      "rotationY": 0.08726646,
+      "label": "Notes",
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          170.5,
+          -640.5,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          19.5,
+          19.5,
+          29.5
+        ]
+      },
+      "width": 0.16,
+      "depth": 0.2
+    },
+    {
+      "id": "PROP_0146",
+      "type": "bottle",
+      "zone": "Z06",
+      "position": [
+        3.7465,
+        0.7493,
+        -16.4592
+      ],
+      "rotationY": 0.0,
+      "label": null,
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          170.5,
+          -640.5,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -23.0,
+          7.5,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0147",
+      "type": "cable",
+      "zone": "Z06",
+      "position": [
+        4.5085,
+        0.7493,
+        -16.4084
+      ],
+      "rotationY": 0.34906585,
+      "label": null,
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          170.5,
+          -640.5,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          7.0,
+          5.5,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0148",
+      "type": "mug",
+      "zone": "Z06",
+      "position": [
+        6.2992,
+        0.7493,
+        -16.0909
+      ],
+      "rotationY": -0.26179939,
+      "label": null,
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          170.5,
+          -640.5,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          77.5,
+          -7,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0149",
+      "type": "notebook",
+      "zone": "Z06",
+      "position": [
+        6.223,
+        0.7493,
+        -15.7734
+      ],
+      "rotationY": -0.08726646,
+      "label": "Notes",
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          170.5,
+          -640.5,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          74.5,
+          -19.5,
+          29.5
+        ]
+      },
+      "width": 0.16,
+      "depth": 0.2
+    },
+    {
+      "id": "PROP_0150",
+      "type": "bottle",
+      "zone": "Z06",
+      "position": [
+        5.1435,
+        0.7493,
+        -16.0782
+      ],
+      "rotationY": 0.0,
+      "label": null,
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          170.5,
+          -640.5,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          32.0,
+          -7.5,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0151",
+      "type": "cable",
+      "zone": "Z06",
+      "position": [
+        5.9055,
+        0.7493,
+        -16.129
+      ],
+      "rotationY": -0.34906585,
+      "label": null,
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          170.5,
+          -640.5,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          62.0,
+          -5.5,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0152",
+      "type": "mug",
+      "zone": "Z06",
+      "position": [
+        6.2992,
+        0.7493,
+        -16.4465
+      ],
+      "rotationY": 0.26179939,
+      "label": null,
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          170.5,
+          -640.5,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          77.5,
+          7,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0153",
+      "type": "notebook",
+      "zone": "Z06",
+      "position": [
+        6.223,
+        0.7493,
+        -16.764
+      ],
+      "rotationY": 0.08726646,
+      "label": "Notes",
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          170.5,
+          -640.5,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          74.5,
+          19.5,
+          29.5
+        ]
+      },
+      "width": 0.16,
+      "depth": 0.2
+    },
+    {
+      "id": "PROP_0154",
+      "type": "bottle",
+      "zone": "Z06",
+      "position": [
+        5.1435,
+        0.7493,
+        -16.4592
+      ],
+      "rotationY": 0.0,
+      "label": null,
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          170.5,
+          -640.5,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          32.0,
+          7.5,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0155",
+      "type": "cable",
+      "zone": "Z06",
+      "position": [
+        5.9055,
+        0.7493,
+        -16.4084
+      ],
+      "rotationY": 0.34906585,
+      "label": null,
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          170.5,
+          -640.5,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          62.0,
+          5.5,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0156",
+      "type": "mug",
+      "zone": "Z06",
+      "position": [
+        3.5052,
+        0.7493,
+        -12.1412
+      ],
+      "rotationY": -0.26179939,
+      "label": null,
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          170.5,
+          -485,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -32.5,
+          -7,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0157",
+      "type": "notebook",
+      "zone": "Z06",
+      "position": [
+        3.429,
+        0.7493,
+        -11.8237
+      ],
+      "rotationY": -0.08726646,
+      "label": "Notes",
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          170.5,
+          -485,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -35.5,
+          -19.5,
+          29.5
+        ]
+      },
+      "width": 0.16,
+      "depth": 0.2
+    },
+    {
+      "id": "PROP_0158",
+      "type": "bottle",
+      "zone": "Z06",
+      "position": [
+        2.3495,
+        0.7493,
+        -12.1285
+      ],
+      "rotationY": 0.0,
+      "label": null,
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          170.5,
+          -485,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -78.0,
+          -7.5,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0159",
+      "type": "cable",
+      "zone": "Z06",
+      "position": [
+        3.1115,
+        0.7493,
+        -12.1793
+      ],
+      "rotationY": -0.34906585,
+      "label": null,
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          170.5,
+          -485,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -48.0,
+          -5.5,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0160",
+      "type": "mug",
+      "zone": "Z06",
+      "position": [
+        3.5052,
+        0.7493,
+        -12.4968
+      ],
+      "rotationY": 0.26179939,
+      "label": null,
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          170.5,
+          -485,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -32.5,
+          7,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0161",
+      "type": "notebook",
+      "zone": "Z06",
+      "position": [
+        3.429,
+        0.7493,
+        -12.8143
+      ],
+      "rotationY": 0.08726646,
+      "label": "Notes",
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          170.5,
+          -485,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -35.5,
+          19.5,
+          29.5
+        ]
+      },
+      "width": 0.16,
+      "depth": 0.2
+    },
+    {
+      "id": "PROP_0162",
+      "type": "bottle",
+      "zone": "Z06",
+      "position": [
+        2.3495,
+        0.7493,
+        -12.5095
+      ],
+      "rotationY": 0.0,
+      "label": null,
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          170.5,
+          -485,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -78.0,
+          7.5,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0163",
+      "type": "cable",
+      "zone": "Z06",
+      "position": [
+        3.1115,
+        0.7493,
+        -12.4587
+      ],
+      "rotationY": 0.34906585,
+      "label": null,
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          170.5,
+          -485,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -48.0,
+          5.5,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0164",
+      "type": "mug",
+      "zone": "Z06",
+      "position": [
+        4.9022,
+        0.7493,
+        -12.1412
+      ],
+      "rotationY": -0.26179939,
+      "label": null,
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          170.5,
+          -485,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          22.5,
+          -7,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0165",
+      "type": "notebook",
+      "zone": "Z06",
+      "position": [
+        4.826,
+        0.7493,
+        -11.8237
+      ],
+      "rotationY": -0.08726646,
+      "label": "Notes",
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          170.5,
+          -485,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          19.5,
+          -19.5,
+          29.5
+        ]
+      },
+      "width": 0.16,
+      "depth": 0.2
+    },
+    {
+      "id": "PROP_0166",
+      "type": "bottle",
+      "zone": "Z06",
+      "position": [
+        3.7465,
+        0.7493,
+        -12.1285
+      ],
+      "rotationY": 0.0,
+      "label": null,
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          170.5,
+          -485,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -23.0,
+          -7.5,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0167",
+      "type": "cable",
+      "zone": "Z06",
+      "position": [
+        4.5085,
+        0.7493,
+        -12.1793
+      ],
+      "rotationY": -0.34906585,
+      "label": null,
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          170.5,
+          -485,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          7.0,
+          -5.5,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0168",
+      "type": "mug",
+      "zone": "Z06",
+      "position": [
+        4.9022,
+        0.7493,
+        -12.4968
+      ],
+      "rotationY": 0.26179939,
+      "label": null,
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          170.5,
+          -485,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          22.5,
+          7,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0169",
+      "type": "notebook",
+      "zone": "Z06",
+      "position": [
+        4.826,
+        0.7493,
+        -12.8143
+      ],
+      "rotationY": 0.08726646,
+      "label": "Notes",
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          170.5,
+          -485,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          19.5,
+          19.5,
+          29.5
+        ]
+      },
+      "width": 0.16,
+      "depth": 0.2
+    },
+    {
+      "id": "PROP_0170",
+      "type": "bottle",
+      "zone": "Z06",
+      "position": [
+        3.7465,
+        0.7493,
+        -12.5095
+      ],
+      "rotationY": 0.0,
+      "label": null,
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          170.5,
+          -485,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -23.0,
+          7.5,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0171",
+      "type": "cable",
+      "zone": "Z06",
+      "position": [
+        4.5085,
+        0.7493,
+        -12.4587
+      ],
+      "rotationY": 0.34906585,
+      "label": null,
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          170.5,
+          -485,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          7.0,
+          5.5,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0172",
+      "type": "mug",
+      "zone": "Z06",
+      "position": [
+        6.2992,
+        0.7493,
+        -12.1412
+      ],
+      "rotationY": -0.26179939,
+      "label": null,
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          170.5,
+          -485,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          77.5,
+          -7,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0173",
+      "type": "notebook",
+      "zone": "Z06",
+      "position": [
+        6.223,
+        0.7493,
+        -11.8237
+      ],
+      "rotationY": -0.08726646,
+      "label": "Notes",
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          170.5,
+          -485,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          74.5,
+          -19.5,
+          29.5
+        ]
+      },
+      "width": 0.16,
+      "depth": 0.2
+    },
+    {
+      "id": "PROP_0174",
+      "type": "bottle",
+      "zone": "Z06",
+      "position": [
+        5.1435,
+        0.7493,
+        -12.1285
+      ],
+      "rotationY": 0.0,
+      "label": null,
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          170.5,
+          -485,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          32.0,
+          -7.5,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0175",
+      "type": "cable",
+      "zone": "Z06",
+      "position": [
+        5.9055,
+        0.7493,
+        -12.1793
+      ],
+      "rotationY": -0.34906585,
+      "label": null,
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          170.5,
+          -485,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          62.0,
+          -5.5,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0176",
+      "type": "mug",
+      "zone": "Z06",
+      "position": [
+        6.2992,
+        0.7493,
+        -12.4968
+      ],
+      "rotationY": 0.26179939,
+      "label": null,
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          170.5,
+          -485,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          77.5,
+          7,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0177",
+      "type": "notebook",
+      "zone": "Z06",
+      "position": [
+        6.223,
+        0.7493,
+        -12.8143
+      ],
+      "rotationY": 0.08726646,
+      "label": "Notes",
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          170.5,
+          -485,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          74.5,
+          19.5,
+          29.5
+        ]
+      },
+      "width": 0.16,
+      "depth": 0.2
+    },
+    {
+      "id": "PROP_0178",
+      "type": "bottle",
+      "zone": "Z06",
+      "position": [
+        5.1435,
+        0.7493,
+        -12.5095
+      ],
+      "rotationY": 0.0,
+      "label": null,
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          170.5,
+          -485,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          32.0,
+          7.5,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0179",
+      "type": "cable",
+      "zone": "Z06",
+      "position": [
+        5.9055,
+        0.7493,
+        -12.4587
+      ],
+      "rotationY": 0.34906585,
+      "label": null,
+      "support": {
+        "asset": "bench3",
+        "origin_plan_inches": [
+          170.5,
+          -485,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          62.0,
+          5.5,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0180",
+      "type": "notebook",
+      "zone": "Z06",
+      "position": [
+        3.8227,
+        0.7493,
+        -8.18515
+      ],
+      "rotationY": -0.10471976,
+      "label": "Notes",
+      "support": {
+        "asset": "desk_single",
+        "origin_plan_inches": [
+          175,
+          -330,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -24.5,
+          -7.75,
+          29.5
+        ]
+      },
+      "width": 0.18,
+      "depth": 0.22
+    },
+    {
+      "id": "PROP_0181",
+      "type": "mug",
+      "zone": "Z06",
+      "position": [
+        5.1181,
+        0.7493,
+        -8.382
+      ],
+      "rotationY": 0.34906585,
+      "label": null,
+      "support": {
+        "asset": "desk_single",
+        "origin_plan_inches": [
+          175,
+          -330,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          26.5,
+          0,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0182",
+      "type": "tray",
+      "zone": "Z06",
+      "position": [
+        5.0165,
+        0.7493,
+        -8.62965
+      ],
+      "rotationY": 0.0,
+      "label": "Approvals",
+      "support": {
+        "asset": "desk_single",
+        "origin_plan_inches": [
+          175,
+          -330,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          22.5,
+          9.75,
+          29.5
+        ]
+      },
+      "width": 0.23,
+      "depth": 0.18
+    },
+    {
+      "id": "PROP_0183",
+      "type": "books",
+      "zone": "Z06",
+      "position": [
+        7.45744,
+        1.0922,
+        -6.1214
+      ],
+      "rotationY": 3.14159265,
+      "label": "Orders",
+      "support": {
+        "asset": "filing_120",
+        "origin_plan_inches": [
+          260,
+          -241,
+          0.0
+        ],
+        "source_rotation_deg": 180,
+        "local_inches": [
+          -33.6,
+          0,
+          43
+        ]
+      }
+    },
+    {
+      "id": "PROP_0184",
+      "type": "tray",
+      "zone": "Z06",
+      "position": [
+        5.842,
+        1.0922,
+        -6.1214
+      ],
+      "rotationY": 3.14159265,
+      "label": "Approvals",
+      "support": {
+        "asset": "filing_120",
+        "origin_plan_inches": [
+          260,
+          -241,
+          0.0
+        ],
+        "source_rotation_deg": 180,
+        "local_inches": [
+          30.0,
+          0,
+          43
+        ]
+      },
+      "width": 0.27,
+      "depth": 0.28
+    },
+    {
+      "id": "PROP_0185",
+      "type": "notebook",
+      "zone": "Z09",
+      "position": [
+        4.01828,
+        0.7493,
+        -20.51812
+      ],
+      "rotationY": 0.08726646,
+      "label": "Notes",
+      "support": {
+        "asset": "table_audit",
+        "origin_plan_inches": [
+          175,
+          -815,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -16.8,
+          -7.2,
+          29.5
+        ]
+      },
+      "width": 0.2,
+      "depth": 0.23
+    },
+    {
+      "id": "PROP_0186",
+      "type": "mug",
+      "zone": "Z09",
+      "position": [
+        4.01828,
+        0.7493,
+        -20.911312
+      ],
+      "rotationY": 0.0,
+      "label": null,
+      "support": {
+        "asset": "table_audit",
+        "origin_plan_inches": [
+          175,
+          -815,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -16.8,
+          8.280000000000001,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0187",
+      "type": "notebook",
+      "zone": "Z09",
+      "position": [
+        4.87172,
+        0.7493,
+        -20.51812
+      ],
+      "rotationY": 0.08726646,
+      "label": "Notes",
+      "support": {
+        "asset": "table_audit",
+        "origin_plan_inches": [
+          175,
+          -815,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          16.8,
+          -7.2,
+          29.5
+        ]
+      },
+      "width": 0.2,
+      "depth": 0.23
+    },
+    {
+      "id": "PROP_0188",
+      "type": "mug",
+      "zone": "Z09",
+      "position": [
+        4.87172,
+        0.7493,
+        -20.911312
+      ],
+      "rotationY": 0.0,
+      "label": null,
+      "support": {
+        "asset": "table_audit",
+        "origin_plan_inches": [
+          175,
+          -815,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          16.8,
+          8.280000000000001,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0189",
+      "type": "mug",
+      "zone": "Z05",
+      "position": [
+        6.223,
+        0.7493,
+        -3.8862
+      ],
+      "rotationY": -0.26179939,
+      "label": null,
+      "support": {
+        "asset": "bench2",
+        "origin_plan_inches": [
+          250,
+          -160,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -5.0,
+          -7,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0190",
+      "type": "notebook",
+      "zone": "Z05",
+      "position": [
+        6.1468,
+        0.7493,
+        -3.5687
+      ],
+      "rotationY": -0.08726646,
+      "label": "Notes",
+      "support": {
+        "asset": "bench2",
+        "origin_plan_inches": [
+          250,
+          -160,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -8.0,
+          -19.5,
+          29.5
+        ]
+      },
+      "width": 0.16,
+      "depth": 0.2
+    },
+    {
+      "id": "PROP_0191",
+      "type": "bottle",
+      "zone": "Z05",
+      "position": [
+        5.0673,
+        0.7493,
+        -3.8735
+      ],
+      "rotationY": 0.0,
+      "label": null,
+      "support": {
+        "asset": "bench2",
+        "origin_plan_inches": [
+          250,
+          -160,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -50.5,
+          -7.5,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0192",
+      "type": "cable",
+      "zone": "Z05",
+      "position": [
+        5.8293,
+        0.7493,
+        -3.9243
+      ],
+      "rotationY": -0.34906585,
+      "label": null,
+      "support": {
+        "asset": "bench2",
+        "origin_plan_inches": [
+          250,
+          -160,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -20.5,
+          -5.5,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0193",
+      "type": "mug",
+      "zone": "Z05",
+      "position": [
+        6.223,
+        0.7493,
+        -4.2418
+      ],
+      "rotationY": 0.26179939,
+      "label": null,
+      "support": {
+        "asset": "bench2",
+        "origin_plan_inches": [
+          250,
+          -160,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -5.0,
+          7,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0194",
+      "type": "notebook",
+      "zone": "Z05",
+      "position": [
+        6.1468,
+        0.7493,
+        -4.5593
+      ],
+      "rotationY": 0.08726646,
+      "label": "Notes",
+      "support": {
+        "asset": "bench2",
+        "origin_plan_inches": [
+          250,
+          -160,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -8.0,
+          19.5,
+          29.5
+        ]
+      },
+      "width": 0.16,
+      "depth": 0.2
+    },
+    {
+      "id": "PROP_0195",
+      "type": "bottle",
+      "zone": "Z05",
+      "position": [
+        5.0673,
+        0.7493,
+        -4.2545
+      ],
+      "rotationY": 0.0,
+      "label": null,
+      "support": {
+        "asset": "bench2",
+        "origin_plan_inches": [
+          250,
+          -160,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -50.5,
+          7.5,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0196",
+      "type": "cable",
+      "zone": "Z05",
+      "position": [
+        5.8293,
+        0.7493,
+        -4.2037
+      ],
+      "rotationY": 0.34906585,
+      "label": null,
+      "support": {
+        "asset": "bench2",
+        "origin_plan_inches": [
+          250,
+          -160,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -20.5,
+          5.5,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0197",
+      "type": "mug",
+      "zone": "Z05",
+      "position": [
+        7.62,
+        0.7493,
+        -3.8862
+      ],
+      "rotationY": -0.26179939,
+      "label": null,
+      "support": {
+        "asset": "bench2",
+        "origin_plan_inches": [
+          250,
+          -160,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          50.0,
+          -7,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0198",
+      "type": "notebook",
+      "zone": "Z05",
+      "position": [
+        7.5438,
+        0.7493,
+        -3.5687
+      ],
+      "rotationY": -0.08726646,
+      "label": "Notes",
+      "support": {
+        "asset": "bench2",
+        "origin_plan_inches": [
+          250,
+          -160,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          47.0,
+          -19.5,
+          29.5
+        ]
+      },
+      "width": 0.16,
+      "depth": 0.2
+    },
+    {
+      "id": "PROP_0199",
+      "type": "bottle",
+      "zone": "Z05",
+      "position": [
+        6.4643,
+        0.7493,
+        -3.8735
+      ],
+      "rotationY": 0.0,
+      "label": null,
+      "support": {
+        "asset": "bench2",
+        "origin_plan_inches": [
+          250,
+          -160,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          4.5,
+          -7.5,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0200",
+      "type": "cable",
+      "zone": "Z05",
+      "position": [
+        7.2263,
+        0.7493,
+        -3.9243
+      ],
+      "rotationY": -0.34906585,
+      "label": null,
+      "support": {
+        "asset": "bench2",
+        "origin_plan_inches": [
+          250,
+          -160,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          34.5,
+          -5.5,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0201",
+      "type": "mug",
+      "zone": "Z05",
+      "position": [
+        7.62,
+        0.7493,
+        -4.2418
+      ],
+      "rotationY": 0.26179939,
+      "label": null,
+      "support": {
+        "asset": "bench2",
+        "origin_plan_inches": [
+          250,
+          -160,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          50.0,
+          7,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0202",
+      "type": "notebook",
+      "zone": "Z05",
+      "position": [
+        7.5438,
+        0.7493,
+        -4.5593
+      ],
+      "rotationY": 0.08726646,
+      "label": "Notes",
+      "support": {
+        "asset": "bench2",
+        "origin_plan_inches": [
+          250,
+          -160,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          47.0,
+          19.5,
+          29.5
+        ]
+      },
+      "width": 0.16,
+      "depth": 0.2
+    },
+    {
+      "id": "PROP_0203",
+      "type": "bottle",
+      "zone": "Z05",
+      "position": [
+        6.4643,
+        0.7493,
+        -4.2545
+      ],
+      "rotationY": 0.0,
+      "label": null,
+      "support": {
+        "asset": "bench2",
+        "origin_plan_inches": [
+          250,
+          -160,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          4.5,
+          7.5,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0204",
+      "type": "cable",
+      "zone": "Z05",
+      "position": [
+        7.2263,
+        0.7493,
+        -4.2037
+      ],
+      "rotationY": 0.34906585,
+      "label": null,
+      "support": {
+        "asset": "bench2",
+        "origin_plan_inches": [
+          250,
+          -160,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          34.5,
+          5.5,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0205",
+      "type": "notebook",
+      "zone": "Z05",
+      "position": [
+        7.470648,
+        0.7493,
+        -1.905
+      ],
+      "rotationY": 0.20943951,
+      "label": "Notes",
+      "support": {
+        "asset": "meet_round",
+        "origin_plan_inches": [
+          300,
+          -75,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -5.880000000000001,
+          0,
+          29.5
+        ]
+      },
+      "width": 0.21,
+      "depth": 0.22
+    },
+    {
+      "id": "PROP_0206",
+      "type": "teacup",
+      "zone": "Z05",
+      "position": [
+        7.854696,
+        0.7493,
+        -1.905
+      ],
+      "rotationY": 0.0,
+      "label": null,
+      "support": {
+        "asset": "meet_round",
+        "origin_plan_inches": [
+          300,
+          -75,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          9.24,
+          0,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0207",
+      "type": "books",
+      "zone": "Z05",
+      "position": [
+        6.270752,
+        1.0922,
+        -0.4826
+      ],
+      "rotationY": 3.14159265,
+      "label": "Reference",
+      "support": {
+        "asset": "filing_96",
+        "origin_plan_inches": [
+          220,
+          -19,
+          0.0
+        ],
+        "source_rotation_deg": 180,
+        "local_inches": [
+          -26.880000000000003,
+          0,
+          43
+        ]
+      }
+    },
+    {
+      "id": "PROP_0208",
+      "type": "tray",
+      "zone": "Z05",
+      "position": [
+        4.9784,
+        1.0922,
+        -0.4826
+      ],
+      "rotationY": 3.14159265,
+      "label": "Approvals",
+      "support": {
+        "asset": "filing_96",
+        "origin_plan_inches": [
+          220,
+          -19,
+          0.0
+        ],
+        "source_rotation_deg": 180,
+        "local_inches": [
+          24.0,
+          0,
+          43
+        ]
+      },
+      "width": 0.27,
+      "depth": 0.28
+    },
+    {
+      "id": "PROP_0209",
+      "type": "notebook",
+      "zone": "Z04",
+      "position": [
+        -0.343408,
+        0.7493,
+        -2.032
+      ],
+      "rotationY": 0.08726646,
+      "label": "Notes",
+      "support": {
+        "asset": "table_guest",
+        "origin_plan_inches": [
+          10,
+          -88,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -23.520000000000003,
+          -8.0,
+          29.5
+        ]
+      },
+      "width": 0.2,
+      "depth": 0.23
+    },
+    {
+      "id": "PROP_0210",
+      "type": "mug",
+      "zone": "Z04",
+      "position": [
+        -0.343408,
+        0.7493,
+        -2.46888
+      ],
+      "rotationY": 0.0,
+      "label": null,
+      "support": {
+        "asset": "table_guest",
+        "origin_plan_inches": [
+          10,
+          -88,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -23.520000000000003,
+          9.200000000000001,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0211",
+      "type": "notebook",
+      "zone": "Z04",
+      "position": [
+        0.851408,
+        0.7493,
+        -2.032
+      ],
+      "rotationY": 0.08726646,
+      "label": "Notes",
+      "support": {
+        "asset": "table_guest",
+        "origin_plan_inches": [
+          10,
+          -88,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          23.520000000000003,
+          -8.0,
+          29.5
+        ]
+      },
+      "width": 0.2,
+      "depth": 0.23
+    },
+    {
+      "id": "PROP_0212",
+      "type": "mug",
+      "zone": "Z04",
+      "position": [
+        0.851408,
+        0.7493,
+        -2.46888
+      ],
+      "rotationY": 0.0,
+      "label": null,
+      "support": {
+        "asset": "table_guest",
+        "origin_plan_inches": [
+          10,
+          -88,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          23.520000000000003,
+          9.200000000000001,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0213",
+      "type": "soap",
+      "zone": "Z34",
+      "position": [
+        0.635,
+        0.8636,
+        -18.32102
+      ],
+      "rotationY": 3.14159265,
+      "label": null,
+      "support": {
+        "asset": "wudu4",
+        "origin_plan_inches": [
+          -12,
+          -738,
+          0.0
+        ],
+        "source_rotation_deg": 180,
+        "local_inches": [
+          -37.0,
+          16.7,
+          34
+        ]
+      },
+      "depth": 0.03
+    },
+    {
+      "id": "PROP_0214",
+      "type": "soap",
+      "zone": "Z26",
+      "position": [
+        -1.2954,
+        0.8128,
+        -13.8049
+      ],
+      "rotationY": 1.57079633,
+      "label": null,
+      "support": {
+        "asset": "vanity2",
+        "origin_plan_inches": [
+          -44.5,
+          -570,
+          0.0
+        ],
+        "source_rotation_deg": 90,
+        "local_inches": [
+          -26.5,
+          6.5,
+          32
+        ]
+      }
+    },
+    {
+      "id": "PROP_0215",
+      "type": "towels",
+      "zone": "Z26",
+      "position": [
+        -1.1303,
+        0.8128,
+        -15.1511
+      ],
+      "rotationY": 1.57079633,
+      "label": null,
+      "support": {
+        "asset": "vanity2",
+        "origin_plan_inches": [
+          -44.5,
+          -570,
+          0.0
+        ],
+        "source_rotation_deg": 90,
+        "local_inches": [
+          26.5,
+          0,
+          32
+        ]
+      },
+      "width": 0.12,
+      "depth": 0.19
+    },
+    {
+      "id": "PROP_0216",
+      "type": "soap",
+      "zone": "Z27",
+      "position": [
+        -1.2954,
+        0.8128,
+        -6.1849
+      ],
+      "rotationY": 1.57079633,
+      "label": null,
+      "support": {
+        "asset": "vanity2",
+        "origin_plan_inches": [
+          -44.5,
+          -270,
+          0.0
+        ],
+        "source_rotation_deg": 90,
+        "local_inches": [
+          -26.5,
+          6.5,
+          32
+        ]
+      }
+    },
+    {
+      "id": "PROP_0217",
+      "type": "towels",
+      "zone": "Z27",
+      "position": [
+        -1.1303,
+        0.8128,
+        -7.5311
+      ],
+      "rotationY": 1.57079633,
+      "label": null,
+      "support": {
+        "asset": "vanity2",
+        "origin_plan_inches": [
+          -44.5,
+          -270,
+          0.0
+        ],
+        "source_rotation_deg": 90,
+        "local_inches": [
+          26.5,
+          0,
+          32
+        ]
+      },
+      "width": 0.12,
+      "depth": 0.19
+    },
+    {
+      "id": "PROP_0218",
+      "type": "soap",
+      "zone": "Z28",
+      "position": [
+        12.0904,
+        0.8128,
+        -3.6449
+      ],
+      "rotationY": 4.71238898,
+      "label": null,
+      "support": {
+        "asset": "vanity1",
+        "origin_plan_inches": [
+          471,
+          -132,
+          0.0
+        ],
+        "source_rotation_deg": 270,
+        "local_inches": [
+          -11.5,
+          5.0,
+          32
+        ]
+      }
+    },
+    {
+      "id": "PROP_0219",
+      "type": "towels",
+      "zone": "Z28",
+      "position": [
+        11.9634,
+        0.8128,
+        -3.0607
+      ],
+      "rotationY": 4.71238898,
+      "label": null,
+      "support": {
+        "asset": "vanity1",
+        "origin_plan_inches": [
+          471,
+          -132,
+          0.0
+        ],
+        "source_rotation_deg": 270,
+        "local_inches": [
+          11.5,
+          0,
+          32
+        ]
+      },
+      "width": 0.12,
+      "depth": 0.19
+    },
+    {
+      "id": "PROP_0220",
+      "type": "soap",
+      "zone": "Z28",
+      "position": [
+        12.0904,
+        0.8128,
+        -1.0033
+      ],
+      "rotationY": 4.71238898,
+      "label": null,
+      "support": {
+        "asset": "vanity1",
+        "origin_plan_inches": [
+          471,
+          -28,
+          0.0
+        ],
+        "source_rotation_deg": 270,
+        "local_inches": [
+          -11.5,
+          5.0,
+          32
+        ]
+      }
+    },
+    {
+      "id": "PROP_0221",
+      "type": "towels",
+      "zone": "Z28",
+      "position": [
+        11.9634,
+        0.8128,
+        -0.4191
+      ],
+      "rotationY": 4.71238898,
+      "label": null,
+      "support": {
+        "asset": "vanity1",
+        "origin_plan_inches": [
+          471,
+          -28,
+          0.0
+        ],
+        "source_rotation_deg": 270,
+        "local_inches": [
+          11.5,
+          0,
+          32
+        ]
+      },
+      "width": 0.12,
+      "depth": 0.19
+    },
+    {
+      "id": "PROP_0222",
+      "type": "soap",
+      "zone": "Z29",
+      "position": [
+        0.2159,
+        0.8128,
+        -5.5118
+      ],
+      "rotationY": 0.0,
+      "label": null,
+      "support": {
+        "asset": "vanity1",
+        "origin_plan_inches": [
+          20,
+          -212,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -11.5,
+          5.0,
+          32
+        ]
+      }
+    },
+    {
+      "id": "PROP_0223",
+      "type": "towels",
+      "zone": "Z29",
+      "position": [
+        0.8001,
+        0.8128,
+        -5.3848
+      ],
+      "rotationY": 0.0,
+      "label": null,
+      "support": {
+        "asset": "vanity1",
+        "origin_plan_inches": [
+          20,
+          -212,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          11.5,
+          0,
+          32
+        ]
+      },
+      "width": 0.12,
+      "depth": 0.19
+    },
+    {
+      "id": "PROP_0224",
+      "type": "notebook",
+      "zone": "Z14",
+      "position": [
+        22.8473,
+        0.7493,
+        -5.0927
+      ],
+      "rotationY": 1.46607657,
+      "label": "Notes",
+      "support": {
+        "asset": "cad_desk",
+        "origin_plan_inches": [
+          891.75,
+          -225,
+          0.0
+        ],
+        "source_rotation_deg": 90,
+        "local_inches": [
+          -24.5,
+          -7.75,
+          29.5
+        ]
+      },
+      "width": 0.18,
+      "depth": 0.22
+    },
+    {
+      "id": "PROP_0225",
+      "type": "mug",
+      "zone": "Z14",
+      "position": [
+        22.65045,
+        0.7493,
+        -6.3881
+      ],
+      "rotationY": 1.91986218,
+      "label": null,
+      "support": {
+        "asset": "cad_desk",
+        "origin_plan_inches": [
+          891.75,
+          -225,
+          0.0
+        ],
+        "source_rotation_deg": 90,
+        "local_inches": [
+          26.5,
+          0,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0226",
+      "type": "tray",
+      "zone": "Z14",
+      "position": [
+        22.4028,
+        0.7493,
+        -6.2865
+      ],
+      "rotationY": 1.57079633,
+      "label": "Approvals",
+      "support": {
+        "asset": "cad_desk",
+        "origin_plan_inches": [
+          891.75,
+          -225,
+          0.0
+        ],
+        "source_rotation_deg": 90,
+        "local_inches": [
+          22.5,
+          9.75,
+          29.5
+        ]
+      },
+      "width": 0.23,
+      "depth": 0.18
+    },
+    {
+      "id": "PROP_0227",
+      "type": "notebook",
+      "zone": "Z14",
+      "position": [
+        22.8473,
+        0.7493,
+        -3.3147
+      ],
+      "rotationY": 1.46607657,
+      "label": "Notes",
+      "support": {
+        "asset": "cad_desk",
+        "origin_plan_inches": [
+          891.75,
+          -155,
+          0.0
+        ],
+        "source_rotation_deg": 90,
+        "local_inches": [
+          -24.5,
+          -7.75,
+          29.5
+        ]
+      },
+      "width": 0.18,
+      "depth": 0.22
+    },
+    {
+      "id": "PROP_0228",
+      "type": "mug",
+      "zone": "Z14",
+      "position": [
+        22.65045,
+        0.7493,
+        -4.6101
+      ],
+      "rotationY": 1.91986218,
+      "label": null,
+      "support": {
+        "asset": "cad_desk",
+        "origin_plan_inches": [
+          891.75,
+          -155,
+          0.0
+        ],
+        "source_rotation_deg": 90,
+        "local_inches": [
+          26.5,
+          0,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0229",
+      "type": "tray",
+      "zone": "Z14",
+      "position": [
+        22.4028,
+        0.7493,
+        -4.5085
+      ],
+      "rotationY": 1.57079633,
+      "label": "Approvals",
+      "support": {
+        "asset": "cad_desk",
+        "origin_plan_inches": [
+          891.75,
+          -155,
+          0.0
+        ],
+        "source_rotation_deg": 90,
+        "local_inches": [
+          22.5,
+          9.75,
+          29.5
+        ]
+      },
+      "width": 0.23,
+      "depth": 0.18
+    },
+    {
+      "id": "PROP_0230",
+      "type": "notebook",
+      "zone": "Z14",
+      "position": [
+        22.8473,
+        0.7493,
+        -1.5367
+      ],
+      "rotationY": 1.46607657,
+      "label": "Notes",
+      "support": {
+        "asset": "cad_desk",
+        "origin_plan_inches": [
+          891.75,
+          -85,
+          0.0
+        ],
+        "source_rotation_deg": 90,
+        "local_inches": [
+          -24.5,
+          -7.75,
+          29.5
+        ]
+      },
+      "width": 0.18,
+      "depth": 0.22
+    },
+    {
+      "id": "PROP_0231",
+      "type": "mug",
+      "zone": "Z14",
+      "position": [
+        22.65045,
+        0.7493,
+        -2.8321
+      ],
+      "rotationY": 1.91986218,
+      "label": null,
+      "support": {
+        "asset": "cad_desk",
+        "origin_plan_inches": [
+          891.75,
+          -85,
+          0.0
+        ],
+        "source_rotation_deg": 90,
+        "local_inches": [
+          26.5,
+          0,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0232",
+      "type": "tray",
+      "zone": "Z14",
+      "position": [
+        22.4028,
+        0.7493,
+        -2.7305
+      ],
+      "rotationY": 1.57079633,
+      "label": "Approvals",
+      "support": {
+        "asset": "cad_desk",
+        "origin_plan_inches": [
+          891.75,
+          -85,
+          0.0
+        ],
+        "source_rotation_deg": 90,
+        "local_inches": [
+          22.5,
+          9.75,
+          29.5
+        ]
+      },
+      "width": 0.23,
+      "depth": 0.18
+    },
+    {
+      "id": "PROP_0233",
+      "type": "cuttingmat",
+      "zone": "Z14",
+      "position": [
+        25.180544,
+        0.9144,
+        -3.556
+      ],
+      "rotationY": 0.0,
+      "label": null,
+      "support": {
+        "asset": "table_layout",
+        "origin_plan_inches": [
+          1000,
+          -140,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -8.64,
+          0,
+          36
+        ]
+      },
+      "width": 0.9144,
+      "depth": 0.7315199999999998
+    },
+    {
+      "id": "PROP_0234",
+      "type": "patternroll",
+      "zone": "Z14",
+      "position": [
+        26.003504,
+        0.9144,
+        -3.556
+      ],
+      "rotationY": 1.57079633,
+      "label": null,
+      "support": {
+        "asset": "table_layout",
+        "origin_plan_inches": [
+          1000,
+          -140,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          23.76,
+          0,
+          36
+        ]
+      }
+    },
+    {
+      "id": "PROP_0235",
+      "type": "scissors",
+      "zone": "Z14",
+      "position": [
+        25.509728,
+        0.9184,
+        -3.409696
+      ],
+      "rotationY": 0.0,
+      "label": null,
+      "support": {
+        "asset": "table_layout",
+        "origin_plan_inches": [
+          1000,
+          -140,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          4.32,
+          -5.76,
+          36.15748031496063
+        ]
+      }
+    },
+    {
+      "id": "PROP_0236",
+      "type": "swatches",
+      "zone": "Z14",
+      "position": [
+        24.9428,
+        0.9184,
+        -3.653536
+      ],
+      "rotationY": 0.0,
+      "label": null,
+      "support": {
+        "asset": "table_layout",
+        "origin_plan_inches": [
+          1000,
+          -140,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -18.0,
+          3.84,
+          36.15748031496063
+        ]
+      }
+    },
+    {
+      "id": "PROP_0237",
+      "type": "books",
+      "zone": "Z14",
+      "position": [
+        26.1112,
+        0.9398,
+        -1.95072
+      ],
+      "rotationY": 4.71238898,
+      "label": "Reference",
+      "support": {
+        "asset": "plan_chest",
+        "origin_plan_inches": [
+          1028,
+          -60,
+          0.0
+        ],
+        "source_rotation_deg": 270,
+        "local_inches": [
+          -16.8,
+          0,
+          37
+        ]
+      }
+    },
+    {
+      "id": "PROP_0238",
+      "type": "tray",
+      "zone": "Z14",
+      "position": [
+        26.1112,
+        0.9398,
+        -1.143
+      ],
+      "rotationY": 4.71238898,
+      "label": "Approvals",
+      "support": {
+        "asset": "plan_chest",
+        "origin_plan_inches": [
+          1028,
+          -60,
+          0.0
+        ],
+        "source_rotation_deg": 270,
+        "local_inches": [
+          15.0,
+          0,
+          37
+        ]
+      },
+      "width": 0.27,
+      "depth": 0.28
+    },
+    {
+      "id": "PROP_0239",
+      "type": "swatches",
+      "zone": "Z15",
+      "position": [
+        23.7998,
+        0.9144,
+        -9.1186
+      ],
+      "rotationY": 0.0,
+      "label": null,
+      "support": {
+        "asset": "table_review",
+        "origin_plan_inches": [
+          960,
+          -352,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -23,
+          7,
+          36
+        ]
+      }
+    },
+    {
+      "id": "PROP_0240",
+      "type": "notebook",
+      "zone": "Z15",
+      "position": [
+        24.9428,
+        0.9144,
+        -9.0678
+      ],
+      "rotationY": 0.0,
+      "label": "Fabric approvals",
+      "support": {
+        "asset": "table_review",
+        "origin_plan_inches": [
+          960,
+          -352,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          22,
+          5,
+          36
+        ]
+      },
+      "width": 0.18,
+      "depth": 0.2
+    },
+    {
+      "id": "PROP_0241",
+      "type": "filamentspool",
+      "zone": "Z16",
+      "position": [
+        22.5552,
+        0.7874,
+        -12.573
+      ],
+      "rotationY": 1.57079633,
+      "label": null,
+      "support": {
+        "asset": "post_bench",
+        "origin_plan_inches": [
+          888,
+          -530,
+          0.0
+        ],
+        "source_rotation_deg": 90,
+        "local_inches": [
+          -35,
+          0,
+          31
+        ]
+      }
+    },
+    {
+      "id": "PROP_0242",
+      "type": "filamentspool",
+      "zone": "Z16",
+      "position": [
+        22.5552,
+        0.7874,
+        -13.1572
+      ],
+      "rotationY": 1.57079633,
+      "label": null,
+      "support": {
+        "asset": "post_bench",
+        "origin_plan_inches": [
+          888,
+          -530,
+          0.0
+        ],
+        "source_rotation_deg": 90,
+        "local_inches": [
+          -12,
+          0,
+          31
+        ]
+      }
+    },
+    {
+      "id": "PROP_0243",
+      "type": "filamentspool",
+      "zone": "Z16",
+      "position": [
+        22.5552,
+        0.7874,
+        -13.7668
+      ],
+      "rotationY": 1.57079633,
+      "label": null,
+      "support": {
+        "asset": "post_bench",
+        "origin_plan_inches": [
+          888,
+          -530,
+          0.0
+        ],
+        "source_rotation_deg": 90,
+        "local_inches": [
+          12,
+          0,
+          31
+        ]
+      }
+    },
+    {
+      "id": "PROP_0244",
+      "type": "filamentspool",
+      "zone": "Z16",
+      "position": [
+        22.5552,
+        0.7874,
+        -14.351
+      ],
+      "rotationY": 1.57079633,
+      "label": null,
+      "support": {
+        "asset": "post_bench",
+        "origin_plan_inches": [
+          888,
+          -530,
+          0.0
+        ],
+        "source_rotation_deg": 90,
+        "local_inches": [
+          35,
+          0,
+          31
+        ]
+      }
+    },
+    {
+      "id": "PROP_0245",
+      "type": "notebook",
+      "zone": "Z16",
+      "position": [
+        25.3873,
+        0.7493,
+        -12.13485
+      ],
+      "rotationY": 3.0368729,
+      "label": "Notes",
+      "support": {
+        "asset": "desk_single",
+        "origin_plan_inches": [
+          975,
+          -470,
+          0.0
+        ],
+        "source_rotation_deg": 180,
+        "local_inches": [
+          -24.5,
+          -7.75,
+          29.5
+        ]
+      },
+      "width": 0.18,
+      "depth": 0.22
+    },
+    {
+      "id": "PROP_0246",
+      "type": "mug",
+      "zone": "Z16",
+      "position": [
+        24.0919,
+        0.7493,
+        -11.938
+      ],
+      "rotationY": 3.4906585,
+      "label": null,
+      "support": {
+        "asset": "desk_single",
+        "origin_plan_inches": [
+          975,
+          -470,
+          0.0
+        ],
+        "source_rotation_deg": 180,
+        "local_inches": [
+          26.5,
+          0,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0247",
+      "type": "tray",
+      "zone": "Z16",
+      "position": [
+        24.1935,
+        0.7493,
+        -11.69035
+      ],
+      "rotationY": 3.14159265,
+      "label": "Approvals",
+      "support": {
+        "asset": "desk_single",
+        "origin_plan_inches": [
+          975,
+          -470,
+          0.0
+        ],
+        "source_rotation_deg": 180,
+        "local_inches": [
+          22.5,
+          9.75,
+          29.5
+        ]
+      },
+      "width": 0.23,
+      "depth": 0.18
+    },
+    {
+      "id": "PROP_0248",
+      "type": "cuttingmat",
+      "zone": "Z17",
+      "position": [
+        25.527,
+        0.9144,
+        -19.011392
+      ],
+      "rotationY": 1.57079633,
+      "label": null,
+      "support": {
+        "asset": "table_pattern",
+        "origin_plan_inches": [
+          1005,
+          -760,
+          0.0
+        ],
+        "source_rotation_deg": 90,
+        "local_inches": [
+          -11.52,
+          0,
+          36
+        ]
+      },
+      "width": 1.2191999999999998,
+      "depth": 0.7315199999999998
+    },
+    {
+      "id": "PROP_0249",
+      "type": "patternroll",
+      "zone": "Z17",
+      "position": [
+        25.527,
+        0.9144,
+        -20.108672
+      ],
+      "rotationY": 3.14159265,
+      "label": null,
+      "support": {
+        "asset": "table_pattern",
+        "origin_plan_inches": [
+          1005,
+          -760,
+          0.0
+        ],
+        "source_rotation_deg": 90,
+        "local_inches": [
+          31.68,
+          0,
+          36
+        ]
+      }
+    },
+    {
+      "id": "PROP_0250",
+      "type": "scissors",
+      "zone": "Z17",
+      "position": [
+        25.673304,
+        0.9184,
+        -19.450304
+      ],
+      "rotationY": 1.57079633,
+      "label": null,
+      "support": {
+        "asset": "table_pattern",
+        "origin_plan_inches": [
+          1005,
+          -760,
+          0.0
+        ],
+        "source_rotation_deg": 90,
+        "local_inches": [
+          5.76,
+          -5.76,
+          36.15748031496063
+        ]
+      }
+    },
+    {
+      "id": "PROP_0251",
+      "type": "swatches",
+      "zone": "Z17",
+      "position": [
+        25.429464,
+        0.9184,
+        -18.6944
+      ],
+      "rotationY": 1.57079633,
+      "label": null,
+      "support": {
+        "asset": "table_pattern",
+        "origin_plan_inches": [
+          1005,
+          -760,
+          0.0
+        ],
+        "source_rotation_deg": 90,
+        "local_inches": [
+          -24.0,
+          3.84,
+          36.15748031496063
+        ]
+      }
+    },
+    {
+      "id": "PROP_0252",
+      "type": "mug",
+      "zone": "Z18",
+      "position": [
+        31.6992,
+        0.7493,
+        -28.2702
+      ],
+      "rotationY": -0.26179939,
+      "label": null,
+      "support": {
+        "asset": "bench_design",
+        "origin_plan_inches": [
+          1253,
+          -1120,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -5.0,
+          -7,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0253",
+      "type": "notebook",
+      "zone": "Z18",
+      "position": [
+        31.623,
+        0.7493,
+        -27.8511
+      ],
+      "rotationY": -0.08726646,
+      "label": "Notes",
+      "support": {
+        "asset": "bench_design",
+        "origin_plan_inches": [
+          1253,
+          -1120,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -8.0,
+          -23.5,
+          29.5
+        ]
+      },
+      "width": 0.16,
+      "depth": 0.2
+    },
+    {
+      "id": "PROP_0254",
+      "type": "bottle",
+      "zone": "Z18",
+      "position": [
+        30.3403,
+        0.7493,
+        -28.2575
+      ],
+      "rotationY": 0.0,
+      "label": null,
+      "support": {
+        "asset": "bench_design",
+        "origin_plan_inches": [
+          1253,
+          -1120,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -58.5,
+          -7.5,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0255",
+      "type": "cable",
+      "zone": "Z18",
+      "position": [
+        31.2039,
+        0.7493,
+        -28.3083
+      ],
+      "rotationY": -0.34906585,
+      "label": null,
+      "support": {
+        "asset": "bench_design",
+        "origin_plan_inches": [
+          1253,
+          -1120,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -24.5,
+          -5.5,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0256",
+      "type": "mug",
+      "zone": "Z18",
+      "position": [
+        31.6992,
+        0.7493,
+        -28.6258
+      ],
+      "rotationY": 0.26179939,
+      "label": null,
+      "support": {
+        "asset": "bench_design",
+        "origin_plan_inches": [
+          1253,
+          -1120,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -5.0,
+          7,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0257",
+      "type": "notebook",
+      "zone": "Z18",
+      "position": [
+        31.623,
+        0.7493,
+        -29.0449
+      ],
+      "rotationY": 0.08726646,
+      "label": "Notes",
+      "support": {
+        "asset": "bench_design",
+        "origin_plan_inches": [
+          1253,
+          -1120,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -8.0,
+          23.5,
+          29.5
+        ]
+      },
+      "width": 0.16,
+      "depth": 0.2
+    },
+    {
+      "id": "PROP_0258",
+      "type": "bottle",
+      "zone": "Z18",
+      "position": [
+        30.3403,
+        0.7493,
+        -28.6385
+      ],
+      "rotationY": 0.0,
+      "label": null,
+      "support": {
+        "asset": "bench_design",
+        "origin_plan_inches": [
+          1253,
+          -1120,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -58.5,
+          7.5,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0259",
+      "type": "cable",
+      "zone": "Z18",
+      "position": [
+        31.2039,
+        0.7493,
+        -28.5877
+      ],
+      "rotationY": 0.34906585,
+      "label": null,
+      "support": {
+        "asset": "bench_design",
+        "origin_plan_inches": [
+          1253,
+          -1120,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -24.5,
+          5.5,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0260",
+      "type": "mug",
+      "zone": "Z18",
+      "position": [
+        33.2994,
+        0.7493,
+        -28.2702
+      ],
+      "rotationY": -0.26179939,
+      "label": null,
+      "support": {
+        "asset": "bench_design",
+        "origin_plan_inches": [
+          1253,
+          -1120,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          58.0,
+          -7,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0261",
+      "type": "notebook",
+      "zone": "Z18",
+      "position": [
+        33.2232,
+        0.7493,
+        -27.8511
+      ],
+      "rotationY": -0.08726646,
+      "label": "Notes",
+      "support": {
+        "asset": "bench_design",
+        "origin_plan_inches": [
+          1253,
+          -1120,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          55.0,
+          -23.5,
+          29.5
+        ]
+      },
+      "width": 0.16,
+      "depth": 0.2
+    },
+    {
+      "id": "PROP_0262",
+      "type": "bottle",
+      "zone": "Z18",
+      "position": [
+        31.9405,
+        0.7493,
+        -28.2575
+      ],
+      "rotationY": 0.0,
+      "label": null,
+      "support": {
+        "asset": "bench_design",
+        "origin_plan_inches": [
+          1253,
+          -1120,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          4.5,
+          -7.5,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0263",
+      "type": "cable",
+      "zone": "Z18",
+      "position": [
+        32.8041,
+        0.7493,
+        -28.3083
+      ],
+      "rotationY": -0.34906585,
+      "label": null,
+      "support": {
+        "asset": "bench_design",
+        "origin_plan_inches": [
+          1253,
+          -1120,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          38.5,
+          -5.5,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0264",
+      "type": "mug",
+      "zone": "Z18",
+      "position": [
+        33.2994,
+        0.7493,
+        -28.6258
+      ],
+      "rotationY": 0.26179939,
+      "label": null,
+      "support": {
+        "asset": "bench_design",
+        "origin_plan_inches": [
+          1253,
+          -1120,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          58.0,
+          7,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0265",
+      "type": "notebook",
+      "zone": "Z18",
+      "position": [
+        33.2232,
+        0.7493,
+        -29.0449
+      ],
+      "rotationY": 0.08726646,
+      "label": "Notes",
+      "support": {
+        "asset": "bench_design",
+        "origin_plan_inches": [
+          1253,
+          -1120,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          55.0,
+          23.5,
+          29.5
+        ]
+      },
+      "width": 0.16,
+      "depth": 0.2
+    },
+    {
+      "id": "PROP_0266",
+      "type": "bottle",
+      "zone": "Z18",
+      "position": [
+        31.9405,
+        0.7493,
+        -28.6385
+      ],
+      "rotationY": 0.0,
+      "label": null,
+      "support": {
+        "asset": "bench_design",
+        "origin_plan_inches": [
+          1253,
+          -1120,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          4.5,
+          7.5,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0267",
+      "type": "cable",
+      "zone": "Z18",
+      "position": [
+        32.8041,
+        0.7493,
+        -28.5877
+      ],
+      "rotationY": 0.34906585,
+      "label": null,
+      "support": {
+        "asset": "bench_design",
+        "origin_plan_inches": [
+          1253,
+          -1120,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          38.5,
+          5.5,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0268",
+      "type": "mug",
+      "zone": "Z18",
+      "position": [
+        31.6992,
+        0.7493,
+        -24.2062
+      ],
+      "rotationY": -0.26179939,
+      "label": null,
+      "support": {
+        "asset": "bench_design",
+        "origin_plan_inches": [
+          1253,
+          -960,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -5.0,
+          -7,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0269",
+      "type": "notebook",
+      "zone": "Z18",
+      "position": [
+        31.623,
+        0.7493,
+        -23.7871
+      ],
+      "rotationY": -0.08726646,
+      "label": "Notes",
+      "support": {
+        "asset": "bench_design",
+        "origin_plan_inches": [
+          1253,
+          -960,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -8.0,
+          -23.5,
+          29.5
+        ]
+      },
+      "width": 0.16,
+      "depth": 0.2
+    },
+    {
+      "id": "PROP_0270",
+      "type": "bottle",
+      "zone": "Z18",
+      "position": [
+        30.3403,
+        0.7493,
+        -24.1935
+      ],
+      "rotationY": 0.0,
+      "label": null,
+      "support": {
+        "asset": "bench_design",
+        "origin_plan_inches": [
+          1253,
+          -960,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -58.5,
+          -7.5,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0271",
+      "type": "cable",
+      "zone": "Z18",
+      "position": [
+        31.2039,
+        0.7493,
+        -24.2443
+      ],
+      "rotationY": -0.34906585,
+      "label": null,
+      "support": {
+        "asset": "bench_design",
+        "origin_plan_inches": [
+          1253,
+          -960,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -24.5,
+          -5.5,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0272",
+      "type": "mug",
+      "zone": "Z18",
+      "position": [
+        31.6992,
+        0.7493,
+        -24.5618
+      ],
+      "rotationY": 0.26179939,
+      "label": null,
+      "support": {
+        "asset": "bench_design",
+        "origin_plan_inches": [
+          1253,
+          -960,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -5.0,
+          7,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0273",
+      "type": "notebook",
+      "zone": "Z18",
+      "position": [
+        31.623,
+        0.7493,
+        -24.9809
+      ],
+      "rotationY": 0.08726646,
+      "label": "Notes",
+      "support": {
+        "asset": "bench_design",
+        "origin_plan_inches": [
+          1253,
+          -960,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -8.0,
+          23.5,
+          29.5
+        ]
+      },
+      "width": 0.16,
+      "depth": 0.2
+    },
+    {
+      "id": "PROP_0274",
+      "type": "bottle",
+      "zone": "Z18",
+      "position": [
+        30.3403,
+        0.7493,
+        -24.5745
+      ],
+      "rotationY": 0.0,
+      "label": null,
+      "support": {
+        "asset": "bench_design",
+        "origin_plan_inches": [
+          1253,
+          -960,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -58.5,
+          7.5,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0275",
+      "type": "cable",
+      "zone": "Z18",
+      "position": [
+        31.2039,
+        0.7493,
+        -24.5237
+      ],
+      "rotationY": 0.34906585,
+      "label": null,
+      "support": {
+        "asset": "bench_design",
+        "origin_plan_inches": [
+          1253,
+          -960,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -24.5,
+          5.5,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0276",
+      "type": "mug",
+      "zone": "Z18",
+      "position": [
+        33.2994,
+        0.7493,
+        -24.2062
+      ],
+      "rotationY": -0.26179939,
+      "label": null,
+      "support": {
+        "asset": "bench_design",
+        "origin_plan_inches": [
+          1253,
+          -960,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          58.0,
+          -7,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0277",
+      "type": "notebook",
+      "zone": "Z18",
+      "position": [
+        33.2232,
+        0.7493,
+        -23.7871
+      ],
+      "rotationY": -0.08726646,
+      "label": "Notes",
+      "support": {
+        "asset": "bench_design",
+        "origin_plan_inches": [
+          1253,
+          -960,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          55.0,
+          -23.5,
+          29.5
+        ]
+      },
+      "width": 0.16,
+      "depth": 0.2
+    },
+    {
+      "id": "PROP_0278",
+      "type": "bottle",
+      "zone": "Z18",
+      "position": [
+        31.9405,
+        0.7493,
+        -24.1935
+      ],
+      "rotationY": 0.0,
+      "label": null,
+      "support": {
+        "asset": "bench_design",
+        "origin_plan_inches": [
+          1253,
+          -960,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          4.5,
+          -7.5,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0279",
+      "type": "cable",
+      "zone": "Z18",
+      "position": [
+        32.8041,
+        0.7493,
+        -24.2443
+      ],
+      "rotationY": -0.34906585,
+      "label": null,
+      "support": {
+        "asset": "bench_design",
+        "origin_plan_inches": [
+          1253,
+          -960,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          38.5,
+          -5.5,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0280",
+      "type": "mug",
+      "zone": "Z18",
+      "position": [
+        33.2994,
+        0.7493,
+        -24.5618
+      ],
+      "rotationY": 0.26179939,
+      "label": null,
+      "support": {
+        "asset": "bench_design",
+        "origin_plan_inches": [
+          1253,
+          -960,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          58.0,
+          7,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0281",
+      "type": "notebook",
+      "zone": "Z18",
+      "position": [
+        33.2232,
+        0.7493,
+        -24.9809
+      ],
+      "rotationY": 0.08726646,
+      "label": "Notes",
+      "support": {
+        "asset": "bench_design",
+        "origin_plan_inches": [
+          1253,
+          -960,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          55.0,
+          23.5,
+          29.5
+        ]
+      },
+      "width": 0.16,
+      "depth": 0.2
+    },
+    {
+      "id": "PROP_0282",
+      "type": "bottle",
+      "zone": "Z18",
+      "position": [
+        31.9405,
+        0.7493,
+        -24.5745
+      ],
+      "rotationY": 0.0,
+      "label": null,
+      "support": {
+        "asset": "bench_design",
+        "origin_plan_inches": [
+          1253,
+          -960,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          4.5,
+          7.5,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0283",
+      "type": "cable",
+      "zone": "Z18",
+      "position": [
+        32.8041,
+        0.7493,
+        -24.5237
+      ],
+      "rotationY": 0.34906585,
+      "label": null,
+      "support": {
+        "asset": "bench_design",
+        "origin_plan_inches": [
+          1253,
+          -960,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          38.5,
+          5.5,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0284",
+      "type": "cuttingmat",
+      "zone": "Z18",
+      "position": [
+        31.203392,
+        0.9144,
+        -20.32
+      ],
+      "rotationY": 0.0,
+      "label": null,
+      "support": {
+        "asset": "table_trend",
+        "origin_plan_inches": [
+          1240,
+          -800,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -11.52,
+          0,
+          36
+        ]
+      },
+      "width": 1.2191999999999998,
+      "depth": 0.64008
+    },
+    {
+      "id": "PROP_0285",
+      "type": "patternroll",
+      "zone": "Z18",
+      "position": [
+        32.300672,
+        0.9144,
+        -20.32
+      ],
+      "rotationY": 1.57079633,
+      "label": null,
+      "support": {
+        "asset": "table_trend",
+        "origin_plan_inches": [
+          1240,
+          -800,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          31.68,
+          0,
+          36
+        ]
+      }
+    },
+    {
+      "id": "PROP_0286",
+      "type": "scissors",
+      "zone": "Z18",
+      "position": [
+        31.642304,
+        0.9184,
+        -20.191984
+      ],
+      "rotationY": 0.0,
+      "label": null,
+      "support": {
+        "asset": "table_trend",
+        "origin_plan_inches": [
+          1240,
+          -800,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          5.76,
+          -5.04,
+          36.15748031496063
+        ]
+      }
+    },
+    {
+      "id": "PROP_0287",
+      "type": "swatches",
+      "zone": "Z18",
+      "position": [
+        30.8864,
+        0.9184,
+        -20.405344
+      ],
+      "rotationY": 0.0,
+      "label": null,
+      "support": {
+        "asset": "table_trend",
+        "origin_plan_inches": [
+          1240,
+          -800,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -24.0,
+          3.36,
+          36.15748031496063
+        ]
+      }
+    },
+    {
+      "id": "PROP_0288",
+      "type": "notebook",
+      "zone": "Z18",
+      "position": [
+        31.10484,
+        0.7493,
+        -15.91056
+      ],
+      "rotationY": 1.65806279,
+      "label": "Samples",
+      "support": {
+        "asset": "table_present",
+        "origin_plan_inches": [
+          1215,
+          -660,
+          0.0
+        ],
+        "source_rotation_deg": 90,
+        "local_inches": [
+          -33.6,
+          -9.600000000000001,
+          29.5
+        ]
+      },
+      "width": 0.2,
+      "depth": 0.23
+    },
+    {
+      "id": "PROP_0289",
+      "type": "mug",
+      "zone": "Z18",
+      "position": [
+        30.580584,
+        0.7493,
+        -15.91056
+      ],
+      "rotationY": 1.57079633,
+      "label": null,
+      "support": {
+        "asset": "table_present",
+        "origin_plan_inches": [
+          1215,
+          -660,
+          0.0
+        ],
+        "source_rotation_deg": 90,
+        "local_inches": [
+          -33.6,
+          11.040000000000001,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0290",
+      "type": "notebook",
+      "zone": "Z18",
+      "position": [
+        31.10484,
+        0.7493,
+        -17.61744
+      ],
+      "rotationY": 1.65806279,
+      "label": "Samples",
+      "support": {
+        "asset": "table_present",
+        "origin_plan_inches": [
+          1215,
+          -660,
+          0.0
+        ],
+        "source_rotation_deg": 90,
+        "local_inches": [
+          33.6,
+          -9.600000000000001,
+          29.5
+        ]
+      },
+      "width": 0.2,
+      "depth": 0.23
+    },
+    {
+      "id": "PROP_0291",
+      "type": "mug",
+      "zone": "Z18",
+      "position": [
+        30.580584,
+        0.7493,
+        -17.61744
+      ],
+      "rotationY": 1.57079633,
+      "label": null,
+      "support": {
+        "asset": "table_present",
+        "origin_plan_inches": [
+          1215,
+          -660,
+          0.0
+        ],
+        "source_rotation_deg": 90,
+        "local_inches": [
+          33.6,
+          11.040000000000001,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0292",
+      "type": "trimbox",
+      "zone": "Z19",
+      "position": [
+        29.3878,
+        2.1336,
+        -13.1064
+      ],
+      "rotationY": 0.0,
+      "label": "Trims - buttons",
+      "support": {
+        "asset": "shelf_store",
+        "origin_plan_inches": [
+          1157,
+          -516,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          0,
+          0,
+          84
+        ]
+      },
+      "width": 0.28,
+      "depth": 0.23
+    },
+    {
+      "id": "PROP_0293",
+      "type": "trimbox",
+      "zone": "Z19",
+      "position": [
+        32.6898,
+        2.1336,
+        -13.1064
+      ],
+      "rotationY": 0.0,
+      "label": "Trims - buttons",
+      "support": {
+        "asset": "shelf_store72",
+        "origin_plan_inches": [
+          1287,
+          -516,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          0,
+          0,
+          84
+        ]
+      },
+      "width": 0.28,
+      "depth": 0.23
+    },
+    {
+      "id": "PROP_0294",
+      "type": "trimbox",
+      "zone": "Z19",
+      "position": [
+        29.3878,
+        2.1336,
+        -11.3284
+      ],
+      "rotationY": 3.14159265,
+      "label": "Trims - buttons",
+      "support": {
+        "asset": "shelf_store",
+        "origin_plan_inches": [
+          1157,
+          -446,
+          0.0
+        ],
+        "source_rotation_deg": 180,
+        "local_inches": [
+          0,
+          0,
+          84
+        ]
+      },
+      "width": 0.28,
+      "depth": 0.23
+    },
+    {
+      "id": "PROP_0295",
+      "type": "trimbox",
+      "zone": "Z19",
+      "position": [
+        32.004,
+        2.1336,
+        -11.3284
+      ],
+      "rotationY": 3.14159265,
+      "label": "Trims - buttons",
+      "support": {
+        "asset": "shelf_store",
+        "origin_plan_inches": [
+          1260,
+          -446,
+          0.0
+        ],
+        "source_rotation_deg": 180,
+        "local_inches": [
+          0,
+          0,
+          84
+        ]
+      },
+      "width": 0.28,
+      "depth": 0.23
+    },
+    {
+      "id": "PROP_0296",
+      "type": "kettle",
+      "zone": "Z20",
+      "position": [
+        22.5679,
+        0.9017,
+        -28.2702
+      ],
+      "rotationY": 1.57079633,
+      "label": null,
+      "support": {
+        "asset": "pantry",
+        "origin_plan_inches": [
+          888.5,
+          -1150,
+          0.0
+        ],
+        "source_rotation_deg": 90,
+        "local_inches": [
+          -37,
+          0,
+          35.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0297",
+      "type": "canister",
+      "zone": "Z20",
+      "position": [
+        22.5171,
+        0.9017,
+        -28.6512
+      ],
+      "rotationY": 1.57079633,
+      "label": "Tea",
+      "support": {
+        "asset": "pantry",
+        "origin_plan_inches": [
+          888.5,
+          -1150,
+          0.0
+        ],
+        "source_rotation_deg": 90,
+        "local_inches": [
+          -22,
+          2,
+          35.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0298",
+      "type": "canister",
+      "zone": "Z20",
+      "position": [
+        22.5171,
+        0.9017,
+        -29.7688
+      ],
+      "rotationY": 1.57079633,
+      "label": "Sugar",
+      "support": {
+        "asset": "pantry",
+        "origin_plan_inches": [
+          888.5,
+          -1150,
+          0.0
+        ],
+        "source_rotation_deg": 90,
+        "local_inches": [
+          22,
+          2,
+          35.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0299",
+      "type": "teacup",
+      "zone": "Z20",
+      "position": [
+        22.6949,
+        0.9017,
+        -30.0482
+      ],
+      "rotationY": 1.57079633,
+      "label": null,
+      "support": {
+        "asset": "pantry",
+        "origin_plan_inches": [
+          888.5,
+          -1150,
+          0.0
+        ],
+        "source_rotation_deg": 90,
+        "local_inches": [
+          33,
+          -5,
+          35.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0300",
+      "type": "notebook",
+      "zone": "Z20",
+      "position": [
+        24.463248,
+        0.7493,
+        -29.53512
+      ],
+      "rotationY": 0.08726646,
+      "label": "Notes",
+      "support": {
+        "asset": "table_dining",
+        "origin_plan_inches": [
+          990,
+          -1170,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -26.880000000000003,
+          -7.2,
+          29.5
+        ]
+      },
+      "width": 0.2,
+      "depth": 0.23
+    },
+    {
+      "id": "PROP_0301",
+      "type": "mug",
+      "zone": "Z20",
+      "position": [
+        24.463248,
+        0.7493,
+        -29.928312
+      ],
+      "rotationY": 0.0,
+      "label": null,
+      "support": {
+        "asset": "table_dining",
+        "origin_plan_inches": [
+          990,
+          -1170,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -26.880000000000003,
+          8.280000000000001,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0302",
+      "type": "notebook",
+      "zone": "Z20",
+      "position": [
+        25.828752,
+        0.7493,
+        -29.53512
+      ],
+      "rotationY": 0.08726646,
+      "label": "Notes",
+      "support": {
+        "asset": "table_dining",
+        "origin_plan_inches": [
+          990,
+          -1170,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          26.880000000000003,
+          -7.2,
+          29.5
+        ]
+      },
+      "width": 0.2,
+      "depth": 0.23
+    },
+    {
+      "id": "PROP_0303",
+      "type": "mug",
+      "zone": "Z20",
+      "position": [
+        25.828752,
+        0.7493,
+        -29.928312
+      ],
+      "rotationY": 0.0,
+      "label": null,
+      "support": {
+        "asset": "table_dining",
+        "origin_plan_inches": [
+          990,
+          -1170,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          26.880000000000003,
+          8.280000000000001,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0304",
+      "type": "fruitbowl",
+      "zone": "Z20",
+      "position": [
+        25.146,
+        0.7493,
+        -29.718
+      ],
+      "rotationY": 0.0,
+      "label": null,
+      "support": {
+        "asset": "table_dining",
+        "origin_plan_inches": [
+          990,
+          -1170,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          0,
+          0,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0305",
+      "type": "notebook",
+      "zone": "Z20",
+      "position": [
+        24.463248,
+        0.7493,
+        -25.72512
+      ],
+      "rotationY": 0.08726646,
+      "label": "Notes",
+      "support": {
+        "asset": "table_dining",
+        "origin_plan_inches": [
+          990,
+          -1020,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -26.880000000000003,
+          -7.2,
+          29.5
+        ]
+      },
+      "width": 0.2,
+      "depth": 0.23
+    },
+    {
+      "id": "PROP_0306",
+      "type": "mug",
+      "zone": "Z20",
+      "position": [
+        24.463248,
+        0.7493,
+        -26.118312
+      ],
+      "rotationY": 0.0,
+      "label": null,
+      "support": {
+        "asset": "table_dining",
+        "origin_plan_inches": [
+          990,
+          -1020,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -26.880000000000003,
+          8.280000000000001,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0307",
+      "type": "notebook",
+      "zone": "Z20",
+      "position": [
+        25.828752,
+        0.7493,
+        -25.72512
+      ],
+      "rotationY": 0.08726646,
+      "label": "Notes",
+      "support": {
+        "asset": "table_dining",
+        "origin_plan_inches": [
+          990,
+          -1020,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          26.880000000000003,
+          -7.2,
+          29.5
+        ]
+      },
+      "width": 0.2,
+      "depth": 0.23
+    },
+    {
+      "id": "PROP_0308",
+      "type": "mug",
+      "zone": "Z20",
+      "position": [
+        25.828752,
+        0.7493,
+        -26.118312
+      ],
+      "rotationY": 0.0,
+      "label": null,
+      "support": {
+        "asset": "table_dining",
+        "origin_plan_inches": [
+          990,
+          -1020,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          26.880000000000003,
+          8.280000000000001,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0309",
+      "type": "fruitbowl",
+      "zone": "Z20",
+      "position": [
+        25.146,
+        0.7493,
+        -25.908
+      ],
+      "rotationY": 0.0,
+      "label": null,
+      "support": {
+        "asset": "table_dining",
+        "origin_plan_inches": [
+          990,
+          -1020,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          0,
+          0,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0310",
+      "type": "notebook",
+      "zone": "Z21",
+      "position": [
+        24.270208,
+        0.4064,
+        -37.5412
+      ],
+      "rotationY": 0.20943951,
+      "label": "Notes",
+      "support": {
+        "asset": "coffee_round",
+        "origin_plan_inches": [
+          960,
+          -1478,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -4.48,
+          0,
+          16
+        ]
+      },
+      "width": 0.21,
+      "depth": 0.22
+    },
+    {
+      "id": "PROP_0311",
+      "type": "teacup",
+      "zone": "Z21",
+      "position": [
+        24.562816,
+        0.4064,
+        -37.5412
+      ],
+      "rotationY": 0.0,
+      "label": null,
+      "support": {
+        "asset": "coffee_round",
+        "origin_plan_inches": [
+          960,
+          -1478,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          7.04,
+          0,
+          16
+        ]
+      }
+    },
+    {
+      "id": "PROP_0312",
+      "type": "notebook",
+      "zone": "Z21",
+      "position": [
+        24.082248,
+        0.7493,
+        -33.59912
+      ],
+      "rotationY": 0.08726646,
+      "label": "Notes",
+      "support": {
+        "asset": "table_training",
+        "origin_plan_inches": [
+          975,
+          -1330,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -26.880000000000003,
+          -7.2,
+          29.5
+        ]
+      },
+      "width": 0.2,
+      "depth": 0.23
+    },
+    {
+      "id": "PROP_0313",
+      "type": "mug",
+      "zone": "Z21",
+      "position": [
+        24.082248,
+        0.7493,
+        -33.992312
+      ],
+      "rotationY": 0.0,
+      "label": null,
+      "support": {
+        "asset": "table_training",
+        "origin_plan_inches": [
+          975,
+          -1330,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          -26.880000000000003,
+          8.280000000000001,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0314",
+      "type": "notebook",
+      "zone": "Z21",
+      "position": [
+        25.447752,
+        0.7493,
+        -33.59912
+      ],
+      "rotationY": 0.08726646,
+      "label": "Notes",
+      "support": {
+        "asset": "table_training",
+        "origin_plan_inches": [
+          975,
+          -1330,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          26.880000000000003,
+          -7.2,
+          29.5
+        ]
+      },
+      "width": 0.2,
+      "depth": 0.23
+    },
+    {
+      "id": "PROP_0315",
+      "type": "mug",
+      "zone": "Z21",
+      "position": [
+        25.447752,
+        0.7493,
+        -33.992312
+      ],
+      "rotationY": 0.0,
+      "label": null,
+      "support": {
+        "asset": "table_training",
+        "origin_plan_inches": [
+          975,
+          -1330,
+          0.0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          26.880000000000003,
+          8.280000000000001,
+          29.5
+        ]
+      }
+    },
+    {
+      "id": "PROP_0316",
+      "type": "shoes",
+      "zone": "Z23",
+      "position": [
+        29.6164,
+        0.762,
+        -33.4518
+      ],
+      "rotationY": 1.57079633,
+      "label": null,
+      "support": {
+        "asset": "shoe_rack",
+        "origin_plan_inches": [
+          1166,
+          -1325,
+          0.0
+        ],
+        "source_rotation_deg": 90,
+        "local_inches": [
+          -8,
+          0,
+          30
+        ]
+      }
+    },
+    {
+      "id": "PROP_0317",
+      "type": "foldedmats",
+      "zone": "Z23",
+      "position": [
+        29.6164,
+        0.762,
+        -33.8836
+      ],
+      "rotationY": 1.57079633,
+      "label": null,
+      "support": {
+        "asset": "shoe_rack",
+        "origin_plan_inches": [
+          1166,
+          -1325,
+          0.0
+        ],
+        "source_rotation_deg": 90,
+        "local_inches": [
+          9,
+          0,
+          30
+        ]
+      }
+    },
+    {
+      "id": "PROP_0318",
+      "type": "soap",
+      "zone": "Z24",
+      "position": [
+        32.9438,
+        0.8636,
+        -30.89402
+      ],
+      "rotationY": 3.14159265,
+      "label": null,
+      "support": {
+        "asset": "wudu5",
+        "origin_plan_inches": [
+          1240,
+          -1233,
+          0.0
+        ],
+        "source_rotation_deg": 180,
+        "local_inches": [
+          -57.0,
+          16.7,
+          34
+        ]
+      },
+      "depth": 0.03
+    },
+    {
+      "id": "PROP_0319",
+      "type": "prayermat",
+      "zone": "Z23",
+      "position": [
+        30.48,
+        0.01016,
+        -35.052
+      ],
+      "rotationY": 0.0,
+      "label": null,
+      "support": {
+        "asset": "approved_floor",
+        "origin_plan_inches": [
+          1200,
+          -1380,
+          0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          0,
+          0,
+          0.4
+        ]
+      },
+      "width": 0.6,
+      "depth": 1.08
+    },
+    {
+      "id": "PROP_0320",
+      "type": "prayermat",
+      "zone": "Z23",
+      "position": [
+        31.75,
+        0.01016,
+        -35.052
+      ],
+      "rotationY": 0.0,
+      "label": null,
+      "support": {
+        "asset": "approved_floor",
+        "origin_plan_inches": [
+          1250,
+          -1380,
+          0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          0,
+          0,
+          0.4
+        ]
+      },
+      "width": 0.6,
+      "depth": 1.08
+    },
+    {
+      "id": "PROP_0321",
+      "type": "prayermat",
+      "zone": "Z23",
+      "position": [
+        33.02,
+        0.01016,
+        -35.052
+      ],
+      "rotationY": 0.0,
+      "label": null,
+      "support": {
+        "asset": "approved_floor",
+        "origin_plan_inches": [
+          1300,
+          -1380,
+          0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          0,
+          0,
+          0.4
+        ]
+      },
+      "width": 0.6,
+      "depth": 1.08
+    },
+    {
+      "id": "PROP_0322",
+      "type": "prayermat",
+      "zone": "Z25",
+      "position": [
+        -0.6858,
+        0.01016,
+        -21.1836
+      ],
+      "rotationY": 0.0,
+      "label": null,
+      "support": {
+        "asset": "approved_floor",
+        "origin_plan_inches": [
+          -27,
+          -834,
+          0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          0,
+          0,
+          0.4
+        ]
+      },
+      "width": 0.6,
+      "depth": 1.08
+    },
+    {
+      "id": "PROP_0323",
+      "type": "prayermat",
+      "zone": "Z25",
+      "position": [
+        0.3556,
+        0.01016,
+        -21.1836
+      ],
+      "rotationY": 0.0,
+      "label": null,
+      "support": {
+        "asset": "approved_floor",
+        "origin_plan_inches": [
+          14,
+          -834,
+          0
+        ],
+        "source_rotation_deg": 0,
+        "local_inches": [
+          0,
+          0,
+          0.4
+        ]
+      },
+      "width": 0.6,
+      "depth": 1.08
+    },
+    {
+      "id": "PROP_0324",
+      "type": "sewingcloth",
+      "zone": "Z17",
+      "position": [
+        22.86,
+        0.8255,
+        -19.558
+      ],
+      "rotationY": 1.57079633,
+      "label": null,
+      "support": {
+        "asset": "sewing",
+        "origin_plan_inches": [
+          900,
+          -770,
+          0.0
+        ],
+        "source_rotation_deg": 90,
+        "local_inches": [
+          0,
+          0,
+          32.5
+        ]
+      },
+      "width": 0.36,
+      "depth": 0.11,
+      "thickness": 0.0012
+    }
+  ],
+  "room_coverage": [
+    {
+      "zone": "Z01",
+      "name": "ENTRANCE LOBBY security + visitor check-in",
+      "additional_props": 2,
+      "treatment": "Add surface-anchored everyday objects",
+      "existing_placement_count": 5
+    },
+    {
+      "zone": "Z02",
+      "name": "RECEPTION + VISITOR WAITING",
+      "additional_props": 8,
+      "treatment": "Add surface-anchored everyday objects",
+      "existing_placement_count": 11
+    },
+    {
+      "zone": "Z03",
+      "name": "VISITOR PASSAGE",
+      "additional_props": 0,
+      "treatment": "Retain approved corridor signs, fittings and clear walking route; no unapproved wall fixtures or floor clutter",
+      "existing_placement_count": 0
+    },
+    {
+      "zone": "Z30",
+      "name": "EXPERIENCE CENTRE brand story + collection gallery",
+      "additional_props": 7,
+      "treatment": "Add surface-anchored everyday objects",
+      "existing_placement_count": 14
+    },
+    {
+      "zone": "Z08",
+      "name": "BOARDROOM 15 seats",
+      "additional_props": 24,
+      "treatment": "Add surface-anchored everyday objects",
+      "existing_placement_count": 20
+    },
+    {
+      "zone": "Z09",
+      "name": "AUDIT ROOM",
+      "additional_props": 4,
+      "treatment": "Add surface-anchored everyday objects",
+      "existing_placement_count": 7
+    },
+    {
+      "zone": "Z10",
+      "name": "EXECUTIVE RECEPTION PA + waiting",
+      "additional_props": 4,
+      "treatment": "Add surface-anchored everyday objects",
+      "existing_placement_count": 6
+    },
+    {
+      "zone": "Z11",
+      "name": "DIRECTOR",
+      "additional_props": 4,
+      "treatment": "Add surface-anchored everyday objects",
+      "existing_placement_count": 6
+    },
+    {
+      "zone": "Z12",
+      "name": "MANAGING DIRECTOR",
+      "additional_props": 6,
+      "treatment": "Add surface-anchored everyday objects",
+      "existing_placement_count": 10
+    },
+    {
+      "zone": "Z13",
+      "name": "EXECUTIVE CORRIDOR",
+      "additional_props": 0,
+      "treatment": "Retain approved corridor signs, fittings and clear walking route; no unapproved wall fixtures or floor clutter",
+      "existing_placement_count": 0
+    },
+    {
+      "zone": "Z04",
+      "name": "GUEST WORKSPACE 6 seats",
+      "additional_props": 4,
+      "treatment": "Add surface-anchored everyday objects",
+      "existing_placement_count": 9
+    },
+    {
+      "zone": "Z05",
+      "name": "HR & ADMIN",
+      "additional_props": 20,
+      "treatment": "Add surface-anchored everyday objects",
+      "existing_placement_count": 11
+    },
+    {
+      "zone": "Z31",
+      "name": "STAFF CORRIDOR",
+      "additional_props": 0,
+      "treatment": "Retain approved corridor signs, fittings and clear walking route; no unapproved wall fixtures or floor clutter",
+      "existing_placement_count": 0
+    },
+    {
+      "zone": "Z06",
+      "name": "COMMERCIAL & ACCOUNTS 12 workstations + manager",
+      "additional_props": 53,
+      "treatment": "Add surface-anchored everyday objects",
+      "existing_placement_count": 22
+    },
+    {
+      "zone": "Z07",
+      "name": "MERCHANDISING open office, 16 workstations",
+      "additional_props": 76,
+      "treatment": "Add surface-anchored everyday objects",
+      "existing_placement_count": 37
+    },
+    {
+      "zone": "Z14",
+      "name": "CAD / TECHNICAL DESIGN",
+      "additional_props": 15,
+      "treatment": "Add surface-anchored everyday objects",
+      "existing_placement_count": 11
+    },
+    {
+      "zone": "Z15",
+      "name": "FABRIC & TRIM LIBRARY fabric, colour, print, trims",
+      "additional_props": 2,
+      "treatment": "Add surface-anchored everyday objects",
+      "existing_placement_count": 7
+    },
+    {
+      "zone": "Z16",
+      "name": "3D PRINTING LAB",
+      "additional_props": 7,
+      "treatment": "Add surface-anchored everyday objects",
+      "existing_placement_count": 9
+    },
+    {
+      "zone": "Z17",
+      "name": "SAMPLE DEVELOPMENT pattern + cutting support",
+      "additional_props": 5,
+      "treatment": "Add surface-anchored everyday objects",
+      "existing_placement_count": 10
+    },
+    {
+      "zone": "Z18",
+      "name": "GLOBAL DESIGN STUDIO (name as proposed in the master plan)",
+      "additional_props": 40,
+      "treatment": "Add surface-anchored everyday objects",
+      "existing_placement_count": 30
+    },
+    {
+      "zone": "Z19",
+      "name": "SAMPLE & MATERIAL STORE",
+      "additional_props": 4,
+      "treatment": "Add surface-anchored everyday objects",
+      "existing_placement_count": 4
+    },
+    {
+      "zone": "Z20",
+      "name": "STAFF CAFE + PANTRY",
+      "additional_props": 14,
+      "treatment": "Add surface-anchored everyday objects",
+      "existing_placement_count": 22
+    },
+    {
+      "zone": "Z21",
+      "name": "STAFF LOUNGE / TRAINING (multipurpose)",
+      "additional_props": 6,
+      "treatment": "Add surface-anchored everyday objects",
+      "existing_placement_count": 14
+    },
+    {
+      "zone": "Z22",
+      "name": "CORRIDOR",
+      "additional_props": 0,
+      "treatment": "Retain approved corridor signs, fittings and clear walking route; no unapproved wall fixtures or floor clutter",
+      "existing_placement_count": 0
+    },
+    {
+      "zone": "Z32",
+      "name": "NORTH CORRIDOR",
+      "additional_props": 0,
+      "treatment": "Retain approved corridor signs, fittings and clear walking route; no unapproved wall fixtures or floor clutter",
+      "existing_placement_count": 0
+    },
+    {
+      "zone": "Z33",
+      "name": "HALLWAY",
+      "additional_props": 0,
+      "treatment": "Retain approved corridor signs, fittings and clear walking route; no unapproved wall fixtures or floor clutter",
+      "existing_placement_count": 0
+    },
+    {
+      "zone": "Z23",
+      "name": "PRAYER (MALE)",
+      "additional_props": 5,
+      "treatment": "Add surface-anchored everyday objects",
+      "existing_placement_count": 2
+    },
+    {
+      "zone": "Z24",
+      "name": "WUDU (MALE)",
+      "additional_props": 1,
+      "treatment": "Add surface-anchored everyday objects",
+      "existing_placement_count": 1
+    },
+    {
+      "zone": "Z25",
+      "name": "PRAYER (FEMALE)",
+      "additional_props": 2,
+      "treatment": "Add surface-anchored everyday objects",
+      "existing_placement_count": 2
+    },
+    {
+      "zone": "Z34",
+      "name": "WUDU (FEMALE)",
+      "additional_props": 1,
+      "treatment": "Add surface-anchored everyday objects",
+      "existing_placement_count": 1
+    },
+    {
+      "zone": "Z26",
+      "name": "WASHROOM (FEMALE)",
+      "additional_props": 2,
+      "treatment": "Add surface-anchored everyday objects",
+      "existing_placement_count": 5
+    },
+    {
+      "zone": "Z27",
+      "name": "WASHROOM (MALE)",
+      "additional_props": 2,
+      "treatment": "Add surface-anchored everyday objects",
+      "existing_placement_count": 7
+    },
+    {
+      "zone": "Z28",
+      "name": "GUEST WC (2)",
+      "additional_props": 4,
+      "treatment": "Add surface-anchored everyday objects",
+      "existing_placement_count": 4
+    },
+    {
+      "zone": "Z29",
+      "name": "GUEST WORKSPACE WC",
+      "additional_props": 2,
+      "treatment": "Add surface-anchored everyday objects",
+      "existing_placement_count": 2
+    }
+  ],
+  "limitations": [
+    "No source vertex/UV edits",
+    "Visual framing, prop/source component collisions and AO must be verified after integration",
+    "New props are not included in the Phase 1 atlas; use grounded AO or rebake before claiming baked prop contact shadows",
+    "Wall accessories, new sockets, switches and fire equipment deferred without source plan positions",
+    "Existing source shoe racks are solid cabinets; male top used, female additions omitted because source rack straddles room boundary",
+    "All surfaces use declared actual builder heights; floor finish top is 0.01016m, not zero"
+  ]
+}

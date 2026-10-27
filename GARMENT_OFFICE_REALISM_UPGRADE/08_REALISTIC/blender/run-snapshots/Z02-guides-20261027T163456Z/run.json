@@ -1,0 +1,8 @@
+{
+  "capture_method": "Immutable scripts captured before execution",
+  "purpose": "Deterministic same-atlas normal and actual diffuse-colour guides",
+  "scripts": {
+    "bake_rooms.py": "46445ee87123c91fb75c8dcd1c13ef5775edc2657b9c218b6e542e3974111a3c",
+    "denoise_lightmap.py": "0c787931ea0b3337ac4ecabeaa3a29d974065d2057198f41eae7f3f2914994ae"
+  }
+}

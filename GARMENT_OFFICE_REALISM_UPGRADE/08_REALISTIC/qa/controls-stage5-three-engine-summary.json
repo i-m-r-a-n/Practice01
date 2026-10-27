@@ -1,0 +1,68 @@
+{
+  "scope": "Actual UI click, W key/release, mouse-look and Escape in three Linux engines. Normal default spawn, no QA movement hooks. Diagnostic gates disable postprocessing/PBR/probes for input isolation.",
+  "results": [
+    {
+      "browser": "chromium",
+      "version": "154.0.8037.57",
+      "status": "passed",
+      "checks_passed": 7,
+      "checks_total": 7,
+      "pointer_lock_acquired": true,
+      "mouse_mode": "pointer lock",
+      "page_errors": [],
+      "console_errors": [],
+      "report": "controls-stage5-chromium-fixed/controls-report.json",
+      "sha256": "e73f494e41bdcf41fed0dab8bc0dda5d2e261c7b44bd1cc805d85c8a4b56381c",
+      "app_source": {
+        "url": "http://127.0.0.1:8783/realistic/app.js",
+        "status": 200,
+        "bytes": 914695,
+        "sha256": "338bc429a6ccd07d3bf6a06a08af0afd90c9a3a29fd21eb52b1c797506a479ad"
+      }
+    },
+    {
+      "browser": "firefox",
+      "version": "153.0",
+      "status": "passed",
+      "checks_passed": 7,
+      "checks_total": 7,
+      "pointer_lock_acquired": true,
+      "mouse_mode": "pointer lock",
+      "page_errors": [],
+      "console_errors": [],
+      "report": "controls-stage5-firefox/controls-report.json",
+      "sha256": "17633cfde1107f0f15599e0280b0f9440944e348423fb73d7b476cc9cced0e73",
+      "app_source": {
+        "url": "http://127.0.0.1:8783/realistic/app.js",
+        "status": 200,
+        "bytes": 915338,
+        "sha256": "0aed3f619e94c6bae3c96a5913c60b363142bc7cb37c8eca629b8157d96c6d7d"
+      }
+    },
+    {
+      "browser": "webkit",
+      "version": "26.5",
+      "status": "passed",
+      "checks_passed": 7,
+      "checks_total": 7,
+      "pointer_lock_acquired": false,
+      "mouse_mode": "drag fallback",
+      "page_errors": [],
+      "console_errors": [],
+      "report": "controls-stage5-webkit/controls-report.json",
+      "sha256": "e0e3fd12271072d148dc821f075fc1ddf3bef09998f60d054d7b299203d8e78b",
+      "app_source": {
+        "url": "http://127.0.0.1:8783/realistic/app.js",
+        "status": 200,
+        "bytes": 915338,
+        "sha256": "0aed3f619e94c6bae3c96a5913c60b363142bc7cb37c8eca629b8157d96c6d7d"
+      }
+    }
+  ],
+  "limits": [
+    "Not MacBook hardware or FPS testing.",
+    "WebKit used drag look; native Safari pointer lock remains unverified.",
+    "These reports check console/page errors; later final QA should additionally record internal __viewer.errors.",
+    "People-on state and final full-effects visual quality are not established here."
+  ]
+}

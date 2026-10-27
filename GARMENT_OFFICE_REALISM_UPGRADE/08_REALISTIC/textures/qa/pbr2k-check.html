@@ -1,0 +1,29 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Native 2K material codec verification</title>
+<script type="importmap">{"imports":{"three":"/GARMENT_OFFICE_WALKTHROUGH_FINAL/03_INTERACTIVE_3D/vendor/three/build/three.module.js"}}</script></head><body>
+<script type="module">
+import * as THREE from 'three';
+import {KTX2Loader} from '../codecs/three_r169/examples/jsm/loaders/KTX2Loader.js';
+window.result={complete:false,errors:[],textures:[]};
+try {
+ const renderer=new THREE.WebGLRenderer({antialias:false});renderer.setSize(64,64);renderer.outputColorSpace=THREE.LinearSRGBColorSpace;renderer.toneMapping=THREE.NoToneMapping;document.body.append(renderer.domElement);
+ const gl=renderer.getContext(),debug=gl.getExtension('WEBGL_debug_renderer_info');
+ const loader=new KTX2Loader().setTranscoderPath('../codecs/three_r169/examples/jsm/libs/basis/').setWorkerLimit(1).detectSupport(renderer);
+ const scene=new THREE.Scene(),camera=new THREE.OrthographicCamera(-1,1,1,-1,.1,10);camera.position.z=1;
+ const material=new THREE.ShaderMaterial({uniforms:{map:{value:null}},vertexShader:'varying vec2 v;void main(){v=uv;gl_Position=vec4(position.xy,0.,1.);}',fragmentShader:'precision highp float;uniform sampler2D map;varying vec2 v;void main(){gl_FragColor=vec4(texture2D(map,v).rgb,1.);}'});
+ scene.add(new THREE.Mesh(new THREE.PlaneGeometry(2,2),material));
+ const index=await (await fetch('../pbr2k/index.json')).json();
+ for(const [set,maps] of Object.entries(index))for(const [role,entry] of Object.entries(maps)){
+  const texture=await loader.loadAsync('../pbr2k/'+entry.file);
+  if(texture.image.width!==2048||texture.image.height!==2048)throw new Error('Not genuine2K: '+set+'/'+role);
+  if(texture.colorSpace!==(role==='basecolor'?THREE.SRGBColorSpace:THREE.NoColorSpace))throw new Error('Wrongcolorspace: '+set+'/'+role);
+  material.uniforms.map.value=texture;renderer.render(scene,camera);
+  const pixel=new Uint8Array(4);gl.readPixels(32,32,1,1,gl.RGBA,gl.UNSIGNED_BYTE,pixel);
+  if(gl.getError()!==gl.NO_ERROR)throw new Error('WebGLupload/renderfailure: '+set+'/'+role);
+  window.result.textures.push({set,role,width:texture.image.width,height:texture.image.height,mips:texture.mipmaps.length,colorSpace:texture.colorSpace,gpuFormat:texture.format,pixel:Array.from(pixel)});
+  texture.dispose();
+ }
+ const expected=Object.values(index).reduce((sum,maps)=>sum+Object.keys(maps).length,0);
+ Object.assign(window.result,{complete:true,pass:expected>0&&window.result.textures.length===expected,expectedTextures:expected,three:THREE.REVISION,renderer:debug?gl.getParameter(debug.UNMASKED_RENDERER_WEBGL):gl.getParameter(gl.RENDERER),scope:'Texture decode, colorspace and actual GPU upload/render only. Not a material appearance, Mac, Safari or performance test.'});
+ loader.dispose();renderer.dispose();
+}catch(error){window.result.complete=true;window.result.pass=false;window.result.errors.push(String(error));console.error(error);}
+</script></body></html>

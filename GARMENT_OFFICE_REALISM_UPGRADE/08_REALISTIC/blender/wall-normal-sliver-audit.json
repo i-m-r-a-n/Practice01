@@ -1,0 +1,70 @@
+{
+  "scope": "Measured cause of the4Kshared-wall maximum-normal warning; not a general lighting acceptance.",
+  "objects": {
+    "PW02 Room 2 washroom, east": {
+      "count": 4,
+      "max": 180.0,
+      "examples": [
+        {
+          "point": [
+            1.2700004577636719,
+            3.9370007514953613,
+            0.0
+          ],
+          "before": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "after": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "beforeFaceArea_m2": 9.083747087856864e-09,
+          "afterFaceArea_m2": 0.0
+        },
+        {
+          "point": [
+            1.1937999725341797,
+            3.9370007514953613,
+            0.0
+          ],
+          "before": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "after": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "beforeFaceArea_m2": 9.083747087856864e-09,
+          "afterFaceArea_m2": 0.0
+        },
+        {
+          "point": [
+            1.1937999725341797,
+            3.9370007514953613,
+            0.0
+          ],
+          "before": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "after": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "beforeFaceArea_m2": 9.083747087856864e-09,
+          "afterFaceArea_m2": 0.0
+        }
+      ]
+    }
+  },
+  "finding": "Only4corners of one original Boolean sliver at PW02 floor level differ. Original facearea9.083747e-9m\u00b2 collapses to0 after float32 joining; this is0.0000364texel at63.33px/m, below representable atlas area. No other corner deviates over1degree.",
+  "action": "Resumed existing wall bake without restart; original report retained and exception documented."
+}

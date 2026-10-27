@@ -1,0 +1,56 @@
+{
+  "complete": true,
+  "errors": [],
+  "pass": true,
+  "three": "169",
+  "renderer": "Apple GPU",
+  "hdr": {
+    "type": 1016,
+    "colorSpace": "srgb-linear",
+    "width": 16,
+    "height": 16,
+    "first": [
+      0.125,
+      0.25,
+      0.5,
+      1
+    ],
+    "last": [
+      0.0010004043579101562,
+      0.01000213623046875,
+      0.0999755859375,
+      1
+    ],
+    "readback": [
+      64,
+      128,
+      255,
+      255
+    ],
+    "uvChannel": 1
+  },
+  "exrFirst": [
+    16,
+    32,
+    64,
+    1
+  ],
+  "orientationNote": "EXRLoader flips scanlines; KTX output preserves top-left EXR file rows for glTF UV1. Do not mix without adjusting the map transform.",
+  "normal": {
+    "format": 37808,
+    "colorSpace": "",
+    "width": 1024,
+    "height": 1024,
+    "mips": 11
+  },
+  "basecolor": {
+    "format": 36492,
+    "colorSpace": "srgb",
+    "width": 1024,
+    "height": 1024,
+    "mips": 11
+  },
+  "pageErrors": [],
+  "browser": "26.5",
+  "platformNote": "Playwright WebKit on Debian Linux with LIBGL_ALWAYS_SOFTWARE=1. Renderer string may be privacy-masked as Apple GPU; this is NOT an Apple GPU, macOS or native Safari test."
+}

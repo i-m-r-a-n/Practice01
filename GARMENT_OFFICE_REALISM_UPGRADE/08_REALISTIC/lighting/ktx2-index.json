@@ -1,0 +1,38 @@
+{
+  "Z02": {
+    "url": "Z02.ktx2",
+    "format": "ktx2",
+    "textureFormat": "RGBA16F",
+    "supercompression": "zstd",
+    "linear": true,
+    "channel": 1,
+    "mipLevels": 1,
+    "flipY": false,
+    "sourceRowOrder": "top-left",
+    "bytes": 15673981,
+    "gpuBytes": 33554432,
+    "sha256": "d954e72aa185783277408ff9341a9ffa3b57d3d4ad630f8dbbf5c20eaac8c63b",
+    "sourceEXR": "Z02.exr",
+    "sourceEXRSha256": "76f6919eaff3a08b9e2d26d77cb84ffa807a4820a7fb83d1f94baaccfdb0e415",
+    "sourceMax": 28.40625,
+    "decodedLevelBitExact": true
+  },
+  "Z30": {
+    "url": "Z30.ktx2",
+    "format": "ktx2",
+    "textureFormat": "RGBA16F",
+    "supercompression": "zstd",
+    "linear": true,
+    "channel": 1,
+    "mipLevels": 1,
+    "flipY": false,
+    "sourceRowOrder": "top-left",
+    "bytes": 15477757,
+    "gpuBytes": 33554432,
+    "sha256": "ef10e3582d3d71849fba6b9159eef0c7b9322bc948a61cf1cea4c700a37d4505",
+    "sourceEXR": "Z30.exr",
+    "sourceEXRSha256": "5bc21a42b7dcaed9e1075b27e62bc2fdd45ea767be18ba721e90e4722ad60538",
+    "sourceMax": 21.140625,
+    "decodedLevelBitExact": true
+  }
+}

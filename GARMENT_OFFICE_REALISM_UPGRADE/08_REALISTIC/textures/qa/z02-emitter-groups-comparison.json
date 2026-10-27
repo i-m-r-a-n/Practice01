@@ -1,0 +1,72 @@
+{
+  "scope": "Raw2K32 image comparison, prior joined target vs9 original emitter groups preserved. Union of nonzero raw atlas coverage includes padding and physical light gradients; total variance is not pure noise.",
+  "sources": [
+    {
+      "file": "/workspace/office-bake-work/explicit-uv-z02/Z02_raw.exr",
+      "sha256": "ee9d9da9261249e47b664679b1fd4843235dae23f2cf53104a089188580dbf58"
+    },
+    {
+      "file": "/workspace/office-bake-work/emitter-groups-z02/Z02_raw.exr",
+      "sha256": "bafc5c80d989ebe68595002aa90f40a8d08f52624c5c5b33de4de01652286de7"
+    }
+  ],
+  "prior": {
+    "mean": 0.4280189871788025,
+    "std": 0.7237514853477478,
+    "CV": 1.690933108329773,
+    "p50": 0.21373356878757477,
+    "p95": 1.4876047372817993,
+    "p99": 3.5457656383514404,
+    "max": 42.06500244140625
+  },
+  "emitterGroups": {
+    "mean": 0.4331210255622864,
+    "std": 0.738355815410614,
+    "CV": 1.7047332525253296,
+    "p50": 0.21417443454265594,
+    "p95": 1.5172051191329956,
+    "p99": 3.6613504886627197,
+    "max": 42.06500244140625
+  },
+  "meanAbsRGBDelta": 0.007952039130032063,
+  "globalLinearLuminanceCorrelation": 0.9699510586797804,
+  "changedChannelFraction": 0.11252450942993164,
+  "fourPixelErodedMaterialHighpassStats": [
+    {
+      "material": "steel_painted",
+      "interiorPixels": 17442,
+      "priorHighpassLogRMS": 0.12857747077941895,
+      "emitterGroupsHighpassLogRMS": 0.12858279049396515,
+      "ratio": 1.0000413736132308
+    },
+    {
+      "material": "fab_green",
+      "interiorPixels": 7319,
+      "priorHighpassLogRMS": 0.18589940667152405,
+      "emitterGroupsHighpassLogRMS": 0.18589891493320465,
+      "ratio": 0.9999973548150142
+    },
+    {
+      "material": "paint_white",
+      "interiorPixels": 53028,
+      "priorHighpassLogRMS": 0.163266122341156,
+      "emitterGroupsHighpassLogRMS": 0.16326658427715302,
+      "ratio": 1.0000028293438368
+    },
+    {
+      "material": "fl_terrazzo",
+      "interiorPixels": 219243,
+      "priorHighpassLogRMS": 0.18482686579227448,
+      "emitterGroupsHighpassLogRMS": 0.18483087420463562,
+      "ratio": 1.0000216873902177
+    },
+    {
+      "material": "fab_sand",
+      "interiorPixels": 18426,
+      "priorHighpassLogRMS": 0.1502237319946289,
+      "emitterGroupsHighpassLogRMS": 0.15022508800029755,
+      "ratio": 1.0000090265742345
+    }
+  ],
+  "highpassMethod": "log1p luminance minus Gaussian sigma2; four-pixel-eroded source UV1 material masks. This measures high-frequency content, which can include real lighting as well as noise."
+}

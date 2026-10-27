@@ -1,0 +1,132 @@
+{
+  "dressing": {
+    "enabled": true,
+    "props": {
+      "props": 323,
+      "instances": 1473,
+      "drawCalls": 49,
+      "triangles": 128786,
+      "atlasSize": [
+        2048,
+        2048
+      ],
+      "rooms": 28
+    },
+    "screens": {
+      "Z02": {
+        "touched": [
+          {
+            "mesh": "BM008_Room_3_secondary002_12",
+            "zone": "Z02",
+            "component": 0,
+            "vertices": 24,
+            "worldBounds": {
+              "min": [
+                12.758419752120972,
+                0.8889999389648438,
+                4.000499963760376
+              ],
+              "max": [
+                12.759689807891846,
+                1.2001500129699707,
+                4.533900022506714
+              ]
+            },
+            "content": "sheet"
+          },
+          {
+            "mesh": "BM008_Room_3_secondary002_12",
+            "zone": "Z02",
+            "component": 1,
+            "vertices": 24,
+            "worldBounds": {
+              "min": [
+                12.758419752120972,
+                0.8889999389648438,
+                3.289299964904785
+              ],
+              "max": [
+                12.759689807891846,
+                1.2001500129699707,
+                3.8226999640464783
+              ]
+            },
+            "content": "messages"
+          }
+        ],
+        "skipped": []
+      }
+    },
+    "peopleAccepted": false,
+    "errors": [],
+    "dynamicLighting": "Room SH for actors; instance SH for additive props; static lightmaps exclude both."
+  },
+  "probes": {
+    "rooms": {
+      "Z02": {
+        "state": "loaded",
+        "position": [
+          11.049,
+          1.2,
+          3.1369
+        ],
+        "box": [
+          [
+            7.747,
+            0,
+            0
+          ],
+          [
+            14.351,
+            2.8956,
+            6.2738
+          ]
+        ],
+        "captureCalls": 1412,
+        "captureTriangles": 10525108
+      }
+    },
+    "errors": [],
+    "captureResolution": 256,
+    "maxResident": 4,
+    "dynamicRoomIrradiance": true,
+    "capturing": null
+  },
+  "lighting": {
+    "phase": 1,
+    "manifest": "http://127.0.0.1:8783/realistic/lighting-v2/manifest.json",
+    "available": 1,
+    "loaded": [
+      "Z02"
+    ],
+    "requiredShared": [],
+    "rooms": {
+      "Z02": {
+        "state": "loaded",
+        "sourceObjects": 36,
+        "meshes": 37,
+        "triangles": 52769,
+        "intensity": 3.141592653589793,
+        "format": "ktx2",
+        "resolution": 2048,
+        "heroError": null
+      }
+    },
+    "error": null
+  },
+  "stats": {
+    "frame": 64,
+    "calls": 255,
+    "triangles": 1771094,
+    "points": 0,
+    "lines": 0,
+    "memory": {
+      "geometries": 228,
+      "textures": 83
+    },
+    "phase": 4,
+    "capturePostProcessing": false,
+    "post": null
+  },
+  "errors": []
+}

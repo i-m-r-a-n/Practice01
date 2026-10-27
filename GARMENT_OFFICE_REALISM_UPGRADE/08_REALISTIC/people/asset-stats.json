@@ -1,0 +1,54 @@
+{
+  "shirt": {
+    "LOD0": {
+      "vertices": 20264,
+      "triangles": 39732,
+      "drawMeshes": 5
+    },
+    "LOD1": {
+      "vertices": 7882,
+      "triangles": 15092,
+      "drawMeshes": 5
+    },
+    "bytes": 4411128
+  },
+  "panjabi": {
+    "LOD0": {
+      "vertices": 19852,
+      "triangles": 38314,
+      "drawMeshes": 6
+    },
+    "LOD1": {
+      "vertices": 7801,
+      "triangles": 14554,
+      "drawMeshes": 6
+    },
+    "bytes": 4099060
+  },
+  "salwar": {
+    "LOD0": {
+      "vertices": 22773,
+      "triangles": 42740,
+      "drawMeshes": 6
+    },
+    "LOD1": {
+      "vertices": 9179,
+      "triangles": 16237,
+      "drawMeshes": 6
+    },
+    "bytes": 5159776
+  },
+  "salwar_braid": {
+    "LOD0": {
+      "vertices": 23548,
+      "triangles": 42906,
+      "drawMeshes": 6
+    },
+    "LOD1": {
+      "vertices": 9609,
+      "triangles": 16300,
+      "drawMeshes": 6
+    },
+    "bytes": 4689540
+  }
+}

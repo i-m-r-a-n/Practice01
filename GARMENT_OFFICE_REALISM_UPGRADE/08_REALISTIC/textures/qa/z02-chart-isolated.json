@@ -1,0 +1,37 @@
+{
+  "purpose": "Diagnostic per-chart RTLightmap, not production acceptance",
+  "source": "/workspace/office-bake-work/explicit-uv-z02/Z02_raw.exr",
+  "sourceSHA256": "ee9d9da9261249e47b664679b1fd4843235dae23f2cf53104a089188580dbf58",
+  "geometry": "/workspace/office-bake-work/explicit-uv-z02/Z02.glb",
+  "geometrySHA256": "319d201d8e6282acae523640924281573b5082d19573c60c5759f984660e899a",
+  "filter": "RTLightmap",
+  "padding": 32,
+  "finalDilation": 16,
+  "stats": {
+    "triangles": 52769,
+    "connectedUVCharts": 2413,
+    "chartsWithPixels": 1992,
+    "crossChartPixelOverlap": 0,
+    "maskPixels": 887309,
+    "pixelCountPercentiles": {
+      "0": 1.0,
+      "10": 2.0,
+      "50": 32.0,
+      "90": 504.50000000000136,
+      "100": 114144.0
+    },
+    "chartsBelow8Pixels": 683,
+    "pixelsInChartsBelow8": 2550,
+    "maskBuildSeconds": 2.4569903359997625,
+    "chartsWithoutPixelCentres": 421
+  },
+  "inputUnchanged": true,
+  "scopeLimit": "Charts with1\u20137 pixel centres retain raw values. Charts without any pixel centres have no independent raster interior and may sample nearest-chart dilation; they require better UV allocation, not a denoising claim. No denoiser can recover missing spatial resolution. Pixel-centre rasterization does not certify UV uniqueness below pixel resolution.",
+  "output": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/textures/qa/z02-chart-isolated.exr",
+  "outputSHA256": "f4ac2c4c478141bf28470e69310e9ea1d585dd07a6a026a968890e7027bbc899",
+  "filteredCharts": 1309,
+  "rawPassthroughCharts": 683,
+  "outputMax": 52.15625,
+  "dilationPixels": 2920238,
+  "seconds": 14.408658877999642
+}

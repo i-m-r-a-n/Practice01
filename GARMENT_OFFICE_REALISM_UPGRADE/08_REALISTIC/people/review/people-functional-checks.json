@@ -1,0 +1,154 @@
+{
+  "checks": [
+    {
+      "name": "25\u201340 loaded fictional adults",
+      "pass": true,
+      "detail": {
+        "enabled": true,
+        "loaded": true,
+        "total": 35,
+        "visible": 26,
+        "walkers": 3,
+        "illustrative": true,
+        "forbiddenZoneViolations": 0,
+        "status": "asset/pose review required before integration",
+        "nativeMacPerformanceTested": false
+      }
+    },
+    {
+      "name": "Complete head/torso/legs/feet at 2m",
+      "pass": true,
+      "detail": {
+        "lod": "LOD0",
+        "materials": [
+          "Skin_CC0_MakeHuman.002",
+          "Shoes_CC0.002",
+          "Eyes_CC0.002",
+          "Hair_CC0.002",
+          "Garment_drape.002",
+          "Garment_trousers.003"
+        ]
+      }
+    },
+    {
+      "name": "Complete head/torso/legs/feet at 8.5m",
+      "pass": true,
+      "detail": {
+        "lod": "LOD1",
+        "materials": [
+          "Skin_CC0_MakeHuman.002",
+          "Shoes_CC0.002",
+          "Eyes_CC0.002",
+          "Hair_CC0.002",
+          "Garment_drape.002",
+          "Garment_trousers.003"
+        ]
+      }
+    },
+    {
+      "name": "Complete head/torso/legs/feet at 18m",
+      "pass": true,
+      "detail": {
+        "lod": "LOD1",
+        "materials": [
+          "Skin_CC0_MakeHuman.002",
+          "Shoes_CC0.002",
+          "Eyes_CC0.002",
+          "Hair_CC0.002",
+          "Garment_drape.002",
+          "Garment_trousers.003"
+        ]
+      }
+    },
+    {
+      "name": "office-person-33 moves on validated corridor route",
+      "pass": true,
+      "detail": {
+        "start": [
+          11.051,
+          0,
+          -22.0232
+        ],
+        "end": [
+          16.699,
+          0,
+          -22.0232
+        ]
+      }
+    },
+    {
+      "name": "office-person-34 moves on validated corridor route",
+      "pass": true,
+      "detail": {
+        "start": [
+          27.199,
+          0,
+          -11.7752
+        ],
+        "end": [
+          27.199,
+          0,
+          -16.4232
+        ]
+      }
+    },
+    {
+      "name": "office-person-35 moves on validated corridor route",
+      "pass": true,
+      "detail": {
+        "start": [
+          3.399,
+          0,
+          -0.8752
+        ],
+        "end": [
+          3.399,
+          0,
+          -3.1232
+        ]
+      }
+    },
+    {
+      "name": "No prayer/washroom occupants after motion",
+      "pass": true,
+      "detail": {}
+    },
+    {
+      "name": "Walker yields before visitor overlap",
+      "pass": true,
+      "detail": {
+        "minimumCentreDistance": 0.8173333333333304,
+        "combinedPhysicalRadius": 0.4
+      }
+    },
+    {
+      "name": "People on blocks visitor movement",
+      "pass": true,
+      "detail": {}
+    },
+    {
+      "name": "People off removes dynamic collision",
+      "pass": true,
+      "detail": {}
+    },
+    {
+      "name": "MD has generic phone attached",
+      "pass": true,
+      "detail": {}
+    }
+  ],
+  "allPassed": true,
+  "stats": {
+    "enabled": true,
+    "loaded": true,
+    "total": 35,
+    "visible": 0,
+    "walkers": 3,
+    "illustrative": true,
+    "forbiddenZoneViolations": 0,
+    "status": "asset/pose review required before integration",
+    "nativeMacPerformanceTested": false
+  },
+  "scope": "Chromium SwiftShader functional prototype checks; not native Mac FPS or photorealism certification",
+  "pageErrors": []
+}

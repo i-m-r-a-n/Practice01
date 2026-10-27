@@ -1,0 +1,2500 @@
+{
+  "coordinate_contract": {
+    "plan": "inches, x east, y south",
+    "blender": "[plan_x*.0254, -plan_y*.0254, height*.0254]",
+    "viewer": "[plan_x*.0254, height*.0254, plan_y*.0254]",
+    "local": "Builder local y is Blender north; local z vertical; facing rotation around Blender Z becomes viewer Y"
+  },
+  "source_locks": {
+    "GARMENT_OFFICE_FINAL_PRESENTATION/01_EDITABLE_3D/Final_Office_Interior.blend": "fa3ed3d58f6d44c3554e3761307841b96115ff7816e4e541c8e6611cb363810d",
+    "GARMENT_OFFICE_FINAL_PRESENTATION/01_EDITABLE_3D/Final_Office_Interior.glb": "3b883c0077541aa3c574c903cfad60a3b8ba410d12af6d6b476b7733230fc35d",
+    "GARMENT_OFFICE_WALKTHROUGH_FINAL/07_WEB_TOUR_ASSETS/office_web_metadata.json": "934c2e807eb9c203b3a8f8ac31b0166a20a36e22580342e868bc496a89d1bcc3",
+    "GARMENT_OFFICE_FINAL_PRESENTATION/01_EDITABLE_3D/scripts/office_layout.py": "831066f8f07875b02a06ed4b6afd6c77cfd26d4ecc0faca6ca7d0ad23444717b",
+    "GARMENT_OFFICE_FINAL_PRESENTATION/01_EDITABLE_3D/scripts/lib_assets.py": "713bf2135e6388dc553192d668fa9d16d549412cd7a45b61898c5b4c643652c8",
+    "GARMENT_OFFICE_FINAL_PRESENTATION/01_EDITABLE_3D/scripts/lib_materials.py": "8129438c75b7256d0ae94bf81f2a015589b79a247ed79a3878e320bbe982730d"
+  },
+  "texture_sets": [
+    {
+      "set": "Carpet003",
+      "licence": "CC0 1.0; existing assets/LICENSES.md",
+      "maps": [
+        {
+          "file": "GARMENT_OFFICE_FINAL_PRESENTATION/01_EDITABLE_3D/assets/textures/Carpet003/Carpet003_1K-JPG_Color.jpg",
+          "size": [
+            1024,
+            1024
+          ],
+          "mode": "RGB",
+          "bytes": 1123524,
+          "sha256": "06dd773cfc41d7a1f991833e5154f0436839c292960e168a6742176567505901"
+        },
+        {
+          "file": "GARMENT_OFFICE_FINAL_PRESENTATION/01_EDITABLE_3D/assets/textures/Carpet003/Carpet003_1K-JPG_NormalGL.jpg",
+          "size": [
+            1024,
+            1024
+          ],
+          "mode": "RGB",
+          "bytes": 2266684,
+          "sha256": "2078cec7e2c7bb4f5888870f23f273ea6e607955b6fa87ae9066e982b3a3dc89"
+        },
+        {
+          "file": "GARMENT_OFFICE_FINAL_PRESENTATION/01_EDITABLE_3D/assets/textures/Carpet003/Carpet003_1K-JPG_Roughness.jpg",
+          "size": [
+            1024,
+            1024
+          ],
+          "mode": "L",
+          "bytes": 520065,
+          "sha256": "c50a1ce6d842ef4bc869109b92c2ae287a05f5682529b0ec7c151f46f5a04374"
+        }
+      ]
+    },
+    {
+      "set": "Carpet004",
+      "licence": "CC0 1.0; existing assets/LICENSES.md",
+      "maps": [
+        {
+          "file": "GARMENT_OFFICE_FINAL_PRESENTATION/01_EDITABLE_3D/assets/textures/Carpet004/Carpet004_1K-JPG_Color.jpg",
+          "size": [
+            1024,
+            1024
+          ],
+          "mode": "RGB",
+          "bytes": 1163942,
+          "sha256": "098c8b2cf075b58f064921a22994c7278cba1f92fb83131a48b09aff8d4526ef"
+        },
+        {
+          "file": "GARMENT_OFFICE_FINAL_PRESENTATION/01_EDITABLE_3D/assets/textures/Carpet004/Carpet004_1K-JPG_NormalGL.jpg",
+          "size": [
+            1024,
+            1024
+          ],
+          "mode": "RGB",
+          "bytes": 2395003,
+          "sha256": "ab4643cd4e1943730e1e6aa06056ce46639452472ac3beb2bb0204e268ba4279"
+        },
+        {
+          "file": "GARMENT_OFFICE_FINAL_PRESENTATION/01_EDITABLE_3D/assets/textures/Carpet004/Carpet004_1K-JPG_Roughness.jpg",
+          "size": [
+            1024,
+            1024
+          ],
+          "mode": "L",
+          "bytes": 561589,
+          "sha256": "18bd38dd1fcf57a12b6dac107268ea34476398e66e12adcd14f9d1103ea6fad9"
+        }
+      ]
+    },
+    {
+      "set": "Fabric030",
+      "licence": "CC0 1.0; existing assets/LICENSES.md",
+      "maps": [
+        {
+          "file": "GARMENT_OFFICE_FINAL_PRESENTATION/01_EDITABLE_3D/assets/textures/Fabric030/Fabric030_1K-JPG_Color.jpg",
+          "size": [
+            1024,
+            1024
+          ],
+          "mode": "RGB",
+          "bytes": 1681447,
+          "sha256": "6388762708722de48cdbdfb4878b9ae6d8012de5948d564006067b629f0b84ef"
+        },
+        {
+          "file": "GARMENT_OFFICE_FINAL_PRESENTATION/01_EDITABLE_3D/assets/textures/Fabric030/Fabric030_1K-JPG_NormalGL.jpg",
+          "size": [
+            1024,
+            1024
+          ],
+          "mode": "RGB",
+          "bytes": 2682952,
+          "sha256": "c9a8f4ff15527af0b226b8a8840405f944c45a32c2e4462864d3b0136827e6e2"
+        },
+        {
+          "file": "GARMENT_OFFICE_FINAL_PRESENTATION/01_EDITABLE_3D/assets/textures/Fabric030/Fabric030_1K-JPG_Roughness.jpg",
+          "size": [
+            1024,
+            1024
+          ],
+          "mode": "L",
+          "bytes": 866950,
+          "sha256": "221bf708cb614b01ae83b856376fa79fff22dc249d8a397ab0f89dd3b7fe6da6"
+        }
+      ]
+    },
+    {
+      "set": "Fabric034",
+      "licence": "CC0 1.0; existing assets/LICENSES.md",
+      "maps": [
+        {
+          "file": "GARMENT_OFFICE_FINAL_PRESENTATION/01_EDITABLE_3D/assets/textures/Fabric034/Fabric034_1K-JPG_Color.jpg",
+          "size": [
+            1024,
+            1024
+          ],
+          "mode": "RGB",
+          "bytes": 1153031,
+          "sha256": "23d4da86236b98235a493d5ab9a79f0345d041fc721544fd5f148a76d96d1f01"
+        },
+        {
+          "file": "GARMENT_OFFICE_FINAL_PRESENTATION/01_EDITABLE_3D/assets/textures/Fabric034/Fabric034_1K-JPG_NormalGL.jpg",
+          "size": [
+            1024,
+            1024
+          ],
+          "mode": "RGB",
+          "bytes": 2096180,
+          "sha256": "2e8bcb8be56ff6f1f529ac0d9f798120210e54d98adc7e3d437904cf9287ce94"
+        },
+        {
+          "file": "GARMENT_OFFICE_FINAL_PRESENTATION/01_EDITABLE_3D/assets/textures/Fabric034/Fabric034_1K-JPG_Roughness.jpg",
+          "size": [
+            1024,
+            1024
+          ],
+          "mode": "L",
+          "bytes": 686699,
+          "sha256": "768c4d09770b4198a7525d406e30c3a4c1197846a14e4cd67132fa91c7065893"
+        }
+      ]
+    },
+    {
+      "set": "Fabric036",
+      "licence": "CC0 1.0; existing assets/LICENSES.md",
+      "maps": [
+        {
+          "file": "GARMENT_OFFICE_FINAL_PRESENTATION/01_EDITABLE_3D/assets/textures/Fabric036/Fabric036_1K-JPG_Color.jpg",
+          "size": [
+            1024,
+            1024
+          ],
+          "mode": "L",
+          "bytes": 628346,
+          "sha256": "d786e4a1c229f96f781667d062817e14fdbf2ffaba81d38f4fcc04c39a0062d4"
+        },
+        {
+          "file": "GARMENT_OFFICE_FINAL_PRESENTATION/01_EDITABLE_3D/assets/textures/Fabric036/Fabric036_1K-JPG_NormalGL.jpg",
+          "size": [
+            1024,
+            1024
+          ],
+          "mode": "RGB",
+          "bytes": 2521262,
+          "sha256": "b9c2153b5f78b8d1ee0529b5d8e3174fa25accb4131e425aa18b808efede4feb"
+        },
+        {
+          "file": "GARMENT_OFFICE_FINAL_PRESENTATION/01_EDITABLE_3D/assets/textures/Fabric036/Fabric036_1K-JPG_Roughness.jpg",
+          "size": [
+            1024,
+            1024
+          ],
+          "mode": "L",
+          "bytes": 710098,
+          "sha256": "9ad01f95163602e6ae63c4ced864edc9b8347936b51e3f49f89e64e868f995fd"
+        }
+      ]
+    },
+    {
+      "set": "Terrazzo019M",
+      "licence": "CC0 1.0; existing assets/LICENSES.md",
+      "maps": [
+        {
+          "file": "GARMENT_OFFICE_FINAL_PRESENTATION/01_EDITABLE_3D/assets/textures/Terrazzo019M/Terrazzo019M_1K-JPG_Color.jpg",
+          "size": [
+            1024,
+            1024
+          ],
+          "mode": "RGB",
+          "bytes": 1302013,
+          "sha256": "6a92b2eb2bcd0533cf0177005ecd7db567ff15974fd1b0bd4fc4070b41d2cac9"
+        },
+        {
+          "file": "GARMENT_OFFICE_FINAL_PRESENTATION/01_EDITABLE_3D/assets/textures/Terrazzo019M/Terrazzo019M_1K-JPG_NormalGL.jpg",
+          "size": [
+            1024,
+            1024
+          ],
+          "mode": "RGB",
+          "bytes": 524113,
+          "sha256": "ded1684ba029aafc82ec6be632cb544580209091934262f2c52a446ffa306521"
+        },
+        {
+          "file": "GARMENT_OFFICE_FINAL_PRESENTATION/01_EDITABLE_3D/assets/textures/Terrazzo019M/Terrazzo019M_1K-JPG_Roughness.jpg",
+          "size": [
+            1024,
+            1024
+          ],
+          "mode": "L",
+          "bytes": 553720,
+          "sha256": "565433e979ea38ba0e74207a2470cb11f3eaacd5e5ea6a510dda4206acfaa0ae"
+        }
+      ]
+    },
+    {
+      "set": "Tiles040",
+      "licence": "CC0 1.0; existing assets/LICENSES.md",
+      "maps": [
+        {
+          "file": "GARMENT_OFFICE_FINAL_PRESENTATION/01_EDITABLE_3D/assets/textures/Tiles040/Tiles040_1K-JPG_Color.jpg",
+          "size": [
+            1024,
+            1024
+          ],
+          "mode": "RGB",
+          "bytes": 1289504,
+          "sha256": "01b519c9a02661f266c7945e656b09900746eadae27970e6956832b3512a6bea"
+        },
+        {
+          "file": "GARMENT_OFFICE_FINAL_PRESENTATION/01_EDITABLE_3D/assets/textures/Tiles040/Tiles040_1K-JPG_NormalGL.jpg",
+          "size": [
+            1024,
+            1024
+          ],
+          "mode": "RGB",
+          "bytes": 1399589,
+          "sha256": "5eb099cce9e6fec60c43d0ad3d80839b6710a312ffd84a0132fb70d14d5082c4"
+        },
+        {
+          "file": "GARMENT_OFFICE_FINAL_PRESENTATION/01_EDITABLE_3D/assets/textures/Tiles040/Tiles040_1K-JPG_Roughness.jpg",
+          "size": [
+            1024,
+            1024
+          ],
+          "mode": "L",
+          "bytes": 578936,
+          "sha256": "20b14c35dc8a9f2f08c19b0ab328af381c8991de1fbcf1f7ae56ec4d52611c38"
+        }
+      ]
+    },
+    {
+      "set": "Tiles043",
+      "licence": "CC0 1.0; existing assets/LICENSES.md",
+      "maps": [
+        {
+          "file": "GARMENT_OFFICE_FINAL_PRESENTATION/01_EDITABLE_3D/assets/textures/Tiles043/Tiles043_1K-JPG_Color.jpg",
+          "size": [
+            1024,
+            1024
+          ],
+          "mode": "RGB",
+          "bytes": 1164649,
+          "sha256": "551b1941ef558428d5b86eed72a19519c18d8300d62bf0e30693059bf2d86856"
+        },
+        {
+          "file": "GARMENT_OFFICE_FINAL_PRESENTATION/01_EDITABLE_3D/assets/textures/Tiles043/Tiles043_1K-JPG_NormalGL.jpg",
+          "size": [
+            1024,
+            1024
+          ],
+          "mode": "RGB",
+          "bytes": 1354099,
+          "sha256": "03f2d9144e414f531dcae8a6f009ac1e349fb9806c585679dcab6ebd60ddf5a8"
+        },
+        {
+          "file": "GARMENT_OFFICE_FINAL_PRESENTATION/01_EDITABLE_3D/assets/textures/Tiles043/Tiles043_1K-JPG_Roughness.jpg",
+          "size": [
+            1024,
+            1024
+          ],
+          "mode": "L",
+          "bytes": 590355,
+          "sha256": "728252a27ee52fc336fd173e943551aa1978434f9c464a1ece3afe0882e53778"
+        }
+      ]
+    },
+    {
+      "set": "herringbone_parquet",
+      "licence": "CC0 1.0; existing assets/LICENSES.md",
+      "maps": [
+        {
+          "file": "GARMENT_OFFICE_FINAL_PRESENTATION/01_EDITABLE_3D/assets/textures/herringbone_parquet/herringbone_parquet_diff_1k.jpg",
+          "size": [
+            1024,
+            1024
+          ],
+          "mode": "RGB",
+          "bytes": 829046,
+          "sha256": "d6c66492a6c4cfd4e8ed18c9cdd4e0303f3de4e04613d2adca8bc2b8f2dd2350"
+        },
+        {
+          "file": "GARMENT_OFFICE_FINAL_PRESENTATION/01_EDITABLE_3D/assets/textures/herringbone_parquet/herringbone_parquet_nor_gl_1k.jpg",
+          "size": [
+            1024,
+            1024
+          ],
+          "mode": "RGB",
+          "bytes": 373438,
+          "sha256": "af6a822100fd6369bb75e43bb764f4a71ca41f521538ac796e92e681e3ad38f5"
+        },
+        {
+          "file": "GARMENT_OFFICE_FINAL_PRESENTATION/01_EDITABLE_3D/assets/textures/herringbone_parquet/herringbone_parquet_rough_1k.jpg",
+          "size": [
+            1024,
+            1024
+          ],
+          "mode": "RGB",
+          "bytes": 515202,
+          "sha256": "6058f5a1d27cef64f40057370188fec65c34998868d202a944f346ad9866ed62"
+        }
+      ]
+    },
+    {
+      "set": "laminate_floor_02",
+      "licence": "CC0 1.0; existing assets/LICENSES.md",
+      "maps": [
+        {
+          "file": "GARMENT_OFFICE_FINAL_PRESENTATION/01_EDITABLE_3D/assets/textures/laminate_floor_02/laminate_floor_02_diff_1k.jpg",
+          "size": [
+            1024,
+            1024
+          ],
+          "mode": "RGB",
+          "bytes": 721641,
+          "sha256": "c112a8fb107d8600a2974af2f9fa9b595c491a33a59982e22706e9650990bf8f"
+        },
+        {
+          "file": "GARMENT_OFFICE_FINAL_PRESENTATION/01_EDITABLE_3D/assets/textures/laminate_floor_02/laminate_floor_02_nor_gl_1k.jpg",
+          "size": [
+            1024,
+            1024
+          ],
+          "mode": "RGB",
+          "bytes": 515725,
+          "sha256": "ec501e1c76269cabc1648ab0e3f38db1b062ffef7ff4ce037fdc369383afd005"
+        },
+        {
+          "file": "GARMENT_OFFICE_FINAL_PRESENTATION/01_EDITABLE_3D/assets/textures/laminate_floor_02/laminate_floor_02_rough_1k.jpg",
+          "size": [
+            1024,
+            1024
+          ],
+          "mode": "RGB",
+          "bytes": 560815,
+          "sha256": "1d48d21a8497d83d4148e4378bf6891e052c98b58cdce1f79003bcc24a3aff8f"
+        }
+      ]
+    },
+    {
+      "set": "leather_white",
+      "licence": "CC0 1.0; existing assets/LICENSES.md",
+      "maps": [
+        {
+          "file": "GARMENT_OFFICE_FINAL_PRESENTATION/01_EDITABLE_3D/assets/textures/leather_white/leather_white_diff_1k.jpg",
+          "size": [
+            1024,
+            1024
+          ],
+          "mode": "RGB",
+          "bytes": 728363,
+          "sha256": "4d916dfe89c9d2b88bf52e0c70c6a9798a5c29c8c2fcb6ba1ab7b7ded9ef3ed5"
+        },
+        {
+          "file": "GARMENT_OFFICE_FINAL_PRESENTATION/01_EDITABLE_3D/assets/textures/leather_white/leather_white_nor_gl_1k.jpg",
+          "size": [
+            1024,
+            1024
+          ],
+          "mode": "RGB",
+          "bytes": 670610,
+          "sha256": "51bdac4b76da70dc54c288cffea4ecaf837ebb6ed9264664bf5c9a1fc79aa074"
+        },
+        {
+          "file": "GARMENT_OFFICE_FINAL_PRESENTATION/01_EDITABLE_3D/assets/textures/leather_white/leather_white_rough_1k.jpg",
+          "size": [
+            1024,
+            1024
+          ],
+          "mode": "L",
+          "bytes": 675426,
+          "sha256": "dbae1aeb5f9a2a46f7fe758f38811beb6a109021848462032d9a3cd63f187a66"
+        }
+      ]
+    },
+    {
+      "set": "natural_walnut_veneer",
+      "licence": "CC0 1.0; existing assets/LICENSES.md",
+      "maps": [
+        {
+          "file": "GARMENT_OFFICE_FINAL_PRESENTATION/01_EDITABLE_3D/assets/textures/natural_walnut_veneer/natural_walnut_veneer_diff_1k.jpg",
+          "size": [
+            1024,
+            1024
+          ],
+          "mode": "RGB",
+          "bytes": 633330,
+          "sha256": "41fe45f6457bddd4d97627bc610d2980d91683bc521c9692a6c4f2a6a3b05efd"
+        },
+        {
+          "file": "GARMENT_OFFICE_FINAL_PRESENTATION/01_EDITABLE_3D/assets/textures/natural_walnut_veneer/natural_walnut_veneer_nor_gl_1k.jpg",
+          "size": [
+            1024,
+            1024
+          ],
+          "mode": "RGB",
+          "bytes": 441987,
+          "sha256": "da621d3c7e96740313b459a034a30f46271d91a9dcad0c0c657a1485e32d336b"
+        },
+        {
+          "file": "GARMENT_OFFICE_FINAL_PRESENTATION/01_EDITABLE_3D/assets/textures/natural_walnut_veneer/natural_walnut_veneer_rough_1k.jpg",
+          "size": [
+            1024,
+            1024
+          ],
+          "mode": "L",
+          "bytes": 568696,
+          "sha256": "a5c7353aa7886a383b04506145548f9d2ffb9753c3d0b6cf52d972c18e5578d9"
+        }
+      ]
+    },
+    {
+      "set": "smooth_concrete_floor",
+      "licence": "CC0 1.0; existing assets/LICENSES.md",
+      "maps": [
+        {
+          "file": "GARMENT_OFFICE_FINAL_PRESENTATION/01_EDITABLE_3D/assets/textures/smooth_concrete_floor/smooth_concrete_floor_diff_1k.jpg",
+          "size": [
+            1024,
+            1024
+          ],
+          "mode": "RGB",
+          "bytes": 861674,
+          "sha256": "079587ae48fb3e2bfb0d0f9209eb75dc26ee30e213403d96377a30f6f6955092"
+        },
+        {
+          "file": "GARMENT_OFFICE_FINAL_PRESENTATION/01_EDITABLE_3D/assets/textures/smooth_concrete_floor/smooth_concrete_floor_nor_gl_1k.jpg",
+          "size": [
+            1024,
+            1024
+          ],
+          "mode": "RGB",
+          "bytes": 529251,
+          "sha256": "588bdbcc16b8dfa2869a2c154c076a419abb8ed83284691c2dffdddfcf20cc0c"
+        },
+        {
+          "file": "GARMENT_OFFICE_FINAL_PRESENTATION/01_EDITABLE_3D/assets/textures/smooth_concrete_floor/smooth_concrete_floor_rough_1k.jpg",
+          "size": [
+            1024,
+            1024
+          ],
+          "mode": "RGB",
+          "bytes": 488628,
+          "sha256": "89082ede1efd3a60fd600a49e381a5822c89ee3bf75456ad883b3057190042a5"
+        }
+      ]
+    },
+    {
+      "set": "white_oak_veneer",
+      "licence": "CC0 1.0; existing assets/LICENSES.md",
+      "maps": [
+        {
+          "file": "GARMENT_OFFICE_FINAL_PRESENTATION/01_EDITABLE_3D/assets/textures/white_oak_veneer/white_oak_veneer_diff_1k.jpg",
+          "size": [
+            1024,
+            1024
+          ],
+          "mode": "RGB",
+          "bytes": 595257,
+          "sha256": "8fdec14fd3c06de907693c9c3241037dc93327ad907296371a2f74a0becd8187"
+        },
+        {
+          "file": "GARMENT_OFFICE_FINAL_PRESENTATION/01_EDITABLE_3D/assets/textures/white_oak_veneer/white_oak_veneer_nor_gl_1k.jpg",
+          "size": [
+            1024,
+            1024
+          ],
+          "mode": "RGB",
+          "bytes": 623607,
+          "sha256": "9e8dd65e443d92107caa4cd30403d78946a8b8c5a6029e6446c7368865b1d1c0"
+        },
+        {
+          "file": "GARMENT_OFFICE_FINAL_PRESENTATION/01_EDITABLE_3D/assets/textures/white_oak_veneer/white_oak_veneer_rough_1k.jpg",
+          "size": [
+            1024,
+            1024
+          ],
+          "mode": "L",
+          "bytes": 520649,
+          "sha256": "a8670e80f203bd031ac3c80f0f606383be51a0ee108e016fa19cad6b9bd373e7"
+        }
+      ]
+    }
+  ],
+  "model_packages": [
+    {
+      "asset": "calathea_orbifolia_01",
+      "files": 4,
+      "licence": "CC0 1.0; existing assets/LICENSES.md"
+    },
+    {
+      "asset": "ceramic_vase_01",
+      "files": 3,
+      "licence": "CC0 1.0; existing assets/LICENSES.md"
+    },
+    {
+      "asset": "coffee_table_round_01",
+      "files": 2,
+      "licence": "CC0 1.0; existing assets/LICENSES.md"
+    },
+    {
+      "asset": "mid_century_lounge_chair",
+      "files": 2,
+      "licence": "CC0 1.0; existing assets/LICENSES.md"
+    },
+    {
+      "asset": "modern_arm_chair_01",
+      "files": 9,
+      "licence": "CC0 1.0; existing assets/LICENSES.md"
+    },
+    {
+      "asset": "modern_ceiling_lamp_01",
+      "files": 3,
+      "licence": "CC0 1.0; existing assets/LICENSES.md"
+    },
+    {
+      "asset": "modern_wooden_cabinet",
+      "files": 2,
+      "licence": "CC0 1.0; existing assets/LICENSES.md"
+    },
+    {
+      "asset": "pachira_aquatica_01",
+      "files": 8,
+      "licence": "CC0 1.0; existing assets/LICENSES.md"
+    },
+    {
+      "asset": "potted_plant_02",
+      "files": 8,
+      "licence": "CC0 1.0; existing assets/LICENSES.md"
+    },
+    {
+      "asset": "potted_plant_04",
+      "files": 2,
+      "licence": "CC0 1.0; existing assets/LICENSES.md"
+    },
+    {
+      "asset": "side_table_01",
+      "files": 3,
+      "licence": "CC0 1.0; existing assets/LICENSES.md"
+    },
+    {
+      "asset": "wall_clock",
+      "files": 4,
+      "licence": "CC0 1.0; existing assets/LICENSES.md"
+    }
+  ],
+  "brand_files": [
+    {
+      "file": "logo_stage2_ltd.png",
+      "sha256": "f9d23df4904fa39a024e25a14c9fd7195baa49a259d7e8ae333f79f614a0a601",
+      "licence": "Client supplied; project use only"
+    },
+    {
+      "file": "logo_stage2_ltd_sign.png",
+      "sha256": "ff460d96c7e026c805919953b8ac3627e30cb9ede08a2dcc0fa9d9f0bcdac5d8",
+      "licence": "Client supplied; project use only"
+    },
+    {
+      "file": "logo_stage2_unit1.png",
+      "sha256": "06d073e089472dfb0cbb0245a76d1cef5ea72b755ad28f9535556d3d3ed95a39",
+      "licence": "Client supplied; project use only"
+    },
+    {
+      "file": "logo_stage2_unit1_sign.png",
+      "sha256": "7d9f10e4d30a7e2ec6b703f9f9f435dee72c13082544e892e1cef11c59284189",
+      "licence": "Client supplied; project use only"
+    },
+    {
+      "file": "logo_zara_fashion_card.png",
+      "sha256": "4476d0965ef80f7b891d270a257ea2f436c229a2a124ab54981a7a37bae00515",
+      "licence": "Client supplied; project use only"
+    },
+    {
+      "file": "logo_zara_fashion_profile.png",
+      "sha256": "d5de166b3a3ffbf345f419c4c1cc7c87038a435224130510ad5b5cf96de36ef0",
+      "licence": "Client supplied; project use only"
+    },
+    {
+      "file": "logo_zara_fashion_profile_sign.png",
+      "sha256": "3227ebda272d3f4da55b7b4c2e392980461aafd8cf68c0212f61eb5f25a7af84",
+      "licence": "Client supplied; project use only"
+    },
+    {
+      "file": "tagline_quality_compliance_commitment.png",
+      "sha256": "722b4888bde4cf8ec6730415e47ff734e56ebb9c6c0ed44c5c0f3f6ee8e99b5d",
+      "licence": "Client supplied; project use only"
+    },
+    {
+      "file": "tagline_quality_compliance_commitment_sign.png",
+      "sha256": "38259e43ee5822470682663c925aa978377311e0342caed5c3b7775a9c24fb17",
+      "licence": "Client supplied; project use only"
+    }
+  ],
+  "glbs": [
+    {
+      "path": "GARMENT_OFFICE_FINAL_PRESENTATION/01_EDITABLE_3D/Final_Office_Interior.glb",
+      "sha256": "3b883c0077541aa3c574c903cfad60a3b8ba410d12af6d6b476b7733230fc35d",
+      "bytes": 41857588,
+      "nodes": 1150,
+      "meshes": 563,
+      "mesh_triangles_before_instances": 374160,
+      "scene_triangles_from_mesh_nodes": 920497,
+      "materials": [
+        {
+          "name": "plastic_white",
+          "basecolor": false,
+          "normal": false,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.44999998807907104,
+          "extensions": []
+        },
+        {
+          "name": "plastic_dark",
+          "basecolor": false,
+          "normal": false,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.5,
+          "extensions": []
+        },
+        {
+          "name": "steel_painted",
+          "basecolor": false,
+          "normal": false,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.6000000238418579,
+          "extensions": []
+        },
+        {
+          "name": "logo_zf",
+          "basecolor": true,
+          "normal": false,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.3499999940395355,
+          "extensions": []
+        },
+        {
+          "name": "logo_s2_ltd",
+          "basecolor": true,
+          "normal": false,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.3499999940395355,
+          "extensions": []
+        },
+        {
+          "name": "logo_s2_unit1",
+          "basecolor": true,
+          "normal": false,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.3499999940395355,
+          "extensions": []
+        },
+        {
+          "name": "tagline",
+          "basecolor": true,
+          "normal": false,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.4000000059604645,
+          "extensions": []
+        },
+        {
+          "name": "oak_slat",
+          "basecolor": true,
+          "normal": true,
+          "metallic_roughness": true,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.8999999761581421,
+          "extensions": []
+        },
+        {
+          "name": "plinth",
+          "basecolor": false,
+          "normal": false,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.5,
+          "extensions": []
+        },
+        {
+          "name": "felt_green",
+          "basecolor": true,
+          "normal": true,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.949999988079071,
+          "extensions": []
+        },
+        {
+          "name": "felt_grey",
+          "basecolor": true,
+          "normal": true,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.949999988079071,
+          "extensions": []
+        },
+        {
+          "name": "wall_clock",
+          "basecolor": true,
+          "normal": true,
+          "metallic_roughness": true,
+          "occlusion": false,
+          "metallic_factor": 1,
+          "roughness_factor": 1,
+          "extensions": []
+        },
+        {
+          "name": "wall_clock_glass",
+          "basecolor": true,
+          "normal": false,
+          "metallic_roughness": true,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 1,
+          "extensions": []
+        },
+        {
+          "name": "glass_clear",
+          "basecolor": false,
+          "normal": false,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0,
+          "extensions": [
+            "KHR_materials_transmission",
+            "KHR_materials_ior"
+          ]
+        },
+        {
+          "name": "alu_black",
+          "basecolor": false,
+          "normal": false,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0.75,
+          "roughness_factor": 0.3799999952316284,
+          "extensions": []
+        },
+        {
+          "name": "brass",
+          "basecolor": false,
+          "normal": false,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 1,
+          "roughness_factor": 0.3199999928474426,
+          "extensions": []
+        },
+        {
+          "name": "oak",
+          "basecolor": true,
+          "normal": true,
+          "metallic_roughness": true,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.8500000238418579,
+          "extensions": [
+            "KHR_materials_clearcoat"
+          ]
+        },
+        {
+          "name": "walnut",
+          "basecolor": true,
+          "normal": true,
+          "metallic_roughness": true,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.800000011920929,
+          "extensions": [
+            "KHR_materials_clearcoat"
+          ]
+        },
+        {
+          "name": "paint_white",
+          "basecolor": false,
+          "normal": false,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.8799999952316284,
+          "extensions": []
+        },
+        {
+          "name": "fab_green",
+          "basecolor": true,
+          "normal": true,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.8999999761581421,
+          "extensions": [
+            "KHR_materials_sheen"
+          ]
+        },
+        {
+          "name": "metal_black",
+          "basecolor": false,
+          "normal": false,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0.4000000059604645,
+          "roughness_factor": 0.44999998807907104,
+          "extensions": []
+        },
+        {
+          "name": "screen_ui",
+          "basecolor": false,
+          "normal": false,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.15000000596046448,
+          "extensions": []
+        },
+        {
+          "name": "alu_silver",
+          "basecolor": false,
+          "normal": false,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 1,
+          "roughness_factor": 0.30000001192092896,
+          "extensions": []
+        },
+        {
+          "name": "rubber",
+          "basecolor": false,
+          "normal": false,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.800000011920929,
+          "extensions": []
+        },
+        {
+          "name": "chrome",
+          "basecolor": false,
+          "normal": false,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 1,
+          "roughness_factor": 0.07999999821186066,
+          "extensions": []
+        },
+        {
+          "name": "fab_charcoal",
+          "basecolor": true,
+          "normal": true,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.8999999761581421,
+          "extensions": [
+            "KHR_materials_sheen"
+          ]
+        },
+        {
+          "name": "mesh_black",
+          "basecolor": false,
+          "normal": false,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.699999988079071,
+          "extensions": []
+        },
+        {
+          "name": "ceramic_white",
+          "basecolor": false,
+          "normal": false,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.11999999731779099,
+          "extensions": [
+            "KHR_materials_clearcoat"
+          ]
+        },
+        {
+          "name": "soil",
+          "basecolor": false,
+          "normal": false,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 1,
+          "extensions": []
+        },
+        {
+          "name": "g_rust",
+          "basecolor": false,
+          "normal": false,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.8999999761581421,
+          "extensions": [
+            "KHR_materials_sheen"
+          ]
+        },
+        {
+          "name": "terrazzo_counter",
+          "basecolor": true,
+          "normal": true,
+          "metallic_roughness": true,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.3499999940395355,
+          "extensions": [
+            "KHR_materials_clearcoat"
+          ]
+        },
+        {
+          "name": "led_soft",
+          "basecolor": false,
+          "normal": false,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.5,
+          "extensions": [
+            "KHR_materials_emissive_strength"
+          ]
+        },
+        {
+          "name": "leather_black",
+          "basecolor": true,
+          "normal": true,
+          "metallic_roughness": true,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.699999988079071,
+          "extensions": []
+        },
+        {
+          "name": "fab_sand",
+          "basecolor": true,
+          "normal": true,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.9200000166893005,
+          "extensions": [
+            "KHR_materials_sheen"
+          ]
+        },
+        {
+          "name": "rug_wool",
+          "basecolor": true,
+          "normal": true,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.949999988079071,
+          "extensions": [
+            "KHR_materials_sheen"
+          ]
+        },
+        {
+          "name": "paint_green",
+          "basecolor": false,
+          "normal": false,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.8500000238418579,
+          "extensions": []
+        },
+        {
+          "name": "led_3500",
+          "basecolor": false,
+          "normal": false,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.5,
+          "extensions": [
+            "KHR_materials_emissive_strength"
+          ]
+        },
+        {
+          "name": "g_heather",
+          "basecolor": false,
+          "normal": false,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.8999999761581421,
+          "extensions": [
+            "KHR_materials_sheen"
+          ]
+        },
+        {
+          "name": "g_olive",
+          "basecolor": false,
+          "normal": false,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.8999999761581421,
+          "extensions": [
+            "KHR_materials_sheen"
+          ]
+        },
+        {
+          "name": "g_sand",
+          "basecolor": false,
+          "normal": false,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.8999999761581421,
+          "extensions": [
+            "KHR_materials_sheen"
+          ]
+        },
+        {
+          "name": "g_black",
+          "basecolor": false,
+          "normal": false,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.8999999761581421,
+          "extensions": [
+            "KHR_materials_sheen"
+          ]
+        },
+        {
+          "name": "g_denim",
+          "basecolor": false,
+          "normal": false,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.8999999761581421,
+          "extensions": [
+            "KHR_materials_sheen"
+          ]
+        },
+        {
+          "name": "g_sage",
+          "basecolor": false,
+          "normal": false,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.8999999761581421,
+          "extensions": [
+            "KHR_materials_sheen"
+          ]
+        },
+        {
+          "name": "g_white",
+          "basecolor": false,
+          "normal": false,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.8999999761581421,
+          "extensions": [
+            "KHR_materials_sheen"
+          ]
+        },
+        {
+          "name": "g_green",
+          "basecolor": false,
+          "normal": false,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.8999999761581421,
+          "extensions": [
+            "KHR_materials_sheen"
+          ]
+        },
+        {
+          "name": "g_navy",
+          "basecolor": false,
+          "normal": false,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.8999999761581421,
+          "extensions": [
+            "KHR_materials_sheen"
+          ]
+        },
+        {
+          "name": "g_blush",
+          "basecolor": false,
+          "normal": false,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.8999999761581421,
+          "extensions": [
+            "KHR_materials_sheen"
+          ]
+        },
+        {
+          "name": "mannequin",
+          "basecolor": false,
+          "normal": false,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.550000011920929,
+          "extensions": []
+        },
+        {
+          "name": "screen_brand",
+          "basecolor": false,
+          "normal": false,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.15000000596046448,
+          "extensions": []
+        },
+        {
+          "name": "modern_arm_chair_01_legs",
+          "basecolor": true,
+          "normal": true,
+          "metallic_roughness": true,
+          "occlusion": false,
+          "metallic_factor": 1,
+          "roughness_factor": 1,
+          "extensions": []
+        },
+        {
+          "name": "modern_arm_chair_01_pillow",
+          "basecolor": true,
+          "normal": true,
+          "metallic_roughness": true,
+          "occlusion": false,
+          "metallic_factor": 1,
+          "roughness_factor": 1,
+          "extensions": []
+        },
+        {
+          "name": "leather_cognac",
+          "basecolor": true,
+          "normal": true,
+          "metallic_roughness": true,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.800000011920929,
+          "extensions": []
+        },
+        {
+          "name": "fab_grey",
+          "basecolor": true,
+          "normal": true,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.9200000166893005,
+          "extensions": [
+            "KHR_materials_sheen"
+          ]
+        },
+        {
+          "name": "paper",
+          "basecolor": false,
+          "normal": false,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.8999999761581421,
+          "extensions": []
+        },
+        {
+          "name": "pinboard_linen",
+          "basecolor": false,
+          "normal": false,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.949999988079071,
+          "extensions": []
+        },
+        {
+          "name": "porcelain",
+          "basecolor": false,
+          "normal": false,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.07999999821186066,
+          "extensions": [
+            "KHR_materials_clearcoat"
+          ]
+        },
+        {
+          "name": "wall_porcelain",
+          "basecolor": true,
+          "normal": true,
+          "metallic_roughness": true,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.4000000059604645,
+          "extensions": []
+        },
+        {
+          "name": "mirror",
+          "basecolor": false,
+          "normal": false,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 1,
+          "roughness_factor": 0.019999999552965164,
+          "extensions": []
+        },
+        {
+          "name": "led_4000",
+          "basecolor": false,
+          "normal": false,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.5,
+          "extensions": [
+            "KHR_materials_emissive_strength"
+          ]
+        },
+        {
+          "name": "paint_warmgrey",
+          "basecolor": false,
+          "normal": false,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.8500000238418579,
+          "extensions": []
+        },
+        {
+          "name": "lightbox",
+          "basecolor": false,
+          "normal": false,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.5,
+          "extensions": [
+            "KHR_materials_emissive_strength"
+          ]
+        },
+        {
+          "name": "stone_white",
+          "basecolor": true,
+          "normal": true,
+          "metallic_roughness": true,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.3499999940395355,
+          "extensions": [
+            "KHR_materials_clearcoat"
+          ]
+        },
+        {
+          "name": "glass_frosted",
+          "basecolor": false,
+          "normal": false,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.3199999928474426,
+          "extensions": [
+            "KHR_materials_transmission",
+            "KHR_materials_ior"
+          ]
+        },
+        {
+          "name": "fl_concrete",
+          "basecolor": true,
+          "normal": true,
+          "metallic_roughness": true,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.5,
+          "extensions": []
+        },
+        {
+          "name": "led_3000",
+          "basecolor": false,
+          "normal": false,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.5,
+          "extensions": [
+            "KHR_materials_emissive_strength"
+          ]
+        },
+        {
+          "name": "modern_ceiling_lamp_01_glass",
+          "basecolor": true,
+          "normal": true,
+          "metallic_roughness": true,
+          "occlusion": false,
+          "metallic_factor": 1,
+          "roughness_factor": 1,
+          "extensions": [
+            "KHR_materials_specular",
+            "KHR_materials_ior"
+          ]
+        },
+        {
+          "name": "modern_ceiling_lamp_01",
+          "basecolor": true,
+          "normal": true,
+          "metallic_roughness": true,
+          "occlusion": false,
+          "metallic_factor": 1,
+          "roughness_factor": 1,
+          "extensions": []
+        },
+        {
+          "name": "modern_ceiling_globe",
+          "basecolor": true,
+          "normal": true,
+          "metallic_roughness": true,
+          "occlusion": false,
+          "metallic_factor": 1,
+          "roughness_factor": 1,
+          "extensions": []
+        },
+        {
+          "name": "pachira_aquatica_01_bark",
+          "basecolor": true,
+          "normal": true,
+          "metallic_roughness": true,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 1,
+          "extensions": []
+        },
+        {
+          "name": "pachira_aquatica_01_leaves",
+          "basecolor": true,
+          "normal": true,
+          "metallic_roughness": true,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 1,
+          "extensions": [
+            "KHR_materials_specular",
+            "KHR_materials_ior"
+          ]
+        },
+        {
+          "name": "calathea_orbifolia_01",
+          "basecolor": true,
+          "normal": true,
+          "metallic_roughness": true,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 1,
+          "extensions": [
+            "KHR_materials_specular",
+            "KHR_materials_ior"
+          ]
+        },
+        {
+          "name": "potted_plant_04",
+          "basecolor": true,
+          "normal": true,
+          "metallic_roughness": true,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 1,
+          "extensions": []
+        },
+        {
+          "name": "paint_ceiling",
+          "basecolor": false,
+          "normal": false,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.9200000166893005,
+          "extensions": []
+        },
+        {
+          "name": "fl_terrazzo",
+          "basecolor": true,
+          "normal": true,
+          "metallic_roughness": true,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.550000011920929,
+          "extensions": []
+        },
+        {
+          "name": "fl_carpet",
+          "basecolor": true,
+          "normal": true,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.9700000286102295,
+          "extensions": []
+        },
+        {
+          "name": "fl_herringbone",
+          "basecolor": true,
+          "normal": true,
+          "metallic_roughness": true,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 1.25,
+          "extensions": [
+            "KHR_materials_clearcoat"
+          ]
+        },
+        {
+          "name": "fl_oak_planks",
+          "basecolor": true,
+          "normal": true,
+          "metallic_roughness": true,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.8999999761581421,
+          "extensions": []
+        },
+        {
+          "name": "fl_carpet_green",
+          "basecolor": true,
+          "normal": true,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.9700000286102295,
+          "extensions": []
+        },
+        {
+          "name": "fl_porcelain",
+          "basecolor": true,
+          "normal": true,
+          "metallic_roughness": true,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.5,
+          "extensions": []
+        }
+      ],
+      "map_counts": {
+        "basecolor": 37,
+        "normal": 32,
+        "metallic_roughness": 24,
+        "occlusion": 0
+      },
+      "images": 61
+    },
+    {
+      "path": "GARMENT_OFFICE_REALISM_UPGRADE/01_IMPROVED_MODEL/Final_Office_Interior_web_realism.glb",
+      "sha256": "e51b79514114efbe9b7780879581d882399490e166d30293faaaf8d280e810ea",
+      "bytes": 19451276,
+      "nodes": 715,
+      "meshes": 269,
+      "mesh_triangles_before_instances": 412800,
+      "scene_triangles_from_mesh_nodes": 999775,
+      "materials": [
+        {
+          "name": "plastic_white",
+          "basecolor": false,
+          "normal": false,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.44999998807907104,
+          "extensions": []
+        },
+        {
+          "name": "plastic_dark",
+          "basecolor": false,
+          "normal": false,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.5,
+          "extensions": []
+        },
+        {
+          "name": "logo_zf",
+          "basecolor": true,
+          "normal": false,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.3499999940395355,
+          "extensions": []
+        },
+        {
+          "name": "logo_s2_ltd",
+          "basecolor": true,
+          "normal": false,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.3499999940395355,
+          "extensions": []
+        },
+        {
+          "name": "logo_s2_unit1",
+          "basecolor": true,
+          "normal": false,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.3499999940395355,
+          "extensions": []
+        },
+        {
+          "name": "tagline",
+          "basecolor": true,
+          "normal": false,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.4000000059604645,
+          "extensions": []
+        },
+        {
+          "name": "wall_clock",
+          "basecolor": true,
+          "normal": true,
+          "metallic_roughness": true,
+          "occlusion": false,
+          "metallic_factor": 1,
+          "roughness_factor": 1,
+          "extensions": []
+        },
+        {
+          "name": "wall_clock_glass",
+          "basecolor": false,
+          "normal": false,
+          "metallic_roughness": true,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 1,
+          "extensions": []
+        },
+        {
+          "name": "glass_clear",
+          "basecolor": false,
+          "normal": false,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0,
+          "extensions": [
+            "KHR_materials_ior",
+            "KHR_materials_transmission"
+          ]
+        },
+        {
+          "name": "alu_black",
+          "basecolor": false,
+          "normal": false,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0.75,
+          "roughness_factor": 0.3799999952316284,
+          "extensions": []
+        },
+        {
+          "name": "brass",
+          "basecolor": false,
+          "normal": false,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 1,
+          "roughness_factor": 0.3199999928474426,
+          "extensions": []
+        },
+        {
+          "name": "oak",
+          "basecolor": true,
+          "normal": true,
+          "metallic_roughness": true,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.8500000238418579,
+          "extensions": [
+            "KHR_materials_clearcoat"
+          ]
+        },
+        {
+          "name": "walnut",
+          "basecolor": true,
+          "normal": true,
+          "metallic_roughness": true,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.800000011920929,
+          "extensions": [
+            "KHR_materials_clearcoat"
+          ]
+        },
+        {
+          "name": "steel_painted",
+          "basecolor": false,
+          "normal": false,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.6000000238418579,
+          "extensions": []
+        },
+        {
+          "name": "fab_green",
+          "basecolor": true,
+          "normal": true,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.8999999761581421,
+          "extensions": [
+            "KHR_materials_sheen"
+          ]
+        },
+        {
+          "name": "metal_black",
+          "basecolor": false,
+          "normal": false,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0.4000000059604645,
+          "roughness_factor": 0.44999998807907104,
+          "extensions": []
+        },
+        {
+          "name": "screen_ui",
+          "basecolor": false,
+          "normal": false,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.15000000596046448,
+          "extensions": []
+        },
+        {
+          "name": "alu_silver",
+          "basecolor": false,
+          "normal": false,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 1,
+          "roughness_factor": 0.30000001192092896,
+          "extensions": []
+        },
+        {
+          "name": "rubber",
+          "basecolor": false,
+          "normal": false,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.800000011920929,
+          "extensions": []
+        },
+        {
+          "name": "chrome",
+          "basecolor": false,
+          "normal": false,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 1,
+          "roughness_factor": 0.07999999821186066,
+          "extensions": []
+        },
+        {
+          "name": "fab_charcoal",
+          "basecolor": true,
+          "normal": true,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.8999999761581421,
+          "extensions": [
+            "KHR_materials_sheen"
+          ]
+        },
+        {
+          "name": "mesh_black",
+          "basecolor": false,
+          "normal": false,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.699999988079071,
+          "extensions": []
+        },
+        {
+          "name": "ceramic_white",
+          "basecolor": false,
+          "normal": false,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.11999999731779099,
+          "extensions": [
+            "KHR_materials_clearcoat"
+          ]
+        },
+        {
+          "name": "soil",
+          "basecolor": false,
+          "normal": false,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 1,
+          "extensions": []
+        },
+        {
+          "name": "g_rust",
+          "basecolor": false,
+          "normal": false,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.8999999761581421,
+          "extensions": [
+            "KHR_materials_sheen"
+          ]
+        },
+        {
+          "name": "plinth",
+          "basecolor": false,
+          "normal": false,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.5,
+          "extensions": []
+        },
+        {
+          "name": "terrazzo_counter",
+          "basecolor": true,
+          "normal": true,
+          "metallic_roughness": true,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.3499999940395355,
+          "extensions": [
+            "KHR_materials_clearcoat"
+          ]
+        },
+        {
+          "name": "led_soft",
+          "basecolor": false,
+          "normal": false,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.5,
+          "extensions": [
+            "KHR_materials_emissive_strength"
+          ]
+        },
+        {
+          "name": "leather_black",
+          "basecolor": true,
+          "normal": true,
+          "metallic_roughness": true,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.699999988079071,
+          "extensions": []
+        },
+        {
+          "name": "fab_sand",
+          "basecolor": true,
+          "normal": true,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.9200000166893005,
+          "extensions": [
+            "KHR_materials_sheen"
+          ]
+        },
+        {
+          "name": "rug_wool",
+          "basecolor": true,
+          "normal": true,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.949999988079071,
+          "extensions": [
+            "KHR_materials_sheen"
+          ]
+        },
+        {
+          "name": "paint_green",
+          "basecolor": false,
+          "normal": false,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.8500000238418579,
+          "extensions": []
+        },
+        {
+          "name": "led_3500",
+          "basecolor": false,
+          "normal": false,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.5,
+          "extensions": [
+            "KHR_materials_emissive_strength"
+          ]
+        },
+        {
+          "name": "g_heather",
+          "basecolor": false,
+          "normal": false,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.8999999761581421,
+          "extensions": [
+            "KHR_materials_sheen"
+          ]
+        },
+        {
+          "name": "g_olive",
+          "basecolor": false,
+          "normal": false,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.8999999761581421,
+          "extensions": [
+            "KHR_materials_sheen"
+          ]
+        },
+        {
+          "name": "g_sand",
+          "basecolor": false,
+          "normal": false,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.8999999761581421,
+          "extensions": [
+            "KHR_materials_sheen"
+          ]
+        },
+        {
+          "name": "g_black",
+          "basecolor": false,
+          "normal": false,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.8999999761581421,
+          "extensions": [
+            "KHR_materials_sheen"
+          ]
+        },
+        {
+          "name": "g_denim",
+          "basecolor": false,
+          "normal": false,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.8999999761581421,
+          "extensions": [
+            "KHR_materials_sheen"
+          ]
+        },
+        {
+          "name": "g_sage",
+          "basecolor": false,
+          "normal": false,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.8999999761581421,
+          "extensions": [
+            "KHR_materials_sheen"
+          ]
+        },
+        {
+          "name": "g_white",
+          "basecolor": false,
+          "normal": false,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.8999999761581421,
+          "extensions": [
+            "KHR_materials_sheen"
+          ]
+        },
+        {
+          "name": "g_green",
+          "basecolor": false,
+          "normal": false,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.8999999761581421,
+          "extensions": [
+            "KHR_materials_sheen"
+          ]
+        },
+        {
+          "name": "g_navy",
+          "basecolor": false,
+          "normal": false,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.8999999761581421,
+          "extensions": [
+            "KHR_materials_sheen"
+          ]
+        },
+        {
+          "name": "g_blush",
+          "basecolor": false,
+          "normal": false,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.8999999761581421,
+          "extensions": [
+            "KHR_materials_sheen"
+          ]
+        },
+        {
+          "name": "mannequin",
+          "basecolor": false,
+          "normal": false,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.550000011920929,
+          "extensions": []
+        },
+        {
+          "name": "screen_brand",
+          "basecolor": false,
+          "normal": false,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.15000000596046448,
+          "extensions": []
+        },
+        {
+          "name": "modern_arm_chair_01_legs",
+          "basecolor": true,
+          "normal": true,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 1,
+          "extensions": []
+        },
+        {
+          "name": "modern_arm_chair_01_pillow",
+          "basecolor": true,
+          "normal": true,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 1,
+          "extensions": []
+        },
+        {
+          "name": "leather_cognac",
+          "basecolor": true,
+          "normal": true,
+          "metallic_roughness": true,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.800000011920929,
+          "extensions": []
+        },
+        {
+          "name": "fab_grey",
+          "basecolor": true,
+          "normal": true,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.9200000166893005,
+          "extensions": [
+            "KHR_materials_sheen"
+          ]
+        },
+        {
+          "name": "felt_green",
+          "basecolor": true,
+          "normal": true,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.949999988079071,
+          "extensions": []
+        },
+        {
+          "name": "paper",
+          "basecolor": false,
+          "normal": false,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.8999999761581421,
+          "extensions": []
+        },
+        {
+          "name": "pinboard_linen",
+          "basecolor": false,
+          "normal": false,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.949999988079071,
+          "extensions": []
+        },
+        {
+          "name": "porcelain",
+          "basecolor": false,
+          "normal": false,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.07999999821186066,
+          "extensions": [
+            "KHR_materials_clearcoat"
+          ]
+        },
+        {
+          "name": "wall_porcelain",
+          "basecolor": true,
+          "normal": true,
+          "metallic_roughness": true,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.4000000059604645,
+          "extensions": []
+        },
+        {
+          "name": "mirror",
+          "basecolor": false,
+          "normal": false,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 1,
+          "roughness_factor": 0.019999999552965164,
+          "extensions": []
+        },
+        {
+          "name": "led_4000",
+          "basecolor": false,
+          "normal": false,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.5,
+          "extensions": [
+            "KHR_materials_emissive_strength"
+          ]
+        },
+        {
+          "name": "paint_white",
+          "basecolor": false,
+          "normal": false,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.8799999952316284,
+          "extensions": []
+        },
+        {
+          "name": "paint_warmgrey",
+          "basecolor": false,
+          "normal": false,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.8500000238418579,
+          "extensions": []
+        },
+        {
+          "name": "lightbox",
+          "basecolor": false,
+          "normal": false,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.5,
+          "extensions": [
+            "KHR_materials_emissive_strength"
+          ]
+        },
+        {
+          "name": "felt_grey",
+          "basecolor": true,
+          "normal": true,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.949999988079071,
+          "extensions": []
+        },
+        {
+          "name": "stone_white",
+          "basecolor": true,
+          "normal": true,
+          "metallic_roughness": true,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.3499999940395355,
+          "extensions": [
+            "KHR_materials_clearcoat"
+          ]
+        },
+        {
+          "name": "glass_frosted",
+          "basecolor": false,
+          "normal": false,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.3199999928474426,
+          "extensions": [
+            "KHR_materials_ior",
+            "KHR_materials_transmission"
+          ]
+        },
+        {
+          "name": "led_3000",
+          "basecolor": false,
+          "normal": false,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.5,
+          "extensions": [
+            "KHR_materials_emissive_strength"
+          ]
+        },
+        {
+          "name": "modern_ceiling_lamp_01_glass",
+          "basecolor": true,
+          "normal": true,
+          "metallic_roughness": true,
+          "occlusion": false,
+          "metallic_factor": 1,
+          "roughness_factor": 1,
+          "extensions": [
+            "KHR_materials_ior",
+            "KHR_materials_specular"
+          ]
+        },
+        {
+          "name": "modern_ceiling_lamp_01",
+          "basecolor": true,
+          "normal": true,
+          "metallic_roughness": true,
+          "occlusion": false,
+          "metallic_factor": 1,
+          "roughness_factor": 1,
+          "extensions": []
+        },
+        {
+          "name": "modern_ceiling_globe",
+          "basecolor": true,
+          "normal": true,
+          "metallic_roughness": true,
+          "occlusion": false,
+          "metallic_factor": 1,
+          "roughness_factor": 1,
+          "extensions": []
+        },
+        {
+          "name": "pachira_aquatica_01_bark",
+          "basecolor": true,
+          "normal": true,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 1,
+          "extensions": []
+        },
+        {
+          "name": "pachira_aquatica_01_leaves",
+          "basecolor": true,
+          "normal": true,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 1,
+          "extensions": [
+            "KHR_materials_ior",
+            "KHR_materials_specular"
+          ]
+        },
+        {
+          "name": "calathea_orbifolia_01",
+          "basecolor": true,
+          "normal": true,
+          "metallic_roughness": true,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 1,
+          "extensions": [
+            "KHR_materials_ior",
+            "KHR_materials_specular"
+          ]
+        },
+        {
+          "name": "potted_plant_04",
+          "basecolor": true,
+          "normal": true,
+          "metallic_roughness": true,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 1,
+          "extensions": []
+        },
+        {
+          "name": "fl_concrete",
+          "basecolor": true,
+          "normal": true,
+          "metallic_roughness": true,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.5,
+          "extensions": []
+        },
+        {
+          "name": "oak_slat",
+          "basecolor": true,
+          "normal": true,
+          "metallic_roughness": true,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.8999999761581421,
+          "extensions": []
+        },
+        {
+          "name": "fl_terrazzo",
+          "basecolor": true,
+          "normal": true,
+          "metallic_roughness": true,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.550000011920929,
+          "extensions": []
+        },
+        {
+          "name": "fl_carpet",
+          "basecolor": true,
+          "normal": true,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.9700000286102295,
+          "extensions": []
+        },
+        {
+          "name": "fl_herringbone",
+          "basecolor": true,
+          "normal": true,
+          "metallic_roughness": true,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 1.25,
+          "extensions": [
+            "KHR_materials_clearcoat"
+          ]
+        },
+        {
+          "name": "fl_oak_planks",
+          "basecolor": true,
+          "normal": true,
+          "metallic_roughness": true,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.8999999761581421,
+          "extensions": []
+        },
+        {
+          "name": "fl_carpet_green",
+          "basecolor": true,
+          "normal": true,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.9700000286102295,
+          "extensions": []
+        },
+        {
+          "name": "fl_porcelain",
+          "basecolor": true,
+          "normal": true,
+          "metallic_roughness": true,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.5,
+          "extensions": []
+        },
+        {
+          "name": "paint_ceiling",
+          "basecolor": false,
+          "normal": false,
+          "metallic_roughness": false,
+          "occlusion": false,
+          "metallic_factor": 0,
+          "roughness_factor": 0.9200000166893005,
+          "extensions": []
+        }
+      ],
+      "map_counts": {
+        "basecolor": 36,
+        "normal": 32,
+        "metallic_roughness": 20,
+        "occlusion": 0
+      },
+      "images": 67
+    }
+  ],
+  "rooms": 34,
+  "scheduled_placements": 295,
+  "existing_asset_type_counts": {
+    "security_desk": 1,
+    "task_chair": 39,
+    "planter_l": 8,
+    "planter_m": 9,
+    "fire_ext": 10,
+    "reception_desk": 1,
+    "exec_chair_black": 6,
+    "sofa_84_sand": 1,
+    "coffee_round": 3,
+    "lounge_green": 2,
+    "rug_reception": 1,
+    "console": 1,
+    "bay_104": 1,
+    "bay_104b": 1,
+    "bay_86": 1,
+    "bay_86b": 1,
+    "plinth": 1,
+    "mannequin_navy": 1,
+    "mannequin_sand": 1,
+    "mannequin_olive": 1,
+    "mannequin_white": 1,
+    "material_table": 1,
+    "ec_counter": 1,
+    "totem": 1,
+    "board_table": 1,
+    "board_chair": 14,
+    "screen_86": 2,
+    "credenza_walnut": 3,
+    "desk_single": 3,
+    "cc0:modern_arm_chair_01": 2,
+    "side_round": 1,
+    "exec_desk_dir": 1,
+    "visitor_chair": 20,
+    "credenza_oak": 1,
+    "exec_desk_md": 1,
+    "exec_chair_cognac": 1,
+    "visitor_leather": 2,
+    "sofa_72_sand": 1,
+    "lounge_grey": 3,
+    "rug_md": 1,
+    "bench3": 4,
+    "bench2": 2,
+    "table_team": 1,
+    "task_chair_green": 16,
+    "review_counter": 1,
+    "pinboard_merch": 1,
+    "mfp": 2,
+    "lockers8": 1,
+    "under_window_110": 2,
+    "filing_120": 1,
+    "table_audit": 1,
+    "tall_cab_90": 1,
+    "meet_round": 1,
+    "filing_96": 1,
+    "table_guest": 1,
+    "visitor_chair_green": 12,
+    "screen_55": 1,
+    "wudu4": 1,
+    "shoe_rack_36": 1,
+    "cubicle": 4,
+    "wc": 7,
+    "vanity2": 2,
+    "urinal": 2,
+    "vanity1": 3,
+    "cad_desk": 3,
+    "plotter": 1,
+    "table_layout": 1,
+    "plan_chest": 1,
+    "screen_65": 1,
+    "pinboard_cad": 1,
+    "shelf_lib_150": 1,
+    "shelf_lib_low": 1,
+    "bay_110_white": 1,
+    "table_review": 1,
+    "light_booth": 1,
+    "stool": 8,
+    "printer_bench": 1,
+    "printer3d": 4,
+    "post_bench": 1,
+    "dry_cabinet": 1,
+    "sewing": 2,
+    "table_pattern": 1,
+    "dress_form": 3,
+    "steam": 1,
+    "bay_72_white": 1,
+    "bench_design": 2,
+    "moodboard": 1,
+    "table_trend": 1,
+    "table_present": 1,
+    "bay_120_white": 1,
+    "shelf_store": 3,
+    "shelf_store72": 1,
+    "pantry": 1,
+    "fridge": 1,
+    "water": 1,
+    "table_dining": 2,
+    "dining_chair": 16,
+    "sofa_96_green": 1,
+    "rug_lounge": 1,
+    "screen_75": 1,
+    "table_training": 1,
+    "shoe_rack": 1,
+    "quran_shelf": 1,
+    "quran_shelf_f": 1,
+    "wudu5": 1
+  }
+}

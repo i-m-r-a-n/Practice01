@@ -1,0 +1,20 @@
+{
+  "Z02": {
+    "url": "Z02.ktx2",
+    "format": "ktx2",
+    "textureFormat": "RGBA16F",
+    "supercompression": "zstd",
+    "linear": true,
+    "channel": 1,
+    "mipLevels": 1,
+    "flipY": false,
+    "sourceRowOrder": "top-left",
+    "bytes": 18938140,
+    "gpuBytes": 33554432,
+    "sha256": "1eec0b7f3e08f42d7bde75c49a7716e1d520c90beb96ee0c7998daf5402c02d0",
+    "sourceEXR": "Z02.exr",
+    "sourceEXRSha256": "966513336c6de93ec2e7a1e3c567269bb845db9f28a312c047f4074c9076f6dd",
+    "sourceMax": 14.2109375,
+    "decodedLevelBitExact": true
+  }
+}

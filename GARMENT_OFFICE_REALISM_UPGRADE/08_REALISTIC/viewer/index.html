@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ground Floor - Realistic Office Tour</title>
+<meta name="theme-color" content="#16201b">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="style.css">
+<script type="importmap">
+{ "imports": { "three": "./vendor/three/build/three.module.js", "three/addons/": "./vendor/three/examples/jsm/" } }
+</script>
+</head>
+<body data-mode="loading">
+<div id="app"></div>
+<canvas id="dissolve"></canvas>
+
+<header id="top">
+  <div class="brand">
+    <div class="logos">
+      <img src="assets/logo_zara_fashion_profile.png" alt="Zara Fashion">
+      <img src="assets/logo_stage2_ltd.png" alt="Stage II Knitting Apparel Ltd.">
+      <img src="assets/logo_stage2_unit1.png" alt="Stage II Knitting Apparel Unit-1">
+    </div>
+    <div class="ttl">
+      <div class="eyebrow">Corporate headquarters &amp; design development centre</div>
+      <h1>Ground floor &middot; realistic tour <span id="lightingStatus">Lighting preview</span></h1>
+    </div>
+  </div>
+  <nav class="modes" aria-label="Ways to explore">
+    <button id="mTour" class="primary" title="Guided tour: 16 stops, plays by itself (T)">&#9654; Guided tour</button>
+    <div class="seg">
+      <button id="mOverview" class="on" title="The whole floor from above (O)">Overview</button>
+      <button id="mRooms" title="Show or hide the list of rooms (R)">Rooms</button>
+      <button id="mWalk" title="Walk through the office at eye level (W)">Walk</button>
+    </div>
+    <button id="mPeople" hidden aria-pressed="false" title="Show or hide illustrative people">People</button>
+    <button id="mHelp" class="icon" title="How to use this tour (H)" aria-label="Help">?</button>
+    <button id="mFull" class="icon" title="Full screen for a projector or large display (F)" aria-label="Full screen">&#x26F6;</button>
+  </nav>
+</header>
+
+<aside id="side" aria-label="Rooms">
+  <div class="side-head">
+    <div><b>Rooms</b><small>Choose a room to go there</small></div>
+    <button id="sideClose" title="Hide the room list" aria-label="Hide the room list">&times;</button>
+  </div>
+  <input id="search" type="search" placeholder="Search, e.g. boardroom, prayer, CAD" autocomplete="off">
+  <div id="roomList"></div>
+</aside>
+
+<div id="dock">
+  <section id="info" class="card hidden" aria-live="polite">
+    <div class="eyebrow" id="infoKicker"></div>
+    <h2 id="infoTitle"></h2>
+    <p id="infoText"></p>
+    <div class="hint" id="infoHint"></div>
+    <div class="row">
+      <button id="bPhoto" class="ghost gold hidden" title="The offline Cycles render of this room (P)">Photoreal render</button>
+      <button id="bWalkHere" class="ghost hidden" title="Walk on from this spot">Walk from here</button>
+      <button id="bBack" class="ghost">&larr; Back to overview</button>
+    </div>
+  </section>
+
+  <div id="center">
+    <div id="viewbar" class="bar" aria-label="Overview tools">
+      <button id="vReset" title="Back to the starting view">Reset view</button>
+      <button id="vIso" title="Isometric view">Isometric</button>
+      <button id="vTop" title="Top plan view">Plan</button>
+      <span class="sep"></span>
+      <button id="vCeil" title="Show / hide deck, beams, ceilings and light fittings (C)">Ceilings</button>
+      <button id="vLabels" class="on" title="Room names on the model (L)">Room names</button>
+    </div>
+
+    <section id="tourbar" class="card hidden" aria-live="polite">
+      <div class="tb-head"><span class="eyebrow" id="tKicker"></span><span id="tCount"></span></div>
+      <h2 id="tTitle"></h2>
+      <p id="tText"></p>
+      <div id="tSegs" class="segs" aria-hidden="true"></div>
+      <div class="tb-row">
+        <button id="tPrev" title="Previous stop (left arrow)">&#8249; Back</button>
+        <button id="tPlay" class="play" title="Pause / resume (Space)">&#10073;&#10073; Pause</button>
+        <button id="tNext" title="Next stop (right arrow)">Next &#8250;</button>
+        <label class="chk" title="Optional: at each stop, also fade into the offline Cycles still of the same viewpoint"><input type="checkbox" id="tPhoto"> Show photoreal stills</label>
+        <button id="tStop" class="end" title="End the tour (Esc)">End tour</button>
+      </div>
+    </section>
+
+    <div id="pad" class="hidden" aria-label="Walk"><button data-k="KeyW" aria-label="Forward">&#9650;</button><button data-k="KeyA" aria-label="Left">&#9664;</button><button data-k="KeyS" aria-label="Back">&#9660;</button><button data-k="KeyD" aria-label="Right">&#9654;</button></div>
+  </div>
+
+  <canvas id="minimap" class="hidden" width="180" height="230" title="Floor map: click to go there"></canvas>
+</div>
+
+<div id="photo" class="hidden">
+  <img id="photoImg" alt="">
+  <div class="photo-tag">PHOTOREAL RENDER &middot; offline Cycles still &middot; not real-time</div>
+  <button id="photoClose" title="Back to the real-time 3D model (Esc)">&larr; Back to 3D</button>
+</div>
+
+<div id="walkhint" class="hidden"></div>
+<div id="labels"></div>
+
+<footer id="disclaimer">Proposed interior visualization. Final dimensions and technical details subject to site verification. <span id="peopleNote" hidden>People shown are illustrative.</span></footer>
+
+<div id="welcome" class="hidden" role="dialog" aria-modal="true" aria-labelledby="wTitle">
+  <div class="wbox">
+    <div class="eyebrow">Ground floor &middot; realistic tour <span id="lightingStatus">Lighting preview</span></div>
+    <h2 id="wTitle">Three ways to explore the office</h2>
+    <div class="ways">
+      <button class="way primary" id="wTour"><b>&#9654; Guided tour</b><span>16 stops through the floor. It plays by itself: pause, go back or skip at any time.</span></button>
+      <button class="way" id="wRooms"><b>Rooms</b><span>Choose any of the 34 rooms from the list, or click a room on the model.</span></button>
+      <button class="way" id="wWalk"><b>Walk</b><span>Move at eye level with W A S D or the arrow keys and drag to look. Walls, glass and furniture stop you.</span></button>
+    </div>
+    <p class="tips"><b>Trackpad or mouse:</b> drag to turn, <b>Shift</b> + drag to move, scroll or pinch to zoom. <b>Esc</b> brings you back to the overview. <b>F</b> or the &#x26F6; button: full screen.</p>
+    <div class="wfoot">
+      <label class="q" title="High for desktops and projectors, Balanced for laptops, Low for phones and older computers">Display quality
+        <select id="vQuality"><option value="high">High</option><option value="balanced">Balanced</option><option value="low">Low</option></select></label>
+      <button id="wClose" class="ghost">Explore on my own</button>
+    </div>
+  </div>
+</div>
+
+<div id="loading">
+  <div class="box">
+    <div class="eyebrow">Ground floor &middot; realistic tour <span id="lightingStatus">Lighting preview</span></div>
+    <div class="t" id="loadTitle">Loading the 3D model&hellip;</div>
+    <div class="track"><div id="loadBar"></div></div>
+    <div id="loadText">Starting&hellip;</div>
+    <div id="loadError" class="hidden"></div>
+  </div>
+</div>
+<noscript><div class="noscript">This 3D tour needs JavaScript and WebGL.</div></noscript>
+<script>
+  // anything that fails before or while the module runs is shown instead of an endless loading screen
+  window.__fail = function (msg) {
+    var e = document.getElementById('loadError'); if (!e) return;
+    document.getElementById('loading').style.display = 'flex';
+    e.className = ''; e.textContent = msg;
+    document.getElementById('loadTitle').textContent = 'The 3D model could not be shown';
+  };
+  window.addEventListener('error', function (ev) { if (!window.__viewerReady) window.__fail('Error: ' + (ev.message || ev.type) + (ev.filename ? ' (' + ev.filename.split('/').pop() + ':' + ev.lineno + ')' : '')); });
+  window.addEventListener('unhandledrejection', function (ev) { if (!window.__viewerReady) window.__fail('Error: ' + (ev.reason && ev.reason.message || ev.reason)); });
+  setTimeout(function () { if (!window.__viewerStarted) window.__fail('The viewer script did not start. Use a current Chrome, Safari, Edge or Firefox and open the page through a web server (see README).'); }, 15000);
+</script>
+<script type="module" src="app.js"></script>
+</body>
+</html>

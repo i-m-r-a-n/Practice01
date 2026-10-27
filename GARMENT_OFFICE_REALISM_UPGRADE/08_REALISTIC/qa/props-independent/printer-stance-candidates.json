@@ -1,0 +1,61 @@
+[
+  {
+    "position": [
+      10.7,
+      0,
+      -11.85
+    ],
+    "hits": []
+  },
+  {
+    "position": [
+      10.75,
+      0,
+      -11.82
+    ],
+    "hits": []
+  },
+  {
+    "position": [
+      10.8,
+      0,
+      -11.85
+    ],
+    "hits": []
+  },
+  {
+    "position": [
+      10.6,
+      0,
+      -11.7
+    ],
+    "hits": [
+      "F103 mfp",
+      "F103 mfp"
+    ]
+  },
+  {
+    "position": [
+      10.5,
+      0,
+      -11.7
+    ],
+    "hits": [
+      "F103 mfp",
+      "F103 mfp",
+      "PL108 calathea (CC0) (calathea_orbifolia_01_a)"
+    ]
+  },
+  {
+    "position": [
+      10.21,
+      0,
+      -11.75
+    ],
+    "hits": [
+      "F108 planter_m",
+      "F108 planter_m",
+      "PL108 calathea (CC0) (calathea_orbifolia_01_a)"
+    ]
+  }
+]

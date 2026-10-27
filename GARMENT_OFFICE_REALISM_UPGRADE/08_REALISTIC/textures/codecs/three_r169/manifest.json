@@ -1,0 +1,50 @@
+[
+  {
+    "file": "examples/jsm/loaders/KTX2Loader.js",
+    "source": "https://raw.githubusercontent.com/mrdoob/three.js/r169/examples/jsm/loaders/KTX2Loader.js",
+    "bytes": 23627,
+    "sha256": "68a9bc3a01170cf4c840ae025715fd661f0a929019231e61128a64fa12608fd7"
+  },
+  {
+    "file": "examples/jsm/utils/WorkerPool.js",
+    "source": "https://raw.githubusercontent.com/mrdoob/three.js/r169/examples/jsm/utils/WorkerPool.js",
+    "bytes": 1712,
+    "sha256": "94ff7b608caf3b827ffa95bd6092b9d174732b856915b38ed006b4f049f95675"
+  },
+  {
+    "file": "examples/jsm/libs/ktx-parse.module.js",
+    "source": "https://raw.githubusercontent.com/mrdoob/three.js/r169/examples/jsm/libs/ktx-parse.module.js",
+    "bytes": 19440,
+    "sha256": "34a3a68f08db30a353802c5a762c5dcd89a168a1b56567019ef4a7563ceaf4d4"
+  },
+  {
+    "file": "examples/jsm/libs/zstddec.module.js",
+    "source": "https://raw.githubusercontent.com/mrdoob/three.js/r169/examples/jsm/libs/zstddec.module.js",
+    "bytes": 39754,
+    "sha256": "5cbf818e842628a4464e748594a6deae18ceddda3c2f541e7b3a0ff5fc7611e2"
+  },
+  {
+    "file": "examples/jsm/libs/basis/basis_transcoder.js",
+    "source": "https://raw.githubusercontent.com/mrdoob/three.js/r169/examples/jsm/libs/basis/basis_transcoder.js",
+    "bytes": 57529,
+    "sha256": "8478b5b6d6b74e7d3082b89f6417321d8d1dc0307f2b30d4484bb11b441696a1"
+  },
+  {
+    "file": "examples/jsm/libs/basis/basis_transcoder.wasm",
+    "source": "https://raw.githubusercontent.com/mrdoob/three.js/r169/examples/jsm/libs/basis/basis_transcoder.wasm",
+    "bytes": 527333,
+    "sha256": "6cf17dc889352c42e9acf8897107978d127005fe3386c36a0e3845e27967630a"
+  },
+  {
+    "file": "examples/jsm/libs/basis/README.md",
+    "source": "https://raw.githubusercontent.com/mrdoob/three.js/r169/examples/jsm/libs/basis/README.md",
+    "bytes": 1448,
+    "sha256": "930b11bbbb742b2525491b0964f0462d63d8b21383c0623ec4c98c43d53723c6"
+  },
+  {
+    "file": "LICENSE",
+    "source": "https://raw.githubusercontent.com/mrdoob/three.js/r169/LICENSE",
+    "bytes": 1081,
+    "sha256": "4c40a1ef62450b857c3b2aaf294936304cd552d965fbcd9d32d4c5bcf4ba4454"
+  }
+]

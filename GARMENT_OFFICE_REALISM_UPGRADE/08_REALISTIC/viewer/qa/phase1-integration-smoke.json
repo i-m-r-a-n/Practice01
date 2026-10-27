@@ -1,0 +1,36 @@
+{
+  "phase": 1,
+  "status": "integration-tested-not-visual-acceptance",
+  "browser": "Chromium154 on Linux",
+  "gpu": "ANGLE Vulkan SwiftShader software GPU",
+  "viewport": [
+    1280,
+    720
+  ],
+  "checks": {
+    "fallback_boot_no_js_errors": true,
+    "rooms_retained": 34,
+    "cameras_retained": 38,
+    "tour_stops_retained": 16,
+    "reception_source_objects_replaced": 36,
+    "reception_material_primitives": 37,
+    "reception_triangles": 52769,
+    "reception_missing_materials": 0,
+    "reception_missing_uv1": 0,
+    "reception_EXR_KTX2_mean_RGB_abs_difference_8bit": 0.0008000578703703704,
+    "reception_EXR_KTX2_max_RGB_abs_difference_8bit": 2,
+    "deliberate_flip_scrambles_atlas": true
+  },
+  "limitations": [
+    "Reception remains visually unaccepted: shared shell surfaces still use fallback lighting, some baked surfaces show blotchy light.",
+    "No MacBook, Firefox or Safari performance claim.",
+    "No Phase2-PBR, Phase3-room-probe, Phase4-prop/people or Phase5-walking improvements implied.",
+    "Captured with AO and runtime shadow map disabled to isolate diffuse atlas."
+  ],
+  "screenshots": {
+    "office-phase1-fallback.png": "0fe297f9c0698aa6af7b3c5a6957c08e60ddf5e6dfad32c523b64ce7b044f265",
+    "office-phase1-reception-ktx.png": "ff9651c65df5e4fc6a65467aee992c667759d1be941f3745a2f596cd4fe92066",
+    "office-phase1-reception-exr.png": "c97fad4babf56000e02b667bf78876edc52cb7a988fabe9bc5811f36ef67df6d",
+    "office-phase1-reception-ktx-flipped.png": "ac48b82e8a2b451522e8a4672040abd17184085222785c728c644b80dc8de010"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "props": 324,
+  "rooms_reviewed": 34,
+  "all_prop_world_bounds_inside_assigned_room": true,
+  "outside_room_ids": [],
+  "prop_bounds_below_support": [],
+  "prop_pair_aabb_overlaps": [],
+  "scope": "Uses generated geometry world-axis bounds and approved room polygons. Pair overlaps are broadphase candidates, not automatically exact mesh intersections. No source component intersection proof, GPU/image or dynamic collision claim."
+}

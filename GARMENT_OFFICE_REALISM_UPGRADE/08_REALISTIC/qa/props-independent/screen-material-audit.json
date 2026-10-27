@@ -1,0 +1,761 @@
+{
+  "source_glb_sha256": "3b883c0077541aa3c574c903cfad60a3b8ba410d12af6d6b476b7733230fc35d",
+  "screen_primitives": 29,
+  "screens": [
+    {
+      "node": "F001 security_desk",
+      "zone": "Z01",
+      "material": "screen_ui",
+      "uv_min": [
+        -0.26669999957084656,
+        -0.19506990909576416
+      ],
+      "uv_max": [
+        0.26669999957084656,
+        0.907289981842041
+      ],
+      "exported_material": {
+        "doubleSided": true,
+        "emissiveFactor": [
+          0.8999999761581421,
+          0.8999999761581421,
+          0.8999999761581421
+        ],
+        "name": "screen_ui",
+        "pbrMetallicRoughness": {
+          "metallicFactor": 0,
+          "roughnessFactor": 0.15000000596046448
+        }
+      }
+    },
+    {
+      "node": "F006 reception_desk",
+      "zone": "Z02",
+      "material": "screen_ui",
+      "uv_min": [
+        -0.5206999778747559,
+        -0.2001500129699707
+      ],
+      "uv_max": [
+        0.7239000201225281,
+        0.941580057144165
+      ],
+      "exported_material": {
+        "doubleSided": true,
+        "emissiveFactor": [
+          0.8999999761581421,
+          0.8999999761581421,
+          0.8999999761581421
+        ],
+        "name": "screen_ui",
+        "pbrMetallicRoughness": {
+          "metallicFactor": 0,
+          "roughnessFactor": 0.15000000596046448
+        }
+      }
+    },
+    {
+      "node": "F028 totem",
+      "zone": "Z30",
+      "material": "screen_brand",
+      "uv_min": [
+        -0.34544000029563904,
+        -0.25983989238739014
+      ],
+      "uv_max": [
+        0.34544000029563904,
+        1.0393699407577515
+      ],
+      "exported_material": {
+        "doubleSided": true,
+        "emissiveFactor": [
+          1,
+          1,
+          1
+        ],
+        "name": "screen_brand",
+        "pbrMetallicRoughness": {
+          "metallicFactor": 0,
+          "roughnessFactor": 0.15000000596046448
+        }
+      }
+    },
+    {
+      "node": "F047 screen_86",
+      "zone": "Z08",
+      "material": "screen_brand",
+      "uv_min": [
+        -0.9423399567604065,
+        -0.056639909744262695
+      ],
+      "uv_max": [
+        0.9423399567604065,
+        1.0292099714279175
+      ],
+      "exported_material": {
+        "doubleSided": true,
+        "emissiveFactor": [
+          1,
+          1,
+          1
+        ],
+        "name": "screen_brand",
+        "pbrMetallicRoughness": {
+          "metallicFactor": 0,
+          "roughnessFactor": 0.15000000596046448
+        }
+      }
+    },
+    {
+      "node": "F051 desk_single",
+      "zone": "Z10",
+      "material": "screen_ui",
+      "uv_min": [
+        -0.26669999957084656,
+        -0.19506990909576416
+      ],
+      "uv_max": [
+        0.26669999957084656,
+        0.8120399713516235
+      ],
+      "exported_material": {
+        "doubleSided": true,
+        "emissiveFactor": [
+          0.8999999761581421,
+          0.8999999761581421,
+          0.8999999761581421
+        ],
+        "name": "screen_ui",
+        "pbrMetallicRoughness": {
+          "metallicFactor": 0,
+          "roughnessFactor": 0.15000000596046448
+        }
+      }
+    },
+    {
+      "node": "F057 exec_desk_dir",
+      "zone": "Z11",
+      "material": "screen_ui",
+      "uv_min": [
+        -0.18414999544620514,
+        -0.26364994049072266
+      ],
+      "uv_max": [
+        0.4889499843120575,
+        0.831089973449707
+      ],
+      "exported_material": {
+        "doubleSided": true,
+        "emissiveFactor": [
+          0.8999999761581421,
+          0.8999999761581421,
+          0.8999999761581421
+        ],
+        "name": "screen_ui",
+        "pbrMetallicRoughness": {
+          "metallicFactor": 0,
+          "roughnessFactor": 0.15000000596046448
+        }
+      }
+    },
+    {
+      "node": "F063 exec_desk_md",
+      "zone": "Z12",
+      "material": "screen_ui",
+      "uv_min": [
+        -0.18414999544620514,
+        -0.26364994049072266
+      ],
+      "uv_max": [
+        0.4889499843120575,
+        0.7548900246620178
+      ],
+      "exported_material": {
+        "doubleSided": true,
+        "emissiveFactor": [
+          0.8999999761581421,
+          0.8999999761581421,
+          0.8999999761581421
+        ],
+        "name": "screen_ui",
+        "pbrMetallicRoughness": {
+          "metallicFactor": 0,
+          "roughnessFactor": 0.15000000596046448
+        }
+      }
+    },
+    {
+      "node": "F073 bench3",
+      "zone": "Z07",
+      "material": "screen_ui",
+      "uv_min": [
+        -1.663699984550476,
+        -0.19506990909576416
+      ],
+      "uv_max": [
+        1.663699984550476,
+        1.275589942932129
+      ],
+      "exported_material": {
+        "doubleSided": true,
+        "emissiveFactor": [
+          0.8999999761581421,
+          0.8999999761581421,
+          0.8999999761581421
+        ],
+        "name": "screen_ui",
+        "pbrMetallicRoughness": {
+          "metallicFactor": 0,
+          "roughnessFactor": 0.15000000596046448
+        }
+      }
+    },
+    {
+      "node": "F080 bench3",
+      "zone": "Z07",
+      "material": "screen_ui",
+      "uv_min": [
+        -1.663699984550476,
+        -0.19506990909576416
+      ],
+      "uv_max": [
+        1.663699984550476,
+        1.275589942932129
+      ],
+      "exported_material": {
+        "doubleSided": true,
+        "emissiveFactor": [
+          0.8999999761581421,
+          0.8999999761581421,
+          0.8999999761581421
+        ],
+        "name": "screen_ui",
+        "pbrMetallicRoughness": {
+          "metallicFactor": 0,
+          "roughnessFactor": 0.15000000596046448
+        }
+      }
+    },
+    {
+      "node": "F087 bench2",
+      "zone": "Z07",
+      "material": "screen_ui",
+      "uv_min": [
+        -0.9652000069618225,
+        -0.19506990909576416
+      ],
+      "uv_max": [
+        0.9652000069618225,
+        1.275589942932129
+      ],
+      "exported_material": {
+        "doubleSided": true,
+        "emissiveFactor": [
+          0.8999999761581421,
+          0.8999999761581421,
+          0.8999999761581421
+        ],
+        "name": "screen_ui",
+        "pbrMetallicRoughness": {
+          "metallicFactor": 0,
+          "roughnessFactor": 0.15000000596046448
+        }
+      }
+    },
+    {
+      "node": "F110 bench3",
+      "zone": "Z06",
+      "material": "screen_ui",
+      "uv_min": [
+        -1.663699984550476,
+        -0.19506990909576416
+      ],
+      "uv_max": [
+        1.663699984550476,
+        1.275589942932129
+      ],
+      "exported_material": {
+        "doubleSided": true,
+        "emissiveFactor": [
+          0.8999999761581421,
+          0.8999999761581421,
+          0.8999999761581421
+        ],
+        "name": "screen_ui",
+        "pbrMetallicRoughness": {
+          "metallicFactor": 0,
+          "roughnessFactor": 0.15000000596046448
+        }
+      }
+    },
+    {
+      "node": "F117 bench3",
+      "zone": "Z06",
+      "material": "screen_ui",
+      "uv_min": [
+        -1.663699984550476,
+        -0.19506990909576416
+      ],
+      "uv_max": [
+        1.663699984550476,
+        1.275589942932129
+      ],
+      "exported_material": {
+        "doubleSided": true,
+        "emissiveFactor": [
+          0.8999999761581421,
+          0.8999999761581421,
+          0.8999999761581421
+        ],
+        "name": "screen_ui",
+        "pbrMetallicRoughness": {
+          "metallicFactor": 0,
+          "roughnessFactor": 0.15000000596046448
+        }
+      }
+    },
+    {
+      "node": "F124 desk_single",
+      "zone": "Z06",
+      "material": "screen_ui",
+      "uv_min": [
+        -0.26669999957084656,
+        -0.19506990909576416
+      ],
+      "uv_max": [
+        0.26669999957084656,
+        0.8120399713516235
+      ],
+      "exported_material": {
+        "doubleSided": true,
+        "emissiveFactor": [
+          0.8999999761581421,
+          0.8999999761581421,
+          0.8999999761581421
+        ],
+        "name": "screen_ui",
+        "pbrMetallicRoughness": {
+          "metallicFactor": 0,
+          "roughnessFactor": 0.15000000596046448
+        }
+      }
+    },
+    {
+      "node": "F139 bench2",
+      "zone": "Z05",
+      "material": "screen_ui",
+      "uv_min": [
+        -0.9652000069618225,
+        -0.19506990909576416
+      ],
+      "uv_max": [
+        0.9652000069618225,
+        1.275589942932129
+      ],
+      "exported_material": {
+        "doubleSided": true,
+        "emissiveFactor": [
+          0.8999999761581421,
+          0.8999999761581421,
+          0.8999999761581421
+        ],
+        "name": "screen_ui",
+        "pbrMetallicRoughness": {
+          "metallicFactor": 0,
+          "roughnessFactor": 0.15000000596046448
+        }
+      }
+    },
+    {
+      "node": "F157 screen_55",
+      "zone": "Z04",
+      "material": "screen_ui",
+      "uv_min": [
+        -0.5994399785995483,
+        0.3243600130081177
+      ],
+      "uv_max": [
+        0.5994399785995483,
+        1.0292099714279175
+      ],
+      "exported_material": {
+        "doubleSided": true,
+        "emissiveFactor": [
+          0.8999999761581421,
+          0.8999999761581421,
+          0.8999999761581421
+        ],
+        "name": "screen_ui",
+        "pbrMetallicRoughness": {
+          "metallicFactor": 0,
+          "roughnessFactor": 0.15000000596046448
+        }
+      }
+    },
+    {
+      "node": "F179 cad_desk",
+      "zone": "Z14",
+      "material": "screen_ui",
+      "uv_min": [
+        -0.5587999820709229,
+        -0.19506990909576416
+      ],
+      "uv_max": [
+        0.5587999820709229,
+        0.8120399713516235
+      ],
+      "exported_material": {
+        "doubleSided": true,
+        "emissiveFactor": [
+          0.8999999761581421,
+          0.8999999761581421,
+          0.8999999761581421
+        ],
+        "name": "screen_ui",
+        "pbrMetallicRoughness": {
+          "metallicFactor": 0,
+          "roughnessFactor": 0.15000000596046448
+        }
+      }
+    },
+    {
+      "node": "F181 cad_desk",
+      "zone": "Z14",
+      "material": "screen_ui",
+      "uv_min": [
+        -0.5587999820709229,
+        -0.19506990909576416
+      ],
+      "uv_max": [
+        0.5587999820709229,
+        0.8120399713516235
+      ],
+      "exported_material": {
+        "doubleSided": true,
+        "emissiveFactor": [
+          0.8999999761581421,
+          0.8999999761581421,
+          0.8999999761581421
+        ],
+        "name": "screen_ui",
+        "pbrMetallicRoughness": {
+          "metallicFactor": 0,
+          "roughnessFactor": 0.15000000596046448
+        }
+      }
+    },
+    {
+      "node": "F183 cad_desk",
+      "zone": "Z14",
+      "material": "screen_ui",
+      "uv_min": [
+        -0.5587999820709229,
+        -0.19506990909576416
+      ],
+      "uv_max": [
+        0.5587999820709229,
+        0.8120399713516235
+      ],
+      "exported_material": {
+        "doubleSided": true,
+        "emissiveFactor": [
+          0.8999999761581421,
+          0.8999999761581421,
+          0.8999999761581421
+        ],
+        "name": "screen_ui",
+        "pbrMetallicRoughness": {
+          "metallicFactor": 0,
+          "roughnessFactor": 0.15000000596046448
+        }
+      }
+    },
+    {
+      "node": "F185 plotter",
+      "zone": "Z14",
+      "material": "screen_ui",
+      "uv_min": [
+        -0.3314700126647949,
+        -0.06679999828338623
+      ],
+      "uv_max": [
+        0.7111999988555908,
+        1.331470012664795
+      ],
+      "exported_material": {
+        "doubleSided": true,
+        "emissiveFactor": [
+          0.8999999761581421,
+          0.8999999761581421,
+          0.8999999761581421
+        ],
+        "name": "screen_ui",
+        "pbrMetallicRoughness": {
+          "metallicFactor": 0,
+          "roughnessFactor": 0.15000000596046448
+        }
+      }
+    },
+    {
+      "node": "F188 screen_65",
+      "zone": "Z14",
+      "material": "screen_ui",
+      "uv_min": [
+        -0.7137399911880493,
+        0.19735997915267944
+      ],
+      "uv_max": [
+        0.7137399911880493,
+        1.0292099714279175
+      ],
+      "exported_material": {
+        "doubleSided": true,
+        "emissiveFactor": [
+          0.8999999761581421,
+          0.8999999761581421,
+          0.8999999761581421
+        ],
+        "name": "screen_ui",
+        "pbrMetallicRoughness": {
+          "metallicFactor": 0,
+          "roughnessFactor": 0.15000000596046448
+        }
+      }
+    },
+    {
+      "node": "F198 printer3d",
+      "zone": "Z16",
+      "material": "screen_ui",
+      "uv_min": [
+        -0.25527000427246094,
+        0.9390400052070618
+      ],
+      "uv_max": [
+        -0.07620000094175339,
+        1.255270004272461
+      ],
+      "exported_material": {
+        "doubleSided": true,
+        "emissiveFactor": [
+          0.8999999761581421,
+          0.8999999761581421,
+          0.8999999761581421
+        ],
+        "name": "screen_ui",
+        "pbrMetallicRoughness": {
+          "metallicFactor": 0,
+          "roughnessFactor": 0.15000000596046448
+        }
+      }
+    },
+    {
+      "node": "F199 printer3d",
+      "zone": "Z16",
+      "material": "screen_ui",
+      "uv_min": [
+        -0.25527000427246094,
+        0.9390400052070618
+      ],
+      "uv_max": [
+        -0.07620000094175339,
+        1.255270004272461
+      ],
+      "exported_material": {
+        "doubleSided": true,
+        "emissiveFactor": [
+          0.8999999761581421,
+          0.8999999761581421,
+          0.8999999761581421
+        ],
+        "name": "screen_ui",
+        "pbrMetallicRoughness": {
+          "metallicFactor": 0,
+          "roughnessFactor": 0.15000000596046448
+        }
+      }
+    },
+    {
+      "node": "F200 printer3d",
+      "zone": "Z16",
+      "material": "screen_ui",
+      "uv_min": [
+        -0.25527000427246094,
+        0.9390400052070618
+      ],
+      "uv_max": [
+        -0.07620000094175339,
+        1.255270004272461
+      ],
+      "exported_material": {
+        "doubleSided": true,
+        "emissiveFactor": [
+          0.8999999761581421,
+          0.8999999761581421,
+          0.8999999761581421
+        ],
+        "name": "screen_ui",
+        "pbrMetallicRoughness": {
+          "metallicFactor": 0,
+          "roughnessFactor": 0.15000000596046448
+        }
+      }
+    },
+    {
+      "node": "F201 printer3d",
+      "zone": "Z16",
+      "material": "screen_ui",
+      "uv_min": [
+        -0.25527000427246094,
+        0.9390400052070618
+      ],
+      "uv_max": [
+        -0.07620000094175339,
+        1.255270004272461
+      ],
+      "exported_material": {
+        "doubleSided": true,
+        "emissiveFactor": [
+          0.8999999761581421,
+          0.8999999761581421,
+          0.8999999761581421
+        ],
+        "name": "screen_ui",
+        "pbrMetallicRoughness": {
+          "metallicFactor": 0,
+          "roughnessFactor": 0.15000000596046448
+        }
+      }
+    },
+    {
+      "node": "F203 desk_single",
+      "zone": "Z16",
+      "material": "screen_ui",
+      "uv_min": [
+        -0.26669999957084656,
+        -0.19506990909576416
+      ],
+      "uv_max": [
+        0.26669999957084656,
+        0.8120399713516235
+      ],
+      "exported_material": {
+        "doubleSided": true,
+        "emissiveFactor": [
+          0.8999999761581421,
+          0.8999999761581421,
+          0.8999999761581421
+        ],
+        "name": "screen_ui",
+        "pbrMetallicRoughness": {
+          "metallicFactor": 0,
+          "roughnessFactor": 0.15000000596046448
+        }
+      }
+    },
+    {
+      "node": "F216 bench_design",
+      "zone": "Z18",
+      "material": "screen_ui",
+      "uv_min": [
+        -1.0667999982833862,
+        -0.19506990909576416
+      ],
+      "uv_max": [
+        1.0667999982833862,
+        1.275589942932129
+      ],
+      "exported_material": {
+        "doubleSided": true,
+        "emissiveFactor": [
+          0.8999999761581421,
+          0.8999999761581421,
+          0.8999999761581421
+        ],
+        "name": "screen_ui",
+        "pbrMetallicRoughness": {
+          "metallicFactor": 0,
+          "roughnessFactor": 0.15000000596046448
+        }
+      }
+    },
+    {
+      "node": "F221 bench_design",
+      "zone": "Z18",
+      "material": "screen_ui",
+      "uv_min": [
+        -1.0667999982833862,
+        -0.19506990909576416
+      ],
+      "uv_max": [
+        1.0667999982833862,
+        1.275589942932129
+      ],
+      "exported_material": {
+        "doubleSided": true,
+        "emissiveFactor": [
+          0.8999999761581421,
+          0.8999999761581421,
+          0.8999999761581421
+        ],
+        "name": "screen_ui",
+        "pbrMetallicRoughness": {
+          "metallicFactor": 0,
+          "roughnessFactor": 0.15000000596046448
+        }
+      }
+    },
+    {
+      "node": "F243 screen_86",
+      "zone": "Z18",
+      "material": "screen_brand",
+      "uv_min": [
+        -0.9423399567604065,
+        -0.056639909744262695
+      ],
+      "uv_max": [
+        0.9423399567604065,
+        1.0292099714279175
+      ],
+      "exported_material": {
+        "doubleSided": true,
+        "emissiveFactor": [
+          1,
+          1,
+          1
+        ],
+        "name": "screen_brand",
+        "pbrMetallicRoughness": {
+          "metallicFactor": 0,
+          "roughnessFactor": 0.15000000596046448
+        }
+      }
+    },
+    {
+      "node": "F277 screen_75",
+      "zone": "Z21",
+      "material": "screen_brand",
+      "uv_min": [
+        -0.8280399441719055,
+        0.07036006450653076
+      ],
+      "uv_max": [
+        0.8280399441719055,
+        1.0292099714279175
+      ],
+      "exported_material": {
+        "doubleSided": true,
+        "emissiveFactor": [
+          1,
+          1,
+          1
+        ],
+        "name": "screen_brand",
+        "pbrMetallicRoughness": {
+          "metallicFactor": 0,
+          "roughnessFactor": 0.15000000596046448
+        }
+      }
+    }
+  ],
+  "finding": "screen_ui and screen_brand export with uniform white emission and no map. Source procedural gradient does not export. No readable generic content is present. Replacements need component-local screen UV projection; furniture uses shared meter-scaled UVs rather than independent 0..1 per display."
+}

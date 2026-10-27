@@ -1,0 +1,10 @@
+<!doctype html><meta charset="utf-8"><title>Generic screen artwork QA</title>
+<style>body{margin:0;background:#ddd;font:16px Arial}canvas{display:block;width:1024px;height:1024px}</style>
+<script type="module">
+import * as THREE from '../../../../GARMENT_OFFICE_WALKTHROUGH_FINAL/03_INTERACTIVE_3D/vendor/three/build/three.module.js';
+import {applyOfficeScreenContent}from '../../props/screen-content.mjs';
+const clientImage=new Image();clientImage.src='../../../../GARMENT_OFFICE_FINAL_PRESENTATION/01_EDITABLE_3D/assets/brand/logo_stage2_ltd.png';await clientImage.decode();
+const root=new THREE.Group();root.add(new THREE.Mesh(new THREE.BoxGeometry(.5,.3,.002),new THREE.MeshStandardMaterial({name:'screen_ui'})));
+const result=applyOfficeScreenContent(THREE,root,{clientLogo:{image:clientImage,provenance:'assets/brand/logo_stage2_ltd.png'}});
+document.body.appendChild(result.texture.image);window.atlasData=result.texture.image.toDataURL('image/png');window.qaReady=true;
+</script>

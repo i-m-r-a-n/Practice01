@@ -1,0 +1,33 @@
+{
+  "source_sha256": "fa3ed3d58f6d44c3554e3761307841b96115ff7816e4e541c8e6611cb363810d",
+  "production_v2_started": false,
+  "visual_acceptance": false,
+  "completed_candidates": {
+    "Z02_original": {
+      "resolution": 2048,
+      "configured_samples": 256,
+      "status": "rejected visible mottling and incomplete shared-shell coverage"
+    },
+    "Z30_original": {
+      "resolution": 2048,
+      "configured_samples": 256,
+      "status": "unaccepted candidate; original floor density33.68px/m"
+    }
+  },
+  "diagnostics": {
+    "raw_retention": "Fixed; original Z02 raw cannot be recovered",
+    "explicit_target_uv": "Default and explicitLightmapUV raw agree within half-float rounding; wrong targetUV excluded",
+    "source_geometry": "UV0 preserved; maxReception worldvertex error1.08micrometre; cornernormal deviation0.1431deg",
+    "RTLightmap32": "Actual image reviewed; insufficient visual quality",
+    "chart_isolated32": "Actual image reviewed; insufficient visual quality;421subpixelcharts and683chartsunder8pixels recorded",
+    "emitter_groups32": "Completed65.43sec; numericalmean+1.2%, no generalvariance reduction; actualviewpending"
+  },
+  "pipeline_test": {
+    "path": "/workspace/office-bake-work/rtlightmap-integration-check",
+    "resolution": 128,
+    "samples": 1,
+    "seconds": 6.2394,
+    "scope": "Tests isolated OIDN invocation+rawEXR+GLB+manifest output only; not visual quality"
+  },
+  "source_preserved_after_diagnostics": true
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "file": "ktx-parse-MIT.txt",
+    "source": "https://raw.githubusercontent.com/donmccurdy/ktx-parse/v0.7.1/LICENSE",
+    "sha256": "79847431f9ecef9cf399085cb863452e71a6dab99738f4f0c1ea06c6484b5692",
+    "bytes": 1078
+  },
+  {
+    "file": "zstddec-MIT.txt",
+    "source": "https://raw.githubusercontent.com/donmccurdy/zstddec/main/LICENSE",
+    "sha256": "8d078b49fc02bd63c1beaf4ddc629a8b48e4ba6a435415408c8209e2a5c3aacf",
+    "bytes": 2617
+  },
+  {
+    "file": "basis-universal-Apache-2.0.txt",
+    "source": "https://raw.githubusercontent.com/BinomialLLC/basis_universal/master/LICENSE",
+    "sha256": "065fcf48d6af21c0b75e23be5ed5753aee75c892e1c2cf178fa6736305614a5c",
+    "bytes": 11347
+  },
+  {
+    "file": "zstd-BSD.txt",
+    "source": "https://raw.githubusercontent.com/facebook/zstd/v1.5.5/LICENSE",
+    "sha256": "7055266497633c9025b777c78eb7235af13922117480ed5c674677adc381c9d8",
+    "bytes": 1549
+  }
+]

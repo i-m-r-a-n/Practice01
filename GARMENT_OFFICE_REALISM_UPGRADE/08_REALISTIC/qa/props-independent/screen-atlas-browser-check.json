@@ -1,0 +1,10 @@
+{
+  "browser": "154.0.8037.57",
+  "runtime": "Linux Chromium headless",
+  "page_errors": [],
+  "canvas_size": [
+    2048,
+    2048
+  ],
+  "scope": "Actual glyph/client-logo Canvas artwork capture only, not integrated WebGL screen shading/framing acceptance"
+}

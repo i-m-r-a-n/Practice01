@@ -1,0 +1,341 @@
+{
+  "white_oak_veneer": {
+    "basecolor": {
+      "file": "ktx2/white_oak_veneer/basecolor.ktx2",
+      "bytes": 715823,
+      "sha256": "737176af7b20eb1f743237d3d847d8b06dd36c6aa265cb66db6e627f749a1402",
+      "width": 2048,
+      "height": 2048,
+      "colorSpace": "sRGB",
+      "encoding": "basis-lz"
+    },
+    "normal": {
+      "file": "ktx2/white_oak_veneer/normal.ktx2",
+      "bytes": 4612567,
+      "sha256": "681618fa4a35384814e81a810d40f29118ef5b12eb5d5c276bcc5cca61d6072b",
+      "width": 2048,
+      "height": 2048,
+      "colorSpace": "non-color linear",
+      "encoding": "uastc"
+    },
+    "roughness": {
+      "file": "ktx2/white_oak_veneer/roughness.ktx2",
+      "bytes": 3723480,
+      "sha256": "1b82750046c63dcec090d3dce5c41caa881d72e7f19c845847139970b55be6b2",
+      "width": 2048,
+      "height": 2048,
+      "colorSpace": "non-color linear",
+      "encoding": "uastc"
+    }
+  },
+  "natural_walnut_veneer": {
+    "basecolor": {
+      "file": "ktx2/natural_walnut_veneer/basecolor.ktx2",
+      "bytes": 730201,
+      "sha256": "30ae9a84845835d3488f88429c149657073eb3fc3ceceae9f14774f6258b385f",
+      "width": 2048,
+      "height": 2048,
+      "colorSpace": "sRGB",
+      "encoding": "basis-lz"
+    },
+    "normal": {
+      "file": "ktx2/natural_walnut_veneer/normal.ktx2",
+      "bytes": 4006440,
+      "sha256": "7cb5e03832393b4922ff4b6292c98488ca53c85900b7434c59df578273bd364a",
+      "width": 2048,
+      "height": 2048,
+      "colorSpace": "non-color linear",
+      "encoding": "uastc"
+    },
+    "roughness": {
+      "file": "ktx2/natural_walnut_veneer/roughness.ktx2",
+      "bytes": 3651569,
+      "sha256": "bfb420e48acc31140c721d405d8a9a451dfa67af2043748c76991f1b1f0f6951",
+      "width": 2048,
+      "height": 2048,
+      "colorSpace": "non-color linear",
+      "encoding": "uastc"
+    }
+  },
+  "Terrazzo019M": {
+    "basecolor": {
+      "file": "ktx2/Terrazzo019M/basecolor.ktx2",
+      "bytes": 785456,
+      "sha256": "e16352c3c2076a0e4ca75f31117a25dbc947b9d905d9b4ed6bd881ee5ef9b7b8",
+      "width": 2048,
+      "height": 2048,
+      "colorSpace": "sRGB",
+      "encoding": "basis-lz"
+    },
+    "normal": {
+      "file": "ktx2/Terrazzo019M/normal.ktx2",
+      "bytes": 3483236,
+      "sha256": "36a409219745844aea39b3ff8e038b792862c6d6f5679d125b7284063d871344",
+      "width": 2048,
+      "height": 2048,
+      "colorSpace": "non-color linear",
+      "encoding": "uastc"
+    },
+    "roughness": {
+      "file": "ktx2/Terrazzo019M/roughness.ktx2",
+      "bytes": 3650331,
+      "sha256": "b39f707ff692c949ff9b9cc7174a9ee2c6cad5e4b80261fed00ec99fb3a6b1c9",
+      "width": 2048,
+      "height": 2048,
+      "colorSpace": "non-color linear",
+      "encoding": "uastc"
+    }
+  },
+  "Fabric030": {
+    "basecolor": {
+      "file": "ktx2/Fabric030/basecolor.ktx2",
+      "bytes": 826919,
+      "sha256": "1c8d1fc6c433d01dcae41bab18585d5b875ce0bec359a2517ef4fb98d7657798",
+      "width": 2048,
+      "height": 2048,
+      "colorSpace": "sRGB",
+      "encoding": "basis-lz"
+    },
+    "normal": {
+      "file": "ktx2/Fabric030/normal.ktx2",
+      "bytes": 4641909,
+      "sha256": "3d608a3e5eb7dcb5c8770cc962aec54f13472b5f0732571f4f12cb11b2a44d4d",
+      "width": 2048,
+      "height": 2048,
+      "colorSpace": "non-color linear",
+      "encoding": "uastc"
+    },
+    "roughness": {
+      "file": "ktx2/Fabric030/roughness.ktx2",
+      "bytes": 3828701,
+      "sha256": "6dc933dd4e6e618a454e5ac4935ad6bc78d2145d4d53bf844a0d1fa3b1ae470b",
+      "width": 2048,
+      "height": 2048,
+      "colorSpace": "non-color linear",
+      "encoding": "uastc"
+    }
+  },
+  "Fabric034": {
+    "basecolor": {
+      "file": "ktx2/Fabric034/basecolor.ktx2",
+      "bytes": 785287,
+      "sha256": "b397af87f4e147a061d9e3ea928a2482b6444a8ade37dcf6a8d9d4f9f4107bdb",
+      "width": 2048,
+      "height": 2048,
+      "colorSpace": "sRGB",
+      "encoding": "basis-lz"
+    },
+    "normal": {
+      "file": "ktx2/Fabric034/normal.ktx2",
+      "bytes": 4929313,
+      "sha256": "5f811b34d069dc0c3b696b176c80adf2d66e2f33efe91b90a165493e774317fe",
+      "width": 2048,
+      "height": 2048,
+      "colorSpace": "non-color linear",
+      "encoding": "uastc"
+    },
+    "roughness": {
+      "file": "ktx2/Fabric034/roughness.ktx2",
+      "bytes": 3799539,
+      "sha256": "60f7933da39197d082b97c66569e3698998984397b16cc1dcf3a4c5e1304919f",
+      "width": 2048,
+      "height": 2048,
+      "colorSpace": "non-color linear",
+      "encoding": "uastc"
+    }
+  },
+  "selfmade_brushed_metal": {
+    "normal": {
+      "file": "ktx2/selfmade_brushed_metal/normal.ktx2",
+      "bytes": 1710941,
+      "sha256": "bc868ead99afc0e09af0bf2c0ffe1bbfc55e8416a1d372028f854050ed1ecb12",
+      "width": 2048,
+      "height": 2048,
+      "colorSpace": "non-color linear",
+      "encoding": "uastc"
+    },
+    "roughness": {
+      "file": "ktx2/selfmade_brushed_metal/roughness.ktx2",
+      "bytes": 1315651,
+      "sha256": "57fa146eb1e13c79f74bec33ecf2f3124720b0344d4e30cbc124906500445818",
+      "width": 2048,
+      "height": 2048,
+      "colorSpace": "non-color linear",
+      "encoding": "uastc"
+    }
+  },
+  "herringbone_parquet": {
+    "basecolor": {
+      "file": "ktx2/herringbone_parquet/basecolor.ktx2",
+      "bytes": 782859,
+      "sha256": "717bf22e8fdff5b9998ed1257c1e882f0a38fc8fab71771db0fd6f8d55d1986d",
+      "width": 2048,
+      "height": 2048,
+      "colorSpace": "sRGB",
+      "encoding": "basis-lz"
+    },
+    "normal": {
+      "file": "ktx2/herringbone_parquet/normal.ktx2",
+      "bytes": 3823348,
+      "sha256": "7253256b8ca2ddbfe372782ab3d94a4490ea937961be11364568f86da6503f55",
+      "width": 2048,
+      "height": 2048,
+      "colorSpace": "non-color linear",
+      "encoding": "uastc"
+    },
+    "roughness": {
+      "file": "ktx2/herringbone_parquet/roughness.ktx2",
+      "bytes": 3684042,
+      "sha256": "6beb9b5c1a1e6df6c2967218a9f06176e58785e7b6aaab22ec88df80c46ffb2e",
+      "width": 2048,
+      "height": 2048,
+      "colorSpace": "non-color linear",
+      "encoding": "uastc"
+    }
+  },
+  "laminate_floor_02": {
+    "basecolor": {
+      "file": "ktx2/laminate_floor_02/basecolor.ktx2",
+      "bytes": 767527,
+      "sha256": "f2d339589c36b807de3991011c81ea526076f2d71045340c11515fb6f81ad43c",
+      "width": 2048,
+      "height": 2048,
+      "colorSpace": "sRGB",
+      "encoding": "basis-lz"
+    },
+    "normal": {
+      "file": "ktx2/laminate_floor_02/normal.ktx2",
+      "bytes": 4001713,
+      "sha256": "410e319210332fd7608906fa39f777da285b46e5b0ee74434013cb0962f9f6ab",
+      "width": 2048,
+      "height": 2048,
+      "colorSpace": "non-color linear",
+      "encoding": "uastc"
+    },
+    "roughness": {
+      "file": "ktx2/laminate_floor_02/roughness.ktx2",
+      "bytes": 3767999,
+      "sha256": "092fa341fdde45a14239733d8c567c1c7c3006e348a92a95707195073dedfe14",
+      "width": 2048,
+      "height": 2048,
+      "colorSpace": "non-color linear",
+      "encoding": "uastc"
+    }
+  },
+  "leather_white": {
+    "basecolor": {
+      "file": "ktx2/leather_white/basecolor.ktx2",
+      "bytes": 781210,
+      "sha256": "74892ef9a6b56a1ba11b7aac25d53a50ddb8c1dc7b6b36f16f0b7713938e7d7c",
+      "width": 2048,
+      "height": 2048,
+      "colorSpace": "sRGB",
+      "encoding": "basis-lz"
+    },
+    "normal": {
+      "file": "ktx2/leather_white/normal.ktx2",
+      "bytes": 4375247,
+      "sha256": "28ebcbc9b260873a375c07cfcd7b3190b3fd94baf13c77da4406259f93625375",
+      "width": 2048,
+      "height": 2048,
+      "colorSpace": "non-color linear",
+      "encoding": "uastc"
+    },
+    "roughness": {
+      "file": "ktx2/leather_white/roughness.ktx2",
+      "bytes": 3795631,
+      "sha256": "5ed423b3e2335b039c2e1ce67bae6e9244a6acd5dc284503ace20fabc76e0c14",
+      "width": 2048,
+      "height": 2048,
+      "colorSpace": "non-color linear",
+      "encoding": "uastc"
+    }
+  },
+  "Tiles040": {
+    "basecolor": {
+      "file": "ktx2/Tiles040/basecolor.ktx2",
+      "bytes": 849488,
+      "sha256": "ee6ef2ee0285115874686da939481261ea167648ec7ee8737a533f088088b87b",
+      "width": 2048,
+      "height": 2048,
+      "colorSpace": "sRGB",
+      "encoding": "basis-lz"
+    },
+    "normal": {
+      "file": "ktx2/Tiles040/normal.ktx2",
+      "bytes": 4359938,
+      "sha256": "08df7c3d40327b9244e1c6ac169ed021d649c60a9548ee66c3e2f28e7e12e8da",
+      "width": 2048,
+      "height": 2048,
+      "colorSpace": "non-color linear",
+      "encoding": "uastc"
+    },
+    "roughness": {
+      "file": "ktx2/Tiles040/roughness.ktx2",
+      "bytes": 3852692,
+      "sha256": "f7c099e99d2966371d77b95b96c6ee95a554b4d3d4e831d5026a7d7ea58076c7",
+      "width": 2048,
+      "height": 2048,
+      "colorSpace": "non-color linear",
+      "encoding": "uastc"
+    }
+  },
+  "smooth_concrete_floor": {
+    "basecolor": {
+      "file": "ktx2/smooth_concrete_floor/basecolor.ktx2",
+      "bytes": 795718,
+      "sha256": "18754847b948ba9eee7f21fead30089a1feee276e15861bb5a6a824d8c7fe2fe",
+      "width": 2048,
+      "height": 2048,
+      "colorSpace": "sRGB",
+      "encoding": "basis-lz"
+    },
+    "normal": {
+      "file": "ktx2/smooth_concrete_floor/normal.ktx2",
+      "bytes": 4303234,
+      "sha256": "e4a10529bdb81dab148f147eadf5f0a1db222c401e3204ebf9ca0eb2306dad42",
+      "width": 2048,
+      "height": 2048,
+      "colorSpace": "non-color linear",
+      "encoding": "uastc"
+    },
+    "roughness": {
+      "file": "ktx2/smooth_concrete_floor/roughness.ktx2",
+      "bytes": 3538180,
+      "sha256": "ee6aa17f9d8ec2f4f33f79a6eb71a9cf73b6a36cd51d6608b47dc3d1f9ef0641",
+      "width": 2048,
+      "height": 2048,
+      "colorSpace": "non-color linear",
+      "encoding": "uastc"
+    }
+  },
+  "Tiles043": {
+    "basecolor": {
+      "file": "ktx2/Tiles043/basecolor.ktx2",
+      "bytes": 769920,
+      "sha256": "b7dad7de3514f8078587927457f6cf75addb6ea604f2dbf50108efe3ce363036",
+      "width": 2048,
+      "height": 2048,
+      "colorSpace": "sRGB",
+      "encoding": "basis-lz"
+    },
+    "normal": {
+      "file": "ktx2/Tiles043/normal.ktx2",
+      "bytes": 4330027,
+      "sha256": "8f0ca777a8b34b786f5b543d60c415ce5868fdbb423cb74fdb5d0b66b21af0f9",
+      "width": 2048,
+      "height": 2048,
+      "colorSpace": "non-color linear",
+      "encoding": "uastc"
+    },
+    "roughness": {
+      "file": "ktx2/Tiles043/roughness.ktx2",
+      "bytes": 3918537,
+      "sha256": "1883ff44df52bb2c9eb1713193bbd6685f17678a1348da5de24155dafb6594e1",
+      "width": 2048,
+      "height": 2048,
+      "colorSpace": "non-color linear",
+      "encoding": "uastc"
+    }
+  }
+}

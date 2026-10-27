@@ -1,0 +1,43 @@
+{
+  "status": "PASS bounded static geometry; integrated image and animated hand/fabric check pending",
+  "source_glb_sha256": "3b883c0077541aa3c574c903cfad60a3b8ba410d12af6d6b476b7733230fc35d",
+  "new_manifest_sha256": "4b93095d048f658bcdff957f56b41dac78e2287d727af9eb4312647593a9e3dd",
+  "new_module_sha256": "cf7b2883f1a3696319bbb79dea0b3800117d2f17bf8469c6dcf4383c92dd4add",
+  "actual_mesh_sha256": "2e92907a12da1a3e0f6d6d24e36351af1bb67cd4b28ff85dac164e2b8e367322",
+  "actor_v2_t0_sha256": "eecd3b687fb99b122104d6cb4d817f2984eb1f937fe9d78849c72ac487324f6d",
+  "existing_323_props_unchanged": true,
+  "bounds": {
+    "min": [
+      22.80500061010014,
+      0.8254999917699024,
+      -19.73800057189522
+    ],
+    "max": [
+      22.915000610602984,
+      0.8266999918268993,
+      -19.37800055725517
+    ]
+  },
+  "dimensions_m": [
+    0.11000000050284342,
+    0.0012000000569969416,
+    0.3600000146400504
+  ],
+  "triangles": 92,
+  "source_contacts": [
+    {
+      "object": "F206 sewing",
+      "material": "plastic_white",
+      "source_triangles": 2,
+      "contact_source_y_min": 0.8255000114440918,
+      "contact_source_y_max": 0.8255000114440918
+    }
+  ],
+  "source_above_support_crossings": [],
+  "actor26_v2_t0_contacts": [],
+  "limits": [
+    "One static frozen people v2 snapshot; later poses require the same check.",
+    "Touching F206 horizontal bed at the declared support height is intentional. No source geometry moved.",
+    "Thin workpiece uses existing self-made fabric material; no physics or actual needle motion claim."
+  ]
+}

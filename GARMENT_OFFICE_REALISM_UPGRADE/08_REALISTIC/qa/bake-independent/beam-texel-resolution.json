@@ -1,0 +1,117 @@
+{
+  "actual_room_lightmap_size": 2048,
+  "method": "Actual glTF UV1 edges of source-identified vertical beam side triangles. Pixel height is Euclidean UV edge length \u00d7 atlas width; duplicates are retained as triangle evidence.",
+  "beams": [
+    {
+      "object": "BM008 Room 3 secondary",
+      "vertical_edges": [
+        {
+          "world_height_m": 0.30480000376701355,
+          "lightmap_pixels": 16.080322265625
+        },
+        {
+          "world_height_m": 0.30480000376701355,
+          "lightmap_pixels": 16.080322265625
+        },
+        {
+          "world_height_m": 0.30480000376701355,
+          "lightmap_pixels": 15.937320709228516
+        },
+        {
+          "world_height_m": 0.30480000376701355,
+          "lightmap_pixels": 15.937320709228516
+        },
+        {
+          "world_height_m": 0.30480000376701355,
+          "lightmap_pixels": 16.064208984375
+        },
+        {
+          "world_height_m": 0.30480000376701355,
+          "lightmap_pixels": 16.064208984375
+        },
+        {
+          "world_height_m": 0.30480000376701355,
+          "lightmap_pixels": 15.942398071289062
+        },
+        {
+          "world_height_m": 0.30480000376701355,
+          "lightmap_pixels": 15.942398071289062
+        }
+      ]
+    },
+    {
+      "object": "BM009 Room 3 secondary",
+      "vertical_edges": [
+        {
+          "world_height_m": 0.30480000376701355,
+          "lightmap_pixels": 16.0804443359375
+        },
+        {
+          "world_height_m": 0.30480000376701355,
+          "lightmap_pixels": 16.080322265625
+        },
+        {
+          "world_height_m": 0.30480000376701355,
+          "lightmap_pixels": 15.937259674072266
+        },
+        {
+          "world_height_m": 0.30480000376701355,
+          "lightmap_pixels": 15.937259674072266
+        },
+        {
+          "world_height_m": 0.30480000376701355,
+          "lightmap_pixels": 16.064208984375
+        },
+        {
+          "world_height_m": 0.30480000376701355,
+          "lightmap_pixels": 16.064208984375
+        },
+        {
+          "world_height_m": 0.30480000376701355,
+          "lightmap_pixels": 15.942459106445312
+        },
+        {
+          "world_height_m": 0.30480000376701355,
+          "lightmap_pixels": 15.942459106445312
+        }
+      ]
+    },
+    {
+      "object": "BM010 Room 3 secondary",
+      "vertical_edges": [
+        {
+          "world_height_m": 0.30480000376701355,
+          "lightmap_pixels": 16.080322265625
+        },
+        {
+          "world_height_m": 0.30480000376701355,
+          "lightmap_pixels": 16.080322265625
+        },
+        {
+          "world_height_m": 0.30480000376701355,
+          "lightmap_pixels": 15.937320709228516
+        },
+        {
+          "world_height_m": 0.30480000376701355,
+          "lightmap_pixels": 15.937320709228516
+        },
+        {
+          "world_height_m": 0.30480000376701355,
+          "lightmap_pixels": 16.0643310546875
+        },
+        {
+          "world_height_m": 0.30480000376701355,
+          "lightmap_pixels": 16.064453125
+        },
+        {
+          "world_height_m": 0.30480000376701355,
+          "lightmap_pixels": 15.942398071289062
+        },
+        {
+          "world_height_m": 0.30480000376701355,
+          "lightmap_pixels": 15.942398071289062
+        }
+      ]
+    }
+  ]
+}

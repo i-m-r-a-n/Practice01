@@ -1,0 +1,196 @@
+{
+  "status": "passed",
+  "url": "http://127.0.0.1:8783/realistic/?stage=5&welcome=0&ao=0&shadows=0&post=0&materials=0&probes=0&scale=0.25",
+  "checks": [
+    {
+      "name": "normal UI entry spawns on free floor",
+      "passed": true,
+      "detail": [
+        6.199,
+        1.6,
+        5.1768
+      ]
+    },
+    {
+      "name": "normal walk eye height is 1.60m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "real W key moves forward",
+      "passed": true,
+      "detail": {
+        "from": [
+          6.199,
+          1.6,
+          5.1768
+        ],
+        "to": [
+          6.125668335084034,
+          1.6,
+          4.486191336738414
+        ]
+      }
+    },
+    {
+      "name": "key release brakes to rest on free floor",
+      "passed": true,
+      "detail": {
+        "position": [
+          6.125668335084034,
+          1.6,
+          4.486191336738414
+        ],
+        "velocity": [
+          0,
+          -0.00018195724928842238
+        ],
+        "steps": 138,
+        "collisions": 0,
+        "distance": 0.6944914322214059,
+        "eye": 1.6
+      }
+    },
+    {
+      "name": "real mouse changes first-person look",
+      "passed": true,
+      "detail": {
+        "before": {
+          "yaw": 0.10579731450231747,
+          "pitch": -0.01671949452651246,
+          "pointerLocked": false,
+          "eye": 1.6
+        },
+        "after": {
+          "yaw": -0.15820268549768254,
+          "pitch": -0.01671949452651246,
+          "pointerLocked": true,
+          "eye": 1.6
+        },
+        "input_mode": "pointer lock"
+      }
+    },
+    {
+      "name": "one Escape leaves walking and releases mouse",
+      "passed": true,
+      "detail": {
+        "viewer": {
+          "mode": "overview",
+          "room": null,
+          "atCam": null,
+          "flying": true,
+          "flightT": 0.157,
+          "fps": 3.03951367781155,
+          "overhead": false,
+          "tour": null,
+          "photo": null,
+          "aoFrames": 0,
+          "pos": [
+            6.167,
+            2.288,
+            4.512
+          ]
+        },
+        "look": {
+          "yaw": -0.15820268549768254,
+          "pitch": -0.01671949452651246,
+          "pointerLocked": false,
+          "eye": 1.6
+        }
+      }
+    },
+    {
+      "name": "no QA spawn used",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "page_errors": [],
+  "console_errors": [],
+  "source_responses": [
+    {
+      "url": "http://127.0.0.1:8783/realistic/?stage=5&welcome=0&ao=0&shadows=0&post=0&materials=0&probes=0&scale=0.25",
+      "status": 200,
+      "bytes": 70998,
+      "sha256": "77be4478c6e364dfd4c8d57517a303d15a42954863ac2c46a514cbff30bb2c25"
+    },
+    {
+      "url": "http://127.0.0.1:8783/realistic/app.js",
+      "status": 200,
+      "bytes": 915338,
+      "sha256": "0aed3f619e94c6bae3c96a5913c60b363142bc7cb37c8eca629b8157d96c6d7d"
+    }
+  ],
+  "scope": "Real UI click, keyboard and mouse events; no QA movement or spawn hook invoked. Linux software rendering; no FPS or Mac hardware claim.",
+  "browser": "153.0",
+  "gpu": {
+    "userAgent": "Mozilla/5.0 (X11; Linux x86_64; rv:153.0) Gecko/20100101 Firefox/153.0",
+    "vendor": "Mesa",
+    "renderer": "llvmpipe, or similar",
+    "webgl": "WebGL 2.0",
+    "maxTextureSize": 16384,
+    "pixelRatio": 0.25,
+    "quality": "balanced",
+    "viewport": [
+      1280,
+      720
+    ]
+  },
+  "render_state": {
+    "frame": 35,
+    "calls": 270,
+    "triangles": 1651842,
+    "points": 0,
+    "lines": 0,
+    "memory": {
+      "geometries": 141,
+      "textures": 67
+    },
+    "phase": 5,
+    "capturePostProcessing": false,
+    "post": null
+  },
+  "initial": {
+    "viewer": {
+      "mode": "walk",
+      "room": "Z01",
+      "atCam": "CAM_03_Entrance_Lobby",
+      "flying": false,
+      "flightT": null,
+      "fps": 2.865329512893983,
+      "overhead": true,
+      "tour": null,
+      "photo": null,
+      "aoFrames": 0,
+      "pos": [
+        6.199,
+        1.6,
+        5.177
+      ]
+    },
+    "walk": {
+      "position": [
+        6.199,
+        1.6,
+        5.1768
+      ],
+      "velocity": [
+        0,
+        0
+      ],
+      "steps": 23,
+      "collisions": 0,
+      "distance": 0,
+      "eye": 1.6
+    },
+    "look": {
+      "yaw": 0.10579731450231747,
+      "pitch": -0.01671949452651246,
+      "pointerLocked": false,
+      "eye": 1.6
+    },
+    "blocked": false
+  },
+  "pointer_lock_acquired": true,
+  "wall_seconds": 12.063
+}

@@ -1,0 +1,175 @@
+{
+  "scope": "Same-atlas 2048px/32sample diagnostic, no production files modified. Four-pixel-eroded UV1 material masks avoid most atlas boundaries. Initial uncertainty about default bake UV target was resolved by the explicit LightmapUV comparison recorded in uvVerificationEvidence. Low-frequency variation may be genuine illumination or sampling/denoiser artifacts; this is not visual acceptance.",
+  "sourceFiles": [
+    {
+      "path": "/workspace/office-bake-work/diagnostic-z02/Z02_raw.exr",
+      "sha256": "5b514f9e5a5c1f4c2d8c6298f7e82fd2ac0b866ab6cac61c78753978b54c64ea"
+    },
+    {
+      "path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/textures/qa/z02-2k32-rtlightmap.exr",
+      "sha256": "56c4a42aa1d7affb32e252b3d9b715a7b9097d1476f03e60dca05ff90e37297e"
+    },
+    {
+      "path": "/workspace/office-bake-work/diagnostic-z02/Z02.glb",
+      "sha256": "319d201d8e6282acae523640924281573b5082d19573c60c5759f984660e899a"
+    }
+  ],
+  "rawRange": [
+    0.0,
+    52.46875
+  ],
+  "oidnRange": [
+    0.0,
+    29.8125
+  ],
+  "shape": [
+    2048,
+    2048,
+    3
+  ],
+  "materials": [
+    {
+      "material": "steel_painted",
+      "triangles": 36,
+      "maskPixels": 49785,
+      "interiorPixels": 12138,
+      "rawLuminancePercentiles": {
+        "p05": 0.005403097672387958,
+        "p50": 0.13600250333547592,
+        "p95": 0.679767394065857
+      },
+      "oidnLuminancePercentiles": {
+        "p05": 0.04595415256917477,
+        "p50": 0.15694132447242737,
+        "p95": 0.42390679121017455
+      },
+      "meanLuminanceDelta": -0.02294444479048252,
+      "meanAbsLuminanceDelta": 0.13148868083953857,
+      "relativeAbsDeltaMedian": 0.5689465999603271,
+      "rawHighpassLogRMS": 0.14715449512004852,
+      "oidnHighpassLogRMS": 0.025282256305217743,
+      "highpassRMSRatio": 0.17180757224559784,
+      "smoothLogCorrelation": 0.9943153324009318,
+      "maxInteriorRadiusPx": 9.0,
+      "exampleInteriorPixelXY": [
+        376,
+        1349
+      ]
+    },
+    {
+      "material": "fab_green",
+      "triangles": 1880,
+      "maskPixels": 22169,
+      "interiorPixels": 3702,
+      "rawLuminancePercentiles": {
+        "p05": 0.027977789472788575,
+        "p50": 0.485377237200737,
+        "p95": 1.8994795918464642
+      },
+      "oidnLuminancePercentiles": {
+        "p05": 0.08423110358417034,
+        "p50": 0.47267234325408936,
+        "p95": 1.3461384832859038
+      },
+      "meanLuminanceDelta": -0.07047394663095474,
+      "meanAbsLuminanceDelta": 0.3026779592037201,
+      "relativeAbsDeltaMedian": 0.41542553901672363,
+      "rawHighpassLogRMS": 0.24453336000442505,
+      "oidnHighpassLogRMS": 0.047757912427186966,
+      "highpassRMSRatio": 0.19530223309993744,
+      "smoothLogCorrelation": 0.9967327053958985,
+      "maxInteriorRadiusPx": 19.0,
+      "exampleInteriorPixelXY": [
+        1788,
+        1463
+      ]
+    },
+    {
+      "material": "fl_terrazzo",
+      "triangles": 12,
+      "maskPixels": 232015,
+      "interiorPixels": 81242,
+      "rawLuminancePercentiles": {
+        "p05": 0.017140382807701828,
+        "p50": 0.5317027866840363,
+        "p95": 2.1649482846260066
+      },
+      "oidnLuminancePercentiles": {
+        "p05": 0.21488671824336053,
+        "p50": 0.6339195370674133,
+        "p95": 1.4381544411182403
+      },
+      "meanLuminanceDelta": -0.029636794701218605,
+      "meanAbsLuminanceDelta": 0.4166746735572815,
+      "relativeAbsDeltaMedian": 0.46765846014022827,
+      "rawHighpassLogRMS": 0.28947657346725464,
+      "oidnHighpassLogRMS": 0.02658100239932537,
+      "highpassRMSRatio": 0.09182436764240265,
+      "smoothLogCorrelation": 0.9797084093518612,
+      "maxInteriorRadiusPx": 165.0,
+      "exampleInteriorPixelXY": [
+        173,
+        1854
+      ]
+    },
+    {
+      "material": "paint_white",
+      "triangles": 64,
+      "maskPixels": 78153,
+      "interiorPixels": 50789,
+      "rawLuminancePercentiles": {
+        "p05": 0.026050784066319468,
+        "p50": 0.3633686602115631,
+        "p95": 1.157894110679626
+      },
+      "oidnLuminancePercentiles": {
+        "p05": 0.12895481884479523,
+        "p50": 0.3810802400112152,
+        "p95": 0.9778476119041443
+      },
+      "meanLuminanceDelta": -0.006562278605997562,
+      "meanAbsLuminanceDelta": 0.19514352083206177,
+      "relativeAbsDeltaMedian": 0.4283529818058014,
+      "rawHighpassLogRMS": 0.16271518170833588,
+      "oidnHighpassLogRMS": 0.00868460163474083,
+      "highpassRMSRatio": 0.053373027592897415,
+      "smoothLogCorrelation": 0.9937539512262369,
+      "maxInteriorRadiusPx": 40.01249804748511,
+      "exampleInteriorPixelXY": [
+        139,
+        1631
+      ]
+    },
+    {
+      "material": "fab_sand",
+      "triangles": 1344,
+      "maskPixels": 39201,
+      "interiorPixels": 5322,
+      "rawLuminancePercentiles": {
+        "p05": 0.07108736746013165,
+        "p50": 0.7692151367664337,
+        "p95": 2.371451151371001
+      },
+      "oidnLuminancePercentiles": {
+        "p05": 0.18504129648208617,
+        "p50": 0.7827698588371277,
+        "p95": 1.6922673165798185
+      },
+      "meanLuminanceDelta": -0.04932207241654396,
+      "meanAbsLuminanceDelta": 0.3918057382106781,
+      "relativeAbsDeltaMedian": 0.3666224181652069,
+      "rawHighpassLogRMS": 0.2640942931175232,
+      "oidnHighpassLogRMS": 0.058200061321258545,
+      "highpassRMSRatio": 0.22037605941295624,
+      "smoothLogCorrelation": 0.9960656522559768,
+      "maxInteriorRadiusPx": 23.0,
+      "exampleInteriorPixelXY": [
+        1479,
+        1304
+      ]
+    }
+  ],
+  "bakeUvLayerVerified": true,
+  "maskUvLayer": "TEXCOORD_1 / LightmapUV",
+  "uvVerificationEvidence": "z02-explicit-uv-comparison.json: explicit LightmapUV vs prior raw meanAbsRGB3.9775e-10, same coverage; all37 GLB TEXCOORD_1 arrays exactly equal."
+}

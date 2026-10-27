@@ -1,0 +1,321 @@
+{
+  "manifest_sha256": "5304ebb7a42d3a7d97e3874b75da7b8236dfb1d7aa67c2f26f59a5cb57ffa5a9",
+  "actors": 35,
+  "seat_supports": [
+    {
+      "id": "office-person-01",
+      "sourceObject": "F007 exec_chair_black",
+      "declaredSeatTopY": 0.47,
+      "measuredSeatAtActorXZ": 0.5029199719429016,
+      "declared_minus_actual_m": -0.03291997194290164
+    },
+    {
+      "id": "office-person-03",
+      "sourceObject": "F009 sofa_84_sand",
+      "declaredSeatTopY": 0.43,
+      "measuredSeatAtActorXZ": 0.44449999928474426,
+      "declared_minus_actual_m": -0.01449999928474427
+    },
+    {
+      "id": "office-person-04",
+      "sourceObject": "F009 sofa_84_sand",
+      "declaredSeatTopY": 0.43,
+      "measuredSeatAtActorXZ": 0.44449999928474426,
+      "declared_minus_actual_m": -0.01449999928474427
+    },
+    {
+      "id": "office-person-08",
+      "sourceObject": "F034 board_chair",
+      "declaredSeatTopY": 0.47,
+      "measuredSeatAtActorXZ": 0.5029199719429016,
+      "declared_minus_actual_m": -0.03291997194290164
+    },
+    {
+      "id": "office-person-09",
+      "sourceObject": "F037 board_chair",
+      "declaredSeatTopY": 0.47,
+      "measuredSeatAtActorXZ": 0.5029199719429016,
+      "declared_minus_actual_m": -0.03291997194290164
+    },
+    {
+      "id": "office-person-10",
+      "sourceObject": "F040 board_chair",
+      "declaredSeatTopY": 0.47,
+      "measuredSeatAtActorXZ": 0.5029199719429016,
+      "declared_minus_actual_m": -0.03291997194290164
+    },
+    {
+      "id": "office-person-11",
+      "sourceObject": "F043 board_chair",
+      "declaredSeatTopY": 0.47,
+      "measuredSeatAtActorXZ": 0.5029199719429016,
+      "declared_minus_actual_m": -0.03291997194290164
+    },
+    {
+      "id": "office-person-12",
+      "sourceObject": "F046 exec_chair_black",
+      "declaredSeatTopY": 0.47,
+      "measuredSeatAtActorXZ": 0.5029199719429016,
+      "declared_minus_actual_m": -0.03291997194290164
+    },
+    {
+      "id": "office-person-14",
+      "sourceObject": "F064 exec_chair_cognac",
+      "declaredSeatTopY": 0.49,
+      "measuredSeatAtActorXZ": 0.5029199719429016,
+      "declared_minus_actual_m": -0.01291997194290162
+    },
+    {
+      "id": "office-person-15",
+      "sourceObject": "F140 task_chair",
+      "declaredSeatTopY": 0.47,
+      "measuredSeatAtActorXZ": 0.49021998047828674,
+      "declared_minus_actual_m": -0.02021998047828677
+    },
+    {
+      "id": "office-person-16",
+      "sourceObject": "F143 task_chair",
+      "declaredSeatTopY": 0.47,
+      "measuredSeatAtActorXZ": 0.49021998047828674,
+      "declared_minus_actual_m": -0.02021998047828677
+    },
+    {
+      "id": "office-person-17",
+      "sourceObject": "F113 task_chair",
+      "declaredSeatTopY": 0.47,
+      "measuredSeatAtActorXZ": 0.49021998047828674,
+      "declared_minus_actual_m": -0.02021998047828677
+    },
+    {
+      "id": "office-person-18",
+      "sourceObject": "F120 task_chair",
+      "declaredSeatTopY": 0.47,
+      "measuredSeatAtActorXZ": 0.49021998047828674,
+      "declared_minus_actual_m": -0.02021998047828677
+    },
+    {
+      "id": "office-person-19",
+      "sourceObject": "F074 task_chair",
+      "declaredSeatTopY": 0.47,
+      "measuredSeatAtActorXZ": 0.49021998047828674,
+      "declared_minus_actual_m": -0.02021998047828677
+    },
+    {
+      "id": "office-person-20",
+      "sourceObject": "F089 task_chair",
+      "declaredSeatTopY": 0.47,
+      "measuredSeatAtActorXZ": 0.49021998047828674,
+      "declared_minus_actual_m": -0.02021998047828677
+    },
+    {
+      "id": "office-person-21",
+      "sourceObject": "F094 task_chair_green",
+      "declaredSeatTopY": 0.47,
+      "measuredSeatAtActorXZ": 0.49021998047828674,
+      "declared_minus_actual_m": -0.02021998047828677
+    },
+    {
+      "id": "office-person-25",
+      "sourceObject": "F182 task_chair",
+      "declaredSeatTopY": 0.47,
+      "measuredSeatAtActorXZ": 0.49021998047828674,
+      "declared_minus_actual_m": -0.02021998047828677
+    },
+    {
+      "id": "office-person-26",
+      "sourceObject": "F207 task_chair",
+      "declaredSeatTopY": 0.47,
+      "measuredSeatAtActorXZ": 0.49021998047828674,
+      "declared_minus_actual_m": -0.02021998047828677
+    },
+    {
+      "id": "office-person-28",
+      "sourceObject": "F222 task_chair_green",
+      "declaredSeatTopY": 0.47,
+      "measuredSeatAtActorXZ": 0.49021998047828674,
+      "declared_minus_actual_m": -0.02021998047828677
+    },
+    {
+      "id": "office-person-29",
+      "sourceObject": "F225 task_chair_green",
+      "declaredSeatTopY": 0.47,
+      "measuredSeatAtActorXZ": 0.49021998047828674,
+      "declared_minus_actual_m": -0.02021998047828677
+    },
+    {
+      "id": "office-person-30",
+      "sourceObject": "F263 dining_chair",
+      "declaredSeatTopY": 0.45,
+      "measuredSeatAtActorXZ": 0.48768001794815063,
+      "declared_minus_actual_m": -0.037680017948150624
+    },
+    {
+      "id": "office-person-31",
+      "sourceObject": "F266 dining_chair",
+      "declaredSeatTopY": 0.45,
+      "measuredSeatAtActorXZ": 0.48768001794815063,
+      "declared_minus_actual_m": -0.037680017948150624
+    },
+    {
+      "id": "office-person-32",
+      "sourceObject": "F269 dining_chair",
+      "declaredSeatTopY": 0.45,
+      "measuredSeatAtActorXZ": 0.48768001794815063,
+      "declared_minus_actual_m": -0.037680017948150624
+    }
+  ],
+  "standing_and_walking_start_envelopes": [
+    {
+      "id": "office-person-02",
+      "zone": "Z02",
+      "task": "idle",
+      "position": [
+        11.599,
+        0,
+        3.1768
+      ],
+      "envelope_radius_m": 0.25,
+      "source_surface_candidates": []
+    },
+    {
+      "id": "office-person-05",
+      "zone": "Z30",
+      "task": "show_sample",
+      "position": [
+        18.499,
+        0,
+        -7.3232
+      ],
+      "envelope_radius_m": 0.25,
+      "source_surface_candidates": []
+    },
+    {
+      "id": "office-person-06",
+      "zone": "Z30",
+      "task": "browsing",
+      "position": [
+        17.299,
+        0,
+        -9.6232
+      ],
+      "envelope_radius_m": 0.25,
+      "source_surface_candidates": []
+    },
+    {
+      "id": "office-person-07",
+      "zone": "Z30",
+      "task": "browsing",
+      "position": [
+        20.299,
+        0,
+        -7.5232
+      ],
+      "envelope_radius_m": 0.25,
+      "source_surface_candidates": []
+    },
+    {
+      "id": "office-person-13",
+      "zone": "Z08",
+      "task": "presenting",
+      "position": [
+        13.199,
+        0,
+        -3.7232
+      ],
+      "envelope_radius_m": 0.25,
+      "source_surface_candidates": []
+    },
+    {
+      "id": "office-person-22",
+      "zone": "Z07",
+      "task": "show_sample",
+      "position": [
+        15.099,
+        0,
+        -16.7232
+      ],
+      "envelope_radius_m": 0.25,
+      "source_surface_candidates": []
+    },
+    {
+      "id": "office-person-23",
+      "zone": "Z07",
+      "task": "browsing",
+      "position": [
+        15.799,
+        0,
+        -16.7232
+      ],
+      "envelope_radius_m": 0.25,
+      "source_surface_candidates": []
+    },
+    {
+      "id": "office-person-24",
+      "zone": "Z16",
+      "task": "fabric",
+      "position": [
+        24.499,
+        0,
+        -14.0232
+      ],
+      "envelope_radius_m": 0.25,
+      "source_surface_candidates": []
+    },
+    {
+      "id": "office-person-27",
+      "zone": "Z15",
+      "task": "fabric",
+      "position": [
+        24.399,
+        0,
+        -7.9232
+      ],
+      "envelope_radius_m": 0.25,
+      "source_surface_candidates": []
+    },
+    {
+      "id": "office-person-33",
+      "zone": "Z33",
+      "task": "walking",
+      "position": [
+        10.999,
+        0,
+        -22.0232
+      ],
+      "envelope_radius_m": 0.25,
+      "source_surface_candidates": []
+    },
+    {
+      "id": "office-person-34",
+      "zone": "Z22",
+      "task": "walking_files",
+      "position": [
+        27.199,
+        0,
+        -11.7232
+      ],
+      "envelope_radius_m": 0.25,
+      "source_surface_candidates": []
+    },
+    {
+      "id": "office-person-35",
+      "zone": "Z31",
+      "task": "walking",
+      "position": [
+        3.399,
+        0,
+        -0.8232
+      ],
+      "envelope_radius_m": 0.25,
+      "source_surface_candidates": []
+    }
+  ],
+  "unique_style_pose_parameter_sets": 35,
+  "parameter_clone_count": 0,
+  "limits": [
+    "Seat ray uses actual source triangles at actor root XZ; it does not test deformed human pelvis/cloth/feet.",
+    "Standing full-envelope positives are candidates, not a body-surface intersection proof; arm gestures must be checked using final skinned vertices.",
+    "Different style parameters do not prove different faces or believable diversity; actual renders are required.",
+    "Walking paths and person/person interaction are not checked by this starting-position review."
+  ]
+}

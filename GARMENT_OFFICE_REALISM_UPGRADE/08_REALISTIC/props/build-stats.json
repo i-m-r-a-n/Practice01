@@ -1,0 +1,13 @@
+{
+  "props": 324,
+  "instances": 1474,
+  "drawCalls": 49,
+  "triangles": 128878,
+  "atlasSize": [
+    2048,
+    2048
+  ],
+  "rooms": 28,
+  "allMatricesFinite": true,
+  "environment": "Node.js using the real r169 Three.js geometry implementation and a canvas API stub. No screenshot, browser performance or visual acceptance claim."
+}

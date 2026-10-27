@@ -1,0 +1,4000 @@
+{
+  "source_sha256": "fa3ed3d58f6d44c3554e3761307841b96115ff7816e4e541c8e6611cb363810d",
+  "scope": "Measured final evaluated geometry / UV0 preserved; UV1 packing-only audit, not rendered lighting acceptance. Whole objects assigned once.",
+  "rooms": {
+    "SHELL_FLOOR": {
+      "atlas_size": 2048,
+      "source_objects": [
+        "Floor slab (existing, finished floor = 0)"
+      ],
+      "uv_metrics": {
+        "uv0_world_loop_signature": "31bd1ee6262f62223dde125c65263f952c2adca9d0a6d1e01f79946c966160e2",
+        "uv0_and_evaluated_geometry_preserved": true,
+        "max_world_loop_error_m": 0.0,
+        "world_surface_area_m2": 2419.534368986072,
+        "summed_uv_island_area": 0.5677677603178496,
+        "mean_linear_texels_per_metre": 31.3725209981598,
+        "packing_margin_uv": 0.004,
+        "bake_dilation_px": 16,
+        "objects": {
+          "Floor slab (existing, finished floor = 0)": {
+            "world_area_m2": 2419.534368986072,
+            "uv_area": 0.5677677603178496,
+            "texels_per_metre": 31.3725209981598
+          }
+        }
+      },
+      "always_load": true,
+      "packing_only_not_baked": true
+    },
+    "SHELL_DECK": {
+      "atlas_size": 2048,
+      "source_objects": [
+        "Steel deck / slab above (soffit painted)"
+      ],
+      "uv_metrics": {
+        "uv0_world_loop_signature": "4b3a85e21aded75db432dfc8d04d8427daa4cb65c574683cb2be0d7207ff120e",
+        "uv0_and_evaluated_geometry_preserved": true,
+        "max_world_loop_error_m": 0.0,
+        "world_surface_area_m2": 2278.101091471937,
+        "summed_uv_island_area": 0.5343741166435867,
+        "mean_linear_texels_per_metre": 31.36650738400765,
+        "packing_margin_uv": 0.004,
+        "bake_dilation_px": 16,
+        "objects": {
+          "Steel deck / slab above (soffit painted)": {
+            "world_area_m2": 2278.101091471937,
+            "uv_area": 0.5343741166435867,
+            "texels_per_metre": 31.36650738400765
+          }
+        }
+      },
+      "always_load": true,
+      "packing_only_not_baked": true
+    },
+    "SHELL_STRUCTURE": {
+      "atlas_size": 2048,
+      "source_objects": [
+        "COL01 steel column (position PHOTO-EST)",
+        "COL02 steel column (position PHOTO-EST)",
+        "COL03 steel column (position PHOTO-EST)",
+        "COL04 steel column (position PHOTO-EST)",
+        "COL05 steel column (position PHOTO-EST)",
+        "COL06 steel column (position PHOTO-EST)",
+        "COL07 steel column (position PHOTO-EST)",
+        "COL08 steel column (position PHOTO-EST)",
+        "COL09 steel column (position PHOTO-EST)",
+        "COL10 steel column (position PHOTO-EST)",
+        "COL11 steel column (position PHOTO-EST)",
+        "BM001 Room 7 main beam (sketch line)",
+        "BM002 Room 6 - 5 main beam",
+        "BM003 Room 8 main beam",
+        "BM004 Room 1 secondary",
+        "BM005 Room 1 secondary",
+        "BM006 Room 1 secondary",
+        "BM007 Room 1 secondary",
+        "BM008 Room 3 secondary",
+        "BM009 Room 3 secondary",
+        "BM010 Room 3 secondary",
+        "BM011 Room 4 secondary",
+        "BM012 Room 4 secondary",
+        "BM013 Room 4 secondary",
+        "BM014 Room 4 secondary",
+        "BM015 Room 4 secondary",
+        "BM016 Room 4 secondary",
+        "BM017 Room 4 secondary",
+        "BM018 Room 2 secondary",
+        "BM019 Room 2 secondary",
+        "BM020 Room 7 secondary",
+        "BM021 Room 7 secondary",
+        "BM022 Room 7 secondary",
+        "BM023 Room 7 secondary",
+        "BM024 Room 7 secondary",
+        "BM025 Room 7 secondary",
+        "BM026 Room 7 secondary",
+        "BM027 Room 7 secondary",
+        "BM028 Room 7 secondary",
+        "BM029 Room 7 secondary",
+        "BM030 Room 7 secondary",
+        "BM031 Room 7 secondary",
+        "BM032 Hallway secondary",
+        "BM033 Hallway secondary",
+        "BM034 Hallway secondary",
+        "BM035 Hallway secondary",
+        "BM036 Hallway secondary",
+        "BM037 Hallway secondary",
+        "BM038 Hallway secondary",
+        "BM039 Room 5 secondary",
+        "BM040 Room 5 secondary",
+        "BM041 Room 5 secondary",
+        "BM042 Room 5 secondary",
+        "BM043 Room 5 secondary",
+        "BM044 Room 5 secondary",
+        "BM045 Room 6 secondary",
+        "BM046 Room 6 secondary",
+        "BM047 Room 6 secondary",
+        "BM048 Room 6 secondary",
+        "BM049 Room 6 secondary",
+        "BM050 Room 6 secondary",
+        "BM051 Room 6 secondary",
+        "BM052 Room 6 secondary",
+        "BM053 Room 6 secondary",
+        "BM054 Room 6 secondary",
+        "BM055 Room 6 secondary",
+        "BM056 Room 6 secondary",
+        "BM057 Room 6 secondary",
+        "BM058 Room 6 secondary",
+        "BM059 Room 6 secondary",
+        "BM060 Room 6 secondary",
+        "BM061 Room 8 secondary",
+        "BM062 Room 8 secondary",
+        "BM063 Room 8 secondary",
+        "BM064 Room 8 secondary",
+        "BM065 Room 8 secondary",
+        "BM066 Room 8 secondary",
+        "BM067 Room 8 secondary",
+        "BM068 Room 8 secondary",
+        "BM069 Room 8 secondary",
+        "BM070 Room 8 secondary",
+        "BM071 Room 8 secondary",
+        "BM072 Room 8 secondary",
+        "BM073 Room 8 secondary",
+        "BM074 Room 8 secondary",
+        "BM075 Room 8 secondary",
+        "BM076 Room 8 secondary",
+        "BM077 Room 8 secondary",
+        "BM078 Room 8 secondary",
+        "BM079 Room 8 secondary",
+        "BM080 Room 8 secondary",
+        "BM081 Room 8 secondary",
+        "BM082 Room 8 secondary",
+        "BM083 Room 8 secondary",
+        "BM084 Room 8 secondary",
+        "BM085 Room 8 secondary",
+        "BM086 Room 8 secondary",
+        "BM087 Room 8 secondary",
+        "BM088 Room 8 secondary",
+        "BM089 Room 8 secondary",
+        "BM090 Room 8 secondary",
+        "BM091 Room 8 secondary",
+        "BM092 Room 8 secondary",
+        "BM093 Room 8 secondary",
+        "BM094 Room 8 secondary",
+        "BM095 Room 8 secondary",
+        "BM096 Room 8 secondary",
+        "BM097 Room 8 secondary",
+        "BM098 Room 8 secondary",
+        "BM099 Room 8 secondary",
+        "BM100 Room 8 secondary",
+        "BM101 Room 8 secondary",
+        "BM102 Room 8 secondary",
+        "NI01 frame above PW01",
+        "NI03 frame above PW01",
+        "NI04 frame above PW05",
+        "NI06 frame above PW05",
+        "NI07 frame above PW06",
+        "NI08 frame above PW07",
+        "NI10 frame above PW07",
+        "NP01 frame + mullions",
+        "NP32 frame + mullions",
+        "NP04 frame + mullions",
+        "NP11 frame + mullions",
+        "NP13 frame + mullions",
+        "NP15 frame + mullions",
+        "NP17 frame + mullions",
+        "NP18 frame + mullions",
+        "NP22 frame + mullions",
+        "NP23 frame + mullions",
+        "NP24 frame + mullions",
+        "NP29 frame + mullions",
+        "NP30 frame + mullions",
+        "NP31 frame + mullions"
+      ],
+      "uv_metrics": {
+        "uv0_world_loop_signature": "cd76185087a7bc96322f4308dd48d4129f6e5f70d4295faa049d8c5f47de0148",
+        "uv0_and_evaluated_geometry_preserved": true,
+        "max_world_loop_error_m": 2.6973982585332124e-06,
+        "world_surface_area_m2": 770.4828035383867,
+        "summed_uv_island_area": 0.13146909263175519,
+        "mean_linear_texels_per_metre": 26.75224973866769,
+        "packing_margin_uv": 0.004,
+        "bake_dilation_px": 16,
+        "objects": {
+          "COL01 steel column (position PHOTO-EST)": {
+            "world_area_m2": 2.6580558635432774,
+            "uv_area": 0.0004535477933345078,
+            "texels_per_metre": 26.752195491961675
+          },
+          "COL02 steel column (position PHOTO-EST)": {
+            "world_area_m2": 2.6580558635432774,
+            "uv_area": 0.0004535485745749135,
+            "texels_per_metre": 26.75221853240787
+          },
+          "COL03 steel column (position PHOTO-EST)": {
+            "world_area_m2": 2.658061115126678,
+            "uv_area": 0.0004535482288723358,
+            "texels_per_metre": 26.752181909459793
+          },
+          "COL04 steel column (position PHOTO-EST)": {
+            "world_area_m2": 2.658045461808601,
+            "uv_area": 0.0004535476451161813,
+            "texels_per_metre": 26.752243465335365
+          },
+          "COL05 steel column (position PHOTO-EST)": {
+            "world_area_m2": 2.6580558635432774,
+            "uv_area": 0.0004535504635416743,
+            "texels_per_metre": 26.75227424198541
+          },
+          "COL06 steel column (position PHOTO-EST)": {
+            "world_area_m2": 2.6580558635432774,
+            "uv_area": 0.0004535445110427361,
+            "texels_per_metre": 26.75209868995834
+          },
+          "COL07 steel column (position PHOTO-EST)": {
+            "world_area_m2": 2.658061115126678,
+            "uv_area": 0.00045354658775131895,
+            "texels_per_metre": 26.752133509306407
+          },
+          "COL08 steel column (position PHOTO-EST)": {
+            "world_area_m2": 2.658045461808601,
+            "uv_area": 0.000453547240027774,
+            "texels_per_metre": 26.752231518380913
+          },
+          "COL09 steel column (position PHOTO-EST)": {
+            "world_area_m2": 2.658066352254834,
+            "uv_area": 0.0004535539436982816,
+            "texels_per_metre": 26.752324096373503
+          },
+          "COL10 steel column (position PHOTO-EST)": {
+            "world_area_m2": 2.6580716038345553,
+            "uv_area": 0.0004535504235487764,
+            "texels_per_metre": 26.752193852984572
+          },
+          "COL11 steel column (position PHOTO-EST)": {
+            "world_area_m2": 2.6580559577452427,
+            "uv_area": 0.0004535477654193931,
+            "texels_per_metre": 26.752194194633805
+          },
+          "BM001 Room 7 main beam (sketch line)": {
+            "world_area_m2": 27.447700691316328,
+            "uv_area": 0.00468345881774683,
+            "texels_per_metre": 26.752250388986507
+          },
+          "BM002 Room 6 - 5 main beam": {
+            "world_area_m2": 25.806413304165606,
+            "uv_area": 0.004403403425657095,
+            "texels_per_metre": 26.752253189722296
+          },
+          "BM003 Room 8 main beam": {
+            "world_area_m2": 47.793553891346654,
+            "uv_area": 0.008155117927533782,
+            "texels_per_metre": 26.75225604048319
+          },
+          "BM004 Room 1 secondary": {
+            "world_area_m2": 5.495471401357955,
+            "uv_area": 0.0009377102280451188,
+            "texels_per_metre": 26.7523416921225
+          },
+          "BM005 Room 1 secondary": {
+            "world_area_m2": 5.495471401357955,
+            "uv_area": 0.0009377025885761725,
+            "texels_per_metre": 26.752232717039504
+          },
+          "BM006 Room 1 secondary": {
+            "world_area_m2": 5.495471401357955,
+            "uv_area": 0.000937707913043262,
+            "texels_per_metre": 26.752308669256234
+          },
+          "BM007 Room 1 secondary": {
+            "world_area_m2": 5.495471401357955,
+            "uv_area": 0.0009377068076679151,
+            "texels_per_metre": 26.752292901365838
+          },
+          "BM008 Room 3 secondary": {
+            "world_area_m2": 5.495483950969328,
+            "uv_area": 0.0009376986527360742,
+            "texels_per_metre": 26.752146027152495
+          },
+          "BM009 Room 3 secondary": {
+            "world_area_m2": 5.495458776844082,
+            "uv_area": 0.0009377067133385653,
+            "texels_per_metre": 26.75232228428843
+          },
+          "BM010 Room 3 secondary": {
+            "world_area_m2": 5.495483950969328,
+            "uv_area": 0.0009377066223557051,
+            "texels_per_metre": 26.752259711849874
+          },
+          "BM011 Room 4 secondary": {
+            "world_area_m2": 5.495458776844082,
+            "uv_area": 0.0009377080437389385,
+            "texels_per_metre": 26.75234126212362
+          },
+          "BM012 Room 4 secondary": {
+            "world_area_m2": 5.495458776844082,
+            "uv_area": 0.0009377085528203821,
+            "texels_per_metre": 26.752348524042056
+          },
+          "BM013 Room 4 secondary": {
+            "world_area_m2": 5.495458776844082,
+            "uv_area": 0.0009377062946009929,
+            "texels_per_metre": 26.75231631109682
+          },
+          "BM014 Room 4 secondary": {
+            "world_area_m2": 5.495509052916661,
+            "uv_area": 0.0009377060697323136,
+            "texels_per_metre": 26.752190730356993
+          },
+          "BM015 Room 4 secondary": {
+            "world_area_m2": 5.495509052916661,
+            "uv_area": 0.0009376947203483255,
+            "texels_per_metre": 26.752028834314277
+          },
+          "BM016 Room 4 secondary": {
+            "world_area_m2": 5.495458776844082,
+            "uv_area": 0.0009377031320063622,
+            "texels_per_metre": 26.752271197395576
+          },
+          "BM017 Room 4 secondary": {
+            "world_area_m2": 5.495458776844082,
+            "uv_area": 0.0009376965402018711,
+            "texels_per_metre": 26.752177166542246
+          },
+          "BM018 Room 2 secondary": {
+            "world_area_m2": 3.5870891438687793,
+            "uv_area": 0.000612078006628991,
+            "texels_per_metre": 26.752369535707555
+          },
+          "BM019 Room 2 secondary": {
+            "world_area_m2": 3.5870891438687793,
+            "uv_area": 0.0006120748130831188,
+            "texels_per_metre": 26.752299744741517
+          },
+          "BM020 Room 7 secondary": {
+            "world_area_m2": 9.22455736471409,
+            "uv_area": 0.0015740026132717022,
+            "texels_per_metre": 26.75222502766278
+          },
+          "BM021 Room 7 secondary": {
+            "world_area_m2": 9.22455736471409,
+            "uv_area": 0.0015740020318065415,
+            "texels_per_metre": 26.752220086283355
+          },
+          "BM022 Room 7 secondary": {
+            "world_area_m2": 9.22447412955303,
+            "uv_area": 0.0015739956749827935,
+            "texels_per_metre": 26.752286761053238
+          },
+          "BM023 Room 7 secondary": {
+            "world_area_m2": 9.224515878873408,
+            "uv_area": 0.0015739980433202572,
+            "texels_per_metre": 26.752246348348045
+          },
+          "BM024 Room 7 secondary": {
+            "world_area_m2": 9.224515878873408,
+            "uv_area": 0.0015740027721753425,
+            "texels_per_metre": 26.752286534993033
+          },
+          "BM025 Room 7 secondary": {
+            "world_area_m2": 9.22447412955303,
+            "uv_area": 0.0015739931024402465,
+            "texels_per_metre": 26.752264899041435
+          },
+          "BM026 Room 7 secondary": {
+            "world_area_m2": 9.224515878873408,
+            "uv_area": 0.0015739927392480757,
+            "texels_per_metre": 26.752201273334833
+          },
+          "BM027 Room 7 secondary": {
+            "world_area_m2": 9.22447412955303,
+            "uv_area": 0.001573999395948239,
+            "texels_per_metre": 26.75231838257462
+          },
+          "BM028 Room 7 secondary": {
+            "world_area_m2": 9.224495004291937,
+            "uv_area": 0.0015739918098842676,
+            "texels_per_metre": 26.75222364485289
+          },
+          "BM029 Room 7 secondary": {
+            "world_area_m2": 5.605147961704687,
+            "uv_area": 0.0009564237337822412,
+            "texels_per_metre": 26.752328212084873
+          },
+          "BM030 Room 7 secondary": {
+            "world_area_m2": 5.605147961704687,
+            "uv_area": 0.0009564198897457632,
+            "texels_per_metre": 26.752274450856866
+          },
+          "BM031 Room 7 secondary": {
+            "world_area_m2": 5.605147961704687,
+            "uv_area": 0.000956420441322603,
+            "texels_per_metre": 26.752282165006804
+          },
+          "BM032 Hallway secondary": {
+            "world_area_m2": 1.1303171765557294,
+            "uv_area": 0.00019286834734266733,
+            "texels_per_metre": 26.752247163076365
+          },
+          "BM033 Hallway secondary": {
+            "world_area_m2": 1.1303229808474808,
+            "uv_area": 0.00019286937564011453,
+            "texels_per_metre": 26.752249791510096
+          },
+          "BM034 Hallway secondary": {
+            "world_area_m2": 1.1303229808474808,
+            "uv_area": 0.00019286872295687374,
+            "texels_per_metre": 26.752204525744585
+          },
+          "BM035 Hallway secondary": {
+            "world_area_m2": 1.130320078712484,
+            "uv_area": 0.00019286876251278784,
+            "texels_per_metre": 26.75224161265772
+          },
+          "BM036 Hallway secondary": {
+            "world_area_m2": 1.1303171765557294,
+            "uv_area": 0.00019287032471027032,
+            "texels_per_metre": 26.752384300382694
+          },
+          "BM037 Hallway secondary": {
+            "world_area_m2": 1.130328800088889,
+            "uv_area": 0.00019286959313191687,
+            "texels_per_metre": 26.752196011204866
+          },
+          "BM038 Hallway secondary": {
+            "world_area_m2": 1.130328800088889,
+            "uv_area": 0.00019287034441184403,
+            "texels_per_metre": 26.752248114721993
+          },
+          "BM039 Room 5 secondary": {
+            "world_area_m2": 4.5522586610173095,
+            "uv_area": 0.0007767531571029052,
+            "texels_per_metre": 26.752107469830147
+          },
+          "BM040 Room 5 secondary": {
+            "world_area_m2": 4.5522586610173095,
+            "uv_area": 0.0007767564967267049,
+            "texels_per_metre": 26.752164979656758
+          },
+          "BM041 Room 5 secondary": {
+            "world_area_m2": 4.5522586610173095,
+            "uv_area": 0.0007767629629800155,
+            "texels_per_metre": 26.752276331100926
+          },
+          "BM042 Room 5 secondary": {
+            "world_area_m2": 4.552279615415669,
+            "uv_area": 0.0007767616089981999,
+            "texels_per_metre": 26.752191443904632
+          },
+          "BM043 Room 5 secondary": {
+            "world_area_m2": 4.552279615415669,
+            "uv_area": 0.0007767631818690335,
+            "texels_per_metre": 26.7522185292548
+          },
+          "BM044 Room 5 secondary": {
+            "world_area_m2": 4.552279615415669,
+            "uv_area": 0.0007767633511480687,
+            "texels_per_metre": 26.752221444293518
+          },
+          "BM045 Room 6 secondary": {
+            "world_area_m2": 5.451637516487308,
+            "uv_area": 0.0009302188714567505,
+            "texels_per_metre": 26.75217147249435
+          },
+          "BM046 Room 6 secondary": {
+            "world_area_m2": 5.451637516487308,
+            "uv_area": 0.0009302184016983794,
+            "texels_per_metre": 26.752164717601246
+          },
+          "BM047 Room 6 secondary": {
+            "world_area_m2": 5.451625020190983,
+            "uv_area": 0.0009302190430533486,
+            "texels_per_metre": 26.752204600817
+          },
+          "BM048 Room 6 secondary": {
+            "world_area_m2": 5.451612671628697,
+            "uv_area": 0.0009302202970244977,
+            "texels_per_metre": 26.752252930806083
+          },
+          "BM049 Room 6 secondary": {
+            "world_area_m2": 5.451587753986298,
+            "uv_area": 0.0009302185127867402,
+            "texels_per_metre": 26.75228841260659
+          },
+          "BM050 Room 6 secondary": {
+            "world_area_m2": 5.451587753986298,
+            "uv_area": 0.0009302183695165667,
+            "texels_per_metre": 26.752286352442713
+          },
+          "BM051 Room 6 secondary": {
+            "world_area_m2": 5.451587753986298,
+            "uv_area": 0.0009302162339492881,
+            "texels_per_metre": 26.75225564387899
+          },
+          "BM052 Room 6 secondary": {
+            "world_area_m2": 5.451600175145124,
+            "uv_area": 0.0009302194732991875,
+            "texels_per_metre": 26.75227174754933
+          },
+          "BM053 Room 6 secondary": {
+            "world_area_m2": 5.473572390138299,
+            "uv_area": 0.0009339636291474385,
+            "texels_per_metre": 26.75219991875602
+          },
+          "BM054 Room 6 secondary": {
+            "world_area_m2": 5.473572390138299,
+            "uv_area": 0.0009339618053143539,
+            "texels_per_metre": 26.752173798054102
+          },
+          "BM055 Room 6 secondary": {
+            "world_area_m2": 5.473559867168802,
+            "uv_area": 0.0009339616068104739,
+            "texels_per_metre": 26.752201558263113
+          },
+          "BM056 Room 6 secondary": {
+            "world_area_m2": 5.473547341097709,
+            "uv_area": 0.0009339655075067954,
+            "texels_per_metre": 26.752288034476937
+          },
+          "BM057 Room 6 secondary": {
+            "world_area_m2": 5.4735223697999436,
+            "uv_area": 0.0009339594342818169,
+            "texels_per_metre": 26.752262078684147
+          },
+          "BM058 Room 6 secondary": {
+            "world_area_m2": 5.4735223697999436,
+            "uv_area": 0.0009339670735108996,
+            "texels_per_metre": 26.752371487205064
+          },
+          "BM059 Room 6 secondary": {
+            "world_area_m2": 5.4735223697999436,
+            "uv_area": 0.0009339632113726237,
+            "texels_per_metre": 26.752316173978485
+          },
+          "BM060 Room 6 secondary": {
+            "world_area_m2": 5.473534817939756,
+            "uv_area": 0.0009339616864565414,
+            "texels_per_metre": 26.752263913618595
+          },
+          "BM061 Room 8 secondary": {
+            "world_area_m2": 4.925138301702834,
+            "uv_area": 0.0008403877560416717,
+            "texels_per_metre": 26.752267312906717
+          },
+          "BM062 Room 8 secondary": {
+            "world_area_m2": 4.925138301702834,
+            "uv_area": 0.0008403833499596169,
+            "texels_per_metre": 26.752197182875324
+          },
+          "BM063 Room 8 secondary": {
+            "world_area_m2": 4.925138301702834,
+            "uv_area": 0.0008403867282549271,
+            "texels_per_metre": 26.752250954009327
+          },
+          "BM064 Room 8 secondary": {
+            "world_area_m2": 4.925138301702834,
+            "uv_area": 0.0008403820963245323,
+            "texels_per_metre": 26.752177229180685
+          },
+          "BM065 Room 8 secondary": {
+            "world_area_m2": 4.925138301702834,
+            "uv_area": 0.0008403833324059917,
+            "texels_per_metre": 26.752196903480183
+          },
+          "BM066 Room 8 secondary": {
+            "world_area_m2": 4.925138301702834,
+            "uv_area": 0.0008403882398866358,
+            "texels_per_metre": 26.75227501408267
+          },
+          "BM067 Room 8 secondary": {
+            "world_area_m2": 4.925138301702834,
+            "uv_area": 0.0008403848549178861,
+            "texels_per_metre": 26.752221136778232
+          },
+          "BM068 Room 8 secondary": {
+            "world_area_m2": 4.925138301702834,
+            "uv_area": 0.0008403819285847103,
+            "texels_per_metre": 26.752174559320338
+          },
+          "BM069 Room 8 secondary": {
+            "world_area_m2": 4.925138301702834,
+            "uv_area": 0.0008403872109547517,
+            "texels_per_metre": 26.75225863696323
+          },
+          "BM070 Room 8 secondary": {
+            "world_area_m2": 4.925138301702834,
+            "uv_area": 0.0008403862954553531,
+            "texels_per_metre": 26.75224406529731
+          },
+          "BM071 Room 8 secondary": {
+            "world_area_m2": 4.925183433689817,
+            "uv_area": 0.0008403870605171448,
+            "texels_per_metre": 26.752133669886813
+          },
+          "BM072 Room 8 secondary": {
+            "world_area_m2": 4.925138301702834,
+            "uv_area": 0.0008403875863104981,
+            "texels_per_metre": 26.752264611359767
+          },
+          "BM073 Room 8 secondary": {
+            "world_area_m2": 4.925138301702834,
+            "uv_area": 0.0008403936845837734,
+            "texels_per_metre": 26.75236167509978
+          },
+          "BM074 Room 8 secondary": {
+            "world_area_m2": 4.925160949969978,
+            "uv_area": 0.0008403938735268568,
+            "texels_per_metre": 26.752303172211462
+          },
+          "BM075 Room 8 secondary": {
+            "world_area_m2": 4.925138301702834,
+            "uv_area": 0.0008403859367205335,
+            "texels_per_metre": 26.752238355445467
+          },
+          "BM076 Room 8 secondary": {
+            "world_area_m2": 4.925138301702834,
+            "uv_area": 0.0008403861235843912,
+            "texels_per_metre": 26.75224132968978
+          },
+          "BM077 Room 8 secondary": {
+            "world_area_m2": 4.925160949969978,
+            "uv_area": 0.0008403998733843565,
+            "texels_per_metre": 26.752398668933534
+          },
+          "BM078 Room 8 secondary": {
+            "world_area_m2": 4.925149667683355,
+            "uv_area": 0.000840378089039584,
+            "texels_per_metre": 26.752082577931525
+          },
+          "BM079 Room 8 secondary": {
+            "world_area_m2": 4.925149667683355,
+            "uv_area": 0.000840384994217569,
+            "texels_per_metre": 26.75219248531405
+          },
+          "BM080 Room 8 secondary": {
+            "world_area_m2": 4.925149667683355,
+            "uv_area": 0.00084038532964259,
+            "texels_per_metre": 26.752197824149167
+          },
+          "BM081 Room 8 secondary": {
+            "world_area_m2": 4.925149667683355,
+            "uv_area": 0.000840392251088673,
+            "texels_per_metre": 26.752307989990395
+          },
+          "BM082 Room 8 secondary": {
+            "world_area_m2": 4.925138301702834,
+            "uv_area": 0.0008403882770806614,
+            "texels_per_metre": 26.752275606085714
+          },
+          "BM083 Room 8 secondary": {
+            "world_area_m2": 4.925138301702834,
+            "uv_area": 0.0008403855777989744,
+            "texels_per_metre": 26.752232642620143
+          },
+          "BM084 Room 8 secondary": {
+            "world_area_m2": 4.925138301702834,
+            "uv_area": 0.0008403912722149964,
+            "texels_per_metre": 26.752323278447406
+          },
+          "BM085 Room 8 secondary": {
+            "world_area_m2": 4.925138301702834,
+            "uv_area": 0.0008403887948569277,
+            "texels_per_metre": 26.752283847330638
+          },
+          "BM086 Room 8 secondary": {
+            "world_area_m2": 4.925138301702834,
+            "uv_area": 0.0008403805741981074,
+            "texels_per_metre": 26.75215300197826
+          },
+          "BM087 Room 8 secondary": {
+            "world_area_m2": 4.925138301702834,
+            "uv_area": 0.0008403879790073177,
+            "texels_per_metre": 26.75227086176623
+          },
+          "BM088 Room 8 secondary": {
+            "world_area_m2": 4.925138301702834,
+            "uv_area": 0.0008403837473238696,
+            "texels_per_metre": 26.75220350758748
+          },
+          "BM089 Room 8 secondary": {
+            "world_area_m2": 4.925138301702834,
+            "uv_area": 0.0008403883573409182,
+            "texels_per_metre": 26.7522768835574
+          },
+          "BM090 Room 8 secondary": {
+            "world_area_m2": 4.925138301702834,
+            "uv_area": 0.0008403816216144833,
+            "texels_per_metre": 26.752169673374098
+          },
+          "BM091 Room 8 secondary": {
+            "world_area_m2": 4.925138301702834,
+            "uv_area": 0.0008403930366309709,
+            "texels_per_metre": 26.75235136191479
+          },
+          "BM092 Room 8 secondary": {
+            "world_area_m2": 4.925183433689817,
+            "uv_area": 0.000840391665334006,
+            "texels_per_metre": 26.752206962607058
+          },
+          "BM093 Room 8 secondary": {
+            "world_area_m2": 4.925138301702834,
+            "uv_area": 0.000840382262081274,
+            "texels_per_metre": 26.752179867476723
+          },
+          "BM094 Room 8 secondary": {
+            "world_area_m2": 4.925138301702834,
+            "uv_area": 0.0008403970652635095,
+            "texels_per_metre": 26.752415483854957
+          },
+          "BM095 Room 8 secondary": {
+            "world_area_m2": 4.925160949969978,
+            "uv_area": 0.0008403842413580165,
+            "texels_per_metre": 26.75214986109896
+          },
+          "BM096 Room 8 secondary": {
+            "world_area_m2": 4.925138301702834,
+            "uv_area": 0.0008403887573302099,
+            "texels_per_metre": 26.752283250032445
+          },
+          "BM097 Room 8 secondary": {
+            "world_area_m2": 4.925138301702834,
+            "uv_area": 0.0008403881225484966,
+            "texels_per_metre": 26.752273146456414
+          },
+          "BM098 Room 8 secondary": {
+            "world_area_m2": 4.925160949969978,
+            "uv_area": 0.0008403901686417914,
+            "texels_per_metre": 26.752244203244146
+          },
+          "BM099 Room 8 secondary": {
+            "world_area_m2": 4.925149667683355,
+            "uv_area": 0.0008403905595582017,
+            "texels_per_metre": 26.75228106662999
+          },
+          "BM100 Room 8 secondary": {
+            "world_area_m2": 4.925149667683355,
+            "uv_area": 0.000840387892690142,
+            "texels_per_metre": 26.75223861918714
+          },
+          "BM101 Room 8 secondary": {
+            "world_area_m2": 4.925149667683355,
+            "uv_area": 0.0008403912612831022,
+            "texels_per_metre": 26.752292235685637
+          },
+          "BM102 Room 8 secondary": {
+            "world_area_m2": 4.925149667683355,
+            "uv_area": 0.000840382659940353,
+            "texels_per_metre": 26.752155331463623
+          },
+          "NI01 frame above PW01": {
+            "world_area_m2": 1.8038697599110134,
+            "uv_area": 0.00030779853246576394,
+            "texels_per_metre": 26.752269798796565
+          },
+          "NI03 frame above PW01": {
+            "world_area_m2": 2.4709643456614323,
+            "uv_area": 0.0004216258737836931,
+            "texels_per_metre": 26.752251584474198
+          },
+          "NI04 frame above PW05": {
+            "world_area_m2": 4.725820378696099,
+            "uv_area": 0.0008063692200260819,
+            "texels_per_metre": 26.752127025921318
+          },
+          "NI06 frame above PW05": {
+            "world_area_m2": 9.754209428416244,
+            "uv_area": 0.0016643833904193828,
+            "texels_per_metre": 26.752267657806126
+          },
+          "NI07 frame above PW06": {
+            "world_area_m2": 11.51927810930741,
+            "uv_area": 0.001965557790578717,
+            "texels_per_metre": 26.752244758914827
+          },
+          "NI08 frame above PW07": {
+            "world_area_m2": 0.9458066702848901,
+            "uv_area": 0.0001613852192141607,
+            "texels_per_metre": 26.752270328433863
+          },
+          "NI10 frame above PW07": {
+            "world_area_m2": 8.470953371349852,
+            "uv_area": 0.0014454244864308269,
+            "texels_per_metre": 26.752323691286993
+          },
+          "NP01 frame + mullions": {
+            "world_area_m2": 4.787747903767984,
+            "uv_area": 0.0008169369543206129,
+            "texels_per_metre": 26.752143531634836
+          },
+          "NP32 frame + mullions": {
+            "world_area_m2": 6.027744386679571,
+            "uv_area": 0.0010285351378978846,
+            "texels_per_metre": 26.752360321704654
+          },
+          "NP04 frame + mullions": {
+            "world_area_m2": 5.3367889228525005,
+            "uv_area": 0.0009106333547173051,
+            "texels_per_metre": 26.752336346570555
+          },
+          "NP11 frame + mullions": {
+            "world_area_m2": 6.248267169966879,
+            "uv_area": 0.0010661514444792464,
+            "texels_per_metre": 26.752206401511327
+          },
+          "NP13 frame + mullions": {
+            "world_area_m2": 5.2490125726191605,
+            "uv_area": 0.0008956445175076766,
+            "texels_per_metre": 26.75216791534087
+          },
+          "NP15 frame + mullions": {
+            "world_area_m2": 5.071464166261906,
+            "uv_area": 0.0008653510289193811,
+            "texels_per_metre": 26.752195462066624
+          },
+          "NP17 frame + mullions": {
+            "world_area_m2": 2.464495875376511,
+            "uv_area": 0.00042052074973619735,
+            "texels_per_metre": 26.752207202902447
+          },
+          "NP18 frame + mullions": {
+            "world_area_m2": 7.691713674982676,
+            "uv_area": 0.0013124630558482286,
+            "texels_per_metre": 26.752350231476225
+          },
+          "NP22 frame + mullions": {
+            "world_area_m2": 5.955620156933406,
+            "uv_area": 0.0010162241128777172,
+            "texels_per_metre": 26.75230484046207
+          },
+          "NP23 frame + mullions": {
+            "world_area_m2": 14.169477582479665,
+            "uv_area": 0.002417771989503874,
+            "texels_per_metre": 26.75227400831821
+          },
+          "NP24 frame + mullions": {
+            "world_area_m2": 4.765758979254852,
+            "uv_area": 0.0008131979129102351,
+            "texels_per_metre": 26.752356462794506
+          },
+          "NP29 frame + mullions": {
+            "world_area_m2": 10.966954096701162,
+            "uv_area": 0.0018713212482682207,
+            "texels_per_metre": 26.752299257576475
+          },
+          "NP30 frame + mullions": {
+            "world_area_m2": 4.17031504242092,
+            "uv_area": 0.000711600582686045,
+            "texels_per_metre": 26.752456559980242
+          },
+          "NP31 frame + mullions": {
+            "world_area_m2": 4.170232972444959,
+            "uv_area": 0.0007115548582306563,
+            "texels_per_metre": 26.751860279848824
+          }
+        }
+      },
+      "always_load": true,
+      "packing_only_not_baked": true,
+      "repack_required_after_reception_context_exclusion": true,
+      "audit_scope_note": "This measured grouping predates moving three local beams and one adjoining wall back to Reception. Preserve evidence; rerun packing before this atlas bake."
+    },
+    "SHELL_WALLS": {
+      "atlas_size": 4096,
+      "source_objects": [
+        "EW01 Front facade with main gate",
+        "EW02 Room 1 west wall",
+        "EW03 Room 4 east wall",
+        "IW01 Row wall, rooms 1 and 2",
+        "IW02 Row wall over the room 3 - room 7 opening",
+        "IW03 Row wall, room 4 - rooms 5 and 8",
+        "EW04 South wall of the east stair",
+        "IW04 Room 1 - room 3",
+        "IW05 Room 3 - room 4",
+        "EW05 Middle block north wall",
+        "EW06 Washroom row west wall",
+        "EW07 Room 2 west wall",
+        "IW06 Room 2 north wall (64 in jog)",
+        "IW07 Room 2 - room 7",
+        "IW08 Washroom row - room 7",
+        "IW09 Rooms 5, 6, hallway - room 8",
+        "EW08 Room 8 west wall, north part",
+        "EW09 Room 8 north wall",
+        "EW10 Room 8 east wall",
+        "IW10 North-east stair, south wall",
+        "IW11 North-east stair, west wall",
+        "IW12 Engine room (sub-station), north wall",
+        "IW13 Engine room (sub-station), west wall",
+        "IW14 South-east stair, north wall",
+        "IW15 South-east stair, west wall",
+        "PW01 Row wall, room 3 - room 5 (48 in)",
+        "PW02 Room 2 washroom, east",
+        "PW03 Room 2 washroom, south",
+        "PW04 Washroom 1 - washroom 2",
+        "PW05 Room 7 - rooms 5 and 6 (48 in)",
+        "PW06 Hallway - room 6 (48 in)",
+        "PW07 Room 5 - room 6 (48 in)",
+        "NI02 solid infill above 48in wall PW01",
+        "NI05 solid infill above 48in wall PW05",
+        "NI09 solid infill above 48in wall PW07",
+        "NP02 Audit room west",
+        "NP03 Audit room east",
+        "NP05 Visitor passage - guest WCs",
+        "NP06 Guest WC divider",
+        "NP07 Guest WCs - boardroom",
+        "NP08 Female prayer - female washroom",
+        "NP09 Store opening infill",
+        "NP33 Experience centre - merchandising (display wall)",
+        "NP10 Sample room north",
+        "NP12 Sample room - 3D lab",
+        "NP14 3D lab - fabric library",
+        "NP16 Fabric library - CAD",
+        "NP19 Store west",
+        "NP20 Design studio - store",
+        "NP21 Store south",
+        "NP25 Prayer and wudu - north corridor",
+        "NP26 Design studio - north corridor (mood-board wall)",
+        "NP27 Prayer - wudu",
+        "NP28 Wudu - design studio"
+      ],
+      "uv_metrics": {
+        "uv0_world_loop_signature": "f731e08627d5ee2ed49efa4faa055fb1da38235f309c0d49e9975c5ee7e6911a",
+        "uv0_and_evaluated_geometry_preserved": true,
+        "max_world_loop_error_m": 5.394796517066425e-06,
+        "world_surface_area_m2": 2344.153617384579,
+        "summed_uv_island_area": 0.546979359304535,
+        "mean_linear_texels_per_metre": 62.56801583692016,
+        "packing_margin_uv": 0.004,
+        "bake_dilation_px": 16,
+        "objects": {
+          "EW01 Front facade with main gate": {
+            "world_area_m2": 162.64739418750386,
+            "uv_area": 0.03795178428456895,
+            "texels_per_metre": 62.568031643933175
+          },
+          "EW02 Room 1 west wall": {
+            "world_area_m2": 42.59088051932693,
+            "uv_area": 0.009938059254357423,
+            "texels_per_metre": 62.56802256767525
+          },
+          "EW03 Room 4 east wall": {
+            "world_area_m2": 42.59084455845468,
+            "uv_area": 0.009938057765478625,
+            "texels_per_metre": 62.56804429496213
+          },
+          "IW01 Row wall, rooms 1 and 2": {
+            "world_area_m2": 53.734073235786916,
+            "uv_area": 0.012538200247117104,
+            "texels_per_metre": 62.56805683031009
+          },
+          "IW02 Row wall over the room 3 - room 7 opening": {
+            "world_area_m2": 3.3290238226267235,
+            "uv_area": 0.0007767873625144084,
+            "texels_per_metre": 62.56804312233653
+          },
+          "IW03 Row wall, room 4 - rooms 5 and 8": {
+            "world_area_m2": 83.28241072725349,
+            "uv_area": 0.019432916776180753,
+            "texels_per_metre": 62.56800381625837
+          },
+          "EW04 South wall of the east stair": {
+            "world_area_m2": 39.55089865841262,
+            "uv_area": 0.009228721017514152,
+            "texels_per_metre": 62.56803687598469
+          },
+          "IW04 Room 1 - room 3": {
+            "world_area_m2": 27.258006602623016,
+            "uv_area": 0.006360323395175754,
+            "texels_per_metre": 62.56803284767781
+          },
+          "IW05 Room 3 - room 4": {
+            "world_area_m2": 32.70059719505192,
+            "uv_area": 0.007630283161107698,
+            "texels_per_metre": 62.56802313236826
+          },
+          "EW05 Middle block north wall": {
+            "world_area_m2": 152.030767419957,
+            "uv_area": 0.035474520295000624,
+            "texels_per_metre": 62.568028370643866
+          },
+          "EW06 Washroom row west wall": {
+            "world_area_m2": 108.67073975373023,
+            "uv_area": 0.025356992893067698,
+            "texels_per_metre": 62.56803426324584
+          },
+          "EW07 Room 2 west wall": {
+            "world_area_m2": 38.43088160542283,
+            "uv_area": 0.008967366186719339,
+            "texels_per_metre": 62.56799334519381
+          },
+          "IW06 Room 2 north wall (64 in jog)": {
+            "world_area_m2": 27.870908906404274,
+            "uv_area": 0.006503328324308555,
+            "texels_per_metre": 62.567992688326505
+          },
+          "IW07 Room 2 - room 7": {
+            "world_area_m2": 28.654154958531286,
+            "uv_area": 0.006686114949959965,
+            "texels_per_metre": 62.56811409182379
+          },
+          "IW08 Washroom row - room 7": {
+            "world_area_m2": 93.29791193548333,
+            "uv_area": 0.02176991583193688,
+            "texels_per_metre": 62.56801268146903
+          },
+          "IW09 Rooms 5, 6, hallway - room 8": {
+            "world_area_m2": 118.31216395535306,
+            "uv_area": 0.027606655591232723,
+            "texels_per_metre": 62.56798196379718
+          },
+          "EW08 Room 8 west wall, north part": {
+            "world_area_m2": 106.59081750188938,
+            "uv_area": 0.02487165577045014,
+            "texels_per_metre": 62.56801840160272
+          },
+          "EW09 Room 8 north wall": {
+            "world_area_m2": 76.6707661051095,
+            "uv_area": 0.017890186746065462,
+            "texels_per_metre": 62.568030349710426
+          },
+          "EW10 Room 8 east wall": {
+            "world_area_m2": 227.89698227499255,
+            "uv_area": 0.053176823909372284,
+            "texels_per_metre": 62.56794024023405
+          },
+          "IW10 North-east stair, south wall": {
+            "world_area_m2": 38.65279103678064,
+            "uv_area": 0.009019162393071323,
+            "texels_per_metre": 62.56805027352709
+          },
+          "IW11 North-east stair, west wall": {
+            "world_area_m2": 16.550985011096216,
+            "uv_area": 0.003861963378980704,
+            "texels_per_metre": 62.567975225673045
+          },
+          "IW12 Engine room (sub-station), north wall": {
+            "world_area_m2": 26.83864542122958,
+            "uv_area": 0.006262464266882428,
+            "texels_per_metre": 62.568001319975764
+          },
+          "IW13 Engine room (sub-station), west wall": {
+            "world_area_m2": 29.43992395370769,
+            "uv_area": 0.0068694624257013,
+            "texels_per_metre": 62.56810219656942
+          },
+          "IW14 South-east stair, north wall": {
+            "world_area_m2": 38.941875147655786,
+            "uv_area": 0.009086613897508755,
+            "texels_per_metre": 62.56804068628877
+          },
+          "IW15 South-east stair, west wall": {
+            "world_area_m2": 32.8270109635991,
+            "uv_area": 0.007659792519754127,
+            "texels_per_metre": 62.56807319102335
+          },
+          "PW01 Row wall, room 3 - room 5 (48 in)": {
+            "world_area_m2": 10.76384602865186,
+            "uv_area": 0.0025116157142202056,
+            "texels_per_metre": 62.5680767171208
+          },
+          "PW02 Room 2 washroom, east": {
+            "world_area_m2": 7.8580531082649845,
+            "uv_area": 0.0018335826176478776,
+            "texels_per_metre": 62.5680629383508
+          },
+          "PW03 Room 2 washroom, south": {
+            "world_area_m2": 16.29287486434131,
+            "uv_area": 0.0038017406490481187,
+            "texels_per_metre": 62.568008255551256
+          },
+          "PW04 Washroom 1 - washroom 2": {
+            "world_area_m2": 15.476088865659076,
+            "uv_area": 0.003611152903930659,
+            "texels_per_metre": 62.56800094494637
+          },
+          "PW05 Room 7 - rooms 5 and 6 (48 in)": {
+            "world_area_m2": 53.993472582741994,
+            "uv_area": 0.012598726354646345,
+            "texels_per_metre": 62.56805282559034
+          },
+          "PW06 Hallway - room 6 (48 in)": {
+            "world_area_m2": 31.530223865586365,
+            "uv_area": 0.0073571936331439935,
+            "texels_per_metre": 62.5680347386106
+          },
+          "PW07 Room 5 - room 6 (48 in)": {
+            "world_area_m2": 28.83093149977344,
+            "uv_area": 0.006727352023983002,
+            "texels_per_metre": 62.56805976275905
+          },
+          "NI02 solid infill above 48in wall PW01": {
+            "world_area_m2": 7.22579335388286,
+            "uv_area": 0.00168604806844605,
+            "texels_per_metre": 62.56798306418399
+          },
+          "NI05 solid infill above 48in wall PW05": {
+            "world_area_m2": 18.290290824794,
+            "uv_area": 0.004267803891631061,
+            "texels_per_metre": 62.56794195792004
+          },
+          "NI09 solid infill above 48in wall PW07": {
+            "world_area_m2": 6.3806408781553,
+            "uv_area": 0.0014888450764862782,
+            "texels_per_metre": 62.56804014901357
+          },
+          "NP02 Audit room west": {
+            "world_area_m2": 22.970279109434347,
+            "uv_area": 0.005359828296471747,
+            "texels_per_metre": 62.56799676266985
+          },
+          "NP03 Audit room east": {
+            "world_area_m2": 22.970266453428277,
+            "uv_area": 0.005359832769943118,
+            "texels_per_metre": 62.56804010987173
+          },
+          "NP05 Visitor passage - guest WCs": {
+            "world_area_m2": 26.639970470417573,
+            "uv_area": 0.006216106472842764,
+            "texels_per_metre": 62.568004017132345
+          },
+          "NP06 Guest WC divider": {
+            "world_area_m2": 8.962564306098235,
+            "uv_area": 0.0020912999428068235,
+            "texels_per_metre": 62.5679561326576
+          },
+          "NP07 Guest WCs - boardroom": {
+            "world_area_m2": 32.059308423820234,
+            "uv_area": 0.007480649737278203,
+            "texels_per_metre": 62.56803753158488
+          },
+          "NP08 Female prayer - female washroom": {
+            "world_area_m2": 15.476088865659076,
+            "uv_area": 0.0036111591563976475,
+            "texels_per_metre": 62.56805511105364
+          },
+          "NP09 Store opening infill": {
+            "world_area_m2": 5.034839051202984,
+            "uv_area": 0.0011748152454833516,
+            "texels_per_metre": 62.567951870904366
+          },
+          "NP33 Experience centre - merchandising (display wall)": {
+            "world_area_m2": 73.34561769767242,
+            "uv_area": 0.01711429889755811,
+            "texels_per_metre": 62.56802105655163
+          },
+          "NP10 Sample room north": {
+            "world_area_m2": 26.68508569373997,
+            "uv_area": 0.006226636742533209,
+            "texels_per_metre": 62.56802005579157
+          },
+          "NP12 Sample room - 3D lab": {
+            "world_area_m2": 26.68508569373997,
+            "uv_area": 0.006226633559002437,
+            "texels_per_metre": 62.56800406102177
+          },
+          "NP14 3D lab - fabric library": {
+            "world_area_m2": 26.68508569373997,
+            "uv_area": 0.006226640481531653,
+            "texels_per_metre": 62.568038841349825
+          },
+          "NP16 Fabric library - CAD": {
+            "world_area_m2": 26.68511300622098,
+            "uv_area": 0.006226647034424548,
+            "texels_per_metre": 62.56803974499197
+          },
+          "NP19 Store west": {
+            "world_area_m2": 15.783227332244515,
+            "uv_area": 0.0036828117617462297,
+            "texels_per_metre": 62.567932271857856
+          },
+          "NP20 Design studio - store": {
+            "world_area_m2": 31.309585198182745,
+            "uv_area": 0.007305713240592482,
+            "texels_per_metre": 62.56804738217833
+          },
+          "NP21 Store south": {
+            "world_area_m2": 8.56641747826142,
+            "uv_area": 0.0019988649349294008,
+            "texels_per_metre": 62.56796859417928
+          },
+          "NP25 Prayer and wudu - north corridor": {
+            "world_area_m2": 28.681303921301584,
+            "uv_area": 0.006692418649200338,
+            "texels_per_metre": 62.567968262409785
+          },
+          "NP26 Design studio - north corridor (mood-board wall)": {
+            "world_area_m2": 48.335452513906425,
+            "uv_area": 0.011278480279701242,
+            "texels_per_metre": 62.56801051042088
+          },
+          "NP27 Prayer - wudu": {
+            "world_area_m2": 24.282483008148194,
+            "uv_area": 0.0056660200471476685,
+            "texels_per_metre": 62.56802618068369
+          },
+          "NP28 Wudu - design studio": {
+            "world_area_m2": 26.992172137535892,
+            "uv_area": 0.006298288477733394,
+            "texels_per_metre": 62.56800459900402
+          }
+        }
+      },
+      "always_load": true,
+      "packing_only_not_baked": true,
+      "repack_required_after_reception_context_exclusion": true,
+      "audit_scope_note": "This measured grouping predates moving three local beams and one adjoining wall back to Reception. Preserve evidence; rerun packing before this atlas bake."
+    },
+    "Z02": {
+      "atlas_size": 2048,
+      "source_objects": [
+        "BM008 Room 3 secondary",
+        "BM009 Room 3 secondary",
+        "BM010 Room 3 secondary",
+        "IW04 Room 1 - room 3",
+        "FIN03 Reception feature wall: fluted oak",
+        "FIN11 Reception logo plate (backlit)",
+        "W11 frame",
+        "W12 frame",
+        "D04 door (glass) D47 room 1 - room 3",
+        "Z02 RECEPTION + VISITOR WAITING - floor finish",
+        "F006 reception_desk",
+        "F007 exec_chair_black",
+        "F008 exec_chair_black",
+        "F009 sofa_84_sand",
+        "F010 coffee_round",
+        "F011 lounge_green",
+        "F012 lounge_green",
+        "F013 rug_reception",
+        "F014 console",
+        "F015 planter_l",
+        "F016 planter_m",
+        "CL000 slat_raft (Z02)",
+        "LT006 halo pendant (Z02)",
+        "LT007 linear pendant 96in (Z02)",
+        "LT008 track spot (Z02)",
+        "LT009 track spot (Z02)",
+        "LT010 track spot (Z02)",
+        "LT011 track spot (Z02)",
+        "LT012 downlight (Z02)",
+        "LT013 downlight (Z02)",
+        "AC10 VRF indoor unit, under-ceiling (Z02) - capacity by MEP",
+        "SD02 smoke detector",
+        "BR05 client logo (logo_zf)",
+        "PL015 pachira (CC0) (pachira_aquatica_01_leaves_a)",
+        "PL015 pachira (CC0) (pachira_aquatica_01_bark_a)",
+        "PL016 calathea (CC0) (calathea_orbifolia_01_a)"
+      ],
+      "uv_metrics": {
+        "uv0_world_loop_signature": "6b1ef3d37d2e37a6cf2fffecd416044dacfd2739c2443a84194240697a83265c",
+        "uv0_and_evaluated_geometry_preserved": true,
+        "max_world_loop_error_m": 1.076602416105743e-06,
+        "max_world_corner_normal_error_degrees": 0.14310506378277205,
+        "world_surface_area_m2": 322.13537762138037,
+        "summed_uv_island_area": 0.21170908653527648,
+        "mean_linear_texels_per_metre": 52.50256123638158,
+        "packing_margin_uv": 0.004,
+        "bake_dilation_px": 16,
+        "objects": {
+          "BM008 Room 3 secondary": {
+            "world_area_m2": 5.495483950969328,
+            "uv_area": 0.003611659190468103,
+            "texels_per_metre": 52.502545663828464
+          },
+          "BM009 Room 3 secondary": {
+            "world_area_m2": 5.495483950969328,
+            "uv_area": 0.003611664176205509,
+            "texels_per_metre": 52.502581902548904
+          },
+          "BM010 Room 3 secondary": {
+            "world_area_m2": 5.495483950969328,
+            "uv_area": 0.003611662144516581,
+            "texels_per_metre": 52.502567135266546
+          },
+          "IW04 Room 1 - room 3": {
+            "world_area_m2": 27.25800705719211,
+            "uv_area": 0.017914165251679985,
+            "texels_per_metre": 52.50264590827238
+          },
+          "FIN03 Reception feature wall: fluted oak": {
+            "world_area_m2": 54.4368714372118,
+            "uv_area": 0.0357763157210432,
+            "texels_per_metre": 52.50264471558837
+          },
+          "FIN11 Reception logo plate (backlit)": {
+            "world_area_m2": 2.9465427390990437,
+            "uv_area": 0.001936485907968244,
+            "texels_per_metre": 52.502592692383374
+          },
+          "W11 frame": {
+            "world_area_m2": 1.027092962828401,
+            "uv_area": 0.0006750117376324027,
+            "texels_per_metre": 52.50259118295388
+          },
+          "W12 frame": {
+            "world_area_m2": 1.0270921255475844,
+            "uv_area": 0.0006750150368688423,
+            "texels_per_metre": 52.502740890522176
+          },
+          "D04 door (glass) D47 room 1 - room 3": {
+            "world_area_m2": 5.465049212526943,
+            "uv_area": 0.0035916716978104946,
+            "texels_per_metre": 52.50265067693314
+          },
+          "Z02 RECEPTION + VISITOR WAITING - floor finish": {
+            "world_area_m2": 83.1260260411401,
+            "uv_area": 0.05463104118595087,
+            "texels_per_metre": 52.50264483243409
+          },
+          "F006 reception_desk": {
+            "world_area_m2": 29.98419971845386,
+            "uv_area": 0.0197058407104599,
+            "texels_per_metre": 52.5026476900493
+          },
+          "F007 exec_chair_black": {
+            "world_area_m2": 2.3907906398190777,
+            "uv_area": 0.0015712423886581756,
+            "texels_per_metre": 52.502595350287116
+          },
+          "F008 exec_chair_black": {
+            "world_area_m2": 2.390790091744043,
+            "uv_area": 0.0015712469272978202,
+            "texels_per_metre": 52.50267719684583
+          },
+          "F009 sofa_84_sand": {
+            "world_area_m2": 16.544350837114855,
+            "uv_area": 0.010873058212099163,
+            "texels_per_metre": 52.50261602356266
+          },
+          "F010 coffee_round": {
+            "world_area_m2": 1.649006808267672,
+            "uv_area": 0.0010837382502311699,
+            "texels_per_metre": 52.50261427977066
+          },
+          "F011 lounge_green": {
+            "world_area_m2": 3.6685760476305163,
+            "uv_area": 0.0024110097343726933,
+            "texels_per_metre": 52.502583115019185
+          },
+          "F012 lounge_green": {
+            "world_area_m2": 3.6685755248136123,
+            "uv_area": 0.002411013390200334,
+            "texels_per_metre": 52.50262666111833
+          },
+          "F013 rug_reception": {
+            "world_area_m2": 10.931772034065169,
+            "uv_area": 0.0071844470477634426,
+            "texels_per_metre": 52.50266435584744
+          },
+          "F014 console": {
+            "world_area_m2": 10.158251522597503,
+            "uv_area": 0.006676075573303464,
+            "texels_per_metre": 52.50263417263873
+          },
+          "F015 planter_l": {
+            "world_area_m2": 1.3121724580486833,
+            "uv_area": 0.0008623682417672196,
+            "texels_per_metre": 52.50260723206174
+          },
+          "F016 planter_m": {
+            "world_area_m2": 0.8363726130466272,
+            "uv_area": 0.0005496692592803498,
+            "texels_per_metre": 52.502595704902134
+          },
+          "CL000 slat_raft (Z02)": {
+            "world_area_m2": 39.58105840795844,
+            "uv_area": 0.026012949766102217,
+            "texels_per_metre": 52.50262914243422
+          },
+          "LT006 halo pendant (Z02)": {
+            "world_area_m2": 0.7671017733873753,
+            "uv_area": 0.000504146073607048,
+            "texels_per_metre": 52.502701877973614
+          },
+          "LT007 linear pendant 96in (Z02)": {
+            "world_area_m2": 0.9809783764393117,
+            "uv_area": 0.0006447020747413212,
+            "texels_per_metre": 52.502474059004115
+          },
+          "LT008 track spot (Z02)": {
+            "world_area_m2": 0.06353059995298806,
+            "uv_area": 4.1752813936146715e-05,
+            "texels_per_metre": 52.502665072233306
+          },
+          "LT009 track spot (Z02)": {
+            "world_area_m2": 0.06353059995298806,
+            "uv_area": 4.175322263269554e-05,
+            "texels_per_metre": 52.50292203222579
+          },
+          "LT010 track spot (Z02)": {
+            "world_area_m2": 0.06353055563229501,
+            "uv_area": 4.1753036192138104e-05,
+            "texels_per_metre": 52.50282312522327
+          },
+          "LT011 track spot (Z02)": {
+            "world_area_m2": 0.06353063728361151,
+            "uv_area": 4.175307818593543e-05,
+            "texels_per_metre": 52.50281578894056
+          },
+          "LT012 downlight (Z02)": {
+            "world_area_m2": 0.13811676242151805,
+            "uv_area": 9.077111954614026e-05,
+            "texels_per_metre": 52.50257494050219
+          },
+          "LT013 downlight (Z02)": {
+            "world_area_m2": 0.1381167281322133,
+            "uv_area": 9.077107075139423e-05,
+            "texels_per_metre": 52.5025673461366
+          },
+          "AC10 VRF indoor unit, under-ceiling (Z02) - capacity by MEP": {
+            "world_area_m2": 2.959157371224043,
+            "uv_area": 0.001944784783615816,
+            "texels_per_metre": 52.502706919038445
+          },
+          "SD02 smoke detector": {
+            "world_area_m2": 0.038469088584044464,
+            "uv_area": 2.5282049882946467e-05,
+            "texels_per_metre": 52.502519598295606
+          },
+          "BR05 client logo (logo_zf)": {
+            "world_area_m2": 0.9125355413125729,
+            "uv_area": 0.0005997248281719436,
+            "texels_per_metre": 52.502631638016844
+          },
+          "PL015 pachira (CC0) (pachira_aquatica_01_leaves_a)": {
+            "world_area_m2": 0.5880752701592776,
+            "uv_area": 0.00038628795856296416,
+            "texels_per_metre": 52.489094308802066
+          },
+          "PL015 pachira (CC0) (pachira_aquatica_01_bark_a)": {
+            "world_area_m2": 0.2066883501871908,
+            "uv_area": 0.000135700694714469,
+            "texels_per_metre": 52.47627369156238
+          },
+          "PL016 calathea (CC0) (calathea_orbifolia_01_a)": {
+            "world_area_m2": 0.26296583470595597,
+            "uv_area": 0.00017255217905499942,
+            "texels_per_metre": 52.46147689537003
+          }
+        }
+      },
+      "always_load": false,
+      "packing_only_not_baked": true
+    },
+    "Z30": {
+      "atlas_size": 2048,
+      "source_objects": [
+        "FIN04 Experience centre story wall frame",
+        "FIN05 Experience centre story panel",
+        "Z30 EXPERIENCE CENTRE - floor finish",
+        "F017 bay_104",
+        "F018 bay_104b",
+        "F019 bay_86",
+        "F020 bay_86b",
+        "F021 plinth",
+        "F022 mannequin_navy",
+        "F023 mannequin_sand",
+        "F024 mannequin_olive",
+        "F025 mannequin_white",
+        "F026 material_table",
+        "F027 ec_counter",
+        "F028 totem",
+        "F029 planter_l",
+        "F030 fire_ext",
+        "LT016 track rail (Z30)",
+        "LT017 track rail (Z30)",
+        "LT018 track rail (Z30)",
+        "LT019 track rail (Z30)",
+        "LT020 track spot (Z30)",
+        "LT021 track spot (Z30)",
+        "LT022 track spot (Z30)",
+        "LT023 track spot (Z30)",
+        "LT024 track spot (Z30)",
+        "LT025 track spot (Z30)",
+        "LT026 track spot (Z30)",
+        "LT027 track spot (Z30)",
+        "LT028 track spot (Z30)",
+        "LT029 track spot (Z30)",
+        "LT030 track spot (Z30)",
+        "LT031 track spot (Z30)",
+        "LT032 track spot (Z30)",
+        "LT033 track spot (Z30)",
+        "LT034 track spot (Z30)",
+        "LT035 track spot (Z30)",
+        "LT036 track spot (Z30)",
+        "LT037 linear pendant 120in (Z30)",
+        "AC08 VRF indoor unit, under-ceiling (Z30) - capacity by MEP",
+        "SD03 smoke detector",
+        "BR06 client logo (logo_zf)",
+        "BR07 client logo (logo_s2_ltd)",
+        "BR08 client logo (logo_s2_unit1)",
+        "BR09 client logo (tagline)",
+        "PL029 pachira (CC0) (pachira_aquatica_01_leaves_a)",
+        "PL029 pachira (CC0) (pachira_aquatica_01_bark_a)"
+      ],
+      "uv_metrics": {
+        "uv0_world_loop_signature": "dd67646d12893041691bb602be212fba584299aae74b7c6a6889b4eba24d8f32",
+        "uv0_and_evaluated_geometry_preserved": true,
+        "max_world_loop_error_m": 2.1324806311895372e-06,
+        "max_world_corner_normal_error_degrees": 0.15809670157084826,
+        "world_surface_area_m2": 484.6213809020384,
+        "summed_uv_island_area": 0.19672992341507045,
+        "mean_linear_texels_per_metre": 41.263292491990384,
+        "floor_uv_weight": 1.3,
+        "packing_margin_uv": 0.004,
+        "bake_dilation_px": 16,
+        "objects": {
+          "FIN04 Experience centre story wall frame": {
+            "world_area_m2": 59.48166086430882,
+            "uv_area": 0.02033331915720679,
+            "texels_per_metre": 37.8653998991025
+          },
+          "FIN05 Experience centre story panel": {
+            "world_area_m2": 13.775005802299273,
+            "uv_area": 0.004708891272837468,
+            "texels_per_metre": 37.86547319648644
+          },
+          "Z30 EXPERIENCE CENTRE - floor finish": {
+            "world_area_m2": 131.71224972190498,
+            "uv_area": 0.07609208766568562,
+            "texels_per_metre": 49.22510125971261
+          },
+          "F017 bay_104": {
+            "world_area_m2": 43.48300669750296,
+            "uv_area": 0.014863958408445815,
+            "texels_per_metre": 37.86495193029727
+          },
+          "F018 bay_104b": {
+            "world_area_m2": 43.331424886957905,
+            "uv_area": 0.0148121587556643,
+            "texels_per_metre": 37.86497253833068
+          },
+          "F019 bay_86": {
+            "world_area_m2": 36.99196161190581,
+            "uv_area": 0.012645141729069026,
+            "texels_per_metre": 37.86501403399088
+          },
+          "F020 bay_86b": {
+            "world_area_m2": 37.14931165292202,
+            "uv_area": 0.012698900945717184,
+            "texels_per_metre": 37.86497152711213
+          },
+          "F021 plinth": {
+            "world_area_m2": 22.564775311819982,
+            "uv_area": 0.007713611753260463,
+            "texels_per_metre": 37.86546840668425
+          },
+          "F022 mannequin_navy": {
+            "world_area_m2": 1.7658314421099883,
+            "uv_area": 0.0006036377181692226,
+            "texels_per_metre": 37.865484132961306
+          },
+          "F023 mannequin_sand": {
+            "world_area_m2": 1.765831430394752,
+            "uv_area": 0.0006036377619351163,
+            "texels_per_metre": 37.865485631260235
+          },
+          "F024 mannequin_olive": {
+            "world_area_m2": 1.765831392698796,
+            "uv_area": 0.0006036370286106041,
+            "texels_per_metre": 37.86546303512699
+          },
+          "F025 mannequin_white": {
+            "world_area_m2": 1.765832151049057,
+            "uv_area": 0.0006036386686335549,
+            "texels_per_metre": 37.86550634265785
+          },
+          "F026 material_table": {
+            "world_area_m2": 14.5693625587678,
+            "uv_area": 0.004980439665734936,
+            "texels_per_metre": 37.86548453581209
+          },
+          "F027 ec_counter": {
+            "world_area_m2": 57.995546421859125,
+            "uv_area": 0.019825374057681464,
+            "texels_per_metre": 37.865467668934045
+          },
+          "F028 totem": {
+            "world_area_m2": 3.815471872982333,
+            "uv_area": 0.001304291694878501,
+            "texels_per_metre": 37.86545576752103
+          },
+          "F029 planter_l": {
+            "world_area_m2": 1.3121726319361866,
+            "uv_area": 0.0004485565947151271,
+            "texels_per_metre": 37.86544696736415
+          },
+          "F030 fire_ext": {
+            "world_area_m2": 0.6302071204565345,
+            "uv_area": 0.00021543215333363896,
+            "texels_per_metre": 37.86548820559147
+          },
+          "LT016 track rail (Z30)": {
+            "world_area_m2": 0.8036388721187809,
+            "uv_area": 0.00027471154209979254,
+            "texels_per_metre": 37.86499797969823
+          },
+          "LT017 track rail (Z30)": {
+            "world_area_m2": 0.8036361886459695,
+            "uv_area": 0.00027471321603121657,
+            "texels_per_metre": 37.86517656194906
+          },
+          "LT018 track rail (Z30)": {
+            "world_area_m2": 0.8036444804831636,
+            "uv_area": 0.0002747101809598973,
+            "texels_per_metre": 37.86477204945249
+          },
+          "LT019 track rail (Z30)": {
+            "world_area_m2": 0.8036332637759416,
+            "uv_area": 0.00027471280900283335,
+            "texels_per_metre": 37.8652174166435
+          },
+          "LT020 track spot (Z30)": {
+            "world_area_m2": 0.06353072417646757,
+            "uv_area": 2.1717793048825484e-05,
+            "texels_per_metre": 37.86569170058968
+          },
+          "LT021 track spot (Z30)": {
+            "world_area_m2": 0.06353081744879639,
+            "uv_area": 2.1717270046600623e-05,
+            "texels_per_metre": 37.86520796618977
+          },
+          "LT022 track spot (Z30)": {
+            "world_area_m2": 0.06353062972312414,
+            "uv_area": 2.171706932574402e-05,
+            "texels_per_metre": 37.86508892543317
+          },
+          "LT023 track spot (Z30)": {
+            "world_area_m2": 0.06353065765576231,
+            "uv_area": 2.1717641470742066e-05,
+            "texels_per_metre": 37.86557938349305
+          },
+          "LT024 track spot (Z30)": {
+            "world_area_m2": 0.06353085552923428,
+            "uv_area": 2.171772867273769e-05,
+            "texels_per_metre": 37.86559643519469
+          },
+          "LT025 track spot (Z30)": {
+            "world_area_m2": 0.06353066982946871,
+            "uv_area": 2.171723352656363e-05,
+            "texels_per_metre": 37.865220120445315
+          },
+          "LT026 track spot (Z30)": {
+            "world_area_m2": 0.06353048656224955,
+            "uv_area": 2.1717753049266264e-05,
+            "texels_per_metre": 37.865727642046544
+          },
+          "LT027 track spot (Z30)": {
+            "world_area_m2": 0.06353071233802532,
+            "uv_area": 2.1717426121378725e-05,
+            "texels_per_metre": 37.8653753521137
+          },
+          "LT028 track spot (Z30)": {
+            "world_area_m2": 0.06353070698021065,
+            "uv_area": 2.171738721878924e-05,
+            "texels_per_metre": 37.86534303450463
+          },
+          "LT029 track spot (Z30)": {
+            "world_area_m2": 0.06353079620618947,
+            "uv_area": 2.1717804584653333e-05,
+            "texels_per_metre": 37.86568029151044
+          },
+          "LT030 track spot (Z30)": {
+            "world_area_m2": 0.06353079734681072,
+            "uv_area": 2.1717907663809655e-05,
+            "texels_per_metre": 37.86576981237322
+          },
+          "LT031 track spot (Z30)": {
+            "world_area_m2": 0.06353087989312231,
+            "uv_area": 2.1717429556145085e-05,
+            "texels_per_metre": 37.86532841371749
+          },
+          "LT032 track spot (Z30)": {
+            "world_area_m2": 0.0635306643073893,
+            "uv_area": 2.1717706594245878e-05,
+            "texels_per_metre": 37.86563417391546
+          },
+          "LT033 track spot (Z30)": {
+            "world_area_m2": 0.06353081180610648,
+            "uv_area": 2.171717707183385e-05,
+            "texels_per_metre": 37.865128594448926
+          },
+          "LT034 track spot (Z30)": {
+            "world_area_m2": 0.0635308411570036,
+            "uv_area": 2.171761864799837e-05,
+            "texels_per_metre": 37.86550480219222
+          },
+          "LT035 track spot (Z30)": {
+            "world_area_m2": 0.06353079842204999,
+            "uv_area": 2.1717477922011952e-05,
+            "texels_per_metre": 37.865394856763224
+          },
+          "LT036 track spot (Z30)": {
+            "world_area_m2": 0.0635308984448713,
+            "uv_area": 2.171746816248543e-05,
+            "texels_per_metre": 37.86535654109985
+          },
+          "LT037 linear pendant 120in (Z30)": {
+            "world_area_m2": 1.2204220839161877,
+            "uv_area": 0.00041718996310621814,
+            "texels_per_metre": 37.86533898745123
+          },
+          "AC08 VRF indoor unit, under-ceiling (Z30) - capacity by MEP": {
+            "world_area_m2": 2.9591592856009012,
+            "uv_area": 0.0010115679078763484,
+            "texels_per_metre": 37.86546567673142
+          },
+          "SD03 smoke detector": {
+            "world_area_m2": 0.03846901747145019,
+            "uv_area": 1.3150568492159564e-05,
+            "texels_per_metre": 37.86575921833156
+          },
+          "BR06 client logo (logo_zf)": {
+            "world_area_m2": 0.6704344053946474,
+            "uv_area": 0.0002291825383426982,
+            "texels_per_metre": 37.86540168077278
+          },
+          "BR07 client logo (logo_s2_ltd)": {
+            "world_area_m2": 0.2894500505744862,
+            "uv_area": 9.894679395605621e-05,
+            "texels_per_metre": 37.86552658902404
+          },
+          "BR08 client logo (logo_s2_unit1)": {
+            "world_area_m2": 0.28975626455468123,
+            "uv_area": 9.905047710034864e-05,
+            "texels_per_metre": 37.865336537352235
+          },
+          "BR09 client logo (tagline)": {
+            "world_area_m2": 0.18886764747224358,
+            "uv_area": 6.456314693448206e-05,
+            "texels_per_metre": 37.8654839838911
+          },
+          "PL029 pachira (CC0) (pachira_aquatica_01_leaves_a)": {
+            "world_area_m2": 0.5880747073809556,
+            "uv_area": 0.00020092744222613423,
+            "texels_per_metre": 37.85587854843314
+          },
+          "PL029 pachira (CC0) (pachira_aquatica_01_bark_a)": {
+            "world_area_m2": 0.20668831493984696,
+            "uv_area": 7.058390467920561e-05,
+            "texels_per_metre": 37.84642219792654
+          }
+        }
+      },
+      "always_load": false,
+      "packing_only_not_baked": true
+    },
+    "Z08": {
+      "atlas_size": 2048,
+      "source_objects": [
+        "FIN06 Boardroom media wall",
+        "FIN07 Boardroom acoustic walnut slats",
+        "D20 door (solid) Executive suite - boardroom 42\"",
+        "Z08 BOARDROOM - floor finish",
+        "F031 board_table",
+        "F032 board_chair",
+        "F033 board_chair",
+        "F034 board_chair",
+        "F035 board_chair",
+        "F036 board_chair",
+        "F037 board_chair",
+        "F038 board_chair",
+        "F039 board_chair",
+        "F040 board_chair",
+        "F041 board_chair",
+        "F042 board_chair",
+        "F043 board_chair",
+        "F044 board_chair",
+        "F045 board_chair",
+        "F046 exec_chair_black",
+        "F047 screen_86",
+        "F048 credenza_walnut",
+        "F049 credenza_walnut",
+        "F050 planter_m",
+        "CL002 raft (Z08)",
+        "CL003 raft (Z08)",
+        "CL004 raft (Z08)",
+        "CL005 raft (Z08)",
+        "LT038 linear pendant 96in (Z08)",
+        "LT039 linear pendant 96in (Z08)",
+        "LT040 downlight (Z08)",
+        "LT041 downlight (Z08)",
+        "LT042 downlight (Z08)",
+        "LT043 downlight (Z08)",
+        "LT044 track spot (Z08)",
+        "LT045 track spot (Z08)",
+        "LT046 track spot (Z08)",
+        "LT047 track spot (Z08)",
+        "LT048 track spot (Z08)",
+        "AC09 VRF indoor unit, under-ceiling (Z08) - capacity by MEP",
+        "SD04 smoke detector",
+        "PL050 calathea (CC0) (calathea_orbifolia_01_a)"
+      ],
+      "uv_metrics": {
+        "uv0_world_loop_signature": "c7e3679083d926cbf54b7b6ea466f94777bd8ff9ae77cbf671e6ee321161cc63",
+        "uv0_and_evaluated_geometry_preserved": true,
+        "max_world_loop_error_m": 1.9660499219753547e-06,
+        "world_surface_area_m2": 363.9778844915654,
+        "summed_uv_island_area": 0.1669115846438767,
+        "mean_linear_texels_per_metre": 43.85667416538979,
+        "packing_margin_uv": 0.004,
+        "bake_dilation_px": 16,
+        "objects": {
+          "FIN06 Boardroom media wall": {
+            "world_area_m2": 62.355473153289324,
+            "uv_area": 0.02859466568849954,
+            "texels_per_metre": 43.856621681991236
+          },
+          "FIN07 Boardroom acoustic walnut slats": {
+            "world_area_m2": 64.22449899965225,
+            "uv_area": 0.029451873881404175,
+            "texels_per_metre": 43.856710676437075
+          },
+          "D20 door (solid) Executive suite - boardroom 42\"": {
+            "world_area_m2": 6.2532177735891015,
+            "uv_area": 0.002867593306120339,
+            "texels_per_metre": 43.85680142878314
+          },
+          "Z08 BOARDROOM - floor finish": {
+            "world_area_m2": 100.59074752473889,
+            "uv_area": 0.046128597881984375,
+            "texels_per_metre": 43.856711259637315
+          },
+          "F031 board_table": {
+            "world_area_m2": 20.10883802592627,
+            "uv_area": 0.009221451144199193,
+            "texels_per_metre": 43.85671505826485
+          },
+          "F032 board_chair": {
+            "world_area_m2": 2.15853088157371,
+            "uv_area": 0.0009898553171960173,
+            "texels_per_metre": 43.85677363904049
+          },
+          "F033 board_chair": {
+            "world_area_m2": 2.158530744178293,
+            "uv_area": 0.0009898536844925587,
+            "texels_per_metre": 43.856738865335444
+          },
+          "F034 board_chair": {
+            "world_area_m2": 2.158530767597456,
+            "uv_area": 0.0009898541549333145,
+            "texels_per_metre": 43.85674904916141
+          },
+          "F035 board_chair": {
+            "world_area_m2": 2.1585309255726672,
+            "uv_area": 0.00098985558019285,
+            "texels_per_metre": 43.85677901825851
+          },
+          "F036 board_chair": {
+            "world_area_m2": 2.1585300208938794,
+            "uv_area": 0.0009898510117059,
+            "texels_per_metre": 43.85668700246245
+          },
+          "F037 board_chair": {
+            "world_area_m2": 2.1585324760815783,
+            "uv_area": 0.0009898548727631795,
+            "texels_per_metre": 43.856747594965995
+          },
+          "F038 board_chair": {
+            "world_area_m2": 2.1585299004035217,
+            "uv_area": 0.0009898513574956858,
+            "texels_per_metre": 43.856695886856414
+          },
+          "F039 board_chair": {
+            "world_area_m2": 2.158530335480379,
+            "uv_area": 0.0009898520279981726,
+            "texels_per_metre": 43.85670632069628
+          },
+          "F040 board_chair": {
+            "world_area_m2": 2.1585304690851967,
+            "uv_area": 0.0009898520503159314,
+            "texels_per_metre": 43.856705457823615
+          },
+          "F041 board_chair": {
+            "world_area_m2": 2.1585306569607954,
+            "uv_area": 0.0009898519820541046,
+            "texels_per_metre": 43.85670203699406
+          },
+          "F042 board_chair": {
+            "world_area_m2": 2.15853075312416,
+            "uv_area": 0.0009898550474535528,
+            "texels_per_metre": 43.85676896831324
+          },
+          "F043 board_chair": {
+            "world_area_m2": 2.1585307694505955,
+            "uv_area": 0.0009898497238592652,
+            "texels_per_metre": 43.856650868036
+          },
+          "F044 board_chair": {
+            "world_area_m2": 2.158530364970885,
+            "uv_area": 0.0009898515503861255,
+            "texels_per_metre": 43.856695440485716
+          },
+          "F045 board_chair": {
+            "world_area_m2": 2.1585304616965955,
+            "uv_area": 0.0009898538205952434,
+            "texels_per_metre": 43.85674475015062
+          },
+          "F046 exec_chair_black": {
+            "world_area_m2": 2.390789692768757,
+            "uv_area": 0.0010963599338114915,
+            "texels_per_metre": 43.8566891769646
+          },
+          "F047 screen_86": {
+            "world_area_m2": 8.312681657088158,
+            "uv_area": 0.003812004036561012,
+            "texels_per_metre": 43.856710466128334
+          },
+          "F048 credenza_walnut": {
+            "world_area_m2": 12.383661785064128,
+            "uv_area": 0.005678860161287352,
+            "texels_per_metre": 43.856704884387476
+          },
+          "F049 credenza_walnut": {
+            "world_area_m2": 12.383659043282583,
+            "uv_area": 0.005678867735720128,
+            "texels_per_metre": 43.85673898730489
+          },
+          "F050 planter_m": {
+            "world_area_m2": 0.8363730566820042,
+            "uv_area": 0.0003835414875474341,
+            "texels_per_metre": 43.856716106825644
+          },
+          "CL002 raft (Z08)": {
+            "world_area_m2": 9.417359468254169,
+            "uv_area": 0.004318583240259376,
+            "texels_per_metre": 43.856707643572875
+          },
+          "CL003 raft (Z08)": {
+            "world_area_m2": 9.417359487334176,
+            "uv_area": 0.0043185896769709214,
+            "texels_per_metre": 43.85674028264968
+          },
+          "CL004 raft (Z08)": {
+            "world_area_m2": 9.573772479224392,
+            "uv_area": 0.004390316861168642,
+            "texels_per_metre": 43.8567387692216
+          },
+          "CL005 raft (Z08)": {
+            "world_area_m2": 9.417359173867164,
+            "uv_area": 0.004318579052259609,
+            "texels_per_metre": 43.856687063754926
+          },
+          "LT038 linear pendant 96in (Z08)": {
+            "world_area_m2": 0.9809765418774636,
+            "uv_area": 0.00044984885726101487,
+            "texels_per_metre": 43.85649822867214
+          },
+          "LT039 linear pendant 96in (Z08)": {
+            "world_area_m2": 0.9809753693280228,
+            "uv_area": 0.0004498517321696871,
+            "texels_per_metre": 43.856664578893344
+          },
+          "LT040 downlight (Z08)": {
+            "world_area_m2": 0.13811669578625138,
+            "uv_area": 6.333692430771087e-05,
+            "texels_per_metre": 43.856639123321926
+          },
+          "LT041 downlight (Z08)": {
+            "world_area_m2": 0.1381166626846855,
+            "uv_area": 6.333695414323381e-05,
+            "texels_per_metre": 43.85665470831136
+          },
+          "LT042 downlight (Z08)": {
+            "world_area_m2": 0.13811647814081207,
+            "uv_area": 6.33369204533496e-05,
+            "texels_per_metre": 43.856672343744876
+          },
+          "LT043 downlight (Z08)": {
+            "world_area_m2": 0.13811653494636167,
+            "uv_area": 6.333680273745701e-05,
+            "texels_per_metre": 43.85662256961566
+          },
+          "LT044 track spot (Z08)": {
+            "world_area_m2": 0.06353092353772098,
+            "uv_area": 2.9133730567565408e-05,
+            "texels_per_metre": 43.856646243807894
+          },
+          "LT045 track spot (Z08)": {
+            "world_area_m2": 0.06353091204817078,
+            "uv_area": 2.913342101695804e-05,
+            "texels_per_metre": 43.85641721691385
+          },
+          "LT046 track spot (Z08)": {
+            "world_area_m2": 0.0635308356975838,
+            "uv_area": 2.9133233897304933e-05,
+            "texels_per_metre": 43.85630272801024
+          },
+          "LT047 track spot (Z08)": {
+            "world_area_m2": 0.06353082152533308,
+            "uv_area": 2.9133566468608763e-05,
+            "texels_per_metre": 43.85655794045322
+          },
+          "LT048 track spot (Z08)": {
+            "world_area_m2": 0.06353083820955348,
+            "uv_area": 2.9133411640458462e-05,
+            "texels_per_metre": 43.85643564540321
+          },
+          "AC09 VRF indoor unit, under-ceiling (Z08) - capacity by MEP": {
+            "world_area_m2": 2.9591563661754727,
+            "uv_area": 0.0013570020385516024,
+            "texels_per_metre": 43.85672979251765
+          },
+          "SD04 smoke detector": {
+            "world_area_m2": 0.038469001647966544,
+            "uv_area": 1.7640733587898083e-05,
+            "texels_per_metre": 43.85638342506596
+          },
+          "PL050 calathea (CC0) (calathea_orbifolia_01_a)": {
+            "world_area_m2": 0.26296566213282946,
+            "uv_area": 0.00012040004783836489,
+            "texels_per_metre": 43.82215805194756
+          }
+        }
+      },
+      "always_load": false,
+      "packing_only_not_baked": true
+    },
+    "Z12": {
+      "atlas_size": 2048,
+      "source_objects": [
+        "FIN08 MD feature wall, walnut",
+        "FIN09 MD logo plate",
+        "Z12 MANAGING DIRECTOR - floor finish",
+        "F063 exec_desk_md",
+        "F064 exec_chair_cognac",
+        "F065 visitor_leather",
+        "F066 visitor_leather",
+        "F067 credenza_walnut",
+        "F068 sofa_72_sand",
+        "F069 coffee_round",
+        "F070 lounge_grey",
+        "F071 rug_md",
+        "F072 planter_l",
+        "CL001 slat_raft (Z12)",
+        "LT053 linear pendant 72in (Z12)",
+        "LT054 halo pendant (Z12)",
+        "LT055 track spot (Z12)",
+        "LT056 track spot (Z12)",
+        "LT057 track spot (Z12)",
+        "AC11 VRF indoor unit, under-ceiling (Z12) - capacity by MEP",
+        "SD20 smoke detector",
+        "BR10 client logo (logo_zf)",
+        "PL072 pachira (CC0) (pachira_aquatica_01_leaves_a)",
+        "PL072 pachira (CC0) (pachira_aquatica_01_bark_a)"
+      ],
+      "uv_metrics": {
+        "uv0_world_loop_signature": "7823f750dd5ea80f7b39bb5f0c3b4eab84881952e99b584d9e55aafab00df33e",
+        "uv0_and_evaluated_geometry_preserved": true,
+        "max_world_loop_error_m": 1.969660615941393e-06,
+        "world_surface_area_m2": 164.28422474030313,
+        "summed_uv_island_area": 0.4545955540432257,
+        "mean_linear_texels_per_metre": 107.73197285067768,
+        "packing_margin_uv": 0.004,
+        "bake_dilation_px": 16,
+        "objects": {
+          "FIN08 MD feature wall, walnut": {
+            "world_area_m2": 19.60358082027294,
+            "uv_area": 0.054245806452377296,
+            "texels_per_metre": 107.73215160927508
+          },
+          "FIN09 MD logo plate": {
+            "world_area_m2": 1.8419411586213468,
+            "uv_area": 0.005096908035155945,
+            "texels_per_metre": 107.7321866583428
+          },
+          "Z12 MANAGING DIRECTOR - floor finish": {
+            "world_area_m2": 55.866728900429635,
+            "uv_area": 0.15459095756305175,
+            "texels_per_metre": 107.73216169823385
+          },
+          "F063 exec_desk_md": {
+            "world_area_m2": 12.303412799128449,
+            "uv_area": 0.03404522249232898,
+            "texels_per_metre": 107.73212911295383
+          },
+          "F064 exec_chair_cognac": {
+            "world_area_m2": 2.390791369514204,
+            "uv_area": 0.0066156493191068255,
+            "texels_per_metre": 107.73215584869207
+          },
+          "F065 visitor_leather": {
+            "world_area_m2": 1.0802437959375895,
+            "uv_area": 0.002989170180683842,
+            "texels_per_metre": 107.73191568393455
+          },
+          "F066 visitor_leather": {
+            "world_area_m2": 1.080237660293097,
+            "uv_area": 0.0029891690014465233,
+            "texels_per_metre": 107.73220038652669
+          },
+          "F067 credenza_walnut": {
+            "world_area_m2": 12.383664340958042,
+            "uv_area": 0.034267286285758314,
+            "texels_per_metre": 107.73212412009434
+          },
+          "F068 sofa_72_sand": {
+            "world_area_m2": 14.445293948418529,
+            "uv_area": 0.039972082462434194,
+            "texels_per_metre": 107.73210551310564
+          },
+          "F069 coffee_round": {
+            "world_area_m2": 1.6490084707860853,
+            "uv_area": 0.004563028292890903,
+            "texels_per_metre": 107.73209113852128
+          },
+          "F070 lounge_grey": {
+            "world_area_m2": 3.668576604466681,
+            "uv_area": 0.01015143682005086,
+            "texels_per_metre": 107.73204758858067
+          },
+          "F071 rug_md": {
+            "world_area_m2": 8.974789220447317,
+            "uv_area": 0.024834462476920116,
+            "texels_per_metre": 107.73211988686381
+          },
+          "F072 planter_l": {
+            "world_area_m2": 1.3121709797749876,
+            "uv_area": 0.0036309581001982005,
+            "texels_per_metre": 107.73215733868203
+          },
+          "CL001 slat_raft (Z12)": {
+            "world_area_m2": 21.82530476748625,
+            "uv_area": 0.060393606604386,
+            "texels_per_metre": 107.73213750116837
+          },
+          "LT053 linear pendant 72in (Z12)": {
+            "world_area_m2": 0.7452432009302039,
+            "uv_area": 0.002062178871909709,
+            "texels_per_metre": 107.73184746862354
+          },
+          "LT054 halo pendant (Z12)": {
+            "world_area_m2": 0.6266833647494943,
+            "uv_area": 0.0017341187875028474,
+            "texels_per_metre": 107.73214097966404
+          },
+          "LT055 track spot (Z12)": {
+            "world_area_m2": 0.06353078179457423,
+            "uv_area": 0.00017579788669018492,
+            "texels_per_metre": 107.73198884808379
+          },
+          "LT056 track spot (Z12)": {
+            "world_area_m2": 0.06353078179457423,
+            "uv_area": 0.0001757986445976023,
+            "texels_per_metre": 107.73222107722765
+          },
+          "LT057 track spot (Z12)": {
+            "world_area_m2": 0.06353078179457423,
+            "uv_area": 0.0001757980472998355,
+            "texels_per_metre": 107.73203806025995
+          },
+          "AC11 VRF indoor unit, under-ceiling (Z12) - capacity by MEP": {
+            "world_area_m2": 2.959157557205134,
+            "uv_area": 0.008188410424816273,
+            "texels_per_metre": 107.73224471007859
+          },
+          "SD20 smoke detector": {
+            "world_area_m2": 0.038469097743329864,
+            "uv_area": 0.0001064492451716692,
+            "texels_per_metre": 107.73212967855271
+          },
+          "BR10 client logo (logo_zf)": {
+            "world_area_m2": 0.5035709182056441,
+            "uv_area": 0.0013934484735713681,
+            "texels_per_metre": 107.73209088707203
+          },
+          "PL072 pachira (CC0) (pachira_aquatica_01_leaves_a)": {
+            "world_area_m2": 0.5880751014647082,
+            "uv_area": 0.001626450603000526,
+            "texels_per_metre": 107.70453625919292
+          },
+          "PL072 pachira (CC0) (pachira_aquatica_01_bark_a)": {
+            "world_area_m2": 0.20668831808397134,
+            "uv_area": 0.0005713589718753936,
+            "texels_per_metre": 107.67788395525847
+          }
+        }
+      },
+      "always_load": false,
+      "packing_only_not_baked": true
+    },
+    "Z07": {
+      "atlas_size": 4096,
+      "source_objects": [
+        "Z07 MERCHANDISING - floor finish",
+        "F073 bench3",
+        "F074 task_chair",
+        "F075 task_chair",
+        "F076 task_chair",
+        "F077 task_chair",
+        "F078 task_chair",
+        "F079 task_chair",
+        "F080 bench3",
+        "F081 task_chair",
+        "F082 task_chair",
+        "F083 task_chair",
+        "F084 task_chair",
+        "F085 task_chair",
+        "F086 task_chair",
+        "F087 bench2",
+        "F088 task_chair",
+        "F089 task_chair",
+        "F090 task_chair",
+        "F091 task_chair",
+        "F092 table_team",
+        "F093 task_chair_green",
+        "F094 task_chair_green",
+        "F095 task_chair_green",
+        "F096 task_chair_green",
+        "F097 task_chair_green",
+        "F098 task_chair_green",
+        "F099 task_chair_green",
+        "F100 task_chair_green",
+        "F101 review_counter",
+        "F102 pinboard_merch",
+        "F103 mfp",
+        "F104 lockers8",
+        "F105 under_window_110",
+        "F106 under_window_110",
+        "F107 planter_l",
+        "F108 planter_m",
+        "F109 fire_ext",
+        "F290 fire_ext",
+        "CL006 baffle (Z07)",
+        "CL007 baffle (Z07)",
+        "CL008 baffle (Z07)",
+        "CL009 baffle (Z07)",
+        "CL010 baffle (Z07)",
+        "CL011 baffle (Z07)",
+        "CL012 baffle (Z07)",
+        "CL013 baffle (Z07)",
+        "CL014 baffle (Z07)",
+        "CL015 baffle (Z07)",
+        "CL016 baffle (Z07)",
+        "CL017 baffle (Z07)",
+        "CL018 baffle (Z07)",
+        "CL019 baffle (Z07)",
+        "CL020 baffle (Z07)",
+        "CL021 baffle (Z07)",
+        "CL022 baffle (Z07)",
+        "CL023 baffle (Z07)",
+        "CL024 baffle (Z07)",
+        "CL025 baffle (Z07)",
+        "CL026 baffle (Z07)",
+        "CL027 baffle (Z07)",
+        "CL028 baffle (Z07)",
+        "CL029 baffle (Z07)",
+        "CL030 baffle (Z07)",
+        "CL031 baffle (Z07)",
+        "CL032 baffle (Z07)",
+        "CL033 baffle (Z07)",
+        "CL034 baffle (Z07)",
+        "CL035 baffle (Z07)",
+        "CL036 baffle (Z07)",
+        "CL037 baffle (Z07)",
+        "CL038 baffle (Z07)",
+        "CL039 baffle (Z07)",
+        "CL040 baffle (Z07)",
+        "CL041 baffle (Z07)",
+        "CL042 baffle (Z07)",
+        "CL043 baffle (Z07)",
+        "CL044 baffle (Z07)",
+        "CL045 baffle (Z07)",
+        "CL046 baffle (Z07)",
+        "CL047 baffle (Z07)",
+        "CL048 baffle (Z07)",
+        "CL049 baffle (Z07)",
+        "CL050 baffle (Z07)",
+        "CL051 baffle (Z07)",
+        "CL052 baffle (Z07)",
+        "CL053 baffle (Z07)",
+        "CL054 baffle (Z07)",
+        "CL055 baffle (Z07)",
+        "CL056 baffle (Z07)",
+        "CL057 baffle (Z07)",
+        "CL058 baffle (Z07)",
+        "CL059 baffle (Z07)",
+        "CL060 baffle (Z07)",
+        "CL061 baffle (Z07)",
+        "CL062 baffle (Z07)",
+        "CL063 baffle (Z07)",
+        "CL064 baffle (Z07)",
+        "CL065 baffle (Z07)",
+        "CL066 baffle (Z07)",
+        "CL067 baffle (Z07)",
+        "CL068 baffle (Z07)",
+        "CL069 baffle (Z07)",
+        "CL070 baffle (Z07)",
+        "CL071 baffle (Z07)",
+        "CL072 baffle (Z07)",
+        "CL073 baffle (Z07)",
+        "CL074 baffle (Z07)",
+        "CL075 baffle (Z07)",
+        "CL076 baffle (Z07)",
+        "CL077 baffle (Z07)",
+        "CL078 baffle (Z07)",
+        "CL079 baffle (Z07)",
+        "CL080 baffle (Z07)",
+        "CL081 baffle (Z07)",
+        "CL082 baffle (Z07)",
+        "CL083 baffle (Z07)",
+        "CL084 baffle (Z07)",
+        "CL085 baffle (Z07)",
+        "CL086 baffle (Z07)",
+        "CL087 baffle (Z07)",
+        "CL088 baffle (Z07)",
+        "CL089 baffle (Z07)",
+        "CL090 baffle (Z07)",
+        "CL091 baffle (Z07)",
+        "CL092 baffle (Z07)",
+        "CL093 baffle (Z07)",
+        "CL094 baffle (Z07)",
+        "CL095 baffle (Z07)",
+        "CL096 baffle (Z07)",
+        "CL097 baffle (Z07)",
+        "CL098 baffle (Z07)",
+        "CL099 baffle (Z07)",
+        "CL100 baffle (Z07)",
+        "CL101 baffle (Z07)",
+        "CL102 baffle (Z07)",
+        "CL103 baffle (Z07)",
+        "CL104 baffle (Z07)",
+        "CL105 baffle (Z07)",
+        "CL106 baffle (Z07)",
+        "CL107 baffle (Z07)",
+        "CL108 baffle (Z07)",
+        "CL109 baffle (Z07)",
+        "CL110 baffle (Z07)",
+        "CL111 baffle (Z07)",
+        "CL112 baffle (Z07)",
+        "CL113 baffle (Z07)",
+        "CL114 baffle (Z07)",
+        "CL115 baffle (Z07)",
+        "CL116 baffle (Z07)",
+        "CL117 baffle (Z07)",
+        "CL118 baffle (Z07)",
+        "CL119 baffle (Z07)",
+        "CL120 baffle (Z07)",
+        "CL121 baffle (Z07)",
+        "CL122 baffle (Z07)",
+        "CL123 baffle (Z07)",
+        "CL124 baffle (Z07)",
+        "CL125 baffle (Z07)",
+        "CL126 baffle (Z07)",
+        "CL127 baffle (Z07)",
+        "CL128 baffle (Z07)",
+        "CL129 baffle (Z07)",
+        "CL130 baffle (Z07)",
+        "CL131 baffle (Z07)",
+        "CL132 baffle (Z07)",
+        "CL133 baffle (Z07)",
+        "CL134 baffle (Z07)",
+        "CL135 baffle (Z07)",
+        "CL136 baffle (Z07)",
+        "CL137 baffle (Z07)",
+        "CL138 baffle (Z07)",
+        "CL139 baffle (Z07)",
+        "CL140 baffle (Z07)",
+        "CL141 baffle (Z07)",
+        "CL142 baffle (Z07)",
+        "CL143 baffle (Z07)",
+        "CL144 baffle (Z07)",
+        "CL145 baffle (Z07)",
+        "CL146 baffle (Z07)",
+        "CL147 baffle (Z07)",
+        "CL148 baffle (Z07)",
+        "CL149 baffle (Z07)",
+        "CL150 baffle (Z07)",
+        "CL151 baffle (Z07)",
+        "CL152 baffle (Z07)",
+        "CL153 baffle (Z07)",
+        "CL154 baffle (Z07)",
+        "CL155 baffle (Z07)",
+        "CL156 baffle (Z07)",
+        "CL157 baffle (Z07)",
+        "CL158 baffle (Z07)",
+        "CL159 baffle (Z07)",
+        "CL160 baffle (Z07)",
+        "CL161 baffle (Z07)",
+        "CL162 baffle (Z07)",
+        "CL163 baffle (Z07)",
+        "CL164 baffle (Z07)",
+        "CL165 baffle (Z07)",
+        "CL166 baffle (Z07)",
+        "CL167 baffle (Z07)",
+        "CL168 baffle (Z07)",
+        "CL169 baffle (Z07)",
+        "CL170 baffle (Z07)",
+        "CL171 baffle (Z07)",
+        "CL172 baffle (Z07)",
+        "CL173 baffle (Z07)",
+        "LT063 linear pendant 150in (Z07)",
+        "LT064 linear pendant 150in (Z07)",
+        "LT065 linear pendant 100in (Z07)",
+        "LT066 linear pendant 130in (Z07)",
+        "LT067 linear pendant 200in (Z07)",
+        "LT082 downlight (Z07)",
+        "LT083 downlight (Z07)",
+        "LT084 downlight (Z07)",
+        "LT085 downlight (Z07)",
+        "LT086 downlight (Z07)",
+        "LT087 downlight (Z07)",
+        "AC01 VRF indoor unit, under-ceiling (Z07) - capacity by MEP",
+        "AC02 VRF indoor unit, under-ceiling (Z07) - capacity by MEP",
+        "AC03 VRF indoor unit, under-ceiling (Z07) - capacity by MEP",
+        "AC04 VRF indoor unit, under-ceiling (Z07) - capacity by MEP",
+        "SD05 smoke detector",
+        "SD06 smoke detector",
+        "PL107 pachira (CC0) (pachira_aquatica_01_leaves_a)",
+        "PL107 pachira (CC0) (pachira_aquatica_01_bark_a)",
+        "PL108 calathea (CC0) (calathea_orbifolia_01_a)",
+        "PL080 desk plant (CC0) (potted_plant_04_pot)",
+        "PL080 desk plant (CC0) (potted_plant_04_plant)",
+        "PL080 desk plant (CC0) (potted_plant_04_ground)",
+        "PL080 desk plant (CC0) (potted_plant_04_dirt)"
+      ],
+      "uv_metrics": {
+        "uv0_world_loop_signature": "283f04b99af444883c162c76768d236008873a4901c53d6653f0264c1ea65e85",
+        "uv0_and_evaluated_geometry_preserved": true,
+        "max_world_loop_error_m": 1.9073486328125e-06,
+        "max_world_corner_normal_error_degrees": 22.54239726489493,
+        "world_surface_area_m2": 745.2144862871127,
+        "summed_uv_island_area": 0.07081324851243148,
+        "mean_linear_texels_per_metre": 39.92790858888184,
+        "floor_uv_weight": 1.4,
+        "packing_margin_uv": 0.004,
+        "bake_dilation_px": 16,
+        "objects": {
+          "Z07 MERCHANDISING - floor finish": {
+            "world_area_m2": 264.4556952764551,
+            "uv_area": 0.036738248538146445,
+            "texels_per_metre": 48.277270694404336
+          },
+          "F073 bench3": {
+            "world_area_m2": 35.88891854625574,
+            "uv_area": 0.0025437252248982287,
+            "texels_per_metre": 34.48377958022527
+          },
+          "F074 task_chair": {
+            "world_area_m2": 2.341588706438292,
+            "uv_area": 0.00016596575911735634,
+            "texels_per_metre": 34.483702440715064
+          },
+          "F075 task_chair": {
+            "world_area_m2": 2.341588437095122,
+            "uv_area": 0.00016596654363204566,
+            "texels_per_metre": 34.48378592554586
+          },
+          "F076 task_chair": {
+            "world_area_m2": 2.341588706438292,
+            "uv_area": 0.00016596749750361073,
+            "texels_per_metre": 34.48388303771793
+          },
+          "F077 task_chair": {
+            "world_area_m2": 2.341588437095122,
+            "uv_area": 0.00016596730770288004,
+            "texels_per_metre": 34.48386530306431
+          },
+          "F078 task_chair": {
+            "world_area_m2": 2.341588757124065,
+            "uv_area": 0.0001659666285080269,
+            "texels_per_metre": 34.48379238664086
+          },
+          "F079 task_chair": {
+            "world_area_m2": 2.341588539850514,
+            "uv_area": 0.00016596690145871673,
+            "texels_per_metre": 34.4838223427154
+          },
+          "F080 bench3": {
+            "world_area_m2": 35.888908847424894,
+            "uv_area": 0.002543722626071873,
+            "texels_per_metre": 34.483766624391755
+          },
+          "F081 task_chair": {
+            "world_area_m2": 2.341587610546954,
+            "uv_area": 0.00016596631145388008,
+            "texels_per_metre": 34.48376789121306
+          },
+          "F082 task_chair": {
+            "world_area_m2": 2.3415887581469375,
+            "uv_area": 0.00016596706417436324,
+            "texels_per_metre": 34.48383763946586
+          },
+          "F083 task_chair": {
+            "world_area_m2": 2.341587610546954,
+            "uv_area": 0.000165965436814422,
+            "texels_per_metre": 34.48367702667696
+          },
+          "F084 task_chair": {
+            "world_area_m2": 2.3415887581469375,
+            "uv_area": 0.00016596636393924336,
+            "texels_per_metre": 34.483764893647965
+          },
+          "F085 task_chair": {
+            "world_area_m2": 2.341587659897586,
+            "uv_area": 0.00016596634262547316,
+            "texels_per_metre": 34.48377076617777
+          },
+          "F086 task_chair": {
+            "world_area_m2": 2.341588860325827,
+            "uv_area": 0.0001659656466174858,
+            "texels_per_metre": 34.48368962020455
+          },
+          "F087 bench2": {
+            "world_area_m2": 23.978802890812528,
+            "uv_area": 0.0016995635972850004,
+            "texels_per_metre": 34.48378346161091
+          },
+          "F088 task_chair": {
+            "world_area_m2": 2.341587555617671,
+            "uv_area": 0.00016596665316742643,
+            "texels_per_metre": 34.48380379554472
+          },
+          "F089 task_chair": {
+            "world_area_m2": 2.3415873302458325,
+            "uv_area": 0.0001659660679708408,
+            "texels_per_metre": 34.48374466022185
+          },
+          "F090 task_chair": {
+            "world_area_m2": 2.3415877940670193,
+            "uv_area": 0.00016596646149738548,
+            "texels_per_metre": 34.483782127587865
+          },
+          "F091 task_chair": {
+            "world_area_m2": 2.34158733502049,
+            "uv_area": 0.0001659661067616447,
+            "texels_per_metre": 34.48374865496082
+          },
+          "F092 table_team": {
+            "world_area_m2": 11.549311847801063,
+            "uv_area": 0.0008185872333935362,
+            "texels_per_metre": 34.48374123546383
+          },
+          "F093 task_chair_green": {
+            "world_area_m2": 2.3415872978027608,
+            "uv_area": 0.00016596608103711108,
+            "texels_per_metre": 34.48374625653863
+          },
+          "F094 task_chair_green": {
+            "world_area_m2": 2.341586718380476,
+            "uv_area": 0.00016596791508249886,
+            "texels_per_metre": 34.483941057697
+          },
+          "F095 task_chair_green": {
+            "world_area_m2": 2.3415872978027608,
+            "uv_area": 0.0001659664139610495,
+            "texels_per_metre": 34.48378084330113
+          },
+          "F096 task_chair_green": {
+            "world_area_m2": 2.341586718380476,
+            "uv_area": 0.00016596525796615247,
+            "texels_per_metre": 34.483665015757914
+          },
+          "F097 task_chair_green": {
+            "world_area_m2": 2.3415872986837214,
+            "uv_area": 0.0001659663663975547,
+            "texels_per_metre": 34.48377589554576
+          },
+          "F098 task_chair_green": {
+            "world_area_m2": 2.3415864799379267,
+            "uv_area": 0.00016596622538669892,
+            "texels_per_metre": 34.48376727492616
+          },
+          "F099 task_chair_green": {
+            "world_area_m2": 2.3415872986837214,
+            "uv_area": 0.00016596570588250925,
+            "texels_per_metre": 34.48370727599362
+          },
+          "F100 task_chair_green": {
+            "world_area_m2": 2.3415864799379267,
+            "uv_area": 0.0001659656665231879,
+            "texels_per_metre": 34.48370921571733
+          },
+          "F101 review_counter": {
+            "world_area_m2": 43.17200972835016,
+            "uv_area": 0.0030599306630903628,
+            "texels_per_metre": 34.48375951020789
+          },
+          "F102 pinboard_merch": {
+            "world_area_m2": 21.30433877052472,
+            "uv_area": 0.001510003192010577,
+            "texels_per_metre": 34.48377882691373
+          },
+          "F103 mfp": {
+            "world_area_m2": 6.092606925627884,
+            "uv_area": 0.000431830323066526,
+            "texels_per_metre": 34.483785552537014
+          },
+          "F104 lockers8": {
+            "world_area_m2": 15.499397345578936,
+            "uv_area": 0.001098562079616637,
+            "texels_per_metre": 34.48377826594458
+          },
+          "F105 under_window_110": {
+            "world_area_m2": 15.559440513068823,
+            "uv_area": 0.0011028165740674042,
+            "texels_per_metre": 34.48375905309544
+          },
+          "F106 under_window_110": {
+            "world_area_m2": 15.559443632995292,
+            "uv_area": 0.0011028156601364247,
+            "texels_per_metre": 34.48374130704509
+          },
+          "F107 planter_l": {
+            "world_area_m2": 1.3121718915087086,
+            "uv_area": 9.300351796914796e-05,
+            "texels_per_metre": 34.48373278507919
+          },
+          "F108 planter_m": {
+            "world_area_m2": 0.8363735894264333,
+            "uv_area": 5.928023365719959e-05,
+            "texels_per_metre": 34.48377050556803
+          },
+          "F109 fire_ext": {
+            "world_area_m2": 0.6302078686476418,
+            "uv_area": 4.466683404835692e-05,
+            "texels_per_metre": 34.48344310841344
+          },
+          "F290 fire_ext": {
+            "world_area_m2": 0.6302078686476418,
+            "uv_area": 4.466734586650034e-05,
+            "texels_per_metre": 34.48364067335898
+          },
+          "CL006 baffle (Z07)": {
+            "world_area_m2": 1.0519015330515773,
+            "uv_area": 7.455632833852643e-05,
+            "texels_per_metre": 34.48376367132298
+          },
+          "CL007 baffle (Z07)": {
+            "world_area_m2": 1.0519015330515773,
+            "uv_area": 7.45570391476047e-05,
+            "texels_per_metre": 34.483928052498904
+          },
+          "CL008 baffle (Z07)": {
+            "world_area_m2": 1.0519015330515773,
+            "uv_area": 7.455689231439244e-05,
+            "texels_per_metre": 34.48389409602425
+          },
+          "CL009 baffle (Z07)": {
+            "world_area_m2": 1.0519015330515773,
+            "uv_area": 7.455640220976889e-05,
+            "texels_per_metre": 34.483780754767764
+          },
+          "CL010 baffle (Z07)": {
+            "world_area_m2": 1.0519015330515773,
+            "uv_area": 7.455596982974821e-05,
+            "texels_per_metre": 34.48368076255374
+          },
+          "CL011 baffle (Z07)": {
+            "world_area_m2": 1.0519015330515773,
+            "uv_area": 7.455691277413745e-05,
+            "texels_per_metre": 34.48389882752264
+          },
+          "CL012 baffle (Z07)": {
+            "world_area_m2": 1.0519015330515773,
+            "uv_area": 7.455693757991988e-05,
+            "texels_per_metre": 34.48390456408004
+          },
+          "CL013 baffle (Z07)": {
+            "world_area_m2": 1.0519015330515773,
+            "uv_area": 7.45568265588803e-05,
+            "texels_per_metre": 34.4838788894716
+          },
+          "CL014 baffle (Z07)": {
+            "world_area_m2": 1.0519015330515773,
+            "uv_area": 7.455574640446994e-05,
+            "texels_per_metre": 34.48362909310487
+          },
+          "CL015 baffle (Z07)": {
+            "world_area_m2": 1.0519015330515773,
+            "uv_area": 7.455594802574517e-05,
+            "texels_per_metre": 34.483675720151794
+          },
+          "CL016 baffle (Z07)": {
+            "world_area_m2": 1.0519015330515773,
+            "uv_area": 7.455625373642416e-05,
+            "texels_per_metre": 34.48374641885116
+          },
+          "CL017 baffle (Z07)": {
+            "world_area_m2": 1.0519015330515773,
+            "uv_area": 7.455668269451543e-05,
+            "texels_per_metre": 34.48384561952197
+          },
+          "CL018 baffle (Z07)": {
+            "world_area_m2": 1.0519015330515773,
+            "uv_area": 7.45565025812786e-05,
+            "texels_per_metre": 34.48380396664406
+          },
+          "CL019 baffle (Z07)": {
+            "world_area_m2": 1.0519015330515773,
+            "uv_area": 7.455631790942441e-05,
+            "texels_per_metre": 34.48376125949082
+          },
+          "CL020 baffle (Z07)": {
+            "world_area_m2": 1.0519015462122443,
+            "uv_area": 7.455597114715273e-05,
+            "texels_per_metre": 34.48368085149916
+          },
+          "CL021 baffle (Z07)": {
+            "world_area_m2": 1.0519015462122443,
+            "uv_area": 7.455671958722654e-05,
+            "texels_per_metre": 34.48385393558265
+          },
+          "CL022 baffle (Z07)": {
+            "world_area_m2": 1.0519015462122443,
+            "uv_area": 7.45561829047503e-05,
+            "texels_per_metre": 34.483729822601774
+          },
+          "CL023 baffle (Z07)": {
+            "world_area_m2": 1.0519015462122443,
+            "uv_area": 7.45559876508678e-05,
+            "texels_per_metre": 34.48368466815396
+          },
+          "CL024 baffle (Z07)": {
+            "world_area_m2": 1.0519015462122443,
+            "uv_area": 7.455609538044305e-05,
+            "texels_per_metre": 34.48370958172213
+          },
+          "CL025 baffle (Z07)": {
+            "world_area_m2": 1.0519015462122443,
+            "uv_area": 7.45565731986586e-05,
+            "texels_per_metre": 34.483820081863634
+          },
+          "CL026 baffle (Z07)": {
+            "world_area_m2": 1.0519015462122443,
+            "uv_area": 7.45566257457364e-05,
+            "texels_per_metre": 34.48383223386834
+          },
+          "CL027 baffle (Z07)": {
+            "world_area_m2": 1.0519015462122443,
+            "uv_area": 7.455640097414618e-05,
+            "texels_per_metre": 34.48378025329939
+          },
+          "CL028 baffle (Z07)": {
+            "world_area_m2": 1.0519015462122443,
+            "uv_area": 7.455607027573308e-05,
+            "texels_per_metre": 34.483703776002315
+          },
+          "CL029 baffle (Z07)": {
+            "world_area_m2": 1.0519015462122443,
+            "uv_area": 7.45562567955188e-05,
+            "texels_per_metre": 34.4837469105787
+          },
+          "CL030 baffle (Z07)": {
+            "world_area_m2": 1.0519015462122443,
+            "uv_area": 7.455605575712454e-05,
+            "texels_per_metre": 34.483700418425805
+          },
+          "CL031 baffle (Z07)": {
+            "world_area_m2": 1.0519015462122443,
+            "uv_area": 7.455581238069442e-05,
+            "texels_per_metre": 34.48364413509195
+          },
+          "CL032 baffle (Z07)": {
+            "world_area_m2": 1.0519015462122443,
+            "uv_area": 7.455649455145874e-05,
+            "texels_per_metre": 34.48380189395284
+          },
+          "CL033 baffle (Z07)": {
+            "world_area_m2": 1.0519015462122443,
+            "uv_area": 7.455599065531171e-05,
+            "texels_per_metre": 34.48368536296265
+          },
+          "CL034 baffle (Z07)": {
+            "world_area_m2": 1.0519015330515773,
+            "uv_area": 7.455620697160992e-05,
+            "texels_per_metre": 34.48373560402231
+          },
+          "CL035 baffle (Z07)": {
+            "world_area_m2": 1.0519015330515773,
+            "uv_area": 7.455668958666894e-05,
+            "texels_per_metre": 34.48384721339622
+          },
+          "CL036 baffle (Z07)": {
+            "world_area_m2": 1.0519015330515773,
+            "uv_area": 7.45562147965867e-05,
+            "texels_per_metre": 34.48373741362632
+          },
+          "CL037 baffle (Z07)": {
+            "world_area_m2": 1.0519015330515773,
+            "uv_area": 7.455626176544605e-05,
+            "texels_per_metre": 34.483748275642064
+          },
+          "CL038 baffle (Z07)": {
+            "world_area_m2": 1.0519015330515773,
+            "uv_area": 7.455640488085447e-05,
+            "texels_per_metre": 34.48378137248218
+          },
+          "CL039 baffle (Z07)": {
+            "world_area_m2": 1.0519015330515773,
+            "uv_area": 7.455619884311204e-05,
+            "texels_per_metre": 34.48373372422591
+          },
+          "CL040 baffle (Z07)": {
+            "world_area_m2": 1.0519015330515773,
+            "uv_area": 7.45565869135767e-05,
+            "texels_per_metre": 34.483823469286435
+          },
+          "CL041 baffle (Z07)": {
+            "world_area_m2": 1.0519015330515773,
+            "uv_area": 7.455574089243466e-05,
+            "texels_per_metre": 34.483627818387674
+          },
+          "CL042 baffle (Z07)": {
+            "world_area_m2": 1.0519015330515773,
+            "uv_area": 7.455651715590483e-05,
+            "texels_per_metre": 34.48380733716515
+          },
+          "CL043 baffle (Z07)": {
+            "world_area_m2": 1.0519015330515773,
+            "uv_area": 7.455638642839268e-05,
+            "texels_per_metre": 34.48377710517142
+          },
+          "CL044 baffle (Z07)": {
+            "world_area_m2": 1.0519015330515773,
+            "uv_area": 7.45559050132627e-05,
+            "texels_per_metre": 34.48366577306675
+          },
+          "CL045 baffle (Z07)": {
+            "world_area_m2": 1.0519015330515773,
+            "uv_area": 7.45560428274672e-05,
+            "texels_per_metre": 34.48369764402834
+          },
+          "CL046 baffle (Z07)": {
+            "world_area_m2": 1.0519015330515773,
+            "uv_area": 7.455676581663573e-05,
+            "texels_per_metre": 34.483864842276134
+          },
+          "CL047 baffle (Z07)": {
+            "world_area_m2": 1.0519015330515773,
+            "uv_area": 7.455648761503508e-05,
+            "texels_per_metre": 34.48380050555739
+          },
+          "CL048 baffle (Z07)": {
+            "world_area_m2": 1.0519015462122443,
+            "uv_area": 7.455611129258966e-05,
+            "texels_per_metre": 34.48371326156756
+          },
+          "CL049 baffle (Z07)": {
+            "world_area_m2": 1.0519015462122443,
+            "uv_area": 7.455660503050132e-05,
+            "texels_per_metre": 34.483827443276404
+          },
+          "CL050 baffle (Z07)": {
+            "world_area_m2": 1.0519015462122443,
+            "uv_area": 7.455626955210626e-05,
+            "texels_per_metre": 34.48374986066588
+          },
+          "CL051 baffle (Z07)": {
+            "world_area_m2": 1.0519015462122443,
+            "uv_area": 7.45562734745242e-05,
+            "texels_per_metre": 34.48375076776382
+          },
+          "CL052 baffle (Z07)": {
+            "world_area_m2": 1.0519015462122443,
+            "uv_area": 7.455624806651517e-05,
+            "texels_per_metre": 34.48374489191002
+          },
+          "CL053 baffle (Z07)": {
+            "world_area_m2": 1.0519015462122443,
+            "uv_area": 7.455580404913675e-05,
+            "texels_per_metre": 34.48364220833085
+          },
+          "CL054 baffle (Z07)": {
+            "world_area_m2": 1.0519015462122443,
+            "uv_area": 7.455643751730356e-05,
+            "texels_per_metre": 34.483788704257584
+          },
+          "CL055 baffle (Z07)": {
+            "world_area_m2": 1.0519015462122443,
+            "uv_area": 7.455637810195592e-05,
+            "texels_per_metre": 34.48377496388338
+          },
+          "CL056 baffle (Z07)": {
+            "world_area_m2": 1.0519015462122443,
+            "uv_area": 7.455630939463831e-05,
+            "texels_per_metre": 34.483759074644354
+          },
+          "CL057 baffle (Z07)": {
+            "world_area_m2": 1.0519015462122443,
+            "uv_area": 7.455580488757718e-05,
+            "texels_per_metre": 34.4836424022291
+          },
+          "CL058 baffle (Z07)": {
+            "world_area_m2": 1.0519015462122443,
+            "uv_area": 7.455617617067867e-05,
+            "texels_per_metre": 34.48372826528015
+          },
+          "CL059 baffle (Z07)": {
+            "world_area_m2": 1.0519015462122443,
+            "uv_area": 7.455619941398872e-05,
+            "texels_per_metre": 34.48373364052849
+          },
+          "CL060 baffle (Z07)": {
+            "world_area_m2": 1.0519015462122443,
+            "uv_area": 7.455651741261615e-05,
+            "texels_per_metre": 34.48380718081327
+          },
+          "CL061 baffle (Z07)": {
+            "world_area_m2": 1.0519015462122443,
+            "uv_area": 7.455621415478064e-05,
+            "texels_per_metre": 34.48373704948389
+          },
+          "CL062 baffle (Z07)": {
+            "world_area_m2": 1.0519015330515773,
+            "uv_area": 7.455619095009247e-05,
+            "texels_per_metre": 34.48373189888612
+          },
+          "CL063 baffle (Z07)": {
+            "world_area_m2": 1.0519015330515773,
+            "uv_area": 7.455609492323934e-05,
+            "texels_per_metre": 34.483709691707325
+          },
+          "CL064 baffle (Z07)": {
+            "world_area_m2": 1.0519015330515773,
+            "uv_area": 7.455658620397765e-05,
+            "texels_per_metre": 34.48382330518498
+          },
+          "CL065 baffle (Z07)": {
+            "world_area_m2": 1.0519015330515773,
+            "uv_area": 7.455632065533901e-05,
+            "texels_per_metre": 34.48376189451053
+          },
+          "CL066 baffle (Z07)": {
+            "world_area_m2": 1.0519015330515773,
+            "uv_area": 7.455636483255645e-05,
+            "texels_per_metre": 34.483772110924164
+          },
+          "CL067 baffle (Z07)": {
+            "world_area_m2": 1.0519015330515773,
+            "uv_area": 7.455603638606423e-05,
+            "texels_per_metre": 34.48369615438787
+          },
+          "CL068 baffle (Z07)": {
+            "world_area_m2": 1.0519015330515773,
+            "uv_area": 7.455621882657137e-05,
+            "texels_per_metre": 34.483738345600486
+          },
+          "CL069 baffle (Z07)": {
+            "world_area_m2": 1.0519015330515773,
+            "uv_area": 7.455657602939425e-05,
+            "texels_per_metre": 34.48382095221681
+          },
+          "CL070 baffle (Z07)": {
+            "world_area_m2": 1.0519015330515773,
+            "uv_area": 7.455595491534517e-05,
+            "texels_per_metre": 34.48367731344336
+          },
+          "CL071 baffle (Z07)": {
+            "world_area_m2": 1.0519015330515773,
+            "uv_area": 7.45564587930625e-05,
+            "texels_per_metre": 34.48379384020016
+          },
+          "CL072 baffle (Z07)": {
+            "world_area_m2": 1.0519015330515773,
+            "uv_area": 7.455589880600577e-05,
+            "texels_per_metre": 34.48366433757362
+          },
+          "CL073 baffle (Z07)": {
+            "world_area_m2": 1.0519015330515773,
+            "uv_area": 7.455627648933483e-05,
+            "texels_per_metre": 34.48375168068704
+          },
+          "CL074 baffle (Z07)": {
+            "world_area_m2": 1.0519015330515773,
+            "uv_area": 7.45563128328186e-05,
+            "texels_per_metre": 34.48376008547586
+          },
+          "CL075 baffle (Z07)": {
+            "world_area_m2": 1.0519015330515773,
+            "uv_area": 7.455607341916304e-05,
+            "texels_per_metre": 34.48370471867072
+          },
+          "CL076 baffle (Z07)": {
+            "world_area_m2": 1.0519015462122443,
+            "uv_area": 7.455650052756724e-05,
+            "texels_per_metre": 34.48380327598493
+          },
+          "CL077 baffle (Z07)": {
+            "world_area_m2": 1.0519015462122443,
+            "uv_area": 7.455621838481363e-05,
+            "texels_per_metre": 34.48373802772122
+          },
+          "CL078 baffle (Z07)": {
+            "world_area_m2": 1.0519015462122443,
+            "uv_area": 7.455655853205734e-05,
+            "texels_per_metre": 34.48381669007373
+          },
+          "CL079 baffle (Z07)": {
+            "world_area_m2": 1.0519015462122443,
+            "uv_area": 7.455577544168701e-05,
+            "texels_per_metre": 34.48363559255379
+          },
+          "CL080 baffle (Z07)": {
+            "world_area_m2": 1.0519015462122443,
+            "uv_area": 7.45560921497912e-05,
+            "texels_per_metre": 34.483708834601046
+          },
+          "CL081 baffle (Z07)": {
+            "world_area_m2": 1.0519015462122443,
+            "uv_area": 7.455651470245073e-05,
+            "texels_per_metre": 34.483806554061744
+          },
+          "CL082 baffle (Z07)": {
+            "world_area_m2": 1.0519015462122443,
+            "uv_area": 7.455634552314128e-05,
+            "texels_per_metre": 34.483767429714845
+          },
+          "CL083 baffle (Z07)": {
+            "world_area_m2": 1.0519015462122443,
+            "uv_area": 7.455660958888277e-05,
+            "texels_per_metre": 34.48382849744482
+          },
+          "CL084 baffle (Z07)": {
+            "world_area_m2": 1.0519015462122443,
+            "uv_area": 7.45563090126522e-05,
+            "texels_per_metre": 34.483758986306306
+          },
+          "CL085 baffle (Z07)": {
+            "world_area_m2": 1.0519015462122443,
+            "uv_area": 7.455560741606582e-05,
+            "texels_per_metre": 34.48359673481593
+          },
+          "CL086 baffle (Z07)": {
+            "world_area_m2": 1.0519015462122443,
+            "uv_area": 7.455675842643616e-05,
+            "texels_per_metre": 34.48386291750584
+          },
+          "CL087 baffle (Z07)": {
+            "world_area_m2": 1.0519015462122443,
+            "uv_area": 7.455609498396853e-05,
+            "texels_per_metre": 34.48370949003337
+          },
+          "CL088 baffle (Z07)": {
+            "world_area_m2": 1.0519015462122443,
+            "uv_area": 7.455607857054236e-05,
+            "texels_per_metre": 34.48370569426153
+          },
+          "CL089 baffle (Z07)": {
+            "world_area_m2": 1.0519015462122443,
+            "uv_area": 7.455542593581832e-05,
+            "texels_per_metre": 34.48355476550138
+          },
+          "CL090 baffle (Z07)": {
+            "world_area_m2": 1.0519015067333042,
+            "uv_area": 7.455702419992966e-05,
+            "texels_per_metre": 34.48392502710775
+          },
+          "CL091 baffle (Z07)": {
+            "world_area_m2": 1.0519015067333042,
+            "uv_area": 7.455603686745693e-05,
+            "texels_per_metre": 34.483696697100946
+          },
+          "CL092 baffle (Z07)": {
+            "world_area_m2": 1.0519015067333042,
+            "uv_area": 7.455553911039914e-05,
+            "texels_per_metre": 34.48358158548303
+          },
+          "CL093 baffle (Z07)": {
+            "world_area_m2": 1.0519015067333042,
+            "uv_area": 7.455684917101468e-05,
+            "texels_per_metre": 34.48388455011991
+          },
+          "CL094 baffle (Z07)": {
+            "world_area_m2": 1.0519015067333042,
+            "uv_area": 7.455666280176132e-05,
+            "texels_per_metre": 34.48384145052608
+          },
+          "CL095 baffle (Z07)": {
+            "world_area_m2": 1.0519015067333042,
+            "uv_area": 7.45563376323144e-05,
+            "texels_per_metre": 34.483766251989444
+          },
+          "CL096 baffle (Z07)": {
+            "world_area_m2": 1.0519015067333042,
+            "uv_area": 7.45565872339593e-05,
+            "texels_per_metre": 34.48382397476559
+          },
+          "CL097 baffle (Z07)": {
+            "world_area_m2": 1.0519015067333042,
+            "uv_area": 7.455663332844864e-05,
+            "texels_per_metre": 34.48383463454811
+          },
+          "CL098 baffle (Z07)": {
+            "world_area_m2": 1.0519015067333042,
+            "uv_area": 7.455544550849513e-05,
+            "texels_per_metre": 34.48355993900347
+          },
+          "CL099 baffle (Z07)": {
+            "world_area_m2": 1.0519015067333042,
+            "uv_area": 7.455608469147945e-05,
+            "texels_per_metre": 34.48370775689498
+          },
+          "CL100 baffle (Z07)": {
+            "world_area_m2": 1.0519015067333042,
+            "uv_area": 7.455725145241732e-05,
+            "texels_per_metre": 34.48397758118873
+          },
+          "CL101 baffle (Z07)": {
+            "world_area_m2": 1.0519015067333042,
+            "uv_area": 7.455653437365983e-05,
+            "texels_per_metre": 34.48381175032203
+          },
+          "CL102 baffle (Z07)": {
+            "world_area_m2": 1.0519015067333042,
+            "uv_area": 7.455602078243473e-05,
+            "texels_per_metre": 34.48369297727436
+          },
+          "CL103 baffle (Z07)": {
+            "world_area_m2": 1.0519015067333042,
+            "uv_area": 7.455679870155274e-05,
+            "texels_per_metre": 34.48387287860071
+          },
+          "CL104 baffle (Z07)": {
+            "world_area_m2": 1.0519015198909103,
+            "uv_area": 7.45560856654226e-05,
+            "texels_per_metre": 34.48370776646122
+          },
+          "CL105 baffle (Z07)": {
+            "world_area_m2": 1.0519015198909103,
+            "uv_area": 7.455612013318458e-05,
+            "texels_per_metre": 34.483715737481184
+          },
+          "CL106 baffle (Z07)": {
+            "world_area_m2": 1.0519015198909103,
+            "uv_area": 7.455659861033137e-05,
+            "texels_per_metre": 34.48382638998976
+          },
+          "CL107 baffle (Z07)": {
+            "world_area_m2": 1.0519015198909103,
+            "uv_area": 7.45564708194979e-05,
+            "texels_per_metre": 34.483796837147445
+          },
+          "CL108 baffle (Z07)": {
+            "world_area_m2": 1.0519015198909103,
+            "uv_area": 7.455670886818977e-05,
+            "texels_per_metre": 34.48385188814493
+          },
+          "CL109 baffle (Z07)": {
+            "world_area_m2": 1.0519015198909103,
+            "uv_area": 7.455633654945837e-05,
+            "texels_per_metre": 34.48376578589999
+          },
+          "CL110 baffle (Z07)": {
+            "world_area_m2": 1.0519015198909103,
+            "uv_area": 7.455647078352667e-05,
+            "texels_per_metre": 34.48379682882876
+          },
+          "CL111 baffle (Z07)": {
+            "world_area_m2": 1.0519015198909103,
+            "uv_area": 7.455645305354253e-05,
+            "texels_per_metre": 34.48379272859975
+          },
+          "CL112 baffle (Z07)": {
+            "world_area_m2": 1.0519015198909103,
+            "uv_area": 7.455619739360486e-05,
+            "texels_per_metre": 34.48373360473122
+          },
+          "CL113 baffle (Z07)": {
+            "world_area_m2": 1.0519015198909103,
+            "uv_area": 7.455632444225424e-05,
+            "texels_per_metre": 34.48376298599037
+          },
+          "CL114 baffle (Z07)": {
+            "world_area_m2": 1.0519015198909103,
+            "uv_area": 7.455629960251287e-05,
+            "texels_per_metre": 34.483757241556
+          },
+          "CL115 baffle (Z07)": {
+            "world_area_m2": 1.0519015198909103,
+            "uv_area": 7.455637071096533e-05,
+            "texels_per_metre": 34.48377368608209
+          },
+          "CL116 baffle (Z07)": {
+            "world_area_m2": 1.0519015198909103,
+            "uv_area": 7.455667845240876e-05,
+            "texels_per_metre": 34.48384485421459
+          },
+          "CL117 baffle (Z07)": {
+            "world_area_m2": 1.0519015198909103,
+            "uv_area": 7.455673711287414e-05,
+            "texels_per_metre": 34.48385841998784
+          },
+          "CL118 baffle (Z07)": {
+            "world_area_m2": 1.0519015067333042,
+            "uv_area": 7.455669585176156e-05,
+            "texels_per_metre": 34.48384909364474
+          },
+          "CL119 baffle (Z07)": {
+            "world_area_m2": 1.0519015067333042,
+            "uv_area": 7.45565629597933e-05,
+            "texels_per_metre": 34.48381836113595
+          },
+          "CL120 baffle (Z07)": {
+            "world_area_m2": 1.0519015067333042,
+            "uv_area": 7.455588897742338e-05,
+            "texels_per_metre": 34.48366249599662
+          },
+          "CL121 baffle (Z07)": {
+            "world_area_m2": 1.0519015067333042,
+            "uv_area": 7.455679459567044e-05,
+            "texels_per_metre": 34.48387192907814
+          },
+          "CL122 baffle (Z07)": {
+            "world_area_m2": 1.0519015067333042,
+            "uv_area": 7.455628007013715e-05,
+            "texels_per_metre": 34.483752940169744
+          },
+          "CL123 baffle (Z07)": {
+            "world_area_m2": 1.0519015067333042,
+            "uv_area": 7.455625596927695e-05,
+            "texels_per_metre": 34.483747366607226
+          },
+          "CL124 baffle (Z07)": {
+            "world_area_m2": 1.0519015067333042,
+            "uv_area": 7.455624161556429e-05,
+            "texels_per_metre": 34.48374404716865
+          },
+          "CL125 baffle (Z07)": {
+            "world_area_m2": 1.0519015067333042,
+            "uv_area": 7.455683891566256e-05,
+            "texels_per_metre": 34.483882178477366
+          },
+          "CL126 baffle (Z07)": {
+            "world_area_m2": 1.0519015067333042,
+            "uv_area": 7.455587389104679e-05,
+            "texels_per_metre": 34.48365900711364
+          },
+          "CL127 baffle (Z07)": {
+            "world_area_m2": 1.0519015067333042,
+            "uv_area": 7.45564693667572e-05,
+            "texels_per_metre": 34.483796716855814
+          },
+          "CL128 baffle (Z07)": {
+            "world_area_m2": 1.0519015067333042,
+            "uv_area": 7.455613114992765e-05,
+            "texels_per_metre": 34.48371850088259
+          },
+          "CL129 baffle (Z07)": {
+            "world_area_m2": 1.0519015067333042,
+            "uv_area": 7.455652788290745e-05,
+            "texels_per_metre": 34.48381024927394
+          },
+          "CL130 baffle (Z07)": {
+            "world_area_m2": 1.0519015067333042,
+            "uv_area": 7.455647973908519e-05,
+            "texels_per_metre": 34.483799115556025
+          },
+          "CL131 baffle (Z07)": {
+            "world_area_m2": 1.0519015067333042,
+            "uv_area": 7.455676988132875e-05,
+            "texels_per_metre": 34.48386621366167
+          },
+          "CL132 baffle (Z07)": {
+            "world_area_m2": 1.0519015198909103,
+            "uv_area": 7.45560548733315e-05,
+            "texels_per_metre": 34.48370064547592
+          },
+          "CL133 baffle (Z07)": {
+            "world_area_m2": 1.0519015198909103,
+            "uv_area": 7.455653020843611e-05,
+            "texels_per_metre": 34.48381057140585
+          },
+          "CL134 baffle (Z07)": {
+            "world_area_m2": 1.0519015198909103,
+            "uv_area": 7.455628302319162e-05,
+            "texels_per_metre": 34.48375340742445
+          },
+          "CL135 baffle (Z07)": {
+            "world_area_m2": 1.0519015198909103,
+            "uv_area": 7.455626920116476e-05,
+            "texels_per_metre": 34.483750210944095
+          },
+          "CL136 baffle (Z07)": {
+            "world_area_m2": 1.0519015198909103,
+            "uv_area": 7.455616687115918e-05,
+            "texels_per_metre": 34.483726546109466
+          },
+          "CL137 baffle (Z07)": {
+            "world_area_m2": 1.0519015198909103,
+            "uv_area": 7.455571197956257e-05,
+            "texels_per_metre": 34.48362134769322
+          },
+          "CL138 baffle (Z07)": {
+            "world_area_m2": 1.0519015198909103,
+            "uv_area": 7.455651099563809e-05,
+            "texels_per_metre": 34.48380612826366
+          },
+          "CL139 baffle (Z07)": {
+            "world_area_m2": 1.0519015198909103,
+            "uv_area": 7.455579045084759e-05,
+            "texels_per_metre": 34.48363949501752
+          },
+          "CL140 baffle (Z07)": {
+            "world_area_m2": 1.0519015198909103,
+            "uv_area": 7.455595365690737e-05,
+            "texels_per_metre": 34.483677238134554
+          },
+          "CL141 baffle (Z07)": {
+            "world_area_m2": 1.0519015198909103,
+            "uv_area": 7.455637051320685e-05,
+            "texels_per_metre": 34.48377364034851
+          },
+          "CL142 baffle (Z07)": {
+            "world_area_m2": 1.0519015198909103,
+            "uv_area": 7.455591565388997e-05,
+            "texels_per_metre": 34.483668449540964
+          },
+          "CL143 baffle (Z07)": {
+            "world_area_m2": 1.0519015198909103,
+            "uv_area": 7.4556467273168e-05,
+            "texels_per_metre": 34.48379601702466
+          },
+          "CL144 baffle (Z07)": {
+            "world_area_m2": 1.0519015198909103,
+            "uv_area": 7.455628513414192e-05,
+            "texels_per_metre": 34.48375389560255
+          },
+          "CL145 baffle (Z07)": {
+            "world_area_m2": 1.0519015198909103,
+            "uv_area": 7.455598930852791e-05,
+            "texels_per_metre": 34.4836854829411
+          },
+          "CL146 baffle (Z07)": {
+            "world_area_m2": 0.9995719363014925,
+            "uv_area": 7.084693205561265e-05,
+            "texels_per_metre": 34.48366718539677
+          },
+          "CL147 baffle (Z07)": {
+            "world_area_m2": 0.9995719363014925,
+            "uv_area": 7.084725429529204e-05,
+            "texels_per_metre": 34.48374560794027
+          },
+          "CL148 baffle (Z07)": {
+            "world_area_m2": 0.9995719363014925,
+            "uv_area": 7.084730460471533e-05,
+            "texels_per_metre": 34.48375785158375
+          },
+          "CL149 baffle (Z07)": {
+            "world_area_m2": 0.9995719363014925,
+            "uv_area": 7.084739419549457e-05,
+            "texels_per_metre": 34.483779654994464
+          },
+          "CL150 baffle (Z07)": {
+            "world_area_m2": 0.9995719363014925,
+            "uv_area": 7.084709787585908e-05,
+            "texels_per_metre": 34.48370754061525
+          },
+          "CL151 baffle (Z07)": {
+            "world_area_m2": 0.9995719363014925,
+            "uv_area": 7.08473261459841e-05,
+            "texels_per_metre": 34.483763094012126
+          },
+          "CL152 baffle (Z07)": {
+            "world_area_m2": 0.9995719363014925,
+            "uv_area": 7.084796672662819e-05,
+            "texels_per_metre": 34.483918989671444
+          },
+          "CL153 baffle (Z07)": {
+            "world_area_m2": 0.9995719363014925,
+            "uv_area": 7.084762355713536e-05,
+            "texels_per_metre": 34.48383547391322
+          },
+          "CL154 baffle (Z07)": {
+            "world_area_m2": 0.9995719363014925,
+            "uv_area": 7.084763768450131e-05,
+            "texels_per_metre": 34.483838912036575
+          },
+          "CL155 baffle (Z07)": {
+            "world_area_m2": 0.9995719363014925,
+            "uv_area": 7.084679179797382e-05,
+            "texels_per_metre": 34.483633051243096
+          },
+          "CL156 baffle (Z07)": {
+            "world_area_m2": 0.9995719363014925,
+            "uv_area": 7.084753671264543e-05,
+            "texels_per_metre": 34.48381433889224
+          },
+          "CL157 baffle (Z07)": {
+            "world_area_m2": 0.9995719363014925,
+            "uv_area": 7.084690633707424e-05,
+            "texels_per_metre": 34.483660926342395
+          },
+          "CL158 baffle (Z07)": {
+            "world_area_m2": 0.9995719363014925,
+            "uv_area": 7.084768120169116e-05,
+            "texels_per_metre": 34.48384950264752
+          },
+          "CL159 baffle (Z07)": {
+            "world_area_m2": 0.9995719363014925,
+            "uv_area": 7.084747912999845e-05,
+            "texels_per_metre": 34.48380032521016
+          },
+          "CL160 baffle (Z07)": {
+            "world_area_m2": 0.9995719494590984,
+            "uv_area": 7.084679106350578e-05,
+            "texels_per_metre": 34.48363264553917
+          },
+          "CL161 baffle (Z07)": {
+            "world_area_m2": 0.9995719494590984,
+            "uv_area": 7.084732388729087e-05,
+            "texels_per_metre": 34.48376231736232
+          },
+          "CL162 baffle (Z07)": {
+            "world_area_m2": 0.9995719494590984,
+            "uv_area": 7.084791615419306e-05,
+            "texels_per_metre": 34.483906455117136
+          },
+          "CL163 baffle (Z07)": {
+            "world_area_m2": 0.9995719494590984,
+            "uv_area": 7.084684846292433e-05,
+            "texels_per_metre": 34.483646614697356
+          },
+          "CL164 baffle (Z07)": {
+            "world_area_m2": 0.9995719494590984,
+            "uv_area": 7.084751650843213e-05,
+            "texels_per_metre": 34.48380919490669
+          },
+          "CL165 baffle (Z07)": {
+            "world_area_m2": 0.9995719494590984,
+            "uv_area": 7.084734544249294e-05,
+            "texels_per_metre": 34.48376756318085
+          },
+          "CL166 baffle (Z07)": {
+            "world_area_m2": 0.9995719494590984,
+            "uv_area": 7.08475859383384e-05,
+            "texels_per_metre": 34.48382609180845
+          },
+          "CL167 baffle (Z07)": {
+            "world_area_m2": 0.9995719494590984,
+            "uv_area": 7.084674523544221e-05,
+            "texels_per_metre": 34.4836214924697
+          },
+          "CL168 baffle (Z07)": {
+            "world_area_m2": 0.9995719494590984,
+            "uv_area": 7.084726103423478e-05,
+            "texels_per_metre": 34.48374702101654
+          },
+          "CL169 baffle (Z07)": {
+            "world_area_m2": 0.9995719494590984,
+            "uv_area": 7.084809995558383e-05,
+            "texels_per_metre": 34.483951186043605
+          },
+          "CL170 baffle (Z07)": {
+            "world_area_m2": 0.9995719494590984,
+            "uv_area": 7.084762249470744e-05,
+            "texels_per_metre": 34.48383498839465
+          },
+          "CL171 baffle (Z07)": {
+            "world_area_m2": 0.9995719494590984,
+            "uv_area": 7.084810045285272e-05,
+            "texels_per_metre": 34.48395130706164
+          },
+          "CL172 baffle (Z07)": {
+            "world_area_m2": 0.9995719494590984,
+            "uv_area": 7.084720635486264e-05,
+            "texels_per_metre": 34.48373371386837
+          },
+          "CL173 baffle (Z07)": {
+            "world_area_m2": 0.9995719494590984,
+            "uv_area": 7.08477767327742e-05,
+            "texels_per_metre": 34.48387252470823
+          },
+          "LT063 linear pendant 150in (Z07)": {
+            "world_area_m2": 1.513243723156417,
+            "uv_area": 0.0001072570625178515,
+            "texels_per_metre": 34.484065132453615
+          },
+          "LT064 linear pendant 150in (Z07)": {
+            "world_area_m2": 1.51324216537749,
+            "uv_area": 0.00010725428600766307,
+            "texels_per_metre": 34.4836365429051
+          },
+          "LT065 linear pendant 100in (Z07)": {
+            "world_area_m2": 1.0221275454929242,
+            "uv_area": 7.244799553696168e-05,
+            "texels_per_metre": 34.48423443038258
+          },
+          "LT066 linear pendant 130in (Z07)": {
+            "world_area_m2": 1.3167984815857672,
+            "uv_area": 9.333263968264865e-05,
+            "texels_per_metre": 34.48395454063802
+          },
+          "LT067 linear pendant 200in (Z07)": {
+            "world_area_m2": 2.0025014722238925,
+            "uv_area": 0.00014193203776136087,
+            "texels_per_metre": 34.4836910134311
+          },
+          "LT082 downlight (Z07)": {
+            "world_area_m2": 0.13811663223022522,
+            "uv_area": 9.789315333463833e-06,
+            "texels_per_metre": 34.48364114868949
+          },
+          "LT083 downlight (Z07)": {
+            "world_area_m2": 0.13811583215379977,
+            "uv_area": 9.789413070393493e-06,
+            "texels_per_metre": 34.48391316996186
+          },
+          "LT084 downlight (Z07)": {
+            "world_area_m2": 0.13811503318946325,
+            "uv_area": 9.789185702935299e-06,
+            "texels_per_metre": 34.48361244803647
+          },
+          "LT085 downlight (Z07)": {
+            "world_area_m2": 0.13811583235675315,
+            "uv_area": 9.789208906596514e-06,
+            "texels_per_metre": 34.48355355190557
+          },
+          "LT086 downlight (Z07)": {
+            "world_area_m2": 0.13811583215379977,
+            "uv_area": 9.789470059473615e-06,
+            "texels_per_metre": 34.48401354388705
+          },
+          "LT087 downlight (Z07)": {
+            "world_area_m2": 0.13811663223022522,
+            "uv_area": 9.78927581840594e-06,
+            "texels_per_metre": 34.48357155115355
+          },
+          "AC01 VRF indoor unit, under-ceiling (Z07) - capacity by MEP": {
+            "world_area_m2": 2.9591570024033755,
+            "uv_area": 0.0002097369993812187,
+            "texels_per_metre": 34.48366911762537
+          },
+          "AC02 VRF indoor unit, under-ceiling (Z07) - capacity by MEP": {
+            "world_area_m2": 2.959156682083487,
+            "uv_area": 0.00020974033127571512,
+            "texels_per_metre": 34.4839448877429
+          },
+          "AC03 VRF indoor unit, under-ceiling (Z07) - capacity by MEP": {
+            "world_area_m2": 2.959160976999593,
+            "uv_area": 0.00020973925892076029,
+            "texels_per_metre": 34.48383170843347
+          },
+          "AC04 VRF indoor unit, under-ceiling (Z07) - capacity by MEP": {
+            "world_area_m2": 2.9591606574264215,
+            "uv_area": 0.00020973821065561893,
+            "texels_per_metre": 34.48374739621803
+          },
+          "SD05 smoke detector": {
+            "world_area_m2": 0.03846909082813282,
+            "uv_area": 2.7266543334292237e-06,
+            "texels_per_metre": 34.48411057811636
+          },
+          "SD06 smoke detector": {
+            "world_area_m2": 0.03846910029076529,
+            "uv_area": 2.7264868593945835e-06,
+            "texels_per_metre": 34.48304729524684
+          },
+          "PL107 pachira (CC0) (pachira_aquatica_01_leaves_a)": {
+            "world_area_m2": 0.5880747389113843,
+            "uv_area": 4.165972058584044e-05,
+            "texels_per_metre": 34.47480847608011
+          },
+          "PL107 pachira (CC0) (pachira_aquatica_01_bark_a)": {
+            "world_area_m2": 0.20668850078542975,
+            "uv_area": 1.4634837400287481e-05,
+            "texels_per_metre": 34.46638549980482
+          },
+          "PL108 calathea (CC0) (calathea_orbifolia_01_a)": {
+            "world_area_m2": 0.2629655485146782,
+            "uv_area": 1.8609180617065735e-05,
+            "texels_per_metre": 34.456736851281256
+          },
+          "PL080 desk plant (CC0) (potted_plant_04_pot)": {
+            "world_area_m2": 0.10924774753648309,
+            "uv_area": 7.743148170424874e-06,
+            "texels_per_metre": 34.48359113914038
+          },
+          "PL080 desk plant (CC0) (potted_plant_04_plant)": {
+            "world_area_m2": 0.09369544969351436,
+            "uv_area": 6.6350728871039655e-06,
+            "texels_per_metre": 34.46859228783132
+          },
+          "PL080 desk plant (CC0) (potted_plant_04_ground)": {
+            "world_area_m2": 0.02229120548702596,
+            "uv_area": 1.5799314375675166e-06,
+            "texels_per_metre": 34.483575539269154
+          },
+          "PL080 desk plant (CC0) (potted_plant_04_dirt)": {
+            "world_area_m2": 0.011169939498984663,
+            "uv_area": 7.915725082074943e-07,
+            "texels_per_metre": 34.48100288137529
+          }
+        }
+      },
+      "always_load": false,
+      "packing_only_not_baked": true
+    },
+    "Z18": {
+      "atlas_size": 2048,
+      "source_objects": [
+        "FIN12 Mood-board wall backing",
+        "W09 frame",
+        "W10 frame",
+        "W08 roller blind",
+        "W08 blind cassette",
+        "W09 roller blind",
+        "W09 blind cassette",
+        "W10 roller blind",
+        "W10 blind cassette",
+        "Z18 GLOBAL DESIGN STUDIO - floor finish",
+        "F216 bench_design",
+        "F217 task_chair_green",
+        "F218 task_chair_green",
+        "F219 task_chair_green",
+        "F220 task_chair_green",
+        "F221 bench_design",
+        "F222 task_chair_green",
+        "F223 task_chair_green",
+        "F224 task_chair_green",
+        "F225 task_chair_green",
+        "F226 moodboard",
+        "F227 table_trend",
+        "F228 stool",
+        "F229 stool",
+        "F230 stool",
+        "F231 stool",
+        "F232 stool",
+        "F233 stool",
+        "F234 table_present",
+        "F235 visitor_chair",
+        "F236 visitor_chair",
+        "F237 visitor_chair",
+        "F238 visitor_chair",
+        "F239 visitor_chair",
+        "F240 visitor_chair",
+        "F241 visitor_chair",
+        "F242 visitor_chair",
+        "F243 screen_86",
+        "F244 bay_120_white",
+        "F245 planter_l",
+        "LT102 linear pendant 110in (Z18)",
+        "LT103 linear pendant 110in (Z18)",
+        "LT104 linear pendant 80in (Z18)",
+        "LT105 linear pendant 96in (Z18)",
+        "LT106 track rail (Z18)",
+        "LT107 track spot (Z18)",
+        "LT108 track spot (Z18)",
+        "LT109 track spot (Z18)",
+        "LT110 track spot (Z18)",
+        "LT111 track spot (Z18)",
+        "AC14 VRF indoor unit, under-ceiling (Z18) - capacity by MEP",
+        "AC15 VRF indoor unit, under-ceiling (Z18) - capacity by MEP",
+        "SD13 smoke detector",
+        "SD14 smoke detector",
+        "PL245 pachira (CC0) (pachira_aquatica_01_leaves_a)",
+        "PL245 pachira (CC0) (pachira_aquatica_01_bark_a)",
+        "PL216 desk plant (CC0) (potted_plant_04_pot)",
+        "PL216 desk plant (CC0) (potted_plant_04_plant)",
+        "PL216 desk plant (CC0) (potted_plant_04_ground)",
+        "PL216 desk plant (CC0) (potted_plant_04_dirt)"
+      ],
+      "uv_metrics": {
+        "uv0_world_loop_signature": "3c180df2bdbd4909333f44304a82af897f459ab94af17f76e41951d76f171447",
+        "uv0_and_evaluated_geometry_preserved": true,
+        "max_world_loop_error_m": 4.2653778109524865e-06,
+        "max_world_corner_normal_error_degrees": 22.57072043631263,
+        "world_surface_area_m2": 448.96688171169757,
+        "summed_uv_island_area": 0.18434027895091007,
+        "mean_linear_texels_per_metre": 41.49854971975401,
+        "floor_uv_weight": 1.5,
+        "packing_margin_uv": 0.004,
+        "bake_dilation_px": 16,
+        "objects": {
+          "FIN12 Mood-board wall backing": {
+            "world_area_m2": 42.809606952105234,
+            "uv_area": 0.011832555017839357,
+            "texels_per_metre": 34.04854816887524
+          },
+          "W09 frame": {
+            "world_area_m2": 1.532835308809537,
+            "uv_area": 0.00042368004292028805,
+            "texels_per_metre": 34.04875277661456
+          },
+          "W10 frame": {
+            "world_area_m2": 1.5328468666491455,
+            "uv_area": 0.0004236823461718775,
+            "texels_per_metre": 34.04871695977302
+          },
+          "W08 roller blind": {
+            "world_area_m2": 3.5210364720230514,
+            "uv_area": 0.0009732143800706972,
+            "texels_per_metre": 34.048575675495464
+          },
+          "W08 blind cassette": {
+            "world_area_m2": 0.8187046597765347,
+            "uv_area": 0.000226292220261666,
+            "texels_per_metre": 34.048746883698236
+          },
+          "W09 roller blind": {
+            "world_area_m2": 3.5210364720230514,
+            "uv_area": 0.0009732098417085666,
+            "texels_per_metre": 34.04849628653977
+          },
+          "W09 blind cassette": {
+            "world_area_m2": 0.8187046597765347,
+            "uv_area": 0.00022629219338576867,
+            "texels_per_metre": 34.04874486177576
+          },
+          "W10 roller blind": {
+            "world_area_m2": 3.5210364720230514,
+            "uv_area": 0.0009732089804908028,
+            "texels_per_metre": 34.04848122135287
+          },
+          "W10 blind cassette": {
+            "world_area_m2": 0.8187046597765347,
+            "uv_area": 0.0002262900520211275,
+            "texels_per_metre": 34.04858376264609
+          },
+          "Z18 GLOBAL DESIGN STUDIO - floor finish": {
+            "world_area_m2": 174.37439695628555,
+            "uv_area": 0.10844331260874197,
+            "texels_per_metre": 51.07283675621228
+          },
+          "F216 bench_design": {
+            "world_area_m2": 27.18319003239124,
+            "uv_area": 0.007513409249812392,
+            "texels_per_metre": 34.04852198175182
+          },
+          "F217 task_chair_green": {
+            "world_area_m2": 2.341588238340979,
+            "uv_area": 0.0006472143505468486,
+            "texels_per_metre": 34.048560642853104
+          },
+          "F218 task_chair_green": {
+            "world_area_m2": 2.341587184250145,
+            "uv_area": 0.0006472175689479776,
+            "texels_per_metre": 34.04865296302501
+          },
+          "F219 task_chair_green": {
+            "world_area_m2": 2.341595316382175,
+            "uv_area": 0.0006472158925547727,
+            "texels_per_metre": 34.048549743569026
+          },
+          "F220 task_chair_green": {
+            "world_area_m2": 2.3415942633955678,
+            "uv_area": 0.0006472134318703526,
+            "texels_per_metre": 34.04849267360917
+          },
+          "F221 bench_design": {
+            "world_area_m2": 27.183190071820743,
+            "uv_area": 0.007513425237471616,
+            "texels_per_metre": 34.04855818268193
+          },
+          "F222 task_chair_green": {
+            "world_area_m2": 2.341588923685382,
+            "uv_area": 0.00064721361423771,
+            "texels_per_metre": 34.048536292301094
+          },
+          "F223 task_chair_green": {
+            "world_area_m2": 2.3415883719251203,
+            "uv_area": 0.0006472132769046318,
+            "texels_per_metre": 34.04853143062362
+          },
+          "F224 task_chair_green": {
+            "world_area_m2": 2.3415960015365327,
+            "uv_area": 0.000647213055683965,
+            "texels_per_metre": 34.04847014152387
+          },
+          "F225 task_chair_green": {
+            "world_area_m2": 2.3415954246898503,
+            "uv_area": 0.0006472144644854017,
+            "texels_per_metre": 34.048511392378025
+          },
+          "F226 moodboard": {
+            "world_area_m2": 41.7216095367503,
+            "uv_area": 0.011531864129397447,
+            "texels_per_metre": 34.048594051980196
+          },
+          "F227 table_trend": {
+            "world_area_m2": 7.041539046920324,
+            "uv_area": 0.0019462742156647755,
+            "texels_per_metre": 34.048514661665465
+          },
+          "F228 stool": {
+            "world_area_m2": 0.853520706588094,
+            "uv_area": 0.00023591358432983878,
+            "texels_per_metre": 34.048610708099865
+          },
+          "F229 stool": {
+            "world_area_m2": 0.853520706588094,
+            "uv_area": 0.00023591151728252768,
+            "texels_per_metre": 34.04846154279517
+          },
+          "F230 stool": {
+            "world_area_m2": 0.853520706588094,
+            "uv_area": 0.00023591272935810648,
+            "texels_per_metre": 34.04854901045295
+          },
+          "F231 stool": {
+            "world_area_m2": 0.853520706588094,
+            "uv_area": 0.00023591222380155152,
+            "texels_per_metre": 34.0485125277324
+          },
+          "F232 stool": {
+            "world_area_m2": 0.8535216161153667,
+            "uv_area": 0.00023591268825967626,
+            "texels_per_metre": 34.048527903286505
+          },
+          "F233 stool": {
+            "world_area_m2": 0.8535216161153667,
+            "uv_area": 0.00023591194888339384,
+            "texels_per_metre": 34.04847454733119
+          },
+          "F234 table_present": {
+            "world_area_m2": 9.757600581404906,
+            "uv_area": 0.0026969985561668963,
+            "texels_per_metre": 34.048563270532426
+          },
+          "F235 visitor_chair": {
+            "world_area_m2": 1.0802435291051316,
+            "uv_area": 0.0002985783516130103,
+            "texels_per_metre": 34.04852271132982
+          },
+          "F236 visitor_chair": {
+            "world_area_m2": 1.0802426837151935,
+            "uv_area": 0.0002985776242644955,
+            "texels_per_metre": 34.04849456258187
+          },
+          "F237 visitor_chair": {
+            "world_area_m2": 1.0802397669819022,
+            "uv_area": 0.0002985775034090865,
+            "texels_per_metre": 34.0485336384498
+          },
+          "F238 visitor_chair": {
+            "world_area_m2": 1.0802389220319744,
+            "uv_area": 0.00029857921361588213,
+            "texels_per_metre": 34.04864446694933
+          },
+          "F239 visitor_chair": {
+            "world_area_m2": 1.0802397669819022,
+            "uv_area": 0.00029857698624252693,
+            "texels_per_metre": 34.0485041506779
+          },
+          "F240 visitor_chair": {
+            "world_area_m2": 1.0802389220319744,
+            "uv_area": 0.00029857768945115715,
+            "texels_per_metre": 34.04855756235803
+          },
+          "F241 visitor_chair": {
+            "world_area_m2": 1.0802416353686901,
+            "uv_area": 0.0002985802240883517,
+            "texels_per_metre": 34.04865932022423
+          },
+          "F242 visitor_chair": {
+            "world_area_m2": 1.0802407901885491,
+            "uv_area": 0.0002985775853864281,
+            "texels_per_metre": 34.04852218719452
+          },
+          "F243 screen_86": {
+            "world_area_m2": 8.312684027767189,
+            "uv_area": 0.0022976191954744707,
+            "texels_per_metre": 34.048528018703976
+          },
+          "F244 bay_120_white": {
+            "world_area_m2": 48.32464915538808,
+            "uv_area": 0.013356799027477086,
+            "texels_per_metre": 34.048406647662624
+          },
+          "F245 planter_l": {
+            "world_area_m2": 1.3121699286464772,
+            "uv_area": 0.0003626833210650382,
+            "texels_per_metre": 34.048556446642635
+          },
+          "LT102 linear pendant 110in (Z18)": {
+            "world_area_m2": 1.11942304177668,
+            "uv_area": 0.0003094038345632655,
+            "texels_per_metre": 34.04831915415937
+          },
+          "LT103 linear pendant 110in (Z18)": {
+            "world_area_m2": 1.11942304177668,
+            "uv_area": 0.00030939978051493233,
+            "texels_per_metre": 34.04809608972342
+          },
+          "LT104 linear pendant 80in (Z18)": {
+            "world_area_m2": 0.823822588819899,
+            "uv_area": 0.00022770207566991107,
+            "texels_per_metre": 34.04839143233254
+          },
+          "LT105 linear pendant 96in (Z18)": {
+            "world_area_m2": 0.9809795885470812,
+            "uv_area": 0.0002711393497258491,
+            "texels_per_metre": 34.048363424893296
+          },
+          "LT106 track rail (Z18)": {
+            "world_area_m2": 0.977839230642758,
+            "uv_area": 0.0002702673988683735,
+            "texels_per_metre": 34.048113555558245
+          },
+          "LT107 track spot (Z18)": {
+            "world_area_m2": 0.06353106511582249,
+            "uv_area": 1.7559881378304e-05,
+            "texels_per_metre": 34.04847562265831
+          },
+          "LT108 track spot (Z18)": {
+            "world_area_m2": 0.06353106511582249,
+            "uv_area": 1.7559826946289547e-05,
+            "texels_per_metre": 34.04842285098766
+          },
+          "LT109 track spot (Z18)": {
+            "world_area_m2": 0.06353106511582249,
+            "uv_area": 1.755975937234311e-05,
+            "texels_per_metre": 34.04835733814057
+          },
+          "LT110 track spot (Z18)": {
+            "world_area_m2": 0.06353106511582249,
+            "uv_area": 1.7560172737685065e-05,
+            "texels_per_metre": 34.048758093291795
+          },
+          "LT111 track spot (Z18)": {
+            "world_area_m2": 0.06353106511582249,
+            "uv_area": 1.7559783859200095e-05,
+            "texels_per_metre": 34.048381078128926
+          },
+          "AC14 VRF indoor unit, under-ceiling (Z18) - capacity by MEP": {
+            "world_area_m2": 2.959158092215989,
+            "uv_area": 0.0008179129505946348,
+            "texels_per_metre": 34.048611863669606
+          },
+          "AC15 VRF indoor unit, under-ceiling (Z18) - capacity by MEP": {
+            "world_area_m2": 2.9591494751726484,
+            "uv_area": 0.0008179111895493807,
+            "texels_per_metre": 34.04862478337152
+          },
+          "SD13 smoke detector": {
+            "world_area_m2": 0.03846910544851127,
+            "uv_area": 1.0632820383715824e-05,
+            "texels_per_metre": 34.048512814589984
+          },
+          "SD14 smoke detector": {
+            "world_area_m2": 0.03846860176195181,
+            "uv_area": 1.063285635050093e-05,
+            "texels_per_metre": 34.04879330695137
+          },
+          "PL245 pachira (CC0) (pachira_aquatica_01_leaves_a)": {
+            "world_area_m2": 0.5880746194822047,
+            "uv_area": 0.00016246030572211745,
+            "texels_per_metre": 34.03982880729876
+          },
+          "PL245 pachira (CC0) (pachira_aquatica_01_bark_a)": {
+            "world_area_m2": 0.20668800540780058,
+            "uv_area": 5.707209992644735e-05,
+            "texels_per_metre": 34.03174680125707
+          },
+          "PL216 desk plant (CC0) (potted_plant_04_pot)": {
+            "world_area_m2": 0.10924741555106973,
+            "uv_area": 3.0195841828062342e-05,
+            "texels_per_metre": 34.04849634810981
+          },
+          "PL216 desk plant (CC0) (potted_plant_04_plant)": {
+            "world_area_m2": 0.09369488330408272,
+            "uv_area": 2.5874673621195665e-05,
+            "texels_per_metre": 34.03372263646684
+          },
+          "PL216 desk plant (CC0) (potted_plant_04_ground)": {
+            "world_area_m2": 0.02229113850718876,
+            "uv_area": 6.161291613057673e-06,
+            "texels_per_metre": 34.048635269713984
+          },
+          "PL216 desk plant (CC0) (potted_plant_04_dirt)": {
+            "world_area_m2": 0.011169898180047343,
+            "uv_area": 3.086916325223399e-06,
+            "texels_per_metre": 34.0461316325919
+          }
+        }
+      },
+      "always_load": false,
+      "packing_only_not_baked": true
+    }
+  },
+  "memory": {
+    "shared_decoded_mib": 224,
+    "room_2048_decoded_mib": 32,
+    "room_4096_decoded_mib": 128
+  },
+  "notes": [
+    "SHELL_WALLS contains54 whole wall/solid partition objects.",
+    "SHELL_STRUCTURE contains134 whole beam/column/frame objects.",
+    "Source floor slab and overhead deck remain whole separate objects. Their nonkey shared surfaces use31.37px/m; key room floor finishes are separate atlases.",
+    "World-space normal preservation additionally audited for original Reception assignment: max0.1431degrees.",
+    "The combined4K all-shell option was rejected at24.12px/m; walls+structure4K was rejected at30.73px/m.",
+    "Reception512trial retains36sourceobjects and52.50px/m rather than the32-object56.58px/m split-room option. Sharedwall/structure remeasurement is pending that ownership change."
+  ]
+}

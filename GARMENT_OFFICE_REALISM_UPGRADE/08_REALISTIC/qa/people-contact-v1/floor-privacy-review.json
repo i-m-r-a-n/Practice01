@@ -1,0 +1,6587 @@
+{
+  "status": "failed",
+  "scope": "Actual runtime-deformed visible LOD0 shoe vertices against measured source horizontal finish/rug tops; all visible mesh projected hulls against eight empty-zone polygons.",
+  "source_hashes": {
+    "/workspace/office-people-contact-export-v1/export-manifest.json": "b4f56480ecd9cf8cd8bdccb97cfe79aef228fa062cabe8778dfe8a51f9845be6",
+    "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/qa/props-independent/source-floor-heights.json": "10b2d55e441eafb5e49c1ee52ffd2177a48a438914e96fb73b450b9b50244e5f",
+    "GARMENT_OFFICE_WALKTHROUGH_FINAL/07_WEB_TOUR_ASSETS/office_web_metadata.json": "934c2e807eb9c203b3a8f8ac31b0166a20a36e22580342e868bc496a89d1bcc3"
+  },
+  "loaded_people_source_hashes": [
+    {
+      "url": "http://127.0.0.1:8770/GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/people/people-layer.js",
+      "bytes": 11863,
+      "sha256": "eed6830c1ffdc2407bd227b4dad578b97068ac0cca81f8360c96de8aefe2ad30"
+    },
+    {
+      "url": "http://127.0.0.1:8770/GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/people/people-manifest.json",
+      "bytes": 40977,
+      "sha256": "8bf7eeab839407f5fcdca6d9076b9a8b4fcba09d4efff5d25eee8a76094b3859"
+    },
+    {
+      "url": "http://127.0.0.1:8770/GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/people/poses.json",
+      "bytes": 321997,
+      "sha256": "46d6a7d13d75c512d4000c514a3237a92f65ffd409c80507f26045811bf78653"
+    },
+    {
+      "url": "http://127.0.0.1:8770/GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/people/assets/salwar_braid.glb",
+      "bytes": 4581800,
+      "sha256": "07015f14834520715c91e7822e4c9ddfb7bcb9d6e278cf1995453c38644e9497"
+    },
+    {
+      "url": "http://127.0.0.1:8770/GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/people/assets/salwar.glb",
+      "bytes": 4895972,
+      "sha256": "019c82bdf8c36410f200400837215ba0c2c1a3336c46bdd2f8bf16cd5f775784"
+    },
+    {
+      "url": "http://127.0.0.1:8770/GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/people/assets/shirt.glb",
+      "bytes": 4375048,
+      "sha256": "1ad870ca2eb18f7cfec870977f4929cfdb940fbaa6407a0b1d3976abcf8909ad"
+    },
+    {
+      "url": "http://127.0.0.1:8770/GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/people/assets/panjabi.glb",
+      "bytes": 4138872,
+      "sha256": "8a54f94988b31142aab090a49a60c11efec6909cfb90204ceed14529d59df121"
+    }
+  ],
+  "verified_export_files": 149,
+  "actor_count": 35,
+  "floor_snapshot_passed": 1,
+  "floor_snapshot_total": 149,
+  "actors_with_penetration_more_than_2mm": 35,
+  "maximum_floor_penetration_m": 0.04037700001847744,
+  "empty_zone_hull_passed": 149,
+  "empty_zone_hull_total": 149,
+  "per_actor_worst": [
+    {
+      "id": "office-person-01",
+      "zone": "Z02",
+      "outfit": "salwar",
+      "pose": "greeting_seated__seat_50292",
+      "seated": true,
+      "walking": false,
+      "seconds": 0,
+      "minimum_clearance_m": -0.0049050000634789466,
+      "support_source": "Z02 RECEPTION + VISITOR WAITING - floor finish",
+      "deepest_point_xyz": [
+        13.283406,
+        0.005255,
+        3.229571
+      ]
+    },
+    {
+      "id": "office-person-02",
+      "zone": "Z02",
+      "outfit": "shirt",
+      "pose": "idle",
+      "seated": false,
+      "walking": false,
+      "seconds": 0,
+      "minimum_clearance_m": -0.02453800006347895,
+      "support_source": "Z02 RECEPTION + VISITOR WAITING - floor finish",
+      "deepest_point_xyz": [
+        11.721854,
+        -0.014378,
+        3.040733
+      ]
+    },
+    {
+      "id": "office-person-03",
+      "zone": "Z02",
+      "outfit": "panjabi",
+      "pose": "listening__seat_44450",
+      "seated": true,
+      "walking": false,
+      "seconds": 0,
+      "minimum_clearance_m": -0.04037700001847744,
+      "support_source": "F013 rug_reception",
+      "deepest_point_xyz": [
+        9.104213,
+        -0.018787,
+        5.261429
+      ]
+    },
+    {
+      "id": "office-person-04",
+      "zone": "Z02",
+      "outfit": "salwar_braid",
+      "pose": "listening__seat_44450",
+      "seated": true,
+      "walking": false,
+      "seconds": 0,
+      "minimum_clearance_m": -0.01628800001847744,
+      "support_source": "F013 rug_reception",
+      "deepest_point_xyz": [
+        9.935998,
+        0.005302,
+        5.264585
+      ]
+    },
+    {
+      "id": "office-person-05",
+      "zone": "Z30",
+      "outfit": "salwar",
+      "pose": "show_sample",
+      "seated": false,
+      "walking": false,
+      "seconds": 0,
+      "minimum_clearance_m": -0.018750000063478947,
+      "support_source": "Z30 EXPERIENCE CENTRE - floor finish",
+      "deepest_point_xyz": [
+        18.368786,
+        -0.00859,
+        -7.484107
+      ]
+    },
+    {
+      "id": "office-person-06",
+      "zone": "Z30",
+      "outfit": "shirt",
+      "pose": "browsing",
+      "seated": false,
+      "walking": false,
+      "seconds": 0,
+      "minimum_clearance_m": -0.023572000063478947,
+      "support_source": "Z30 EXPERIENCE CENTRE - floor finish",
+      "deepest_point_xyz": [
+        17.430169,
+        -0.013412,
+        -9.500346
+      ]
+    },
+    {
+      "id": "office-person-07",
+      "zone": "Z30",
+      "outfit": "panjabi",
+      "pose": "browsing",
+      "seated": false,
+      "walking": false,
+      "seconds": 0,
+      "minimum_clearance_m": -0.024924000063478946,
+      "support_source": "Z30 EXPERIENCE CENTRE - floor finish",
+      "deepest_point_xyz": [
+        20.176146,
+        -0.014764,
+        -7.37568
+      ]
+    },
+    {
+      "id": "office-person-08",
+      "zone": "Z08",
+      "outfit": "shirt",
+      "pose": "notes__seat_50292",
+      "seated": true,
+      "walking": false,
+      "seconds": 0,
+      "minimum_clearance_m": -0.028813000063478946,
+      "support_source": "Z08 BOARDROOM - floor finish",
+      "deepest_point_xyz": [
+        15.644547,
+        -0.018653,
+        -3.54739
+      ]
+    },
+    {
+      "id": "office-person-09",
+      "zone": "Z08",
+      "outfit": "salwar",
+      "pose": "listening__seat_50292",
+      "seated": true,
+      "walking": false,
+      "seconds": 0,
+      "minimum_clearance_m": -0.0049050000634789466,
+      "support_source": "Z08 BOARDROOM - floor finish",
+      "deepest_point_xyz": [
+        16.193963,
+        0.005255,
+        -2.134394
+      ]
+    },
+    {
+      "id": "office-person-10",
+      "zone": "Z08",
+      "outfit": "panjabi",
+      "pose": "listening__seat_50292",
+      "seated": true,
+      "walking": false,
+      "seconds": 0,
+      "minimum_clearance_m": -0.028943000063478948,
+      "support_source": "Z08 BOARDROOM - floor finish",
+      "deepest_point_xyz": [
+        18.105282,
+        -0.018783,
+        -3.546977
+      ]
+    },
+    {
+      "id": "office-person-11",
+      "zone": "Z08",
+      "outfit": "salwar_braid",
+      "pose": "notes__seat_50292",
+      "seated": true,
+      "walking": false,
+      "seconds": 0,
+      "minimum_clearance_m": -0.0049050000634789466,
+      "support_source": "Z08 BOARDROOM - floor finish",
+      "deepest_point_xyz": [
+        18.634852,
+        0.005255,
+        -2.134394
+      ]
+    },
+    {
+      "id": "office-person-12",
+      "zone": "Z08",
+      "outfit": "shirt",
+      "pose": "listening__seat_50292",
+      "seated": true,
+      "walking": false,
+      "seconds": 0,
+      "minimum_clearance_m": -0.028813000063478946,
+      "support_source": "Z08 BOARDROOM - floor finish",
+      "deepest_point_xyz": [
+        20.28599,
+        -0.018653,
+        -2.707746
+      ]
+    },
+    {
+      "id": "office-person-13",
+      "zone": "Z08",
+      "outfit": "salwar",
+      "pose": "presenting",
+      "seated": false,
+      "walking": false,
+      "seconds": 0,
+      "minimum_clearance_m": -0.018899000063478947,
+      "support_source": "Z08 BOARDROOM - floor finish",
+      "deepest_point_xyz": [
+        13.359907,
+        -0.008739,
+        -3.844365
+      ]
+    },
+    {
+      "id": "office-person-14",
+      "zone": "Z12",
+      "outfit": "shirt",
+      "pose": "phone_seated__seat_50292",
+      "seated": true,
+      "walking": false,
+      "seconds": 0,
+      "minimum_clearance_m": -0.028813000063478946,
+      "support_source": "Z12 MANAGING DIRECTOR - floor finish",
+      "deepest_point_xyz": [
+        26.027328,
+        -0.018653,
+        4.614191
+      ]
+    },
+    {
+      "id": "office-person-15",
+      "zone": "Z05",
+      "outfit": "salwar",
+      "pose": "typing__seat_49022",
+      "seated": true,
+      "walking": false,
+      "seconds": 0,
+      "minimum_clearance_m": -0.004895000063478947,
+      "support_source": "Z05 HR & ADMIN - floor finish",
+      "deepest_point_xyz": [
+        5.520676,
+        0.005265,
+        -3.294357
+      ]
+    },
+    {
+      "id": "office-person-16",
+      "zone": "Z05",
+      "outfit": "shirt",
+      "pose": "phone_seated__seat_49022",
+      "seated": true,
+      "walking": false,
+      "seconds": 0,
+      "minimum_clearance_m": -0.028815000063478948,
+      "support_source": "Z05 HR & ADMIN - floor finish",
+      "deepest_point_xyz": [
+        7.180849,
+        -0.018655,
+        -4.827051
+      ]
+    },
+    {
+      "id": "office-person-17",
+      "zone": "Z06",
+      "outfit": "panjabi",
+      "pose": "typing__seat_49022",
+      "seated": true,
+      "walking": false,
+      "seconds": 0,
+      "minimum_clearance_m": -0.028944000063478945,
+      "support_source": "Z06 COMMERCIAL & ACCOUNTS - floor finish",
+      "deepest_point_xyz": [
+        4.183152,
+        -0.018784,
+        -15.506052
+      ]
+    },
+    {
+      "id": "office-person-18",
+      "zone": "Z06",
+      "outfit": "salwar_braid",
+      "pose": "notes__seat_49022",
+      "seated": true,
+      "walking": false,
+      "seconds": 0,
+      "minimum_clearance_m": -0.004895000063478947,
+      "support_source": "Z06 COMMERCIAL & ACCOUNTS - floor finish",
+      "deepest_point_xyz": [
+        4.194898,
+        0.005265,
+        -11.549356
+      ]
+    },
+    {
+      "id": "office-person-19",
+      "zone": "Z07",
+      "outfit": "shirt",
+      "pose": "typing__seat_49022",
+      "seated": true,
+      "walking": false,
+      "seconds": 0,
+      "minimum_clearance_m": -0.028815000063478948,
+      "support_source": "Z07 MERCHANDISING - floor finish",
+      "deepest_point_xyz": [
+        10.848386,
+        -0.018655,
+        -18.09645
+      ]
+    },
+    {
+      "id": "office-person-20",
+      "zone": "Z07",
+      "outfit": "salwar",
+      "pose": "phone_seated__seat_49022",
+      "seated": true,
+      "walking": false,
+      "seconds": 0,
+      "minimum_clearance_m": -0.004895000063478947,
+      "support_source": "Z07 MERCHANDISING - floor finish",
+      "deepest_point_xyz": [
+        17.595813,
+        0.005265,
+        -19.629143
+      ]
+    },
+    {
+      "id": "office-person-21",
+      "zone": "Z07",
+      "outfit": "panjabi",
+      "pose": "notes__seat_49022",
+      "seated": true,
+      "walking": false,
+      "seconds": 0,
+      "minimum_clearance_m": -0.028944000063478945,
+      "support_source": "Z07 MERCHANDISING - floor finish",
+      "deepest_point_xyz": [
+        17.129491,
+        -0.018784,
+        -14.236052
+      ]
+    },
+    {
+      "id": "office-person-22",
+      "zone": "Z07",
+      "outfit": "salwar_braid",
+      "pose": "show_sample",
+      "seated": false,
+      "walking": false,
+      "seconds": 0,
+      "minimum_clearance_m": -0.018452000063478947,
+      "support_source": "Z07 MERCHANDISING - floor finish",
+      "deepest_point_xyz": [
+        15.259907,
+        -0.008292,
+        -16.842102
+      ]
+    },
+    {
+      "id": "office-person-23",
+      "zone": "Z07",
+      "outfit": "shirt",
+      "pose": "browsing",
+      "seated": false,
+      "walking": false,
+      "seconds": 0,
+      "minimum_clearance_m": -0.02318500006347895,
+      "support_source": "Z07 MERCHANDISING - floor finish",
+      "deepest_point_xyz": [
+        15.676146,
+        -0.013025,
+        -16.587133
+      ]
+    },
+    {
+      "id": "office-person-24",
+      "zone": "Z07",
+      "outfit": "shirt",
+      "pose": "fabric",
+      "seated": false,
+      "walking": false,
+      "seconds": 0,
+      "minimum_clearance_m": -0.02453800006347895,
+      "support_source": "Z07 MERCHANDISING - floor finish",
+      "deepest_point_xyz": [
+        10.830663,
+        -0.014378,
+        -11.637033
+      ]
+    },
+    {
+      "id": "office-person-25",
+      "zone": "Z14",
+      "outfit": "salwar",
+      "pose": "typing__seat_49022",
+      "seated": true,
+      "walking": false,
+      "seconds": 0,
+      "minimum_clearance_m": -0.004895000063478947,
+      "support_source": "Z14 CAD / TECHNICAL - floor finish",
+      "deepest_point_xyz": [
+        23.121643,
+        0.005265,
+        -3.801198
+      ]
+    },
+    {
+      "id": "office-person-26",
+      "zone": "Z17",
+      "outfit": "panjabi",
+      "pose": "sewing__seat_49022",
+      "seated": true,
+      "walking": false,
+      "seconds": 0,
+      "minimum_clearance_m": -0.028944000063478945,
+      "support_source": "Z17 SAMPLE DEVELOPMENT - floor finish",
+      "deepest_point_xyz": [
+        23.178147,
+        -0.018784,
+        -19.412973
+      ]
+    },
+    {
+      "id": "office-person-27",
+      "zone": "Z15",
+      "outfit": "salwar_braid",
+      "pose": "fabric",
+      "seated": false,
+      "walking": false,
+      "seconds": 0,
+      "minimum_clearance_m": -0.018750000063478947,
+      "support_source": "Z15 FABRIC & TRIM LIBRARY - floor finish",
+      "deepest_point_xyz": [
+        24.277835,
+        -0.00859,
+        -8.084107
+      ]
+    },
+    {
+      "id": "office-person-28",
+      "zone": "Z18",
+      "outfit": "shirt",
+      "pose": "typing__seat_49022",
+      "seated": true,
+      "walking": false,
+      "seconds": 0,
+      "minimum_clearance_m": -0.028815000063478948,
+      "support_source": "Z18 GLOBAL DESIGN STUDIO - floor finish",
+      "deepest_point_xyz": [
+        30.891369,
+        -0.018655,
+        -23.519349
+      ]
+    },
+    {
+      "id": "office-person-29",
+      "zone": "Z18",
+      "outfit": "salwar",
+      "pose": "notes__seat_49022",
+      "seated": true,
+      "walking": false,
+      "seconds": 0,
+      "minimum_clearance_m": -0.004895000063478947,
+      "support_source": "Z18 GLOBAL DESIGN STUDIO - floor finish",
+      "deepest_point_xyz": [
+        32.757125,
+        0.005265,
+        -25.255243
+      ]
+    },
+    {
+      "id": "office-person-30",
+      "zone": "Z20",
+      "outfit": "panjabi",
+      "pose": "tea__seat_48768",
+      "seated": true,
+      "walking": false,
+      "seconds": 0,
+      "minimum_clearance_m": -0.028945000063478946,
+      "support_source": "Z20 STAFF CAFE + PANTRY - floor finish",
+      "deepest_point_xyz": [
+        24.3716,
+        -0.018785,
+        -26.377993
+      ]
+    },
+    {
+      "id": "office-person-31",
+      "zone": "Z20",
+      "outfit": "salwar_braid",
+      "pose": "tea__seat_48768",
+      "seated": true,
+      "walking": false,
+      "seconds": 0,
+      "minimum_clearance_m": -0.004893000063478947,
+      "support_source": "Z20 STAFF CAFE + PANTRY - floor finish",
+      "deepest_point_xyz": [
+        24.695429,
+        0.005267,
+        -25.431249
+      ]
+    },
+    {
+      "id": "office-person-32",
+      "zone": "Z20",
+      "outfit": "shirt",
+      "pose": "listening__seat_48768",
+      "seated": true,
+      "walking": false,
+      "seconds": 0,
+      "minimum_clearance_m": -0.028815000063478948,
+      "support_source": "Z20 STAFF CAFE + PANTRY - floor finish",
+      "deepest_point_xyz": [
+        26.190379,
+        -0.018655,
+        -26.378394
+      ]
+    },
+    {
+      "id": "office-person-33",
+      "zone": "Z33",
+      "outfit": "salwar",
+      "pose": "idle",
+      "seated": false,
+      "walking": true,
+      "seconds": 0,
+      "minimum_clearance_m": -0.018452000063478947,
+      "support_source": "Z33 HALLWAY - floor finish",
+      "deepest_point_xyz": [
+        11.129214,
+        -0.008292,
+        -21.862293
+      ]
+    },
+    {
+      "id": "office-person-34",
+      "zone": "Z22",
+      "outfit": "shirt",
+      "pose": "idle",
+      "seated": false,
+      "walking": true,
+      "seconds": 1.3,
+      "minimum_clearance_m": -0.027306000063478948,
+      "support_source": "Z22 CORRIDOR - floor finish",
+      "deepest_point_xyz": [
+        27.074134,
+        -0.017146,
+        -12.105474
+      ]
+    },
+    {
+      "id": "office-person-35",
+      "zone": "Z31",
+      "outfit": "panjabi",
+      "pose": "idle",
+      "seated": false,
+      "walking": true,
+      "seconds": 1.3,
+      "minimum_clearance_m": -0.029612000063478947,
+      "support_source": "Z31 STAFF CORRIDOR - floor finish",
+      "deepest_point_xyz": [
+        3.259522,
+        -0.019452,
+        -1.205452
+      ]
+    }
+  ],
+  "floor_snapshots": [
+    {
+      "id": "office-person-01",
+      "seconds": 0,
+      "zone": "Z02",
+      "outfit": "salwar",
+      "pose": "greeting_seated__seat_50292",
+      "task": "greeting",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": -0.0049050000634789466,
+      "deepest_point_xyz": [
+        13.283406,
+        0.005255,
+        3.229571
+      ],
+      "support_source": "Z02 RECEPTION + VISITOR WAITING - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 28,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.0049050000634789466,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.0049050000634789466,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": true
+    },
+    {
+      "id": "office-person-02",
+      "seconds": 0,
+      "zone": "Z02",
+      "outfit": "shirt",
+      "pose": "idle",
+      "task": "idle",
+      "seated": false,
+      "walking": false,
+      "minimum_clearance_m": -0.02453800006347895,
+      "deepest_point_xyz": [
+        11.721854,
+        -0.014378,
+        3.040733
+      ],
+      "support_source": "Z02 RECEPTION + VISITOR WAITING - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 570,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.02453800006347895,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.02453800006347895,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": false
+    },
+    {
+      "id": "office-person-03",
+      "seconds": 0,
+      "zone": "Z02",
+      "outfit": "panjabi",
+      "pose": "listening__seat_44450",
+      "task": "listening",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": -0.04037700001847744,
+      "deepest_point_xyz": [
+        9.104213,
+        -0.018787,
+        5.261429
+      ],
+      "support_source": "F013 rug_reception",
+      "support_top_y_m": 0.02159000001847744,
+      "shoe_vertices_below_surface_by_more_than_2mm": 388,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.04037700001847744,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.04037700001847744,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": false
+    },
+    {
+      "id": "office-person-04",
+      "seconds": 0,
+      "zone": "Z02",
+      "outfit": "salwar_braid",
+      "pose": "listening__seat_44450",
+      "task": "listening",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": -0.01628800001847744,
+      "deepest_point_xyz": [
+        9.935998,
+        0.005302,
+        5.264585
+      ],
+      "support_source": "F013 rug_reception",
+      "support_top_y_m": 0.02159000001847744,
+      "shoe_vertices_below_surface_by_more_than_2mm": 134,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.01628800001847744,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.01628800001847744,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": false
+    },
+    {
+      "id": "office-person-05",
+      "seconds": 0,
+      "zone": "Z30",
+      "outfit": "salwar",
+      "pose": "show_sample",
+      "task": "show_sample",
+      "seated": false,
+      "walking": false,
+      "minimum_clearance_m": -0.018750000063478947,
+      "deepest_point_xyz": [
+        18.368786,
+        -0.00859,
+        -7.484107
+      ],
+      "support_source": "Z30 EXPERIENCE CENTRE - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 286,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.018750000063478947,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.018750000063478947,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": false
+    },
+    {
+      "id": "office-person-06",
+      "seconds": 0,
+      "zone": "Z30",
+      "outfit": "shirt",
+      "pose": "browsing",
+      "task": "browsing",
+      "seated": false,
+      "walking": false,
+      "minimum_clearance_m": -0.023572000063478947,
+      "deepest_point_xyz": [
+        17.430169,
+        -0.013412,
+        -9.500346
+      ],
+      "support_source": "Z30 EXPERIENCE CENTRE - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 570,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.023572000063478947,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.023572000063478947,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": false
+    },
+    {
+      "id": "office-person-07",
+      "seconds": 0,
+      "zone": "Z30",
+      "outfit": "panjabi",
+      "pose": "browsing",
+      "task": "browsing",
+      "seated": false,
+      "walking": false,
+      "minimum_clearance_m": -0.024924000063478946,
+      "deepest_point_xyz": [
+        20.176146,
+        -0.014764,
+        -7.37568
+      ],
+      "support_source": "Z30 EXPERIENCE CENTRE - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 572,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.024924000063478946,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.024924000063478946,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": false
+    },
+    {
+      "id": "office-person-08",
+      "seconds": 0,
+      "zone": "Z08",
+      "outfit": "shirt",
+      "pose": "notes__seat_50292",
+      "task": "notes",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": -0.028813000063478946,
+      "deepest_point_xyz": [
+        15.644547,
+        -0.018653,
+        -3.54739
+      ],
+      "support_source": "Z08 BOARDROOM - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 178,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.028813000063478946,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.028813000063478946,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": false
+    },
+    {
+      "id": "office-person-09",
+      "seconds": 0,
+      "zone": "Z08",
+      "outfit": "salwar",
+      "pose": "listening__seat_50292",
+      "task": "listening",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": -0.0049050000634789466,
+      "deepest_point_xyz": [
+        16.193963,
+        0.005255,
+        -2.134394
+      ],
+      "support_source": "Z08 BOARDROOM - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 28,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.0049050000634789466,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.0049050000634789466,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": true
+    },
+    {
+      "id": "office-person-10",
+      "seconds": 0,
+      "zone": "Z08",
+      "outfit": "panjabi",
+      "pose": "listening__seat_50292",
+      "task": "listening",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": -0.028943000063478948,
+      "deepest_point_xyz": [
+        18.105282,
+        -0.018783,
+        -3.546977
+      ],
+      "support_source": "Z08 BOARDROOM - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 176,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.028943000063478948,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.028943000063478948,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": false
+    },
+    {
+      "id": "office-person-11",
+      "seconds": 0,
+      "zone": "Z08",
+      "outfit": "salwar_braid",
+      "pose": "notes__seat_50292",
+      "task": "notes",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": -0.0049050000634789466,
+      "deepest_point_xyz": [
+        18.634852,
+        0.005255,
+        -2.134394
+      ],
+      "support_source": "Z08 BOARDROOM - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 28,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.0049050000634789466,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.0049050000634789466,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": true
+    },
+    {
+      "id": "office-person-12",
+      "seconds": 0,
+      "zone": "Z08",
+      "outfit": "shirt",
+      "pose": "listening__seat_50292",
+      "task": "listening",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": -0.028813000063478946,
+      "deepest_point_xyz": [
+        20.28599,
+        -0.018653,
+        -2.707746
+      ],
+      "support_source": "Z08 BOARDROOM - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 178,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.028813000063478946,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.028813000063478946,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": false
+    },
+    {
+      "id": "office-person-13",
+      "seconds": 0,
+      "zone": "Z08",
+      "outfit": "salwar",
+      "pose": "presenting",
+      "task": "presenting",
+      "seated": false,
+      "walking": false,
+      "minimum_clearance_m": -0.018899000063478947,
+      "deepest_point_xyz": [
+        13.359907,
+        -0.008739,
+        -3.844365
+      ],
+      "support_source": "Z08 BOARDROOM - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 286,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.018899000063478947,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.018899000063478947,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": false
+    },
+    {
+      "id": "office-person-14",
+      "seconds": 0,
+      "zone": "Z12",
+      "outfit": "shirt",
+      "pose": "phone_seated__seat_50292",
+      "task": "phone_seated",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": -0.028813000063478946,
+      "deepest_point_xyz": [
+        26.027328,
+        -0.018653,
+        4.614191
+      ],
+      "support_source": "Z12 MANAGING DIRECTOR - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 178,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.028813000063478946,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.028813000063478946,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": false
+    },
+    {
+      "id": "office-person-15",
+      "seconds": 0,
+      "zone": "Z05",
+      "outfit": "salwar",
+      "pose": "typing__seat_49022",
+      "task": "typing",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": -0.004895000063478947,
+      "deepest_point_xyz": [
+        5.520676,
+        0.005265,
+        -3.294357
+      ],
+      "support_source": "Z05 HR & ADMIN - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 28,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.004895000063478947,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.004895000063478947,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": true
+    },
+    {
+      "id": "office-person-16",
+      "seconds": 0,
+      "zone": "Z05",
+      "outfit": "shirt",
+      "pose": "phone_seated__seat_49022",
+      "task": "phone_seated",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": -0.028815000063478948,
+      "deepest_point_xyz": [
+        7.180849,
+        -0.018655,
+        -4.827051
+      ],
+      "support_source": "Z05 HR & ADMIN - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 178,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.028815000063478948,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.028814000063478947,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": false
+    },
+    {
+      "id": "office-person-17",
+      "seconds": 0,
+      "zone": "Z06",
+      "outfit": "panjabi",
+      "pose": "typing__seat_49022",
+      "task": "typing",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": -0.028944000063478945,
+      "deepest_point_xyz": [
+        4.183152,
+        -0.018784,
+        -15.506052
+      ],
+      "support_source": "Z06 COMMERCIAL & ACCOUNTS - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 176,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.028944000063478945,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.028944000063478945,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": false
+    },
+    {
+      "id": "office-person-18",
+      "seconds": 0,
+      "zone": "Z06",
+      "outfit": "salwar_braid",
+      "pose": "notes__seat_49022",
+      "task": "notes",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": -0.004895000063478947,
+      "deepest_point_xyz": [
+        4.194898,
+        0.005265,
+        -11.549356
+      ],
+      "support_source": "Z06 COMMERCIAL & ACCOUNTS - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 28,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.004895000063478947,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.004895000063478947,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": true
+    },
+    {
+      "id": "office-person-19",
+      "seconds": 0,
+      "zone": "Z07",
+      "outfit": "shirt",
+      "pose": "typing__seat_49022",
+      "task": "typing",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": -0.028815000063478948,
+      "deepest_point_xyz": [
+        10.848386,
+        -0.018655,
+        -18.09645
+      ],
+      "support_source": "Z07 MERCHANDISING - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 178,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.028815000063478948,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.028814000063478947,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": false
+    },
+    {
+      "id": "office-person-20",
+      "seconds": 0,
+      "zone": "Z07",
+      "outfit": "salwar",
+      "pose": "phone_seated__seat_49022",
+      "task": "phone_seated",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": -0.004895000063478947,
+      "deepest_point_xyz": [
+        17.595813,
+        0.005265,
+        -19.629143
+      ],
+      "support_source": "Z07 MERCHANDISING - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 28,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.004895000063478947,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.004895000063478947,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": true
+    },
+    {
+      "id": "office-person-21",
+      "seconds": 0,
+      "zone": "Z07",
+      "outfit": "panjabi",
+      "pose": "notes__seat_49022",
+      "task": "notes",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": -0.028944000063478945,
+      "deepest_point_xyz": [
+        17.129491,
+        -0.018784,
+        -14.236052
+      ],
+      "support_source": "Z07 MERCHANDISING - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 176,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.028944000063478945,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.028944000063478945,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": false
+    },
+    {
+      "id": "office-person-22",
+      "seconds": 0,
+      "zone": "Z07",
+      "outfit": "salwar_braid",
+      "pose": "show_sample",
+      "task": "show_sample",
+      "seated": false,
+      "walking": false,
+      "minimum_clearance_m": -0.018452000063478947,
+      "deepest_point_xyz": [
+        15.259907,
+        -0.008292,
+        -16.842102
+      ],
+      "support_source": "Z07 MERCHANDISING - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 282,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.018452000063478947,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.018452000063478947,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": false
+    },
+    {
+      "id": "office-person-23",
+      "seconds": 0,
+      "zone": "Z07",
+      "outfit": "shirt",
+      "pose": "browsing",
+      "task": "browsing",
+      "seated": false,
+      "walking": false,
+      "minimum_clearance_m": -0.02318500006347895,
+      "deepest_point_xyz": [
+        15.676146,
+        -0.013025,
+        -16.587133
+      ],
+      "support_source": "Z07 MERCHANDISING - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 564,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.02318500006347895,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.02318500006347895,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": false
+    },
+    {
+      "id": "office-person-24",
+      "seconds": 0,
+      "zone": "Z07",
+      "outfit": "shirt",
+      "pose": "fabric",
+      "task": "fabric",
+      "seated": false,
+      "walking": false,
+      "minimum_clearance_m": -0.02453800006347895,
+      "deepest_point_xyz": [
+        10.830663,
+        -0.014378,
+        -11.637033
+      ],
+      "support_source": "Z07 MERCHANDISING - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 570,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.02453800006347895,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.02453800006347895,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": false
+    },
+    {
+      "id": "office-person-25",
+      "seconds": 0,
+      "zone": "Z14",
+      "outfit": "salwar",
+      "pose": "typing__seat_49022",
+      "task": "typing",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": -0.004895000063478947,
+      "deepest_point_xyz": [
+        23.121643,
+        0.005265,
+        -3.801198
+      ],
+      "support_source": "Z14 CAD / TECHNICAL - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 28,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.004895000063478947,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.004895000063478947,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": true
+    },
+    {
+      "id": "office-person-26",
+      "seconds": 0,
+      "zone": "Z17",
+      "outfit": "panjabi",
+      "pose": "sewing__seat_49022",
+      "task": "sewing",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": -0.028944000063478945,
+      "deepest_point_xyz": [
+        23.178147,
+        -0.018784,
+        -19.412973
+      ],
+      "support_source": "Z17 SAMPLE DEVELOPMENT - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 176,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.028944000063478945,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.028944000063478945,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": false
+    },
+    {
+      "id": "office-person-27",
+      "seconds": 0,
+      "zone": "Z15",
+      "outfit": "salwar_braid",
+      "pose": "fabric",
+      "task": "fabric",
+      "seated": false,
+      "walking": false,
+      "minimum_clearance_m": -0.018750000063478947,
+      "deepest_point_xyz": [
+        24.277835,
+        -0.00859,
+        -8.084107
+      ],
+      "support_source": "Z15 FABRIC & TRIM LIBRARY - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 286,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.018750000063478947,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.018750000063478947,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": false
+    },
+    {
+      "id": "office-person-28",
+      "seconds": 0,
+      "zone": "Z18",
+      "outfit": "shirt",
+      "pose": "typing__seat_49022",
+      "task": "typing",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": -0.028815000063478948,
+      "deepest_point_xyz": [
+        30.891369,
+        -0.018655,
+        -23.519349
+      ],
+      "support_source": "Z18 GLOBAL DESIGN STUDIO - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 178,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.028815000063478948,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.028814000063478947,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": false
+    },
+    {
+      "id": "office-person-29",
+      "seconds": 0,
+      "zone": "Z18",
+      "outfit": "salwar",
+      "pose": "notes__seat_49022",
+      "task": "notes",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": -0.004895000063478947,
+      "deepest_point_xyz": [
+        32.757125,
+        0.005265,
+        -25.255243
+      ],
+      "support_source": "Z18 GLOBAL DESIGN STUDIO - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 28,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.004895000063478947,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.004895000063478947,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": true
+    },
+    {
+      "id": "office-person-30",
+      "seconds": 0,
+      "zone": "Z20",
+      "outfit": "panjabi",
+      "pose": "tea__seat_48768",
+      "task": "tea",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": -0.028945000063478946,
+      "deepest_point_xyz": [
+        24.3716,
+        -0.018785,
+        -26.377993
+      ],
+      "support_source": "Z20 STAFF CAFE + PANTRY - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 176,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.028945000063478946,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.028945000063478946,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": false
+    },
+    {
+      "id": "office-person-31",
+      "seconds": 0,
+      "zone": "Z20",
+      "outfit": "salwar_braid",
+      "pose": "tea__seat_48768",
+      "task": "tea",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": -0.004893000063478947,
+      "deepest_point_xyz": [
+        24.695429,
+        0.005267,
+        -25.431249
+      ],
+      "support_source": "Z20 STAFF CAFE + PANTRY - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 28,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.004893000063478947,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.004893000063478947,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": true
+    },
+    {
+      "id": "office-person-32",
+      "seconds": 0,
+      "zone": "Z20",
+      "outfit": "shirt",
+      "pose": "listening__seat_48768",
+      "task": "listening",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": -0.028815000063478948,
+      "deepest_point_xyz": [
+        26.190379,
+        -0.018655,
+        -26.378394
+      ],
+      "support_source": "Z20 STAFF CAFE + PANTRY - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 178,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.028815000063478948,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.028815000063478948,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": false
+    },
+    {
+      "id": "office-person-33",
+      "seconds": 0,
+      "zone": "Z33",
+      "outfit": "salwar",
+      "pose": "idle",
+      "task": "walking",
+      "seated": false,
+      "walking": true,
+      "minimum_clearance_m": -0.018452000063478947,
+      "deepest_point_xyz": [
+        11.129214,
+        -0.008292,
+        -21.862293
+      ],
+      "support_source": "Z33 HALLWAY - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 282,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.018452000063478947,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.018452000063478947,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": null
+    },
+    {
+      "id": "office-person-34",
+      "seconds": 0,
+      "zone": "Z22",
+      "outfit": "shirt",
+      "pose": "idle",
+      "task": "walking_files",
+      "seated": false,
+      "walking": true,
+      "minimum_clearance_m": -0.02318500006347895,
+      "deepest_point_xyz": [
+        27.330169,
+        -0.013025,
+        -11.600346
+      ],
+      "support_source": "Z22 CORRIDOR - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 564,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.02318500006347895,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.02318500006347895,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": null
+    },
+    {
+      "id": "office-person-35",
+      "seconds": 0,
+      "zone": "Z31",
+      "outfit": "panjabi",
+      "pose": "idle",
+      "task": "walking",
+      "seated": false,
+      "walking": true,
+      "minimum_clearance_m": -0.02453800006347895,
+      "deepest_point_xyz": [
+        3.54652,
+        -0.014378,
+        -0.700346
+      ],
+      "support_source": "Z31 STAFF CORRIDOR - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 570,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.02453800006347895,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.02453800006347895,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": null
+    },
+    {
+      "id": "office-person-33",
+      "seconds": 0.35,
+      "zone": "Z33",
+      "outfit": "salwar",
+      "pose": "idle",
+      "task": "walking",
+      "seated": false,
+      "walking": true,
+      "minimum_clearance_m": 0.007853999936521052,
+      "deepest_point_xyz": [
+        10.980707,
+        0.018014,
+        -21.896007
+      ],
+      "support_source": "Z33 HALLWAY - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 0,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": 0.021904999936521057,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": 0.007853999936521052,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": true,
+      "standing_or_seated_grounded_check_passed": null
+    },
+    {
+      "id": "office-person-34",
+      "seconds": 0.35,
+      "zone": "Z22",
+      "outfit": "shirt",
+      "pose": "idle",
+      "task": "walking_files",
+      "seated": false,
+      "walking": true,
+      "minimum_clearance_m": -0.013913000063478946,
+      "deepest_point_xyz": [
+        27.290954,
+        -0.003753,
+        -11.64449
+      ],
+      "support_source": "Z22 CORRIDOR - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 36,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": 0.00028399993652105347,
+          "referenced_vertices": 1259
+        },
+        "right": {
+          "minimum_clearance_m": -0.013913000063478946,
+          "referenced_vertices": 1251
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": null
+    },
+    {
+      "id": "office-person-35",
+      "seconds": 0.35,
+      "zone": "Z31",
+      "outfit": "panjabi",
+      "pose": "idle",
+      "task": "walking",
+      "seated": false,
+      "walking": true,
+      "minimum_clearance_m": -0.015430000063478947,
+      "deepest_point_xyz": [
+        3.505376,
+        -0.00527,
+        -0.742288
+      ],
+      "support_source": "Z31 STAFF CORRIDOR - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 37,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.0003910000634789468,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.015430000063478947,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": null
+    },
+    {
+      "id": "office-person-33",
+      "seconds": 0.75,
+      "zone": "Z33",
+      "outfit": "salwar",
+      "pose": "idle",
+      "task": "walking",
+      "seated": false,
+      "walking": true,
+      "minimum_clearance_m": -0.018452000063478947,
+      "deepest_point_xyz": [
+        11.460351,
+        -0.008292,
+        -22.152863
+      ],
+      "support_source": "Z33 HALLWAY - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 282,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.018452000063478947,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.018452000063478947,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": null
+    },
+    {
+      "id": "office-person-34",
+      "seconds": 0.75,
+      "zone": "Z22",
+      "outfit": "shirt",
+      "pose": "idle",
+      "task": "walking_files",
+      "seated": false,
+      "walking": true,
+      "minimum_clearance_m": -0.02318500006347895,
+      "deepest_point_xyz": [
+        27.068675,
+        -0.013025,
+        -12.146948
+      ],
+      "support_source": "Z22 CORRIDOR - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 564,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.02318500006347895,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.02318500006347895,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": null
+    },
+    {
+      "id": "office-person-35",
+      "seconds": 0.75,
+      "zone": "Z31",
+      "outfit": "panjabi",
+      "pose": "idle",
+      "task": "walking",
+      "seated": false,
+      "walking": true,
+      "minimum_clearance_m": -0.02453800006347895,
+      "deepest_point_xyz": [
+        3.252324,
+        -0.014378,
+        -1.247059
+      ],
+      "support_source": "Z31 STAFF CORRIDOR - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 570,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.02453800006347895,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.02453800006347895,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": null
+    },
+    {
+      "id": "office-person-33",
+      "seconds": 1.3,
+      "zone": "Z33",
+      "outfit": "salwar",
+      "pose": "idle",
+      "task": "walking",
+      "seated": false,
+      "walking": true,
+      "minimum_clearance_m": -0.0047150000634789465,
+      "deepest_point_xyz": [
+        11.429518,
+        0.005445,
+        -22.162605
+      ],
+      "support_source": "Z33 HALLWAY - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 11,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.0047150000634789465,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": 0.00012899993652105285,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": null
+    },
+    {
+      "id": "office-person-34",
+      "seconds": 1.3,
+      "zone": "Z22",
+      "outfit": "shirt",
+      "pose": "idle",
+      "task": "walking_files",
+      "seated": false,
+      "walking": true,
+      "minimum_clearance_m": -0.027306000063478948,
+      "deepest_point_xyz": [
+        27.074134,
+        -0.017146,
+        -12.105474
+      ],
+      "support_source": "Z22 CORRIDOR - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 154,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.027306000063478948,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.022479000063478947,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": null
+    },
+    {
+      "id": "office-person-35",
+      "seconds": 1.3,
+      "zone": "Z31",
+      "outfit": "panjabi",
+      "pose": "idle",
+      "task": "walking",
+      "seated": false,
+      "walking": true,
+      "minimum_clearance_m": -0.029612000063478947,
+      "deepest_point_xyz": [
+        3.259522,
+        -0.019452,
+        -1.205452
+      ],
+      "support_source": "Z31 STAFF CORRIDOR - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 156,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.029612000063478947,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.024496000063478948,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": null
+    },
+    {
+      "id": "office-person-01",
+      "seconds": 3,
+      "zone": "Z02",
+      "outfit": "salwar",
+      "pose": "greeting_seated__seat_50292",
+      "task": "greeting",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": -0.0049050000634789466,
+      "deepest_point_xyz": [
+        13.283406,
+        0.005255,
+        3.229571
+      ],
+      "support_source": "Z02 RECEPTION + VISITOR WAITING - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 28,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.0049050000634789466,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.0049050000634789466,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": true
+    },
+    {
+      "id": "office-person-02",
+      "seconds": 3,
+      "zone": "Z02",
+      "outfit": "shirt",
+      "pose": "idle",
+      "task": "idle",
+      "seated": false,
+      "walking": false,
+      "minimum_clearance_m": -0.02453800006347895,
+      "deepest_point_xyz": [
+        11.721854,
+        -0.014378,
+        3.040733
+      ],
+      "support_source": "Z02 RECEPTION + VISITOR WAITING - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 570,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.02453800006347895,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.02453800006347895,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": false
+    },
+    {
+      "id": "office-person-03",
+      "seconds": 3,
+      "zone": "Z02",
+      "outfit": "panjabi",
+      "pose": "listening__seat_44450",
+      "task": "listening",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": -0.04037700001847744,
+      "deepest_point_xyz": [
+        9.104213,
+        -0.018787,
+        5.261429
+      ],
+      "support_source": "F013 rug_reception",
+      "support_top_y_m": 0.02159000001847744,
+      "shoe_vertices_below_surface_by_more_than_2mm": 388,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.04037700001847744,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.04037700001847744,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": false
+    },
+    {
+      "id": "office-person-04",
+      "seconds": 3,
+      "zone": "Z02",
+      "outfit": "salwar_braid",
+      "pose": "listening__seat_44450",
+      "task": "listening",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": -0.01628800001847744,
+      "deepest_point_xyz": [
+        9.935998,
+        0.005302,
+        5.264585
+      ],
+      "support_source": "F013 rug_reception",
+      "support_top_y_m": 0.02159000001847744,
+      "shoe_vertices_below_surface_by_more_than_2mm": 134,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.01628800001847744,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.01628800001847744,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": false
+    },
+    {
+      "id": "office-person-05",
+      "seconds": 3,
+      "zone": "Z30",
+      "outfit": "salwar",
+      "pose": "show_sample",
+      "task": "show_sample",
+      "seated": false,
+      "walking": false,
+      "minimum_clearance_m": -0.018750000063478947,
+      "deepest_point_xyz": [
+        18.368786,
+        -0.00859,
+        -7.484107
+      ],
+      "support_source": "Z30 EXPERIENCE CENTRE - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 286,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.018750000063478947,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.018750000063478947,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": false
+    },
+    {
+      "id": "office-person-06",
+      "seconds": 3,
+      "zone": "Z30",
+      "outfit": "shirt",
+      "pose": "browsing",
+      "task": "browsing",
+      "seated": false,
+      "walking": false,
+      "minimum_clearance_m": -0.023572000063478947,
+      "deepest_point_xyz": [
+        17.430169,
+        -0.013412,
+        -9.500346
+      ],
+      "support_source": "Z30 EXPERIENCE CENTRE - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 570,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.023572000063478947,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.023572000063478947,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": false
+    },
+    {
+      "id": "office-person-07",
+      "seconds": 3,
+      "zone": "Z30",
+      "outfit": "panjabi",
+      "pose": "browsing",
+      "task": "browsing",
+      "seated": false,
+      "walking": false,
+      "minimum_clearance_m": -0.024924000063478946,
+      "deepest_point_xyz": [
+        20.176146,
+        -0.014764,
+        -7.37568
+      ],
+      "support_source": "Z30 EXPERIENCE CENTRE - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 572,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.024924000063478946,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.024924000063478946,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": false
+    },
+    {
+      "id": "office-person-08",
+      "seconds": 3,
+      "zone": "Z08",
+      "outfit": "shirt",
+      "pose": "notes__seat_50292",
+      "task": "notes",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": -0.028813000063478946,
+      "deepest_point_xyz": [
+        15.644547,
+        -0.018653,
+        -3.54739
+      ],
+      "support_source": "Z08 BOARDROOM - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 178,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.028813000063478946,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.028813000063478946,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": false
+    },
+    {
+      "id": "office-person-09",
+      "seconds": 3,
+      "zone": "Z08",
+      "outfit": "salwar",
+      "pose": "listening__seat_50292",
+      "task": "listening",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": -0.0049050000634789466,
+      "deepest_point_xyz": [
+        16.193963,
+        0.005255,
+        -2.134394
+      ],
+      "support_source": "Z08 BOARDROOM - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 28,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.0049050000634789466,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.0049050000634789466,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": true
+    },
+    {
+      "id": "office-person-10",
+      "seconds": 3,
+      "zone": "Z08",
+      "outfit": "panjabi",
+      "pose": "listening__seat_50292",
+      "task": "listening",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": -0.028943000063478948,
+      "deepest_point_xyz": [
+        18.105282,
+        -0.018783,
+        -3.546977
+      ],
+      "support_source": "Z08 BOARDROOM - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 176,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.028943000063478948,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.028943000063478948,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": false
+    },
+    {
+      "id": "office-person-11",
+      "seconds": 3,
+      "zone": "Z08",
+      "outfit": "salwar_braid",
+      "pose": "notes__seat_50292",
+      "task": "notes",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": -0.0049050000634789466,
+      "deepest_point_xyz": [
+        18.634852,
+        0.005255,
+        -2.134394
+      ],
+      "support_source": "Z08 BOARDROOM - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 28,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.0049050000634789466,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.0049050000634789466,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": true
+    },
+    {
+      "id": "office-person-12",
+      "seconds": 3,
+      "zone": "Z08",
+      "outfit": "shirt",
+      "pose": "listening__seat_50292",
+      "task": "listening",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": -0.028813000063478946,
+      "deepest_point_xyz": [
+        20.28599,
+        -0.018653,
+        -2.707746
+      ],
+      "support_source": "Z08 BOARDROOM - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 178,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.028813000063478946,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.028813000063478946,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": false
+    },
+    {
+      "id": "office-person-13",
+      "seconds": 3,
+      "zone": "Z08",
+      "outfit": "salwar",
+      "pose": "presenting",
+      "task": "presenting",
+      "seated": false,
+      "walking": false,
+      "minimum_clearance_m": -0.018899000063478947,
+      "deepest_point_xyz": [
+        13.359907,
+        -0.008739,
+        -3.844365
+      ],
+      "support_source": "Z08 BOARDROOM - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 286,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.018899000063478947,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.018899000063478947,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": false
+    },
+    {
+      "id": "office-person-14",
+      "seconds": 3,
+      "zone": "Z12",
+      "outfit": "shirt",
+      "pose": "phone_seated__seat_50292",
+      "task": "phone_seated",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": -0.028813000063478946,
+      "deepest_point_xyz": [
+        26.027328,
+        -0.018653,
+        4.614191
+      ],
+      "support_source": "Z12 MANAGING DIRECTOR - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 178,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.028813000063478946,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.028813000063478946,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": false
+    },
+    {
+      "id": "office-person-15",
+      "seconds": 3,
+      "zone": "Z05",
+      "outfit": "salwar",
+      "pose": "typing__seat_49022",
+      "task": "typing",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": -0.004895000063478947,
+      "deepest_point_xyz": [
+        5.520676,
+        0.005265,
+        -3.294357
+      ],
+      "support_source": "Z05 HR & ADMIN - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 28,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.004895000063478947,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.004895000063478947,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": true
+    },
+    {
+      "id": "office-person-16",
+      "seconds": 3,
+      "zone": "Z05",
+      "outfit": "shirt",
+      "pose": "phone_seated__seat_49022",
+      "task": "phone_seated",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": -0.028815000063478948,
+      "deepest_point_xyz": [
+        7.180849,
+        -0.018655,
+        -4.827051
+      ],
+      "support_source": "Z05 HR & ADMIN - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 178,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.028815000063478948,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.028814000063478947,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": false
+    },
+    {
+      "id": "office-person-17",
+      "seconds": 3,
+      "zone": "Z06",
+      "outfit": "panjabi",
+      "pose": "typing__seat_49022",
+      "task": "typing",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": -0.028944000063478945,
+      "deepest_point_xyz": [
+        4.183152,
+        -0.018784,
+        -15.506052
+      ],
+      "support_source": "Z06 COMMERCIAL & ACCOUNTS - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 176,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.028944000063478945,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.028944000063478945,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": false
+    },
+    {
+      "id": "office-person-18",
+      "seconds": 3,
+      "zone": "Z06",
+      "outfit": "salwar_braid",
+      "pose": "notes__seat_49022",
+      "task": "notes",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": -0.004895000063478947,
+      "deepest_point_xyz": [
+        4.194898,
+        0.005265,
+        -11.549356
+      ],
+      "support_source": "Z06 COMMERCIAL & ACCOUNTS - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 28,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.004895000063478947,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.004895000063478947,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": true
+    },
+    {
+      "id": "office-person-19",
+      "seconds": 3,
+      "zone": "Z07",
+      "outfit": "shirt",
+      "pose": "typing__seat_49022",
+      "task": "typing",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": -0.028815000063478948,
+      "deepest_point_xyz": [
+        10.848386,
+        -0.018655,
+        -18.09645
+      ],
+      "support_source": "Z07 MERCHANDISING - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 178,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.028815000063478948,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.028814000063478947,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": false
+    },
+    {
+      "id": "office-person-20",
+      "seconds": 3,
+      "zone": "Z07",
+      "outfit": "salwar",
+      "pose": "phone_seated__seat_49022",
+      "task": "phone_seated",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": -0.004895000063478947,
+      "deepest_point_xyz": [
+        17.595813,
+        0.005265,
+        -19.629143
+      ],
+      "support_source": "Z07 MERCHANDISING - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 28,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.004895000063478947,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.004895000063478947,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": true
+    },
+    {
+      "id": "office-person-21",
+      "seconds": 3,
+      "zone": "Z07",
+      "outfit": "panjabi",
+      "pose": "notes__seat_49022",
+      "task": "notes",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": -0.028944000063478945,
+      "deepest_point_xyz": [
+        17.129491,
+        -0.018784,
+        -14.236052
+      ],
+      "support_source": "Z07 MERCHANDISING - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 176,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.028944000063478945,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.028944000063478945,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": false
+    },
+    {
+      "id": "office-person-22",
+      "seconds": 3,
+      "zone": "Z07",
+      "outfit": "salwar_braid",
+      "pose": "show_sample",
+      "task": "show_sample",
+      "seated": false,
+      "walking": false,
+      "minimum_clearance_m": -0.018452000063478947,
+      "deepest_point_xyz": [
+        15.259907,
+        -0.008292,
+        -16.842102
+      ],
+      "support_source": "Z07 MERCHANDISING - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 282,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.018452000063478947,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.018452000063478947,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": false
+    },
+    {
+      "id": "office-person-23",
+      "seconds": 3,
+      "zone": "Z07",
+      "outfit": "shirt",
+      "pose": "browsing",
+      "task": "browsing",
+      "seated": false,
+      "walking": false,
+      "minimum_clearance_m": -0.02318500006347895,
+      "deepest_point_xyz": [
+        15.676146,
+        -0.013025,
+        -16.587133
+      ],
+      "support_source": "Z07 MERCHANDISING - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 564,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.02318500006347895,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.02318500006347895,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": false
+    },
+    {
+      "id": "office-person-24",
+      "seconds": 3,
+      "zone": "Z07",
+      "outfit": "shirt",
+      "pose": "fabric",
+      "task": "fabric",
+      "seated": false,
+      "walking": false,
+      "minimum_clearance_m": -0.02453800006347895,
+      "deepest_point_xyz": [
+        10.830663,
+        -0.014378,
+        -11.637033
+      ],
+      "support_source": "Z07 MERCHANDISING - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 570,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.02453800006347895,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.02453800006347895,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": false
+    },
+    {
+      "id": "office-person-25",
+      "seconds": 3,
+      "zone": "Z14",
+      "outfit": "salwar",
+      "pose": "typing__seat_49022",
+      "task": "typing",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": -0.004895000063478947,
+      "deepest_point_xyz": [
+        23.121643,
+        0.005265,
+        -3.801198
+      ],
+      "support_source": "Z14 CAD / TECHNICAL - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 28,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.004895000063478947,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.004895000063478947,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": true
+    },
+    {
+      "id": "office-person-26",
+      "seconds": 3,
+      "zone": "Z17",
+      "outfit": "panjabi",
+      "pose": "sewing__seat_49022",
+      "task": "sewing",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": -0.028944000063478945,
+      "deepest_point_xyz": [
+        23.178147,
+        -0.018784,
+        -19.412973
+      ],
+      "support_source": "Z17 SAMPLE DEVELOPMENT - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 176,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.028944000063478945,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.028944000063478945,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": false
+    },
+    {
+      "id": "office-person-27",
+      "seconds": 3,
+      "zone": "Z15",
+      "outfit": "salwar_braid",
+      "pose": "fabric",
+      "task": "fabric",
+      "seated": false,
+      "walking": false,
+      "minimum_clearance_m": -0.018750000063478947,
+      "deepest_point_xyz": [
+        24.277835,
+        -0.00859,
+        -8.084107
+      ],
+      "support_source": "Z15 FABRIC & TRIM LIBRARY - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 286,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.018750000063478947,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.018750000063478947,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": false
+    },
+    {
+      "id": "office-person-28",
+      "seconds": 3,
+      "zone": "Z18",
+      "outfit": "shirt",
+      "pose": "typing__seat_49022",
+      "task": "typing",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": -0.028815000063478948,
+      "deepest_point_xyz": [
+        30.891369,
+        -0.018655,
+        -23.519349
+      ],
+      "support_source": "Z18 GLOBAL DESIGN STUDIO - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 178,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.028815000063478948,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.028814000063478947,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": false
+    },
+    {
+      "id": "office-person-29",
+      "seconds": 3,
+      "zone": "Z18",
+      "outfit": "salwar",
+      "pose": "notes__seat_49022",
+      "task": "notes",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": -0.004895000063478947,
+      "deepest_point_xyz": [
+        32.757125,
+        0.005265,
+        -25.255243
+      ],
+      "support_source": "Z18 GLOBAL DESIGN STUDIO - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 28,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.004895000063478947,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.004895000063478947,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": true
+    },
+    {
+      "id": "office-person-30",
+      "seconds": 3,
+      "zone": "Z20",
+      "outfit": "panjabi",
+      "pose": "tea__seat_48768",
+      "task": "tea",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": -0.028945000063478946,
+      "deepest_point_xyz": [
+        24.3716,
+        -0.018785,
+        -26.377993
+      ],
+      "support_source": "Z20 STAFF CAFE + PANTRY - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 176,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.028945000063478946,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.028945000063478946,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": false
+    },
+    {
+      "id": "office-person-31",
+      "seconds": 3,
+      "zone": "Z20",
+      "outfit": "salwar_braid",
+      "pose": "tea__seat_48768",
+      "task": "tea",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": -0.004893000063478947,
+      "deepest_point_xyz": [
+        24.695429,
+        0.005267,
+        -25.431249
+      ],
+      "support_source": "Z20 STAFF CAFE + PANTRY - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 28,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.004893000063478947,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.004893000063478947,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": true
+    },
+    {
+      "id": "office-person-32",
+      "seconds": 3,
+      "zone": "Z20",
+      "outfit": "shirt",
+      "pose": "listening__seat_48768",
+      "task": "listening",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": -0.028815000063478948,
+      "deepest_point_xyz": [
+        26.190379,
+        -0.018655,
+        -26.378394
+      ],
+      "support_source": "Z20 STAFF CAFE + PANTRY - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 178,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.028815000063478948,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.028815000063478948,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": false
+    },
+    {
+      "id": "office-person-33",
+      "seconds": 3,
+      "zone": "Z33",
+      "outfit": "salwar",
+      "pose": "idle",
+      "task": "walking",
+      "seated": false,
+      "walking": true,
+      "minimum_clearance_m": -0.018452000063478947,
+      "deepest_point_xyz": [
+        12.359907,
+        -0.008292,
+        -22.153414
+      ],
+      "support_source": "Z33 HALLWAY - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 282,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.018452000063478947,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.018452000063478947,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": null
+    },
+    {
+      "id": "office-person-34",
+      "seconds": 3,
+      "zone": "Z22",
+      "outfit": "shirt",
+      "pose": "idle",
+      "task": "walking_files",
+      "seated": false,
+      "walking": true,
+      "minimum_clearance_m": -0.02318500006347895,
+      "deepest_point_xyz": [
+        27.067831,
+        -0.013025,
+        -13.046054
+      ],
+      "support_source": "Z22 CORRIDOR - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 564,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.02318500006347895,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.02318500006347895,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": null
+    },
+    {
+      "id": "office-person-35",
+      "seconds": 3,
+      "zone": "Z31",
+      "outfit": "panjabi",
+      "pose": "idle",
+      "task": "walking",
+      "seated": false,
+      "walking": true,
+      "minimum_clearance_m": -0.02453800006347895,
+      "deepest_point_xyz": [
+        3.25148,
+        -0.014378,
+        -2.146054
+      ],
+      "support_source": "Z31 STAFF CORRIDOR - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 570,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.02453800006347895,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.02453800006347895,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": null
+    },
+    {
+      "id": "office-person-01",
+      "seconds": 6,
+      "zone": "Z02",
+      "outfit": "salwar",
+      "pose": "greeting_seated__seat_50292",
+      "task": "greeting",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": -0.0049050000634789466,
+      "deepest_point_xyz": [
+        13.283406,
+        0.005255,
+        3.229571
+      ],
+      "support_source": "Z02 RECEPTION + VISITOR WAITING - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 28,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.0049050000634789466,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.0049050000634789466,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": true
+    },
+    {
+      "id": "office-person-02",
+      "seconds": 6,
+      "zone": "Z02",
+      "outfit": "shirt",
+      "pose": "idle",
+      "task": "idle",
+      "seated": false,
+      "walking": false,
+      "minimum_clearance_m": -0.02453800006347895,
+      "deepest_point_xyz": [
+        11.721854,
+        -0.014378,
+        3.040733
+      ],
+      "support_source": "Z02 RECEPTION + VISITOR WAITING - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 570,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.02453800006347895,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.02453800006347895,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": false
+    },
+    {
+      "id": "office-person-03",
+      "seconds": 6,
+      "zone": "Z02",
+      "outfit": "panjabi",
+      "pose": "listening__seat_44450",
+      "task": "listening",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": -0.04037700001847744,
+      "deepest_point_xyz": [
+        9.104213,
+        -0.018787,
+        5.261429
+      ],
+      "support_source": "F013 rug_reception",
+      "support_top_y_m": 0.02159000001847744,
+      "shoe_vertices_below_surface_by_more_than_2mm": 388,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.04037700001847744,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.04037700001847744,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": false
+    },
+    {
+      "id": "office-person-04",
+      "seconds": 6,
+      "zone": "Z02",
+      "outfit": "salwar_braid",
+      "pose": "listening__seat_44450",
+      "task": "listening",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": -0.01628800001847744,
+      "deepest_point_xyz": [
+        9.935998,
+        0.005302,
+        5.264585
+      ],
+      "support_source": "F013 rug_reception",
+      "support_top_y_m": 0.02159000001847744,
+      "shoe_vertices_below_surface_by_more_than_2mm": 134,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.01628800001847744,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.01628800001847744,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": false
+    },
+    {
+      "id": "office-person-05",
+      "seconds": 6,
+      "zone": "Z30",
+      "outfit": "salwar",
+      "pose": "show_sample",
+      "task": "show_sample",
+      "seated": false,
+      "walking": false,
+      "minimum_clearance_m": -0.018750000063478947,
+      "deepest_point_xyz": [
+        18.368786,
+        -0.00859,
+        -7.484107
+      ],
+      "support_source": "Z30 EXPERIENCE CENTRE - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 286,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.018750000063478947,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.018750000063478947,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": false
+    },
+    {
+      "id": "office-person-06",
+      "seconds": 6,
+      "zone": "Z30",
+      "outfit": "shirt",
+      "pose": "browsing",
+      "task": "browsing",
+      "seated": false,
+      "walking": false,
+      "minimum_clearance_m": -0.023572000063478947,
+      "deepest_point_xyz": [
+        17.430169,
+        -0.013412,
+        -9.500346
+      ],
+      "support_source": "Z30 EXPERIENCE CENTRE - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 570,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.023572000063478947,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.023572000063478947,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": false
+    },
+    {
+      "id": "office-person-07",
+      "seconds": 6,
+      "zone": "Z30",
+      "outfit": "panjabi",
+      "pose": "browsing",
+      "task": "browsing",
+      "seated": false,
+      "walking": false,
+      "minimum_clearance_m": -0.024924000063478946,
+      "deepest_point_xyz": [
+        20.176146,
+        -0.014764,
+        -7.37568
+      ],
+      "support_source": "Z30 EXPERIENCE CENTRE - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 572,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.024924000063478946,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.024924000063478946,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": false
+    },
+    {
+      "id": "office-person-08",
+      "seconds": 6,
+      "zone": "Z08",
+      "outfit": "shirt",
+      "pose": "notes__seat_50292",
+      "task": "notes",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": -0.028813000063478946,
+      "deepest_point_xyz": [
+        15.644547,
+        -0.018653,
+        -3.54739
+      ],
+      "support_source": "Z08 BOARDROOM - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 178,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.028813000063478946,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.028813000063478946,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": false
+    },
+    {
+      "id": "office-person-09",
+      "seconds": 6,
+      "zone": "Z08",
+      "outfit": "salwar",
+      "pose": "listening__seat_50292",
+      "task": "listening",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": -0.0049050000634789466,
+      "deepest_point_xyz": [
+        16.193963,
+        0.005255,
+        -2.134394
+      ],
+      "support_source": "Z08 BOARDROOM - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 28,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.0049050000634789466,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.0049050000634789466,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": true
+    },
+    {
+      "id": "office-person-10",
+      "seconds": 6,
+      "zone": "Z08",
+      "outfit": "panjabi",
+      "pose": "listening__seat_50292",
+      "task": "listening",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": -0.028943000063478948,
+      "deepest_point_xyz": [
+        18.105282,
+        -0.018783,
+        -3.546977
+      ],
+      "support_source": "Z08 BOARDROOM - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 176,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.028943000063478948,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.028943000063478948,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": false
+    },
+    {
+      "id": "office-person-11",
+      "seconds": 6,
+      "zone": "Z08",
+      "outfit": "salwar_braid",
+      "pose": "notes__seat_50292",
+      "task": "notes",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": -0.0049050000634789466,
+      "deepest_point_xyz": [
+        18.634852,
+        0.005255,
+        -2.134394
+      ],
+      "support_source": "Z08 BOARDROOM - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 28,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.0049050000634789466,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.0049050000634789466,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": true
+    },
+    {
+      "id": "office-person-12",
+      "seconds": 6,
+      "zone": "Z08",
+      "outfit": "shirt",
+      "pose": "listening__seat_50292",
+      "task": "listening",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": -0.028813000063478946,
+      "deepest_point_xyz": [
+        20.28599,
+        -0.018653,
+        -2.707746
+      ],
+      "support_source": "Z08 BOARDROOM - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 178,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.028813000063478946,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.028813000063478946,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": false
+    },
+    {
+      "id": "office-person-13",
+      "seconds": 6,
+      "zone": "Z08",
+      "outfit": "salwar",
+      "pose": "presenting",
+      "task": "presenting",
+      "seated": false,
+      "walking": false,
+      "minimum_clearance_m": -0.018899000063478947,
+      "deepest_point_xyz": [
+        13.359907,
+        -0.008739,
+        -3.844365
+      ],
+      "support_source": "Z08 BOARDROOM - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 286,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.018899000063478947,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.018899000063478947,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": false
+    },
+    {
+      "id": "office-person-14",
+      "seconds": 6,
+      "zone": "Z12",
+      "outfit": "shirt",
+      "pose": "phone_seated__seat_50292",
+      "task": "phone_seated",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": -0.028813000063478946,
+      "deepest_point_xyz": [
+        26.027328,
+        -0.018653,
+        4.614191
+      ],
+      "support_source": "Z12 MANAGING DIRECTOR - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 178,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.028813000063478946,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.028813000063478946,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": false
+    },
+    {
+      "id": "office-person-15",
+      "seconds": 6,
+      "zone": "Z05",
+      "outfit": "salwar",
+      "pose": "typing__seat_49022",
+      "task": "typing",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": -0.004895000063478947,
+      "deepest_point_xyz": [
+        5.520676,
+        0.005265,
+        -3.294357
+      ],
+      "support_source": "Z05 HR & ADMIN - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 28,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.004895000063478947,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.004895000063478947,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": true
+    },
+    {
+      "id": "office-person-16",
+      "seconds": 6,
+      "zone": "Z05",
+      "outfit": "shirt",
+      "pose": "phone_seated__seat_49022",
+      "task": "phone_seated",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": -0.028815000063478948,
+      "deepest_point_xyz": [
+        7.180849,
+        -0.018655,
+        -4.827051
+      ],
+      "support_source": "Z05 HR & ADMIN - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 178,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.028815000063478948,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.028814000063478947,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": false
+    },
+    {
+      "id": "office-person-17",
+      "seconds": 6,
+      "zone": "Z06",
+      "outfit": "panjabi",
+      "pose": "typing__seat_49022",
+      "task": "typing",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": -0.028944000063478945,
+      "deepest_point_xyz": [
+        4.183152,
+        -0.018784,
+        -15.506052
+      ],
+      "support_source": "Z06 COMMERCIAL & ACCOUNTS - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 176,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.028944000063478945,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.028944000063478945,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": false
+    },
+    {
+      "id": "office-person-18",
+      "seconds": 6,
+      "zone": "Z06",
+      "outfit": "salwar_braid",
+      "pose": "notes__seat_49022",
+      "task": "notes",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": -0.004895000063478947,
+      "deepest_point_xyz": [
+        4.194898,
+        0.005265,
+        -11.549356
+      ],
+      "support_source": "Z06 COMMERCIAL & ACCOUNTS - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 28,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.004895000063478947,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.004895000063478947,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": true
+    },
+    {
+      "id": "office-person-19",
+      "seconds": 6,
+      "zone": "Z07",
+      "outfit": "shirt",
+      "pose": "typing__seat_49022",
+      "task": "typing",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": -0.028815000063478948,
+      "deepest_point_xyz": [
+        10.848386,
+        -0.018655,
+        -18.09645
+      ],
+      "support_source": "Z07 MERCHANDISING - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 178,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.028815000063478948,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.028814000063478947,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": false
+    },
+    {
+      "id": "office-person-20",
+      "seconds": 6,
+      "zone": "Z07",
+      "outfit": "salwar",
+      "pose": "phone_seated__seat_49022",
+      "task": "phone_seated",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": -0.004895000063478947,
+      "deepest_point_xyz": [
+        17.595813,
+        0.005265,
+        -19.629143
+      ],
+      "support_source": "Z07 MERCHANDISING - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 28,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.004895000063478947,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.004895000063478947,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": true
+    },
+    {
+      "id": "office-person-21",
+      "seconds": 6,
+      "zone": "Z07",
+      "outfit": "panjabi",
+      "pose": "notes__seat_49022",
+      "task": "notes",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": -0.028944000063478945,
+      "deepest_point_xyz": [
+        17.129491,
+        -0.018784,
+        -14.236052
+      ],
+      "support_source": "Z07 MERCHANDISING - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 176,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.028944000063478945,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.028944000063478945,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": false
+    },
+    {
+      "id": "office-person-22",
+      "seconds": 6,
+      "zone": "Z07",
+      "outfit": "salwar_braid",
+      "pose": "show_sample",
+      "task": "show_sample",
+      "seated": false,
+      "walking": false,
+      "minimum_clearance_m": -0.018452000063478947,
+      "deepest_point_xyz": [
+        15.259907,
+        -0.008292,
+        -16.842102
+      ],
+      "support_source": "Z07 MERCHANDISING - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 282,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.018452000063478947,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.018452000063478947,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": false
+    },
+    {
+      "id": "office-person-23",
+      "seconds": 6,
+      "zone": "Z07",
+      "outfit": "shirt",
+      "pose": "browsing",
+      "task": "browsing",
+      "seated": false,
+      "walking": false,
+      "minimum_clearance_m": -0.02318500006347895,
+      "deepest_point_xyz": [
+        15.676146,
+        -0.013025,
+        -16.587133
+      ],
+      "support_source": "Z07 MERCHANDISING - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 564,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.02318500006347895,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.02318500006347895,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": false
+    },
+    {
+      "id": "office-person-24",
+      "seconds": 6,
+      "zone": "Z07",
+      "outfit": "shirt",
+      "pose": "fabric",
+      "task": "fabric",
+      "seated": false,
+      "walking": false,
+      "minimum_clearance_m": -0.02453800006347895,
+      "deepest_point_xyz": [
+        10.830663,
+        -0.014378,
+        -11.637033
+      ],
+      "support_source": "Z07 MERCHANDISING - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 570,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.02453800006347895,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.02453800006347895,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": false
+    },
+    {
+      "id": "office-person-25",
+      "seconds": 6,
+      "zone": "Z14",
+      "outfit": "salwar",
+      "pose": "typing__seat_49022",
+      "task": "typing",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": -0.004895000063478947,
+      "deepest_point_xyz": [
+        23.121643,
+        0.005265,
+        -3.801198
+      ],
+      "support_source": "Z14 CAD / TECHNICAL - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 28,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.004895000063478947,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.004895000063478947,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": true
+    },
+    {
+      "id": "office-person-26",
+      "seconds": 6,
+      "zone": "Z17",
+      "outfit": "panjabi",
+      "pose": "sewing__seat_49022",
+      "task": "sewing",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": -0.028944000063478945,
+      "deepest_point_xyz": [
+        23.178147,
+        -0.018784,
+        -19.412973
+      ],
+      "support_source": "Z17 SAMPLE DEVELOPMENT - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 176,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.028944000063478945,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.028944000063478945,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": false
+    },
+    {
+      "id": "office-person-27",
+      "seconds": 6,
+      "zone": "Z15",
+      "outfit": "salwar_braid",
+      "pose": "fabric",
+      "task": "fabric",
+      "seated": false,
+      "walking": false,
+      "minimum_clearance_m": -0.018750000063478947,
+      "deepest_point_xyz": [
+        24.277835,
+        -0.00859,
+        -8.084107
+      ],
+      "support_source": "Z15 FABRIC & TRIM LIBRARY - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 286,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.018750000063478947,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.018750000063478947,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": false
+    },
+    {
+      "id": "office-person-28",
+      "seconds": 6,
+      "zone": "Z18",
+      "outfit": "shirt",
+      "pose": "typing__seat_49022",
+      "task": "typing",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": -0.028815000063478948,
+      "deepest_point_xyz": [
+        30.891369,
+        -0.018655,
+        -23.519349
+      ],
+      "support_source": "Z18 GLOBAL DESIGN STUDIO - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 178,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.028815000063478948,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.028814000063478947,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": false
+    },
+    {
+      "id": "office-person-29",
+      "seconds": 6,
+      "zone": "Z18",
+      "outfit": "salwar",
+      "pose": "notes__seat_49022",
+      "task": "notes",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": -0.004895000063478947,
+      "deepest_point_xyz": [
+        32.757125,
+        0.005265,
+        -25.255243
+      ],
+      "support_source": "Z18 GLOBAL DESIGN STUDIO - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 28,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.004895000063478947,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.004895000063478947,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": true
+    },
+    {
+      "id": "office-person-30",
+      "seconds": 6,
+      "zone": "Z20",
+      "outfit": "panjabi",
+      "pose": "tea__seat_48768",
+      "task": "tea",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": -0.028945000063478946,
+      "deepest_point_xyz": [
+        24.3716,
+        -0.018785,
+        -26.377993
+      ],
+      "support_source": "Z20 STAFF CAFE + PANTRY - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 176,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.028945000063478946,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.028945000063478946,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": false
+    },
+    {
+      "id": "office-person-31",
+      "seconds": 6,
+      "zone": "Z20",
+      "outfit": "salwar_braid",
+      "pose": "tea__seat_48768",
+      "task": "tea",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": -0.004893000063478947,
+      "deepest_point_xyz": [
+        24.695429,
+        0.005267,
+        -25.431249
+      ],
+      "support_source": "Z20 STAFF CAFE + PANTRY - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 28,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.004893000063478947,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.004893000063478947,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": true
+    },
+    {
+      "id": "office-person-32",
+      "seconds": 6,
+      "zone": "Z20",
+      "outfit": "shirt",
+      "pose": "listening__seat_48768",
+      "task": "listening",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": -0.028815000063478948,
+      "deepest_point_xyz": [
+        26.190379,
+        -0.018655,
+        -26.378394
+      ],
+      "support_source": "Z20 STAFF CAFE + PANTRY - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 178,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.028815000063478948,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.028815000063478948,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": false
+    },
+    {
+      "id": "office-person-33",
+      "seconds": 6,
+      "zone": "Z33",
+      "outfit": "salwar",
+      "pose": "idle",
+      "task": "walking",
+      "seated": false,
+      "walking": true,
+      "minimum_clearance_m": -0.018452000063478947,
+      "deepest_point_xyz": [
+        13.559907,
+        -0.008292,
+        -22.153414
+      ],
+      "support_source": "Z33 HALLWAY - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 282,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.018452000063478947,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.018452000063478947,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": null
+    },
+    {
+      "id": "office-person-34",
+      "seconds": 6,
+      "zone": "Z22",
+      "outfit": "shirt",
+      "pose": "idle",
+      "task": "walking_files",
+      "seated": false,
+      "walking": true,
+      "minimum_clearance_m": -0.02318500006347895,
+      "deepest_point_xyz": [
+        27.067831,
+        -0.013025,
+        -14.246054
+      ],
+      "support_source": "Z22 CORRIDOR - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 564,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.02318500006347895,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.02318500006347895,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": null
+    },
+    {
+      "id": "office-person-35",
+      "seconds": 6,
+      "zone": "Z31",
+      "outfit": "panjabi",
+      "pose": "idle",
+      "task": "walking",
+      "seated": false,
+      "walking": true,
+      "minimum_clearance_m": -0.02453800006347895,
+      "deepest_point_xyz": [
+        3.25148,
+        -0.014378,
+        -3.346054
+      ],
+      "support_source": "Z31 STAFF CORRIDOR - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 570,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.02453800006347895,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.02453800006347895,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": null
+    },
+    {
+      "id": "office-person-01",
+      "seconds": 9,
+      "zone": "Z02",
+      "outfit": "salwar",
+      "pose": "greeting_seated__seat_50292",
+      "task": "greeting",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": -0.0049050000634789466,
+      "deepest_point_xyz": [
+        13.283406,
+        0.005255,
+        3.229571
+      ],
+      "support_source": "Z02 RECEPTION + VISITOR WAITING - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 28,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.0049050000634789466,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.0049050000634789466,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": true
+    },
+    {
+      "id": "office-person-02",
+      "seconds": 9,
+      "zone": "Z02",
+      "outfit": "shirt",
+      "pose": "idle",
+      "task": "idle",
+      "seated": false,
+      "walking": false,
+      "minimum_clearance_m": -0.02453800006347895,
+      "deepest_point_xyz": [
+        11.721854,
+        -0.014378,
+        3.040733
+      ],
+      "support_source": "Z02 RECEPTION + VISITOR WAITING - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 570,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.02453800006347895,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.02453800006347895,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": false
+    },
+    {
+      "id": "office-person-03",
+      "seconds": 9,
+      "zone": "Z02",
+      "outfit": "panjabi",
+      "pose": "listening__seat_44450",
+      "task": "listening",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": -0.04037700001847744,
+      "deepest_point_xyz": [
+        9.104213,
+        -0.018787,
+        5.261429
+      ],
+      "support_source": "F013 rug_reception",
+      "support_top_y_m": 0.02159000001847744,
+      "shoe_vertices_below_surface_by_more_than_2mm": 388,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.04037700001847744,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.04037700001847744,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": false
+    },
+    {
+      "id": "office-person-04",
+      "seconds": 9,
+      "zone": "Z02",
+      "outfit": "salwar_braid",
+      "pose": "listening__seat_44450",
+      "task": "listening",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": -0.01628800001847744,
+      "deepest_point_xyz": [
+        9.935998,
+        0.005302,
+        5.264585
+      ],
+      "support_source": "F013 rug_reception",
+      "support_top_y_m": 0.02159000001847744,
+      "shoe_vertices_below_surface_by_more_than_2mm": 134,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.01628800001847744,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.01628800001847744,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": false
+    },
+    {
+      "id": "office-person-05",
+      "seconds": 9,
+      "zone": "Z30",
+      "outfit": "salwar",
+      "pose": "show_sample",
+      "task": "show_sample",
+      "seated": false,
+      "walking": false,
+      "minimum_clearance_m": -0.018750000063478947,
+      "deepest_point_xyz": [
+        18.368786,
+        -0.00859,
+        -7.484107
+      ],
+      "support_source": "Z30 EXPERIENCE CENTRE - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 286,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.018750000063478947,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.018750000063478947,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": false
+    },
+    {
+      "id": "office-person-06",
+      "seconds": 9,
+      "zone": "Z30",
+      "outfit": "shirt",
+      "pose": "browsing",
+      "task": "browsing",
+      "seated": false,
+      "walking": false,
+      "minimum_clearance_m": -0.023572000063478947,
+      "deepest_point_xyz": [
+        17.430169,
+        -0.013412,
+        -9.500346
+      ],
+      "support_source": "Z30 EXPERIENCE CENTRE - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 570,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.023572000063478947,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.023572000063478947,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": false
+    },
+    {
+      "id": "office-person-07",
+      "seconds": 9,
+      "zone": "Z30",
+      "outfit": "panjabi",
+      "pose": "browsing",
+      "task": "browsing",
+      "seated": false,
+      "walking": false,
+      "minimum_clearance_m": -0.024924000063478946,
+      "deepest_point_xyz": [
+        20.176146,
+        -0.014764,
+        -7.37568
+      ],
+      "support_source": "Z30 EXPERIENCE CENTRE - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 572,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.024924000063478946,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.024924000063478946,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": false
+    },
+    {
+      "id": "office-person-08",
+      "seconds": 9,
+      "zone": "Z08",
+      "outfit": "shirt",
+      "pose": "notes__seat_50292",
+      "task": "notes",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": -0.028813000063478946,
+      "deepest_point_xyz": [
+        15.644547,
+        -0.018653,
+        -3.54739
+      ],
+      "support_source": "Z08 BOARDROOM - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 178,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.028813000063478946,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.028813000063478946,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": false
+    },
+    {
+      "id": "office-person-09",
+      "seconds": 9,
+      "zone": "Z08",
+      "outfit": "salwar",
+      "pose": "listening__seat_50292",
+      "task": "listening",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": -0.0049050000634789466,
+      "deepest_point_xyz": [
+        16.193963,
+        0.005255,
+        -2.134394
+      ],
+      "support_source": "Z08 BOARDROOM - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 28,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.0049050000634789466,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.0049050000634789466,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": true
+    },
+    {
+      "id": "office-person-10",
+      "seconds": 9,
+      "zone": "Z08",
+      "outfit": "panjabi",
+      "pose": "listening__seat_50292",
+      "task": "listening",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": -0.028943000063478948,
+      "deepest_point_xyz": [
+        18.105282,
+        -0.018783,
+        -3.546977
+      ],
+      "support_source": "Z08 BOARDROOM - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 176,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.028943000063478948,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.028943000063478948,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": false
+    },
+    {
+      "id": "office-person-11",
+      "seconds": 9,
+      "zone": "Z08",
+      "outfit": "salwar_braid",
+      "pose": "notes__seat_50292",
+      "task": "notes",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": -0.0049050000634789466,
+      "deepest_point_xyz": [
+        18.634852,
+        0.005255,
+        -2.134394
+      ],
+      "support_source": "Z08 BOARDROOM - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 28,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.0049050000634789466,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.0049050000634789466,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": true
+    },
+    {
+      "id": "office-person-12",
+      "seconds": 9,
+      "zone": "Z08",
+      "outfit": "shirt",
+      "pose": "listening__seat_50292",
+      "task": "listening",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": -0.028813000063478946,
+      "deepest_point_xyz": [
+        20.28599,
+        -0.018653,
+        -2.707746
+      ],
+      "support_source": "Z08 BOARDROOM - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 178,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.028813000063478946,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.028813000063478946,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": false
+    },
+    {
+      "id": "office-person-13",
+      "seconds": 9,
+      "zone": "Z08",
+      "outfit": "salwar",
+      "pose": "presenting",
+      "task": "presenting",
+      "seated": false,
+      "walking": false,
+      "minimum_clearance_m": -0.018899000063478947,
+      "deepest_point_xyz": [
+        13.359907,
+        -0.008739,
+        -3.844365
+      ],
+      "support_source": "Z08 BOARDROOM - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 286,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.018899000063478947,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.018899000063478947,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": false
+    },
+    {
+      "id": "office-person-14",
+      "seconds": 9,
+      "zone": "Z12",
+      "outfit": "shirt",
+      "pose": "phone_seated__seat_50292",
+      "task": "phone_seated",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": -0.028813000063478946,
+      "deepest_point_xyz": [
+        26.027328,
+        -0.018653,
+        4.614191
+      ],
+      "support_source": "Z12 MANAGING DIRECTOR - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 178,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.028813000063478946,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.028813000063478946,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": false
+    },
+    {
+      "id": "office-person-15",
+      "seconds": 9,
+      "zone": "Z05",
+      "outfit": "salwar",
+      "pose": "typing__seat_49022",
+      "task": "typing",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": -0.004895000063478947,
+      "deepest_point_xyz": [
+        5.520676,
+        0.005265,
+        -3.294357
+      ],
+      "support_source": "Z05 HR & ADMIN - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 28,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.004895000063478947,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.004895000063478947,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": true
+    },
+    {
+      "id": "office-person-16",
+      "seconds": 9,
+      "zone": "Z05",
+      "outfit": "shirt",
+      "pose": "phone_seated__seat_49022",
+      "task": "phone_seated",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": -0.028815000063478948,
+      "deepest_point_xyz": [
+        7.180849,
+        -0.018655,
+        -4.827051
+      ],
+      "support_source": "Z05 HR & ADMIN - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 178,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.028815000063478948,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.028814000063478947,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": false
+    },
+    {
+      "id": "office-person-17",
+      "seconds": 9,
+      "zone": "Z06",
+      "outfit": "panjabi",
+      "pose": "typing__seat_49022",
+      "task": "typing",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": -0.028944000063478945,
+      "deepest_point_xyz": [
+        4.183152,
+        -0.018784,
+        -15.506052
+      ],
+      "support_source": "Z06 COMMERCIAL & ACCOUNTS - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 176,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.028944000063478945,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.028944000063478945,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": false
+    },
+    {
+      "id": "office-person-18",
+      "seconds": 9,
+      "zone": "Z06",
+      "outfit": "salwar_braid",
+      "pose": "notes__seat_49022",
+      "task": "notes",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": -0.004895000063478947,
+      "deepest_point_xyz": [
+        4.194898,
+        0.005265,
+        -11.549356
+      ],
+      "support_source": "Z06 COMMERCIAL & ACCOUNTS - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 28,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.004895000063478947,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.004895000063478947,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": true
+    },
+    {
+      "id": "office-person-19",
+      "seconds": 9,
+      "zone": "Z07",
+      "outfit": "shirt",
+      "pose": "typing__seat_49022",
+      "task": "typing",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": -0.028815000063478948,
+      "deepest_point_xyz": [
+        10.848386,
+        -0.018655,
+        -18.09645
+      ],
+      "support_source": "Z07 MERCHANDISING - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 178,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.028815000063478948,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.028814000063478947,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": false
+    },
+    {
+      "id": "office-person-20",
+      "seconds": 9,
+      "zone": "Z07",
+      "outfit": "salwar",
+      "pose": "phone_seated__seat_49022",
+      "task": "phone_seated",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": -0.004895000063478947,
+      "deepest_point_xyz": [
+        17.595813,
+        0.005265,
+        -19.629143
+      ],
+      "support_source": "Z07 MERCHANDISING - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 28,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.004895000063478947,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.004895000063478947,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": true
+    },
+    {
+      "id": "office-person-21",
+      "seconds": 9,
+      "zone": "Z07",
+      "outfit": "panjabi",
+      "pose": "notes__seat_49022",
+      "task": "notes",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": -0.028944000063478945,
+      "deepest_point_xyz": [
+        17.129491,
+        -0.018784,
+        -14.236052
+      ],
+      "support_source": "Z07 MERCHANDISING - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 176,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.028944000063478945,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.028944000063478945,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": false
+    },
+    {
+      "id": "office-person-22",
+      "seconds": 9,
+      "zone": "Z07",
+      "outfit": "salwar_braid",
+      "pose": "show_sample",
+      "task": "show_sample",
+      "seated": false,
+      "walking": false,
+      "minimum_clearance_m": -0.018452000063478947,
+      "deepest_point_xyz": [
+        15.259907,
+        -0.008292,
+        -16.842102
+      ],
+      "support_source": "Z07 MERCHANDISING - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 282,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.018452000063478947,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.018452000063478947,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": false
+    },
+    {
+      "id": "office-person-23",
+      "seconds": 9,
+      "zone": "Z07",
+      "outfit": "shirt",
+      "pose": "browsing",
+      "task": "browsing",
+      "seated": false,
+      "walking": false,
+      "minimum_clearance_m": -0.02318500006347895,
+      "deepest_point_xyz": [
+        15.676146,
+        -0.013025,
+        -16.587133
+      ],
+      "support_source": "Z07 MERCHANDISING - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 564,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.02318500006347895,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.02318500006347895,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": false
+    },
+    {
+      "id": "office-person-24",
+      "seconds": 9,
+      "zone": "Z07",
+      "outfit": "shirt",
+      "pose": "fabric",
+      "task": "fabric",
+      "seated": false,
+      "walking": false,
+      "minimum_clearance_m": -0.02453800006347895,
+      "deepest_point_xyz": [
+        10.830663,
+        -0.014378,
+        -11.637033
+      ],
+      "support_source": "Z07 MERCHANDISING - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 570,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.02453800006347895,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.02453800006347895,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": false
+    },
+    {
+      "id": "office-person-25",
+      "seconds": 9,
+      "zone": "Z14",
+      "outfit": "salwar",
+      "pose": "typing__seat_49022",
+      "task": "typing",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": -0.004895000063478947,
+      "deepest_point_xyz": [
+        23.121643,
+        0.005265,
+        -3.801198
+      ],
+      "support_source": "Z14 CAD / TECHNICAL - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 28,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.004895000063478947,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.004895000063478947,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": true
+    },
+    {
+      "id": "office-person-26",
+      "seconds": 9,
+      "zone": "Z17",
+      "outfit": "panjabi",
+      "pose": "sewing__seat_49022",
+      "task": "sewing",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": -0.028944000063478945,
+      "deepest_point_xyz": [
+        23.178147,
+        -0.018784,
+        -19.412973
+      ],
+      "support_source": "Z17 SAMPLE DEVELOPMENT - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 176,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.028944000063478945,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.028944000063478945,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": false
+    },
+    {
+      "id": "office-person-27",
+      "seconds": 9,
+      "zone": "Z15",
+      "outfit": "salwar_braid",
+      "pose": "fabric",
+      "task": "fabric",
+      "seated": false,
+      "walking": false,
+      "minimum_clearance_m": -0.018750000063478947,
+      "deepest_point_xyz": [
+        24.277835,
+        -0.00859,
+        -8.084107
+      ],
+      "support_source": "Z15 FABRIC & TRIM LIBRARY - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 286,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.018750000063478947,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.018750000063478947,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": false
+    },
+    {
+      "id": "office-person-28",
+      "seconds": 9,
+      "zone": "Z18",
+      "outfit": "shirt",
+      "pose": "typing__seat_49022",
+      "task": "typing",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": -0.028815000063478948,
+      "deepest_point_xyz": [
+        30.891369,
+        -0.018655,
+        -23.519349
+      ],
+      "support_source": "Z18 GLOBAL DESIGN STUDIO - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 178,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.028815000063478948,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.028814000063478947,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": false
+    },
+    {
+      "id": "office-person-29",
+      "seconds": 9,
+      "zone": "Z18",
+      "outfit": "salwar",
+      "pose": "notes__seat_49022",
+      "task": "notes",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": -0.004895000063478947,
+      "deepest_point_xyz": [
+        32.757125,
+        0.005265,
+        -25.255243
+      ],
+      "support_source": "Z18 GLOBAL DESIGN STUDIO - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 28,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.004895000063478947,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.004895000063478947,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": true
+    },
+    {
+      "id": "office-person-30",
+      "seconds": 9,
+      "zone": "Z20",
+      "outfit": "panjabi",
+      "pose": "tea__seat_48768",
+      "task": "tea",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": -0.028945000063478946,
+      "deepest_point_xyz": [
+        24.3716,
+        -0.018785,
+        -26.377993
+      ],
+      "support_source": "Z20 STAFF CAFE + PANTRY - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 176,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.028945000063478946,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.028945000063478946,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": false
+    },
+    {
+      "id": "office-person-31",
+      "seconds": 9,
+      "zone": "Z20",
+      "outfit": "salwar_braid",
+      "pose": "tea__seat_48768",
+      "task": "tea",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": -0.004893000063478947,
+      "deepest_point_xyz": [
+        24.695429,
+        0.005267,
+        -25.431249
+      ],
+      "support_source": "Z20 STAFF CAFE + PANTRY - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 28,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.004893000063478947,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.004893000063478947,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": true
+    },
+    {
+      "id": "office-person-32",
+      "seconds": 9,
+      "zone": "Z20",
+      "outfit": "shirt",
+      "pose": "listening__seat_48768",
+      "task": "listening",
+      "seated": true,
+      "walking": false,
+      "minimum_clearance_m": -0.028815000063478948,
+      "deepest_point_xyz": [
+        26.190379,
+        -0.018655,
+        -26.378394
+      ],
+      "support_source": "Z20 STAFF CAFE + PANTRY - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 178,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.028815000063478948,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.028815000063478948,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": false
+    },
+    {
+      "id": "office-person-33",
+      "seconds": 9,
+      "zone": "Z33",
+      "outfit": "salwar",
+      "pose": "idle",
+      "task": "walking",
+      "seated": false,
+      "walking": true,
+      "minimum_clearance_m": -0.018452000063478947,
+      "deepest_point_xyz": [
+        14.759907,
+        -0.008292,
+        -22.153414
+      ],
+      "support_source": "Z33 HALLWAY - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 282,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.018452000063478947,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.018452000063478947,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": null
+    },
+    {
+      "id": "office-person-34",
+      "seconds": 9,
+      "zone": "Z22",
+      "outfit": "shirt",
+      "pose": "idle",
+      "task": "walking_files",
+      "seated": false,
+      "walking": true,
+      "minimum_clearance_m": -0.02318500006347895,
+      "deepest_point_xyz": [
+        27.067831,
+        -0.013025,
+        -15.446054
+      ],
+      "support_source": "Z22 CORRIDOR - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 564,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.02318500006347895,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.02318500006347895,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": null
+    },
+    {
+      "id": "office-person-35",
+      "seconds": 9,
+      "zone": "Z31",
+      "outfit": "panjabi",
+      "pose": "idle",
+      "task": "walking",
+      "seated": false,
+      "walking": true,
+      "minimum_clearance_m": -0.02453800006347895,
+      "deepest_point_xyz": [
+        3.25148,
+        -0.014378,
+        -4.546054
+      ],
+      "support_source": "Z31 STAFF CORRIDOR - floor finish",
+      "support_top_y_m": 0.010160000063478947,
+      "shoe_vertices_below_surface_by_more_than_2mm": 570,
+      "feet": {
+        "left": {
+          "minimum_clearance_m": -0.02453800006347895,
+          "referenced_vertices": 1255
+        },
+        "right": {
+          "minimum_clearance_m": -0.02453800006347895,
+          "referenced_vertices": 1255
+        }
+      },
+      "penetration_check_passed": false,
+      "standing_or_seated_grounded_check_passed": null
+    }
+  ],
+  "empty_zone_snapshots": [
+    {
+      "id": "office-person-01",
+      "seconds": 0,
+      "visible_mesh_count": 6,
+      "hull_vertex_count": 37,
+      "minimum_hull_to_empty_zone_m": 3.0352201540087664,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-02",
+      "seconds": 0,
+      "visible_mesh_count": 6,
+      "hull_vertex_count": 37,
+      "minimum_hull_to_empty_zone_m": 3.147479,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-03",
+      "seconds": 0,
+      "visible_mesh_count": 6,
+      "hull_vertex_count": 44,
+      "minimum_hull_to_empty_zone_m": 5.462594390313543,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-04",
+      "seconds": 0,
+      "visible_mesh_count": 6,
+      "hull_vertex_count": 42,
+      "minimum_hull_to_empty_zone_m": 5.336311145690907,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-05",
+      "seconds": 0,
+      "visible_mesh_count": 7,
+      "hull_vertex_count": 32,
+      "minimum_hull_to_empty_zone_m": 6.33465561433548,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-06",
+      "seconds": 0,
+      "visible_mesh_count": 6,
+      "hull_vertex_count": 43,
+      "minimum_hull_to_empty_zone_m": 6.250306938836605,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-07",
+      "seconds": 0,
+      "visible_mesh_count": 7,
+      "hull_vertex_count": 35,
+      "minimum_hull_to_empty_zone_m": 7.8805788770705165,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-08",
+      "seconds": 0,
+      "visible_mesh_count": 6,
+      "hull_vertex_count": 44,
+      "minimum_hull_to_empty_zone_m": 3.0519110000000005,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-09",
+      "seconds": 0,
+      "visible_mesh_count": 6,
+      "hull_vertex_count": 44,
+      "minimum_hull_to_empty_zone_m": 3.8939909999999998,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-10",
+      "seconds": 0,
+      "visible_mesh_count": 6,
+      "hull_vertex_count": 44,
+      "minimum_hull_to_empty_zone_m": 5.455697999999998,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-11",
+      "seconds": 0,
+      "visible_mesh_count": 6,
+      "hull_vertex_count": 49,
+      "minimum_hull_to_empty_zone_m": 6.355404,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-12",
+      "seconds": 0,
+      "visible_mesh_count": 6,
+      "hull_vertex_count": 42,
+      "minimum_hull_to_empty_zone_m": 7.855332999999998,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-13",
+      "seconds": 0,
+      "visible_mesh_count": 7,
+      "hull_vertex_count": 27,
+      "minimum_hull_to_empty_zone_m": 0.827,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-14",
+      "seconds": 0,
+      "visible_mesh_count": 7,
+      "hull_vertex_count": 43,
+      "minimum_hull_to_empty_zone_m": 14.574043629481865,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-15",
+      "seconds": 0,
+      "visible_mesh_count": 6,
+      "hull_vertex_count": 47,
+      "minimum_hull_to_empty_zone_m": 4.307503994379691,
+      "closest_empty_zone": "Z29",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-16",
+      "seconds": 0,
+      "visible_mesh_count": 7,
+      "hull_vertex_count": 43,
+      "minimum_hull_to_empty_zone_m": 3.4631790000000002,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-17",
+      "seconds": 0,
+      "visible_mesh_count": 6,
+      "hull_vertex_count": 43,
+      "minimum_hull_to_empty_zone_m": 2.962555,
+      "closest_empty_zone": "Z26",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-18",
+      "seconds": 0,
+      "visible_mesh_count": 6,
+      "hull_vertex_count": 47,
+      "minimum_hull_to_empty_zone_m": 3.0580409999999993,
+      "closest_empty_zone": "Z27",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-19",
+      "seconds": 0,
+      "visible_mesh_count": 6,
+      "hull_vertex_count": 44,
+      "minimum_hull_to_empty_zone_m": 9.638372,
+      "closest_empty_zone": "Z26",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-20",
+      "seconds": 0,
+      "visible_mesh_count": 7,
+      "hull_vertex_count": 47,
+      "minimum_hull_to_empty_zone_m": 14.899050844817767,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-21",
+      "seconds": 0,
+      "visible_mesh_count": 6,
+      "hull_vertex_count": 47,
+      "minimum_hull_to_empty_zone_m": 9.686383704171233,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-22",
+      "seconds": 0,
+      "visible_mesh_count": 7,
+      "hull_vertex_count": 32,
+      "minimum_hull_to_empty_zone_m": 11.316877645807121,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-23",
+      "seconds": 0,
+      "visible_mesh_count": 6,
+      "hull_vertex_count": 42,
+      "minimum_hull_to_empty_zone_m": 11.514954631864816,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-24",
+      "seconds": 0,
+      "visible_mesh_count": 6,
+      "hull_vertex_count": 42,
+      "minimum_hull_to_empty_zone_m": 5.97614368682966,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-25",
+      "seconds": 0,
+      "visible_mesh_count": 6,
+      "hull_vertex_count": 46,
+      "minimum_hull_to_empty_zone_m": 10.7105,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-26",
+      "seconds": 0,
+      "visible_mesh_count": 6,
+      "hull_vertex_count": 40,
+      "minimum_hull_to_empty_zone_m": 12.48145113828216,
+      "closest_empty_zone": "Z24",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-27",
+      "seconds": 0,
+      "visible_mesh_count": 7,
+      "hull_vertex_count": 33,
+      "minimum_hull_to_empty_zone_m": 12.2147900369159,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-28",
+      "seconds": 0,
+      "visible_mesh_count": 6,
+      "hull_vertex_count": 45,
+      "minimum_hull_to_empty_zone_m": 7.102996000000001,
+      "closest_empty_zone": "Z24",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-29",
+      "seconds": 0,
+      "visible_mesh_count": 6,
+      "hull_vertex_count": 47,
+      "minimum_hull_to_empty_zone_m": 5.146743000000001,
+      "closest_empty_zone": "Z24",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-30",
+      "seconds": 0,
+      "visible_mesh_count": 7,
+      "hull_vertex_count": 48,
+      "minimum_hull_to_empty_zone_m": 6.356759699541584,
+      "closest_empty_zone": "Z24",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-31",
+      "seconds": 0,
+      "visible_mesh_count": 7,
+      "hull_vertex_count": 41,
+      "minimum_hull_to_empty_zone_m": 6.802534406054042,
+      "closest_empty_zone": "Z24",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-32",
+      "seconds": 0,
+      "visible_mesh_count": 6,
+      "hull_vertex_count": 44,
+      "minimum_hull_to_empty_zone_m": 5.098470368556045,
+      "closest_empty_zone": "Z24",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-33",
+      "seconds": 0,
+      "visible_mesh_count": 7,
+      "hull_vertex_count": 33,
+      "minimum_hull_to_empty_zone_m": 9.704398000000001,
+      "closest_empty_zone": "Z25",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-34",
+      "seconds": 0,
+      "visible_mesh_count": 7,
+      "hull_vertex_count": 42,
+      "minimum_hull_to_empty_zone_m": 15.948472863211732,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-35",
+      "seconds": 0,
+      "visible_mesh_count": 7,
+      "hull_vertex_count": 31,
+      "minimum_hull_to_empty_zone_m": 3.613630025822372,
+      "closest_empty_zone": "Z29",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-33",
+      "seconds": 0.35,
+      "visible_mesh_count": 7,
+      "hull_vertex_count": 41,
+      "minimum_hull_to_empty_zone_m": 9.848378,
+      "closest_empty_zone": "Z25",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-34",
+      "seconds": 0.35,
+      "visible_mesh_count": 7,
+      "hull_vertex_count": 37,
+      "minimum_hull_to_empty_zone_m": 16.114867247147526,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-35",
+      "seconds": 0.35,
+      "visible_mesh_count": 7,
+      "hull_vertex_count": 44,
+      "minimum_hull_to_empty_zone_m": 3.44400173425116,
+      "closest_empty_zone": "Z29",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-33",
+      "seconds": 0.75,
+      "visible_mesh_count": 7,
+      "hull_vertex_count": 33,
+      "minimum_hull_to_empty_zone_m": 10.077601000000001,
+      "closest_empty_zone": "Z25",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-34",
+      "seconds": 0.75,
+      "visible_mesh_count": 7,
+      "hull_vertex_count": 42,
+      "minimum_hull_to_empty_zone_m": 16.149707964610656,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-35",
+      "seconds": 0.75,
+      "visible_mesh_count": 7,
+      "hull_vertex_count": 31,
+      "minimum_hull_to_empty_zone_m": 3.2833637219237524,
+      "closest_empty_zone": "Z29",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-33",
+      "seconds": 1.3,
+      "visible_mesh_count": 7,
+      "hull_vertex_count": 52,
+      "minimum_hull_to_empty_zone_m": 10.259041,
+      "closest_empty_zone": "Z25",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-34",
+      "seconds": 1.3,
+      "visible_mesh_count": 7,
+      "hull_vertex_count": 43,
+      "minimum_hull_to_empty_zone_m": 16.243082811765166,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-35",
+      "seconds": 1.3,
+      "visible_mesh_count": 7,
+      "hull_vertex_count": 36,
+      "minimum_hull_to_empty_zone_m": 3.0573969299444905,
+      "closest_empty_zone": "Z29",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-01",
+      "seconds": 3,
+      "visible_mesh_count": 6,
+      "hull_vertex_count": 37,
+      "minimum_hull_to_empty_zone_m": 3.0335376855607046,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-02",
+      "seconds": 3,
+      "visible_mesh_count": 6,
+      "hull_vertex_count": 38,
+      "minimum_hull_to_empty_zone_m": 3.147479,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-03",
+      "seconds": 3,
+      "visible_mesh_count": 6,
+      "hull_vertex_count": 44,
+      "minimum_hull_to_empty_zone_m": 5.462594390313543,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-04",
+      "seconds": 3,
+      "visible_mesh_count": 6,
+      "hull_vertex_count": 42,
+      "minimum_hull_to_empty_zone_m": 5.336311145690907,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-05",
+      "seconds": 3,
+      "visible_mesh_count": 7,
+      "hull_vertex_count": 31,
+      "minimum_hull_to_empty_zone_m": 6.33465561433548,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-06",
+      "seconds": 3,
+      "visible_mesh_count": 6,
+      "hull_vertex_count": 42,
+      "minimum_hull_to_empty_zone_m": 6.250293735152054,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-07",
+      "seconds": 3,
+      "visible_mesh_count": 7,
+      "hull_vertex_count": 36,
+      "minimum_hull_to_empty_zone_m": 7.880601121526008,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-08",
+      "seconds": 3,
+      "visible_mesh_count": 6,
+      "hull_vertex_count": 44,
+      "minimum_hull_to_empty_zone_m": 3.0519160000000003,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-09",
+      "seconds": 3,
+      "visible_mesh_count": 6,
+      "hull_vertex_count": 44,
+      "minimum_hull_to_empty_zone_m": 3.8939909999999998,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-10",
+      "seconds": 3,
+      "visible_mesh_count": 6,
+      "hull_vertex_count": 44,
+      "minimum_hull_to_empty_zone_m": 5.455697999999998,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-11",
+      "seconds": 3,
+      "visible_mesh_count": 6,
+      "hull_vertex_count": 47,
+      "minimum_hull_to_empty_zone_m": 6.355404,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-12",
+      "seconds": 3,
+      "visible_mesh_count": 6,
+      "hull_vertex_count": 44,
+      "minimum_hull_to_empty_zone_m": 7.855332999999998,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-13",
+      "seconds": 3,
+      "visible_mesh_count": 7,
+      "hull_vertex_count": 28,
+      "minimum_hull_to_empty_zone_m": 0.827,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-14",
+      "seconds": 3,
+      "visible_mesh_count": 7,
+      "hull_vertex_count": 43,
+      "minimum_hull_to_empty_zone_m": 14.574043629481865,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-15",
+      "seconds": 3,
+      "visible_mesh_count": 6,
+      "hull_vertex_count": 47,
+      "minimum_hull_to_empty_zone_m": 4.306999902382748,
+      "closest_empty_zone": "Z29",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-16",
+      "seconds": 3,
+      "visible_mesh_count": 7,
+      "hull_vertex_count": 42,
+      "minimum_hull_to_empty_zone_m": 3.4631790000000002,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-17",
+      "seconds": 3,
+      "visible_mesh_count": 6,
+      "hull_vertex_count": 47,
+      "minimum_hull_to_empty_zone_m": 2.962534,
+      "closest_empty_zone": "Z26",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-18",
+      "seconds": 3,
+      "visible_mesh_count": 6,
+      "hull_vertex_count": 47,
+      "minimum_hull_to_empty_zone_m": 3.058026,
+      "closest_empty_zone": "Z27",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-19",
+      "seconds": 3,
+      "visible_mesh_count": 6,
+      "hull_vertex_count": 44,
+      "minimum_hull_to_empty_zone_m": 9.638189,
+      "closest_empty_zone": "Z26",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-20",
+      "seconds": 3,
+      "visible_mesh_count": 7,
+      "hull_vertex_count": 47,
+      "minimum_hull_to_empty_zone_m": 14.899050844817767,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-21",
+      "seconds": 3,
+      "visible_mesh_count": 6,
+      "hull_vertex_count": 47,
+      "minimum_hull_to_empty_zone_m": 9.68645093448834,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-22",
+      "seconds": 3,
+      "visible_mesh_count": 7,
+      "hull_vertex_count": 33,
+      "minimum_hull_to_empty_zone_m": 11.306851572374379,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-23",
+      "seconds": 3,
+      "visible_mesh_count": 6,
+      "hull_vertex_count": 42,
+      "minimum_hull_to_empty_zone_m": 11.515227248708424,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-24",
+      "seconds": 3,
+      "visible_mesh_count": 6,
+      "hull_vertex_count": 42,
+      "minimum_hull_to_empty_zone_m": 5.976147562212048,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-25",
+      "seconds": 3,
+      "visible_mesh_count": 6,
+      "hull_vertex_count": 47,
+      "minimum_hull_to_empty_zone_m": 10.7105,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-26",
+      "seconds": 3,
+      "visible_mesh_count": 6,
+      "hull_vertex_count": 40,
+      "minimum_hull_to_empty_zone_m": 12.48199512098647,
+      "closest_empty_zone": "Z24",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-27",
+      "seconds": 3,
+      "visible_mesh_count": 7,
+      "hull_vertex_count": 33,
+      "minimum_hull_to_empty_zone_m": 12.214907043937746,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-28",
+      "seconds": 3,
+      "visible_mesh_count": 6,
+      "hull_vertex_count": 44,
+      "minimum_hull_to_empty_zone_m": 7.102996000000001,
+      "closest_empty_zone": "Z24",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-29",
+      "seconds": 3,
+      "visible_mesh_count": 6,
+      "hull_vertex_count": 46,
+      "minimum_hull_to_empty_zone_m": 5.147871000000002,
+      "closest_empty_zone": "Z24",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-30",
+      "seconds": 3,
+      "visible_mesh_count": 7,
+      "hull_vertex_count": 48,
+      "minimum_hull_to_empty_zone_m": 6.356765533266508,
+      "closest_empty_zone": "Z24",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-31",
+      "seconds": 3,
+      "visible_mesh_count": 7,
+      "hull_vertex_count": 42,
+      "minimum_hull_to_empty_zone_m": 6.802534406054042,
+      "closest_empty_zone": "Z24",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-32",
+      "seconds": 3,
+      "visible_mesh_count": 6,
+      "hull_vertex_count": 42,
+      "minimum_hull_to_empty_zone_m": 5.098443502674127,
+      "closest_empty_zone": "Z24",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-33",
+      "seconds": 3,
+      "visible_mesh_count": 7,
+      "hull_vertex_count": 33,
+      "minimum_hull_to_empty_zone_m": 10.9776,
+      "closest_empty_zone": "Z25",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-34",
+      "seconds": 3,
+      "visible_mesh_count": 7,
+      "hull_vertex_count": 42,
+      "minimum_hull_to_empty_zone_m": 16.540638396425692,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-35",
+      "seconds": 3,
+      "visible_mesh_count": 7,
+      "hull_vertex_count": 31,
+      "minimum_hull_to_empty_zone_m": 2.6233178226606473,
+      "closest_empty_zone": "Z29",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-01",
+      "seconds": 6,
+      "visible_mesh_count": 6,
+      "hull_vertex_count": 38,
+      "minimum_hull_to_empty_zone_m": 3.0384441740107713,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-02",
+      "seconds": 6,
+      "visible_mesh_count": 6,
+      "hull_vertex_count": 38,
+      "minimum_hull_to_empty_zone_m": 3.147479,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-03",
+      "seconds": 6,
+      "visible_mesh_count": 6,
+      "hull_vertex_count": 44,
+      "minimum_hull_to_empty_zone_m": 5.462594390313543,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-04",
+      "seconds": 6,
+      "visible_mesh_count": 6,
+      "hull_vertex_count": 42,
+      "minimum_hull_to_empty_zone_m": 5.336311145690907,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-05",
+      "seconds": 6,
+      "visible_mesh_count": 7,
+      "hull_vertex_count": 32,
+      "minimum_hull_to_empty_zone_m": 6.33465561433548,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-06",
+      "seconds": 6,
+      "visible_mesh_count": 6,
+      "hull_vertex_count": 42,
+      "minimum_hull_to_empty_zone_m": 6.250321943083733,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-07",
+      "seconds": 6,
+      "visible_mesh_count": 7,
+      "hull_vertex_count": 36,
+      "minimum_hull_to_empty_zone_m": 7.880589515722603,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-08",
+      "seconds": 6,
+      "visible_mesh_count": 6,
+      "hull_vertex_count": 43,
+      "minimum_hull_to_empty_zone_m": 3.0519040000000004,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-09",
+      "seconds": 6,
+      "visible_mesh_count": 6,
+      "hull_vertex_count": 44,
+      "minimum_hull_to_empty_zone_m": 3.8939909999999998,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-10",
+      "seconds": 6,
+      "visible_mesh_count": 6,
+      "hull_vertex_count": 44,
+      "minimum_hull_to_empty_zone_m": 5.455697999999998,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-11",
+      "seconds": 6,
+      "visible_mesh_count": 6,
+      "hull_vertex_count": 50,
+      "minimum_hull_to_empty_zone_m": 6.355404,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-12",
+      "seconds": 6,
+      "visible_mesh_count": 6,
+      "hull_vertex_count": 44,
+      "minimum_hull_to_empty_zone_m": 7.855332999999998,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-13",
+      "seconds": 6,
+      "visible_mesh_count": 7,
+      "hull_vertex_count": 27,
+      "minimum_hull_to_empty_zone_m": 0.827,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-14",
+      "seconds": 6,
+      "visible_mesh_count": 7,
+      "hull_vertex_count": 42,
+      "minimum_hull_to_empty_zone_m": 14.574043629481865,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-15",
+      "seconds": 6,
+      "visible_mesh_count": 6,
+      "hull_vertex_count": 49,
+      "minimum_hull_to_empty_zone_m": 4.307580647114999,
+      "closest_empty_zone": "Z29",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-16",
+      "seconds": 6,
+      "visible_mesh_count": 7,
+      "hull_vertex_count": 43,
+      "minimum_hull_to_empty_zone_m": 3.4631790000000002,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-17",
+      "seconds": 6,
+      "visible_mesh_count": 6,
+      "hull_vertex_count": 46,
+      "minimum_hull_to_empty_zone_m": 2.9625559999999993,
+      "closest_empty_zone": "Z26",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-18",
+      "seconds": 6,
+      "visible_mesh_count": 6,
+      "hull_vertex_count": 46,
+      "minimum_hull_to_empty_zone_m": 3.058059,
+      "closest_empty_zone": "Z27",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-19",
+      "seconds": 6,
+      "visible_mesh_count": 6,
+      "hull_vertex_count": 44,
+      "minimum_hull_to_empty_zone_m": 9.638346,
+      "closest_empty_zone": "Z26",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-20",
+      "seconds": 6,
+      "visible_mesh_count": 7,
+      "hull_vertex_count": 47,
+      "minimum_hull_to_empty_zone_m": 14.899050844817767,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-21",
+      "seconds": 6,
+      "visible_mesh_count": 6,
+      "hull_vertex_count": 47,
+      "minimum_hull_to_empty_zone_m": 9.686384566097352,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-22",
+      "seconds": 6,
+      "visible_mesh_count": 7,
+      "hull_vertex_count": 31,
+      "minimum_hull_to_empty_zone_m": 11.318317223369073,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-23",
+      "seconds": 6,
+      "visible_mesh_count": 6,
+      "hull_vertex_count": 43,
+      "minimum_hull_to_empty_zone_m": 11.515053288749035,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-24",
+      "seconds": 6,
+      "visible_mesh_count": 6,
+      "hull_vertex_count": 42,
+      "minimum_hull_to_empty_zone_m": 5.976147562212048,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-25",
+      "seconds": 6,
+      "visible_mesh_count": 6,
+      "hull_vertex_count": 47,
+      "minimum_hull_to_empty_zone_m": 10.7105,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-26",
+      "seconds": 6,
+      "visible_mesh_count": 6,
+      "hull_vertex_count": 40,
+      "minimum_hull_to_empty_zone_m": 12.481525460470168,
+      "closest_empty_zone": "Z24",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-27",
+      "seconds": 6,
+      "visible_mesh_count": 7,
+      "hull_vertex_count": 33,
+      "minimum_hull_to_empty_zone_m": 12.21469353475219,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-28",
+      "seconds": 6,
+      "visible_mesh_count": 6,
+      "hull_vertex_count": 44,
+      "minimum_hull_to_empty_zone_m": 7.102996000000001,
+      "closest_empty_zone": "Z24",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-29",
+      "seconds": 6,
+      "visible_mesh_count": 6,
+      "hull_vertex_count": 47,
+      "minimum_hull_to_empty_zone_m": 5.146659,
+      "closest_empty_zone": "Z24",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-30",
+      "seconds": 6,
+      "visible_mesh_count": 7,
+      "hull_vertex_count": 48,
+      "minimum_hull_to_empty_zone_m": 6.3569800898379425,
+      "closest_empty_zone": "Z24",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-31",
+      "seconds": 6,
+      "visible_mesh_count": 7,
+      "hull_vertex_count": 41,
+      "minimum_hull_to_empty_zone_m": 6.802534406054042,
+      "closest_empty_zone": "Z24",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-32",
+      "seconds": 6,
+      "visible_mesh_count": 6,
+      "hull_vertex_count": 44,
+      "minimum_hull_to_empty_zone_m": 5.098481431002766,
+      "closest_empty_zone": "Z24",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-33",
+      "seconds": 6,
+      "visible_mesh_count": 7,
+      "hull_vertex_count": 33,
+      "minimum_hull_to_empty_zone_m": 12.1776,
+      "closest_empty_zone": "Z25",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-34",
+      "seconds": 6,
+      "visible_mesh_count": 7,
+      "hull_vertex_count": 42,
+      "minimum_hull_to_empty_zone_m": 16.39044039442217,
+      "closest_empty_zone": "Z24",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-35",
+      "seconds": 6,
+      "visible_mesh_count": 7,
+      "hull_vertex_count": 31,
+      "minimum_hull_to_empty_zone_m": 2.014104717120736,
+      "closest_empty_zone": "Z29",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-01",
+      "seconds": 9,
+      "visible_mesh_count": 6,
+      "hull_vertex_count": 37,
+      "minimum_hull_to_empty_zone_m": 3.031532481994049,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-02",
+      "seconds": 9,
+      "visible_mesh_count": 6,
+      "hull_vertex_count": 38,
+      "minimum_hull_to_empty_zone_m": 3.147479,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-03",
+      "seconds": 9,
+      "visible_mesh_count": 6,
+      "hull_vertex_count": 44,
+      "minimum_hull_to_empty_zone_m": 5.462594390313543,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-04",
+      "seconds": 9,
+      "visible_mesh_count": 6,
+      "hull_vertex_count": 42,
+      "minimum_hull_to_empty_zone_m": 5.336311145690907,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-05",
+      "seconds": 9,
+      "visible_mesh_count": 7,
+      "hull_vertex_count": 33,
+      "minimum_hull_to_empty_zone_m": 6.33465561433548,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-06",
+      "seconds": 9,
+      "visible_mesh_count": 6,
+      "hull_vertex_count": 42,
+      "minimum_hull_to_empty_zone_m": 6.250291334487458,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-07",
+      "seconds": 9,
+      "visible_mesh_count": 7,
+      "hull_vertex_count": 36,
+      "minimum_hull_to_empty_zone_m": 7.880581778520987,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-08",
+      "seconds": 9,
+      "visible_mesh_count": 6,
+      "hull_vertex_count": 43,
+      "minimum_hull_to_empty_zone_m": 3.0519230000000004,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-09",
+      "seconds": 9,
+      "visible_mesh_count": 6,
+      "hull_vertex_count": 44,
+      "minimum_hull_to_empty_zone_m": 3.8939909999999998,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-10",
+      "seconds": 9,
+      "visible_mesh_count": 6,
+      "hull_vertex_count": 44,
+      "minimum_hull_to_empty_zone_m": 5.455697999999998,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-11",
+      "seconds": 9,
+      "visible_mesh_count": 6,
+      "hull_vertex_count": 47,
+      "minimum_hull_to_empty_zone_m": 6.355404,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-12",
+      "seconds": 9,
+      "visible_mesh_count": 6,
+      "hull_vertex_count": 42,
+      "minimum_hull_to_empty_zone_m": 7.855332999999998,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-13",
+      "seconds": 9,
+      "visible_mesh_count": 7,
+      "hull_vertex_count": 28,
+      "minimum_hull_to_empty_zone_m": 0.827,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-14",
+      "seconds": 9,
+      "visible_mesh_count": 7,
+      "hull_vertex_count": 43,
+      "minimum_hull_to_empty_zone_m": 14.574043629481865,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-15",
+      "seconds": 9,
+      "visible_mesh_count": 6,
+      "hull_vertex_count": 47,
+      "minimum_hull_to_empty_zone_m": 4.306957487767903,
+      "closest_empty_zone": "Z29",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-16",
+      "seconds": 9,
+      "visible_mesh_count": 7,
+      "hull_vertex_count": 42,
+      "minimum_hull_to_empty_zone_m": 3.4631790000000002,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-17",
+      "seconds": 9,
+      "visible_mesh_count": 6,
+      "hull_vertex_count": 48,
+      "minimum_hull_to_empty_zone_m": 2.962534,
+      "closest_empty_zone": "Z26",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-18",
+      "seconds": 9,
+      "visible_mesh_count": 6,
+      "hull_vertex_count": 48,
+      "minimum_hull_to_empty_zone_m": 3.0580099999999995,
+      "closest_empty_zone": "Z27",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-19",
+      "seconds": 9,
+      "visible_mesh_count": 6,
+      "hull_vertex_count": 45,
+      "minimum_hull_to_empty_zone_m": 9.638218,
+      "closest_empty_zone": "Z26",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-20",
+      "seconds": 9,
+      "visible_mesh_count": 7,
+      "hull_vertex_count": 47,
+      "minimum_hull_to_empty_zone_m": 14.899050844817767,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-21",
+      "seconds": 9,
+      "visible_mesh_count": 6,
+      "hull_vertex_count": 43,
+      "minimum_hull_to_empty_zone_m": 9.686436281713156,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-22",
+      "seconds": 9,
+      "visible_mesh_count": 7,
+      "hull_vertex_count": 33,
+      "minimum_hull_to_empty_zone_m": 11.307802575226187,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-23",
+      "seconds": 9,
+      "visible_mesh_count": 6,
+      "hull_vertex_count": 43,
+      "minimum_hull_to_empty_zone_m": 11.515091235921885,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-24",
+      "seconds": 9,
+      "visible_mesh_count": 6,
+      "hull_vertex_count": 42,
+      "minimum_hull_to_empty_zone_m": 5.976147562212048,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-25",
+      "seconds": 9,
+      "visible_mesh_count": 6,
+      "hull_vertex_count": 46,
+      "minimum_hull_to_empty_zone_m": 10.7105,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-26",
+      "seconds": 9,
+      "visible_mesh_count": 6,
+      "hull_vertex_count": 40,
+      "minimum_hull_to_empty_zone_m": 12.481824158983576,
+      "closest_empty_zone": "Z24",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-27",
+      "seconds": 9,
+      "visible_mesh_count": 7,
+      "hull_vertex_count": 33,
+      "minimum_hull_to_empty_zone_m": 12.214959007820696,
+      "closest_empty_zone": "Z28",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-28",
+      "seconds": 9,
+      "visible_mesh_count": 6,
+      "hull_vertex_count": 44,
+      "minimum_hull_to_empty_zone_m": 7.102996000000001,
+      "closest_empty_zone": "Z24",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-29",
+      "seconds": 9,
+      "visible_mesh_count": 6,
+      "hull_vertex_count": 46,
+      "minimum_hull_to_empty_zone_m": 5.147704000000001,
+      "closest_empty_zone": "Z24",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-30",
+      "seconds": 9,
+      "visible_mesh_count": 7,
+      "hull_vertex_count": 48,
+      "minimum_hull_to_empty_zone_m": 6.356588580231068,
+      "closest_empty_zone": "Z24",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-31",
+      "seconds": 9,
+      "visible_mesh_count": 7,
+      "hull_vertex_count": 42,
+      "minimum_hull_to_empty_zone_m": 6.802534406054042,
+      "closest_empty_zone": "Z24",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-32",
+      "seconds": 9,
+      "visible_mesh_count": 6,
+      "hull_vertex_count": 42,
+      "minimum_hull_to_empty_zone_m": 5.098441132159223,
+      "closest_empty_zone": "Z24",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-33",
+      "seconds": 9,
+      "visible_mesh_count": 7,
+      "hull_vertex_count": 33,
+      "minimum_hull_to_empty_zone_m": 13.377600000000001,
+      "closest_empty_zone": "Z25",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-34",
+      "seconds": 9,
+      "visible_mesh_count": 7,
+      "hull_vertex_count": 42,
+      "minimum_hull_to_empty_zone_m": 15.200789440399536,
+      "closest_empty_zone": "Z24",
+      "hull_separated_from_all_empty_zones": true
+    },
+    {
+      "id": "office-person-35",
+      "seconds": 9,
+      "visible_mesh_count": 7,
+      "hull_vertex_count": 31,
+      "minimum_hull_to_empty_zone_m": 1.9012829999999998,
+      "closest_empty_zone": "Z29",
+      "hull_separated_from_all_empty_zones": true
+    }
+  ],
+  "limitations": [
+    "Finite actual animation snapshots, not proof of every time in a continuous animation cycle.",
+    "Rug tops use source rectangular footprints; no failure located near a rug border should be accepted without exact triangle follow-up.",
+    "Used shoe vertices can demonstrate penetration; no all-mesh floor collision or physiological gait certification is claimed.",
+    "Empty-zone convex hull separation is conservative and covers every displayed triangle at each exported time, including hand props, but does not alone cover every time or every path location.",
+    "Furniture, hair/eye intersections, rendered realism and mutual visitor/actor interaction remain separate reviews."
+  ]
+}

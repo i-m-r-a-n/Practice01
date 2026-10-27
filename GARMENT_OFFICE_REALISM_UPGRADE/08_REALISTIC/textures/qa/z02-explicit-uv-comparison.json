@@ -1,0 +1,31 @@
+{
+  "scope": "Same2K/32 Reception diagnostic, previous omitted-bake-UV vs explicit LightmapUV target. Source shader UV0 stays render-active. No production overwrite.",
+  "sources": [
+    {
+      "path": "/workspace/office-bake-work/diagnostic-z02/Z02_raw.exr",
+      "sha256": "5b514f9e5a5c1f4c2d8c6298f7e82fd2ac0b866ab6cac61c78753978b54c64ea"
+    },
+    {
+      "path": "/workspace/office-bake-work/explicit-uv-z02/Z02_raw.exr",
+      "sha256": "ee9d9da9261249e47b664679b1fd4843235dae23f2cf53104a089188580dbf58"
+    }
+  ],
+  "shape": [
+    2048,
+    2048,
+    3
+  ],
+  "bitwiseEqual": false,
+  "meanAbsRGB": 3.9775235882721915e-10,
+  "maxAbsRGB": 0.0009765625,
+  "changedChannelFraction": 1.1920928955078125e-06,
+  "oldMax": 52.46875,
+  "explicitUVMax": 52.46875,
+  "oldNonzeroPixels": 2342743,
+  "explicitUVNonzeroPixels": 2342743,
+  "matchingGLB_UV1": {
+    "primitiveCountBefore": 37,
+    "primitiveCountAfter": 37,
+    "sameUV1Arrays": true
+  }
+}

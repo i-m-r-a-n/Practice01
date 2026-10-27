@@ -1,0 +1,23 @@
+{
+  "capture_method": "Immutable scripts before execution",
+  "command": [
+    "/workspace/tools/blender-5.2.3-linux-x64/blender",
+    "-b",
+    "/workspace/office-bake-work/approved-copy.blend",
+    "-t",
+    "2",
+    "--python-exit-code",
+    "1",
+    "--python",
+    "/workspace/office-realism/GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/blender/run-snapshots/doorway-export-20261027T163942Z/export_doorway_repairs.py",
+    "--",
+    "--output-root",
+    "/workspace/office-realism/GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/lighting-v2"
+  ],
+  "scripts": {
+    "export_doorway_repairs.py": "5cc12d2bee29fade32e020e542e197a68eeda8278f7f9a9b05097b333c49dc3d",
+    "doorway_repairs.py": "f8fe367f72b3339fdf97559c1c54a860ef001731e9317b00f782a03db3546c78"
+  },
+  "status": "completed",
+  "returncode": 0
+}

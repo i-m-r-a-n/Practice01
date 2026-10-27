@@ -1,0 +1,44 @@
+{
+  "dressing": {
+    "enabled": true,
+    "props": {
+      "props": 323,
+      "instances": 1473,
+      "drawCalls": 49,
+      "triangles": 128786,
+      "atlasSize": [
+        2048,
+        2048
+      ],
+      "rooms": 28
+    },
+    "screens": {},
+    "peopleAccepted": false,
+    "errors": [],
+    "dynamicLighting": "Room SH for actors; instance SH for additive props; static lightmaps exclude both."
+  },
+  "stats": {
+    "frame": 36,
+    "calls": 187,
+    "triangles": 1817708,
+    "points": 0,
+    "lines": 0,
+    "memory": {
+      "geometries": 129,
+      "textures": 70
+    },
+    "phase": 4,
+    "capturePostProcessing": false,
+    "post": null
+  },
+  "people": {
+    "enabled": false,
+    "loaded": false,
+    "total": 0,
+    "visible": 0,
+    "illustrative": true,
+    "accepted": false
+  },
+  "errors": [],
+  "browserErrors": []
+}

@@ -1,0 +1,47 @@
+{
+  "codec": "HDR EXR to KTX pixels verified bit-exact; no codec-induced noise found",
+  "tests": [
+    {
+      "test": "explicit bake UV target",
+      "result": "No meaningful change in raw pixels; gross UV-target mismatch ruled out",
+      "evidence": "z02-explicit-uv-comparison.json"
+    },
+    {
+      "test": "global RTLightmap at32samples",
+      "result": "Rejected by actual-image review; still mottled",
+      "source": "webgl engineer visual review"
+    },
+    {
+      "test": "chart-isolated RTLightmap at32samples",
+      "result": "Rejected by actual-image review; grain on beams, slats, chair and sofa worse than original256samplecandidate",
+      "tinyChartLimit": "683 charts have1\u20137 pixels and retain raw;421 charts have no pixel centres",
+      "image": "/tmp/office-phase1-reception-chart-isolated.png",
+      "imageSHA256": "cbd967b3b239bed0bbc1afbb95ce589e0994ed742e2c9e9ab74e13490f061abb"
+    },
+    {
+      "test": "RT normal-only guide",
+      "result": "Unsupported input feature combination; no output generated",
+      "evidence": "z02-normal-guided-attempt.json"
+    },
+    {
+      "test": "source emitter groups at32samples",
+      "result": "Target-material raw high-frequency RMS effectively unchanged; actual visual verdict pending",
+      "evidence": "z02-emitter-groups-comparison.json"
+    },
+    {
+      "test": "RTLightmap at 512 samples",
+      "result": "Provisional only; visible broad beam/chair mottling in Reception-only context. Awaiting shared-lit context, not visually accepted.",
+      "image": "/tmp/office-phase1-reception-512.png"
+    },
+    {
+      "test": "RT with actual albedo and normal guides at 512 samples",
+      "result": "Rejected by root, viewer and independent actual-image review: textured sofa/rug/chair mottling remains. Input is no-albedo illumination; RT beauty-image albedo guidance may preserve unwanted texture correlation.",
+      "evidence": "z02-512-guided-rt.json",
+      "image": "/tmp/office-guided512-independent-fixed/shots/after_CAM_01_Reception_A.png",
+      "imageSHA256": "8f072b4f39d7c6a3d6d795db784076614f924957e8253e8dc71c05c1479052eb",
+      "browserEvidence": "/tmp/office-guided512-independent-fixed/capture.json"
+    }
+  ],
+  "productionOverwrite": false,
+  "next": "Wait for shared WALLS/STRUCTURE/FLOOR/DECK lighting context; immediately convert completed EXRs. No atlas currently accepted for production HDR previews."
+}

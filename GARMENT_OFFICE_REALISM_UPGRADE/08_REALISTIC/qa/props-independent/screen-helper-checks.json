@@ -1,0 +1,1360 @@
+{
+  "helperSha256": "49d74477d5197099f241899bb22a86b405d8c15ef702c28a50a24ec067490f43",
+  "sourceGlbSha256": "3b883c0077541aa3c574c903cfad60a3b8ba410d12af6d6b476b7733230fc35d",
+  "joinedSourceMeshes": 29,
+  "screenComponents": 57,
+  "skipped": [],
+  "idempotentSecondApply": true,
+  "checks": [
+    {
+      "mesh": "F001 security_desk",
+      "positionExact": true,
+      "normalExact": true,
+      "uv1Exact": true,
+      "indexExact": true,
+      "physicalNonScreenUVExact": true,
+      "nonScreenMaterialsIdentical": true
+    },
+    {
+      "mesh": "F006 reception_desk",
+      "positionExact": true,
+      "normalExact": true,
+      "uv1Exact": true,
+      "indexExact": true,
+      "physicalNonScreenUVExact": true,
+      "nonScreenMaterialsIdentical": true
+    },
+    {
+      "mesh": "F028 totem",
+      "positionExact": true,
+      "normalExact": true,
+      "uv1Exact": true,
+      "indexExact": true,
+      "physicalNonScreenUVExact": true,
+      "nonScreenMaterialsIdentical": true
+    },
+    {
+      "mesh": "F047 screen_86",
+      "positionExact": true,
+      "normalExact": true,
+      "uv1Exact": true,
+      "indexExact": true,
+      "physicalNonScreenUVExact": true,
+      "nonScreenMaterialsIdentical": true
+    },
+    {
+      "mesh": "F051 desk_single",
+      "positionExact": true,
+      "normalExact": true,
+      "uv1Exact": true,
+      "indexExact": true,
+      "physicalNonScreenUVExact": true,
+      "nonScreenMaterialsIdentical": true
+    },
+    {
+      "mesh": "F057 exec_desk_dir",
+      "positionExact": true,
+      "normalExact": true,
+      "uv1Exact": true,
+      "indexExact": true,
+      "physicalNonScreenUVExact": true,
+      "nonScreenMaterialsIdentical": true
+    },
+    {
+      "mesh": "F063 exec_desk_md",
+      "positionExact": true,
+      "normalExact": true,
+      "uv1Exact": true,
+      "indexExact": true,
+      "physicalNonScreenUVExact": true,
+      "nonScreenMaterialsIdentical": true
+    },
+    {
+      "mesh": "F073 bench3",
+      "positionExact": true,
+      "normalExact": true,
+      "uv1Exact": true,
+      "indexExact": true,
+      "physicalNonScreenUVExact": true,
+      "nonScreenMaterialsIdentical": true
+    },
+    {
+      "mesh": "F080 bench3",
+      "positionExact": true,
+      "normalExact": true,
+      "uv1Exact": true,
+      "indexExact": true,
+      "physicalNonScreenUVExact": true,
+      "nonScreenMaterialsIdentical": true
+    },
+    {
+      "mesh": "F087 bench2",
+      "positionExact": true,
+      "normalExact": true,
+      "uv1Exact": true,
+      "indexExact": true,
+      "physicalNonScreenUVExact": true,
+      "nonScreenMaterialsIdentical": true
+    },
+    {
+      "mesh": "F110 bench3",
+      "positionExact": true,
+      "normalExact": true,
+      "uv1Exact": true,
+      "indexExact": true,
+      "physicalNonScreenUVExact": true,
+      "nonScreenMaterialsIdentical": true
+    },
+    {
+      "mesh": "F117 bench3",
+      "positionExact": true,
+      "normalExact": true,
+      "uv1Exact": true,
+      "indexExact": true,
+      "physicalNonScreenUVExact": true,
+      "nonScreenMaterialsIdentical": true
+    },
+    {
+      "mesh": "F124 desk_single",
+      "positionExact": true,
+      "normalExact": true,
+      "uv1Exact": true,
+      "indexExact": true,
+      "physicalNonScreenUVExact": true,
+      "nonScreenMaterialsIdentical": true
+    },
+    {
+      "mesh": "F139 bench2",
+      "positionExact": true,
+      "normalExact": true,
+      "uv1Exact": true,
+      "indexExact": true,
+      "physicalNonScreenUVExact": true,
+      "nonScreenMaterialsIdentical": true
+    },
+    {
+      "mesh": "F157 screen_55",
+      "positionExact": true,
+      "normalExact": true,
+      "uv1Exact": true,
+      "indexExact": true,
+      "physicalNonScreenUVExact": true,
+      "nonScreenMaterialsIdentical": true
+    },
+    {
+      "mesh": "F179 cad_desk",
+      "positionExact": true,
+      "normalExact": true,
+      "uv1Exact": true,
+      "indexExact": true,
+      "physicalNonScreenUVExact": true,
+      "nonScreenMaterialsIdentical": true
+    },
+    {
+      "mesh": "F181 cad_desk",
+      "positionExact": true,
+      "normalExact": true,
+      "uv1Exact": true,
+      "indexExact": true,
+      "physicalNonScreenUVExact": true,
+      "nonScreenMaterialsIdentical": true
+    },
+    {
+      "mesh": "F183 cad_desk",
+      "positionExact": true,
+      "normalExact": true,
+      "uv1Exact": true,
+      "indexExact": true,
+      "physicalNonScreenUVExact": true,
+      "nonScreenMaterialsIdentical": true
+    },
+    {
+      "mesh": "F185 plotter",
+      "positionExact": true,
+      "normalExact": true,
+      "uv1Exact": true,
+      "indexExact": true,
+      "physicalNonScreenUVExact": true,
+      "nonScreenMaterialsIdentical": true
+    },
+    {
+      "mesh": "F188 screen_65",
+      "positionExact": true,
+      "normalExact": true,
+      "uv1Exact": true,
+      "indexExact": true,
+      "physicalNonScreenUVExact": true,
+      "nonScreenMaterialsIdentical": true
+    },
+    {
+      "mesh": "F198 printer3d",
+      "positionExact": true,
+      "normalExact": true,
+      "uv1Exact": true,
+      "indexExact": true,
+      "physicalNonScreenUVExact": true,
+      "nonScreenMaterialsIdentical": true
+    },
+    {
+      "mesh": "F199 printer3d",
+      "positionExact": true,
+      "normalExact": true,
+      "uv1Exact": true,
+      "indexExact": true,
+      "physicalNonScreenUVExact": true,
+      "nonScreenMaterialsIdentical": true
+    },
+    {
+      "mesh": "F200 printer3d",
+      "positionExact": true,
+      "normalExact": true,
+      "uv1Exact": true,
+      "indexExact": true,
+      "physicalNonScreenUVExact": true,
+      "nonScreenMaterialsIdentical": true
+    },
+    {
+      "mesh": "F201 printer3d",
+      "positionExact": true,
+      "normalExact": true,
+      "uv1Exact": true,
+      "indexExact": true,
+      "physicalNonScreenUVExact": true,
+      "nonScreenMaterialsIdentical": true
+    },
+    {
+      "mesh": "F203 desk_single",
+      "positionExact": true,
+      "normalExact": true,
+      "uv1Exact": true,
+      "indexExact": true,
+      "physicalNonScreenUVExact": true,
+      "nonScreenMaterialsIdentical": true
+    },
+    {
+      "mesh": "F216 bench_design",
+      "positionExact": true,
+      "normalExact": true,
+      "uv1Exact": true,
+      "indexExact": true,
+      "physicalNonScreenUVExact": true,
+      "nonScreenMaterialsIdentical": true
+    },
+    {
+      "mesh": "F221 bench_design",
+      "positionExact": true,
+      "normalExact": true,
+      "uv1Exact": true,
+      "indexExact": true,
+      "physicalNonScreenUVExact": true,
+      "nonScreenMaterialsIdentical": true
+    },
+    {
+      "mesh": "F243 screen_86",
+      "positionExact": true,
+      "normalExact": true,
+      "uv1Exact": true,
+      "indexExact": true,
+      "physicalNonScreenUVExact": true,
+      "nonScreenMaterialsIdentical": true
+    },
+    {
+      "mesh": "F277 screen_75",
+      "positionExact": true,
+      "normalExact": true,
+      "uv1Exact": true,
+      "indexExact": true,
+      "physicalNonScreenUVExact": true,
+      "nonScreenMaterialsIdentical": true
+    }
+  ],
+  "touched": [
+    {
+      "mesh": "F001 security_desk",
+      "zone": "Z01",
+      "component": 0,
+      "vertices": 24,
+      "worldBounds": {
+        "min": [
+          5.5498998544203495,
+          0.8839199542999268,
+          3.1407100772159238
+        ],
+        "max": [
+          6.083299853673069,
+          1.1950699090957642,
+          3.1419801200134616
+        ]
+      },
+      "content": "sheet"
+    },
+    {
+      "mesh": "F006 reception_desk",
+      "zone": "Z02",
+      "component": 0,
+      "vertices": 24,
+      "worldBounds": {
+        "min": [
+          12.758419692510156,
+          0.8889999985694885,
+          4.000499967402662
+        ],
+        "max": [
+          12.759689812668109,
+          1.2001500129699707,
+          4.533900068184325
+        ]
+      },
+      "content": "sheet"
+    },
+    {
+      "mesh": "F006 reception_desk",
+      "zone": "Z02",
+      "component": 1,
+      "vertices": 24,
+      "worldBounds": {
+        "min": [
+          12.758419788066178,
+          0.8889999985694885,
+          3.289299902793379
+        ],
+        "max": [
+          12.759689908224123,
+          1.2001500129699707,
+          3.822699952352293
+        ]
+      },
+      "content": "messages"
+    },
+    {
+      "mesh": "F028 totem",
+      "zone": "Z30",
+      "component": 0,
+      "vertices": 24,
+      "worldBounds": {
+        "min": [
+          9.790430079659304,
+          0.010160000063478947,
+          -7.965439937557353
+        ],
+        "max": [
+          9.792970168884171,
+          1.2598398923873901,
+          -7.274559843798956
+        ]
+      },
+      "content": "portrait-sample-guide"
+    },
+    {
+      "mesh": "F047 screen_86",
+      "zone": "Z08",
+      "component": 0,
+      "vertices": 24,
+      "worldBounds": {
+        "min": [
+          12.449809446837097,
+          1.0261600324884057,
+          -3.7871400827191106
+        ],
+        "max": [
+          12.45234970204749,
+          2.0726399421691895,
+          -1.9024599156335882
+        ]
+      },
+      "content": "presentation"
+    },
+    {
+      "mesh": "F051 desk_single",
+      "zone": "Z10",
+      "component": 0,
+      "vertices": 24,
+      "worldBounds": {
+        "min": [
+          15.76196947528466,
+          0.8839199542999268,
+          2.5780999852721003
+        ],
+        "max": [
+          15.763239543288538,
+          1.1950699090957642,
+          3.1115000562514425
+        ]
+      },
+      "content": "sheet"
+    },
+    {
+      "mesh": "F057 exec_desk_dir",
+      "zone": "Z11",
+      "component": 0,
+      "vertices": 24,
+      "worldBounds": {
+        "min": [
+          19.627850279211998,
+          0.8839199542999268,
+          3.995419830083847
+        ],
+        "max": [
+          20.30095025897026,
+          1.2636499404907227,
+          3.9966898262500763
+        ]
+      },
+      "content": "sheet"
+    },
+    {
+      "mesh": "F063 exec_desk_md",
+      "zone": "Z12",
+      "component": 0,
+      "vertices": 24,
+      "worldBounds": {
+        "min": [
+          25.977850660681725,
+          0.8839199542999268,
+          3.7668198198080063
+        ],
+        "max": [
+          26.650950640439987,
+          1.2636499404907227,
+          3.7680898159742355
+        ]
+      },
+      "content": "sheet"
+    },
+    {
+      "mesh": "F073 bench3",
+      "zone": "Z07",
+      "component": 0,
+      "vertices": 24,
+      "worldBounds": {
+        "min": [
+          12.115799695253372,
+          0.8839199542999268,
+          -18.58518087863922
+        ],
+        "max": [
+          12.649199694395065,
+          1.1950699090957642,
+          -18.583910882472992
+        ]
+      },
+      "content": "sheet"
+    },
+    {
+      "mesh": "F073 bench3",
+      "zone": "Z07",
+      "component": 1,
+      "vertices": 24,
+      "worldBounds": {
+        "min": [
+          13.512799739837646,
+          0.8839199542999268,
+          -18.58518087863922
+        ],
+        "max": [
+          14.046199679374695,
+          1.1950699090957642,
+          -18.583910882472992
+        ]
+      },
+      "content": "messages"
+    },
+    {
+      "mesh": "F073 bench3",
+      "zone": "Z07",
+      "component": 2,
+      "vertices": 24,
+      "worldBounds": {
+        "min": [
+          10.718799710273743,
+          0.8839199542999268,
+          -19.13509091734886
+        ],
+        "max": [
+          11.252199649810791,
+          1.1950699090957642,
+          -19.133820861577988
+        ]
+      },
+      "content": "sheet"
+    },
+    {
+      "mesh": "F073 bench3",
+      "zone": "Z07",
+      "component": 3,
+      "vertices": 24,
+      "worldBounds": {
+        "min": [
+          12.115799695253372,
+          0.8839199542999268,
+          -19.13509091734886
+        ],
+        "max": [
+          12.649199694395065,
+          1.1950699090957642,
+          -19.133820861577988
+        ]
+      },
+      "content": "messages"
+    },
+    {
+      "mesh": "F073 bench3",
+      "zone": "Z07",
+      "component": 4,
+      "vertices": 24,
+      "worldBounds": {
+        "min": [
+          13.512799739837646,
+          0.8839199542999268,
+          -19.13509091734886
+        ],
+        "max": [
+          14.046199679374695,
+          1.1950699090957642,
+          -19.133820861577988
+        ]
+      },
+      "content": "sheet"
+    },
+    {
+      "mesh": "F080 bench3",
+      "zone": "Z07",
+      "component": 0,
+      "vertices": 24,
+      "worldBounds": {
+        "min": [
+          12.115799695253372,
+          0.8839199542999268,
+          -14.521179795265198
+        ],
+        "max": [
+          12.649199694395065,
+          1.1950699090957642,
+          -14.519909799098969
+        ]
+      },
+      "content": "sheet"
+    },
+    {
+      "mesh": "F080 bench3",
+      "zone": "Z07",
+      "component": 1,
+      "vertices": 24,
+      "worldBounds": {
+        "min": [
+          13.512799739837646,
+          0.8839199542999268,
+          -14.521179795265198
+        ],
+        "max": [
+          14.046199679374695,
+          1.1950699090957642,
+          -14.519909799098969
+        ]
+      },
+      "content": "messages"
+    },
+    {
+      "mesh": "F080 bench3",
+      "zone": "Z07",
+      "component": 2,
+      "vertices": 24,
+      "worldBounds": {
+        "min": [
+          10.718799710273743,
+          0.8839199542999268,
+          -15.071089833974838
+        ],
+        "max": [
+          11.252199649810791,
+          1.1950699090957642,
+          -15.069819778203964
+        ]
+      },
+      "content": "sheet"
+    },
+    {
+      "mesh": "F080 bench3",
+      "zone": "Z07",
+      "component": 3,
+      "vertices": 24,
+      "worldBounds": {
+        "min": [
+          12.115799695253372,
+          0.8839199542999268,
+          -15.071089833974838
+        ],
+        "max": [
+          12.649199694395065,
+          1.1950699090957642,
+          -15.069819778203964
+        ]
+      },
+      "content": "messages"
+    },
+    {
+      "mesh": "F080 bench3",
+      "zone": "Z07",
+      "component": 4,
+      "vertices": 24,
+      "worldBounds": {
+        "min": [
+          13.512799739837646,
+          0.8839199542999268,
+          -15.071089833974838
+        ],
+        "max": [
+          14.046199679374695,
+          1.1950699090957642,
+          -15.069819778203964
+        ]
+      },
+      "content": "sheet"
+    },
+    {
+      "mesh": "F087 bench2",
+      "zone": "Z07",
+      "component": 0,
+      "vertices": 24,
+      "worldBounds": {
+        "min": [
+          18.592799305915833,
+          0.8839199542999268,
+          -18.58518087863922
+        ],
+        "max": [
+          19.126199305057526,
+          1.1950699090957642,
+          -18.583910882472992
+        ]
+      },
+      "content": "sheet"
+    },
+    {
+      "mesh": "F087 bench2",
+      "zone": "Z07",
+      "component": 1,
+      "vertices": 24,
+      "worldBounds": {
+        "min": [
+          17.19579929113388,
+          0.8839199542999268,
+          -19.13509091734886
+        ],
+        "max": [
+          17.729199290275574,
+          1.1950699090957642,
+          -19.133820861577988
+        ]
+      },
+      "content": "messages"
+    },
+    {
+      "mesh": "F087 bench2",
+      "zone": "Z07",
+      "component": 2,
+      "vertices": 24,
+      "worldBounds": {
+        "min": [
+          18.592799305915833,
+          0.8839199542999268,
+          -19.13509091734886
+        ],
+        "max": [
+          19.126199305057526,
+          1.1950699090957642,
+          -19.133820861577988
+        ]
+      },
+      "content": "sheet"
+    },
+    {
+      "mesh": "F110 bench3",
+      "zone": "Z06",
+      "component": 0,
+      "vertices": 24,
+      "worldBounds": {
+        "min": [
+          4.06399992108345,
+          0.8839199542999268,
+          -15.99437963962555
+        ],
+        "max": [
+          4.597399920225143,
+          1.1950699090957642,
+          -15.99310964345932
+        ]
+      },
+      "content": "sheet"
+    },
+    {
+      "mesh": "F110 bench3",
+      "zone": "Z06",
+      "component": 1,
+      "vertices": 24,
+      "worldBounds": {
+        "min": [
+          5.460999965667725,
+          0.8839199542999268,
+          -15.99437963962555
+        ],
+        "max": [
+          5.994399905204773,
+          1.1950699090957642,
+          -15.99310964345932
+        ]
+      },
+      "content": "messages"
+    },
+    {
+      "mesh": "F110 bench3",
+      "zone": "Z06",
+      "component": 2,
+      "vertices": 24,
+      "worldBounds": {
+        "min": [
+          2.666999936103821,
+          0.8839199542999268,
+          -16.54428967833519
+        ],
+        "max": [
+          3.200399875640869,
+          1.1950699090957642,
+          -16.543019622564316
+        ]
+      },
+      "content": "sheet"
+    },
+    {
+      "mesh": "F110 bench3",
+      "zone": "Z06",
+      "component": 3,
+      "vertices": 24,
+      "worldBounds": {
+        "min": [
+          4.06399992108345,
+          0.8839199542999268,
+          -16.54428967833519
+        ],
+        "max": [
+          4.597399920225143,
+          1.1950699090957642,
+          -16.543019622564316
+        ]
+      },
+      "content": "messages"
+    },
+    {
+      "mesh": "F110 bench3",
+      "zone": "Z06",
+      "component": 4,
+      "vertices": 24,
+      "worldBounds": {
+        "min": [
+          5.460999965667725,
+          0.8839199542999268,
+          -16.54428967833519
+        ],
+        "max": [
+          5.994399905204773,
+          1.1950699090957642,
+          -16.543019622564316
+        ]
+      },
+      "content": "sheet"
+    },
+    {
+      "mesh": "F117 bench3",
+      "zone": "Z06",
+      "component": 0,
+      "vertices": 24,
+      "worldBounds": {
+        "min": [
+          4.06399992108345,
+          0.8839199542999268,
+          -12.04468023777008
+        ],
+        "max": [
+          4.597399920225143,
+          1.1950699090957642,
+          -12.043410241603851
+        ]
+      },
+      "content": "sheet"
+    },
+    {
+      "mesh": "F117 bench3",
+      "zone": "Z06",
+      "component": 1,
+      "vertices": 24,
+      "worldBounds": {
+        "min": [
+          5.460999965667725,
+          0.8839199542999268,
+          -12.04468023777008
+        ],
+        "max": [
+          5.994399905204773,
+          1.1950699090957642,
+          -12.043410241603851
+        ]
+      },
+      "content": "messages"
+    },
+    {
+      "mesh": "F117 bench3",
+      "zone": "Z06",
+      "component": 2,
+      "vertices": 24,
+      "worldBounds": {
+        "min": [
+          2.666999936103821,
+          0.8839199542999268,
+          -12.594590276479721
+        ],
+        "max": [
+          3.200399875640869,
+          1.1950699090957642,
+          -12.593320220708847
+        ]
+      },
+      "content": "sheet"
+    },
+    {
+      "mesh": "F117 bench3",
+      "zone": "Z06",
+      "component": 3,
+      "vertices": 24,
+      "worldBounds": {
+        "min": [
+          4.06399992108345,
+          0.8839199542999268,
+          -12.594590276479721
+        ],
+        "max": [
+          4.597399920225143,
+          1.1950699090957642,
+          -12.593320220708847
+        ]
+      },
+      "content": "messages"
+    },
+    {
+      "mesh": "F117 bench3",
+      "zone": "Z06",
+      "component": 4,
+      "vertices": 24,
+      "worldBounds": {
+        "min": [
+          5.460999965667725,
+          0.8839199542999268,
+          -12.594590276479721
+        ],
+        "max": [
+          5.994399905204773,
+          1.1950699090957642,
+          -12.593320220708847
+        ]
+      },
+      "content": "sheet"
+    },
+    {
+      "mesh": "F124 desk_single",
+      "zone": "Z06",
+      "component": 0,
+      "vertices": 24,
+      "worldBounds": {
+        "min": [
+          4.17830017209053,
+          0.8839199542999268,
+          -8.571229964494705
+        ],
+        "max": [
+          4.7117001712322235,
+          1.1950699090957642,
+          -8.569959968328476
+        ]
+      },
+      "content": "sheet"
+    },
+    {
+      "mesh": "F139 bench2",
+      "zone": "Z05",
+      "component": 0,
+      "vertices": 24,
+      "worldBounds": {
+        "min": [
+          6.781799912452698,
+          0.8839199542999268,
+          -3.7896801233291626
+        ],
+        "max": [
+          7.315199911594391,
+          1.1950699090957642,
+          -3.7884101271629333
+        ]
+      },
+      "content": "sheet"
+    },
+    {
+      "mesh": "F139 bench2",
+      "zone": "Z05",
+      "component": 1,
+      "vertices": 24,
+      "worldBounds": {
+        "min": [
+          5.384799897670746,
+          0.8839199542999268,
+          -4.339590162038803
+        ],
+        "max": [
+          5.918199896812439,
+          1.1950699090957642,
+          -4.338320106267929
+        ]
+      },
+      "content": "messages"
+    },
+    {
+      "mesh": "F139 bench2",
+      "zone": "Z05",
+      "component": 2,
+      "vertices": 24,
+      "worldBounds": {
+        "min": [
+          6.781799912452698,
+          0.8839199542999268,
+          -4.339590162038803
+        ],
+        "max": [
+          7.315199911594391,
+          1.1950699090957642,
+          -4.338320106267929
+        ]
+      },
+      "content": "sheet"
+    },
+    {
+      "mesh": "F157 screen_55",
+      "zone": "Z04",
+      "component": 0,
+      "vertices": 24,
+      "worldBounds": {
+        "min": [
+          -0.24383997917175293,
+          0.9753600070253015,
+          -3.8061899952590466
+        ],
+        "max": [
+          0.9550399780273438,
+          1.6408399939537048,
+          -3.8036499936133623
+        ]
+      },
+      "content": "sheet"
+    },
+    {
+      "mesh": "F179 cad_desk",
+      "zone": "Z14",
+      "component": 0,
+      "vertices": 24,
+      "worldBounds": {
+        "min": [
+          22.461219735783324,
+          0.8839199542999268,
+          -5.689600124228049
+        ],
+        "max": [
+          22.4624898037872,
+          1.1950699090957642,
+          -5.156200070012515
+        ]
+      },
+      "content": "garment-pattern"
+    },
+    {
+      "mesh": "F179 cad_desk",
+      "zone": "Z14",
+      "component": 1,
+      "vertices": 24,
+      "worldBounds": {
+        "min": [
+          22.461219657290883,
+          0.8839199542999268,
+          -6.2738001844844495
+        ],
+        "max": [
+          22.46248972529476,
+          1.1950699090957642,
+          -5.740400130268916
+        ]
+      },
+      "content": "garment-pattern"
+    },
+    {
+      "mesh": "F181 cad_desk",
+      "zone": "Z14",
+      "component": 0,
+      "vertices": 24,
+      "worldBounds": {
+        "min": [
+          22.461219735783324,
+          0.8839199542999268,
+          -3.9116000078797826
+        ],
+        "max": [
+          22.4624898037872,
+          1.1950699090957642,
+          -3.378199953664249
+        ]
+      },
+      "content": "garment-pattern"
+    },
+    {
+      "mesh": "F181 cad_desk",
+      "zone": "Z14",
+      "component": 1,
+      "vertices": 24,
+      "worldBounds": {
+        "min": [
+          22.461219657290883,
+          0.8839199542999268,
+          -4.495800068136183
+        ],
+        "max": [
+          22.46248972529476,
+          1.1950699090957642,
+          -3.9624000139206492
+        ]
+      },
+      "content": "garment-pattern"
+    },
+    {
+      "mesh": "F183 cad_desk",
+      "zone": "Z14",
+      "component": 0,
+      "vertices": 24,
+      "worldBounds": {
+        "min": [
+          22.461219735783324,
+          0.8839199542999268,
+          -2.133599891531516
+        ],
+        "max": [
+          22.4624898037872,
+          1.1950699090957642,
+          -1.6001998373159823
+        ]
+      },
+      "content": "garment-pattern"
+    },
+    {
+      "mesh": "F183 cad_desk",
+      "zone": "Z14",
+      "component": 1,
+      "vertices": 24,
+      "worldBounds": {
+        "min": [
+          22.461219657290883,
+          0.8839199542999268,
+          -2.7177999517879163
+        ],
+        "max": [
+          22.46248972529476,
+          1.1950699090957642,
+          -2.1843998975723826
+        ]
+      },
+      "content": "garment-pattern"
+    },
+    {
+      "mesh": "F185 plotter",
+      "zone": "Z14",
+      "component": 0,
+      "vertices": 24,
+      "worldBounds": {
+        "min": [
+          24.307799071897826,
+          0.9905999898910522,
+          -0.941069969126439
+        ],
+        "max": [
+          24.434799106530456,
+          1.0667999982833862,
+          -0.9321799252554939
+        ]
+      },
+      "content": "garment-pattern"
+    },
+    {
+      "mesh": "F188 screen_65",
+      "zone": "Z14",
+      "component": 0,
+      "vertices": 24,
+      "worldBounds": {
+        "min": [
+          24.432259917259216,
+          1.0769599983468652,
+          -6.473189812153578
+        ],
+        "max": [
+          25.859739899635315,
+          1.8694400191307068,
+          -6.470649810507894
+        ]
+      },
+      "content": "garment-pattern"
+    },
+    {
+      "mesh": "F198 printer3d",
+      "zone": "Z16",
+      "component": 0,
+      "vertices": 24,
+      "worldBounds": {
+        "min": [
+          22.78379951417446,
+          0.8026400078088045,
+          -14.55927987396717
+        ],
+        "max": [
+          22.910799510776997,
+          0.8483600094914436,
+          -14.552929878234863
+        ]
+      },
+      "content": "sheet"
+    },
+    {
+      "mesh": "F199 printer3d",
+      "zone": "Z16",
+      "component": 0,
+      "vertices": 24,
+      "worldBounds": {
+        "min": [
+          23.545800551772118,
+          0.8026400078088045,
+          -14.55927987396717
+        ],
+        "max": [
+          23.672800548374653,
+          0.8483600094914436,
+          -14.552929878234863
+        ]
+      },
+      "content": "sheet"
+    },
+    {
+      "mesh": "F200 printer3d",
+      "zone": "Z16",
+      "component": 0,
+      "vertices": 24,
+      "worldBounds": {
+        "min": [
+          24.30779968202114,
+          0.8026400078088045,
+          -14.55927987396717
+        ],
+        "max": [
+          24.434799678623676,
+          0.8483600094914436,
+          -14.552929878234863
+        ]
+      },
+      "content": "sheet"
+    },
+    {
+      "mesh": "F201 printer3d",
+      "zone": "Z16",
+      "component": 0,
+      "vertices": 24,
+      "worldBounds": {
+        "min": [
+          25.069800719618797,
+          0.8026400078088045,
+          -14.55927987396717
+        ],
+        "max": [
+          25.196800716221333,
+          0.8483600094914436,
+          -14.552929878234863
+        ]
+      },
+      "content": "sheet"
+    },
+    {
+      "mesh": "F203 desk_single",
+      "zone": "Z16",
+      "component": 0,
+      "vertices": 24,
+      "worldBounds": {
+        "min": [
+          24.498299406509577,
+          0.8839199542999268,
+          -11.750039749811398
+        ],
+        "max": [
+          25.031699405762296,
+          1.1950699090957642,
+          -11.748769707013858
+        ]
+      },
+      "content": "sheet"
+    },
+    {
+      "mesh": "F216 bench_design",
+      "zone": "Z18",
+      "component": 0,
+      "vertices": 24,
+      "worldBounds": {
+        "min": [
+          32.359600484371185,
+          0.8839199542999268,
+          -28.17367994785309
+        ],
+        "max": [
+          32.89300048351288,
+          1.1950699090957642,
+          -28.17240995168686
+        ]
+      },
+      "content": "garment-pattern"
+    },
+    {
+      "mesh": "F216 bench_design",
+      "zone": "Z18",
+      "component": 1,
+      "vertices": 24,
+      "worldBounds": {
+        "min": [
+          30.759400486946106,
+          0.8839199542999268,
+          -28.72358998656273
+        ],
+        "max": [
+          31.2928004860878,
+          1.1950699090957642,
+          -28.722319930791855
+        ]
+      },
+      "content": "garment-pattern"
+    },
+    {
+      "mesh": "F216 bench_design",
+      "zone": "Z18",
+      "component": 2,
+      "vertices": 24,
+      "worldBounds": {
+        "min": [
+          32.359600484371185,
+          0.8839199542999268,
+          -28.72358998656273
+        ],
+        "max": [
+          32.89300048351288,
+          1.1950699090957642,
+          -28.722319930791855
+        ]
+      },
+      "content": "garment-pattern"
+    },
+    {
+      "mesh": "F221 bench_design",
+      "zone": "Z18",
+      "component": 0,
+      "vertices": 24,
+      "worldBounds": {
+        "min": [
+          32.359600484371185,
+          0.8839199542999268,
+          -24.109680771827698
+        ],
+        "max": [
+          32.89300048351288,
+          1.1950699090957642,
+          -24.10841077566147
+        ]
+      },
+      "content": "garment-pattern"
+    },
+    {
+      "mesh": "F221 bench_design",
+      "zone": "Z18",
+      "component": 1,
+      "vertices": 24,
+      "worldBounds": {
+        "min": [
+          30.759400486946106,
+          0.8839199542999268,
+          -24.65959081053734
+        ],
+        "max": [
+          31.2928004860878,
+          1.1950699090957642,
+          -24.658320754766464
+        ]
+      },
+      "content": "garment-pattern"
+    },
+    {
+      "mesh": "F221 bench_design",
+      "zone": "Z18",
+      "component": 2,
+      "vertices": 24,
+      "worldBounds": {
+        "min": [
+          32.359600484371185,
+          0.8839199542999268,
+          -24.65959081053734
+        ],
+        "max": [
+          32.89300048351288,
+          1.1950699090957642,
+          -24.658320754766464
+        ]
+      },
+      "content": "garment-pattern"
+    },
+    {
+      "mesh": "F243 screen_86",
+      "zone": "Z18",
+      "component": 0,
+      "vertices": 24,
+      "worldBounds": {
+        "min": [
+          29.91866010172113,
+          1.0261600324884057,
+          -13.5191497713858
+        ],
+        "max": [
+          31.803340015464,
+          2.0726399421691895,
+          -13.516609604976166
+        ]
+      },
+      "content": "presentation"
+    },
+    {
+      "mesh": "F277 screen_75",
+      "zone": "Z21",
+      "component": 0,
+      "vertices": 24,
+      "worldBounds": {
+        "min": [
+          22.30500927603709,
+          0.9245599815621972,
+          -36.38804143264204
+        ],
+        "max": [
+          22.307549500533046,
+          1.8440399169921875,
+          -34.73196132144796
+        ]
+      },
+      "content": "presentation"
+    }
+  ],
+  "limits": [
+    "Actual Three.js CPU geometry; Canvas API stub. Texture glyph rendering and WebGL/material shading require browser screenshot review.",
+    "UV0 is changed only on screen material groups; positions, normals, indices, lightmap UV1 and physical non-screen UVs compared byte-for-byte."
+  ]
+}

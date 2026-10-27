@@ -1,0 +1,13 @@
+{
+  "status": "rejected diagnostic call; no output EXR or KTX produced",
+  "filter": "OIDN2.3.3 RT",
+  "inputFeatures": [
+    "color HDR",
+    "actual Cycles normal guide"
+  ],
+  "error": "OIDN error3: unsupported combination of input features",
+  "normalGuide": "/workspace/office-bake-work/diagnostic-z02/Z02_normal.exr",
+  "normalGuideSHA256": "a7001e48b7ce3fdf088773d024daafe999f3033f4d99f4fdc09ed4b04045a577",
+  "nextAction": "Hold this variant per root while source-emitter-group diagnostic is tested; no artificial albedo guide added",
+  "productionChanged": false
+}

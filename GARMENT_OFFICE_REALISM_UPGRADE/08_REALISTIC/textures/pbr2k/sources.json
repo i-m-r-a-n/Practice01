@@ -1,0 +1,667 @@
+[
+  {
+    "set": "white_oak_veneer",
+    "role": "basecolor",
+    "file": "source/white_oak_veneer/white_oak_veneer_diff_2k.jpg",
+    "source": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/white_oak_veneer/white_oak_veneer_diff_2k.jpg",
+    "resolvedSource": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/white_oak_veneer/white_oak_veneer_diff_2k.jpg",
+    "bytes": 2537257,
+    "sha256": "00e09e2f901fb76c6d206e7a0197f257f8a9d5f662d3cd863c2258c9b287131e",
+    "pixels": [
+      2048,
+      2048
+    ],
+    "mode": "RGB",
+    "upscaled": false,
+    "normalConvention": null,
+    "licence": "CC0-1.0",
+    "licenceURL": "https://polyhaven.com/license",
+    "assetURL": "https://polyhaven.com/a/white_oak_veneer"
+  },
+  {
+    "set": "white_oak_veneer",
+    "role": "normal",
+    "file": "source/white_oak_veneer/white_oak_veneer_nor_gl_2k.jpg",
+    "source": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/white_oak_veneer/white_oak_veneer_nor_gl_2k.jpg",
+    "resolvedSource": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/white_oak_veneer/white_oak_veneer_nor_gl_2k.jpg",
+    "bytes": 2840866,
+    "sha256": "262b2c0b9020e34abbba2f3d02a5d7184d5ef008f12499c5350187125929b053",
+    "pixels": [
+      2048,
+      2048
+    ],
+    "mode": "RGB",
+    "upscaled": false,
+    "normalConvention": "OpenGL +Y",
+    "licence": "CC0-1.0",
+    "licenceURL": "https://polyhaven.com/license",
+    "assetURL": "https://polyhaven.com/a/white_oak_veneer"
+  },
+  {
+    "set": "white_oak_veneer",
+    "role": "roughness",
+    "file": "source/white_oak_veneer/white_oak_veneer_rough_2k.jpg",
+    "source": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/white_oak_veneer/white_oak_veneer_rough_2k.jpg",
+    "resolvedSource": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/white_oak_veneer/white_oak_veneer_rough_2k.jpg",
+    "bytes": 2352922,
+    "sha256": "1e325ebc77729c09afb9a2c6ed3bf51b2f0b3f8c1731642dca39b197c79097f0",
+    "pixels": [
+      2048,
+      2048
+    ],
+    "mode": "L",
+    "upscaled": false,
+    "normalConvention": null,
+    "licence": "CC0-1.0",
+    "licenceURL": "https://polyhaven.com/license",
+    "assetURL": "https://polyhaven.com/a/white_oak_veneer"
+  },
+  {
+    "set": "natural_walnut_veneer",
+    "role": "basecolor",
+    "file": "source/natural_walnut_veneer/natural_walnut_veneer_diff_2k.jpg",
+    "source": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/natural_walnut_veneer/natural_walnut_veneer_diff_2k.jpg",
+    "resolvedSource": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/natural_walnut_veneer/natural_walnut_veneer_diff_2k.jpg",
+    "bytes": 2484434,
+    "sha256": "4a1a84e9537b291ac0cce1e2b8908fb9b5d1057a246ee0b3c25345565ac9686d",
+    "pixels": [
+      2048,
+      2048
+    ],
+    "mode": "RGB",
+    "upscaled": false,
+    "normalConvention": null,
+    "licence": "CC0-1.0",
+    "licenceURL": "https://polyhaven.com/license",
+    "assetURL": "https://polyhaven.com/a/natural_walnut_veneer"
+  },
+  {
+    "set": "natural_walnut_veneer",
+    "role": "normal",
+    "file": "source/natural_walnut_veneer/natural_walnut_veneer_nor_gl_2k.jpg",
+    "source": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/natural_walnut_veneer/natural_walnut_veneer_nor_gl_2k.jpg",
+    "resolvedSource": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/natural_walnut_veneer/natural_walnut_veneer_nor_gl_2k.jpg",
+    "bytes": 1893243,
+    "sha256": "9b1e316d019b2ae07f5327e2a8203ef34d7c8b86dbf2579273d3b5cf8e5fd441",
+    "pixels": [
+      2048,
+      2048
+    ],
+    "mode": "RGB",
+    "upscaled": false,
+    "normalConvention": "OpenGL +Y",
+    "licence": "CC0-1.0",
+    "licenceURL": "https://polyhaven.com/license",
+    "assetURL": "https://polyhaven.com/a/natural_walnut_veneer"
+  },
+  {
+    "set": "natural_walnut_veneer",
+    "role": "roughness",
+    "file": "source/natural_walnut_veneer/natural_walnut_veneer_rough_2k.jpg",
+    "source": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/natural_walnut_veneer/natural_walnut_veneer_rough_2k.jpg",
+    "resolvedSource": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/natural_walnut_veneer/natural_walnut_veneer_rough_2k.jpg",
+    "bytes": 2316837,
+    "sha256": "2056eb8c99a936bdc7ec4fc6b04e3b1a443c7c87ca8fd0e7011bed6188290fef",
+    "pixels": [
+      2048,
+      2048
+    ],
+    "mode": "L",
+    "upscaled": false,
+    "normalConvention": null,
+    "licence": "CC0-1.0",
+    "licenceURL": "https://polyhaven.com/license",
+    "assetURL": "https://polyhaven.com/a/natural_walnut_veneer"
+  },
+  {
+    "set": "Terrazzo019M",
+    "role": "basecolor",
+    "file": "source/Terrazzo019M/Terrazzo019M_2K-JPG_Color.jpg",
+    "source": "https://ambientcg.com/get?file=Terrazzo019M_2K-JPG.zip",
+    "resolvedSource": "https://acg-download.struffelproductions.com/file/ambientCG-Web/download/Terrazzo019M_PR5hkLd7/Terrazzo019M_2K-JPG.zip",
+    "bytes": 4926571,
+    "sha256": "b238f236ddc003a43d5e785149d7fb6fe87603b3ff847ad382bcf42e8c16c684",
+    "pixels": [
+      2048,
+      2048
+    ],
+    "mode": "RGB",
+    "upscaled": false,
+    "normalConvention": null,
+    "licence": "CC0-1.0",
+    "licenceURL": "https://docs.ambientcg.com/license/",
+    "assetURL": "https://ambientcg.com/a/Terrazzo019M"
+  },
+  {
+    "set": "Terrazzo019M",
+    "role": "normal",
+    "file": "source/Terrazzo019M/Terrazzo019M_2K-JPG_NormalGL.jpg",
+    "source": "https://ambientcg.com/get?file=Terrazzo019M_2K-JPG.zip",
+    "resolvedSource": "https://acg-download.struffelproductions.com/file/ambientCG-Web/download/Terrazzo019M_PR5hkLd7/Terrazzo019M_2K-JPG.zip",
+    "bytes": 2941217,
+    "sha256": "9ab390431781615811995d910aa5d15e8efa682f3e34c107eec286dd4984a3fa",
+    "pixels": [
+      2048,
+      2048
+    ],
+    "mode": "RGB",
+    "upscaled": false,
+    "normalConvention": "OpenGL +Y",
+    "licence": "CC0-1.0",
+    "licenceURL": "https://docs.ambientcg.com/license/",
+    "assetURL": "https://ambientcg.com/a/Terrazzo019M"
+  },
+  {
+    "set": "Terrazzo019M",
+    "role": "roughness",
+    "file": "source/Terrazzo019M/Terrazzo019M_2K-JPG_Roughness.jpg",
+    "source": "https://ambientcg.com/get?file=Terrazzo019M_2K-JPG.zip",
+    "resolvedSource": "https://acg-download.struffelproductions.com/file/ambientCG-Web/download/Terrazzo019M_PR5hkLd7/Terrazzo019M_2K-JPG.zip",
+    "bytes": 2098881,
+    "sha256": "ba3d7f81f0cca4a2f06281c2f532acd00805978c7b34b46308aca59bd15663db",
+    "pixels": [
+      2048,
+      2048
+    ],
+    "mode": "L",
+    "upscaled": false,
+    "normalConvention": null,
+    "licence": "CC0-1.0",
+    "licenceURL": "https://docs.ambientcg.com/license/",
+    "assetURL": "https://ambientcg.com/a/Terrazzo019M"
+  },
+  {
+    "set": "Fabric030",
+    "role": "basecolor",
+    "file": "source/Fabric030/Fabric030_2K-JPG_Color.jpg",
+    "source": "https://ambientcg.com/get?file=Fabric030_2K-JPG.zip",
+    "resolvedSource": "https://acg-download.struffelproductions.com/file/ambientCG-Web/download/Fabric030_Pu23GKtr/Fabric030_2K-JPG.zip",
+    "bytes": 7286913,
+    "sha256": "7aa2ae8d953523c1e7489b4fa7ffd3cfda8f463738db4ddebbbaf126a1ee351a",
+    "pixels": [
+      2048,
+      2048
+    ],
+    "mode": "RGB",
+    "upscaled": false,
+    "normalConvention": null,
+    "licence": "CC0-1.0",
+    "licenceURL": "https://docs.ambientcg.com/license/",
+    "assetURL": "https://ambientcg.com/a/Fabric030"
+  },
+  {
+    "set": "Fabric030",
+    "role": "normal",
+    "file": "source/Fabric030/Fabric030_2K-JPG_NormalGL.jpg",
+    "source": "https://ambientcg.com/get?file=Fabric030_2K-JPG.zip",
+    "resolvedSource": "https://acg-download.struffelproductions.com/file/ambientCG-Web/download/Fabric030_Pu23GKtr/Fabric030_2K-JPG.zip",
+    "bytes": 10149065,
+    "sha256": "7c871bf6969e45e5aa11c5d04c7ad141dbc0aadf1124b7eeb9b0b42eb0c8890b",
+    "pixels": [
+      2048,
+      2048
+    ],
+    "mode": "RGB",
+    "upscaled": false,
+    "normalConvention": "OpenGL +Y",
+    "licence": "CC0-1.0",
+    "licenceURL": "https://docs.ambientcg.com/license/",
+    "assetURL": "https://ambientcg.com/a/Fabric030"
+  },
+  {
+    "set": "Fabric030",
+    "role": "roughness",
+    "file": "source/Fabric030/Fabric030_2K-JPG_Roughness.jpg",
+    "source": "https://ambientcg.com/get?file=Fabric030_2K-JPG.zip",
+    "resolvedSource": "https://acg-download.struffelproductions.com/file/ambientCG-Web/download/Fabric030_Pu23GKtr/Fabric030_2K-JPG.zip",
+    "bytes": 3421323,
+    "sha256": "ac4806ea54090d5979f5052eb02f72b27cb01762ebfafa82cce2464e5274c1ec",
+    "pixels": [
+      2048,
+      2048
+    ],
+    "mode": "L",
+    "upscaled": false,
+    "normalConvention": null,
+    "licence": "CC0-1.0",
+    "licenceURL": "https://docs.ambientcg.com/license/",
+    "assetURL": "https://ambientcg.com/a/Fabric030"
+  },
+  {
+    "set": "Fabric034",
+    "role": "basecolor",
+    "file": "source/Fabric034/Fabric034_2K-JPG_Color.jpg",
+    "source": "https://ambientcg.com/get?file=Fabric034_2K-JPG.zip",
+    "resolvedSource": "https://acg-download.struffelproductions.com/file/ambientCG-Web/download/Fabric034_fxWY3Srb/Fabric034_2K-JPG.zip",
+    "bytes": 4877156,
+    "sha256": "fb7e0bc5da7bd0d62d20140e936c89884212f0cb7e44b5c6f8b9837cddd2242a",
+    "pixels": [
+      2048,
+      2048
+    ],
+    "mode": "RGB",
+    "upscaled": false,
+    "normalConvention": null,
+    "licence": "CC0-1.0",
+    "licenceURL": "https://docs.ambientcg.com/license/",
+    "assetURL": "https://ambientcg.com/a/Fabric034"
+  },
+  {
+    "set": "Fabric034",
+    "role": "normal",
+    "file": "source/Fabric034/Fabric034_2K-JPG_NormalGL.jpg",
+    "source": "https://ambientcg.com/get?file=Fabric034_2K-JPG.zip",
+    "resolvedSource": "https://acg-download.struffelproductions.com/file/ambientCG-Web/download/Fabric034_fxWY3Srb/Fabric034_2K-JPG.zip",
+    "bytes": 9607311,
+    "sha256": "3e42b594ddb376a1f9f6909b236bc1f280469b08c500fa4f199d29f9e8591c5a",
+    "pixels": [
+      2048,
+      2048
+    ],
+    "mode": "RGB",
+    "upscaled": false,
+    "normalConvention": "OpenGL +Y",
+    "licence": "CC0-1.0",
+    "licenceURL": "https://docs.ambientcg.com/license/",
+    "assetURL": "https://ambientcg.com/a/Fabric034"
+  },
+  {
+    "set": "Fabric034",
+    "role": "roughness",
+    "file": "source/Fabric034/Fabric034_2K-JPG_Roughness.jpg",
+    "source": "https://ambientcg.com/get?file=Fabric034_2K-JPG.zip",
+    "resolvedSource": "https://acg-download.struffelproductions.com/file/ambientCG-Web/download/Fabric034_fxWY3Srb/Fabric034_2K-JPG.zip",
+    "bytes": 2787687,
+    "sha256": "b8be247a5ea8e54224d8c5d88e057611eec8721193ce881d08dcdcaa09cd5700",
+    "pixels": [
+      2048,
+      2048
+    ],
+    "mode": "L",
+    "upscaled": false,
+    "normalConvention": null,
+    "licence": "CC0-1.0",
+    "licenceURL": "https://docs.ambientcg.com/license/",
+    "assetURL": "https://ambientcg.com/a/Fabric034"
+  },
+  {
+    "set": "selfmade_brushed_metal",
+    "role": "normal",
+    "file": "source/selfmade_brushed_metal/normal.png",
+    "source": "../make_brushed_metal.py",
+    "bytes": 441490,
+    "sha256": "ba7df3ddee7b4e6cabde6411b135bf0abffb8b0cae04d9e9c0ef08f089f90b0b",
+    "pixels": [
+      2048,
+      2048
+    ],
+    "mode": "RGB",
+    "upscaled": false,
+    "normalConvention": "OpenGL +Y",
+    "licence": "Self-made for this project, no third-party assets",
+    "licenceURL": null,
+    "assetURL": null,
+    "seed": 3292
+  },
+  {
+    "set": "selfmade_brushed_metal",
+    "role": "roughness",
+    "file": "source/selfmade_brushed_metal/roughness.png",
+    "source": "../make_brushed_metal.py",
+    "bytes": 286563,
+    "sha256": "1af904ed64c7b133f125864021366b4b1242a079070c5aad9b2a843f7454e3c7",
+    "pixels": [
+      2048,
+      2048
+    ],
+    "mode": "RGB",
+    "upscaled": false,
+    "normalConvention": null,
+    "licence": "Self-made for this project, no third-party assets",
+    "licenceURL": null,
+    "assetURL": null,
+    "seed": 3292
+  },
+  {
+    "set": "herringbone_parquet",
+    "role": "basecolor",
+    "file": "source/herringbone_parquet/herringbone_parquet_diff_2k.jpg",
+    "source": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/herringbone_parquet/herringbone_parquet_diff_2k.jpg",
+    "resolvedSource": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/herringbone_parquet/herringbone_parquet_diff_2k.jpg",
+    "bytes": 3482793,
+    "sha256": "8305c12adf1da61f4d267611948bfdc9293c9b9915da64e41cc1ab68c0167ff1",
+    "pixels": [
+      2048,
+      2048
+    ],
+    "mode": "RGB",
+    "upscaled": false,
+    "normalConvention": null,
+    "licence": "CC0-1.0",
+    "licenceURL": "https://polyhaven.com/license",
+    "assetURL": "https://polyhaven.com/a/herringbone_parquet"
+  },
+  {
+    "set": "herringbone_parquet",
+    "role": "normal",
+    "file": "source/herringbone_parquet/herringbone_parquet_nor_gl_2k.jpg",
+    "source": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/herringbone_parquet/herringbone_parquet_nor_gl_2k.jpg",
+    "resolvedSource": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/herringbone_parquet/herringbone_parquet_nor_gl_2k.jpg",
+    "bytes": 1854683,
+    "sha256": "8891325197ab8a77689506118fade7bc812944a03bcce47b802e4b8742e590cd",
+    "pixels": [
+      2048,
+      2048
+    ],
+    "mode": "RGB",
+    "upscaled": false,
+    "normalConvention": "OpenGL +Y",
+    "licence": "CC0-1.0",
+    "licenceURL": "https://polyhaven.com/license",
+    "assetURL": "https://polyhaven.com/a/herringbone_parquet"
+  },
+  {
+    "set": "herringbone_parquet",
+    "role": "roughness",
+    "file": "source/herringbone_parquet/herringbone_parquet_rough_2k.jpg",
+    "source": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/herringbone_parquet/herringbone_parquet_rough_2k.jpg",
+    "resolvedSource": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/herringbone_parquet/herringbone_parquet_rough_2k.jpg",
+    "bytes": 2285252,
+    "sha256": "9fd86e1c5bff348625bab72091d7ea2fa80d197f8e4a5452b378ce8ae0abd9e5",
+    "pixels": [
+      2048,
+      2048
+    ],
+    "mode": "RGB",
+    "upscaled": false,
+    "normalConvention": null,
+    "licence": "CC0-1.0",
+    "licenceURL": "https://polyhaven.com/license",
+    "assetURL": "https://polyhaven.com/a/herringbone_parquet"
+  },
+  {
+    "set": "laminate_floor_02",
+    "role": "basecolor",
+    "file": "source/laminate_floor_02/laminate_floor_02_diff_2k.jpg",
+    "source": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/laminate_floor_02/laminate_floor_02_diff_2k.jpg",
+    "resolvedSource": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/laminate_floor_02/laminate_floor_02_diff_2k.jpg",
+    "bytes": 3225117,
+    "sha256": "2a1e6519309b369f749f06aaf241ac67ea762c686b6a848c1a79331b18a30521",
+    "pixels": [
+      2048,
+      2048
+    ],
+    "mode": "RGB",
+    "upscaled": false,
+    "normalConvention": null,
+    "licence": "CC0-1.0",
+    "licenceURL": "https://polyhaven.com/license",
+    "assetURL": "https://polyhaven.com/a/laminate_floor_02"
+  },
+  {
+    "set": "laminate_floor_02",
+    "role": "normal",
+    "file": "source/laminate_floor_02/laminate_floor_02_nor_gl_2k.jpg",
+    "source": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/laminate_floor_02/laminate_floor_02_nor_gl_2k.jpg",
+    "resolvedSource": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/laminate_floor_02/laminate_floor_02_nor_gl_2k.jpg",
+    "bytes": 2420220,
+    "sha256": "49aa58c34c6770d209e63f9bdb4d16326f5dab24474cfeb18433e63fc54456de",
+    "pixels": [
+      2048,
+      2048
+    ],
+    "mode": "RGB",
+    "upscaled": false,
+    "normalConvention": "OpenGL +Y",
+    "licence": "CC0-1.0",
+    "licenceURL": "https://polyhaven.com/license",
+    "assetURL": "https://polyhaven.com/a/laminate_floor_02"
+  },
+  {
+    "set": "laminate_floor_02",
+    "role": "roughness",
+    "file": "source/laminate_floor_02/laminate_floor_02_rough_2k.jpg",
+    "source": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/laminate_floor_02/laminate_floor_02_rough_2k.jpg",
+    "resolvedSource": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/laminate_floor_02/laminate_floor_02_rough_2k.jpg",
+    "bytes": 2545321,
+    "sha256": "f547988692d1b53274b3023e9ed89d8280087a5ff1018cd64f83e77440ab54c4",
+    "pixels": [
+      2048,
+      2048
+    ],
+    "mode": "RGB",
+    "upscaled": false,
+    "normalConvention": null,
+    "licence": "CC0-1.0",
+    "licenceURL": "https://polyhaven.com/license",
+    "assetURL": "https://polyhaven.com/a/laminate_floor_02"
+  },
+  {
+    "set": "leather_white",
+    "role": "basecolor",
+    "file": "source/leather_white/leather_white_diff_2k.jpg",
+    "source": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/leather_white/leather_white_diff_2k.jpg",
+    "resolvedSource": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/leather_white/leather_white_diff_2k.jpg",
+    "bytes": 3460639,
+    "sha256": "5b2d3f7c2f6f10ea65a644353a9f4e0ce87a6737e09b4cb38c1e1ad3257c86a4",
+    "pixels": [
+      2048,
+      2048
+    ],
+    "mode": "RGB",
+    "upscaled": false,
+    "normalConvention": null,
+    "licence": "CC0-1.0",
+    "licenceURL": "https://polyhaven.com/license",
+    "assetURL": "https://polyhaven.com/a/leather_white"
+  },
+  {
+    "set": "leather_white",
+    "role": "normal",
+    "file": "source/leather_white/leather_white_nor_gl_2k.jpg",
+    "source": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/leather_white/leather_white_nor_gl_2k.jpg",
+    "resolvedSource": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/leather_white/leather_white_nor_gl_2k.jpg",
+    "bytes": 3176928,
+    "sha256": "f06e81389faf7c4bef47b8ed5a5c433b6e3b7d0ac77e4090f65ed9d964a589f6",
+    "pixels": [
+      2048,
+      2048
+    ],
+    "mode": "RGB",
+    "upscaled": false,
+    "normalConvention": "OpenGL +Y",
+    "licence": "CC0-1.0",
+    "licenceURL": "https://polyhaven.com/license",
+    "assetURL": "https://polyhaven.com/a/leather_white"
+  },
+  {
+    "set": "leather_white",
+    "role": "roughness",
+    "file": "source/leather_white/leather_white_rough_2k.jpg",
+    "source": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/leather_white/leather_white_rough_2k.jpg",
+    "resolvedSource": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/leather_white/leather_white_rough_2k.jpg",
+    "bytes": 3142711,
+    "sha256": "ccf43d38aadaf2b16bf10b587c082a81928cf63f028bd59d061181fb7967af8c",
+    "pixels": [
+      2048,
+      2048
+    ],
+    "mode": "L",
+    "upscaled": false,
+    "normalConvention": null,
+    "licence": "CC0-1.0",
+    "licenceURL": "https://polyhaven.com/license",
+    "assetURL": "https://polyhaven.com/a/leather_white"
+  },
+  {
+    "set": "Tiles040",
+    "role": "basecolor",
+    "file": "source/Tiles040/Tiles040_2K-JPG_Color.jpg",
+    "source": "https://ambientcg.com/get?file=Tiles040_2K-JPG.zip",
+    "resolvedSource": "https://acg-download.struffelproductions.com/file/ambientCG-Web/download/Tiles040_clNIBUoY/Tiles040_2K-JPG.zip",
+    "bytes": 4602501,
+    "sha256": "e3f383c750a78b2c878afd3b2d22d9f2743540b1dd473cc5a4df67a7e182a78b",
+    "pixels": [
+      2048,
+      2048
+    ],
+    "mode": "RGB",
+    "upscaled": false,
+    "normalConvention": null,
+    "licence": "CC0-1.0",
+    "licenceURL": "https://docs.ambientcg.com/license/",
+    "assetURL": "https://ambientcg.com/a/Tiles040"
+  },
+  {
+    "set": "Tiles040",
+    "role": "normal",
+    "file": "source/Tiles040/Tiles040_2K-JPG_NormalGL.jpg",
+    "source": "https://ambientcg.com/get?file=Tiles040_2K-JPG.zip",
+    "resolvedSource": "https://acg-download.struffelproductions.com/file/ambientCG-Web/download/Tiles040_clNIBUoY/Tiles040_2K-JPG.zip",
+    "bytes": 5349121,
+    "sha256": "49357b2eb961de0e0ac2f4a827493cf30ae1cc3ee2986a66770dd2bffe15b681",
+    "pixels": [
+      2048,
+      2048
+    ],
+    "mode": "RGB",
+    "upscaled": false,
+    "normalConvention": "OpenGL +Y",
+    "licence": "CC0-1.0",
+    "licenceURL": "https://docs.ambientcg.com/license/",
+    "assetURL": "https://ambientcg.com/a/Tiles040"
+  },
+  {
+    "set": "Tiles040",
+    "role": "roughness",
+    "file": "source/Tiles040/Tiles040_2K-JPG_Roughness.jpg",
+    "source": "https://ambientcg.com/get?file=Tiles040_2K-JPG.zip",
+    "resolvedSource": "https://acg-download.struffelproductions.com/file/ambientCG-Web/download/Tiles040_clNIBUoY/Tiles040_2K-JPG.zip",
+    "bytes": 2103130,
+    "sha256": "4a22e3686508356e26f64ee48ac4d1650062fee26c05279455e2c6135eb790f0",
+    "pixels": [
+      2048,
+      2048
+    ],
+    "mode": "L",
+    "upscaled": false,
+    "normalConvention": null,
+    "licence": "CC0-1.0",
+    "licenceURL": "https://docs.ambientcg.com/license/",
+    "assetURL": "https://ambientcg.com/a/Tiles040"
+  },
+  {
+    "set": "smooth_concrete_floor",
+    "role": "basecolor",
+    "file": "source/smooth_concrete_floor/smooth_concrete_floor_diff_2k.jpg",
+    "source": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/smooth_concrete_floor/smooth_concrete_floor_diff_2k.jpg",
+    "resolvedSource": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/smooth_concrete_floor/smooth_concrete_floor_diff_2k.jpg",
+    "bytes": 3561275,
+    "sha256": "19fecf502443f53f5e94b67569461dc571f1de60d3676f925b74b78b398f4897",
+    "pixels": [
+      2048,
+      2048
+    ],
+    "mode": "RGB",
+    "upscaled": false,
+    "normalConvention": null,
+    "licence": "CC0-1.0",
+    "licenceURL": "https://polyhaven.com/license",
+    "assetURL": "https://polyhaven.com/a/smooth_concrete_floor"
+  },
+  {
+    "set": "smooth_concrete_floor",
+    "role": "normal",
+    "file": "source/smooth_concrete_floor/smooth_concrete_floor_nor_gl_2k.jpg",
+    "source": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/smooth_concrete_floor/smooth_concrete_floor_nor_gl_2k.jpg",
+    "resolvedSource": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/smooth_concrete_floor/smooth_concrete_floor_nor_gl_2k.jpg",
+    "bytes": 2819837,
+    "sha256": "0f698e2f3ca8f1b74c79765c8d51489772af05c969715d326490eafb1e92ae79",
+    "pixels": [
+      2048,
+      2048
+    ],
+    "mode": "RGB",
+    "upscaled": false,
+    "normalConvention": "OpenGL +Y",
+    "licence": "CC0-1.0",
+    "licenceURL": "https://polyhaven.com/license",
+    "assetURL": "https://polyhaven.com/a/smooth_concrete_floor"
+  },
+  {
+    "set": "smooth_concrete_floor",
+    "role": "roughness",
+    "file": "source/smooth_concrete_floor/smooth_concrete_floor_rough_2k.jpg",
+    "source": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/smooth_concrete_floor/smooth_concrete_floor_rough_2k.jpg",
+    "resolvedSource": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/smooth_concrete_floor/smooth_concrete_floor_rough_2k.jpg",
+    "bytes": 2181493,
+    "sha256": "6d21666ada82093a437b87d5ba32361792f26016ad4e5978487488c3e61ca54a",
+    "pixels": [
+      2048,
+      2048
+    ],
+    "mode": "RGB",
+    "upscaled": false,
+    "normalConvention": null,
+    "licence": "CC0-1.0",
+    "licenceURL": "https://polyhaven.com/license",
+    "assetURL": "https://polyhaven.com/a/smooth_concrete_floor"
+  },
+  {
+    "set": "Tiles043",
+    "role": "basecolor",
+    "file": "source/Tiles043/Tiles043_2K-JPG_Color.jpg",
+    "source": "https://ambientcg.com/get?file=Tiles043_2K-JPG.zip",
+    "resolvedSource": "https://acg-download.struffelproductions.com/file/ambientCG-Web/download/Tiles043_C06KoljA/Tiles043_2K-JPG.zip",
+    "bytes": 3836568,
+    "sha256": "39ae10fd460138ee5e71147722e37385a241c65aee49be68f3983997f0eb23e9",
+    "pixels": [
+      2048,
+      2048
+    ],
+    "mode": "RGB",
+    "upscaled": false,
+    "normalConvention": null,
+    "licence": "CC0-1.0",
+    "licenceURL": "https://docs.ambientcg.com/license/",
+    "assetURL": "https://ambientcg.com/a/Tiles043"
+  },
+  {
+    "set": "Tiles043",
+    "role": "normal",
+    "file": "source/Tiles043/Tiles043_2K-JPG_NormalGL.jpg",
+    "source": "https://ambientcg.com/get?file=Tiles043_2K-JPG.zip",
+    "resolvedSource": "https://acg-download.struffelproductions.com/file/ambientCG-Web/download/Tiles043_C06KoljA/Tiles043_2K-JPG.zip",
+    "bytes": 5207096,
+    "sha256": "e5b94c0eff0d179109548eb73e8610615a6ac5204bf2bedd2562eaa36ec85189",
+    "pixels": [
+      2048,
+      2048
+    ],
+    "mode": "RGB",
+    "upscaled": false,
+    "normalConvention": "OpenGL +Y",
+    "licence": "CC0-1.0",
+    "licenceURL": "https://docs.ambientcg.com/license/",
+    "assetURL": "https://ambientcg.com/a/Tiles043"
+  },
+  {
+    "set": "Tiles043",
+    "role": "roughness",
+    "file": "source/Tiles043/Tiles043_2K-JPG_Roughness.jpg",
+    "source": "https://ambientcg.com/get?file=Tiles043_2K-JPG.zip",
+    "resolvedSource": "https://acg-download.struffelproductions.com/file/ambientCG-Web/download/Tiles043_C06KoljA/Tiles043_2K-JPG.zip",
+    "bytes": 2170863,
+    "sha256": "91ec870b2523c603adf91277f4e8f31f22230897d4aa40ea28b0b757264bcdab",
+    "pixels": [
+      2048,
+      2048
+    ],
+    "mode": "L",
+    "upscaled": false,
+    "normalConvention": null,
+    "licence": "CC0-1.0",
+    "licenceURL": "https://docs.ambientcg.com/license/",
+    "assetURL": "https://ambientcg.com/a/Tiles043"
+  }
+]

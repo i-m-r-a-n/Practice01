@@ -1,0 +1,21 @@
+{
+  "capture_method": "Immutable scripts before execution",
+  "command": [
+    "/workspace/tools/blender-5.2.3-linux-x64/blender",
+    "-b",
+    "/workspace/office-bake-work/approved-copy.blend",
+    "-t",
+    "2",
+    "--python",
+    "/workspace/office-realism/GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/blender/run-snapshots/doorway-export-20261027T163854Z/export_doorway_repairs.py",
+    "--",
+    "--output-root",
+    "/workspace/office-realism/GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/lighting-v2"
+  ],
+  "scripts": {
+    "export_doorway_repairs.py": "5cc12d2bee29fade32e020e542e197a68eeda8278f7f9a9b05097b333c49dc3d",
+    "doorway_repairs.py": "6358bdf547b73a9ee92ce771aab3b9dcd1402d961fc3424ca84c851bc9f3e4c3"
+  },
+  "status": "failed",
+  "reason": "Guard rejected assumed ordered frame/door pairing. Documentation lists sets; actual cutter intersections determine mapping. No output GLB was produced."
+}

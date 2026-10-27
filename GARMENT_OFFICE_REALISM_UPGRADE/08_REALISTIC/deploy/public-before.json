@@ -1,0 +1,29 @@
+{
+  "checked_at_utc": "2026-10-27T16:25:34.187903+00:00",
+  "origin": "https://stage2-office-virtual-tour.imranahmedjh611.workers.dev",
+  "request_user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+  "default_python_client_result": "403 Cloudflare1010; browser-style request below returned public responses",
+  "responses": [
+    {
+      "path": "/",
+      "status": 200,
+      "bytes": 63353,
+      "sha256": "ff75beb54b3134b3e1eee7d29d0f6016ed1bf5895777c715f3815ebe3dcd2675",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "path": "/app.js",
+      "status": 200,
+      "bytes": 747798,
+      "sha256": "c6af8144c56302bf92a975179d847b89c6e4eac63068ecc16a96c7c0c02e9bc4",
+      "content_type": "text/javascript; charset=utf-8"
+    },
+    {
+      "path": "/health",
+      "status": 200,
+      "bytes": 205,
+      "sha256": "5118ed4955892545f48d6edf7fee295fdd0e8963fe1c7704041534fc04de378b",
+      "content_type": "application/json"
+    }
+  ]
+}

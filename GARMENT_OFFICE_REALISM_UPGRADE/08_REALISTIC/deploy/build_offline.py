@@ -17,7 +17,8 @@ bundle=REAL/'viewer/dist'
 html=(bundle/'index.html').read_text()
 app=(bundle/'app.js').read_text().replace('</script','<\\/script')
 assets={'model_web.glb':REPO/'GARMENT_OFFICE_WALKTHROUGH_FINAL/07_WEB_TOUR_ASSETS/Final_Office_Interior_web.glb'}
-for folder in ['lighting','textures','people','props']:
+lighting_folder='lighting-v2' if (REAL/'lighting-v2/manifest.json').exists() else 'lighting'
+for folder in [lighting_folder,'textures','people','props']:
     for p in (REAL/folder).rglob('*'):
         if not p.is_file(): continue
         rel=p.relative_to(REAL).as_posix()
@@ -63,9 +64,9 @@ __PACKS__
   if(url.protocol==='file:')window.__OFFLINE_STATS.missing.push(key||url.pathname);
   return originalFetch(input,init);
  };
- window.__TOUR_CONFIG=Object.assign({},window.__TOUR_CONFIG,{models:['./model_web.glb'],renders:'./renders/',lightmapManifest:'./lighting/manifest.json'});
+ window.__TOUR_CONFIG=Object.assign({},window.__TOUR_CONFIG,{models:['./model_web.glb'],renders:'./renders/',lightmapManifest:'./__LIGHTING__/manifest.json'});
 })();
-</script>'''.replace('__PACKS__','\n'.join(f'<script src="./{p}"></script>' for p in packs))
+</script>'''.replace('__PACKS__','\n'.join(f'<script src="./{p}"></script>' for p in packs)).replace('__LIGHTING__',lighting_folder)
 tag='<script type="module" src="./app.js"></script>'
 assert tag in html,'expected built module script not found'
 html=html.replace(tag,bootstrap+'\n<script type="module">\n'+app+'\n</script>')
@@ -76,6 +77,17 @@ meta=json.loads((REPO/'GARMENT_OFFICE_WALKTHROUGH_FINAL/07_WEB_TOUR_ASSETS/offic
 for c in meta['cameras']:
     p=renderdir/(c['name']+'.jpg');assert p.exists(),p
     shutil.copyfile(p,OUT/'renders'/p.name)
+license_paths=[
+    REAL/'viewer/vendor/three/LICENSE',REAL/'textures/LICENSES.md',
+    REAL/'people/LICENSES.md',REAL/'people/source/LICENSE.ASSETS.md',REAL/'props/LICENSES.md',
+    REPO/'GARMENT_OFFICE_FINAL_PRESENTATION/01_EDITABLE_3D/assets/LICENSES.md',
+]
+license_paths+=sorted((REAL/'textures/codecs/third_party_licenses').glob('*'))
+for p in license_paths:
+    if not p.is_file():raise FileNotFoundError(f'Required licence missing: {p}')
+    relative=p.relative_to(REPO)
+    target=OUT/'licenses'/relative
+    target.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(p,target)
 (OUT/'offline-manifest.json').write_text(json.dumps({'source_files':manifest,'source_bytes':total,'resource_packs':packs,'camera_renders':len(meta['cameras']),'status':'Built package; see external file-protocol QA before claiming acceptance.'},indent=2)+'\n')
-(OUT/'READ_ME.txt').write_text('OFFICE REALISTIC TOUR — OFFLINE\n\nExtract the entire folder, then double-click Office_Realistic_Tour.html.\nKeep the asset-pack files and renders folder beside it. No server is needed.\n\nPeople shown are illustrative.\nProposed interior visualization. Final dimensions and technical details subject to site verification.\n\nThis package uses local JavaScript packs and Blob-backed fetch responses, not oversized data URLs.\nPhysical MacBook Firefox/Chrome/Safari performance requires separate validation; do not infer it from Linux software-GPU tests.\n')
+(OUT/'READ_ME.txt').write_text('OFFICE REALISTIC TOUR — OFFLINE\n\nExtract the entire folder, then double-click Office_Realistic_Tour.html.\nKeep the asset-pack files and renders folder beside it. No server is needed by the package.\n\nPeople shown are illustrative.\nProposed interior visualization. Final dimensions and technical details subject to site verification.\n\nThis package uses local JavaScript packs and Blob-backed fetch responses, not oversized data URLs.\nLicence notices and asset provenance are retained in the licenses folder.\nPhysical MacBook Firefox/Chrome/Safari performance requires separate validation; do not infer it from Linux software-GPU tests.\nThe managed test browser blocked file:// navigation by administrator policy; local double-click opening still needs verification on the target Mac.\n')
 print(json.dumps({'output':str(OUT),'assets':len(assets),'source_bytes':total,'packs':len(packs),'renders':len(meta['cameras'])}))

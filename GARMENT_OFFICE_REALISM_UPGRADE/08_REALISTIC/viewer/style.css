@@ -1,0 +1,195 @@
+:root {
+  --green: #26673D; --green-2: #1d4f30; --mint: #a9d8b8; --charcoal: #171d1a; --white: #F6F3EE; --muted: #b9c4bd; --brass: #C29A55;
+  --glass: rgba(20, 27, 23, .86); --line: rgba(246, 243, 238, .14);
+  --top-h: 64px; --foot-h: 34px; --gap: 16px; --side-w: 292px;      /* --top-h / --foot-h are measured by app.js */
+}
+* { box-sizing: border-box }
+html, body { margin: 0; height: 100%; overflow: hidden; font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif; color: var(--white);
+  background: radial-gradient(ellipse at 60% 40%, #2a3a31 0%, #18211c 55%, #0f1411 100%) }
+button, input, select { font: inherit; color: inherit }
+button { cursor: pointer }
+button:focus-visible, input:focus-visible, select:focus-visible { outline: 2px solid var(--brass); outline-offset: 2px }
+.hidden { display: none !important }
+#app { position: fixed; inset: 0 }
+#app canvas { display: block; touch-action: none; outline: none }
+#dissolve { position: fixed; inset: 0; width: 100%; height: 100%; pointer-events: none; opacity: 0; z-index: 2 }
+.eyebrow { font-size: 10.5px; letter-spacing: .16em; text-transform: uppercase; color: var(--mint); font-weight: 600 }
+.card { background: var(--glass); border: 1px solid var(--line); border-radius: 14px; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, .28) }
+button.ghost { background: rgba(255, 255, 255, .07); border: 1px solid var(--line); border-radius: 9px; padding: 8px 12px; font-size: 13px; white-space: nowrap }
+button.ghost:hover { background: rgba(255, 255, 255, .15) }
+button.ghost.gold { border-color: var(--brass); color: #f1d7a4 }
+
+/* ---------------------------------------------------------------- header: brand left, ways to explore right */
+#top { position: fixed; left: 0; right: 0; top: 0; z-index: 10; display: flex; justify-content: space-between; align-items: center; gap: 16px;
+  padding: 12px 18px; background: linear-gradient(180deg, rgba(12, 17, 14, .9), rgba(12, 17, 14, .55) 70%, rgba(12, 17, 14, 0)); pointer-events: none }
+#top > * { pointer-events: auto }
+.brand { display: flex; align-items: center; gap: 14px; min-width: 0 }
+.logos { display: inline-flex; gap: 10px; align-items: center; background: #fff; padding: 6px 10px; border-radius: 8px; flex: none }
+.logos img { height: 24px; display: block }
+.ttl { min-width: 0 }
+.ttl h1 { margin: 3px 0 0; font-size: 16px; font-weight: 650; letter-spacing: .01em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis }
+.modes { display: flex; gap: 8px; align-items: center; flex: none }
+.modes button { border: 0; padding: 9px 14px; border-radius: 9px; font-size: 13.5px; white-space: nowrap }
+.modes .primary { background: var(--brass); color: #1b1408; font-weight: 650; box-shadow: 0 2px 10px rgba(194, 154, 85, .3) }
+.modes .primary:hover { background: #d3ad69 }
+.modes .primary.on { background: #e2bd77; box-shadow: 0 0 0 2px rgba(246, 243, 238, .85) }
+.seg { display: flex; gap: 2px; background: var(--glass); padding: 4px; border-radius: 11px; border: 1px solid var(--line); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px) }
+.seg button { background: transparent; padding: 7px 13px }
+.seg button:hover { background: rgba(255, 255, 255, .09) }
+.seg button.on { background: var(--green); font-weight: 600 }
+.modes .icon { width: 38px; height: 38px; padding: 0; background: var(--glass); border: 1px solid var(--line); font-size: 15px; font-weight: 650 }
+.modes .icon:hover { background: rgba(255, 255, 255, .12) }
+
+/* ---------------------------------------------------------------- room list (left) */
+#side { position: fixed; left: var(--gap); top: calc(var(--top-h) + 6px); bottom: calc(var(--foot-h) + 6px); width: var(--side-w); z-index: 9; display: flex; flex-direction: column;
+  background: var(--glass); border: 1px solid var(--line); border-radius: 14px; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  transform: translateX(calc(-100% - 40px)); transition: transform .3s ease, visibility .3s; visibility: hidden }
+#side.open { transform: none; visibility: visible }
+.side-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; padding: 12px 12px 8px 14px }
+.side-head b { display: block; font-size: 15px }
+.side-head small { color: var(--muted); font-size: 11.5px }
+#sideClose { background: none; border: 0; font-size: 22px; line-height: 1; padding: 0 4px; color: var(--muted) }
+#sideClose:hover { color: var(--white) }
+#search { margin: 0 10px 6px; background: rgba(0, 0, 0, .28); border: 1px solid var(--line); border-radius: 9px; padding: 9px 10px; font-size: 13px; outline: none }
+#search:focus { border-color: var(--brass) }
+#roomList { overflow: auto; padding: 0 8px 10px; scrollbar-width: thin }
+.grp { margin: 12px 6px 4px; font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--brass); font-weight: 650 }
+.room { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; width: 100%; text-align: left; background: none; border: 1px solid transparent;
+  border-radius: 8px; padding: 7px 8px; font-size: 13px }
+.room:hover { background: rgba(255, 255, 255, .07) }
+.room.on { background: rgba(38, 103, 61, .6); border-color: rgba(169, 216, 184, .35) }
+.room small { color: var(--muted); font-size: 11px; white-space: nowrap }
+.nores { color: var(--muted); font-size: 12.5px; padding: 10px 8px }
+
+/* ---------------------------------------------------------------- bottom dock: room card | tools or tour | floor map (they never overlap) */
+#dock { position: fixed; left: var(--gap); right: var(--gap); bottom: calc(var(--foot-h) + 6px); z-index: 9; display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: end; gap: 12px; pointer-events: none; transition: left .3s ease }
+#dock > *, #center > * { pointer-events: auto }
+body.side-open #dock { left: calc(var(--gap) + var(--side-w) + 14px) }
+#info { grid-column: 1; justify-self: start; width: min(430px, 100%); padding: 14px 16px }
+#center { grid-column: 2; display: flex; justify-content: center; min-width: 0; pointer-events: none }
+#minimap { grid-column: 3; justify-self: end; border-radius: 12px; border: 1px solid var(--line); background: rgba(20, 27, 23, .88); cursor: crosshair }
+#info h2 { margin: 4px 0 6px; font-size: 20px; font-weight: 650 }
+#info p { margin: 0; font-size: 13px; line-height: 1.5; color: #dfe6e1; max-height: 7.5em; overflow: auto }
+#info .hint { margin-top: 8px; font-size: 12px; color: var(--mint) }
+#info .hint:empty { display: none }
+#info .row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px }
+
+.bar { display: flex; gap: 5px; padding: 6px; align-items: center; background: var(--glass); border: 1px solid var(--line); border-radius: 13px;
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); max-width: 100%; overflow-x: auto; scrollbar-width: none }
+.bar button { background: rgba(255, 255, 255, .07); border: 1px solid var(--line); border-radius: 8px; padding: 8px 12px; font-size: 13px; white-space: nowrap }
+.bar button:hover { background: rgba(255, 255, 255, .15) }
+.bar button.on { background: var(--green); border-color: var(--green) }
+.bar .sep { flex: none; width: 1px; height: 22px; background: var(--line); margin: 0 3px }
+
+/* guided tour: one card with the stop and its controls */
+#tourbar { width: min(680px, 100%); padding: 14px 16px 12px }
+.tb-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px }
+#tCount { font-size: 12px; color: var(--muted); white-space: nowrap; font-variant-numeric: tabular-nums }
+#tTitle { margin: 4px 0 5px; font-size: 20px; font-weight: 650 }
+#tText { margin: 0; font-size: 13px; line-height: 1.5; color: #dfe6e1; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden }
+.segs { display: flex; gap: 3px; margin: 12px 0 10px }
+.segs div { flex: 1; height: 5px; border-radius: 3px; background: rgba(255, 255, 255, .16); overflow: hidden; cursor: pointer }
+.segs div:hover { background: rgba(255, 255, 255, .3) }
+.segs div i { display: block; height: 100%; width: 0; background: var(--brass) }
+.tb-row { display: flex; gap: 6px; align-items: center; flex-wrap: wrap }
+.tb-row button { background: rgba(255, 255, 255, .07); border: 1px solid var(--line); border-radius: 8px; padding: 8px 12px; font-size: 13px; white-space: nowrap }
+.tb-row button:hover { background: rgba(255, 255, 255, .15) }
+.tb-row button.play { min-width: 106px; background: var(--green); border-color: var(--green); font-weight: 600 }
+.tb-row button.end { margin-left: auto }
+.chk { font-size: 12.5px; color: var(--muted); display: flex; gap: 6px; align-items: center; cursor: pointer; padding: 0 4px; white-space: nowrap }
+.chk input { accent-color: var(--brass) }
+
+/* walk: on-screen arrows (touch), hint */
+#pad { display: grid; grid-template-columns: repeat(3, 52px); grid-template-rows: repeat(2, 52px); gap: 5px }
+#pad button { background: var(--glass); border: 1px solid var(--line); border-radius: 12px; font-size: 17px; touch-action: none; user-select: none; -webkit-user-select: none }
+#pad button[data-k="KeyW"] { grid-column: 2 } #pad button[data-k="KeyA"] { grid-column: 1; grid-row: 2 } #pad button[data-k="KeyS"] { grid-column: 2; grid-row: 2 } #pad button[data-k="KeyD"] { grid-column: 3; grid-row: 2 }
+#walkhint { position: fixed; top: calc(var(--top-h) + 6px); left: 50%; transform: translateX(-50%); z-index: 9; font-size: 12.5px; background: rgba(0, 0, 0, .5); padding: 7px 13px;
+  border-radius: 9px; color: #e6ece8; white-space: nowrap; max-width: calc(100vw - 2 * var(--gap)); overflow: hidden; text-overflow: ellipsis }
+
+/* ---------------------------------------------------------------- photoreal render */
+#photo { position: fixed; inset: 0; z-index: 8; background: #000; display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity .7s ease }
+#photo.show { opacity: 1 }
+#photo img { width: 100%; height: 100%; object-fit: cover }
+.photo-tag { position: fixed; top: calc(var(--top-h) + 8px); left: 50%; transform: translateX(-50%); font-size: 11px; letter-spacing: .12em; background: rgba(0, 0, 0, .6);
+  border: 1px solid rgba(194, 154, 85, .65); color: #f1d7a4; padding: 6px 11px; border-radius: 7px; white-space: nowrap }
+#photoClose { position: fixed; right: var(--gap); top: calc(var(--top-h) + 6px); background: var(--glass); border: 1px solid var(--line); border-radius: 9px; padding: 8px 13px; font-size: 13px; z-index: 9 }
+
+/* ---------------------------------------------------------------- room names on the model */
+#labels { position: fixed; inset: 0; pointer-events: none; z-index: 5 }
+.lbl { position: absolute; left: 0; top: 0; transform: translate(-50%, -50%); font-size: 11.5px; font-weight: 600; white-space: nowrap; padding: 3px 8px; border-radius: 6px;
+  background: rgba(23, 29, 26, .86); border: 1px solid rgba(194, 154, 85, .45); pointer-events: auto; cursor: pointer; user-select: none }
+.lbl:hover, .lbl.on { background: var(--green); border-color: var(--mint) }
+
+/* ---------------------------------------------------------------- welcome / help */
+#welcome { position: fixed; inset: 0; z-index: 20; display: flex; align-items: center; justify-content: center; padding: 16px;
+  background: rgba(8, 12, 10, .55); backdrop-filter: blur(3px); -webkit-backdrop-filter: blur(3px) }
+.wbox { width: min(760px, 100%); max-height: 100%; overflow: auto; background: rgba(20, 27, 23, .96); border: 1px solid var(--line); border-radius: 18px; padding: 24px 24px 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, .45) }
+.wbox h2 { margin: 6px 0 16px; font-size: 24px; font-weight: 650 }
+.ways { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px }
+.way { display: flex; flex-direction: column; gap: 6px; text-align: left; background: rgba(255, 255, 255, .06); border: 1px solid var(--line); border-radius: 12px; padding: 14px }
+.way:hover { background: rgba(255, 255, 255, .12) }
+.way b { font-size: 16px }
+.way span { font-size: 13px; line-height: 1.45; color: #d6dfd9 }
+.way.primary { background: rgba(194, 154, 85, .2); border-color: var(--brass) }
+.way.primary b { color: #f1d7a4 }
+.tips { margin: 14px 0 0; font-size: 12.5px; line-height: 1.6; color: var(--muted) }
+.tips b { color: var(--white); font-weight: 600 }
+.wfoot { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; margin-top: 16px }
+.q { display: flex; gap: 8px; align-items: center; font-size: 13px; color: var(--muted) }
+.q select { background: rgba(255, 255, 255, .07); border: 1px solid var(--line); border-radius: 8px; padding: 6px 8px; font-size: 13px; color: var(--white) }
+.q select option { color: #111 }
+
+/* ---------------------------------------------------------------- footer, loading */
+#disclaimer { position: fixed; left: 0; right: 0; bottom: 0; z-index: 9; text-align: center; font-size: 11.5px; color: #d0d8d3; padding: 9px 12px 11px;
+  background: linear-gradient(0deg, rgba(10, 14, 12, .85), rgba(10, 14, 12, 0)) }
+#loading { position: fixed; inset: 0; z-index: 30; display: flex; align-items: center; justify-content: center; background: radial-gradient(ellipse at 50% 40%, #233229, #101511) }
+#loading .box { width: min(420px, 86vw); text-align: center }
+#loading .t { font-size: 18px; margin: 10px 0 16px }
+.track { height: 4px; background: rgba(255, 255, 255, .12); border-radius: 2px; overflow: hidden }
+#loadBar { height: 100%; width: 0; background: var(--brass); transition: width .2s }
+#loadText { margin-top: 9px; font-size: 12px; color: var(--muted) }
+#loadError { margin-top: 14px; font-size: 13px; color: #ffd3c4; line-height: 1.5; background: rgba(120, 30, 20, .35); border: 1px solid rgba(255, 140, 120, .4); border-radius: 8px; padding: 10px 12px }
+.noscript { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; background: #101511; z-index: 40 }
+
+/* ---------------------------------------------------------------- medium screens */
+@media (max-width: 1199px) {
+  body[data-mode="tour"] #minimap { display: none }               /* the tour card needs the width */
+}
+@media (max-width: 1180px) {
+  .ttl .eyebrow { display: none } .ttl h1 { font-size: 13.5px; line-height: 1.3; white-space: normal; max-width: 250px }
+}
+@media (max-width: 1080px) {
+  .logos img { height: 20px }
+  .modes { gap: 6px } .modes button { padding: 8px 11px; font-size: 13px } .seg button { padding: 7px 10px }
+}
+/* ---------------------------------------------------------------- narrow screens: stack the dock, list over the model */
+@media (max-width: 860px) {
+  .ttl { display: none }
+  body.side-open #dock { left: var(--gap); visibility: hidden }      /* the list covers the model; the panels come back after a choice */
+  #side { width: min(320px, calc(100vw - 2 * var(--gap))); z-index: 11 }
+  #dock { grid-template-columns: minmax(0, 1fr); gap: 8px }
+  #info, #center { grid-column: 1 } #info { width: 100% }
+  #minimap { display: none }
+  .ways { grid-template-columns: 1fr }
+}
+@media (max-width: 640px) {
+  :root { --gap: 10px }
+  #top { flex-direction: column; align-items: stretch; gap: 8px; padding: 8px 10px }
+  .brand { justify-content: center } .logos img { height: 18px }
+  .modes { justify-content: space-between; gap: 4px } .modes button { padding: 8px 8px; font-size: 12.5px } .seg button { padding: 6px 8px } .modes .icon { width: 34px; height: 34px }
+  #info { padding: 11px 13px } #info h2 { font-size: 17px } #info p { font-size: 12.5px; max-height: 4.6em }
+  #tourbar { padding: 11px 12px 10px } #tTitle { font-size: 17px } #tText { font-size: 12.5px; -webkit-line-clamp: 2 }
+  .tb-row button { padding: 7px 9px; font-size: 12.5px } .tb-row button.play { min-width: 92px } .chk { font-size: 12px }
+  .bar button { padding: 7px 9px; font-size: 12.5px }
+  #walkhint { font-size: 11.5px }
+  .photo-tag { white-space: normal; width: calc(100vw - 2 * var(--gap)); text-align: center } #photoClose { top: calc(var(--top-h) + 52px) }
+  .wbox { padding: 18px 16px 16px } .wbox h2 { font-size: 20px }
+  #disclaimer { font-size: 10px; padding: 7px 10px 9px }
+}
+.tb-row button:disabled { opacity: .38; cursor: default; background: rgba(255, 255, 255, .04) }
+
+#lightingStatus { display:inline-block; padding:.15rem .4rem; margin-left:.35rem; border:1px solid currentColor; border-radius:4px; font-size:10px; font-weight:500; vertical-align:middle; opacity:.72; }
+body[data-mode="capture"] > :not(#app):not(script) { display:none !important; }

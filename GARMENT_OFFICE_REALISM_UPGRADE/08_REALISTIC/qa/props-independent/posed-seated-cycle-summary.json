@@ -1,0 +1,584 @@
+{
+  "status": "REJECTED contact candidate; fixes required before acceptance",
+  "snapshot_seconds": [
+    0,
+    3,
+    6,
+    9
+  ],
+  "seated_actors": 23,
+  "actor_snapshots": 92,
+  "actors_with_seat_probe_penetration": 21,
+  "actors_with_nonseat_nonrug_furniture_contact": 12,
+  "hashes": {
+    "posed-seated-contacts-t0_0.json": "41b96221efc9f0e8c3fd13bfbcd2052c99b861ea977b76f447cb28b1b107485f",
+    "posed-seated-contacts-t3_0.json": "ec36f29f48e5bca6f93e431b53e7ec39b8a0147e0e5684a3bf14009c063b0749",
+    "posed-seated-contacts-t6_0.json": "61900352447cec5fa4d7f1cf2ddc5b476b1c79369e2eead5a7599e6506314d2c",
+    "posed-seated-contacts-t9_0.json": "3d406834067a9cde8c201cd8690293b6d6d037e4c125b8af13470d0825de69f9"
+  },
+  "limitations": [
+    "Four discrete task snapshots are not continuous swept-volume proof.",
+    "Surface contacts can be intentional hand/cushion contact; individual actual triangle coordinates and planes are supplied for interpretation.",
+    "Seat probe uses actual flat source top triangles and actual used visible mesh vertices15\u201365mm below that top. 15mm is a diagnostic threshold, not an ergonomic standard.",
+    "A skin mesh can be occluded by clothing despite being enabled; trousers independently produce35\u201343mm seat penetration in typical chair poses. People agent traced extreme skin counts to hanging resting hands and will fix them separately.",
+    "Other agent owns foot/floor, forbidden rooms, visitor/moving people and visual realism checks."
+  ],
+  "actors": [
+    {
+      "id": "office-person-01",
+      "zone": "Z02",
+      "support": {
+        "sourceObject": "F007 exec_chair_black",
+        "seatTopY": 0.50291997,
+        "note": "Pelvis aligned to approved chair; contact pose reviewed separately."
+      },
+      "seat_probe_vertices_by_time": {
+        "0": 818,
+        "3": 815,
+        "6": 818,
+        "9": 818
+      },
+      "maximum_seat_probe_depth_m": 0.06492096999999997,
+      "seat_probe_meshes": [
+        "LOD0_Adult_skin",
+        "Office_clothing004_1"
+      ],
+      "other_furniture_contacts": {
+        "F006 reception_desk / plinth": {
+          "actor_triangles_max": 140,
+          "local_two_sided_triangle_plane_depth_max_m": 0.005317949067210773
+        }
+      }
+    },
+    {
+      "id": "office-person-03",
+      "zone": "Z02",
+      "support": {
+        "sourceObject": "F009 sofa_84_sand",
+        "seatTopY": 0.4445,
+        "note": "Pelvis aligned to approved chair; contact pose reviewed separately."
+      },
+      "seat_probe_vertices_by_time": {
+        "0": 0,
+        "3": 0,
+        "6": 0,
+        "9": 0
+      },
+      "maximum_seat_probe_depth_m": 0,
+      "seat_probe_meshes": [],
+      "other_furniture_contacts": {}
+    },
+    {
+      "id": "office-person-04",
+      "zone": "Z02",
+      "support": {
+        "sourceObject": "F009 sofa_84_sand",
+        "seatTopY": 0.4445,
+        "note": "Pelvis aligned to approved chair; contact pose reviewed separately."
+      },
+      "seat_probe_vertices_by_time": {
+        "0": 0,
+        "3": 0,
+        "6": 0,
+        "9": 0
+      },
+      "maximum_seat_probe_depth_m": 0,
+      "seat_probe_meshes": [],
+      "other_furniture_contacts": {}
+    },
+    {
+      "id": "office-person-08",
+      "zone": "Z08",
+      "support": {
+        "sourceObject": "F034 board_chair",
+        "seatTopY": 0.50291997,
+        "note": "Pelvis aligned to approved chair; contact pose reviewed separately."
+      },
+      "seat_probe_vertices_by_time": {
+        "0": 49,
+        "3": 49,
+        "6": 49,
+        "9": 49
+      },
+      "maximum_seat_probe_depth_m": 0.04224397000000002,
+      "seat_probe_meshes": [
+        "Office_clothing_1"
+      ],
+      "other_furniture_contacts": {
+        "F031 board_table / walnut": {
+          "actor_triangles_max": 382,
+          "local_two_sided_triangle_plane_depth_max_m": 0.00573995547485362
+        }
+      }
+    },
+    {
+      "id": "office-person-09",
+      "zone": "Z08",
+      "support": {
+        "sourceObject": "F037 board_chair",
+        "seatTopY": 0.50291997,
+        "note": "Pelvis aligned to approved chair; contact pose reviewed separately."
+      },
+      "seat_probe_vertices_by_time": {
+        "0": 56,
+        "3": 56,
+        "6": 56,
+        "9": 56
+      },
+      "maximum_seat_probe_depth_m": 0.04316597,
+      "seat_probe_meshes": [
+        "Office_clothing004_1"
+      ],
+      "other_furniture_contacts": {}
+    },
+    {
+      "id": "office-person-10",
+      "zone": "Z08",
+      "support": {
+        "sourceObject": "F040 board_chair",
+        "seatTopY": 0.50291997,
+        "note": "Pelvis aligned to approved chair; contact pose reviewed separately."
+      },
+      "seat_probe_vertices_by_time": {
+        "0": 49,
+        "3": 49,
+        "6": 49,
+        "9": 49
+      },
+      "maximum_seat_probe_depth_m": 0.04235397000000002,
+      "seat_probe_meshes": [
+        "Office_clothing002_1"
+      ],
+      "other_furniture_contacts": {}
+    },
+    {
+      "id": "office-person-11",
+      "zone": "Z08",
+      "support": {
+        "sourceObject": "F043 board_chair",
+        "seatTopY": 0.50291997,
+        "note": "Pelvis aligned to approved chair; contact pose reviewed separately."
+      },
+      "seat_probe_vertices_by_time": {
+        "0": 56,
+        "3": 56,
+        "6": 56,
+        "9": 56
+      },
+      "maximum_seat_probe_depth_m": 0.04316597,
+      "seat_probe_meshes": [
+        "Office_clothing006_1"
+      ],
+      "other_furniture_contacts": {
+        "F031 board_table / walnut": {
+          "actor_triangles_max": 323,
+          "local_two_sided_triangle_plane_depth_max_m": 0.003917964630126836
+        }
+      }
+    },
+    {
+      "id": "office-person-12",
+      "zone": "Z08",
+      "support": {
+        "sourceObject": "F046 exec_chair_black",
+        "seatTopY": 0.50291997,
+        "note": "Pelvis aligned to approved chair; contact pose reviewed separately."
+      },
+      "seat_probe_vertices_by_time": {
+        "0": 49,
+        "3": 49,
+        "6": 49,
+        "9": 49
+      },
+      "maximum_seat_probe_depth_m": 0.04224397000000002,
+      "seat_probe_meshes": [
+        "Office_clothing_1"
+      ],
+      "other_furniture_contacts": {}
+    },
+    {
+      "id": "office-person-14",
+      "zone": "Z12",
+      "support": {
+        "sourceObject": "F064 exec_chair_cognac",
+        "seatTopY": 0.50291997,
+        "note": "Pelvis aligned to approved chair; contact pose reviewed separately."
+      },
+      "seat_probe_vertices_by_time": {
+        "0": 278,
+        "3": 276,
+        "6": 274,
+        "9": 280
+      },
+      "maximum_seat_probe_depth_m": 0.06495596999999997,
+      "seat_probe_meshes": [
+        "LOD0_Adult_skin",
+        "Office_clothing_1"
+      ],
+      "other_furniture_contacts": {}
+    },
+    {
+      "id": "office-person-15",
+      "zone": "Z05",
+      "support": {
+        "sourceObject": "F140 task_chair",
+        "seatTopY": 0.49021998,
+        "note": "Pelvis aligned to approved chair; contact pose reviewed separately."
+      },
+      "seat_probe_vertices_by_time": {
+        "0": 40,
+        "3": 40,
+        "6": 40,
+        "9": 40
+      },
+      "maximum_seat_probe_depth_m": 0.03730897999999999,
+      "seat_probe_meshes": [
+        "Office_clothing004_1"
+      ],
+      "other_furniture_contacts": {
+        "F139 bench2 / plastic_white": {
+          "actor_triangles_max": 466,
+          "local_two_sided_triangle_plane_depth_max_m": 0.007551152111053394
+        },
+        "F139 bench2 / oak": {
+          "actor_triangles_max": 40,
+          "local_two_sided_triangle_plane_depth_max_m": 0.006281155944824146
+        },
+        "F139 bench2 / plastic_dark": {
+          "actor_triangles_max": 113,
+          "local_two_sided_triangle_plane_depth_max_m": 0.002791164699554649
+        }
+      }
+    },
+    {
+      "id": "office-person-16",
+      "zone": "Z05",
+      "support": {
+        "sourceObject": "F143 task_chair",
+        "seatTopY": 0.49021998,
+        "note": "Pelvis aligned to approved chair; contact pose reviewed separately."
+      },
+      "seat_probe_vertices_by_time": {
+        "0": 218,
+        "3": 216,
+        "6": 221,
+        "9": 216
+      },
+      "maximum_seat_probe_depth_m": 0.06491698000000001,
+      "seat_probe_meshes": [
+        "LOD0_Adult_skin",
+        "Office_clothing_1"
+      ],
+      "other_furniture_contacts": {}
+    },
+    {
+      "id": "office-person-17",
+      "zone": "Z06",
+      "support": {
+        "sourceObject": "F113 task_chair",
+        "seatTopY": 0.49021998,
+        "note": "Pelvis aligned to approved chair; contact pose reviewed separately."
+      },
+      "seat_probe_vertices_by_time": {
+        "0": 26,
+        "3": 26,
+        "6": 26,
+        "9": 26
+      },
+      "maximum_seat_probe_depth_m": 0.035673979999999994,
+      "seat_probe_meshes": [
+        "Office_clothing002_1"
+      ],
+      "other_furniture_contacts": {
+        "F110 bench3 / plastic_white": {
+          "actor_triangles_max": 460,
+          "local_two_sided_triangle_plane_depth_max_m": 0.010300671340727808
+        },
+        "F110 bench3 / oak": {
+          "actor_triangles_max": 36,
+          "local_two_sided_triangle_plane_depth_max_m": 0.009230996948242143
+        },
+        "F110 bench3 / plastic_dark": {
+          "actor_triangles_max": 165,
+          "local_two_sided_triangle_plane_depth_max_m": 0.0033084840367664137
+        }
+      }
+    },
+    {
+      "id": "office-person-18",
+      "zone": "Z06",
+      "support": {
+        "sourceObject": "F120 task_chair",
+        "seatTopY": 0.49021998,
+        "note": "Pelvis aligned to approved chair; contact pose reviewed separately."
+      },
+      "seat_probe_vertices_by_time": {
+        "0": 40,
+        "3": 40,
+        "6": 40,
+        "9": 40
+      },
+      "maximum_seat_probe_depth_m": 0.03730897999999999,
+      "seat_probe_meshes": [
+        "Office_clothing006_1"
+      ],
+      "other_furniture_contacts": {
+        "F117 bench3 / plastic_white": {
+          "actor_triangles_max": 469,
+          "local_two_sided_triangle_plane_depth_max_m": 0.008504266551971895
+        },
+        "F117 bench3 / oak": {
+          "actor_triangles_max": 40,
+          "local_two_sided_triangle_plane_depth_max_m": 0.007251003051757854
+        },
+        "F117 bench3 / plastic_dark": {
+          "actor_triangles_max": 131,
+          "local_two_sided_triangle_plane_depth_max_m": 0.003390819305378744
+        }
+      }
+    },
+    {
+      "id": "office-person-19",
+      "zone": "Z07",
+      "support": {
+        "sourceObject": "F074 task_chair",
+        "seatTopY": 0.49021998,
+        "note": "Pelvis aligned to approved chair; contact pose reviewed separately."
+      },
+      "seat_probe_vertices_by_time": {
+        "0": 25,
+        "3": 25,
+        "6": 25,
+        "9": 25
+      },
+      "maximum_seat_probe_depth_m": 0.03554197999999997,
+      "seat_probe_meshes": [
+        "Office_clothing_1"
+      ],
+      "other_furniture_contacts": {
+        "F073 bench3 / plastic_white": {
+          "actor_triangles_max": 429,
+          "local_two_sided_triangle_plane_depth_max_m": 0.008764770356515838
+        },
+        "F073 bench3 / oak": {
+          "actor_triangles_max": 46,
+          "local_two_sided_triangle_plane_depth_max_m": 0.009914888252257725
+        },
+        "F073 bench3 / plastic_dark": {
+          "actor_triangles_max": 140,
+          "local_two_sided_triangle_plane_depth_max_m": 0.0032354317211598423
+        }
+      }
+    },
+    {
+      "id": "office-person-20",
+      "zone": "Z07",
+      "support": {
+        "sourceObject": "F089 task_chair",
+        "seatTopY": 0.49021998,
+        "note": "Pelvis aligned to approved chair; contact pose reviewed separately."
+      },
+      "seat_probe_vertices_by_time": {
+        "0": 802,
+        "3": 801,
+        "6": 802,
+        "9": 799
+      },
+      "maximum_seat_probe_depth_m": 0.06497698000000002,
+      "seat_probe_meshes": [
+        "LOD0_Adult_skin",
+        "Office_clothing004_1"
+      ],
+      "other_furniture_contacts": {}
+    },
+    {
+      "id": "office-person-21",
+      "zone": "Z07",
+      "support": {
+        "sourceObject": "F094 task_chair_green",
+        "seatTopY": 0.49021998,
+        "note": "Pelvis aligned to approved chair; contact pose reviewed separately."
+      },
+      "seat_probe_vertices_by_time": {
+        "0": 26,
+        "3": 26,
+        "6": 26,
+        "9": 26
+      },
+      "maximum_seat_probe_depth_m": 0.035673979999999994,
+      "seat_probe_meshes": [
+        "Office_clothing002_1"
+      ],
+      "other_furniture_contacts": {
+        "F092 table_team / oak": {
+          "actor_triangles_max": 478,
+          "local_two_sided_triangle_plane_depth_max_m": 0.00991264596241617
+        }
+      }
+    },
+    {
+      "id": "office-person-25",
+      "zone": "Z14",
+      "support": {
+        "sourceObject": "F182 task_chair",
+        "seatTopY": 0.49021998,
+        "note": "Pelvis aligned to approved chair; contact pose reviewed separately."
+      },
+      "seat_probe_vertices_by_time": {
+        "0": 40,
+        "3": 40,
+        "6": 40,
+        "9": 40
+      },
+      "maximum_seat_probe_depth_m": 0.03730897999999999,
+      "seat_probe_meshes": [
+        "Office_clothing004_1"
+      ],
+      "other_furniture_contacts": {
+        "F181 cad_desk / oak": {
+          "actor_triangles_max": 427,
+          "local_two_sided_triangle_plane_depth_max_m": 0.007997188018828736
+        },
+        "F181 cad_desk / metal_black": {
+          "actor_triangles_max": 89,
+          "local_two_sided_triangle_plane_depth_max_m": 0.0020858081656919083
+        }
+      }
+    },
+    {
+      "id": "office-person-26",
+      "zone": "Z17",
+      "support": {
+        "sourceObject": "F207 task_chair",
+        "seatTopY": 0.49021998,
+        "note": "Pelvis aligned to approved chair; contact pose reviewed separately."
+      },
+      "seat_probe_vertices_by_time": {
+        "0": 26,
+        "3": 26,
+        "6": 26,
+        "9": 26
+      },
+      "maximum_seat_probe_depth_m": 0.035673979999999994,
+      "seat_probe_meshes": [
+        "Office_clothing002_1"
+      ],
+      "other_furniture_contacts": {
+        "F206 sewing / plastic_white": {
+          "actor_triangles_max": 296,
+          "local_two_sided_triangle_plane_depth_max_m": 0.004727643213425929
+        }
+      }
+    },
+    {
+      "id": "office-person-28",
+      "zone": "Z18",
+      "support": {
+        "sourceObject": "F222 task_chair_green",
+        "seatTopY": 0.49021998,
+        "note": "Pelvis aligned to approved chair; contact pose reviewed separately."
+      },
+      "seat_probe_vertices_by_time": {
+        "0": 25,
+        "3": 25,
+        "6": 25,
+        "9": 25
+      },
+      "maximum_seat_probe_depth_m": 0.03554197999999997,
+      "seat_probe_meshes": [
+        "Office_clothing_1"
+      ],
+      "other_furniture_contacts": {
+        "F221 bench_design / oak": {
+          "actor_triangles_max": 440,
+          "local_two_sided_triangle_plane_depth_max_m": 0.009812790119170245
+        }
+      }
+    },
+    {
+      "id": "office-person-29",
+      "zone": "Z18",
+      "support": {
+        "sourceObject": "F225 task_chair_green",
+        "seatTopY": 0.49021998,
+        "note": "Pelvis aligned to approved chair; contact pose reviewed separately."
+      },
+      "seat_probe_vertices_by_time": {
+        "0": 40,
+        "3": 40,
+        "6": 40,
+        "9": 40
+      },
+      "maximum_seat_probe_depth_m": 0.03730897999999999,
+      "seat_probe_meshes": [
+        "Office_clothing004_1"
+      ],
+      "other_furniture_contacts": {
+        "F221 bench_design / oak": {
+          "actor_triangles_max": 458,
+          "local_two_sided_triangle_plane_depth_max_m": 0.007465252891542207
+        }
+      }
+    },
+    {
+      "id": "office-person-30",
+      "zone": "Z20",
+      "support": {
+        "sourceObject": "F263 dining_chair",
+        "seatTopY": 0.48768002,
+        "note": "Pelvis aligned to approved chair; contact pose reviewed separately."
+      },
+      "seat_probe_vertices_by_time": {
+        "0": 29,
+        "3": 29,
+        "6": 29,
+        "9": 29
+      },
+      "maximum_seat_probe_depth_m": 0.03432901999999999,
+      "seat_probe_meshes": [
+        "Office_clothing002_1"
+      ],
+      "other_furniture_contacts": {}
+    },
+    {
+      "id": "office-person-31",
+      "zone": "Z20",
+      "support": {
+        "sourceObject": "F266 dining_chair",
+        "seatTopY": 0.48768002,
+        "note": "Pelvis aligned to approved chair; contact pose reviewed separately."
+      },
+      "seat_probe_vertices_by_time": {
+        "0": 40,
+        "3": 40,
+        "6": 40,
+        "9": 40
+      },
+      "maximum_seat_probe_depth_m": 0.03612702000000001,
+      "seat_probe_meshes": [
+        "Office_clothing006_1"
+      ],
+      "other_furniture_contacts": {}
+    },
+    {
+      "id": "office-person-32",
+      "zone": "Z20",
+      "support": {
+        "sourceObject": "F269 dining_chair",
+        "seatTopY": 0.48768002,
+        "note": "Pelvis aligned to approved chair; contact pose reviewed separately."
+      },
+      "seat_probe_vertices_by_time": {
+        "0": 30,
+        "3": 30,
+        "6": 30,
+        "9": 30
+      },
+      "maximum_seat_probe_depth_m": 0.03419302000000002,
+      "seat_probe_meshes": [
+        "Office_clothing_1"
+      ],
+      "other_furniture_contacts": {}
+    }
+  ]
+}

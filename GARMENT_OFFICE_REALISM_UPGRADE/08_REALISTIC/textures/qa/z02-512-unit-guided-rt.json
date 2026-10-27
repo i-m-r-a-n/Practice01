@@ -1,0 +1,35 @@
+{
+  "purpose": "Diagnostic postprocess of retained raw scene-linear EXR, not adopted production replacement",
+  "filter": "RT",
+  "directional": false,
+  "inputScale": "automatic",
+  "normalGuide": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/lighting-v2/Z02_normal.exr",
+  "normalGuideSHA256": "a7001e48b7ce3fdf088773d024daafe999f3033f4d99f4fdc09ed4b04045a577",
+  "normalGuideDescription": "Actual deterministic Cycles NORMAL bake, decoded RGB*2-1 and transformed to world space",
+  "albedoGuide": null,
+  "albedoGuideSHA256": null,
+  "albedoGuideDescription": "Constant RGB1 unit-reflectance diagnostic for no-albedo irradiance; not an actual material albedo bake",
+  "cleanAux": true,
+  "source": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/lighting-v2/Z02_raw.exr",
+  "sourceSHA256": "8d11e2f3d9ebae583d001f01c8f632ce04616a616378f4b0c7dd0d72ad5864bc",
+  "output": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/textures/qa/z02-512-unit-guided-rt.exr",
+  "outputSHA256": "b2cd6e9b33f51df893468c5b23c518218b2a8968b2696603ca3bb25125ba3851",
+  "shape": [
+    2048,
+    2048,
+    3
+  ],
+  "sourceMax": 26.046875,
+  "outputMax": 16.21875,
+  "negativeOutputChannelsClamped": 0,
+  "seconds": 10.941309963000094,
+  "threads": 2,
+  "documentation": "https://github.com/RenderKit/oidn/blob/v2.3.3/README.md#rtlightmap",
+  "library": "/workspace/tools/oidn/oidn-2.3.3.x86_64.linux/lib/libOpenImageDenoise.so",
+  "albedoSourceRange": [
+    1.0,
+    1.0
+  ],
+  "albedoGuideChannelValuesClamped": 0,
+  "unitAlbedoDiagnostic": true
+}

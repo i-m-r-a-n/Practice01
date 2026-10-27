@@ -1,0 +1,3365 @@
+{
+  "status": "exported",
+  "url": "http://127.0.0.1:8770/GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/people/review/office-preview.html",
+  "sources": [
+    {
+      "url": "http://127.0.0.1:8770/GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/people/people-layer.js",
+      "bytes": 11863,
+      "sha256": "eed6830c1ffdc2407bd227b4dad578b97068ac0cca81f8360c96de8aefe2ad30"
+    },
+    {
+      "url": "http://127.0.0.1:8770/GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/people/people-manifest.json",
+      "bytes": 40977,
+      "sha256": "8bf7eeab839407f5fcdca6d9076b9a8b4fcba09d4efff5d25eee8a76094b3859"
+    },
+    {
+      "url": "http://127.0.0.1:8770/GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/people/poses.json",
+      "bytes": 321997,
+      "sha256": "46d6a7d13d75c512d4000c514a3237a92f65ffd409c80507f26045811bf78653"
+    },
+    {
+      "url": "http://127.0.0.1:8770/GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/people/assets/salwar_braid.glb",
+      "bytes": 4581800,
+      "sha256": "07015f14834520715c91e7822e4c9ddfb7bcb9d6e278cf1995453c38644e9497"
+    },
+    {
+      "url": "http://127.0.0.1:8770/GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/people/assets/salwar.glb",
+      "bytes": 4895972,
+      "sha256": "019c82bdf8c36410f200400837215ba0c2c1a3336c46bdd2f8bf16cd5f775784"
+    },
+    {
+      "url": "http://127.0.0.1:8770/GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/people/assets/shirt.glb",
+      "bytes": 4375048,
+      "sha256": "1ad870ca2eb18f7cfec870977f4929cfdb940fbaa6407a0b1d3976abcf8909ad"
+    },
+    {
+      "url": "http://127.0.0.1:8770/GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/people/assets/panjabi.glb",
+      "bytes": 4138872,
+      "sha256": "8a54f94988b31142aab090a49a60c11efec6909cfb90204ceed14529d59df121"
+    }
+  ],
+  "snapshots": [
+    {
+      "seconds": 0,
+      "all_actors": true,
+      "actors": [
+        {
+          "id": "office-person-01",
+          "file": "t0/office-person-01.json.gz",
+          "sha256": "a9f0f3cfe24bfde2c8bed66680634cfc1c66a822e75336fcab6f3b29197a3cf8",
+          "meshes": 6,
+          "vertices": 23946,
+          "minimum_vertex_y": 0.005255
+        },
+        {
+          "id": "office-person-02",
+          "file": "t0/office-person-02.json.gz",
+          "sha256": "78a5a493bda05bfb91b9be6f3046666dc58db08ffa7142f3c48868198a8569c8",
+          "meshes": 6,
+          "vertices": 21774,
+          "minimum_vertex_y": -0.014378
+        },
+        {
+          "id": "office-person-03",
+          "file": "t0/office-person-03.json.gz",
+          "sha256": "59fd557ca51062a988c7213363047f8724f7361a9d3021f6ff5e1f14a895e560",
+          "meshes": 6,
+          "vertices": 20961,
+          "minimum_vertex_y": -0.018787
+        },
+        {
+          "id": "office-person-04",
+          "file": "t0/office-person-04.json.gz",
+          "sha256": "3bc249ffbe29d485ce7d04c16808e0326b823092c3c2d1edb4890c304ae01fac",
+          "meshes": 6,
+          "vertices": 24707,
+          "minimum_vertex_y": 0.005302
+        },
+        {
+          "id": "office-person-05",
+          "file": "t0/office-person-05.json.gz",
+          "sha256": "b51aa117c3a1b5934fb7c621065c68bb3881bdaf84ed4e9f4c21b980451ea998",
+          "meshes": 7,
+          "vertices": 24426,
+          "minimum_vertex_y": -0.00859
+        },
+        {
+          "id": "office-person-06",
+          "file": "t0/office-person-06.json.gz",
+          "sha256": "39de7313b09a62914617de2ef12dc0b1f2fd8a2a699d979925f7c965f68d1b6a",
+          "meshes": 6,
+          "vertices": 21774,
+          "minimum_vertex_y": -0.013412
+        },
+        {
+          "id": "office-person-07",
+          "file": "t0/office-person-07.json.gz",
+          "sha256": "ed919a99886bd766cffbfa643b4cc09f1ab12ca68aad59352b7cc46edce1d4e1",
+          "meshes": 7,
+          "vertices": 21441,
+          "minimum_vertex_y": -0.014764
+        },
+        {
+          "id": "office-person-08",
+          "file": "t0/office-person-08.json.gz",
+          "sha256": "a55b24616e3575025df507718cba423a7e5912329d7666279c4b3ec9e8782320",
+          "meshes": 6,
+          "vertices": 21774,
+          "minimum_vertex_y": -0.018653
+        },
+        {
+          "id": "office-person-09",
+          "file": "t0/office-person-09.json.gz",
+          "sha256": "6926ffaedd9daad51c55c25646d727b7e7ef5224631789a1e914af778bf1a9b5",
+          "meshes": 6,
+          "vertices": 23946,
+          "minimum_vertex_y": 0.005255
+        },
+        {
+          "id": "office-person-10",
+          "file": "t0/office-person-10.json.gz",
+          "sha256": "b3161b63635f06a0adcca1c82d186ba94e189b7ee07604524cc068f652a5bb97",
+          "meshes": 6,
+          "vertices": 20961,
+          "minimum_vertex_y": -0.018783
+        },
+        {
+          "id": "office-person-11",
+          "file": "t0/office-person-11.json.gz",
+          "sha256": "1875824fb72ac65ca849a14262966e34f5460ccc6e26c93643f5832922a9a908",
+          "meshes": 6,
+          "vertices": 24707,
+          "minimum_vertex_y": 0.005255
+        },
+        {
+          "id": "office-person-12",
+          "file": "t0/office-person-12.json.gz",
+          "sha256": "1594f3565b3e7415bfeb906dc4710aae706ffadc03eb78b6264708e45a665111",
+          "meshes": 6,
+          "vertices": 21774,
+          "minimum_vertex_y": -0.018653
+        },
+        {
+          "id": "office-person-13",
+          "file": "t0/office-person-13.json.gz",
+          "sha256": "78179b4bb719d6a8ff303a6e6bef774215617285d85644b54a4d3ff304828a77",
+          "meshes": 7,
+          "vertices": 24426,
+          "minimum_vertex_y": -0.008739
+        },
+        {
+          "id": "office-person-14",
+          "file": "t0/office-person-14.json.gz",
+          "sha256": "967062dc1fc54816f96131e828e604d41a1b159dec7bf70097741603cca0c6de",
+          "meshes": 7,
+          "vertices": 21798,
+          "minimum_vertex_y": -0.018653
+        },
+        {
+          "id": "office-person-15",
+          "file": "t0/office-person-15.json.gz",
+          "sha256": "9b1247c519897af1ecca035a57a32d1205e22ce016eee2ccc141aa731c753006",
+          "meshes": 6,
+          "vertices": 23946,
+          "minimum_vertex_y": 0.005265
+        },
+        {
+          "id": "office-person-16",
+          "file": "t0/office-person-16.json.gz",
+          "sha256": "70fff5e47bcf00a4c719fe150a70aa4f742c87431a103523a0d030b404c39901",
+          "meshes": 7,
+          "vertices": 21798,
+          "minimum_vertex_y": -0.018655
+        },
+        {
+          "id": "office-person-17",
+          "file": "t0/office-person-17.json.gz",
+          "sha256": "f31b54510ee0ede696090ed9a02dd0b85a5ae090b0a12218c5c89dfa9d70f107",
+          "meshes": 6,
+          "vertices": 20961,
+          "minimum_vertex_y": -0.018784
+        },
+        {
+          "id": "office-person-18",
+          "file": "t0/office-person-18.json.gz",
+          "sha256": "c67cfefbaac91720d151e2865a7dbaa1dfa515426fe0ff8ac855fc1b0fd284b1",
+          "meshes": 6,
+          "vertices": 24707,
+          "minimum_vertex_y": 0.005265
+        },
+        {
+          "id": "office-person-19",
+          "file": "t0/office-person-19.json.gz",
+          "sha256": "1061db7ef87689efe0db2fc9e820bf6351e68f814bf5d32b579e6b9f7082eda3",
+          "meshes": 6,
+          "vertices": 21774,
+          "minimum_vertex_y": -0.018655
+        },
+        {
+          "id": "office-person-20",
+          "file": "t0/office-person-20.json.gz",
+          "sha256": "5f77101dca40280e6b92195327c27b451e59f0cf2939b98e6602a97971629f88",
+          "meshes": 7,
+          "vertices": 23970,
+          "minimum_vertex_y": 0.005265
+        },
+        {
+          "id": "office-person-21",
+          "file": "t0/office-person-21.json.gz",
+          "sha256": "9794c2b6ef89688eb702c57f569e459140fe61088efd4f44b9953cf7f8dd91b9",
+          "meshes": 6,
+          "vertices": 20961,
+          "minimum_vertex_y": -0.018784
+        },
+        {
+          "id": "office-person-22",
+          "file": "t0/office-person-22.json.gz",
+          "sha256": "e3dfea37cf2db925de7ccc7df74c7d8e2396a95be553f5452f9ea63b589b307d",
+          "meshes": 7,
+          "vertices": 25187,
+          "minimum_vertex_y": -0.008292
+        },
+        {
+          "id": "office-person-23",
+          "file": "t0/office-person-23.json.gz",
+          "sha256": "896190a562be2d707468aacbac085d38714dea23d5e5eec3f83f326e5353951e",
+          "meshes": 6,
+          "vertices": 21774,
+          "minimum_vertex_y": -0.013025
+        },
+        {
+          "id": "office-person-24",
+          "file": "t0/office-person-24.json.gz",
+          "sha256": "8f1f9e2d0f2c05ea24efc21dde1478662b147c9c85bfd224546783cb9ae7c25b",
+          "meshes": 6,
+          "vertices": 21774,
+          "minimum_vertex_y": -0.014378
+        },
+        {
+          "id": "office-person-25",
+          "file": "t0/office-person-25.json.gz",
+          "sha256": "542dfe5428e81f7b46098f72afa24ce0111b57377296d9f5fddfcacbadbf0f25",
+          "meshes": 6,
+          "vertices": 23946,
+          "minimum_vertex_y": 0.005265
+        },
+        {
+          "id": "office-person-26",
+          "file": "t0/office-person-26.json.gz",
+          "sha256": "782dc13e1b1bcc1c86daa2100d3beae314fb9c618d382c2d9c038062657f056c",
+          "meshes": 6,
+          "vertices": 20961,
+          "minimum_vertex_y": -0.018784
+        },
+        {
+          "id": "office-person-27",
+          "file": "t0/office-person-27.json.gz",
+          "sha256": "91533d9c82fb8ab524ad22e77501773ee937c7719aba1cc9e50f4e44aaaf0169",
+          "meshes": 7,
+          "vertices": 25187,
+          "minimum_vertex_y": -0.00859
+        },
+        {
+          "id": "office-person-28",
+          "file": "t0/office-person-28.json.gz",
+          "sha256": "2bf1280641d4d6b315ca1fd67680ec7d0ad20c9b7f96569e5c2a01738c40fe4a",
+          "meshes": 6,
+          "vertices": 21774,
+          "minimum_vertex_y": -0.018655
+        },
+        {
+          "id": "office-person-29",
+          "file": "t0/office-person-29.json.gz",
+          "sha256": "275e25597a314d912ee6befe1247bb9de07197eccc0b2c90a9de3795baee03d9",
+          "meshes": 6,
+          "vertices": 23946,
+          "minimum_vertex_y": 0.005265
+        },
+        {
+          "id": "office-person-30",
+          "file": "t0/office-person-30.json.gz",
+          "sha256": "7d733ec11b53643a1f0607d2ea7644f406a28aedd7b52fd94557b712a8c1bccd",
+          "meshes": 7,
+          "vertices": 21037,
+          "minimum_vertex_y": -0.018785
+        },
+        {
+          "id": "office-person-31",
+          "file": "t0/office-person-31.json.gz",
+          "sha256": "4b2b9cf9ea56db2cfb703ee28f1e49e0ec41096200d5bb7bc31373552255b3e5",
+          "meshes": 7,
+          "vertices": 24783,
+          "minimum_vertex_y": 0.005267
+        },
+        {
+          "id": "office-person-32",
+          "file": "t0/office-person-32.json.gz",
+          "sha256": "cc6b95b43498c082449d1206196f0167e6c2246930058027fe744c04c0a22dc5",
+          "meshes": 6,
+          "vertices": 21774,
+          "minimum_vertex_y": -0.018655
+        },
+        {
+          "id": "office-person-33",
+          "file": "t0/office-person-33.json.gz",
+          "sha256": "5f66af57e84acbc89a00af9bae426255c27c50113d52b1045cd97641aa724acc",
+          "meshes": 7,
+          "vertices": 24426,
+          "minimum_vertex_y": -0.008292
+        },
+        {
+          "id": "office-person-34",
+          "file": "t0/office-person-34.json.gz",
+          "sha256": "dc1c28c63c5ae2c0ba53c9f2d69338f016c969a553299d5a50914e52d323b0b3",
+          "meshes": 7,
+          "vertices": 21798,
+          "minimum_vertex_y": -0.013025
+        },
+        {
+          "id": "office-person-35",
+          "file": "t0/office-person-35.json.gz",
+          "sha256": "869f23f66f38852fce183107d1a5a7af44b0bc1c8cf243b2f7df2cee050a9218",
+          "meshes": 7,
+          "vertices": 21441,
+          "minimum_vertex_y": -0.014378
+        }
+      ],
+      "runtime_stats": {
+        "enabled": true,
+        "loaded": true,
+        "total": 35,
+        "visible": 35,
+        "walkers": 3,
+        "illustrative": true,
+        "forbiddenZoneViolations": 0,
+        "status": "asset/pose review required before integration",
+        "nativeMacPerformanceTested": false
+      }
+    },
+    {
+      "seconds": 0.35,
+      "all_actors": false,
+      "actors": [
+        {
+          "id": "office-person-33",
+          "file": "t0_35/office-person-33.json.gz",
+          "sha256": "3435156dab12014e87221949c60a6d4a1741cfd77fa9f8046d5a804d42d938d2",
+          "meshes": 7,
+          "vertices": 24426,
+          "minimum_vertex_y": 0.018014
+        },
+        {
+          "id": "office-person-34",
+          "file": "t0_35/office-person-34.json.gz",
+          "sha256": "6913812b254d885ea229ea2bc65cd13e37e9cf52d4510bf365ae793073cb8c90",
+          "meshes": 7,
+          "vertices": 21798,
+          "minimum_vertex_y": -0.003753
+        },
+        {
+          "id": "office-person-35",
+          "file": "t0_35/office-person-35.json.gz",
+          "sha256": "6692392a8dab5f1f7f588ef3098468d753a46332f1d44c6beb74f19275e4ae67",
+          "meshes": 7,
+          "vertices": 21441,
+          "minimum_vertex_y": -0.00527
+        }
+      ],
+      "runtime_stats": {
+        "enabled": true,
+        "loaded": true,
+        "total": 35,
+        "visible": 35,
+        "walkers": 3,
+        "illustrative": true,
+        "forbiddenZoneViolations": 0,
+        "status": "asset/pose review required before integration",
+        "nativeMacPerformanceTested": false
+      }
+    },
+    {
+      "seconds": 0.75,
+      "all_actors": false,
+      "actors": [
+        {
+          "id": "office-person-33",
+          "file": "t0_75/office-person-33.json.gz",
+          "sha256": "eb5b42a06170b368c95206fbe84728a06832c4bf9b3526d0d7c247a7804b3310",
+          "meshes": 7,
+          "vertices": 24426,
+          "minimum_vertex_y": -0.008292
+        },
+        {
+          "id": "office-person-34",
+          "file": "t0_75/office-person-34.json.gz",
+          "sha256": "394ffc0807187c71e0c16020aad544a368a21e2a72f619b0cc8edc899b74a05a",
+          "meshes": 7,
+          "vertices": 21798,
+          "minimum_vertex_y": -0.013025
+        },
+        {
+          "id": "office-person-35",
+          "file": "t0_75/office-person-35.json.gz",
+          "sha256": "353006a986dfea0db9c11cb6d2f103365f656bb66b0ce3ce8b85cd4b6252ac12",
+          "meshes": 7,
+          "vertices": 21441,
+          "minimum_vertex_y": -0.014378
+        }
+      ],
+      "runtime_stats": {
+        "enabled": true,
+        "loaded": true,
+        "total": 35,
+        "visible": 35,
+        "walkers": 3,
+        "illustrative": true,
+        "forbiddenZoneViolations": 0,
+        "status": "asset/pose review required before integration",
+        "nativeMacPerformanceTested": false
+      }
+    },
+    {
+      "seconds": 1.3,
+      "all_actors": false,
+      "actors": [
+        {
+          "id": "office-person-33",
+          "file": "t1_3/office-person-33.json.gz",
+          "sha256": "5eb030906df695fe355859e423e389300f75e550b71d091c935df5e7127934f2",
+          "meshes": 7,
+          "vertices": 24426,
+          "minimum_vertex_y": 0.005445
+        },
+        {
+          "id": "office-person-34",
+          "file": "t1_3/office-person-34.json.gz",
+          "sha256": "06e66633449ba322f7e9c49ec042f001cf5bcf4fbba74be8460aa877f1995643",
+          "meshes": 7,
+          "vertices": 21798,
+          "minimum_vertex_y": -0.017146
+        },
+        {
+          "id": "office-person-35",
+          "file": "t1_3/office-person-35.json.gz",
+          "sha256": "ec0f965a49ef10d14f77f915d9e60db89715bce2f213d40f93c91f7688196f16",
+          "meshes": 7,
+          "vertices": 21441,
+          "minimum_vertex_y": -0.019452
+        }
+      ],
+      "runtime_stats": {
+        "enabled": true,
+        "loaded": true,
+        "total": 35,
+        "visible": 35,
+        "walkers": 3,
+        "illustrative": true,
+        "forbiddenZoneViolations": 0,
+        "status": "asset/pose review required before integration",
+        "nativeMacPerformanceTested": false
+      }
+    },
+    {
+      "seconds": 3,
+      "all_actors": true,
+      "actors": [
+        {
+          "id": "office-person-01",
+          "file": "t3/office-person-01.json.gz",
+          "sha256": "0130603aba5d1a922ca2759264e23d1a0d754e7d3ee6fb21021692b32df63f70",
+          "meshes": 6,
+          "vertices": 23946,
+          "minimum_vertex_y": 0.005255
+        },
+        {
+          "id": "office-person-02",
+          "file": "t3/office-person-02.json.gz",
+          "sha256": "d5edc5d1084d1a2ae1404356d8c5e72e338d9278ecdaad659831ebdb6f9091ca",
+          "meshes": 6,
+          "vertices": 21774,
+          "minimum_vertex_y": -0.014378
+        },
+        {
+          "id": "office-person-03",
+          "file": "t3/office-person-03.json.gz",
+          "sha256": "f0ecb05af392f02c79c149ef12ff735182de37ccbb73ed956dee274a92299437",
+          "meshes": 6,
+          "vertices": 20961,
+          "minimum_vertex_y": -0.018787
+        },
+        {
+          "id": "office-person-04",
+          "file": "t3/office-person-04.json.gz",
+          "sha256": "4cc15b49b7f6a2fb84666187f27cd776e9c3cfba5e9816ce72aa188ba32e6cef",
+          "meshes": 6,
+          "vertices": 24707,
+          "minimum_vertex_y": 0.005302
+        },
+        {
+          "id": "office-person-05",
+          "file": "t3/office-person-05.json.gz",
+          "sha256": "8647087950562a5cf2f56e5afc71d2849ef15168514bd75b6280ebbc2631a133",
+          "meshes": 7,
+          "vertices": 24426,
+          "minimum_vertex_y": -0.00859
+        },
+        {
+          "id": "office-person-06",
+          "file": "t3/office-person-06.json.gz",
+          "sha256": "016b17d8038e9e1c4f5c7545ddabd6d75bed80f56bfaa4f5e37d8feda85041c8",
+          "meshes": 6,
+          "vertices": 21774,
+          "minimum_vertex_y": -0.013412
+        },
+        {
+          "id": "office-person-07",
+          "file": "t3/office-person-07.json.gz",
+          "sha256": "ec6c3af1d8d47347fa20515abb4514a5be6804ed3389fa32a32aada92a026515",
+          "meshes": 7,
+          "vertices": 21441,
+          "minimum_vertex_y": -0.014764
+        },
+        {
+          "id": "office-person-08",
+          "file": "t3/office-person-08.json.gz",
+          "sha256": "668a7b130c6928f0658a044e4e2b7e0c0c37ad4a087b782244c2f47c3895d6f5",
+          "meshes": 6,
+          "vertices": 21774,
+          "minimum_vertex_y": -0.018653
+        },
+        {
+          "id": "office-person-09",
+          "file": "t3/office-person-09.json.gz",
+          "sha256": "df672298583ee05e3b1b1ad3d983a246a120b02df0bcd2ddd15c5da203507b63",
+          "meshes": 6,
+          "vertices": 23946,
+          "minimum_vertex_y": 0.005255
+        },
+        {
+          "id": "office-person-10",
+          "file": "t3/office-person-10.json.gz",
+          "sha256": "4e77d3c0a0c3096efdf0ae0de3de2d84864b94389a133769d21dda29f5c779d1",
+          "meshes": 6,
+          "vertices": 20961,
+          "minimum_vertex_y": -0.018783
+        },
+        {
+          "id": "office-person-11",
+          "file": "t3/office-person-11.json.gz",
+          "sha256": "a22a91eaa3102baa0faff0633d456be8011d370226915713eeede10f2c21f88b",
+          "meshes": 6,
+          "vertices": 24707,
+          "minimum_vertex_y": 0.005255
+        },
+        {
+          "id": "office-person-12",
+          "file": "t3/office-person-12.json.gz",
+          "sha256": "3391579d44f8bb51ce58fd4f66a7a029cc25820c4539d25c569d7ef6b8d2d6a1",
+          "meshes": 6,
+          "vertices": 21774,
+          "minimum_vertex_y": -0.018653
+        },
+        {
+          "id": "office-person-13",
+          "file": "t3/office-person-13.json.gz",
+          "sha256": "4e5deb5a44511fe35c71100e92b278bd0a006a01fe0e8497adf9c2867c65a800",
+          "meshes": 7,
+          "vertices": 24426,
+          "minimum_vertex_y": -0.008739
+        },
+        {
+          "id": "office-person-14",
+          "file": "t3/office-person-14.json.gz",
+          "sha256": "5d9a2ba10d66de80b9dda7c68eff26c77f9f0ee995e5cf0fc8f5c7b92384cd4d",
+          "meshes": 7,
+          "vertices": 21798,
+          "minimum_vertex_y": -0.018653
+        },
+        {
+          "id": "office-person-15",
+          "file": "t3/office-person-15.json.gz",
+          "sha256": "e0a2049c931571b19073c0014b4a5bc03e655be576ee9dde5fb91eafc9885bfb",
+          "meshes": 6,
+          "vertices": 23946,
+          "minimum_vertex_y": 0.005265
+        },
+        {
+          "id": "office-person-16",
+          "file": "t3/office-person-16.json.gz",
+          "sha256": "fc4cf85d663ab9595edecb56487d466ea1d77d669eec218dc990b99ed7fa7662",
+          "meshes": 7,
+          "vertices": 21798,
+          "minimum_vertex_y": -0.018655
+        },
+        {
+          "id": "office-person-17",
+          "file": "t3/office-person-17.json.gz",
+          "sha256": "e049bc7aa626d543156eb3f646ee4c1e8a467a3404a9af88b2611e79faaeda3d",
+          "meshes": 6,
+          "vertices": 20961,
+          "minimum_vertex_y": -0.018784
+        },
+        {
+          "id": "office-person-18",
+          "file": "t3/office-person-18.json.gz",
+          "sha256": "9a4da0a14346d5c25f404154b678adf95c02175348326c906f78bd9a9c3c6fe6",
+          "meshes": 6,
+          "vertices": 24707,
+          "minimum_vertex_y": 0.005265
+        },
+        {
+          "id": "office-person-19",
+          "file": "t3/office-person-19.json.gz",
+          "sha256": "2891df9a67368f0e6d0475153db3ef1bb7621587e6d5c42d52b48b63393e8178",
+          "meshes": 6,
+          "vertices": 21774,
+          "minimum_vertex_y": -0.018655
+        },
+        {
+          "id": "office-person-20",
+          "file": "t3/office-person-20.json.gz",
+          "sha256": "0f89c65c04f413d4c9ff185d1f2bb823ebdf356cf46d0606f754e411039e32f7",
+          "meshes": 7,
+          "vertices": 23970,
+          "minimum_vertex_y": 0.005265
+        },
+        {
+          "id": "office-person-21",
+          "file": "t3/office-person-21.json.gz",
+          "sha256": "cf7b777f98bfa4d1ce26468eb9568b6d30bfb854c9b9a51c1e99c23d44c354db",
+          "meshes": 6,
+          "vertices": 20961,
+          "minimum_vertex_y": -0.018784
+        },
+        {
+          "id": "office-person-22",
+          "file": "t3/office-person-22.json.gz",
+          "sha256": "d7334eaf4a156e14b33b0684839fc2fe79e2b671902f55cda91c31cb10c9abd7",
+          "meshes": 7,
+          "vertices": 25187,
+          "minimum_vertex_y": -0.008292
+        },
+        {
+          "id": "office-person-23",
+          "file": "t3/office-person-23.json.gz",
+          "sha256": "57b9b9cc1d7880ac05388bf0ca1b981dee76b6b74923736f4e73ca6919cf0e81",
+          "meshes": 6,
+          "vertices": 21774,
+          "minimum_vertex_y": -0.013025
+        },
+        {
+          "id": "office-person-24",
+          "file": "t3/office-person-24.json.gz",
+          "sha256": "22e7de4d0abd00f3e6f02510187fae64e7dbf487840d572a137f37b40e9402fb",
+          "meshes": 6,
+          "vertices": 21774,
+          "minimum_vertex_y": -0.014378
+        },
+        {
+          "id": "office-person-25",
+          "file": "t3/office-person-25.json.gz",
+          "sha256": "3a1bfb41255eec9c81fb2ed09e7c3352b5a8ebd27ab1e5a318a27ecfb3b11470",
+          "meshes": 6,
+          "vertices": 23946,
+          "minimum_vertex_y": 0.005265
+        },
+        {
+          "id": "office-person-26",
+          "file": "t3/office-person-26.json.gz",
+          "sha256": "e38337f56df2927ccb5092831f553c6bf70958b5cbd391abba4c4bb21958f9e5",
+          "meshes": 6,
+          "vertices": 20961,
+          "minimum_vertex_y": -0.018784
+        },
+        {
+          "id": "office-person-27",
+          "file": "t3/office-person-27.json.gz",
+          "sha256": "0c00768e51f00b5bcd4e3e82bc43fb183bacce800c5f085e4b2cae4f6aab98a1",
+          "meshes": 7,
+          "vertices": 25187,
+          "minimum_vertex_y": -0.00859
+        },
+        {
+          "id": "office-person-28",
+          "file": "t3/office-person-28.json.gz",
+          "sha256": "82747c55acd1dab64712c2610b280d281eb7ec19d5ce9450130d05523ee565c5",
+          "meshes": 6,
+          "vertices": 21774,
+          "minimum_vertex_y": -0.018655
+        },
+        {
+          "id": "office-person-29",
+          "file": "t3/office-person-29.json.gz",
+          "sha256": "d88eb81c42296488c5cce41a175beff135819b116e344629c2636b3b8401486a",
+          "meshes": 6,
+          "vertices": 23946,
+          "minimum_vertex_y": 0.005265
+        },
+        {
+          "id": "office-person-30",
+          "file": "t3/office-person-30.json.gz",
+          "sha256": "efbd3e56d95983f941d1a5e5c857288cedae30b3a0afa52aa486fd913610272f",
+          "meshes": 7,
+          "vertices": 21037,
+          "minimum_vertex_y": -0.018785
+        },
+        {
+          "id": "office-person-31",
+          "file": "t3/office-person-31.json.gz",
+          "sha256": "741438940757338d07fd3522a90c4d76b3992c736d8db9385406f6b30f0f3ad7",
+          "meshes": 7,
+          "vertices": 24783,
+          "minimum_vertex_y": 0.005267
+        },
+        {
+          "id": "office-person-32",
+          "file": "t3/office-person-32.json.gz",
+          "sha256": "5b7a0a887ede7482a56f32c5a3cea8f8c379883220413dcf64776be75e20dbf0",
+          "meshes": 6,
+          "vertices": 21774,
+          "minimum_vertex_y": -0.018655
+        },
+        {
+          "id": "office-person-33",
+          "file": "t3/office-person-33.json.gz",
+          "sha256": "33ab5b5f8a125b5f4eca677db61269faa3ea5ecaa945d140e41c2dd42efd11e5",
+          "meshes": 7,
+          "vertices": 24426,
+          "minimum_vertex_y": -0.008292
+        },
+        {
+          "id": "office-person-34",
+          "file": "t3/office-person-34.json.gz",
+          "sha256": "d381a2ed0540090442d62fc2e6f21412542eef9898f9efb3e7e8b7179a5b3748",
+          "meshes": 7,
+          "vertices": 21798,
+          "minimum_vertex_y": -0.013025
+        },
+        {
+          "id": "office-person-35",
+          "file": "t3/office-person-35.json.gz",
+          "sha256": "4cd8a08038db265306331bc10061a97fcbf5a75b87bdbd311ed6c5a41a6337d9",
+          "meshes": 7,
+          "vertices": 21441,
+          "minimum_vertex_y": -0.014378
+        }
+      ],
+      "runtime_stats": {
+        "enabled": true,
+        "loaded": true,
+        "total": 35,
+        "visible": 35,
+        "walkers": 3,
+        "illustrative": true,
+        "forbiddenZoneViolations": 0,
+        "status": "asset/pose review required before integration",
+        "nativeMacPerformanceTested": false
+      }
+    },
+    {
+      "seconds": 6,
+      "all_actors": true,
+      "actors": [
+        {
+          "id": "office-person-01",
+          "file": "t6/office-person-01.json.gz",
+          "sha256": "05bd721b8c1208833132fc9f71dbd8ce80d19640ffbef22f0798209c0ca72b7c",
+          "meshes": 6,
+          "vertices": 23946,
+          "minimum_vertex_y": 0.005255
+        },
+        {
+          "id": "office-person-02",
+          "file": "t6/office-person-02.json.gz",
+          "sha256": "618676283a95c88b1f307af450c3b157d42264a02749a1afb4215564dd2184d4",
+          "meshes": 6,
+          "vertices": 21774,
+          "minimum_vertex_y": -0.014378
+        },
+        {
+          "id": "office-person-03",
+          "file": "t6/office-person-03.json.gz",
+          "sha256": "5f46aacb10c1dd67410208c2f9568b71078b56c4f0ee97faa29eafb2dd8f5374",
+          "meshes": 6,
+          "vertices": 20961,
+          "minimum_vertex_y": -0.018787
+        },
+        {
+          "id": "office-person-04",
+          "file": "t6/office-person-04.json.gz",
+          "sha256": "abf0fb923ae9efb7922abd2879f870f407e2c11e223ef58b974790f2efd445cb",
+          "meshes": 6,
+          "vertices": 24707,
+          "minimum_vertex_y": 0.005302
+        },
+        {
+          "id": "office-person-05",
+          "file": "t6/office-person-05.json.gz",
+          "sha256": "457e3ec55b720542c05d508c471d2f3dbbc75de6139d358631dae9fdbe77907b",
+          "meshes": 7,
+          "vertices": 24426,
+          "minimum_vertex_y": -0.00859
+        },
+        {
+          "id": "office-person-06",
+          "file": "t6/office-person-06.json.gz",
+          "sha256": "9600e6c3c7d1dc19734a659c73bfdab7b9780f99ebd39b5f17d893a9e381c370",
+          "meshes": 6,
+          "vertices": 21774,
+          "minimum_vertex_y": -0.013412
+        },
+        {
+          "id": "office-person-07",
+          "file": "t6/office-person-07.json.gz",
+          "sha256": "1084007c1779fb748b41b005b987f84795b3bf33e5056c4646494fdbec634007",
+          "meshes": 7,
+          "vertices": 21441,
+          "minimum_vertex_y": -0.014764
+        },
+        {
+          "id": "office-person-08",
+          "file": "t6/office-person-08.json.gz",
+          "sha256": "d2bc6326223cd53bf87bbb2c189990087dbeb2a805e37d066edc8f495e86853c",
+          "meshes": 6,
+          "vertices": 21774,
+          "minimum_vertex_y": -0.018653
+        },
+        {
+          "id": "office-person-09",
+          "file": "t6/office-person-09.json.gz",
+          "sha256": "3e1bfdc685190ee4fcf37662c8e4186a528b9a6a65fab033ad5a321496194d9f",
+          "meshes": 6,
+          "vertices": 23946,
+          "minimum_vertex_y": 0.005255
+        },
+        {
+          "id": "office-person-10",
+          "file": "t6/office-person-10.json.gz",
+          "sha256": "acbf7e737eee578d66c49748b6b2fecf8310aed769a447e349c35f4464f85f7c",
+          "meshes": 6,
+          "vertices": 20961,
+          "minimum_vertex_y": -0.018783
+        },
+        {
+          "id": "office-person-11",
+          "file": "t6/office-person-11.json.gz",
+          "sha256": "20c1a3226d13432aa78d9f0e18cebd6db645ef9301c341073334321aeda94138",
+          "meshes": 6,
+          "vertices": 24707,
+          "minimum_vertex_y": 0.005255
+        },
+        {
+          "id": "office-person-12",
+          "file": "t6/office-person-12.json.gz",
+          "sha256": "c3922cdad2dae9d1c738961eeffa5e54ffeb1ce646e85a6a5da9727e63607565",
+          "meshes": 6,
+          "vertices": 21774,
+          "minimum_vertex_y": -0.018653
+        },
+        {
+          "id": "office-person-13",
+          "file": "t6/office-person-13.json.gz",
+          "sha256": "192140d4e1bda8dcea16d1f00e5edc570bff8e3bb05ec94efc5e7a369ffec0d0",
+          "meshes": 7,
+          "vertices": 24426,
+          "minimum_vertex_y": -0.008739
+        },
+        {
+          "id": "office-person-14",
+          "file": "t6/office-person-14.json.gz",
+          "sha256": "b55e7be1b8e2a525ae4bc86bee77b057f890f373bdba7d8644e940a7523ac06c",
+          "meshes": 7,
+          "vertices": 21798,
+          "minimum_vertex_y": -0.018653
+        },
+        {
+          "id": "office-person-15",
+          "file": "t6/office-person-15.json.gz",
+          "sha256": "db53a81c6588b0450ed59ed527b04d636d31f65e4dd38dbaa2148b5549b76d2f",
+          "meshes": 6,
+          "vertices": 23946,
+          "minimum_vertex_y": 0.005265
+        },
+        {
+          "id": "office-person-16",
+          "file": "t6/office-person-16.json.gz",
+          "sha256": "612f23f0c11109a12ac68f8874715076fd683ba55d6f1ad4093b14cb8aa208c4",
+          "meshes": 7,
+          "vertices": 21798,
+          "minimum_vertex_y": -0.018655
+        },
+        {
+          "id": "office-person-17",
+          "file": "t6/office-person-17.json.gz",
+          "sha256": "edfff3b1ec1daf67e81904db870a6eda9cc98075bd407bca7f268c7a294ec4f6",
+          "meshes": 6,
+          "vertices": 20961,
+          "minimum_vertex_y": -0.018784
+        },
+        {
+          "id": "office-person-18",
+          "file": "t6/office-person-18.json.gz",
+          "sha256": "924c05abe349f5dbbb81a7e59c5fd632e24e98258c8c73190945c424bb49dd10",
+          "meshes": 6,
+          "vertices": 24707,
+          "minimum_vertex_y": 0.005265
+        },
+        {
+          "id": "office-person-19",
+          "file": "t6/office-person-19.json.gz",
+          "sha256": "ad82b6361754b4572caf24b3b471bbae907d7811196fa6f7735bce0fed65ff2f",
+          "meshes": 6,
+          "vertices": 21774,
+          "minimum_vertex_y": -0.018655
+        },
+        {
+          "id": "office-person-20",
+          "file": "t6/office-person-20.json.gz",
+          "sha256": "10f544d3cbe7047da5c631447cbff768385ef60935f6aa44a0929b15a4811632",
+          "meshes": 7,
+          "vertices": 23970,
+          "minimum_vertex_y": 0.005265
+        },
+        {
+          "id": "office-person-21",
+          "file": "t6/office-person-21.json.gz",
+          "sha256": "96198aa06a28f00a437c9bba7be91de28a7b27052f1bfad6d5d58958103c1436",
+          "meshes": 6,
+          "vertices": 20961,
+          "minimum_vertex_y": -0.018784
+        },
+        {
+          "id": "office-person-22",
+          "file": "t6/office-person-22.json.gz",
+          "sha256": "05bbc0b982145c5aa85588faeb43cb45fe92b88a92a48cceae07146d81df6d45",
+          "meshes": 7,
+          "vertices": 25187,
+          "minimum_vertex_y": -0.008292
+        },
+        {
+          "id": "office-person-23",
+          "file": "t6/office-person-23.json.gz",
+          "sha256": "b546233bd913f187d03f29bc468324ce2f7d1c7f341ee8036456f65c88c61684",
+          "meshes": 6,
+          "vertices": 21774,
+          "minimum_vertex_y": -0.013025
+        },
+        {
+          "id": "office-person-24",
+          "file": "t6/office-person-24.json.gz",
+          "sha256": "62029eebb8cded6eb47c2bf66c7d2bded2e1b3b2eed5035dc439e24db6e3df75",
+          "meshes": 6,
+          "vertices": 21774,
+          "minimum_vertex_y": -0.014378
+        },
+        {
+          "id": "office-person-25",
+          "file": "t6/office-person-25.json.gz",
+          "sha256": "2dc9667cbd6f7c74e5ed26eedd23c1446f44f61ef8847156765643fe29c02610",
+          "meshes": 6,
+          "vertices": 23946,
+          "minimum_vertex_y": 0.005265
+        },
+        {
+          "id": "office-person-26",
+          "file": "t6/office-person-26.json.gz",
+          "sha256": "43c16ae42edc60fccd6f1f5f300d384f90562d0e65891d11c6075990786f6973",
+          "meshes": 6,
+          "vertices": 20961,
+          "minimum_vertex_y": -0.018784
+        },
+        {
+          "id": "office-person-27",
+          "file": "t6/office-person-27.json.gz",
+          "sha256": "ee17b870ee21e4fdd59ce6dd54b6ba82257b24feca0de2aa61d44eaece32c02e",
+          "meshes": 7,
+          "vertices": 25187,
+          "minimum_vertex_y": -0.00859
+        },
+        {
+          "id": "office-person-28",
+          "file": "t6/office-person-28.json.gz",
+          "sha256": "482a0d3a30d8e27576f91d799deaeb659b38c0ba77fe11f32d61814d9ec9305e",
+          "meshes": 6,
+          "vertices": 21774,
+          "minimum_vertex_y": -0.018655
+        },
+        {
+          "id": "office-person-29",
+          "file": "t6/office-person-29.json.gz",
+          "sha256": "72f90f840b5a684cf8fc522f3f53edc0a8a27d8f1a6b505f5201a11ff849db4a",
+          "meshes": 6,
+          "vertices": 23946,
+          "minimum_vertex_y": 0.005265
+        },
+        {
+          "id": "office-person-30",
+          "file": "t6/office-person-30.json.gz",
+          "sha256": "1c4afd189fabd1c7d6dc7ecd0261b1bb342b6b80cb9d0758a93b1551501a915e",
+          "meshes": 7,
+          "vertices": 21037,
+          "minimum_vertex_y": -0.018785
+        },
+        {
+          "id": "office-person-31",
+          "file": "t6/office-person-31.json.gz",
+          "sha256": "56451aefad8d4605790090ec19babd8b2e4f35d0b40263e6a4e90017808a4b1b",
+          "meshes": 7,
+          "vertices": 24783,
+          "minimum_vertex_y": 0.005267
+        },
+        {
+          "id": "office-person-32",
+          "file": "t6/office-person-32.json.gz",
+          "sha256": "c89dbe0734aae4212518aa9d70a251b669abaed03f4d1abeb7b32a03197e0ee0",
+          "meshes": 6,
+          "vertices": 21774,
+          "minimum_vertex_y": -0.018655
+        },
+        {
+          "id": "office-person-33",
+          "file": "t6/office-person-33.json.gz",
+          "sha256": "73413e32d063ecdbabc58b14dd2828355adc73270c3deeb9c276e14cf026620c",
+          "meshes": 7,
+          "vertices": 24426,
+          "minimum_vertex_y": -0.008292
+        },
+        {
+          "id": "office-person-34",
+          "file": "t6/office-person-34.json.gz",
+          "sha256": "e0d6ada09baa848ed514ab47b874ada6e0f1821937f4bf839db2404a7b3ee40d",
+          "meshes": 7,
+          "vertices": 21798,
+          "minimum_vertex_y": -0.013025
+        },
+        {
+          "id": "office-person-35",
+          "file": "t6/office-person-35.json.gz",
+          "sha256": "7092d985c20ba9144f259ec059f5748451d5e9ca3b6dadf84593fc248c2a6580",
+          "meshes": 7,
+          "vertices": 21441,
+          "minimum_vertex_y": -0.014378
+        }
+      ],
+      "runtime_stats": {
+        "enabled": true,
+        "loaded": true,
+        "total": 35,
+        "visible": 35,
+        "walkers": 3,
+        "illustrative": true,
+        "forbiddenZoneViolations": 0,
+        "status": "asset/pose review required before integration",
+        "nativeMacPerformanceTested": false
+      }
+    },
+    {
+      "seconds": 9,
+      "all_actors": true,
+      "actors": [
+        {
+          "id": "office-person-01",
+          "file": "t9/office-person-01.json.gz",
+          "sha256": "d2fc0cdb6f84693034a7a66bc6ce2333edaed35f2e4c0e9dd08fc7300ad17933",
+          "meshes": 6,
+          "vertices": 23946,
+          "minimum_vertex_y": 0.005255
+        },
+        {
+          "id": "office-person-02",
+          "file": "t9/office-person-02.json.gz",
+          "sha256": "aff339aa34631df416ad37aec0ecbdfa1516188e556615083133ae822453b3b6",
+          "meshes": 6,
+          "vertices": 21774,
+          "minimum_vertex_y": -0.014378
+        },
+        {
+          "id": "office-person-03",
+          "file": "t9/office-person-03.json.gz",
+          "sha256": "88651d4348f1415c689ea714b31422bd86682b007ed99f27dffe84cf1fe333a3",
+          "meshes": 6,
+          "vertices": 20961,
+          "minimum_vertex_y": -0.018787
+        },
+        {
+          "id": "office-person-04",
+          "file": "t9/office-person-04.json.gz",
+          "sha256": "af3860f803abd3ad12b6672c0cf74fa2e23dc13d052bdb248e966bef0f255ea1",
+          "meshes": 6,
+          "vertices": 24707,
+          "minimum_vertex_y": 0.005302
+        },
+        {
+          "id": "office-person-05",
+          "file": "t9/office-person-05.json.gz",
+          "sha256": "c2766ac8978538de473a78ae037d7b30cf6e38432390411f8e7e9506d84dac44",
+          "meshes": 7,
+          "vertices": 24426,
+          "minimum_vertex_y": -0.00859
+        },
+        {
+          "id": "office-person-06",
+          "file": "t9/office-person-06.json.gz",
+          "sha256": "31cd3bdd76db693f366bfb270ca649c08165e294e6460321efc4eed32fec81fa",
+          "meshes": 6,
+          "vertices": 21774,
+          "minimum_vertex_y": -0.013412
+        },
+        {
+          "id": "office-person-07",
+          "file": "t9/office-person-07.json.gz",
+          "sha256": "1378cdd5fb509e6ef5edf086e9a0e32b2818023b65455becfc1b105640eaab24",
+          "meshes": 7,
+          "vertices": 21441,
+          "minimum_vertex_y": -0.014764
+        },
+        {
+          "id": "office-person-08",
+          "file": "t9/office-person-08.json.gz",
+          "sha256": "d82981d3d0f6459b3779016c402de770f133b825254d263b1d2734856ce54bf7",
+          "meshes": 6,
+          "vertices": 21774,
+          "minimum_vertex_y": -0.018653
+        },
+        {
+          "id": "office-person-09",
+          "file": "t9/office-person-09.json.gz",
+          "sha256": "16f96244c2b3990a3dba7581bcc5343ccb251b8d210889862f2684f21d297728",
+          "meshes": 6,
+          "vertices": 23946,
+          "minimum_vertex_y": 0.005255
+        },
+        {
+          "id": "office-person-10",
+          "file": "t9/office-person-10.json.gz",
+          "sha256": "ac8a59ce259190a32cb07fd1004b69c7e868a169e6a0cbd6af5ccfb3f54a7ec2",
+          "meshes": 6,
+          "vertices": 20961,
+          "minimum_vertex_y": -0.018783
+        },
+        {
+          "id": "office-person-11",
+          "file": "t9/office-person-11.json.gz",
+          "sha256": "dfcca4fb9a72404839ea3e62b33c5bc04504df55bbbd552825fccc32625bb18f",
+          "meshes": 6,
+          "vertices": 24707,
+          "minimum_vertex_y": 0.005255
+        },
+        {
+          "id": "office-person-12",
+          "file": "t9/office-person-12.json.gz",
+          "sha256": "f060a744f8ea1f524cab5a7055811206a775b76a6d6dafcff322d18b7596a165",
+          "meshes": 6,
+          "vertices": 21774,
+          "minimum_vertex_y": -0.018653
+        },
+        {
+          "id": "office-person-13",
+          "file": "t9/office-person-13.json.gz",
+          "sha256": "984a19132df8d663a47e38c47b72a747dedc1815dbb5b285bf713e41c13e51c8",
+          "meshes": 7,
+          "vertices": 24426,
+          "minimum_vertex_y": -0.008739
+        },
+        {
+          "id": "office-person-14",
+          "file": "t9/office-person-14.json.gz",
+          "sha256": "9de51a471b60869e673ff0316497408854c106581bdc40a24e4caf583b666c9c",
+          "meshes": 7,
+          "vertices": 21798,
+          "minimum_vertex_y": -0.018653
+        },
+        {
+          "id": "office-person-15",
+          "file": "t9/office-person-15.json.gz",
+          "sha256": "d84639e1e9aa4d51a9ce24530906f7f52e955b50880087e883a6a550f1bdd57c",
+          "meshes": 6,
+          "vertices": 23946,
+          "minimum_vertex_y": 0.005265
+        },
+        {
+          "id": "office-person-16",
+          "file": "t9/office-person-16.json.gz",
+          "sha256": "7c4e9701a1eb6721be7dc8d16715dfd59be40be846bcbbdb2e3850703c56b12d",
+          "meshes": 7,
+          "vertices": 21798,
+          "minimum_vertex_y": -0.018655
+        },
+        {
+          "id": "office-person-17",
+          "file": "t9/office-person-17.json.gz",
+          "sha256": "354f0dc65c72a7759ee15115be7e834c87c5b5ee71d41ce9d8e6340c754c1111",
+          "meshes": 6,
+          "vertices": 20961,
+          "minimum_vertex_y": -0.018784
+        },
+        {
+          "id": "office-person-18",
+          "file": "t9/office-person-18.json.gz",
+          "sha256": "c7217d4916790e470dda9700e8409ddf85bad3c71755604678d3426ab8c4ccec",
+          "meshes": 6,
+          "vertices": 24707,
+          "minimum_vertex_y": 0.005265
+        },
+        {
+          "id": "office-person-19",
+          "file": "t9/office-person-19.json.gz",
+          "sha256": "636ed265042eb2813c02b29c215a506844dcf171408b1435175aea58ac0e16a3",
+          "meshes": 6,
+          "vertices": 21774,
+          "minimum_vertex_y": -0.018655
+        },
+        {
+          "id": "office-person-20",
+          "file": "t9/office-person-20.json.gz",
+          "sha256": "481efad2c6abdf3246349c6efc02f229d54a12aa3c10690b1ff0514ba392771b",
+          "meshes": 7,
+          "vertices": 23970,
+          "minimum_vertex_y": 0.005265
+        },
+        {
+          "id": "office-person-21",
+          "file": "t9/office-person-21.json.gz",
+          "sha256": "8d9331e35b9a30cdc52a9d412ada114c1dff9688058bfc4bb2ca1cb29dc9daa6",
+          "meshes": 6,
+          "vertices": 20961,
+          "minimum_vertex_y": -0.018784
+        },
+        {
+          "id": "office-person-22",
+          "file": "t9/office-person-22.json.gz",
+          "sha256": "924e56b96433d67c1c4fc42f76de9b39c27b7114c4901894701290a87efc9780",
+          "meshes": 7,
+          "vertices": 25187,
+          "minimum_vertex_y": -0.008292
+        },
+        {
+          "id": "office-person-23",
+          "file": "t9/office-person-23.json.gz",
+          "sha256": "a0ece7f641d9448752b471b59a893fd55467905d593ba2aa3cce130cbadf7c36",
+          "meshes": 6,
+          "vertices": 21774,
+          "minimum_vertex_y": -0.013025
+        },
+        {
+          "id": "office-person-24",
+          "file": "t9/office-person-24.json.gz",
+          "sha256": "c0a29ad3608a5c4a4cd135a87a3fa4f62049842203b9983ced05ced0772aa715",
+          "meshes": 6,
+          "vertices": 21774,
+          "minimum_vertex_y": -0.014378
+        },
+        {
+          "id": "office-person-25",
+          "file": "t9/office-person-25.json.gz",
+          "sha256": "58554d0f49f258b112642b4d54d798aab00c563e00b36584e040607eb367953e",
+          "meshes": 6,
+          "vertices": 23946,
+          "minimum_vertex_y": 0.005265
+        },
+        {
+          "id": "office-person-26",
+          "file": "t9/office-person-26.json.gz",
+          "sha256": "d4867746a302d1115bb6fd3b91d2147ecc76edfc8dca7c54c290d0efdb88283e",
+          "meshes": 6,
+          "vertices": 20961,
+          "minimum_vertex_y": -0.018784
+        },
+        {
+          "id": "office-person-27",
+          "file": "t9/office-person-27.json.gz",
+          "sha256": "684936ef21444a69211ea3025a064d969b7f87484770b9753c6f013f47a7249d",
+          "meshes": 7,
+          "vertices": 25187,
+          "minimum_vertex_y": -0.00859
+        },
+        {
+          "id": "office-person-28",
+          "file": "t9/office-person-28.json.gz",
+          "sha256": "20bc098410ed02e58e1497fac1acefbb517274a844133d9f843f640149297918",
+          "meshes": 6,
+          "vertices": 21774,
+          "minimum_vertex_y": -0.018655
+        },
+        {
+          "id": "office-person-29",
+          "file": "t9/office-person-29.json.gz",
+          "sha256": "cae05353632dce2441ddcac1cb7c82298735ca065a9c17ea0405e11b41f2b64a",
+          "meshes": 6,
+          "vertices": 23946,
+          "minimum_vertex_y": 0.005265
+        },
+        {
+          "id": "office-person-30",
+          "file": "t9/office-person-30.json.gz",
+          "sha256": "84efec2a58ec0b93819af5e487f00fb5cf3688bc2507f7a82c37cd0a0855bd55",
+          "meshes": 7,
+          "vertices": 21037,
+          "minimum_vertex_y": -0.018785
+        },
+        {
+          "id": "office-person-31",
+          "file": "t9/office-person-31.json.gz",
+          "sha256": "daa720f905f5e93b97d400773dfb1ac754e087633c217d625bcabf2b7de83e2d",
+          "meshes": 7,
+          "vertices": 24783,
+          "minimum_vertex_y": 0.005267
+        },
+        {
+          "id": "office-person-32",
+          "file": "t9/office-person-32.json.gz",
+          "sha256": "e0bebbfedece466f83a57bad7bf30e53233488e85c3cb6e29a3da9723644fe6b",
+          "meshes": 6,
+          "vertices": 21774,
+          "minimum_vertex_y": -0.018655
+        },
+        {
+          "id": "office-person-33",
+          "file": "t9/office-person-33.json.gz",
+          "sha256": "cec8f108662b32b5cc4e3a432d7e72394333744530d3d79607d38c2392f30853",
+          "meshes": 7,
+          "vertices": 24426,
+          "minimum_vertex_y": -0.008292
+        },
+        {
+          "id": "office-person-34",
+          "file": "t9/office-person-34.json.gz",
+          "sha256": "5c90a5f9131ec87d47c07e93fcd78d692b79d335f08f2e9f1aaf184e2610848d",
+          "meshes": 7,
+          "vertices": 21798,
+          "minimum_vertex_y": -0.013025
+        },
+        {
+          "id": "office-person-35",
+          "file": "t9/office-person-35.json.gz",
+          "sha256": "d7daf6c7f02231536ef9c944c8c02237cc11254f5bc0626ab71fb9a29241bb90",
+          "meshes": 7,
+          "vertices": 21441,
+          "minimum_vertex_y": -0.014378
+        }
+      ],
+      "runtime_stats": {
+        "enabled": true,
+        "loaded": true,
+        "total": 35,
+        "visible": 35,
+        "walkers": 3,
+        "illustrative": true,
+        "forbiddenZoneViolations": 0,
+        "status": "asset/pose review required before integration",
+        "nativeMacPerformanceTested": false
+      }
+    }
+  ],
+  "errors": [],
+  "scope": "Actual runtime posed LOD0 world vertices/indices plus hand props. All actors at0/3/6/9seconds; moving actors additionally at0.35/0.75/1.3seconds. No rendering/material realism or Mac performance claim.",
+  "browser": "154.0.8037.57",
+  "people_manifest": {
+    "version": "1.0-prototype",
+    "count": 35,
+    "note": "People shown are illustrative",
+    "defaultEnabled": false,
+    "status": "asset/pose review required before integration",
+    "approvedLayoutChanged": false,
+    "axes": "metres; x east, y up, z south; characters face +z at yaw 0",
+    "emptyZones": [
+      "Z23",
+      "Z24",
+      "Z25",
+      "Z26",
+      "Z27",
+      "Z28",
+      "Z29",
+      "Z34"
+    ],
+    "assets": {
+      "shirt": {
+        "file": "assets/shirt.glb",
+        "license": "CC0-1.0 plus self-made drape",
+        "sha256": "1ad870ca2eb18f7cfec870977f4929cfdb940fbaa6407a0b1d3976abcf8909ad"
+      },
+      "panjabi": {
+        "file": "assets/panjabi.glb",
+        "license": "CC0-1.0 plus self-made drape",
+        "sha256": "8a54f94988b31142aab090a49a60c11efec6909cfb90204ceed14529d59df121"
+      },
+      "salwar": {
+        "file": "assets/salwar.glb",
+        "license": "CC0-1.0 plus self-made drape",
+        "sha256": "019c82bdf8c36410f200400837215ba0c2c1a3336c46bdd2f8bf16cd5f775784"
+      },
+      "salwar_braid": {
+        "file": "assets/salwar_braid.glb",
+        "license": "CC0-1.0 plus self-made drape",
+        "sha256": "07015f14834520715c91e7822e4c9ddfb7bcb9d6e278cf1995453c38644e9497"
+      }
+    },
+    "poses": "poses.json",
+    "actors": [
+      {
+        "id": "office-person-01",
+        "zone": "Z02",
+        "task": "greeting",
+        "outfit": "salwar",
+        "pose": "greeting_seated__seat_50292",
+        "heightScale": 1,
+        "bodyWidth": 0.946,
+        "skinTint": "#d5b6a0",
+        "garmentTint": "#a8bbcd",
+        "lowerTint": "#25313c",
+        "phase": 0,
+        "radius": 0.25,
+        "fictional": true,
+        "faceMorph": [
+          0,
+          0,
+          0
+        ],
+        "position": [
+          13.614399909973145,
+          0,
+          3.09879994392395
+        ],
+        "yaw": 4.71238899230957,
+        "support": {
+          "sourceObject": "F007 exec_chair_black",
+          "seatTopY": 0.50291997,
+          "note": "Pelvis aligned to approved chair; contact pose reviewed separately."
+        },
+        "seated": true,
+        "wardrobeMode": "modest long-sleeve shirt and trousers; long drape disabled for seated role"
+      },
+      {
+        "id": "office-person-02",
+        "zone": "Z02",
+        "task": "idle",
+        "outfit": "shirt",
+        "pose": "idle",
+        "heightScale": 1.016,
+        "bodyWidth": 1,
+        "skinTint": "#c69d7b",
+        "garmentTint": "#a98a76",
+        "lowerTint": "#30363d",
+        "phase": 1.61803,
+        "radius": 0.25,
+        "fictional": true,
+        "faceMorph": [
+          0.214,
+          0.417,
+          0.389
+        ],
+        "position": [
+          11.599,
+          0,
+          3.1768
+        ],
+        "yaw": 1.5707963267948966,
+        "seated": false
+      },
+      {
+        "id": "office-person-03",
+        "zone": "Z02",
+        "task": "listening",
+        "outfit": "panjabi",
+        "pose": "listening__seat_44450",
+        "heightScale": 1,
+        "bodyWidth": 1.054,
+        "skinTint": "#b88b69",
+        "garmentTint": "#637b76",
+        "lowerTint": "#424039",
+        "phase": 3.23607,
+        "radius": 0.25,
+        "fictional": true,
+        "faceMorph": [
+          0.429,
+          0.833,
+          0.778
+        ],
+        "position": [
+          9.252000411509993,
+          0,
+          5.611200160980225
+        ],
+        "yaw": 3.1415927410125732,
+        "support": {
+          "sourceObject": "F009 sofa_84_sand",
+          "seatTopY": 0.4445,
+          "note": "Pelvis aligned to approved chair; contact pose reviewed separately."
+        },
+        "seated": true,
+        "wardrobeMode": "modest long-sleeve shirt and trousers; long drape disabled for seated role"
+      },
+      {
+        "id": "office-person-04",
+        "zone": "Z02",
+        "task": "listening",
+        "outfit": "salwar_braid",
+        "pose": "listening__seat_44450",
+        "heightScale": 1,
+        "bodyWidth": 0.982,
+        "skinTint": "#ddbaa4",
+        "garmentTint": "#ad9271",
+        "lowerTint": "#25313c",
+        "phase": 4.8541,
+        "radius": 0.25,
+        "fictional": true,
+        "faceMorph": [
+          0.643,
+          0.333,
+          0.222
+        ],
+        "position": [
+          10.072000411509993,
+          0,
+          5.611200160980225
+        ],
+        "yaw": 3.1415927410125732,
+        "support": {
+          "sourceObject": "F009 sofa_84_sand",
+          "seatTopY": 0.4445,
+          "note": "Pelvis aligned to approved chair; contact pose reviewed separately."
+        },
+        "seated": true,
+        "wardrobeMode": "modest long-sleeve shirt and trousers; long drape disabled for seated role"
+      },
+      {
+        "id": "office-person-05",
+        "zone": "Z30",
+        "task": "show_sample",
+        "outfit": "salwar",
+        "pose": "show_sample",
+        "heightScale": 1.008,
+        "bodyWidth": 1.036,
+        "skinTint": "#d5b6a0",
+        "garmentTint": "#8a9bb2",
+        "lowerTint": "#30363d",
+        "phase": 6.47214,
+        "radius": 0.25,
+        "fictional": true,
+        "faceMorph": [
+          0.857,
+          0.75,
+          0.611
+        ],
+        "position": [
+          18.499,
+          0,
+          -7.3232
+        ],
+        "yaw": 3.141592653589793,
+        "seated": false
+      },
+      {
+        "id": "office-person-06",
+        "zone": "Z30",
+        "task": "browsing",
+        "outfit": "shirt",
+        "pose": "browsing",
+        "heightScale": 0.976,
+        "bodyWidth": 0.964,
+        "skinTint": "#c69d7b",
+        "garmentTint": "#9e7788",
+        "lowerTint": "#424039",
+        "phase": 8.09017,
+        "radius": 0.25,
+        "fictional": true,
+        "faceMorph": [
+          0.143,
+          0.25,
+          0.056
+        ],
+        "position": [
+          17.299,
+          0,
+          -9.6232
+        ],
+        "yaw": 0,
+        "seated": false
+      },
+      {
+        "id": "office-person-07",
+        "zone": "Z30",
+        "task": "browsing",
+        "outfit": "panjabi",
+        "pose": "browsing",
+        "heightScale": 1.032,
+        "bodyWidth": 1.018,
+        "skinTint": "#b88b69",
+        "garmentTint": "#738866",
+        "lowerTint": "#25313c",
+        "phase": 9.7082,
+        "radius": 0.25,
+        "fictional": true,
+        "faceMorph": [
+          0.357,
+          0.667,
+          0.444
+        ],
+        "position": [
+          20.299,
+          0,
+          -7.5232
+        ],
+        "yaw": -1.5707963267948966,
+        "seated": false
+      },
+      {
+        "id": "office-person-08",
+        "zone": "Z08",
+        "task": "notes",
+        "outfit": "shirt",
+        "pose": "notes__seat_50292",
+        "heightScale": 1,
+        "bodyWidth": 0.946,
+        "skinTint": "#ddbaa4",
+        "garmentTint": "#b9a895",
+        "lowerTint": "#30363d",
+        "phase": 11.32624,
+        "radius": 0.25,
+        "fictional": true,
+        "faceMorph": [
+          0.571,
+          0.167,
+          0.833
+        ],
+        "position": [
+          15.519399642944336,
+          0,
+          -3.886199951171875
+        ],
+        "yaw": 0,
+        "support": {
+          "sourceObject": "F034 board_chair",
+          "seatTopY": 0.50291997,
+          "note": "Pelvis aligned to approved chair; contact pose reviewed separately."
+        },
+        "seated": true,
+        "wardrobeMode": "modest long-sleeve shirt and trousers; long drape disabled for seated role"
+      },
+      {
+        "id": "office-person-09",
+        "zone": "Z08",
+        "task": "listening",
+        "outfit": "salwar",
+        "pose": "listening__seat_50292",
+        "heightScale": 1,
+        "bodyWidth": 1,
+        "skinTint": "#d5b6a0",
+        "garmentTint": "#a8bbcd",
+        "lowerTint": "#424039",
+        "phase": 12.94427,
+        "radius": 0.25,
+        "fictional": true,
+        "faceMorph": [
+          0.786,
+          0.583,
+          0.278
+        ],
+        "position": [
+          16.332199096679688,
+          0,
+          -1.8034000396728516
+        ],
+        "yaw": 3.1415927410125732,
+        "support": {
+          "sourceObject": "F037 board_chair",
+          "seatTopY": 0.50291997,
+          "note": "Pelvis aligned to approved chair; contact pose reviewed separately."
+        },
+        "seated": true,
+        "wardrobeMode": "modest long-sleeve shirt and trousers; long drape disabled for seated role"
+      },
+      {
+        "id": "office-person-10",
+        "zone": "Z08",
+        "task": "listening",
+        "outfit": "panjabi",
+        "pose": "listening__seat_50292",
+        "heightScale": 1,
+        "bodyWidth": 1.054,
+        "skinTint": "#c69d7b",
+        "garmentTint": "#a98a76",
+        "lowerTint": "#25313c",
+        "phase": 14.56231,
+        "radius": 0.25,
+        "fictional": true,
+        "faceMorph": [
+          0.071,
+          0.083,
+          0.667
+        ],
+        "position": [
+          17.957799911499023,
+          0,
+          -3.886199951171875
+        ],
+        "yaw": 0,
+        "support": {
+          "sourceObject": "F040 board_chair",
+          "seatTopY": 0.50291997,
+          "note": "Pelvis aligned to approved chair; contact pose reviewed separately."
+        },
+        "seated": true,
+        "wardrobeMode": "modest long-sleeve shirt and trousers; long drape disabled for seated role"
+      },
+      {
+        "id": "office-person-11",
+        "zone": "Z08",
+        "task": "notes",
+        "outfit": "salwar_braid",
+        "pose": "notes__seat_50292",
+        "heightScale": 1,
+        "bodyWidth": 0.982,
+        "skinTint": "#b88b69",
+        "garmentTint": "#637b76",
+        "lowerTint": "#30363d",
+        "phase": 16.18034,
+        "radius": 0.25,
+        "fictional": true,
+        "faceMorph": [
+          0.286,
+          0.5,
+          0.111
+        ],
+        "position": [
+          18.770599365234375,
+          0,
+          -1.8034000396728516
+        ],
+        "yaw": 3.1415927410125732,
+        "support": {
+          "sourceObject": "F043 board_chair",
+          "seatTopY": 0.50291997,
+          "note": "Pelvis aligned to approved chair; contact pose reviewed separately."
+        },
+        "seated": true,
+        "wardrobeMode": "modest long-sleeve shirt and trousers; long drape disabled for seated role"
+      },
+      {
+        "id": "office-person-12",
+        "zone": "Z08",
+        "task": "listening",
+        "outfit": "shirt",
+        "pose": "listening__seat_50292",
+        "heightScale": 1,
+        "bodyWidth": 1.036,
+        "skinTint": "#ddbaa4",
+        "garmentTint": "#ad9271",
+        "lowerTint": "#424039",
+        "phase": 17.79837,
+        "radius": 0.25,
+        "fictional": true,
+        "faceMorph": [
+          0.5,
+          0,
+          0.5
+        ],
+        "position": [
+          20.624799728393555,
+          0,
+          -2.8447999954223633
+        ],
+        "yaw": 4.71238899230957,
+        "support": {
+          "sourceObject": "F046 exec_chair_black",
+          "seatTopY": 0.50291997,
+          "note": "Pelvis aligned to approved chair; contact pose reviewed separately."
+        },
+        "seated": true,
+        "wardrobeMode": "modest long-sleeve shirt and trousers; long drape disabled for seated role"
+      },
+      {
+        "id": "office-person-13",
+        "zone": "Z08",
+        "task": "presenting",
+        "outfit": "salwar",
+        "pose": "presenting",
+        "heightScale": 1.016,
+        "bodyWidth": 0.964,
+        "skinTint": "#d5b6a0",
+        "garmentTint": "#8a9bb2",
+        "lowerTint": "#25313c",
+        "phase": 19.41641,
+        "radius": 0.25,
+        "fictional": true,
+        "faceMorph": [
+          0.714,
+          0.417,
+          0.889
+        ],
+        "position": [
+          13.199,
+          0,
+          -3.7232
+        ],
+        "yaw": 1.5707963267948966,
+        "seated": false
+      },
+      {
+        "id": "office-person-14",
+        "zone": "Z12",
+        "task": "phone_seated",
+        "outfit": "shirt",
+        "pose": "phone_seated__seat_50292",
+        "heightScale": 1,
+        "bodyWidth": 1.018,
+        "skinTint": "#c69d7b",
+        "garmentTint": "#9e7788",
+        "lowerTint": "#30363d",
+        "phase": 21.03444,
+        "radius": 0.25,
+        "fictional": true,
+        "faceMorph": [
+          0,
+          0.833,
+          0.333
+        ],
+        "position": [
+          26.16200065612793,
+          0,
+          4.953000068664551
+        ],
+        "yaw": 3.1415927410125732,
+        "support": {
+          "sourceObject": "F064 exec_chair_cognac",
+          "seatTopY": 0.50291997,
+          "note": "Pelvis aligned to approved chair; contact pose reviewed separately."
+        },
+        "seated": true,
+        "wardrobeMode": "modest long-sleeve shirt and trousers; long drape disabled for seated role"
+      },
+      {
+        "id": "office-person-15",
+        "zone": "Z05",
+        "task": "typing",
+        "outfit": "salwar",
+        "pose": "typing__seat_49022",
+        "heightScale": 1,
+        "bodyWidth": 0.946,
+        "skinTint": "#b88b69",
+        "garmentTint": "#738866",
+        "lowerTint": "#424039",
+        "phase": 22.65248,
+        "radius": 0.25,
+        "fictional": true,
+        "faceMorph": [
+          0.214,
+          0.333,
+          0.722
+        ],
+        "position": [
+          5.651500225067139,
+          0,
+          -2.9591000080108643
+        ],
+        "yaw": 3.1415927410125732,
+        "support": {
+          "sourceObject": "F140 task_chair",
+          "seatTopY": 0.49021998,
+          "note": "Pelvis aligned to approved chair; contact pose reviewed separately."
+        },
+        "seated": true,
+        "wardrobeMode": "modest long-sleeve shirt and trousers; long drape disabled for seated role"
+      },
+      {
+        "id": "office-person-16",
+        "zone": "Z05",
+        "task": "phone_seated",
+        "outfit": "shirt",
+        "pose": "phone_seated__seat_49022",
+        "heightScale": 1,
+        "bodyWidth": 1,
+        "skinTint": "#ddbaa4",
+        "garmentTint": "#b9a895",
+        "lowerTint": "#25313c",
+        "phase": 24.27051,
+        "radius": 0.25,
+        "fictional": true,
+        "faceMorph": [
+          0.429,
+          0.75,
+          0.167
+        ],
+        "position": [
+          7.048500061035156,
+          0,
+          -5.168900012969971
+        ],
+        "yaw": 0,
+        "support": {
+          "sourceObject": "F143 task_chair",
+          "seatTopY": 0.49021998,
+          "note": "Pelvis aligned to approved chair; contact pose reviewed separately."
+        },
+        "seated": true,
+        "wardrobeMode": "modest long-sleeve shirt and trousers; long drape disabled for seated role"
+      },
+      {
+        "id": "office-person-17",
+        "zone": "Z06",
+        "task": "typing",
+        "outfit": "panjabi",
+        "pose": "typing__seat_49022",
+        "heightScale": 1,
+        "bodyWidth": 1.054,
+        "skinTint": "#d5b6a0",
+        "garmentTint": "#a8bbcd",
+        "lowerTint": "#30363d",
+        "phase": 25.88854,
+        "radius": 0.25,
+        "fictional": true,
+        "faceMorph": [
+          0.643,
+          0.25,
+          0.556
+        ],
+        "position": [
+          4.330699920654297,
+          0,
+          -15.163800239562988
+        ],
+        "yaw": 3.1415927410125732,
+        "support": {
+          "sourceObject": "F113 task_chair",
+          "seatTopY": 0.49021998,
+          "note": "Pelvis aligned to approved chair; contact pose reviewed separately."
+        },
+        "seated": true,
+        "wardrobeMode": "modest long-sleeve shirt and trousers; long drape disabled for seated role"
+      },
+      {
+        "id": "office-person-18",
+        "zone": "Z06",
+        "task": "notes",
+        "outfit": "salwar_braid",
+        "pose": "notes__seat_49022",
+        "heightScale": 1,
+        "bodyWidth": 0.982,
+        "skinTint": "#c69d7b",
+        "garmentTint": "#a98a76",
+        "lowerTint": "#424039",
+        "phase": 27.50658,
+        "radius": 0.25,
+        "fictional": true,
+        "faceMorph": [
+          0.857,
+          0.667,
+          0
+        ],
+        "position": [
+          4.330699920654297,
+          0,
+          -11.214099884033203
+        ],
+        "yaw": 3.1415927410125732,
+        "support": {
+          "sourceObject": "F120 task_chair",
+          "seatTopY": 0.49021998,
+          "note": "Pelvis aligned to approved chair; contact pose reviewed separately."
+        },
+        "seated": true,
+        "wardrobeMode": "modest long-sleeve shirt and trousers; long drape disabled for seated role"
+      },
+      {
+        "id": "office-person-19",
+        "zone": "Z07",
+        "task": "typing",
+        "outfit": "shirt",
+        "pose": "typing__seat_49022",
+        "heightScale": 1,
+        "bodyWidth": 1.036,
+        "skinTint": "#b88b69",
+        "garmentTint": "#637b76",
+        "lowerTint": "#25313c",
+        "phase": 29.12461,
+        "radius": 0.25,
+        "fictional": true,
+        "faceMorph": [
+          0.143,
+          0.167,
+          0.389
+        ],
+        "position": [
+          10.98550033569336,
+          0,
+          -17.754600524902344
+        ],
+        "yaw": 3.1415927410125732,
+        "support": {
+          "sourceObject": "F074 task_chair",
+          "seatTopY": 0.49021998,
+          "note": "Pelvis aligned to approved chair; contact pose reviewed separately."
+        },
+        "seated": true,
+        "wardrobeMode": "modest long-sleeve shirt and trousers; long drape disabled for seated role"
+      },
+      {
+        "id": "office-person-20",
+        "zone": "Z07",
+        "task": "phone_seated",
+        "outfit": "salwar",
+        "pose": "phone_seated__seat_49022",
+        "heightScale": 1,
+        "bodyWidth": 0.964,
+        "skinTint": "#ddbaa4",
+        "garmentTint": "#ad9271",
+        "lowerTint": "#30363d",
+        "phase": 30.74265,
+        "radius": 0.25,
+        "fictional": true,
+        "faceMorph": [
+          0.357,
+          0.583,
+          0.778
+        ],
+        "position": [
+          17.462499618530273,
+          0,
+          -19.964399337768555
+        ],
+        "yaw": 0,
+        "support": {
+          "sourceObject": "F089 task_chair",
+          "seatTopY": 0.49021998,
+          "note": "Pelvis aligned to approved chair; contact pose reviewed separately."
+        },
+        "seated": true,
+        "wardrobeMode": "modest long-sleeve shirt and trousers; long drape disabled for seated role"
+      },
+      {
+        "id": "office-person-21",
+        "zone": "Z07",
+        "task": "notes",
+        "outfit": "panjabi",
+        "pose": "notes__seat_49022",
+        "heightScale": 1,
+        "bodyWidth": 1.018,
+        "skinTint": "#d5b6a0",
+        "garmentTint": "#8a9bb2",
+        "lowerTint": "#424039",
+        "phase": 32.36068,
+        "radius": 0.25,
+        "fictional": true,
+        "faceMorph": [
+          0.571,
+          0.083,
+          0.222
+        ],
+        "position": [
+          17.27199935913086,
+          0,
+          -13.893799781799316
+        ],
+        "yaw": 3.1415927410125732,
+        "support": {
+          "sourceObject": "F094 task_chair_green",
+          "seatTopY": 0.49021998,
+          "note": "Pelvis aligned to approved chair; contact pose reviewed separately."
+        },
+        "seated": true,
+        "wardrobeMode": "modest long-sleeve shirt and trousers; long drape disabled for seated role"
+      },
+      {
+        "id": "office-person-22",
+        "zone": "Z07",
+        "task": "show_sample",
+        "outfit": "salwar_braid",
+        "pose": "show_sample",
+        "heightScale": 0.992,
+        "bodyWidth": 0.946,
+        "skinTint": "#c69d7b",
+        "garmentTint": "#9e7788",
+        "lowerTint": "#25313c",
+        "phase": 33.97871,
+        "radius": 0.25,
+        "fictional": true,
+        "faceMorph": [
+          0.786,
+          0.5,
+          0.611
+        ],
+        "position": [
+          15.099,
+          0,
+          -16.7232
+        ],
+        "yaw": 1.5707963267948966,
+        "seated": false
+      },
+      {
+        "id": "office-person-23",
+        "zone": "Z07",
+        "task": "browsing",
+        "outfit": "shirt",
+        "pose": "browsing",
+        "heightScale": 0.96,
+        "bodyWidth": 1,
+        "skinTint": "#b88b69",
+        "garmentTint": "#738866",
+        "lowerTint": "#30363d",
+        "phase": 35.59675,
+        "radius": 0.25,
+        "fictional": true,
+        "faceMorph": [
+          0.071,
+          0,
+          0.056
+        ],
+        "position": [
+          15.799,
+          0,
+          -16.7232
+        ],
+        "yaw": -1.5707963267948966,
+        "seated": false
+      },
+      {
+        "id": "office-person-24",
+        "zone": "Z07",
+        "task": "fabric",
+        "outfit": "shirt",
+        "pose": "fabric",
+        "heightScale": 1.016,
+        "bodyWidth": 1.054,
+        "skinTint": "#ddbaa4",
+        "garmentTint": "#b9a895",
+        "lowerTint": "#424039",
+        "phase": 37.21478,
+        "radius": 0.25,
+        "fictional": true,
+        "faceMorph": [
+          0.286,
+          0.417,
+          0.444
+        ],
+        "position": [
+          10.799,
+          0,
+          -11.8232
+        ],
+        "yaw": -0.694,
+        "seated": false
+      },
+      {
+        "id": "office-person-25",
+        "zone": "Z14",
+        "task": "typing",
+        "outfit": "salwar",
+        "pose": "typing__seat_49022",
+        "heightScale": 1,
+        "bodyWidth": 0.982,
+        "skinTint": "#d5b6a0",
+        "garmentTint": "#a8bbcd",
+        "lowerTint": "#25313c",
+        "phase": 38.83282,
+        "radius": 0.25,
+        "fictional": true,
+        "faceMorph": [
+          0.5,
+          0.833,
+          0.833
+        ],
+        "position": [
+          23.456899642944336,
+          0,
+          -3.937000036239624
+        ],
+        "yaw": 4.71238899230957,
+        "support": {
+          "sourceObject": "F182 task_chair",
+          "seatTopY": 0.49021998,
+          "note": "Pelvis aligned to approved chair; contact pose reviewed separately."
+        },
+        "seated": true,
+        "wardrobeMode": "modest long-sleeve shirt and trousers; long drape disabled for seated role"
+      },
+      {
+        "id": "office-person-26",
+        "zone": "Z17",
+        "task": "sewing",
+        "outfit": "panjabi",
+        "pose": "sewing__seat_49022",
+        "heightScale": 1,
+        "bodyWidth": 1.036,
+        "skinTint": "#c69d7b",
+        "garmentTint": "#a98a76",
+        "lowerTint": "#30363d",
+        "phase": 40.45085,
+        "radius": 0.25,
+        "fictional": true,
+        "faceMorph": [
+          0.714,
+          0.333,
+          0.278
+        ],
+        "position": [
+          23.52039909362793,
+          0,
+          -19.558000564575195
+        ],
+        "yaw": 4.71238899230957,
+        "support": {
+          "sourceObject": "F207 task_chair",
+          "seatTopY": 0.49021998,
+          "note": "Pelvis aligned to approved chair; contact pose reviewed separately."
+        },
+        "seated": true,
+        "wardrobeMode": "modest long-sleeve shirt and trousers; long drape disabled for seated role"
+      },
+      {
+        "id": "office-person-27",
+        "zone": "Z15",
+        "task": "fabric",
+        "outfit": "salwar_braid",
+        "pose": "fabric",
+        "heightScale": 1.008,
+        "bodyWidth": 0.964,
+        "skinTint": "#b88b69",
+        "garmentTint": "#637b76",
+        "lowerTint": "#424039",
+        "phase": 42.06888,
+        "radius": 0.25,
+        "fictional": true,
+        "faceMorph": [
+          0,
+          0.75,
+          0.667
+        ],
+        "position": [
+          24.399,
+          0,
+          -7.9232
+        ],
+        "yaw": 3.141592653589793,
+        "seated": false
+      },
+      {
+        "id": "office-person-28",
+        "zone": "Z18",
+        "task": "typing",
+        "outfit": "shirt",
+        "pose": "typing__seat_49022",
+        "heightScale": 1,
+        "bodyWidth": 1.018,
+        "skinTint": "#ddbaa4",
+        "garmentTint": "#ad9271",
+        "lowerTint": "#25313c",
+        "phase": 43.68692,
+        "radius": 0.25,
+        "fictional": true,
+        "faceMorph": [
+          0.214,
+          0.25,
+          0.111
+        ],
+        "position": [
+          31.026100158691406,
+          0,
+          -23.177499771118164
+        ],
+        "yaw": 3.1415927410125732,
+        "support": {
+          "sourceObject": "F222 task_chair_green",
+          "seatTopY": 0.49021998,
+          "note": "Pelvis aligned to approved chair; contact pose reviewed separately."
+        },
+        "seated": true,
+        "wardrobeMode": "modest long-sleeve shirt and trousers; long drape disabled for seated role"
+      },
+      {
+        "id": "office-person-29",
+        "zone": "Z18",
+        "task": "notes",
+        "outfit": "salwar",
+        "pose": "notes__seat_49022",
+        "heightScale": 1,
+        "bodyWidth": 0.946,
+        "skinTint": "#d5b6a0",
+        "garmentTint": "#8a9bb2",
+        "lowerTint": "#30363d",
+        "phase": 45.30495,
+        "radius": 0.25,
+        "fictional": true,
+        "faceMorph": [
+          0.429,
+          0.667,
+          0.5
+        ],
+        "position": [
+          32.62630081176758,
+          0,
+          -25.590499877929688
+        ],
+        "yaw": 0,
+        "support": {
+          "sourceObject": "F225 task_chair_green",
+          "seatTopY": 0.49021998,
+          "note": "Pelvis aligned to approved chair; contact pose reviewed separately."
+        },
+        "seated": true,
+        "wardrobeMode": "modest long-sleeve shirt and trousers; long drape disabled for seated role"
+      },
+      {
+        "id": "office-person-30",
+        "zone": "Z20",
+        "task": "tea",
+        "outfit": "panjabi",
+        "pose": "tea__seat_48768",
+        "heightScale": 1,
+        "bodyWidth": 1,
+        "skinTint": "#c69d7b",
+        "garmentTint": "#9e7788",
+        "lowerTint": "#424039",
+        "phase": 46.92299,
+        "radius": 0.25,
+        "fictional": true,
+        "faceMorph": [
+          0.643,
+          0.167,
+          0.889
+        ],
+        "position": [
+          24.231599807739258,
+          0,
+          -26.720800399780273
+        ],
+        "yaw": 0,
+        "support": {
+          "sourceObject": "F263 dining_chair",
+          "seatTopY": 0.48768002,
+          "note": "Pelvis aligned to approved chair; contact pose reviewed separately."
+        },
+        "seated": true,
+        "wardrobeMode": "modest long-sleeve shirt and trousers; long drape disabled for seated role"
+      },
+      {
+        "id": "office-person-31",
+        "zone": "Z20",
+        "task": "tea",
+        "outfit": "salwar_braid",
+        "pose": "tea__seat_48768",
+        "heightScale": 1,
+        "bodyWidth": 1.054,
+        "skinTint": "#b88b69",
+        "garmentTint": "#738866",
+        "lowerTint": "#25313c",
+        "phase": 48.54102,
+        "radius": 0.25,
+        "fictional": true,
+        "faceMorph": [
+          0.857,
+          0.583,
+          0.333
+        ],
+        "position": [
+          24.84119987487793,
+          0,
+          -25.095199584960938
+        ],
+        "yaw": 3.1415927410125732,
+        "support": {
+          "sourceObject": "F266 dining_chair",
+          "seatTopY": 0.48768002,
+          "note": "Pelvis aligned to approved chair; contact pose reviewed separately."
+        },
+        "seated": true,
+        "wardrobeMode": "modest long-sleeve shirt and trousers; long drape disabled for seated role"
+      },
+      {
+        "id": "office-person-32",
+        "zone": "Z20",
+        "task": "listening",
+        "outfit": "shirt",
+        "pose": "listening__seat_48768",
+        "heightScale": 1,
+        "bodyWidth": 0.982,
+        "skinTint": "#ddbaa4",
+        "garmentTint": "#b9a895",
+        "lowerTint": "#30363d",
+        "phase": 50.15905,
+        "radius": 0.25,
+        "fictional": true,
+        "faceMorph": [
+          0.143,
+          0.083,
+          0.722
+        ],
+        "position": [
+          26.060400009155273,
+          0,
+          -26.720800399780273
+        ],
+        "yaw": 0,
+        "support": {
+          "sourceObject": "F269 dining_chair",
+          "seatTopY": 0.48768002,
+          "note": "Pelvis aligned to approved chair; contact pose reviewed separately."
+        },
+        "seated": true,
+        "wardrobeMode": "modest long-sleeve shirt and trousers; long drape disabled for seated role"
+      },
+      {
+        "id": "office-person-33",
+        "zone": "Z33",
+        "task": "walking",
+        "outfit": "salwar",
+        "pose": "idle",
+        "heightScale": 0.992,
+        "bodyWidth": 1.036,
+        "skinTint": "#d5b6a0",
+        "garmentTint": "#a8bbcd",
+        "lowerTint": "#424039",
+        "phase": 51.77709,
+        "radius": 0.25,
+        "fictional": true,
+        "faceMorph": [
+          0.357,
+          0.5,
+          0.167
+        ],
+        "position": [
+          10.999,
+          0,
+          -22.0232
+        ],
+        "yaw": 0,
+        "seated": false,
+        "path": [
+          [
+            10.999,
+            -22.0232
+          ],
+          [
+            11.099,
+            -22.0232
+          ],
+          [
+            11.199,
+            -22.0232
+          ],
+          [
+            11.299,
+            -22.0232
+          ],
+          [
+            11.399,
+            -22.0232
+          ],
+          [
+            11.499,
+            -22.0232
+          ],
+          [
+            11.599,
+            -22.0232
+          ],
+          [
+            11.699,
+            -22.0232
+          ],
+          [
+            11.799,
+            -22.0232
+          ],
+          [
+            11.899,
+            -22.0232
+          ],
+          [
+            11.999,
+            -22.0232
+          ],
+          [
+            12.099,
+            -22.0232
+          ],
+          [
+            12.199,
+            -22.0232
+          ],
+          [
+            12.299,
+            -22.0232
+          ],
+          [
+            12.399,
+            -22.0232
+          ],
+          [
+            12.499,
+            -22.0232
+          ],
+          [
+            12.599,
+            -22.0232
+          ],
+          [
+            12.699,
+            -22.0232
+          ],
+          [
+            12.799,
+            -22.0232
+          ],
+          [
+            12.899,
+            -22.0232
+          ],
+          [
+            12.999,
+            -22.0232
+          ],
+          [
+            13.099,
+            -22.0232
+          ],
+          [
+            13.199,
+            -22.0232
+          ],
+          [
+            13.299,
+            -22.0232
+          ],
+          [
+            13.399,
+            -22.0232
+          ],
+          [
+            13.499,
+            -22.0232
+          ],
+          [
+            13.599,
+            -22.0232
+          ],
+          [
+            13.699,
+            -22.0232
+          ],
+          [
+            13.799,
+            -22.0232
+          ],
+          [
+            13.899,
+            -22.0232
+          ],
+          [
+            13.999,
+            -22.0232
+          ],
+          [
+            14.099,
+            -22.0232
+          ],
+          [
+            14.199,
+            -22.0232
+          ],
+          [
+            14.299,
+            -22.0232
+          ],
+          [
+            14.399,
+            -22.0232
+          ],
+          [
+            14.499,
+            -22.0232
+          ],
+          [
+            14.599,
+            -22.0232
+          ],
+          [
+            14.699,
+            -22.0232
+          ],
+          [
+            14.799,
+            -22.0232
+          ],
+          [
+            14.899,
+            -22.0232
+          ],
+          [
+            14.999,
+            -22.0232
+          ],
+          [
+            15.099,
+            -22.0232
+          ],
+          [
+            15.199,
+            -22.0232
+          ],
+          [
+            15.299,
+            -22.0232
+          ],
+          [
+            15.399,
+            -22.0232
+          ],
+          [
+            15.499,
+            -22.0232
+          ],
+          [
+            15.599,
+            -22.0232
+          ],
+          [
+            15.699,
+            -22.0232
+          ],
+          [
+            15.799,
+            -22.0232
+          ],
+          [
+            15.899,
+            -22.0232
+          ],
+          [
+            15.999,
+            -22.0232
+          ],
+          [
+            16.099,
+            -22.0232
+          ],
+          [
+            16.199,
+            -22.0232
+          ],
+          [
+            16.299,
+            -22.0232
+          ],
+          [
+            16.399,
+            -22.0232
+          ],
+          [
+            16.499,
+            -22.0232
+          ],
+          [
+            16.599,
+            -22.0232
+          ],
+          [
+            16.699,
+            -22.0232
+          ],
+          [
+            16.799,
+            -22.0232
+          ],
+          [
+            16.899,
+            -22.0232
+          ],
+          [
+            16.999,
+            -22.0232
+          ],
+          [
+            17.099,
+            -22.0232
+          ],
+          [
+            17.199,
+            -22.0232
+          ],
+          [
+            17.299,
+            -22.0232
+          ],
+          [
+            17.399,
+            -22.0232
+          ],
+          [
+            17.499,
+            -22.0232
+          ],
+          [
+            17.599,
+            -22.0232
+          ],
+          [
+            17.699,
+            -22.0232
+          ],
+          [
+            17.799,
+            -22.0232
+          ],
+          [
+            17.899,
+            -22.0232
+          ],
+          [
+            17.999,
+            -22.0232
+          ],
+          [
+            18.099,
+            -22.0232
+          ],
+          [
+            18.199,
+            -22.0232
+          ],
+          [
+            18.299,
+            -22.0232
+          ],
+          [
+            18.399,
+            -22.0232
+          ],
+          [
+            18.499,
+            -22.0232
+          ],
+          [
+            18.599,
+            -22.0232
+          ],
+          [
+            18.699,
+            -22.0232
+          ],
+          [
+            18.799,
+            -22.0232
+          ],
+          [
+            18.899,
+            -22.0232
+          ],
+          [
+            18.999,
+            -22.0232
+          ],
+          [
+            19.099,
+            -22.0232
+          ],
+          [
+            19.199,
+            -22.0232
+          ],
+          [
+            19.299,
+            -22.0232
+          ],
+          [
+            19.399,
+            -22.0232
+          ],
+          [
+            19.499,
+            -22.0232
+          ],
+          [
+            19.599,
+            -22.0232
+          ],
+          [
+            19.699,
+            -22.0232
+          ]
+        ],
+        "walkSpeed": 0.52
+      },
+      {
+        "id": "office-person-34",
+        "zone": "Z22",
+        "task": "walking_files",
+        "outfit": "shirt",
+        "pose": "idle",
+        "heightScale": 0.96,
+        "bodyWidth": 0.964,
+        "skinTint": "#c69d7b",
+        "garmentTint": "#a98a76",
+        "lowerTint": "#25313c",
+        "phase": 53.39512,
+        "radius": 0.25,
+        "fictional": true,
+        "faceMorph": [
+          0.571,
+          0,
+          0.556
+        ],
+        "position": [
+          27.199,
+          0,
+          -11.7232
+        ],
+        "yaw": 0,
+        "seated": false,
+        "path": [
+          [
+            27.199,
+            -11.7232
+          ],
+          [
+            27.199,
+            -11.8232
+          ],
+          [
+            27.199,
+            -11.9232
+          ],
+          [
+            27.199,
+            -12.0232
+          ],
+          [
+            27.199,
+            -12.1232
+          ],
+          [
+            27.199,
+            -12.2232
+          ],
+          [
+            27.199,
+            -12.3232
+          ],
+          [
+            27.199,
+            -12.4232
+          ],
+          [
+            27.199,
+            -12.5232
+          ],
+          [
+            27.199,
+            -12.6232
+          ],
+          [
+            27.199,
+            -12.7232
+          ],
+          [
+            27.199,
+            -12.8232
+          ],
+          [
+            27.199,
+            -12.9232
+          ],
+          [
+            27.199,
+            -13.0232
+          ],
+          [
+            27.199,
+            -13.1232
+          ],
+          [
+            27.199,
+            -13.2232
+          ],
+          [
+            27.199,
+            -13.3232
+          ],
+          [
+            27.199,
+            -13.4232
+          ],
+          [
+            27.199,
+            -13.5232
+          ],
+          [
+            27.199,
+            -13.6232
+          ],
+          [
+            27.199,
+            -13.7232
+          ],
+          [
+            27.199,
+            -13.8232
+          ],
+          [
+            27.199,
+            -13.9232
+          ],
+          [
+            27.199,
+            -14.0232
+          ],
+          [
+            27.199,
+            -14.1232
+          ],
+          [
+            27.199,
+            -14.2232
+          ],
+          [
+            27.199,
+            -14.3232
+          ],
+          [
+            27.199,
+            -14.4232
+          ],
+          [
+            27.199,
+            -14.5232
+          ],
+          [
+            27.199,
+            -14.6232
+          ],
+          [
+            27.199,
+            -14.7232
+          ],
+          [
+            27.199,
+            -14.8232
+          ],
+          [
+            27.199,
+            -14.9232
+          ],
+          [
+            27.199,
+            -15.0232
+          ],
+          [
+            27.199,
+            -15.1232
+          ],
+          [
+            27.199,
+            -15.2232
+          ],
+          [
+            27.199,
+            -15.3232
+          ],
+          [
+            27.199,
+            -15.4232
+          ],
+          [
+            27.199,
+            -15.5232
+          ],
+          [
+            27.199,
+            -15.6232
+          ],
+          [
+            27.199,
+            -15.7232
+          ],
+          [
+            27.199,
+            -15.8232
+          ],
+          [
+            27.199,
+            -15.9232
+          ],
+          [
+            27.199,
+            -16.0232
+          ],
+          [
+            27.199,
+            -16.1232
+          ],
+          [
+            27.199,
+            -16.2232
+          ],
+          [
+            27.199,
+            -16.3232
+          ],
+          [
+            27.199,
+            -16.4232
+          ],
+          [
+            27.199,
+            -16.5232
+          ],
+          [
+            27.199,
+            -16.6232
+          ],
+          [
+            27.199,
+            -16.7232
+          ],
+          [
+            27.199,
+            -16.8232
+          ],
+          [
+            27.199,
+            -16.9232
+          ],
+          [
+            27.199,
+            -17.0232
+          ],
+          [
+            27.199,
+            -17.1232
+          ],
+          [
+            27.199,
+            -17.2232
+          ],
+          [
+            27.199,
+            -17.3232
+          ],
+          [
+            27.199,
+            -17.4232
+          ],
+          [
+            27.199,
+            -17.5232
+          ],
+          [
+            27.199,
+            -17.6232
+          ],
+          [
+            27.199,
+            -17.7232
+          ],
+          [
+            27.199,
+            -17.8232
+          ],
+          [
+            27.199,
+            -17.9232
+          ],
+          [
+            27.199,
+            -18.0232
+          ],
+          [
+            27.199,
+            -18.1232
+          ],
+          [
+            27.199,
+            -18.2232
+          ],
+          [
+            27.199,
+            -18.3232
+          ],
+          [
+            27.199,
+            -18.4232
+          ],
+          [
+            27.199,
+            -18.5232
+          ],
+          [
+            27.199,
+            -18.6232
+          ],
+          [
+            27.199,
+            -18.7232
+          ],
+          [
+            27.199,
+            -18.8232
+          ],
+          [
+            27.199,
+            -18.9232
+          ],
+          [
+            27.199,
+            -19.0232
+          ],
+          [
+            27.199,
+            -19.1232
+          ],
+          [
+            27.199,
+            -19.2232
+          ],
+          [
+            27.199,
+            -19.3232
+          ],
+          [
+            27.199,
+            -19.4232
+          ],
+          [
+            27.199,
+            -19.5232
+          ],
+          [
+            27.199,
+            -19.6232
+          ],
+          [
+            27.199,
+            -19.7232
+          ],
+          [
+            27.199,
+            -19.8232
+          ],
+          [
+            27.199,
+            -19.9232
+          ]
+        ],
+        "walkSpeed": 0.52
+      },
+      {
+        "id": "office-person-35",
+        "zone": "Z31",
+        "task": "walking",
+        "outfit": "panjabi",
+        "pose": "idle",
+        "heightScale": 1.016,
+        "bodyWidth": 1.018,
+        "skinTint": "#b88b69",
+        "garmentTint": "#637b76",
+        "lowerTint": "#30363d",
+        "phase": 55.01316,
+        "radius": 0.25,
+        "fictional": true,
+        "faceMorph": [
+          0.786,
+          0.417,
+          0
+        ],
+        "position": [
+          3.399,
+          0,
+          -0.8232
+        ],
+        "yaw": 0,
+        "seated": false,
+        "path": [
+          [
+            3.399,
+            -0.8232
+          ],
+          [
+            3.399,
+            -0.9232
+          ],
+          [
+            3.399,
+            -1.0232
+          ],
+          [
+            3.399,
+            -1.1232
+          ],
+          [
+            3.399,
+            -1.2232
+          ],
+          [
+            3.399,
+            -1.3232
+          ],
+          [
+            3.399,
+            -1.4232
+          ],
+          [
+            3.399,
+            -1.5232
+          ],
+          [
+            3.399,
+            -1.6232
+          ],
+          [
+            3.399,
+            -1.7232
+          ],
+          [
+            3.399,
+            -1.8232
+          ],
+          [
+            3.399,
+            -1.9232
+          ],
+          [
+            3.399,
+            -2.0232
+          ],
+          [
+            3.399,
+            -2.1232
+          ],
+          [
+            3.399,
+            -2.2232
+          ],
+          [
+            3.399,
+            -2.3232
+          ],
+          [
+            3.399,
+            -2.4232
+          ],
+          [
+            3.399,
+            -2.5232
+          ],
+          [
+            3.399,
+            -2.6232
+          ],
+          [
+            3.399,
+            -2.7232
+          ],
+          [
+            3.399,
+            -2.8232
+          ],
+          [
+            3.399,
+            -2.9232
+          ],
+          [
+            3.399,
+            -3.0232
+          ],
+          [
+            3.399,
+            -3.1232
+          ],
+          [
+            3.399,
+            -3.2232
+          ],
+          [
+            3.399,
+            -3.3232
+          ],
+          [
+            3.399,
+            -3.4232
+          ],
+          [
+            3.399,
+            -3.5232
+          ],
+          [
+            3.399,
+            -3.6232
+          ],
+          [
+            3.399,
+            -3.7232
+          ],
+          [
+            3.399,
+            -3.8232
+          ],
+          [
+            3.399,
+            -3.9232
+          ],
+          [
+            3.399,
+            -4.0232
+          ],
+          [
+            3.399,
+            -4.1232
+          ],
+          [
+            3.399,
+            -4.2232
+          ],
+          [
+            3.399,
+            -4.3232
+          ],
+          [
+            3.399,
+            -4.4232
+          ],
+          [
+            3.399,
+            -4.5232
+          ],
+          [
+            3.399,
+            -4.6232
+          ],
+          [
+            3.399,
+            -4.7232
+          ],
+          [
+            3.399,
+            -4.8232
+          ],
+          [
+            3.399,
+            -4.9232
+          ]
+        ],
+        "walkSpeed": 0.52
+      }
+    ],
+    "navigation": {
+      "source": "walk_grid.json",
+      "gridRadius": 0.15,
+      "planningRadius": 0.25,
+      "additionalOrthogonalCells": 1,
+      "mode": "stationary assigned tasks plus reversible validated single-corridor routes; wait for visitor/actor separation"
+    },
+    "limitations": [
+      "Procedural gestures, not motion-captured performance.",
+      "No native MacBook/Safari performance measurement available.",
+      "Anatomical props and seated contacts require actual in-scene render review."
+    ]
+  },
+  "wall_seconds": 215.11,
+  "source_capture_errors": [
+    {
+      "url": "http://127.0.0.1:8770/GARMENT_OFFICE_WALKTHROUGH_FINAL/07_WEB_TOUR_ASSETS/Final_Office_Interior_web.glb",
+      "error": "Large base-office GLB response body was evicted from Chromium inspector cache. All4people GLB response hashes, people runtime, manifest and poses were captured successfully. Geometry exports completed; this metadata error is not a scene execution error."
+    }
+  ],
+  "reference_office_glb_local_sha256": "8b4c46b76db22788f18c12591375764c70be1e7eac16a8ca871af53bb3aae8fd"
+}

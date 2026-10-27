@@ -1,0 +1,35 @@
+{
+  "capture_method": "Immutable script copies created before execution",
+  "command": [
+    "/workspace/tools/blender-5.2.3-linux-x64/blender",
+    "-b",
+    "/workspace/office-bake-work/approved-copy.blend",
+    "-t",
+    "4",
+    "--python-exit-code",
+    "1",
+    "--python",
+    "/workspace/office-realism/GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/blender/run-snapshots/20261027T164533Z-SHELL_WALLS-0c2d66/bake_rooms.py",
+    "--",
+    "--room",
+    "SHELL_WALLS",
+    "--size",
+    "4096",
+    "--samples",
+    "256",
+    "--shared-shell",
+    "--save-guides",
+    "--floor-uv-weight",
+    "1.0",
+    "--out",
+    "/workspace/office-realism/GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/lighting-v2"
+  ],
+  "project_root": "/workspace/office-realism",
+  "script_sha256": {
+    "bake_rooms.py": "5bea676996f981a5776ec7a5c3af2d298ba1ca09fc20adde4a13a79ae5a9ada9",
+    "denoise_lightmap.py": "0c787931ea0b3337ac4ecabeaa3a29d974065d2057198f41eae7f3f2914994ae",
+    "doorway_repairs.py": "f8fe367f72b3339fdf97559c1c54a860ef001731e9317b00f782a03db3546c78"
+  },
+  "source_sha256": "fa3ed3d58f6d44c3554e3761307841b96115ff7816e4e541c8e6611cb363810d",
+  "status": "running"
+}

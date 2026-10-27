@@ -1,0 +1,388 @@
+{
+  "source_files": {
+    "/workspace/office-bake-work/diagnostic-z02/Z02.glb": "319d201d8e6282acae523640924281573b5082d19573c60c5759f984660e899a",
+    "/workspace/office-bake-work/diagnostic-z02/Z02_raw.exr": "5b514f9e5a5c1f4c2d8c6298f7e82fd2ac0b866ab6cac61c78753978b54c64ea",
+    "/workspace/office-bake-work/diagnostic-z02/Z02.exr": "6996e0e14cc0a5ffa923588f3238dc434769aa48249abf8c287ce634ead998be"
+  },
+  "method": "glTF UV1 already has Blender V flipped; sample EXR top-down rows with y=v*height. Actual exported UV1 triangles, central barycentric interiors (>5%edge margin), image scene-linear luma. Beam samples exclude horizontal top/bottom faces to avoid intentional slab contact. Whole-object spatial light gradients remain in variance.",
+  "samples": [
+    {
+      "object": "BM008 Room 3 secondary",
+      "material": "steel_painted",
+      "interior_triangle_texels": 7557,
+      "triangles": 8,
+      "raw32": {
+        "mean": 0.08340553156430244,
+        "std": 0.13305224229264456,
+        "cv": 1.5952448212630408,
+        "percentiles": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.015709898376464842,
+          0.11798145751953124,
+          0.3675884765624999,
+          0.5879859628906235,
+          1.12676298828125
+        ],
+        "fraction_below_0_01": 0.4738652904591769,
+        "fraction_above_4": 0.0
+      },
+      "rtlightmap32": {
+        "mean": 0.08492839797233262,
+        "std": 0.07116928757145802,
+        "cv": 0.8379916408483656,
+        "percentiles": [
+          0.0,
+          0.0,
+          0.00317155517578125,
+          0.01612978515625,
+          0.08259570312499999,
+          0.13222744140624998,
+          0.22317340332031246,
+          0.2542519335937499,
+          0.301430322265625
+        ],
+        "fraction_below_0_01": 0.1617043800449914,
+        "fraction_above_4": 0.0
+      }
+    },
+    {
+      "object": "BM009 Room 3 secondary",
+      "material": "steel_painted",
+      "interior_triangle_texels": 7556,
+      "triangles": 8,
+      "raw32": {
+        "mean": 0.09388523792542591,
+        "std": 0.16026152545515615,
+        "cv": 1.7069938682208343,
+        "percentiles": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0046276689529418935,
+          0.13102034301757812,
+          0.4258415588378906,
+          0.6868352685546872,
+          1.2336264648437498
+        ],
+        "fraction_below_0_01": 0.5348067760719958,
+        "fraction_above_4": 0.0
+      },
+      "rtlightmap32": {
+        "mean": 0.09408097253474468,
+        "std": 0.09590637806272004,
+        "cv": 1.0194024942429376,
+        "percentiles": [
+          0.0,
+          0.0,
+          0.0,
+          0.0044205667495727545,
+          0.08147682800292969,
+          0.14670735778808594,
+          0.2958578430175781,
+          0.3728621728515624,
+          0.567367333984375
+        ],
+        "fraction_below_0_01": 0.3212016940179989,
+        "fraction_above_4": 0.0
+      }
+    },
+    {
+      "object": "BM010 Room 3 secondary",
+      "material": "steel_painted",
+      "interior_triangle_texels": 7557,
+      "triangles": 8,
+      "raw32": {
+        "mean": 0.285031164397292,
+        "std": 0.28292263837704573,
+        "cv": 0.9926024719973874,
+        "percentiles": [
+          0.0,
+          0.0,
+          0.0,
+          0.03877861938476563,
+          0.22794648437499998,
+          0.410627197265625,
+          0.8250277734374999,
+          1.1576738593749967,
+          2.2602916015625
+        ],
+        "fraction_below_0_01": 0.13669445547174805,
+        "fraction_above_4": 0.0
+      },
+      "rtlightmap32": {
+        "mean": 0.28742405979685065,
+        "std": 0.12364454246056548,
+        "cv": 0.4301816018740971,
+        "percentiles": [
+          0.0,
+          3.8331985473632965e-08,
+          0.07627055053710938,
+          0.19076680908203125,
+          0.30388225097656246,
+          0.39457958984374997,
+          0.45588010742187496,
+          0.49326177343749983,
+          0.55954033203125
+        ],
+        "fraction_below_0_01": 0.019584491200211725,
+        "fraction_above_4": 0.0
+      }
+    },
+    {
+      "object": "F011 lounge_green",
+      "material": "fab_green",
+      "interior_triangle_texels": 7019,
+      "triangles": 940,
+      "raw32": {
+        "mean": 0.34389188326328696,
+        "std": 0.5747398827230792,
+        "cv": 1.6712807446026656,
+        "percentiles": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.03248175659179687,
+          0.46480744628906245,
+          1.5624578515624996,
+          2.5519640390624945,
+          5.8155453125
+        ],
+        "fraction_below_0_01": 0.47684855392506054,
+        "fraction_above_4": 0.0011397634990739421
+      },
+      "rtlightmap32": {
+        "mean": 0.3356139535731154,
+        "std": 0.4412662551439712,
+        "cv": 1.3148030659811016,
+        "percentiles": [
+          0.0,
+          0.0,
+          0.0,
+          0.0006471929907798768,
+          0.14630946044921875,
+          0.46662434082031246,
+          1.2726586816406242,
+          1.6819608476562498,
+          3.2644265624999997
+        ],
+        "fraction_below_0_01": 0.2838011112694116,
+        "fraction_above_4": 0.0
+      }
+    },
+    {
+      "object": "F009 sofa_84_sand",
+      "material": "fab_sand",
+      "interior_triangle_texels": 26050,
+      "triangles": 1344,
+      "raw32": {
+        "mean": 0.32407783428583126,
+        "std": 0.6098784801843955,
+        "cv": 1.8818889034122983,
+        "percentiles": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.43105806884765624,
+          1.6835002343749998,
+          2.6815049296874998,
+          5.026860156249999
+        ],
+        "fraction_below_0_01": 0.636852207293666,
+        "fraction_above_4": 0.0009213051823416507
+      },
+      "rtlightmap32": {
+        "mean": 0.3228678536064949,
+        "std": 0.5121080726669648,
+        "cv": 1.5861228268674659,
+        "percentiles": [
+          0.0,
+          0.0,
+          0.0,
+          4.262924194335937e-08,
+          0.00030116052627563475,
+          0.5398144897460938,
+          1.4773074414062497,
+          1.8773996679687495,
+          3.4734371093750003
+        ],
+        "fraction_below_0_01": 0.5612284069097888,
+        "fraction_above_4": 0.0
+      }
+    },
+    {
+      "object": "Z02 RECEPTION + VISITOR WAITING - floor finish",
+      "material": "fl_terrazzo",
+      "interior_triangle_texels": 165523,
+      "triangles": 12,
+      "raw32": {
+        "mean": 0.28672549297258226,
+        "std": 0.5775320149506606,
+        "cv": 2.014233226920936,
+        "percentiles": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.355978662109375,
+          1.5069924999999995,
+          2.66188371875,
+          6.314853125
+        ],
+        "fraction_below_0_01": 0.640799163862424,
+        "fraction_above_4": 0.0014680739232614199
+      },
+      "rtlightmap32": {
+        "mean": 0.289035327987726,
+        "std": 0.42963498749476764,
+        "cv": 1.4864445480969448,
+        "percentiles": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.5519730712890625,
+          1.2475313085937496,
+          1.5515635273437498,
+          1.8458505859374998
+        ],
+        "fraction_below_0_01": 0.6086706983319539,
+        "fraction_above_4": 0.0
+      }
+    }
+  ],
+  "materials": {
+    "fab_green": {
+      "name": "fab_green",
+      "use_nodes": true,
+      "nodes": [
+        {
+          "type": "OUTPUT_MATERIAL",
+          "name": "Material Output",
+          "image": null
+        },
+        {
+          "type": "BSDF_PRINCIPLED",
+          "name": "Principled BSDF",
+          "image": null
+        },
+        {
+          "type": "TEX_COORD",
+          "name": "Texture Coordinate",
+          "image": null
+        },
+        {
+          "type": "MAPPING",
+          "name": "Mapping",
+          "image": null
+        },
+        {
+          "type": "TEX_IMAGE",
+          "name": "Image Texture",
+          "image": "Fabric030_1K-JPG_Color.jpg"
+        },
+        {
+          "type": "HUE_SAT",
+          "name": "Hue/Saturation/Value",
+          "image": null
+        },
+        {
+          "type": "RGBTOBW",
+          "name": "RGB to BW",
+          "image": null
+        },
+        {
+          "type": "VALTORGB",
+          "name": "Color Ramp",
+          "image": null
+        },
+        {
+          "type": "TEX_IMAGE",
+          "name": "Image Texture.001",
+          "image": "Fabric030_1K-JPG_NormalGL.jpg"
+        },
+        {
+          "type": "NORMAL_MAP",
+          "name": "Normal Map",
+          "image": null
+        }
+      ]
+    },
+    "paint_ceiling": {
+      "name": "paint_ceiling",
+      "use_nodes": true,
+      "nodes": [
+        {
+          "type": "OUTPUT_MATERIAL",
+          "name": "Material Output",
+          "image": null
+        },
+        {
+          "type": "BSDF_PRINCIPLED",
+          "name": "Principled BSDF",
+          "image": null
+        }
+      ]
+    },
+    "paint_white": {
+      "name": "paint_white",
+      "use_nodes": true,
+      "nodes": [
+        {
+          "type": "OUTPUT_MATERIAL",
+          "name": "Material Output",
+          "image": null
+        },
+        {
+          "type": "BSDF_PRINCIPLED",
+          "name": "Principled BSDF",
+          "image": null
+        },
+        {
+          "type": "TEX_COORD",
+          "name": "Texture Coordinate",
+          "image": null
+        },
+        {
+          "type": "TEX_NOISE",
+          "name": "Noise Texture",
+          "image": null
+        },
+        {
+          "type": "BUMP",
+          "name": "Bump",
+          "image": null
+        }
+      ]
+    },
+    "steel_painted": {
+      "name": "steel_painted",
+      "use_nodes": true,
+      "nodes": [
+        {
+          "type": "OUTPUT_MATERIAL",
+          "name": "Material Output",
+          "image": null
+        },
+        {
+          "type": "BSDF_PRINCIPLED",
+          "name": "Principled BSDF",
+          "image": null
+        }
+      ]
+    }
+  },
+  "target_image_shape": [
+    2048,
+    2048,
+    3
+  ]
+}

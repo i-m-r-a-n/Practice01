@@ -1,0 +1,78 @@
+{
+  "passed": true,
+  "liveReferenceFile": "GARMENT_OFFICE_REALISM_UPGRADE/01_IMPROVED_MODEL/Final_Office_Interior_web_realism.glb",
+  "liveReferenceSHA256": "e51b79514114efbe9b7780879581d882399490e166d30293faaaf8d280e810ea",
+  "repairedSHA256": "54aa7fb5d07a7517c94ac516b99e0c0f1b08229b95ed29945a430fa1526c83e6",
+  "liveNodes": [
+    "WEB_SHELL_INTERIOR"
+  ],
+  "newNodes": [
+    "NI01 frame above PW01",
+    "NI03 frame above PW01",
+    "NI04 frame above PW05",
+    "NI07 frame above PW06",
+    "NI08 frame above PW07",
+    "NI10 frame above PW07"
+  ],
+  "liveVertices": 87528,
+  "liveTriangles": 111070,
+  "newVertices": 696,
+  "newTriangles": 348,
+  "checks": [
+    {
+      "frame": "NI01 frame above PW01",
+      "door": "D18 Reception - visitor passage 42\"",
+      "rays": 33,
+      "originalSourceFrameHits": 33,
+      "retainedLiveShellHits": 0,
+      "newRepairedFrameHits": 0,
+      "pass": true
+    },
+    {
+      "frame": "NI03 frame above PW01",
+      "door": "D19 Reception - boardroom 42\"",
+      "rays": 33,
+      "originalSourceFrameHits": 33,
+      "retainedLiveShellHits": 0,
+      "newRepairedFrameHits": 0,
+      "pass": true
+    },
+    {
+      "frame": "NI04 frame above PW05",
+      "door": "D10 48\" opening room 7 - room 5",
+      "rays": 33,
+      "originalSourceFrameHits": 33,
+      "retainedLiveShellHits": 0,
+      "newRepairedFrameHits": 0,
+      "pass": true
+    },
+    {
+      "frame": "NI07 frame above PW06",
+      "door": "D11 52\" opening hallway - room 6",
+      "rays": 33,
+      "originalSourceFrameHits": 33,
+      "retainedLiveShellHits": 0,
+      "newRepairedFrameHits": 0,
+      "pass": true
+    },
+    {
+      "frame": "NI08 frame above PW07",
+      "door": "D12 49\" opening room 5 - room 6",
+      "rays": 33,
+      "originalSourceFrameHits": 33,
+      "retainedLiveShellHits": 0,
+      "newRepairedFrameHits": 0,
+      "pass": true
+    },
+    {
+      "frame": "NI10 frame above PW07",
+      "door": "D21 Experience centre - boardroom 42\"",
+      "rays": 33,
+      "originalSourceFrameHits": 33,
+      "retainedLiveShellHits": 0,
+      "newRepairedFrameHits": 0,
+      "pass": true
+    }
+  ],
+  "scope": "All198 actual GLB ray probes reproduce the existing six live doorway clearances at the former rail heights. This checks the retained live file bytes, not a new network fetch or general building compliance."
+}

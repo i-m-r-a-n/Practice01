@@ -1,0 +1,22 @@
+{
+  "purpose": "Diagnostic RTLightmap postprocess of retained raw scene-linear EXR, not adopted production replacement",
+  "filter": "RTLightmap",
+  "directional": false,
+  "inputScale": "automatic",
+  "source": "/workspace/office-bake-work/explicit-uv-z02/Z02_raw.exr",
+  "sourceSHA256": "ee9d9da9261249e47b664679b1fd4843235dae23f2cf53104a089188580dbf58",
+  "output": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/textures/qa/z02-explicit-uv-rtlightmap.exr",
+  "outputSHA256": "3db5d84f967e54bc56d3efa93cbd6b0ab5a7eb35ee5f32a84cd69b711e9b2778",
+  "shape": [
+    2048,
+    2048,
+    3
+  ],
+  "sourceMax": 52.46875,
+  "outputMax": 29.8125,
+  "negativeOutputChannelsClamped": 0,
+  "seconds": 3.472676875000161,
+  "threads": 2,
+  "documentation": "https://github.com/RenderKit/oidn/blob/v2.3.3/README.md#rtlightmap",
+  "library": "/workspace/tools/oidn/oidn-2.3.3.x86_64.linux/lib/libOpenImageDenoise.so"
+}

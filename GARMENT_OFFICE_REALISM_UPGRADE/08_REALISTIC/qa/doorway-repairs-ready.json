@@ -1,0 +1,78 @@
+{
+  "status": "passed",
+  "url": "http://127.0.0.1:8783/realistic/?stage=5&welcome=0&post=0&materials=0&probes=0&scale=0.25&lighting=./lighting-v2/manifest.json",
+  "page_errors": [],
+  "console_errors": [],
+  "responses": [
+    {
+      "url": "http://127.0.0.1:8783/realistic/app.js",
+      "status": 200,
+      "bytes": 1064659,
+      "sha256": "522b15660cf942620205f98658918ce27514e389edfb85383f0a48e423f9fa8c"
+    },
+    {
+      "url": "http://127.0.0.1:8783/realistic/lighting-v2/manifest.json",
+      "status": 200,
+      "bytes": 24059,
+      "sha256": "cfd873c4921783e43c97cbebc2c2c2643939f667c7adec438ba7f9876d1b4231"
+    },
+    {
+      "url": "http://127.0.0.1:8783/realistic/lighting-v2/doorway-repairs.glb",
+      "status": 200,
+      "bytes": 29800,
+      "sha256": "54aa7fb5d07a7517c94ac516b99e0c0f1b08229b95ed29945a430fa1526c83e6"
+    }
+  ],
+  "scope": "Alternate-manifest startup applies exactly six named fallback repairs. No room-selection, frameCamera or atlas-loading API invoked. Not a new controller or visual acceptance.",
+  "state": {
+    "repairs": {
+      "required": true,
+      "state": "applied",
+      "objects": [
+        "NI01 frame above PW01",
+        "NI03 frame above PW01",
+        "NI04 frame above PW05",
+        "NI07 frame above PW06",
+        "NI08 frame above PW07",
+        "NI10 frame above PW07"
+      ]
+    },
+    "errors": [],
+    "lighting": {
+      "phase": 1,
+      "manifest": "http://127.0.0.1:8783/realistic/lighting-v2/manifest.json",
+      "available": 1,
+      "loaded": [],
+      "requiredShared": [],
+      "rooms": {
+        "Z02": {
+          "state": "available",
+          "sourceObjects": 36
+        }
+      },
+      "error": null
+    },
+    "features": {
+      "materials": false,
+      "probes": false,
+      "post": false,
+      "gameWalking": true,
+      "props": true,
+      "peopleAccepted": false
+    },
+    "gpu": {
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+      "vendor": "Google Inc. (Google)",
+      "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "webgl": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+      "maxTextureSize": 8192,
+      "pixelRatio": 0.25,
+      "quality": "balanced",
+      "viewport": [
+        640,
+        360
+      ]
+    }
+  },
+  "passed": true
+}

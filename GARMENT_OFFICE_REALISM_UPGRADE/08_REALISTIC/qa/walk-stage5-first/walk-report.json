@@ -1,0 +1,40 @@
+{
+  "status": "failed",
+  "url": "http://127.0.0.1:8783/realistic/?stage=5&welcome=0&ao=0&shadows=0&scale=0.25",
+  "browser_requested": "chromium",
+  "people_requested": "unchanged",
+  "route_sha256": "120946a9107d780c1d94f076c4862b1ad78626c558b43b51e7c734faccf5161b",
+  "route_m": 201.6,
+  "scope": "One initial verified spawn, then actual browser movement-controller steps. No intermediate camera-position assignment. Real rendering only at requested checkpoints.",
+  "limitations": [
+    "Automated proportional movement inputs, not a manual keyboard/mouse walkthrough.",
+    "Linux software rendering, not MacBook FPS, hardware, Safari or accessibility evidence.",
+    "Inherited raster radius is 0.15m; this is not a human-body clearance certification.",
+    "No new atlas or visual-quality pass is inferred from movement checks."
+  ],
+  "legs": [],
+  "console_errors": [],
+  "page_errors": [],
+  "source_responses": [
+    {
+      "url": "http://127.0.0.1:8783/realistic/?stage=5&welcome=0&ao=0&shadows=0&scale=0.25",
+      "status": 200,
+      "bytes": 70998,
+      "sha256": "77be4478c6e364dfd4c8d57517a303d15a42954863ac2c46a514cbff30bb2c25"
+    },
+    {
+      "url": "http://127.0.0.1:8783/realistic/app.js",
+      "status": 200,
+      "bytes": 893444,
+      "sha256": "79a240d3d8a2169f5d17db4b9208c697b7a90e5c17df1f17da376688247cc8ae"
+    },
+    {
+      "url": "http://127.0.0.1:8783/realistic/lighting/manifest.json",
+      "status": 200,
+      "bytes": 38249,
+      "sha256": "fdff7f6ac55790908185035ba63caee86c629b81439d2f26ce8141de1763ad14"
+    }
+  ],
+  "exception": "Page.wait_for_function: Error: Start a stage=5 movement review first\n    at Av (http://127.0.0.1:8783/realistic/app.js:4301:42451)\n    at predicate (eval at evaluate (:311:30), <anonymous>:13:29)\n    at next (eval at evaluate (:311:30), <anonymous>:29:33)",
+  "wall_seconds": 6.082
+}

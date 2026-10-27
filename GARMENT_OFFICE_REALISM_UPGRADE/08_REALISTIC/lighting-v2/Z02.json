@@ -1,0 +1,774 @@
+{
+  "id": "Z02",
+  "name": "Reception & visitor waiting",
+  "glb": "Z02.glb",
+  "lightMap": {
+    "url": "Z02.exr",
+    "format": "exr",
+    "channel": 1,
+    "intensity": 3.141592653589793,
+    "linear": true,
+    "samples": 512,
+    "size": 2048,
+    "denoised": true,
+    "denoiser": "OIDN2.3.3 RTLightmap HDR"
+  },
+  "objects": [
+    "BM008 Room 3 secondary",
+    "BM009 Room 3 secondary",
+    "BM010 Room 3 secondary",
+    "IW04 Room 1 - room 3",
+    "FIN03 Reception feature wall: fluted oak",
+    "FIN11 Reception logo plate (backlit)",
+    "W11 frame",
+    "W12 frame",
+    "D04 door (glass) D47 room 1 - room 3",
+    "Z02 RECEPTION + VISITOR WAITING - floor finish",
+    "F006 reception_desk",
+    "F007 exec_chair_black",
+    "F008 exec_chair_black",
+    "F009 sofa_84_sand",
+    "F010 coffee_round",
+    "F011 lounge_green",
+    "F012 lounge_green",
+    "F013 rug_reception",
+    "F014 console",
+    "F015 planter_l",
+    "F016 planter_m",
+    "CL000 slat_raft (Z02)",
+    "LT006 halo pendant (Z02)",
+    "LT007 linear pendant 96in (Z02)",
+    "LT008 track spot (Z02)",
+    "LT009 track spot (Z02)",
+    "LT010 track spot (Z02)",
+    "LT011 track spot (Z02)",
+    "LT012 downlight (Z02)",
+    "LT013 downlight (Z02)",
+    "AC10 VRF indoor unit, under-ceiling (Z02) - capacity by MEP",
+    "SD02 smoke detector",
+    "BR05 client logo (logo_zf)",
+    "PL015 pachira (CC0) (pachira_aquatica_01_leaves_a)",
+    "PL015 pachira (CC0) (pachira_aquatica_01_bark_a)",
+    "PL016 calathea (CC0) (calathea_orbifolia_01_a)"
+  ],
+  "materials": [
+    "steel_painted",
+    "paint_white",
+    "cutter",
+    "plinth",
+    "oak_slat",
+    "plastic_white",
+    "alu_black",
+    "glass_clear",
+    "brass",
+    "fl_terrazzo",
+    "oak",
+    "terrazzo_counter",
+    "led_soft",
+    "plastic_dark",
+    "screen_ui",
+    "chrome",
+    "rubber",
+    "leather_black",
+    "metal_black",
+    "fab_sand",
+    "walnut",
+    "fab_green",
+    "rug_wool",
+    "ceramic_white",
+    "soil",
+    "led_3000",
+    "alu_silver",
+    "led_3500",
+    "logo_zf",
+    "pachira_aquatica_01_leaves",
+    "pachira_aquatica_01_bark",
+    "calathea_orbifolia_01"
+  ],
+  "bounds": [
+    [
+      7.747,
+      0.0
+    ],
+    [
+      14.351,
+      0.0
+    ],
+    [
+      14.351,
+      6.2738
+    ],
+    [
+      7.747,
+      6.2738
+    ]
+  ],
+  "bake": {
+    "type": "DIFFUSE",
+    "passes": [
+      "DIRECT",
+      "INDIRECT"
+    ],
+    "target_uv_layer": "LightmapUV",
+    "source_shader_uv_layer": "UVMap",
+    "albedo_included": false,
+    "source_sha256": "fa3ed3d58f6d44c3554e3761307841b96115ff7816e4e541c8e6611cb363810d",
+    "blender": "5.2.3 LTS",
+    "cpu_threads": 4,
+    "adaptive_sampling": false,
+    "preserved_emitter_groups": false,
+    "emitter_source_objects": [
+      "F006 reception_desk",
+      "LT006 halo pendant (Z02)",
+      "LT007 linear pendant 96in (Z02)",
+      "LT008 track spot (Z02)",
+      "LT009 track spot (Z02)",
+      "LT010 track spot (Z02)",
+      "LT011 track spot (Z02)",
+      "LT012 downlight (Z02)",
+      "LT013 downlight (Z02)"
+    ],
+    "seconds": 858.5222840839997,
+    "total_seconds": 861.462083802,
+    "stats": {
+      "min": 0.0,
+      "max": 26.04068374633789,
+      "p99": 3.112497329711914,
+      "covered_nonzero_pixels": 2604247,
+      "finite": true,
+      "raw_exr": "Z02_raw.exr",
+      "denoised_max": 14.2109375,
+      "denoised_finite": true
+    },
+    "uv_metrics": {
+      "uv0_world_loop_signature": "6b1ef3d37d2e37a6cf2fffecd416044dacfd2739c2443a84194240697a83265c",
+      "uv0_and_evaluated_geometry_preserved": true,
+      "max_world_loop_error_m": 1.076602416105743e-06,
+      "max_world_corner_normal_error_degrees": 0.14310506378277205,
+      "world_surface_area_m2": 322.13537762138037,
+      "summed_uv_island_area": 0.21170908653527648,
+      "mean_linear_texels_per_metre": 52.50256123638158,
+      "floor_uv_weight": 1.0,
+      "packing_margin_uv": 0.004,
+      "bake_dilation_px": 16,
+      "objects": {
+        "BM008 Room 3 secondary": {
+          "world_area_m2": 5.495483950969328,
+          "uv_area": 0.003611659190468103,
+          "texels_per_metre": 52.502545663828464
+        },
+        "BM009 Room 3 secondary": {
+          "world_area_m2": 5.495483950969328,
+          "uv_area": 0.003611664176205509,
+          "texels_per_metre": 52.502581902548904
+        },
+        "BM010 Room 3 secondary": {
+          "world_area_m2": 5.495483950969328,
+          "uv_area": 0.003611662144516581,
+          "texels_per_metre": 52.502567135266546
+        },
+        "IW04 Room 1 - room 3": {
+          "world_area_m2": 27.25800705719211,
+          "uv_area": 0.017914165251679985,
+          "texels_per_metre": 52.50264590827238
+        },
+        "FIN03 Reception feature wall: fluted oak": {
+          "world_area_m2": 54.4368714372118,
+          "uv_area": 0.0357763157210432,
+          "texels_per_metre": 52.50264471558837
+        },
+        "FIN11 Reception logo plate (backlit)": {
+          "world_area_m2": 2.9465427390990437,
+          "uv_area": 0.001936485907968244,
+          "texels_per_metre": 52.502592692383374
+        },
+        "W11 frame": {
+          "world_area_m2": 1.027092962828401,
+          "uv_area": 0.0006750117376324027,
+          "texels_per_metre": 52.50259118295388
+        },
+        "W12 frame": {
+          "world_area_m2": 1.0270921255475844,
+          "uv_area": 0.0006750150368688423,
+          "texels_per_metre": 52.502740890522176
+        },
+        "D04 door (glass) D47 room 1 - room 3": {
+          "world_area_m2": 5.465049212526943,
+          "uv_area": 0.0035916716978104946,
+          "texels_per_metre": 52.50265067693314
+        },
+        "Z02 RECEPTION + VISITOR WAITING - floor finish": {
+          "world_area_m2": 83.1260260411401,
+          "uv_area": 0.05463104118595087,
+          "texels_per_metre": 52.50264483243409
+        },
+        "F006 reception_desk": {
+          "world_area_m2": 29.98419971845386,
+          "uv_area": 0.0197058407104599,
+          "texels_per_metre": 52.5026476900493
+        },
+        "F007 exec_chair_black": {
+          "world_area_m2": 2.3907906398190777,
+          "uv_area": 0.0015712423886581756,
+          "texels_per_metre": 52.502595350287116
+        },
+        "F008 exec_chair_black": {
+          "world_area_m2": 2.390790091744043,
+          "uv_area": 0.0015712469272978202,
+          "texels_per_metre": 52.50267719684583
+        },
+        "F009 sofa_84_sand": {
+          "world_area_m2": 16.544350837114855,
+          "uv_area": 0.010873058212099163,
+          "texels_per_metre": 52.50261602356266
+        },
+        "F010 coffee_round": {
+          "world_area_m2": 1.649006808267672,
+          "uv_area": 0.0010837382502311699,
+          "texels_per_metre": 52.50261427977066
+        },
+        "F011 lounge_green": {
+          "world_area_m2": 3.6685760476305163,
+          "uv_area": 0.0024110097343726933,
+          "texels_per_metre": 52.502583115019185
+        },
+        "F012 lounge_green": {
+          "world_area_m2": 3.6685755248136123,
+          "uv_area": 0.002411013390200334,
+          "texels_per_metre": 52.50262666111833
+        },
+        "F013 rug_reception": {
+          "world_area_m2": 10.931772034065169,
+          "uv_area": 0.0071844470477634426,
+          "texels_per_metre": 52.50266435584744
+        },
+        "F014 console": {
+          "world_area_m2": 10.158251522597503,
+          "uv_area": 0.006676075573303464,
+          "texels_per_metre": 52.50263417263873
+        },
+        "F015 planter_l": {
+          "world_area_m2": 1.3121724580486833,
+          "uv_area": 0.0008623682417672196,
+          "texels_per_metre": 52.50260723206174
+        },
+        "F016 planter_m": {
+          "world_area_m2": 0.8363726130466272,
+          "uv_area": 0.0005496692592803498,
+          "texels_per_metre": 52.502595704902134
+        },
+        "CL000 slat_raft (Z02)": {
+          "world_area_m2": 39.58105840795844,
+          "uv_area": 0.026012949766102217,
+          "texels_per_metre": 52.50262914243422
+        },
+        "LT006 halo pendant (Z02)": {
+          "world_area_m2": 0.7671017733873753,
+          "uv_area": 0.000504146073607048,
+          "texels_per_metre": 52.502701877973614
+        },
+        "LT007 linear pendant 96in (Z02)": {
+          "world_area_m2": 0.9809783764393117,
+          "uv_area": 0.0006447020747413212,
+          "texels_per_metre": 52.502474059004115
+        },
+        "LT008 track spot (Z02)": {
+          "world_area_m2": 0.06353059995298806,
+          "uv_area": 4.1752813936146715e-05,
+          "texels_per_metre": 52.502665072233306
+        },
+        "LT009 track spot (Z02)": {
+          "world_area_m2": 0.06353059995298806,
+          "uv_area": 4.175322263269554e-05,
+          "texels_per_metre": 52.50292203222579
+        },
+        "LT010 track spot (Z02)": {
+          "world_area_m2": 0.06353055563229501,
+          "uv_area": 4.1753036192138104e-05,
+          "texels_per_metre": 52.50282312522327
+        },
+        "LT011 track spot (Z02)": {
+          "world_area_m2": 0.06353063728361151,
+          "uv_area": 4.175307818593543e-05,
+          "texels_per_metre": 52.50281578894056
+        },
+        "LT012 downlight (Z02)": {
+          "world_area_m2": 0.13811676242151805,
+          "uv_area": 9.077111954614026e-05,
+          "texels_per_metre": 52.50257494050219
+        },
+        "LT013 downlight (Z02)": {
+          "world_area_m2": 0.1381167281322133,
+          "uv_area": 9.077107075139423e-05,
+          "texels_per_metre": 52.5025673461366
+        },
+        "AC10 VRF indoor unit, under-ceiling (Z02) - capacity by MEP": {
+          "world_area_m2": 2.959157371224043,
+          "uv_area": 0.001944784783615816,
+          "texels_per_metre": 52.502706919038445
+        },
+        "SD02 smoke detector": {
+          "world_area_m2": 0.038469088584044464,
+          "uv_area": 2.5282049882946467e-05,
+          "texels_per_metre": 52.502519598295606
+        },
+        "BR05 client logo (logo_zf)": {
+          "world_area_m2": 0.9125355413125729,
+          "uv_area": 0.0005997248281719436,
+          "texels_per_metre": 52.502631638016844
+        },
+        "PL015 pachira (CC0) (pachira_aquatica_01_leaves_a)": {
+          "world_area_m2": 0.5880752701592776,
+          "uv_area": 0.00038628795856296416,
+          "texels_per_metre": 52.489094308802066
+        },
+        "PL015 pachira (CC0) (pachira_aquatica_01_bark_a)": {
+          "world_area_m2": 0.2066883501871908,
+          "uv_area": 0.000135700694714469,
+          "texels_per_metre": 52.47627369156238
+        },
+        "PL016 calathea (CC0) (calathea_orbifolia_01_a)": {
+          "world_area_m2": 0.26296583470595597,
+          "uv_area": 0.00017255217905499942,
+          "texels_per_metre": 52.46147689537003
+        }
+      }
+    },
+    "smoke_only": false,
+    "original_object_bboxes": {
+      "BM008 Room 3 secondary": [
+        [
+          9.33449935913086,
+          -6.273799896240234,
+          2.5908000469207764
+        ],
+        [
+          9.46150016784668,
+          0.0,
+          2.8956000804901123
+        ]
+      ],
+      "BM009 Room 3 secondary": [
+        [
+          10.985499382019043,
+          -6.273799896240234,
+          2.5908000469207764
+        ],
+        [
+          11.112500190734863,
+          0.0,
+          2.8956000804901123
+        ]
+      ],
+      "BM010 Room 3 secondary": [
+        [
+          12.636499404907227,
+          -6.273799896240234,
+          2.5908000469207764
+        ],
+        [
+          12.763500213623047,
+          0.0,
+          2.8956000804901123
+        ]
+      ],
+      "IW04 Room 1 - room 3": [
+        [
+          7.619999885559082,
+          -6.273799896240234,
+          0.0
+        ],
+        [
+          7.746999740600586,
+          0.0,
+          2.8956000804901123
+        ]
+      ],
+      "FIN03 Reception feature wall: fluted oak": [
+        [
+          14.274799346923828,
+          -6.0960001945495605,
+          0.0
+        ],
+        [
+          14.35099983215332,
+          -2.0320000648498535,
+          2.7939999103546143
+        ]
+      ],
+      "FIN11 Reception logo plate (backlit)": [
+        [
+          14.24940013885498,
+          -5.130800247192383,
+          1.4223999977111816
+        ],
+        [
+          14.274800300598145,
+          -2.9972000122070312,
+          2.0827999114990234
+        ]
+      ],
+      "W11 frame": [
+        [
+          7.658100128173828,
+          -2.8447999954223633,
+          0.6096000075340271
+        ],
+        [
+          7.708899974822998,
+          -1.5239999294281006,
+          2.1335999965667725
+        ]
+      ],
+      "W12 frame": [
+        [
+          7.658100128173828,
+          -4.775199890136719,
+          0.6096000075340271
+        ],
+        [
+          7.708899974822998,
+          -3.454400062561035,
+          2.1335999965667725
+        ]
+      ],
+      "D04 door (glass) D47 room 1 - room 3": [
+        [
+          7.627619743347168,
+          -1.5620999336242676,
+          0.0
+        ],
+        [
+          7.7393798828125,
+          -0.3937000036239624,
+          2.1285200119018555
+        ]
+      ],
+      "Z02 RECEPTION + VISITOR WAITING - floor finish": [
+        [
+          7.746999740600586,
+          -6.273799896240234,
+          0.0
+        ],
+        [
+          14.35099983215332,
+          0.0,
+          0.010160000063478947
+        ]
+      ],
+      "F006 reception_desk": [
+        [
+          12.141200065612793,
+          -5.206999778747559,
+          0.0
+        ],
+        [
+          13.080999374389648,
+          -2.4129998683929443,
+          1.2064999341964722
+        ]
+      ],
+      "F007 exec_chair_black": [
+        [
+          13.323105812072754,
+          -3.4382388591766357,
+          0.0
+        ],
+        [
+          14.016446113586426,
+          -2.7593610286712646,
+          1.1737639904022217
+        ]
+      ],
+      "F008 exec_chair_black": [
+        [
+          13.323105812072754,
+          -4.8606390953063965,
+          0.0
+        ],
+        [
+          14.016446113586426,
+          -4.181761264801025,
+          1.1737639904022217
+        ]
+      ],
+      "F009 sofa_84_sand": [
+        [
+          8.585200309753418,
+          -6.2230000495910645,
+          0.0
+        ],
+        [
+          10.71880054473877,
+          -5.359400272369385,
+          0.7874000072479248
+        ]
+      ],
+      "F010 coffee_round": [
+        [
+          9.245600700378418,
+          -5.105400085449219,
+          0.0
+        ],
+        [
+          10.05840015411377,
+          -4.292599678039551,
+          0.40639999508857727
+        ]
+      ],
+      "F011 lounge_green": [
+        [
+          8.077199935913086,
+          -4.724400043487549,
+          0.0
+        ],
+        [
+          8.76300048828125,
+          -4.013200283050537,
+          0.7619999647140503
+        ]
+      ],
+      "F012 lounge_green": [
+        [
+          10.540999412536621,
+          -4.724400043487549,
+          0.0
+        ],
+        [
+          11.226799964904785,
+          -4.013200283050537,
+          0.7619999647140503
+        ]
+      ],
+      "F013 rug_reception": [
+        [
+          8.280400276184082,
+          -5.943600177764893,
+          0.011429999954998493
+        ],
+        [
+          11.023600578308105,
+          -3.962399959564209,
+          0.02159000001847744
+        ]
+      ],
+      "F014 console": [
+        [
+          10.685779571533203,
+          -0.45465999841690063,
+          0.0
+        ],
+        [
+          12.52981948852539,
+          -0.02539999783039093,
+          0.7874000072479248
+        ]
+      ],
+      "F015 planter_l": [
+        [
+          7.874000072479248,
+          -6.0960001945495605,
+          0.0
+        ],
+        [
+          8.381999969482422,
+          -5.5879998207092285,
+          0.5080000162124634
+        ]
+      ],
+      "F016 planter_m": [
+        [
+          13.715999603271484,
+          -6.095999717712402,
+          0.0
+        ],
+        [
+          14.122400283813477,
+          -5.689599990844727,
+          0.40639999508857727
+        ]
+      ],
+      "CL000 slat_raft (Z02)": [
+        [
+          8.128000259399414,
+          -6.045200347900391,
+          2.5018999576568604
+        ],
+        [
+          11.937999725341797,
+          -3.606800079345703,
+          2.5908000469207764
+        ]
+      ],
+      "LT006 halo pendant (Z02)": [
+        [
+          9.113520622253418,
+          -5.2374796867370605,
+          2.031491994857788
+        ],
+        [
+          10.19048023223877,
+          -4.160520076751709,
+          2.8956000804901123
+        ]
+      ],
+      "LT007 linear pendant 96in (Z02)": [
+        [
+          12.664440155029297,
+          -5.029200077056885,
+          2.0827999114990234
+        ],
+        [
+          12.735559463500977,
+          -2.5907998085021973,
+          2.8447999954223633
+        ]
+      ],
+      "LT008 track spot (Z02)": [
+        [
+          13.804890632629395,
+          -2.4536402225494385,
+          2.600053071975708
+        ],
+        [
+          13.947714805603027,
+          -2.3723599910736084,
+          2.808114767074585
+        ]
+      ],
+      "LT009 track spot (Z02)": [
+        [
+          13.804890632629395,
+          -3.469640016555786,
+          2.600053071975708
+        ],
+        [
+          13.947714805603027,
+          -3.388359785079956,
+          2.808114767074585
+        ]
+      ],
+      "LT010 track spot (Z02)": [
+        [
+          13.804890632629395,
+          -4.485640048980713,
+          2.600053071975708
+        ],
+        [
+          13.947714805603027,
+          -4.404360294342041,
+          2.808114767074585
+        ]
+      ],
+      "LT011 track spot (Z02)": [
+        [
+          13.804890632629395,
+          -5.5016398429870605,
+          2.600053071975708
+        ],
+        [
+          13.947714805603027,
+          -5.420360088348389,
+          2.808114767074585
+        ]
+      ],
+      "LT012 downlight (Z02)": [
+        [
+          8.305800437927246,
+          -1.0922000408172607,
+          2.742691993713379
+        ],
+        [
+          8.458199501037598,
+          -0.9398000240325928,
+          2.8956000804901123
+        ]
+      ],
+      "LT013 downlight (Z02)": [
+        [
+          11.353800773620605,
+          -1.0922000408172607,
+          2.742691993713379
+        ],
+        [
+          11.506199836730957,
+          -0.9398000240325928,
+          2.8956000804901123
+        ]
+      ],
+      "AC10 VRF indoor unit, under-ceiling (Z02) - capacity by MEP": [
+        [
+          10.59179973602295,
+          -3.64490008354187,
+          2.6530301570892334
+        ],
+        [
+          11.25220012664795,
+          -2.4511001110076904,
+          2.8956000804901123
+        ]
+      ],
+      "SD02 smoke detector": [
+        [
+          10.98803997039795,
+          -3.1089601516723633,
+          2.8549599647521973
+        ],
+        [
+          11.109959602355957,
+          -2.9870400428771973,
+          2.8956000804901123
+        ]
+      ],
+      "BR05 client logo (logo_zf)": [
+        [
+          14.244319915771484,
+          -4.953000068664551,
+          1.5621000528335571
+        ],
+        [
+          14.244319915771484,
+          -3.1750001907348633,
+          2.0753371715545654
+        ]
+      ],
+      "PL015 pachira (CC0) (pachira_aquatica_01_leaves_a)": [
+        [
+          7.753265857696533,
+          -6.288736343383789,
+          0.9990310668945312
+        ],
+        [
+          8.594862937927246,
+          -5.512560844421387,
+          1.7022572755813599
+        ]
+      ],
+      "PL015 pachira (CC0) (pachira_aquatica_01_bark_a)": [
+        [
+          8.016661643981934,
+          -5.977598667144775,
+          0.46582353115081787
+        ],
+        [
+          8.289311408996582,
+          -5.6992573738098145,
+          1.2741897106170654
+        ]
+      ],
+      "PL016 calathea (CC0) (calathea_orbifolia_01_a)": [
+        [
+          13.641070365905762,
+          -6.266891956329346,
+          0.3598739504814148
+        ],
+        [
+          14.296382904052734,
+          -5.556971549987793,
+          0.7841682434082031
+        ]
+      ]
+    }
+  },
+  "status": "baked-unreviewed"
+}

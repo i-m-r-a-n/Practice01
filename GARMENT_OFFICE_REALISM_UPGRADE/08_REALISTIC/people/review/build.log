@@ -1,0 +1,6 @@
+Failed to create secure directory (/home/agent/.config/pulse): Read-only file system
+/workspace/office-realism/GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/people/build_people.py:44: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  m=bpy.data.materials.new(n);m.use_nodes=True;p=m.node_tree.nodes.get('Principled BSDF');p.inputs['Base Color'].default_value=color;p.inputs['Roughness'].default_value=rough
+SEAT_SOLVE shirt 0.49 hip 0.2 forward 0.08 gap -1 shoeFront 0.8046604798456782
+SEAT_SOLVE shirt 0.4445 hip 0.094 forward 0 gap 0.00278105163574216 shoeFront 1.0067396157914401
+SEAT_SOLVE shirt 0.48768 hip 0.2 forward 0.1 gap -1 shoeFront 0.807191031233089

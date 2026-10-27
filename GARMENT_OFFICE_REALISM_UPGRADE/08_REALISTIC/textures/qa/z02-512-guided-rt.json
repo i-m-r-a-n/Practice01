@@ -1,0 +1,50 @@
+{
+  "purpose": "Diagnostic postprocess of retained raw scene-linear EXR, not adopted production replacement",
+  "filter": "RT",
+  "directional": false,
+  "inputScale": "automatic",
+  "normalGuide": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/lighting-v2/Z02_normal.exr",
+  "normalGuideSHA256": "a7001e48b7ce3fdf088773d024daafe999f3033f4d99f4fdc09ed4b04045a577",
+  "normalGuideDescription": "Actual deterministic Cycles NORMAL bake, decoded RGB*2-1 and transformed to world space",
+  "albedoGuide": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/lighting-v2/Z02_albedo.exr",
+  "albedoGuideSHA256": "300b48a5b857af5898ed27d3ede96b3335a568dff3017d7f02cca138fda46591",
+  "albedoGuideDescription": "Actual Cycles DIFFUSE/COLOR guide, not multiplied into input irradiance",
+  "cleanAux": true,
+  "source": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/lighting-v2/Z02_raw.exr",
+  "sourceSHA256": "8d11e2f3d9ebae583d001f01c8f632ce04616a616378f4b0c7dd0d72ad5864bc",
+  "output": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/textures/qa/z02-512-guided-rt.exr",
+  "outputSHA256": "ad441c518cb34bb8863519879c7a4c89a20f4c9f2fd9ce74ba64b76f7b48392d",
+  "shape": [
+    2048,
+    2048,
+    3
+  ],
+  "sourceMax": 26.046875,
+  "outputMax": 15.8046875,
+  "negativeOutputChannelsClamped": 0,
+  "seconds": 5.864850325000589,
+  "threads": 2,
+  "documentation": "https://github.com/RenderKit/oidn/blob/v2.3.3/README.md#rtlightmap",
+  "library": "/workspace/tools/oidn/oidn-2.3.3.x86_64.linux/lib/libOpenImageDenoise.so",
+  "albedoSourceRange": [
+    0.0,
+    0.96240234375
+  ],
+  "albedoGuideChannelValuesClamped": 0,
+  "guideUVVerification": {
+    "file": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/lighting-v2/Z02_normal_uv_check.json",
+    "sha256": "252cdb657ea188c73c1dddb440404980d2a7488a3b62c77099be446a18747b5e",
+    "result": {
+      "passed": true,
+      "glbSHA256": "319d201d8e6282acae523640924281573b5082d19573c60c5759f984660e899a",
+      "guideReferenceSHA256": "b3ebac06eb688fb9a614f712aee226059e077706050d7f4bd7e16a79d56682ad",
+      "sourceGuideLoops": 104821,
+      "exportedVertices": 46429,
+      "maxWorldPositionDifferenceMetres": 0.0,
+      "maxUV0Difference": 2.384185791015625e-07,
+      "maxUV1Difference": 2.9802322387695312e-08,
+      "unmatchedVertices": [],
+      "scope": "Actual exported world positions and UV0/UV1 match the normal-guide bake reference; this is not lighting visual acceptance."
+    }
+  }
+}

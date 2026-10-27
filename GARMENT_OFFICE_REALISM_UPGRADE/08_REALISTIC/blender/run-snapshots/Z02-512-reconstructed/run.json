@@ -1,0 +1,8 @@
+{
+  "capture_method": "Reconstructed from exact logged post-launch reporting-only edits; not captured at process startup.",
+  "process_command": "blender -b /workspace/office-bake-work/approved-copy.blend -t4 --python original_working_bake_rooms.py -- --room Z02 --size2048 --samples512 --shared-shell --out lighting-v2",
+  "source_sha256": "fa3ed3d58f6d44c3554e3761307841b96115ff7816e4e541c8e6611cb363810d",
+  "script_sha256": "113778ab3816f16d599725b02ae23ddf858bbb5cf965696c10c528e05270a70a",
+  "denoiser_sha256": "ab45341232d48a53fb3303113ee7a00e5d60c6fbb632dbec14ad36109fa1b681",
+  "reconstruction": "Removed only UV1-loop SHA reporting and guide reference NPZ export added after the512 process started. No claim that later working-script bytes were executed."
+}
