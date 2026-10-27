@@ -5,6 +5,7 @@ unchanged (SHA-256 checked); everything here is derived from them by the scripts
 
 | File | What it is |
 |---|---|
+| `Final_Office_Interior_web_baked.glb` | **Recommended.** 19.5 MB. As below, plus the Cycles lighting baked onto the building shell (see "Baked light") |
 | `Final_Office_Interior_web.glb` | Web copy of the approved GLB: 16.6 MB instead of 41.9 MB, same 1,150 named objects, 79 materials and 38 cameras, base colours corrected (see below) |
 | `office_web_metadata.json` | 38 cameras (exact matrices, fov, lens shift, render file), 34 rooms (name, function group, area, floor polygon, description, camera), 16-stop guided tour, object-name lists |
 | `walk_grid.json` | Walk-mode floor map (0.10 m cells, walls + glazing + furniture between 0.10 and 1.90 m, door openings kept free) |
@@ -35,6 +36,25 @@ unchanged (SHA-256 checked); everything here is derived from them by the scripts
 
 Unchanged: geometry, object names, materials' PBR values (other than the base colour / sheen fixes), glass
 (transmission 1, IOR 1.45, roughness 0 / 0.32 frosted), emissive fittings (strength 12) and cameras.
+
+## Baked light (`Final_Office_Interior_web_baked.glb`)
+
+Made by `04_BLENDER_ANIMATION/scripts/bake_shell_lighting.py` from the approved scene (its 188 lights, emissive panels
+and daylight; the .blend is not saved): the 440 shell objects (floor finishes, walls and partitions, wall finishes,
+ceilings, rafts and baffles, steel deck, beams, columns) are joined into `WEB_SHELL_INTERIOR` and `WEB_SHELL_OVERHEAD`, large
+faces split to 0.4 m, and Cycles bakes the diffuse light (direct + indirect, 64 samples) into the vertex colours `COLOR_0`
+(value = light / 16; node extras `baked_light_scale: 16`). Furniture, glass and fittings are not baked: they keep real-time
+light and cast their shadows onto the baked floors and walls. Per-object names of the shell are merged (walls / floors are no
+longer separate objects); everything else keeps its name.
+
+Display in three.js: replace the material of meshes whose node has `userData.baked_light_scale` (and a `color` attribute)
+with an unlit material:
+```js
+new THREE.MeshBasicMaterial({ map: m.map, color: m.color.clone().multiplyScalar(k * 2.0), vertexColors: true, side: m.side })
+// k = userData.baked_light_scale (16); 2.0 = exposure matched to the Cycles renders; keep glass / emissive materials as they are
+```
+Camera QC: mean RGB difference to the Cycles renders falls from 27-59 (unbaked) to 19-27 on the checked views
+(`05_PRODUCTION/camera_qc/bake_qc*`).
 
 ## Using the cameras in three.js (exact match with the renders)
 
@@ -77,10 +97,9 @@ web GLB vs original GLB differ by 0.12-0.24 / 255 on average (`camera_qc_summary
 
 ## Known limitations (not hidden)
 
-- **Lighting.** Blender lights are not part of glTF here and nothing is baked: real-time views are lit by an environment map
-  and are flatter and brighter than the Cycles renders (no light pools, no soft shadows). Baked lightmaps (second UV set +
-  Cycles bake of the floors and walls) are the next step if the tour must come closer to the renders; the renders remain
-  the photoreal reference (show them as "Photoreal render", labelled as still images).
+- **Lighting.** In `Final_Office_Interior_web.glb` nothing is baked (flat, environment-lit). In the baked GLB the shell carries
+  the Cycles light at vertex resolution (about 0.4 m on large surfaces): soft light pools and shadows, not sharp ones;
+  furniture and reflections stay real-time. The renders remain the photoreal reference.
 - Not reproduced in the web textures: the tile-joint lines of the terrazzo / prayer carpet and the quarter-turn carpet-tile
   pattern (they depend on the room UVs).
 - Found in the approved model (not changed): the 38 mm aluminium frame rail on top of the 48 in existing walls runs across

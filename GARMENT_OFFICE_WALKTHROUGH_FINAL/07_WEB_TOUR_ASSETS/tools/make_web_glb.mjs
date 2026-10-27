@@ -30,7 +30,7 @@ const groups = { WEB_INTERIOR: doc.createNode('WEB_INTERIOR'), WEB_OVERHEAD: doc
 const counts = { WEB_INTERIOR: 0, WEB_OVERHEAD: 0, WEB_CAMERAS: 0 };
 for (const n of [...scene.listChildren()]) {
   scene.removeChild(n);
-  const key = n.getCamera() ? 'WEB_CAMERAS' : overhead.has(n.getName()) ? 'WEB_OVERHEAD' : 'WEB_INTERIOR';
+  const key = n.getCamera() ? 'WEB_CAMERAS' : overhead.has(n.getName()) || n.getName().startsWith('WEB_SHELL_OVERHEAD') ? 'WEB_OVERHEAD' : 'WEB_INTERIOR';
   groups[key].addChild(n);
   counts[key]++;
   const m = /\((Z\d\d)\)/.exec(n.getName());
@@ -111,7 +111,7 @@ doc.createExtension(EXTTextureWebP).setRequired(true);
 // ---------------------------------------------------------------- geometry
 await doc.transform(
   dedup({ propertyTypes: [PropertyType.ACCESSOR, PropertyType.MESH, PropertyType.TEXTURE] }),
-  quantize({ quantizePosition: 14, quantizeNormal: 10, quantizeTexcoord: 14, quantizeColor: 8, quantizeGeneric: 12 }),
+  quantize({ quantizePosition: 14, quantizeNormal: 10, quantizeTexcoord: 14, quantizeColor: Number(process.env.QUANT_COLOR || 8), quantizeGeneric: 12 }),   // 16 for baked light
   prune({ keepLeaves: true }),
 );
 await io.write(out, doc);

@@ -14,7 +14,7 @@ const qs = new URLSearchParams(location.search);
 // Paths: repository layout by default; a deployment bundle sets window.__TOUR_CONFIG (and window.__TOUR_DATA = { meta, grid }).
 const CFG = window.__TOUR_CONFIG || {};
 const BASE = CFG.base || '../07_WEB_TOUR_ASSETS/';
-const MODELS = qs.get('model') ? [qs.get('model')] : CFG.models || [BASE + 'Final_Office_Interior_web.glb'];
+const MODELS = qs.get('model') ? [qs.get('model')] : CFG.models || [BASE + 'Final_Office_Interior_web_baked.glb', BASE + 'Final_Office_Interior_web.glb'];
 const RENDERS = qs.get('renders') || CFG.renders || '../../GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/';
 const S = { mode: 'loading', ready: false, ceilUser: false, labels: true, room: null, atCam: null, tour: null, errors: [], counts: {} };
 window.__viewer = S;
@@ -39,8 +39,9 @@ const hemi = new THREE.HemisphereLight(0xfff1e0, 0x4a4640, 0.5);
 const sun = new THREE.DirectionalLight(0xfff3e4, 1.2);
 sun.position.set(30, 60, 25);
 scene.add(hemi, sun, sun.target);
-const SHADOWS = qs.get('shadows') !== '0';           // soft shadows ground the furniture (inside: light from above)
-if (SHADOWS) {
+let SHADOWS = false;                                  // set after loading: real-time shadows only without baked light
+function enableShadows() {
+  SHADOWS = true;
   renderer.shadowMap.enabled = true;
   renderer.shadowMap.type = THREE.PCFSoftShadowMap;
   sun.castShadow = true;
@@ -56,7 +57,8 @@ controls.addEventListener('change', () => { needsRender = true; });
 let lookPreset = 'outside';
 function look(preset) {                               // inside: light from above with soft shadows; outside: low sun, wall shadows
   lookPreset = preset;
-  const L = preset === 'inside' ? { exp: 1.1, env: 0.55, hemi: 0.36, sun: SHADOWS ? 1.05 : 0.55 } : { exp: 0.95, env: 0.55, hemi: 0.5, sun: 1.35 };
+  const L = BAKED ? (preset === 'inside' ? { exp: 1.0, env: 0.5, hemi: 0.45, sun: 0.35 } : { exp: 0.95, env: 0.5, hemi: 0.5, sun: 0.9 })
+    : preset === 'inside' ? { exp: 1.1, env: 0.55, hemi: 0.36, sun: SHADOWS ? 1.05 : 0.55 } : { exp: 0.95, env: 0.55, hemi: 0.5, sun: 1.35 };
   renderer.toneMappingExposure = L.exp; scene.environmentIntensity = L.env; hemi.intensity = L.hemi; sun.intensity = L.sun;
   placeSun(); needsRender = true;
 }
@@ -119,6 +121,38 @@ if (!overhead) {                                       // original GLB: collect 
   model.add(overhead);
 }
 const interior = model.getObjectByName('WEB_INTERIOR') || model;
+
+// baked light: shell objects carry Cycles lighting as vertex colours (light / baked_light_scale); show them unlit
+const BX = parseFloat(qs.get('bx')) || CFG.bakedExposure || 2.0;     // checked against the Cycles renders (camera QC)
+const LIGHT_FLOOR = 0.012;                                         // rooms without any lamp become dark grey, not black
+let BAKED = false;
+{
+  const cache = new Map();
+  model.traverse((o) => {
+    if (!o.isMesh || !o.geometry.attributes.color) return;
+    let n = o, k = 0;
+    while (n && !k) { k = (n.userData && n.userData.baked_light_scale) || 0; n = n.parent; }
+    if (!k) return;
+    const m = o.material;
+    if (m.transmission > 0 || (m.transparent && m.opacity < 0.95) || (m.emissiveIntensity > 1 && m.emissive && m.emissive.getHex() !== 0)) {
+      m.vertexColors = false; m.needsUpdate = true; return;          // glass and lamps stay real-time
+    }
+    const col = o.geometry.attributes.color;
+    if (!col.userData.lifted) {
+      const arr = col.array, max = arr instanceof Uint16Array ? 65535 : arr instanceof Uint8Array ? 255 : 1, add = LIGHT_FLOOR * max;
+      for (let i = 0; i < arr.length; i++) if ((i % col.itemSize) < 3) arr[i] = Math.min(max, arr[i] + add);
+      col.userData.lifted = true; col.needsUpdate = true;
+    }
+    if (!cache.has(m)) {
+      cache.set(m, new THREE.MeshBasicMaterial({ name: m.name + '_baked', map: m.map, color: m.color.clone().multiplyScalar(k * BX),
+        vertexColors: true, side: m.side, transparent: m.transparent, opacity: m.opacity, alphaTest: m.alphaTest }));
+    }
+    o.material = cache.get(m);
+    BAKED = true;
+  });
+}
+if (!BAKED && qs.get('shadows') !== '0') enableShadows();
+if (BAKED && qs.get('shadows') === '1') enableShadows();
 for (const m of new Set(collectMaterials(model))) {
   if (m.transmission > 0) m.envMapIntensity = 1.0;   // keep glass reflective; transmission pass stays enabled
 }
@@ -725,7 +759,7 @@ applyPose(start); controls.target.copy(C); controls.update(); look('outside');
 $('loading').style.display = 'none';
 S.ready = true; window.__viewerReady = true;
 let meshes = 0; model.traverse((o) => { if (o.isMesh) meshes++; });
-S.counts = { meshes, drawCallsMerged: drawCalls, rooms: rooms.length, cameras: meta.cameras.length, stops: stops.length, model: gltf.scene.getObjectByName('WEB_INTERIOR') ? 'web' : 'original' };
+S.counts = { meshes, drawCallsMerged: drawCalls, rooms: rooms.length, cameras: meta.cameras.length, stops: stops.length, model: gltf.scene.getObjectByName('WEB_INTERIOR') ? 'web' : 'original', bakedLight: BAKED, shadows: SHADOWS };
 S.api = { selectRoom: (z) => selectRoom(byZone[z]), goOverview, startWalk, startTour, goStop, nextStop, togglePlay, stopTour, showPhoto, hidePhoto,
   blocked, state: () => ({ mode: S.mode, room: S.room && S.room.zone, atCam: S.atCam, flying: !!flight, flightT: flight ? +flight.t.toFixed(3) : null, fps: S.fps, overhead: overhead.visible,
     tour: S.tour && { i: S.tour.i, phase: S.tour.phase, playing: S.tour.playing, sub: S.tour.sub }, photo: S.photo, pos: camera.position.toArray().map((v) => +v.toFixed(3)) }) };

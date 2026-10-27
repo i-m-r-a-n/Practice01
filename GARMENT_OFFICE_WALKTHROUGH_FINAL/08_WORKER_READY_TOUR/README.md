@@ -12,7 +12,7 @@ The page requests only these URLs, relative to itself:
 | URL | Serve |
 |---|---|
 | `./app.js` | this `app.js` |
-| `./model_web.glb` | `GARMENT_OFFICE_WALKTHROUGH_FINAL/07_WEB_TOUR_ASSETS/Final_Office_Interior_web.glb` (16.6 MB). If it is missing, the page falls back to `./model.glb` (the original 41.9 MB GLB the Worker already serves; ceilings still toggle, colours as exported) |
+| `./model_web.glb` | `GARMENT_OFFICE_WALKTHROUGH_FINAL/07_WEB_TOUR_ASSETS/Final_Office_Interior_web_baked.glb` (19.5 MB, Cycles light baked on walls, floors and ceilings). If it is missing, the page falls back to `./model.glb` (the original 41.9 MB GLB the Worker already serves; ceilings still toggle, but colours as exported and no baked light) |
 | `./renders/<camera>.jpg` | the 38 Cycles renders (the Worker already serves `/renders/CAM_xx.jpg`) |
 
 ## Why it was not deployed from this session

@@ -1,8 +1,9 @@
 # Ground floor - interactive design experience (offline 3D tour)
 
 A real-time 3D tour of the approved model, made with three.js r169 (included in `vendor/`, no internet needed).
-Model: `../07_WEB_TOUR_ASSETS/Final_Office_Interior_web.glb` (web copy of the approved model, colours matched to the
-Blender materials). Data: `../07_WEB_TOUR_ASSETS/office_web_metadata.json` and `walk_grid.json`.
+Model: `../07_WEB_TOUR_ASSETS/Final_Office_Interior_web_baked.glb` (web copy of the approved model with the Cycles lighting
+baked onto walls, floors and ceilings, colours matched to the Blender materials; falls back to `Final_Office_Interior_web.glb`).
+Data: `../07_WEB_TOUR_ASSETS/office_web_metadata.json` and `walk_grid.json`.
 Photoreal stills: `../../GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/` (the 38 Cycles renders).
 
 ## Open it on a Mac (2 minutes)
@@ -39,6 +40,7 @@ of the same model. Final dimensions and technical details are subject to site ve
 
 - Tested in headless Chromium (WebGL 2, software GPU): see `../05_PRODUCTION/viewer_test/viewer_test.json`.
   A real GPU runs it much faster than this software test; on a slow machine add `?scale=0.6` to the address.
-- Real-time lighting is simpler than the Cycles renders (no baked light or shadows); use the photoreal renders for
-  material and lighting questions.
+- The light on walls, floors and ceilings is baked from Cycles (light pools, soft shadows under furniture, darker corners);
+  furniture, glass and reflections are still real-time and simpler than in the renders - use the photoreal renders for
+  material questions.
 - `qc/` holds the camera check page used to compare the 38 render cameras with the model.

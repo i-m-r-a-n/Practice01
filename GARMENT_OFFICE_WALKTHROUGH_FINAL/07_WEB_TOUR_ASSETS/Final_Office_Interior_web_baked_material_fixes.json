@@ -1,0 +1,403 @@
+{
+ "baked": [
+  {
+   "material": "oak",
+   "ops": {
+    "hsv": [
+     0.5,
+     0.85,
+     1.12
+    ],
+    "desat_to": null,
+    "tint": null,
+    "tint_mix": 0
+   },
+   "mean_srgb": "#988471"
+  },
+  {
+   "material": "walnut",
+   "ops": {
+    "hsv": [
+     0.5,
+     1,
+     0.95
+    ],
+    "desat_to": null,
+    "tint": "#6B4A33",
+    "tint_mix": 0.85
+   },
+   "mean_srgb": "#483A30"
+  },
+  {
+   "material": "fab_green",
+   "ops": {
+    "hsv": [
+     0.5,
+     1,
+     1
+    ],
+    "desat_to": [
+     "#2E5A40",
+     "#4E7D60"
+    ],
+    "tint": null,
+    "tint_mix": 0
+   },
+   "mean_srgb": "#335F44"
+  },
+  {
+   "material": "fab_charcoal",
+   "ops": {
+    "hsv": [
+     0.5,
+     0.5,
+     0.75
+    ],
+    "desat_to": null,
+    "tint": null,
+    "tint_mix": 0
+   },
+   "mean_srgb": "#545353"
+  },
+  {
+   "material": "terrazzo_counter",
+   "ops": {
+    "hsv": [
+     0.5,
+     0.75,
+     1.15
+    ],
+    "desat_to": null,
+    "tint": null,
+    "tint_mix": 0
+   },
+   "mean_srgb": "#AB9D8B"
+  },
+  {
+   "material": "leather_black",
+   "ops": {
+    "hsv": [
+     0.5,
+     1,
+     1
+    ],
+    "desat_to": null,
+    "tint": "#202020",
+    "tint_mix": 1
+   },
+   "mean_srgb": "#0E0D0A"
+  },
+  {
+   "material": "fab_sand",
+   "ops": {
+    "hsv": [
+     0.5,
+     1,
+     1
+    ],
+    "desat_to": [
+     "#B9A98E",
+     "#DCCFB8"
+    ],
+    "tint": null,
+    "tint_mix": 0
+   },
+   "mean_srgb": "#BDAE93"
+  },
+  {
+   "material": "rug_wool",
+   "ops": {
+    "hsv": [
+     0.5,
+     1,
+     1
+    ],
+    "desat_to": [
+     "#8E877B",
+     "#CBC4B7"
+    ],
+    "tint": null,
+    "tint_mix": 0
+   },
+   "mean_srgb": "#969083"
+  },
+  {
+   "material": "leather_cognac",
+   "ops": {
+    "hsv": [
+     0.5,
+     1,
+     1
+    ],
+    "desat_to": null,
+    "tint": "#8A5A36",
+    "tint_mix": 1
+   },
+   "mean_srgb": "#4F3016"
+  },
+  {
+   "material": "fab_grey",
+   "ops": {
+    "hsv": [
+     0.5,
+     1,
+     1
+    ],
+    "desat_to": [
+     "#5E5F60",
+     "#8B8C8D"
+    ],
+    "tint": null,
+    "tint_mix": 0
+   },
+   "mean_srgb": "#646566"
+  },
+  {
+   "material": "felt_green",
+   "ops": {
+    "hsv": [
+     0.5,
+     1,
+     1
+    ],
+    "desat_to": [
+     "#2C5A3F",
+     "#477A5B"
+    ],
+    "tint": null,
+    "tint_mix": 0
+   },
+   "mean_srgb": "#37674A"
+  },
+  {
+   "material": "wall_porcelain",
+   "ops": {
+    "hsv": [
+     0.5,
+     0.5,
+     1.02
+    ],
+    "desat_to": null,
+    "tint": null,
+    "tint_mix": 0
+   },
+   "mean_srgb": "#E0DFDF"
+  },
+  {
+   "material": "felt_grey",
+   "ops": {
+    "hsv": [
+     0.5,
+     0.5,
+     0.95
+    ],
+    "desat_to": null,
+    "tint": null,
+    "tint_mix": 0
+   },
+   "mean_srgb": "#A09FA2"
+  },
+  {
+   "material": "stone_white",
+   "ops": {
+    "hsv": [
+     0.5,
+     0.6,
+     1
+    ],
+    "desat_to": null,
+    "tint": null,
+    "tint_mix": 0
+   },
+   "mean_srgb": "#DCE0DF"
+  },
+  {
+   "material": "fl_concrete",
+   "ops": {
+    "hsv": [
+     0.5,
+     1,
+     1
+    ],
+    "desat_to": [
+     "#A9A6A0",
+     "#CFCCC6"
+    ],
+    "tint": null,
+    "tint_mix": 0
+   },
+   "mean_srgb": "#ABA8A2"
+  },
+  {
+   "material": "oak_slat",
+   "ops": {
+    "hsv": [
+     0.5,
+     0.9,
+     1.05
+    ],
+    "desat_to": null,
+    "tint": null,
+    "tint_mix": 0
+   },
+   "mean_srgb": "#937F6B"
+  },
+  {
+   "material": "fl_terrazzo",
+   "ops": {
+    "hsv": [
+     0.5,
+     0.75,
+     1.12
+    ],
+    "desat_to": null,
+    "tint": null,
+    "tint_mix": 0
+   },
+   "mean_srgb": "#A99B89"
+  },
+  {
+   "material": "fl_carpet",
+   "ops": {
+    "hsv": [
+     0.5,
+     1,
+     1
+    ],
+    "desat_to": [
+     "#2B2D2F",
+     "#4A4D50"
+    ],
+    "tint": null,
+    "tint_mix": 0
+   },
+   "mean_srgb": "#303234"
+  },
+  {
+   "material": "fl_herringbone",
+   "ops": {
+    "hsv": [
+     0.5,
+     0.78,
+     1.08
+    ],
+    "desat_to": null,
+    "tint": null,
+    "tint_mix": 0
+   },
+   "mean_srgb": "#997E66"
+  },
+  {
+   "material": "fl_oak_planks",
+   "ops": {
+    "hsv": [
+     0.5,
+     0.75,
+     1.08
+    ],
+    "desat_to": null,
+    "tint": null,
+    "tint_mix": 0
+   },
+   "mean_srgb": "#A18D79"
+  },
+  {
+   "material": "fl_carpet_green",
+   "ops": {
+    "hsv": [
+     0.5,
+     1,
+     1
+    ],
+    "desat_to": [
+     "#2A5539",
+     "#3F6E50"
+    ],
+    "tint": null,
+    "tint_mix": 0
+   },
+   "mean_srgb": "#2D583C"
+  },
+  {
+   "material": "fl_porcelain",
+   "ops": {
+    "hsv": [
+     0.5,
+     0.5,
+     1
+    ],
+    "desat_to": null,
+    "tint": null,
+    "tint_mix": 0
+   },
+   "mean_srgb": "#DEDDDD"
+  }
+ ],
+ "sheen": [
+  {
+   "material": "fab_green",
+   "weight": 0.2
+  },
+  {
+   "material": "fab_charcoal",
+   "weight": 0.4
+  },
+  {
+   "material": "g_rust",
+   "weight": 0.5
+  },
+  {
+   "material": "fab_sand",
+   "weight": 0.2
+  },
+  {
+   "material": "rug_wool",
+   "weight": 0.5
+  },
+  {
+   "material": "g_heather",
+   "weight": 0.5
+  },
+  {
+   "material": "g_olive",
+   "weight": 0.5
+  },
+  {
+   "material": "g_sand",
+   "weight": 0.5
+  },
+  {
+   "material": "g_black",
+   "weight": 0.5
+  },
+  {
+   "material": "g_denim",
+   "weight": 0.5
+  },
+  {
+   "material": "g_sage",
+   "weight": 0.5
+  },
+  {
+   "material": "g_white",
+   "weight": 0.5
+  },
+  {
+   "material": "g_green",
+   "weight": 0.5
+  },
+  {
+   "material": "g_navy",
+   "weight": 0.5
+  },
+  {
+   "material": "g_blush",
+   "weight": 0.5
+  },
+  {
+   "material": "fab_grey",
+   "weight": 0.4
+  }
+ ],
+ "skipped": []
+}
