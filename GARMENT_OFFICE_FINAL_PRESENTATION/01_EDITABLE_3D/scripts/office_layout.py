@@ -625,11 +625,11 @@ L_("lin", 905, -1150, 86, "Z20", L=96, rot=90, temp=3500)
 L_("halo", 960, -1478, 82, "Z21", r=18, temp=3000)
 L_("lin", 975, -1330, 82, "Z21", L=96, temp=3500)
 for x, y in ((1200, -1400), (1280, -1400), (1200, -1320), (1280, -1320)):
-    L_("down", x, y, 110, "Z23", temp=3000)
+    L_("down", x, y, 110, "Z23", temp=3000, power=90, beam=110)      # wide, soft beam: calm, even light for prayer
 for x in (1200, 1280):
     L_("down", x, -1246, 110, "Z24", temp=3500)
 for x, y in ((-7, -860), (-7, -790), (-7, -740)):
-    L_("down", x, y, 110, "Z25", temp=3000)
+    L_("down", x, y, 110, "Z25", temp=3000, power=90, beam=110)      # wide, soft beam: calm, even light for prayer
 for y in (-690, -630, -570):
     L_("down", -7, y, 110, "Z26", temp=3500)
 for y in (-480, -400, -330, -270):

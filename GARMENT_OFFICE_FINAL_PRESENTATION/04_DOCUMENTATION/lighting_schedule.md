@@ -4,9 +4,10 @@ Concept: 4000 K task light in work areas, 3000-3500 K in visitor/executive areas
 
 | type | description | CCT | qty | mounting height (in AFF, bottom) | zones |
 |---|---|---|---|---|---|
-| down | Surface cylinder downlight, matt black, 60-80 deg | 3000 K | 14 | 110 | Z10 Z11 Z13 Z23 Z25 |
-| down | Surface cylinder downlight, matt black, 60-80 deg | 3500 K | 39 | 110 | Z02 Z03 Z05 Z08 Z22 Z24 Z26 Z27 Z28 Z29 Z31 Z32 Z33 |
-| down | Surface cylinder downlight, matt black, 60-80 deg | 4000 K | 17 | 110 | Z06 Z07 |
+| down | Surface cylinder downlight, matt black, 60-80 deg | 3000 K | 7 | 108 | Z10 Z11 Z13 |
+| down | Surface cylinder downlight, matt black, 60-80 deg | 3500 K | 39 | 108 | Z02 Z03 Z05 Z08 Z22 Z24 Z26 Z27 Z28 Z29 Z31 Z32 Z33 |
+| down | Surface cylinder downlight, matt black, 60-80 deg | 4000 K | 17 | 108 | Z06 Z07 |
+| down | Surface cylinder downlight, matt black, wide beam about 110 deg | 3000 K | 7 | 108 | Z23 Z25 |
 | halo | Brass ring (halo) pendant, LED, ring r 16 in | 3000 K | 1 | 82 | Z12 |
 | halo | Brass ring (halo) pendant, LED, ring r 18 in | 3000 K | 1 | 82 | Z21 |
 | halo | Brass ring (halo) pendant, LED, ring r 20 in | 3000 K | 1 | 80 | Z02 |

@@ -12,7 +12,8 @@
      meeting table, about 80 in above the floor.
    - Accent: 3000 K adjustable track spots on garments, mannequins, brand walls and the mood-board wall.
    - Feature: brushed-brass halo rings over the reception lounge, the MD lounge and the staff lounge; opal pendants in the cafe.
-   - Circulation and wet areas: surface cylinder downlights.
+   - Circulation and wet areas: surface cylinder downlights. Prayer rooms: wide-beam (about 110 deg) 3000 K downlights for calm,
+     even light without glare.
 4. **Colour temperature by zone.** 4000 K in work areas (merchandising, commercial, HR, CAD, studio, library, sample room) for
    alertness and colour judgement; 3000-3500 K in the visitor and executive zones for warmth; 3000 K in prayer rooms.
    Colour-critical fabric checks use the D65 booth in the fabric & trim library, not the room lighting.

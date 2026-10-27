@@ -15,3 +15,5 @@ CAM_04_Experience_Centre_A --res 1920x1080
 CAM_05_Experience_Centre_B --res 1920x1080
 # CAD room: green felt pinboard for tech packs added on the south wall
 CAM_15_CAD_Room
+# prayer rooms: wider, brighter 3000 K downlights (room was underlit)
+CAM_22_Prayer_Male

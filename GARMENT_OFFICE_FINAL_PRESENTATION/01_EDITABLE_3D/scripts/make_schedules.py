@@ -104,18 +104,19 @@ def materials():
 def lighting():
     groups = defaultdict(lambda: [0, set(), set()])
     for kind, x, y, z, kw, zone in O.LIGHTS:
-        key = (kind, kw.get("L", kw.get("r", "")), kw.get("temp", 3500 if kind != "track" else ""))
+        key = (kind, kw.get("L", kw.get("r", kw.get("beam", ""))), kw.get("temp", 3500 if kind != "track" else ""))
         g = groups[key]
         g[0] += 1
         g[1].add(zone or "circulation")
-        g[2].add(z)
+        g[2].add(S.DECK_H - 6 if kind == "down" else z)          # downlights sit on the deck (as built in build_model.py)
     desc = {"lin": "Suspended linear LED profile, direct/indirect, opal diffuser, matt black", "halo": "Brass ring (halo) pendant, LED",
-            "down": "Surface cylinder downlight, matt black, 60-80 deg", "spot": "Track spot on 3-circuit track, adjustable, 24-40 deg",
+            "down": "Surface cylinder downlight, matt black", "spot": "Track spot on 3-circuit track, adjustable, 24-40 deg",
             "track": "3-circuit track fixed to the beam soffit", "pendant_cc0": "Opal dome pendant (cafe)"}
     rows = []
     for (kind, size, temp), (n, zones, zs) in sorted(groups.items(), key=lambda kv: str(kv[0])):
         sz = f"{size} in" if size != "" else ""
-        rows.append([kind, desc[kind] + (f", {sz} long" if kind == "lin" else (f", ring r {sz}" if kind == "halo" else "")),
+        extra = {"lin": f", {sz} long", "halo": f", ring r {sz}", "down": f", wide beam about {size} deg" if size != "" else ", 60-80 deg"}
+        rows.append([kind, desc[kind] + extra.get(kind, ""),
                      f"{temp} K" if temp else "", n, " / ".join(f"{z:g}" for z in sorted(zs)), " ".join(sorted(zones))])
     rows += [["AC", "VRF under-ceiling indoor unit (capacity by MEP engineer)", "", len(O.AC_UNITS), "fixed to deck", ""],
              ["SD", "Smoke detector (connect to the existing fire alarm system)", "", len(O.SMOKE_DETECTORS), "deck", ""],

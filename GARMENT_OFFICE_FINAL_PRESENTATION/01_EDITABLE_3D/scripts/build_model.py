@@ -585,7 +585,7 @@ def lights_and_fixtures(lib):
             me = A.get(f"down_{led}", A.downlight, 3.0, led)
             zz = S.DECK_H - 6
             place(me, f"LT{n:03d} downlight ({zone})", LF, x, y, zz, 0, {"zone": zone})
-            add_light(f"LS{n:03d} down {zone}", "SPOT", pb(x, y, zz - 0.5), power=55, temp=temp, spot=80)
+            add_light(f"LS{n:03d} down {zone}", "SPOT", pb(x, y, zz - 0.5), power=kw.get("power", 55), temp=temp, spot=kw.get("beam", 80))
         elif kind == "spot":
             me = A.get(f"spot_{led}", A.track_spot, 5.5, led)
             ob = place(me, f"LT{n:03d} track spot ({zone})", LF, x, y, z, 0, {"zone": zone})
