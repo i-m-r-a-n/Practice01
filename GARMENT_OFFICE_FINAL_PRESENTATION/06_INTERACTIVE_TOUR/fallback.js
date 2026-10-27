@@ -68,6 +68,7 @@ async function activate(){
   if(!res.ok)throw Error('Room manifest unavailable');
   rooms=await res.json();
  }catch(e){rooms=[{id:'Z02',name:'Reception & waiting',group:'Arrival',camera:'CAM_01_Reception_A'},{id:'Z30',name:'Experience centre',group:'Arrival',camera:'CAM_04_Experience_Centre_A'},{id:'Z08',name:'Boardroom',group:'Meeting',camera:'CAM_09_Boardroom_A'},{id:'Z18',name:'Global Design Studio',group:'Design',camera:'CAM_13_Design_Studio_A'}];}
+ if(window.__stage2MainStarted)return;
  $('progressBox').style.display='none';$('fallbackStage').hidden=false;
  $('statusPill').textContent='Original Cycles room gallery · 3D temporarily unavailable';
  $('fallbackInfo').querySelector('strong').textContent='Original photorealistic design views';
@@ -89,6 +90,7 @@ async function activate(){
  renderRooms();showRoom(null);
 }
 window.__stage2EmergencyPhoto=activate;
+window.__stage2EmergencyStop=()=>{endTour();$('fallbackStage').hidden=true};
 $('previewNow')?.addEventListener('click',()=>{if(!window.__stage2MainStarted)activate()});
 setTimeout(()=>{if(!window.__stage2MainStarted)activate()},13000);
 })();
