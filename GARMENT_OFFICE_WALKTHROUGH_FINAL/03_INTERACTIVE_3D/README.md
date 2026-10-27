@@ -28,7 +28,7 @@ On the first visit a short card explains the three ways to explore; the **?** bu
 
 | Header button | What it does | Keys |
 |---|---|---|
-| **Guided tour** (gold) | 16 stops, plays by itself; the tour card shows the stop, its text and Back / Pause / Next / End tour; with **Photoreal renders** on, each room fades into its Cycles render | `T`, `Space` pause, `<-` `->`, `Esc` end |
+| **Guided tour** (gold) | 16 stops through the real-time 3D model, plays by itself; the tour card shows the stop, its text and Back / Pause / Next / End tour (Back / Next also work while paused); at the end it stays on the final view (Play again). Optional: **Show photoreal stills** also fades each room into its Cycles render | `T`, `Space` pause, `<-` `->`, `Esc` end |
 | **Overview** | whole floor: drag to turn, Shift + drag (or right-drag with a mouse) to move, scroll / pinch to zoom; click a room or its name; tools: Reset view, Isometric, Plan, Ceilings, Room names | `O`, `C`, `L` |
 | **Rooms** | shows / hides the room list (grouped, searchable). Choosing a room flies to the viewpoint of its render; then drag to look around, **Photoreal render** shows the still, **Walk from here** (or `W A S D`) walks on | `R`, `P` |
 | **Walk** | eye level from the entrance lobby, collision with walls, glazing and furniture; floor map bottom right (click to go there) | `W A S D` / arrows, drag to look, `Shift`, double-click floor, `Esc` |
@@ -37,7 +37,7 @@ On the first visit a short card explains the three ways to explore; the **?** bu
 Links that open a view directly: `?room=Z08` (a room by its zone code, e.g. the boardroom), `?tour=1`, `?walk=1`;
 `?welcome=0` hides the help card, `?welcome=1` always shows it.
 
-Suggested 5-minute client sequence: Overview (turn the building, ceilings off) -> Guided tour with Photoreal renders on ->
+Suggested 5-minute client sequence: Overview (turn the building, ceilings off) -> Guided tour in 3D ->
 pause at the boardroom and MD office for questions -> Walk from the reception to the experience centre -> Plan view.
 
 What to say: "This is the proposed design. The moving 3D model is real-time; the still images are photoreal renders
@@ -47,6 +47,8 @@ of the same model. Final dimensions and technical details are subject to site ve
 
 - Tested in headless Chromium (WebGL 2, software GPU): see `../05_PRODUCTION/viewer_test/viewer_test.json`.
   A real GPU runs it much faster than this software test; on a slow machine add `?scale=0.6` to the address.
+- Ambient occlusion: when the view stops moving, one frame with soft contact shadows (furniture feet, corners) replaces the
+  moving frame (GTAO, three.js r169); off with the Low display quality or `?ao=0`.
 - The light on walls, floors and ceilings is baked from Cycles (light pools, soft shadows under furniture, darker corners);
   furniture, glass and reflections are still real-time and simpler than in the renders - use the photoreal renders for
   material questions.

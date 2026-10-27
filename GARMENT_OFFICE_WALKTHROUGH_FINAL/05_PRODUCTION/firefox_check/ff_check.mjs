@@ -24,19 +24,21 @@ try {
   await page.waitForFunction(() => (window.__viewer && window.__viewer.ready) || !document.getElementById('loadError').classList.contains('hidden'), { timeout: 600000, polling: 1000 });
   const s0 = await page.evaluate(() => ({ ready: !!(window.__viewer && window.__viewer.ready), err: document.getElementById('loadError').textContent, counts: window.__viewer && window.__viewer.counts, welcome: !document.getElementById('welcome').classList.contains('hidden') }));
   step('loaded', s0);
-  await page.screenshot({ type: 'jpeg', quality: 84, path: path.join(outDir, `${label}_01_welcome.jpg`) });
+  await page.screenshot({ path: path.join(outDir, `${label}_01_welcome.jpg`) });
   if (s0.ready) {
     await page.click('#wClose');
     await page.evaluate(() => window.__viewer.api.selectRoom('Z08'));
     await page.waitForFunction(() => { const s = window.__viewer.api.state(); return !s.flying && s.atCam; }, { timeout: 600000, polling: 1000 });
     await new Promise((r) => setTimeout(r, 2000));
-    step('room', await page.evaluate(() => window.__viewer.api.state()));
-    await page.screenshot({ type: 'jpeg', quality: 84, path: path.join(outDir, `${label}_02_boardroom.jpg`) });
+    const n0 = await page.evaluate(() => window.__viewer.api.state().aoFrames);
+    await page.waitForFunction((n) => window.__viewer.api.state().aoFrames > n || !window.__viewer.counts.ambientOcclusion, { timeout: 200000, polling: 500 }, n0).catch(() => {});
+    step('room', await page.evaluate(() => ({ ...window.__viewer.api.state(), ambientOcclusion: window.__viewer.counts.ambientOcclusion, viewerErrors: window.__viewer.errors })));
+    await page.screenshot({ path: path.join(outDir, `${label}_02_boardroom.jpg`) });
     await page.click('#bPhoto');
     await page.waitForFunction(() => document.getElementById('photo').classList.contains('show'), { timeout: 120000, polling: 500 }).catch(() => {});
     await new Promise((r) => setTimeout(r, 1500));
     step('photo', await page.evaluate(() => ({ photo: window.__viewer.api.state().photo, w: document.getElementById('photoImg').naturalWidth })));
-    await page.screenshot({ type: 'jpeg', quality: 84, path: path.join(outDir, `${label}_03_boardroom_render.jpg`) });
+    await page.screenshot({ path: path.join(outDir, `${label}_03_boardroom_render.jpg`) });
     await page.click('#photoClose');
     await page.evaluate(() => window.__viewer.api.startTour(0));
     await page.evaluate(() => window.__viewer.api.goStop(2));
@@ -45,7 +47,7 @@ try {
     await page.evaluate(() => window.__viewer.api.hidePhoto());
     await new Promise((r) => setTimeout(r, 1500));
     step('tour', await page.evaluate(() => ({ ...window.__viewer.api.state(), card: document.getElementById('tTitle').textContent, info: document.getElementById('info').classList.contains('hidden') ? 'hidden' : 'shown' })));
-    await page.screenshot({ type: 'jpeg', quality: 84, path: path.join(outDir, `${label}_04_tour_stop3.jpg`) });
+    await page.screenshot({ path: path.join(outDir, `${label}_04_tour_stop3.jpg`) });
     await page.evaluate(() => window.__viewer.api.stopTour(true));
     await page.waitForFunction(() => !window.__viewer.api.state().flying, { timeout: 600000, polling: 1000 });
     await page.evaluate(() => window.__viewer.api.startWalk());
@@ -54,7 +56,7 @@ try {
     await page.keyboard.down('w'); await new Promise((r) => setTimeout(r, 2500)); await page.keyboard.up('w');
     const p1 = (await page.evaluate(() => window.__viewer.api.state())).pos;
     step('walk', { p0, p1, moved: +Math.hypot(p1[0] - p0[0], p1[2] - p0[2]).toFixed(2) });
-    await page.screenshot({ type: 'jpeg', quality: 84, path: path.join(outDir, `${label}_05_walk.jpg`) });
+    await page.screenshot({ path: path.join(outDir, `${label}_05_walk.jpg`) });
   }
 } catch (e) {
   log.errors.push('TEST: ' + String(e.message || e).slice(0, 300));

@@ -1,0 +1,136 @@
+{
+ "url": "http://127.0.0.1:8780/?scale=0.5&welcome=0",
+ "label": "improved",
+ "errors": [],
+ "shots": [
+  {
+   "zone": "Z02",
+   "cam": "CAM_01_Reception_A",
+   "state": {
+    "mode": "rooms",
+    "room": "Z02",
+    "atCam": "CAM_01_Reception_A",
+    "flying": false,
+    "flightT": null,
+    "fps": 0,
+    "overhead": true,
+    "tour": null,
+    "pos": [
+     8.077,
+     1.524,
+     0.66
+    ]
+   }
+  },
+  {
+   "zone": "Z30",
+   "cam": "CAM_04_Experience_Centre_A",
+   "state": {
+    "mode": "rooms",
+    "room": "Z30",
+    "atCam": "CAM_04_Experience_Centre_A",
+    "flying": false,
+    "flightT": null,
+    "fps": 0,
+    "overhead": true,
+    "tour": null,
+    "pos": [
+     9.957,
+     1.575,
+     -5.74
+    ]
+   }
+  },
+  {
+   "zone": "Z08",
+   "cam": "CAM_09_Boardroom_A",
+   "state": {
+    "mode": "rooms",
+    "room": "Z08",
+    "atCam": "CAM_09_Boardroom_A",
+    "flying": false,
+    "flightT": null,
+    "fps": 0,
+    "overhead": true,
+    "tour": null,
+    "pos": [
+     21.844,
+     1.575,
+     -5.08
+    ]
+   }
+  },
+  {
+   "zone": "Z12",
+   "cam": "CAM_07_MD_Office_A",
+   "state": {
+    "mode": "rooms",
+    "room": "Z12",
+    "atCam": "CAM_07_MD_Office_A",
+    "flying": false,
+    "flightT": null,
+    "fps": 0,
+    "overhead": true,
+    "tour": null,
+    "pos": [
+     22.098,
+     1.524,
+     1.626
+    ]
+   }
+  },
+  {
+   "zone": "Z07",
+   "cam": "CAM_11_Merchandising_A",
+   "state": {
+    "mode": "rooms",
+    "room": "Z07",
+    "atCam": "CAM_11_Merchandising_A",
+    "flying": false,
+    "flightT": null,
+    "fps": 0,
+    "overhead": true,
+    "tour": null,
+    "pos": [
+     9.601,
+     1.626,
+     -11.176
+    ]
+   }
+  },
+  {
+   "zone": "Z18",
+   "cam": "CAM_13_Design_Studio_A",
+   "state": {
+    "mode": "rooms",
+    "room": "Z18",
+    "atCam": "CAM_13_Design_Studio_A",
+    "flying": false,
+    "flightT": null,
+    "fps": 0,
+    "overhead": true,
+    "tour": null,
+    "pos": [
+     28.245,
+     1.575,
+     -13.665
+    ]
+   }
+  }
+ ],
+ "loadSeconds": 3.113,
+ "counts": {
+  "quality": "balanced",
+  "meshes": 100,
+  "drawCallsMerged": {
+   "before": 1880,
+   "after": 100
+  },
+  "rooms": 34,
+  "cameras": 38,
+  "stops": 16,
+  "model": "web",
+  "bakedLight": true,
+  "shadows": false
+ }
+}

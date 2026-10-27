@@ -1,22 +1,22 @@
 {
- "url": "file:///home/user/Practice01/GARMENT_OFFICE_WALKTHROUGH_FINAL/09_MAC_OFFLINE_TOUR/Ground_Floor_3D_Tour.html?scale=0.4",
+ "url": "file:///home/user/Practice01/GARMENT_OFFICE_WALKTHROUGH_FINAL/09_MAC_OFFLINE_TOUR/Ground_Floor_3D_Tour.html?scale=0.5",
  "label": "offline",
  "errors": [],
  "steps": [
   {
    "name": "browser",
-   "t": 2.1,
+   "t": 1.7,
    "version": "firefox/159.0"
   },
   {
    "name": "webgl",
-   "t": 3,
+   "t": 2.4,
    "webgl2": true,
    "renderer": "llvmpipe, or similar"
   },
   {
    "name": "loaded",
-   "t": 6.2,
+   "t": 5,
    "ready": true,
    "err": "",
    "counts": {
@@ -31,13 +31,14 @@
     "stops": 16,
     "model": "web",
     "bakedLight": true,
-    "shadows": false
+    "shadows": false,
+    "ambientOcclusion": true
    },
    "welcome": true
   },
   {
    "name": "room",
-   "t": 14.6,
+   "t": 192.8,
    "mode": "rooms",
    "room": "Z08",
    "atCam": "CAM_09_Boardroom_A",
@@ -46,21 +47,24 @@
    "fps": 0,
    "overhead": true,
    "tour": null,
+   "aoFrames": 1,
    "pos": [
     21.844,
     1.575,
     -5.08
-   ]
+   ],
+   "ambientOcclusion": true,
+   "viewerErrors": []
   },
   {
    "name": "photo",
-   "t": 16.2,
+   "t": 194.4,
    "photo": "CAM_09_Boardroom_A",
    "w": 1600
   },
   {
    "name": "tour",
-   "t": 21.6,
+   "t": 200.2,
    "mode": "tour",
    "room": "Z02",
    "atCam": "CAM_01_Reception_A",
@@ -72,9 +76,11 @@
     "i": 2,
     "phase": "hold",
     "playing": false,
-    "sub": 0
+    "sub": 0,
+    "done": false
    },
    "photo": null,
+   "aoFrames": 3,
    "pos": [
     8.077,
     1.524,
@@ -85,19 +91,19 @@
   },
   {
    "name": "walk",
-   "t": 36.3,
+   "t": 214.7,
    "p0": [
     6.248,
     1.626,
     5.74
    ],
    "p1": [
-    5.974,
+    5.894,
     1.626,
-    3.536
+    3.558
    ],
-   "moved": 2.22
+   "moved": 2.21
   }
  ],
- "seconds": 36.955
+ "seconds": 215.366
 }

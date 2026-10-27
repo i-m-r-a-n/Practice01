@@ -72,40 +72,50 @@ const path = require('path');
   await page.click('#mTour'); await page.waitForTimeout(1000);
   s = await st();
   check('tour starts at stop 1', s.mode === 'tour' && s.tour && s.tour.i === 0, s);
-  await idle(); await page.waitForTimeout(1500); await shot('09_tour_stop01_overview');
-  await page.click('#tNext'); await idle(); await page.waitForTimeout(500);
-  s = await st();
-  check('tour next: stop 2 entrance lobby at its render camera', s.tour.i === 1 && s.atCam === 'CAM_03_Entrance_Lobby', s);
-  check('tour card shows the stop; no separate room card on top of it', await page.evaluate(() => document.getElementById('tTitle').textContent.length > 3
-    && document.getElementById('tText').textContent.length > 20 && document.getElementById('info').classList.contains('hidden')));
-  await shot('10_tour_stop02_lobby');
-  await page.waitForFunction(() => window.__viewer.api.state().photo === 'CAM_03_Entrance_Lobby', null, { timeout: 120000 }).catch(() => {});
-  await page.waitForTimeout(1200);
-  check('photoreal stop: the render dissolves in at the stop', (await st()).photo === 'CAM_03_Entrance_Lobby');
-  await shot('11_tour_stop02_photoreal');
+  await idle();
+  // navigation is checked with the tour paused, so the 6.5 s stop timer cannot move on while a slow test machine takes screenshots
   await page.click('#tPlay');
   const paused = await st();
   await page.waitForTimeout(3000);
   const stillPaused = await st();
   check('pause holds the tour', paused.tour.playing === false && stillPaused.tour.i === paused.tour.i && stillPaused.tour.phase === paused.tour.phase, stillPaused.tour);
+  await shot('09_tour_stop01_overview');
+  await page.click('#tNext'); await idle();
+  s = await st();
+  check('next while paused: flies to stop 2, entrance lobby, at its render camera', s.tour.i === 1 && s.atCam === 'CAM_03_Entrance_Lobby' && !s.tour.playing, s);
+  check('tour card shows the stop; no separate room card on top of it', await page.evaluate(() => document.getElementById('tTitle').textContent.length > 3
+    && document.getElementById('tText').textContent.length > 20 && document.getElementById('info').classList.contains('hidden')));
+  await shot('10_tour_stop02_lobby');
+  await page.check('#tPhoto');                                  // the photoreal stills are optional (off by default)
   await page.click('#tPlay');
   check('resume', (await st()).tour.playing === true);
-  await page.click('#tNext'); await page.click('#tNext'); await idle(); await page.waitForTimeout(1200);
+  const ph = await page.waitForFunction(() => window.__viewer.api.state().photo === 'CAM_03_Entrance_Lobby', null, { timeout: 120000 }).then(() => true, () => false);
+  check('photoreal stop: the render dissolves in at the stop', ph);
+  await page.click('#tPlay');                                   // pause again for the next checks
+  await page.waitForTimeout(1200); await shot('11_tour_stop02_photoreal');
   s = await st();
-  check('next x2: stop 4 experience centre', s.tour.i === 3 && s.atCam === 'CAM_04_Experience_Centre_A', s);
-  await shot('12_tour_stop04_experience');
+  await page.click('#tNext'); await idle(); await page.click('#tNext'); await idle();
+  const s4 = await st();
+  check('next x2 (from the stop shown): two stops further', s4.tour.i === Math.min(15, s.tour.i + 2) && !s4.flying, { from: s.tour, to: s4.tour, atCam: s4.atCam });
+  await shot('12_tour_two_stops_on');
   await page.click('#tPrev'); await idle();
-  check('previous: stop 3 reception', (await st()).tour.i === 2);
+  check('back: one stop earlier', (await st()).tour.i === s4.tour.i - 1);
   await page.evaluate(() => window.__viewer.api.goStop(15)); await idle(); await page.waitForTimeout(1500);
   check('last stop (16) final reveal', (await st()).tour.i === 15);
   await shot('13_tour_stop16_final');
+  await page.click('#tPlay');                                   // let the last stop run out
+  const ended = await page.waitForFunction(() => { const t = window.__viewer.api.state().tour; return t && t.done; }, null, { timeout: 180000 }).then(() => true, () => false);
+  check('tour ends on the final view with Play again (no jump away)', ended && (await st()).mode === 'tour'
+    && (await page.evaluate(() => document.getElementById('tPlay').textContent)).includes('Play again'));
   await page.click('#tStop'); await idle();
   check('stop ends the tour', (await st()).mode === 'overview' && !(await st()).tour);
 
   if (!(await page.evaluate(() => document.getElementById('side').classList.contains('open')))) await page.click('#mRooms');
   await page.waitForTimeout(600);
   await page.fill('#search', 'prayer');
-  check('search filters the room list', (await page.$$eval('.room', (b) => b.length)) === 2);
+  const found = await page.$$eval('.room', (b) => b.map((x) => x.textContent));
+  // 5 rooms mention prayer (the two prayer rooms, the two wudu rooms, the north corridor that leads to them)
+  check('search filters the room list', found.length === 5 && found.some((t) => t.includes('Prayer room (male)')) && found.some((t) => t.includes('Prayer room (female)')), found);
   await page.fill('#search', '');
   await page.setViewportSize({ width: 1470, height: 956 }); await page.waitForTimeout(1500);
   check('MacBook Air size (1470 x 956): no horizontal overflow', await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1));

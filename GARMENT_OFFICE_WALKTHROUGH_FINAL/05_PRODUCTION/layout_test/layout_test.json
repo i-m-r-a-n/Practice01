@@ -1,0 +1,685 @@
+{
+ "url": "http://127.0.0.1:8780/?scale=0.3&welcome=1",
+ "errors": [],
+ "results": [
+  {
+   "screen": "a_welcome",
+   "size": "2000x1093",
+   "ok": true,
+   "panels": [
+    "top",
+    "side",
+    "viewbar",
+    "disclaimer",
+    "welcome"
+   ],
+   "overlaps": [],
+   "outside": [],
+   "hscroll": false
+  },
+  {
+   "screen": "a_welcome",
+   "size": "1920x1080",
+   "ok": true,
+   "panels": [
+    "top",
+    "side",
+    "viewbar",
+    "disclaimer",
+    "welcome"
+   ],
+   "overlaps": [],
+   "outside": [],
+   "hscroll": false
+  },
+  {
+   "screen": "a_welcome",
+   "size": "1728x1117",
+   "ok": true,
+   "panels": [
+    "top",
+    "side",
+    "viewbar",
+    "disclaimer",
+    "welcome"
+   ],
+   "overlaps": [],
+   "outside": [],
+   "hscroll": false
+  },
+  {
+   "screen": "a_welcome",
+   "size": "1512x982",
+   "ok": true,
+   "panels": [
+    "top",
+    "side",
+    "viewbar",
+    "disclaimer",
+    "welcome"
+   ],
+   "overlaps": [],
+   "outside": [],
+   "hscroll": false
+  },
+  {
+   "screen": "a_welcome",
+   "size": "1470x956",
+   "ok": true,
+   "panels": [
+    "top",
+    "side",
+    "viewbar",
+    "disclaimer",
+    "welcome"
+   ],
+   "overlaps": [],
+   "outside": [],
+   "hscroll": false
+  },
+  {
+   "screen": "a_welcome",
+   "size": "1440x900",
+   "ok": true,
+   "panels": [
+    "top",
+    "side",
+    "viewbar",
+    "disclaimer",
+    "welcome"
+   ],
+   "overlaps": [],
+   "outside": [],
+   "hscroll": false
+  },
+  {
+   "screen": "a_welcome",
+   "size": "1280x800",
+   "ok": true,
+   "panels": [
+    "top",
+    "side",
+    "viewbar",
+    "disclaimer",
+    "welcome"
+   ],
+   "overlaps": [],
+   "outside": [],
+   "hscroll": false
+  },
+  {
+   "screen": "b_overview",
+   "size": "2000x1093",
+   "ok": true,
+   "panels": [
+    "top",
+    "side",
+    "viewbar",
+    "disclaimer"
+   ],
+   "overlaps": [],
+   "outside": [],
+   "hscroll": false
+  },
+  {
+   "screen": "b_overview",
+   "size": "1920x1080",
+   "ok": true,
+   "panels": [
+    "top",
+    "side",
+    "viewbar",
+    "disclaimer"
+   ],
+   "overlaps": [],
+   "outside": [],
+   "hscroll": false
+  },
+  {
+   "screen": "b_overview",
+   "size": "1728x1117",
+   "ok": true,
+   "panels": [
+    "top",
+    "side",
+    "viewbar",
+    "disclaimer"
+   ],
+   "overlaps": [],
+   "outside": [],
+   "hscroll": false
+  },
+  {
+   "screen": "b_overview",
+   "size": "1512x982",
+   "ok": true,
+   "panels": [
+    "top",
+    "side",
+    "viewbar",
+    "disclaimer"
+   ],
+   "overlaps": [],
+   "outside": [],
+   "hscroll": false
+  },
+  {
+   "screen": "b_overview",
+   "size": "1470x956",
+   "ok": true,
+   "panels": [
+    "top",
+    "side",
+    "viewbar",
+    "disclaimer"
+   ],
+   "overlaps": [],
+   "outside": [],
+   "hscroll": false
+  },
+  {
+   "screen": "b_overview",
+   "size": "1440x900",
+   "ok": true,
+   "panels": [
+    "top",
+    "side",
+    "viewbar",
+    "disclaimer"
+   ],
+   "overlaps": [],
+   "outside": [],
+   "hscroll": false
+  },
+  {
+   "screen": "b_overview",
+   "size": "1280x800",
+   "ok": true,
+   "panels": [
+    "top",
+    "side",
+    "viewbar",
+    "disclaimer"
+   ],
+   "overlaps": [],
+   "outside": [],
+   "hscroll": false
+  },
+  {
+   "screen": "c_room_reception",
+   "size": "2000x1093",
+   "ok": true,
+   "panels": [
+    "top",
+    "side",
+    "info",
+    "disclaimer"
+   ],
+   "overlaps": [],
+   "outside": [],
+   "hscroll": false
+  },
+  {
+   "screen": "c_room_reception",
+   "size": "1920x1080",
+   "ok": true,
+   "panels": [
+    "top",
+    "side",
+    "info",
+    "disclaimer"
+   ],
+   "overlaps": [],
+   "outside": [],
+   "hscroll": false
+  },
+  {
+   "screen": "c_room_reception",
+   "size": "1728x1117",
+   "ok": true,
+   "panels": [
+    "top",
+    "side",
+    "info",
+    "disclaimer"
+   ],
+   "overlaps": [],
+   "outside": [],
+   "hscroll": false
+  },
+  {
+   "screen": "c_room_reception",
+   "size": "1512x982",
+   "ok": true,
+   "panels": [
+    "top",
+    "side",
+    "info",
+    "disclaimer"
+   ],
+   "overlaps": [],
+   "outside": [],
+   "hscroll": false
+  },
+  {
+   "screen": "c_room_reception",
+   "size": "1470x956",
+   "ok": true,
+   "panels": [
+    "top",
+    "side",
+    "info",
+    "disclaimer"
+   ],
+   "overlaps": [],
+   "outside": [],
+   "hscroll": false
+  },
+  {
+   "screen": "c_room_reception",
+   "size": "1440x900",
+   "ok": true,
+   "panels": [
+    "top",
+    "side",
+    "info",
+    "disclaimer"
+   ],
+   "overlaps": [],
+   "outside": [],
+   "hscroll": false
+  },
+  {
+   "screen": "c_room_reception",
+   "size": "1280x800",
+   "ok": true,
+   "panels": [
+    "top",
+    "side",
+    "info",
+    "disclaimer"
+   ],
+   "overlaps": [],
+   "outside": [],
+   "hscroll": false
+  },
+  {
+   "screen": "d_tour_stop3_photoreal",
+   "size": "2000x1093",
+   "ok": true,
+   "panels": [
+    "top",
+    "tourbar",
+    "minimap",
+    "disclaimer",
+    "photoClose"
+   ],
+   "overlaps": [],
+   "outside": [],
+   "hscroll": false
+  },
+  {
+   "screen": "d_tour_stop3_photoreal",
+   "size": "1920x1080",
+   "ok": true,
+   "panels": [
+    "top",
+    "tourbar",
+    "minimap",
+    "disclaimer",
+    "photoClose"
+   ],
+   "overlaps": [],
+   "outside": [],
+   "hscroll": false
+  },
+  {
+   "screen": "d_tour_stop3_photoreal",
+   "size": "1728x1117",
+   "ok": true,
+   "panels": [
+    "top",
+    "tourbar",
+    "minimap",
+    "disclaimer",
+    "photoClose"
+   ],
+   "overlaps": [],
+   "outside": [],
+   "hscroll": false
+  },
+  {
+   "screen": "d_tour_stop3_photoreal",
+   "size": "1512x982",
+   "ok": true,
+   "panels": [
+    "top",
+    "tourbar",
+    "minimap",
+    "disclaimer",
+    "photoClose"
+   ],
+   "overlaps": [],
+   "outside": [],
+   "hscroll": false
+  },
+  {
+   "screen": "d_tour_stop3_photoreal",
+   "size": "1470x956",
+   "ok": true,
+   "panels": [
+    "top",
+    "tourbar",
+    "minimap",
+    "disclaimer",
+    "photoClose"
+   ],
+   "overlaps": [],
+   "outside": [],
+   "hscroll": false
+  },
+  {
+   "screen": "d_tour_stop3_photoreal",
+   "size": "1440x900",
+   "ok": true,
+   "panels": [
+    "top",
+    "tourbar",
+    "minimap",
+    "disclaimer",
+    "photoClose"
+   ],
+   "overlaps": [],
+   "outside": [],
+   "hscroll": false
+  },
+  {
+   "screen": "d_tour_stop3_photoreal",
+   "size": "1280x800",
+   "ok": true,
+   "panels": [
+    "top",
+    "tourbar",
+    "minimap",
+    "disclaimer",
+    "photoClose"
+   ],
+   "overlaps": [],
+   "outside": [],
+   "hscroll": false
+  },
+  {
+   "screen": "e_tour_stop3_3d",
+   "size": "2000x1093",
+   "ok": true,
+   "panels": [
+    "top",
+    "tourbar",
+    "minimap",
+    "disclaimer"
+   ],
+   "overlaps": [],
+   "outside": [],
+   "hscroll": false
+  },
+  {
+   "screen": "e_tour_stop3_3d",
+   "size": "1920x1080",
+   "ok": true,
+   "panels": [
+    "top",
+    "tourbar",
+    "minimap",
+    "disclaimer"
+   ],
+   "overlaps": [],
+   "outside": [],
+   "hscroll": false
+  },
+  {
+   "screen": "e_tour_stop3_3d",
+   "size": "1728x1117",
+   "ok": true,
+   "panels": [
+    "top",
+    "tourbar",
+    "minimap",
+    "disclaimer"
+   ],
+   "overlaps": [],
+   "outside": [],
+   "hscroll": false
+  },
+  {
+   "screen": "e_tour_stop3_3d",
+   "size": "1512x982",
+   "ok": true,
+   "panels": [
+    "top",
+    "tourbar",
+    "minimap",
+    "disclaimer"
+   ],
+   "overlaps": [],
+   "outside": [],
+   "hscroll": false
+  },
+  {
+   "screen": "e_tour_stop3_3d",
+   "size": "1470x956",
+   "ok": true,
+   "panels": [
+    "top",
+    "tourbar",
+    "minimap",
+    "disclaimer"
+   ],
+   "overlaps": [],
+   "outside": [],
+   "hscroll": false
+  },
+  {
+   "screen": "e_tour_stop3_3d",
+   "size": "1440x900",
+   "ok": true,
+   "panels": [
+    "top",
+    "tourbar",
+    "minimap",
+    "disclaimer"
+   ],
+   "overlaps": [],
+   "outside": [],
+   "hscroll": false
+  },
+  {
+   "screen": "e_tour_stop3_3d",
+   "size": "1280x800",
+   "ok": true,
+   "panels": [
+    "top",
+    "tourbar",
+    "minimap",
+    "disclaimer"
+   ],
+   "overlaps": [],
+   "outside": [],
+   "hscroll": false
+  },
+  {
+   "screen": "f_walk",
+   "size": "2000x1093",
+   "ok": true,
+   "panels": [
+    "top",
+    "info",
+    "minimap",
+    "walkhint",
+    "disclaimer"
+   ],
+   "overlaps": [],
+   "outside": [],
+   "hscroll": false
+  },
+  {
+   "screen": "f_walk",
+   "size": "1920x1080",
+   "ok": true,
+   "panels": [
+    "top",
+    "info",
+    "minimap",
+    "walkhint",
+    "disclaimer"
+   ],
+   "overlaps": [],
+   "outside": [],
+   "hscroll": false
+  },
+  {
+   "screen": "f_walk",
+   "size": "1728x1117",
+   "ok": true,
+   "panels": [
+    "top",
+    "info",
+    "minimap",
+    "walkhint",
+    "disclaimer"
+   ],
+   "overlaps": [],
+   "outside": [],
+   "hscroll": false
+  },
+  {
+   "screen": "f_walk",
+   "size": "1512x982",
+   "ok": true,
+   "panels": [
+    "top",
+    "info",
+    "minimap",
+    "walkhint",
+    "disclaimer"
+   ],
+   "overlaps": [],
+   "outside": [],
+   "hscroll": false
+  },
+  {
+   "screen": "f_walk",
+   "size": "1470x956",
+   "ok": true,
+   "panels": [
+    "top",
+    "info",
+    "minimap",
+    "walkhint",
+    "disclaimer"
+   ],
+   "overlaps": [],
+   "outside": [],
+   "hscroll": false
+  },
+  {
+   "screen": "f_walk",
+   "size": "1440x900",
+   "ok": true,
+   "panels": [
+    "top",
+    "info",
+    "minimap",
+    "walkhint",
+    "disclaimer"
+   ],
+   "overlaps": [],
+   "outside": [],
+   "hscroll": false
+  },
+  {
+   "screen": "f_walk",
+   "size": "1280x800",
+   "ok": true,
+   "panels": [
+    "top",
+    "info",
+    "minimap",
+    "walkhint",
+    "disclaimer"
+   ],
+   "overlaps": [],
+   "outside": [],
+   "hscroll": false
+  }
+ ],
+ "loadSeconds": 3.146,
+ "counts": {
+  "quality": "balanced",
+  "meshes": 100,
+  "drawCallsMerged": {
+   "before": 1880,
+   "after": 100
+  },
+  "rooms": 34,
+  "cameras": 38,
+  "stops": 16,
+  "model": "web",
+  "bakedLight": true,
+  "shadows": false
+ },
+ "welcomeShown": true,
+ "room": {
+  "mode": "rooms",
+  "room": "Z02",
+  "atCam": "CAM_01_Reception_A",
+  "flying": false,
+  "flightT": null,
+  "fps": 1,
+  "overhead": true,
+  "tour": null,
+  "pos": [
+   8.077,
+   1.524,
+   0.66
+  ]
+ },
+ "tour": {
+  "mode": "tour",
+  "room": "Z02",
+  "atCam": "CAM_01_Reception_A",
+  "flying": false,
+  "flightT": null,
+  "fps": 1,
+  "overhead": true,
+  "tour": {
+   "i": 2,
+   "phase": "hold",
+   "playing": false,
+   "sub": 0
+  },
+  "photo": "CAM_01_Reception_A",
+  "pos": [
+   8.077,
+   1.524,
+   0.66
+  ]
+ },
+ "walk": {
+  "mode": "walk",
+  "room": "Z01",
+  "atCam": "CAM_03_Entrance_Lobby",
+  "flying": false,
+  "flightT": null,
+  "fps": 1,
+  "overhead": true,
+  "tour": null,
+  "photo": null,
+  "pos": [
+   6.248,
+   1.626,
+   5.74
+  ]
+ },
+ "seconds": 337.86,
+ "failed": []
+}

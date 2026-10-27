@@ -7,6 +7,10 @@ import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
+import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
+import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
+import { GTAOPass } from 'three/addons/postprocessing/GTAOPass.js';
+import { OutputPass } from 'three/addons/postprocessing/OutputPass.js';
 
 window.__viewerStarted = true;
 const $ = (id) => document.getElementById(id);
@@ -36,6 +40,7 @@ function applyQuality(q) {
   renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, QUALITY[q]) * scale);
   renderer.setSize(innerWidth, innerHeight);
   try { localStorage.setItem('tourQuality', q); } catch (e) { /* storage blocked */ }
+  if (typeof sizeAO === 'function') { if (aoWanted() && !AO) setupAO(); if (!aoWanted()) AO = null; sizeAO(); }
   needsRender = true;
 }
 renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, QUALITY[quality]) * scale);
@@ -223,6 +228,34 @@ if (SHADOWS) {
   });
   overhead.traverse((o) => { if (o.isMesh) { o.castShadow = false; o.receiveShadow = true; } });
 }
+
+// ------------------------------------------------------------------ ambient occlusion (soft contact shadows), drawn once the view stops moving
+// The baked light has no furniture in it; GTAO darkens contact areas (chair and table feet, corners) in screen space.
+// Moving frames render directly (smooth on any GPU); 0.25 s after the last movement one AO frame replaces it.
+let AO = null;
+const aoWanted = () => (qs.get('ao') ? qs.get('ao') !== '0' : quality !== 'low');
+function setupAO() {
+  try {
+    const size = renderer.getDrawingBufferSize(new THREE.Vector2());
+    const rt = new THREE.WebGLRenderTarget(size.x, size.y, { type: THREE.HalfFloatType, samples: 4 });
+    const composer = new EffectComposer(renderer, rt);
+    composer.setPixelRatio(renderer.getPixelRatio()); composer.setSize(innerWidth, innerHeight);
+    composer.addPass(new RenderPass(scene, camera));
+    const gtao = new GTAOPass(scene, camera, innerWidth, innerHeight);
+    gtao.updateGtaoMaterial({ radius: 0.35, distanceExponent: 1, thickness: 1, scale: 1, samples: 16, distanceFallOff: 1, screenSpaceRadius: false });
+    gtao.updatePdMaterial({ lumaPhi: 10, depthPhi: 2, normalPhi: 3, radius: 4, radiusExponent: 1, rings: 2, samples: 16 });
+    gtao.blendIntensity = 1.0;
+    const hideSeeThrough = gtao.overrideVisibility.bind(gtao);          // glass must not cast AO onto what is behind it
+    gtao.overrideVisibility = function () {
+      hideSeeThrough();
+      scene.traverse((o) => { if (o.isMesh && o.material && (o.material.transmission > 0 || (o.material.transparent && o.material.opacity < 0.95))) o.visible = false; });
+    };
+    composer.addPass(gtao);
+    composer.addPass(new OutputPass());
+    AO = { composer, gtao, pending: false, last: 0 };
+  } catch (e) { AO = null; S.errors.push('ambient occlusion off: ' + e.message); }
+}
+function sizeAO() { if (AO) { AO.composer.setPixelRatio(renderer.getPixelRatio()); AO.composer.setSize(innerWidth, innerHeight); AO.gtao.setSize(innerWidth * renderer.getPixelRatio(), innerHeight * renderer.getPixelRatio()); } }
 
 // ------------------------------------------------------------------ metadata
 const cams = Object.fromEntries(meta.cameras.map((c) => [c.name, c]));
@@ -816,7 +849,7 @@ addEventListener('resize', () => {
   wasNarrow = narrow();
   camera.aspect = innerWidth / innerHeight;
   if (S.atCam && cams[S.atCam].lens) applyPose(poseFromCamera(cams[S.atCam]));
-  camera.updateProjectionMatrix(); renderer.setSize(innerWidth, innerHeight); measureChrome(); needsRender = true;
+  camera.updateProjectionMatrix(); renderer.setSize(innerWidth, innerHeight); sizeAO(); measureChrome(); needsRender = true;
 });
 // ------------------------------------------------------------------ welcome / help card
 function openWelcome() { $('welcome').classList.remove('hidden'); $('wTour').focus({ preventScroll: true }); }
@@ -835,8 +868,7 @@ const clock = new THREE.Clock();
 let frames = 0, fpsT = 0;
 renderer.setAnimationLoop(() => {
   const dt = Math.min(clock.getDelta(), 1.0);             // time-based: flights and tour stops end on time even on slow GPUs
-  const paused = S.tour && !S.tour.playing;
-  if (flight && !paused) flightStep(dt);
+  if (flight) flightStep(dt);                           // Back / Next also fly while the tour is paused; pause stops the stop timer
   if ((S.mode === 'overview' || S.mode === 'rooms') && controls.enabled) controls.update();
   if (S.mode === 'walk' && !flight) walkStep(dt);
   if (S.mode === 'tour') tourStep(dt);
@@ -849,6 +881,10 @@ renderer.setAnimationLoop(() => {
     if (pendingSwap) { captureDissolve(); pendingSwap(); pendingSwap = null; renderer.render(scene, camera); }
     placeLabels(); drawMinimap();
     needsRender = false; frames++;
+    if (AO) { AO.pending = true; AO.last = performance.now(); }
+  } else if (AO && AO.pending && !flight && !walk.drag && performance.now() - AO.last > 250) {
+    try { AO.composer.render(); AO.pending = false; S.aoFrames = (S.aoFrames || 0) + 1; }  // the still view, with contact shadows
+    catch (e) { AO = null; S.errors.push('ambient occlusion off: ' + e.message); needsRender = true; }
   }
   fpsT += dt; if (fpsT > 1) { S.fps = frames / fpsT; frames = 0; fpsT = 0; }
 });
@@ -856,6 +892,7 @@ renderer.setAnimationLoop(() => {
 // ------------------------------------------------------------------ start
 buildList();
 measureChrome();
+if (aoWanted()) setupAO();
 setMode('overview');
 if (!narrow()) openSide();
 overhead.visible = false;
@@ -873,7 +910,7 @@ S.ready = true; window.__viewerReady = true;
   else if (w === '1' || (w !== '0' && !seen)) openWelcome();
 }
 let meshes = 0; model.traverse((o) => { if (o.isMesh) meshes++; });
-S.counts = { quality, meshes, drawCallsMerged: drawCalls, rooms: rooms.length, cameras: meta.cameras.length, stops: stops.length, model: gltf.scene.getObjectByName('WEB_INTERIOR') ? 'web' : 'original', bakedLight: BAKED, shadows: SHADOWS };
+S.counts = { quality, meshes, drawCallsMerged: drawCalls, rooms: rooms.length, cameras: meta.cameras.length, stops: stops.length, model: gltf.scene.getObjectByName('WEB_INTERIOR') ? 'web' : 'original', bakedLight: BAKED, shadows: SHADOWS, ambientOcclusion: !!AO };
 S.api = { selectRoom: (z) => selectRoom(byZone[z]), goOverview, startWalk, startTour, goStop, nextStop, togglePlay, stopTour, showPhoto, hidePhoto,
   blocked, state: () => ({ mode: S.mode, room: S.room && S.room.zone, atCam: S.atCam, flying: !!flight, flightT: flight ? +flight.t.toFixed(3) : null, fps: S.fps, overhead: overhead.visible,
-    tour: S.tour && { i: S.tour.i, phase: S.tour.phase, playing: S.tour.playing, sub: S.tour.sub }, photo: S.photo, pos: camera.position.toArray().map((v) => +v.toFixed(3)) }) };
+    tour: S.tour && { i: S.tour.i, phase: S.tour.phase, playing: S.tour.playing, sub: S.tour.sub, done: !!S.tour.done }, photo: S.photo, aoFrames: S.aoFrames || 0, pos: camera.position.toArray().map((v) => +v.toFixed(3)) }) };

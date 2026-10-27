@@ -34,8 +34,8 @@ Trackpad: drag to turn, Shift + drag to move, scroll or pinch to zoom. `Esc` ret
 
 Opened from `file://`, as a double-click does, in **Firefox 159** and in Chromium (Linux, software GPU, window 1470 x 956 =
 MacBook Air): the model loads with the baked light, the help card shows, the boardroom flight lands on its render camera,
-the photoreal render opens from `renders/`, the guided tour shows stop 3 in one card, walking moves 2.2 m in 2.5 s; no
-errors (`../05_PRODUCTION/firefox_check/`, `../05_PRODUCTION/offline_check/`).
+ambient occlusion is drawn on the still view, the photoreal render opens from `renders/`, the guided tour shows stop 3 in
+one card (in 3D; photoreal stills are optional), walking moves 2.2 m in 2.5 s; no errors (`../05_PRODUCTION/firefox_check/`, `../05_PRODUCTION/offline_check/`).
 Not tested here: macOS itself, Safari and a real Mac GPU (no Mac in this cloud machine); a real GPU is much faster than
 the software rendering used in these tests.
 

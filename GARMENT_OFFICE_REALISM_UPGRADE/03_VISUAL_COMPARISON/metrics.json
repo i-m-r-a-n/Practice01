@@ -1,0 +1,35 @@
+{
+ "note": "mean absolute RGB difference (0-255) to the Cycles render, all images reduced to 64 x 36; lower = closer",
+ "rooms": {
+  "CAM_01_Reception_A": {
+   "room": "Reception",
+   "live_vs_render": 26.43,
+   "improved_vs_render": 29.29
+  },
+  "CAM_04_Experience_Centre_A": {
+   "room": "Experience centre",
+   "live_vs_render": 77.07,
+   "improved_vs_render": 71.4
+  },
+  "CAM_09_Boardroom_A": {
+   "room": "Boardroom",
+   "live_vs_render": 51.78,
+   "improved_vs_render": 40.39
+  },
+  "CAM_07_MD_Office_A": {
+   "room": "Managing Director's office",
+   "live_vs_render": 30.56,
+   "improved_vs_render": 31.78
+  },
+  "CAM_11_Merchandising_A": {
+   "room": "Merchandising",
+   "live_vs_render": 35.18,
+   "improved_vs_render": 25.3
+  },
+  "CAM_13_Design_Studio_A": {
+   "room": "Global Design Studio",
+   "live_vs_render": 38.65,
+   "improved_vs_render": 32.84
+  }
+ }
+}
