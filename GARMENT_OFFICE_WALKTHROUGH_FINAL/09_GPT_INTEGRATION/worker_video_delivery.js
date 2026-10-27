@@ -3,6 +3,7 @@
 const CODE='https://raw.githubusercontent.com/i-m-r-a-n/Practice01/6a65b7d10982563ee7fdb059b791a67126d98ccb/';
 const ASSETS='https://raw.githubusercontent.com/i-m-r-a-n/Practice01/ddf99eee703600ee722f06595708439560373567/';
 const FILMS='https://raw.githubusercontent.com/i-m-r-a-n/Practice01/cc2bd270c896adba1a127ad2a2216a8a4cdf10a7/';
+const HUB='https://raw.githubusercontent.com/i-m-r-a-n/Practice01/809bb9ec05d21aae83e5c525910607cd6956a563/';
 addEventListener('fetch',e=>e.respondWith(route(e.request)));
 async function route(req){
   const p=new URL(req.url).pathname;
@@ -11,6 +12,7 @@ async function route(req){
   else if(p==='/app.js'){path='GARMENT_OFFICE_WALKTHROUGH_FINAL/08_WORKER_READY_TOUR/app.js';type='text/javascript; charset=utf-8';base=CODE}
   else if(p==='/model_web.glb'){path='GARMENT_OFFICE_WALKTHROUGH_FINAL/07_WEB_TOUR_ASSETS/Final_Office_Interior_web_baked.glb';type='model/gltf-binary'}
   else if(p==='/model.glb'){path='GARMENT_OFFICE_FINAL_PRESENTATION/01_EDITABLE_3D/Final_Office_Interior.glb';type='model/gltf-binary'}
+  else if(p==='/present'||p==='/presentation'){path='GARMENT_OFFICE_WALKTHROUGH_FINAL/09_GPT_INTEGRATION/client_presentation.html';type='text/html; charset=utf-8';base=HUB}
   else if(p==='/pitch.mp4'){path='GARMENT_OFFICE_WALKTHROUGH_FINAL/01_CLIENT_PITCH_VIDEO/Client_Pitch_Cinematic_Tour_web720.mp4';type='video/mp4';base=FILMS}
   else if(p==='/tour.mp4'){path='GARMENT_OFFICE_WALKTHROUGH_FINAL/02_FULL_FLOOR_TOUR/Complete_Ground_Floor_Tour_web720.mp4';type='video/mp4';base=FILMS}
   else if(p==='/presentation.pdf'){path='GARMENT_OFFICE_FINAL_PRESENTATION/03_PRESENTATION/Garment_Office_Design_Pitch.pdf';type='application/pdf'}
