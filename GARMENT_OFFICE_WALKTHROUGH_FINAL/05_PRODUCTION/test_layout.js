@@ -63,8 +63,9 @@ const SIZES = [[2000, 1093], [1920, 1080], [1728, 1117], [1512, 982], [1470, 956
   log.room = await st();
   await sweep('c_room_reception');
   await api('startTour', 0); await idle();
+  await page.evaluate(() => { document.getElementById('tPhoto').checked = true; });   // photoreal stills are off by default
   await api('goStop', 2); await idle();
-  await page.waitForFunction(() => window.__viewer.api.state().photo, null, { timeout: 200000 }).catch(() => {});
+  await page.waitForFunction(() => window.__viewer.api.state().photo, null, { timeout: 200000 });   // fail loudly if no still
   await page.waitForTimeout(1200);
   await api('togglePlay');                                           // pause on the render so every size shows the same state
   log.tour = await st();
