@@ -46,7 +46,7 @@ const tourRoom=i=>TOUR[i]==='__OVERVIEW__'?{id:'__OVERVIEW__',name:'Complete Gro
 let renderer,scene,camera,controls,office,box,frame,officeCenter,officeSize,ceilingMeshes=[],savedCameras=new Map(),markers=[],raycaster=new THREE.Raycaster(),pointer=new THREE.Vector2();
 let selected=null,viewMode='orbit',walkPitch=0,walkYaw=0,keys={},inTour=false,tourPlaying=false,tourIndex=0,tourElapsed=0,transition=null,prevTime=performance.now(),markerVisible=true,ceilingHidden=false;
 const modelPath='./model.glb';
-let fallbackMode=false,photosEnabled=true,fallbackTimer=null,collisionMeshes=[],collisionBoxes=[],webglReady=false,loadWatchdog=null,navSequence=0,interiorLights=[];
+let fallbackMode=false,photosEnabled=true,fallbackTimer=null,collisionMeshes=[],collisionBoxes=[],zoneFloors=[],pointerDown=null,webglReady=false,loadWatchdog=null,navSequence=0,interiorLights=[];
 const setStatus=t=>{const p=$('statusPill');if(p)p.textContent=t;};
 const isMobile=matchMedia('(max-width: 780px)').matches;
 const finalRender=name=>'/renders/'+encodeURIComponent(name)+'.jpg';
@@ -86,7 +86,9 @@ function init(){
    try{const pmrem=new THREE.PMREMGenerator(renderer);scene.environment=pmrem.fromScene(new RoomEnvironment(),.045).texture;pmrem.dispose();}catch(e){console.warn('Environment reflection fallback:',e.message);}
  }).catch(e=>console.warn('Optional reflections unavailable:',e.message));
  window.addEventListener('resize',onResize);
- canvas.addEventListener('pointerdown',onCanvasPointer);
+ canvas.addEventListener('pointerdown',e=>{pointerDown={x:e.clientX,y:e.clientY};});
+ canvas.addEventListener('pointerup',e=>{if(!pointerDown)return;const moved=Math.hypot(e.clientX-pointerDown.x,e.clientY-pointerDown.y);pointerDown=null;if(moved<7)onCanvasPointer(e);});
+ canvas.addEventListener('pointermove',e=>{if(viewMode==='walk'||inTour||!office)return;const rect=canvas.getBoundingClientRect();pointer.set((e.clientX-rect.left)/rect.width*2-1,-(e.clientY-rect.top)/rect.height*2+1);raycaster.setFromCamera(pointer,camera);const a=raycaster.intersectObjects(markers.filter(x=>x.visible),false);canvas.style.cursor=a.length?'pointer':'grab';});
  canvas.addEventListener('click',()=>{if(viewMode==='walk'&&document.pointerLockElement!==canvas)canvas.requestPointerLock?.().catch(()=>{});});
  document.addEventListener('mousemove',e=>{if(viewMode==='walk'&&document.pointerLockElement===canvas){walkYaw-=e.movementX*.002;walkPitch=Math.max(-1.3,Math.min(1.3,walkPitch-e.movementY*.002));}});
  document.addEventListener('keydown',e=>{if(e.code==='Escape'){if(inTour)stopTour();if(viewMode==='walk')setWalk(false);}if(e.target?.matches?.('input,textarea,[contenteditable]'))return;keys[e.code]=true;if(viewMode==='walk'&&['ArrowLeft','ArrowRight','ArrowUp','ArrowDown','Space'].includes(e.code))e.preventDefault();});
@@ -120,6 +122,7 @@ function onLoaded(gltf){
  office.traverse(o=>{
    if(o.isCamera){savedCameras.set(o.name,o);o.visible=false;}
    if(o.isMesh){
+     if(o.userData?.zone_id)zoneFloors.push(o);
      const n=o.name.toLowerCase();
      if(/^cl\d{3}\b|ceiling|ceil |clg |steel deck \/ slab|acoustic raft|felt baffle|wood raft|oak raft|slat[_ ]raft/.test(n))ceilingMeshes.push(o);
      if(/\bwall\b|partition|glass|steel column|^(?:iw|pw|np|col)\d{2}/.test(n))collisionMeshes.push(o);
@@ -142,7 +145,7 @@ function onLoaded(gltf){
  loaderBox.style.display='none';
  $('sidebar').classList.remove('closed');
  updateHUD(null);
- console.info('Loaded office model:',{nodes:office.children.length,cameras:savedCameras.size,ceilingMeshes:ceilingMeshes.length,bounds:officeSize.toArray()});
+ console.info('Loaded office model:',{nodes:office.children.length,cameras:savedCameras.size,zones:zoneFloors.length,ceilingMeshes:ceilingMeshes.length,bounds:officeSize.toArray()});
 }
 function onResize(){
  camera.aspect=innerWidth/innerHeight;
@@ -295,12 +298,14 @@ function addMarkers(){
  }
 }
 function onCanvasPointer(event){
- if(viewMode==='walk')return;
- if(!office)return;
+ if(viewMode==='walk'||inTour||!office)return;
  const rect=canvas.getBoundingClientRect();pointer.set((event.clientX-rect.left)/rect.width*2-1,-(event.clientY-rect.top)/rect.height*2+1);
  raycaster.setFromCamera(pointer,camera);
  const hits=raycaster.intersectObjects(markers.filter(x=>x.visible),false);
- if(hits.length){const r=ROOMS.find(x=>x.id===hits[0].object.userData.roomId);if(r)selectRoom(r);}
+ if(hits.length){const r=ROOMS.find(x=>x.id===hits[0].object.userData.roomId);if(r){selectRoom(r);return;}}
+ // Every actual floor polygon carries a verified zone_id custom property from the Blender export.
+ const floorHits=raycaster.intersectObjects(zoneFloors,false);
+ if(floorHits.length){const id=floorHits[0].object.userData.zone_id;const r=ROOMS.find(x=>x.id===id);if(r)selectRoom(r);}
 }
 function startTour(){
  if(!office&&!fallbackMode)return;
