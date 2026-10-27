@@ -46,17 +46,22 @@ const path = require('path');
   await page.click('#photoClose'); await page.waitForTimeout(1000);
 
   await page.click('#bBack'); await idle();
-  await page.click('#vCeil'); await page.waitForTimeout(1200);
+  await page.click('#vCeil');
+  // wait for the state, not a fixed time: on this software GPU one frame with ambient occlusion can take seconds
+  await page.waitForFunction(() => window.__viewer.api.state().overhead === true, null, { timeout: 60000 }).catch(() => {});
   check('ceilings on in overview', (await st()).overhead === true);
   await shot('04_overview_ceilings_on');
-  await page.click('#vCeil'); await page.waitForTimeout(800);
+  await page.click('#vCeil');
+  await page.waitForFunction(() => window.__viewer.api.state().overhead === false, null, { timeout: 60000 }).catch(() => {});
   check('ceilings off again', (await st()).overhead === false);
   await page.click('#vIso'); await idle(); await shot('05_isometric');
   await page.click('#vTop'); await idle(); await shot('06_plan');
 
   await page.click('#mWalk'); await idle(); await page.waitForTimeout(800);
   const p0 = (await st()).pos;
-  await page.keyboard.down('KeyW'); await page.waitForTimeout(2500); await page.keyboard.up('KeyW');
+  await page.keyboard.down('KeyW');
+  await page.waitForFunction((a) => { const p = window.__viewer.api.state().pos; return Math.hypot(p[0] - a[0], p[2] - a[2]) > 0.5; }, p0, { timeout: 60000 }).catch(() => {});
+  await page.keyboard.up('KeyW');
   const p1 = (await st()).pos;
   check('walk: W moves forward at eye height', Math.hypot(p1[0] - p0[0], p1[2] - p0[2]) > 0.5 && Math.abs(p1[1] - p0[1]) < 0.01, { p0, p1 });
   await shot('07_walk_forward');

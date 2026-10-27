@@ -1,0 +1,2 @@
+{"load":3.44,"ready":true,"err":"","counts":{"quality":"balanced","meshes":100,"drawCallsMerged":{"before":1880,"after":100},"rooms":34,"cameras":38,"stops":16,"model":"web","bakedLight":true,"shadows":false,"ambientOcclusion":true},"welcome":true}
+{"room":{"mode":"rooms","room":"Z08","atCam":"CAM_09_Boardroom_A","flying":false,"flightT":null,"fps":0,"overhead":true,"tour":null,"photo":"CAM_09_Boardroom_A","aoFrames":3,"pos":[21.844,1.575,-5.08]},"photo":{"photo":"CAM_09_Boardroom_A","w":1600,"src":"LINE_TOUR/renders/CAM_09_Boardroom_A.jpg"},"errors":[],"seconds":109.436}

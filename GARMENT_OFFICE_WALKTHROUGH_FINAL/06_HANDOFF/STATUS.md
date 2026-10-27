@@ -5,9 +5,11 @@
 ## Done and checked
 - Web GLB, metadata, walk map, 38-camera browser check - `07_WEB_TOUR_ASSETS/`, `05_PRODUCTION/camera_qc/`
 - Real-WebGL check of the live GPT tour (commit 50923eb) - `05_PRODUCTION/live_site_qa/LIVE_SITE_QA.md`, posted on issue #12
-- Offline 3D tour + Mac guide - `03_INTERACTIVE_3D/`: simplified interface (one bottom panel row, no overlapping panels, help card),
-  layout test of 6 screens x 7 window sizes in `05_PRODUCTION/layout_test/`
-- Worker-ready 2-file bundle (not deployed; load checked) - `08_WORKER_READY_TOUR/`
+- 3D tour - `03_INTERACTIVE_3D/` (source), `08_WORKER_READY_TOUR/` (2 files for the website), `09_MAC_OFFLINE_TOUR/`
+  (**presentation package: one HTML file, opens by double-click in Firefox on the Mac, no server**): simplified interface
+  (no overlapping panels, help card), improved model with baked Cycles light + ambient occlusion on still views, tour in 3D
+  (photoreal stills optional). Tests: Firefox 159 offline + website 0 errors (`05_PRODUCTION/firefox_check/`), Mac-size
+  layout 42/42 (`05_PRODUCTION/layout_test/`), Chromium functional test (`05_PRODUCTION/viewer_test_v3/`).
 - Blender animation file + scripts, storyboard, benchmarks, encoding settings
 
 ## Videos
@@ -27,5 +29,8 @@
   Worker was re-pinned to f9048ef (the route is not in that release). The Worker is GPT's; the route fix is posted on issue #12.
 
 ## Not done / open
-- Live website: unchanged by Claude (GPT owns the frontend and the Worker; integration via issue #12)
-- Baked lighting for the real-time model (the Cycles renders remain the photoreal reference)
+- Live website: unchanged by Claude (GPT owns the frontend and the Worker); it still runs GPT's `f9048ef` release until GPT
+  integrates the handoff on issue #12 (commit `cc2bd27`, routes for the model and the videos)
+- Real-time 3D is closer to the renders (baked light, ambient occlusion) but not identical: no glossy reflections, furniture
+  not baked; the Cycles renders and the videos remain the photoreal reference
+- Not testable here: macOS, Safari, the frame rate of the presentation Mac

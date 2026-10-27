@@ -1,0 +1,28 @@
+{
+ "passed": "23/25",
+ "failed": [
+  {
+   "name": "ceilings on in overview",
+   "ok": false
+  },
+  {
+   "name": "walk: W moves forward at eye height",
+   "ok": false,
+   "detail": {
+    "p0": [
+     6.248,
+     1.626,
+     5.74
+    ],
+    "p1": [
+     6.248,
+     1.626,
+     5.74
+    ]
+   }
+  }
+ ],
+ "errors": [],
+ "seconds": 624.583
+}
+EXIT 0
