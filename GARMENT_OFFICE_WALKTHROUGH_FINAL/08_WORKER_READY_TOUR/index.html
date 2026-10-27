@@ -268,5 +268,30 @@ document.addEventListener('keydown',e=>{if(!modal.hidden&&e.key==='Escape'){e.pr
 })();
 </script>
 
+
+<script>
+/* Presentation navigation enhancements; the core bundled 3D application remains unchanged. */
+(function(){
+  const params=new URLSearchParams(location.search),target=params.get('room');
+  if(target && /^Z[0-9]{2}$/.test(target)){
+    let count=0;
+    const timer=setInterval(()=>{
+      if(window.__viewerReady){
+        clearInterval(timer);
+        const btn=document.querySelector('#roomList .room[data-zone="'+target+'"]');
+        if(btn)btn.click();
+      }else if(++count>500)clearInterval(timer);
+    },100);
+  }
+  const reset=()=>queueMicrotask(()=>{
+    const t=document.getElementById('mTour');
+    if(t)t.innerHTML='&#9654; Guided tour';
+  });
+  for(const id of ['tStop','mOverview','vReset','bBack']){
+    document.getElementById(id)?.addEventListener('click',reset);
+  }
+})();
+</script>
+
 </body>
 </html>
