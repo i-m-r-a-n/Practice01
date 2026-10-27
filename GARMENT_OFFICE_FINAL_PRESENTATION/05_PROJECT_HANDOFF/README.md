@@ -15,7 +15,7 @@ Scope: ground floor only, office use only (corporate headquarters + design devel
 | `02_RENDERED_IMAGES/final/` | final Cycles renders of all 38 views (PNG + JPG), `render_log.csv` with times, `superseded/` first versions; index in `02_RENDERED_IMAGES/README.md`, all finals on `final_contact_sheet.jpg` |
 | `02_RENDERED_IMAGES/previews/` | 960 x 540 preview renders of all 33 interior views |
 | `02_RENDERED_IMAGES/plans/` | drawings ID-01 to ID-04 as SVG, PNG and A3 PDF |
-| `03_PRESENTATION/` | `Garment_Office_Design_Pitch.pdf`, editable `.pptx`, HTML source, `assets/` (renders, drawings, logos, finish swatches cropped from the material board render) |
+| `03_PRESENTATION/` | `Garment_Office_Design_Pitch.pdf`, editable `.pptx`, `Garment_Office_Render_Book.pdf` (all 38 renders, A3), HTML sources, `assets/` (renders, drawings, logos, finish swatches cropped from the material board render) |
 | `04_DOCUMENTATION/` | schedules (rooms, furniture, materials, lighting, dimensions), design notes, assumptions, technical coordination, geometry verification |
 | `05_PROJECT_HANDOFF/` | this README, `PROJECT_STATUS.md`, `verification_results.md` |
 
@@ -37,6 +37,7 @@ Scope: ground floor only, office use only (corporate headquarters + design devel
 | `make_schedules.py`, `material_board.py` | schedules (CSV/MD) and the material board render |
 | `make_presentation.py` + `export_presentation.js` | 18-slide deck (HTML -> PDF) and editable PPTX (`deck_manifest.json` lists every render shown and its caption) |
 | `make_render_index.py` | `02_RENDERED_IMAGES/README.md` (index of all views) and `final_contact_sheet.jpg` |
+| `make_render_book.py` + `export_render_book.js` | render book PDF (A3 landscape): cover, contents, one page per final render, notes |
 | `fetch_assets.py` | re-downloads the CC0 assets if the assets folder is missing |
 
 ## Resume in a new cloud session

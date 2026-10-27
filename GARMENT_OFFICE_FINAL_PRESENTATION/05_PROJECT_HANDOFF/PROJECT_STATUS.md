@@ -19,6 +19,8 @@ folder `GARMENT_OFFICE_FINAL_PRESENTATION`._
   notes, unresolved issues, lighting concept, material board.
 - 18-slide presentation: `Garment_Office_Design_Pitch.pdf` (opens, 18 pages) and editable `.pptx` (opens, 18 slides). Every
   render in the deck is byte-identical to a final render of this project (24 views); no previews are left in the deck.
+- Render book `03_PRESENTATION/Garment_Office_Render_Book.pdf`: 41 A3 landscape pages (cover, contents, the 38 final renders
+  uncropped at full resolution with captions, notes on what the images are).
 
 ## Render times (measured, Blender 5.2.3 Cycles on 4 CPU cores)
 
