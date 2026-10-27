@@ -1,21 +1,21 @@
 {
   "active_task": "Six-room static office tour increments",
   "live_url": "https://stage2-office-virtual-tour.imranahmedjh611.workers.dev/realistic/",
-  "runtime_commit": "039091d5d35ea97adf95ff439231f6336ed05381",
-  "latest_pushed_evidence_commit": "f675fb03cb7f3f94f196c33b30d8d102f4d49915",
+  "runtime_commit": "102d5e9444a17072f39f345d8865f34f4934cf5c",
+  "latest_pushed_evidence_commit": "102d5e9444a17072f39f345d8865f34f4934cf5c",
   "branch": "chatgpt/office-realistic-20261027",
   "completed_rooms": [
     "Reception",
-    "Boardroom"
+    "Boardroom",
+    "Experience Centre"
   ],
-  "current_work": "Experience Centre",
+  "current_work": "MD Office",
   "remaining_order": [
-    "Experience Centre",
     "MD Office",
     "Merchandising",
     "Design Studio"
   ],
-  "static_people_live": 10,
+  "static_people_live": 13,
   "no_animation": true,
   "source_model_sha256": "faaf09d1a61d2136a96a8b2eb4146be1f29135483dd7f94e67e6f3a54596d20a",
   "approved_blend_sha256": "fa3ed3d58f6d44c3554e3761307841b96115ff7816e4e541c8e6611cb363810d",
