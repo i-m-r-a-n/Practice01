@@ -1,0 +1,51 @@
+{
+  "project": "Stage II ground-floor realistic WebGL rollout",
+  "base_url": "https://stage2-office-virtual-tour.imranahmedjh611.workers.dev",
+  "original_tour_preserved": true,
+  "source_pinned_commit": "8a01ddc7bd9d8b5acc3b99ef287f1263088f9e52",
+  "releases": [
+    {
+      "zone": "Z02",
+      "room": "Reception",
+      "status": "live",
+      "url": "https://stage2-office-virtual-tour.imranahmedjh611.workers.dev/realistic/?room=Z02&welcome=0",
+      "comparison": "https://stage2-office-virtual-tour.imranahmedjh611.workers.dev/realistic/review/reception-before-after.png",
+      "browser": "Firefox Playwright run 40561479093 passed, Linux llvmpipe software WebGL"
+    },
+    {
+      "zone": "Z30",
+      "room": "Experience Centre",
+      "status": "pending room-specific realistic QA",
+      "note": "Next candidate; not released until lightmap, presentation and screenshot comparison verified"
+    },
+    {
+      "zone": "Z08",
+      "room": "Boardroom",
+      "status": "pending room-specific realistic QA"
+    },
+    {
+      "zone": "Z12",
+      "room": "Managing Director Office",
+      "status": "pending room-specific realistic QA"
+    },
+    {
+      "zone": "Z07",
+      "room": "Merchandising",
+      "status": "pending room-specific realistic QA",
+      "note": "Separate functional redesign in issue #13 may affect future assets"
+    },
+    {
+      "zone": "Z18",
+      "room": "Global Design Studio",
+      "status": "pending room-specific realistic QA"
+    }
+  ],
+  "acceptance_gate": [
+    "room-specific lighting/material assets committed to immutable SHA",
+    "reviewed camera-aligned before/after evidence",
+    "independent WebGL test and Firefox smoke",
+    "no changes to / root",
+    "share individual live link after release"
+  ],
+  "documentation": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/deploy/RECEPTION_LIVE_RELEASE_QA.md"
+}
