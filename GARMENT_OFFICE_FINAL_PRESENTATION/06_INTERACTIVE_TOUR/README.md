@@ -62,3 +62,28 @@ This is a **proposed** interior with site measurements and technical verificatio
 - Cycles JPGs: `../02_RENDERED_IMAGES/final/CAM_*.jpg`
 
 External ESM dependencies are pinned to Three.js 0.164.1. A tested production bundle on the same domain would improve long-term reliability.
+
+## Verified QA release — 2026-10-27
+
+- **Production URL:** https://stage2-office-virtual-tour.imranahmedjh611.workers.dev/
+- **Production source revision:** `92860bb4fd777b7b9161804b3d5bff9b5a4d5684` from QA branch `chatgpt/office-viewer-qa-v2`
+- **Staging worker:** `stage2-office-tour-preview` on the same Cloudflare account; original Blender scene and Claude's branch remain unchanged.
+- The Worker now serves HTML with no-store and revisions both `app.js` and `fallback.js` as cache-busting URLs, preventing stale JavaScript after releases.
+- Normal Cloudflare Chromium browser-rendering validation of the **production** URL with `?room=Z08&photo=0`: HTML reported `3D model ready · 34 rooms`, `Boardroom` and 34 clickable sidebar buttons, HTTP 200.
+- Browser test of GLTFLoader without a GPU: 41,857,588-byte GLB parsed into a Three.js scene with 34 Blender zone floors, 38 cameras, 2306 mesh instances, 61 embedded images and model bounds about 35.59 × 4.19 × 46.10 m.
+- In a no-WebGL test harness, the full model loaded, room selections and guided-tour controls were exercised, and clickable actual floor polygon `Z09` correctly selected **Audit room**.
+- A major ceiling matcher bug was fixed: Blender exported names like `CL001_...` instead of `CL001 ...`. New matching correctly identified 172 ceiling objects plus the steel deck; simulated toggle revealed all 173 and hid all 173.
+- In a Cloudflare Chromium browser with `esm.sh` requests explicitly blocked, the dependency-independent `fallback.js` displayed all 34 room entries, dismissed the loading overlay and opened the **Boardroom** Cycles render for `?room=Z08`. This fallback is explicitly photographic rather than live 3D.
+- Original final Blender render images are clearly labeled as static Cycles references; generic adjacent-room images are identified honestly as nearest available renders.
+
+### Outstanding release limitations
+
+- GPU-enabled **Mac Chrome/Safari** performance and raycast walking through every doorway have not been physically checked on the user's computer; do not mark those as verified.
+- WebGL real-time lighting approximates the Blender Cycles output. The original Cycles images remain available for a realistic reference.
+- Blender itself includes photo-estimated architectural measurements; the online scene is concept visualization, not construction documentation.
+- This update is an interactive viewer, not a generated cinematic MP4. Video deliverables remain under Claude's separate workflow.
+- The public GitHub repository serves the viewer assets and GLB. Maintain approved data-visibility policies before sharing new files.
+
+### Claude / GPT integration contract
+
+Claude should work on a distinct **Blender asset branch** and post the optimized GLB and tested camera metadata with a commit reference to GitHub issue #12. Do not force-push the GPT QA frontend branch or change the existing Cloudflare Worker without coordination. GPT can integrate the verified GLB after reviewing its material accuracy and WebGL performance.
