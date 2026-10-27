@@ -1,0 +1,5 @@
+PASS loads without startup errors  5.6 s; {"quality":"balanced","meshes":102,"drawCallsMerged":{"before":2072,"after":102},"rooms":34,"cameras":45,"quickStops":9,"fullStops":16,"bakedLight":true,"ambientOcclusion":true}
+PASS baked light active
+PASS home screen shows three choices
+PASS no tutorial pop-up on load
+PASS layout a_home 1440x900  {"panels":["top","disclaimer"],"overlaps":[],"outside":[],"hscroll":false,"labels":0,"lblClash":0}
