@@ -138,7 +138,7 @@ const BX = parseFloat(qs.get('bx')) || CFG.bakedExposure || 2.0;     // checked 
 const LIGHT_FLOOR = 0.012;                                         // rooms without any lamp become dark grey, not black
 let BAKED = false;
 {
-  const cache = new Map();
+  const cache = new Map(), lifted = new WeakSet();
   model.traverse((o) => {
     if (!o.isMesh || !o.geometry.attributes.color) return;
     let n = o, k = 0;
@@ -148,11 +148,12 @@ let BAKED = false;
     if (m.transmission > 0 || (m.transparent && m.opacity < 0.95) || (m.emissiveIntensity > 1 && m.emissive && m.emissive.getHex() !== 0)) {
       m.vertexColors = false; m.needsUpdate = true; return;          // glass and lamps stay real-time
     }
-    const col = o.geometry.attributes.color;
-    if (!col.userData.lifted) {
-      const arr = col.array, max = arr instanceof Uint16Array ? 65535 : arr instanceof Uint8Array ? 255 : 1, add = LIGHT_FLOOR * max;
-      for (let i = 0; i < arr.length; i++) if ((i % col.itemSize) < 3) arr[i] = Math.min(max, arr[i] + add);
-      col.userData.lifted = true; col.needsUpdate = true;
+    const col = o.geometry.attributes.color;            // may be interleaved with position / normal (glTF byteStride): use the accessors
+    if (!lifted.has(col)) {
+      const f = (v) => Math.min(1, v + LIGHT_FLOOR);
+      for (let i = 0; i < col.count; i++) col.setXYZ(i, f(col.getX(i)), f(col.getY(i)), f(col.getZ(i)));
+      lifted.add(col);
+      if (col.isInterleavedBufferAttribute) col.data.needsUpdate = true; else col.needsUpdate = true;
     }
     if (!cache.has(m)) {
       cache.set(m, new THREE.MeshBasicMaterial({ name: m.name + '_baked', map: m.map, color: m.color.clone().multiplyScalar(k * BX),
@@ -336,7 +337,7 @@ function flyTo(target, { duration, onDone, inside } = {}) {
   const toFov = target.lens ? vfovFor(target) : target.fov;
   flight = { from, target, p0, p1, p2, p3, t0, t3, toFov, t: 0, dur: duration || THREE.MathUtils.clamp(1.6 + dist * 0.06 + (lift ? 0.8 : 0), 1.6, 5.2),
     onDone, inside: inside ?? lowB };
-  controls.enabled = false;
+  controls.enabled = false; S.freeLook = false; walk.drag = null;
   if (lift && overhead.visible) setOverhead(false, true);
   S.atCam = null; updateInfoButtons();
 }
@@ -394,12 +395,17 @@ function placeLabels() {
   const show = S.labels && (S.mode === 'overview' || S.mode === 'rooms') && !flight && camera.position.y > 3;
   $('labels').style.display = show ? 'block' : 'none';
   if (!show) return;
-  const placed = [], W = innerWidth, H = innerHeight;
+  const W = innerWidth, H = innerHeight, top = $('top').offsetHeight, foot = $('disclaimer').offsetHeight;
+  const placed = [];                                   // panels count as taken space: no name hides under the room list or the dock
+  for (const id of ['side', 'info', 'viewbar', 'tourbar', 'minimap']) {
+    const e = $(id); if (!e.getClientRects().length || (id === 'side' && !e.classList.contains('open'))) continue;
+    const b = e.getBoundingClientRect(); placed.push([b.left - 4, b.top - 4, b.right + 4, b.bottom + 4]);
+  }
   const list = S.room ? [labelEls.find((l) => l.r === S.room), ...order.filter((l) => l.r !== S.room)] : order;
   for (const l of list) {
     _v.copy(l.pos).project(camera);
     const x = (_v.x * 0.5 + 0.5) * W, y = (-_v.y * 0.5 + 0.5) * H;
-    let ok = _v.z < 1 && x > 20 && x < W - 20 && y > 80 && y < H - 60;
+    let ok = _v.z < 1 && x > 20 && x < W - 20 && y > top + 12 && y < H - foot - 12;
     const box = [x - l.w / 2 - 3, y - 13, x + l.w / 2 + 3, y + 13];
     if (ok) ok = !placed.some((b) => !(box[2] < b[0] || box[0] > b[2] || box[3] < b[1] || box[1] > b[3]));
     l.el.style.display = ok ? 'block' : 'none';
@@ -409,6 +415,9 @@ function placeLabels() {
 }
 
 // ------------------------------------------------------------------ room list + search
+const narrow = () => innerWidth <= 860;              // the list then covers the model, so it closes after a choice
+function openSide() { $('side').classList.add('open'); document.body.classList.add('side-open'); needsRender = true; }
+function closeSide() { $('side').classList.remove('open'); document.body.classList.remove('side-open'); needsRender = true; }
 const groups = meta.room_groups;
 function buildList(filter = '') {
   const f = filter.trim().toLowerCase();
@@ -421,8 +430,8 @@ function buildList(filter = '') {
     for (const r of rs) {
       const b = document.createElement('button');
       b.className = 'room' + (S.room === r ? ' on' : ''); b.dataset.zone = r.zone;
-      b.title = r.primary_camera ? 'Fly into the room (eye level, matches the render)' : 'Show the room from above';
-      b.innerHTML = `<span><i class="cam${r.primary_camera ? '' : ' none'}"></i>${r.name}</span><small>${r.area_sft.toLocaleString('en-US')} sft</small>`;
+      b.title = r.primary_camera ? 'Go into the room (eye level, with a photoreal render)' : 'Show the room from above';
+      b.innerHTML = `<span>${r.name}</span><small>${r.area_sft.toLocaleString('en-US')} sft</small>`;
       b.addEventListener('click', () => selectRoom(r));
       list.appendChild(b); n++;
     }
@@ -433,32 +442,42 @@ function buildList(filter = '') {
 $('search').addEventListener('input', (e) => buildList(e.target.value));
 $('search').addEventListener('keydown', (e) => { if (e.key === 'Enter') { const b = $('roomList').querySelector('.room'); if (b) b.click(); } e.stopPropagation(); });
 $('sideClose').onclick = () => closeSide();
-$('sideOpen').onclick = () => { $('side').classList.add('open'); $('sideOpen').classList.add('hidden'); };
 
-// ------------------------------------------------------------------ info card
-function showInfo(r, kicker) {
+// ------------------------------------------------------------------ room card (bottom left)
+const COARSE = matchMedia('(pointer: coarse)').matches;
+function showInfo(r, kicker, hint = '') {
   if (!r && !kicker) { $('info').classList.add('hidden'); return; }
   $('info').classList.remove('hidden');
   $('infoKicker').textContent = kicker || `${r.group}  ·  approx. ${r.area_sft.toLocaleString('en-US')} sft (${r.area_m2} m²)`;
   $('infoTitle').textContent = r ? r.name : '';
   $('infoText').textContent = r ? r.description : '';
+  $('infoHint').textContent = hint;
   updateInfoButtons();
 }
+const photoCam = () => S.atCam || (S.mode === 'rooms' && !flight && S.room && S.room.primary_camera) || null;
 function updateInfoButtons() {
-  $('bPhoto').classList.toggle('hidden', !S.atCam);
-  $('bWalkHere').classList.toggle('hidden', !(S.mode === 'rooms' && S.atCam));
+  $('bPhoto').classList.toggle('hidden', !photoCam());
+  $('bWalkHere').classList.toggle('hidden', !(S.mode === 'rooms' && !flight && camera.position.y < 2.4));
+  $('bBack').innerHTML = S.mode === 'walk' ? '&larr; Leave walk mode' : '&larr; Back to overview';
 }
 
 // ------------------------------------------------------------------ modes
+const WALK_HINT = COARSE ? 'Use the arrows below to walk  ·  drag to look around  ·  tap the map to jump'
+  : 'W A S D or arrow keys to walk  ·  drag to look  ·  Shift = faster  ·  double-click the floor to go there  ·  Esc to leave';
 function setMode(m) {
   S.mode = m;
+  document.body.dataset.mode = m;
   for (const [id, mm] of [['mOverview', 'overview'], ['mRooms', 'rooms'], ['mWalk', 'walk'], ['mTour', 'tour']]) $(id).classList.toggle('on', m === mm);
   $('viewbar').classList.toggle('hidden', m !== 'overview');
   $('tourbar').classList.toggle('hidden', m !== 'tour');
+  if (m === 'tour' || m === 'overview') $('info').classList.add('hidden');      // the tour card carries the stop text
   $('walkhint').classList.toggle('hidden', m !== 'walk');
-  $('pad').classList.toggle('hidden', !(m === 'walk' && matchMedia('(pointer: coarse)').matches));
+  $('walkhint').textContent = WALK_HINT;
+  $('pad').classList.toggle('hidden', !(m === 'walk' && COARSE));
   $('minimap').classList.toggle('hidden', !(m === 'walk' || m === 'tour'));
+  if (m === 'tour' || m === 'walk') closeSide();
   controls.enabled = m === 'overview' && !flight;
+  closeWelcome();
   needsRender = true;
 }
 function goOverview(pose = overviewPose()) {
@@ -468,15 +487,24 @@ function goOverview(pose = overviewPose()) {
 }
 function selectRoom(r, then) {
   stopTour(false); hidePhoto();
-  setMode('rooms'); S.room = r; highlight(r); buildList($('search').value); showInfo(r);
+  setMode('rooms'); S.room = r; highlight(r); buildList($('search').value);
+  if (narrow()) closeSide();
   const c = r.primary_camera && cams[r.primary_camera];
+  showInfo(r, null, c ? 'Drag to look around  ·  W A S D or arrows to walk on' : 'Drag to turn  ·  Shift + drag to move  ·  scroll or pinch to zoom');
   const target = c ? poseFromCamera(c) : roomAerialPose(r);
-  flyTo(target, { onDone: () => { if (!c) { setOverhead(false, true); } if (then) then(); } });
+  flyTo(target, { onDone: () => {
+    if (!c) {                                         // no render camera: orbit around the room from above
+      setOverhead(false, true);
+      controls.target.set(r.centroid_xz[0], 0, r.centroid_xz[1]); controls.enabled = S.mode === 'rooms'; controls.update();
+    }
+    updateInfoButtons();
+    if (then) then();
+  } });
 }
 $('mOverview').onclick = () => goOverview();
-$('mRooms').onclick = () => { $('side').classList.add('open'); $('sideOpen').classList.add('hidden'); if (S.mode !== 'rooms') selectRoom(byZone.Z02); };
+$('mRooms').onclick = () => { closeWelcome(); if ($('side').classList.contains('open')) closeSide(); else { openSide(); if (!narrow()) $('search').focus({ preventScroll: true }); } };
 $('mWalk').onclick = () => startWalk();
-$('mTour').onclick = () => (S.mode === 'tour' ? togglePlay() : startTour(0));
+$('mTour').onclick = () => { if (S.mode !== 'tour') startTour(0); };
 $('bBack').onclick = () => goOverview();
 $('bWalkHere').onclick = () => startWalk(true);
 $('vReset').onclick = () => { S.ceilUser = false; $('vCeil').classList.remove('on'); goOverview(); };
@@ -504,7 +532,14 @@ function floorPoint(ev) {
 }
 let down = null;
 const el = renderer.domElement;
-el.addEventListener('pointerdown', (e) => { down = { x: e.clientX, y: e.clientY, t: performance.now() }; if (S.mode === 'walk') { walk.drag = { x: e.clientX, y: e.clientY }; el.setPointerCapture(e.pointerId); } });
+const eyeLevel = () => !flight && camera.position.y < 2.4;
+el.addEventListener('pointerdown', (e) => {
+  down = { x: e.clientX, y: e.clientY, t: performance.now() };
+  if (S.mode === 'walk' || (S.mode === 'rooms' && eyeLevel())) {   // drag to look around (inside a room or walking)
+    if (S.mode === 'rooms' && !S.freeLook) { lookFromCamera(); S.freeLook = true; }
+    walk.drag = { x: e.clientX, y: e.clientY }; el.setPointerCapture(e.pointerId);
+  }
+});
 el.addEventListener('pointerup', (e) => {
   walk.drag = null;
   if (!down || Math.hypot(e.clientX - down.x, e.clientY - down.y) > 5 || performance.now() - down.t > 600) return;
@@ -514,7 +549,7 @@ el.addEventListener('pointerup', (e) => {
   }
 });
 el.addEventListener('pointermove', (e) => {
-  if (S.mode === 'walk' && walk.drag) {
+  if ((S.mode === 'walk' || S.mode === 'rooms') && walk.drag) {
     walk.yaw -= (e.clientX - walk.drag.x) * 0.0035;
     walk.pitch = THREE.MathUtils.clamp(walk.pitch - (e.clientY - walk.drag.y) * 0.0035, -1.2, 1.2);
     walk.drag = { x: e.clientX, y: e.clientY };
@@ -526,25 +561,36 @@ el.addEventListener('pointermove', (e) => {
   }
 });
 
+// a trackpad pinch must zoom the model, never the page (Firefox / Chrome send ctrl + wheel, Safari gesture events)
+addEventListener('wheel', (e) => { if (e.ctrlKey) e.preventDefault(); }, { passive: false });
+for (const t of ['gesturestart', 'gesturechange']) document.addEventListener(t, (e) => e.preventDefault(), { passive: false });
+
 // ------------------------------------------------------------------ walk mode
 const walk = { yaw: 0, pitch: 0, eye: 1.6, keys: {}, drag: null, glide: null };
 function applyWalkLook() { camera.quaternion.setFromEuler(new THREE.Euler(walk.pitch, walk.yaw, 0, 'YXZ')); needsRender = true; }
-function enterWalkFromCamera() {
+function lookFromCamera() {                           // yaw / pitch from the current view; a lens-shifted view becomes an equivalent up / down look
   const e = new THREE.Euler().setFromQuaternion(camera.quaternion, 'YXZ');
   walk.yaw = e.y;
-  // a lens-shifted view becomes an equivalent upward / downward look
   const sh = currentPose().shift, f = (innerHeight / 2) / Math.tan(THREE.MathUtils.degToRad(camera.fov) / 2);
   walk.pitch = e.x + Math.atan((sh * Math.max(innerWidth, innerHeight)) / f);
-  walk.eye = THREE.MathUtils.clamp(camera.position.y, 1.2, 1.7);
-  camera.position.y = walk.eye;
   camera.clearViewOffset(); camera.updateProjectionMatrix();
   applyWalkLook();
 }
+function enterWalkFromCamera() {
+  walk.eye = THREE.MathUtils.clamp(camera.position.y, 1.2, 1.7);
+  camera.position.y = walk.eye;
+  lookFromCamera();
+}
+const walkCard = (r) => showInfo(r, `You are in  ·  ${r.group}  ·  approx. ${r.area_sft.toLocaleString('en-US')} sft`);
 function startWalk(here = false) {
   stopTour(false); hidePhoto();
-  if (here && camera.position.y < 2.4) { setMode('walk'); enterWalkFromCamera(); return; }
+  if (here && camera.position.y < 2.4) {
+    setMode('walk'); enterWalkFromCamera();
+    const r = roomAt(camera.position.x, camera.position.z); if (r) { S.room = r; walkCard(r); }
+    updateInfoButtons(); return;
+  }
   const start = poseFromCamera(cams.CAM_03_Entrance_Lobby);
-  S.room = byZone.Z01; highlight(null); showInfo(byZone.Z01, 'Walk mode  ·  you are in');
+  S.room = byZone.Z01; highlight(null); walkCard(byZone.Z01);
   setMode('walk');
   flyTo(start, { onDone: () => { setOverhead(true, true); enterWalkFromCamera(); } });
 }
@@ -575,7 +621,7 @@ function walkStep(dt) {
     else break;
   }
   const r = roomAt(p.x, p.z);                                        // the card follows the room you walk into
-  if (r && r !== S.room) { S.room = r; showInfo(r, `Walk mode  ·  ${r.group}  ·  approx. ${r.area_sft.toLocaleString('en-US')} sft`); }
+  if (r && r !== S.room) { S.room = r; walkCard(r); }
   needsRender = true;
 }
 el.addEventListener('dblclick', (e) => {
@@ -585,20 +631,25 @@ el.addEventListener('dblclick', (e) => {
   if (blocked(to.x, to.z) || !pathClear(camera.position, to)) return;
   walk.glide = { from: camera.position.clone(), to, t: 0, dur: Math.max(0.5, camera.position.distanceTo(to) / 2) };
 });
+const MOVE_KEYS = new Set(['KeyW', 'KeyA', 'KeyS', 'KeyD', 'ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight']);
 addEventListener('keydown', (e) => {
-  if (e.target.tagName === 'INPUT') return;
+  if (e.target.tagName === 'INPUT' || e.target.tagName === 'SELECT') return;
+  if (!$('welcome').classList.contains('hidden')) { if (e.code === 'Escape' || e.code === 'KeyH') closeWelcome(); return; }
   walk.keys[e.code] = true;
-  if (e.code === 'Escape') { if (!$('photo').classList.contains('hidden')) hidePhoto(); else if (S.mode !== 'overview') goOverview(); }
+  if (e.code === 'Escape') { if (!$('photo').classList.contains('hidden')) { hidePhoto(); if (S.tour) S.tour.photoSkip = true; } else if (S.mode !== 'overview') goOverview(); }
   else if (e.code === 'Space' && S.mode === 'tour') { e.preventDefault(); togglePlay(); }
   else if (S.mode === 'tour' && e.code === 'ArrowRight') nextStop(1);
   else if (S.mode === 'tour' && e.code === 'ArrowLeft') nextStop(-1);
+  else if (S.mode === 'rooms' && MOVE_KEYS.has(e.code) && eyeLevel()) startWalk(true);   // walk on from the room view
+  else if (e.code === 'KeyF') toggleFullscreen();
+  else if (e.code === 'KeyH' || e.key === '?') openWelcome();
   else if (S.mode !== 'walk' && S.mode !== 'tour') {
     if (e.code === 'KeyO') goOverview(); else if (e.code === 'KeyT') startTour(0); else if (e.code === 'KeyW') startWalk();
-    else if (e.code === 'KeyF') toggleFullscreen();
+    else if (e.code === 'KeyR') $('mRooms').click();
     else if (e.code === 'KeyC' && S.mode === 'overview') $('vCeil').click(); else if (e.code === 'KeyL') $('vLabels').click();
-    else if (e.code === 'KeyP' && S.atCam) showPhoto(S.atCam);
+    else if (e.code === 'KeyP' && photoCam()) showPhoto(photoCam());
   }
-  if (S.mode === 'walk' && e.code.startsWith('Arrow')) e.preventDefault();
+  if ((S.mode === 'walk' || S.mode === 'tour') && e.code.startsWith('Arrow')) e.preventDefault();
 });
 addEventListener('keyup', (e) => { walk.keys[e.code] = false; });
 addEventListener('blur', () => { walk.keys = {}; });
@@ -645,13 +696,13 @@ mm.addEventListener('click', (e) => {
   const to = new THREE.Vector3(x, walk.eye, z);
   if (pathClear(camera.position, to)) walk.glide = { from: camera.position.clone(), to, t: 0, dur: Math.max(0.5, camera.position.distanceTo(to) / 2.2) };
   else flyTo({ pos: to, quat: camera.quaternion.clone(), fov: camera.fov, shift: 0 }, { inside: true, onDone: () => { setMode('walk'); setOverhead(true, true); enterWalkFromCamera(); } });
-  S.room = roomAt(x, z); if (S.room) showInfo(S.room, 'Walk mode  ·  you are in');
+  S.room = roomAt(x, z); if (S.room) walkCard(S.room);
 });
 
 // ------------------------------------------------------------------ photoreal render panel
-function closeSide() { $('side').classList.remove('open'); $('sideOpen').classList.remove('hidden'); }
 function showPhoto(camName) {
   const c = cams[camName]; if (!c) return;
+  if (!S.photo) S.sideWasOpen = $('side').classList.contains('open');
   closeSide();
   const img = $('photoImg');
   img.onload = () => { $('photo').classList.add('show'); };
@@ -666,9 +717,11 @@ function hidePhoto() {
   if ($('photo').classList.contains('hidden')) return;
   $('photo').classList.remove('show');
   S.photo = null;
+  if (S.sideWasOpen && S.mode !== 'tour' && S.mode !== 'walk' && !narrow()) openSide();
+  S.sideWasOpen = false;
   setTimeout(() => { if (!S.photo) $('photo').classList.add('hidden'); }, 700);
 }
-$('bPhoto').onclick = () => S.atCam && showPhoto(S.atCam);
+$('bPhoto').onclick = () => photoCam() && showPhoto(photoCam());
 $('photoClose').onclick = () => { hidePhoto(); if (S.tour) S.tour.photoSkip = true; };
 function preload(camName) { if (camName && cams[camName]) { const i = new Image(); i.src = RENDERS + camName + '.jpg'; } }
 
@@ -686,7 +739,7 @@ function stopPose(st, which = 'camera') {
   return poseFromCamera(c);
 }
 function startTour(i = 0) {
-  hidePhoto(); S.room = null; highlight(null); closeSide();
+  hidePhoto(); S.room = null; highlight(null); closeSide(); showInfo(null);
   setMode('tour');
   S.tour = { i: 0, phase: 'fly', t: 0, playing: true, sub: 0 };
   goStop(i);
@@ -696,10 +749,11 @@ function goStop(i) {
   hidePhoto();
   T.i = THREE.MathUtils.clamp(i, 0, stops.length - 1); T.sub = 0; T.phase = 'fly'; T.t = 0; T.photoSkip = false;
   const st = stops[T.i];
-  $('tCount').textContent = `Stop ${T.i + 1} / ${stops.length}`; $('tTitle').textContent = st.title;
   S.room = st.zone ? byZone[st.zone] : null;
-  showInfo(S.room ? { ...S.room, name: st.title, description: st.description } : { name: st.title, description: st.description, group: 'Guided tour', area_sft: 0 },
-    S.room ? `Guided tour  ·  ${S.room.group}  ·  approx. ${S.room.area_sft.toLocaleString('en-US')} sft` : 'Guided tour  ·  overview');
+  $('tCount').textContent = `Stop ${T.i + 1} of ${stops.length}`;
+  $('tKicker').textContent = S.room ? `${S.room.group}  ·  approx. ${S.room.area_sft.toLocaleString('en-US')} sft` : 'The whole floor';
+  $('tTitle').textContent = st.title; $('tText').textContent = st.description;
+  $('tPrev').disabled = T.i === 0; $('tNext').disabled = T.i === stops.length - 1;
   preload(st.camera); preload(st.also_camera);
   const p = stopPose(st);
   const outside = cams[st.camera].type === 'ORTHO';
@@ -713,7 +767,7 @@ function stopTour(toOverview = true) {
   if (toOverview) goOverview();
 }
 function togglePlay() { if (!S.tour) return; S.tour.playing = !S.tour.playing; updatePlay(); }
-function updatePlay() { $('tPlay').innerHTML = S.tour && !S.tour.playing ? '&#9654; Resume' : '&#10073;&#10073; Pause'; $('mTour').innerHTML = S.tour ? (S.tour.playing ? '&#10073;&#10073; Pause tour' : '&#9654; Resume tour') : '&#9654; Guided tour'; }
+function updatePlay() { $('tPlay').innerHTML = S.tour && !S.tour.playing ? '&#9654; Resume' : '&#10073;&#10073; Pause'; }
 function updateSegs() {
   const T = S.tour; if (!T) return;
   segs.forEach((s, i) => { s.style.width = i < T.i ? '100%' : i > T.i ? '0%' : `${Math.round(Math.min(1, (T.phase === 'hold' ? 0.3 + 0.7 * (T.t / HOLD) : 0.3 * (flight ? flight.t : 0))) * 100)}%`; });
@@ -745,18 +799,38 @@ $('tPlay').onclick = () => togglePlay();
 $('tStop').onclick = () => stopTour(true);
 
 // ------------------------------------------------------------------ loop
+function measureChrome() {                            // header / footer heights drive the panel positions in style.css
+  const r = document.documentElement.style;
+  r.setProperty('--top-h', $('top').offsetHeight + 'px'); r.setProperty('--foot-h', $('disclaimer').offsetHeight + 'px');
+}
+let wasNarrow = narrow();
 addEventListener('resize', () => {
+  if (narrow() && !wasNarrow) closeSide();            // e.g. a tablet turned to portrait: the list would cover the view
+  wasNarrow = narrow();
   camera.aspect = innerWidth / innerHeight;
   if (S.atCam && cams[S.atCam].lens) applyPose(poseFromCamera(cams[S.atCam]));
-  camera.updateProjectionMatrix(); renderer.setSize(innerWidth, innerHeight); needsRender = true;
+  camera.updateProjectionMatrix(); renderer.setSize(innerWidth, innerHeight); measureChrome(); needsRender = true;
 });
+// ------------------------------------------------------------------ welcome / help card
+function openWelcome() { $('welcome').classList.remove('hidden'); $('wTour').focus({ preventScroll: true }); }
+function closeWelcome() {
+  if ($('welcome').classList.contains('hidden')) return;
+  $('welcome').classList.add('hidden');
+  try { localStorage.setItem('tourWelcomeSeen', '1'); } catch (e) { /* storage blocked */ }
+}
+$('mHelp').onclick = () => ($('welcome').classList.contains('hidden') ? openWelcome() : closeWelcome());
+$('wClose').onclick = () => closeWelcome();
+$('wTour').onclick = () => startTour(0);
+$('wWalk').onclick = () => startWalk();
+$('wRooms').onclick = () => { closeWelcome(); openSide(); };
+$('welcome').addEventListener('click', (e) => { if (e.target === $('welcome')) closeWelcome(); });
 const clock = new THREE.Clock();
 let frames = 0, fpsT = 0;
 renderer.setAnimationLoop(() => {
   const dt = Math.min(clock.getDelta(), 1.0);             // time-based: flights and tour stops end on time even on slow GPUs
   const paused = S.tour && !S.tour.playing;
   if (flight && !paused) flightStep(dt);
-  if (S.mode === 'overview' && controls.enabled) controls.update();
+  if ((S.mode === 'overview' || S.mode === 'rooms') && controls.enabled) controls.update();
   if (S.mode === 'walk' && !flight) walkStep(dt);
   if (S.mode === 'tour') tourStep(dt);
   if (needsRender) {
@@ -774,12 +848,23 @@ renderer.setAnimationLoop(() => {
 
 // ------------------------------------------------------------------ start
 buildList();
+measureChrome();
 setMode('overview');
+if (!narrow()) openSide();
 overhead.visible = false;
 const start = overviewPose();
 applyPose(start); controls.target.copy(C); controls.update(); look('outside');
 $('loading').style.display = 'none';
 S.ready = true; window.__viewerReady = true;
+// links: ?room=Z08 opens a room, ?tour=1 starts the tour, ?walk=1 starts walking; ?welcome=0 / 1 hides / forces the help card
+{
+  const z = qs.get('room'), w = qs.get('welcome');
+  let seen = false; try { seen = localStorage.getItem('tourWelcomeSeen') === '1'; } catch (e) { /* storage blocked */ }
+  if (z && byZone[z]) selectRoom(byZone[z]);
+  else if (qs.get('tour') === '1') startTour(0);
+  else if (qs.get('walk') === '1') startWalk();
+  else if (w === '1' || (w !== '0' && !seen)) openWelcome();
+}
 let meshes = 0; model.traverse((o) => { if (o.isMesh) meshes++; });
 S.counts = { quality, meshes, drawCallsMerged: drawCalls, rooms: rooms.length, cameras: meta.cameras.length, stops: stops.length, model: gltf.scene.getObjectByName('WEB_INTERIOR') ? 'web' : 'original', bakedLight: BAKED, shadows: SHADOWS };
 S.api = { selectRoom: (z) => selectRoom(byZone[z]), goOverview, startWalk, startTour, goStop, nextStop, togglePlay, stopTour, showPhoto, hidePhoto,

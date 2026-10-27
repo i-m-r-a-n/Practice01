@@ -10,7 +10,7 @@
 { "imports": { "three": "./vendor/three/build/three.module.js", "three/addons/": "./vendor/three/examples/jsm/" } }
 </script>
 </head>
-<body>
+<body data-mode="loading">
 <div id="app"></div>
 <canvas id="dissolve"></canvas>
 
@@ -23,71 +23,101 @@
     </div>
     <div class="ttl">
       <div class="eyebrow">Corporate headquarters &amp; design development centre</div>
-      <h1>GROUND FLOOR &mdash; INTERACTIVE DESIGN EXPERIENCE</h1>
+      <h1>Ground floor &middot; interactive design experience</h1>
     </div>
   </div>
-  <nav class="modes" aria-label="Viewing mode">
-    <button id="mOverview" class="on" title="Whole floor: drag to orbit, right-drag to pan, scroll to zoom (O)">Overview</button>
-    <button id="mRooms" title="Choose a room from the list (R)">Rooms</button>
-    <button id="mWalk" title="Walk at eye level: W A S D / arrows, drag to look, Esc to leave (W)">Walk</button>
-    <button id="mTour" class="primary" title="Guided tour of 16 stops (T, Space to pause)">&#9654; Guided tour</button>
-    <button id="mFull" title="Full screen for a projector or large display (F)">&#x26F6;</button>
+  <nav class="modes" aria-label="Ways to explore">
+    <button id="mTour" class="primary" title="Guided tour: 16 stops, plays by itself (T)">&#9654; Guided tour</button>
+    <div class="seg">
+      <button id="mOverview" class="on" title="The whole floor from above (O)">Overview</button>
+      <button id="mRooms" title="Show or hide the list of rooms (R)">Rooms</button>
+      <button id="mWalk" title="Walk through the office at eye level (W)">Walk</button>
+    </div>
+    <button id="mHelp" class="icon" title="How to use this tour (H)" aria-label="Help">?</button>
+    <button id="mFull" class="icon" title="Full screen for a projector or large display (F)" aria-label="Full screen">&#x26F6;</button>
   </nav>
 </header>
 
-<aside id="side" class="open" aria-label="Rooms">
-  <div class="side-head"><input id="search" type="search" placeholder="Search rooms, e.g. boardroom, prayer, CAD" autocomplete="off"><button id="sideClose" title="Hide the room list">&times;</button></div>
+<aside id="side" aria-label="Rooms">
+  <div class="side-head">
+    <div><b>Rooms</b><small>Choose a room to go there</small></div>
+    <button id="sideClose" title="Hide the room list" aria-label="Hide the room list">&times;</button>
+  </div>
+  <input id="search" type="search" placeholder="Search, e.g. boardroom, prayer, CAD" autocomplete="off">
   <div id="roomList"></div>
 </aside>
-<button id="sideOpen" class="hidden" title="Show the room list">&#9776; Rooms</button>
 
-<section id="info" class="card hidden" aria-live="polite">
-  <div class="eyebrow" id="infoKicker"></div>
-  <h2 id="infoTitle"></h2>
-  <p id="infoText"></p>
-  <div class="row">
-    <button id="bPhoto" class="ghost hidden" title="Show the offline Cycles render of exactly this viewpoint (P)">Photoreal render</button>
-    <button id="bWalkHere" class="ghost hidden">Walk from here</button>
-    <button id="bBack" class="ghost">Back to overview</button>
+<div id="dock">
+  <section id="info" class="card hidden" aria-live="polite">
+    <div class="eyebrow" id="infoKicker"></div>
+    <h2 id="infoTitle"></h2>
+    <p id="infoText"></p>
+    <div class="hint" id="infoHint"></div>
+    <div class="row">
+      <button id="bPhoto" class="ghost gold hidden" title="The offline Cycles render of this room (P)">Photoreal render</button>
+      <button id="bWalkHere" class="ghost hidden" title="Walk on from this spot">Walk from here</button>
+      <button id="bBack" class="ghost">&larr; Back to overview</button>
+    </div>
+  </section>
+
+  <div id="center">
+    <div id="viewbar" class="bar" aria-label="Overview tools">
+      <button id="vReset" title="Back to the starting view">Reset view</button>
+      <button id="vIso" title="Isometric view">Isometric</button>
+      <button id="vTop" title="Top plan view">Plan</button>
+      <span class="sep"></span>
+      <button id="vCeil" title="Show / hide deck, beams, ceilings and light fittings (C)">Ceilings</button>
+      <button id="vLabels" class="on" title="Room names on the model (L)">Room names</button>
+    </div>
+
+    <section id="tourbar" class="card hidden" aria-live="polite">
+      <div class="tb-head"><span class="eyebrow" id="tKicker"></span><span id="tCount"></span></div>
+      <h2 id="tTitle"></h2>
+      <p id="tText"></p>
+      <div id="tSegs" class="segs" aria-hidden="true"></div>
+      <div class="tb-row">
+        <button id="tPrev" title="Previous stop (left arrow)">&#8249; Back</button>
+        <button id="tPlay" class="play" title="Pause / resume (Space)">&#10073;&#10073; Pause</button>
+        <button id="tNext" title="Next stop (right arrow)">Next &#8250;</button>
+        <label class="chk" title="At each stop, fade into the photoreal render of the same viewpoint"><input type="checkbox" id="tPhoto" checked> Photoreal renders</label>
+        <button id="tStop" class="end" title="End the tour (Esc)">End tour</button>
+      </div>
+    </section>
+
+    <div id="pad" class="hidden" aria-label="Walk"><button data-k="KeyW" aria-label="Forward">&#9650;</button><button data-k="KeyA" aria-label="Left">&#9664;</button><button data-k="KeyS" aria-label="Back">&#9660;</button><button data-k="KeyD" aria-label="Right">&#9654;</button></div>
   </div>
-</section>
 
-<div id="viewbar" class="bar">
-  <button id="vReset" title="Reset the overview">Reset</button>
-  <button id="vIso" title="Isometric view">Isometric</button>
-  <button id="vTop" title="Top plan view">Plan</button>
-  <span class="sep"></span>
-  <button id="vCeil" title="Show / hide deck, beams, ceilings and light fittings (C)">Ceilings</button>
-  <button id="vLabels" class="on" title="Room names (L)">Labels</button>
-  <span class="sep"></span>
-  <label class="q" title="Graphics quality: High for desktops and projectors, Balanced for laptops, Low for phones and older computers">Quality
-    <select id="vQuality"><option value="high">High</option><option value="balanced">Balanced</option><option value="low">Low</option></select></label>
-</div>
-
-<div id="tourbar" class="bar hidden">
-  <div class="tb-row">
-    <button id="tPrev" title="Previous stop">&#8249;</button>
-    <button id="tPlay" class="wide" title="Pause / resume (Space)">&#10073;&#10073; Pause</button>
-    <button id="tNext" title="Next stop">&#8250;</button>
-    <button id="tStop" title="End the tour">&#9632; Stop</button>
-    <label class="chk" title="At each stop, dissolve into the photoreal render of the same viewpoint"><input type="checkbox" id="tPhoto" checked> Photoreal stops</label>
-  </div>
-  <div id="tSegs" class="segs"></div>
-  <div class="tb-cap"><span id="tCount"></span> <b id="tTitle"></b></div>
+  <canvas id="minimap" class="hidden" width="180" height="230" title="Floor map: click to go there"></canvas>
 </div>
 
 <div id="photo" class="hidden">
   <img id="photoImg" alt="">
-  <div class="photo-tag">PHOTOREAL RENDER &middot; offline Cycles still of this exact viewpoint &middot; not real-time</div>
-  <button id="photoClose" title="Back to the real-time 3D model (Esc)">Back to 3D</button>
+  <div class="photo-tag">PHOTOREAL RENDER &middot; offline Cycles still &middot; not real-time</div>
+  <button id="photoClose" title="Back to the real-time 3D model (Esc)">&larr; Back to 3D</button>
 </div>
 
-<div id="walkhint" class="hidden">W A S D / arrows to walk &middot; drag to look &middot; Shift faster &middot; double-click the floor to go there &middot; Esc to leave</div>
-<div id="pad" class="hidden"><button data-k="KeyW">&#9650;</button><button data-k="KeyA">&#9664;</button><button data-k="KeyS">&#9660;</button><button data-k="KeyD">&#9654;</button></div>
-<canvas id="minimap" class="hidden" width="180" height="230" title="Click to go there"></canvas>
+<div id="walkhint" class="hidden"></div>
 <div id="labels"></div>
 
 <footer id="disclaimer">Proposed interior visualization. Final dimensions and technical details subject to site verification.</footer>
+
+<div id="welcome" class="hidden" role="dialog" aria-modal="true" aria-labelledby="wTitle">
+  <div class="wbox">
+    <div class="eyebrow">Ground floor &middot; interactive design experience</div>
+    <h2 id="wTitle">Three ways to explore the office</h2>
+    <div class="ways">
+      <button class="way primary" id="wTour"><b>&#9654; Guided tour</b><span>16 stops through the floor. It plays by itself: pause, go back or skip at any time.</span></button>
+      <button class="way" id="wRooms"><b>Rooms</b><span>Choose any of the 34 rooms from the list, or click a room on the model.</span></button>
+      <button class="way" id="wWalk"><b>Walk</b><span>Move at eye level with W A S D or the arrow keys and drag to look. Walls, glass and furniture stop you.</span></button>
+    </div>
+    <p class="tips"><b>Trackpad or mouse:</b> drag to turn, <b>Shift</b> + drag to move, scroll or pinch to zoom. <b>Esc</b> brings you back to the overview. <b>F</b> or the &#x26F6; button: full screen.</p>
+    <div class="wfoot">
+      <label class="q" title="High for desktops and projectors, Balanced for laptops, Low for phones and older computers">Display quality
+        <select id="vQuality"><option value="high">High</option><option value="balanced">Balanced</option><option value="low">Low</option></select></label>
+      <button id="wClose" class="ghost">Explore on my own</button>
+    </div>
+  </div>
+</div>
 
 <div id="loading">
   <div class="box">

@@ -1,0 +1,9 @@
+browser {"version":"firefox/159.0"}
+webgl {"webgl2":true,"renderer":"llvmpipe, or similar"}
+loaded {"ready":true,"err":"","counts":{"quality":"balanced","meshes":100,"drawCallsMerged":{"before":1880,"after":100},"rooms":34,"cameras":38,"stops":16,"model":"web","bakedLight":true,"shadows":false},"welcome":true}
+room {"mode":"rooms","room":"Z08","atCam":"CAM_09_Boardroom_A","flying":false,"flightT":null,"fps":0,"overhead":true,"tour":null,"pos":[21.844,1.575,-5.08]}
+photo {"photo":"CAM_09_Boardroom_A","w":1600}
+tour {"mode":"tour","room":"Z02","atCam":"CAM_01_Reception_A","flying":false,"flightT":null,"fps":0,"overhead":true,"tour":{"i":2,"phase":"hold","playing":false,"sub":0},"photo":null,"pos":[8.077,1.524,0.66],"card":"Reception & visitor waiting","info":"hidden"}
+walk {"p0":[6.248,1.626,5.74],"p1":[5.945,1.626,3.538],"moved":2.22}
+FF_CHECK_END {"errors":[],"seconds":42.142}
+EXIT 0

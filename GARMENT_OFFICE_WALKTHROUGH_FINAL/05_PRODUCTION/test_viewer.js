@@ -26,6 +26,9 @@ const path = require('path');
   await page.waitForFunction(() => window.__viewer && window.__viewer.ready, null, { timeout: 400000 });
   const counts = await page.evaluate(() => window.__viewer.counts);
   check('model loaded, loading screen gone', await page.evaluate(() => getComputedStyle(document.getElementById('loading')).display === 'none'), { seconds: (Date.now() - t0) / 1000, counts });
+  check('help card shown on the first visit', await page.evaluate(() => !document.getElementById('welcome').classList.contains('hidden')));
+  await page.click('#wClose'); await page.waitForTimeout(500);
+  check('help card closes', await page.evaluate(() => document.getElementById('welcome').classList.contains('hidden')));
   await page.waitForTimeout(1500); await shot('01_overview');
   check('room list: 34 rooms in 8 groups', (await page.$$eval('.room', (b) => b.length)) === 34 && (await page.$$eval('.grp', (g) => g.length)) === 8);
 
@@ -33,6 +36,10 @@ const path = require('path');
   let s = await st();
   check('room selection flies to the boardroom render camera', s.room === 'Z08' && s.atCam === 'CAM_09_Boardroom_A' && s.overhead, s);
   await shot('02_room_boardroom');
+  const q0 = await page.evaluate(() => window.__viewer.api.state().pos);
+  await page.mouse.move(640, 360); await page.mouse.down(); await page.mouse.move(520, 360, { steps: 6 }); await page.mouse.up(); await page.waitForTimeout(800);
+  s = await st();
+  check('room: drag looks around without moving or leaving the room', s.mode === 'rooms' && s.atCam === null && Math.hypot(s.pos[0] - q0[0], s.pos[2] - q0[2]) < 0.01, s);
   await page.click('#bPhoto'); await page.waitForFunction(() => document.getElementById('photo').classList.contains('show'), null, { timeout: 120000 }).catch(() => {});
   check('photoreal render shown for the same camera', (await st()).photo === 'CAM_09_Boardroom_A' && await page.evaluate(() => document.getElementById('photoImg').naturalWidth === 1600));
   await shot('03_photoreal_boardroom');
@@ -69,6 +76,8 @@ const path = require('path');
   await page.click('#tNext'); await idle(); await page.waitForTimeout(500);
   s = await st();
   check('tour next: stop 2 entrance lobby at its render camera', s.tour.i === 1 && s.atCam === 'CAM_03_Entrance_Lobby', s);
+  check('tour card shows the stop; no separate room card on top of it', await page.evaluate(() => document.getElementById('tTitle').textContent.length > 3
+    && document.getElementById('tText').textContent.length > 20 && document.getElementById('info').classList.contains('hidden')));
   await shot('10_tour_stop02_lobby');
   await page.waitForFunction(() => window.__viewer.api.state().photo === 'CAM_03_Entrance_Lobby', null, { timeout: 120000 }).catch(() => {});
   await page.waitForTimeout(1200);
@@ -93,12 +102,14 @@ const path = require('path');
   await page.click('#tStop'); await idle();
   check('stop ends the tour', (await st()).mode === 'overview' && !(await st()).tour);
 
+  if (!(await page.evaluate(() => document.getElementById('side').classList.contains('open')))) await page.click('#mRooms');
+  await page.waitForTimeout(600);
   await page.fill('#search', 'prayer');
   check('search filters the room list', (await page.$$eval('.room', (b) => b.length)) === 2);
   await page.fill('#search', '');
-  await page.setViewportSize({ width: 390, height: 844 }); await page.waitForTimeout(1500);
-  check('phone width: no horizontal overflow', await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1));
-  await shot('14_phone_390');
+  await page.setViewportSize({ width: 1470, height: 956 }); await page.waitForTimeout(1500);
+  check('MacBook Air size (1470 x 956): no horizontal overflow', await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1));
+  await shot('14_macbook_air_1470');
   await page.setViewportSize({ width: vw, height: vh });
 
   log.seconds = (Date.now() - t0) / 1000;

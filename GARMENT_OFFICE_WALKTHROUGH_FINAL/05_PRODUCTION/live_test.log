@@ -1,0 +1,14 @@
+TEST FAILED page.screenshot: Target page, context or browser has been closed
+Call log:
+[2m  - taking page screenshot[22m
+[2m  - waiting for fonts to load...[22m
+[2m  - fonts loaded[22m
+
+    at shot (/home/user/Practice01/GARMENT_OFFICE_WALKTHROUGH_FINAL/05_PRODUCTION/test_viewer.js:20:28)
+    at /home/user/Practice01/GARMENT_OFFICE_WALKTHROUGH_FINAL/05_PRODUCTION/test_viewer.js:55:9 {
+  log: [
+    '  - taking page screenshot',
+    '  - waiting for fonts to load...',
+    '  - fonts loaded'
+  ]
+}

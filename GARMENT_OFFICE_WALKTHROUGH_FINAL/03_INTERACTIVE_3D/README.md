@@ -22,15 +22,22 @@ Photoreal stills: `../../GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/fi
 
 ## Presenting
 
-| Mode | How | Keys |
-|---|---|---|
-| Overview | drag to orbit, right-drag (two-finger drag) to pan, scroll / pinch to zoom; click a room on the model or its name | `O`, `C` ceilings, `L` labels |
-| Rooms | room list on the left (grouped by function, searchable); the camera flies into the room to the exact viewpoint of the render | `R` |
-| Photoreal render | button on the room card: the offline Cycles render of exactly that viewpoint, labelled as a still image | `P`, `Esc` back |
-| Walk | eye-level walk with collision against walls, glazing and furniture; minimap bottom right (click to go there) | `W A S D` / arrows, drag to look, `Shift` faster, double-click floor, `Esc` |
-| Guided tour | 16 stops (overview, lobby, reception, experience centre, boardroom, executive suite, commercial, HR, merchandising, CAD, design studio, sample room, cafe, lounge, prayer, final reveal); with **Photoreal stops** on, each room dissolves into its render | `Space` pause, `<-` `->` previous / next, `Esc` stop |
+The screen has three parts: the **header** (logos; the ways to explore), the **3D view**, and **one panel row at the bottom**
+(room card on the left, tools or the tour card in the middle, floor map on the right). Panels never cover each other.
+On the first visit a short card explains the three ways to explore; the **?** button (or `H`) shows it again.
 
-Suggested 5-minute client sequence: Overview (turn the building, ceilings off) -> Guided tour with Photoreal stops ->
+| Header button | What it does | Keys |
+|---|---|---|
+| **Guided tour** (gold) | 16 stops, plays by itself; the tour card shows the stop, its text and Back / Pause / Next / End tour; with **Photoreal renders** on, each room fades into its Cycles render | `T`, `Space` pause, `<-` `->`, `Esc` end |
+| **Overview** | whole floor: drag to turn, Shift + drag (or right-drag with a mouse) to move, scroll / pinch to zoom; click a room or its name; tools: Reset view, Isometric, Plan, Ceilings, Room names | `O`, `C`, `L` |
+| **Rooms** | shows / hides the room list (grouped, searchable). Choosing a room flies to the viewpoint of its render; then drag to look around, **Photoreal render** shows the still, **Walk from here** (or `W A S D`) walks on | `R`, `P` |
+| **Walk** | eye level from the entrance lobby, collision with walls, glazing and furniture; floor map bottom right (click to go there) | `W A S D` / arrows, drag to look, `Shift`, double-click floor, `Esc` |
+| **?** / **full screen** | help card (with display quality: High / Balanced / Low) / full screen for a projector | `H`, `F` |
+
+Links that open a view directly: `?room=Z08` (a room by its zone code, e.g. the boardroom), `?tour=1`, `?walk=1`;
+`?welcome=0` hides the help card, `?welcome=1` always shows it.
+
+Suggested 5-minute client sequence: Overview (turn the building, ceilings off) -> Guided tour with Photoreal renders on ->
 pause at the boardroom and MD office for questions -> Walk from the reception to the experience centre -> Plan view.
 
 What to say: "This is the proposed design. The moving 3D model is real-time; the still images are photoreal renders

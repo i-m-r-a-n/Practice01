@@ -24,3 +24,13 @@ python3 04_BLENDER_ANIMATION/scripts/make_titles.py work/titles
 python3 04_BLENDER_ANIMATION/scripts/make_video.py pitch work/frames work/titles 01_CLIENT_PITCH_VIDEO/Client_Pitch_Cinematic_Tour.mp4 --work work/edit_pitch
 python3 04_BLENDER_ANIMATION/scripts/make_video.py tour  work/frames work/titles 02_FULL_FLOOR_TOUR/Complete_Ground_Floor_Tour.mp4 --work work/edit_pitch
 ```
+
+## Delivered files and web copies
+| File | Encode | Size |
+|---|---|---|
+| `01_CLIENT_PITCH_VIDEO/Client_Pitch_Cinematic_Tour.mp4` | as above, CRF 18 | 73.8 MB, 77.0 s |
+| `02_FULL_FLOOR_TOUR/Complete_Ground_Floor_Tour.mp4` | the CRF 18 edit (117.9 MB) is over GitHub's 100 MB file limit, so the delivered file is that edit re-encoded once: libx264 preset slow, **CRF 20, max 6 Mbit/s** (buffer 12 Mbit), High@4.1, BT.709, `+faststart`, audio copied | 78.9 MB, 121.0 s |
+| `..._web720.mp4` (both videos) | for phones, e-mail links and the website: Lanczos 1280 x 720, CRF 23, max 3 Mbit/s, High@4.0, BT.709, AAC 96 kbit/s, `+faststart` | pitch 16.9 MB, tour 26.0 MB |
+
+QC of every delivered file (`05_PRODUCTION/video_qc/*_qc.json` + contact sheets): no decode errors, no black frames, frozen only
+on the intended title (0.8 s) and closing cards. Re-encode commands: `05_PRODUCTION/reencode_videos.sh`.

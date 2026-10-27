@@ -8,3 +8,6 @@ __pycache__/
 03_INTERACTIVE_3D/model/
 03_INTERACTIVE_3D/data/office_web_metadata.json
 05_PRODUCTION/camera_qc/*.log
+# the unzipped Mac tour (rebuilt by build_offline_html.mjs); the committed copy is the zip next to it
+09_MAC_OFFLINE_TOUR/Ground_Floor_3D_Tour.html
+09_MAC_OFFLINE_TOUR/renders/

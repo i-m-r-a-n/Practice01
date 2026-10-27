@@ -1,0 +1,103 @@
+{
+ "url": "http://127.0.0.1:8780/?scale=0.4",
+ "label": "website",
+ "errors": [],
+ "steps": [
+  {
+   "name": "browser",
+   "t": 2.1,
+   "version": "firefox/159.0"
+  },
+  {
+   "name": "webgl",
+   "t": 3,
+   "webgl2": true,
+   "renderer": "llvmpipe, or similar"
+  },
+  {
+   "name": "loaded",
+   "t": 6.4,
+   "ready": true,
+   "err": "",
+   "counts": {
+    "quality": "balanced",
+    "meshes": 100,
+    "drawCallsMerged": {
+     "before": 1880,
+     "after": 100
+    },
+    "rooms": 34,
+    "cameras": 38,
+    "stops": 16,
+    "model": "web",
+    "bakedLight": true,
+    "shadows": false
+   },
+   "welcome": true
+  },
+  {
+   "name": "room",
+   "t": 14.8,
+   "mode": "rooms",
+   "room": "Z08",
+   "atCam": "CAM_09_Boardroom_A",
+   "flying": false,
+   "flightT": null,
+   "fps": 0,
+   "overhead": true,
+   "tour": null,
+   "pos": [
+    21.844,
+    1.575,
+    -5.08
+   ]
+  },
+  {
+   "name": "photo",
+   "t": 16.5,
+   "photo": "CAM_09_Boardroom_A",
+   "w": 1600
+  },
+  {
+   "name": "tour",
+   "t": 22,
+   "mode": "tour",
+   "room": "Z02",
+   "atCam": "CAM_01_Reception_A",
+   "flying": false,
+   "flightT": null,
+   "fps": 0,
+   "overhead": true,
+   "tour": {
+    "i": 2,
+    "phase": "hold",
+    "playing": false,
+    "sub": 0
+   },
+   "photo": null,
+   "pos": [
+    8.077,
+    1.524,
+    0.66
+   ],
+   "card": "Reception & visitor waiting",
+   "info": "hidden"
+  },
+  {
+   "name": "walk",
+   "t": 36.9,
+   "p0": [
+    6.248,
+    1.626,
+    5.74
+   ],
+   "p1": [
+    5.952,
+    1.626,
+    3.542
+   ],
+   "moved": 2.22
+  }
+ ],
+ "seconds": 37.658
+}

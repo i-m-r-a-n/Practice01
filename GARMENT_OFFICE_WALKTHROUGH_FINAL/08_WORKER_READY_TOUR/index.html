@@ -7,108 +7,152 @@
 <meta name="theme-color" content="#16201b">
 <style>
 :root {
-  --green: #26673D; --green-2: #1d4f30; --mint: #a9d8b8; --charcoal: #171d1a; --charcoal-2: #222a26;
-  --white: #F6F3EE; --muted: #b9c4bd; --brass: #C29A55; --glass: rgba(20, 27, 23, .82); --line: rgba(246, 243, 238, .14);
+  --green: #26673D; --green-2: #1d4f30; --mint: #a9d8b8; --charcoal: #171d1a; --white: #F6F3EE; --muted: #b9c4bd; --brass: #C29A55;
+  --glass: rgba(20, 27, 23, .86); --line: rgba(246, 243, 238, .14);
+  --top-h: 64px; --foot-h: 34px; --gap: 16px; --side-w: 292px;      /* --top-h / --foot-h are measured by app.js */
 }
 * { box-sizing: border-box }
-html, body { margin: 0; height: 100%; overflow: hidden; font-family: Inter, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif; color: var(--white);
+html, body { margin: 0; height: 100%; overflow: hidden; font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif; color: var(--white);
   background: radial-gradient(ellipse at 60% 40%, #2a3a31 0%, #18211c 55%, #0f1411 100%) }
-button, input { font: inherit; color: inherit }
+button, input, select { font: inherit; color: inherit }
 button { cursor: pointer }
+button:focus-visible, input:focus-visible, select:focus-visible { outline: 2px solid var(--brass); outline-offset: 2px }
 .hidden { display: none !important }
 #app { position: fixed; inset: 0 }
 #app canvas { display: block; touch-action: none; outline: none }
 #dissolve { position: fixed; inset: 0; width: 100%; height: 100%; pointer-events: none; opacity: 0; z-index: 2 }
-.eyebrow { font-size: 10.5px; letter-spacing: .18em; text-transform: uppercase; color: var(--mint); font-weight: 600 }
+.eyebrow { font-size: 10.5px; letter-spacing: .16em; text-transform: uppercase; color: var(--mint); font-weight: 600 }
+.card { background: var(--glass); border: 1px solid var(--line); border-radius: 14px; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, .28) }
+button.ghost { background: rgba(255, 255, 255, .07); border: 1px solid var(--line); border-radius: 9px; padding: 8px 12px; font-size: 13px; white-space: nowrap }
+button.ghost:hover { background: rgba(255, 255, 255, .15) }
+button.ghost.gold { border-color: var(--brass); color: #f1d7a4 }
 
-/* ---------------------------------------------------------------- header */
+/* ---------------------------------------------------------------- header: brand left, ways to explore right */
 #top { position: fixed; left: 0; right: 0; top: 0; z-index: 10; display: flex; justify-content: space-between; align-items: center; gap: 16px;
-  padding: 12px 18px; background: linear-gradient(180deg, rgba(12, 17, 14, .85), rgba(12, 17, 14, 0)); pointer-events: none }
+  padding: 12px 18px; background: linear-gradient(180deg, rgba(12, 17, 14, .9), rgba(12, 17, 14, .55) 70%, rgba(12, 17, 14, 0)); pointer-events: none }
 #top > * { pointer-events: auto }
 .brand { display: flex; align-items: center; gap: 14px; min-width: 0 }
-.logos { display: inline-flex; gap: 10px; align-items: center; background: #fff; padding: 6px 10px; border-radius: 6px; flex: none }
+.logos { display: inline-flex; gap: 10px; align-items: center; background: #fff; padding: 6px 10px; border-radius: 8px; flex: none }
 .logos img { height: 24px; display: block }
-.ttl h1 { margin: 3px 0 0; font-size: 15px; letter-spacing: .08em; font-weight: 650; white-space: nowrap; overflow: hidden; text-overflow: ellipsis }
-.modes { display: flex; gap: 6px; background: var(--glass); padding: 5px; border-radius: 10px; border: 1px solid var(--line); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px) }
-.modes button { background: transparent; border: 0; padding: 8px 13px; border-radius: 7px; font-size: 13px; white-space: nowrap }
-.modes button:hover { background: rgba(255, 255, 255, .08) }
-.modes button.on { background: var(--green) }
-.modes button.primary { background: var(--brass); color: #1b1408; font-weight: 650 }
-.modes button.primary.on { background: #d8b16a }
+.ttl { min-width: 0 }
+.ttl h1 { margin: 3px 0 0; font-size: 16px; font-weight: 650; letter-spacing: .01em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis }
+.modes { display: flex; gap: 8px; align-items: center; flex: none }
+.modes button { border: 0; padding: 9px 14px; border-radius: 9px; font-size: 13.5px; white-space: nowrap }
+.modes .primary { background: var(--brass); color: #1b1408; font-weight: 650; box-shadow: 0 2px 10px rgba(194, 154, 85, .3) }
+.modes .primary:hover { background: #d3ad69 }
+.modes .primary.on { background: #e2bd77; box-shadow: 0 0 0 2px rgba(246, 243, 238, .85) }
+.seg { display: flex; gap: 2px; background: var(--glass); padding: 4px; border-radius: 11px; border: 1px solid var(--line); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px) }
+.seg button { background: transparent; padding: 7px 13px }
+.seg button:hover { background: rgba(255, 255, 255, .09) }
+.seg button.on { background: var(--green); font-weight: 600 }
+.modes .icon { width: 38px; height: 38px; padding: 0; background: var(--glass); border: 1px solid var(--line); font-size: 15px; font-weight: 650 }
+.modes .icon:hover { background: rgba(255, 255, 255, .12) }
 
-/* ---------------------------------------------------------------- room list */
-#side { position: fixed; left: 14px; top: 84px; bottom: 54px; width: 292px; z-index: 9; display: flex; flex-direction: column;
-  background: var(--glass); border: 1px solid var(--line); border-radius: 12px; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); transform: translateX(-120%); transition: transform .3s ease }
-#side.open { transform: none }
-.side-head { display: flex; gap: 6px; padding: 10px }
-#search { flex: 1; min-width: 0; background: rgba(0, 0, 0, .28); border: 1px solid var(--line); border-radius: 8px; padding: 9px 10px; font-size: 13px; outline: none }
+/* ---------------------------------------------------------------- room list (left) */
+#side { position: fixed; left: var(--gap); top: calc(var(--top-h) + 6px); bottom: calc(var(--foot-h) + 6px); width: var(--side-w); z-index: 9; display: flex; flex-direction: column;
+  background: var(--glass); border: 1px solid var(--line); border-radius: 14px; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  transform: translateX(calc(-100% - 40px)); transition: transform .3s ease, visibility .3s; visibility: hidden }
+#side.open { transform: none; visibility: visible }
+.side-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; padding: 12px 12px 8px 14px }
+.side-head b { display: block; font-size: 15px }
+.side-head small { color: var(--muted); font-size: 11.5px }
+#sideClose { background: none; border: 0; font-size: 22px; line-height: 1; padding: 0 4px; color: var(--muted) }
+#sideClose:hover { color: var(--white) }
+#search { margin: 0 10px 6px; background: rgba(0, 0, 0, .28); border: 1px solid var(--line); border-radius: 9px; padding: 9px 10px; font-size: 13px; outline: none }
 #search:focus { border-color: var(--brass) }
-#sideClose { background: none; border: 0; font-size: 22px; line-height: 1; padding: 0 6px; color: var(--muted) }
-#sideOpen { position: fixed; left: 14px; top: 88px; z-index: 9; background: var(--glass); border: 1px solid var(--line); border-radius: 9px; padding: 8px 12px; font-size: 13px }
 #roomList { overflow: auto; padding: 0 8px 10px; scrollbar-width: thin }
-.grp { margin: 12px 6px 4px; font-size: 10.5px; letter-spacing: .16em; text-transform: uppercase; color: var(--brass); font-weight: 650 }
+.grp { margin: 12px 6px 4px; font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--brass); font-weight: 650 }
 .room { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; width: 100%; text-align: left; background: none; border: 1px solid transparent;
   border-radius: 8px; padding: 7px 8px; font-size: 13px }
-.room:hover { background: rgba(255, 255, 255, .06) }
-.room.on { background: rgba(38, 103, 61, .55); border-color: rgba(169, 216, 184, .35) }
+.room:hover { background: rgba(255, 255, 255, .07) }
+.room.on { background: rgba(38, 103, 61, .6); border-color: rgba(169, 216, 184, .35) }
 .room small { color: var(--muted); font-size: 11px; white-space: nowrap }
-.room .cam { width: 6px; height: 6px; border-radius: 50%; background: var(--brass); display: inline-block; margin-right: 7px; vertical-align: middle }
-.room .cam.none { background: transparent; border: 1px solid var(--muted) }
 .nores { color: var(--muted); font-size: 12.5px; padding: 10px 8px }
 
-/* ---------------------------------------------------------------- info card */
-.card { position: fixed; z-index: 9; background: var(--glass); border: 1px solid var(--line); border-radius: 12px; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px) }
-#info { left: 320px; bottom: 54px; width: min(470px, calc(100vw - 340px)); padding: 14px 16px }
-#info h2 { margin: 4px 0 6px; font-size: 21px; font-weight: 650 }
-#info p { margin: 0; font-size: 13px; line-height: 1.5; color: #dfe6e1 }
-#info .row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px }
-button.ghost { background: rgba(255, 255, 255, .07); border: 1px solid var(--line); border-radius: 8px; padding: 7px 11px; font-size: 12.5px }
-button.ghost:hover { background: rgba(255, 255, 255, .14) }
-#bPhoto { border-color: var(--brass); color: #f1d7a4 }
+/* ---------------------------------------------------------------- bottom dock: room card | tools or tour | floor map (they never overlap) */
+#dock { position: fixed; left: var(--gap); right: var(--gap); bottom: calc(var(--foot-h) + 6px); z-index: 9; display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: end; gap: 12px; pointer-events: none; transition: left .3s ease }
+#dock > *, #center > * { pointer-events: auto }
+body.side-open #dock { left: calc(var(--gap) + var(--side-w) + 14px) }
+#info { grid-column: 1; justify-self: start; width: min(430px, 100%); padding: 14px 16px }
+#center { grid-column: 2; display: flex; justify-content: center; min-width: 0; pointer-events: none }
+#minimap { grid-column: 3; justify-self: end; border-radius: 12px; border: 1px solid var(--line); background: rgba(20, 27, 23, .88); cursor: crosshair }
+#info h2 { margin: 4px 0 6px; font-size: 20px; font-weight: 650 }
+#info p { margin: 0; font-size: 13px; line-height: 1.5; color: #dfe6e1; max-height: 7.5em; overflow: auto }
+#info .hint { margin-top: 8px; font-size: 12px; color: var(--mint) }
+#info .hint:empty { display: none }
+#info .row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px }
 
-/* ---------------------------------------------------------------- bars */
-.bar { position: fixed; z-index: 9; left: 50%; transform: translateX(-50%); background: var(--glass); border: 1px solid var(--line); border-radius: 12px;
-  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px) }
-#viewbar { bottom: 54px; display: flex; gap: 5px; padding: 6px; align-items: center }
-.bar button { background: rgba(255, 255, 255, .07); border: 1px solid var(--line); border-radius: 7px; padding: 7px 11px; font-size: 12.5px; white-space: nowrap }
+.bar { display: flex; gap: 5px; padding: 6px; align-items: center; background: var(--glass); border: 1px solid var(--line); border-radius: 13px;
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); max-width: 100%; overflow-x: auto; scrollbar-width: none }
+.bar button { background: rgba(255, 255, 255, .07); border: 1px solid var(--line); border-radius: 8px; padding: 8px 12px; font-size: 13px; white-space: nowrap }
 .bar button:hover { background: rgba(255, 255, 255, .15) }
 .bar button.on { background: var(--green); border-color: var(--green) }
-.bar .sep { width: 1px; height: 22px; background: var(--line); margin: 0 3px }
-.bar .q { display: flex; gap: 6px; align-items: center; font-size: 12.5px; color: var(--muted) }
-.bar select { background: rgba(255, 255, 255, .07); border: 1px solid var(--line); border-radius: 7px; padding: 6px 8px; font: inherit; font-size: 12.5px; color: var(--white) }
-.bar select option { color: #111 }
-#tourbar { bottom: 54px; width: min(640px, calc(100vw - 24px)); padding: 10px 12px 9px }
-.tb-row { display: flex; gap: 6px; align-items: center; flex-wrap: wrap }
-#tourbar button.wide { min-width: 104px }
-.chk { margin-left: auto; font-size: 12px; color: var(--muted); display: flex; gap: 6px; align-items: center; cursor: pointer }
-.segs { display: flex; gap: 3px; margin-top: 9px }
-.segs div { flex: 1; height: 4px; border-radius: 2px; background: rgba(255, 255, 255, .16); overflow: hidden; cursor: pointer }
-.segs div i { display: block; height: 100%; width: 0; background: var(--brass) }
-.tb-cap { margin-top: 7px; font-size: 12.5px; color: var(--muted) }
-.tb-cap b { color: var(--white); font-weight: 600; margin-left: 4px }
+.bar .sep { flex: none; width: 1px; height: 22px; background: var(--line); margin: 0 3px }
 
-/* ---------------------------------------------------------------- photoreal panel */
+/* guided tour: one card with the stop and its controls */
+#tourbar { width: min(680px, 100%); padding: 14px 16px 12px }
+.tb-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px }
+#tCount { font-size: 12px; color: var(--muted); white-space: nowrap; font-variant-numeric: tabular-nums }
+#tTitle { margin: 4px 0 5px; font-size: 20px; font-weight: 650 }
+#tText { margin: 0; font-size: 13px; line-height: 1.5; color: #dfe6e1; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden }
+.segs { display: flex; gap: 3px; margin: 12px 0 10px }
+.segs div { flex: 1; height: 5px; border-radius: 3px; background: rgba(255, 255, 255, .16); overflow: hidden; cursor: pointer }
+.segs div:hover { background: rgba(255, 255, 255, .3) }
+.segs div i { display: block; height: 100%; width: 0; background: var(--brass) }
+.tb-row { display: flex; gap: 6px; align-items: center; flex-wrap: wrap }
+.tb-row button { background: rgba(255, 255, 255, .07); border: 1px solid var(--line); border-radius: 8px; padding: 8px 12px; font-size: 13px; white-space: nowrap }
+.tb-row button:hover { background: rgba(255, 255, 255, .15) }
+.tb-row button.play { min-width: 106px; background: var(--green); border-color: var(--green); font-weight: 600 }
+.tb-row button.end { margin-left: auto }
+.chk { font-size: 12.5px; color: var(--muted); display: flex; gap: 6px; align-items: center; cursor: pointer; padding: 0 4px; white-space: nowrap }
+.chk input { accent-color: var(--brass) }
+
+/* walk: on-screen arrows (touch), hint */
+#pad { display: grid; grid-template-columns: repeat(3, 52px); grid-template-rows: repeat(2, 52px); gap: 5px }
+#pad button { background: var(--glass); border: 1px solid var(--line); border-radius: 12px; font-size: 17px; touch-action: none; user-select: none; -webkit-user-select: none }
+#pad button[data-k="KeyW"] { grid-column: 2 } #pad button[data-k="KeyA"] { grid-column: 1; grid-row: 2 } #pad button[data-k="KeyS"] { grid-column: 2; grid-row: 2 } #pad button[data-k="KeyD"] { grid-column: 3; grid-row: 2 }
+#walkhint { position: fixed; top: calc(var(--top-h) + 6px); left: 50%; transform: translateX(-50%); z-index: 9; font-size: 12.5px; background: rgba(0, 0, 0, .5); padding: 7px 13px;
+  border-radius: 9px; color: #e6ece8; white-space: nowrap; max-width: calc(100vw - 2 * var(--gap)); overflow: hidden; text-overflow: ellipsis }
+
+/* ---------------------------------------------------------------- photoreal render */
 #photo { position: fixed; inset: 0; z-index: 8; background: #000; display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity .7s ease }
 #photo.show { opacity: 1 }
 #photo img { width: 100%; height: 100%; object-fit: cover }
-.photo-tag { position: fixed; top: 76px; left: 50%; transform: translateX(-50%); font-size: 11px; letter-spacing: .12em; background: rgba(0, 0, 0, .55);
-  border: 1px solid rgba(194, 154, 85, .65); color: #f1d7a4; padding: 6px 11px; border-radius: 6px; white-space: nowrap }
-#photoClose { position: fixed; right: 18px; top: 74px; background: var(--glass); border: 1px solid var(--line); border-radius: 8px; padding: 7px 12px; font-size: 12.5px; z-index: 9 }
+.photo-tag { position: fixed; top: calc(var(--top-h) + 8px); left: 50%; transform: translateX(-50%); font-size: 11px; letter-spacing: .12em; background: rgba(0, 0, 0, .6);
+  border: 1px solid rgba(194, 154, 85, .65); color: #f1d7a4; padding: 6px 11px; border-radius: 7px; white-space: nowrap }
+#photoClose { position: fixed; right: var(--gap); top: calc(var(--top-h) + 6px); background: var(--glass); border: 1px solid var(--line); border-radius: 9px; padding: 8px 13px; font-size: 13px; z-index: 9 }
 
-/* ---------------------------------------------------------------- walk + labels */
-#walkhint { position: fixed; top: 74px; left: 50%; transform: translateX(-50%); z-index: 9; font-size: 12px; background: rgba(0, 0, 0, .45); padding: 6px 12px; border-radius: 8px; color: #e6ece8; white-space: nowrap }
-#pad { position: fixed; right: 18px; bottom: 120px; z-index: 9; display: grid; grid-template-columns: repeat(3, 46px); grid-template-rows: repeat(2, 46px); gap: 4px }
-#pad button { background: var(--glass); border: 1px solid var(--line); border-radius: 10px; font-size: 16px; touch-action: none; user-select: none; -webkit-user-select: none }
-#pad button[data-k="KeyW"] { grid-column: 2 } #pad button[data-k="KeyA"] { grid-column: 1; grid-row: 2 } #pad button[data-k="KeyS"] { grid-column: 2; grid-row: 2 } #pad button[data-k="KeyD"] { grid-column: 3; grid-row: 2 }
-#minimap { position: fixed; right: 16px; bottom: 54px; z-index: 9; border-radius: 10px; border: 1px solid var(--line); background: rgba(20, 27, 23, .85); cursor: crosshair }
+/* ---------------------------------------------------------------- room names on the model */
 #labels { position: fixed; inset: 0; pointer-events: none; z-index: 5 }
-.lbl { position: absolute; left: 0; top: 0; transform: translate(-50%, -50%); font-size: 11.5px; font-weight: 600; white-space: nowrap; padding: 3px 8px; border-radius: 5px;
-  background: rgba(23, 29, 26, .84); border: 1px solid rgba(194, 154, 85, .45); pointer-events: auto; cursor: pointer; user-select: none }
+.lbl { position: absolute; left: 0; top: 0; transform: translate(-50%, -50%); font-size: 11.5px; font-weight: 600; white-space: nowrap; padding: 3px 8px; border-radius: 6px;
+  background: rgba(23, 29, 26, .86); border: 1px solid rgba(194, 154, 85, .45); pointer-events: auto; cursor: pointer; user-select: none }
 .lbl:hover, .lbl.on { background: var(--green); border-color: var(--mint) }
+
+/* ---------------------------------------------------------------- welcome / help */
+#welcome { position: fixed; inset: 0; z-index: 20; display: flex; align-items: center; justify-content: center; padding: 16px;
+  background: rgba(8, 12, 10, .55); backdrop-filter: blur(3px); -webkit-backdrop-filter: blur(3px) }
+.wbox { width: min(760px, 100%); max-height: 100%; overflow: auto; background: rgba(20, 27, 23, .96); border: 1px solid var(--line); border-radius: 18px; padding: 24px 24px 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, .45) }
+.wbox h2 { margin: 6px 0 16px; font-size: 24px; font-weight: 650 }
+.ways { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px }
+.way { display: flex; flex-direction: column; gap: 6px; text-align: left; background: rgba(255, 255, 255, .06); border: 1px solid var(--line); border-radius: 12px; padding: 14px }
+.way:hover { background: rgba(255, 255, 255, .12) }
+.way b { font-size: 16px }
+.way span { font-size: 13px; line-height: 1.45; color: #d6dfd9 }
+.way.primary { background: rgba(194, 154, 85, .2); border-color: var(--brass) }
+.way.primary b { color: #f1d7a4 }
+.tips { margin: 14px 0 0; font-size: 12.5px; line-height: 1.6; color: var(--muted) }
+.tips b { color: var(--white); font-weight: 600 }
+.wfoot { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; margin-top: 16px }
+.q { display: flex; gap: 8px; align-items: center; font-size: 13px; color: var(--muted) }
+.q select { background: rgba(255, 255, 255, .07); border: 1px solid var(--line); border-radius: 8px; padding: 6px 8px; font-size: 13px; color: var(--white) }
+.q select option { color: #111 }
 
 /* ---------------------------------------------------------------- footer, loading */
 #disclaimer { position: fixed; left: 0; right: 0; bottom: 0; z-index: 9; text-align: center; font-size: 11.5px; color: #d0d8d3; padding: 9px 12px 11px;
-  background: linear-gradient(0deg, rgba(10, 14, 12, .82), rgba(10, 14, 12, 0)) }
+  background: linear-gradient(0deg, rgba(10, 14, 12, .85), rgba(10, 14, 12, 0)) }
 #loading { position: fixed; inset: 0; z-index: 30; display: flex; align-items: center; justify-content: center; background: radial-gradient(ellipse at 50% 40%, #233229, #101511) }
 #loading .box { width: min(420px, 86vw); text-align: center }
 #loading .t { font-size: 18px; margin: 10px 0 16px }
@@ -118,26 +162,45 @@ button.ghost:hover { background: rgba(255, 255, 255, .14) }
 #loadError { margin-top: 14px; font-size: 13px; color: #ffd3c4; line-height: 1.5; background: rgba(120, 30, 20, .35); border: 1px solid rgba(255, 140, 120, .4); border-radius: 8px; padding: 10px 12px }
 .noscript { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; background: #101511; z-index: 40 }
 
-/* ---------------------------------------------------------------- small screens */
-@media (max-width: 900px) {
-  .ttl .eyebrow { display: none } .ttl h1 { font-size: 12.5px } .logos img { height: 18px }
-  #info { left: 12px; width: calc(100vw - 24px); bottom: 104px }
-  #side { width: min(300px, calc(100vw - 24px)) }
+/* ---------------------------------------------------------------- medium screens */
+@media (max-width: 1199px) {
+  body[data-mode="tour"] #minimap { display: none }               /* the tour card needs the width */
+}
+@media (max-width: 1180px) {
+  .ttl .eyebrow { display: none } .ttl h1 { font-size: 13.5px; line-height: 1.3; white-space: normal; max-width: 250px }
+}
+@media (max-width: 1080px) {
+  .logos img { height: 20px }
+  .modes { gap: 6px } .modes button { padding: 8px 11px; font-size: 13px } .seg button { padding: 7px 10px }
+}
+/* ---------------------------------------------------------------- narrow screens: stack the dock, list over the model */
+@media (max-width: 860px) {
+  .ttl { display: none }
+  body.side-open #dock { left: var(--gap); visibility: hidden }      /* the list covers the model; the panels come back after a choice */
+  #side { width: min(320px, calc(100vw - 2 * var(--gap))); z-index: 11 }
+  #dock { grid-template-columns: minmax(0, 1fr); gap: 8px }
+  #info, #center { grid-column: 1 } #info { width: 100% }
+  #minimap { display: none }
+  .ways { grid-template-columns: 1fr }
 }
 @media (max-width: 640px) {
+  :root { --gap: 10px }
   #top { flex-direction: column; align-items: stretch; gap: 8px; padding: 8px 10px }
-  .ttl { display: none } .brand { justify-content: center }
-  .modes { justify-content: space-between } .modes button { padding: 7px 8px; font-size: 12px }
-  #side, #sideOpen { top: 112px }
-  #viewbar { bottom: 50px; max-width: calc(100vw - 16px); overflow-x: auto }
-  #info { bottom: 100px } #info h2 { font-size: 17px } #info p { font-size: 12px; max-height: 76px; overflow: auto }
-  #minimap { display: none } #walkhint { display: none !important }
-  .photo-tag { top: 112px; white-space: normal; width: 88vw; text-align: center } #photoClose { top: 150px }
-  #disclaimer { font-size: 10px }
+  .brand { justify-content: center } .logos img { height: 18px }
+  .modes { justify-content: space-between; gap: 4px } .modes button { padding: 8px 8px; font-size: 12.5px } .seg button { padding: 6px 8px } .modes .icon { width: 34px; height: 34px }
+  #info { padding: 11px 13px } #info h2 { font-size: 17px } #info p { font-size: 12.5px; max-height: 4.6em }
+  #tourbar { padding: 11px 12px 10px } #tTitle { font-size: 17px } #tText { font-size: 12.5px; -webkit-line-clamp: 2 }
+  .tb-row button { padding: 7px 9px; font-size: 12.5px } .tb-row button.play { min-width: 92px } .chk { font-size: 12px }
+  .bar button { padding: 7px 9px; font-size: 12.5px }
+  #walkhint { font-size: 11.5px }
+  .photo-tag { white-space: normal; width: calc(100vw - 2 * var(--gap)); text-align: center } #photoClose { top: calc(var(--top-h) + 52px) }
+  .wbox { padding: 18px 16px 16px } .wbox h2 { font-size: 20px }
+  #disclaimer { font-size: 10px; padding: 7px 10px 9px }
 }
+.tb-row button:disabled { opacity: .38; cursor: default; background: rgba(255, 255, 255, .04) }
 </style>
 </head>
-<body>
+<body data-mode="loading">
 <div id="app"></div>
 <canvas id="dissolve"></canvas>
 
@@ -150,71 +213,101 @@ button.ghost:hover { background: rgba(255, 255, 255, .14) }
     </div>
     <div class="ttl">
       <div class="eyebrow">Corporate headquarters &amp; design development centre</div>
-      <h1>GROUND FLOOR &mdash; INTERACTIVE DESIGN EXPERIENCE</h1>
+      <h1>Ground floor &middot; interactive design experience</h1>
     </div>
   </div>
-  <nav class="modes" aria-label="Viewing mode">
-    <button id="mOverview" class="on" title="Whole floor: drag to orbit, right-drag to pan, scroll to zoom (O)">Overview</button>
-    <button id="mRooms" title="Choose a room from the list (R)">Rooms</button>
-    <button id="mWalk" title="Walk at eye level: W A S D / arrows, drag to look, Esc to leave (W)">Walk</button>
-    <button id="mTour" class="primary" title="Guided tour of 16 stops (T, Space to pause)">&#9654; Guided tour</button>
-    <button id="mFull" title="Full screen for a projector or large display (F)">&#x26F6;</button>
+  <nav class="modes" aria-label="Ways to explore">
+    <button id="mTour" class="primary" title="Guided tour: 16 stops, plays by itself (T)">&#9654; Guided tour</button>
+    <div class="seg">
+      <button id="mOverview" class="on" title="The whole floor from above (O)">Overview</button>
+      <button id="mRooms" title="Show or hide the list of rooms (R)">Rooms</button>
+      <button id="mWalk" title="Walk through the office at eye level (W)">Walk</button>
+    </div>
+    <button id="mHelp" class="icon" title="How to use this tour (H)" aria-label="Help">?</button>
+    <button id="mFull" class="icon" title="Full screen for a projector or large display (F)" aria-label="Full screen">&#x26F6;</button>
   </nav>
 </header>
 
-<aside id="side" class="open" aria-label="Rooms">
-  <div class="side-head"><input id="search" type="search" placeholder="Search rooms, e.g. boardroom, prayer, CAD" autocomplete="off"><button id="sideClose" title="Hide the room list">&times;</button></div>
+<aside id="side" aria-label="Rooms">
+  <div class="side-head">
+    <div><b>Rooms</b><small>Choose a room to go there</small></div>
+    <button id="sideClose" title="Hide the room list" aria-label="Hide the room list">&times;</button>
+  </div>
+  <input id="search" type="search" placeholder="Search, e.g. boardroom, prayer, CAD" autocomplete="off">
   <div id="roomList"></div>
 </aside>
-<button id="sideOpen" class="hidden" title="Show the room list">&#9776; Rooms</button>
 
-<section id="info" class="card hidden" aria-live="polite">
-  <div class="eyebrow" id="infoKicker"></div>
-  <h2 id="infoTitle"></h2>
-  <p id="infoText"></p>
-  <div class="row">
-    <button id="bPhoto" class="ghost hidden" title="Show the offline Cycles render of exactly this viewpoint (P)">Photoreal render</button>
-    <button id="bWalkHere" class="ghost hidden">Walk from here</button>
-    <button id="bBack" class="ghost">Back to overview</button>
+<div id="dock">
+  <section id="info" class="card hidden" aria-live="polite">
+    <div class="eyebrow" id="infoKicker"></div>
+    <h2 id="infoTitle"></h2>
+    <p id="infoText"></p>
+    <div class="hint" id="infoHint"></div>
+    <div class="row">
+      <button id="bPhoto" class="ghost gold hidden" title="The offline Cycles render of this room (P)">Photoreal render</button>
+      <button id="bWalkHere" class="ghost hidden" title="Walk on from this spot">Walk from here</button>
+      <button id="bBack" class="ghost">&larr; Back to overview</button>
+    </div>
+  </section>
+
+  <div id="center">
+    <div id="viewbar" class="bar" aria-label="Overview tools">
+      <button id="vReset" title="Back to the starting view">Reset view</button>
+      <button id="vIso" title="Isometric view">Isometric</button>
+      <button id="vTop" title="Top plan view">Plan</button>
+      <span class="sep"></span>
+      <button id="vCeil" title="Show / hide deck, beams, ceilings and light fittings (C)">Ceilings</button>
+      <button id="vLabels" class="on" title="Room names on the model (L)">Room names</button>
+    </div>
+
+    <section id="tourbar" class="card hidden" aria-live="polite">
+      <div class="tb-head"><span class="eyebrow" id="tKicker"></span><span id="tCount"></span></div>
+      <h2 id="tTitle"></h2>
+      <p id="tText"></p>
+      <div id="tSegs" class="segs" aria-hidden="true"></div>
+      <div class="tb-row">
+        <button id="tPrev" title="Previous stop (left arrow)">&#8249; Back</button>
+        <button id="tPlay" class="play" title="Pause / resume (Space)">&#10073;&#10073; Pause</button>
+        <button id="tNext" title="Next stop (right arrow)">Next &#8250;</button>
+        <label class="chk" title="At each stop, fade into the photoreal render of the same viewpoint"><input type="checkbox" id="tPhoto" checked> Photoreal renders</label>
+        <button id="tStop" class="end" title="End the tour (Esc)">End tour</button>
+      </div>
+    </section>
+
+    <div id="pad" class="hidden" aria-label="Walk"><button data-k="KeyW" aria-label="Forward">&#9650;</button><button data-k="KeyA" aria-label="Left">&#9664;</button><button data-k="KeyS" aria-label="Back">&#9660;</button><button data-k="KeyD" aria-label="Right">&#9654;</button></div>
   </div>
-</section>
 
-<div id="viewbar" class="bar">
-  <button id="vReset" title="Reset the overview">Reset</button>
-  <button id="vIso" title="Isometric view">Isometric</button>
-  <button id="vTop" title="Top plan view">Plan</button>
-  <span class="sep"></span>
-  <button id="vCeil" title="Show / hide deck, beams, ceilings and light fittings (C)">Ceilings</button>
-  <button id="vLabels" class="on" title="Room names (L)">Labels</button>
-  <span class="sep"></span>
-  <label class="q" title="Graphics quality: High for desktops and projectors, Balanced for laptops, Low for phones and older computers">Quality
-    <select id="vQuality"><option value="high">High</option><option value="balanced">Balanced</option><option value="low">Low</option></select></label>
-</div>
-
-<div id="tourbar" class="bar hidden">
-  <div class="tb-row">
-    <button id="tPrev" title="Previous stop">&#8249;</button>
-    <button id="tPlay" class="wide" title="Pause / resume (Space)">&#10073;&#10073; Pause</button>
-    <button id="tNext" title="Next stop">&#8250;</button>
-    <button id="tStop" title="End the tour">&#9632; Stop</button>
-    <label class="chk" title="At each stop, dissolve into the photoreal render of the same viewpoint"><input type="checkbox" id="tPhoto" checked> Photoreal stops</label>
-  </div>
-  <div id="tSegs" class="segs"></div>
-  <div class="tb-cap"><span id="tCount"></span> <b id="tTitle"></b></div>
+  <canvas id="minimap" class="hidden" width="180" height="230" title="Floor map: click to go there"></canvas>
 </div>
 
 <div id="photo" class="hidden">
   <img id="photoImg" alt="">
-  <div class="photo-tag">PHOTOREAL RENDER &middot; offline Cycles still of this exact viewpoint &middot; not real-time</div>
-  <button id="photoClose" title="Back to the real-time 3D model (Esc)">Back to 3D</button>
+  <div class="photo-tag">PHOTOREAL RENDER &middot; offline Cycles still &middot; not real-time</div>
+  <button id="photoClose" title="Back to the real-time 3D model (Esc)">&larr; Back to 3D</button>
 </div>
 
-<div id="walkhint" class="hidden">W A S D / arrows to walk &middot; drag to look &middot; Shift faster &middot; double-click the floor to go there &middot; Esc to leave</div>
-<div id="pad" class="hidden"><button data-k="KeyW">&#9650;</button><button data-k="KeyA">&#9664;</button><button data-k="KeyS">&#9660;</button><button data-k="KeyD">&#9654;</button></div>
-<canvas id="minimap" class="hidden" width="180" height="230" title="Click to go there"></canvas>
+<div id="walkhint" class="hidden"></div>
 <div id="labels"></div>
 
 <footer id="disclaimer">Proposed interior visualization. Final dimensions and technical details subject to site verification.</footer>
+
+<div id="welcome" class="hidden" role="dialog" aria-modal="true" aria-labelledby="wTitle">
+  <div class="wbox">
+    <div class="eyebrow">Ground floor &middot; interactive design experience</div>
+    <h2 id="wTitle">Three ways to explore the office</h2>
+    <div class="ways">
+      <button class="way primary" id="wTour"><b>&#9654; Guided tour</b><span>16 stops through the floor. It plays by itself: pause, go back or skip at any time.</span></button>
+      <button class="way" id="wRooms"><b>Rooms</b><span>Choose any of the 34 rooms from the list, or click a room on the model.</span></button>
+      <button class="way" id="wWalk"><b>Walk</b><span>Move at eye level with W A S D or the arrow keys and drag to look. Walls, glass and furniture stop you.</span></button>
+    </div>
+    <p class="tips"><b>Trackpad or mouse:</b> drag to turn, <b>Shift</b> + drag to move, scroll or pinch to zoom. <b>Esc</b> brings you back to the overview. <b>F</b> or the &#x26F6; button: full screen.</p>
+    <div class="wfoot">
+      <label class="q" title="High for desktops and projectors, Balanced for laptops, Low for phones and older computers">Display quality
+        <select id="vQuality"><option value="high">High</option><option value="balanced">Balanced</option><option value="low">Low</option></select></label>
+      <button id="wClose" class="ghost">Explore on my own</button>
+    </div>
+  </div>
+</div>
 
 <div id="loading">
   <div class="box">
