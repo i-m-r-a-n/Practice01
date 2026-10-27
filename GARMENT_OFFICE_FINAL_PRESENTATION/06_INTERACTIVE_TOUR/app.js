@@ -41,7 +41,8 @@ const ROOMS=[
 ['Z22','Design corridor','Circulation','CAM_32_Design_Corridor',988,-872,'Circulation through the creative development wing.']
 ].map(r=>({id:r[0],name:r[1],group:r[2],camera:r[3],x:r[4]*IN,z:r[5]*IN,desc:r[6]}));
 const FEATURED=['Z01','Z02','Z30','Z08','Z12','Z07','Z06','Z05','Z14','Z15','Z17','Z18','Z20','Z21','Z23'];
-const TOUR=['Z01','Z02','Z30','Z08','Z10','Z12','Z06','Z07','Z14','Z15','Z17','Z18','Z20','Z21','Z23'];
+const TOUR=['__OVERVIEW__','Z01','Z02','Z30','Z08','Z10','Z12','Z06','Z07','Z14','Z15','Z17','Z18','Z20','Z21','Z23','__OVERVIEW__'];
+const tourRoom=i=>TOUR[i]==='__OVERVIEW__'?{id:'__OVERVIEW__',name:'Complete Ground Floor',group:'Architectural overview',camera:'CAM_ISO_SE',desc:'A furnished, coordinated corporate headquarters and design development centre.'}:ROOMS.find(r=>r.id===TOUR[i]);
 let renderer,scene,camera,controls,office,box,frame,officeCenter,officeSize,ceilingMeshes=[],savedCameras=new Map(),markers=[],raycaster=new THREE.Raycaster(),pointer=new THREE.Vector2();
 let selected=null,viewMode='orbit',walkPitch=0,walkYaw=0,keys={},inTour=false,tourPlaying=false,tourIndex=0,tourElapsed=0,transition=null,prevTime=performance.now(),markerVisible=true,ceilingHidden=false;
 const modelPath='./model.glb';
@@ -180,6 +181,12 @@ function renderRooms(){
  }
 }
 function cameraPose(r){
+ if(r.id==='__OVERVIEW__'){
+   const target=officeCenter.clone(),diag=Math.max(frame,30);
+   const pos=target.clone().add(new THREE.Vector3(diag*.62,diag*.65,diag*.72));
+   const q=new THREE.Quaternion().setFromRotationMatrix(new THREE.Matrix4().lookAt(pos,target,new THREE.Vector3(0,1,0)));
+   return {pos,q,target};
+ }
  const cam=savedCameras.get(r.camera);
  if(cam){
    cam.updateWorldMatrix(true,false);
@@ -293,7 +300,7 @@ function startTour(){
 }
 function setTourStep(i){
  tourIndex=i;
- const id=TOUR[i],r=ROOMS.find(x=>x.id===id);
+ const r=tourRoom(i);
  selected=r;renderRooms();updateHUD(r);
  if(office){const pose=cameraPose(r);camera.position.copy(pose.pos);camera.quaternion.copy(pose.q);controls.target.copy(pose.target);}
  if(fallbackMode)showFallback(r);
@@ -305,12 +312,12 @@ function setTourStep(i){
 function tickTour(dt){
  if(!tourPlaying)return;
  tourElapsed+=dt;
- const room=ROOMS.find(x=>x.id===TOUR[tourIndex]);
+ const room=tourRoom(tourIndex);
  const pose=cameraPose(room);
  // Move gently within the saved room camera's viewing direction while keeping a fixed aim.
  const t=Math.min(1,tourElapsed/6.6),ease=.5-.5*Math.cos(Math.PI*t);
  const right=new THREE.Vector3(1,0,0).applyQuaternion(pose.q);
- camera.position.copy(pose.pos).addScaledVector(right,(ease-.5)*.23);
+ camera.position.copy(pose.pos).addScaledVector(right,(ease-.5)*(room.id==='__OVERVIEW__'?1.6:.58));
  camera.quaternion.copy(pose.q);
  $('tourFill').style.width=(((tourIndex+t)/TOUR.length)*100)+'%';
  if(tourElapsed>7.1){
@@ -374,6 +381,7 @@ function bindExtras(){
  $('photoBtn').classList.add('active');
  $('closeRender').onclick=()=>{$('renderPanel').hidden=true;photosEnabled=false;$('photoBtn').classList.remove('active');};
  $('fullBtn').onclick=()=>{if(!document.fullscreenElement)document.documentElement.requestFullscreen?.().catch(()=>{});else document.exitFullscreen?.();};
+ $('tourStop').onclick=stopTour;
  $('tourPrev').onclick=()=>{if(inTour)setTourStep(Math.max(0,tourIndex-1));};
  $('tourNext').onclick=()=>{if(inTour){if(tourIndex>=TOUR.length-1)stopTour();else setTourStep(tourIndex+1);}};
  $('tourPause').onclick=()=>{tourPlaying=!tourPlaying;$('tourPause').textContent=tourPlaying?'Pause':'Resume';};
