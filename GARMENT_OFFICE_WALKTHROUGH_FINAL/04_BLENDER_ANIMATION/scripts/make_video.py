@@ -91,7 +91,10 @@ def shot_clip(name):
     elif s["label"]:
         t_in, t_out = 0.5, D - 0.9
         alpha = f"if(lt(t\\,{t_in})\\,0\\,if(lt(t\\,{t_in + 0.6})\\,(t-{t_in})/0.6\\,if(lt(t\\,{t_out})\\,1\\,if(lt(t\\,{t_out + 0.6})\\,({t_out + 0.6}-t)/0.6\\,0))))"
-        scene = esc(s["scene"].upper())
+        eyebrow = s["scene"]
+        if eyebrow.lower() == s["label"].lower():            # avoid "BOARDROOM / Boardroom": name the zone instead
+            eyebrow = "Visitor zone" if eyebrow in ("Reception", "Experience centre", "Boardroom") else "Ground floor"
+        scene = esc(eyebrow.upper())
         label = esc(s["label"])
         fc = (f"{base};[1:v]format=rgba,fade=t=in:st={t_in}:d=0.6:alpha=1,fade=t=out:st={t_out:.2f}:d=0.6:alpha=1[o];"
               f"[v0][o]overlay=0:0:shortest=1,"
