@@ -37,7 +37,7 @@ CAMERAS = [
     dict(name="CAM_29_Washroom_Female", room="Washroom (female)", priority=2, pos=(36, -525, 60), target=(-50, -700, 40), lens=18),
     dict(name="CAM_30_Prayer_Female", room="Prayer (female)", priority=2, pos=(34, -768, 58), target=(-45, -880, 24), lens=16),
     dict(name="CAM_31_Executive_Corridor", room="Executive corridor", priority=2, pos=(706, 28, 60), target=(1088, 28, 52), lens=20),
-    dict(name="CAM_32_Design_Corridor", room="Corridor (design wing)", priority=2, pos=(1072, -447, 62), target=(1072, -860, 50), lens=20),
+    dict(name="CAM_32_Design_Corridor", room="Corridor (design wing)", priority=2, pos=(1070, -560, 62), target=(1070, -880, 50), lens=20),
     dict(name="CAM_33_Wudu_Male", room="Wudu (male)", priority=2, pos=(1160, -1220, 60), target=(1320, -1250, 30), lens=18),
 ]
 
@@ -53,9 +53,9 @@ def _ortho(name, target_m, rx_deg, rz_deg, dist, scale, room, priority=1, exposu
 _cx = (-65 + 1336) / 2 * IN
 _cy = -((-1558 + 257) / 2) * IN
 CAMERAS += [
-    dict(name="CAM_TOP_Plan", room="Whole floor", priority=1, ortho=47.5, loc_m=(_cx, _cy, 60.0), rot_deg=(0, 0, 0), exposure="-0.3"),
-    _ortho("CAM_ISO_SE", (_cx + 1.2, _cy - 1.0, 0.0), 47, 38, 120, 57.0, "Whole floor"),
-    _ortho("CAM_ISO_SW", (_cx - 1.2, _cy - 1.0, 0.0), 47, -38, 120, 57.0, "Whole floor"),
+    dict(name="CAM_TOP_Plan", room="Whole floor", priority=1, ortho=49.0, loc_m=(_cx, _cy, 60.0), rot_deg=(0, 0, 0), exposure="-0.3"),  # render portrait 1240 x 1600
+    _ortho("CAM_ISO_SE", (_cx + 1.84, _cy - 1.46, -0.82), 47, 38, 120, 58.6, "Whole floor"),          # centred on the projected outline
+    _ortho("CAM_ISO_SW", (_cx + 2.53, _cy - 1.84, 1.75), 47, -38, 120, 59.0, "Whole floor"),          # render 4:3 (1600 x 1200)
     _ortho("CAM_ISO_Front_Zone", (13.8, 2.2, 0.0), 50, 32, 100, 24.0, "Visitor zone (lobby, reception, experience centre, boardroom, executive suite)"),
     _ortho("CAM_ISO_Design_Wing", (28.0, 19.8, 0.0), 50, 140, 100, 26.0, "Design development wing + staff support"),
 ]
