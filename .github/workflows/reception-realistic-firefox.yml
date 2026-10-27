@@ -1,0 +1,68 @@
+name: Reception Realistic Firefox QA
+on:
+  push:
+    branches:
+      - chatgpt/office-realistic-reception-firefox-qa
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  firefox:
+    name: Firefox WebGL Reception smoke test
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      LIBGL_ALWAYS_SOFTWARE: "1"
+      MOZ_WEBRENDER: "1"
+      MOZ_DISABLE_RDD_SANDBOX: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Install Playwright Firefox and Linux dependencies
+        run: |
+          npm install --no-save playwright@1.58.2
+          npx playwright install --with-deps firefox
+      - name: Test live Reception in actual Firefox and capture screenshot
+        run: |
+          cat > reception-firefox-test.cjs <<'NODE'
+          const {firefox}=require('playwright');
+          const fs=require('fs');
+          (async()=>{
+            const result={time:new Date().toISOString(),browser:'Firefox',url:'https://stage2-office-virtual-tour.imranahmedjh611.workers.dev/realistic/?room=Z02&welcome=0',errors:[],consoleErrors:[],requestsFailed:[]};
+            const browser=await firefox.launch({headless:false,firefoxUserPrefs:{'webgl.force-enabled':true,'webgl.disabled':false,'gfx.webrender.all':true}});
+            const page=await browser.newPage({viewport:{width:1440,height:900},deviceScaleFactor:1});
+            page.on('pageerror',e=>result.errors.push(String(e)));
+            page.on('console',m=>{if(m.type()==='error')result.consoleErrors.push(m.text())});
+            page.on('requestfailed',r=>result.requestsFailed.push({url:r.url(),reason:r.failure()}));
+            try{
+              const response=await page.goto(result.url,{waitUntil:'domcontentloaded',timeout:60000});
+              result.navigationHTTP=response.status();
+              await page.waitForFunction(()=>window.__viewerReady===true,{timeout:120000});
+              await page.waitForTimeout(5000);
+              result.runtime=await page.evaluate(()=>({ready:window.__viewerReady,mode:window.__viewer?.mode,room:window.__viewer?.room,counts:window.__viewer?.counts,errors:window.__viewer?.errors,peopleButton:{exists:!!document.querySelector('#mPeople'),hidden:document.querySelector('#mPeople')?.hidden},webgl:!!document.createElement('canvas').getContext('webgl2'),loadingHidden:document.querySelector('#loading')?.style.display==='none'}));
+              await page.screenshot({path:'reception-firefox.png',animations:'disabled'});
+              const imageRes=await page.request.get('https://stage2-office-virtual-tour.imranahmedjh611.workers.dev/realistic/review/reception-before-after.png');
+              result.comparisonHTTP=imageRes.status();
+              result.success=response.status()===200 && result.runtime?.ready===true && result.runtime?.webgl && result.runtime?.loadingHidden && result.comparisonHTTP===200 && result.errors.length===0;
+            }catch(e){result.error=String(e);await page.screenshot({path:'reception-firefox-failure.png'}).catch(()=>{});result.success=false}
+            finally{
+              fs.writeFileSync('reception-firefox-result.json',JSON.stringify(result,null,2));
+              console.log(JSON.stringify(result,null,2));
+              await browser.close();
+            }
+            if(!result.success)process.exitCode=1;
+          })().catch(e=>{console.error(e);process.exitCode=1});
+          NODE
+          xvfb-run -a -s "-screen 0 1440x900x24" node reception-firefox-test.cjs
+      - name: Upload QA evidence (even if Firefox fails)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: reception-realistic-firefox-qa
+          path: |
+            reception-firefox-result.json
+            reception-firefox.png
+            reception-firefox-failure.png
+          if-no-files-found: warn
