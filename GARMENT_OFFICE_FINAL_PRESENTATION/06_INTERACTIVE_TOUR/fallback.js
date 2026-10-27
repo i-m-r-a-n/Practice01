@@ -87,7 +87,7 @@ async function activate(){
  $('search').oninput=renderRooms;
  $('photoBtn').disabled=true;
  $('fullBtn').onclick=()=>{if(!document.fullscreenElement)document.documentElement.requestFullscreen?.().catch(()=>{});else document.exitFullscreen?.()};
- renderRooms();showRoom(null);
+ renderRooms();const requested=rooms.find(r=>r.id===new URLSearchParams(location.search).get('room'));showRoom(requested||null);
 }
 window.__stage2EmergencyPhoto=activate;
 window.__stage2EmergencyStop=()=>{endTour();$('fallbackStage').hidden=true};
