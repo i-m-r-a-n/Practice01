@@ -1,0 +1,24 @@
+const { chromium } = require('playwright');
+(async () => {
+  const [url, out] = process.argv.slice(2);
+  const b = await chromium.launch({ args: ['--use-gl=angle', '--use-angle=swiftshader', '--enable-unsafe-swiftshader', '--ignore-gpu-blocklist'] });
+  const p = await b.newPage({ viewport: { width: 1280, height: 720 } });
+  const errors = []; p.on('pageerror', (e) => errors.push(String(e).slice(0, 200)));
+  await p.goto(url, { waitUntil: 'load', timeout: 180000 });
+  await p.waitForFunction(() => window.__viewer && window.__viewer.ready, null, { timeout: 400000 });
+  const counts = await p.evaluate(() => window.__viewer.counts);
+  await p.screenshot({ path: out + '/live_fixed_overview.jpg', quality: 82, timeout: 300000 });
+  await p.addStyleTag({ content: '#dissolve{display:none!important}' });
+  await p.evaluate(() => window.__viewer.api.selectRoom('Z02'));
+  await p.waitForFunction(() => { const s = window.__viewer.api.state(); return !s.flying && s.atCam; }, null, { timeout: 400000 });
+  await p.waitForTimeout(2500);
+  await p.screenshot({ path: out + '/live_fixed_reception.jpg', quality: 82, timeout: 300000 });
+  const rec = await p.evaluate(() => window.__viewer.api.state());
+  await p.evaluate(() => window.__viewer.api.selectRoom('Z08'));
+  await p.waitForFunction(() => { const s = window.__viewer.api.state(); return !s.flying && s.atCam === 'CAM_09_Boardroom_A'; }, null, { timeout: 400000 });
+  await p.waitForTimeout(2500);
+  await p.screenshot({ path: out + '/live_fixed_boardroom.jpg', quality: 82, timeout: 300000 });
+  console.log(JSON.stringify({ reception: rec, boardroom: await p.evaluate(() => window.__viewer.api.state()) }));
+  console.log(JSON.stringify({ counts, errors }));
+  await b.close();
+})().catch((e) => { console.error('LIVE CHECK FAILED', e.message); process.exit(1); });

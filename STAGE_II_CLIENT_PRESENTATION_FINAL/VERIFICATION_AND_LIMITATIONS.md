@@ -14,8 +14,10 @@
 | Downloads | each link in `README.md` fetched from GitHub | HTTP 200, sizes equal to the repository files |
 
 ## Not verified / limitations (stated, not hidden)
-- **Live website** (GPT's Cloudflare deployment, frontend `6a65b7d`): at 15:16 Dhaka the room views were broken (walls offset,
-  Reception shows a single wall). Cause found and fix sent to GPT on issue #12. Use the offline Mac package for the meeting.
+- **Live website** (GPT's Cloudflare deployment): broken room views found at 15:16 Dhaka (walls offset); GPT deployed the fix at
+  15:52 (frontend `6be2c0f`). Re-checked ~17:30: Reception and Boardroom correct in Chromium (live URL) and Firefox 159 (exact
+  live files). Still open there: the guided-tour bar overlaps the room card (fixed only in Claude's interface / Mac package).
+  `/present` launcher, both videos and both PDFs answer. The offline Mac package remains the recommended way to present.
 - macOS, Safari and the actual presentation Mac were not available for testing; all browser tests ran on a software GPU in
   a cloud machine (they prove behaviour and layout, not the frame rate).
 - Real-time 3D is not identical to the Cycles renders: no glossy reflections, glass reflects a generic environment,
