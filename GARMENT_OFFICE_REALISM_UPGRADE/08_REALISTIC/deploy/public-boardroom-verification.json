@@ -1,0 +1,125 @@
+{
+  "room": "Boardroom",
+  "commit": "039091d5d35ea97adf95ff439231f6336ed05381",
+  "passed": true,
+  "checks": [
+    {
+      "url": "https://stage2-office-virtual-tour.imranahmedjh611.workers.dev/realistic/",
+      "status": 200,
+      "bytes": 70875,
+      "sha256": "c3fb3ba4ae201892c4451a5db43c6add6f50a70b80bd1833491290373c6f1545",
+      "expected_sha256": "c3fb3ba4ae201892c4451a5db43c6add6f50a70b80bd1833491290373c6f1545",
+      "source": "039091d5d35ea97adf95ff439231f6336ed05381",
+      "passed": true
+    },
+    {
+      "url": "https://stage2-office-virtual-tour.imranahmedjh611.workers.dev/realistic/app.js",
+      "status": 200,
+      "bytes": 1163143,
+      "sha256": "4a21e69db0c9a966d379824afc426991b4d5b179c39eb8a1f590ca079a604783",
+      "expected_sha256": "4a21e69db0c9a966d379824afc426991b4d5b179c39eb8a1f590ca079a604783",
+      "source": "039091d5d35ea97adf95ff439231f6336ed05381",
+      "passed": true
+    },
+    {
+      "url": "https://stage2-office-virtual-tour.imranahmedjh611.workers.dev/realistic/release-config.json",
+      "status": 200,
+      "bytes": 348,
+      "sha256": "a5ccd13c025b0dda9560777300f5612a0df8a7b939261b9e1affd7692f3b1366",
+      "expected_sha256": "a5ccd13c025b0dda9560777300f5612a0df8a7b939261b9e1affd7692f3b1366",
+      "source": "039091d5d35ea97adf95ff439231f6336ed05381",
+      "passed": true
+    },
+    {
+      "url": "https://stage2-office-virtual-tour.imranahmedjh611.workers.dev/realistic/model_web_baked.glb",
+      "status": 200,
+      "bytes": 19452524,
+      "sha256": "faaf09d1a61d2136a96a8b2eb4146be1f29135483dd7f94e67e6f3a54596d20a",
+      "expected_sha256": "faaf09d1a61d2136a96a8b2eb4146be1f29135483dd7f94e67e6f3a54596d20a",
+      "source": "039091d5d35ea97adf95ff439231f6336ed05381",
+      "passed": true
+    },
+    {
+      "url": "https://stage2-office-virtual-tour.imranahmedjh611.workers.dev/realistic/lighting-v2/manifest-hybrid.json",
+      "status": 200,
+      "bytes": 25011,
+      "sha256": "2ea818b15323e03ec96949d5c74d7273f8568cedc31a560c61f115a37c698abd",
+      "expected_sha256": "2ea818b15323e03ec96949d5c74d7273f8568cedc31a560c61f115a37c698abd",
+      "source": "039091d5d35ea97adf95ff439231f6336ed05381",
+      "passed": true
+    },
+    {
+      "url": "https://stage2-office-virtual-tour.imranahmedjh611.workers.dev/realistic/people/room-release/people-manifest.json",
+      "status": 200,
+      "bytes": 10937,
+      "sha256": "58972aaffebab7c776ce72a6fe854b8962c2c636c5a40f3b84f18656fa403ecb",
+      "expected_sha256": "58972aaffebab7c776ce72a6fe854b8962c2c636c5a40f3b84f18656fa403ecb",
+      "source": "039091d5d35ea97adf95ff439231f6336ed05381",
+      "passed": true
+    },
+    {
+      "url": "https://stage2-office-virtual-tour.imranahmedjh611.workers.dev/realistic/people/room-release/poses.json",
+      "status": 200,
+      "bytes": 14743,
+      "sha256": "681c74052665993d137c7e046e9c64d168ea0954f5d2a7d0e80f3dbd0cd9b596",
+      "expected_sha256": "681c74052665993d137c7e046e9c64d168ea0954f5d2a7d0e80f3dbd0cd9b596",
+      "source": "039091d5d35ea97adf95ff439231f6336ed05381",
+      "passed": true
+    },
+    {
+      "url": "https://stage2-office-virtual-tour.imranahmedjh611.workers.dev/realistic/props/office-props-manifest.json",
+      "status": 200,
+      "bytes": 167943,
+      "sha256": "4b93095d048f658bcdff957f56b41dac78e2287d727af9eb4312647593a9e3dd",
+      "expected_sha256": "4b93095d048f658bcdff957f56b41dac78e2287d727af9eb4312647593a9e3dd",
+      "source": "039091d5d35ea97adf95ff439231f6336ed05381",
+      "passed": true
+    },
+    {
+      "url": "https://stage2-office-virtual-tour.imranahmedjh611.workers.dev/realistic/review/boardroom-before-after.png",
+      "status": 200,
+      "bytes": 562613,
+      "sha256": "1b346df9cbf273325802c636275f75dcd93df3d2e89c13690e5808c42226324c",
+      "expected_sha256": "1b346df9cbf273325802c636275f75dcd93df3d2e89c13690e5808c42226324c",
+      "source": "039091d5d35ea97adf95ff439231f6336ed05381",
+      "passed": true
+    },
+    {
+      "url": "https://stage2-office-virtual-tour.imranahmedjh611.workers.dev/",
+      "status": 200,
+      "bytes": 63353,
+      "sha256": "ff75beb54b3134b3e1eee7d29d0f6016ed1bf5895777c715f3815ebe3dcd2675",
+      "expected_sha256": "ff75beb54b3134b3e1eee7d29d0f6016ed1bf5895777c715f3815ebe3dcd2675",
+      "source": null,
+      "passed": true
+    },
+    {
+      "url": "https://stage2-office-virtual-tour.imranahmedjh611.workers.dev/app.js",
+      "status": 200,
+      "bytes": 747798,
+      "sha256": "c6af8144c56302bf92a975179d847b89c6e4eac63068ecc16a96c7c0c02e9bc4",
+      "expected_sha256": "c6af8144c56302bf92a975179d847b89c6e4eac63068ecc16a96c7c0c02e9bc4",
+      "source": null,
+      "passed": true
+    },
+    {
+      "url": "https://stage2-office-virtual-tour.imranahmedjh611.workers.dev/health",
+      "status": 200,
+      "bytes": 205,
+      "sha256": "5118ed4955892545f48d6edf7fee295fdd0e8963fe1c7704041534fc04de378b",
+      "expected_sha256": "5118ed4955892545f48d6edf7fee295fdd0e8963fe1c7704041534fc04de378b",
+      "source": null,
+      "passed": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/i-m-r-a-n/Practice01/039091d5d35ea97adf95ff439231f6336ed05381/GARMENT_OFFICE_WALKTHROUGH_FINAL/09_MAC_OFFLINE_TOUR/realistic-boardroom/Boardroom_Realistic_Offline.zip",
+      "status": 200,
+      "bytes": 71875464,
+      "sha256": "953a7a8f161627777c0fe92518166daf61eafa131bb2bfc3a234a24b51f4935e",
+      "expected_sha256": "953a7a8f161627777c0fe92518166daf61eafa131bb2bfc3a234a24b51f4935e",
+      "source": null,
+      "passed": true
+    }
+  ],
+  "limits": "HTTPS/source bytes verified; browser WebGL capture blocked by environment CA trust. Native MacBook performance untested."
+}
