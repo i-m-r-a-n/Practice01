@@ -11,9 +11,11 @@ import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
 window.__viewerStarted = true;
 const $ = (id) => document.getElementById(id);
 const qs = new URLSearchParams(location.search);
-const BASE = '../07_WEB_TOUR_ASSETS/';
-const MODEL = qs.get('model') || BASE + 'Final_Office_Interior_web.glb';
-const RENDERS = qs.get('renders') || '../../GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/';
+// Paths: repository layout by default; a deployment bundle sets window.__TOUR_CONFIG (and window.__TOUR_DATA = { meta, grid }).
+const CFG = window.__TOUR_CONFIG || {};
+const BASE = CFG.base || '../07_WEB_TOUR_ASSETS/';
+const MODELS = qs.get('model') ? [qs.get('model')] : CFG.models || [BASE + 'Final_Office_Interior_web.glb'];
+const RENDERS = qs.get('renders') || CFG.renders || '../../GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/';
 const S = { mode: 'loading', ready: false, ceilUser: false, labels: true, room: null, atCam: null, tour: null, errors: [], counts: {} };
 window.__viewer = S;
 
@@ -83,16 +85,22 @@ async function getJSON(url) {
   if (!r.ok) throw new Error(`${url}: HTTP ${r.status}`);
   return r.json();
 }
-let meta, grid, gltf;
-try {
-  [meta, grid] = await Promise.all([getJSON(BASE + 'office_web_metadata.json'), getJSON(BASE + 'walk_grid.json')]);
-  gltf = await new Promise((res, rej) => {
+function loadModel(url) {
+  return new Promise((res, rej) => {
     let last = Date.now();
     const stall = setInterval(() => { if (Date.now() - last > 45000) $('loadText').textContent = 'The connection is slow - still loading the model...'; }, 5000);
-    new GLTFLoader().load(MODEL, (g) => { clearInterval(stall); res(g); },
+    new GLTFLoader().load(url, (g) => { clearInterval(stall); res(g); },
       (e) => { last = Date.now(); progress(e.loaded, e.lengthComputable ? e.total : 16.6e6, 'Loading the 3D model'); },
       (err) => { clearInterval(stall); rej(err); });
   });
+}
+let meta, grid, gltf;
+try {
+  if (window.__TOUR_DATA) ({ meta, grid } = window.__TOUR_DATA);
+  else [meta, grid] = await Promise.all([getJSON(BASE + 'office_web_metadata.json'), getJSON(BASE + 'walk_grid.json')]);
+  for (let i = 0; i < MODELS.length && !gltf; i++) {               // e.g. the web GLB first, then the original GLB
+    try { gltf = await loadModel(MODELS[i]); } catch (e) { S.errors.push(`${MODELS[i]}: ${e.message || e}`); if (i === MODELS.length - 1) throw e; }
+  }
 } catch (err) {
   window.__fail(`Could not load the tour data (${err.message || err}). Serve the repository folder with a web server and open GARMENT_OFFICE_WALKTHROUGH_FINAL/03_INTERACTIVE_3D/ (see README).`);
   throw err;
@@ -406,13 +414,11 @@ function setMode(m) {
   $('pad').classList.toggle('hidden', !(m === 'walk' && matchMedia('(pointer: coarse)').matches));
   $('minimap').classList.toggle('hidden', !(m === 'walk' || m === 'tour'));
   controls.enabled = m === 'overview' && !flight;
-  look(m === 'overview' ? 'outside' : 'inside');
   needsRender = true;
 }
 function goOverview(pose = overviewPose()) {
   stopTour(false); hidePhoto();
   setMode('overview'); S.room = null; highlight(null); showInfo(null); buildList($('search').value);
-  look('outside');
   flyTo(pose, { inside: false, onDone: () => { controls.target.copy(pose.target || C); controls.enabled = S.mode === 'overview'; controls.update(); setOverhead(S.ceilUser, true); } });
 }
 function selectRoom(r, then) {
@@ -513,6 +519,8 @@ function walkStep(dt) {
     else if (!blocked(p.x, p.z + dz)) p.z += dz;
     else break;
   }
+  const r = roomAt(p.x, p.z);                                        // the card follows the room you walk into
+  if (r && r !== S.room) { S.room = r; showInfo(r, `Walk mode  ·  ${r.group}  ·  approx. ${r.area_sft.toLocaleString('en-US')} sft`); }
   needsRender = true;
 }
 el.addEventListener('dblclick', (e) => {
@@ -639,8 +647,7 @@ function goStop(i) {
   preload(st.camera); preload(st.also_camera);
   const p = stopPose(st);
   const outside = cams[st.camera].type === 'ORTHO';
-  if (outside) { look('outside'); }
-  flyTo(p, { inside: !outside, onDone: () => { if (!S.tour) return; look(outside ? 'outside' : 'inside'); if (!outside) setOverhead(true, true); else setOverhead(false, true); S.tour.phase = 'hold'; S.tour.t = 0; } });
+  flyTo(p, { inside: !outside, onDone: () => { if (!S.tour) return; if (!outside) setOverhead(true, true); else setOverhead(false, true); S.tour.phase = 'hold'; S.tour.t = 0; } });
   updateSegs(); updatePlay();
 }
 function nextStop(d) { if (S.tour) goStop(S.tour.i + d); }
@@ -697,6 +704,9 @@ renderer.setAnimationLoop(() => {
   if (S.mode === 'walk' && !flight) walkStep(dt);
   if (S.mode === 'tour') tourStep(dt);
   if (needsRender) {
+    const want = camera.position.y < 2.6 ? 'inside' : 'outside';     // lighting follows the camera height
+    if (want !== lookPreset) look(want);
+    hiGroup.visible = camera.position.y > 2.6;                       // room highlight only from above
     if (SHADOWS && lookPreset === 'inside') placeSun();
     renderer.render(scene, camera);
     if (pendingSwap) { captureDissolve(); pendingSwap(); pendingSwap = null; renderer.render(scene, camera); }
@@ -711,11 +721,11 @@ buildList();
 setMode('overview');
 overhead.visible = false;
 const start = overviewPose();
-applyPose(start); controls.target.copy(C); controls.update();
+applyPose(start); controls.target.copy(C); controls.update(); look('outside');
 $('loading').style.display = 'none';
 S.ready = true; window.__viewerReady = true;
 let meshes = 0; model.traverse((o) => { if (o.isMesh) meshes++; });
-S.counts = { meshes, drawCallsMerged: drawCalls, rooms: rooms.length, cameras: meta.cameras.length, stops: stops.length };
+S.counts = { meshes, drawCallsMerged: drawCalls, rooms: rooms.length, cameras: meta.cameras.length, stops: stops.length, model: gltf.scene.getObjectByName('WEB_INTERIOR') ? 'web' : 'original' };
 S.api = { selectRoom: (z) => selectRoom(byZone[z]), goOverview, startWalk, startTour, goStop, nextStop, togglePlay, stopTour, showPhoto, hidePhoto,
   blocked, state: () => ({ mode: S.mode, room: S.room && S.room.zone, atCam: S.atCam, flying: !!flight, flightT: flight ? +flight.t.toFixed(3) : null, fps: S.fps, overhead: overhead.visible,
     tour: S.tour && { i: S.tour.i, phase: S.tour.phase, playing: S.tour.playing, sub: S.tour.sub }, photo: S.photo, pos: camera.position.toArray().map((v) => +v.toFixed(3)) }) };

@@ -1,4 +1,4 @@
-// Browser test of the offline 3D tour (Chromium, WebGL 2 via SwiftShader): node test_viewer.js BASE_URL OUT_DIR [WIDTHxHEIGHT]
+// Browser test of the offline 3D tour (Chromium, WebGL 2 via SwiftShader): node test_viewer.js BASE_URL OUT_DIR [WIDTHxHEIGHT] [PAGE_PATH]
 // BASE_URL = the repository root served over http, e.g. http://127.0.0.1:8770
 // Checks: loading, overview, room selection (camera = render camera), photoreal panel, ceilings, walk + collision,
 // minimap, guided tour (start, pause, resume, next, previous, stop), search, resize, console errors.
@@ -20,7 +20,9 @@ const path = require('path');
   const shot = (n) => page.screenshot({ path: path.join(out, n + '.jpg'), quality: 82, timeout: 300000 });
   const idle = async (ms = 420000) => { await page.waitForFunction(() => !window.__viewer.api.state().flying, null, { timeout: ms }); await page.waitForTimeout(700); };
 
-  await page.goto(`${base}/GARMENT_OFFICE_WALKTHROUGH_FINAL/03_INTERACTIVE_3D/index.html?scale=0.3`, { waitUntil: 'load' });
+  const pagePath = process.argv[5] || '/GARMENT_OFFICE_WALKTHROUGH_FINAL/03_INTERACTIVE_3D/index.html';
+  log.page = pagePath;
+  await page.goto(`${base}${pagePath}?scale=0.3`, { waitUntil: 'load' });
   await page.waitForFunction(() => window.__viewer && window.__viewer.ready, null, { timeout: 400000 });
   const counts = await page.evaluate(() => window.__viewer.counts);
   check('model loaded, loading screen gone', await page.evaluate(() => getComputedStyle(document.getElementById('loading')).display === 'none'), { seconds: (Date.now() - t0) / 1000, counts });
