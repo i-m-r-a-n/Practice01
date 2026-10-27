@@ -139,8 +139,10 @@ async function open() {
   for (let i = 0; i < qn; i++) {
     await P.evaluate((k) => window.__viewer.api.goStop(k), i); await still(); await P.waitFor(() => window.__viewer.api.state().tour.phase === 'hold');
     const x = await st();
-    const want = await P.evaluate((k) => window.__viewer.api.state && document.getElementById('tTitle').textContent, i);
-    if (x.tour.i === i) qok++;
+    const want = await P.evaluate(() => document.getElementById('tTitle').textContent);
+    const q = await P.evaluate((k) => fetch('assets/office_web_metadata.json').then((r) => r.json()).then((m) => { const c = m.quick_tour[k].camera; return { c, ortho: m.cameras.find((x) => x.name === c).type === 'ORTHO' }; }), i);
+    const faded = await P.evaluate(() => +getComputedStyle(document.getElementById('dissolve')).opacity === 0);
+    if (x.tour.i === i && (q.ortho || x.atCam === q.c) && faded) qok++; else console.log('  quick stop', i, q.c, x.atCam, 'dissolve gone', faded);
     if (i === 5 || i === 6) await P.shot(path.join(out, `d_quick_stop${i + 1}_${want.replace(/[^A-Za-z]+/g, '_')}.jpg`));
   }
   ok('all quick-tour stops reached', qok === qn, `${qok}/${qn}`);

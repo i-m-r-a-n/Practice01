@@ -100,7 +100,7 @@ button.link:hover { color: var(--white) }
 .tb-head { display: flex; justify-content: space-between; gap: 10px; align-items: baseline }
 #tCount { color: var(--muted); font-size: 12.5px; white-space: nowrap }
 #tTitle { margin: 4px 0 4px; font-size: 22px; font-weight: 650 }
-#tText { margin: 0; font-size: 14px; line-height: 1.45; color: #dfe6e1; max-height: 4.4em; overflow: hidden }
+#tText { margin: 0; font-size: 14px; line-height: 1.45; color: #dfe6e1; max-height: 6em; overflow: hidden }
 .segs { display: flex; gap: 3px; margin: 12px 0 10px }
 .segs div { flex: 1; height: 4px; border-radius: 2px; background: rgba(255, 255, 255, .18); cursor: pointer; overflow: hidden }
 .segs i { display: block; height: 100%; width: 0; background: var(--brass) }

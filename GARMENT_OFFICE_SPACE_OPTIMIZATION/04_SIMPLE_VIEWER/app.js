@@ -319,12 +319,20 @@ function setOverhead(on, dissolve = false) {
   else overhead.visible = on;
   needsRender = true;
 }
+let fade = null;                                     // dissolve driven by the render loop (time-based, never stalls on a slow GPU)
 function captureDissolve(ms = 450) {
   const cv = $('dissolve');
   cv.width = renderer.domElement.width; cv.height = renderer.domElement.height;
   dctx.drawImage(renderer.domElement, 0, 0);
   cv.style.transition = 'none'; cv.style.opacity = 1;
-  requestAnimationFrame(() => requestAnimationFrame(() => { cv.style.transition = `opacity ${ms / 1000}s ease`; cv.style.opacity = 0; }));
+  fade = { t: 0, dur: ms / 1000 };
+}
+function fadeStep(dt) {
+  if (!fade) return;
+  fade.t += dt;
+  const k = Math.min(1, fade.t / fade.dur);
+  $('dissolve').style.opacity = String(1 - k * k * (3 - 2 * k));
+  if (k >= 1) fade = null;
 }
 
 // ------------------------------------------------------------------ transitions: predictable flights from above, dissolves at eye level
@@ -397,7 +405,7 @@ function cutStep(dt) {
   c.t += dt;
   if (c.t >= c.dur) { cut = null; if (c.target.cam) S.atCam = c.target.cam; if (c.onDone) c.onDone(); }
 }
-const moving = () => !!(flight || cut);
+const moving = () => !!(flight || cut || fade);
 
 // ------------------------------------------------------------------ room names on the plan (never at eye level)
 const hiGroup = new THREE.Group(); scene.add(hiGroup);
@@ -914,6 +922,7 @@ renderer.setAnimationLoop(() => {
   const dt = Math.min(clock.getDelta(), 1.0);         // time-based: transitions and holds end on time even on slow GPUs
   if (flight) flightStep(dt);
   if (cut) cutStep(dt);
+  fadeStep(dt);
   if (!moving() && controls.enabled) controls.update();
   if (S.mode === 'walk' && !moving()) walkStep(dt);
   if (S.mode === 'tour') tourStep(dt);
