@@ -9,7 +9,7 @@
 | Pitch PDF / PPTX / render book | `pdfinfo`, PPTX archive test and slide count | 18 pages / 18 slides (archive intact) / 41 pages |
 | 3D tour, Mac package, **Firefox 159** (the presentation browser), opened from `file://` | automated browser run: load, help card, boardroom flight to its render camera, photoreal still, guided-tour stop, walk | 0 errors; ambient occlusion and baked light active (`GARMENT_OFFICE_WALKTHROUGH_FINAL/05_PRODUCTION/firefox_check/`) |
 | 3D tour layout at Mac window sizes (7 sizes x 6 screens) | automated overlap / overflow check + screenshots | 42 / 42 pass (`05_PRODUCTION/layout_test/`) |
-| 3D tour functions (Chromium) | 25-check functional test: rooms, render camera, look around, photoreal, ceilings, walk + collision, 16-stop tour, pause / resume / next / back / end, search, window size | see `05_PRODUCTION/viewer_test_v3/viewer_test.json` (earlier run 23 / 25: the 2 misses were software-GPU timing; the test now waits on state) |
+| 3D tour functions (Chromium) | 25-check functional test: rooms, render camera, look around, photoreal, ceilings, walk + collision, 16-stop tour, pause / resume / next / back / end, search, window size | **25 / 25 pass, 0 console errors** on the final build (`05_PRODUCTION/viewer_test_v3/`; an earlier run had 2 timing misses on the software GPU, kept in `viewer_test_v3_run1/`) |
 | Six key rooms: Cycles vs live vs improved 3D | same cameras, side by side + colour metric | improved closer to the render in 4 of 6 rooms (`GARMENT_OFFICE_REALISM_UPGRADE/03_VISUAL_COMPARISON/`) |
 | Downloads | each link in `README.md` fetched from GitHub | HTTP 200, sizes equal to the repository files |
 

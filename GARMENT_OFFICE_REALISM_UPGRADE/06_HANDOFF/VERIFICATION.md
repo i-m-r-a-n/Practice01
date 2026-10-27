@@ -10,7 +10,7 @@ virtual display). They prove behaviour and layout, not the frame rate of a real 
 | Firefox 159 (presentation browser), Mac offline file from `file://` | model + baked light + ambient occlusion, help card, boardroom flight to `CAM_09_Boardroom_A`, photoreal still from `renders/`, tour stop 3 in one card, walk 2.2 m; **0 errors** | `GARMENT_OFFICE_WALKTHROUGH_FINAL/05_PRODUCTION/firefox_check/` |
 | Firefox 159, website build (served like the Worker) | same steps, 0 errors | same folder |
 | Layout at Mac sizes (2000x1093, 1920x1080, 1728x1117, 1512x982, 1470x956, 1440x900, 1280x800) x 6 screens (help, overview, room, tour + still, tour 3D, walk) | **42 / 42**: no overlapping panels, nothing outside the window, no sideways scroll; 0 console errors | `.../05_PRODUCTION/layout_test/` |
-| Full functional test (Chromium, 1280x720) | see `viewer_test_v3/viewer_test.json` (run on the final build) | `.../05_PRODUCTION/viewer_test_v3/` |
+| Full functional test (Chromium, 1280x720): 25 checks incl. room camera, look around, photoreal, ceilings, walk + collision, tour pause / next / back while paused / end / Play again, search | **25 / 25, 0 errors** on the final build | `.../05_PRODUCTION/viewer_test_v3/` |
 | Ambient occlusion A/B | contact shadows visible, no glass artefacts | `../03_VISUAL_COMPARISON/ambient_occlusion/` |
 | Six-room comparison Cycles / live / improved | improved closer to the render in 4 of 6 rooms, about the same in 1, further in 1 (reception brighter) | `../03_VISUAL_COMPARISON/` |
 | Videos | QC: no decode errors, no black frames, still only on title / closing cards, faststart; GitHub downloads byte-identical (SHA-256) | `.../05_PRODUCTION/video_qc/`, `../../GARMENT_OFFICE_WALKTHROUGH_FINAL/06_HANDOFF/STATUS.md` |
