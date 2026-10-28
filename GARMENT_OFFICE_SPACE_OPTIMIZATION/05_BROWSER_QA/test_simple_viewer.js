@@ -25,7 +25,9 @@ async function open() {
       size: (w, h) => page.setViewport({ width: w, height: h }),
       shot: (p) => page.screenshot({ path: p, type: 'jpeg', quality: 78 }),
       click: (sel) => page.click(sel),
-      mouse: page.mouse, keyboard: page.keyboard,
+      mouse: page.mouse,
+      // WebDriver BiDi takes key values, not Playwright's code names
+      keyboard: ((K, m) => ({ press: (k) => K.press(m[k] || k), down: (k) => K.down(m[k] || k), up: (k) => K.up(m[k] || k) }))(page.keyboard, { Space: ' ', KeyW: 'w' }),
       wait: (ms) => new Promise((r) => setTimeout(r, ms)),
     };
     page.on('pageerror', (e) => errors.push('pageerror: ' + String(e).slice(0, 300)));
