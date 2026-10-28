@@ -1,0 +1,596 @@
+{
+  "scope": "LOCAL Chromium (SwiftShader) via serve_preview.py; not live, Safari or MacBook proof",
+  "url": "http://127.0.0.1:8784/realistic/?room=Z02&welcome=0",
+  "views": [
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "errors": [],
+      "failed_requests": [],
+      "http_errors": [],
+      "model_ready_seconds_local": 4.282,
+      "settled_seconds_local": 40.416,
+      "state": {
+        "mode": "rooms",
+        "room": "Z02",
+        "atCam": "CAM_01_Reception_A",
+        "flying": false,
+        "flightT": null,
+        "fps": 1,
+        "overhead": true,
+        "tour": null,
+        "photo": null,
+        "aoFrames": 0,
+        "pos": [
+          8.077,
+          1.524,
+          0.66
+        ]
+      },
+      "controls": {
+        "mTour": {
+          "x": 892.671875,
+          "y": 15,
+          "width": 121.515625,
+          "height": 34,
+          "right": 1014.1875,
+          "bottom": 49,
+          "color": "rgb(27, 20, 8)",
+          "background": "rgb(194, 154, 85)",
+          "display": "block",
+          "visibility": "visible",
+          "pressed": null,
+          "text": "\u25b6 Guided tour"
+        },
+        "mOverview": {
+          "x": 1027.1875,
+          "y": 17,
+          "width": 86.34375,
+          "height": 30,
+          "right": 1113.53125,
+          "bottom": 47,
+          "color": "rgb(246, 243, 238)",
+          "background": "rgba(0, 0, 0, 0)",
+          "display": "block",
+          "visibility": "visible",
+          "pressed": null,
+          "text": "Overview"
+        },
+        "mRooms": {
+          "x": 1115.53125,
+          "y": 17,
+          "width": 70.65625,
+          "height": 30,
+          "right": 1186.1875,
+          "bottom": 47,
+          "color": "rgb(246, 243, 238)",
+          "background": "rgb(38, 103, 61)",
+          "display": "block",
+          "visibility": "visible",
+          "pressed": null,
+          "text": "Rooms"
+        },
+        "mWalk": {
+          "x": 1188.1875,
+          "y": 17,
+          "width": 56.890625,
+          "height": 30,
+          "right": 1245.078125,
+          "bottom": 47,
+          "color": "rgb(246, 243, 238)",
+          "background": "rgba(0, 0, 0, 0)",
+          "display": "block",
+          "visibility": "visible",
+          "pressed": null,
+          "text": "Walk"
+        },
+        "mPeople": {
+          "x": 1258.078125,
+          "y": 15,
+          "width": 71.921875,
+          "height": 34,
+          "right": 1330,
+          "bottom": 49,
+          "color": "rgb(246, 243, 238)",
+          "background": "rgb(239, 239, 239)",
+          "display": "block",
+          "visibility": "visible",
+          "pressed": "true",
+          "text": "People"
+        },
+        "mHelp": {
+          "x": 1338,
+          "y": 13,
+          "width": 38,
+          "height": 38,
+          "right": 1376,
+          "bottom": 51,
+          "color": "rgb(246, 243, 238)",
+          "background": "rgba(20, 27, 23, 0.86)",
+          "display": "block",
+          "visibility": "visible",
+          "pressed": null,
+          "text": "?"
+        },
+        "mFull": {
+          "x": 1384,
+          "y": 13,
+          "width": 38,
+          "height": 38,
+          "right": 1422,
+          "bottom": 51,
+          "color": "rgb(246, 243, 238)",
+          "background": "rgba(20, 27, 23, 0.86)",
+          "display": "block",
+          "visibility": "visible",
+          "pressed": null,
+          "text": "\u26f6"
+        }
+      },
+      "screenshot": "1440_interactive_reception.png",
+      "sha256": "eeaa4acabe81bef8d942626f60ba34214582e7bf14256813f6d661a98f744c3d",
+      "status": "checked"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "errors": [],
+      "failed_requests": [],
+      "http_errors": [],
+      "model_ready_seconds_local": 2.005,
+      "settled_seconds_local": 23.906,
+      "state": {
+        "mode": "rooms",
+        "room": "Z02",
+        "atCam": "CAM_01_Reception_A",
+        "flying": false,
+        "flightT": null,
+        "fps": 0.9907856930546609,
+        "overhead": true,
+        "tour": null,
+        "photo": null,
+        "aoFrames": 0,
+        "pos": [
+          8.077,
+          1.524,
+          0.66
+        ]
+      },
+      "controls": {
+        "mTour": {
+          "x": 10,
+          "y": 49,
+          "width": 102.59375,
+          "height": 31,
+          "right": 112.59375,
+          "bottom": 80,
+          "color": "rgb(27, 20, 8)",
+          "background": "rgb(194, 154, 85)",
+          "display": "block",
+          "visibility": "visible",
+          "pressed": null,
+          "text": "\u25b6 Guided tour"
+        },
+        "mOverview": {
+          "x": 121.59375,
+          "y": 51,
+          "width": 71.875,
+          "height": 27,
+          "right": 193.46875,
+          "bottom": 78,
+          "color": "rgb(246, 243, 238)",
+          "background": "rgba(0, 0, 0, 0)",
+          "display": "block",
+          "visibility": "visible",
+          "pressed": null,
+          "text": "Overview"
+        },
+        "mRooms": {
+          "x": 195.46875,
+          "y": 51,
+          "width": 57.34375,
+          "height": 27,
+          "right": 252.8125,
+          "bottom": 78,
+          "color": "rgb(246, 243, 238)",
+          "background": "rgb(38, 103, 61)",
+          "display": "block",
+          "visibility": "visible",
+          "pressed": null,
+          "text": "Rooms"
+        },
+        "mWalk": {
+          "x": 254.8125,
+          "y": 51,
+          "width": 44.59375,
+          "height": 27,
+          "right": 299.40625,
+          "bottom": 78,
+          "color": "rgb(246, 243, 238)",
+          "background": "rgba(0, 0, 0, 0)",
+          "display": "block",
+          "visibility": "visible",
+          "pressed": null,
+          "text": "Walk"
+        },
+        "mPeople": {
+          "x": 308.40625,
+          "y": 49,
+          "width": 56.671875,
+          "height": 31,
+          "right": 365.078125,
+          "bottom": 80,
+          "color": "rgb(246, 243, 238)",
+          "background": "rgb(239, 239, 239)",
+          "display": "block",
+          "visibility": "visible",
+          "pressed": "true",
+          "text": "People"
+        },
+        "mHelp": {
+          "x": 369.078125,
+          "y": 47.5,
+          "width": 10.40625,
+          "height": 34,
+          "right": 379.484375,
+          "bottom": 81.5,
+          "color": "rgb(246, 243, 238)",
+          "background": "rgba(20, 27, 23, 0.86)",
+          "display": "block",
+          "visibility": "visible",
+          "pressed": null,
+          "text": "?"
+        },
+        "mFull": {
+          "x": 383.484375,
+          "y": 47.5,
+          "width": 12.515625,
+          "height": 34,
+          "right": 396,
+          "bottom": 81.5,
+          "color": "rgb(246, 243, 238)",
+          "background": "rgba(20, 27, 23, 0.86)",
+          "display": "block",
+          "visibility": "visible",
+          "pressed": null,
+          "text": "\u26f6"
+        }
+      },
+      "screenshot": "390_interactive_reception.png",
+      "sha256": "383fb180437b74ee71775946141c91ea17f06ff0393d19feef28ed570675917a",
+      "status": "checked"
+    },
+    {
+      "viewport": [
+        360,
+        740
+      ],
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "http://127.0.0.1:8784/realistic/people/assets/panjabi.glb",
+          "failure": "net::ERR_ABORTED"
+        }
+      ],
+      "http_errors": [],
+      "model_ready_seconds_local": 1.753,
+      "settled_seconds_local": 25.629,
+      "state": {
+        "mode": "rooms",
+        "room": "Z02",
+        "atCam": "CAM_01_Reception_A",
+        "flying": false,
+        "flightT": null,
+        "fps": 1.9466614755693545,
+        "overhead": true,
+        "tour": null,
+        "photo": null,
+        "aoFrames": 0,
+        "pos": [
+          8.077,
+          1.524,
+          0.66
+        ]
+      },
+      "controls": {
+        "mTour": {
+          "x": 10,
+          "y": 49,
+          "width": 102.59375,
+          "height": 31,
+          "right": 112.59375,
+          "bottom": 80,
+          "color": "rgb(27, 20, 8)",
+          "background": "rgb(194, 154, 85)",
+          "display": "block",
+          "visibility": "visible",
+          "pressed": null,
+          "text": "\u25b6 Guided tour"
+        },
+        "mOverview": {
+          "x": 121.59375,
+          "y": 51,
+          "width": 71.875,
+          "height": 27,
+          "right": 193.46875,
+          "bottom": 78,
+          "color": "rgb(246, 243, 238)",
+          "background": "rgba(0, 0, 0, 0)",
+          "display": "block",
+          "visibility": "visible",
+          "pressed": null,
+          "text": "Overview"
+        },
+        "mRooms": {
+          "x": 195.46875,
+          "y": 51,
+          "width": 57.34375,
+          "height": 27,
+          "right": 252.8125,
+          "bottom": 78,
+          "color": "rgb(246, 243, 238)",
+          "background": "rgb(38, 103, 61)",
+          "display": "block",
+          "visibility": "visible",
+          "pressed": null,
+          "text": "Rooms"
+        },
+        "mWalk": {
+          "x": 254.8125,
+          "y": 51,
+          "width": 44.59375,
+          "height": 27,
+          "right": 299.40625,
+          "bottom": 78,
+          "color": "rgb(246, 243, 238)",
+          "background": "rgba(0, 0, 0, 0)",
+          "display": "block",
+          "visibility": "visible",
+          "pressed": null,
+          "text": "Walk"
+        },
+        "mPeople": {
+          "x": 308.40625,
+          "y": 49,
+          "width": 56.671875,
+          "height": 31,
+          "right": 365.078125,
+          "bottom": 80,
+          "color": "rgb(246, 243, 238)",
+          "background": "rgb(239, 239, 239)",
+          "display": "block",
+          "visibility": "visible",
+          "pressed": "true",
+          "text": "People"
+        },
+        "mHelp": {
+          "x": 369.078125,
+          "y": 47.5,
+          "width": 10.40625,
+          "height": 34,
+          "right": 379.484375,
+          "bottom": 81.5,
+          "color": "rgb(246, 243, 238)",
+          "background": "rgba(20, 27, 23, 0.86)",
+          "display": "block",
+          "visibility": "visible",
+          "pressed": null,
+          "text": "?"
+        },
+        "mFull": {
+          "x": 383.484375,
+          "y": 47.5,
+          "width": 12.515625,
+          "height": 34,
+          "right": 396,
+          "bottom": 81.5,
+          "color": "rgb(246, 243, 238)",
+          "background": "rgba(20, 27, 23, 0.86)",
+          "display": "block",
+          "visibility": "visible",
+          "pressed": null,
+          "text": "\u26f6"
+        }
+      },
+      "screenshot": "360_interactive_reception.png",
+      "sha256": "4a28959f065bcb5ac398b6a98131d8dcb5c4da3c8ce0cf50980bb4cf2bfd57ea",
+      "status": "failed",
+      "exception": "Locator.click: Timeout 30000ms exceeded.\nCall log:\n  - waiting for locator(\"#mHelp\")\n    - locator resolved to <button id=\"mHelp\" class=\"icon\" aria-label=\"Help\" title=\"How to use this tour (H)\">?</button>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - element is outside of the viewport\n    - retrying click action\n    - waiting 20ms\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - element is outside of the viewport\n    - retrying click action\n      - waiting 100ms\n    52 \u00d7 waiting for element to be visible, enabled and stable\n       - element is visible, enabled and stable\n       - scrolling into view if needed\n       - done scrolling\n       - element is outside of the viewport\n     - retrying click action\n       - waiting 500ms\n    - waiting for element to be visible, enabled and stable\n"
+    }
+  ],
+  "checks": [
+    {
+      "name": "1440: every toolbar control fully inside the viewport and at least 30 px",
+      "passed": true,
+      "value": {
+        "mTour": true,
+        "mOverview": true,
+        "mRooms": true,
+        "mWalk": true,
+        "mPeople": true,
+        "mHelp": true,
+        "mFull": true
+      }
+    },
+    {
+      "name": "1440: toolbar controls do not overlap",
+      "passed": true,
+      "value": []
+    },
+    {
+      "name": "1440: People button text contrast >= 4.5",
+      "passed": false,
+      "value": 1.04
+    },
+    {
+      "name": "1440: concept + illustrative-people notice visible (>= 11 px)",
+      "passed": true,
+      "value": {
+        "text": "Proposed interior visualization. Final dimensions and technical details subject to site verification. People shown are illustrative.",
+        "fontSize": 11.5,
+        "visible": true,
+        "peopleNoteHidden": false
+      }
+    },
+    {
+      "name": "1440: drag right/down moves the room with the pointer (yaw and pitch increase)",
+      "passed": false,
+      "value": {
+        "yaw": -1.980108524313515,
+        "pitch": 0.10172270497203284
+      }
+    },
+    {
+      "name": "1440: People off",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "1440: People on",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "1440: Help opens",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "1440: no page/console errors",
+      "passed": true,
+      "value": []
+    },
+    {
+      "name": "1440: no HTTP errors",
+      "passed": true,
+      "value": []
+    },
+    {
+      "name": "390: every toolbar control fully inside the viewport and at least 30 px",
+      "passed": false,
+      "value": {
+        "mTour": true,
+        "mOverview": false,
+        "mRooms": false,
+        "mWalk": false,
+        "mPeople": true,
+        "mHelp": false,
+        "mFull": false
+      }
+    },
+    {
+      "name": "390: toolbar controls do not overlap",
+      "passed": true,
+      "value": []
+    },
+    {
+      "name": "390: People button text contrast >= 4.5",
+      "passed": false,
+      "value": 1.04
+    },
+    {
+      "name": "390: concept + illustrative-people notice visible (>= 11 px)",
+      "passed": false,
+      "value": {
+        "text": "Proposed interior visualization. Final dimensions and technical details subject to site verification. People shown are illustrative.",
+        "fontSize": 10,
+        "visible": true,
+        "peopleNoteHidden": false
+      }
+    },
+    {
+      "name": "390: drag right/down moves the room with the pointer (yaw and pitch increase)",
+      "passed": false,
+      "value": {
+        "yaw": -1.980108524313515,
+        "pitch": 0.10172270497203284
+      }
+    },
+    {
+      "name": "390: People off",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "390: People on",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "390: Help opens",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "390: no page/console errors",
+      "passed": true,
+      "value": []
+    },
+    {
+      "name": "390: no HTTP errors",
+      "passed": true,
+      "value": []
+    },
+    {
+      "name": "360: every toolbar control fully inside the viewport and at least 30 px",
+      "passed": false,
+      "value": {
+        "mTour": true,
+        "mOverview": false,
+        "mRooms": false,
+        "mWalk": false,
+        "mPeople": false,
+        "mHelp": false,
+        "mFull": false
+      }
+    },
+    {
+      "name": "360: toolbar controls do not overlap",
+      "passed": true,
+      "value": []
+    },
+    {
+      "name": "360: People button text contrast >= 4.5",
+      "passed": false,
+      "value": 1.04
+    },
+    {
+      "name": "360: concept + illustrative-people notice visible (>= 11 px)",
+      "passed": false,
+      "value": {
+        "text": "Proposed interior visualization. Final dimensions and technical details subject to site verification. People shown are illustrative.",
+        "fontSize": 10,
+        "visible": true,
+        "peopleNoteHidden": false
+      }
+    },
+    {
+      "name": "360: drag right/down moves the room with the pointer (yaw and pitch increase)",
+      "passed": false,
+      "value": {
+        "yaw": -1.980108524313515,
+        "pitch": 0.10172270497203284
+      }
+    },
+    {
+      "name": "360: People off",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "360: People on",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "360: completed",
+      "passed": false,
+      "value": "Locator.click: Timeout 30000ms exceeded.\nCall log:\n  - waiting for locator(\"#mHelp\")\n    - locator resolved to <button id=\"mHelp\" class=\"icon\" aria-label=\"Help\" title=\"How to use this tour (H)\">?</button>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - element is outside of the viewport\n    - retrying click action\n    - waiting 20ms\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - element is outside of the viewport\n    - retrying click action\n      - waiting 100ms\n    52 \u00d7 waiting for element to be visible, enabled and stable\n       - element is visible, enabled and stable\n       - scrolling into view if needed\n       - done scrolling\n       - element is outside of the viewport\n     - retrying click action\n       - waiting 500ms\n    - waiting for element to be visible, enabled and stable\n"
+    }
+  ],
+  "passed": false
+}

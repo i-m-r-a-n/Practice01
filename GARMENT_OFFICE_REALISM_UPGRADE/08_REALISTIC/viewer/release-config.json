@@ -95,5 +95,18 @@
     "PROP_0131"
   ],
   "peopleAccepted": true,
-  "baseModel": "revised-model/Optimized_Office_Interior_web_baked.glb (Z06/Z07 option B; documentation only, routed by the Worker as ./model_web_baked.glb)"
+  "baseModel": "revised-model/Optimized_Office_Interior_web_baked.glb (Z06/Z07 option B; documentation only, routed by the Worker as ./model_web_baked.glb)",
+  "roomNotes": {
+    "Z02": "A Jamdani-inspired textile panel behind the sofa, as a design reference. The maker is to be identified and credited; nothing here is claimed as artisan-made.",
+    "Z30": "Water & Wellbeing refill point with reusable glasses at the counter. The drinking water is client-stated to come from a deep tube well; no laboratory results are available yet, so none are shown. Coconut-shell button story and sample cards: supplier data pending. The client states the building runs on solar power; energy figures will appear only with real monitoring data.",
+    "Z08": "Fabric review trays on the table for material discussions with buyers and visiting designers.",
+    "Z12": "Current development samples and a swatch study on the credenza, beside the existing frame and books.",
+    "Z07": "Monitors show generic placeholder screens, not real buyer data.",
+    "Z18": "Daylight from the east windows. True north, sun angles and glare at the desks are still to be measured on site."
+  },
+  "screenZones": [
+    "Z07",
+    "Z12",
+    "Z18"
+  ]
 }

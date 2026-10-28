@@ -325,6 +325,19 @@ if (USE_DRESSING && SIMPLE_RELEASE) {
     else S.errors.push(`${zone} display artwork skipped: exact source ${name} was not found.`);
   }
 }
+if (USE_DRESSING && SIMPLE_RELEASE && CFG.screenZones?.length) {
+  const wanted = new Set(CFG.screenZones.filter(z => CFG.releaseZones?.includes(z)));
+  const isScreen = m => /^screen_(ui|brand)(?:$|[_.\s-])/.test(m?.name || '');
+  const roots = [];
+  interior.traverse(o => {
+    if (!wanted.has(o.userData?.zone) || roots.some(r => r === o.parent || r.getObjectById(o.id))) return;
+    let has = false; o.traverse(m => { if (m.isMesh && (Array.isArray(m.material) ? m.material : [m.material]).some(isScreen)) has = true; });
+    if (has) roots.push(o);
+  });
+  const layer = await ensureDressing();
+  for (const root of roots) layer.prepareSourceScreen(root, root.userData.zone);
+  S.screenRoots = roots.length;
+}
 let drawCalls = null;
 if (qs.get('merge') !== '0') {
   try {
@@ -604,6 +617,9 @@ function showInfo(r, kicker, hint = '') {
   $('infoKicker').textContent = kicker || `${r.group}  ·  approx. ${r.area_sft.toLocaleString('en-US')} sft (${r.area_m2} m²)`;
   $('infoTitle').textContent = r ? r.name : '';
   $('infoText').textContent = r ? r.description : '';
+  const note = r && CFG.roomNotes?.[r.zone];                       // concept additions + evidence still pending (release-config.json)
+  $('infoNote').classList.toggle('hidden', !note);
+  $('infoNote').innerHTML = note ? '<b>Concept</b> \u00b7 ' + note.replace(/[<>&]/g, c => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;' }[c])) : '';
   $('infoHint').textContent = hint;
   updateInfoButtons();
 }
@@ -942,6 +958,8 @@ function goStop(i) {
   $('tCount').textContent = `Stop ${T.i + 1} of ${stops.length}`;
   $('tKicker').textContent = S.room ? `${S.room.group}  ·  approx. ${S.room.area_sft.toLocaleString('en-US')} sft` : 'The whole floor';
   $('tTitle').textContent = st.title; $('tText').textContent = st.description;
+  const tNote = st.zone && CFG.roomNotes?.[st.zone];
+  $('tNote').classList.toggle('hidden', !tNote); $('tNote').textContent = tNote ? 'Concept \u00b7 ' + tNote : '';
   $('tPrev').disabled = T.i === 0; $('tNext').disabled = T.i === stops.length - 1;
   preload(st.camera); preload(st.also_camera);
   const p = stopPose(st);

@@ -3,6 +3,7 @@ import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { buildOfficeProps } from '../props/office-props.mjs';
 import { applyOfficeScreenContent } from '../props/screen-content.mjs';
 import { createPeopleLayer } from '../people/people-layer.js';
+import { buildIdentityProps } from '../props/identity-props.mjs';
 
 // Phase 4 is deliberately dormant in stages 1–3. Source objects remain untouched;
 // additive props, screen artwork and fictional actors have separate provenance.
@@ -16,8 +17,11 @@ export async function createOfficeDressing({ scene, renderer, metadata, grid, pr
   const props = buildOfficeProps(THREE, manifest, { anisotropy: Math.min(8, renderer.capabilities.getMaxAnisotropy()) });
   scene.add(props.group);
   props.group.traverse(mesh => { if (mesh.isMesh) { mesh.castShadow = false; mesh.receiveShadow = false; } });
+  // Client-identity items (water point, material stories, development samples): on furniture tops or walls only.
+  const identity = buildIdentityProps(THREE, { zones: activeZones, anisotropy: Math.min(8, renderer.capabilities.getMaxAnisotropy()) });
+  scene.add(identity.group);
   let atlas, people = null, peoplePromise = null;
-  const status = { enabled: true, props: props.stats, screens: {}, peopleAccepted, errors: [], dynamicLighting: probes ? 'Room SH for actors; instance SH for additive props; static lightmaps exclude both.' : 'Existing scene hemisphere/directional lighting for added props and static people; not a calibrated dynamic-lighting bake.' };
+  const status = { enabled: true, props: props.stats, identity: { ...identity.stats, items: identity.items }, screens: {}, peopleAccepted, errors: [], dynamicLighting: probes ? 'Room SH for actors; instance SH for additive props; static lightmaps exclude both.' : 'Existing scene hemisphere/directional lighting for added props and static people; not a calibrated dynamic-lighting bake.' };
   const zones = metadata.rooms.map(r => r.zone), rows = new Float32Array(9 * zones.length * 4);
   const shTexture = new THREE.DataTexture(rows, 9, zones.length, THREE.RGBAFormat, THREE.FloatType);
   shTexture.minFilter = shTexture.magFilter = THREE.NearestFilter; shTexture.generateMipmaps = false;
@@ -128,10 +132,10 @@ vec3 officeSH(vec3 n){
     changed(); return layer.stats();
   }
   function update(dt, options) { if (people?.stats().enabled) { people.update(frozenPeople ? 0 : dt, options); if (!frozenPeople) changed(); } }
-  return { status, props, prepareRoom, prepareSourceScreen, applyProbe, prepareView, propDiagnostics, textures: () => [shTexture, atlas].filter(Boolean), setPeopleEnabled, update,
+  return { status, props, prepareRoom, prepareSourceScreen, applyProbe, prepareView, propDiagnostics, textures: () => [shTexture, atlas, ...identity.textures()].filter(Boolean), setPeopleEnabled, update,
     peopleStats: () => people?.stats() || { enabled: false, loaded: false, total: 0, visible: 0, illustrative: true, accepted: peopleAccepted },
     peopleDiagnostics: () => people?.diagnostics() || [], blocksMovement: (x, z, radius) => people?.blocksMovement(x, z, radius) || false,
     hiddenDuringProbe: () => people ? [people.group] : [],
-    dispose() { people?.dispose(); props.group.traverse(o => o.geometry?.dispose()); props.dispose(); atlas?.dispose(); shTexture.dispose(); },
+    dispose() { people?.dispose(); props.group.traverse(o => o.geometry?.dispose()); props.dispose(); identity.dispose(); atlas?.dispose(); shTexture.dispose(); },
   };
 }

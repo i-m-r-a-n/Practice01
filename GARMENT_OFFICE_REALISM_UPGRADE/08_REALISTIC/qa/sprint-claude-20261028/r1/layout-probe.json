@@ -1,0 +1,134 @@
+{
+ "url": "http://127.0.0.1:8784/realistic/?room=Z02&welcome=0",
+ "all_ok": true,
+ "sizes": {
+  "320x568": {
+   "ok": true,
+   "bad": [],
+   "out": [],
+   "clip": [],
+   "small": [],
+   "top": 98
+  },
+  "360x740": {
+   "ok": true,
+   "bad": [],
+   "out": [],
+   "clip": [],
+   "small": [],
+   "top": 98
+  },
+  "390x844": {
+   "ok": true,
+   "bad": [],
+   "out": [],
+   "clip": [],
+   "small": [],
+   "top": 98
+  },
+  "414x896": {
+   "ok": true,
+   "bad": [],
+   "out": [],
+   "clip": [],
+   "small": [],
+   "top": 98
+  },
+  "600x900": {
+   "ok": true,
+   "bad": [],
+   "out": [],
+   "clip": [],
+   "small": [],
+   "top": 98
+  },
+  "640x900": {
+   "ok": true,
+   "bad": [],
+   "out": [],
+   "clip": [],
+   "small": [],
+   "top": 98
+  },
+  "700x900": {
+   "ok": true,
+   "bad": [],
+   "out": [],
+   "clip": [],
+   "small": [],
+   "top": 100
+  },
+  "768x1024": {
+   "ok": true,
+   "bad": [],
+   "out": [],
+   "clip": [],
+   "small": [],
+   "top": 100
+  },
+  "820x1180": {
+   "ok": true,
+   "bad": [],
+   "out": [],
+   "clip": [],
+   "small": [],
+   "top": 100
+  },
+  "860x900": {
+   "ok": true,
+   "bad": [],
+   "out": [],
+   "clip": [],
+   "small": [],
+   "top": 100
+  },
+  "861x900": {
+   "ok": true,
+   "bad": [],
+   "out": [],
+   "clip": [],
+   "small": [],
+   "top": 115
+  },
+  "1024x768": {
+   "ok": true,
+   "bad": [],
+   "out": [],
+   "clip": [],
+   "small": [],
+   "top": 64
+  },
+  "1180x820": {
+   "ok": true,
+   "bad": [],
+   "out": [],
+   "clip": [],
+   "small": [],
+   "top": 64
+  },
+  "1280x800": {
+   "ok": true,
+   "bad": [],
+   "out": [],
+   "clip": [],
+   "small": [],
+   "top": 73
+  },
+  "1440x900": {
+   "ok": true,
+   "bad": [],
+   "out": [],
+   "clip": [],
+   "small": [],
+   "top": 64
+  },
+  "1920x1080": {
+   "ok": true,
+   "bad": [],
+   "out": [],
+   "clip": [],
+   "small": [],
+   "top": 64
+  }
+ }
+}
