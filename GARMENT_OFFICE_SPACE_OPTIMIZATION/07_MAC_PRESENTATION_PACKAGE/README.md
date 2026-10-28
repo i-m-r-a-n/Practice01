@@ -47,6 +47,6 @@ There are 130 files, 453 MB in total. Every file is pinned to an exact commit in
 ## Getting the files
 
 - **From Drive:** download the Drive folder.
-- **Straight from GitHub:** put `manifest.csv` and a script in one folder, then run it. It downloads everything into `STAGE_II_Presentation/` and checks each SHA-256. If you run it again, it skips the files that are already correct.
+- **Straight from GitHub:** run a script on its own; it fetches `manifest.csv` from GitHub if the file is not next to it. It downloads everything into `STAGE_II_Presentation/` and checks each SHA-256. If you run it again, it skips the files that are already correct.
   - Mac: `sh get_package_mac.sh`. Tested on Linux: 130 / 130 files downloaded, all hashes matched.
   - Windows: `powershell -ExecutionPolicy Bypass -File .\get_package_windows.ps1`. Not run here; no PowerShell in this environment.

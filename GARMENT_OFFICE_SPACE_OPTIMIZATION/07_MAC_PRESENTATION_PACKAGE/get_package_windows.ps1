@@ -2,6 +2,7 @@
 # Windows PowerShell:  cd <folder with this script and manifest.csv>;  powershell -ExecutionPolicy Bypass -File .\get_package_windows.ps1
 $ErrorActionPreference = 'Continue'
 Set-Location $PSScriptRoot
+if (-not (Test-Path manifest.csv)) { Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/i-m-r-a-n/Practice01/1ba6ff0/GARMENT_OFFICE_SPACE_OPTIMIZATION/07_MAC_PRESENTATION_PACKAGE/manifest.csv' -OutFile manifest.csv -UseBasicParsing }
 $out = Join-Path $PSScriptRoot 'STAGE_II_Presentation'
 $bad = 0
 foreach ($r in Import-Csv manifest.csv) {
