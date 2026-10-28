@@ -190,7 +190,7 @@ async function open() {
   await P.wait(300);
   const f1 = (await st()).fov;
   ok('scroll zooms in within limits', f1 < f0 && f1 > 10 && f1 < 85, `fov ${f0} -> ${f1}`);
-  await P.mouse.dblclick ? await P.mouse.dblclick(700, 450) : await P.mouse.click(700, 450, { clickCount: 2 }); await still();
+  await P.mouse.dblclick ? await P.mouse.dblclick(700, 450) : await P.mouse.click(700, 450, { count: 2, clickCount: 2 }); await still();
   s = await st(); ok('double-click resets to the architectural camera', s.atCam === 'CAM_34_Merchandising_Sample_Hub', JSON.stringify(s));
   await P.click('#cPhoto'); await P.waitFor(() => document.getElementById('photo').classList.contains('show'), null, 60000);
   const tag = await P.evaluate(() => document.querySelector('.photo-tag').textContent);

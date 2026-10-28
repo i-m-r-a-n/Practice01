@@ -1,0 +1,344 @@
+{
+ "url": "http://127.0.0.1:8800/GARMENT_OFFICE_SPACE_OPTIMIZATION/04_SIMPLE_VIEWER/?motion=0",
+ "engine": "firefox",
+ "seconds": 288.204,
+ "counts": {
+  "quality": "balanced",
+  "meshes": 102,
+  "drawCallsMerged": {
+   "before": 2072,
+   "after": 102
+  },
+  "rooms": 34,
+  "cameras": 45,
+  "quickStops": 9,
+  "fullStops": 16,
+  "bakedLight": true,
+  "ambientOcclusion": true
+ },
+ "results": [
+  {
+   "name": "loads without startup errors",
+   "pass": true,
+   "detail": "3.3 s; {\"quality\":\"balanced\",\"meshes\":102,\"drawCallsMerged\":{\"before\":2072,\"after\":102},\"rooms\":34,\"cameras\":45,\"quickStops\":9,\"fullStops\":16,\"bakedLight\":true,\"ambientOcclusion\":true}"
+  },
+  {
+   "name": "baked light active",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "home screen shows three choices",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "no tutorial pop-up on load",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "layout a_home 1440x900",
+   "pass": true,
+   "detail": "{\"panels\":[\"top\",\"disclaimer\"],\"overlaps\":[],\"outside\":[],\"hscroll\":false,\"labels\":0,\"lblClash\":0}"
+  },
+  {
+   "name": "layout a_home 1920x1080",
+   "pass": true,
+   "detail": "{\"panels\":[\"top\",\"disclaimer\"],\"overlaps\":[],\"outside\":[],\"hscroll\":false,\"labels\":0,\"lblClash\":0}"
+  },
+  {
+   "name": "layout a_home 1280x800",
+   "pass": true,
+   "detail": "{\"panels\":[\"top\",\"disclaimer\"],\"overlaps\":[],\"outside\":[],\"hscroll\":false,\"labels\":0,\"lblClash\":0}"
+  },
+  {
+   "name": "layout a_home 390x844",
+   "pass": true,
+   "detail": "{\"panels\":[\"top\",\"disclaimer\"],\"overlaps\":[],\"outside\":[],\"hscroll\":false,\"labels\":0,\"lblClash\":0}"
+  },
+  {
+   "name": "tour choice opens",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "quick tour is 3-5 minutes",
+   "pass": true,
+   "detail": "9 stops, the key rooms  ·  about 3½ min (196 s)"
+  },
+  {
+   "name": "complete tour shows 16 stops",
+   "pass": true,
+   "detail": "16 stops, the whole office  ·  about 4½ min (255 s)"
+  },
+  {
+   "name": "quick tour starts on the overview",
+   "pass": true,
+   "detail": "{\"key\":\"quick\",\"i\":0,\"phase\":\"hold\",\"playing\":true,\"sub\":0,\"done\":false}"
+  },
+  {
+   "name": "pause",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "next works while paused (reception)",
+   "pass": true,
+   "detail": "{\"mode\":\"tour\",\"room\":\"Z02\",\"atCam\":\"CAM_01_Reception_A\",\"moving\":false,\"fps\":0.9823182711198428,\"overhead\":true,\"looking\":false,\"tour\":{\"key\":\"quick\",\"i\":1,\"phase\":\"hold\",\"playing\":false,\"sub\":0,\"done\":false},\"present\":false,\"aoFrames\":7,\"fov\":64.01,\"yaw\":0,\"pos\":[8.077,1.524,0.66]}"
+  },
+  {
+   "name": "room to room at eye level ends on the camera (experience centre)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "back works",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "right arrow = next",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "space = resume",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "layout c_tour_paused 1440x900",
+   "pass": true,
+   "detail": "{\"panels\":[\"top\",\"tourbar\",\"disclaimer\"],\"overlaps\":[],\"outside\":[],\"hscroll\":false,\"labels\":0,\"lblClash\":0}"
+  },
+  {
+   "name": "layout c_tour_paused 1920x1080",
+   "pass": true,
+   "detail": "{\"panels\":[\"top\",\"tourbar\",\"disclaimer\"],\"overlaps\":[],\"outside\":[],\"hscroll\":false,\"labels\":0,\"lblClash\":0}"
+  },
+  {
+   "name": "layout c_tour_paused 1280x800",
+   "pass": true,
+   "detail": "{\"panels\":[\"top\",\"tourbar\",\"disclaimer\"],\"overlaps\":[],\"outside\":[],\"hscroll\":false,\"labels\":0,\"lblClash\":0}"
+  },
+  {
+   "name": "layout c_tour_paused 390x844",
+   "pass": true,
+   "detail": "{\"panels\":[\"top\",\"tourbar\",\"disclaimer\"],\"overlaps\":[],\"outside\":[],\"hscroll\":false,\"labels\":0,\"lblClash\":0}"
+  },
+  {
+   "name": "all quick-tour stops reached",
+   "pass": true,
+   "detail": "9/9"
+  },
+  {
+   "name": "Tour complete card after the last stop",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "tour complete has Explore rooms / Play again / Return to overview",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "play again restarts at stop 1",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "exit tour returns home",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "complete tour: all 16 stops reach their cameras",
+   "pass": true,
+   "detail": "16/16"
+  },
+  {
+   "name": "room menu: 5 groups, 34 rooms",
+   "pass": true,
+   "detail": "{\"groups\":[\"Arrival & Experience\",\"Executive & Meeting\",\"Merchandising & Operations\",\"Design & Development\",\"Staff Facilities\"],\"rooms\":34}"
+  },
+  {
+   "name": "layout f_menu 1440x900",
+   "pass": true,
+   "detail": "{\"panels\":[\"top\",\"disclaimer\"],\"overlaps\":[],\"outside\":[],\"hscroll\":false,\"labels\":0,\"lblClash\":0}"
+  },
+  {
+   "name": "layout f_menu 390x844",
+   "pass": true,
+   "detail": "{\"panels\":[\"top\",\"disclaimer\"],\"overlaps\":[],\"outside\":[],\"hscroll\":false,\"labels\":0,\"lblClash\":0}"
+  },
+  {
+   "name": "choosing Merchandising closes the menu and lands on the sample-hub camera",
+   "pass": true,
+   "detail": "{\"mode\":\"room\",\"room\":\"Z07\",\"atCam\":\"CAM_34_Merchandising_Sample_Hub\",\"moving\":false,\"fps\":1.2338062924120914,\"overhead\":true,\"looking\":false,\"tour\":null,\"present\":false,\"aoFrames\":33,\"fov\":64.01,\"yaw\":0,\"pos\":[21.285,1.575,-11.481]}"
+  },
+  {
+   "name": "layout g_room_merchandising 1440x900",
+   "pass": true,
+   "detail": "{\"panels\":[\"top\",\"card\",\"disclaimer\"],\"overlaps\":[],\"outside\":[],\"hscroll\":false,\"labels\":0,\"lblClash\":0}"
+  },
+  {
+   "name": "layout g_room_merchandising 1920x1080",
+   "pass": true,
+   "detail": "{\"panels\":[\"top\",\"card\",\"disclaimer\"],\"overlaps\":[],\"outside\":[],\"hscroll\":false,\"labels\":0,\"lblClash\":0}"
+  },
+  {
+   "name": "layout g_room_merchandising 1280x800",
+   "pass": true,
+   "detail": "{\"panels\":[\"top\",\"card\",\"disclaimer\"],\"overlaps\":[],\"outside\":[],\"hscroll\":false,\"labels\":0,\"lblClash\":0}"
+  },
+  {
+   "name": "layout g_room_merchandising 390x844",
+   "pass": true,
+   "detail": "{\"panels\":[\"top\",\"card\",\"disclaimer\"],\"overlaps\":[],\"outside\":[],\"hscroll\":false,\"labels\":0,\"lblClash\":0}"
+  },
+  {
+   "name": "drag right turns the view so the room follows the pointer (grab, like a 360 photo)",
+   "pass": true,
+   "detail": "yaw 0 -> 0.681"
+  },
+  {
+   "name": "reset view button appears after looking around",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "scroll zooms in within limits",
+   "pass": true,
+   "detail": "fov 64.01 -> 39.61"
+  },
+  {
+   "name": "double-click resets to the architectural camera",
+   "pass": true,
+   "detail": "{\"mode\":\"room\",\"room\":\"Z07\",\"atCam\":\"CAM_34_Merchandising_Sample_Hub\",\"moving\":false,\"fps\":1.4054813773717498,\"overhead\":true,\"looking\":true,\"tour\":null,\"present\":false,\"aoFrames\":39,\"fov\":64.01,\"yaw\":0.681,\"pos\":[21.285,1.575,-11.481]}"
+  },
+  {
+   "name": "photorealistic view opens, labelled as a still render",
+   "pass": true,
+   "detail": "Photorealistic Blender render — still image. People shown are illustrative."
+  },
+  {
+   "name": "back to the same 3D room and camera",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "Commercial & accounts opens on the finance-suite camera",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "all 34 rooms open with their camera (or an aerial view)",
+   "pass": true,
+   "detail": "34/34 "
+  },
+  {
+   "name": "floor plan view from above with room names",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "layout j_plan 1440x900",
+   "pass": true,
+   "detail": "{\"panels\":[\"top\",\"planbar\",\"disclaimer\"],\"overlaps\":[],\"outside\":[],\"hscroll\":false,\"labels\":21,\"lblClash\":0}"
+  },
+  {
+   "name": "layout j_plan 1920x1080",
+   "pass": true,
+   "detail": "{\"panels\":[\"top\",\"planbar\",\"disclaimer\"],\"overlaps\":[],\"outside\":[],\"hscroll\":false,\"labels\":26,\"lblClash\":0}"
+  },
+  {
+   "name": "layout j_plan 1280x800",
+   "pass": true,
+   "detail": "{\"panels\":[\"top\",\"planbar\",\"disclaimer\"],\"overlaps\":[],\"outside\":[],\"hscroll\":false,\"labels\":20,\"lblClash\":0}"
+  },
+  {
+   "name": "layout j_plan 390x844",
+   "pass": true,
+   "detail": "{\"panels\":[\"top\",\"planbar\",\"disclaimer\"],\"overlaps\":[],\"outside\":[],\"hscroll\":false,\"labels\":13,\"lblClash\":0}"
+  },
+  {
+   "name": "click a room name on the plan opens it",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "explore freely: walk mode with a minimal hint",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "W moves forward",
+   "pass": true,
+   "detail": "21.844,1.575,-5.08 -> 20.909,1.575,-4.827"
+  },
+  {
+   "name": "walls stop the walker (never inside a blocked cell)",
+   "pass": true,
+   "detail": "13.07,1.575,-2.986"
+  },
+  {
+   "name": "layout k_walk 1440x900",
+   "pass": true,
+   "detail": "{\"panels\":[\"top\",\"card\",\"walkhint\",\"minimap\",\"disclaimer\"],\"overlaps\":[],\"outside\":[],\"hscroll\":false,\"labels\":0,\"lblClash\":0}"
+  },
+  {
+   "name": "layout k_walk 1920x1080",
+   "pass": true,
+   "detail": "{\"panels\":[\"top\",\"card\",\"walkhint\",\"minimap\",\"disclaimer\"],\"overlaps\":[],\"outside\":[],\"hscroll\":false,\"labels\":0,\"lblClash\":0}"
+  },
+  {
+   "name": "layout k_walk 1280x800",
+   "pass": true,
+   "detail": "{\"panels\":[\"top\",\"card\",\"walkhint\",\"minimap\",\"disclaimer\"],\"overlaps\":[],\"outside\":[],\"hscroll\":false,\"labels\":0,\"lblClash\":0}"
+  },
+  {
+   "name": "layout k_walk 390x844",
+   "pass": true,
+   "detail": "{\"panels\":[\"top\",\"card\",\"walkhint\",\"disclaimer\"],\"overlaps\":[],\"outside\":[],\"hscroll\":false,\"labels\":0,\"lblClash\":0}"
+  },
+  {
+   "name": "Esc leaves walk mode to the room card",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "presentation mode: quick tour, menus hidden, exit button shown",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "presentation mode asks for full screen on the click",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "layout l_present 1920x1080",
+   "pass": true,
+   "detail": "{\"panels\":[\"top\",\"tourbar\",\"toast\",\"disclaimer\"],\"overlaps\":[],\"outside\":[],\"hscroll\":false,\"labels\":0,\"lblClash\":0}"
+  },
+  {
+   "name": "layout l_present 1440x900",
+   "pass": true,
+   "detail": "{\"panels\":[\"top\",\"tourbar\",\"disclaimer\"],\"overlaps\":[],\"outside\":[],\"hscroll\":false,\"labels\":0,\"lblClash\":0}"
+  },
+  {
+   "name": "Esc exits the presentation",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "no runtime errors during the test",
+   "pass": true,
+   "detail": ""
+  }
+ ],
+ "errors": [],
+ "passed": 64,
+ "total": 64
+}

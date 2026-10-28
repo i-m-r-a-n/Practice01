@@ -1,0 +1,66 @@
+PASS loads without startup errors  3.3 s; {"quality":"balanced","meshes":102,"drawCallsMerged":{"before":2072,"after":102},"rooms":34,"cameras":45,"quickStops":9,"fullStops":16,"bakedLight":true,"ambientOcclusion":true}
+PASS baked light active
+PASS home screen shows three choices
+PASS no tutorial pop-up on load
+PASS layout a_home 1440x900  {"panels":["top","disclaimer"],"overlaps":[],"outside":[],"hscroll":false,"labels":0,"lblClash":0}
+PASS layout a_home 1920x1080  {"panels":["top","disclaimer"],"overlaps":[],"outside":[],"hscroll":false,"labels":0,"lblClash":0}
+PASS layout a_home 1280x800  {"panels":["top","disclaimer"],"overlaps":[],"outside":[],"hscroll":false,"labels":0,"lblClash":0}
+PASS layout a_home 390x844  {"panels":["top","disclaimer"],"overlaps":[],"outside":[],"hscroll":false,"labels":0,"lblClash":0}
+PASS tour choice opens
+PASS quick tour is 3-5 minutes  9 stops, the key rooms  ·  about 3½ min (196 s)
+PASS complete tour shows 16 stops  16 stops, the whole office  ·  about 4½ min (255 s)
+PASS quick tour starts on the overview  {"key":"quick","i":0,"phase":"hold","playing":true,"sub":0,"done":false}
+PASS pause
+PASS next works while paused (reception)  {"mode":"tour","room":"Z02","atCam":"CAM_01_Reception_A","moving":false,"fps":0.9823182711198428,"overhead":true,"looking":false,"tour":{"key":"quick","i":1,"phase":"hold","playing":false,"sub":0,"done":false},"present":false,"aoFrames":7,"fov":64.01,"yaw":0,"pos":[8.077,1.524,0.66]}
+PASS room to room at eye level ends on the camera (experience centre)
+PASS back works
+PASS right arrow = next
+PASS space = resume
+PASS layout c_tour_paused 1440x900  {"panels":["top","tourbar","disclaimer"],"overlaps":[],"outside":[],"hscroll":false,"labels":0,"lblClash":0}
+PASS layout c_tour_paused 1920x1080  {"panels":["top","tourbar","disclaimer"],"overlaps":[],"outside":[],"hscroll":false,"labels":0,"lblClash":0}
+PASS layout c_tour_paused 1280x800  {"panels":["top","tourbar","disclaimer"],"overlaps":[],"outside":[],"hscroll":false,"labels":0,"lblClash":0}
+PASS layout c_tour_paused 390x844  {"panels":["top","tourbar","disclaimer"],"overlaps":[],"outside":[],"hscroll":false,"labels":0,"lblClash":0}
+PASS all quick-tour stops reached  9/9
+PASS Tour complete card after the last stop
+PASS tour complete has Explore rooms / Play again / Return to overview
+PASS play again restarts at stop 1
+PASS exit tour returns home
+PASS complete tour: all 16 stops reach their cameras  16/16
+PASS room menu: 5 groups, 34 rooms  {"groups":["Arrival & Experience","Executive & Meeting","Merchandising & Operations","Design & Development","Staff Facilities"],"rooms":34}
+PASS layout f_menu 1440x900  {"panels":["top","disclaimer"],"overlaps":[],"outside":[],"hscroll":false,"labels":0,"lblClash":0}
+PASS layout f_menu 390x844  {"panels":["top","disclaimer"],"overlaps":[],"outside":[],"hscroll":false,"labels":0,"lblClash":0}
+PASS choosing Merchandising closes the menu and lands on the sample-hub camera  {"mode":"room","room":"Z07","atCam":"CAM_34_Merchandising_Sample_Hub","moving":false,"fps":1.2338062924120914,"overhead":true,"looking":false,"tour":null,"present":false,"aoFrames":33,"fov":64.01,"yaw":0,"pos":[21.285,1.575,-11.481]}
+PASS layout g_room_merchandising 1440x900  {"panels":["top","card","disclaimer"],"overlaps":[],"outside":[],"hscroll":false,"labels":0,"lblClash":0}
+PASS layout g_room_merchandising 1920x1080  {"panels":["top","card","disclaimer"],"overlaps":[],"outside":[],"hscroll":false,"labels":0,"lblClash":0}
+PASS layout g_room_merchandising 1280x800  {"panels":["top","card","disclaimer"],"overlaps":[],"outside":[],"hscroll":false,"labels":0,"lblClash":0}
+PASS layout g_room_merchandising 390x844  {"panels":["top","card","disclaimer"],"overlaps":[],"outside":[],"hscroll":false,"labels":0,"lblClash":0}
+PASS drag right turns the view so the room follows the pointer (grab, like a 360 photo)  yaw 0 -> 0.681
+PASS reset view button appears after looking around
+PASS scroll zooms in within limits  fov 64.01 -> 39.61
+PASS double-click resets to the architectural camera  {"mode":"room","room":"Z07","atCam":"CAM_34_Merchandising_Sample_Hub","moving":false,"fps":1.4054813773717498,"overhead":true,"looking":true,"tour":null,"present":false,"aoFrames":39,"fov":64.01,"yaw":0.681,"pos":[21.285,1.575,-11.481]}
+PASS photorealistic view opens, labelled as a still render  Photorealistic Blender render — still image. People shown are illustrative.
+PASS back to the same 3D room and camera
+PASS Commercial & accounts opens on the finance-suite camera
+PASS all 34 rooms open with their camera (or an aerial view)  34/34 
+PASS floor plan view from above with room names
+PASS layout j_plan 1440x900  {"panels":["top","planbar","disclaimer"],"overlaps":[],"outside":[],"hscroll":false,"labels":21,"lblClash":0}
+PASS layout j_plan 1920x1080  {"panels":["top","planbar","disclaimer"],"overlaps":[],"outside":[],"hscroll":false,"labels":26,"lblClash":0}
+PASS layout j_plan 1280x800  {"panels":["top","planbar","disclaimer"],"overlaps":[],"outside":[],"hscroll":false,"labels":20,"lblClash":0}
+PASS layout j_plan 390x844  {"panels":["top","planbar","disclaimer"],"overlaps":[],"outside":[],"hscroll":false,"labels":13,"lblClash":0}
+PASS click a room name on the plan opens it
+PASS explore freely: walk mode with a minimal hint
+PASS W moves forward  21.844,1.575,-5.08 -> 20.909,1.575,-4.827
+PASS walls stop the walker (never inside a blocked cell)  13.07,1.575,-2.986
+PASS layout k_walk 1440x900  {"panels":["top","card","walkhint","minimap","disclaimer"],"overlaps":[],"outside":[],"hscroll":false,"labels":0,"lblClash":0}
+PASS layout k_walk 1920x1080  {"panels":["top","card","walkhint","minimap","disclaimer"],"overlaps":[],"outside":[],"hscroll":false,"labels":0,"lblClash":0}
+PASS layout k_walk 1280x800  {"panels":["top","card","walkhint","minimap","disclaimer"],"overlaps":[],"outside":[],"hscroll":false,"labels":0,"lblClash":0}
+PASS layout k_walk 390x844  {"panels":["top","card","walkhint","disclaimer"],"overlaps":[],"outside":[],"hscroll":false,"labels":0,"lblClash":0}
+PASS Esc leaves walk mode to the room card
+PASS presentation mode: quick tour, menus hidden, exit button shown
+PASS presentation mode asks for full screen on the click
+PASS layout l_present 1920x1080  {"panels":["top","tourbar","toast","disclaimer"],"overlaps":[],"outside":[],"hscroll":false,"labels":0,"lblClash":0}
+PASS layout l_present 1440x900  {"panels":["top","tourbar","disclaimer"],"overlaps":[],"outside":[],"hscroll":false,"labels":0,"lblClash":0}
+PASS Esc exits the presentation
+PASS no runtime errors during the test
+
+64/64 passed in 288 s
