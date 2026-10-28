@@ -1,0 +1,119 @@
+{
+  "room": "Design_Studio",
+  "commit": "bcb92b00963fa51906676f8cca22da88f841dc64",
+  "passed": false,
+  "deployment_health": [
+    {
+      "status": 200,
+      "source": "bcb92b00963fa51906676f8cca22da88f841dc64"
+    }
+  ],
+  "checks": [
+    {
+      "url": "https://stage2-office-virtual-tour.imranahmedjh611.workers.dev/realistic/",
+      "status": 200,
+      "bytes": 70875,
+      "sha256": "c3fb3ba4ae201892c4451a5db43c6add6f50a70b80bd1833491290373c6f1545",
+      "expected_sha256": "c3fb3ba4ae201892c4451a5db43c6add6f50a70b80bd1833491290373c6f1545",
+      "source": "bcb92b00963fa51906676f8cca22da88f841dc64",
+      "passed": true
+    },
+    {
+      "url": "https://stage2-office-virtual-tour.imranahmedjh611.workers.dev/realistic/app.js",
+      "passed": false,
+      "error": "IncompleteRead(992857 bytes read)"
+    },
+    {
+      "url": "https://stage2-office-virtual-tour.imranahmedjh611.workers.dev/realistic/release-config.json",
+      "status": 200,
+      "bytes": 1842,
+      "sha256": "ca2cbbf76a0ea4c5303a65c4ddc52b41559c17c211e4829aaf033390b467d884",
+      "expected_sha256": "ca2cbbf76a0ea4c5303a65c4ddc52b41559c17c211e4829aaf033390b467d884",
+      "source": "bcb92b00963fa51906676f8cca22da88f841dc64",
+      "passed": true
+    },
+    {
+      "url": "https://stage2-office-virtual-tour.imranahmedjh611.workers.dev/realistic/model_web_baked.glb",
+      "passed": false,
+      "error": "The read operation timed out"
+    },
+    {
+      "url": "https://stage2-office-virtual-tour.imranahmedjh611.workers.dev/realistic/lighting-v2/manifest-hybrid.json",
+      "status": 200,
+      "bytes": 25011,
+      "sha256": "2ea818b15323e03ec96949d5c74d7273f8568cedc31a560c61f115a37c698abd",
+      "expected_sha256": "2ea818b15323e03ec96949d5c74d7273f8568cedc31a560c61f115a37c698abd",
+      "source": "bcb92b00963fa51906676f8cca22da88f841dc64",
+      "passed": true
+    },
+    {
+      "url": "https://stage2-office-virtual-tour.imranahmedjh611.workers.dev/realistic/people/room-release/people-manifest.json",
+      "status": 200,
+      "bytes": 25860,
+      "sha256": "be4556ac5fd1057a5d7fe19e15b0f25c7d6ca2eae0b6a87eb8122bdc06dd0884",
+      "expected_sha256": "be4556ac5fd1057a5d7fe19e15b0f25c7d6ca2eae0b6a87eb8122bdc06dd0884",
+      "source": "bcb92b00963fa51906676f8cca22da88f841dc64",
+      "passed": true
+    },
+    {
+      "url": "https://stage2-office-virtual-tour.imranahmedjh611.workers.dev/realistic/people/room-release/poses.json",
+      "status": 200,
+      "bytes": 33042,
+      "sha256": "500e30099762c78a20f4d151e060478e886b98779ebf1cfa09a6fa2e4861ccd2",
+      "expected_sha256": "500e30099762c78a20f4d151e060478e886b98779ebf1cfa09a6fa2e4861ccd2",
+      "source": "bcb92b00963fa51906676f8cca22da88f841dc64",
+      "passed": true
+    },
+    {
+      "url": "https://stage2-office-virtual-tour.imranahmedjh611.workers.dev/realistic/props/office-props-manifest.json",
+      "status": 200,
+      "bytes": 167943,
+      "sha256": "4b93095d048f658bcdff957f56b41dac78e2287d727af9eb4312647593a9e3dd",
+      "expected_sha256": "4b93095d048f658bcdff957f56b41dac78e2287d727af9eb4312647593a9e3dd",
+      "source": "bcb92b00963fa51906676f8cca22da88f841dc64",
+      "passed": true
+    },
+    {
+      "url": "https://stage2-office-virtual-tour.imranahmedjh611.workers.dev/realistic/review/design_studio-before-after.png",
+      "passed": false,
+      "error": "The read operation timed out"
+    },
+    {
+      "url": "https://stage2-office-virtual-tour.imranahmedjh611.workers.dev/",
+      "status": 200,
+      "bytes": 63353,
+      "sha256": "ff75beb54b3134b3e1eee7d29d0f6016ed1bf5895777c715f3815ebe3dcd2675",
+      "expected_sha256": "ff75beb54b3134b3e1eee7d29d0f6016ed1bf5895777c715f3815ebe3dcd2675",
+      "source": null,
+      "passed": true
+    },
+    {
+      "url": "https://stage2-office-virtual-tour.imranahmedjh611.workers.dev/app.js",
+      "status": 200,
+      "bytes": 747798,
+      "sha256": "c6af8144c56302bf92a975179d847b89c6e4eac63068ecc16a96c7c0c02e9bc4",
+      "expected_sha256": "c6af8144c56302bf92a975179d847b89c6e4eac63068ecc16a96c7c0c02e9bc4",
+      "source": null,
+      "passed": true
+    },
+    {
+      "url": "https://stage2-office-virtual-tour.imranahmedjh611.workers.dev/health",
+      "status": 200,
+      "bytes": 205,
+      "sha256": "5118ed4955892545f48d6edf7fee295fdd0e8963fe1c7704041534fc04de378b",
+      "expected_sha256": "5118ed4955892545f48d6edf7fee295fdd0e8963fe1c7704041534fc04de378b",
+      "source": null,
+      "passed": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/i-m-r-a-n/Practice01/bcb92b00963fa51906676f8cca22da88f841dc64/GARMENT_OFFICE_WALKTHROUGH_FINAL/09_MAC_OFFLINE_TOUR/realistic-design_studio/Design_Studio_Realistic_Offline.zip",
+      "status": 200,
+      "bytes": 73034188,
+      "sha256": "8c86264151392b77087556c5d20fdc4b56be7b3c7e8024a2d73b3d50af98893a",
+      "expected_sha256": "8c86264151392b77087556c5d20fdc4b56be7b3c7e8024a2d73b3d50af98893a",
+      "source": null,
+      "passed": true
+    }
+  ],
+  "limits": "HTTPS/source bytes verified; browser WebGL capture blocked by environment CA trust. Native MacBook performance untested."
+}
