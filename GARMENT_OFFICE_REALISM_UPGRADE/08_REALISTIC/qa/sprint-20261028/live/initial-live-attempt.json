@@ -1,0 +1,18 @@
+{
+  "url": "https://stage2-office-virtual-tour.imranahmedjh611.workers.dev/realistic/?welcome=0",
+  "viewport": [
+    1440,
+    900
+  ],
+  "started_utc": "2026-10-28T11:05:14Z",
+  "console_errors": [],
+  "page_errors": [],
+  "request_failures": [
+    {
+      "url": "https://stage2-office-virtual-tour.imranahmedjh611.workers.dev/realistic/?welcome=0",
+      "failure": "net::ERR_CERT_AUTHORITY_INVALID"
+    }
+  ],
+  "status": "blocked",
+  "error": "Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://stage2-office-virtual-tour.imranahmedjh611.workers.dev/realistic/?welcome=0\nCall log:\n  - navigating to \"https://stage2-office-virtual-tour.imranahmedjh611.workers.dev/realistic/?welcome=0\", waiting until \"domcontentloaded\"\n"
+}

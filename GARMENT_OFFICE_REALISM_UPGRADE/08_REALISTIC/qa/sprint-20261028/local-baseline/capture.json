@@ -1,0 +1,246 @@
+{
+  "url": "http://127.0.0.1:8784/realistic/?welcome=0",
+  "scope": "LOCAL browser equivalent. Not a live-site browser capture or Mac performance claim.",
+  "started_utc": "2026-10-28T11:08:35Z",
+  "views": [
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "console_errors": [],
+      "page_errors": [],
+      "failed_requests": [
+        {
+          "url": "http://127.0.0.1:8784/realistic/people/assets/panjabi.glb",
+          "failure": "net::ERR_ABORTED"
+        }
+      ],
+      "http_errors": [],
+      "shots": [
+        {
+          "camera": "CAM_01_Reception_A",
+          "file": "1440_CAM_01_Reception_A_ui.png",
+          "sha256": "dc46626775141a6d56d6c8f4bff183b2392000b6dd3a0d5eba3deb721460164d",
+          "state": {
+            "name": "CAM_01_Reception_A",
+            "type": "PERSP",
+            "lighting": {
+              "state": "loaded",
+              "sourceObjects": 25,
+              "meshes": 29,
+              "triangles": 41717,
+              "intensity": 3.141592653589793,
+              "format": "ktx2",
+              "resolution": 2048,
+              "heroError": null
+            }
+          },
+          "clean_file": "1440_CAM_01_Reception_A_room.png",
+          "clean_sha256": "dc46626775141a6d56d6c8f4bff183b2392000b6dd3a0d5eba3deb721460164d"
+        },
+        {
+          "camera": "CAM_04_Experience_Centre_A",
+          "file": "1440_CAM_04_Experience_Centre_A_ui.png",
+          "sha256": "e151589cf634a6dd60696b7f1a626b1d32f37d095c92170a579b0f859c76f279",
+          "state": {
+            "name": "CAM_04_Experience_Centre_A",
+            "type": "PERSP",
+            "lighting": null
+          },
+          "clean_file": "1440_CAM_04_Experience_Centre_A_room.png",
+          "clean_sha256": "e151589cf634a6dd60696b7f1a626b1d32f37d095c92170a579b0f859c76f279"
+        },
+        {
+          "camera": "CAM_09_Boardroom_A",
+          "file": "1440_CAM_09_Boardroom_A_ui.png",
+          "sha256": "eb5e12c4e9ccc33ee8954097f32a9c2f1a5eb3966925f41de0b87c7230b29364",
+          "state": {
+            "name": "CAM_09_Boardroom_A",
+            "type": "PERSP",
+            "lighting": null
+          },
+          "clean_file": "1440_CAM_09_Boardroom_A_room.png",
+          "clean_sha256": "eb5e12c4e9ccc33ee8954097f32a9c2f1a5eb3966925f41de0b87c7230b29364"
+        },
+        {
+          "camera": "CAM_07_MD_Office_A",
+          "file": "1440_CAM_07_MD_Office_A_ui.png",
+          "sha256": "8ee29d72e8a7035f258523a9f1b8ea0dc95cb27e3f68b1ebbc6a0459b21736fe",
+          "state": {
+            "name": "CAM_07_MD_Office_A",
+            "type": "PERSP",
+            "lighting": null
+          },
+          "clean_file": "1440_CAM_07_MD_Office_A_room.png",
+          "clean_sha256": "8ee29d72e8a7035f258523a9f1b8ea0dc95cb27e3f68b1ebbc6a0459b21736fe"
+        },
+        {
+          "camera": "CAM_34_Merchandising_Sample_Hub",
+          "file": "1440_CAM_34_Merchandising_Sample_Hub_ui.png",
+          "sha256": "4f612ca5d19d218eaf1c06db196cc96c83854b313265e22c0af0e959868d5b52",
+          "state": {
+            "name": "CAM_34_Merchandising_Sample_Hub",
+            "type": "PERSP",
+            "lighting": null
+          },
+          "clean_file": "1440_CAM_34_Merchandising_Sample_Hub_room.png",
+          "clean_sha256": "4f612ca5d19d218eaf1c06db196cc96c83854b313265e22c0af0e959868d5b52"
+        },
+        {
+          "camera": "CAM_13_Design_Studio_A",
+          "file": "1440_CAM_13_Design_Studio_A_ui.png",
+          "sha256": "60e8cbfe37968cf6e847980e66d7840a71f290724ad1c1911458c6bdcc3d8acc",
+          "state": {
+            "name": "CAM_13_Design_Studio_A",
+            "type": "PERSP",
+            "lighting": null
+          },
+          "clean_file": "1440_CAM_13_Design_Studio_A_room.png",
+          "clean_sha256": "60e8cbfe37968cf6e847980e66d7840a71f290724ad1c1911458c6bdcc3d8acc"
+        }
+      ],
+      "status": "captured",
+      "model_ready_seconds_local": 2.008,
+      "gpu": {
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+        "vendor": "Google Inc. (Google)",
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "webgl": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+        "maxTextureSize": 8192,
+        "pixelRatio": 1,
+        "quality": "balanced",
+        "viewport": [
+          1440,
+          900
+        ]
+      },
+      "browser": "154.0.8037.57",
+      "people": {
+        "enabled": true,
+        "loaded": true,
+        "frozen": true,
+        "total": 27,
+        "visible": 0,
+        "walkers": 0,
+        "illustrative": true,
+        "forbiddenZoneViolations": 0,
+        "status": "Six-room release: Reception, Boardroom, Experience Centre, MD Office, Merchandising (proposed option B), Global Design Studio",
+        "nativeMacPerformanceTested": false
+      },
+      "people_ready_seconds_local": 7.899,
+      "elapsed_seconds": 35.702
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "console_errors": [],
+      "page_errors": [],
+      "failed_requests": [],
+      "http_errors": [],
+      "shots": [
+        {
+          "camera": "CAM_01_Reception_A",
+          "file": "390_CAM_01_Reception_A_ui.png",
+          "sha256": "d6d79367a72a2606def182840e1a8429c1d276650cb5decaed4ac17f11fc1f43",
+          "state": {
+            "name": "CAM_01_Reception_A",
+            "type": "PERSP",
+            "lighting": {
+              "state": "loaded",
+              "sourceObjects": 25,
+              "meshes": 29,
+              "triangles": 41717,
+              "intensity": 3.141592653589793,
+              "format": "ktx2",
+              "resolution": 2048,
+              "heroError": null
+            }
+          }
+        },
+        {
+          "camera": "CAM_04_Experience_Centre_A",
+          "file": "390_CAM_04_Experience_Centre_A_ui.png",
+          "sha256": "dc2b25c0fc1b098634e7e29f3c8030135987f2689de0da4f3bd0440a715e2b23",
+          "state": {
+            "name": "CAM_04_Experience_Centre_A",
+            "type": "PERSP",
+            "lighting": null
+          }
+        },
+        {
+          "camera": "CAM_09_Boardroom_A",
+          "file": "390_CAM_09_Boardroom_A_ui.png",
+          "sha256": "bb900259f5d1fe0e6914983786fc5b4603317fa719cacfe068a33df24a6e6566",
+          "state": {
+            "name": "CAM_09_Boardroom_A",
+            "type": "PERSP",
+            "lighting": null
+          }
+        },
+        {
+          "camera": "CAM_07_MD_Office_A",
+          "file": "390_CAM_07_MD_Office_A_ui.png",
+          "sha256": "f1ed674bd32b6c4a0ff7fede53dedef41b582e0b7f7f313485eef9b0080cbaf8",
+          "state": {
+            "name": "CAM_07_MD_Office_A",
+            "type": "PERSP",
+            "lighting": null
+          }
+        },
+        {
+          "camera": "CAM_34_Merchandising_Sample_Hub",
+          "file": "390_CAM_34_Merchandising_Sample_Hub_ui.png",
+          "sha256": "0eaad330dda39bf8d42608134f8e3d71edc4e348e2bdb3268b8c73a74c22d01f",
+          "state": {
+            "name": "CAM_34_Merchandising_Sample_Hub",
+            "type": "PERSP",
+            "lighting": null
+          }
+        },
+        {
+          "camera": "CAM_13_Design_Studio_A",
+          "file": "390_CAM_13_Design_Studio_A_ui.png",
+          "sha256": "b6d4f8efcacc5be3ea80affbe6ff3565f80466b7142cf3f5f9b0db2d0faa6e77",
+          "state": {
+            "name": "CAM_13_Design_Studio_A",
+            "type": "PERSP",
+            "lighting": null
+          }
+        }
+      ],
+      "status": "captured",
+      "model_ready_seconds_local": 1.538,
+      "gpu": {
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+        "vendor": "Google Inc. (Google)",
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "webgl": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+        "maxTextureSize": 8192,
+        "pixelRatio": 1,
+        "quality": "balanced",
+        "viewport": [
+          390,
+          844
+        ]
+      },
+      "browser": "154.0.8037.57",
+      "people": {
+        "enabled": true,
+        "loaded": true,
+        "frozen": true,
+        "total": 27,
+        "visible": 0,
+        "walkers": 0,
+        "illustrative": true,
+        "forbiddenZoneViolations": 0,
+        "status": "Six-room release: Reception, Boardroom, Experience Centre, MD Office, Merchandising (proposed option B), Global Design Studio",
+        "nativeMacPerformanceTested": false
+      },
+      "people_ready_seconds_local": 6.103,
+      "elapsed_seconds": 19.753
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "baseline": "20a3de996191ee2ecbe57928780b49209a289832",
+  "source": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/viewer/app.js",
+  "status": "passed",
+  "checks": [
+    {
+      "name": "walk: right direct drag follows the requested positive client delta",
+      "passed": true
+    },
+    {
+      "name": "walk: left direct drag follows the requested positive client delta",
+      "passed": true
+    },
+    {
+      "name": "walk: down direct drag follows the requested positive client delta",
+      "passed": true
+    },
+    {
+      "name": "walk: up direct drag follows the requested positive client delta",
+      "passed": true
+    },
+    {
+      "name": "rooms: right direct drag follows the requested positive client delta",
+      "passed": true
+    },
+    {
+      "name": "rooms: left direct drag follows the requested positive client delta",
+      "passed": true
+    },
+    {
+      "name": "rooms: down direct drag follows the requested positive client delta",
+      "passed": true
+    },
+    {
+      "name": "rooms: up direct drag follows the requested positive client delta",
+      "passed": true
+    },
+    {
+      "name": "Pitch retains both safety clamps",
+      "passed": true
+    },
+    {
+      "name": "Pointer movement without an active drag does not turn the room",
+      "passed": true
+    },
+    {
+      "name": "Existing pointer-lock FPS look remains byte-identical and behaves unchanged",
+      "passed": true
+    },
+    {
+      "name": "Keyboard handler and complete walking step remain byte-identical to baseline",
+      "passed": true
+    },
+    {
+      "name": "Legacy keyboard ArrowRight turning remains unchanged",
+      "passed": true
+    },
+    {
+      "name": "Legacy keyboard ArrowLeft turning remains unchanged",
+      "passed": true
+    },
+    {
+      "name": "Collision-controller keyboard arrows still strafe without changing yaw",
+      "passed": true
+    }
+  ],
+  "scope": "Actual source pointermove and walkStep handlers executed in Node VM with DOM/render boundaries stubbed.",
+  "limits": [
+    "Not a native MacBook or browser pointer-lock interaction test.",
+    "No scene pixels or visual judgement is inferred from this handler test."
+  ]
+}

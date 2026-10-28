@@ -1,0 +1,85 @@
+{
+  "scope": "Local ordinary interactive room UI, not live",
+  "views": [
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "failed": [
+        {
+          "url": "http://127.0.0.1:8784/realistic/people/assets/panjabi.glb",
+          "failure": "net::ERR_ABORTED"
+        }
+      ],
+      "console": [],
+      "body_mode": "rooms",
+      "overflow": {
+        "scroll": 1440,
+        "width": 1440
+      },
+      "body_text": "CORPORATE HEADQUARTERS & DESIGN DEVELOPMENT CENTRE\nGround floor \u00b7 interactive design experience\n\u25b6 Guided tour\nOverview\nRooms\nWalk\nPeople\n?\n\u26f6\nRooms\nChoose a room to go there\n\u00d7\nARRIVAL & VISITORS\nEntrance lobby\n515 sft\nReception & visitor waiting\n446 sft\nVisitor passage\n75 sft\nGuest WCs\n78 sft\nEXPERIENCE & MEETING\nBoardroom\n540 sft\nAudit room\n153 sft\nExperience centre\n707 sft\nEXECUTIVE SUITE\nExecutive reception\n223 sft\nDirector\n205 sft\nManaging Director\n300 sft\nExecutive corridor\n146 sft\nWORKPLACE\nGuest workspace\n184 sft\nHR & admin\n301 sft\nCommercial & accounts\n1,283 sft\nMerchandising\n1,421 sft\nStaff corridor\n76 sft\nDESIGN DEVELOPMENT\nCAD / technical design\n281 sft\nFabric & trim library\n203 sft\n3D printing lab\n171 sft\nSample development\n271 sft\nGlobal Design Studio\n936 sft\nSample & material store\n135 sft\nDesign-wing corridor\n412 sft\nSTAFF FACILITIES\nStaff cafe & pantry\n465 sft\nStaff lounge / training\n389 sft\nNorth corridor\n270 sft\nHallway\n168 sft\nPRAYER & WUDU\nPrayer room (male)\n186 sft\nWudu (male)\n75 sft\nPrayer room (female)\n87 sft\nWudu (female)\n27 sft\nWASHROOMS\nWashroom (female)\n131 sft\nWashroom (male)\n189 sft\nGuest workspace WC\n47 sft\nARRIVAL & VISITORS \u00b7 APPROX. 446 SFT (41.4 M\u00b2)\nReception & visitor waiting\n\nFluted-oak reception counter with a terrazzo ledge and an accessible lower section; backlit logo plate on a fluted oak wall; waiting lounge (sofa, green armchairs, walnut table, wool rug) under a suspended oak slat raft with a brass halo pendant.\n\nDrag to look around \u00b7 W A S D or arrows to walk on\n\u2190 Back to overview\nProposed interior visualization. Final dimensions and technical details subject to site verification. People shown are illustrative.",
+      "state": {
+        "mode": "rooms",
+        "room": "Z02",
+        "atCam": null,
+        "flying": true,
+        "flightT": 0.944,
+        "fps": 1,
+        "overhead": true,
+        "tour": null,
+        "photo": null,
+        "aoFrames": 0,
+        "pos": [
+          8.077,
+          1.554,
+          0.66
+        ]
+      }
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "failed": [
+        {
+          "url": "http://127.0.0.1:8784/realistic/lighting-v2/Z02.ktx2",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8784/realistic/people/assets/panjabi.glb",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8784/realistic/people/assets/salwar.glb",
+          "failure": "net::ERR_ABORTED"
+        }
+      ],
+      "console": [],
+      "body_mode": "rooms",
+      "overflow": {
+        "scroll": 390,
+        "width": 390
+      },
+      "body_text": "\u25b6 Guided tour\nOverview\nRooms\nWalk\nPeople\n?\n\u26f6\nARRIVAL & VISITORS \u00b7 APPROX. 446 SFT (41.4 M\u00b2)\nReception & visitor waiting\n\nFluted-oak reception counter with a terrazzo ledge and an accessible lower section; backlit logo plate on a fluted oak wall; waiting lounge (sofa, green armchairs, walnut table, wool rug) under a suspended oak slat raft with a brass halo pendant.\n\nDrag to look around \u00b7 W A S D or arrows to walk on\n\u2190 Back to overview\nProposed interior visualization. Final dimensions and technical details subject to site verification. People shown are illustrative.",
+      "state": {
+        "mode": "rooms",
+        "room": "Z02",
+        "atCam": null,
+        "flying": true,
+        "flightT": 0.788,
+        "fps": 1.9702492365255289,
+        "overhead": false,
+        "tour": null,
+        "photo": null,
+        "aoFrames": 0,
+        "pos": [
+          8.235,
+          3.253,
+          0.774
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "url": "https://stage2-office-virtual-tour.imranahmedjh611.workers.dev/realistic/?welcome=0",
+  "viewport": [
+    1440,
+    900
+  ],
+  "started_utc": "2026-10-28T11:08:01Z",
+  "console_errors": [],
+  "page_errors": [],
+  "request_failures": [],
+  "status": "blocked",
+  "trust": "Existing environment-proxy CA imported into /workspace task-only Firefox profile NSS DB. Certificate verification stays ON.",
+  "error": "BrowserType.launch_persistent_context: Timeout 30000ms exceeded.\nCall log:\n  - <launching> /workspace/tools/playwright/firefox-1538/firefox/firefox -no-remote -headless -profile /workspace/office-sprint-firefox-trust -juggler-pipe about:blank\n  - <launched> pid=2052\n  - [pid=2052][err] *** You are running in headless mode.\n  - [pid=2052][err] Fontconfig error: No writable cache directories\n  - [pid=2052][err] [2089] Sandbox: writing /proc/self/uid_map: EROFS\n  - [pid=2052][out] Crash Annotation GraphicsCriticalError: |[0][GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt (t=0.285598) [GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt\n"
+}

@@ -723,8 +723,8 @@ el.addEventListener('pointermove', (e) => {
     applyWalkLook(); return;
   }
   if ((S.mode === 'walk' || S.mode === 'rooms') && walk.drag) {
-    walk.yaw -= (e.clientX - walk.drag.x) * 0.0035;
-    walk.pitch = THREE.MathUtils.clamp(walk.pitch - (e.clientY - walk.drag.y) * 0.0035, -1.2, 1.2);
+    walk.yaw += (e.clientX - walk.drag.x) * 0.0035;
+    walk.pitch = THREE.MathUtils.clamp(walk.pitch + (e.clientY - walk.drag.y) * 0.0035, -1.2, 1.2);
     walk.drag = { x: e.clientX, y: e.clientY };
     applyWalkLook(); S.atCam = null; updateInfoButtons();
   } else if (S.mode === 'overview' && !flight) {
