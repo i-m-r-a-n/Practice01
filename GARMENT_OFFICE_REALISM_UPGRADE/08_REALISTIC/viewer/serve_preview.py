@@ -10,9 +10,11 @@ REPO = HERE.parents[2]
 
 class Handler(SimpleHTTPRequestHandler):
     def translate_path(self, path):
-        name = unquote(urlparse(path).path).removeprefix('/realistic/').lstrip('/')
+        raw = unquote(urlparse(path).path)
+        dist = 'dist-bel' if raw.startswith('/bengal-earth-lab/') else 'dist'   # the /bengal-earth-lab/ proposal has its own page and bundle
+        name = raw.removeprefix('/realistic/').removeprefix('/bengal-earth-lab/').lstrip('/')
         if name in ('', 'index.html', 'app.js'):
-            return str(HERE / 'dist' / (name or 'index.html'))
+            return str(HERE / dist / (name or 'index.html'))
         if name in ('model_web.glb', 'model_web_baked.glb'):
             return str(REPO / ('GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/revised-model/Optimized_Office_Interior_web_baked.glb' if name == 'model_web_baked.glb' else 'GARMENT_OFFICE_WALKTHROUGH_FINAL/07_WEB_TOUR_ASSETS/Final_Office_Interior_web.glb'))
         if name.startswith('renders/') and (REALISTIC / 'revised-model' / name).is_file():

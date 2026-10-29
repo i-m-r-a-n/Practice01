@@ -24,10 +24,10 @@ export const IDENTITY_ITEMS = [
   { id: 'ID_BOARD_REVIEW_2', zone: 'Z08', kind: 'reviewtray', position: [18.33, 0.749, -2.845], yaw: Math.PI },
 ];
 
-export function buildIdentityProps(THREE, { zones = null, anisotropy = 4 } = {}) {
+export function buildIdentityProps(THREE, { zones = null, exclude = [], anisotropy = 4 } = {}) {
   const group = new THREE.Group(); group.name = 'CLIENT_IDENTITY_PROPS';
   const geometries = [], materials = new Map(), textures = [];
-  const items = IDENTITY_ITEMS.filter(i => !zones || zones.includes(i.zone));
+  const items = IDENTITY_ITEMS.filter(i => (!zones || zones.includes(i.zone)) && !exclude.includes(i.id));
   const std = (key, props) => { if (!materials.has(key)) materials.set(key, new THREE.MeshStandardMaterial({ name: 'identity_' + key, ...props })); return materials.get(key); };
   const M = {
     oak: std('oak', { color: '#b88e5f', roughness: .62 }), oakDark: std('oakDark', { color: '#7a5a3a', roughness: .6 }),

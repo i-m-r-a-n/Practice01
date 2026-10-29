@@ -5,10 +5,11 @@ import { applyOfficeScreenContent } from '../props/screen-content.mjs';
 import { createPeopleLayer } from '../people/people-layer.js';
 import { buildIdentityProps } from '../props/identity-props.mjs';
 import { buildInteriorDesign } from '../props/interior-design.mjs';
+import { buildBengalEarthLab } from '../props/bengal-earth-lab.mjs';
 
 // Phase 4 is deliberately dormant in stages 1–3. Source objects remain untouched;
 // additive props, screen artwork and fictional actors have separate provenance.
-export async function createOfficeDressing({ scene, renderer, metadata, grid, probes, staticBlocked, changed, peopleAccepted = false, activeZones = null, interiorZones = [], frozenPeople = false, peopleManifest = null, excludedProps = [], detail = 1 }) {
+export async function createOfficeDressing({ scene, renderer, metadata, grid, probes, staticBlocked, changed, peopleAccepted = false, activeZones = null, interiorZones = [], frozenPeople = false, peopleManifest = null, excludedProps = [], concept = null, conceptZones = [], excludedInterior = [], excludedIdentity = [], conceptOptions = {}, detail = 1 }) {
   const base = new URL('./', location.href);
   const response = await fetch(new URL('props/office-props-manifest.json', base));
   if (!response.ok) throw new Error(`Props manifest HTTP ${response.status}`);
@@ -19,15 +20,18 @@ export async function createOfficeDressing({ scene, renderer, metadata, grid, pr
   scene.add(props.group);
   props.group.traverse(mesh => { if (mesh.isMesh) { mesh.castShadow = false; mesh.receiveShadow = false; } });
   // Client-identity items (water point, material stories, development samples): on furniture tops or walls only.
-  const identity = buildIdentityProps(THREE, { zones: activeZones, anisotropy: Math.min(8, renderer.capabilities.getMaxAnisotropy()) });
+  const identity = buildIdentityProps(THREE, { zones: activeZones, exclude: excludedIdentity, anisotropy: Math.min(8, renderer.capabilities.getMaxAnisotropy()) });
   scene.add(identity.group);
   // Interior design layer (textiles, light pools, material displays); restyles the approved rug when its room atlas is live.
   // interiorZones: tour rooms outside the release zones that get only the interior layer (no props, people or screens)
-  const interior = buildInteriorDesign(THREE, { zones: activeZones ? [...activeZones, ...interiorZones] : null, anisotropy: Math.min(8, renderer.capabilities.getMaxAnisotropy()), detail });
+  const interior = buildInteriorDesign(THREE, { zones: activeZones ? [...activeZones, ...interiorZones] : null, exclude: excludedInterior, anisotropy: Math.min(8, renderer.capabilities.getMaxAnisotropy()), detail });
   scene.add(interior.group);
+  // Concept proposal layer (the /bengal-earth-lab/ route): replaces approved planters in place and adds its own items.
+  const conceptLayer = concept === 'bengal-earth-lab' ? buildBengalEarthLab(THREE, { zones: conceptZones, ...conceptOptions, anisotropy: Math.min(8, renderer.capabilities.getMaxAnisotropy()), detail }) : null;
+  if (conceptLayer) scene.add(conceptLayer.group);
   const interiorRugs = interior.prepareBase(scene);   // approved rugs drawn by the shared base material get their redesign by position
   let atlas, people = null, peoplePromise = null;
-  const status = { enabled: true, props: props.stats, identity: { ...identity.stats, items: identity.items }, interior: { ...interior.stats, items: interior.items, rugMaterials: interiorRugs }, screens: {}, peopleAccepted, errors: [], dynamicLighting: probes ? 'Room SH for actors; instance SH for additive props; static lightmaps exclude both.' : 'Existing scene hemisphere/directional lighting for added props and static people; not a calibrated dynamic-lighting bake.' };
+  const status = { enabled: true, props: props.stats, identity: { ...identity.stats, items: identity.items }, interior: { ...interior.stats, items: interior.items, rugMaterials: interiorRugs }, concept: conceptLayer ? { name: concept, ...conceptLayer.stats, items: conceptLayer.items } : null, screens: {}, peopleAccepted, errors: [], dynamicLighting: probes ? 'Room SH for actors; instance SH for additive props; static lightmaps exclude both.' : 'Existing scene hemisphere/directional lighting for added props and static people; not a calibrated dynamic-lighting bake.' };
   const zones = metadata.rooms.map(r => r.zone), rows = new Float32Array(9 * zones.length * 4);
   const shTexture = new THREE.DataTexture(rows, 9, zones.length, THREE.RGBAFormat, THREE.FloatType);
   shTexture.minFilter = shTexture.magFilter = THREE.NearestFilter; shTexture.generateMipmaps = false;
@@ -139,10 +143,10 @@ vec3 officeSH(vec3 n){
     changed(); return layer.stats();
   }
   function update(dt, options) { if (people?.stats().enabled) { people.update(frozenPeople ? 0 : dt, options); if (!frozenPeople) changed(); } }
-  return { status, props, interiorOverhead: interior.overhead, prepareRoom, prepareSourceScreen, applyProbe, prepareView, propDiagnostics, textures: () => [shTexture, atlas, ...identity.textures(), ...interior.textures()].filter(Boolean), setPeopleEnabled, update,
+  return { status, props, interiorOverhead: interior.overhead, prepareRoom, prepareSourceScreen, applyProbe, prepareView, propDiagnostics, textures: () => [shTexture, atlas, ...identity.textures(), ...interior.textures(), ...(conceptLayer?.textures() || [])].filter(Boolean), setPeopleEnabled, update,
     peopleStats: () => people?.stats() || { enabled: false, loaded: false, total: 0, visible: 0, illustrative: true, accepted: peopleAccepted },
-    peopleDiagnostics: () => people?.diagnostics() || [], peopleContacts: stride => people?.contactDiagnostics(stride) || [], blocksMovement: (x, z, radius) => people?.blocksMovement(x, z, radius) || false,
+    peopleDiagnostics: () => people?.diagnostics() || [], peopleContacts: stride => people?.contactDiagnostics(stride) || [], blocksMovement: (x, z, radius) => people?.blocksMovement(x, z, radius) || conceptLayer?.blocksMovement(x, z, radius) || false,
     hiddenDuringProbe: () => people ? [people.group] : [],
-    dispose() { people?.dispose(); props.group.traverse(o => o.geometry?.dispose()); props.dispose(); identity.dispose(); interior.dispose(); atlas?.dispose(); shTexture.dispose(); },
+    dispose() { people?.dispose(); props.group.traverse(o => o.geometry?.dispose()); props.dispose(); identity.dispose(); interior.dispose(); conceptLayer?.dispose(); atlas?.dispose(); shTexture.dispose(); },
   };
 }

@@ -44,6 +44,7 @@ S.stage = STAGE;
 S.features = { materials: USE_PBR, probes: USE_PROBES, post: USE_POST, gameWalking: USE_WALKING, props: USE_DRESSING, peopleAccepted: PEOPLE_ACCEPTED };
 S.timings = { moduleStartedMs: performance.now(), baseFirstViewMs: null, atlasDecodedByRoomMs: {}, atlasVisibleByRoomMs: {}, atlasFullVisibleByRoomMs: {}, heroMapsReadyByRoomMs: {} };
 window.__viewer = S;
+if (qs.get('debug') === '1') window.__dbg = () => ({ scene, THREE, camera });   // QA probes only (ray casts against the real scene)
 
 // ------------------------------------------------------------------ renderer
 const probe = document.createElement('canvas');
@@ -150,6 +151,18 @@ try {
   throw err;
 }
 $('loadTitle').textContent = 'Preparing the scene...';
+// Concept routes (e.g. /bengal-earth-lab/) rename rooms, set their own tour and page wording from the config.
+if (CFG.roomNames) for (const r of meta.rooms) if (CFG.roomNames[r.zone]) r.name = CFG.roomNames[r.zone];
+if (CFG.roomDescriptions) for (const r of meta.rooms) if (CFG.roomDescriptions[r.zone]) r.description = CFG.roomDescriptions[r.zone];
+if (CFG.extraCameras) meta.cameras.push(...CFG.extraCameras);   // proposal viewpoints that have no approved render
+if (CFG.tour) meta.tour = CFG.tour;
+if (CFG.branding) {
+  const b = CFG.branding, set = (sel, text) => { if (text) document.querySelectorAll(sel).forEach(el => { el.textContent = text; }); };
+  if (b.pageTitle) document.title = b.pageTitle;
+  set('#top .eyebrow', b.eyebrow); set('#top h1', b.headline); set('#welcome .eyebrow, #loading .eyebrow', b.headline);
+  set('#wTitle', b.welcomeTitle); set('#wTour span', b.welcomeTour);
+  if (b.disclaimerHtml) $('disclaimer').innerHTML = b.disclaimerHtml;
+}
 
 // ------------------------------------------------------------------ model: groups, draw-call merge
 const model = gltf.scene;
@@ -158,6 +171,18 @@ try { S.repairs = await applyDoorwayRepairs(model, lightingManifest); }
 catch (error) { window.__fail('Could not prepare the verified doorway geometry: ' + error.message); throw error; }
 // Exact source slab top triangles include door thresholds omitted by clear-room polygons.
 // Keep this independent footprint before render batching removes the source node names.
+// A concept route replaces some approved items in place (same footprint, so the walk grid stays valid).
+if (CFG.hideNodes?.length) {
+  const hide = []; model.traverse(o => { if (o !== model && CFG.hideNodes.some(prefix => o.name.startsWith(prefix))) hide.push(o); });
+  for (const o of hide) o.removeFromParent();
+  S.hiddenNodes = hide.map(o => o.name);
+}
+// ... and can empty approved fixtures of their contents (e.g. the garments in the display bays), by material, keeping the fixture.
+for (const rule of CFG.hideParts || []) {
+  const parts = []; model.traverse(o => { if (o.isMesh && rule.nodes.some(prefix => (o.name.startsWith(prefix) || o.parent?.name.startsWith(prefix))) && rule.materials.some(prefix => (o.material?.name || '').startsWith(prefix))) parts.push(o); });
+  for (const o of parts) o.removeFromParent();
+  (S.hiddenParts ||= []).push(...parts.map(o => `${o.parent?.name || ''}/${o.material?.name}`));
+}
 model.updateMatrixWorld(true);
 const floorTriangles = [];
 const sourceSlab = model.getObjectByName(THREE.PropertyBinding.sanitizeNodeName('Floor slab (existing, finished floor = 0)'));
@@ -303,7 +328,7 @@ async function loadVisualRoom(id) {
 }
 async function ensureDressing() {
   if (!USE_DRESSING) return null;
-  if (!dressingPromise) dressingPromise = createOfficeDressing({ scene, renderer, metadata: meta, grid, probes, staticBlocked, changed: () => { needsRender = true; }, peopleAccepted: PEOPLE_ACCEPTED, activeZones: SIMPLE_RELEASE ? (CFG.releaseZones || ['Z02']) : null, interiorZones: SIMPLE_RELEASE ? (CFG.interiorZones || []) : [], frozenPeople: SIMPLE_RELEASE, peopleManifest: CFG.peopleManifest, excludedProps: CFG.excludedProps || [], detail: quality === 'low' ? .5 : 1 }).then(value => { dressing = value; S.dressing = value.status; if (value.interiorOverhead) overhead.add(value.interiorOverhead); return value; });
+  if (!dressingPromise) dressingPromise = createOfficeDressing({ scene, renderer, metadata: meta, grid, probes, staticBlocked, changed: () => { needsRender = true; }, peopleAccepted: PEOPLE_ACCEPTED, activeZones: SIMPLE_RELEASE ? (CFG.releaseZones || ['Z02']) : null, interiorZones: SIMPLE_RELEASE ? (CFG.interiorZones || []) : [], frozenPeople: SIMPLE_RELEASE, peopleManifest: CFG.peopleManifest, excludedProps: CFG.excludedProps || [], concept: CFG.concept || null, conceptZones: CFG.conceptZones || [], excludedInterior: CFG.excludedInterior || [], excludedIdentity: CFG.excludedIdentity || [], conceptOptions: CFG.conceptOptions || {}, detail: quality === 'low' ? .5 : 1 }).then(value => { dressing = value; S.dressing = value.status; if (value.interiorOverhead) overhead.add(value.interiorOverhead); return value; });
   return dressingPromise;
 }
 async function setPeopleEnabled(enabled) {
@@ -638,7 +663,7 @@ function showInfo(r, kicker, hint = '') {
   $('infoHint').textContent = hint;
   updateInfoButtons();
 }
-const photoCam = () => S.atCam || (S.mode === 'rooms' && !flight && S.room && S.room.primary_camera) || null;
+const photoCam = () => CFG.noRenderPhotos ? null : (S.atCam || (S.mode === 'rooms' && !flight && S.room && S.room.primary_camera) || null);
 function updateInfoButtons() {
   $('bPhoto').classList.toggle('hidden', !photoCam());
   $('bWalkHere').classList.toggle('hidden', !(S.mode === 'rooms' && !flight && camera.position.y < 2.4));
@@ -920,7 +945,7 @@ mm.addEventListener('click', (e) => {
 
 // ------------------------------------------------------------------ photoreal render panel
 function showPhoto(camName) {
-  const c = cams[camName]; if (!c) return;
+  const c = cams[camName]; if (!c || CFG.noRenderPhotos) return;   // a concept route never shows the approved renders as its design
   if (!S.photo) S.sideWasOpen = $('side').classList.contains('open');
   closeSide();
   const img = $('photoImg');
@@ -944,7 +969,7 @@ $('bPhoto').onclick = () => photoCam() && showPhoto(photoCam());
 // phones show a room's concept note folded to two lines; a tap opens or folds it
 for (const id of ['infoNote', 'tNote']) $(id).onclick = () => $(id).classList.toggle('open');
 $('photoClose').onclick = () => { hidePhoto(); if (S.tour) S.tour.photoSkip = true; };
-function preload(camName) { if (camName && cams[camName]) { const i = new Image(); i.src = RENDERS + camName + '.jpg'; } }
+function preload(camName) { if (camName && cams[camName] && !CFG.noRenderPhotos) { const i = new Image(); i.src = RENDERS + camName + '.jpg'; } }
 
 // ------------------------------------------------------------------ guided tour (16 stops)
 const stops = meta.tour;

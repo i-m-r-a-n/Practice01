@@ -1,0 +1,744 @@
+{
+ "models": [
+  "./model_web_baked.glb"
+ ],
+ "renders": "./renders/",
+ "lightmapManifest": "./lighting-v2/manifest-hybrid.json",
+ "releaseMode": "rooms",
+ "stage": 4,
+ "baseModel": "revised-model/Optimized_Office_Interior_web_baked.glb (Z06/Z07 option B; documentation only, routed by the Worker as ./model_web_baked.glb)",
+ "concept": "bengal-earth-lab",
+ "conceptZones": [
+  "Z01",
+  "Z02",
+  "Z03",
+  "Z30",
+  "Z08",
+  "Z12",
+  "Z18"
+ ],
+ "conceptOptions": {
+  "drinkware": [
+   {
+    "id": "PROP_0002",
+    "zone": "Z01",
+    "type": "mug",
+    "position": [
+     5.334,
+     0.7493,
+     3.048
+    ],
+    "rotationY": 3.4906585
+   },
+   {
+    "id": "PROP_0019",
+    "zone": "Z08",
+    "type": "glass",
+    "position": [
+     15.4432,
+     0.7493,
+     -2.4384
+    ],
+    "rotationY": 0.0
+   },
+   {
+    "id": "PROP_0021",
+    "zone": "Z08",
+    "type": "glass",
+    "position": [
+     15.4432,
+     0.7493,
+     -3.2512
+    ],
+    "rotationY": 0.0
+   },
+   {
+    "id": "PROP_0023",
+    "zone": "Z08",
+    "type": "glass",
+    "position": [
+     16.6624,
+     0.7493,
+     -2.4384
+    ],
+    "rotationY": 0.0
+   },
+   {
+    "id": "PROP_0025",
+    "zone": "Z08",
+    "type": "glass",
+    "position": [
+     16.6624,
+     0.7493,
+     -3.2512
+    ],
+    "rotationY": 0.0
+   },
+   {
+    "id": "PROP_0027",
+    "zone": "Z08",
+    "type": "glass",
+    "position": [
+     18.288,
+     0.7493,
+     -2.4384
+    ],
+    "rotationY": 0.0
+   },
+   {
+    "id": "PROP_0029",
+    "zone": "Z08",
+    "type": "glass",
+    "position": [
+     18.288,
+     0.7493,
+     -3.2512
+    ],
+    "rotationY": 0.0
+   },
+   {
+    "id": "PROP_0031",
+    "zone": "Z08",
+    "type": "glass",
+    "position": [
+     19.5072,
+     0.7493,
+     -2.4384
+    ],
+    "rotationY": 0.0
+   },
+   {
+    "id": "PROP_0033",
+    "zone": "Z08",
+    "type": "glass",
+    "position": [
+     19.5072,
+     0.7493,
+     -3.2512
+    ],
+    "rotationY": 0.0
+   },
+   {
+    "id": "PROP_0035",
+    "zone": "Z08",
+    "type": "jug",
+    "position": [
+     15.494,
+     0.7493,
+     -2.8448
+    ],
+    "rotationY": 0.0
+   },
+   {
+    "id": "PROP_0050",
+    "zone": "Z12",
+    "type": "teacup",
+    "position": [
+     26.9748,
+     0.7493,
+     4.2926
+    ],
+    "rotationY": 0.0
+   },
+   {
+    "id": "PROP_0051",
+    "zone": "Z12",
+    "type": "tray",
+    "position": [
+     26.924,
+     0.7493,
+     3.7338
+    ],
+    "rotationY": 0.0
+   },
+   {
+    "id": "PROP_0055",
+    "zone": "Z12",
+    "type": "teacup",
+    "position": [
+     23.445216,
+     0.4064,
+     4.064
+    ],
+    "rotationY": 0.0
+   },
+   {
+    "id": "PROP_0252",
+    "zone": "Z18",
+    "type": "mug",
+    "position": [
+     31.6992,
+     0.7493,
+     -28.2702
+    ],
+    "rotationY": -0.26179939
+   },
+   {
+    "id": "PROP_0254",
+    "zone": "Z18",
+    "type": "bottle",
+    "position": [
+     30.3403,
+     0.7493,
+     -28.2575
+    ],
+    "rotationY": 0.0
+   },
+   {
+    "id": "PROP_0256",
+    "zone": "Z18",
+    "type": "mug",
+    "position": [
+     31.6992,
+     0.7493,
+     -28.6258
+    ],
+    "rotationY": 0.26179939
+   },
+   {
+    "id": "PROP_0258",
+    "zone": "Z18",
+    "type": "bottle",
+    "position": [
+     30.3403,
+     0.7493,
+     -28.6385
+    ],
+    "rotationY": 0.0
+   },
+   {
+    "id": "PROP_0260",
+    "zone": "Z18",
+    "type": "mug",
+    "position": [
+     33.2994,
+     0.7493,
+     -28.2702
+    ],
+    "rotationY": -0.26179939
+   },
+   {
+    "id": "PROP_0262",
+    "zone": "Z18",
+    "type": "bottle",
+    "position": [
+     31.9405,
+     0.7493,
+     -28.2575
+    ],
+    "rotationY": 0.0
+   },
+   {
+    "id": "PROP_0264",
+    "zone": "Z18",
+    "type": "mug",
+    "position": [
+     33.2994,
+     0.7493,
+     -28.6258
+    ],
+    "rotationY": 0.26179939
+   },
+   {
+    "id": "PROP_0266",
+    "zone": "Z18",
+    "type": "bottle",
+    "position": [
+     31.9405,
+     0.7493,
+     -28.6385
+    ],
+    "rotationY": 0.0
+   },
+   {
+    "id": "PROP_0268",
+    "zone": "Z18",
+    "type": "mug",
+    "position": [
+     31.6992,
+     0.7493,
+     -24.2062
+    ],
+    "rotationY": -0.26179939
+   },
+   {
+    "id": "PROP_0270",
+    "zone": "Z18",
+    "type": "bottle",
+    "position": [
+     30.3403,
+     0.7493,
+     -24.1935
+    ],
+    "rotationY": 0.0
+   },
+   {
+    "id": "PROP_0272",
+    "zone": "Z18",
+    "type": "mug",
+    "position": [
+     31.6992,
+     0.7493,
+     -24.5618
+    ],
+    "rotationY": 0.26179939
+   },
+   {
+    "id": "PROP_0274",
+    "zone": "Z18",
+    "type": "bottle",
+    "position": [
+     30.3403,
+     0.7493,
+     -24.5745
+    ],
+    "rotationY": 0.0
+   },
+   {
+    "id": "PROP_0276",
+    "zone": "Z18",
+    "type": "mug",
+    "position": [
+     33.2994,
+     0.7493,
+     -24.2062
+    ],
+    "rotationY": -0.26179939
+   },
+   {
+    "id": "PROP_0278",
+    "zone": "Z18",
+    "type": "bottle",
+    "position": [
+     31.9405,
+     0.7493,
+     -24.1935
+    ],
+    "rotationY": 0.0
+   },
+   {
+    "id": "PROP_0280",
+    "zone": "Z18",
+    "type": "mug",
+    "position": [
+     33.2994,
+     0.7493,
+     -24.5618
+    ],
+    "rotationY": 0.26179939
+   },
+   {
+    "id": "PROP_0282",
+    "zone": "Z18",
+    "type": "bottle",
+    "position": [
+     31.9405,
+     0.7493,
+     -24.5745
+    ],
+    "rotationY": 0.0
+   },
+   {
+    "id": "PROP_0289",
+    "zone": "Z18",
+    "type": "mug",
+    "position": [
+     30.580584,
+     0.7493,
+     -15.91056
+    ],
+    "rotationY": 1.57079633
+   },
+   {
+    "id": "PROP_0291",
+    "zone": "Z18",
+    "type": "mug",
+    "position": [
+     30.580584,
+     0.7493,
+     -17.61744
+    ],
+    "rotationY": 1.57079633
+   }
+  ]
+ },
+ "releaseZones": [
+  "Z01",
+  "Z02",
+  "Z08",
+  "Z30",
+  "Z12",
+  "Z18"
+ ],
+ "interiorZones": [],
+ "screenZones": [],
+ "cameraOverrides": {},
+ "excludedProps": [
+  "PROP_0002",
+  "PROP_0006",
+  "PROP_0008",
+  "PROP_0019",
+  "PROP_0021",
+  "PROP_0023",
+  "PROP_0025",
+  "PROP_0027",
+  "PROP_0029",
+  "PROP_0031",
+  "PROP_0033",
+  "PROP_0035",
+  "PROP_0050",
+  "PROP_0051",
+  "PROP_0055",
+  "PROP_0056",
+  "PROP_0057",
+  "PROP_0058",
+  "PROP_0059",
+  "PROP_0060",
+  "PROP_0061",
+  "PROP_0062",
+  "PROP_0063",
+  "PROP_0064",
+  "PROP_0065",
+  "PROP_0066",
+  "PROP_0067",
+  "PROP_0068",
+  "PROP_0069",
+  "PROP_0070",
+  "PROP_0071",
+  "PROP_0072",
+  "PROP_0073",
+  "PROP_0074",
+  "PROP_0075",
+  "PROP_0076",
+  "PROP_0077",
+  "PROP_0078",
+  "PROP_0079",
+  "PROP_0080",
+  "PROP_0081",
+  "PROP_0082",
+  "PROP_0083",
+  "PROP_0084",
+  "PROP_0085",
+  "PROP_0086",
+  "PROP_0087",
+  "PROP_0088",
+  "PROP_0089",
+  "PROP_0090",
+  "PROP_0091",
+  "PROP_0092",
+  "PROP_0093",
+  "PROP_0094",
+  "PROP_0095",
+  "PROP_0096",
+  "PROP_0097",
+  "PROP_0098",
+  "PROP_0099",
+  "PROP_0100",
+  "PROP_0101",
+  "PROP_0102",
+  "PROP_0103",
+  "PROP_0104",
+  "PROP_0105",
+  "PROP_0106",
+  "PROP_0107",
+  "PROP_0108",
+  "PROP_0109",
+  "PROP_0110",
+  "PROP_0111",
+  "PROP_0112",
+  "PROP_0113",
+  "PROP_0114",
+  "PROP_0115",
+  "PROP_0116",
+  "PROP_0117",
+  "PROP_0118",
+  "PROP_0119",
+  "PROP_0120",
+  "PROP_0121",
+  "PROP_0122",
+  "PROP_0123",
+  "PROP_0124",
+  "PROP_0125",
+  "PROP_0126",
+  "PROP_0127",
+  "PROP_0128",
+  "PROP_0129",
+  "PROP_0130",
+  "PROP_0131",
+  "PROP_0252",
+  "PROP_0254",
+  "PROP_0256",
+  "PROP_0258",
+  "PROP_0260",
+  "PROP_0262",
+  "PROP_0264",
+  "PROP_0266",
+  "PROP_0268",
+  "PROP_0270",
+  "PROP_0272",
+  "PROP_0274",
+  "PROP_0276",
+  "PROP_0278",
+  "PROP_0280",
+  "PROP_0282",
+  "PROP_0289",
+  "PROP_0291"
+ ],
+ "excludedInterior": [
+  "EC_MATERIALS_LIBRARY",
+  "MR_FIT_FORMS",
+  "MR_APPROVAL_BOARD",
+  "CAD_SCREENS",
+  "CAD_PINBOARD",
+  "CAD_LAYOUT_TABLE",
+  "DS_REVIEW_TABLE"
+ ],
+ "excludedIdentity": [
+  "ID_WATER_POINT",
+  "ID_SAMPLE_CARD_1",
+  "ID_SAMPLE_CARD_2",
+  "ID_MD_DEVELOPMENT",
+  "ID_BOARD_REVIEW_1",
+  "ID_BOARD_REVIEW_2"
+ ],
+ "peopleManifest": "room-release/people-manifest.json",
+ "peopleAccepted": false,
+ "hideNodes": [
+  "F003_",
+  "PL003_",
+  "F004_",
+  "PL004_",
+  "F015_",
+  "PL015_",
+  "F016_",
+  "PL016_",
+  "F022_",
+  "F023_",
+  "F024_",
+  "F025_",
+  "F029_",
+  "PL029_",
+  "F050_",
+  "PL050_",
+  "F186_",
+  "PL186_"
+ ],
+ "noRenderPhotos": true,
+ "hideParts": [
+  {
+   "nodes": [
+    "F017_",
+    "F018_",
+    "F019_",
+    "F020_"
+   ],
+   "materials": [
+    "g_",
+    "chrome"
+   ]
+  }
+ ],
+ "extraCameras": [
+  {
+   "name": "BEL_CAM_SUN_WALL",
+   "room": "Visitor passage",
+   "zone": "Z03",
+   "priority": 2,
+   "type": "PERSP",
+   "position": [
+    10.42,
+    1.55,
+    -0.45
+   ],
+   "direction": [
+    -0.37054684526926823,
+    -0.0673721536853215,
+    -0.9263671131731709
+   ],
+   "up": [
+    -0.025021389724624164,
+    0.9977279152693891,
+    -0.06255347431156043
+   ],
+   "quaternion_xyzw": [
+    -0.033097,
+    0.189,
+    0.006374,
+    0.981398
+   ],
+   "clip": [
+    0.05,
+    300.0
+   ],
+   "shift_x": 0.0,
+   "shift_y": 0.0,
+   "sensor_fit": "AUTO",
+   "lens": 18.0,
+   "sensor_width": 36.0,
+   "render": {
+    "file": null,
+    "width": 1920,
+    "height": 1080
+   },
+   "proposal_view": true
+  },
+  {
+   "name": "BEL_CAM_SUN_SHELF",
+   "room": "Global Design Studio",
+   "zone": "Z18",
+   "priority": 2,
+   "type": "PERSP",
+   "position": [
+    32.45,
+    1.5,
+    -18.0
+   ],
+   "direction": [
+    0.5644671154711897,
+    -0.4159231377156153,
+    -0.7130110932267687
+   ],
+   "up": [
+    0.25816471620984455,
+    0.9093997710098662,
+    -0.32610279942296283
+   ],
+   "quaternion_xyzw": [
+    -0.201019,
+    -0.32107,
+    -0.069938,
+    0.922829
+   ],
+   "clip": [
+    0.05,
+    300.0
+   ],
+   "shift_x": 0.0,
+   "shift_y": 0.0,
+   "sensor_fit": "AUTO",
+   "lens": 24.0,
+   "sensor_width": 36.0,
+   "render": {
+    "file": null,
+    "width": 1920,
+    "height": 1080
+   },
+   "proposal_view": true
+  }
+ ],
+ "tour": [
+  {
+   "stop": 1,
+   "zone": null,
+   "camera": "CAM_ISO_SE",
+   "title": "The Living Bengal Factory",
+   "description": "Bengal Earth Lab on the approved Stage II floor, a concept proposal: earth, rural craft, a few living trees, rural art and music, and an honest solar story. This first increment covers the front rooms and the studio."
+  },
+  {
+   "stop": 2,
+   "zone": "Z01",
+   "camera": "CAM_03_Entrance_Lobby",
+   "title": "Arrival gallery",
+   "description": "A banyan bonsai on granite by the glass gate, three stones, terracotta on the check-in desk and terracotta plaques by a rural artist (to be commissioned)."
+  },
+  {
+   "stop": 3,
+   "zone": "Z02",
+   "camera": "CAM_01_Reception_A",
+   "title": "Reception and Bengali tea",
+   "description": "Tea in clay, rural instruments above the console, handloom on the walls, a small fig tree and ghritokumari."
+  },
+  {
+   "stop": 4,
+   "zone": "Z03",
+   "camera": "BEL_CAM_SUN_WALL",
+   "title": "Earth and Sun passage",
+   "description": "The Sun wall shows the energy story with grid and backup included. Concept demonstration, not live factory data."
+  },
+  {
+   "stop": 5,
+   "zone": "Z30",
+   "camera": "CAM_04_Experience_Centre_A",
+   "title": "Earth to product",
+   "description": "Raw material, craft technique, prototype, testing and collection on the plinth: illustrative objects until real samples and records arrive."
+  },
+  {
+   "stop": 6,
+   "zone": "Z30",
+   "camera": "CAM_06_Experience_Centre_Detail",
+   "title": "Living materials",
+   "description": "Woven jute, hogla, cane, water hyacinth, bamboo and kaisa samples with terracotta tiles; drinking water from a clay kolshi."
+  },
+  {
+   "stop": 7,
+   "zone": "Z08",
+   "camera": "CAM_09_Boardroom_A",
+   "title": "Negotiation suite",
+   "description": "Tea in clay at every place, woven samples on wooden trays, a bonsai in the corner."
+  },
+  {
+   "stop": 8,
+   "zone": "Z18",
+   "camera": "CAM_13_Design_Studio_A",
+   "title": "Collaborative studio",
+   "description": "The only room with daylight: basket prototypes and form sketches on the co-creation table."
+  },
+  {
+   "stop": 9,
+   "zone": "Z18",
+   "camera": "BEL_CAM_SUN_SHELF",
+   "title": "The sunning shelf",
+   "description": "Bonsai and tulsi take turns in the daylight of window W10."
+  },
+  {
+   "stop": 10,
+   "zone": null,
+   "camera": "CAM_ISO_SW",
+   "title": "Designed for a Solar-Powered Future",
+   "description": "Next increments: the Green Uthan and showroom, the academy and artisan studio, the labs and library."
+  }
+ ],
+ "roomNames": {
+  "Z01": "Arrival gallery",
+  "Z02": "Reception · tea lounge",
+  "Z03": "Earth & Sun passage",
+  "Z30": "Earth to product",
+  "Z08": "Negotiation suite",
+  "Z18": "Collaborative studio",
+  "Z07": "Green Uthan (planned)",
+  "Z06": "Academy · artisans (planned)",
+  "Z15": "Materials library (planned)",
+  "Z16": "Materials lab (planned)",
+  "Z17": "Prototype workshop (planned)",
+  "Z14": "Digital design lab (planned)",
+  "Z05": "Export & order centre (planned)",
+  "Z04": "Buyer project room (planned)",
+  "Z09": "Records room (planned)",
+  "Z20": "Staff & artisan dining (planned)",
+  "Z21": "Academy annex (planned)",
+  "Z10": "Exec reception · tea point"
+ },
+ "roomNotes": {
+  "Z01": "In this 3D proposal: a banyan bonsai on granite by the glass gate, three stones, handmade terracotta on the check-in desk and six terracotta plaques by a rural artist (placeholder; to be commissioned and credited). The approved logos and brand wall are unchanged.",
+  "Z02": "In this 3D proposal: tea in clay cups on wooden trays, rural instruments above the console (ektara, dotara, banshi, dhol; makers to be identified), a small fig tree and ghritokumari, with the handloom pieces of the approved redesign.",
+  "Z03": "In this 3D proposal: the Sun wall (sun, solar generation, use and storage, operations, with grid and backup shown) and a terracotta earth wall. Concept demonstration, not live factory data: \"Designed for a Solar-Powered Future\" until measured evidence exists.",
+  "Z30": "In this 3D proposal: the Earth-to-Product gallery on the plinth (raw material, technique, prototype, testing, collection; the four forms are removed), living materials on the table, drinking water from a clay kolshi (source client-stated; no laboratory results yet) and a Future of Bengal lamp prototype by the boardroom door.",
+  "Z08": "In this 3D proposal: clay cups at every place and a clay jug instead of glass, woven samples on wooden trays, and a bonsai in the corner by the screen.",
+  "Z18": "In this 3D proposal: the only room with exterior windows: three bonsai and a tulsi pot take turns on the sunning shelf at window W10, a small fig tree by W09, and basket prototypes, woven samples and sketches on the co-creation table.",
+  "Z12": "In this 3D proposal: tea in clay cups. The office itself is unchanged in this increment.",
+  "Z07": "Planned: the Green Uthan (a courtyard-like gathering place with a small tree, stone seats and rural art) and European living, dining, bedroom and hospitality room-sets. Needs the merchandising team to move first (owner decision).",
+  "Z06": "Planned: the design education academy (20-30 people if the fire capacity allows) and the artisan demonstration studio, with its own entrance from the staff corridor.",
+  "Z15": "Planned: the living materials library, lit as a jewel box behind the experience-centre glass.",
+  "Z16": "Planned: natural-materials lab and testing (sink and concrete floor already here).",
+  "Z17": "Planned: prototype workshop with dust extraction (to be engineered), seen from the showroom through the interior glass.",
+  "Z05": "Planned: digital export and order centre beside reception."
+ },
+ "branding": {
+  "pageTitle": "Bengal Earth Lab - concept proposal",
+  "eyebrow": "Bengal Earth Lab · From Rural Hands to Global Homes",
+  "headline": "The Living Bengal Factory · concept proposal",
+  "welcomeTitle": "Explore the Bengal Earth Lab proposal",
+  "welcomeTour": "A short guided tour of the first rooms of the proposal. Pause, go back or skip at any time.",
+  "disclaimerHtml": "<b>Concept proposal</b> on the approved Stage II floor &middot; makers, artists, growers, stone sources, test records and energy data are still to be identified &middot; no people shown."
+ }
+}

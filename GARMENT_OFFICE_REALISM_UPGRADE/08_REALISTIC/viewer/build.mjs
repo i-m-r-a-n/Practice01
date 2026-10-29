@@ -10,10 +10,11 @@ import { execFileSync } from 'node:child_process';
 
 const here = process.env.TOUR_SRC || path.dirname(new URL(import.meta.url).pathname);   // TOUR_SRC: run a copy from elsewhere
 const assets = path.resolve(here, '../revised-model');   // Z06 / Z07 option B model data (Claude, claude/space-optimization); was 07_WEB_TOUR_ASSETS
-const release = JSON.parse(fs.readFileSync(path.join(here, 'release-config.json'), 'utf8'));
+const configFile = process.env.RELEASE_CONFIG || 'release-config.json';   // e.g. bel-config.json for the /bengal-earth-lab/ proposal
+const release = JSON.parse(fs.readFileSync(path.join(here, configFile), 'utf8'));
 const out = path.resolve(process.argv[2] || path.join(here, 'dist'));
 fs.mkdirSync(out, { recursive: true });
-fs.copyFileSync(path.join(here, 'release-config.json'), path.join(out, 'release-config.json'));
+fs.copyFileSync(path.join(here, configFile), path.join(out, 'release-config.json'));
 const tmp = fs.mkdtempSync(path.join(out, '.build-'));
 fs.writeFileSync(path.join(tmp, 'data.js'), [
   `import meta from ${JSON.stringify(path.join(assets, 'office_web_metadata.json'))};`,

@@ -39,10 +39,10 @@ export const INTERIOR_ITEMS = [
 const PAL = { khadi: '#e6dccb', khadiShade: '#cfc1a8', jute: '#b39867', juteDark: '#7e6440', indigo: '#33486a', indigoDeep: '#24344f',
   madder: '#8f4a3a', ochre: '#b98a45', thread: '#efe7d6', oak: '#b88e5f', brass: '#a57c3c' };
 
-export function buildInteriorDesign(THREE, { zones = null, anisotropy = 4, detail = 1 } = {}) {
+export function buildInteriorDesign(THREE, { zones = null, exclude = [], anisotropy = 4, detail = 1 } = {}) {
   const group = new THREE.Group(); group.name = 'INTERIOR_DESIGN';
   const geometries = [], materials = [], textures = [];
-  const items = INTERIOR_ITEMS.filter(i => !zones || zones.includes(i.zone));
+  const items = INTERIOR_ITEMS.filter(i => (!zones || zones.includes(i.zone)) && !exclude.includes(i.id));
   const want = id => items.some(i => i.id === id);
   const px = n => Math.max(64, Math.round(n * detail));
   // ---------------------------------------------------------------- canvas helpers (deterministic, self-made)
