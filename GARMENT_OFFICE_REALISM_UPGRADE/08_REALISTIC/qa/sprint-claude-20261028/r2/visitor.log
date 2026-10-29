@@ -1,0 +1,13 @@
+water_point Z30
+coconut_story Z30
+ec_counter_run Z30
+jamdani_panel Z02
+md_development Z12
+board_review Z08
+md_visitor Z12
+board_people Z08
+reception_sofa Z02
+merch_typing ERROR Page.evaluate: Error: QA start is blocked or outside the floor
+    at Object.jS [as setWalkQAStart] (http://127.0.0.1:8784/realistic/app.js:4809:52445)
+    at eval (eval at evaluate (:370:30), <anonym
+{"shots": 10, "errors": []}

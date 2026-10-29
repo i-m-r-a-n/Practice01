@@ -1,0 +1,270 @@
+{
+  "scope": "LOCAL Chromium (SwiftShader) via serve_preview.py; real UI events; not live, Safari or MacBook proof",
+  "url": "http://127.0.0.1:8784/realistic/",
+  "viewport": [
+    1440,
+    900
+  ],
+  "checks": [
+    {
+      "name": "welcome card shows on first visit",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "welcome closes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "tour starts at stop 1",
+      "passed": true,
+      "detail": {
+        "i": 0,
+        "phase": "hold",
+        "playing": true,
+        "sub": 0,
+        "done": false
+      }
+    },
+    {
+      "name": "tour Next",
+      "passed": true,
+      "detail": {
+        "i": 1,
+        "phase": "hold",
+        "playing": true,
+        "sub": 0,
+        "done": false
+      }
+    },
+    {
+      "name": "tour Back",
+      "passed": true,
+      "detail": {
+        "i": 0,
+        "phase": "hold",
+        "playing": true,
+        "sub": 0,
+        "done": false
+      }
+    },
+    {
+      "name": "tour Pause",
+      "passed": true,
+      "detail": {
+        "i": 0,
+        "phase": "hold",
+        "playing": false,
+        "sub": 0,
+        "done": false
+      }
+    },
+    {
+      "name": "tour End returns to overview",
+      "passed": true,
+      "detail": "overview"
+    },
+    {
+      "name": "room Z02 opens on CAM_01_Reception_A with its room lightmap",
+      "passed": true,
+      "detail": {
+        "mode": "rooms",
+        "room": "Z02",
+        "atCam": "CAM_01_Reception_A",
+        "flying": false,
+        "flightT": null,
+        "fps": 1,
+        "overhead": true,
+        "tour": null,
+        "photo": null,
+        "aoFrames": 0,
+        "pos": [
+          8.077,
+          1.524,
+          0.66
+        ]
+      }
+    },
+    {
+      "name": "room Z30 opens on CAM_04_Experience_Centre_A (vertex-lit room)",
+      "passed": true,
+      "detail": {
+        "mode": "rooms",
+        "room": "Z30",
+        "atCam": "CAM_04_Experience_Centre_A",
+        "flying": false,
+        "flightT": null,
+        "fps": 1,
+        "overhead": true,
+        "tour": null,
+        "photo": null,
+        "aoFrames": 0,
+        "pos": [
+          9.957,
+          1.575,
+          -5.74
+        ]
+      }
+    },
+    {
+      "name": "room Z08 opens on CAM_09_Boardroom_A (vertex-lit room)",
+      "passed": true,
+      "detail": {
+        "mode": "rooms",
+        "room": "Z08",
+        "atCam": "CAM_09_Boardroom_A",
+        "flying": false,
+        "flightT": null,
+        "fps": 1,
+        "overhead": true,
+        "tour": null,
+        "photo": null,
+        "aoFrames": 0,
+        "pos": [
+          21.844,
+          1.575,
+          -5.08
+        ]
+      }
+    },
+    {
+      "name": "room Z12 opens on CAM_07_MD_Office_A (vertex-lit room)",
+      "passed": true,
+      "detail": {
+        "mode": "rooms",
+        "room": "Z12",
+        "atCam": "CAM_07_MD_Office_A",
+        "flying": false,
+        "flightT": null,
+        "fps": 1,
+        "overhead": true,
+        "tour": null,
+        "photo": null,
+        "aoFrames": 0,
+        "pos": [
+          22.098,
+          1.524,
+          1.626
+        ]
+      }
+    },
+    {
+      "name": "room Z07 opens on CAM_34_Merchandising_Sample_Hub (vertex-lit room)",
+      "passed": true,
+      "detail": {
+        "mode": "rooms",
+        "room": "Z07",
+        "atCam": "CAM_34_Merchandising_Sample_Hub",
+        "flying": false,
+        "flightT": null,
+        "fps": 1,
+        "overhead": true,
+        "tour": null,
+        "photo": null,
+        "aoFrames": 0,
+        "pos": [
+          21.285,
+          1.575,
+          -11.481
+        ]
+      }
+    },
+    {
+      "name": "room Z18 opens on CAM_14_Design_Studio_B (vertex-lit room)",
+      "passed": true,
+      "detail": {
+        "mode": "rooms",
+        "room": "Z18",
+        "atCam": "CAM_14_Design_Studio_B",
+        "flying": false,
+        "flightT": null,
+        "fps": 1.9228920296123653,
+        "overhead": true,
+        "tour": null,
+        "photo": null,
+        "aoFrames": 0,
+        "pos": [
+          33.477,
+          1.575,
+          -30.48
+        ]
+      }
+    },
+    {
+      "name": "photoreal still loads",
+      "passed": true,
+      "detail": 1600
+    },
+    {
+      "name": "photoreal closes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "walk forward moves the eye",
+      "passed": true,
+      "detail": {
+        "from": [
+          6.199,
+          1.6,
+          5.1768
+        ],
+        "to": [
+          6.136585359081542,
+          1.6,
+          4.589057326773499
+        ]
+      }
+    },
+    {
+      "name": "walk stays on free floor",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Escape leaves walk",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "overview tools run",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "no page or console errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "no HTTP errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "no failed requests",
+      "passed": true,
+      "detail": []
+    }
+  ],
+  "errors": [],
+  "failed_requests": [],
+  "http_errors": [],
+  "model_ready_seconds_local": 2.55,
+  "people": {
+    "enabled": true,
+    "loaded": true,
+    "frozen": true,
+    "total": 27,
+    "visible": 0,
+    "walkers": 0,
+    "illustrative": true,
+    "forbiddenZoneViolations": 0,
+    "status": "Six-room release: Reception, Boardroom, Experience Centre, MD Office, Merchandising (proposed option B), Global Design Studio",
+    "contactShadows": 42,
+    "nativeMacPerformanceTested": false
+  },
+  "seconds": 477.1,
+  "passed": true
+}

@@ -1,0 +1,24 @@
+PASS welcome card shows on first visit
+PASS welcome closes
+PASS tour starts at stop 1
+PASS tour Next
+PASS tour Back
+PASS tour Pause
+PASS tour End returns to overview
+PASS room Z02 opens on CAM_01_Reception_A with its room lightmap
+PASS room Z30 opens on CAM_04_Experience_Centre_A (vertex-lit room)
+PASS room Z08 opens on CAM_09_Boardroom_A (vertex-lit room)
+PASS room Z12 opens on CAM_07_MD_Office_A (vertex-lit room)
+PASS room Z07 opens on CAM_34_Merchandising_Sample_Hub (vertex-lit room)
+PASS room Z18 opens on CAM_14_Design_Studio_B (vertex-lit room)
+PASS photoreal still loads
+PASS photoreal closes
+PASS touch walk pad visible
+PASS walk forward moves the eye
+PASS walk stays on free floor
+PASS Escape leaves walk
+PASS overview tools run
+PASS no page or console errors
+PASS no HTTP errors
+PASS no failed requests
+{"passed": true, "failed": [], "seconds": 255.7}

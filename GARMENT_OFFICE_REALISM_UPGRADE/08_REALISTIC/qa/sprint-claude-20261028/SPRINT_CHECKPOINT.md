@@ -7,7 +7,20 @@ Resume from this file if the session is interrupted. Newest state first.
 - **Branch:** `claude/realistic-sprint-20261028` (worktree `/home/user/rs`).
   - Based on GPT's `chatgpt/realistic-sprint-20261028` @ `3ed3b41`, which carries GPT's QA notes and the direct-drag sign fix.
   - Nothing of GPT's was changed or removed.
-- **Release source commit:** see `deploy/DEPLOY_SPRINT_20261029.md`. The worker is built for that commit and tested.
+- **Release:**
+  - **Source:** `e98ecb5855c3e2586d4de535ee371e82519aead1`.
+  - **Worker:** `deploy/worker-realistic.js` at `6edce191c9e9783835d5c9587faf98405142cd9b`; 7621 bytes, SHA-256 `1e943fcf…25da5`, 41 / 41 worker tests pass.
+  - **Status:** ready, not yet deployed. Deploy, guard and rollback steps: `deploy/DEPLOY_SPRINT_20261029.md`.
+  - **Superseded:** the earlier `9acdeaf` / `e153311` pair was never deployed.
+- **Checks passed on the release build** (`r2/`, local Chromium, software WebGL):
+  - `ui_check`: 34 / 34 at 1440, 390 and 360
+  - `layout_probe`: all 16 widths OK
+  - `smoke`: 22 / 22 at 1440 × 900 and 23 / 23 at 390 × 844, with no page errors, HTTP errors or failed requests
+  - `capture_rooms`: 6 frames; identity props 8; screens 9
+  - `capture_visitor`: 9 frames
+  - `request_list`: all 19 requested files are in the source commit
+  - public bytes of the changed dist files at the source commit match
+  - live guard checked at 05:10 UTC: `/realistic/health` shows `bcb92b0`; `/` returns 200 with SHA-256 `ff75beb5…`
 - **Live:**
   - `/realistic/` = source `bcb92b00963fa51906676f8cca22da88f841dc64` (Cloudflare version `bcfea6b5`) until the owner deploys this release.
   - `/` = original tour, byte-identical, never touched.
@@ -70,6 +83,11 @@ Everything is additive and self-made. Nothing stands on the floor, so walk paths
 - **Contact shadows:** soft static shadows were added (42 in total), one under each person's feet, placed from the posed foot bones, and one under each seated person's chair. They toggle with People.
 
 ## Release steps
+
+Steps 1–4 are done for H = `e98ecb5`. **Exact next action:**
+
+- **Step 5 (the owner's desktop session).** The prompt is in the chat. It repeats the guard, the hash checks and the rollback.
+- **Step 6 (this session, after the deploy).** Run the public verification. If it fails and the owner has not already rolled back, ask for the rollback.
 
 1. Commit and push the source + dist. That gives source commit H.
 2. Run `python3 qa/sprint-claude-20261028/request_list.py H` and `python3 deploy/build_worker.py H`.

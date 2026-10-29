@@ -1,0 +1,127 @@
+{
+  "scope": "LOCAL Chromium (SwiftShader); viewer walk-QA hooks at visitor eye height 1.6 m; UI hidden; not live or MacBook proof",
+  "shots": [
+    {
+      "spot": "water_point",
+      "xz": [
+        11.45,
+        -6.95
+      ],
+      "yaw": 3.141592653589793,
+      "pitch": -0.42,
+      "fov": 62,
+      "file": "visitor_water_point.png",
+      "sha256": "e1c8ea418b0dd99332d6c2370d05e747cf3e60afd84ec0dfb03f87e7f64c7ab4",
+      "room": "Z30"
+    },
+    {
+      "spot": "coconut_story",
+      "xz": [
+        15.55,
+        -6.85
+      ],
+      "yaw": 3.141592653589793,
+      "pitch": -0.48,
+      "fov": 58,
+      "file": "visitor_coconut_story.png",
+      "sha256": "f7c02eaf9c2a47c847d576a00b66842de686d08566d4d3e7464ee8aaba73d7b8",
+      "room": "Z30"
+    },
+    {
+      "spot": "ec_counter_run",
+      "xz": [
+        12.4,
+        -7.3
+      ],
+      "yaw": 2.199114857512855,
+      "pitch": -0.3,
+      "fov": 66,
+      "file": "visitor_ec_counter_run.png",
+      "sha256": "d4b3a2829ec164fab6d29208078c1fef540d6f06d142a52db886b6db1c5f2a2f",
+      "room": "Z30"
+    },
+    {
+      "spot": "jamdani_panel",
+      "xz": [
+        9.65,
+        2.6
+      ],
+      "yaw": 3.141592653589793,
+      "pitch": 0.05,
+      "fov": 60,
+      "file": "visitor_jamdani_panel.png",
+      "sha256": "997c94b91ff6b7cad66529c1a9f0303294ba8bd215048ccbdd8edcb80c645507",
+      "room": "Z02"
+    },
+    {
+      "spot": "md_development",
+      "xz": [
+        24.4,
+        4.9
+      ],
+      "yaw": -2.12,
+      "pitch": -0.3,
+      "fov": 62,
+      "file": "visitor_md_development.png",
+      "sha256": "a64e4407fd2adf8a37af5367d8496ac958419029a6d7353692d5426a61abe8c0",
+      "room": "Z12"
+    },
+    {
+      "spot": "board_review",
+      "xz": [
+        17.25,
+        -0.95
+      ],
+      "yaw": 0.0,
+      "pitch": -0.55,
+      "fov": 64,
+      "file": "visitor_board_review.png",
+      "sha256": "6822706605d502b15b5d17efffc53c9ca9834c5c8543b9285293ca47b3c286ae",
+      "room": "Z08"
+    },
+    {
+      "spot": "md_visitor",
+      "xz": [
+        24.6,
+        2.4
+      ],
+      "yaw": -2.09,
+      "pitch": -0.45,
+      "fov": 60,
+      "file": "visitor_md_visitor.png",
+      "sha256": "716d2e4abbc865a7d973c532e5faf5f337939e892d35e41db07822036b288a56",
+      "room": "Z12"
+    },
+    {
+      "spot": "board_people",
+      "xz": [
+        21.2,
+        -0.9
+      ],
+      "yaw": 0.99,
+      "pitch": -0.3,
+      "fov": 62,
+      "file": "visitor_board_people.png",
+      "sha256": "1e8de940a97168ba5c8b285bfe0f5e9c54e08f382d252abf9420e6f704a635b2",
+      "room": "Z08"
+    },
+    {
+      "spot": "reception_sofa",
+      "xz": [
+        9.6,
+        2.9
+      ],
+      "yaw": 3.141592653589793,
+      "pitch": -0.38,
+      "fov": 60,
+      "file": "visitor_reception_sofa.png",
+      "sha256": "5d00bc51cb5386c58643c92042eccd24d99f5c7260c599bd5ef1d27b0dea7dce",
+      "room": "Z02"
+    },
+    {
+      "spot": "merch_typing",
+      "error": "Page.evaluate: Error: QA start is blocked or outside the floor\n    at Object.jS [as setWalkQAStart] (http://127.0.0.1:8784/realistic/app.js:4809:52445)\n    at eval (eval at evaluate (:370:30), <anonymous>:1:26)\n    at UtilityScript.evaluate (<anonymous>:377:18)\n    at UtilityScript.<anonymous> (<ano"
+    }
+  ],
+  "errors": []
+}

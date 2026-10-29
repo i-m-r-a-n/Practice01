@@ -10,15 +10,15 @@
       "errors": [],
       "failed_requests": [],
       "http_errors": [],
-      "model_ready_seconds_local": 2.499,
-      "settled_seconds_local": 34.126,
+      "model_ready_seconds_local": 2.412,
+      "settled_seconds_local": 32.355,
       "state": {
         "mode": "rooms",
         "room": "Z02",
         "atCam": "CAM_01_Reception_A",
         "flying": false,
         "flightT": null,
-        "fps": 0.9812579727209386,
+        "fps": 1,
         "overhead": true,
         "tour": null,
         "photo": null,
@@ -130,7 +130,7 @@
         }
       },
       "screenshot": "1440_interactive_reception.png",
-      "sha256": "5fd5a025cbefabad48b0a7cb218bd3e793daeba2fa5e6cd8e471dfd098884abf",
+      "sha256": "416b760eb4df77eca1ec160fcf4d0f88558318b70488645641e76ddc08896cc2",
       "status": "checked"
     },
     {
@@ -141,15 +141,15 @@
       "errors": [],
       "failed_requests": [],
       "http_errors": [],
-      "model_ready_seconds_local": 1.787,
-      "settled_seconds_local": 22.312,
+      "model_ready_seconds_local": 1.831,
+      "settled_seconds_local": 24.192,
       "state": {
         "mode": "rooms",
         "room": "Z02",
         "atCam": "CAM_01_Reception_A",
         "flying": false,
         "flightT": null,
-        "fps": 0.9876543209876544,
+        "fps": 1,
         "overhead": true,
         "tour": null,
         "photo": null,
@@ -261,7 +261,7 @@
         }
       },
       "screenshot": "390_interactive_reception.png",
-      "sha256": "baad53efc7175a1b58ab1cb24792e0941643efce6dcdec47c8fd409ca9696add",
+      "sha256": "f5110b8e13f5d5cd186116ef2e4b89cec1716e71ab8204d6eb766f82c717bb6a",
       "status": "checked"
     },
     {
@@ -272,20 +272,20 @@
       "errors": [],
       "failed_requests": [
         {
-          "url": "http://127.0.0.1:8784/realistic/people/assets/panjabi.glb",
+          "url": "http://127.0.0.1:8784/realistic/model_web_baked.glb",
           "failure": "net::ERR_ABORTED"
         }
       ],
       "http_errors": [],
-      "model_ready_seconds_local": 1.695,
-      "settled_seconds_local": 21.938,
+      "model_ready_seconds_local": 1.706,
+      "settled_seconds_local": 22.375,
       "state": {
         "mode": "rooms",
         "room": "Z02",
         "atCam": "CAM_01_Reception_A",
         "flying": false,
         "flightT": null,
-        "fps": 0.9900990099009901,
+        "fps": 0.9908838684108967,
         "overhead": true,
         "tour": null,
         "photo": null,
@@ -397,7 +397,7 @@
         }
       },
       "screenshot": "360_interactive_reception.png",
-      "sha256": "7351845723c5cfe00ba0757dc7797028c7ae2531546233a8a8118cbc238b1553",
+      "sha256": "a411955cd946c315b55515cbb83a22b84a447e3d4597f87d41055bec1653a198",
       "status": "checked"
     }
   ],

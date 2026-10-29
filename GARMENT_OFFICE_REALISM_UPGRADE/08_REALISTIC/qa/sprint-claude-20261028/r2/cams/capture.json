@@ -1,0 +1,270 @@
+{
+  "scope": "LOCAL Chromium (SwiftShader) via serve_preview.py; viewer frameCamera API; UI hidden; not live or MacBook proof",
+  "url": "http://127.0.0.1:8784/realistic/?welcome=0",
+  "shots": [
+    {
+      "camera": "CAM_01_Reception_A",
+      "file": "1440_CAM_01_Reception_A.png",
+      "sha256": "e43de9e7d73d12078bf3ff16b8ba137f1315e7284f766920c0b04a9c36772e08",
+      "state": {
+        "name": "CAM_01_Reception_A",
+        "type": "PERSP",
+        "lighting": {
+          "state": "loaded",
+          "sourceObjects": 25,
+          "meshes": 29,
+          "triangles": 41717,
+          "intensity": 3.141592653589793,
+          "format": "ktx2",
+          "resolution": 2048,
+          "heroError": null
+        }
+      }
+    },
+    {
+      "camera": "CAM_04_Experience_Centre_A",
+      "file": "1440_CAM_04_Experience_Centre_A.png",
+      "sha256": "ba68145d8bf8d6b79bfaf1e6c7bfaf227a9ef7bb31d4db68294082fa97fae7c2",
+      "state": {
+        "name": "CAM_04_Experience_Centre_A",
+        "type": "PERSP",
+        "lighting": null
+      }
+    },
+    {
+      "camera": "CAM_09_Boardroom_A",
+      "file": "1440_CAM_09_Boardroom_A.png",
+      "sha256": "36ce688d3151d29c3645ed29d3e5e5f7cb22dd51d6e3b10c1f3cda7b1bf5ef0a",
+      "state": {
+        "name": "CAM_09_Boardroom_A",
+        "type": "PERSP",
+        "lighting": null
+      }
+    },
+    {
+      "camera": "CAM_07_MD_Office_A",
+      "file": "1440_CAM_07_MD_Office_A.png",
+      "sha256": "4687974ad2599e73471e4de8f8d7d6e2b49178b3a0e4b51f7ad6a1a4aac82a6b",
+      "state": {
+        "name": "CAM_07_MD_Office_A",
+        "type": "PERSP",
+        "lighting": null
+      }
+    },
+    {
+      "camera": "CAM_34_Merchandising_Sample_Hub",
+      "file": "1440_CAM_34_Merchandising_Sample_Hub.png",
+      "sha256": "e8e1a21f7844f29619bc7f1bd0dff3a3ad1b20df16e106061ea8976045ddfb72",
+      "state": {
+        "name": "CAM_34_Merchandising_Sample_Hub",
+        "type": "PERSP",
+        "lighting": null
+      }
+    },
+    {
+      "camera": "CAM_14_Design_Studio_B",
+      "file": "1440_CAM_14_Design_Studio_B.png",
+      "sha256": "4b79982d6c66827d34d5620004cdf27dac05e2c9a350b0e5bb9471f49aa34a2d",
+      "state": {
+        "name": "CAM_14_Design_Studio_B",
+        "type": "PERSP",
+        "lighting": null
+      }
+    }
+  ],
+  "errors": [],
+  "http_errors": [],
+  "people": {
+    "enabled": true,
+    "loaded": true,
+    "frozen": true,
+    "total": 27,
+    "visible": 0,
+    "walkers": 0,
+    "illustrative": true,
+    "forbiddenZoneViolations": 0,
+    "status": "Six-room release: Reception, Boardroom, Experience Centre, MD Office, Merchandising (proposed option B), Global Design Studio",
+    "contactShadows": 42,
+    "nativeMacPerformanceTested": false
+  },
+  "dressing": {
+    "identity": {
+      "items": [
+        {
+          "id": "ID_WATER_POINT",
+          "zone": "Z30",
+          "kind": "water",
+          "note": "Water & Wellbeing refill point (concept). Reusable glasses. The water record only ever shows dated laboratory results; all results are pending."
+        },
+        {
+          "id": "ID_COCONUT_STORY",
+          "zone": "Z30",
+          "kind": "coconut",
+          "note": "Material story (concept): coconut shell, button blanks, finished buttons on a garment panel. Supplier, origin and test data pending."
+        },
+        {
+          "id": "ID_SAMPLE_CARD_1",
+          "zone": "Z30",
+          "kind": "samplecard",
+          "note": null
+        },
+        {
+          "id": "ID_SAMPLE_CARD_2",
+          "zone": "Z30",
+          "kind": "samplecard",
+          "note": null
+        },
+        {
+          "id": "ID_JAMDANI_PANEL",
+          "zone": "Z02",
+          "kind": "jamdani",
+          "note": "Jamdani-inspired textile panel (design reference, concept). The maker is to be identified and credited."
+        },
+        {
+          "id": "ID_MD_DEVELOPMENT",
+          "zone": "Z12",
+          "kind": "devshelf",
+          "note": null
+        },
+        {
+          "id": "ID_BOARD_REVIEW_1",
+          "zone": "Z08",
+          "kind": "reviewtray",
+          "note": null
+        },
+        {
+          "id": "ID_BOARD_REVIEW_2",
+          "zone": "Z08",
+          "kind": "reviewtray",
+          "note": null
+        }
+      ],
+      "meshes": 68,
+      "textures": 7
+    },
+    "screens": {
+      "Z08": {
+        "touched": [
+          {
+            "mesh": "A_screen_86_1",
+            "zone": "Z08",
+            "component": 0,
+            "vertices": 24,
+            "worldBounds": {
+              "min": [
+                12.449820165392495,
+                1.0261020566992434,
+                -3.787184141479294
+              ],
+              "max": [
+                12.45237848039733,
+                2.0726980064339964,
+                -1.9024158568787122
+              ]
+            },
+            "content": "presentation"
+          }
+        ],
+        "skipped": []
+      },
+      "Z30": {
+        "touched": [
+          {
+            "mesh": "A_totem_1",
+            "zone": "Z30",
+            "component": 0,
+            "vertices": 24,
+            "worldBounds": {
+              "min": [
+                9.790435522188398,
+                0.010154728690534576,
+                -7.9654545052772665
+              ],
+              "max": [
+                9.792993676787718,
+                1.259845252235979,
+                -7.2745452760829314
+              ]
+            },
+            "content": "portrait-sample-guide"
+          }
+        ],
+        "skipped": []
+      },
+      "Z12": {
+        "touched": [
+          {
+            "mesh": "A_exec_desk_md_4",
+            "zone": "Z12",
+            "component": 0,
+            "vertices": 24,
+            "worldBounds": {
+              "min": [
+                25.97785743916297,
+                0.8838668133911478,
+                3.76680732637059
+              ],
+              "max": [
+                26.65091131545657,
+                1.2636784769543055,
+                3.7681096122048543
+              ]
+            },
+            "content": "sheet"
+          }
+        ],
+        "skipped": []
+      },
+      "Z18": {
+        "touched": [
+          {
+            "mesh": "A_screen_86_1",
+            "zone": "Z18",
+            "component": 0,
+            "vertices": 24,
+            "worldBounds": {
+              "min": [
+                29.918616042968218,
+                1.0261020566992434,
+                -13.519178549729705
+              ],
+              "max": [
+                31.803384074213454,
+                2.0726980064339964,
+                -13.516620323532191
+              ]
+            },
+            "content": "presentation"
+          }
+        ],
+        "skipped": []
+      },
+      "Z07": {
+        "touched": [
+          {
+            "mesh": "A_props_review_2",
+            "zone": "Z07",
+            "component": 0,
+            "vertices": 24,
+            "worldBounds": {
+              "min": [
+                17.53209012479178,
+                0.7745497543738236,
+                -12.598440635414997
+              ],
+              "max": [
+                17.574590024995064,
+                0.9685610220939941,
+                -12.293585870132242
+              ]
+            },
+            "content": "sheet"
+          }
+        ],
+        "skipped": []
+      }
+    }
+  },
+  "screenRoots": 9,
+  "seconds": 47.4
+}
