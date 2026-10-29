@@ -47,6 +47,30 @@ Resume from this file if the session is interrupted. Newest state first.
       - Not Safari or MacBook proof.
 - **Deploying:** this session cannot deploy, because its Cloudflare account has no Workers. The owner's desktop session deploys by pasting the worker script in the Cloudflare dashboard. Steps, guard and rollback: `deploy/DEPLOY_SPRINT_20261029.md`.
 
+## Cloudflare access for cloud sessions (set up 29 Oct 2026)
+
+- **Token:** the owner created an API token, `claude-cloud-deploy-stage2`, for the account that owns `stage2-office-virtual-tour`.
+  - Intended scope: Account → Workers Scripts → Edit, on that one account only.
+  - It is stored in the cloud environment **Imran** as a Network secret: Bearer token for `api.cloudflare.com`, path `/client/v4/`.
+  - The value is never written in the repo, the chat or any file.
+- **New sessions only:** the proxy picks up the token in sessions started after that. In the session that set it up, `GET /client/v4/accounts/` still returned 0 accounts, because that session's earlier connector credential overrode any Authorization header.
+- **Old connector:** the deprecated "Cloudflare Developer Platform" connector was disconnected. Do not reconnect it: its credential would override the token again.
+- **First step in a new session (read only):**
+  1. `GET /client/v4/accounts/` must list the account.
+  2. `GET /client/v4/accounts/{id}/workers/scripts` must list `stage2-office-virtual-tour`.
+- **Deploy from the session:**
+  - **Script format:** `deploy/worker-realistic.js` is a service-worker script that uses `addEventListener('fetch')`.
+  - **Before uploading:**
+    - Read the current script's settings (compatibility date, flags, bindings) and keep them.
+    - Keep a copy of the current live script as the rollback.
+  - **Upload:** `PUT /client/v4/accounts/{id}/workers/scripts/stage2-office-virtual-tour` with multipart:
+    - metadata `{"body_part": "script", ...current settings}`
+    - the part `script` (`application/javascript`)
+  - **Around the upload:**
+    - Before: the same guard and `node deploy/test_worker.mjs` as the owner prompt.
+    - After: `deploy/verify_release.py` and live browser frames.
+    - If anything fails, roll back to the worker from `cdf0e3e`, or to the saved previous script.
+
 ## Local test harness
 
 - **Serve:** `python3 viewer/serve_preview.py --port 8784` (same routing as the Worker).
