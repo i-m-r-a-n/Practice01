@@ -1,0 +1,123 @@
+{
+  "scope": "LOCAL Chromium (SwiftShader) via serve_preview.py; not live or MacBook proof",
+  "checks": [
+    {
+      "name": "interior layer built",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "walk moves on free floor",
+      "passed": true,
+      "detail": {
+        "start": [
+          11.6,
+          1.6
+        ],
+        "yaw": 3.14159,
+        "end": [
+          11.6,
+          1.6,
+          6.125940455985728
+        ],
+        "collisions": 152,
+        "distance": 4.525940455985728,
+        "room": "Z02"
+      }
+    },
+    {
+      "name": "walk never ends inside geometry or a wall",
+      "passed": true,
+      "detail": [
+        [
+          11.6,
+          1.6,
+          6.125940455985728
+        ],
+        [
+          11.6,
+          1.6,
+          6.125940455985728
+        ],
+        [
+          11.6,
+          1.6,
+          6.125940455985728
+        ]
+      ]
+    },
+    {
+      "name": "no page or console errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "no HTTP errors",
+      "passed": true,
+      "detail": []
+    }
+  ],
+  "errors": [],
+  "http_errors": [],
+  "failed_requests": [],
+  "finishes": {
+    "refined": [
+      "fl_terrazzo_baked"
+    ],
+    "source": "./textures/pbr2k/ktx2/Terrazzo019M/basecolor.ktx2"
+  },
+  "interior": {
+    "items": [
+      {
+        "id": "RC_WARP_WEFT",
+        "zone": "Z02",
+        "note": "Warp & weft: five handloom hangings (khadi with Jamdani-style butis, indigo with kantha running stitch, undyed jute, madder, striped khadi) on an oak rail, washed with warm light."
+      },
+      {
+        "id": "RC_RUG_KANTHA",
+        "zone": "Z02",
+        "note": "The approved rug, redesigned as jute with an indigo border, kantha-style running stitch and a lotus centre. Same footprint and baked light."
+      },
+      {
+        "id": "RC_SOFTS",
+        "zone": "Z02",
+        "note": "Kantha-stitched cushions on the sofa corners and lounge chairs, a stitched throw over the sofa arm."
+      },
+      {
+        "id": "RC_PANEL_LIGHT",
+        "zone": "Z02",
+        "note": "Brass picture light over the Jamdani-inspired panel."
+      },
+      {
+        "id": "RC_WELCOME_SWATCHES",
+        "zone": "Z02",
+        "note": "Fabric rolls and a bowl of coconut-shell buttons on the visitor ledge, for buyers to touch on arrival."
+      },
+      {
+        "id": "RC_SCALLOPS",
+        "zone": "Z02",
+        "note": "Warm scallops of the four existing track spots on the fluted oak wall, as in the Cycles render (vertex light cannot hold them)."
+      }
+    ],
+    "meshes": 52,
+    "textures": 18,
+    "detail": 1
+  },
+  "walk": {
+    "start": [
+      11.6,
+      1.6
+    ],
+    "yaw": 3.14159,
+    "end": [
+      11.6,
+      1.6,
+      6.125940455985728
+    ],
+    "collisions": 152,
+    "distance": 4.525940455985728,
+    "room": "Z02"
+  },
+  "seconds": 43.8,
+  "passed": true
+}

@@ -14,6 +14,8 @@ SPOTS = {
     'md_visitor': (24.6, 2.4, -2.09, -0.45, 60),
     'board_people': (21.2, -0.9, 0.99, -0.3, 62),
     'reception_sofa': (9.6, 2.9, math.pi, -0.38, 60),
+    'warp_weft': (11.55, 2.5, -2.988, -0.05, 62),
+    'sofa_corner': (11.0, 3.6, 2.6, -0.42, 58),
     'merch_typing': (12.9, -16.2, 0.55, -0.35, 60),
 }
 p = argparse.ArgumentParser()

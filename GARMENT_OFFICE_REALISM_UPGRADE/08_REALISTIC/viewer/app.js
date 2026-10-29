@@ -19,6 +19,7 @@ import { createRoomProbes } from './room-probes.js';
 import { createPostProcessing } from './phase-post.js';
 import { createOfficeDressing } from './phase-dressing.js';
 import { estimateGpuMemory } from './gpu-memory.js';
+import { refineReleaseFinishes } from './release-finishes.js';
 import approvedFloor from './approved-floor-footprint.json';
 
 window.__viewerStarted = true;
@@ -279,6 +280,9 @@ lightmaps.onStage = (event, id) => {
 };
 const materialUpgrade = USE_PBR ? createMaterialUpgrade({ renderer, loader: lightmaps.ktx, changed: () => { needsRender = true; } }) : null;
 S.pbr = materialUpgrade?.status || { enabled: false };
+// the release keeps the light vertex-lit base; only the shared terrazzo floor gets its approved 2K CC0 albedo (no extra light)
+if (SIMPLE_RELEASE && BAKED && qs.get('finishes') !== '0') refineReleaseFinishes({ root: model, ktx: lightmaps.ktx, anisotropy: Math.min(8, renderer.capabilities.getMaxAnisotropy()), changed: () => { needsRender = true; } })
+  .then(result => { S.finishes = result; }).catch(error => { S.errors.push('Finishes: ' + error.message); });
 lightmaps.disposeMaterial = material => materialUpgrade?.release(material);
 lightmaps.prepareRoom = async room => {
   if (USE_DRESSING) (await ensureDressing()).prepareRoom(room);
@@ -294,7 +298,7 @@ async function loadVisualRoom(id) {
 }
 async function ensureDressing() {
   if (!USE_DRESSING) return null;
-  if (!dressingPromise) dressingPromise = createOfficeDressing({ scene, renderer, metadata: meta, grid, probes, staticBlocked, changed: () => { needsRender = true; }, peopleAccepted: PEOPLE_ACCEPTED, activeZones: SIMPLE_RELEASE ? (CFG.releaseZones || ['Z02']) : null, frozenPeople: SIMPLE_RELEASE, peopleManifest: CFG.peopleManifest, excludedProps: CFG.excludedProps || [] }).then(value => { dressing = value; S.dressing = value.status; return value; });
+  if (!dressingPromise) dressingPromise = createOfficeDressing({ scene, renderer, metadata: meta, grid, probes, staticBlocked, changed: () => { needsRender = true; }, peopleAccepted: PEOPLE_ACCEPTED, activeZones: SIMPLE_RELEASE ? (CFG.releaseZones || ['Z02']) : null, frozenPeople: SIMPLE_RELEASE, peopleManifest: CFG.peopleManifest, excludedProps: CFG.excludedProps || [], detail: quality === 'low' ? .5 : 1 }).then(value => { dressing = value; S.dressing = value.status; return value; });
   return dressingPromise;
 }
 async function setPeopleEnabled(enabled) {

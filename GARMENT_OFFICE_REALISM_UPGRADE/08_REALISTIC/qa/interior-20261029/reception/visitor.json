@@ -1,0 +1,58 @@
+{
+  "scope": "LOCAL Chromium (SwiftShader); viewer walk-QA hooks at visitor eye height 1.6 m; UI hidden; not live or MacBook proof",
+  "shots": [
+    {
+      "spot": "jamdani_panel",
+      "xz": [
+        9.65,
+        2.6
+      ],
+      "yaw": 3.141592653589793,
+      "pitch": 0.05,
+      "fov": 60,
+      "file": "visitor_jamdani_panel.png",
+      "sha256": "3c3b2496fe07a3f26fdba151c3bd12e7e1bb25bdc0e03140aa32d836b4f19911",
+      "room": "Z02"
+    },
+    {
+      "spot": "reception_sofa",
+      "xz": [
+        9.6,
+        2.9
+      ],
+      "yaw": 3.141592653589793,
+      "pitch": -0.38,
+      "fov": 60,
+      "file": "visitor_reception_sofa.png",
+      "sha256": "ec20fd68f74f1c7acaa51764a0e45d5e3bebf491184194412bb703d2e22a6ad2",
+      "room": "Z02"
+    },
+    {
+      "spot": "warp_weft",
+      "xz": [
+        11.55,
+        2.5
+      ],
+      "yaw": -2.988,
+      "pitch": -0.05,
+      "fov": 62,
+      "file": "visitor_warp_weft.png",
+      "sha256": "e177399e5d12121884979ec8ef9a4992873a03660ecf10f8535b5930536fc984",
+      "room": "Z02"
+    },
+    {
+      "spot": "sofa_corner",
+      "xz": [
+        11.0,
+        3.6
+      ],
+      "yaw": 2.6,
+      "pitch": -0.42,
+      "fov": 58,
+      "file": "visitor_sofa_corner.png",
+      "sha256": "68293892f2ca25d9300150c090c8bfc7344ba21473bf75f7628ac20a2d005108",
+      "room": "Z02"
+    }
+  ],
+  "errors": []
+}

@@ -23,7 +23,12 @@ with sync_playwright() as pw:
     page.goto(a.url, wait_until='domcontentloaded', timeout=60000)
     page.wait_for_function('window.__viewer?.ready', timeout=180000)
     page.wait_for_function('__viewer.api.peopleStats().loaded', timeout=240000)
-    R['people'] = page.evaluate('__viewer.api.peopleStats()'); R['dressing'] = page.evaluate('__viewer.dressing && {identity: __viewer.dressing.identity, screens: __viewer.dressing.screens}')
+    try:   # release floor finish (2K terrazzo albedo) arrives asynchronously; frames wait for it when the build has it
+        page.wait_for_function("__viewer.finishes || __viewer.errors.some(e => e.startsWith('Finishes')) || !__viewer.lightmaps", timeout=60000)
+    except Exception:
+        pass
+    R['finishes'] = page.evaluate('__viewer.finishes ?? null')
+    R['people'] = page.evaluate('__viewer.api.peopleStats()'); R['dressing'] = page.evaluate('__viewer.dressing && {identity: __viewer.dressing.identity, interior: __viewer.dressing.interior, screens: __viewer.dressing.screens}')
     R['screenRoots'] = page.evaluate('__viewer.screenRoots ?? null')
     css = page.add_style_tag(content=HIDE)
     for cam in a.cams.split(','):
