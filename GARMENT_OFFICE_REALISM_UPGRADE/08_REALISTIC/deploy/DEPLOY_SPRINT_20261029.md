@@ -1,8 +1,8 @@
 # Deploying the /realistic sprint release (prepared by Claude, not yet deployed)
 
-`worker-realistic.js` in this folder is built for source commit `9acdeafd3bb91100572dfded7b677dee12e9dc40` (branch `claude/realistic-sprint-20261028`).
+`worker-realistic.js` in this folder is built for source commit `e98ecb5855c3e2586d4de535ee371e82519aead1` (branch `claude/realistic-sprint-20261028`).
 
-- Size and SHA-256: 7621 bytes, `83e427458192a72efd713e34bf632ea9e82d2699d1e3bb01e7d5ed5c12337975`.
+- Size and SHA-256: 7621 bytes, `1e943fcf22148360b1d8f7ef488d4067b658ede5cb6fb285c6dfe070eda25da5`.
 - Its only difference from the live worker is the `REALISTIC_COMMIT` line.
 
 It serves the same six rooms as the live release, plus the sprint changes:
@@ -12,7 +12,7 @@ It serves the same six rooms as the live release, plus the sprint changes:
   - two-row phone header (Help and Full screen no longer cut off)
   - larger concept / illustrative-people notice
   - GPT's direct-drag sign fix
-  - on phones the room notes fold to two lines; a tap opens them
+  - on phones the room notes fold to two lines and a tap opens them; the room hint on touch devices points to "Walk from here"
 - **R2 client identity**, all self-made and on furniture or walls:
   - water & wellbeing refill point with every result *pending*
   - coconut-shell button story with supplier data *pending*
@@ -41,8 +41,8 @@ Nothing structural moved: walls, doors, windows, existing furniture, walk grid a
 1. **Guard.** Live `/realistic/health` must still show `"source":"bcb92b00963fa51906676f8cca22da88f841dc64"` (Cloudflare version `bcfea6b5`). If it shows anything else, stop and reconcile first.
 2. **Deploy.** Upload this `worker-realistic.js` unchanged as the `stage2-office-virtual-tour` script: Cloudflare dashboard → Workers & Pages → stage2-office-virtual-tour → Edit code → replace the whole file → Deploy.
 3. **Verify.**
-   - `/realistic/health` shows `"source":"9acdeafd3bb91100572dfded7b677dee12e9dc40"`.
+   - `/realistic/health` shows `"source":"e98ecb5855c3e2586d4de535ee371e82519aead1"`.
    - `/`, `/health` and `/realistic/` answer 200.
-   - Then run `python3 verify_release.py Design_Studio 9acdeafd3bb91100572dfded7b677dee12e9dc40 --report public-sprint-20261029-verification.json`.
+   - Then run `python3 verify_release.py Design_Studio e98ecb5855c3e2586d4de535ee371e82519aead1 --report public-sprint-20261029-verification.json`.
 
 **Rollback:** upload `worker-realistic.js` from commit `cdf0e3e` (identical to `rollback-sprint-20261028.js` apart from a final newline). That is the current live worker, source `bcb92b0`. The original tour at `/` is unaffected either way.
