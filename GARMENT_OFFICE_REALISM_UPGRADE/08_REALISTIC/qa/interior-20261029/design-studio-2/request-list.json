@@ -1,0 +1,120 @@
+{
+  "scope": "LOCAL Chromium via serve_preview.py; request paths checked against the release commit tree",
+  "commit": "3126dbf2b3a0d5a8fd2d4d2c042024fe8c487b5a",
+  "requests": 22,
+  "missing": [],
+  "seconds": 187.8,
+  "rows": [
+    {
+      "request": "/realistic/",
+      "repo_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/viewer/dist/index.html",
+      "in_commit": true
+    },
+    {
+      "request": "/realistic/app.js",
+      "repo_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/viewer/dist/app.js",
+      "in_commit": true
+    },
+    {
+      "request": "/realistic/lighting-v2/Z02-furniture.glb",
+      "repo_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/lighting-v2/Z02-furniture.glb",
+      "in_commit": true
+    },
+    {
+      "request": "/realistic/lighting-v2/Z02.ktx2",
+      "repo_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/lighting-v2/Z02.ktx2",
+      "in_commit": true
+    },
+    {
+      "request": "/realistic/lighting-v2/manifest-hybrid.json",
+      "repo_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/lighting-v2/manifest-hybrid.json",
+      "in_commit": true
+    },
+    {
+      "request": "/realistic/model_web_baked.glb",
+      "repo_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/revised-model/Optimized_Office_Interior_web_baked.glb",
+      "in_commit": true
+    },
+    {
+      "request": "/realistic/people/assets/panjabi.glb",
+      "repo_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/people/assets/panjabi.glb",
+      "in_commit": true
+    },
+    {
+      "request": "/realistic/people/assets/salwar.glb",
+      "repo_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/people/assets/salwar.glb",
+      "in_commit": true
+    },
+    {
+      "request": "/realistic/people/assets/salwar_braid.glb",
+      "repo_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/people/assets/salwar_braid.glb",
+      "in_commit": true
+    },
+    {
+      "request": "/realistic/people/assets/shirt.glb",
+      "repo_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/people/assets/shirt.glb",
+      "in_commit": true
+    },
+    {
+      "request": "/realistic/people/room-release/people-manifest.json",
+      "repo_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/people/room-release/people-manifest.json",
+      "in_commit": true
+    },
+    {
+      "request": "/realistic/people/room-release/poses.json",
+      "repo_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/people/room-release/poses.json",
+      "in_commit": true
+    },
+    {
+      "request": "/realistic/props/office-props-manifest.json",
+      "repo_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/props/office-props-manifest.json",
+      "in_commit": true
+    },
+    {
+      "request": "/realistic/renders/CAM_01_Reception_A.jpg",
+      "repo_path": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_01_Reception_A.jpg",
+      "in_commit": true
+    },
+    {
+      "request": "/realistic/renders/CAM_04_Experience_Centre_A.jpg",
+      "repo_path": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_04_Experience_Centre_A.jpg",
+      "in_commit": true
+    },
+    {
+      "request": "/realistic/renders/CAM_07_MD_Office_A.jpg",
+      "repo_path": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_07_MD_Office_A.jpg",
+      "in_commit": true
+    },
+    {
+      "request": "/realistic/renders/CAM_09_Boardroom_A.jpg",
+      "repo_path": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_09_Boardroom_A.jpg",
+      "in_commit": true
+    },
+    {
+      "request": "/realistic/renders/CAM_14_Design_Studio_B.jpg",
+      "repo_path": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_14_Design_Studio_B.jpg",
+      "in_commit": true
+    },
+    {
+      "request": "/realistic/renders/CAM_34_Merchandising_Sample_Hub.jpg",
+      "repo_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/revised-model/renders/CAM_34_Merchandising_Sample_Hub.jpg",
+      "in_commit": true
+    },
+    {
+      "request": "/realistic/textures/codecs/three_r169/examples/jsm/libs/basis/basis_transcoder.js",
+      "repo_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/textures/codecs/three_r169/examples/jsm/libs/basis/basis_transcoder.js",
+      "in_commit": true
+    },
+    {
+      "request": "/realistic/textures/codecs/three_r169/examples/jsm/libs/basis/basis_transcoder.wasm",
+      "repo_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/textures/codecs/three_r169/examples/jsm/libs/basis/basis_transcoder.wasm",
+      "in_commit": true
+    },
+    {
+      "request": "/realistic/textures/pbr2k/ktx2/Terrazzo019M/basecolor.ktx2",
+      "repo_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/textures/pbr2k/ktx2/Terrazzo019M/basecolor.ktx2",
+      "in_commit": true
+    }
+  ],
+  "passed": true
+}

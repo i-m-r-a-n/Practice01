@@ -1,8 +1,23 @@
 # Deploying the interior releases (prepared by Claude, not yet deployed)
 
-## Latest: all six rooms (adds MD Office, Boardroom, Merchandising, Design Studio)
+## Latest: Design Studio second pass
 
-`worker-realistic.js` is built for source commit `86438989226bcdce59b22e8fadae7a2e822eb974`.
+`worker-realistic.js` is built for source commit `3126dbf2b3a0d5a8fd2d4d2c042024fe8c487b5a`.
+
+- Size and SHA-256: 7621 bytes, `356d21dc1ab3004cf4fdec5147c3ea7e7bf75738b38556d70a10701e2b1af316`.
+- It contains everything below, plus, in the Design Studio:
+  - **Mood board as pinned cloth:** same swatch layout and colours as the model, lit by its five existing track spots
+  - **Sample-review set on the presentation table:** knit sample, pattern pieces, swatch cards, tape, sketchbook, coconut-shell buttons
+- Verify: `/realistic/health` shows `3126dbf2b3a0d5a8fd2d4d2c042024fe8c487b5a`.
+- Checks:
+  - `node test_worker.mjs` passes 41 checks
+  - the changed dist files at that commit match on raw.githubusercontent.com
+  - `request-list.json`: all 22 requested files are in the commit
+- Evidence: `qa/interior-20261029/design-studio-2/`.
+
+## All six rooms (superseded by the one above)
+
+`worker-realistic.js` was built for source commit `86438989226bcdce59b22e8fadae7a2e822eb974`.
 
 - Size and SHA-256: 7621 bytes, `340d786533628963604a9eb27b2dc79190a757a5f8d0bfc7f2504d4c988f3010`.
 - It contains the Reception and Experience Centre releases below, plus:
@@ -63,7 +78,7 @@ Design references only: makers and fibres are to be identified and credited.
 
 ## Deploy, verify, rollback
 
-1. **Guard.** Live `/realistic/health` must show `bcb92b00963fa51906676f8cca22da88f841dc64`, or one of this branch's release commits (`e98ecb5…`, `0cda894…`, `de424c0…`) if an earlier release went live first.
+1. **Guard.** Live `/realistic/health` must show `bcb92b00963fa51906676f8cca22da88f841dc64`, or one of this branch's release commits (`e98ecb5…`, `0cda894…`, `de424c0…`, `8643898…`) if an earlier release went live first.
 2. **Deploy.** Upload the latest `worker-realistic.js` unchanged as the `stage2-office-virtual-tour` script.
 3. **Verify:**
    - `/realistic/health` shows the source commit named in "Latest" above
