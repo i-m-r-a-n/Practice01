@@ -106,7 +106,10 @@ config = {
     'excludedIdentity': ['ID_WATER_POINT', 'ID_SAMPLE_CARD_1', 'ID_SAMPLE_CARD_2', 'ID_MD_DEVELOPMENT', 'ID_BOARD_REVIEW_1', 'ID_BOARD_REVIEW_2'],
     'peopleManifest': base.get('peopleManifest'), 'peopleAccepted': False,
     'hideNodes': HIDE, 'noRenderPhotos': True,
-    'hideParts': [{'nodes': ['F017_', 'F018_', 'F019_', 'F020_'], 'materials': ['g_', 'chrome']}],   # garments and hangers out of the bays; the fixtures stay
+    'hideParts': [{'nodes': ['F017_', 'F018_', 'F019_', 'F020_'], 'materials': ['g_', 'chrome']}],   # garments and hanger hooks out of the bays; the fixtures stay
+    'trimParts': [{'nodes': ['F017_', 'F018_', 'F019_', 'F020_'], 'material': 'oak',                  # the empty wooden hangers under each rail (bay interiors measured in the scene)
+                   'boxes': [[9.805, 1.15, -10.715, 12.345, 1.80, -10.145], [12.55, 1.15, -10.715, 15.085, 1.80, -10.145],
+                             [16.155, 1.15, -10.715, 18.235, 1.80, -10.145], [18.44, 1.15, -10.715, 20.525, 1.80, -10.145]]}],
     'extraCameras': cameras, 'tour': tour, 'roomNames': names, 'roomNotes': notes,
     'branding': {
         'pageTitle': 'Bengal Earth Lab - concept proposal',

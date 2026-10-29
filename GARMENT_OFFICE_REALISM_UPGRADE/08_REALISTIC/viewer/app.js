@@ -183,6 +183,19 @@ for (const rule of CFG.hideParts || []) {
   for (const o of parts) o.removeFromParent();
   (S.hiddenParts ||= []).push(...parts.map(o => `${o.parent?.name || ''}/${o.material?.name}`));
 }
+// ... and trim small parts that share a fixture's material (e.g. empty hangers inside the bays): triangles fully inside a box go.
+for (const rule of CFG.trimParts || []) {
+  model.updateMatrixWorld(true);
+  const v = new THREE.Vector3(), inBox = ([x0, y0, z0, x1, y1, z1]) => v.x > x0 && v.x < x1 && v.y > y0 && v.y < y1 && v.z > z0 && v.z < z1;
+  model.traverse(o => {
+    if (!o.isMesh || !rule.nodes.some(prefix => o.name.startsWith(prefix) || o.parent?.name.startsWith(prefix)) || !(o.material?.name || '').startsWith(rule.material)) return;
+    const pos = o.geometry.attributes.position, index = o.geometry.index, count = index ? index.count : pos.count, keep = [];
+    const inside = i => { v.fromBufferAttribute(pos, i).applyMatrix4(o.matrixWorld); return rule.boxes.some(inBox); };
+    for (let t = 0; t < count; t += 3) { const a = index ? index.getX(t) : t, b = index ? index.getX(t + 1) : t + 1, c = index ? index.getX(t + 2) : t + 2; if (!(inside(a) && inside(b) && inside(c))) keep.push(a, b, c); }
+    S.trimmedTriangles = (S.trimmedTriangles || 0) + (count - keep.length) / 3;
+    o.geometry = o.geometry.clone(); o.geometry.setIndex(keep);
+  });
+}
 model.updateMatrixWorld(true);
 const floorTriangles = [];
 const sourceSlab = model.getObjectByName(THREE.PropertyBinding.sanitizeNodeName('Floor slab (existing, finished floor = 0)'));

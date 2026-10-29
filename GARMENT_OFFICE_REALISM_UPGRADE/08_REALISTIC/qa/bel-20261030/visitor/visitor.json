@@ -1,0 +1,188 @@
+{
+  "scope": "LOCAL Chromium (SwiftShader); viewer walk-QA hooks at visitor eye height 1.6 m; UI hidden; not live or MacBook proof",
+  "shots": [
+    {
+      "spot": "lobby_gate",
+      "xz": [
+        4.6,
+        2.2
+      ],
+      "yaw": -2.404,
+      "pitch": -0.18,
+      "fov": 62,
+      "file": "visitor_lobby_gate.png",
+      "sha256": "afca749164037a9b1aba3e52a97c761d29765b1ab4a6455d2de77d41d96c6051",
+      "room": "Z01"
+    },
+    {
+      "spot": "lobby_relief",
+      "xz": [
+        2.3,
+        1.45
+      ],
+      "yaw": 1.5707963267948966,
+      "pitch": -0.05,
+      "fov": 60,
+      "file": "visitor_lobby_relief.png",
+      "sha256": "bfcdf525bef7b1221bd940575195809bc3d633b75eb127f29b78bef6aa419c48",
+      "room": "Z01"
+    },
+    {
+      "spot": "reception_instruments",
+      "xz": [
+        11.6,
+        1.7
+      ],
+      "yaw": 0.0,
+      "pitch": -0.08,
+      "fov": 62,
+      "file": "visitor_reception_instruments.png",
+      "sha256": "fc3735b1f04b9fca8da368ffa6f0407c68118a8d04fd3b350a6ca6c723cc5b04",
+      "room": "Z02"
+    },
+    {
+      "spot": "reception_tea",
+      "xz": [
+        10.9,
+        3.6
+      ],
+      "yaw": 2.379,
+      "pitch": -0.55,
+      "fov": 58,
+      "file": "visitor_reception_tea.png",
+      "sha256": "1d34b66070582f8dffbd386286d73a036e037507b9ef0f2cfa194238e34be688",
+      "room": "Z02"
+    },
+    {
+      "spot": "passage_sun",
+      "xz": [
+        10.05,
+        -1.05
+      ],
+      "yaw": -0.34,
+      "pitch": -0.1,
+      "fov": 64,
+      "file": "visitor_passage_sun.png",
+      "sha256": "896584f1d49a1ebb7eb80a712f7311ac93bc37ca7449b4c028a22855fb33a151",
+      "room": "Z03"
+    },
+    {
+      "spot": "passage_earth",
+      "xz": [
+        10.25,
+        -2.2
+      ],
+      "yaw": 0.586,
+      "pitch": -0.42,
+      "fov": 62,
+      "file": "visitor_passage_earth.png",
+      "sha256": "23318ec1af5a7766b92b548fcd9edea65c15f076973039ec17cae828580470c3",
+      "room": "Z03"
+    },
+    {
+      "spot": "ec_plinth",
+      "xz": [
+        12.6,
+        -7.0
+      ],
+      "yaw": 0.0,
+      "pitch": -0.42,
+      "fov": 64,
+      "file": "visitor_ec_plinth.png",
+      "sha256": "b1b1295b14b0179d02a66f29a60f5258220cc0a61583a4c82fc9ccedff07fb29",
+      "room": "Z30"
+    },
+    {
+      "spot": "ec_bays",
+      "xz": [
+        15.6,
+        -8.0
+      ],
+      "yaw": 0.32,
+      "pitch": -0.12,
+      "fov": 70,
+      "file": "visitor_ec_bays.png",
+      "sha256": "0af3cc90b875147531b4ba7dd1f3d3e4972b128bcec431109e345013ef5519a2",
+      "room": "Z30"
+    },
+    {
+      "spot": "ec_future",
+      "xz": [
+        20.9,
+        -9.2
+      ],
+      "yaw": 0.857,
+      "pitch": -0.12,
+      "fov": 62,
+      "file": "visitor_ec_future.png",
+      "sha256": "e89753076aef51ef9c372fbc58567f8a316fbb8ac577f0bc8f6d742609c6148d",
+      "room": "Z30"
+    },
+    {
+      "spot": "ec_water",
+      "xz": [
+        13.3,
+        -6.75
+      ],
+      "yaw": 3.141592653589793,
+      "pitch": -0.42,
+      "fov": 58,
+      "file": "visitor_ec_water.png",
+      "sha256": "f73f00e5fee57a64e0efc9120fb55e79c2b2974d0b217302557090f82f5bfee3",
+      "room": "Z30"
+    },
+    {
+      "spot": "board_review",
+      "xz": [
+        17.25,
+        -0.95
+      ],
+      "yaw": 0.0,
+      "pitch": -0.55,
+      "fov": 64,
+      "file": "visitor_board_review.png",
+      "sha256": "cfae963abc0443695784760a7e46d7b9cb3d7f421e2b001bd08ec189387237bd",
+      "room": "Z08"
+    },
+    {
+      "spot": "board_bonsai",
+      "xz": [
+        14.2,
+        -1.4
+      ],
+      "yaw": 0.4,
+      "pitch": -0.25,
+      "fov": 60,
+      "file": "visitor_board_bonsai.png",
+      "sha256": "4fb4d998b8ece30d895c34db29f974b772e3f0aedafe80098849fb7946f9032d",
+      "room": "Z08"
+    },
+    {
+      "spot": "studio_shelf",
+      "xz": [
+        32.35,
+        -18.95
+      ],
+      "yaw": -1.523,
+      "pitch": -0.35,
+      "fov": 62,
+      "file": "visitor_studio_shelf.png",
+      "sha256": "abd43cc895a674961e72264130a8dd3c6a6fe4200b7bc61e15cec2f2f25d82d5",
+      "room": "Z18"
+    },
+    {
+      "spot": "studio_cocreation",
+      "xz": [
+        29.0,
+        -15.4
+      ],
+      "yaw": -0.927,
+      "pitch": -0.35,
+      "fov": 58,
+      "file": "visitor_studio_cocreation.png",
+      "sha256": "0da34f170695bbe7869a8b54f3f3ae25374948cba992b8d08229017abac9dda3",
+      "room": "Z18"
+    }
+  ],
+  "errors": []
+}

@@ -171,7 +171,12 @@ export function buildBengalEarthLab(THREE, { zones = null, drinkware = [], aniso
   M.clay = potteryMaterial('clay', '#9b5534', '#4a2c1c', .55);           // red clay, dark brown glaze inside
   M.clayCream = potteryMaterial('cream', '#a7623d', '#d9cdb4', .55);      // red clay with a cream glaze
   M.clayBlue = potteryMaterial('blue', '#8f5233', '#3c5266', .5);        // bonsai pots: indigo-grey glaze
-  M.clayRaw = std('clayRaw', () => ({ map: M.terracotta.map, roughness: .95, color: '#d7a587' }));
+  M.graniteSplit = std('granite_split', () => ({ map: M.granite.map, normalMap: M.granite.normalMap, roughness: .8, flatShading: true, color: '#b3aba4' }));   // quarried, split faces
+  M.clayRaw = std('clayRaw', () => {   // unglazed fired clay: warm, mottled, faint throwing rings
+    const c = canvas(64, px(256)), x = c.getContext('2d'), r = rng(57); x.fillStyle = '#a65b38'; x.fillRect(0, 0, 64, c.height);
+    for (let i = 0; i < 40; i++) { const g = x.createRadialGradient(0, 0, 0, 0, 0, 1), cx = r() * 64, cy = r() * c.height, rr = 6 + r() * 26; g.addColorStop(0, r() > .5 ? 'rgba(70,28,12,.18)' : 'rgba(230,170,120,.16)'); g.addColorStop(1, 'rgba(0,0,0,0)'); x.setTransform(rr, 0, 0, rr, cx, cy); x.fillStyle = g; x.fillRect(-1, -1, 2, 2); x.setTransform(1, 0, 0, 1, 0, 0); }
+    for (let y = 0; y < c.height; y += 3) { x.fillStyle = `rgba(255,235,210,${.025 + .025 * Math.sin(y * .4)})`; x.fillRect(0, y, 64, 1); }
+    return { map: tex(c), roughness: .93 }; });
   // weave textures (basket and sample surfaces): one canvas per weave, tinted per material
   function weaveCanvas(kind, size = px(256)) {
     const c = canvas(size, size), x = c.getContext('2d'), n = 16, u = size / n, r = rng(kind.length * 31 + 7);
@@ -247,7 +252,7 @@ export function buildBengalEarthLab(THREE, { zones = null, drinkware = [], aniso
   }
   // text card: a small printed card (canvas) with a thin border
   function card(lines, { w = .16, h = .1, scale = 1, bg = '#f3ece0', ink = '#3c2a1e', accent = '#9c5534' } = {}) {
-    const W = px(512 * scale), H = Math.round(W * h / w), c = canvas(W, H), x = c.getContext('2d');
+    const W = px(320 * scale), H = Math.round(W * h / w), c = canvas(W, H), x = c.getContext('2d');   // ~2,000 px per metre of card: legible up close, light on memory
     x.fillStyle = bg; x.fillRect(0, 0, W, H); x.strokeStyle = 'rgba(60,40,25,.25)'; x.lineWidth = W / 160; x.strokeRect(W / 80, W / 80, W - W / 40, H - W / 40);
     let y = H * .2;
     lines.forEach((ln, i) => { const big = i === 0, fs = (big ? W / 11 : W / 17) * (ln.size || 1); x.fillStyle = big ? ink : (ln.color || '#5b4636'); x.font = `${big ? 600 : 400} ${fs}px system-ui, -apple-system, 'Segoe UI', sans-serif`;
@@ -263,8 +268,18 @@ export function buildBengalEarthLab(THREE, { zones = null, drinkware = [], aniso
 
   // ---------------------------------------------------------------- object builders
   function plinth(parent, x, z, w, d, h, y = 0, mat = M.granite) { box(parent, mat, x, y, z, w, h, d); }
+  // quarried granite (split faces, slightly eased edges), never river-rounded stone
+  function graniteBlock(r, seed, sy = .8) {
+    const g = new THREE.IcosahedronGeometry(r, 1), p = g.attributes.position, n = noise3(seed), seen = new Map();
+    for (let i = 0; i < p.count; i++) {
+      const key = `${p.getX(i).toFixed(4)},${p.getY(i).toFixed(4)},${p.getZ(i).toFixed(4)}`;
+      if (!seen.has(key)) { const x = p.getX(i) / r, y = p.getY(i) / r, z = p.getZ(i) / r, d = 1 + .28 * n(x * 1.7 + 3, y * 1.7, z * 1.7); seen.set(key, [x * d * r, Math.max(y * sy * d * r, -r * sy * .5), z * d * r]); }
+      p.setXYZ(i, ...seen.get(key));
+    }
+    g.computeVertexNormals(); g.computeBoundingBox(); g.translate(0, -g.boundingBox.min.y, 0); g.computeBoundingBox(); return g;
+  }
   function stoneGroup(parent, x, z, seed, specs) {
-    for (const [dx, dz, r, sy, ry] of specs) add(parent, rockGeometry(r, seed + Math.round(r * 1000), 1, sy, .9), M.graniteRough, x + dx, 0, z + dz, 0, ry);
+    for (const [dx, dz, r, sy, ry] of specs) add(parent, graniteBlock(r, seed + Math.round(r * 1000), sy), M.graniteSplit, x + dx, 0, z + dz, 0, ry);
   }
   function bonsai(parent, { x, y, z, ry = 0, scale = 1, seed = 1, style = 'banyan', pot = M.clayBlue, kind = 'fig' }) {
     const g = new THREE.Group(); g.position.set(x, y, z); g.rotation.y = ry; g.scale.setScalar(scale); parent.add(g);
@@ -281,11 +296,11 @@ export function buildBengalEarthLab(THREE, { zones = null, drinkware = [], aniso
       const droop = style === 'cascade' && b === 0 ? -.16 : .02 + r() * .04;
       const tip = [P.x + Math.cos(a) * len, P.y + droop, P.z + Math.sin(a) * len], mid = [P.x + Math.cos(a) * len * .5, P.y + droop * .3 + .03, P.z + Math.sin(a) * len * .5];
       add(g, taperedTube([[P.x, P.y, P.z], mid, tip], .015 - b * .0015, .005, 10, 6), M.bark);
-      pads.push({ c: [tip[0], tip[1] + .03, tip[2]], r: [.085 + r() * .035, .032 + r() * .012, .085 + r() * .035], n: kind === 'fine' ? 110 : 150 });
+      pads.push({ c: [tip[0], tip[1] + .03, tip[2]], r: [.085 + r() * .035, .034 + r() * .012, .085 + r() * .035], n: kind === 'fine' ? 190 : 260 });
       if (style === 'banyan' && (b === 1 || b === 3)) add(g, taperedTube([[mid[0], mid[1] - .01, mid[2]], [mid[0] + .01, (mid[1] + .06) / 2, mid[2]], [mid[0], .062, mid[2]]], .0045, .003, 8, 5), M.bark);
     }
-    const top = curve.getPointAt(1); pads.push({ c: [top.x, top.y + .04, top.z], r: [.1, .05, .1], n: kind === 'fine' ? 140 : 190 });
-    scatterLeaves(g, pads, { kind, size: kind === 'fine' ? .05 : .03, hue: kind === 'fine' ? .25 : .29, sat: .48, light: .3, seed });
+    const top = curve.getPointAt(1); pads.push({ c: [top.x, top.y + .04, top.z], r: [.1, .055, .1], n: kind === 'fine' ? 240 : 320 });
+    scatterLeaves(g, pads, { kind, size: kind === 'fine' ? .05 : .032, hue: kind === 'fine' ? .26 : .29, sat: .58, light: .18, seed });
     return g;
   }
   function smallTree(parent, { x, z, seed = 3, height = 1.75, planter = 'terracotta' }) {
@@ -301,7 +316,7 @@ export function buildBengalEarthLab(THREE, { zones = null, drinkware = [], aniso
       { c: [J(.08), height * .8, J(.08)], r: [.36, .3, .36], n: 520 },
       { c: [.16 + J(.05), height * .66, .05 + J(.05)], r: [.24, .2, .24], n: 240 },
       { c: [-.14 + J(.05), height * .9, -.07 + J(.05)], r: [.24, .2, .24], n: 240 },
-    ], { kind: 'fig', size: .085, hue: .3, sat: .45, light: .27, seed: seed + 9 });
+    ], { kind: 'fig', size: .085, hue: .3, sat: .55, light: .2, seed: seed + 9 });
     return g;
   }
   // tableware in clay and wood
@@ -416,7 +431,7 @@ export function buildBengalEarthLab(THREE, { zones = null, drinkware = [], aniso
   if (want('BEL_GATE_BONSAI')) {
     const g = item('BEL_GATE_BONSAI');   // approved potted tree F003/PL003: x 6.86-7.37, z 4.70-5.21
     plinth(g, 7.115, 4.955, .46, .46, .62);
-    bonsai(g, { x: 7.115, y: .62, z: 4.955, ry: 2.4, seed: 7, style: 'banyan', pot: M.clayBlue });
+    bonsai(g, { x: 7.115, y: .62, z: 4.955, ry: 2.4, seed: 7, style: 'banyan', pot: M.clayBlue, scale: 1.25 });
   }
   if (want('BEL_LOBBY_STONES')) {
     const g = item('BEL_LOBBY_STONES');  // approved small planter F004/PL004: x 4.27-4.67, z 4.78-5.18
@@ -430,38 +445,55 @@ export function buildBengalEarthLab(THREE, { zones = null, drinkware = [], aniso
     box(g, front, 5.82, .03, 3.362, 1.16, .71, .016);
   }
   if (want('BEL_LOBBY_RELIEF')) {
-    const g = item('BEL_LOBBY_RELIEF');  // free west wall (x 0) between the north wall and the stair foot (z 2.58)
-    const W = px(768), H = Math.round(W * 1.05 / 1.62), hc = canvas(W, H), hx = hc.getContext('2d');
-    hx.fillStyle = '#5a5a5a'; hx.fillRect(0, 0, W, H);
-    const cols = 3, rows = 2, gw = W / cols, gh = H / rows;
-    const raise = (fn) => { for (let k = 6; k >= 0; k--) { hx.save(); hx.fillStyle = hx.strokeStyle = `rgb(${130 + (6 - k) * 18},${130 + (6 - k) * 18},${130 + (6 - k) * 18})`; hx.lineWidth = 2 + k * 1.6; hx.lineJoin = hx.lineCap = 'round'; fn(k); hx.restore(); } };
-    for (let j = 0; j < rows; j++) for (let i = 0; i < cols; i++) {
-      const X = i * gw + gw * .05, Y = j * gh + gh * .06, w = gw * .9, h = gh * .88; hx.fillStyle = '#909090'; hx.fillRect(X, Y, w, h); hx.fillStyle = '#7a7a7a'; hx.fillRect(X + w * .06, Y + h * .06, w * .88, h * .88);
-      const cx = X + w / 2, cy = Y + h / 2, u = Math.min(w, h);
-      const k = j * cols + i;
-      raise(() => {
-        hx.beginPath();
-        if (k === 0) { hx.arc(cx, cy, u * .2, 0, 7); hx.stroke(); for (let a = 0; a < 12; a++) { const A = a / 12 * Math.PI * 2; hx.moveTo(cx + Math.cos(A) * u * .28, cy + Math.sin(A) * u * .28); hx.lineTo(cx + Math.cos(A) * u * .38, cy + Math.sin(A) * u * .38); } hx.stroke(); }
-        else if (k === 1) { hx.moveTo(cx - u * .36, cy + u * .05); hx.quadraticCurveTo(cx, cy + u * .26, cx + u * .36, cy + u * .05); hx.lineTo(cx - u * .36, cy + u * .05); hx.moveTo(cx, cy + u * .05); hx.lineTo(cx, cy - u * .3); hx.lineTo(cx + u * .22, cy - .02 * u); hx.lineTo(cx, cy - .02 * u); hx.stroke(); for (let w2 = 0; w2 < 2; w2++) { hx.beginPath(); for (let s = -.4; s <= .4; s += .05) hx.lineTo(cx + s * u, cy + u * (.3 + w2 * .08) + Math.sin(s * 18) * u * .02); hx.stroke(); } }
-        else if (k === 2) { for (let p = 0; p < 8; p++) { const A = p / 8 * Math.PI * 2; hx.moveTo(cx, cy); hx.quadraticCurveTo(cx + Math.cos(A - .35) * u * .3, cy + Math.sin(A - .35) * u * .3, cx + Math.cos(A) * u * .36, cy + Math.sin(A) * u * .36); hx.quadraticCurveTo(cx + Math.cos(A + .35) * u * .3, cy + Math.sin(A + .35) * u * .3, cx, cy); } hx.stroke(); hx.beginPath(); hx.arc(cx, cy, u * .07, 0, 7); hx.stroke(); }
-        else if (k === 3) { for (const s of [-1, 1]) { hx.beginPath(); hx.ellipse(cx, cy + s * u * .14, u * .28, u * .08, 0, 0, 7); hx.moveTo(cx + u * .28, cy + s * u * .14); hx.lineTo(cx + u * .38, cy + s * u * .14 - u * .07); hx.lineTo(cx + u * .38, cy + s * u * .14 + u * .07); hx.closePath(); hx.stroke(); } }
-        else if (k === 4) { for (let s = -2; s <= 2; s++) { hx.moveTo(cx + s * u * .05, cy + u * .36); hx.quadraticCurveTo(cx + s * u * .06, cy - u * .05, cx + s * u * .14, cy - u * .32); for (let q = 0; q < 4; q++) { const t = .55 + q * .1; hx.moveTo(cx + s * u * .08 * t * 1.6, cy - u * .1 - q * u * .05); hx.lineTo(cx + s * u * .08 * t * 1.6 + u * .04, cy - u * .15 - q * u * .05); } } hx.stroke(); }
-        else { hx.ellipse(cx, cy, u * .18, u * .1, -.2, 0, 7); hx.moveTo(cx + u * .16, cy - u * .06); hx.lineTo(cx + u * .26, cy - u * .1); hx.moveTo(cx - u * .16, cy + u * .02); hx.lineTo(cx - u * .38, cy - u * .12); hx.lineTo(cx - u * .36, cy + u * .02); hx.closePath(); hx.moveTo(cx + u * .02, cy + u * .1); hx.lineTo(cx, cy + u * .26); hx.moveTo(cx - u * .3, cy + u * .26); hx.lineTo(cx + u * .3, cy + u * .26); hx.stroke(); }
-      });
+    // six plaques on the free west wall (face x 0.0) between the north wall and the stair foot (z 2.58); a placeholder for
+    // the work of a rural terracotta artist, to be commissioned, paid and credited (motifs: sun, river boat, shapla, fish, rice, doel)
+    const g = item('BEL_LOBBY_RELIEF'), C = px(256), R = Math.round(C * .9), hc = canvas(C * 3, R * 2), hx = hc.getContext('2d');
+    hx.fillStyle = '#5c5c5c'; hx.fillRect(0, 0, hc.width, hc.height);
+    const soft = on => { if ('filter' in hx) hx.filter = on ? `blur(${Math.max(1, C / 140)}px)` : 'none'; };
+    const raised = (shade, draw) => { hx.save(); soft(true); hx.fillStyle = `rgb(${shade},${shade},${shade})`; hx.beginPath(); draw(); hx.fill(); hx.restore(); };
+    const carve = (draw, w = C / 90) => { hx.save(); soft(false); hx.strokeStyle = 'rgb(110,110,110)'; hx.lineWidth = w; hx.lineCap = 'round'; hx.beginPath(); draw(); hx.stroke(); hx.restore(); };
+    for (let k = 0; k < 6; k++) {
+      const X = (k % 3) * C, Y = Math.floor(k / 3) * R, cx = X + C / 2, cy = Y + R / 2, u = C;
+      hx.fillStyle = '#9a9a9a'; hx.fillRect(X, Y, C, R); hx.fillStyle = '#7e7e7e'; hx.fillRect(X + C * .07, Y + R * .07, C * .86, R * .86);
+      if (k === 0) { raised(200, () => hx.arc(cx, cy, u * .17, 0, 7)); for (let a = 0; a < 12; a++) { const A = a / 12 * Math.PI * 2; raised(185, () => { hx.moveTo(cx + Math.cos(A - .12) * u * .21, cy + Math.sin(A - .12) * u * .21); hx.lineTo(cx + Math.cos(A) * u * .36, cy + Math.sin(A) * u * .36); hx.lineTo(cx + Math.cos(A + .12) * u * .21, cy + Math.sin(A + .12) * u * .21); }); }
+        carve(() => { for (let a = 0; a < 8; a++) { const A = a / 8 * Math.PI * 2; hx.moveTo(cx, cy); hx.lineTo(cx + Math.cos(A) * u * .13, cy + Math.sin(A) * u * .13); } }); }
+      if (k === 1) { raised(195, () => { hx.moveTo(cx - u * .36, cy + u * .04); hx.quadraticCurveTo(cx, cy + u * .24, cx + u * .36, cy + u * .04); hx.quadraticCurveTo(cx, cy + u * .12, cx - u * .36, cy + u * .04); });
+        raised(205, () => { hx.moveTo(cx - u * .02, cy + u * .06); hx.lineTo(cx - u * .02, cy - u * .32); hx.quadraticCurveTo(cx + u * .2, cy - u * .14, cx + u * .22, cy + u * .02); });
+        for (let w = 0; w < 2; w++) raised(170, () => { for (let t = -.42; t <= .42; t += .02) hx.lineTo(cx + t * u, cy + u * (.27 + w * .09) + Math.sin(t * 22) * u * .018); for (let t = .42; t >= -.42; t -= .02) hx.lineTo(cx + t * u, cy + u * (.30 + w * .09) + Math.sin(t * 22) * u * .018); });
+        carve(() => { for (let q = 1; q < 4; q++) { hx.moveTo(cx - u * .02, cy - u * .32 + q * u * .09); hx.lineTo(cx + u * .05 * q, cy - u * .32 + q * u * .09 + u * .03); } }); }
+      if (k === 2) { for (let pt = 0; pt < 8; pt++) { const A = pt / 8 * Math.PI * 2 - Math.PI / 2; raised(190, () => { hx.ellipse(cx + Math.cos(A) * u * .17, cy + Math.sin(A) * u * .17, u * .17, u * .065, A, 0, 7); }); }
+        raised(215, () => hx.arc(cx, cy, u * .08, 0, 7)); carve(() => { for (let pt = 0; pt < 8; pt++) { const A = pt / 8 * Math.PI * 2 - Math.PI / 2; hx.moveTo(cx + Math.cos(A) * u * .09, cy + Math.sin(A) * u * .09); hx.lineTo(cx + Math.cos(A) * u * .3, cy + Math.sin(A) * u * .3); } }); }
+      if (k === 3) { for (const sgn of [-1, 1]) { const fy = cy + sgn * u * .13; raised(195, () => { hx.ellipse(cx - u * .04, fy, u * .27, u * .085, 0, 0, 7); }); raised(185, () => { hx.moveTo(cx + u * .2, fy); hx.lineTo(cx + u * .38, fy - u * .09); hx.lineTo(cx + u * .38, fy + u * .09); });
+        carve(() => { for (let q = 0; q < 5; q++) { hx.moveTo(cx - u * .12 + q * u * .07, fy - u * .06); hx.quadraticCurveTo(cx - u * .09 + q * u * .07, fy, cx - u * .12 + q * u * .07, fy + u * .06); } hx.moveTo(cx - u * .25, fy - u * .02); hx.arc(cx - u * .24, fy - u * .02, u * .012, 0, 7); }); } }
+      if (k === 4) { for (let st = -3; st <= 3; st++) { raised(175, () => { hx.moveTo(cx + st * u * .025, cy + u * .36); hx.quadraticCurveTo(cx + st * u * .03, cy, cx + st * u * .1, cy - u * .2); hx.lineTo(cx + st * u * .1 + u * .012, cy - u * .2); hx.quadraticCurveTo(cx + st * u * .03 + u * .012, cy, cx + st * u * .025 + u * .012, cy + u * .36); });
+        for (let q = 0; q < 6; q++) raised(210, () => hx.ellipse(cx + st * u * .1 + (q % 2 ? u * .022 : -u * .022) + st * u * .006 * q, cy - u * .2 - q * u * .035, u * .016, u * .028, (q % 2 ? .5 : -.5), 0, 7)); }
+        carve(() => { hx.moveTo(cx - u * .1, cy + u * .12); hx.lineTo(cx + u * .1, cy + u * .12); }, C / 60); }
+      if (k === 5) { raised(200, () => { hx.ellipse(cx, cy, u * .17, u * .095, -.15, 0, 7); }); raised(205, () => hx.arc(cx + u * .17, cy - u * .07, u * .06, 0, 7)); raised(190, () => { hx.moveTo(cx - u * .14, cy + u * .02); hx.lineTo(cx - u * .36, cy - u * .2); hx.lineTo(cx - u * .3, cy - u * .24); hx.lineTo(cx - u * .1, cy - u * .03); });
+        raised(185, () => { hx.moveTo(cx + u * .22, cy - u * .085); hx.lineTo(cx + u * .3, cy - u * .065); hx.lineTo(cx + u * .22, cy - u * .055); }); raised(165, () => hx.rect(cx - u * .34, cy + u * .2, u * .68, u * .035));
+        carve(() => { hx.moveTo(cx - u * .08, cy - u * .02); hx.quadraticCurveTo(cx + u * .02, cy + u * .05, cx + u * .12, cy - u * .01); hx.moveTo(cx + u * .02, cy + u * .09); hx.lineTo(cx + u * .02, cy + u * .2); hx.moveTo(cx + u * .07, cy + u * .09); hx.lineTo(cx + u * .07, cy + u * .2); }); }
     }
-    const map = canvas(W, H), mx = map.getContext('2d'), hd = hx.getImageData(0, 0, W, H).data, md = mx.createImageData(W, H), r = rng(5);
-    for (let i = 0; i < W * H; i++) { const v = hd[i * 4] / 255, n = (r() - .5) * .05, k = .62 + .5 * v + n; md.data[i * 4] = Math.min(255, 178 * k); md.data[i * 4 + 1] = Math.min(255, 96 * k); md.data[i * 4 + 2] = Math.min(255, 62 * k); md.data[i * 4 + 3] = 255; }
+    const map = canvas(hc.width, hc.height), mx = map.getContext('2d'), hd = hx.getImageData(0, 0, hc.width, hc.height).data, md = mx.createImageData(hc.width, hc.height), r = rng(5), n2 = noise3(13);
+    for (let i = 0, N = hc.width * hc.height; i < N; i++) { const h = hd[i * 4] / 255, px2 = i % hc.width, py2 = Math.floor(i / hc.width), m = .1 * n2(px2 / 40, py2 / 40, 1) + (r() - .5) * .05, k = .66 + .48 * h + m;
+      md.data[i * 4] = Math.min(255, 176 * k); md.data[i * 4 + 1] = Math.min(255, 94 * k); md.data[i * 4 + 2] = Math.min(255, 56 * k); md.data[i * 4 + 3] = 255; }
     mx.putImageData(md, 0, 0);
-    const mat = std('relief', () => ({ map: tex(map, { clamp: true }), normalMap: tex(normalFromHeight(hc, 4), { srgb: false, clamp: true }), roughness: .9 }));
-    add(g, new THREE.PlaneGeometry(1.62, 1.05), mat, .035, 1.6, 1.43, 0, Math.PI / 2);
-    box(g, std('relief_back', () => ({ color: '#7d4128', roughness: .9 })), .02, 1.075, 1.43, .028, 1.05, 1.62);
+    const front = std('relief_front', () => ({ map: tex(map, { clamp: true }), normalMap: tex(normalFromHeight(hc, 5), { srgb: false, clamp: true }), roughness: .9 }));
+    const body = std('relief_body', () => ({ color: '#8c4a2c', roughness: .9 }));
+    const PW = .5, PH = .45, GAP = .05, r2 = rng(17);
+    for (let k = 0; k < 6; k++) {
+      const col = k % 3, row = Math.floor(k / 3), z = 1.43 + (1 - col) * (PW + GAP) + (r2() - .5) * .008, y = 1.6 + (row ? -1 : 1) * (PH + GAP) / 2 + (r2() - .5) * .008;
+      const plaque = new THREE.Group(); plaque.position.set(.004, y, z); plaque.rotation.set((r2() - .5) * .02, Math.PI / 2, 0); g.add(plaque);
+      add(plaque, new THREE.BoxGeometry(PW, PH, .026), body, 0, 0, .013);
+      const geo = new THREE.PlaneGeometry(PW, PH), uv = geo.attributes.uv;
+      for (let i = 0; i < uv.count; i++) uv.setXY(i, (col + uv.getX(i)) / 3, 1 - (row + 1 - uv.getY(i)) / 2);
+      add(plaque, geo, front, 0, 0, .0265);
+    }
   }
 
   // ---------------------------------------------------------------- Z02 Reception
   if (want('BEL_RECEPTION_TREE')) { const g = item('BEL_RECEPTION_TREE'); smallTree(g, { x: 8.125, z: 5.845, seed: 13, height: 1.72 }); }   // approved F015/PL015: x 7.87-8.38, z 5.59-6.10
   if (want('BEL_RECEPTION_ALOE')) {
     const g = item('BEL_RECEPTION_ALOE');  // approved F016/PL016: x 13.72-14.12, z 5.69-6.10
-    const rock = rockGeometry(.2, 211, 1.1, .55, .95); add(g, rock, M.graniteRough, 13.92, 0, 5.9);
+    const rock = graniteBlock(.2, 211, .6); add(g, rock, M.graniteSplit, 13.92, 0, 5.9, 0, .4);
     const pot = new THREE.Group(); pot.position.set(13.92, rock.boundingBox.max.y - .015, 5.9); g.add(pot);
     add(pot, lathe([[0, .005], [.08, 0], [.105, .03], [.115, .17], [.125, .19], [.11, .19], [.1, .17], [0, .17]], 32), M.clayRaw);
     add(pot, new THREE.CircleGeometry(.1, 24), M.soil, 0, .175, 0, -Math.PI / 2);
@@ -591,7 +623,7 @@ export function buildBengalEarthLab(THREE, { zones = null, drinkware = [], aniso
     add(g, new THREE.PlaneGeometry(.12, .035), card(['Terracotta'], { w: .12, h: .035, scale: .5 }), 17.12, TOP + .002, -8.105, -Math.PI / 2);
   }
   if (want('BEL_COLLECTION_BAYS')) {
-    // bays F017-F020 (measured in the scene): base top 0.1016, top shelf 0.... 1.8592, green back z -10.7251, front edge z -10.1347,
+    // bays F017-F020 (measured in the scene): base top 0.1016, top shelf 1.8592, green back z -10.7251, front edge z -10.1347,
     // brass rail y 1.676 at z -10.44; the garments and hangers are hidden on this route (hideParts)
     const g = item('BEL_COLLECTION_BAYS'); const BASE = .1016, SHELF = 1.8592, BACK = -10.7251, RAIL = 1.676, RZ = -10.44;
     const textile = (key, draw) => std('tx_' + key, () => { const c = canvas(px(256), px(256)), x = c.getContext('2d'); draw(x, c.width, c.height); x.globalCompositeOperation = 'multiply'; x.globalAlpha = .3; x.fillStyle = x.createPattern(weave.plain.map, 'repeat'); x.fillRect(0, 0, c.width, c.height); x.globalAlpha = 1; x.globalCompositeOperation = 'source-over'; return { map: tex(c), roughness: .95, side: THREE.DoubleSide }; });
@@ -615,8 +647,8 @@ export function buildBengalEarthLab(THREE, { zones = null, drinkware = [], aniso
     const header = (x0, name, sub) => standingCard(g, [name, sub, 'Illustrative collection · concept'], x0 + .2, BASE, -10.22, 0, { w: .2, h: .1 });
     // 1 Bengal Nordic (x 9.79-12.36)
     let x0 = 9.7917; drape(g, x0 + .55, .62, .72, T.khadi); drape(g, x0 + 1.32, .55, .64, T.indigo);
-    add(g, pillowGeometry(.42, .42, .12), handloomCushion, x0 + .55, BASE + .2, -10.6, -.25, .12, 0);
-    add(g, pillowGeometry(.4, .4, .12), T.indigo, x0 + 1.0, BASE + .19, -10.62, -.25, -.1, 0);
+    add(g, pillowGeometry(.42, .42, .13), handloomCushion, x0 + .55, BASE + .2, -10.6, -.38, .12, 0);
+    add(g, pillowGeometry(.4, .4, .13), T.indigo, x0 + 1.0, BASE + .19, -10.62, -.38, -.1, 0);
     basket(g, x0 + 1.75, BASE, -10.45, { r: .16, h: .3, kind: 'twill', fibre: 'jute' }); folded(g, x0 + 2.2, BASE, -10.45, T.khadi, 2);
     folded(g, x0 + .55, SHELF, -10.45, T.indigo); vase(g, x0 + 1.35, SHELF, -10.45, VASE_B, M.clayCream); basket(g, x0 + 2.0, SHELF, -10.45, { r: .12, h: .16, kind: 'twill', fibre: 'jute' });
     header(x0, 'Bengal Nordic', 'Handloom textiles, quiet colour');
@@ -635,7 +667,7 @@ export function buildBengalEarthLab(THREE, { zones = null, drinkware = [], aniso
     x0 = 16.1417; drape(g, x0 + .75, .8, .8, T.patch);
     const ropeBasket = (x, y, z, r, h) => { const gg = new THREE.Group(); gg.position.set(x, y, z); g.add(gg); add(gg, lathe([[0, .004], [r * .86, 0], [r, h * .12], [r * 1.04, h], [r, h], [r * .95, h * .1], [0, .012]], 36), T.rope); add(gg, new THREE.TorusGeometry(r * 1.02, .012, 8, 36), T.rope, 0, h, 0, Math.PI / 2); };
     ropeBasket(x0 + .4, BASE, -10.42, .17, .28); ropeBasket(x0 + .85, BASE, -10.42, .13, .22);
-    add(g, pillowGeometry(.4, .4, .12), T.patch, x0 + 1.45, BASE + .19, -10.62, -.25, 0, 0);
+    add(g, pillowGeometry(.4, .4, .13), T.patch, x0 + 1.45, BASE + .19, -10.62, -.38, 0, 0);
     folded(g, x0 + 1.85, BASE, -10.45, T.patch, 3);
     [['#8f4a3a', -.12], ['#3d5170', 0], ['#c9a565', .12]].forEach(([cc, dx]) => add(g, new THREE.CylinderGeometry(.03, .045, .17, 24), std('yarn_rec_' + cc, () => ({ color: cc, roughness: .9, map: tex(weave.coil.map, { repeat: [3, 6] }) })), x0 + .7 + dx, SHELF + .085, -10.45));
     ropeBasket(x0 + 1.55, SHELF, -10.45, .1, .13);
