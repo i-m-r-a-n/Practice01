@@ -202,7 +202,8 @@ body.side-open #dock { left: calc(var(--gap) + var(--side-w) + 14px) }
   #mPeople { gap: 5px; padding: 8px 8px } #mPeople .dot { width: 7px; height: 7px }
   #info { padding: 11px 13px } #info h2 { font-size: 17px } #info p { font-size: 12.5px; max-height: 4.6em }
   #tourbar { padding: 11px 12px 10px } #tTitle { font-size: 17px } #tText { font-size: 12.5px; -webkit-line-clamp: 2 }
-  #info .note, #tourbar .note { margin-top: 6px; padding: 5px 8px; font-size: 11.5px; max-height: none; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; cursor: pointer }
+  /* bottom spacing is a transparent border, not padding: a clamped box would show the third line inside its padding */
+  #info .note, #tourbar .note { margin-top: 6px; padding: 5px 8px 0; border-bottom: 5px solid transparent; font-size: 11.5px; max-height: none; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; cursor: pointer }
   #info .note.open, #tourbar .note.open { display: block; max-height: 6.2em; overflow: auto }
   .tb-row button { padding: 7px 9px; font-size: 12.5px } .tb-row button.play { min-width: 92px } .chk { font-size: 12px }
   .bar button { padding: 7px 9px; font-size: 12.5px }

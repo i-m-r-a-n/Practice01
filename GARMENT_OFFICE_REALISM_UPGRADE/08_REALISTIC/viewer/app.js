@@ -672,7 +672,7 @@ function selectRoom(r, then) {
   setMode('rooms'); S.room = r; highlight(r); buildList($('search').value);
   if (narrow()) closeSide();
   const c = r.primary_camera && cams[r.primary_camera];
-  showInfo(r, null, c ? 'Drag to look around  ·  W A S D or arrows to walk on' : 'Drag to turn  ·  Shift + drag to move  ·  scroll or pinch to zoom');
+  showInfo(r, null, c ? (COARSE ? 'Drag to look around  ·  tap Walk from here to move' : 'Drag to look around  ·  W A S D or arrows to walk on') : 'Drag to turn  ·  Shift + drag to move  ·  scroll or pinch to zoom');
   const target = c ? poseFromCamera(c) : roomAerialPose(r);
   flyTo(target, { onDone: () => {
     if (!c) {                                         // no render camera: orbit around the room from above

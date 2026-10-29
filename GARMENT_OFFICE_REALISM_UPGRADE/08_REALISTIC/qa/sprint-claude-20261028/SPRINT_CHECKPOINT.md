@@ -41,7 +41,10 @@ Resume from this file if the session is interrupted. Newest state first.
 - **Header ≤ 860 px.** Two-row grid: logos, Help and Full screen on the first row; Tour, the modes and People on the second. All controls are reachable and none overlap from 320 to 1920 px. Before, Help and Full screen were cut off at 390 and 360 px.
 - **Footer notice.** "Concept proposal · … People shown are illustrative, not real staff", 12 px on desktop and 11 px on phones (was 10 px).
 - **Direct drag.** GPT's sign fix is verified in a browser: dragging right or down moves the room with the pointer.
-- **Phone room card.** The new concept note is folded to two lines on phones; a tap opens or folds it. The card stays at about a third of the screen.
+- **Phone room card.**
+  - On phones the new concept note is folded to two lines, and a tap opens or folds it. The bottom spacing is a transparent border, so no part of a third line peeks out.
+  - On touch devices the room hint says "tap Walk from here to move" instead of "W A S D or arrows".
+  - The card uses 33.5% of a 390 × 844 screen and 40% of a 360 × 740 screen.
 
 ### R2: client identity in the tour
 
@@ -85,8 +88,9 @@ Everything is additive and self-made. Nothing stands on the floor, so walk paths
 - **ERR_ABORTED reports.** With the local Python preview server, Chromium sometimes reports `net::ERR_ABORTED` for a GLB request, for example `panjabi.glb`, `shirt.glb` or `model_web_baked.glb`.
   - `abort_probe.py` shows the page still receives every byte (status 200, bytes equal to the file size) and the model and all 27 people load.
   - So this is a reporting artefact of the local harness, not a load failure. Traces: `r2/abort-probe/`.
-- **Phone room card:** at 360 × 740 the card uses 40% of the screen height (296 px), against about 33% before the sprint. At 390 × 844 it uses 33.5%.
+- **Phone room card size:** at 360 × 740 the card uses 40% of the screen height (296 px), against about 33% before the sprint. At 390 × 844 it uses 33.5%.
+- **Visitor frames:** the `merch_typing` spot in `capture_visitor.py` is not on free floor, so the viewer refuses it. This is a capture-spot error, not a tour defect.
 - **Next candidates:**
-  - **Room hint on phones.** It still says "W A S D or arrows to walk on" (`app.js`, `showInfo` call in `selectRoom`). On touch devices it should point to "Walk from here" instead. That would also save a line on the phone card.
+  - **Coconut-shell story placement.** Seen from the passage, a white vertical element in front of the counter hides part of the card. A quick GLB query near that spot found no model geometry, so it may be a runtime prop. Check what it is before moving anything.
   - A lighter carpet in Merchandising (the concept says "at renewal").
   - More rooms, only after this release is live and verified.
