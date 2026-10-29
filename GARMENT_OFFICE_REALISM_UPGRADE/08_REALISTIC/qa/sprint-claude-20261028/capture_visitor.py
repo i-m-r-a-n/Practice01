@@ -20,6 +20,9 @@ SPOTS = {
     'ec_forms': (12.7, -7.3, 0.0, -0.22, 62),
     'ec_ceiling': (10.6, -6.9, -1.45, 0.22, 66),
     'merch_typing': (12.9, -16.2, 0.55, -0.35, 60),
+    'ds_board': (31.0, -26.4, math.pi / 2, -0.05, 64),
+    'ds_review': (29.0, -15.4, -0.927, -0.35, 58),
+    'ds_review_close': (29.0, -16.8, -1.5708, -0.78, 52),
 }
 p = argparse.ArgumentParser()
 p.add_argument('--url', default='http://127.0.0.1:8784/realistic/?welcome=0')

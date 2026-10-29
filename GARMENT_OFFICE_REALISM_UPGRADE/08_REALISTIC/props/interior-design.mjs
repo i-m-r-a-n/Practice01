@@ -23,6 +23,8 @@ export const INTERIOR_ITEMS = [
   { id: 'BR_KANTHA_PANEL', zone: 'Z08', note: 'A tall kantha-inspired panel on the free wall between the reception glass and the executive-suite door, under a picture light (design reference).' },
   { id: 'BR_TABLE_LIGHT', zone: 'Z08', note: 'Warm pool of the existing linear pendants along the boardroom table.' },
   { id: 'DS_DAYLIGHT', zone: 'Z18', note: 'Overcast daylight in the three existing east windows and its soft spill on the floor; true north, sun angles and glare are still to be measured on site.' },
+  { id: 'DS_FABRIC_BOARD', zone: 'Z18', note: 'The approved mood board with the same swatch layout and colours, shown as pinned cloth (pinked edges, pins, weave and knit, Jamdani-style butis on the whites) and garment flats on its paper sheets, lit by the scallops of its five existing track spots.' },
+  { id: 'DS_REVIEW_TABLE', zone: 'Z18', note: 'A sample-review set on the presentation table for teaching and fit reviews: a knit sample laid flat, drafted pattern pieces, swatch header cards, a tape measure, a sketchbook of garment flats and a card of coconut-shell buttons (illustrative, not an actual collection).' },
 ];
 
 const PAL = { khadi: '#e6dccb', khadiShade: '#cfc1a8', jute: '#b39867', juteDark: '#7e6440', indigo: '#33486a', indigoDeep: '#24344f',
@@ -334,16 +336,24 @@ export function buildInteriorDesign(THREE, { zones = null, anisotropy = 4, detai
     const r = rng(101);
     for (let i = 0; i < 14; i++) { const a = r() * 6.28, d = r() * .036; mesh(g, new THREE.CylinderGeometry(.009, .009, .004, 14), shell, 12.40 + Math.cos(a) * d, 1.071 + d * .35 + r() * .004, 5.03 + Math.sin(a) * d, (r() - .5) * .5, 0, (r() - .5) * .5); }
   }
+  // the visible light of a track spot on the wall below it (a scallop): rounded top under the fitting, soft long fall-off.
+  // Intensity in the RGB of an opaque canvas; one texture shared by every scallop material.
+  let scallopTex = null;
+  function scallopMaterial(name, opacity) {
+    if (!scallopTex) {
+      const W = 256, H = 512, c = canvas(W, H), x = c.getContext('2d'), img = x.createImageData(W, H);
+      for (let j = 0; j < H; j++) for (let i = 0; i < W; i++) {
+        const X = i / (W - 1) * 2 - 1, Y = j / (H - 1), top = .03 + .3 * X * X;
+        const v = Math.min(1, Math.max(0, (Y - top) / .06)) * Math.exp(-Math.pow((Y - .2) / .42, 2)) * Math.pow(Math.max(0, 1 - X * X), 1.6);
+        const k = (j * W + i) * 4; img.data[k] = img.data[k + 1] = img.data[k + 2] = Math.round(255 * v); img.data[k + 3] = 255;
+      }
+      x.putImageData(img, 0, 0); scallopTex = texture(c, { clamp: true });
+    }
+    return std(name, { color: '#000000', emissive: '#ffc488', emissiveMap: scallopTex, transparent: true, opacity, depthWrite: false, blending: THREE.AdditiveBlending, roughness: 1, polygonOffset: true, polygonOffsetFactor: -2, polygonOffsetUnits: -2 });
+  }
   if (want('RC_SCALLOPS')) {
     // track spots LT008-LT011 (x 13.80-13.95, y 2.60-2.81) at z 2.41 / 3.43 / 4.445 / 5.46 light the fluted oak face x 14.27
-    const W = 256, H = 512, c = canvas(W, H), x = c.getContext('2d'), img = x.createImageData(W, H);
-    for (let j = 0; j < H; j++) for (let i = 0; i < W; i++) {
-      const X = i / (W - 1) * 2 - 1, Y = j / (H - 1), top = .03 + .3 * X * X;              // rounded top just under the fitting
-      const v = Math.min(1, Math.max(0, (Y - top) / .06)) * Math.exp(-Math.pow((Y - .2) / .42, 2)) * Math.pow(Math.max(0, 1 - X * X), 1.6);
-      const k = (j * W + i) * 4; img.data[k] = img.data[k + 1] = img.data[k + 2] = Math.round(255 * v); img.data[k + 3] = 255;   // intensity in RGB
-    }
-    x.putImageData(img, 0, 0);
-    const scallop = std('scallop', { color: '#000000', emissive: '#ffc488', emissiveMap: texture(c, { clamp: true }), transparent: true, opacity: .32, depthWrite: false, blending: THREE.AdditiveBlending, roughness: 1, polygonOffset: true, polygonOffsetFactor: -2, polygonOffsetUnits: -2 });
+    const scallop = scallopMaterial('scallop', .32);
     for (const z of [2.41, 3.43, 4.445, 5.46]) mesh(group, new THREE.PlaneGeometry(.85, 1.9), scallop, 14.262, 2.62 - .95, z, 0, -Math.PI / 2);
   }
   if (want('EC_MATERIALS_LIBRARY')) {
@@ -537,6 +547,220 @@ export function buildInteriorDesign(THREE, { zones = null, anisotropy = 4, detai
       mesh(group, new THREE.PlaneGeometry(w + .2, 1.6), skyMat, 34.06, 1.445, zc, 0, -Math.PI / 2);
       mesh(group, new THREE.PlaneGeometry(2.2, w + .8), spillMat, 33.68 - 1.1, .013, zc, -Math.PI / 2);
     }
+  }
+  // ---------------------------------------------------------------- Global Design Studio (Z18): mood board and review table
+  // linear base colours of the model's swatch materials (and the board's linen), as canvas sRGB
+  const LIN = { o: [.109, .127, .063], g: [.028, .147, .06], s: [.27, .376, .275], a: [.578, .462, .301], h: [.323, .323, .314], k: [.012, .012, .013],
+    p: [.913, .896, .855], b: [.694, .456, .381], w: [.839, .823, .776], d: [.047, .091, .171], n: [.019, .032, .068], r: [.323, .082, .037], linen: [.768, .73, .651] };
+  const srgb = l => '#' + l.map(v => Math.round(255 * (v <= .0031308 ? v * 12.92 : 1.055 * Math.pow(v, 1 / 2.4) - .055)).toString(16).padStart(2, '0')).join('');
+  // a stitch tile resized so one tile spans `size` pixels, as a repeating pattern of context x
+  function stitchPattern(x, name, size) {
+    const t = knitTile(name), s = canvas(Math.max(4, Math.round(size)), Math.max(4, Math.round(size * t.height / t.width)));
+    s.getContext('2d').drawImage(t, 0, 0, s.width, s.height); return x.createPattern(s, 'repeat');
+  }
+  // technical flat of a garment in graphite, inside the box (bx, by, bw, bh): tee, cardigan or trouser
+  function garmentFlat(x, kind, bx, by, bw, bh, lw) {
+    const L = (pts, close = true, dash = null) => { x.setLineDash(dash || []); x.beginPath(); pts.forEach(([u, v], i) => i ? x.lineTo(bx + u * bw, by + v * bh) : x.moveTo(bx + u * bw, by + v * bh)); if (close) x.closePath(); x.stroke(); x.setLineDash([]); };
+    x.strokeStyle = '#3c3d40'; x.lineWidth = lw; x.lineJoin = 'round'; x.lineCap = 'round';
+    if (kind === 'trouser') {
+      L([[.22, .04], [.78, .04], [.78, .12], [.22, .12]]);
+      L([[.22, .12], [.17, .96], [.44, .96], [.5, .36], [.56, .96], [.83, .96], [.78, .12]], false);
+      L([[.5, .12], [.5, .3]], false); L([[.3, .12], [.36, .22]], false); L([[.7, .12], [.64, .22]], false);
+      L([[.18, .91], [.43, .91]], false, [lw * 2.5, lw * 2]); L([[.57, .91], [.82, .91]], false, [lw * 2.5, lw * 2]);
+      return;
+    }
+    const body = [[.38, .05], [.2, .11], [.03, .34], [.12, .42], [.24, .3], [.24, .95], [.76, .95], [.76, .3], [.88, .42], [.97, .34], [.8, .11], [.62, .05]];
+    L(kind === 'cardigan' ? [...body, [.5, .46]] : [...body, [.56, .12], [.5, .13], [.44, .12]]);
+    L([[.25, .88], [.75, .88]], false, kind === 'cardigan' ? null : [lw * 2.5, lw * 2]);
+    if (kind === 'cardigan') {
+      L([[.5, .46], [.5, .95]], false);
+      for (let i = 0; i < 5; i++) { x.beginPath(); x.arc(bx + .53 * bw, by + (.52 + i * .085) * bh, lw * 1.6, 0, Math.PI * 2); x.stroke(); }
+      for (let u = .27; u < .74; u += .03) L([[u, .88], [u, .95]], false);
+    } else { L([[.07, .38], [.15, .3]], false, [lw * 2.5, lw * 2]); L([[.93, .38], [.85, .3]], false, [lw * 2.5, lw * 2]); }
+  }
+  // pinking-shear outline: zigzag teeth pointing into the cloth along all four edges
+  function pinkedPath(x, X0, Y0, X1, Y1, tooth) {
+    x.beginPath(); let first = true;
+    const edge = (ax, ay, bx, by, nx, ny) => { const steps = Math.max(2, Math.round(Math.hypot(bx - ax, by - ay) / (tooth * 2))) * 2;
+      for (let i = 0; i <= steps; i++) { const f = i / steps, d = i % 2 ? tooth : 0, X = ax + (bx - ax) * f + nx * d, Y = ay + (by - ay) * f + ny * d; if (first) { x.moveTo(X, Y); first = false; } else x.lineTo(X, Y); } };
+    edge(X0, Y0, X1, Y0, 0, 1); edge(X1, Y0, X1, Y1, -1, 0); edge(X1, Y1, X0, Y1, 0, -1); edge(X0, Y1, X0, Y0, 1, 0); x.closePath();
+  }
+  function pinHead(x, cx, cy, r, light, dark) {
+    x.fillStyle = 'rgba(30,20,10,.32)'; x.beginPath(); x.ellipse(cx + r * .5, cy + r * .8, r * 1.05, r * .8, 0, 0, Math.PI * 2); x.fill();
+    const g = x.createRadialGradient(cx - r * .35, cy - r * .35, r * .1, cx, cy, r); g.addColorStop(0, '#ffffff'); g.addColorStop(.3, light); g.addColorStop(1, dark);
+    x.fillStyle = g; x.beginPath(); x.arc(cx, cy, r, 0, Math.PI * 2); x.fill();
+  }
+  // one piece of cloth on the board: shadow, pinked edge, the weave or knit of its kind, a slight drape, a pin
+  function boardSwatch(x, code, X0, Y0, X1, Y1, n, k) {
+    const base = srgb(LIN[code]), w = X1 - X0, h = Y1 - Y0, r = rng(700 + n), tooth = 2.2 * k;
+    x.save(); x.shadowColor = 'rgba(35,25,15,.5)'; x.shadowBlur = 7 * k; x.shadowOffsetX = 1.5 * k; x.shadowOffsetY = 3.5 * k;
+    x.fillStyle = base; pinkedPath(x, X0, Y0, X1, Y1, tooth); x.fill(); x.restore();
+    x.save(); pinkedPath(x, X0, Y0, X1, Y1, tooth); x.clip();
+    const lines = (step, alpha, vertical, diag = false) => { x.strokeStyle = `rgba(255,255,255,${alpha})`; x.lineWidth = Math.max(1, .9 * k); x.beginPath();
+      for (let s = -h; s < w + h; s += step) { if (diag) { x.moveTo(X0 + s, Y1); x.lineTo(X0 + s + h, Y0); } else if (vertical) { x.moveTo(X0 + s, Y0); x.lineTo(X0 + s, Y1); } else { x.moveTo(X0, Y0 + s); x.lineTo(X1, Y0 + s); } } x.stroke(); };
+    const knit = (name, size, alpha) => { x.globalCompositeOperation = 'multiply'; x.globalAlpha = alpha; x.fillStyle = stitchPattern(x, name, size); x.fillRect(X0, Y0, w, h); x.globalAlpha = 1; x.globalCompositeOperation = 'source-over'; };
+    if ('agw'.includes(code)) cloth(x, X0, Y0, w, h, base, { cell: Math.max(1.5, 2 * k), seed: 710 + n, slub: .16, mottle: .05, contrast: .5 });
+    if (code === 'w') { const u = 1.3 * k, s = 22 * k;                     // Jamdani-style butis woven white on white
+      for (let j = 0, yy = Y0 + s * .6; yy < Y1; yy += s * .9, j++) for (let xx = X0 + s * .5 + (j % 2) * s * .5; xx < X1; xx += s) buti(x, BUTI, xx, yy, u, { 1: 'rgba(255,255,255,.95)', 2: '#cbc3b1' }); }
+    if (code === 'd') { lines(3 * k, .12, false, true); const g = x.createRadialGradient(X0 + w * .5, Y0 + h * .45, 1, X0 + w * .5, Y0 + h * .45, Math.max(w, h) * .7); g.addColorStop(0, 'rgba(160,185,215,.16)'); g.addColorStop(1, 'rgba(160,185,215,0)'); x.fillStyle = g; x.fillRect(X0, Y0, w, h); }
+    if (code === 'n' || code === 'k') { knit('rib', 22 * k, .5); lines(2.75 * k, code === 'k' ? .07 : .05, true); }
+    if (code === 'h') for (let i = 0; i < w * h / 10; i++) { const v = r() > .5; x.fillStyle = v ? 'rgba(235,235,228,.35)' : 'rgba(20,20,22,.35)'; x.fillRect(X0 + r() * w, Y0 + r() * h, k * (1 + r()), k * (.6 + r() * .6)); }
+    if (code === 'b') knit('jersey', 16 * k, .45);
+    if (code === 's') knit('moss', 16 * k, .45);
+    if (code === 'r') knit('waffle', 20 * k, .5);
+    if (code === 'o') for (let s = 0; s < w; s += 4 * k) { const g = x.createLinearGradient(X0 + s, 0, X0 + s + 4 * k, 0); g.addColorStop(0, 'rgba(0,0,0,.22)'); g.addColorStop(.5, 'rgba(255,255,240,.12)'); g.addColorStop(1, 'rgba(0,0,0,.22)'); x.fillStyle = g; x.fillRect(X0 + s, Y0, 4 * k, h); }   // corduroy wales
+    const d = x.createLinearGradient(0, Y0, 0, Y1); d.addColorStop(0, 'rgba(255,255,255,.08)'); d.addColorStop(.45, 'rgba(255,255,255,0)'); d.addColorStop(1, 'rgba(0,0,0,.12)');
+    x.fillStyle = d; x.fillRect(X0, Y0, w, h);                                                       // hangs from its pin: lighter top, heavier foot
+    const curl = x.createRadialGradient(r() > .5 ? X1 : X0, Y1, 1, r() > .5 ? X1 : X0, Y1, w * .6); curl.addColorStop(0, 'rgba(0,0,0,.1)'); curl.addColorStop(1, 'rgba(0,0,0,0)');
+    x.fillStyle = curl; x.fillRect(X0, Y0, w, h);
+    x.restore();
+    const brass = n % 3 === 0; pinHead(x, X0 + w * (.42 + r() * .16), Y0 + 7 * k, 3.2 * k, brass ? '#d9b46a' : '#efe9dc', brass ? '#6e5124' : '#8f887a');
+  }
+  function boardSheet(x, X0, Y0, X1, Y1, n, k) {                         // a paper sheet with a garment flat, pinned at both top corners
+    const w = X1 - X0, h = Y1 - Y0;
+    x.save(); x.shadowColor = 'rgba(35,25,15,.45)'; x.shadowBlur = 6 * k; x.shadowOffsetX = 1.5 * k; x.shadowOffsetY = 3 * k; x.fillStyle = srgb(LIN.p); x.fillRect(X0, Y0, w, h); x.restore();
+    garmentFlat(x, ['tee', 'cardigan', 'trouser'][n % 3], X0 + w * .14, Y0 + h * .1, w * .72, h * .66, Math.max(1, 1.1 * k));
+    x.strokeStyle = 'rgba(70,70,75,.45)'; x.lineWidth = Math.max(1, .8 * k);
+    for (let i = 0; i < 3; i++) { x.beginPath(); for (let s = 0; s <= 24; s++) { const X = X0 + w * (.14 + s / 24 * (.5 + (i % 2) * .2)), Y = Y0 + h * (.83 + i * .05) + Math.sin(s * 1.9 + i) * k; s ? x.lineTo(X, Y) : x.moveTo(X, Y); } x.stroke(); }   // pencil notes (no text)
+    for (const u of [.1, .9]) pinHead(x, X0 + w * u, Y0 + 6 * k, 3 * k, '#efe9dc', '#8f887a');
+  }
+  if (want('DS_FABRIC_BOARD')) {
+    // mood board F167 on the studio's west wall: linen face x 29.427, swatches and sheets at x 29.431 over y 0.459-2.284,
+    // z -30.479..-23.115. Columns from north to south: [z0, z1, 'code y0-y1 ...'], y in mm, codes as LIN (from the model)
+    const BOARD = [[-30.228, -29.978, 'o583-784 g846-1112 s1163-1354 a1420-1696 g1735-1925 h1975-2221'],
+      [-29.897, -29.692, 'k652-887 a923-1170 p1240-1505 h1538-1721 g1786-2064'],
+      [-29.643, -29.407, 'b572-762 w821-975 b1001-1279 g1342-1565 d1610-1785 a1832-2069'],
+      [-29.344, -29.068, 'd609-762 d811-1018 g1058-1309 n1346-1541 o1606-1761 n1826-2075'],
+      [-28.979, -28.717, 'd568-744 h771-1037 d1073-1244 w1270-1538 h1568-1749 p1778-1944 r1984-2233'],
+      [-28.639, -28.377, 'b685-939 s1013-1255 b1296-1475 b1522-1761 k1796-2037'],
+      [-28.28, -28.075, 'a678-910 n938-1134 o1163-1436 a1471-1633 s1708-1938 p1973-2155'],
+      [-28.032, -27.743, 'k564-742 d806-1079 b1121-1290 r1338-1598 p1667-1857 n1895-2155'],
+      [-27.678, -27.495, 'g610-804 o853-1016 r1046-1321 s1368-1533 b1607-1787 k1846-2120'],
+      [-27.441, -27.197, 'b675-846 p878-1100 k1131-1409 o1440-1610 g1670-1881 o1917-2128'],
+      [-27.137, -26.889, 's649-824 h872-1093 b1128-1361 n1417-1679 k1711-1969'],
+      [-26.798, -26.541, 'k645-909 n937-1159 p1203-1408 k1468-1636 g1709-1871 w1933-2136'],
+      [-26.46, -26.238, 'k635-887 n918-1194 n1254-1479 a1548-1774 b1802-2033'],
+      [-26.193, -26.015, 'w663-903 s943-1112 b1164-1378 b1433-1657 k1729-1914 r1983-2227'],
+      [-25.938, -25.744, 'b626-875 a908-1183 k1223-1502 h1539-1780 s1813-2065'],
+      [-25.672, -25.414, 'a625-793 a855-1118 o1147-1350 b1417-1575 a1649-1904 o1963-2222'],
+      [-25.346, -25.165, 'r561-837 h899-1116 k1172-1326 g1370-1525 w1552-1824 o1854-2098'],
+      [-25.067, -24.832, 'a674-827 r853-1014 g1044-1308 r1345-1583 d1647-1809 w1844-2025'],
+      [-24.765, -24.554, 'w645-844 h911-1068 d1138-1297 r1359-1597 r1642-1809 h1844-2079'],
+      [-24.472, -24.263, 'n559-715 r770-1046 o1111-1316 r1364-1528 a1575-1847 o1876-2119'],
+      [-24.216, -23.975, 'r625-819 o870-1143 g1200-1419 d1457-1658 g1720-1897 r1929-2168'],
+      [-23.905, -23.723, 'w596-785 a823-1026 b1073-1234 h1260-1435 n1496-1660 g1692-1878 o1918-2120'],
+      [-23.68, -23.476, 'g569-737 n768-941 g988-1257 a1301-1474 g1536-1751 d1818-2064'],
+      [-23.378, -23.19, 'o586-777 w828-1071 n1113-1308 b1359-1632 h1676-1828 o1881-2095']];
+    const Z0 = -30.479, Z1 = -23.115, Y0 = .459, Y1 = 2.284, Wm = Z1 - Z0, Hm = Y1 - Y0;
+    const W = px(3072), H = px(768), c = canvas(W, H), x = c.getContext('2d'), mx = W / Wm, my = H / Hm, k = W / 3072;
+    cloth(x, 0, 0, W, H, srgb(LIN.linen), { cell: Math.max(1.5, 2 * k), seed: 601, slub: .05, mottle: .03, contrast: .35 });
+    let n = 0;
+    for (const [z0, z1, list] of BOARD) for (const item of list.split(' ')) {
+      const code = item[0], [y0, y1] = item.slice(1).split('-').map(v => v / 1000);
+      const X0 = (Z1 - z1) * mx, X1 = (Z1 - z0) * mx, T = (Y1 - y1) * my, B = (Y1 - y0) * my;   // seen from the room, south is on the left
+      if (code === 'p') boardSheet(x, X0, T, X1, B, n, k); else boardSwatch(x, code, X0, T, X1, B, n, k);
+      n++;
+    }
+    const face = std('ds_board', { map: texture(c, { clamp: true }), roughness: .92 });
+    mesh(group, new THREE.PlaneGeometry(Wm, Hm), face, 29.434, (Y0 + Y1) / 2, (Z0 + Z1) / 2, 0, Math.PI / 2);   // 3 mm in front of the swatches
+    // its five track spots LT082-LT086 (x 29.73-29.86, y 2.40-2.60) are 0.3-0.45 m off the board, as at the Reception oak wall
+    const scallop = scallopMaterial('ds_scallop', .26);
+    for (const z of [-29.97, -28.45, -26.92, -25.40, -23.88]) mesh(group, new THREE.PlaneGeometry(.85, 1.9), scallop, 29.437, 2.62 - .95, z, 0, Math.PI / 2);
+  }
+  if (want('DS_REVIEW_TABLE')) {
+    // presentation table F175: walnut top y 0.75 over x 30.25-31.47, z -18.29..-15.24, eight visitor chairs on its long sides.
+    // Notebooks and mugs sit at both ends (z -16.02..-15.80 and -17.73..-17.51), so the set uses the free middle
+    // (x 30.32-31.39, z -17.44..-16.26). Flat items: canvas top towards north at yaw 0.
+    const g = new THREE.Group(); g.name = 'DS_REVIEW_TABLE'; group.add(g); const TOP = .75;
+    const lay = (c, w, d, cx, cz, yaw, lift, name, props = {}) => mesh(g, new THREE.PlaneGeometry(w, d),
+      std(name, { map: texture(c, { clamp: true }), roughness: .9, alphaTest: .5, polygonOffset: true, polygonOffsetFactor: -1, polygonOffsetUnits: -1, ...props }), cx, TOP + lift, cz, -Math.PI / 2, 0, yaw);
+    const contact = (w, d, cx, cz, yaw, shape) => {                       // soft contact shadow under a flat item
+      const c = canvas(128, Math.round(128 * d / w)), x = c.getContext('2d'); x.fillStyle = '#000'; x.fillRect(0, 0, c.width, c.height);
+      x.shadowColor = '#fff'; x.shadowBlur = 10; x.fillStyle = '#fff'; x.beginPath(); shape(x, c.width, c.height); x.fill();
+      const t = texture(c, { srgb: false, clamp: true });   // unlit black: a lit one would pick up a pale specular haze on the dark walnut
+      const m = new THREE.MeshBasicMaterial({ name: 'interior_review_contact_' + cx.toFixed(2), color: 0x000000, alphaMap: t, transparent: true, opacity: .32, depthWrite: false, polygonOffset: true, polygonOffsetFactor: -1, polygonOffsetUnits: -1 });
+      materials.push(m); return mesh(g, new THREE.PlaneGeometry(w, d), m, cx, TOP + .0012, cz, -Math.PI / 2, 0, yaw);
+    };
+    // 1. a knit sample laid flat for a fit review: jersey body, a cable panel down the front, rib at the hem and neck
+    const outline = [[.36, .03], [.22, .07], [.05, .30], [0, .52], [.1, .55], [.19, .36], [.21, .97], [.79, .97], [.81, .36], [.9, .55], [1, .52], [.95, .3], [.78, .07], [.64, .03], [.5, .09]];
+    const knitSample = (() => {
+      const W = px(640), H = Math.round(W * .56 / .48), c = canvas(W, H), x = c.getContext('2d'), m = W / .48;
+      const P = () => { x.beginPath(); outline.forEach(([u, v], i) => i ? x.lineTo(u * W, v * H) : x.moveTo(u * W, v * H)); x.closePath(); };
+      P(); x.fillStyle = '#d6c6a6'; x.fill(); x.save(); P(); x.clip();
+      const knit = (name, size, alpha, X, Y, w, h) => { x.globalCompositeOperation = 'multiply'; x.globalAlpha = alpha; x.fillStyle = stitchPattern(x, name, size); x.fillRect(X, Y, w, h); x.globalAlpha = 1; x.globalCompositeOperation = 'source-over'; };
+      knit('jersey', .018 * m, .5, 0, 0, W, H);
+      x.fillStyle = '#d6c6a6'; x.fillRect(W * .42, H * .14, W * .16, H * .74); knit('cable', .07 * m, .6, W * .42, H * .14, W * .16, H * .74);
+      x.fillStyle = '#d6c6a6'; x.fillRect(0, H * .9, W, H * .1); knit('rib', .04 * m, .6, 0, H * .9, W, H * .1);
+      for (const [cx, cy, s] of [[.22, .42, -1], [.78, .42, 1]]) { const f = x.createRadialGradient(cx * W, cy * H, 2, cx * W, cy * H, W * .16); f.addColorStop(0, 'rgba(60,40,20,.16)'); f.addColorStop(1, 'rgba(60,40,20,0)'); x.fillStyle = f; x.fillRect(0, 0, W, H); }
+      const hl = x.createLinearGradient(0, H * .1, 0, H * .6); hl.addColorStop(0, 'rgba(255,250,240,.12)'); hl.addColorStop(1, 'rgba(255,250,240,0)'); x.fillStyle = hl; x.fillRect(0, 0, W, H);
+      x.restore();
+      x.strokeStyle = stitchPattern(x, 'rib', .04 * m); x.lineWidth = .022 * m; x.beginPath(); x.moveTo(.36 * W, .035 * H); x.quadraticCurveTo(.5 * W, .15 * H, .64 * W, .035 * H); x.stroke();
+      x.strokeStyle = 'rgba(70,52,30,.5)'; x.lineWidth = 2; P(); x.stroke();
+      return c; })();
+    contact(.52, .6, 30.56, -16.8, .04, (x, w, h) => { x.beginPath(); outline.forEach(([u, v], i) => { const X = (.04 + u * .92) * w, Y = (.035 + v * .93) * h; i ? x.lineTo(X, Y) : x.moveTo(X, Y); }); x.closePath(); });
+    lay(knitSample, .48, .56, 30.56, -16.8, .04, .004, 'review_knit');
+    // 2. drafted pattern pieces on dot-and-cross pattern paper, a clear ruler and a pencil
+    const paperSheet = (() => {
+      const W = px(560), H = Math.round(W * .66 / .46), c = canvas(W, H), x = c.getContext('2d'), m = W / .46, inch = .0254 * m;
+      x.fillStyle = '#f4f0e6'; x.fillRect(0, 0, W, H); x.fillStyle = 'rgba(80,80,100,.55)';
+      for (let i = 0; i * inch < W; i++) for (let j = 0; j * inch < H; j++) { const X = i * inch + inch / 2, Y = j * inch + inch / 2;
+        if (i % 5 === 2 && j % 5 === 2) { x.fillRect(X - 3, Y - .5, 6, 1); x.fillRect(X - .5, Y - 3, 1, 6); } else x.fillRect(X - .8, Y - .8, 1.6, 1.6); }
+      const L = (pts, close = true, dash = null, lw = 2.2) => { x.lineWidth = lw; x.setLineDash(dash || []); x.beginPath(); pts.forEach(([u, v], i) => i ? x.lineTo(u * W, v * H) : x.moveTo(u * W, v * H)); if (close) x.closePath(); x.stroke(); x.setLineDash([]); };
+      x.strokeStyle = '#34363b';
+      const arm = Array.from({ length: 9 }, (_, i) => { const t = i / 8; return [.47 - .09 * Math.sin(t * Math.PI / 2), .30 - .17 * t]; });
+      L([[.07, .1], [.07, .62], [.47, .62], ...arm, [.36, .1], [.27, .08], [.2, .15], [.07, .16]]);                         // front bodice, centre front on the fold
+      L([[.1, .13], [.1, .59], [.44, .59]], false, [6, 5], 1.4);                                                                // stitching line
+      L([[.07, .1], [.07, .62]], false, [14, 6], 4);                                                                           // fold line
+      L([[.25, .25], [.25, .5]], false, null, 1.6); L([[.235, .27], [.25, .25], [.265, .27]], false, null, 1.6); L([[.235, .48], [.25, .5], [.265, .48]], false, null, 1.6);   // grainline
+      for (const [u, v] of [[.47, .45], [.46, .27], [.3, .62]]) L([[u - .012, v], [u + .012, v]], false, null, 1.6);             // notches
+      const cap = Array.from({ length: 13 }, (_, i) => { const t = i / 12; return [.55 + .38 * t, .74 - .08 * Math.sin(t * Math.PI)]; });
+      L([...cap, [.88, .97], [.6, .97]]);                                                                                       // sleeve, crown up
+      L([[.74, .72], [.74, .93]], false, null, 1.6); L([[.725, .74], [.74, .72], [.755, .74]], false, null, 1.6);
+      L([[.55, .1], [.93, .1], [.93, .17], [.55, .17]]); for (let u = .58; u < .92; u += .03) L([[u, .1], [u, .17]], false, null, 1);   // neck rib
+      L([[.58, .3], [.86, .3], [.86, .52], [.58, .52]]); L([[.6, .33], [.84, .33]], false, [6, 5], 1.4);                       // pocket
+      return c; })();
+    lay(paperSheet, .46, .66, 31.13, -16.84, -.05, .0018, 'review_paper');
+    const rulerC = (() => { const c = canvas(48, 480), x = c.getContext('2d'); x.fillStyle = 'rgba(225,235,240,1)'; x.fillRect(0, 0, 48, 480);
+      x.fillStyle = '#4c5a62'; for (let i = 0; i < 46; i++) x.fillRect(0, 8 + i * 10, i % 5 ? 10 : 18, 1.5); return c; })();
+    lay(rulerC, .045, .45, 31.08, -16.86, .55, .0045, 'review_ruler', { transparent: true, opacity: .55, alphaTest: 0, roughness: .25 });
+    mesh(g, new THREE.CylinderGeometry(.0035, .0035, .17, 8), std('review_pencil', { color: '#2f5d50', roughness: .5 }), 31.27, TOP + .0055, -16.62, 0, .9, Math.PI / 2);
+    // 3. an open sketchbook: two flats of a cardigan on the left page; a pinked swatch, colour chips and notes on the right
+    const book = (() => {
+      const W = px(640), H = Math.round(W * .27 / .42), c = canvas(W, H), x = c.getContext('2d');
+      x.fillStyle = '#efe8d8'; x.fillRect(0, 0, W, H);
+      const gut = x.createLinearGradient(W * .44, 0, W * .56, 0); gut.addColorStop(0, 'rgba(0,0,0,0)'); gut.addColorStop(.5, 'rgba(60,45,25,.28)'); gut.addColorStop(1, 'rgba(0,0,0,0)'); x.fillStyle = gut; x.fillRect(0, 0, W, H);
+      garmentFlat(x, 'cardigan', W * .04, H * .12, W * .2, H * .76, 1.6); garmentFlat(x, 'tee', W * .25, H * .12, W * .2, H * .76, 1.6);
+      x.save(); pinkedPath(x, W * .58, H * .12, W * .74, H * .5, 2.5); x.clip(); cloth(x, W * .58, H * .12, W * .16, H * .38, PAL.indigo, { cell: 2, seed: 731 }); x.restore();
+      [PAL.indigo, PAL.madder, PAL.ochre, PAL.khadi, '#6f7a4c'].forEach((cc, i) => { x.fillStyle = cc; x.beginPath(); x.arc(W * (.8 + (i % 3) * .06), H * (.2 + Math.floor(i / 3) * .16), H * .05, 0, Math.PI * 2); x.fill(); });
+      x.strokeStyle = 'rgba(60,60,66,.6)'; x.lineWidth = 1.3;
+      for (let i = 0; i < 5; i++) { x.beginPath(); for (let s = 0; s <= 30; s++) { const X = W * (.58 + s / 30 * .34), Y = H * (.6 + i * .07) + Math.sin(s * 2.1 + i * 3) * 1.5; s ? x.lineTo(X, Y) : x.moveTo(X, Y); } x.stroke(); }
+      return c; })();
+    contact(.45, .3, 30.62, -17.3, -.06, (x, w, h) => x.rect(w * .05, h * .06, w * .9, h * .88));
+    mesh(g, new THREE.BoxGeometry(.42, .012, .27), std('review_book_edge', { color: '#e6dfcd', roughness: .9 }), 30.62, TOP + .006, -17.3, 0, -.06);
+    lay(book, .42, .27, 30.62, -17.3, -.06, .0125, 'review_book');
+    // 4. a tailor's tape measure: the coil and a length of tape (marks only)
+    const coilTop = (() => { const c = canvas(128, 128), x = c.getContext('2d'); x.fillStyle = '#eccf5a'; x.fillRect(0, 0, 128, 128); x.strokeStyle = 'rgba(90,70,20,.45)'; x.lineWidth = 1;
+      for (let rr = 8; rr < 64; rr += 4) { x.beginPath(); x.arc(64, 64, rr, 0, Math.PI * 2); x.stroke(); } return c; })();
+    const tapeY = std('review_tape_edge', { color: '#e3c24d', roughness: .6 });
+    mesh(g, new THREE.CylinderGeometry(.032, .032, .013, 28), [tapeY, std('review_tape_top', { map: texture(coilTop, { clamp: true }), roughness: .6 }), tapeY], 31.05, TOP + .0065, -17.33);
+    const tapeC = (() => { const c = canvas(24, 600), x = c.getContext('2d'); x.fillStyle = '#efd36a'; x.fillRect(0, 0, 24, 600); x.fillStyle = '#2a2a2a'; for (let i = 0; i < 60; i++) x.fillRect(0, i * 10, i % 5 ? 6 : 12, 1.4); return c; })();
+    lay(tapeC, .016, .3, 31.235, -17.345, Math.PI / 2 + .08, .0014, 'review_tape', { alphaTest: 0 });
+    // 5. swatch header cards: a card top with a punched hole, the cloth below with a pinked foot
+    [[PAL.indigo, 'kantha'], [PAL.madder, 'weave'], [PAL.jute, 'weave'], [PAL.ochre, 'jersey']].forEach(([cc, kind], i) => {
+      const W = px(200), H = Math.round(W * 1.45), c = canvas(W, H), x = c.getContext('2d');
+      x.fillStyle = '#f2ede2'; x.fillRect(0, 0, W, H * .26); x.fillStyle = '#9a8f7a'; x.beginPath(); x.arc(W / 2, H * .08, W * .04, 0, Math.PI * 2); x.fill();
+      x.fillStyle = 'rgba(60,60,66,.55)'; x.fillRect(W * .14, H * .15, W * .6, 2); x.fillRect(W * .14, H * .2, W * .4, 2);
+      x.save(); pinkedPath(x, 0, H * .26, W, H, 3); x.clip(); cloth(x, 0, H * .26, W, H * .74, cc, { cell: 2.5, seed: 741 + i });
+      if (kind === 'kantha') for (let r2 = 0; r2 < 6; r2++) stitch(x, wave(8, W - 8, H * (.34 + r2 * .1), 3, W * .3, 40), { color: PAL.thread, dash: 6, gap: 4, width: 2, seed: 750 + r2 });
+      if (kind === 'jersey') { x.globalCompositeOperation = 'multiply'; x.globalAlpha = .5; x.fillStyle = stitchPattern(x, 'jersey', 26); x.fillRect(0, H * .26, W, H * .74); }
+      x.restore();
+      lay(c, .1, .145, 30.40 + i * .13, -16.33, [-.12, .05, -.03, .1][i], .0012 + i * .0004, 'review_card_' + i);
+    });
+    // 6. coconut-shell buttons sewn on a trim card
+    const trim = (() => { const c = canvas(240, 160), x = c.getContext('2d'); x.fillStyle = '#efe9dc'; x.fillRect(0, 0, 240, 160); x.strokeStyle = '#b9ad95'; x.lineWidth = 3; x.strokeRect(6, 6, 228, 148); return c; })();
+    lay(trim, .12, .08, 31.2, -16.33, .03, .0012, 'review_trim');
+    const buttonMat = std('review_button', { color: '#4f3422', roughness: .32 });
+    for (let i = 0; i < 6; i++) mesh(g, new THREE.CylinderGeometry(.0085, .0085, .003, 18), buttonMat, 31.165 + (i % 3) * .035, TOP + .0027, -16.348 + Math.floor(i / 3) * .032);
   }
   // the approved rug keeps its baked Cycles light; only the woven design (albedo) changes when the Reception atlas is live
   function prepareRoom(room) {
