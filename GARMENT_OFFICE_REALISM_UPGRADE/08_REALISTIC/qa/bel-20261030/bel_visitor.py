@@ -29,6 +29,10 @@ SPOTS = {
     'uthan_hospitality': (16.4, -13.65, 3.14159, -0.12, 64),
     'academy_rows': (5.0, -8.95, 0.0, -0.12, 64),
     'academy_teaching': (8.35, -15.6, 1.5708, -0.18, 66),
+    # the design wing (increment 3)
+    'making_line': (22.55, -22.2, -1.91, -0.15, 66),
+    'library_boxes': (23.3, -8.0, 1.5708, -0.45, 64),
+    'workshop_table': (24.4, -19.3, -1.5708, -0.4, 64),
 }
 p = argparse.ArgumentParser()
 p.add_argument('--url', default='http://127.0.0.1:8790/bengal-earth-lab/?welcome=0')

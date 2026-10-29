@@ -9,7 +9,7 @@ base = json.loads((HERE / 'release-config.json').read_text())
 manifest = json.loads((HERE.parent / 'props' / 'office-props-manifest.json').read_text())
 
 RELEASE_ZONES = ['Z01', 'Z02', 'Z08', 'Z30', 'Z12', 'Z18']          # props (small office items) stay in these rooms
-CONCEPT_ZONES = ['Z01', 'Z02', 'Z03', 'Z30', 'Z08', 'Z12', 'Z18', 'Z07', 'Z06']   # rooms with Bengal Earth Lab items (Z07, Z06: option A only)
+CONCEPT_ZONES = ['Z01', 'Z02', 'Z03', 'Z30', 'Z08', 'Z12', 'Z18', 'Z22', 'Z15', 'Z16', 'Z17', 'Z07', 'Z06']   # rooms with Bengal Earth Lab items (Z07, Z06: option A only)
 DRINK = {'glass', 'jug', 'teacup', 'tray', 'mug', 'bottle'}
 TEA_SET = {'PROP_0006', 'PROP_0008'}                                 # reception tray and teacup: replaced by the clay tea set
 drink = [p for p in manifest['props'] if p['zone'] in RELEASE_ZONES and p['type'] in DRINK]
@@ -54,12 +54,15 @@ cameras = [
     look('BEL_CAM_ARTISAN', 'Merchandising', 'Z07', [13.55, 1.45, -13.9], [11.0, 0.45, -16.3], 20.0),
     look('BEL_CAM_ROOMSETS', 'Merchandising', 'Z07', [12.25, 1.62, -13.9], [15.8, 0.8, -19.9], 18.0),
     look('BEL_CAM_ACADEMY', 'Commercial & accounts', 'Z06', [6.25, 1.6, -8.05], [4.7, 1.0, -16.8], 18.0),
+    # the design wing
+    look('BEL_CAM_MAKING_LINE', 'Design-wing corridor', 'Z22', [22.33, 1.6, -22.78], [24.7, 1.15, -21.4], 16.0),   # read from the hallway end: steps 1 to 6
+    look('BEL_CAM_LAB', '3D printing lab', 'Z16', [24.0, 1.5, -13.4], [22.5, 0.8, -13.35], 22.0),
 ]
 
 names = {
     'Z01': 'Arrival gallery', 'Z02': 'Reception · tea lounge', 'Z03': 'Earth & Sun passage', 'Z30': 'Earth to product',
     'Z08': 'Negotiation suite', 'Z18': 'Collaborative studio', 'Z07': 'Green Uthan · room-sets (option A)', 'Z06': 'Design academy (option A)',
-    'Z15': 'Materials library (planned)', 'Z16': 'Materials lab (planned)', 'Z17': 'Prototype workshop (planned)', 'Z14': 'Digital design lab (planned)',
+    'Z15': 'Living materials library', 'Z16': 'Materials lab', 'Z17': 'Prototype workshop', 'Z22': 'Design wing · the making line', 'Z14': 'Digital design lab (planned)',
     'Z05': 'Export & order centre (planned)', 'Z04': 'Buyer project room (planned)', 'Z09': 'Records room (planned)',
     'Z20': 'Staff & artisan dining (planned)', 'Z21': 'Academy annex (planned)', 'Z10': 'Exec reception · tea point',
 }
@@ -74,14 +77,15 @@ notes = {
     'Z12': in3d + 'tea in clay cups. The office itself is unchanged in this increment.',
     'Z07': 'Option A only (the merchandising team moves first; owner decision). In this 3D proposal: the Green Uthan, a Bengali courtyard with a bot-tola seat around the column, two small fig trees and a bonsai under grow lights (no daylight here), stone seats and an open bamboo canopy; an artisan corner (Chakma back-strap loom and Marma weaving and basketry, both only with community consent; nakshi kantha, cane, painted terracotta); four room-sets for European buyers: living, dining, bedroom and hospitality. Every approved item that moves is in the relocation ledger.',
     'Z06': 'Option A only (the accounts team moves first; owner decision). In this 3D proposal: the design education academy inside the existing glass accounts suite, 20 seats, a demonstration bench with a hands camera, a mobile screen and a pin-up board; the discussion room becomes the tutor room. The fire engineer sets the capacity.',
-    'Z15': 'Planned: the living materials library, lit as a jewel box behind the experience-centre glass.',
-    'Z16': 'Planned: natural-materials lab and testing (sink and concrete floor already here).',
-    'Z17': 'Planned: prototype workshop with dust extraction (to be engineered), seen from the showroom through the interior glass.',
+    'Z15': in3d + 'eight labelled boxes of natural materials on the low shelf (jute, hogla, cane, bamboo, water hyacinth, kaisa grass, coconut shell, terracotta) and Material Passport cards on the review table, their fields still to be documented. The D65 colour booth and the approved fabric library stay.',
+    'Z16': in3d + 'a moisture and mould test set-up on the post-processing bench (sealed sample boxes, a scale, a moisture meter) with an empty test log. Methods to be agreed with an accredited laboratory; no results are shown. The 3D printers stay.',
+    'Z17': in3d + 'cane and bamboo prototyping on the pattern table under a dust-extraction hood marked "to be engineered", and a steam-bending jig. The sample machines and forms stay. Seen from the Uthan through the interior glass in option A.',
+    'Z22': in3d + 'the making line on the only solid wall of the design-wing entrance (the corridor walls are glass, so the labs behind them are the exhibit): one River to Home basket in six steps, from hogla leaves to the collection. Illustrative objects.',
     'Z05': 'Planned: digital export and order centre beside reception.',
 }
 tour = [
     {'stop': 1, 'zone': None, 'camera': 'CAM_ISO_SE', 'title': 'The Living Bengal Factory',
-     'description': 'Bengal Earth Lab on the approved Stage II floor, a concept proposal: earth, rural craft, a few living trees, rural art and music, and an honest solar story. The front rooms and the studio work in every option; Merchandising and the accounts suite are shown as option A only.'},
+     'description': 'Bengal Earth Lab on the approved Stage II floor, a concept proposal: earth, rural craft, a few living trees, rural art and music, and an honest solar story. The front rooms, the design wing and the studio work in every option; Merchandising and the accounts suite are shown as option A only.'},
     {'stop': 2, 'zone': 'Z01', 'camera': 'CAM_03_Entrance_Lobby', 'title': 'Arrival gallery',
      'description': 'A banyan bonsai on granite by the glass gate, three stones, terracotta on the check-in desk and terracotta plaques by a rural artist (to be commissioned).'},
     {'stop': 3, 'zone': 'Z02', 'camera': 'CAM_01_Reception_A', 'title': 'Reception and Bengali tea',
@@ -100,14 +104,18 @@ tour = [
      'description': 'Living, dining, bedroom and hospitality settings in mango wood, cane, jute, hogla, kantha and terracotta. Illustrative, not products on sale.'},
     {'stop': 10, 'zone': 'Z06', 'camera': 'BEL_CAM_ACADEMY', 'title': 'Option A · design academy',
      'description': 'Only if the accounts team moves: 20 seats inside the existing glass suite, a demonstration bench and a tutor room. The fire engineer sets the capacity.'},
-    {'stop': 11, 'zone': 'Z08', 'camera': 'CAM_09_Boardroom_A', 'title': 'Negotiation suite',
-     'description': 'Tea in clay at every place, woven samples on wooden trays, a bonsai in the corner.'},
-    {'stop': 12, 'zone': 'Z18', 'camera': 'CAM_13_Design_Studio_A', 'title': 'Collaborative studio',
+    {'stop': 11, 'zone': 'Z22', 'camera': 'BEL_CAM_MAKING_LINE', 'title': 'The making line',
+     'description': 'At the entrance to the design wing: one basket in six steps, from hogla leaves to the collection. Illustrative objects; real samples and records replace them.'},
+    {'stop': 12, 'zone': 'Z16', 'camera': 'BEL_CAM_LAB', 'title': 'The labs behind the glass',
+     'description': 'A moisture and mould test bench with an empty log (no results until tests are done), the living materials library next door and the cane and bamboo prototype workshop.'},
+    {'stop': 13, 'zone': 'Z18', 'camera': 'CAM_13_Design_Studio_A', 'title': 'Collaborative studio',
      'description': 'The only room with daylight: basket prototypes and form sketches on the co-creation table.'},
-    {'stop': 13, 'zone': 'Z18', 'camera': 'BEL_CAM_SUN_SHELF', 'title': 'The sunning shelf',
+    {'stop': 14, 'zone': 'Z18', 'camera': 'BEL_CAM_SUN_SHELF', 'title': 'The sunning shelf',
      'description': 'Bonsai and tulsi take turns in the daylight of window W10.'},
-    {'stop': 14, 'zone': None, 'camera': 'CAM_ISO_SW', 'title': 'Designed for a Solar-Powered Future',
-     'description': 'Next increments: the materials library, the labs and the prototype workshop in the design wing.'},
+    {'stop': 15, 'zone': 'Z08', 'camera': 'CAM_09_Boardroom_A', 'title': 'Negotiation suite',
+     'description': 'The visit ends here: tea in clay at every place, woven samples on wooden trays, a bonsai in the corner.'},
+    {'stop': 16, 'zone': None, 'camera': 'CAM_ISO_SW', 'title': 'Designed for a Solar-Powered Future',
+     'description': 'Every claim on this floor waits for its evidence: makers, tests, water reports and measured energy. Next: the cafe, the academy annex and the export and order centre.'},
 ]
 
 config = {

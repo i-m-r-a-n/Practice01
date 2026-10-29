@@ -286,6 +286,45 @@
       "file": "visitor_academy_teaching.jpg",
       "sha256": "0983cf0522c67c0ffb34d6906e43334101eb56d0930be253bbd10f104d260c6b",
       "room": "Z06"
+    },
+    {
+      "spot": "making_line",
+      "xz": [
+        22.55,
+        -22.2
+      ],
+      "yaw": -1.91,
+      "pitch": -0.15,
+      "fov": 66,
+      "file": "visitor_making_line.jpg",
+      "sha256": "643aa12b2b4b8e4205dea87732fbdde01a0031bc30ef9173dc55f820256cf0fe",
+      "room": "Z22"
+    },
+    {
+      "spot": "library_boxes",
+      "xz": [
+        23.3,
+        -8.0
+      ],
+      "yaw": 1.5708,
+      "pitch": -0.45,
+      "fov": 64,
+      "file": "visitor_library_boxes.jpg",
+      "sha256": "80018d099e4d9cd8127dc328b773e11bc5bd600a45380031e91975cc9daf7703",
+      "room": "Z15"
+    },
+    {
+      "spot": "workshop_table",
+      "xz": [
+        24.4,
+        -19.3
+      ],
+      "yaw": -1.5708,
+      "pitch": -0.4,
+      "fov": 64,
+      "file": "visitor_workshop_table.jpg",
+      "sha256": "64be34ca38536a908d3e82bf032c584194abf31a4b67e8c0355226214a6f166e",
+      "room": "Z17"
     }
   ],
   "errors": []

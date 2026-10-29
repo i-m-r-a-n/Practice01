@@ -30,6 +30,11 @@ export const BEL_ITEMS = [
   { id: 'BEL_STUDIO_TREE', zone: 'Z18', note: 'A small fig tree in daylight by window W09, in place of the approved potted tree and on its footprint.' },
   { id: 'BEL_COCREATION', zone: 'Z18', note: 'Co-creation set on the presentation table: basket prototypes, woven samples, a colour fan and form sketches (illustrative).' },
   { id: 'BEL_CLAY_DRINKWARE', zone: '*', note: 'Every glass, mug, cup, jug, bottle and tray on the route is clay or wood (glazes to be tested; wood with food-safe finishes).' },
+  // the design wing in every option (increment 3): the labs behind the glass of the studio street are the exhibit
+  { id: 'BEL_MAKING_LINE', zone: 'Z22', note: 'The making line on the solid wall of the design-wing entrance (the corridor walls are glass): one River to Home basket in six steps on oak ledges, from hogla leaves to the collection. Illustrative objects; real samples and dated records replace them.' },
+  { id: 'BEL_MATERIALS_LIBRARY', zone: 'Z15', note: 'The living materials library: eight labelled boxes of natural materials on the low shelf (jute, hogla, cane, bamboo, water hyacinth, kaisa grass, coconut shell, terracotta) and Material Passport cards on the review table, with fields still to be documented. The D65 colour booth and the approved fabric library stay.' },
+  { id: 'BEL_TEST_LAB', zone: 'Z16', note: 'Materials lab: a moisture and mould test set-up on the post-processing bench (sealed sample boxes, a scale, a moisture meter) and an empty test log. Methods to be agreed with an accredited laboratory; no results are shown. The 3D printers stay for trims and moulds.' },
+  { id: 'BEL_PROTOTYPE_WORKSHOP', zone: 'Z17', note: 'Prototype workshop: cane and bamboo prototyping on the pattern table (a basket on its mould, split bamboo, a steam-bent hoop and hand tools) under a dust-extraction hood marked "to be engineered", and a steam-bending jig. The sample machines and forms stay.' },
   // option A only (full conversion): shown on this route if the merchandising and accounts teams move; the owner decides
   { id: 'BEL_UTHAN', zone: 'Z07', note: 'Option A only. The Green Uthan: a Bengali courtyard in Merchandising, with a bot-tola seat of handmade terracotta around the steel column, two small fig trees and a banyan bonsai under grow lights (this room has no daylight), split-granite stone seats and an open split-bamboo canopy (fire treatment and smoke-detector coverage to be checked). Natural jute carpet over the whole room.' },
   { id: 'BEL_ARTISAN_CORNER', zone: 'Z07', note: 'Option A only. Artisan corner in the Uthan, by invitation and never as a spectacle: a Chakma back-strap loom (bain) shown only with the consent and participation of Chakma weavers, a Marma weaving and basketry stand (the same consent rule), a nakshi kantha frame, cane basketry and painted terracotta on a sitalpati mat. Quiet, clean crafts only; dusty work stays in the prototype workshop.' },
@@ -1092,6 +1097,76 @@ export function buildBengalEarthLab(THREE, { zones = null, drinkware = [], aniso
     bambooLamp(tut, .3, .74, -.1, { r: .07, h: .2 }); footprint(8.08, -7.08, 9.02, -6.42); shade('Z06', 8.1, -7.06, 9.0, -6.44, .4); footprint(7.52, -7.6, 8.78, -6.52);
     standingCard(g, ['Tutor room', 'One-to-one sessions and course planning'], 8.85, .74, -6.55, Math.PI + .3, { w: .16, h: .07 });
     signStand(g, ['Design Education Academy', 'Option A only: if the accounts team moves', '20 seats shown; the fire engineer sets', 'the capacity, not this drawing'], 3.3, -8.15, -.25);
+  }
+  // ---------------------------------------------------------------- the design wing (every option): making line, library, lab, workshop
+  if (want('BEL_MAKING_LINE')) {
+    // the solid south wall of the corridor's north strip (face z -21.4104; the strip's north side and the corridor are glass)
+    const g = item('BEL_MAKING_LINE'), WZ = -21.4104, LY = .98, xs = [22.85, 23.5, 24.15, 24.8, 25.45, 26.1];
+    for (const x of xs) box(g, M.oak, x, LY, WZ - .066, .6, .03, .13);
+    footprint(22.5, WZ - .14, 26.42, WZ);
+    const step = (i, lines) => add(g, new THREE.PlaneGeometry(.5, .26), card(lines, { w: .5, h: .26, scale: 1.1 }), xs[i], 1.47, WZ - .004, 0, Math.PI);
+    const Y = LY + .03, Z = WZ - .07;
+    for (let k = 0; k < 9; k++) add(g, new THREE.BoxGeometry(.5, .005, .02), wovenMaterial('hogla_leaf', 'plain', FIBRE.hogla, [6, 1]), xs[0], Y + .003 + Math.floor(k / 3) * .006, Z + (k % 3 - 1) * .022, 0, (k - 4) * .02);
+    add(g, new THREE.TorusGeometry(.04, .006, 6, 20), std('band', () => ({ color: '#6b4a2b', roughness: .9 })), xs[0] - .12, Y + .012, Z, Math.PI / 2);
+    for (let k = 0; k < 3; k++) add(g, new THREE.TorusGeometry(.05 - k * .005, .008, 8, 28), std('hogla_rope', () => ({ color: FIBRE.hogla, roughness: .9, map: weaveMap('coil', [8, 1]) })), xs[1] - .14 + k * .14, Y + .008, Z, Math.PI / 2);
+    const fr = new THREE.Group(); fr.position.set(xs[2], Y, Z); fr.rotation.y = Math.PI; g.add(fr); box(fr, M.wood, 0, 0, 0, .3, .02, .1);   // faces the strip box(fr, M.wood, 0, .02, -.03, .28, .2, .02);
+    add(fr, new THREE.PlaneGeometry(.24, .16), wovenMaterial('hogla_mat', 'twill', FIBRE.hogla, [3, 1.2]), 0, .12, -.019);
+    basket(g, xs[3], Y, Z, { r: .1, h: .14, kind: 'twill', fibre: 'hogla', handles: true });
+    add(g, new THREE.PlaneGeometry(.05, .03), card(['prototype'], { w: .05, h: .03, scale: .4 }), xs[3] + .12, Y + .1, Z + .02, 0, Math.PI - .3);
+    basket(g, xs[4], Y, Z, { r: .1, h: .14, kind: 'twill', fibre: 'hogla', handles: true, ry: .6 });
+    basket(g, xs[5] - .08, Y, Z, { r: .11, h: .13, kind: 'twill', fibre: 'hogla' }); basket(g, xs[5] - .08, Y + .012, Z, { r: .08, h: .13, kind: 'twill', fibre: 'hogla' }); basket(g, xs[5] + .14, Y, Z, { r: .06, h: .09, kind: 'plait', fibre: 'hyacinth' });
+    step(0, ['1 · Raw material', 'Hogla leaves, cut and sun-dried']); step(1, ['2 · Preparation', 'Twisted into rope']); step(2, ['3 · Technique', 'Coiling and stitching']);
+    step(3, ['4 · Prototype', 'Form, size and handles']); step(4, ['5 · Testing', 'Moisture, mould, strength', 'Records to be added']); step(5, ['6 · Collection', 'River to Home (illustrative)']);
+    const tc = canvas(px(1280), px(64)), tx = tc.getContext('2d'); tx.fillStyle = '#b88c5c'; tx.fillRect(0, 0, tc.width, tc.height); tx.fillStyle = '#3c2a1e'; tx.font = `600 ${tc.height * .46}px system-ui, 'Segoe UI', sans-serif`; tx.textBaseline = 'middle';
+    tx.fillText('The making line · from rural hands to global homes · one basket in six steps (illustrative)', tc.width * .02, tc.height * .54);
+    add(g, new THREE.PlaneGeometry(3.9, .195), std('making_title', () => ({ map: tex(tc, { clamp: true }), roughness: .6 })), (xs[0] + xs[5]) / 2, 1.9, WZ - .004, 0, Math.PI);
+  }
+  if (want('BEL_MATERIALS_LIBRARY')) {
+    const g = item('BEL_MATERIALS_LIBRARY');   // low shelf F132 top 0.7112 (x 22.25-22.61, z -9.41..-6.74); review table F134 top 0.9144, D65 booth at x 23.98-24.79
+    const T = .7112, X = 22.43, fibres = [['jute', 'twill', 'Jute'], ['hogla', 'plain', 'Hogla'], ['cane', 'lattice', 'Cane'], ['bamboo', 'twill', 'Bamboo'], ['hyacinth', 'plait', 'Water hyacinth'], ['kaisa', 'coil', 'Kaisa grass'], ['coconut', null, 'Coconut shell'], ['terracotta', null, 'Terracotta']];
+    fibres.forEach(([f, k, name], i) => {
+      const z = -9.25 + i * .32, b = new THREE.Group(); b.position.set(X, T, z); g.add(b);
+      const side = k ? wovenMaterial(`box_${f}`, k, FIBRE[f], [2, 1]) : f === 'coconut' ? std('coconut_shell', () => ({ color: '#5a3b24', roughness: .7, map: M.bark.map })) : M.terracotta;
+      add(b, merged([B(.3, .14, .015, 0, 0, -.135), B(.3, .14, .015, 0, 0, .135), B(.015, .14, .27, -.143, 0, 0), B(.015, .14, .27, .143, 0, 0), B(.3, .012, .3, 0, 0, 0)]), M.oak);
+      add(b, new THREE.BoxGeometry(.27, .1, .25), side, 0, .07, 0);
+      add(b, new THREE.PlaneGeometry(.2, .05), card([name], { w: .2, h: .05, scale: .6 }), .152, .07, 0, 0, Math.PI / 2);
+    });
+    const RT = .9144; [[24.97, -9.2, .1], [24.97, -8.88, -.05], [23.8, -9.15, .08]].forEach(([x, z, ry], i) =>
+      add(g, new THREE.PlaneGeometry(.15, .21), card(['Material Passport', ['Material: hogla', 'Material: jute', 'Material: cane'][i], 'Origin: to be documented', 'Maker: to be identified', 'Tests: none yet'], { w: .15, h: .21, scale: .8 }), x, RT + .002, z, -Math.PI / 2, 0, ry));
+    add(g, new THREE.TorusGeometry(.04, .005, 8, 24), std('brass', () => ({ color: '#b08d57', metalness: .8, roughness: .35 })), 23.8, RT + .006, -8.7, Math.PI / 2);
+    add(g, new THREE.CylinderGeometry(.008, .008, .09, 8), M.wood, 23.8 + .07, RT + .008, -8.66, Math.PI / 2, .5, 0);
+  }
+  if (want('BEL_TEST_LAB')) {
+    const g = item('BEL_TEST_LAB'); const T = .7874, X = 22.56;   // post-processing bench F143 (terrazzo top 0.7874), x 22.25-22.88, z -14.87..-12.06
+    const clear = std('clear_box', () => ({ color: '#e8f0f2', roughness: .1, transparent: true, opacity: .35, depthWrite: false }));
+    [['jute', 'twill'], ['hogla', 'plain'], ['cane', 'lattice'], ['hyacinth', 'plait']].forEach(([f, k], i) => {
+      const z = -14.55 + i * .3; swatch(g, X, T, z, f, k, .14, i * .2);
+      add(g, new THREE.BoxGeometry(.22, .16, .22), clear, X, T + .08, z);
+      add(g, new THREE.PlaneGeometry(.1, .03), card([`Sample ${i + 1}`], { w: .1, h: .03, scale: .4 }), X + .111, T + .12, z, 0, Math.PI / 2);
+    });
+    box(g, std('scale_body', () => ({ color: '#dfe2e4', roughness: .4 })), X, T, -13.2, .24, .05, .26); box(g, std('lcd', () => ({ color: '#1b1f22', roughness: .3 })), X + .121, T + .015, -13.2, .002, .025, .08);
+    box(g, std('meter_body', () => ({ color: '#e0b43a', roughness: .5 })), X, T, -12.9, .07, .03, .15); for (const dz of [-.015, .015]) add(g, new THREE.CylinderGeometry(.002, .002, .05, 6), std('steel', () => ({ color: '#c8c8c8', metalness: .8, roughness: .3 })), X, T + .015, -12.9 - .1 + dz, Math.PI / 2, 0, 0);
+    add(g, new THREE.PlaneGeometry(.21, .29), card(['Test log', 'Moisture and mould', 'Method: to agree with an accredited lab', 'Records to be added'], { w: .21, h: .29, scale: .9 }), X, T + .004, -12.48, -Math.PI / 2, 0, -.1);
+    standingCard(g, ['Materials lab', 'No results shown until tests are done'], X + .2, T, -12.2, Math.PI / 2, { w: .18, h: .07 });
+  }
+  if (want('BEL_PROTOTYPE_WORKSHOP')) {
+    const g = item('BEL_PROTOTYPE_WORKSHOP'); const T = .9145, X = 25.53;   // pattern table F151 top 0.9145, x 24.92-26.14, z -20.52..-18.08; steam station F155 top 0.8636
+    add(g, lathe([[0, 0], [.13, 0], [.12, .2], [.1, .22], [0, .22]], 32), M.wood, X, T, -19.85);
+    basket(g, X, T + .02, -19.85, { r: .15, h: .22, kind: 'lattice', fibre: 'cane', partial: .55 });
+    for (let k = 0; k < 9; k++) box(g, M.bamboo, X - .1 + (k % 3) * .03, T + Math.floor(k / 3) * .012, -19.15, .02, .01, .9, (k - 4) * .01);
+    add(g, new THREE.TorusGeometry(.17, .007, 8, 40), std('cane_coil', () => ({ color: FIBRE.cane, roughness: .5 })), X - .05, T + .007, -18.45, Math.PI / 2);
+    const mallet = new THREE.Group(); mallet.position.set(X + .35, T, -18.55); mallet.rotation.y = .6; g.add(mallet);
+    add(mallet, new THREE.CylinderGeometry(.035, .035, .1, 16), M.wood, 0, .035, 0, 0, 0, Math.PI / 2); add(mallet, new THREE.CylinderGeometry(.01, .01, .25, 8), M.oak, 0, .035, .13, Math.PI / 2, 0, 0);
+    standingCard(g, ['Prototype workshop', 'Cane and bamboo', 'Dust extraction: to be engineered'], X - .45, T, -18.35, Math.PI / 2, { w: .18, h: .09 });
+    // a dust-extraction hood over the table, marked as not yet designed
+    const hood = std('hood_steel', () => ({ color: '#b9bec2', metalness: .55, roughness: .45 }));
+    add(g, new THREE.CylinderGeometry(.12, .45, .3, 4, 1, true), std('hood_steel_2s', () => ({ color: '#b9bec2', metalness: .55, roughness: .45, side: THREE.DoubleSide })), X, 2.0, -19.3, 0, Math.PI / 4, 0);   // capture 0.64 m square at 1.85 m
+    add(g, new THREE.CylinderGeometry(.09, .09, 2.895 - 2.15, 16), hood, X, (2.15 + 2.895) / 2, -19.3);
+    add(g, new THREE.PlaneGeometry(.34, .08), card(['Dust extraction: to be engineered'], { w: .34, h: .08, scale: .8 }), X + .335, 1.95, -19.3, 0, Math.PI / 2);
+    // steam bending: a cane strip around a pegged board on the steam station
+    const jig = new THREE.Group(); jig.position.set(23.62, .8636, -15.47); g.add(jig); box(jig, M.oak, 0, 0, 0, .5, .025, .3);
+    for (let k = 0; k < 6; k++) { const a = Math.PI * (k / 5); add(jig, new THREE.CylinderGeometry(.008, .008, .06, 8), M.wood, Math.cos(a) * .16, .055, -Math.sin(a) * .1 + .05); }
+    add(jig, new THREE.TorusGeometry(.15, .006, 6, 24, Math.PI), std('cane_coil', () => ({})), 0, .045, .05, -Math.PI / 2, 0, 0);
   }
   // the floor finishes go in last, so their occlusion maps hold the contact shadows of everything above
   if (want('BEL_UTHAN')) floorOverlay(group.getObjectByName('BEL_UTHAN'), 'Z07', [9.32, -21.29, 22.0, -10.87], { map: juteFloor('z07', '#cdbb94', 81), repeat: [25, 21], color: '#cfc8bd' });

@@ -1,5 +1,31 @@
 # Bengal Earth Lab: 3D proposal route
 
+## Increment 3: the design wing (30 Oct 2026)
+
+These rooms work in every option, including the pilot (option C). Approved furniture stays; the proposal only adds items on existing surfaces and walls.
+
+| Room | Items |
+|---|---|
+| Design-wing entrance, Z22 north strip | **The making line**, on the only solid wall (face z -21.41). The corridor walls are glass, so the labs behind them are the exhibit. It shows one River to Home basket in six steps on oak ledges: raw material, preparation, technique, prototype, testing (records to be added), collection. It reads 1 to 6 from the hallway door D13. |
+| Living materials library Z15 | Eight labelled natural-material boxes on the low shelf under the library glass W04, so they can be seen from the Experience centre: jute, hogla, cane, bamboo, water hyacinth, kaisa grass, coconut shell, terracotta. Material Passport cards on the review table, with "origin to be documented, maker to be identified, tests none yet". The D65 booth and the fabric library stay. |
+| Materials lab Z16 | A moisture and mould test set-up on the post-processing bench: four sealed sample boxes, a scale, a moisture meter and an empty test log ("method to agree with an accredited lab, records to be added"). No results are shown. The 3D printers stay. |
+| Prototype workshop Z17 | On the pattern table: a cane basket on its mould, split bamboo, a steam-bent hoop and a mallet. Above it, a dust-extraction hood marked "to be engineered". A steam-bending jig sits on the steam station. The sample machines and forms stay. |
+
+- **Measured in the scene:**
+  - library low shelf top 0.7112 and review table 0.9144
+  - lab post-processing bench 0.7874
+  - workshop pattern table 0.9145 and steam station 0.8636
+  - the corridor walls are glass; the strip's south wall is solid at z -21.4104; the floor is at 0.0097
+- **Tour:** 16 stops. New: the making line, and the labs behind the glass (`BEL_CAM_LAB`). The negotiation suite now ends the visit.
+- **Memory:** the whole layer is 46.9 MB of textures at full detail (222 textures; mostly the printed cards), with 1,161 meshes and 13,096 instanced leaves.
+- **Walk:** along the making-line strip from the hallway end into the corridor, 4.8 m, with no collisions.
+- **Checks:**
+  - `after-tour16/`: all 16 stops.
+  - `after-inc3/`: the new views, the approved cameras CAM_23, CAM_24, CAM_25 and CAM_32, and a walk along the making-line strip.
+  - `before-inc3/`: the same approved cameras on the approved route.
+  - `compare/inc3_design_wing.jpg`
+  - `visitor/`: `making_line`, `library_boxes`, `workshop_table`.
+
 ## Increment 2: the option A rooms (30 Oct 2026)
 
 **Option A only.** Merchandising Z07 and the accounts suite in Z06 are shown as they would be if both teams moved off this floor. That is the owner's decision; the pilot (option C) does not need it.

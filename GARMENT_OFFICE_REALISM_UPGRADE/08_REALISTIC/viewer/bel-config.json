@@ -16,6 +16,10 @@
   "Z08",
   "Z12",
   "Z18",
+  "Z22",
+  "Z15",
+  "Z16",
+  "Z17",
   "Z07",
   "Z06"
  ],
@@ -3950,6 +3954,92 @@
     "height": 1080
    },
    "proposal_view": true
+  },
+  {
+   "name": "BEL_CAM_MAKING_LINE",
+   "room": "Design-wing corridor",
+   "zone": "Z22",
+   "priority": 2,
+   "type": "PERSP",
+   "position": [
+    22.33,
+    1.6,
+    -22.78
+   ],
+   "direction": [
+    0.852771811385186,
+    -0.1619186983642758,
+    0.49655067498377986
+   ],
+   "up": [
+    0.13992615298639927,
+    0.9868041016939576,
+    0.08147598781486552
+   ],
+   "quaternion_xyzw": [
+    0.040484,
+    0.864081,
+    0.07042,
+    -0.496755
+   ],
+   "clip": [
+    0.05,
+    300.0
+   ],
+   "shift_x": 0.0,
+   "shift_y": 0.0,
+   "sensor_fit": "AUTO",
+   "lens": 16.0,
+   "sensor_width": 36.0,
+   "render": {
+    "file": null,
+    "width": 1920,
+    "height": 1080
+   },
+   "proposal_view": true
+  },
+  {
+   "name": "BEL_CAM_LAB",
+   "room": "3D printing lab",
+   "zone": "Z16",
+   "priority": 2,
+   "type": "PERSP",
+   "position": [
+    24.0,
+    1.5,
+    -13.4
+   ],
+   "direction": [
+    -0.9057700179587527,
+    -0.42269267504741787,
+    0.030192333931958852
+   ],
+   "up": [
+    -0.4224580412935365,
+    0.9062730838225629,
+    0.01408193470978475
+   ],
+   "quaternion_xyzw": [
+    -0.150503,
+    0.701744,
+    0.155603,
+    0.678743
+   ],
+   "clip": [
+    0.05,
+    300.0
+   ],
+   "shift_x": 0.0,
+   "shift_y": 0.0,
+   "sensor_fit": "AUTO",
+   "lens": 22.0,
+   "sensor_width": 36.0,
+   "render": {
+    "file": null,
+    "width": 1920,
+    "height": 1080
+   },
+   "proposal_view": true
   }
  ],
  "tour": [
@@ -3958,7 +4048,7 @@
    "zone": null,
    "camera": "CAM_ISO_SE",
    "title": "The Living Bengal Factory",
-   "description": "Bengal Earth Lab on the approved Stage II floor, a concept proposal: earth, rural craft, a few living trees, rural art and music, and an honest solar story. The front rooms and the studio work in every option; Merchandising and the accounts suite are shown as option A only."
+   "description": "Bengal Earth Lab on the approved Stage II floor, a concept proposal: earth, rural craft, a few living trees, rural art and music, and an honest solar story. The front rooms, the design wing and the studio work in every option; Merchandising and the accounts suite are shown as option A only."
   },
   {
    "stop": 2,
@@ -4025,31 +4115,45 @@
   },
   {
    "stop": 11,
-   "zone": "Z08",
-   "camera": "CAM_09_Boardroom_A",
-   "title": "Negotiation suite",
-   "description": "Tea in clay at every place, woven samples on wooden trays, a bonsai in the corner."
+   "zone": "Z22",
+   "camera": "BEL_CAM_MAKING_LINE",
+   "title": "The making line",
+   "description": "At the entrance to the design wing: one basket in six steps, from hogla leaves to the collection. Illustrative objects; real samples and records replace them."
   },
   {
    "stop": 12,
+   "zone": "Z16",
+   "camera": "BEL_CAM_LAB",
+   "title": "The labs behind the glass",
+   "description": "A moisture and mould test bench with an empty log (no results until tests are done), the living materials library next door and the cane and bamboo prototype workshop."
+  },
+  {
+   "stop": 13,
    "zone": "Z18",
    "camera": "CAM_13_Design_Studio_A",
    "title": "Collaborative studio",
    "description": "The only room with daylight: basket prototypes and form sketches on the co-creation table."
   },
   {
-   "stop": 13,
+   "stop": 14,
    "zone": "Z18",
    "camera": "BEL_CAM_SUN_SHELF",
    "title": "The sunning shelf",
    "description": "Bonsai and tulsi take turns in the daylight of window W10."
   },
   {
-   "stop": 14,
+   "stop": 15,
+   "zone": "Z08",
+   "camera": "CAM_09_Boardroom_A",
+   "title": "Negotiation suite",
+   "description": "The visit ends here: tea in clay at every place, woven samples on wooden trays, a bonsai in the corner."
+  },
+  {
+   "stop": 16,
    "zone": null,
    "camera": "CAM_ISO_SW",
    "title": "Designed for a Solar-Powered Future",
-   "description": "Next increments: the materials library, the labs and the prototype workshop in the design wing."
+   "description": "Every claim on this floor waits for its evidence: makers, tests, water reports and measured energy. Next: the cafe, the academy annex and the export and order centre."
   }
  ],
  "roomNames": {
@@ -4061,9 +4165,10 @@
   "Z18": "Collaborative studio",
   "Z07": "Green Uthan · room-sets (option A)",
   "Z06": "Design academy (option A)",
-  "Z15": "Materials library (planned)",
-  "Z16": "Materials lab (planned)",
-  "Z17": "Prototype workshop (planned)",
+  "Z15": "Living materials library",
+  "Z16": "Materials lab",
+  "Z17": "Prototype workshop",
+  "Z22": "Design wing · the making line",
   "Z14": "Digital design lab (planned)",
   "Z05": "Export & order centre (planned)",
   "Z04": "Buyer project room (planned)",
@@ -4082,9 +4187,10 @@
   "Z12": "In this 3D proposal: tea in clay cups. The office itself is unchanged in this increment.",
   "Z07": "Option A only (the merchandising team moves first; owner decision). In this 3D proposal: the Green Uthan, a Bengali courtyard with a bot-tola seat around the column, two small fig trees and a bonsai under grow lights (no daylight here), stone seats and an open bamboo canopy; an artisan corner (Chakma back-strap loom and Marma weaving and basketry, both only with community consent; nakshi kantha, cane, painted terracotta); four room-sets for European buyers: living, dining, bedroom and hospitality. Every approved item that moves is in the relocation ledger.",
   "Z06": "Option A only (the accounts team moves first; owner decision). In this 3D proposal: the design education academy inside the existing glass accounts suite, 20 seats, a demonstration bench with a hands camera, a mobile screen and a pin-up board; the discussion room becomes the tutor room. The fire engineer sets the capacity.",
-  "Z15": "Planned: the living materials library, lit as a jewel box behind the experience-centre glass.",
-  "Z16": "Planned: natural-materials lab and testing (sink and concrete floor already here).",
-  "Z17": "Planned: prototype workshop with dust extraction (to be engineered), seen from the showroom through the interior glass.",
+  "Z15": "In this 3D proposal: eight labelled boxes of natural materials on the low shelf (jute, hogla, cane, bamboo, water hyacinth, kaisa grass, coconut shell, terracotta) and Material Passport cards on the review table, their fields still to be documented. The D65 colour booth and the approved fabric library stay.",
+  "Z16": "In this 3D proposal: a moisture and mould test set-up on the post-processing bench (sealed sample boxes, a scale, a moisture meter) with an empty test log. Methods to be agreed with an accredited laboratory; no results are shown. The 3D printers stay.",
+  "Z17": "In this 3D proposal: cane and bamboo prototyping on the pattern table under a dust-extraction hood marked \"to be engineered\", and a steam-bending jig. The sample machines and forms stay. Seen from the Uthan through the interior glass in option A.",
+  "Z22": "In this 3D proposal: the making line on the only solid wall of the design-wing entrance (the corridor walls are glass, so the labs behind them are the exhibit): one River to Home basket in six steps, from hogla leaves to the collection. Illustrative objects.",
   "Z05": "Planned: digital export and order centre beside reception."
  },
  "branding": {
