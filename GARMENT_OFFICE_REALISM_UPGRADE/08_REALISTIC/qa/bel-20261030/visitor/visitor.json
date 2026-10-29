@@ -10,8 +10,8 @@
       "yaw": -2.404,
       "pitch": -0.18,
       "fov": 62,
-      "file": "visitor_lobby_gate.png",
-      "sha256": "afca749164037a9b1aba3e52a97c761d29765b1ab4a6455d2de77d41d96c6051",
+      "file": "visitor_lobby_gate.jpg",
+      "sha256": "2a86223ee202433c77543dcdd37a8d05651d6a8cd2ff6298052a1400894c526a",
       "room": "Z01"
     },
     {
@@ -23,8 +23,8 @@
       "yaw": 1.5707963267948966,
       "pitch": -0.05,
       "fov": 60,
-      "file": "visitor_lobby_relief.png",
-      "sha256": "bfcdf525bef7b1221bd940575195809bc3d633b75eb127f29b78bef6aa419c48",
+      "file": "visitor_lobby_relief.jpg",
+      "sha256": "f2fce4c2fe50af0338d816b6982527287d74dcf98f8ef0e3b70afdfc57f22738",
       "room": "Z01"
     },
     {
@@ -36,8 +36,8 @@
       "yaw": 0.0,
       "pitch": -0.08,
       "fov": 62,
-      "file": "visitor_reception_instruments.png",
-      "sha256": "fc3735b1f04b9fca8da368ffa6f0407c68118a8d04fd3b350a6ca6c723cc5b04",
+      "file": "visitor_reception_instruments.jpg",
+      "sha256": "d2a9edb4e8fce117f0531ec5adf458958dfcfcc04a5989bc54140eec58aa1863",
       "room": "Z02"
     },
     {
@@ -49,8 +49,8 @@
       "yaw": 2.379,
       "pitch": -0.55,
       "fov": 58,
-      "file": "visitor_reception_tea.png",
-      "sha256": "1d34b66070582f8dffbd386286d73a036e037507b9ef0f2cfa194238e34be688",
+      "file": "visitor_reception_tea.jpg",
+      "sha256": "42c29df99bdb7262de86a173660c66e090b7f2fd0c1fb5c588e0837efbde38ce",
       "room": "Z02"
     },
     {
@@ -62,8 +62,8 @@
       "yaw": -0.34,
       "pitch": -0.1,
       "fov": 64,
-      "file": "visitor_passage_sun.png",
-      "sha256": "896584f1d49a1ebb7eb80a712f7311ac93bc37ca7449b4c028a22855fb33a151",
+      "file": "visitor_passage_sun.jpg",
+      "sha256": "152e8c6214177e0be2771b36ebf4b6bba55e62799ef57119ad084857fe468417",
       "room": "Z03"
     },
     {
@@ -75,8 +75,8 @@
       "yaw": 0.586,
       "pitch": -0.42,
       "fov": 62,
-      "file": "visitor_passage_earth.png",
-      "sha256": "23318ec1af5a7766b92b548fcd9edea65c15f076973039ec17cae828580470c3",
+      "file": "visitor_passage_earth.jpg",
+      "sha256": "d3ff088a79f5cf7ed26f02e917f82537725886374a1935197ca05cc07aa8a378",
       "room": "Z03"
     },
     {
@@ -88,8 +88,8 @@
       "yaw": 0.0,
       "pitch": -0.42,
       "fov": 64,
-      "file": "visitor_ec_plinth.png",
-      "sha256": "b1b1295b14b0179d02a66f29a60f5258220cc0a61583a4c82fc9ccedff07fb29",
+      "file": "visitor_ec_plinth.jpg",
+      "sha256": "0f327b5c6998c95fb459822959aa1037552a6517fa0d812264086716de44e87d",
       "room": "Z30"
     },
     {
@@ -101,8 +101,8 @@
       "yaw": 0.32,
       "pitch": -0.12,
       "fov": 70,
-      "file": "visitor_ec_bays.png",
-      "sha256": "0af3cc90b875147531b4ba7dd1f3d3e4972b128bcec431109e345013ef5519a2",
+      "file": "visitor_ec_bays.jpg",
+      "sha256": "7ed4f8cfd39f42db6394796b889490d8ee44007742342d5da841fd57ebee4a32",
       "room": "Z30"
     },
     {
@@ -114,8 +114,8 @@
       "yaw": 0.857,
       "pitch": -0.12,
       "fov": 62,
-      "file": "visitor_ec_future.png",
-      "sha256": "e89753076aef51ef9c372fbc58567f8a316fbb8ac577f0bc8f6d742609c6148d",
+      "file": "visitor_ec_future.jpg",
+      "sha256": "46e68dd30ba23b45962d524edf50fbfa2a9a033369a62d0965f87ef1544967c1",
       "room": "Z30"
     },
     {
@@ -127,8 +127,8 @@
       "yaw": 3.141592653589793,
       "pitch": -0.42,
       "fov": 58,
-      "file": "visitor_ec_water.png",
-      "sha256": "f73f00e5fee57a64e0efc9120fb55e79c2b2974d0b217302557090f82f5bfee3",
+      "file": "visitor_ec_water.jpg",
+      "sha256": "60fff85ff4c486ad3beafccf516f7e0f3b9e709bc17b848900a448dccc546bd6",
       "room": "Z30"
     },
     {
@@ -140,8 +140,8 @@
       "yaw": 0.0,
       "pitch": -0.55,
       "fov": 64,
-      "file": "visitor_board_review.png",
-      "sha256": "cfae963abc0443695784760a7e46d7b9cb3d7f421e2b001bd08ec189387237bd",
+      "file": "visitor_board_review.jpg",
+      "sha256": "e8af7f5217303ad23499cdcb6a128a6b0b03300f63cfea7aa2efa1582a7fa9bb",
       "room": "Z08"
     },
     {
@@ -153,8 +153,8 @@
       "yaw": 0.4,
       "pitch": -0.25,
       "fov": 60,
-      "file": "visitor_board_bonsai.png",
-      "sha256": "4fb4d998b8ece30d895c34db29f974b772e3f0aedafe80098849fb7946f9032d",
+      "file": "visitor_board_bonsai.jpg",
+      "sha256": "fd8336c2aeea335d6a9366faef47bfde74edd24aa840a11acc94ec4c6fd569f8",
       "room": "Z08"
     },
     {
@@ -166,8 +166,8 @@
       "yaw": -1.523,
       "pitch": -0.35,
       "fov": 62,
-      "file": "visitor_studio_shelf.png",
-      "sha256": "abd43cc895a674961e72264130a8dd3c6a6fe4200b7bc61e15cec2f2f25d82d5",
+      "file": "visitor_studio_shelf.jpg",
+      "sha256": "ac0f183682116cae398708e5f4b6f30cde6ed0c45a468d4b756c0abd64e984c8",
       "room": "Z18"
     },
     {
@@ -179,9 +179,113 @@
       "yaw": -0.927,
       "pitch": -0.35,
       "fov": 58,
-      "file": "visitor_studio_cocreation.png",
-      "sha256": "0da34f170695bbe7869a8b54f3f3ae25374948cba992b8d08229017abac9dda3",
+      "file": "visitor_studio_cocreation.jpg",
+      "sha256": "d8142ec6a67731e00d3ba99b0c27ba302655a41421664606ac23ad34a27322cd",
       "room": "Z18"
+    },
+    {
+      "spot": "uthan_botola",
+      "xz": [
+        18.6,
+        -16.2
+      ],
+      "yaw": 1.5708,
+      "pitch": -0.2,
+      "fov": 62,
+      "file": "visitor_uthan_botola.jpg",
+      "sha256": "ad5e10a8fb39323c548695d70e1333cbbadf5a41886c01139cbcaa35a605f984",
+      "room": "Z07"
+    },
+    {
+      "spot": "uthan_loom",
+      "xz": [
+        12.2,
+        -14.25
+      ],
+      "yaw": 0.7,
+      "pitch": -0.42,
+      "fov": 62,
+      "file": "visitor_uthan_loom.jpg",
+      "sha256": "521d030714fe20bf77b573f8cec5e2ce1bc68a81e2c11cb5851af01da9da1d76",
+      "room": "Z07"
+    },
+    {
+      "spot": "uthan_living",
+      "xz": [
+        12.2,
+        -14.05
+      ],
+      "yaw": 3.14159,
+      "pitch": -0.25,
+      "fov": 64,
+      "file": "visitor_uthan_living.jpg",
+      "sha256": "2b0c5196174d7129682fc2a71c14722871c21c84f966c18b733b3dc9aa8ac397",
+      "room": "Z07"
+    },
+    {
+      "spot": "uthan_dining",
+      "xz": [
+        12.9,
+        -17.9
+      ],
+      "yaw": 0.58,
+      "pitch": -0.3,
+      "fov": 62,
+      "file": "visitor_uthan_dining.jpg",
+      "sha256": "297e79d0b119c6503bc7238ec365d0148f74dde3bc063beb2835e5de576b931d",
+      "room": "Z07"
+    },
+    {
+      "spot": "uthan_bedroom",
+      "xz": [
+        16.1,
+        -17.95
+      ],
+      "yaw": 0.0,
+      "pitch": -0.3,
+      "fov": 64,
+      "file": "visitor_uthan_bedroom.jpg",
+      "sha256": "479054946a31e936c20a82f050ce76a323606c4520eca36dac7fb1256a80d750",
+      "room": "Z07"
+    },
+    {
+      "spot": "uthan_hospitality",
+      "xz": [
+        16.4,
+        -13.65
+      ],
+      "yaw": 3.14159,
+      "pitch": -0.12,
+      "fov": 64,
+      "file": "visitor_uthan_hospitality.jpg",
+      "sha256": "7d18b57a1d4edc304c9732a8eed7af51c6132217bd5497d8bb6b1dade0782b4a",
+      "room": "Z07"
+    },
+    {
+      "spot": "academy_rows",
+      "xz": [
+        5.0,
+        -8.95
+      ],
+      "yaw": 0.0,
+      "pitch": -0.12,
+      "fov": 64,
+      "file": "visitor_academy_rows.jpg",
+      "sha256": "6cd00cef8dd9496fb7d8720f7104d229054e67da165fcb0e831cee43c16600e6",
+      "room": "Z06"
+    },
+    {
+      "spot": "academy_teaching",
+      "xz": [
+        8.35,
+        -15.6
+      ],
+      "yaw": 1.5708,
+      "pitch": -0.18,
+      "fov": 66,
+      "file": "visitor_academy_teaching.jpg",
+      "sha256": "0983cf0522c67c0ffb34d6906e43334101eb56d0930be253bbd10f104d260c6b",
+      "room": "Z06"
     }
   ],
   "errors": []

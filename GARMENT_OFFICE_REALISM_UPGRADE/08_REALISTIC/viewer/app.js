@@ -449,6 +449,9 @@ const RADIUS = Math.hypot(maxX - minX, maxZ - minZ) / 2;
 
 // walk grid
 const gbits = Uint8Array.from(atob(grid.blocked_bits_base64), (ch) => ch.charCodeAt(0));
+// cells blocked only by approved furniture that a proposal route hides ([row, first column, last column]; walls stay blocked)
+const released = CFG.walkRelease?.length ? new Uint8Array(grid.cols * grid.rows) : null;
+if (released) for (const [row, c0, c1] of CFG.walkRelease) released.fill(1, row * grid.cols + c0, row * grid.cols + c1 + 1);
 function blocked(x, z) { return staticBlocked(x, z) || !!dressing?.blocksMovement(x, z, .15); }
 function staticBlocked(x, z, radius = .15) {
   if (USE_WALKING) {
@@ -458,7 +461,7 @@ function staticBlocked(x, z, radius = .15) {
   const col = Math.floor((x - grid.origin_xz[0]) / grid.res), row = Math.floor((z - grid.origin_xz[1]) / grid.res);
   if (col < 0 || row < 0 || col >= grid.cols || row >= grid.rows) return true;
   const i = row * grid.cols + col;
-  return ((gbits[i >> 3] >> (i & 7)) & 1) === 1;
+  return ((gbits[i >> 3] >> (i & 7)) & 1) === 1 && !(released && released[i]);
 }
 function pathClear(a, b) {
   const d = Math.hypot(b.x - a.x, b.z - a.z), n = Math.ceil(d / 0.08);

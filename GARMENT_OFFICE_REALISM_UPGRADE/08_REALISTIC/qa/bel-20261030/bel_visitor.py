@@ -20,6 +20,15 @@ SPOTS = {
     'board_bonsai': (14.2, -1.4, 0.4, -0.25, 60),
     'studio_shelf': (32.35, -18.95, -1.523, -0.35, 62),
     'studio_cocreation': (29.0, -15.4, -0.927, -0.35, 58),
+    # option A rooms (increment 2)
+    'uthan_botola': (18.6, -16.2, 1.5708, -0.2, 62),
+    'uthan_loom': (12.2, -14.25, 0.70, -0.42, 62),
+    'uthan_living': (12.2, -14.05, 3.14159, -0.25, 64),
+    'uthan_dining': (12.9, -17.9, 0.58, -0.3, 62),
+    'uthan_bedroom': (16.1, -17.95, 0.0, -0.3, 64),
+    'uthan_hospitality': (16.4, -13.65, 3.14159, -0.12, 64),
+    'academy_rows': (5.0, -8.95, 0.0, -0.12, 64),
+    'academy_teaching': (8.35, -15.6, 1.5708, -0.18, 66),
 }
 p = argparse.ArgumentParser()
 p.add_argument('--url', default='http://127.0.0.1:8790/bengal-earth-lab/?welcome=0')

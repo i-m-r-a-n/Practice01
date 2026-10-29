@@ -30,6 +30,14 @@ export const BEL_ITEMS = [
   { id: 'BEL_STUDIO_TREE', zone: 'Z18', note: 'A small fig tree in daylight by window W09, in place of the approved potted tree and on its footprint.' },
   { id: 'BEL_COCREATION', zone: 'Z18', note: 'Co-creation set on the presentation table: basket prototypes, woven samples, a colour fan and form sketches (illustrative).' },
   { id: 'BEL_CLAY_DRINKWARE', zone: '*', note: 'Every glass, mug, cup, jug, bottle and tray on the route is clay or wood (glazes to be tested; wood with food-safe finishes).' },
+  // option A only (full conversion): shown on this route if the merchandising and accounts teams move; the owner decides
+  { id: 'BEL_UTHAN', zone: 'Z07', note: 'Option A only. The Green Uthan: a Bengali courtyard in Merchandising, with a bot-tola seat of handmade terracotta around the steel column, two small fig trees and a banyan bonsai under grow lights (this room has no daylight), split-granite stone seats and an open split-bamboo canopy (fire treatment and smoke-detector coverage to be checked). Natural jute carpet over the whole room.' },
+  { id: 'BEL_ARTISAN_CORNER', zone: 'Z07', note: 'Option A only. Artisan corner in the Uthan, by invitation and never as a spectacle: a Chakma back-strap loom (bain) shown only with the consent and participation of Chakma weavers, a Marma weaving and basketry stand (the same consent rule), a nakshi kantha frame, cane basketry and painted terracotta on a sitalpati mat. Quiet, clean crafts only; dusty work stays in the prototype workshop.' },
+  { id: 'BEL_ROOMSET_LIVING', zone: 'Z07', note: 'Option A only. Bengal Nordic living room-set: a mango-wood sofa in handloom, a cane armchair, a jute rug, a bamboo and paper lamp and a framed kantha. Illustrative concept, not products on sale.' },
+  { id: 'BEL_ROOMSET_DINING', zone: 'Z07', note: 'Option A only. River to Home dining room-set: a mango-wood table with cane chairs on a hogla rug, clay tableware on hogla mats, a cane pendant and a sideboard with terracotta. Illustrative concept.' },
+  { id: 'BEL_ROOMSET_BEDROOM', zone: 'Z07', note: 'Option A only. Second Life Bangladesh bedroom room-set: a kantha patchwork quilt made from garment offcuts, a cane headboard and a rag rug. Illustrative concept.' },
+  { id: 'BEL_ROOMSET_HOSPITALITY', zone: 'Z07', note: 'Option A only. Future of Bengal hospitality corner for hotel buyers: cane lounge chairs, a bamboo and jute table, dried kash flowers in clay and a large nakshi kantha by a rural embroiderer (placeholder; to be commissioned, paid and credited).' },
+  { id: 'BEL_ACADEMY', zone: 'Z06', note: 'Option A only. The design education academy inside the existing glass accounts suite: 20 seats shown at mango-wood tables, a demonstration bench with a hands camera, a mobile screen, a pin-up board and a materials shelf; the discussion room becomes the tutor room. Capacity is set by the fire engineer, not by this drawing.' },
 ];
 
 export function buildBengalEarthLab(THREE, { zones = null, drinkware = [], anisotropy = 4, detail = 1 } = {}) {
@@ -204,9 +212,13 @@ export function buildBengalEarthLab(THREE, { zones = null, drinkware = [], aniso
   }
   const weave = {};
   for (const kind of ['plain', 'twill', 'coil', 'lattice', 'plait']) { const c = weaveCanvas(kind); weave[kind] = { map: c, normal: normalFromHeight(c, 3) }; }
+  // one GPU texture per weave: clones share its source and differ only in repeat (and the material's tint)
+  const clone = t => { const c = t.clone(); c.needsUpdate = true; textures.push(c); return c; };
+  const weaveBase = {};
+  const weaveMap = (kind, repeat = [1, 1], which = 'map') => { const k = kind + which; if (!weaveBase[k]) weaveBase[k] = tex(weave[kind][which], { srgb: which === 'map' }); const t = clone(weaveBase[k]); t.repeat.set(...repeat); return t; };
   function wovenMaterial(key, kind, color, repeat = [3, 3]) {
     return std(`woven_${key}`, () => {
-      const map = tex(weave[kind].map, { repeat }), normalMap = tex(weave[kind].normal, { srgb: false, repeat });
+      const map = weaveMap(kind, repeat), normalMap = weaveMap(kind, repeat, 'normal');
       return { color, map, normalMap, roughness: .92, side: THREE.DoubleSide };
     });
   }
@@ -349,7 +361,7 @@ export function buildBengalEarthLab(THREE, { zones = null, drinkware = [], aniso
     const g = new THREE.Group(); g.position.set(x, y, z); g.rotation.y = ry; parent.add(g);
     const mat = wovenMaterial(fibre + kind, kind, FIBRE[fibre], [Math.round(r * 40), Math.round(h * 30)]), H = h * partial;
     add(g, lathe([[0, .004], [r * .86, 0], [r, H * .12], [r * 1.04, H], [r * 1.0, H], [r * .95, H * .1], [0, .012]], 36), mat);
-    add(g, new THREE.TorusGeometry(r * 1.02, .009, 8, 40), std('rim_' + fibre, () => ({ color: FIBRE[fibre], roughness: .8, map: tex(weave.coil.map, { repeat: [24, 1] }) })), 0, H, 0, Math.PI / 2);
+    add(g, new THREE.TorusGeometry(r * 1.02, .009, 8, 40), std('rim_' + fibre, () => ({ color: FIBRE[fibre], roughness: .8, map: weaveMap('coil', [24, 1]) })), 0, H, 0, Math.PI / 2);
     if (handles) for (const s of [-1, 1]) add(g, new THREE.TorusGeometry(.035, .007, 8, 16, Math.PI), M.oak, s * r * 1.02, H - .02, 0, 0, Math.PI / 2, 0);
     return g;
   }
@@ -575,7 +587,7 @@ export function buildBengalEarthLab(THREE, { zones = null, drinkware = [], aniso
     box(g, M.oak, 9.37, 1.16, -3.45, .07, .025, 3.8);
     [['#8f4a2c', 'clay'], [FIBRE.jute, 'jute'], [FIBRE.hogla, 'hogla'], [FIBRE.cane, 'cane'], ['#d9c58e', 'rice straw']].forEach(([col, nm], i) => {
       const z = -4.9 + i * .78; add(g, lathe([[0, 0], [.04, 0], [.06, .035], [.055, .04], [.035, .012], [0, .012]], 24), M.clay, 9.37, 1.185, z);
-      add(g, new THREE.CircleGeometry(.05, 20), std('earth_' + i, () => ({ color: col, roughness: 1, map: i ? tex(weave.plain.map) : M.soil.map })), 9.37, 1.215, z, -Math.PI / 2);
+      add(g, new THREE.CircleGeometry(.05, 20), std('earth_' + i, () => ({ color: col, roughness: 1, map: i ? weaveMap('plain') : M.soil.map })), 9.37, 1.215, z, -Math.PI / 2);
       add(g, new THREE.PlaneGeometry(.1, .03), card([nm], { w: .1, h: .03, scale: .4 }), 9.4065, 1.165, z, 0, Math.PI / 2);
     });
   }
@@ -669,7 +681,7 @@ export function buildBengalEarthLab(THREE, { zones = null, drinkware = [], aniso
     ropeBasket(x0 + .4, BASE, -10.42, .17, .28); ropeBasket(x0 + .85, BASE, -10.42, .13, .22);
     add(g, pillowGeometry(.4, .4, .13), T.patch, x0 + 1.45, BASE + .19, -10.62, -.38, 0, 0);
     folded(g, x0 + 1.85, BASE, -10.45, T.patch, 3);
-    [['#8f4a3a', -.12], ['#3d5170', 0], ['#c9a565', .12]].forEach(([cc, dx]) => add(g, new THREE.CylinderGeometry(.03, .045, .17, 24), std('yarn_rec_' + cc, () => ({ color: cc, roughness: .9, map: tex(weave.coil.map, { repeat: [3, 6] }) })), x0 + .7 + dx, SHELF + .085, -10.45));
+    [['#8f4a3a', -.12], ['#3d5170', 0], ['#c9a565', .12]].forEach(([cc, dx]) => add(g, new THREE.CylinderGeometry(.03, .045, .17, 24), std('yarn_rec_' + cc, () => ({ color: cc, roughness: .9, map: weaveMap('coil', [3, 6]) })), x0 + .7 + dx, SHELF + .085, -10.45));
     ropeBasket(x0 + 1.55, SHELF, -10.45, .1, .13);
     header(x0, 'Second Life Bangladesh', 'Garment offcuts, kantha patchwork');
     // 4 Future of Bengal (x 18.43-20.54), next to the doors to merchandising and the boardroom
@@ -749,6 +761,348 @@ export function buildBengalEarthLab(THREE, { zones = null, drinkware = [], aniso
     ['#b4613c', '#c9a565', '#3d5170', '#4f6a31', '#d9cdb4', '#7a3b22', '#8a6b47'].forEach((col, i) => add(fan, new THREE.BoxGeometry(.03, .002, .17), std('fan_' + i, () => ({ color: col, roughness: .8 })), 0, i * .0021, -.07, 0, (i - 3) * .14));
   }
 
+  // ---------------------------------------------------------------- option A: Merchandising Z07 and the accounts suite in Z06
+  // The full-conversion option only (owner decision). The route config hides every approved item that the relocation
+  // ledger (viewer/option-a-ledger.json) moves off this floor and releases the walk-grid cells only that furniture
+  // blocked. Walls, glass, doors, columns, fire extinguishers, air conditioning and the kept lights stay as approved.
+  const shadows = { Z07: [], Z06: [] };
+  const RUG = .016;   // rugs and mats lie on the new floor finish (y 0.0135)
+  const shade = (zone, x0, z0, x1, z1, k = .45) => shadows[zone].push([Math.min(x0, x1), Math.min(z0, z1), Math.max(x0, x1), Math.max(z0, z1), k]);
+  const B = (w, h, d, x = 0, y = 0, z = 0, rx = 0, ry = 0, rz = 0) => [new THREE.BoxGeometry(w, h, d), x, y + h / 2, z, rx, ry, rz];   // y = bottom
+  function merged(parts) {   // [geometry, x, y, z, rx, ry, rz] parts -> one geometry (for a single mesh or for instancing)
+    const pos = [], nor = [], uv = [], m = new THREE.Matrix4(), q = new THREE.Quaternion(), e = new THREE.Euler(), one = new THREE.Vector3(1, 1, 1);
+    for (const [g0, x = 0, y = 0, z = 0, rx = 0, ry = 0, rz = 0] of parts) {
+      const g = g0.index ? g0.toNonIndexed() : g0; g.applyMatrix4(m.compose(new THREE.Vector3(x, y, z), q.setFromEuler(e.set(rx, ry, rz)), one));
+      for (const v of g.attributes.position.array) pos.push(v); for (const v of g.attributes.normal.array) nor.push(v); for (const v of g.attributes.uv.array) uv.push(v);
+      g0.dispose(); if (g !== g0) g.dispose();
+    }
+    const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); g.setAttribute('normal', new THREE.Float32BufferAttribute(nor, 3));
+    g.setAttribute('uv', new THREE.Float32BufferAttribute(uv, 2)); geometries.push(g); return g;
+  }
+  function instances(parent, geometry, material, placements) {   // [x, y, z, ry] per copy
+    const im = new THREE.InstancedMesh(geometry, material, placements.length), m = new THREE.Matrix4(), q = new THREE.Quaternion(), up = new THREE.Vector3(0, 1, 0), one = new THREE.Vector3(1, 1, 1);
+    placements.forEach(([x, y, z, ry = 0], i) => im.setMatrixAt(i, m.compose(new THREE.Vector3(x, y, z), q.setFromAxisAngle(up, ry), one)));
+    im.instanceMatrix.needsUpdate = true; im.computeBoundingSphere(); parent.add(im); return im;
+  }
+  const textileMat = (key, draw, [cw, ch] = [384, 384], extra = {}) => std('tx_' + key, () => { const c = canvas(px(cw), px(ch)), x = c.getContext('2d'); draw(x, c.width, c.height);
+    x.globalCompositeOperation = 'multiply'; x.globalAlpha = .25; x.fillStyle = x.createPattern(weave.plain.map, 'repeat'); x.fillRect(0, 0, c.width, c.height); x.globalAlpha = 1; x.globalCompositeOperation = 'source-over';
+    return { map: tex(c), roughness: .95, side: THREE.DoubleSide, ...extra }; });
+  const stitch = (x, w, col, dash = [w / 90, w / 140]) => { x.strokeStyle = col; x.lineWidth = Math.max(1.5, w / 170); x.setLineDash(dash); x.lineCap = 'round'; };
+  // nakshi kantha: running-stitch motifs on a cream ground (a placeholder for the work of a rural embroiderer)
+  function drawKantha(x, w, h, seed = 5) {
+    const r = rng(seed); x.fillStyle = '#efe5cf'; x.fillRect(0, 0, w, h);
+    stitch(x, w, 'rgba(160,140,110,.45)', [w / 160, w / 220]); for (let y = h * .04; y < h; y += h / 70) { x.beginPath(); x.moveTo(0, y); for (let X = 0; X <= w; X += w / 20) x.lineTo(X, y + Math.sin(X / w * 12 + y) * h * .004); x.stroke(); }
+    for (const [inset, col] of [[.03, '#9c3b2a'], [.055, '#2f4a6b'], [.075, '#9c3b2a']]) { stitch(x, w, col); x.strokeRect(w * inset, h * inset, w * (1 - 2 * inset), h * (1 - 2 * inset)); }
+    const lotus = (cx, cy, R, n, col) => { stitch(x, w, col); for (let k = 0; k < n; k++) { const a = k / n * Math.PI * 2; x.beginPath(); x.ellipse(cx + Math.cos(a) * R * .55, cy + Math.sin(a) * R * .55, R * .45, R * .17, a, 0, 7); x.stroke(); }
+      x.beginPath(); x.arc(cx, cy, R * .22, 0, 7); x.stroke(); x.beginPath(); x.arc(cx, cy, R * .12, 0, 7); x.stroke(); };
+    const s = Math.min(w, h); lotus(w / 2, h / 2, s * .3, 16, '#9c3b2a'); lotus(w / 2, h / 2, s * .17, 10, '#2f4a6b');
+    const fish = (cx, cy, L, a, col) => { x.save(); x.translate(cx, cy); x.rotate(a); stitch(x, w, col); x.beginPath(); x.ellipse(0, 0, L * .5, L * .2, 0, 0, 7); x.moveTo(L * .45, 0); x.lineTo(L * .75, -L * .18); x.lineTo(L * .75, L * .18); x.closePath(); x.stroke(); x.beginPath(); x.arc(-L * .3, -L * .04, L * .03, 0, 7); x.stroke(); x.restore(); };
+    const boat = (cx, cy, L, col) => { stitch(x, w, col); x.beginPath(); x.moveTo(cx - L / 2, cy); x.quadraticCurveTo(cx, cy + L * .35, cx + L / 2, cy); x.quadraticCurveTo(cx, cy + L * .15, cx - L / 2, cy); x.moveTo(cx, cy + L * .1); x.lineTo(cx, cy - L * .55); x.lineTo(cx + L * .3, cy - L * .05); x.stroke(); };
+    const kalka = (cx, cy, L, a, col) => { x.save(); x.translate(cx, cy); x.rotate(a); stitch(x, w, col); x.beginPath(); x.moveTo(0, -L * .5); x.bezierCurveTo(L * .5, -L * .3, L * .45, L * .45, 0, L * .5); x.bezierCurveTo(-L * .35, L * .4, -L * .3, 0, 0, -L * .5); x.stroke();
+      x.beginPath(); x.moveTo(0, -L * .3); x.bezierCurveTo(L * .3, -L * .15, L * .25, L * .3, 0, L * .32); x.stroke(); x.restore(); };
+    [[.17, .2, .6], [.83, .2, 2.2], [.17, .8, -.6], [.83, .8, 3.8]].forEach(([u, v, a]) => kalka(w * u, h * v, s * .16, a, '#2f4a6b'));
+    fish(w * .3, h * .5, s * .14, 0, '#2f4a6b'); fish(w * .7, h * .5, s * .14, Math.PI, '#2f4a6b');
+    boat(w * .5, h * .17, s * .2, '#5a4a2a'); boat(w * .5, h * .86, s * .2, '#5a4a2a');
+    x.setLineDash([]); void r;
+  }
+  function floorOverlay(parent, zone, [x0, z0, x1, z1], { map, repeat, color = '#ffffff', y = .0135, edge = .35 }) {   // the approved carpet top is at y 0.0097
+    // a finish laid over an approved floor whose baked light still shows the removed furniture: unlit like the baked shell,
+    // with soft wall shadows and contact shadows of the new furniture painted into its occlusion map
+    const W = x1 - x0, D = z1 - z0, cw = px(256), ch = Math.max(32, Math.round(cw * D / W)), c = canvas(cw, ch), o = c.getContext('2d'), sx = cw / W, sz = ch / D;
+    o.fillStyle = '#ffffff'; o.fillRect(0, 0, cw, ch);
+    const ramp = (gx0, gy0, gx1, gy1, rx, ry, rw, rh) => { const g = o.createLinearGradient(gx0, gy0, gx1, gy1); g.addColorStop(0, 'rgba(0,0,0,.42)'); g.addColorStop(1, 'rgba(0,0,0,0)'); o.fillStyle = g; o.fillRect(rx, ry, rw, rh); };
+    const ex = edge * sx, ez = edge * sz;
+    ramp(0, 0, ex, 0, 0, 0, ex, ch); ramp(cw, 0, cw - ex, 0, cw - ex, 0, ex, ch); ramp(0, 0, 0, ez, 0, 0, cw, ez); ramp(0, ch, 0, ch - ez, 0, ch - ez, cw, ez);
+    if ('filter' in o) o.filter = `blur(${Math.max(2, Math.round(.06 * sx))}px)`;
+    for (const [a, b, c2, d, k] of shadows[zone]) { if (c2 < x0 || a > x1 || d < z0 || b > z1) continue; o.fillStyle = `rgba(0,0,0,${k})`; o.fillRect((a - x0) * sx, (b - z0) * sz, (c2 - a) * sx, (d - b) * sz); }
+    if ('filter' in o) o.filter = 'none';
+    const ao = tex(c, { clamp: true, srgb: false }); map.repeat.set(...repeat);
+    const mat = new THREE.MeshBasicMaterial({ name: 'bel_floor_' + zone, map, aoMap: ao, aoMapIntensity: 1, color }); materials.push(mat);
+    return add(parent, new THREE.PlaneGeometry(W, D), mat, (x0 + x1) / 2, y, (z0 + z1) / 2, -Math.PI / 2);
+  }
+  const juteFloor = (key, base, seed) => { const s = px(256), c = canvas(s, s), x = c.getContext('2d'), r = rng(seed); x.fillStyle = base; x.fillRect(0, 0, s, s);
+    const u = s / 32; for (let j = 0; j < 32; j++) for (let i = 0; i < 32; i++) { const over = (i + j) % 2 === 0, l = r() * .16 - .08; x.fillStyle = l > 0 ? `rgba(255,240,210,${l})` : `rgba(60,40,20,${-l})`; if (over) x.fillRect(i * u, j * u + u * .1, u, u * .8); else x.fillRect(i * u + u * .1, j * u, u * .8, u);
+      x.fillStyle = 'rgba(50,35,20,.18)'; x.fillRect(i * u, j * u, over ? u : u * .1, over ? u * .1 : u); }
+    void key; return tex(c); };
+  function signStand(parent, lines, x, z, ry, opts = {}) {   // a floor-standing oak sign, board at eye height
+    const g = new THREE.Group(); g.position.set(x, 0, z); g.rotation.y = ry; parent.add(g);
+    box(g, M.oak, 0, 0, 0, .34, .02, .26); box(g, M.oak, 0, .02, 0, .04, 1.02, .04);
+    add(g, new THREE.PlaneGeometry(.44, .3), card(lines, { w: .44, h: .3, scale: 1.2, ...opts }), 0, 1.24, .026, -.12);
+    box(g, M.oak, 0, 1.06, .012, .47, .33, .02);
+    footprint(x - .2, z - .2, x + .2, z + .2); return g;
+  }
+  // furniture, front towards local +z (shared by the room-sets and the academy)
+  const cane = wovenMaterial('cane_seat', 'lattice', FIBRE.cane, [5, 5]);
+  const chairWood = merged([B(.035, .45, .035, -.19, 0, .19), B(.035, .45, .035, .19, 0, .19), B(.035, .92, .035, -.19, 0, -.19), B(.035, .92, .035, .19, 0, -.19),
+    B(.42, .04, .03, 0, .41, .2), B(.42, .04, .03, 0, .41, -.2), B(.03, .04, .42, -.2, .41, 0), B(.03, .04, .42, .2, .41, 0), B(.42, .05, .03, 0, .84, -.19), B(.38, .02, .02, 0, .12, .19), B(.38, .02, .02, 0, .12, -.19)]);
+  const chairCane = merged([B(.39, .015, .39, 0, .44, 0), B(.37, .3, .012, 0, .52, -.19)]);
+  const tableWood = (w, d, h) => merged([B(w, .035, d, 0, h - .035, 0), ...[[-1, -1], [1, -1], [-1, 1], [1, 1]].map(([a, b]) => B(.05, h - .035, .05, a * (w / 2 - .06), 0, b * (d / 2 - .06))),
+    B(w - .14, .06, .025, 0, h - .095, d / 2 - .06), B(w - .14, .06, .025, 0, h - .095, -d / 2 + .06)]);
+  function caneArmchair(parent, x, z, ry, cushion = handloomCushion) {
+    const g = new THREE.Group(); g.position.set(x, 0, z); g.rotation.y = ry; parent.add(g);
+    add(g, merged([...[[-1, -1], [1, -1], [-1, 1], [1, 1]].map(([a, b]) => B(.045, .38, .045, a * .31, 0, b * .31)), B(.06, .04, .7, -.33, .58, .02), B(.06, .04, .7, .33, .58, .02),
+      B(.045, .2, .045, -.33, .38, .31), B(.045, .2, .045, .33, .38, .31), B(.045, .5, .045, -.31, .38, -.31), B(.045, .5, .045, .31, .38, -.31), B(.66, .05, .045, 0, .84, -.32), B(.62, .05, .04, 0, .33, .3)]), M.wood);
+    add(g, merged([B(.6, .02, .6, 0, .36, 0), [new THREE.BoxGeometry(.6, .42, .016), 0, .62, -.29, -.16, 0, 0]]), cane);
+    add(g, pillowGeometry(.56, .56, .09), cushion, 0, .43, .02, -Math.PI / 2, 0, 0);
+    return g;
+  }
+  function floorLamp(parent, x, z, h = 1.45) {
+    const g = new THREE.Group(); g.position.set(x, 0, z); parent.add(g);
+    add(g, new THREE.CylinderGeometry(.14, .16, .03, 24), M.wood, 0, .015, 0); add(g, new THREE.CylinderGeometry(.014, .016, h, 10), M.bamboo, 0, h / 2, 0);
+    for (const yy of [.35, .75, 1.15]) if (yy < h) add(g, new THREE.TorusGeometry(.017, .004, 6, 12), M.wood, 0, yy, 0, Math.PI / 2);
+    bambooLamp(g, 0, h - .05, 0, { r: .17, h: .3, glow: 0 }); return g;
+  }
+  function clayPlate(parent, x, y, z, r = .12, mat = M.clayCream) { return add(parent, lathe([[0, 0], [r * .55, 0], [r * .6, .006], [r, .028], [r * .96, .03], [r * .55, .012], [0, .012]], 32), mat, x, y, z); }
+  function kashVase(parent, x, z, h = .62) {   // dried kash flowers (Saccharum spontaneum) in a tall clay vase: autumn in Bengal, no living plant claimed
+    const g = new THREE.Group(); g.position.set(x, 0, z); parent.add(g); const r = rng(Math.round(x * 100 + z * 10));
+    add(g, lathe([[0, 0], [.1, 0], [.15, h * .3], [.13, h * .7], [.07, h * .92], [.08, h], [.065, h], [.055, h * .92], [0, h * .9]], 36), M.clayRaw);
+    const plume = std('kash_plume', () => { const c = canvas(64, 160), xx = c.getContext('2d'), q = rng(97); xx.clearRect(0, 0, 64, 160);
+      for (let i = 0; i < 260; i++) { const t = q(), y = 150 - t * 140, sp = Math.sin(t * Math.PI) * 26; xx.strokeStyle = `rgba(250,246,236,${.35 + q() * .4})`; xx.lineWidth = .8; xx.beginPath(); xx.moveTo(32, y); xx.lineTo(32 + (q() - .5) * sp * 2, y - 6 - q() * 10); xx.stroke(); }
+      return { map: tex(c, { clamp: true }), alphaTest: .3, side: THREE.DoubleSide, roughness: 1, color: '#f6f1e6' }; });
+    for (let k = 0; k < 11; k++) {
+      const a = r() * Math.PI * 2, lean = .05 + r() * .16, L = .55 + r() * .35, tx = Math.cos(a) * lean * L, tz = Math.sin(a) * lean * L;
+      add(g, taperedTube([[0, h * .9, 0], [tx * .5, h + L * .5, tz * .5], [tx, h + L, tz]], .003, .002, 6, 4), std('kash_stem', () => ({ color: '#b9a57a', roughness: .9 })));
+      for (const s of [0, Math.PI / 2]) add(g, new THREE.PlaneGeometry(.09, .26), plume, tx, h + L + .1, tz, 0, a + s, -Math.cos(a) * lean);
+    }
+    footprint(x - .17, z - .17, x + .17, z + .17); return g;
+  }
+
+  if (want('BEL_UTHAN')) {
+    const g = item('BEL_UTHAN'), CX = 15.65, CZ = -16.08;   // steel column COL07 (survey, photo-estimated) at the room centre
+    // bot-tola: a seat platform of handmade terracotta around the column, oak top at seat height (free-standing, not fixed to the steel)
+    const clad = std('terracotta_seat', () => ({ map: M.terracotta.map.clone(), normalMap: M.terracotta.normalMap.clone(), roughness: .86 }));
+    clad.map.repeat.set(2.75, 1.05); clad.normalMap.repeat.set(2.75, 1.05); clad.map.needsUpdate = clad.normalMap.needsUpdate = true; textures.push(clad.map, clad.normalMap);
+    box(g, clad, CX, 0, CZ, 2.2, .42, 2.2); box(g, M.oak, CX, .42, CZ, 2.3, .05, 2.3);
+    footprint(CX - 1.15, CZ - 1.15, CX + 1.15, CZ + 1.15); shade('Z07', CX - 1.2, CZ - 1.2, CX + 1.2, CZ + 1.2, .5);
+    bonsai(g, { x: CX - .78, y: .47, z: CZ - .78, ry: 1.2, seed: 61, style: 'banyan', pot: M.clayBlue, scale: 1.05 });
+    // terracotta tiles of the courtyard floor
+    const tc = terracottaCanvas(4, 4, 63, px(256)), tileMap = tex(tc.c); tileMap.repeat.set(3.5, 3.5);
+    const tiles = new THREE.MeshBasicMaterial({ name: 'bel_uthan_tiles', map: tileMap, color: '#d9d2c8' }); materials.push(tiles);
+    add(g, new THREE.PlaneGeometry(4.2, 4.2), tiles, CX, .019, CZ, -Math.PI / 2);
+    box(g, M.graniteRough, CX, 0, CZ - 2.13, 4.32, .02, .06); box(g, M.graniteRough, CX, 0, CZ + 2.13, 4.32, .02, .06);
+    box(g, M.graniteRough, CX - 2.13, 0, CZ, .06, .02, 4.2); box(g, M.graniteRough, CX + 2.13, 0, CZ, .06, .02, 4.2);
+    // two small fig trees and stone seats
+    smallTree(g, { x: 13.95, z: -14.45, seed: 67, height: 1.85 }); footprint(13.7, -14.7, 14.2, -14.2); shade('Z07', 13.65, -14.75, 14.25, -14.15, .5);
+    smallTree(g, { x: 17.35, z: -17.72, seed: 71, height: 1.9 }); footprint(17.1, -17.97, 17.6, -17.47); shade('Z07', 17.05, -18.02, 17.65, -17.42, .5);
+    stoneGroup(g, 14.05, -17.55, 211, [[0, 0, .24, .78, .4], [.42, .22, .14, .7, 1.9]]); footprint(13.8, -17.8, 14.6, -17.2); shade('Z07', 13.8, -17.8, 14.6, -17.2, .35);
+    stoneGroup(g, 17.35, -14.5, 223, [[0, 0, .23, .8, 2.6], [-.38, .2, .13, .7, .4]]); footprint(16.85, -14.75, 17.6, -14.25); shade('Z07', 16.85, -14.75, 17.6, -14.25, .35);
+    // the Bengal Canopy: an open split-bamboo lattice under the felt baffles, clear of the AC units and smoke detectors
+    const Y = 2.34, X0 = 13.65, X1 = 17.65, Z0 = -18.08, Z1 = -14.08, step = .16, hole = .3, strips = [];
+    const strip = (len, x, z, along) => strips.push(along === 'x' ? B(len, .006, .028, x, 0, z) : B(.028, .006, len, x, .008, z));
+    for (let zz = Z0 + .08; zz < Z1; zz += step) { if (Math.abs(zz - CZ) < hole) { strip(CX - hole - X0, (X0 + CX - hole) / 2, zz, 'x'); strip(X1 - CX - hole, (CX + hole + X1) / 2, zz, 'x'); } else strip(X1 - X0, (X0 + X1) / 2, zz, 'x'); }
+    for (let xx = X0 + .08; xx < X1; xx += step) { if (Math.abs(xx - CX) < hole) { strip(CZ - hole - Z0, xx, (Z0 + CZ - hole) / 2, 'z'); strip(Z1 - CZ - hole, xx, (CZ + hole + Z1) / 2, 'z'); } else strip(Z1 - Z0, xx, (Z0 + Z1) / 2, 'z'); }
+    add(g, merged(strips), M.bamboo, 0, Y, 0);
+    for (const [x, z, w, d] of [[(X0 + X1) / 2, Z0, X1 - X0 + .06, .05], [(X0 + X1) / 2, Z1, X1 - X0 + .06, .05], [X0, (Z0 + Z1) / 2, .05, Z1 - Z0], [X1, (Z0 + Z1) / 2, .05, Z1 - Z0]]) box(g, M.bamboo, x, Y - .02, z, w, .05, d);
+    for (const [x, z] of [[X0 + .1, Z0 + .1], [X1 - .1, Z0 + .1], [X0 + .1, Z1 - .1], [X1 - .1, Z1 - .1]]) add(g, new THREE.CylinderGeometry(.003, .003, 2.895 - Y, 4), std('cord', () => ({ color: '#2a2a2a', roughness: .6 })), x, (Y + 2.895) / 2, z);
+    const grow = new THREE.MeshBasicMaterial({ name: 'bel_growlight', color: '#fff3dc' }); materials.push(grow);
+    for (const [x, z] of [[13.95, -14.45], [17.35, -17.72], [CX - .78, CZ - .78]]) { box(g, std('lamp_body', () => ({ color: '#2b2b2b', roughness: .5 })), x, Y - .05, z, .5, .04, .06); add(g, new THREE.PlaneGeometry(.46, .03), grow, x, Y - .051, z, Math.PI / 2); }
+    standingCard(g, ['Green Uthan', 'A Bengali courtyard: a bot-tola seat around the column', 'Trees under grow lights: this room has no daylight', 'Option A only'], CX + .55, .47, CZ + .85, -.3, { w: .22, h: .13 });
+  }
+  if (want('BEL_ARTISAN_CORNER')) {
+    const g = item('BEL_ARTISAN_CORNER');   // west of the Uthan; the fire extinguisher on the west wall (z -15.34..-15.14) stays clear
+    const pati = textileMat('sitalpati', (x, w, h) => { x.fillStyle = '#d6c393'; x.fillRect(0, 0, w, h); const u = w / 96;
+      for (let j = 0; j < h / u; j++) for (let i = 0; i < w / u; i++) if ((i + j) % 4 < 2) { x.fillStyle = 'rgba(120,90,40,.16)'; x.fillRect(i * u, j * u, u, u); }
+      for (const [y0, col] of [[.06, '#6b3a24'], [.9, '#6b3a24']]) { x.fillStyle = col; x.fillRect(0, h * y0, w, h * .04); x.fillStyle = '#2f4a3a'; for (let i = 0; i < w; i += w / 16) { x.beginPath(); x.moveTo(i, h * (y0 + .02)); x.lineTo(i + w / 32, h * (y0 - .005)); x.lineTo(i + w / 16, h * (y0 + .02)); x.lineTo(i + w / 32, h * (y0 + .045)); x.fill(); } } });
+    box(g, pati, 11.3, RUG, -16.05, 1.8, .008, 1.2);
+    // Chakma back-strap loom (bain): warp from a bar on two posts to the breast bar at the weaver's lap; plain stripes only
+    const L0 = [10.4, .86], L1 = [11.55, .32], ZC = -16.15, WW = .34, len = Math.hypot(L1[0] - L0[0], L1[1] - L0[1]), ang = Math.atan2(L1[1] - L0[1], L1[0] - L0[0]);
+    const slant = m => { m.rotation.order = 'ZYX'; m.rotation.set(-Math.PI / 2, 0, ang); return m; };   // lay the plane flat, then tilt it down towards the weaver
+    for (const dz of [-.3, .3]) { box(g, M.wood, 10.36, 0, ZC + dz, .05, 1.0, .05); }
+    add(g, new THREE.CylinderGeometry(.018, .018, .7, 12), M.bamboo, 10.38, L0[1], ZC, Math.PI / 2, 0, 0);
+    const warp = std('warp_threads', () => { const c = canvas(128, 256), x = c.getContext('2d'); x.clearRect(0, 0, 128, 256);
+      for (let i = 0; i < 40; i++) { x.fillStyle = i % 10 < 2 ? '#8f2f24' : i % 10 === 5 ? '#26313f' : '#efe6d4'; x.fillRect(i * 3.2 + .6, 0, 1.6, 256); } return { map: tex(c, { clamp: true }), alphaTest: .4, side: THREE.DoubleSide, roughness: .85 }; });
+    slant(add(g, new THREE.PlaneGeometry(len * .72, WW), warp, L0[0] + (L1[0] - L0[0]) * .36, L0[1] + (L1[1] - L0[1]) * .36, ZC));
+    const band = std('woven_band', () => { const c = canvas(128, 64), x = c.getContext('2d'); x.fillStyle = '#efe6d4'; x.fillRect(0, 0, 128, 64);
+      for (const [y, h, col] of [[6, 6, '#8f2f24'], [20, 3, '#26313f'], [41, 3, '#26313f'], [52, 6, '#8f2f24']]) { x.fillStyle = col; x.fillRect(0, y, 128, h); }
+      x.globalCompositeOperation = 'multiply'; x.fillStyle = x.createPattern(weave.plain.map, 'repeat'); x.globalAlpha = .35; x.fillRect(0, 0, 128, 64); return { map: tex(c), roughness: .9, side: THREE.DoubleSide }; });
+    slant(add(g, new THREE.PlaneGeometry(len * .3, WW), band, L0[0] + (L1[0] - L0[0]) * .86, L0[1] + (L1[1] - L0[1]) * .86 + .002, ZC));
+    add(g, new THREE.CylinderGeometry(.016, .016, .44, 10), M.wood, L1[0], L1[1], ZC, Math.PI / 2, 0, 0);
+    for (const t of [.45, .6]) add(g, new THREE.CylinderGeometry(.008, .008, .42, 8), M.bamboo, L0[0] + (L1[0] - L0[0]) * t, L0[1] + (L1[1] - L0[1]) * t + .012, ZC, Math.PI / 2, 0, 0);
+    add(g, new THREE.TorusGeometry(.2, .025, 6, 18, Math.PI), std('strap', () => ({ color: '#6b4a2b', roughness: .9 })), L1[0] + .02, .3, ZC, Math.PI / 2, 0, -Math.PI / 2);
+    footprint(10.3, ZC - .36, 11.62, ZC + .36); shade('Z07', 10.3, ZC - .36, 11.62, ZC + .36, .25);
+    standingCard(g, ['Chakma back-strap loom (bain)', 'Shown only with the consent and participation', 'of Chakma weavers; their designs stay theirs', 'Makers paid and credited by name'], 11.95, RUG + .008, -15.55, .5, { w: .2, h: .12 });
+    // Marma weaving and basketry (thami and angi weaving is common among Marma women: Banglapedia): a low bamboo stand with
+    // a folded plain-striped cloth and a basket; no community's designs are copied
+    const ms = new THREE.Group(); ms.position.set(10.75, 0, -17.08); g.add(ms);
+    add(ms, merged([B(.03, .45, .03, -.38, 0, -.17), B(.03, .45, .03, .38, 0, -.17), B(.03, .45, .03, -.38, 0, .17), B(.03, .45, .03, .38, 0, .17), B(.8, .025, .38, 0, .42, 0), B(.8, .025, .38, 0, .15, 0)]), M.bamboo);
+    const cloth = textileMat('marma_plain_stripes', (x, w, h) => { x.fillStyle = '#2b2d3a'; x.fillRect(0, 0, w, h); for (const [y, hh, col] of [[.18, .05, '#b23a2c'], [.3, .02, '#e2c25a'], [.68, .02, '#e2c25a'], [.77, .05, '#b23a2c']]) { x.fillStyle = col; x.fillRect(0, h * y, w, h * hh); } }, [192, 192]);
+    for (let k = 0; k < 3; k++) box(ms, cloth, -.12 + k * .006, .445 + k * .035, .0, .38, .033, .27, (k - 1) * .04);
+    basket(ms, .22, .445, 0, { r: .1, h: .22, kind: 'twill', fibre: 'bamboo' });
+    footprint(10.33, -17.27, 11.17, -16.89); shade('Z07', 10.35, -17.25, 11.15, -16.91, .3);
+    standingCard(g, ['Marma weaving and basketry', 'Thami and angi weaving is common among Marma women', 'Shown only with the consent and participation of', 'Marma weavers; their designs stay theirs'], 10.62, .445, -16.92, .15, { w: .2, h: .12 });
+    // nakshi kantha on a low frame
+    const kf = new THREE.Group(); kf.position.set(12.75, 0, -16.85); kf.rotation.y = .2; g.add(kf);
+    for (const [a, b] of [[-1, -1], [1, -1], [-1, 1], [1, 1]]) box(kf, M.wood, a * .52, 0, b * .32, .04, .34, .04);
+    box(kf, M.wood, 0, .34, -.33, 1.12, .035, .045); box(kf, M.wood, 0, .34, .33, 1.12, .035, .045); box(kf, M.wood, -.54, .34, 0, .045, .035, .7); box(kf, M.wood, .54, .34, 0, .045, .035, .7);
+    add(kf, new THREE.PlaneGeometry(1.03, .62), textileMat('kantha_frame', (x, w, h) => drawKantha(x, w, h, 9), [384, 232]), 0, .358, 0, -Math.PI / 2);
+    footprint(12.15, -17.3, 13.35, -16.4); shade('Z07', 12.2, -17.25, 13.3, -16.45, .3);
+    standingCard(g, ['Nakshi kantha in progress', 'Embroiderer to be invited, paid and credited'], 13.15, 0, -16.25, -.4, { w: .18, h: .07 });
+    // cane basketry on a low pira stool, painted terracotta on a low table
+    box(g, M.wood, 12.35, 0, -15.0, .34, .12, .26);
+    basket(g, 12.75, 0, -15.05, { r: .18, h: .3, kind: 'lattice', fibre: 'cane', partial: .6 });
+    const coil = new THREE.CatmullRomCurve3(Array.from({ length: 80 }, (_, i) => { const a = i / 79 * Math.PI * 2 * 4; return new THREE.Vector3(Math.cos(a) * (.1 + i * .0006), i / 79 * .05, Math.sin(a) * (.1 + i * .0006)); }));
+    add(g, new THREE.TubeGeometry(coil, 240, .004, 5, false), std('cane_coil', () => ({ color: FIBRE.cane, roughness: .5 })), 12.35, .125, -14.75);
+    footprint(12.15, -15.3, 13.0, -14.8); shade('Z07', 12.15, -15.25, 12.95, -14.8, .3);
+    const pt = new THREE.Group(); pt.position.set(11.1, 0, -14.98); g.add(pt);
+    add(pt, tableWood(.62, .42, .36), M.wood);
+    const sora = std('sora_paint', () => { const c = canvas(px(256), px(256)), x = c.getContext('2d'), s = c.width; x.fillStyle = '#b8643c'; x.fillRect(0, 0, s, s);
+      x.fillStyle = '#efe0bf'; x.beginPath(); x.arc(s / 2, s / 2, s * .42, 0, 7); x.fill(); x.strokeStyle = '#7a2f1e'; x.lineWidth = s / 60; x.beginPath(); x.arc(s / 2, s / 2, s * .42, 0, 7); x.stroke();
+      x.fillStyle = '#2f4a6b'; x.beginPath(); x.ellipse(s / 2, s * .55, s * .2, s * .07, 0, 0, 7); x.fill(); x.fillStyle = '#7a2f1e'; x.beginPath(); x.moveTo(s * .3, s * .55); x.lineTo(s / 2, s * .3); x.lineTo(s * .7, s * .55); x.fill();
+      return { map: tex(c, { clamp: true }), roughness: .8 }; });
+    for (const [dx, dz] of [[-.17, -.06], [.05, .08], [.2, -.07]]) add(pt, new THREE.CylinderGeometry(.085, .07, .014, 28), sora, dx, .367, dz);
+    add(pt, lathe([[0, 0], [.06, 0], [.1, .07], [.09, .13], [.05, .16], [.055, .17], [.045, .17], [0, .15]], 28), M.clayRaw, -.2, .36, .12);
+    footprint(10.75, -15.22, 11.45, -14.74); shade('Z07', 10.78, -15.2, 11.42, -14.76, .3);
+    standingCard(g, ['Artisan corner', 'Demonstrations by invitation, never as a spectacle', 'Quiet crafts only: dusty work stays in the workshop', 'Option A only'], 11.2, .36, -14.83, .25, { w: .22, h: .13 });
+  }
+  if (want('BEL_ROOMSET_LIVING')) {
+    const g = item('BEL_ROOMSET_LIVING');   // south-west corner; fire extinguisher at x 9.35-9.52, z -12.80..-12.60 stays clear
+    box(g, wovenMaterial('rug_jute', 'twill', '#cdb68a', [14, 10]), 11.5, RUG, -12.55, 2.6, .01, 1.9);
+    const sofa = new THREE.Group(); sofa.position.set(11.5, 0, -11.42); sofa.rotation.y = Math.PI; g.add(sofa);
+    const upholstery = wovenMaterial('upholstery_khadi', 'plain', '#d8ccb4', [10, 10]), W = 2.1, D = .88;
+    add(sofa, merged([B(W, .12, D, 0, .1, 0), ...[[-1, -1], [1, -1], [-1, 1], [1, 1]].map(([a, b]) => B(.05, .1, .05, a * (W / 2 - .06), 0, b * (D / 2 - .06)))]), M.wood);
+    add(sofa, merged([B(.15, .32, D, -(W / 2 - .075), .22, 0), B(.15, .32, D, W / 2 - .075, .22, 0), B(W, .5, .14, 0, .22, -D / 2 + .07)]), upholstery);
+    for (let k = 0; k < 3; k++) { const cx = -W / 2 + .15 + (W - .3) * (k + .5) / 3; add(sofa, pillowGeometry((W - .3) / 3 - .02, D - .2, .16), upholstery, cx, .32, .06, -Math.PI / 2, 0, 0); add(sofa, pillowGeometry((W - .3) / 3 - .03, .44, .16), upholstery, cx, .6, -D / 2 + .2, -.14, 0, 0); }
+    add(sofa, pillowGeometry(.42, .42, .13), handloomCushion, -.62, .58, -.14, -.3, .25, 0); add(sofa, pillowGeometry(.4, .4, .13), textileMat('indigo_plain', (x, w, h) => { x.fillStyle = '#2f4363'; x.fillRect(0, 0, w, h); x.fillStyle = '#e8e0cf'; for (const y of [.14, .2, .8, .86]) x.fillRect(0, h * y, w, h * .015); }, [256, 256]), .64, .58, -.14, -.3, -.25, 0);
+    footprint(10.43, -11.88, 12.57, -10.95); shade('Z07', 10.4, -11.9, 12.6, -10.95, .5);
+    const ct = new THREE.Group(); ct.position.set(11.5, 0, -12.5); g.add(ct); add(ct, tableWood(1.0, .55, .4), M.wood); box(ct, cane, 0, .1, 0, .88, .014, .43);
+    basket(ct, -.25, .4, 0, { r: .1, h: .1, kind: 'coil', fibre: 'kaisa' }); add(ct, lathe([[0, 0], [.05, 0], [.08, .06], [.06, .14], [.035, .17], [.04, .18], [.03, .18], [0, .16]], 28), M.clayCream, .22, .4, .05);
+    footprint(10.98, -12.8, 12.02, -12.2); shade('Z07', 11.0, -12.78, 12.0, -12.22, .4);
+    caneArmchair(g, 13.08, -12.55, -Math.PI / 2 - .25); footprint(12.68, -12.95, 13.48, -12.15); shade('Z07', 12.72, -12.92, 13.45, -12.18, .45);
+    floorLamp(g, 12.86, -11.25); footprint(12.7, -11.4, 13.0, -11.1);
+    const st = new THREE.Group(); st.position.set(10.1, 0, -11.3); g.add(st); add(st, tableWood(.42, .42, .5), M.wood); bambooLamp(st, 0, .5, 0, { r: .08, h: .22 }); footprint(9.87, -11.53, 10.33, -11.07);
+    basket(g, 12.84, 0, -11.75, { r: .17, h: .34, kind: 'twill', fibre: 'jute', handles: true });
+    const fr = new THREE.Group(); fr.position.set(11.5, 1.25, -10.885); fr.rotation.y = Math.PI; g.add(fr);   // local z -.015 = the wall face
+    box(fr, M.wood, 0, 0, 0, .96, .66, .03); add(fr, new THREE.PlaneGeometry(.86, .56), textileMat('kantha_living', (x, w, h) => drawKantha(x, w, h, 11), [384, 250]), 0, .33, .017);
+    signStand(g, ['Bengal Nordic · living', 'Mango wood, cane, jute and handloom', 'Illustrative room-set · option A'], 10.0, -13.85, Math.PI / 2);
+  }
+  if (want('BEL_ROOMSET_DINING')) {
+    const g = item('BEL_ROOMSET_DINING');   // north-west corner
+    box(g, wovenMaterial('rug_hogla', 'plain', FIBRE.hogla, [16, 12]), 11.85, RUG, -19.5, 2.8, .01, 2.2);
+    const TX = 11.85, TZ = -19.5, TH = .75; const t = new THREE.Group(); t.position.set(TX, 0, TZ); g.add(t); add(t, tableWood(1.8, .9, TH), M.wood);
+    footprint(TX - .92, TZ - .47, TX + .92, TZ + .47); shade('Z07', TX - .9, TZ - .45, TX + .9, TZ + .45, .4);
+    const seats = [-.6, 0, .6].flatMap(dx => [[TX + dx, 0, TZ - .68, 0], [TX + dx, 0, TZ + .68, Math.PI]]);
+    instances(g, chairWood, M.wood, seats); instances(g, chairCane, cane, seats);
+    for (const [x, , z] of seats) { footprint(x - .23, z - .23, x + .23, z + .23); shade('Z07', x - .22, z - .22, x + .22, z + .22, .3); }
+    for (const [x, , z, ry] of seats) {
+      const pz = z + (ry ? -.36 : .36);   // the place setting on the table edge in front of each chair box(t, wovenMaterial('mat_hogla', 'twill', FIBRE.hogla, [3, 2]), x - TX, TH, pz - TZ, .4, .006, .28);
+      clayPlate(t, x - TX, TH + .006, pz - TZ, .12); cup(t, x - TX + .17, TH + .006, pz - TZ + (ry ? -.06 : .06), 'tumbler'); }
+    jug(t, -.2, TH, 0, .5); add(t, lathe([[0, 0], [.08, 0], [.16, .05], [.17, .09], [.15, .09], [.07, .03], [0, .03]], 36), M.clay, .25, TH, 0);
+    const pend = new THREE.Group(); pend.position.set(TX, 1.62, TZ); g.add(pend);
+    add(pend, lathe([[.02, .28], [.12, .26], [.24, .14], [.29, 0], [.27, 0], [.22, .12], [.11, .24], [.02, .26]], 40), wovenMaterial('cane_shade', 'lattice', FIBRE.cane, [8, 3]));
+    const bulb = new THREE.MeshBasicMaterial({ name: 'bel_bulb', color: '#ffe2b0' }); materials.push(bulb); add(pend, new THREE.SphereGeometry(.05, 16, 10), bulb, 0, .14, 0);
+    add(pend, new THREE.CylinderGeometry(.003, .003, 2.895 - 1.9, 4), std('cord', () => ({ color: '#2a2a2a', roughness: .6 })), 0, .28 + (2.895 - 1.9) / 2, 0);
+    // sideboard along the west wall (solid to 1.22 m)
+    const sb = new THREE.Group(); sb.position.set(9.6, 0, -19.9); sb.rotation.y = Math.PI / 2; g.add(sb);
+    add(sb, merged([B(2.0, .66, .44, 0, .12, 0), ...[[-1, -1], [1, -1], [-1, 1], [1, 1]].map(([a, b]) => B(.05, .12, .05, a * .94, 0, b * .18))]), M.wood);
+    for (let k = 0; k < 4; k++) add(sb, new THREE.PlaneGeometry(.44, .56), cane, -.72 + k * .48, .45, .221);
+    add(sb, lathe([[0, 0], [.07, 0], [.11, .1], [.1, .22], [.05, .32], [.06, .36], [.045, .36], [0, .3]], 32), M.clayRaw, -.6, .78, 0);
+    add(sb, lathe([[0, 0], [.05, 0], [.08, .06], [.06, .2], [.07, .26], [.055, .26], [0, .24]], 32), M.clay, -.35, .78, 0);
+    basket(sb, .4, .78, 0, { r: .14, h: .14, kind: 'plait', fibre: 'hyacinth' }); bambooLamp(sb, .78, .78, 0, { r: .07, h: .2 });
+    footprint(9.36, -20.92, 9.84, -18.88); shade('Z07', 9.36, -20.9, 9.84, -18.9, .45);
+    signStand(g, ['River to Home · dining', 'Hogla, water hyacinth and terracotta', 'Illustrative room-set · option A'], 13.45, -18.05, Math.PI * .8);
+  }
+  if (want('BEL_ROOMSET_BEDROOM')) {
+    const g = item('BEL_ROOMSET_BEDROOM');   // headboard on the north wall (solid to 1.22 m, glass above to the hallway)
+    const BX = 16.15, BZ = -20.17, linen = std('linen', () => ({ color: '#ece6da', roughness: .9, map: weaveMap('plain', [10, 10]) }));
+    const quilt = textileMat('quilt_offcuts', (x, w, h) => { const r = rng(79), cols = ['#8a5a4a', '#4a5a72', '#b8a070', '#6f7558', '#d9cdb4', '#9c7a62', '#5a5a60', '#b89a78', '#7d8a9c', '#cfc2a8', '#e2d8c4'];
+      for (let j = 0; j < 14; j++) { let X = 0; while (X < w) { const ww = w * (.04 + r() * .08); x.fillStyle = cols[Math.floor(r() * cols.length)]; x.fillRect(X, j * h / 14, ww, h / 14); X += ww; } }
+      stitch(x, w, 'rgba(245,238,225,.85)'); for (let y = h / 40; y < h; y += h / 22) { x.beginPath(); x.moveTo(0, y); x.lineTo(w, y + (r() - .5) * 4); x.stroke(); } x.setLineDash([]); });
+    box(g, textileMat('rag_rug', (x, w, h) => { const r = rng(89), cols = ['#8a5a4a', '#4a5a72', '#b8a070', '#6f7558', '#cfc2a8', '#9c7a62', '#5a5a60']; for (let j = 0; j < 48; j++) { x.fillStyle = cols[Math.floor(r() * cols.length)]; x.fillRect(0, j * h / 48, w, h / 48 + 1); }
+      x.fillStyle = 'rgba(40,30,20,.25)'; for (let j = 0; j < 48; j++) for (let i = 0; i < w; i += w / 64) x.fillRect(i, j * h / 48, w / 200, h / 48); }, [256, 256]), BX, RUG, -18.95, 2.0, .012, 1.15);
+    const bed = new THREE.Group(); bed.position.set(BX, 0, BZ); g.add(bed);
+    add(bed, merged([B(1.72, .26, 2.1, 0, .1, 0), ...[[-1, -1], [1, -1], [-1, 1], [1, 1]].map(([a, b]) => B(.06, .1, .06, a * .8, 0, b * .99))]), M.wood);
+    box(bed, linen, 0, .36, 0, 1.6, .2, 2.0);
+    add(bed, merged([B(1.76, .03, 1.2, 0, .56, .42), B(.02, .26, 1.2, -.87, .33, .42), B(.02, .26, 1.2, .87, .33, .42), B(1.76, .26, .02, 0, .33, 1.02)]), quilt);
+    for (const s of [-1, 1]) add(bed, pillowGeometry(.62, .4, .14), linen, s * .38, .64, -.78, -1.2, 0, 0);
+    add(bed, pillowGeometry(.42, .42, .13), quilt, -.2, .7, -.55, -1.0, .2, 0);
+    const hb = new THREE.Group(); hb.position.set(0, 0, -1.07); bed.add(hb);
+    add(hb, merged([B(.06, 1.15, .06, -.9, 0, 0), B(.06, 1.15, .06, .9, 0, 0), B(1.86, .06, .06, 0, 1.12, 0), B(1.86, .05, .05, 0, .42, 0)]), M.wood);
+    add(hb, new THREE.PlaneGeometry(1.74, .68), cane, 0, .79, .01);
+    footprint(BX - .88, -21.25, BX + .88, -19.1); shade('Z07', BX - .87, -21.25, BX + .87, -19.1, .45);
+    for (const s of [-1, 1]) { const nx = BX + s * 1.12, n = new THREE.Group(); n.position.set(nx, 0, -20.98); g.add(n); add(n, merged([B(.44, .5, .38, 0, 0, 0)]), M.wood);
+      add(n, new THREE.PlaneGeometry(.38, .14), cane, 0, .36, .191); bambooLamp(n, 0, .5, 0, { r: .075, h: .2 }); footprint(nx - .23, -21.2, nx + .23, -20.77); shade('Z07', nx - .22, -21.2, nx + .22, -20.78, .35); }
+    signStand(g, ['Second Life Bangladesh · bedroom', 'Kantha patchwork from garment offcuts', 'Illustrative room-set · option A'], 14.55, -18.75, Math.PI * .25);
+  }
+  if (want('BEL_ROOMSET_HOSPITALITY')) {
+    const g = item('BEL_ROOMSET_HOSPITALITY');   // along the solid south wall (behind it: the experience-centre bays)
+    const hang = new THREE.Group(); hang.position.set(16.4, .82, -10.885); hang.rotation.y = Math.PI; g.add(hang);
+    add(hang, new THREE.PlaneGeometry(2.4, 1.28), textileMat('kantha_hanging', (x, w, h) => drawKantha(x, w, h, 13), [768, 410]), 0, .66, .004);
+    add(hang, new THREE.CylinderGeometry(.018, .018, 2.55, 12), M.bamboo, 0, 1.32, .025, 0, 0, Math.PI / 2);
+    standingCard(g, ['Nakshi kantha', 'By a rural embroiderer: placeholder,', 'to be commissioned, paid and credited'], 17.75, 0, -11.12, Math.PI + .3, { w: .18, h: .1 });
+    box(g, wovenMaterial('rug_jute_hosp', 'twill', '#bfa577', [12, 7]), 16.4, RUG, -11.95, 2.5, .01, 1.45);
+    caneArmchair(g, 15.55, -12.0, Math.PI - .35); caneArmchair(g, 17.25, -12.0, Math.PI + .35);
+    for (const x of [15.55, 17.25]) { footprint(x - .4, -12.4, x + .4, -11.6); shade('Z07', x - .38, -12.38, x + .38, -11.62, .45); }
+    const rt = new THREE.Group(); rt.position.set(16.4, 0, -11.75); g.add(rt);
+    add(rt, new THREE.CylinderGeometry(.32, .32, .035, 40), std('jute_composite_top', () => ({ color: '#b39463', roughness: .7, map: weaveMap('twill', [4, 4]) })), 0, .405, 0);
+    for (let k = 0; k < 3; k++) { const a = k / 3 * Math.PI * 2 + .5; add(rt, new THREE.CylinderGeometry(.016, .02, .4, 10), M.bamboo, Math.cos(a) * .2, .2, Math.sin(a) * .2); }
+    cup(rt, -.08, .42, .05, 'teacup', M.clayCream); cup(rt, .1, .42, -.04, 'teacup', M.clayCream); teapot(rt, 0, .42, .12, .6);
+    footprint(16.06, -12.09, 16.74, -11.41); shade('Z07', 16.08, -12.07, 16.72, -11.43, .35);
+    kashVase(g, 14.45, -11.35); kashVase(g, 18.45, -11.3, .5);
+    signStand(g, ['Future of Bengal · hospitality', 'Cane, bamboo and jute composite for hotels', 'Illustrative room-set · option A'], 14.05, -12.6, Math.PI * .2);
+  }
+  if (want('BEL_ACADEMY')) {
+    const g = item('BEL_ACADEMY');   // inside the glass accounts suite: every partition and door stays (D50 entrance, D51 to the north corridor)
+    const rows = [-15.2, -13.95, -12.7, -11.45, -10.2], cols = [3.98, 6.08], seats = [], desks = [];
+    for (const z of rows) for (const x of cols) { desks.push([x, 0, z, 0]); for (const dx of [-.37, .37]) seats.push([x + dx, 0, z + .56, Math.PI]); }
+    instances(g, tableWood(1.5, .6, .74), M.wood, desks); instances(g, chairWood, M.wood, seats); instances(g, chairCane, cane, seats);
+    for (const [x, , z] of desks) { footprint(x - .77, z - .32, x + .77, z + .32); shade('Z06', x - .75, z - .3, x + .75, z + .3, .4); }
+    for (const [x, , z] of seats) { footprint(x - .23, z - .23, x + .23, z + .23); shade('Z06', x - .21, z - .21, x + .21, z + .21, .28); }
+    for (const [x, , z] of desks) for (const dx of [-.37, .37]) { const k = Math.round((x + dx) * 10 + z) % 3;
+      if (k === 0) swatch(g, x + dx, .74, z - .05, 'jute', 'twill', .13, .2); else if (k === 1) add(g, new THREE.PlaneGeometry(.21, .28), std('notebook', () => ({ color: '#efe8da', roughness: .9 })), x + dx, .742, z - .02, -Math.PI / 2, 0, .15); else swatch(g, x + dx, .74, z - .05, 'hogla', 'plain', .12, -.15); }
+    // teaching zone at the north glass: demonstration bench with a hands camera, a mobile screen, a pin-up board
+    const db = new THREE.Group(); db.position.set(5.1, 0, -16.6); db.rotation.y = Math.PI; g.add(db);
+    add(db, tableWood(2.0, .7, .9), M.oak); box(db, M.wood, 0, .12, 0, 1.86, .02, .56);
+    add(db, merged([B(.04, .8, .04, .8, .9, .3), B(.04, .04, .5, .8, 1.68, .08)]), std('steel_dark', () => ({ color: '#2e2e30', metalness: .6, roughness: .45 }))); box(db, std('cam_body', () => ({ color: '#151515', roughness: .4 })), .8, 1.6, -.15, .09, .07, .12);
+    const fl = new THREE.Group(); fl.position.set(-.35, .9, 0); db.add(fl);
+    for (const s of [-1, 1]) box(fl, M.oak, s * .2, 0, 0, .025, .32, .025); box(fl, M.oak, 0, .3, 0, .43, .02, .02); box(fl, M.oak, 0, .06, 0, .43, .02, .02);
+    for (let k = 0; k < 13; k++) add(fl, new THREE.CylinderGeometry(.0012, .0012, .24, 4), std('warp', () => ({ color: '#e7dcc4', roughness: .8 })), -.18 + k * .03, .18, 0);
+    add(fl, new THREE.PlaneGeometry(.38, .08), wovenMaterial('jute_band', 'twill', FIBRE.jute, [3, 1]), 0, .11, .003);
+    for (const [dx, col] of [[.2, '#8f4a3a'], [.32, '#c9a565'], [.44, '#3d5170']]) add(db, new THREE.CylinderGeometry(.035, .05, .17, 20), std('cone_' + col, () => ({ color: col, roughness: .9, map: weaveMap('coil', [3, 6]) })), dx, .985, .1);
+    basket(db, -.75, .9, .05, { r: .13, h: .16, kind: 'coil', fibre: 'jute' });
+    footprint(4.07, -16.97, 6.13, -16.23); shade('Z06', 4.1, -16.95, 6.1, -16.25, .45);
+    const scr = new THREE.Group(); scr.position.set(3.35, 0, -16.95); g.add(scr);
+    add(scr, merged([B(.6, .03, .5, 0, 0, 0), B(.06, 1.75, .06, 0, .03, -.05)]), std('steel_dark', () => ({})));
+    box(scr, std('screen_bezel', () => ({ color: '#111', roughness: .35 })), 0, .95, .0, 1.47, .85, .05);
+    const slide = std('lesson_slide', () => { const c = canvas(px(640), px(360)), x = c.getContext('2d'), W = c.width, H = c.height; x.fillStyle = '#f3ede2'; x.fillRect(0, 0, W, H);
+      x.fillStyle = '#3c2a1e'; x.font = `600 ${H * .085}px system-ui, sans-serif`; x.fillText('Lesson 1 · From fibre to product', W * .06, H * .17);
+      x.fillStyle = '#9c5534'; x.fillRect(W * .06, H * .22, W * .1, H * .012);
+      [['Fibre', '#c9a565'], ['Technique', '#8f4a3a'], ['Prototype', '#3d5170'], ['Test', '#6f7a4c']].forEach(([t, col], i) => { const X = W * (.06 + i * .23); x.fillStyle = col; x.fillRect(X, H * .36, W * .19, H * .3); x.fillStyle = '#fff'; x.font = `500 ${H * .06}px system-ui, sans-serif`; x.fillText(t, X + W * .02, H * .53);
+        if (i < 3) { x.fillStyle = '#3c2a1e'; x.fillText('›', X + W * .2, H * .53); } });
+      x.fillStyle = '#5b4636'; x.font = `400 ${H * .05}px system-ui, sans-serif`; x.fillText('Illustrative lesson · Design Education Academy (option A)', W * .06, H * .85);
+      const t = tex(c, { clamp: true }); return { map: t, emissive: '#ffffff', emissiveMap: t, emissiveIntensity: .55, roughness: .4 }; });
+    add(scr, new THREE.PlaneGeometry(1.4, .79), slide, 0, 1.375, .027);
+    footprint(3.03, -17.22, 3.67, -16.68); shade('Z06', 3.05, -17.2, 3.65, -16.7, .4);
+    const pin = new THREE.Group(); pin.position.set(6.95, 0, -16.95); g.add(pin);
+    add(pin, merged([B(.04, 1.75, .04, -.42, 0, 0), B(.04, 1.75, .04, .42, 0, 0), B(.9, .04, .3, 0, 0, 0)]), M.oak);
+    box(pin, std('felt_board', () => ({ color: '#6f6658', roughness: 1, map: weaveMap('plain', [6, 8]) })), 0, .55, 0, .82, 1.15, .03);
+    [['jute', 'twill'], ['cane', 'lattice'], ['hyacinth', 'plait'], ['hogla', 'plain'], ['bamboo', 'twill'], ['kaisa', 'coil']].forEach(([f, k], i) => add(pin, new THREE.PlaneGeometry(.17, .17), wovenMaterial(`sw_${f}${k}`, k, FIBRE[f], [2, 2]), -.25 + (i % 3) * .25, 1.42 - Math.floor(i / 3) * .25, .017));
+    add(pin, new THREE.PlaneGeometry(.36, .25), std('sketch', () => ({ color: '#f4efe4', roughness: .9 })), -.15, .82, .017); add(pin, new THREE.PlaneGeometry(.25, .3), textileMat('kantha_pin', (x, w, h) => drawKantha(x, w, h, 17), [192, 230]), .22, .8, .017);
+    footprint(6.48, -17.12, 7.42, -16.78); shade('Z06', 6.5, -17.1, 7.4, -16.8, .35);
+    // materials shelf at the south end, tutor room in the old discussion room
+    const sh = new THREE.Group(); sh.position.set(5.35, 0, -6.08); sh.rotation.y = Math.PI; g.add(sh);
+    add(sh, merged([B(2.0, .03, .34, 0, 0, 0), B(2.0, .03, .34, 0, .4, 0), B(2.0, .03, .34, 0, .8, 0), B(2.0, .03, .34, 0, 1.17, 0), B(.03, 1.2, .34, -1.0, 0, 0), B(.03, 1.2, .34, 1.0, 0, 0)]), M.wood);
+    basket(sh, -.7, .03, 0, { r: .14, h: .2, kind: 'twill', fibre: 'jute' }); basket(sh, -.25, .03, 0, { r: .13, h: .2, kind: 'plait', fibre: 'hyacinth' }); basket(sh, .3, .03, 0, { r: .14, h: .18, kind: 'coil', fibre: 'kaisa' });
+    for (let k = 0; k < 8; k++) box(sh, std('book_' + (k % 4), () => ({ color: ['#8f4a3a', '#3d5170', '#c9a565', '#6f7a4c'][k % 4], roughness: .8 })), -.8 + k * .07, .43, 0, .05, .26, .2);
+    for (const [dx, col] of [[.25, '#8f4a3a'], [.37, '#c9a565'], [.49, '#3d5170'], [.61, '#6f7a4c']]) add(sh, new THREE.CylinderGeometry(.035, .05, .17, 20), std('cone_' + col, () => ({ color: col, roughness: .9, map: weaveMap('coil', [3, 6]) })), dx, .915, 0);
+    tile(sh, -.6, .83, 0, .12); tile(sh, -.42, .83, 0, .12, .3); bambooLamp(sh, .75, .43, 0, { r: .08, h: .24 });
+    footprint(4.33, -6.27, 6.37, -5.89); shade('Z06', 4.35, -6.25, 6.35, -5.9, .4);
+    const tut = new THREE.Group(); tut.position.set(8.55, 0, -6.75); g.add(tut); add(tut, tableWood(.9, .6, .74), M.wood);
+    const tutorSeats = [[8.55, 0, -7.38, 0], [7.75, 0, -6.75, Math.PI / 2]];   // facing the table (south and east)
+    instances(g, chairWood, M.wood, tutorSeats); instances(g, chairCane, cane, tutorSeats);
+    bambooLamp(tut, .3, .74, -.1, { r: .07, h: .2 }); footprint(8.08, -7.08, 9.02, -6.42); shade('Z06', 8.1, -7.06, 9.0, -6.44, .4); footprint(7.52, -7.6, 8.78, -6.52);
+    standingCard(g, ['Tutor room', 'One-to-one sessions and course planning'], 8.85, .74, -6.55, Math.PI + .3, { w: .16, h: .07 });
+    signStand(g, ['Design Education Academy', 'Option A only: if the accounts team moves', '20 seats shown; the fire engineer sets', 'the capacity, not this drawing'], 3.3, -8.15, -.25);
+  }
+  // the floor finishes go in last, so their occlusion maps hold the contact shadows of everything above
+  if (want('BEL_UTHAN')) floorOverlay(group.getObjectByName('BEL_UTHAN'), 'Z07', [9.32, -21.29, 22.0, -10.87], { map: juteFloor('z07', '#cdbb94', 81), repeat: [25, 21], color: '#cfc8bd' });
+  if (want('BEL_ACADEMY')) {
+    const jute = juteFloor('z06', '#a89474', 83), floor = group.getObjectByName('BEL_ACADEMY');
+    floorOverlay(floor, 'Z06', [2.74, -17.48, 9.19, -8.55], { map: jute, repeat: [13, 18], color: '#c9c2b6' });
+    floorOverlay(floor, 'Z06', [2.74, -8.55, 6.56, -7.4], { map: clone(jute), repeat: [8, 2.3], color: '#c9c2b6' });
+    floorOverlay(floor, 'Z06', [4.11, -7.4, 6.56, -5.87], { map: clone(jute), repeat: [5, 3], color: '#c9c2b6' });
+    floorOverlay(floor, 'Z06', [6.57, -8.54, 9.19, -5.87], { map: clone(jute), repeat: [5.2, 5.3], color: '#c9c2b6' });
+  }
+
   // ---------------------------------------------------------------- clay and wood in place of every drinkware prop on the route
   if (want('BEL_CLAY_DRINKWARE') && drinkware.length) {
     const g = item('BEL_CLAY_DRINKWARE');
@@ -766,7 +1120,7 @@ export function buildBengalEarthLab(THREE, { zones = null, drinkware = [], aniso
 
   // ---------------------------------------------------------------- bookkeeping
   group.traverse(o => { if (o.isMesh) { o.castShadow = false; o.receiveShadow = false; o.userData.conceptLayer = true; } });
-  const pixels = textures.reduce((s, t) => s + (t.image?.width || 0) * (t.image?.height || 0), 0);
+  const sources = new Set(), pixels = textures.reduce((s, t) => sources.has(t.source) ? s : (sources.add(t.source), s + (t.image?.width || 0) * (t.image?.height || 0)), 0);   // clones share their source's GPU memory
   const stats = { items: items.length, meshes: 0, instancedLeaves: 0, textures: textures.length, textureMB: Math.round(pixels * 4 * 1.33 / 1e5) / 10 };
   group.traverse(o => { if (o.isInstancedMesh) stats.instancedLeaves += o.count; else if (o.isMesh) stats.meshes++; });
   function blocksMovement(x, z, radius = .15) { return footprints.some(([x0, z0, x1, z1]) => x > x0 - radius && x < x1 + radius && z > z0 - radius && z < z1 + radius); }

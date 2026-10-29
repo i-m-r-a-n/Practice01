@@ -1,0 +1,5304 @@
+{
+ "title": "Bengal Earth Lab, option A: relocation ledger for Merchandising Z07 and the Accounts suite Z06",
+ "scope": "Proposal route /bengal-earth-lab/ only. The approved model and the other routes are unchanged. Nothing moves until the owner decides on option A and a new home for both teams is agreed.",
+ "source": "revised-model/Optimized_Office_Interior_web_baked.glb (approved Stage II model), world boxes in viewer metres (x east, y up, z south)",
+ "moves_off_this_floor": [
+  {
+   "zone": "Z07",
+   "what": "16 merchandising workstations (2 benches of 8)",
+   "nodes": [
+    "F237",
+    "F246"
+   ],
+   "names": [
+    "F237 bench4",
+    "F246 bench4"
+   ],
+   "bbox": {
+    "min": [
+     9.627,
+     0.0,
+     -19.102
+    ],
+    "max": [
+     15.215,
+     1.201,
+     -14.782
+    ]
+   },
+   "parts": [
+    {
+     "name": "F237 bench4",
+     "min": [
+      9.627,
+      0.0,
+      -19.102
+     ],
+     "max": [
+      15.215,
+      1.201,
+      -17.703
+     ]
+    },
+    {
+     "name": "F246 bench4",
+     "min": [
+      9.627,
+      0.0,
+      -16.181
+     ],
+     "max": [
+      15.215,
+      1.201,
+      -14.782
+     ]
+    }
+   ]
+  },
+  {
+   "zone": "Z07",
+   "what": "16 task chairs",
+   "nodes": [
+    "F238",
+    "F239",
+    "F240",
+    "F241",
+    "F242",
+    "F243",
+    "F244",
+    "F245",
+    "F247",
+    "F248",
+    "F249",
+    "F250",
+    "F251",
+    "F252",
+    "F253",
+    "F254"
+   ],
+   "names": [
+    "F238 task_chair",
+    "F239 task_chair",
+    "F240 task_chair",
+    "F241 task_chair",
+    "F242 task_chair",
+    "F243 task_chair",
+    "F244 task_chair",
+    "F245 task_chair",
+    "F247 task_chair",
+    "F248 task_chair",
+    "F249 task_chair",
+    "F250 task_chair",
+    "F251 task_chair",
+    "F252 task_chair",
+    "F253 task_chair",
+    "F254 task_chair"
+   ],
+   "bbox": {
+    "min": [
+     9.995,
+     0.0,
+     -19.892
+    ],
+    "max": [
+     14.846,
+     1.109,
+     -13.992
+    ]
+   },
+   "parts": [
+    {
+     "name": "F238 task_chair",
+     "min": [
+      9.995,
+      0.0,
+      -17.581
+     ],
+     "max": [
+      10.655,
+      1.109,
+      -16.913
+     ]
+    },
+    {
+     "name": "F239 task_chair",
+     "min": [
+      9.995,
+      0.0,
+      -19.892
+     ],
+     "max": [
+      10.655,
+      1.109,
+      -19.224
+     ]
+    },
+    {
+     "name": "F240 task_chair",
+     "min": [
+      11.392,
+      0.0,
+      -17.581
+     ],
+     "max": [
+      12.052,
+      1.109,
+      -16.913
+     ]
+    },
+    {
+     "name": "F241 task_chair",
+     "min": [
+      11.392,
+      0.0,
+      -19.892
+     ],
+     "max": [
+      12.052,
+      1.109,
+      -19.224
+     ]
+    },
+    {
+     "name": "F242 task_chair",
+     "min": [
+      12.789,
+      0.0,
+      -17.581
+     ],
+     "max": [
+      13.449,
+      1.109,
+      -16.913
+     ]
+    },
+    {
+     "name": "F243 task_chair",
+     "min": [
+      12.789,
+      0.0,
+      -19.892
+     ],
+     "max": [
+      13.449,
+      1.109,
+      -19.224
+     ]
+    },
+    {
+     "name": "F244 task_chair",
+     "min": [
+      14.186,
+      0.0,
+      -17.581
+     ],
+     "max": [
+      14.846,
+      1.109,
+      -16.913
+     ]
+    },
+    {
+     "name": "F245 task_chair",
+     "min": [
+      14.186,
+      0.0,
+      -19.892
+     ],
+     "max": [
+      14.846,
+      1.109,
+      -19.224
+     ]
+    },
+    {
+     "name": "F247 task_chair",
+     "min": [
+      9.995,
+      0.0,
+      -14.66
+     ],
+     "max": [
+      10.655,
+      1.109,
+      -13.992
+     ]
+    },
+    {
+     "name": "F248 task_chair",
+     "min": [
+      9.995,
+      0.0,
+      -16.971
+     ],
+     "max": [
+      10.655,
+      1.109,
+      -16.303
+     ]
+    },
+    {
+     "name": "F249 task_chair",
+     "min": [
+      11.392,
+      0.0,
+      -14.66
+     ],
+     "max": [
+      12.052,
+      1.109,
+      -13.992
+     ]
+    },
+    {
+     "name": "F250 task_chair",
+     "min": [
+      11.392,
+      0.0,
+      -16.971
+     ],
+     "max": [
+      12.052,
+      1.109,
+      -16.303
+     ]
+    },
+    {
+     "name": "F251 task_chair",
+     "min": [
+      12.789,
+      0.0,
+      -14.66
+     ],
+     "max": [
+      13.449,
+      1.109,
+      -13.992
+     ]
+    },
+    {
+     "name": "F252 task_chair",
+     "min": [
+      12.789,
+      0.0,
+      -16.971
+     ],
+     "max": [
+      13.449,
+      1.109,
+      -16.303
+     ]
+    },
+    {
+     "name": "F253 task_chair",
+     "min": [
+      14.186,
+      0.0,
+      -14.66
+     ],
+     "max": [
+      14.846,
+      1.109,
+      -13.992
+     ]
+    },
+    {
+     "name": "F254 task_chair",
+     "min": [
+      14.186,
+      0.0,
+      -16.971
+     ],
+     "max": [
+      14.846,
+      1.109,
+      -16.303
+     ]
+    }
+   ]
+  },
+  {
+   "zone": "Z07",
+   "what": "desk accessories on the two benches",
+   "nodes": [
+    "F313",
+    "F314"
+   ],
+   "names": [
+    "F313 props_bench4_merch",
+    "F314 props_bench4_merch2"
+   ],
+   "bbox": {
+    "min": [
+     9.67,
+     0.749,
+     -19.089
+    ],
+    "max": [
+     15.19,
+     0.846,
+     -14.766
+    ]
+   },
+   "parts": [
+    {
+     "name": "F313 props_bench4_merch",
+     "min": [
+      9.671,
+      0.749,
+      -19.089
+     ],
+     "max": [
+      15.19,
+      0.846,
+      -17.693
+     ]
+    },
+    {
+     "name": "F314 props_bench4_merch2",
+     "min": [
+      9.67,
+      0.749,
+      -16.163
+     ],
+     "max": [
+      15.179,
+      0.837,
+      -14.766
+     ]
+    }
+   ]
+  },
+  {
+   "zone": "Z07",
+   "what": "2 low swatch shelves",
+   "nodes": [
+    "F255",
+    "F256"
+   ],
+   "names": [
+    "F255 swatch_shelf",
+    "F256 swatch_shelf"
+   ],
+   "bbox": {
+    "min": [
+     9.665,
+     0.0,
+     -21.285
+    ],
+    "max": [
+     15.177,
+     0.711,
+     -20.93
+    ]
+   },
+   "parts": [
+    {
+     "name": "F255 swatch_shelf",
+     "min": [
+      9.665,
+      0.0,
+      -21.285
+     ],
+     "max": [
+      12.332,
+      0.711,
+      -20.93
+     ]
+    },
+    {
+     "name": "F256 swatch_shelf",
+     "min": [
+      12.51,
+      0.0,
+      -21.285
+     ],
+     "max": [
+      15.177,
+      0.711,
+      -20.93
+     ]
+    }
+   ]
+  },
+  {
+   "zone": "Z07",
+   "what": "sample approval counter and approval board",
+   "nodes": [
+    "F257",
+    "F258"
+   ],
+   "names": [
+    "F257 approval_counter",
+    "F258 approval_board"
+   ],
+   "bbox": {
+    "min": [
+     9.644,
+     0.0,
+     -11.402
+    ],
+    "max": [
+     11.488,
+     2.184,
+     -10.871
+    ]
+   },
+   "parts": [
+    {
+     "name": "F257 approval_counter",
+     "min": [
+      9.644,
+      0.0,
+      -11.402
+     ],
+     "max": [
+      11.488,
+      0.94,
+      -10.871
+     ]
+    },
+    {
+     "name": "F258 approval_board",
+     "min": [
+      9.652,
+      1.168,
+      -10.914
+     ],
+     "max": [
+      11.481,
+      2.184,
+      -10.872
+     ]
+    }
+   ]
+  },
+  {
+   "zone": "Z07",
+   "what": "2 tall sample cabinets",
+   "nodes": [
+    "F259",
+    "F260"
+   ],
+   "names": [
+    "F259 sample_cab_72",
+    "F260 sample_cab_72"
+   ],
+   "bbox": {
+    "min": [
+     11.532,
+     0.0,
+     -11.504
+    ],
+    "max": [
+     15.24,
+     2.134,
+     -10.871
+    ]
+   },
+   "parts": [
+    {
+     "name": "F259 sample_cab_72",
+     "min": [
+      11.532,
+      0.0,
+      -11.504
+     ],
+     "max": [
+      13.36,
+      2.134,
+      -10.871
+     ]
+    },
+    {
+     "name": "F260 sample_cab_72",
+     "min": [
+      13.411,
+      0.0,
+      -11.504
+     ],
+     "max": [
+      15.24,
+      2.134,
+      -10.871
+     ]
+    }
+   ]
+  },
+  {
+   "zone": "Z07",
+   "what": "multifunction printer",
+   "nodes": [
+    "F261"
+   ],
+   "names": [
+    "F261 mfp"
+   ],
+   "bbox": {
+    "min": [
+     15.334,
+     0.0,
+     -11.488
+    ],
+    "max": [
+     15.959,
+     1.143,
+     -10.871
+    ]
+   },
+   "parts": [
+    {
+     "name": "F261 mfp",
+     "min": [
+      15.334,
+      0.0,
+      -11.488
+     ],
+     "max": [
+      15.959,
+      1.143,
+      -10.871
+     ]
+    }
+   ]
+  },
+  {
+   "zone": "Z07",
+   "what": "dispatch counter and its accessories",
+   "nodes": [
+    "F262",
+    "F317"
+   ],
+   "names": [
+    "F262 dispatch_counter",
+    "F317 props_dispatch"
+   ],
+   "bbox": {
+    "min": [
+     9.322,
+     0.0,
+     -14.359
+    ],
+    "max": [
+     9.954,
+     1.372,
+     -12.819
+    ]
+   },
+   "parts": [
+    {
+     "name": "F262 dispatch_counter",
+     "min": [
+      9.322,
+      0.0,
+      -14.359
+     ],
+     "max": [
+      9.954,
+      0.94,
+      -12.819
+     ]
+    },
+    {
+     "name": "F317 props_dispatch",
+     "min": [
+      9.453,
+      0.94,
+      -14.227
+     ],
+     "max": [
+      9.855,
+      1.372,
+      -12.915
+     ]
+    }
+   ]
+  },
+  {
+   "zone": "Z07",
+   "what": "2 garment rails",
+   "nodes": [
+    "F263",
+    "F264"
+   ],
+   "names": [
+    "F263 rail_60",
+    "F264 rail_60b"
+   ],
+   "bbox": {
+    "min": [
+     15.992,
+     0.005,
+     -20.775
+    ],
+    "max": [
+     19.441,
+     1.654,
+     -20.118
+    ]
+   },
+   "parts": [
+    {
+     "name": "F263 rail_60",
+     "min": [
+      15.992,
+      0.005,
+      -20.775
+     ],
+     "max": [
+      17.536,
+      1.654,
+      -20.118
+     ]
+    },
+    {
+     "name": "F264 rail_60b",
+     "min": [
+      17.897,
+      0.005,
+      -20.772
+     ],
+     "max": [
+      19.441,
+      1.654,
+      -20.118
+     ]
+    }
+   ]
+  },
+  {
+   "zone": "Z07",
+   "what": "2 dress forms and a full-length mirror",
+   "nodes": [
+    "F265",
+    "F266",
+    "F267"
+   ],
+   "names": [
+    "F265 dress_form",
+    "F266 dress_form",
+    "F267 mirror_full"
+   ],
+   "bbox": {
+    "min": [
+     15.784,
+     0.0,
+     -19.113
+    ],
+    "max": [
+     18.428,
+     1.88,
+     -15.799
+    ]
+   },
+   "parts": [
+    {
+     "name": "F265 dress_form",
+     "min": [
+      17.132,
+      0.0,
+      -19.113
+     ],
+     "max": [
+      17.513,
+      1.656,
+      -18.733
+     ]
+    },
+    {
+     "name": "F266 dress_form",
+     "min": [
+      18.047,
+      0.0,
+      -19.113
+     ],
+     "max": [
+      18.428,
+      1.656,
+      -18.733
+     ]
+    },
+    {
+     "name": "F267 mirror_full",
+     "min": [
+      15.784,
+      0.152,
+      -16.358
+     ],
+     "max": [
+      15.816,
+      1.88,
+      -15.799
+     ]
+    }
+   ]
+  },
+  {
+   "zone": "Z07",
+   "what": "inspection table",
+   "nodes": [
+    "F268"
+   ],
+   "names": [
+    "F268 insp_table"
+   ],
+   "bbox": {
+    "min": [
+     17.17,
+     0.0,
+     -17.729
+    ],
+    "max": [
+     18.391,
+     1.04,
+     -15.291
+    ]
+   },
+   "parts": [
+    {
+     "name": "F268 insp_table",
+     "min": [
+      17.17,
+      0.0,
+      -17.729
+     ],
+     "max": [
+      18.391,
+      1.04,
+      -15.291
+     ]
+    }
+   ]
+  },
+  {
+   "zone": "Z07",
+   "what": "team review table with 6 chairs and its accessories",
+   "nodes": [
+    "F269",
+    "F270",
+    "F271",
+    "F272",
+    "F273",
+    "F274",
+    "F275",
+    "F318"
+   ],
+   "names": [
+    "F269 table_guest",
+    "F270 task_chair_green",
+    "F271 task_chair_green",
+    "F272 task_chair_green",
+    "F273 task_chair_green",
+    "F274 task_chair_green",
+    "F275 task_chair_green",
+    "F318 props_review"
+   ],
+   "bbox": {
+    "min": [
+     16.481,
+     -0.0,
+     -14.275
+    ],
+    "max": [
+     19.079,
+     1.109,
+     -12.141
+    ]
+   },
+   "parts": [
+    {
+     "name": "F269 table_guest",
+     "min": [
+      17.272,
+      -0.0,
+      -14.275
+     ],
+     "max": [
+      18.288,
+      0.749,
+      -12.141
+     ]
+    },
+    {
+     "name": "F270 task_chair_green",
+     "min": [
+      16.481,
+      0.0,
+      -14.173
+     ],
+     "max": [
+      17.149,
+      1.109,
+      -13.513
+     ]
+    },
+    {
+     "name": "F271 task_chair_green",
+     "min": [
+      18.411,
+      0.0,
+      -14.173
+     ],
+     "max": [
+      19.079,
+      1.109,
+      -13.513
+     ]
+    },
+    {
+     "name": "F272 task_chair_green",
+     "min": [
+      16.481,
+      0.0,
+      -13.538
+     ],
+     "max": [
+      17.149,
+      1.109,
+      -12.878
+     ]
+    },
+    {
+     "name": "F273 task_chair_green",
+     "min": [
+      18.411,
+      0.0,
+      -13.538
+     ],
+     "max": [
+      19.079,
+      1.109,
+      -12.878
+     ]
+    },
+    {
+     "name": "F274 task_chair_green",
+     "min": [
+      16.481,
+      0.0,
+      -12.903
+     ],
+     "max": [
+      17.149,
+      1.109,
+      -12.243
+     ]
+    },
+    {
+     "name": "F275 task_chair_green",
+     "min": [
+      18.411,
+      0.0,
+      -12.903
+     ],
+     "max": [
+      19.079,
+      1.109,
+      -12.243
+     ]
+    },
+    {
+     "name": "F318 props_review",
+     "min": [
+      17.409,
+      0.749,
+      -14.13
+     ],
+     "max": [
+      18.074,
+      0.977,
+      -12.283
+     ]
+    }
+   ]
+  },
+  {
+   "zone": "Z07",
+   "what": "2 wall screens (65 in and 55 in)",
+   "nodes": [
+    "F276",
+    "F277"
+   ],
+   "names": [
+    "F276 screen_65",
+    "F277 screen_55"
+   ],
+   "bbox": {
+    "min": [
+     17.056,
+     1.016,
+     -16.713
+    ],
+    "max": [
+     21.999,
+     2.007,
+     -10.866
+    ]
+   },
+   "parts": [
+    {
+     "name": "F276 screen_65",
+     "min": [
+      17.056,
+      1.016,
+      -10.923
+     ],
+     "max": [
+      18.504,
+      1.829,
+      -10.866
+     ]
+    },
+    {
+     "name": "F277 screen_55",
+     "min": [
+      21.942,
+      1.321,
+      -16.713
+     ],
+     "max": [
+      21.999,
+      2.007,
+      -15.494
+     ]
+    }
+   ]
+  },
+  {
+   "zone": "Z07",
+   "what": "staff lockers (8)",
+   "nodes": [
+    "F278"
+   ],
+   "names": [
+    "F278 lockers8"
+   ],
+   "bbox": {
+    "min": [
+     21.524,
+     0.0,
+     -17.247
+    ],
+    "max": [
+     21.996,
+     1.118,
+     -14.961
+    ]
+   },
+   "parts": [
+    {
+     "name": "F278 lockers8",
+     "min": [
+      21.524,
+      0.0,
+      -17.247
+     ],
+     "max": [
+      21.996,
+      1.118,
+      -14.961
+     ]
+    }
+   ]
+  },
+  {
+   "zone": "Z07",
+   "what": "2 low storage units on the east wall",
+   "nodes": [
+    "F279",
+    "F280"
+   ],
+   "names": [
+    "F279 under_window_110",
+    "F280 under_window_110"
+   ],
+   "bbox": {
+    "min": [
+     21.516,
+     -0.0,
+     -20.15
+    ],
+    "max": [
+     21.996,
+     0.737,
+     -12.007
+    ]
+   },
+   "parts": [
+    {
+     "name": "F279 under_window_110",
+     "min": [
+      21.516,
+      -0.0,
+      -20.15
+     ],
+     "max": [
+      21.996,
+      0.737,
+      -17.341
+     ]
+    },
+    {
+     "name": "F280 under_window_110",
+     "min": [
+      21.516,
+      -0.0,
+      -14.816
+     ],
+     "max": [
+      21.996,
+      0.737,
+      -12.007
+     ]
+    }
+   ]
+  },
+  {
+   "zone": "Z07",
+   "what": "2 floor planters and a desk plant",
+   "nodes": [
+    "F282",
+    "F283",
+    "PL282",
+    "PL283",
+    "PL246"
+   ],
+   "names": [
+    "F282 planter_m",
+    "F283 planter_m",
+    "PL246 desk plant (CC0) (potted_plant_04_dirt)",
+    "PL246 desk plant (CC0) (potted_plant_04_ground)",
+    "PL246 desk plant (CC0) (potted_plant_04_plant)",
+    "PL246 desk plant (CC0) (potted_plant_04_pot)",
+    "PL282 calathea (CC0) (calathea_orbifolia_01_a)",
+    "PL283 calathea (CC0) (calathea_orbifolia_01_a)"
+   ],
+   "bbox": {
+    "min": [
+     9.437,
+     0.0,
+     -21.384
+    ],
+    "max": [
+     15.765,
+     1.035,
+     -11.774
+    ]
+   },
+   "parts": [
+    {
+     "name": "F282 planter_m",
+     "min": [
+      15.189,
+      0.0,
+      -21.234
+     ],
+     "max": [
+      15.596,
+      0.406,
+      -20.828
+     ]
+    },
+    {
+     "name": "F283 planter_m",
+     "min": [
+      9.576,
+      0.0,
+      -12.268
+     ],
+     "max": [
+      9.982,
+      0.406,
+      -11.862
+     ]
+    },
+    {
+     "name": "PL282 calathea (CC0) (calathea_orbifolia_01_a)",
+     "min": [
+      15.126,
+      0.36,
+      -21.384
+     ],
+     "max": [
+      15.765,
+      0.784,
+      -20.687
+     ]
+    },
+    {
+     "name": "PL283 calathea (CC0) (calathea_orbifolia_01_a)",
+     "min": [
+      9.437,
+      0.36,
+      -12.453
+     ],
+     "max": [
+      10.165,
+      0.784,
+      -11.774
+     ]
+    },
+    {
+     "name": "PL246 desk plant (CC0) (potted_plant_04_dirt)",
+     "min": [
+      11.834,
+      0.901,
+      -15.509
+     ],
+     "max": [
+      11.99,
+      0.92,
+      -15.353
+     ]
+    },
+    {
+     "name": "PL246 desk plant (CC0) (potted_plant_04_ground)",
+     "min": [
+      11.838,
+      0.9,
+      -15.506
+     ],
+     "max": [
+      11.986,
+      0.922,
+      -15.357
+     ]
+    },
+    {
+     "name": "PL246 desk plant (CC0) (potted_plant_04_plant)",
+     "min": [
+      11.85,
+      0.903,
+      -15.503
+     ],
+     "max": [
+      11.996,
+      1.035,
+      -15.33
+     ]
+    },
+    {
+     "name": "PL246 desk plant (CC0) (potted_plant_04_pot)",
+     "min": [
+      11.829,
+      0.767,
+      -15.514
+     ],
+     "max": [
+      11.997,
+      0.923,
+      -15.347
+     ]
+    }
+   ]
+  },
+  {
+   "zone": "Z07",
+   "what": "5 linear pendants over the desks and tables (the lighting designer re-plans them)",
+   "nodes": [
+    "LT131",
+    "LT132",
+    "LT133",
+    "LT134",
+    "LT135"
+   ],
+   "names": [
+    "LT131 linear pendant 200in (Z07)",
+    "LT132 linear pendant 200in (Z07)",
+    "LT133 linear pendant 90in (Z07)",
+    "LT134 linear pendant 72in (Z07)",
+    "LT135 linear pendant 96in (Z07)"
+   ],
+   "bbox": {
+    "min": [
+     9.881,
+     1.981,
+     -20.102
+    ],
+    "max": [
+     18.948,
+     2.946,
+     -12.294
+    ]
+   },
+   "parts": [
+    {
+     "name": "LT131 linear pendant 200in (Z07)",
+     "min": [
+      9.881,
+      2.032,
+      -18.438
+     ],
+     "max": [
+      14.961,
+      2.895,
+      -18.367
+     ]
+    },
+    {
+     "name": "LT132 linear pendant 200in (Z07)",
+     "min": [
+      9.881,
+      2.032,
+      -15.517
+     ],
+     "max": [
+      14.961,
+      2.895,
+      -15.446
+     ]
+    },
+    {
+     "name": "LT133 linear pendant 90in (Z07)",
+     "min": [
+      17.744,
+      1.981,
+      -17.653
+     ],
+     "max": [
+      17.816,
+      2.896,
+      -15.367
+     ]
+    },
+    {
+     "name": "LT134 linear pendant 72in (Z07)",
+     "min": [
+      17.744,
+      2.032,
+      -14.122
+     ],
+     "max": [
+      17.816,
+      2.794,
+      -12.294
+     ]
+    },
+    {
+     "name": "LT135 linear pendant 96in (Z07)",
+     "min": [
+      16.51,
+      2.134,
+      -20.102
+     ],
+     "max": [
+      18.948,
+      2.946,
+      -20.03
+     ]
+    }
+   ]
+  },
+  {
+   "zone": "Z06",
+   "what": "12 finance workstations (2 benches of 6)",
+   "nodes": [
+    "F284",
+    "F291"
+   ],
+   "names": [
+    "F284 bench3_47",
+    "F291 bench3_47"
+   ],
+   "bbox": {
+    "min": [
+     3.785,
+     -0.0,
+     -16.321
+    ],
+    "max": [
+     7.366,
+     1.201,
+     -12.0
+    ]
+   },
+   "parts": [
+    {
+     "name": "F284 bench3_47",
+     "min": [
+      3.785,
+      -0.0,
+      -16.321
+     ],
+     "max": [
+      7.366,
+      1.201,
+      -14.921
+     ]
+    },
+    {
+     "name": "F291 bench3_47",
+     "min": [
+      3.785,
+      -0.0,
+      -13.4
+     ],
+     "max": [
+      7.366,
+      1.201,
+      -12.0
+     ]
+    }
+   ]
+  },
+  {
+   "zone": "Z06",
+   "what": "12 task chairs",
+   "nodes": [
+    "F285",
+    "F286",
+    "F287",
+    "F288",
+    "F289",
+    "F290",
+    "F292",
+    "F293",
+    "F294",
+    "F295",
+    "F296",
+    "F297"
+   ],
+   "names": [
+    "F285 task_chair",
+    "F286 task_chair",
+    "F287 task_chair",
+    "F288 task_chair",
+    "F289 task_chair",
+    "F290 task_chair",
+    "F292 task_chair",
+    "F293 task_chair",
+    "F294 task_chair",
+    "F295 task_chair",
+    "F296 task_chair",
+    "F297 task_chair"
+   ],
+   "bbox": {
+    "min": [
+     4.052,
+     0.0,
+     -17.11
+    ],
+    "max": [
+     7.099,
+     1.109,
+     -11.211
+    ]
+   },
+   "parts": [
+    {
+     "name": "F285 task_chair",
+     "min": [
+      4.052,
+      0.0,
+      -14.8
+     ],
+     "max": [
+      4.711,
+      1.109,
+      -14.132
+     ]
+    },
+    {
+     "name": "F286 task_chair",
+     "min": [
+      4.052,
+      0.0,
+      -17.11
+     ],
+     "max": [
+      4.711,
+      1.109,
+      -16.442
+     ]
+    },
+    {
+     "name": "F287 task_chair",
+     "min": [
+      5.245,
+      0.0,
+      -14.8
+     ],
+     "max": [
+      5.905,
+      1.109,
+      -14.132
+     ]
+    },
+    {
+     "name": "F288 task_chair",
+     "min": [
+      5.245,
+      0.0,
+      -17.11
+     ],
+     "max": [
+      5.905,
+      1.109,
+      -16.442
+     ]
+    },
+    {
+     "name": "F289 task_chair",
+     "min": [
+      6.439,
+      0.0,
+      -14.8
+     ],
+     "max": [
+      7.099,
+      1.109,
+      -14.132
+     ]
+    },
+    {
+     "name": "F290 task_chair",
+     "min": [
+      6.439,
+      0.0,
+      -17.11
+     ],
+     "max": [
+      7.099,
+      1.109,
+      -16.442
+     ]
+    },
+    {
+     "name": "F292 task_chair",
+     "min": [
+      4.052,
+      0.0,
+      -11.879
+     ],
+     "max": [
+      4.711,
+      1.109,
+      -11.211
+     ]
+    },
+    {
+     "name": "F293 task_chair",
+     "min": [
+      4.052,
+      0.0,
+      -14.189
+     ],
+     "max": [
+      4.711,
+      1.109,
+      -13.521
+     ]
+    },
+    {
+     "name": "F294 task_chair",
+     "min": [
+      5.245,
+      0.0,
+      -11.879
+     ],
+     "max": [
+      5.905,
+      1.109,
+      -11.211
+     ]
+    },
+    {
+     "name": "F295 task_chair",
+     "min": [
+      5.245,
+      0.0,
+      -14.189
+     ],
+     "max": [
+      5.905,
+      1.109,
+      -13.521
+     ]
+    },
+    {
+     "name": "F296 task_chair",
+     "min": [
+      6.439,
+      0.0,
+      -11.879
+     ],
+     "max": [
+      7.099,
+      1.109,
+      -11.211
+     ]
+    },
+    {
+     "name": "F297 task_chair",
+     "min": [
+      6.439,
+      0.0,
+      -14.189
+     ],
+     "max": [
+      7.099,
+      1.109,
+      -13.521
+     ]
+    }
+   ]
+  },
+  {
+   "zone": "Z06",
+   "what": "desk accessories on the two benches",
+   "nodes": [
+    "F315",
+    "F316"
+   ],
+   "names": [
+    "F315 props_bench3_fin",
+    "F316 props_bench3_fin2"
+   ],
+   "bbox": {
+    "min": [
+     3.895,
+     0.749,
+     -16.228
+    ],
+    "max": [
+     7.303,
+     1.062,
+     -12.093
+    ]
+   },
+   "parts": [
+    {
+     "name": "F315 props_bench3_fin",
+     "min": [
+      3.911,
+      0.749,
+      -16.228
+     ],
+     "max": [
+      7.303,
+      1.062,
+      -15.017
+     ]
+    },
+    {
+     "name": "F316 props_bench3_fin2",
+     "min": [
+      3.895,
+      0.749,
+      -13.307
+     ],
+     "max": [
+      7.303,
+      1.062,
+      -12.093
+     ]
+    }
+   ]
+  },
+  {
+   "zone": "Z06",
+   "what": "manager's desk, chair and accessories",
+   "nodes": [
+    "F298",
+    "F299",
+    "F319"
+   ],
+   "names": [
+    "F298 desk_single",
+    "F299 exec_chair_black",
+    "F319 props_manager"
+   ],
+   "bbox": {
+    "min": [
+     4.407,
+     -0.0,
+     -10.306
+    ],
+    "max": [
+     6.007,
+     1.201,
+     -8.691
+    ]
+   },
+   "parts": [
+    {
+     "name": "F298 desk_single",
+     "min": [
+      4.407,
+      -0.0,
+      -10.306
+     ],
+     "max": [
+      6.007,
+      1.201,
+      -9.506
+     ]
+    },
+    {
+     "name": "F299 exec_chair_black",
+     "min": [
+      4.868,
+      0.0,
+      -9.384
+     ],
+     "max": [
+      5.546,
+      1.174,
+      -8.691
+     ]
+    },
+    {
+     "name": "F319 props_manager",
+     "min": [
+      4.521,
+      0.749,
+      -10.277
+     ],
+     "max": [
+      5.828,
+      1.062,
+      -9.595
+     ]
+    }
+   ]
+  },
+  {
+   "zone": "Z06",
+   "what": "3 runs of filing cabinets (finance records)",
+   "nodes": [
+    "F300",
+    "F301",
+    "F302"
+   ],
+   "names": [
+    "F300 filing_120l",
+    "F301 filing_120l",
+    "F302 filing_96l"
+   ],
+   "bbox": {
+    "min": [
+     8.664,
+     -0.0,
+     -17.432
+    ],
+    "max": [
+     9.195,
+     1.092,
+     -8.832
+    ]
+   },
+   "parts": [
+    {
+     "name": "F300 filing_120l",
+     "min": [
+      8.664,
+      -0.0,
+      -17.432
+     ],
+     "max": [
+      9.195,
+      1.092,
+      -14.369
+     ]
+    },
+    {
+     "name": "F301 filing_120l",
+     "min": [
+      8.664,
+      -0.0,
+      -14.359
+     ],
+     "max": [
+      9.195,
+      1.092,
+      -11.295
+     ]
+    },
+    {
+     "name": "F302 filing_96l",
+     "min": [
+      8.664,
+      0.0,
+      -11.285
+     ],
+     "max": [
+      9.195,
+      1.092,
+      -8.832
+     ]
+    }
+   ]
+  },
+  {
+   "zone": "Z06",
+   "what": "document counter, multifunction printer and accessories",
+   "nodes": [
+    "F303",
+    "F304",
+    "F320"
+   ],
+   "names": [
+    "F303 doc_counter_66",
+    "F304 mfp",
+    "F320 props_doc_counter"
+   ],
+   "bbox": {
+    "min": [
+     4.133,
+     -0.0,
+     -6.5
+    ],
+    "max": [
+     6.485,
+     1.252,
+     -5.867
+    ]
+   },
+   "parts": [
+    {
+     "name": "F303 doc_counter_66",
+     "min": [
+      4.793,
+      -0.0,
+      -6.5
+     ],
+     "max": [
+      6.485,
+      0.94,
+      -5.867
+     ]
+    },
+    {
+     "name": "F304 mfp",
+     "min": [
+      4.133,
+      0.0,
+      -6.485
+     ],
+     "max": [
+      4.757,
+      1.143,
+      -5.867
+     ]
+    },
+    {
+     "name": "F320 props_doc_counter",
+     "min": [
+      4.863,
+      0.94,
+      -6.473
+     ],
+     "max": [
+      6.426,
+      1.252,
+      -5.944
+     ]
+    }
+   ]
+  },
+  {
+   "zone": "Z06",
+   "what": "finance discussion room: round table, 4 chairs and accessories",
+   "nodes": [
+    "F305",
+    "F306",
+    "F307",
+    "F308",
+    "F309",
+    "F321"
+   ],
+   "names": [
+    "F305 meet_round_36",
+    "F306 visitor_chair",
+    "F307 visitor_chair",
+    "F308 visitor_chair",
+    "F309 visitor_chair",
+    "F321 props_meeting"
+   ],
+   "bbox": {
+    "min": [
+     6.924,
+     -0.0,
+     -8.189
+    ],
+    "max": [
+     8.875,
+     0.846,
+     -6.238
+    ]
+   },
+   "parts": [
+    {
+     "name": "F305 meet_round_36",
+     "min": [
+      7.442,
+      -0.0,
+      -7.671
+     ],
+     "max": [
+      8.357,
+      0.749,
+      -6.756
+     ]
+    },
+    {
+     "name": "F306 visitor_chair",
+     "min": [
+      7.658,
+      0.0,
+      -8.189
+     ],
+     "max": [
+      8.141,
+      0.814,
+      -7.658
+     ]
+    },
+    {
+     "name": "F307 visitor_chair",
+     "min": [
+      7.658,
+      0.0,
+      -6.769
+     ],
+     "max": [
+      8.141,
+      0.814,
+      -6.238
+     ]
+    },
+    {
+     "name": "F308 visitor_chair",
+     "min": [
+      6.924,
+      0.0,
+      -7.455
+     ],
+     "max": [
+      7.455,
+      0.814,
+      -6.972
+     ]
+    },
+    {
+     "name": "F309 visitor_chair",
+     "min": [
+      8.344,
+      0.0,
+      -7.455
+     ],
+     "max": [
+      8.875,
+      0.814,
+      -6.972
+     ]
+    },
+    {
+     "name": "F321 props_meeting",
+     "min": [
+      7.577,
+      0.749,
+      -7.47
+     ],
+     "max": [
+      8.196,
+      0.846,
+      -6.913
+     ]
+    }
+   ]
+  },
+  {
+   "zone": "Z06",
+   "what": "tall cabinet in the discussion room",
+   "nodes": [
+    "F310"
+   ],
+   "names": [
+    "F310 tall_cab_36"
+   ],
+   "bbox": {
+    "min": [
+     8.664,
+     0.0,
+     -6.807
+    ],
+    "max": [
+     9.144,
+     1.981,
+     -5.893
+    ]
+   },
+   "parts": [
+    {
+     "name": "F310 tall_cab_36",
+     "min": [
+      8.664,
+      0.0,
+      -6.807
+     ],
+     "max": [
+      9.144,
+      1.981,
+      -5.893
+     ]
+    }
+   ]
+  }
+ ],
+ "stays": [
+  {
+   "zone": "Z07",
+   "what": "2 fire extinguishers",
+   "nodes": [
+    "F231",
+    "F281"
+   ],
+   "names": [
+    "F231 fire_ext",
+    "F281 fire_ext"
+   ],
+   "bbox": {
+    "min": [
+     9.322,
+     0.152,
+     -15.342
+    ],
+    "max": [
+     9.525,
+     0.787,
+     -12.598
+    ]
+   }
+  },
+  {
+   "zone": "Z07",
+   "what": "4 air-conditioning units",
+   "nodes": [
+    "AC01",
+    "AC02",
+    "AC03",
+    "AC04"
+   ],
+   "names": [
+    "AC01 VRF indoor unit, under-ceiling (Z07) - capacity by MEP",
+    "AC02 VRF indoor unit, under-ceiling (Z07) - capacity by MEP",
+    "AC03 VRF indoor unit, under-ceiling (Z07) - capacity by MEP",
+    "AC04 VRF indoor unit, under-ceiling (Z07) - capacity by MEP"
+   ],
+   "bbox": {
+    "min": [
+     11.849,
+     2.653,
+     -17.247
+    ],
+    "max": [
+     19.393,
+     2.896,
+     -13.081
+    ]
+   }
+  },
+  {
+   "zone": "Z07",
+   "what": "2 smoke detectors",
+   "nodes": [
+    "SD05",
+    "SD06"
+   ],
+   "names": [
+    "SD05 smoke detector",
+    "SD06 smoke detector"
+   ],
+   "bbox": {
+    "min": [
+     12.385,
+     2.855,
+     -16.063
+    ],
+    "max": [
+     18.857,
+     2.896,
+     -15.941
+    ]
+   }
+  },
+  {
+   "zone": "Z07",
+   "what": "7 downlights",
+   "nodes": [
+    "LT136",
+    "LT137",
+    "LT138",
+    "LT139",
+    "LT140",
+    "LT141",
+    "LT142"
+   ],
+   "names": [
+    "LT136 downlight (Z07)",
+    "LT137 downlight (Z07)",
+    "LT138 downlight (Z07)",
+    "LT139 downlight (Z07)",
+    "LT140 downlight (Z07)",
+    "LT141 downlight (Z07)",
+    "LT142 downlight (Z07)"
+   ],
+   "bbox": {
+    "min": [
+     10.49,
+     2.743,
+     -20.396
+    ],
+    "max": [
+     20.752,
+     2.896,
+     -11.862
+    ]
+   }
+  },
+  {
+   "zone": "Z07",
+   "what": "walls, the glass above 1.22 m to the hallway and Z06, interior glass W02 and W03, door D49 and the opening to the hallway",
+   "nodes": []
+  },
+  {
+   "zone": "Z06",
+   "what": "2 fire extinguishers",
+   "nodes": [
+    "F235",
+    "F312"
+   ],
+   "names": [
+    "F235 fire_ext",
+    "F312 fire_ext"
+   ],
+   "bbox": {
+    "min": [
+     1.168,
+     0.152,
+     -22.454
+    ],
+    "max": [
+     1.372,
+     0.787,
+     -7.518
+    ]
+   }
+  },
+  {
+   "zone": "Z06",
+   "what": "archive cabinet in the north corridor (stays where it is; the owner decides whether the finance archive moves)",
+   "nodes": [
+    "F311"
+   ],
+   "names": [
+    "F311 archive_cab_66"
+   ],
+   "bbox": {
+    "min": [
+     6.452,
+     0.0,
+     -20.955
+    ],
+    "max": [
+     6.932,
+     2.134,
+     -19.279
+    ]
+   }
+  },
+  {
+   "zone": "Z06",
+   "what": "2 air-conditioning units",
+   "nodes": [
+    "AC05",
+    "AC06"
+   ],
+   "names": [
+    "AC05 VRF indoor unit, under-ceiling (Z06) - capacity by MEP",
+    "AC06 VRF indoor unit, under-ceiling (Z06) - capacity by MEP"
+   ],
+   "bbox": {
+    "min": [
+     3.721,
+     2.653,
+     -14.554
+    ],
+    "max": [
+     4.915,
+     2.896,
+     -9.83
+    ]
+   }
+  },
+  {
+   "zone": "Z06",
+   "what": "smoke detector",
+   "nodes": [
+    "SD07"
+   ],
+   "names": [
+    "SD07 smoke detector"
+   ],
+   "bbox": {
+    "min": [
+     4.257,
+     2.855,
+     -14.285
+    ],
+    "max": [
+     4.379,
+     2.896,
+     -14.163
+    ]
+   }
+  },
+  {
+   "zone": "Z06",
+   "what": "5 linear pendants (they light the class tables)",
+   "nodes": [
+    "LT143",
+    "LT144",
+    "LT145",
+    "LT146",
+    "LT147"
+   ],
+   "names": [
+    "LT143 linear pendant 130in (Z06)",
+    "LT144 linear pendant 130in (Z06)",
+    "LT145 linear pendant 60in (Z06)",
+    "LT146 linear pendant 48in (Z06)",
+    "LT147 linear pendant 72in (Z06)"
+   ],
+   "bbox": {
+    "min": [
+     3.924,
+     2.032,
+     -15.656
+    ],
+    "max": [
+     8.509,
+     2.997,
+     -6.619
+    ]
+   }
+  },
+  {
+   "zone": "Z06",
+   "what": "13 downlights",
+   "nodes": [
+    "LT148",
+    "LT149",
+    "LT150",
+    "LT151",
+    "LT152",
+    "LT153",
+    "LT154",
+    "LT155",
+    "LT156",
+    "LT157",
+    "LT158",
+    "LT159",
+    "LT160"
+   ],
+   "names": [
+    "LT148 downlight (Z06)",
+    "LT149 downlight (Z06)",
+    "LT150 downlight (Z06)",
+    "LT151 downlight (Z06)",
+    "LT152 downlight (Z06)",
+    "LT153 downlight (Z06)",
+    "LT154 downlight (Z06)",
+    "LT155 downlight (Z06)",
+    "LT156 downlight (Z06)",
+    "LT157 downlight (Z06)",
+    "LT158 downlight (Z06)",
+    "LT159 downlight (Z06)",
+    "LT160 downlight (Z06)"
+   ],
+   "bbox": {
+    "min": [
+     1.702,
+     2.743,
+     -20.65
+    ],
+    "max": [
+     8.306,
+     2.896,
+     -6.782
+    ]
+   }
+  },
+  {
+   "zone": "Z06",
+   "what": "every glass partition and door of the accounts suite and the discussion room",
+   "nodes": [
+    "NP34",
+    "NP35",
+    "NP36",
+    "NP37",
+    "NP38",
+    "NP39",
+    "D50",
+    "D51",
+    "D52"
+   ],
+   "names": [
+    "D50 door (glass) Accounts suite entrance 42\"",
+    "D51 door (glass) Accounts suite - north corridor 42\"",
+    "D52 door (slide) Finance discussion room (sliding) 40\"",
+    "NP34 Accounts suite - public corridor (privacy glass)",
+    "NP34 manifestation band",
+    "NP35 Accounts suite - staff arrival (privacy glass)",
+    "NP35 manifestation band",
+    "NP36 Staff corridor - accounts suite, glass",
+    "NP36 manifestation band",
+    "NP37 Accounts suite - north corridor (privacy glass)",
+    "NP37 manifestation band",
+    "NP38 Finance discussion room west, glass",
+    "NP38 manifestation band",
+    "NP39 Finance discussion room north, glass",
+    "NP39 manifestation band"
+   ],
+   "bbox": {
+    "min": [
+     2.692,
+     -0.0,
+     -17.544
+    ],
+    "max": [
+     9.195,
+     2.896,
+     -5.867
+    ]
+   }
+  },
+  {
+   "zone": "Z06",
+   "what": "the public corridor to the washrooms and female prayer room, and the north corridor to the hallway (kept clear)",
+   "nodes": []
+  }
+ ],
+ "walk_release": {
+  "note": "Walk-grid cells blocked only by the hidden furniture: [row, first column, last column], inclusive. Cells within the walker radius plus one cell of a wall, glass partition or kept item stay blocked.",
+  "cells": 8434,
+  "runs": [
+   [
+    195,
+    122,
+    184
+   ],
+   [
+    196,
+    122,
+    183
+   ],
+   [
+    196,
+    186,
+    188
+   ],
+   [
+    197,
+    122,
+    183
+   ],
+   [
+    197,
+    185,
+    202
+   ],
+   [
+    197,
+    204,
+    221
+   ],
+   [
+    198,
+    178,
+    182
+   ],
+   [
+    198,
+    185,
+    202
+   ],
+   [
+    198,
+    204,
+    221
+   ],
+   [
+    199,
+    178,
+    182
+   ],
+   [
+    199,
+    185,
+    202
+   ],
+   [
+    199,
+    204,
+    221
+   ],
+   [
+    200,
+    185,
+    202
+   ],
+   [
+    200,
+    204,
+    221
+   ],
+   [
+    201,
+    185,
+    202
+   ],
+   [
+    201,
+    204,
+    221
+   ],
+   [
+    202,
+    185,
+    202
+   ],
+   [
+    202,
+    204,
+    221
+   ],
+   [
+    203,
+    185,
+    202
+   ],
+   [
+    203,
+    204,
+    221
+   ],
+   [
+    203,
+    240,
+    243
+   ],
+   [
+    204,
+    185,
+    202
+   ],
+   [
+    204,
+    204,
+    221
+   ],
+   [
+    204,
+    240,
+    243
+   ],
+   [
+    205,
+    126,
+    133
+   ],
+   [
+    205,
+    140,
+    147
+   ],
+   [
+    205,
+    154,
+    161
+   ],
+   [
+    205,
+    168,
+    175
+   ],
+   [
+    205,
+    186,
+    200
+   ],
+   [
+    205,
+    205,
+    219
+   ],
+   [
+    205,
+    240,
+    243
+   ],
+   [
+    206,
+    126,
+    133
+   ],
+   [
+    206,
+    140,
+    147
+   ],
+   [
+    206,
+    154,
+    161
+   ],
+   [
+    206,
+    168,
+    175
+   ],
+   [
+    206,
+    240,
+    243
+   ],
+   [
+    207,
+    126,
+    133
+   ],
+   [
+    207,
+    140,
+    147
+   ],
+   [
+    207,
+    154,
+    161
+   ],
+   [
+    207,
+    168,
+    175
+   ],
+   [
+    207,
+    240,
+    243
+   ],
+   [
+    208,
+    125,
+    133
+   ],
+   [
+    208,
+    139,
+    147
+   ],
+   [
+    208,
+    153,
+    161
+   ],
+   [
+    208,
+    167,
+    175
+   ],
+   [
+    208,
+    240,
+    243
+   ],
+   [
+    209,
+    125,
+    133
+   ],
+   [
+    209,
+    139,
+    147
+   ],
+   [
+    209,
+    153,
+    161
+   ],
+   [
+    209,
+    167,
+    175
+   ],
+   [
+    209,
+    240,
+    243
+   ],
+   [
+    210,
+    125,
+    133
+   ],
+   [
+    210,
+    139,
+    147
+   ],
+   [
+    210,
+    153,
+    161
+   ],
+   [
+    210,
+    167,
+    175
+   ],
+   [
+    210,
+    240,
+    243
+   ],
+   [
+    211,
+    125,
+    133
+   ],
+   [
+    211,
+    139,
+    147
+   ],
+   [
+    211,
+    153,
+    161
+   ],
+   [
+    211,
+    167,
+    175
+   ],
+   [
+    211,
+    240,
+    243
+   ],
+   [
+    212,
+    125,
+    133
+   ],
+   [
+    212,
+    139,
+    147
+   ],
+   [
+    212,
+    153,
+    161
+   ],
+   [
+    212,
+    167,
+    175
+   ],
+   [
+    212,
+    240,
+    243
+   ],
+   [
+    213,
+    122,
+    179
+   ],
+   [
+    213,
+    240,
+    243
+   ],
+   [
+    214,
+    122,
+    179
+   ],
+   [
+    214,
+    197,
+    202
+   ],
+   [
+    214,
+    206,
+    211
+   ],
+   [
+    214,
+    240,
+    243
+   ],
+   [
+    215,
+    122,
+    179
+   ],
+   [
+    215,
+    196,
+    202
+   ],
+   [
+    215,
+    206,
+    211
+   ],
+   [
+    215,
+    240,
+    243
+   ],
+   [
+    216,
+    122,
+    179
+   ],
+   [
+    216,
+    196,
+    202
+   ],
+   [
+    216,
+    206,
+    211
+   ],
+   [
+    216,
+    240,
+    243
+   ],
+   [
+    217,
+    122,
+    179
+   ],
+   [
+    217,
+    196,
+    202
+   ],
+   [
+    217,
+    206,
+    211
+   ],
+   [
+    217,
+    240,
+    243
+   ],
+   [
+    218,
+    122,
+    179
+   ],
+   [
+    218,
+    197,
+    202
+   ],
+   [
+    218,
+    206,
+    211
+   ],
+   [
+    218,
+    240,
+    243
+   ],
+   [
+    219,
+    122,
+    179
+   ],
+   [
+    219,
+    240,
+    243
+   ],
+   [
+    220,
+    122,
+    179
+   ],
+   [
+    220,
+    240,
+    243
+   ],
+   [
+    221,
+    122,
+    179
+   ],
+   [
+    221,
+    240,
+    243
+   ],
+   [
+    222,
+    122,
+    179
+   ],
+   [
+    222,
+    240,
+    243
+   ],
+   [
+    223,
+    122,
+    179
+   ],
+   [
+    223,
+    240,
+    243
+   ],
+   [
+    224,
+    122,
+    179
+   ],
+   [
+    224,
+    240,
+    243
+   ],
+   [
+    225,
+    122,
+    179
+   ],
+   [
+    225,
+    240,
+    243
+   ],
+   [
+    226,
+    122,
+    179
+   ],
+   [
+    226,
+    240,
+    243
+   ],
+   [
+    227,
+    122,
+    179
+   ],
+   [
+    227,
+    197,
+    211
+   ],
+   [
+    227,
+    240,
+    243
+   ],
+   [
+    228,
+    122,
+    179
+   ],
+   [
+    228,
+    197,
+    211
+   ],
+   [
+    228,
+    240,
+    243
+   ],
+   [
+    229,
+    122,
+    179
+   ],
+   [
+    229,
+    197,
+    211
+   ],
+   [
+    229,
+    240,
+    243
+   ],
+   [
+    230,
+    125,
+    133
+   ],
+   [
+    230,
+    139,
+    147
+   ],
+   [
+    230,
+    153,
+    161
+   ],
+   [
+    230,
+    167,
+    175
+   ],
+   [
+    230,
+    197,
+    211
+   ],
+   [
+    230,
+    240,
+    243
+   ],
+   [
+    231,
+    125,
+    133
+   ],
+   [
+    231,
+    139,
+    147
+   ],
+   [
+    231,
+    153,
+    161
+   ],
+   [
+    231,
+    167,
+    175
+   ],
+   [
+    231,
+    197,
+    211
+   ],
+   [
+    231,
+    240,
+    243
+   ],
+   [
+    232,
+    125,
+    133
+   ],
+   [
+    232,
+    139,
+    147
+   ],
+   [
+    232,
+    153,
+    161
+   ],
+   [
+    232,
+    167,
+    175
+   ],
+   [
+    232,
+    197,
+    211
+   ],
+   [
+    232,
+    240,
+    243
+   ],
+   [
+    233,
+    66,
+    73
+   ],
+   [
+    233,
+    78,
+    85
+   ],
+   [
+    233,
+    90,
+    97
+   ],
+   [
+    233,
+    125,
+    133
+   ],
+   [
+    233,
+    139,
+    147
+   ],
+   [
+    233,
+    153,
+    161
+   ],
+   [
+    233,
+    167,
+    175
+   ],
+   [
+    233,
+    197,
+    211
+   ],
+   [
+    233,
+    240,
+    243
+   ],
+   [
+    234,
+    66,
+    73
+   ],
+   [
+    234,
+    78,
+    85
+   ],
+   [
+    234,
+    90,
+    97
+   ],
+   [
+    234,
+    112,
+    115
+   ],
+   [
+    234,
+    125,
+    133
+   ],
+   [
+    234,
+    139,
+    147
+   ],
+   [
+    234,
+    153,
+    161
+   ],
+   [
+    234,
+    167,
+    175
+   ],
+   [
+    234,
+    197,
+    211
+   ],
+   [
+    234,
+    240,
+    243
+   ],
+   [
+    235,
+    66,
+    73
+   ],
+   [
+    235,
+    78,
+    85
+   ],
+   [
+    235,
+    90,
+    97
+   ],
+   [
+    235,
+    112,
+    115
+   ],
+   [
+    235,
+    126,
+    133
+   ],
+   [
+    235,
+    140,
+    147
+   ],
+   [
+    235,
+    154,
+    161
+   ],
+   [
+    235,
+    168,
+    175
+   ],
+   [
+    235,
+    197,
+    211
+   ],
+   [
+    235,
+    240,
+    243
+   ],
+   [
+    236,
+    66,
+    74
+   ],
+   [
+    236,
+    78,
+    86
+   ],
+   [
+    236,
+    90,
+    98
+   ],
+   [
+    236,
+    112,
+    115
+   ],
+   [
+    236,
+    126,
+    133
+   ],
+   [
+    236,
+    140,
+    147
+   ],
+   [
+    236,
+    154,
+    161
+   ],
+   [
+    236,
+    168,
+    175
+   ],
+   [
+    236,
+    197,
+    211
+   ],
+   [
+    236,
+    240,
+    243
+   ],
+   [
+    237,
+    66,
+    74
+   ],
+   [
+    237,
+    78,
+    86
+   ],
+   [
+    237,
+    90,
+    98
+   ],
+   [
+    237,
+    112,
+    115
+   ],
+   [
+    237,
+    125,
+    133
+   ],
+   [
+    237,
+    139,
+    147
+   ],
+   [
+    237,
+    153,
+    161
+   ],
+   [
+    237,
+    167,
+    175
+   ],
+   [
+    237,
+    197,
+    211
+   ],
+   [
+    237,
+    240,
+    243
+   ],
+   [
+    238,
+    66,
+    74
+   ],
+   [
+    238,
+    78,
+    86
+   ],
+   [
+    238,
+    90,
+    98
+   ],
+   [
+    238,
+    112,
+    115
+   ],
+   [
+    238,
+    125,
+    133
+   ],
+   [
+    238,
+    139,
+    147
+   ],
+   [
+    238,
+    153,
+    161
+   ],
+   [
+    238,
+    167,
+    175
+   ],
+   [
+    238,
+    197,
+    211
+   ],
+   [
+    238,
+    240,
+    243
+   ],
+   [
+    239,
+    66,
+    74
+   ],
+   [
+    239,
+    78,
+    86
+   ],
+   [
+    239,
+    90,
+    98
+   ],
+   [
+    239,
+    112,
+    115
+   ],
+   [
+    239,
+    125,
+    133
+   ],
+   [
+    239,
+    139,
+    147
+   ],
+   [
+    239,
+    153,
+    161
+   ],
+   [
+    239,
+    167,
+    175
+   ],
+   [
+    239,
+    197,
+    211
+   ],
+   [
+    239,
+    240,
+    243
+   ],
+   [
+    240,
+    66,
+    74
+   ],
+   [
+    240,
+    78,
+    86
+   ],
+   [
+    240,
+    90,
+    98
+   ],
+   [
+    240,
+    112,
+    115
+   ],
+   [
+    240,
+    125,
+    133
+   ],
+   [
+    240,
+    139,
+    147
+   ],
+   [
+    240,
+    153,
+    161
+   ],
+   [
+    240,
+    167,
+    175
+   ],
+   [
+    240,
+    197,
+    211
+   ],
+   [
+    240,
+    240,
+    243
+   ],
+   [
+    241,
+    63,
+    98
+   ],
+   [
+    241,
+    112,
+    115
+   ],
+   [
+    241,
+    125,
+    133
+   ],
+   [
+    241,
+    139,
+    147
+   ],
+   [
+    241,
+    153,
+    161
+   ],
+   [
+    241,
+    167,
+    175
+   ],
+   [
+    241,
+    197,
+    211
+   ],
+   [
+    241,
+    240,
+    243
+   ],
+   [
+    242,
+    63,
+    98
+   ],
+   [
+    242,
+    112,
+    115
+   ],
+   [
+    242,
+    122,
+    178
+   ],
+   [
+    242,
+    197,
+    211
+   ],
+   [
+    242,
+    240,
+    243
+   ],
+   [
+    243,
+    63,
+    98
+   ],
+   [
+    243,
+    112,
+    115
+   ],
+   [
+    243,
+    122,
+    178
+   ],
+   [
+    243,
+    197,
+    211
+   ],
+   [
+    243,
+    240,
+    243
+   ],
+   [
+    244,
+    63,
+    98
+   ],
+   [
+    244,
+    112,
+    115
+   ],
+   [
+    244,
+    122,
+    178
+   ],
+   [
+    244,
+    197,
+    211
+   ],
+   [
+    244,
+    240,
+    243
+   ],
+   [
+    245,
+    63,
+    98
+   ],
+   [
+    245,
+    112,
+    115
+   ],
+   [
+    245,
+    122,
+    178
+   ],
+   [
+    245,
+    197,
+    211
+   ],
+   [
+    245,
+    240,
+    243
+   ],
+   [
+    246,
+    63,
+    98
+   ],
+   [
+    246,
+    112,
+    115
+   ],
+   [
+    246,
+    122,
+    178
+   ],
+   [
+    246,
+    197,
+    211
+   ],
+   [
+    246,
+    240,
+    243
+   ],
+   [
+    247,
+    63,
+    98
+   ],
+   [
+    247,
+    112,
+    115
+   ],
+   [
+    247,
+    122,
+    178
+   ],
+   [
+    247,
+    197,
+    211
+   ],
+   [
+    247,
+    240,
+    243
+   ],
+   [
+    248,
+    63,
+    98
+   ],
+   [
+    248,
+    112,
+    115
+   ],
+   [
+    248,
+    122,
+    178
+   ],
+   [
+    248,
+    197,
+    211
+   ],
+   [
+    248,
+    240,
+    243
+   ],
+   [
+    249,
+    63,
+    101
+   ],
+   [
+    249,
+    112,
+    115
+   ],
+   [
+    249,
+    122,
+    179
+   ],
+   [
+    249,
+    197,
+    211
+   ],
+   [
+    249,
+    240,
+    243
+   ],
+   [
+    250,
+    63,
+    101
+   ],
+   [
+    250,
+    112,
+    115
+   ],
+   [
+    250,
+    124,
+    179
+   ],
+   [
+    250,
+    197,
+    211
+   ],
+   [
+    250,
+    240,
+    243
+   ],
+   [
+    251,
+    63,
+    101
+   ],
+   [
+    251,
+    112,
+    115
+   ],
+   [
+    251,
+    124,
+    179
+   ],
+   [
+    251,
+    197,
+    211
+   ],
+   [
+    251,
+    240,
+    243
+   ],
+   [
+    252,
+    63,
+    101
+   ],
+   [
+    252,
+    112,
+    115
+   ],
+   [
+    252,
+    124,
+    179
+   ],
+   [
+    252,
+    197,
+    211
+   ],
+   [
+    252,
+    240,
+    243
+   ],
+   [
+    253,
+    63,
+    101
+   ],
+   [
+    253,
+    112,
+    115
+   ],
+   [
+    253,
+    124,
+    179
+   ],
+   [
+    253,
+    197,
+    211
+   ],
+   [
+    253,
+    240,
+    243
+   ],
+   [
+    254,
+    63,
+    101
+   ],
+   [
+    254,
+    112,
+    115
+   ],
+   [
+    254,
+    124,
+    179
+   ],
+   [
+    254,
+    240,
+    243
+   ],
+   [
+    255,
+    63,
+    101
+   ],
+   [
+    255,
+    112,
+    115
+   ],
+   [
+    255,
+    124,
+    179
+   ],
+   [
+    255,
+    240,
+    243
+   ],
+   [
+    256,
+    63,
+    101
+   ],
+   [
+    256,
+    112,
+    115
+   ],
+   [
+    256,
+    124,
+    179
+   ],
+   [
+    256,
+    240,
+    243
+   ],
+   [
+    257,
+    63,
+    101
+   ],
+   [
+    257,
+    112,
+    115
+   ],
+   [
+    257,
+    122,
+    179
+   ],
+   [
+    257,
+    240,
+    243
+   ],
+   [
+    258,
+    66,
+    74
+   ],
+   [
+    258,
+    78,
+    86
+   ],
+   [
+    258,
+    90,
+    98
+   ],
+   [
+    258,
+    112,
+    115
+   ],
+   [
+    258,
+    122,
+    179
+   ],
+   [
+    258,
+    240,
+    243
+   ],
+   [
+    259,
+    66,
+    74
+   ],
+   [
+    259,
+    78,
+    86
+   ],
+   [
+    259,
+    90,
+    98
+   ],
+   [
+    259,
+    112,
+    115
+   ],
+   [
+    259,
+    125,
+    136
+   ],
+   [
+    259,
+    139,
+    147
+   ],
+   [
+    259,
+    153,
+    161
+   ],
+   [
+    259,
+    167,
+    175
+   ],
+   [
+    259,
+    240,
+    243
+   ],
+   [
+    260,
+    66,
+    74
+   ],
+   [
+    260,
+    78,
+    86
+   ],
+   [
+    260,
+    90,
+    98
+   ],
+   [
+    260,
+    112,
+    115
+   ],
+   [
+    260,
+    125,
+    133
+   ],
+   [
+    260,
+    139,
+    147
+   ],
+   [
+    260,
+    153,
+    161
+   ],
+   [
+    260,
+    167,
+    175
+   ],
+   [
+    260,
+    240,
+    243
+   ],
+   [
+    261,
+    66,
+    74
+   ],
+   [
+    261,
+    78,
+    86
+   ],
+   [
+    261,
+    90,
+    98
+   ],
+   [
+    261,
+    112,
+    115
+   ],
+   [
+    261,
+    122,
+    133
+   ],
+   [
+    261,
+    139,
+    147
+   ],
+   [
+    261,
+    153,
+    161
+   ],
+   [
+    261,
+    167,
+    175
+   ],
+   [
+    261,
+    198,
+    210
+   ],
+   [
+    261,
+    240,
+    243
+   ],
+   [
+    262,
+    66,
+    74
+   ],
+   [
+    262,
+    78,
+    86
+   ],
+   [
+    262,
+    90,
+    98
+   ],
+   [
+    262,
+    112,
+    115
+   ],
+   [
+    262,
+    122,
+    133
+   ],
+   [
+    262,
+    139,
+    147
+   ],
+   [
+    262,
+    153,
+    161
+   ],
+   [
+    262,
+    167,
+    175
+   ],
+   [
+    262,
+    198,
+    210
+   ],
+   [
+    262,
+    240,
+    243
+   ],
+   [
+    263,
+    66,
+    73
+   ],
+   [
+    263,
+    78,
+    85
+   ],
+   [
+    263,
+    90,
+    97
+   ],
+   [
+    263,
+    112,
+    115
+   ],
+   [
+    263,
+    122,
+    133
+   ],
+   [
+    263,
+    139,
+    147
+   ],
+   [
+    263,
+    153,
+    161
+   ],
+   [
+    263,
+    167,
+    175
+   ],
+   [
+    263,
+    190,
+    218
+   ],
+   [
+    263,
+    240,
+    243
+   ],
+   [
+    264,
+    66,
+    73
+   ],
+   [
+    264,
+    78,
+    85
+   ],
+   [
+    264,
+    90,
+    97
+   ],
+   [
+    264,
+    112,
+    115
+   ],
+   [
+    264,
+    122,
+    133
+   ],
+   [
+    264,
+    140,
+    147
+   ],
+   [
+    264,
+    154,
+    161
+   ],
+   [
+    264,
+    168,
+    175
+   ],
+   [
+    264,
+    190,
+    218
+   ],
+   [
+    264,
+    240,
+    243
+   ],
+   [
+    265,
+    66,
+    74
+   ],
+   [
+    265,
+    78,
+    86
+   ],
+   [
+    265,
+    90,
+    98
+   ],
+   [
+    265,
+    112,
+    115
+   ],
+   [
+    265,
+    122,
+    133
+   ],
+   [
+    265,
+    140,
+    147
+   ],
+   [
+    265,
+    154,
+    161
+   ],
+   [
+    265,
+    168,
+    175
+   ],
+   [
+    265,
+    190,
+    218
+   ],
+   [
+    265,
+    240,
+    243
+   ],
+   [
+    266,
+    66,
+    74
+   ],
+   [
+    266,
+    78,
+    86
+   ],
+   [
+    266,
+    90,
+    98
+   ],
+   [
+    266,
+    112,
+    115
+   ],
+   [
+    266,
+    122,
+    133
+   ],
+   [
+    266,
+    140,
+    147
+   ],
+   [
+    266,
+    154,
+    161
+   ],
+   [
+    266,
+    168,
+    175
+   ],
+   [
+    266,
+    190,
+    218
+   ],
+   [
+    266,
+    240,
+    243
+   ],
+   [
+    267,
+    66,
+    74
+   ],
+   [
+    267,
+    78,
+    86
+   ],
+   [
+    267,
+    90,
+    98
+   ],
+   [
+    267,
+    112,
+    115
+   ],
+   [
+    267,
+    122,
+    126
+   ],
+   [
+    267,
+    190,
+    218
+   ],
+   [
+    267,
+    240,
+    243
+   ],
+   [
+    268,
+    66,
+    74
+   ],
+   [
+    268,
+    78,
+    86
+   ],
+   [
+    268,
+    90,
+    98
+   ],
+   [
+    268,
+    112,
+    115
+   ],
+   [
+    268,
+    122,
+    126
+   ],
+   [
+    268,
+    190,
+    218
+   ],
+   [
+    268,
+    240,
+    243
+   ],
+   [
+    269,
+    66,
+    74
+   ],
+   [
+    269,
+    78,
+    86
+   ],
+   [
+    269,
+    90,
+    98
+   ],
+   [
+    269,
+    112,
+    115
+   ],
+   [
+    269,
+    122,
+    126
+   ],
+   [
+    269,
+    190,
+    218
+   ],
+   [
+    269,
+    240,
+    243
+   ],
+   [
+    270,
+    63,
+    101
+   ],
+   [
+    270,
+    112,
+    115
+   ],
+   [
+    270,
+    122,
+    127
+   ],
+   [
+    270,
+    190,
+    218
+   ],
+   [
+    270,
+    240,
+    243
+   ],
+   [
+    271,
+    63,
+    101
+   ],
+   [
+    271,
+    112,
+    115
+   ],
+   [
+    271,
+    122,
+    127
+   ],
+   [
+    271,
+    190,
+    218
+   ],
+   [
+    271,
+    240,
+    243
+   ],
+   [
+    272,
+    63,
+    101
+   ],
+   [
+    272,
+    112,
+    115
+   ],
+   [
+    272,
+    122,
+    127
+   ],
+   [
+    272,
+    190,
+    218
+   ],
+   [
+    272,
+    240,
+    243
+   ],
+   [
+    273,
+    63,
+    101
+   ],
+   [
+    273,
+    112,
+    115
+   ],
+   [
+    273,
+    122,
+    127
+   ],
+   [
+    273,
+    190,
+    218
+   ],
+   [
+    273,
+    240,
+    243
+   ],
+   [
+    274,
+    63,
+    101
+   ],
+   [
+    274,
+    112,
+    115
+   ],
+   [
+    274,
+    122,
+    126
+   ],
+   [
+    274,
+    190,
+    218
+   ],
+   [
+    274,
+    240,
+    243
+   ],
+   [
+    275,
+    63,
+    101
+   ],
+   [
+    275,
+    112,
+    115
+   ],
+   [
+    275,
+    124,
+    126
+   ],
+   [
+    275,
+    190,
+    218
+   ],
+   [
+    275,
+    240,
+    243
+   ],
+   [
+    276,
+    63,
+    101
+   ],
+   [
+    276,
+    112,
+    115
+   ],
+   [
+    276,
+    124,
+    126
+   ],
+   [
+    276,
+    190,
+    218
+   ],
+   [
+    276,
+    240,
+    243
+   ],
+   [
+    277,
+    63,
+    101
+   ],
+   [
+    277,
+    112,
+    115
+   ],
+   [
+    277,
+    124,
+    126
+   ],
+   [
+    277,
+    190,
+    218
+   ],
+   [
+    277,
+    240,
+    243
+   ],
+   [
+    278,
+    63,
+    101
+   ],
+   [
+    278,
+    112,
+    115
+   ],
+   [
+    278,
+    124,
+    126
+   ],
+   [
+    278,
+    190,
+    218
+   ],
+   [
+    278,
+    240,
+    243
+   ],
+   [
+    279,
+    63,
+    101
+   ],
+   [
+    279,
+    112,
+    115
+   ],
+   [
+    279,
+    190,
+    218
+   ],
+   [
+    279,
+    240,
+    243
+   ],
+   [
+    280,
+    63,
+    101
+   ],
+   [
+    280,
+    112,
+    115
+   ],
+   [
+    280,
+    124,
+    125
+   ],
+   [
+    280,
+    190,
+    218
+   ],
+   [
+    280,
+    240,
+    243
+   ],
+   [
+    281,
+    63,
+    101
+   ],
+   [
+    281,
+    112,
+    115
+   ],
+   [
+    281,
+    124,
+    126
+   ],
+   [
+    281,
+    190,
+    218
+   ],
+   [
+    281,
+    240,
+    243
+   ],
+   [
+    282,
+    63,
+    101
+   ],
+   [
+    282,
+    112,
+    115
+   ],
+   [
+    282,
+    122,
+    127
+   ],
+   [
+    282,
+    190,
+    218
+   ],
+   [
+    282,
+    240,
+    243
+   ],
+   [
+    283,
+    63,
+    101
+   ],
+   [
+    283,
+    112,
+    115
+   ],
+   [
+    283,
+    122,
+    127
+   ],
+   [
+    283,
+    190,
+    218
+   ],
+   [
+    283,
+    240,
+    243
+   ],
+   [
+    284,
+    63,
+    101
+   ],
+   [
+    284,
+    112,
+    115
+   ],
+   [
+    284,
+    122,
+    128
+   ],
+   [
+    284,
+    193,
+    215
+   ],
+   [
+    284,
+    240,
+    243
+   ],
+   [
+    285,
+    63,
+    101
+   ],
+   [
+    285,
+    112,
+    115
+   ],
+   [
+    285,
+    122,
+    128
+   ],
+   [
+    285,
+    198,
+    210
+   ],
+   [
+    285,
+    240,
+    243
+   ],
+   [
+    286,
+    63,
+    101
+   ],
+   [
+    286,
+    112,
+    115
+   ],
+   [
+    286,
+    122,
+    128
+   ],
+   [
+    286,
+    240,
+    243
+   ],
+   [
+    287,
+    66,
+    74
+   ],
+   [
+    287,
+    78,
+    86
+   ],
+   [
+    287,
+    90,
+    98
+   ],
+   [
+    287,
+    112,
+    115
+   ],
+   [
+    287,
+    122,
+    128
+   ],
+   [
+    288,
+    66,
+    74
+   ],
+   [
+    288,
+    78,
+    86
+   ],
+   [
+    288,
+    90,
+    98
+   ],
+   [
+    288,
+    112,
+    115
+   ],
+   [
+    288,
+    122,
+    127
+   ],
+   [
+    289,
+    66,
+    74
+   ],
+   [
+    289,
+    78,
+    86
+   ],
+   [
+    289,
+    90,
+    98
+   ],
+   [
+    289,
+    112,
+    115
+   ],
+   [
+    289,
+    140,
+    187
+   ],
+   [
+    290,
+    66,
+    74
+   ],
+   [
+    290,
+    78,
+    86
+   ],
+   [
+    290,
+    90,
+    98
+   ],
+   [
+    290,
+    112,
+    115
+   ],
+   [
+    290,
+    122,
+    187
+   ],
+   [
+    291,
+    66,
+    74
+   ],
+   [
+    291,
+    78,
+    86
+   ],
+   [
+    291,
+    90,
+    98
+   ],
+   [
+    291,
+    112,
+    115
+   ],
+   [
+    291,
+    122,
+    187
+   ],
+   [
+    292,
+    66,
+    73
+   ],
+   [
+    292,
+    78,
+    85
+   ],
+   [
+    292,
+    90,
+    97
+   ],
+   [
+    292,
+    112,
+    115
+   ],
+   [
+    292,
+    122,
+    187
+   ],
+   [
+    293,
+    66,
+    73
+   ],
+   [
+    293,
+    78,
+    85
+   ],
+   [
+    293,
+    90,
+    97
+   ],
+   [
+    293,
+    112,
+    115
+   ],
+   [
+    293,
+    122,
+    142
+   ],
+   [
+    293,
+    159,
+    161
+   ],
+   [
+    293,
+    177,
+    187
+   ],
+   [
+    294,
+    66,
+    73
+   ],
+   [
+    294,
+    78,
+    85
+   ],
+   [
+    294,
+    90,
+    97
+   ],
+   [
+    294,
+    112,
+    115
+   ],
+   [
+    294,
+    122,
+    142
+   ],
+   [
+    294,
+    159,
+    161
+   ],
+   [
+    294,
+    177,
+    187
+   ],
+   [
+    295,
+    112,
+    115
+   ],
+   [
+    296,
+    112,
+    115
+   ],
+   [
+    297,
+    112,
+    115
+   ],
+   [
+    298,
+    112,
+    115
+   ],
+   [
+    299,
+    112,
+    115
+   ],
+   [
+    300,
+    112,
+    115
+   ],
+   [
+    301,
+    69,
+    87
+   ],
+   [
+    301,
+    112,
+    115
+   ],
+   [
+    302,
+    69,
+    87
+   ],
+   [
+    302,
+    112,
+    115
+   ],
+   [
+    303,
+    69,
+    87
+   ],
+   [
+    303,
+    112,
+    115
+   ],
+   [
+    304,
+    69,
+    87
+   ],
+   [
+    304,
+    112,
+    115
+   ],
+   [
+    305,
+    69,
+    87
+   ],
+   [
+    305,
+    112,
+    115
+   ],
+   [
+    306,
+    69,
+    87
+   ],
+   [
+    306,
+    112,
+    115
+   ],
+   [
+    307,
+    69,
+    87
+   ],
+   [
+    307,
+    112,
+    115
+   ],
+   [
+    308,
+    69,
+    87
+   ],
+   [
+    308,
+    112,
+    115
+   ],
+   [
+    309,
+    69,
+    87
+   ],
+   [
+    309,
+    112,
+    115
+   ],
+   [
+    310,
+    69,
+    87
+   ],
+   [
+    310,
+    112,
+    115
+   ],
+   [
+    311,
+    69,
+    87
+   ],
+   [
+    311,
+    112,
+    115
+   ],
+   [
+    312,
+    74,
+    82
+   ],
+   [
+    312,
+    112,
+    115
+   ],
+   [
+    313,
+    74,
+    82
+   ],
+   [
+    313,
+    112,
+    115
+   ],
+   [
+    314,
+    74,
+    82
+   ],
+   [
+    314,
+    112,
+    115
+   ],
+   [
+    315,
+    74,
+    82
+   ],
+   [
+    315,
+    112,
+    115
+   ],
+   [
+    316,
+    74,
+    82
+   ],
+   [
+    316,
+    112,
+    115
+   ],
+   [
+    317,
+    74,
+    82
+   ],
+   [
+    317,
+    112,
+    115
+   ],
+   [
+    318,
+    74,
+    82
+   ],
+   [
+    319,
+    74,
+    82
+   ],
+   [
+    323,
+    102,
+    108
+   ],
+   [
+    324,
+    102,
+    108
+   ],
+   [
+    325,
+    102,
+    108
+   ],
+   [
+    326,
+    102,
+    108
+   ],
+   [
+    327,
+    102,
+    108
+   ],
+   [
+    328,
+    101,
+    109
+   ],
+   [
+    329,
+    100,
+    110
+   ],
+   [
+    330,
+    95,
+    115
+   ],
+   [
+    331,
+    95,
+    115
+   ],
+   [
+    332,
+    95,
+    115
+   ],
+   [
+    333,
+    95,
+    115
+   ],
+   [
+    334,
+    95,
+    115
+   ],
+   [
+    335,
+    95,
+    115
+   ],
+   [
+    336,
+    95,
+    115
+   ],
+   [
+    337,
+    95,
+    115
+   ],
+   [
+    338,
+    101,
+    109
+   ],
+   [
+    338,
+    112,
+    115
+   ],
+   [
+    339,
+    70,
+    89
+   ],
+   [
+    339,
+    102,
+    108
+   ],
+   [
+    339,
+    112,
+    114
+   ],
+   [
+    340,
+    70,
+    89
+   ],
+   [
+    340,
+    102,
+    108
+   ],
+   [
+    340,
+    112,
+    114
+   ],
+   [
+    341,
+    70,
+    89
+   ],
+   [
+    341,
+    102,
+    108
+   ],
+   [
+    341,
+    112,
+    114
+   ],
+   [
+    342,
+    70,
+    89
+   ],
+   [
+    342,
+    102,
+    108
+   ],
+   [
+    342,
+    112,
+    114
+   ],
+   [
+    343,
+    70,
+    89
+   ],
+   [
+    343,
+    102,
+    108
+   ],
+   [
+    343,
+    112,
+    114
+   ],
+   [
+    344,
+    70,
+    89
+   ],
+   [
+    344,
+    102,
+    108
+   ],
+   [
+    344,
+    112,
+    114
+   ]
+  ]
+ }
+}

@@ -1,0 +1,473 @@
+{
+  "url": "http://127.0.0.1:8790/bengal-earth-lab/?welcome=0",
+  "scope": "LOCAL Chromium (SwiftShader) via serve_preview.py; not live or MacBook proof",
+  "checks": [
+    {
+      "name": "interior layer built",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "concept layer built",
+      "passed": true,
+      "detail": {
+        "name": "bengal-earth-lab",
+        "meshes": 1041,
+        "instancedLeaves": 13096,
+        "textures": 190,
+        "textureMB": 41.6
+      }
+    },
+    {
+      "name": "replaced approved items hidden",
+      "passed": true,
+      "detail": 115
+    },
+    {
+      "name": "walk moves on free floor",
+      "passed": true,
+      "detail": {
+        "start": [
+          13.0,
+          -17.95
+        ],
+        "yaw": 1.5708,
+        "end": [
+          9.549566544734061,
+          1.6,
+          -17.95
+        ],
+        "collisions": 314,
+        "distance": 3.450433455265939,
+        "room": "Z07"
+      }
+    },
+    {
+      "name": "walk never ends inside geometry or a wall",
+      "passed": true,
+      "detail": [
+        [
+          9.549566544734061,
+          1.6,
+          -17.95
+        ],
+        [
+          9.549566544734061,
+          1.6,
+          -17.95
+        ],
+        [
+          9.549566544734061,
+          1.6,
+          -17.95
+        ]
+      ]
+    },
+    {
+      "name": "no page or console errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "no HTTP errors",
+      "passed": true,
+      "detail": []
+    }
+  ],
+  "errors": [],
+  "http_errors": [],
+  "failed_requests": [],
+  "finishes": {
+    "refined": [
+      "fl_terrazzo_baked"
+    ],
+    "source": "./textures/pbr2k/ktx2/Terrazzo019M/basecolor.ktx2"
+  },
+  "interior": {
+    "items": [
+      {
+        "id": "RC_WARP_WEFT",
+        "zone": "Z02",
+        "note": "Warp & weft: five handloom hangings (khadi with Jamdani-style butis, indigo with kantha running stitch, undyed jute, madder, striped khadi) on an oak rail, washed with warm light."
+      },
+      {
+        "id": "RC_RUG_KANTHA",
+        "zone": "Z02",
+        "note": "The approved rug, redesigned as jute with an indigo border, kantha-style running stitch and a lotus centre. Same footprint and baked light."
+      },
+      {
+        "id": "RC_SOFTS",
+        "zone": "Z02",
+        "note": "Kantha-stitched cushions on the sofa corners and lounge chairs, a stitched throw over the sofa arm."
+      },
+      {
+        "id": "RC_PANEL_LIGHT",
+        "zone": "Z02",
+        "note": "Brass picture light over the Jamdani-inspired panel."
+      },
+      {
+        "id": "RC_WELCOME_SWATCHES",
+        "zone": "Z02",
+        "note": "Fabric rolls and a bowl of coconut-shell buttons on the visitor ledge, for buyers to touch on arrival."
+      },
+      {
+        "id": "RC_SCALLOPS",
+        "zone": "Z02",
+        "note": "Warm scallops of the four existing track spots on the fluted oak wall, as in the Cycles render (vertex light cannot hold them)."
+      },
+      {
+        "id": "EC_TEXTILE_BAFFLES",
+        "zone": "Z30",
+        "note": "Handloom cloth fins under the deck between the two track rails (khadi and jute with woven indigo and madder bands), clear of the spot beams, the AC unit and the smoke detector."
+      },
+      {
+        "id": "EC_GALLERY_LIGHT",
+        "zone": "Z30",
+        "note": "Warm pools of the existing track spots on the plinth and of the linear pendant on the material table."
+      },
+      {
+        "id": "MD_RUG_SOFTS",
+        "zone": "Z12",
+        "note": "MD lounge: the approved rug redesigned as an indigo kantha weave (same footprint); stitched cushions on the sofa and armchair."
+      },
+      {
+        "id": "MD_KANTHA_PANEL",
+        "zone": "Z12",
+        "note": "A framed nakshi-kantha-inspired panel on the free east wall behind the desk, under a brass picture light (design reference)."
+      },
+      {
+        "id": "BR_KANTHA_PANEL",
+        "zone": "Z08",
+        "note": "A tall kantha-inspired panel on the free wall between the reception glass and the executive-suite door, under a picture light (design reference)."
+      },
+      {
+        "id": "BR_DESK_PADS",
+        "zone": "Z08",
+        "note": "Khadi desk pads with a kantha running-stitch edge and a stitched leaf at the eight places with a notebook and a glass, clear of the cable channel."
+      },
+      {
+        "id": "BR_TABLE_LIGHT",
+        "zone": "Z08",
+        "note": "Warm pool of the existing linear pendants along the boardroom table."
+      },
+      {
+        "id": "LB_BRAND_LIGHT",
+        "zone": "Z01",
+        "note": "Warm scallops of the three existing track spots on the oak slats of the brand wall, which falls off softly towards the floor; the white logo panel and the logos keep their look."
+      },
+      {
+        "id": "LB_WOVEN_PIER",
+        "zone": "Z01",
+        "note": "One narrow handloom hanging (khadi with sparse Jamdani-style butis and indigo selvedge stripes) on the blank pier between the two windows, on the way to the Reception door. Design reference; maker to be identified."
+      },
+      {
+        "id": "LB_WOOD_WARMTH",
+        "zone": "Z01",
+        "note": "The walnut of the check-in desk and the oak of the two north doors read warmer (lobby only, same textures)."
+      },
+      {
+        "id": "DS_DAYLIGHT",
+        "zone": "Z18",
+        "note": "Overcast daylight in the three existing east windows and its soft spill on the floor; true north, sun angles and glare are still to be measured on site."
+      },
+      {
+        "id": "DS_FABRIC_BOARD",
+        "zone": "Z18",
+        "note": "The approved mood board with the same swatch layout and colours, shown as pinned cloth (pinked edges, pins, weave and knit, Jamdani-style butis on the whites) and garment flats on its paper sheets, lit by the scallops of its five existing track spots."
+      }
+    ],
+    "meshes": 135,
+    "textures": 39,
+    "detail": 1,
+    "rugMaterials": [
+      "oak",
+      "walnut",
+      "oak_slat_baked",
+      "walnut_baked",
+      "rug_wool"
+    ]
+  },
+  "concept": {
+    "name": "bengal-earth-lab",
+    "items": [
+      {
+        "id": "BEL_GATE_BONSAI",
+        "zone": "Z01",
+        "note": "A banyan bonsai on a granite plinth beside the glass gate, in place of the approved potted tree and on its footprint. Grower, species and stone source to be confirmed; it takes turns in daylight at the studio windows."
+      },
+      {
+        "id": "BEL_LOBBY_STONES",
+        "zone": "Z01",
+        "note": "Three granite stones in place of the approved small planter, on its footprint. Stone only from a documented legal source, never from illegal river extraction."
+      },
+      {
+        "id": "BEL_EARTH_DESK",
+        "zone": "Z01",
+        "note": "Handmade terracotta tiles on the visitor face of the check-in desk (proposal; potter to be identified)."
+      },
+      {
+        "id": "BEL_LOBBY_RELIEF",
+        "zone": "Z01",
+        "note": "Six terracotta plaques by a rural artist on the free west wall: sun, river boat, shapla, fish, rice and a doel bird. Placeholder composition: the artist is to be commissioned, paid and credited by name."
+      },
+      {
+        "id": "BEL_RECEPTION_TREE",
+        "zone": "Z02",
+        "note": "A small fig tree in a handmade terracotta planter, in place of the approved potted tree and on its footprint."
+      },
+      {
+        "id": "BEL_RECEPTION_ALOE",
+        "zone": "Z02",
+        "note": "Ghritokumari (aloe) in a clay pot on a low stone, in place of the approved small planter: a plant traditionally kept in Bengali homes; no medical claim."
+      },
+      {
+        "id": "BEL_INSTRUMENTS",
+        "zone": "Z02",
+        "note": "Rural instruments above the console: ektara, dotara and banshi on an oak rail, a dhol on the console. Makers to be identified and credited; played at events, never used as props."
+      },
+      {
+        "id": "BEL_TEA_CLAY",
+        "zone": "Z02",
+        "note": "Tea in clay cups from a clay pot on a wooden tray, in place of the porcelain props. Glazes to be tested for lead and cadmium release before use."
+      },
+      {
+        "id": "BEL_SUN_WALL",
+        "zone": "Z03",
+        "note": "The Sun wall: sun, solar generation, direct use and storage, operations, with grid and backup shown. Concept demonstration, not live factory data. The message stays \"Designed for a Solar-Powered Future\" until measured evidence exists."
+      },
+      {
+        "id": "BEL_EARTH_WALL",
+        "zone": "Z03",
+        "note": "Handmade terracotta tiles between the guest WC doors, with a narrow oak ledge of clay bowls holding clay, jute, hogla, cane and rice straw (proposal)."
+      },
+      {
+        "id": "BEL_EARTH_TO_PRODUCT",
+        "zone": "Z30",
+        "note": "The Earth-to-Product gallery on the plinth (the four forms are removed): raw material, craft technique, prototype, testing, collection. Illustrative objects; real samples and test records replace them."
+      },
+      {
+        "id": "BEL_MATERIAL_TABLE",
+        "zone": "Z30",
+        "note": "Living materials on the material table: woven jute, hogla, cane, water hyacinth, bamboo and kaisa samples and terracotta tiles, each with its card. Origins to be documented."
+      },
+      {
+        "id": "BEL_COLLECTION_BAYS",
+        "zone": "Z30",
+        "note": "The four display bays (garments removed on this route) show three illustrative collections and the experimental work: Bengal Nordic (handloom textiles), River to Home (hogla, water hyacinth, terracotta), Second Life Bangladesh (garment offcuts, kantha patchwork) and Future of Bengal (bamboo, cane, jute composite). Concept objects, not products on sale."
+      },
+      {
+        "id": "BEL_FUTURE_LAMP",
+        "zone": "Z30",
+        "note": "Future of Bengal: an experimental bamboo and handmade-paper lamp on a granite plinth beside the boardroom door, in place of the approved potted tree and on its footprint."
+      },
+      {
+        "id": "BEL_WATER_KOLSHI",
+        "zone": "Z30",
+        "note": "Drinking water from a clay kolshi with clay cups. The source is client-stated (deep tube well); only dated laboratory reports will ever be shown, and none are available yet."
+      },
+      {
+        "id": "BEL_BOARD_SAMPLES",
+        "zone": "Z08",
+        "note": "Wooden sample trays on the table centre line with woven samples, a terracotta tile and a small basket (illustrative)."
+      },
+      {
+        "id": "BEL_BOARD_BONSAI",
+        "zone": "Z08",
+        "note": "A bonsai on a jute-wrapped stand in the corner by the screen, in place of the approved planter; it rotates to the studio windows for light."
+      },
+      {
+        "id": "BEL_STUDIO_SUN_SHELF",
+        "zone": "Z18",
+        "note": "The sunning shelf at the east window W10: three bonsai and a tulsi pot take turns in daylight. Grower and species to be confirmed."
+      },
+      {
+        "id": "BEL_STUDIO_TREE",
+        "zone": "Z18",
+        "note": "A small fig tree in daylight by window W09, in place of the approved potted tree and on its footprint."
+      },
+      {
+        "id": "BEL_COCREATION",
+        "zone": "Z18",
+        "note": "Co-creation set on the presentation table: basket prototypes, woven samples, a colour fan and form sketches (illustrative)."
+      },
+      {
+        "id": "BEL_CLAY_DRINKWARE",
+        "zone": "*",
+        "note": "Every glass, mug, cup, jug, bottle and tray on the route is clay or wood (glazes to be tested; wood with food-safe finishes)."
+      },
+      {
+        "id": "BEL_UTHAN",
+        "zone": "Z07",
+        "note": "Option A only. The Green Uthan: a Bengali courtyard in Merchandising, with a bot-tola seat of handmade terracotta around the steel column, two small fig trees and a banyan bonsai under grow lights (this room has no daylight), split-granite stone seats and an open split-bamboo canopy (fire treatment and smoke-detector coverage to be checked). Natural jute carpet over the whole room."
+      },
+      {
+        "id": "BEL_ARTISAN_CORNER",
+        "zone": "Z07",
+        "note": "Option A only. Artisan corner in the Uthan, by invitation and never as a spectacle: a Chakma back-strap loom (bain) shown only with the consent and participation of Chakma weavers, a Marma weaving and basketry stand (the same consent rule), a nakshi kantha frame, cane basketry and painted terracotta on a sitalpati mat. Quiet, clean crafts only; dusty work stays in the prototype workshop."
+      },
+      {
+        "id": "BEL_ROOMSET_LIVING",
+        "zone": "Z07",
+        "note": "Option A only. Bengal Nordic living room-set: a mango-wood sofa in handloom, a cane armchair, a jute rug, a bamboo and paper lamp and a framed kantha. Illustrative concept, not products on sale."
+      },
+      {
+        "id": "BEL_ROOMSET_DINING",
+        "zone": "Z07",
+        "note": "Option A only. River to Home dining room-set: a mango-wood table with cane chairs on a hogla rug, clay tableware on hogla mats, a cane pendant and a sideboard with terracotta. Illustrative concept."
+      },
+      {
+        "id": "BEL_ROOMSET_BEDROOM",
+        "zone": "Z07",
+        "note": "Option A only. Second Life Bangladesh bedroom room-set: a kantha patchwork quilt made from garment offcuts, a cane headboard and a rag rug. Illustrative concept."
+      },
+      {
+        "id": "BEL_ROOMSET_HOSPITALITY",
+        "zone": "Z07",
+        "note": "Option A only. Future of Bengal hospitality corner for hotel buyers: cane lounge chairs, a bamboo and jute table, dried kash flowers in clay and a large nakshi kantha by a rural embroiderer (placeholder; to be commissioned, paid and credited)."
+      },
+      {
+        "id": "BEL_ACADEMY",
+        "zone": "Z06",
+        "note": "Option A only. The design education academy inside the existing glass accounts suite: 20 seats shown at mango-wood tables, a demonstration bench with a hands camera, a mobile screen, a pin-up board and a materials shelf; the discussion room becomes the tutor room. Capacity is set by the fire engineer, not by this drawing."
+      }
+    ],
+    "meshes": 1041,
+    "instancedLeaves": 13096,
+    "textures": 190,
+    "textureMB": 41.6
+  },
+  "hidden_nodes": [
+    "F003_planter_l",
+    "F004_planter_m",
+    "F015_planter_l",
+    "F016_planter_m",
+    "F022_mannequin_navy",
+    "F023_mannequin_sand",
+    "F024_mannequin_olive",
+    "F025_mannequin_white",
+    "F029_planter_l",
+    "F050_planter_m",
+    "F186_planter_l",
+    "F237_bench4",
+    "F238_task_chair",
+    "F239_task_chair",
+    "F240_task_chair",
+    "F241_task_chair",
+    "F242_task_chair",
+    "F243_task_chair",
+    "F244_task_chair",
+    "F245_task_chair",
+    "F246_bench4",
+    "F247_task_chair",
+    "F248_task_chair",
+    "F249_task_chair",
+    "F250_task_chair",
+    "F251_task_chair",
+    "F252_task_chair",
+    "F253_task_chair",
+    "F254_task_chair",
+    "F255_swatch_shelf",
+    "F256_swatch_shelf",
+    "F257_approval_counter",
+    "F258_approval_board",
+    "F259_sample_cab_72",
+    "F260_sample_cab_72",
+    "F261_mfp",
+    "F262_dispatch_counter",
+    "F263_rail_60",
+    "F264_rail_60b",
+    "F265_dress_form",
+    "F266_dress_form",
+    "F267_mirror_full",
+    "F268_insp_table",
+    "F269_table_guest",
+    "F270_task_chair_green",
+    "F271_task_chair_green",
+    "F272_task_chair_green",
+    "F273_task_chair_green",
+    "F274_task_chair_green",
+    "F275_task_chair_green",
+    "F276_screen_65",
+    "F277_screen_55",
+    "F278_lockers8",
+    "F279_under_window_110",
+    "F280_under_window_110",
+    "F282_planter_m",
+    "F283_planter_m",
+    "F284_bench3_47",
+    "F285_task_chair",
+    "F286_task_chair",
+    "F287_task_chair",
+    "F288_task_chair",
+    "F289_task_chair",
+    "F290_task_chair",
+    "F291_bench3_47",
+    "F292_task_chair",
+    "F293_task_chair",
+    "F294_task_chair",
+    "F295_task_chair",
+    "F296_task_chair",
+    "F297_task_chair",
+    "F298_desk_single",
+    "F299_exec_chair_black",
+    "F300_filing_120l",
+    "F301_filing_120l",
+    "F302_filing_96l",
+    "F303_doc_counter_66",
+    "F304_mfp",
+    "F305_meet_round_36",
+    "F306_visitor_chair",
+    "F307_visitor_chair",
+    "F308_visitor_chair",
+    "F309_visitor_chair",
+    "F310_tall_cab_36",
+    "F313_props_bench4_merch",
+    "F314_props_bench4_merch2",
+    "F315_props_bench3_fin",
+    "F316_props_bench3_fin2",
+    "F317_props_dispatch",
+    "F318_props_review",
+    "F319_props_manager",
+    "F320_props_doc_counter",
+    "F321_props_meeting",
+    "PL003_pachira_(CC0)_(pachira_aquatica_01_bark_a)",
+    "PL003_pachira_(CC0)_(pachira_aquatica_01_leaves_a)",
+    "PL004_calathea_(CC0)_(calathea_orbifolia_01_a)",
+    "PL015_pachira_(CC0)_(pachira_aquatica_01_bark_a)",
+    "PL015_pachira_(CC0)_(pachira_aquatica_01_leaves_a)",
+    "PL016_calathea_(CC0)_(calathea_orbifolia_01_a)",
+    "PL029_pachira_(CC0)_(pachira_aquatica_01_bark_a)",
+    "PL029_pachira_(CC0)_(pachira_aquatica_01_leaves_a)",
+    "PL050_calathea_(CC0)_(calathea_orbifolia_01_a)",
+    "PL186_pachira_(CC0)_(pachira_aquatica_01_bark_a)",
+    "PL186_pachira_(CC0)_(pachira_aquatica_01_leaves_a)",
+    "PL246_desk_plant_(CC0)_(potted_plant_04_dirt)",
+    "PL246_desk_plant_(CC0)_(potted_plant_04_ground)",
+    "PL246_desk_plant_(CC0)_(potted_plant_04_plant)",
+    "PL246_desk_plant_(CC0)_(potted_plant_04_pot)",
+    "PL282_calathea_(CC0)_(calathea_orbifolia_01_a)",
+    "PL283_calathea_(CC0)_(calathea_orbifolia_01_a)",
+    "LT131_linear_pendant_200in_(Z07)",
+    "LT132_linear_pendant_200in_(Z07)",
+    "LT133_linear_pendant_90in_(Z07)",
+    "LT134_linear_pendant_72in_(Z07)",
+    "LT135_linear_pendant_96in_(Z07)"
+  ],
+  "walk": {
+    "start": [
+      13.0,
+      -17.95
+    ],
+    "yaw": 1.5708,
+    "end": [
+      9.549566544734061,
+      1.6,
+      -17.95
+    ],
+    "collisions": 314,
+    "distance": 3.450433455265939,
+    "room": "Z07"
+  },
+  "seconds": 78.2,
+  "passed": true
+}
