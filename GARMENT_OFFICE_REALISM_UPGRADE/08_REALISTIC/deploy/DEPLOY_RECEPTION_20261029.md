@@ -8,7 +8,28 @@
   - live browser frames in `qa/interior-20261029/live-d5939f9/`
 - **Rollback:** worker from `cdf0e3e`.
 
-## Latest: Merchandising and Boardroom second passes
+## Prepared, not yet deployed: Entrance Lobby (buyer-journey increment 1)
+
+`worker-realistic.js` is built for source commit `2a451939f48253cdfbb9a85c48f6ec16306389e1`.
+
+- Size and SHA-256: 7621 bytes, `fde89e17b2234e00689ea66480740db07b3e1d133f6b5aca51460ff7be94e7b4`.
+- **Affected room:** Entrance Lobby (Z01, CAM_03).
+  - warm light on the oak brand wall
+  - warmer desk walnut and door oak
+  - one woven hanging between the windows W11 and W12
+  - Everything else is as in `d5939f9`.
+- **Guard:** live `/realistic/health` must show `d5939f9ef3928340908459efc440259df0d34b6d`. The original routes must keep these SHA-256 values (from `verify_release.py`):
+  - `/` → `ff75beb5…2675`
+  - `/app.js` → `c6af8144…9bc4`
+  - `/health` → `5118ed49…378b`
+- **Checks:**
+  - `node test_worker.mjs` passes 41 checks
+  - all 22 requested files are in the commit
+  - the changed dist files match on raw.githubusercontent.com
+- **Rollback:** the current verified worker from commit `01fac69` (7621 bytes, SHA-256 `f6e4730f…ffff922`). The older fallback is `cdf0e3e` (SHA-256 `cb62a45f…a623`).
+- **Evidence:** `qa/journey-20261029/lobby/`.
+
+## Live: Merchandising and Boardroom second passes
 
 `worker-realistic.js` is built for source commit `d5939f9ef3928340908459efc440259df0d34b6d`.
 
