@@ -1,0 +1,472 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/i-m-r-a-n/Practice01/blob/chatgpt/bengal-earth-lab-20261030/BENGAL_EARTH_LAB_PROPOSAL/07_material_passport_schema.json",
+  "title": "Bengal Earth Lab material passport — evidence not advertising",
+  "description": "Product-level evidence file. Fields allow UNKNOWN and distinguish raw-origin, transformation, component manufacture, final assembly. A schema-valid record is NOT a certification, a food-contact pass or a Bangladeshi-origin determination.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "item_id",
+    "item_name",
+    "item_revision",
+    "design_status",
+    "last_reviewed_date",
+    "intended_use",
+    "maker_records",
+    "components",
+    "evidence_register",
+    "test_register",
+    "claim_register",
+    "commercial_release"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "item_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "item_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "item_revision": {
+      "type": "string",
+      "minLength": 1
+    },
+    "last_reviewed_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "design_status": {
+      "enum": [
+        "concept",
+        "prototype",
+        "tested",
+        "commercial"
+      ]
+    },
+    "collection": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "intended_use": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "description",
+        "target_markets",
+        "food_contact",
+        "use_conditions",
+        "warnings"
+      ],
+      "properties": {
+        "description": {
+          "type": "string"
+        },
+        "target_markets": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "food_contact": {
+          "enum": [
+            "yes",
+            "no",
+            "uncertain"
+          ]
+        },
+        "use_conditions": {
+          "type": "string"
+        },
+        "warnings": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "maker_records": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "role",
+          "credit_name",
+          "maker_identified",
+          "permission_for_public_credit",
+          "consent_evidence_ids"
+        ],
+        "properties": {
+          "role": {
+            "type": "string"
+          },
+          "credit_name": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "maker_identified": {
+            "type": "boolean"
+          },
+          "permission_for_public_credit": {
+            "type": "boolean"
+          },
+          "consent_evidence_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "benefit_sharing_status": {
+            "enum": [
+              "not_applicable",
+              "not_started",
+              "pending",
+              "documented"
+            ]
+          }
+        }
+      }
+    },
+    "components": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "component_id",
+          "part_name",
+          "material_name",
+          "raw_origin",
+          "processing",
+          "component_manufacture",
+          "final_assembly",
+          "component_evidence_ids",
+          "safety_questions"
+        ],
+        "properties": {
+          "component_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "part_name": {
+            "type": "string"
+          },
+          "material_name": {
+            "type": "string"
+          },
+          "mass_g": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0
+          },
+          "supplier_name": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "raw_origin": {
+            "$ref": "#/$defs/provenance_step"
+          },
+          "processing": {
+            "$ref": "#/$defs/provenance_step"
+          },
+          "component_manufacture": {
+            "$ref": "#/$defs/provenance_step"
+          },
+          "final_assembly": {
+            "$ref": "#/$defs/provenance_step"
+          },
+          "component_evidence_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "safety_questions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "evidence_register": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "evidence_id",
+          "evidence_type",
+          "issuer",
+          "issue_date",
+          "reference",
+          "verification_level",
+          "verified_by",
+          "notes"
+        ],
+        "properties": {
+          "evidence_id": {
+            "type": "string"
+          },
+          "evidence_type": {
+            "enum": [
+              "supplier_declaration",
+              "invoice",
+              "origin_record",
+              "production_log",
+              "laboratory_report",
+              "certificate",
+              "maker_consent",
+              "inspection",
+              "other"
+            ]
+          },
+          "issuer": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "issue_date": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date"
+          },
+          "reference": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "verification_level": {
+            "enum": [
+              "not_provided",
+              "self_reported",
+              "document_received",
+              "independently_checked"
+            ]
+          },
+          "verified_by": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "test_register": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "test_id",
+          "topic",
+          "market",
+          "method",
+          "result",
+          "report_evidence_ids",
+          "limitations"
+        ],
+        "properties": {
+          "test_id": {
+            "type": "string"
+          },
+          "topic": {
+            "type": "string"
+          },
+          "market": {
+            "type": "string"
+          },
+          "method": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "result": {
+            "enum": [
+              "not_started",
+              "planned",
+              "awaiting_results",
+              "passed",
+              "failed",
+              "inconclusive"
+            ]
+          },
+          "report_evidence_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "limitations": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "claim_register": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "claim_text",
+          "claim_type",
+          "claim_boundary",
+          "claim_period",
+          "decision",
+          "evidence_ids",
+          "reviewed_by"
+        ],
+        "properties": {
+          "claim_text": {
+            "type": "string"
+          },
+          "claim_type": {
+            "enum": [
+              "origin",
+              "safety",
+              "solar",
+              "environmental",
+              "cultural",
+              "quality",
+              "other"
+            ]
+          },
+          "claim_boundary": {
+            "type": "string"
+          },
+          "claim_period": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "decision": {
+            "enum": [
+              "not_supported_do_not_publish",
+              "evidence_review_needed",
+              "supported_with_scope"
+            ]
+          },
+          "evidence_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "reviewed_by": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    "commercial_release": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "holds",
+        "decision_maker",
+        "decision_date"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "hold",
+            "restricted_pilot",
+            "approved_for_specific_market"
+          ]
+        },
+        "holds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "decision_maker": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "decision_date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        }
+      }
+    }
+  },
+  "$defs": {
+    "provenance_step": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "country",
+        "district",
+        "verification_level",
+        "evidence_ids"
+      ],
+      "properties": {
+        "country": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "district": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "verification_level": {
+          "enum": [
+            "unknown",
+            "self_reported",
+            "document_received",
+            "independently_checked"
+          ]
+        },
+        "evidence_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "examples": [],
+  "$comment": "Schema validates shape, not truth. Never infer 100% Bangladesh made from final assembly alone. Evidence references must be checked against the evidence register; dates/URLs cannot prove authenticity by themselves."
+}
