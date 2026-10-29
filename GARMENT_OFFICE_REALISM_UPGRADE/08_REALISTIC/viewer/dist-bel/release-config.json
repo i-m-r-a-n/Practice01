@@ -23,6 +23,8 @@
   "Z21",
   "Z20",
   "Z09",
+  "Z14",
+  "Z04",
   "Z07",
   "Z06"
  ],
@@ -4086,6 +4088,49 @@
     "height": 1080
    },
    "proposal_view": true
+  },
+  {
+   "name": "BEL_CAM_CAD",
+   "room": "CAD / technical design",
+   "zone": "Z14",
+   "priority": 2,
+   "type": "PERSP",
+   "position": [
+    23.7,
+    1.55,
+    -1.1
+   ],
+   "direction": [
+    0.25512594664379523,
+    -0.04555820475782051,
+    -0.965833940865795
+   ],
+   "up": [
+    0.011635161067539215,
+    0.9989616859415802,
+    -0.04404739546996983
+   ],
+   "quaternion_xyzw": [
+    -0.022595,
+    -0.128734,
+    -0.002934,
+    0.991417
+   ],
+   "clip": [
+    0.05,
+    300.0
+   ],
+   "shift_x": 0.0,
+   "shift_y": 0.0,
+   "sensor_fit": "AUTO",
+   "lens": 18.0,
+   "sensor_width": 36.0,
+   "render": {
+    "file": null,
+    "width": 1920,
+    "height": 1080
+   },
+   "proposal_view": true
   }
  ],
  "tour": [
@@ -4175,45 +4220,52 @@
   },
   {
    "stop": 13,
+   "zone": "Z14",
+   "camera": "BEL_CAM_CAD",
+   "title": "Lab B · digital product design",
+   "description": "Natural-fibre products designed on screen and drawn for the workshop. Illustrative design; sizes and tests still to be set."
+  },
+  {
+   "stop": 14,
    "zone": "Z21",
    "camera": "CAM_21_Lounge_Training",
    "title": "Academy annex (pilot)",
    "description": "The pilot academy before any room changes: a class of six at the training table and a craft wall of student work."
   },
   {
-   "stop": 14,
+   "stop": 15,
    "zone": "Z18",
    "camera": "CAM_13_Design_Studio_A",
    "title": "Collaborative studio",
    "description": "The only room with daylight: basket prototypes and form sketches on the co-creation table."
   },
   {
-   "stop": 15,
+   "stop": 16,
    "zone": "Z18",
    "camera": "BEL_CAM_SUN_SHELF",
    "title": "The sunning shelf",
    "description": "Bonsai and tulsi take turns in the daylight of window W10."
   },
   {
-   "stop": 16,
+   "stop": 17,
    "zone": "Z09",
    "camera": "BEL_CAM_RECORDS",
    "title": "The records room",
    "description": "The originals behind every claim. Until documents arrive, every line of the Open Record reads none yet or to be collected."
   },
   {
-   "stop": 17,
+   "stop": 18,
    "zone": "Z08",
    "camera": "CAM_09_Boardroom_A",
    "title": "Negotiation suite",
    "description": "The visit ends here: tea in clay at every place, woven samples on wooden trays, a bonsai in the corner."
   },
   {
-   "stop": 18,
+   "stop": 19,
    "zone": null,
    "camera": "CAM_ISO_SW",
    "title": "Designed for a Solar-Powered Future",
-   "description": "Every claim on this floor waits for its evidence: makers, tests, water reports and measured energy. Next: the export and order centre and the buyer project room."
+   "description": "Every claim on this floor waits for its evidence: makers, tests, water reports and measured energy. Next: the full export and order centre once HR moves."
   }
  ],
  "roomNames": {
@@ -4229,9 +4281,9 @@
   "Z16": "Materials lab",
   "Z17": "Prototype workshop",
   "Z22": "Design wing · the making line",
-  "Z14": "Digital design lab (planned)",
+  "Z14": "Digital design lab (Lab B)",
   "Z05": "Export & order centre (planned)",
-  "Z04": "Buyer project room (planned)",
+  "Z04": "Buyer project room · order desk",
   "Z09": "Records room",
   "Z20": "Staff & artisan dining",
   "Z21": "Academy annex (pilot academy)",
@@ -4251,7 +4303,9 @@
   "Z16": "In this 3D proposal: a moisture and mould test set-up on the post-processing bench (sealed sample boxes, a scale, a moisture meter) with an empty test log. Methods to be agreed with an accredited laboratory; no results are shown. The 3D printers stay.",
   "Z17": "In this 3D proposal: cane and bamboo prototyping on the pattern table under a dust-extraction hood marked \"to be engineered\", and a steam-bending jig. The sample machines and forms stay. Seen from the Uthan through the interior glass in option A.",
   "Z22": "In this 3D proposal: the making line on the only solid wall of the design-wing entrance (the corridor walls are glass, so the labs behind them are the exhibit): one River to Home basket in six steps, from hogla leaves to the collection. Illustrative objects.",
-  "Z05": "Planned: digital export and order centre beside reception.",
+  "Z05": "Planned: the full digital export and order centre beside reception once HR moves (in the pilot the buyer project room holds the order desk).",
+  "Z14": "In this 3D proposal: Lab B, digital product design: a natural-fibre basket on the wall screen, its technical drawing on the layout table and a pinboard of swatches and colour chips. Illustrative; no product or dimensions are claimed.",
+  "Z04": "In this 3D proposal: the buyer project room, also the export and order desk in the pilot: a sample tray, clay water, an order checklist and a project board whose dates are all to be agreed.",
   "Z21": "In this 3D proposal: the pilot academy: a class of six at the approved table with fibre samples, a frame loom and yarn cones, and a craft wall of pinned samples and sketches. The lounge stays.",
   "Z20": "In this 3D proposal: staff and artisan dining with the same care as the buyer rooms: clay plates, cups and jugs on hogla runners, and water and tea in clay on the pantry counter. Glazes to be tested before use.",
   "Z09": "In this 3D proposal: the records room: the originals behind every claim. Labelled evidence files and an Open Record index whose lines all read \"none yet\" or \"to be collected\" until documents arrive."

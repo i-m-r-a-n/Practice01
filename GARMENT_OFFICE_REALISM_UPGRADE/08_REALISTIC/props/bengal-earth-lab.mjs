@@ -39,6 +39,8 @@ export const BEL_ITEMS = [
   { id: 'BEL_ACADEMY_ANNEX', zone: 'Z21', note: 'The pilot academy in the training room: a small class of six at the approved table (fibre samples, a frame loom, yarn cones) and a craft wall of pinned samples and sketches. The lounge stays.' },
   { id: 'BEL_ARTISAN_DINING', zone: 'Z20', note: 'Staff and artisan dining with the same care as the buyer rooms: clay plates, cups and jugs on hogla runners, and water and tea in clay on the pantry counter. Glazes to be tested before use.' },
   { id: 'BEL_RECORDS_ROOM', zone: 'Z09', note: 'The records room: the originals behind every claim on the floor. Labelled evidence files on the table and an Open Record index on the wall; every line still reads "none yet" or "to be collected" until documents arrive.' },
+  { id: 'BEL_DIGITAL_LAB', zone: 'Z14', note: 'Lab B, digital product design, in the CAD room: a natural-fibre basket on the wall screen, its technical drawing on the layout table and a pinboard of fibre swatches and colour chips. Illustrative design; no product or dimensions are claimed.' },
+  { id: 'BEL_BUYER_PROJECT', zone: 'Z04', note: 'Buyer project room, which in the pilot is also the export and order desk: a sample tray, clay water, an order checklist and a project board whose dates are all "to be agreed".' },
   // option A only (full conversion): shown on this route if the merchandising and accounts teams move; the owner decides
   { id: 'BEL_UTHAN', zone: 'Z07', note: 'Option A only. The Green Uthan: a Bengali courtyard in Merchandising, with a bot-tola seat of handmade terracotta around the steel column, two small fig trees and a banyan bonsai under grow lights (this room has no daylight), split-granite stone seats and an open split-bamboo canopy (fire treatment and smoke-detector coverage to be checked). Natural jute carpet over the whole room.' },
   { id: 'BEL_ARTISAN_CORNER', zone: 'Z07', note: 'Option A only. Artisan corner in the Uthan, by invitation and never as a spectacle: a Chakma back-strap loom (bain) shown only with the consent and participation of Chakma weavers, a Marma weaving and basketry stand (the same consent rule), a nakshi kantha frame, cane basketry and painted terracotta on a sitalpati mat. Quiet, clean crafts only; dusty work stays in the prototype workshop.' },
@@ -1230,6 +1232,55 @@ export function buildBengalEarthLab(THREE, { zones = null, drinkware = [], aniso
     const fr = new THREE.Group(); fr.position.set(4.3, 1.5, -22.62); g.add(fr);
     box(fr, M.oak, 0, -.45, .01, .66, .9, .02); add(fr, new THREE.PlaneGeometry(.6, .84), std('open_record', () => ({ map: tex(ic, { clamp: true }), roughness: .8 })), 0, 0, .021);
     standingCard(g, ['Records room', 'The originals behind every claim', 'Open to auditors and buyers on request'], 5.05, T, -20.35, 0, { w: .2, h: .1 });
+  }
+  // ---------------------------------------------------------------- pilot rooms: Lab B (digital product design), buyer project room
+  const screenMat = (key, draw) => std('screen_' + key, () => { const c = canvas(px(640), px(360)), x = c.getContext('2d'); draw(x, c.width, c.height);
+    const t = tex(c, { clamp: true }); return { map: t, emissive: '#ffffff', emissiveMap: t, emissiveIntensity: .6, roughness: .35 }; });
+  function basketDrawing(x, cx, cy, s, col, lw) {   // front view of a tapered basket with handles (line art)
+    x.strokeStyle = col; x.lineWidth = lw; x.beginPath(); x.ellipse(cx, cy - s * .5, s * .5, s * .1, 0, 0, 7); x.stroke();
+    x.beginPath(); x.moveTo(cx - s * .5, cy - s * .5); x.lineTo(cx - s * .38, cy + s * .45); x.moveTo(cx + s * .5, cy - s * .5); x.lineTo(cx + s * .38, cy + s * .45); x.stroke();
+    x.beginPath(); x.ellipse(cx, cy + s * .45, s * .38, s * .07, 0, 0, Math.PI); x.stroke();
+    for (let k = 1; k < 6; k++) { const t = k / 6, hw = s * (.5 - .12 * t); x.beginPath(); x.ellipse(cx, cy - s * .5 + t * s * .95, hw, s * (.1 - .03 * t), 0, 0, Math.PI); x.stroke(); }
+    for (const sgn of [-1, 1]) { x.beginPath(); x.arc(cx + sgn * s * .5, cy - s * .38, s * .08, Math.PI / 2 * (sgn > 0 ? -1 : 1), Math.PI / 2 * (sgn > 0 ? 1 : 3)); x.stroke(); }
+  }
+  if (want('BEL_DIGITAL_LAB')) {
+    const g = item('BEL_DIGITAL_LAB');   // wall screen F129 (face z -6.4707, x 24.42-25.87, y 1.07-1.88); layout table F127 top 0.9145 (x 24.49-26.31, z -4.17..-2.95); pinboard F130 face z -0.2972
+    add(g, new THREE.PlaneGeometry(1.4, .77), screenMat('cad_basket', (x, w, h) => {
+      x.fillStyle = '#1f2a33'; x.fillRect(0, 0, w, h); x.strokeStyle = 'rgba(120,160,190,.18)'; x.lineWidth = 1;
+      for (let i = 0; i < w * .66; i += w / 32) { x.beginPath(); x.moveTo(i, 0); x.lineTo(i, h); x.stroke(); } for (let j = 0; j < h; j += w / 32) { x.beginPath(); x.moveTo(0, j); x.lineTo(w * .66, j); x.stroke(); }
+      basketDrawing(x, w * .33, h * .52, h * .62, '#d8c49a', w / 300);
+      x.fillStyle = '#26323c'; x.fillRect(w * .68, 0, w * .32, h); x.fillStyle = '#e8eef2'; x.font = `600 ${h * .065}px system-ui, sans-serif`; x.fillText('Basket B-01', w * .71, h * .14);
+      x.font = `400 ${h * .05}px system-ui, sans-serif`; ['Material: hogla', 'Weave: twill', 'Handles: cane', 'Size: to be set', 'Tests: none yet'].forEach((t, i) => x.fillText(t, w * .71, h * (.27 + i * .1)));
+      x.fillStyle = '#9fb3c2'; x.font = `400 ${h * .042}px system-ui, sans-serif`; x.fillText('Lab B · digital product design (illustrative)', w * .02, h * .95); }), 25.145, 1.475, -6.462);
+    const T = .9145, sheet = std('tech_drawing', () => { const c = canvas(px(560), px(394)), x = c.getContext('2d'), W = c.width, H = c.height; x.fillStyle = '#f6f2ea'; x.fillRect(0, 0, W, H);
+      x.strokeStyle = '#3c2a1e'; x.lineWidth = W / 400; x.strokeRect(W * .02, H * .03, W * .96, H * .94); basketDrawing(x, W * .3, H * .5, H * .58, '#3c2a1e', W / 420);
+      x.beginPath(); x.ellipse(W * .72, H * .45, H * .28, H * .28, 0, 0, 7); x.stroke(); x.beginPath(); x.ellipse(W * .72, H * .45, H * .21, H * .21, 0, 0, 7); x.stroke();
+      x.setLineDash([W / 120, W / 160]); x.beginPath(); x.moveTo(W * .1, H * .82); x.lineTo(W * .5, H * .82); x.moveTo(W * .56, H * .82); x.lineTo(W * .88, H * .82); x.stroke(); x.setLineDash([]);
+      x.fillStyle = '#3c2a1e'; x.font = `600 ${H * .055}px system-ui, sans-serif`; x.fillText('Basket B-01 · technical drawing', W * .05, H * .1);
+      x.font = `400 ${H * .04}px system-ui, sans-serif`; x.fillText('Front and top views · dimensions to be set · illustrative', W * .05, H * .92); return { map: tex(c, { clamp: true }), roughness: .9 }; });
+    add(g, new THREE.PlaneGeometry(.84, .59), sheet, 25.4, T + .002, -3.56, -Math.PI / 2, 0, .04);
+    box(g, std('ruler', () => ({ color: '#d9d4c8', roughness: .5 })), 25.05, T + .002, -3.1, .5, .004, .04, .1);
+    add(g, new THREE.CylinderGeometry(.004, .004, .17, 8), std('pencil', () => ({ color: '#c9a565', roughness: .6 })), 25.95, T + .006, -3.2, Math.PI / 2, .6, 0);
+    swatch(g, 25.95, T, -3.85, 'hogla', 'twill', .13, .2);
+    standingCard(g, ['Lab B · digital product design', 'CAD for natural-fibre products'], 24.7, T, -3.05, -.45, { w: .18, h: .07 });
+    // pinboard: fibre swatches, colour chips, a sketch
+    const pb = new THREE.Group(); pb.position.set(24.75, 0, -.305); pb.rotation.y = Math.PI; g.add(pb);
+    [['jute', 'twill'], ['hogla', 'plain'], ['cane', 'lattice'], ['hyacinth', 'plait']].forEach(([f, k], i) => add(pb, new THREE.PlaneGeometry(.17, .17), wovenMaterial(`sw_${f}${k}`, k, FIBRE[f], [2, 2]), -.9 + i * .24, 1.95, 0));
+    ['#b4613c', '#c9a565', '#3d5170', '#4f6a31', '#d9cdb4', '#7a3b22'].forEach((col, i) => add(pb, new THREE.PlaneGeometry(.06, .09), std('fan_' + i, () => ({ color: col, roughness: .8 })), .15 + i * .085, 1.98, 0));
+    add(pb, new THREE.PlaneGeometry(.36, .25), std('sketch', () => ({ color: '#f4efe4', roughness: .9 })), .45, 1.55, 0);
+    add(pb, new THREE.PlaneGeometry(.44, .1), card(['Lab B pinboard (illustrative)'], { w: .44, h: .1, scale: 1 }), -.55, 1.55, 0);
+  }
+  if (want('BEL_BUYER_PROJECT')) {
+    const g = item('BEL_BUYER_PROJECT'); const T = .7494;   // guest table F091: x -0.81-1.32, z -2.74..-1.73; screen F098 face z -3.8036 (x -0.25-0.97, y 0.97-1.65)
+    add(g, new THREE.PlaneGeometry(1.18, .64), screenMat('project_board', (x, w, h) => {
+      x.fillStyle = '#f3ede2'; x.fillRect(0, 0, w, h); x.fillStyle = '#3c2a1e'; x.font = `600 ${h * .085}px system-ui, sans-serif`; x.fillText('Buyer project board', w * .05, h * .16);
+      ['Brief', 'Samples', 'Tests', 'Approval', 'Order'].forEach((t, i) => { const X = w * (.05 + i * .185); x.fillStyle = ['#c9a565', '#8f4a3a', '#3d5170', '#6f7a4c', '#b88c5c'][i]; x.fillRect(X, h * .32, w * .165, h * .2);
+        x.fillStyle = '#fff'; x.font = `500 ${h * .058}px system-ui, sans-serif`; x.fillText(t, X + w * .012, h * .45); x.fillStyle = '#5b4636'; x.font = `400 ${h * .05}px system-ui, sans-serif`; x.fillText('date to agree', X + w * .01, h * .62); });
+      x.fillStyle = '#5b4636'; x.font = `400 ${h * .05}px system-ui, sans-serif`; x.fillText('Export and order desk (pilot) · illustrative', w * .05, h * .88); }), .36, 1.31, -3.795);
+    tray(g, .1, T, -2.2, .4, .26, 0); [['jute', 'twill'], ['hogla', 'plain'], ['cane', 'lattice']].forEach(([f, k], i) => swatch(g, -.03 + i * .13, T + .012, -2.2, f, k, .1, (i - 1) * .1));
+    jug(g, .85, T, -2.05, -.5); cup(g, .7, T, -2.35, 'tumbler'); cup(g, .98, T, -2.38, 'tumbler');
+    add(g, new THREE.PlaneGeometry(.21, .29), card(['Order checklist', 'Specification · sample approval', 'Test plan · packaging · delivery', 'All to be agreed with the buyer'], { w: .21, h: .29, scale: .9 }), -.5, T + .002, -2.25, -Math.PI / 2, 0, .1);
+    standingCard(g, ['Buyer project room', 'Private desks for visiting buyer teams', 'Export and order desk in the pilot'], .45, T, -1.85, 0, { w: .2, h: .1 });
   }
   // the floor finishes go in last, so their occlusion maps hold the contact shadows of everything above
   if (want('BEL_UTHAN')) floorOverlay(group.getObjectByName('BEL_UTHAN'), 'Z07', [9.32, -21.29, 22.0, -10.87], { map: juteFloor('z07', '#cdbb94', 81), repeat: [25, 21], color: '#cfc8bd' });

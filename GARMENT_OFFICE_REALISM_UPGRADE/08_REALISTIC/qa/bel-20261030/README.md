@@ -1,5 +1,22 @@
 # Bengal Earth Lab: 3D proposal route
 
+## Increment 5: Lab B and the buyer project room (30 Oct 2026)
+
+These rooms work in every option. Approved furniture stays.
+
+| Room | Items |
+|---|---|
+| CAD room Z14, Lab B (digital product design) | A natural-fibre basket on the wall screen (face z -6.4707). Its specification panel reads "size: to be set, tests: none yet". The basket's technical drawing lies on the layout table (top 0.9145), with a ruler, pencil and swatch. A pinboard of swatches and colour chips hangs on the south wall. |
+| Guest workspace Z04, buyer project room | In the pilot it is also the export and order desk. A sample tray, clay water, an order checklist ("all to be agreed with the buyer") and a project board on the screen: brief, samples, tests, approval and order, each with "date to agree". |
+
+- **Tour:** 19 stops, adding Lab B after the labs.
+- **Checks:**
+  - `after-tour19/`: all 19 stops, without errors.
+  - `after-inc5/` and `before-inc5/`: the same approved cameras CAM_15 and CAM_26.
+  - `compare/inc5_lab_b_and_buyer_room.jpg`
+- **Memory:** 58 MB of textures at full detail (244 textures). Low quality halves every canvas.
+- **Presentation:** `presentation/` holds the contact sheet and a 75-second captioned slideshow of the 19 stops. They are made from these frames by `tour_slideshow.py`.
+
 ## Increment 4: pilot rooms (30 Oct 2026)
 
 These rooms work in every option. Approved furniture stays.
