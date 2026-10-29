@@ -1,5 +1,11 @@
 # Bengal Earth Lab: 3D proposal route
 
+## Presenter polish (30 Oct 2026)
+
+- **Option A in the rooms menu.** Merchandising and the accounts suite now sit under their own rooms-menu group, "Option A · proposed" (`roomGroups` in the config, read by `viewer/app.js`). Their tour cards say so in the line above the title.
+- **No stills switch.** The "Show photoreal stills" switch is hidden on this route, which has no approved stills to show (`noRenderPhotos`).
+- **`after-tour-play/`** (`bel_tour_play.py`): the guided tour played through its own buttons (Tour, Pause, then Next at each stop). All 19 counters and titles match the config, with no page, console or HTTP errors. The scene is unchanged from `1f64305`, so the frames in `after-tour19/` still apply.
+
 ## Increment 5: Lab B and the buyer project room (30 Oct 2026)
 
 These rooms work in every option. Approved furniture stays.

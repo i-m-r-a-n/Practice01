@@ -4310,6 +4310,10 @@
   "Z20": "In this 3D proposal: staff and artisan dining with the same care as the buyer rooms: clay plates, cups and jugs on hogla runners, and water and tea in clay on the pantry counter. Glazes to be tested before use.",
   "Z09": "In this 3D proposal: the records room: the originals behind every claim. Labelled evidence files and an Open Record index whose lines all read \"none yet\" or \"to be collected\" until documents arrive."
  },
+ "roomGroups": {
+  "Z07": "Option A · proposed",
+  "Z06": "Option A · proposed"
+ },
  "branding": {
   "pageTitle": "Bengal Earth Lab - concept proposal",
   "eyebrow": "Bengal Earth Lab · From Rural Hands to Global Homes",

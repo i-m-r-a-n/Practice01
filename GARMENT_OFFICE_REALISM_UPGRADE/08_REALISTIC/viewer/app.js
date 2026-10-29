@@ -154,6 +154,10 @@ $('loadTitle').textContent = 'Preparing the scene...';
 // Concept routes (e.g. /bengal-earth-lab/) rename rooms, set their own tour and page wording from the config.
 if (CFG.roomNames) for (const r of meta.rooms) if (CFG.roomNames[r.zone]) r.name = CFG.roomNames[r.zone];
 if (CFG.roomDescriptions) for (const r of meta.rooms) if (CFG.roomDescriptions[r.zone]) r.description = CFG.roomDescriptions[r.zone];
+if (CFG.roomGroups) for (const r of meta.rooms) if (CFG.roomGroups[r.zone]) {   // rooms menu, info and tour card kicker
+  r.group = CFG.roomGroups[r.zone]; if (!meta.room_groups.includes(r.group)) meta.room_groups.push(r.group);
+}
+if (CFG.noRenderPhotos) $('tPhoto').closest('label').hidden = true;   // no approved stills on this route: no stills switch
 if (CFG.extraCameras) meta.cameras.push(...CFG.extraCameras);   // proposal viewpoints that have no approved render
 if (CFG.tour) meta.tour = CFG.tour;
 if (CFG.branding) {

@@ -149,6 +149,7 @@ config = {
                    'boxes': [[9.805, 1.15, -10.715, 12.345, 1.80, -10.145], [12.55, 1.15, -10.715, 15.085, 1.80, -10.145],
                              [16.155, 1.15, -10.715, 18.235, 1.80, -10.145], [18.44, 1.15, -10.715, 20.525, 1.80, -10.145]]}],
     'extraCameras': cameras, 'tour': tour, 'roomNames': names, 'roomNotes': notes,
+    'roomGroups': {'Z07': 'Option A · proposed', 'Z06': 'Option A · proposed'},   # their own menu group and tour-card kicker
     'branding': {
         'pageTitle': 'Bengal Earth Lab - concept proposal',
         'eyebrow': 'Bengal Earth Lab · From Rural Hands to Global Homes',
