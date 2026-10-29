@@ -7,11 +7,16 @@ Resume from this file if the session is interrupted. Newest state first.
 - **Branch:** `claude/realistic-sprint-20261028` (worktree `/home/user/rs`).
   - Based on GPT's `chatgpt/realistic-sprint-20261028` @ `3ed3b41`, which carries GPT's QA notes and the direct-drag sign fix.
   - Nothing of GPT's was changed or removed.
-- **Release:**
-  - **Source:** `e98ecb5855c3e2586d4de535ee371e82519aead1`.
-  - **Worker:** `deploy/worker-realistic.js` at `6edce191c9e9783835d5c9587faf98405142cd9b`; 7621 bytes, SHA-256 `1e943fcf…25da5`, 41 / 41 worker tests pass.
-  - **Status:** ready, not yet deployed. Deploy, guard and rollback steps: `deploy/DEPLOY_SPRINT_20261029.md`.
-  - **Superseded:** the earlier `9acdeaf` / `e153311` pair was never deployed.
+- **Latest release (interior phase, all six rooms):**
+  - **Source:** `86438989226bcdce59b22e8fadae7a2e822eb974`.
+  - **Worker:** `deploy/worker-realistic.js` from the commit after it; 7621 bytes, SHA-256 `340d7865…8f3010`, 41 / 41 worker tests pass.
+  - **Status:** ready, not yet deployed (live still `bcb92b0` at 07:13 UTC). Steps, guard and rollback: `deploy/DEPLOY_RECEPTION_20261029.md`.
+  - **Contains:** the sprint release below, plus the interior phase (`qa/interior-20261029/`):
+    - Reception, built at `0cda894`
+    - Experience Centre, built at `de424c0`
+    - MD Office, Boardroom, Merchandising and Design Studio, built at `8643898`
+  - **Earlier workers:** never deployed; each is superseded by the next.
+- **Sprint release (superseded, never deployed):** source `e98ecb5`, worker `6edce19`, `deploy/DEPLOY_SPRINT_20261029.md`.
 - **Checks passed on the release build** (`r2/`, local Chromium, software WebGL):
   - `ui_check`: 34 / 34 at 1440, 390 and 360
   - `layout_probe`: all 16 widths OK
@@ -84,10 +89,11 @@ Everything is additive and self-made. Nothing stands on the floor, so walk paths
 
 ## Release steps
 
-Steps 1–4 are done for H = `e98ecb5`. **Exact next action:**
+Steps 1–4 are done for H = `8643898` (the latest release; they were also done for the earlier, superseded commits). **Exact next action:**
 
 - **Step 5 (the owner's desktop session).** The prompt is in the chat. It repeats the guard, the hash checks and the rollback.
-- **Step 6 (this session, after the deploy).** Run the public verification. If it fails and the owner has not already rolled back, ask for the rollback.
+- **Step 6 (this session, after the deploy).** Run the public verification with `Design_Studio 86438989226bcdce59b22e8fadae7a2e822eb974`. If it fails and the owner has not already rolled back, ask for the rollback.
+- **Meanwhile:** continue the interior design, room by room, on this branch.
 
 1. Commit and push the source + dist. That gives source commit H.
 2. Run `python3 qa/sprint-claude-20261028/request_list.py H` and `python3 deploy/build_worker.py H`.

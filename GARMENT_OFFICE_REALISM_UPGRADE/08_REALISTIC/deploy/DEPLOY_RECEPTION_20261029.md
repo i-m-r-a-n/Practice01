@@ -1,8 +1,25 @@
 # Deploying the interior releases (prepared by Claude, not yet deployed)
 
-## Latest: Reception + Experience Centre
+## Latest: all six rooms (adds MD Office, Boardroom, Merchandising, Design Studio)
 
-`worker-realistic.js` is built for source commit `de424c0e5161dcc98cbff569cba670bf1c4f677e`.
+`worker-realistic.js` is built for source commit `86438989226bcdce59b22e8fadae7a2e822eb974`.
+
+- Size and SHA-256: 7621 bytes, `340d786533628963604a9eb27b2dc79190a757a5f8d0bfc7f2504d4c988f3010`.
+- It contains the Reception and Experience Centre releases below, plus:
+  - **MD Office:** kantha-inspired panel with a picture light, the lounge rug as an indigo kantha weave (same footprint), stitched cushions
+  - **Boardroom:** indigo kantha-inspired panel beside door D20 with a picture light, soft table light
+  - **Merchandising:** knit structure on samples and swatches; a lighter carpet shown as a design proposal (not an approved finish)
+  - **Design Studio:** the existing east windows W08–W10 read as overcast daylight instead of black glass
+- Verify: `/realistic/health` shows `86438989226bcdce59b22e8fadae7a2e822eb974`.
+- Checks:
+  - `node test_worker.mjs` passes 41 checks
+  - the changed dist files at that commit match on raw.githubusercontent.com
+  - `request-list.json`: all 22 requested files are in the commit
+- Evidence: `qa/interior-20261029/four-rooms/` and the four room folders beside it.
+
+## Reception + Experience Centre (superseded by the one above)
+
+`worker-realistic.js` was built for source commit `de424c0e5161dcc98cbff569cba670bf1c4f677e`.
 
 - Size and SHA-256: 7621 bytes, `bbe5425b372e0152b2c7afee27ec795bdd95fd276c7a83accd732c3b214da862`.
 - It adds the Experience Centre redesign:
@@ -46,10 +63,10 @@ Design references only: makers and fibres are to be identified and credited.
 
 ## Deploy, verify, rollback
 
-1. **Guard.** Live `/realistic/health` must show `bcb92b00963fa51906676f8cca22da88f841dc64`, or `e98ecb5855c3e2586d4de535ee371e82519aead1` if the sprint release went live first.
-2. **Deploy.** Upload this `worker-realistic.js` unchanged as the `stage2-office-virtual-tour` script.
+1. **Guard.** Live `/realistic/health` must show `bcb92b00963fa51906676f8cca22da88f841dc64`, or one of this branch's release commits (`e98ecb5…`, `0cda894…`, `de424c0…`) if an earlier release went live first.
+2. **Deploy.** Upload the latest `worker-realistic.js` unchanged as the `stage2-office-virtual-tour` script.
 3. **Verify:**
-   - `/realistic/health` shows `0cda894f3e4b11edc64f9dc97f481b8e5986f003`
+   - `/realistic/health` shows the source commit named in "Latest" above
    - `/`, `/health` and `/realistic/` return 200
    - `/` is byte-identical (SHA-256 `ff75beb5…`)
 
