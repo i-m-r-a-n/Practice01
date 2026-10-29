@@ -22,6 +22,8 @@ export const INTERIOR_ITEMS = [
   { id: 'MD_KANTHA_PANEL', zone: 'Z12', note: 'A framed nakshi-kantha-inspired panel on the free east wall behind the desk, under a brass picture light (design reference).' },
   { id: 'BR_KANTHA_PANEL', zone: 'Z08', note: 'A tall kantha-inspired panel on the free wall between the reception glass and the executive-suite door, under a picture light (design reference).' },
   { id: 'BR_TABLE_LIGHT', zone: 'Z08', note: 'Warm pool of the existing linear pendants along the boardroom table.' },
+  { id: 'MR_FIT_FORMS', zone: 'Z07', note: 'The two dress forms dressed for fit development: a calico toile with marker-traced style lines and pinned princess seams, and a knitted body sample in indigo jersey with a cable panel (illustrative, not an actual collection).' },
+  { id: 'MR_APPROVAL_BOARD', zone: 'Z07', note: 'The approved approval board with the same swatch layout and colours, shown as pinned cloth with garment flats on its sheets.' },
   { id: 'DS_DAYLIGHT', zone: 'Z18', note: 'Overcast daylight in the three existing east windows and its soft spill on the floor; true north, sun angles and glare are still to be measured on site.' },
   { id: 'DS_FABRIC_BOARD', zone: 'Z18', note: 'The approved mood board with the same swatch layout and colours, shown as pinned cloth (pinked edges, pins, weave and knit, Jamdani-style butis on the whites) and garment flats on its paper sheets, lit by the scallops of its five existing track spots.' },
   { id: 'DS_REVIEW_TABLE', zone: 'Z18', note: 'A sample-review set on the presentation table for teaching and fit reviews: a knit sample laid flat, drafted pattern pieces, swatch header cards, a tape measure, a sketchbook of garment flats and a card of coconut-shell buttons (illustrative, not an actual collection).' },
@@ -624,6 +626,14 @@ export function buildInteriorDesign(THREE, { zones = null, anisotropy = 4, detai
     for (let i = 0; i < 3; i++) { x.beginPath(); for (let s = 0; s <= 24; s++) { const X = X0 + w * (.14 + s / 24 * (.5 + (i % 2) * .2)), Y = Y0 + h * (.83 + i * .05) + Math.sin(s * 1.9 + i) * k; s ? x.lineTo(X, Y) : x.moveTo(X, Y); } x.stroke(); }   // pencil notes (no text)
     for (const u of [.1, .9]) pinHead(x, X0 + w * u, Y0 + 6 * k, 3 * k, '#efe9dc', '#8f887a');
   }
+  // a linen pinboard redrawn as pinned cloth. pieces: [code, X0, Y0, X1, Y1] in canvas pixels; pxPerM sets the detail scale
+  // (k = 1 at 417 px/m); `first` offsets the per-piece randomness so two boards differ
+  function pinnedBoard(W, H, pxPerM, pieces, first) {
+    const c = canvas(W, H), x = c.getContext('2d'), k = pxPerM / 417;
+    cloth(x, 0, 0, W, H, srgb(LIN.linen), { cell: Math.max(1.5, 2 * k), seed: 601 + first, slub: .05, mottle: .03, contrast: .35 });
+    pieces.forEach(([code, X0, Y0, X1, Y1], i) => code === 'p' ? boardSheet(x, X0, Y0, X1, Y1, first + i, k) : boardSwatch(x, code, X0, Y0, X1, Y1, first + i, k));
+    return c;
+  }
   if (want('DS_FABRIC_BOARD')) {
     // mood board F167 on the studio's west wall: linen face x 29.427, swatches and sheets at x 29.431 over y 0.459-2.284,
     // z -30.479..-23.115. Columns from north to south: [z0, z1, 'code y0-y1 ...'], y in mm, codes as LIN (from the model)
@@ -652,16 +662,12 @@ export function buildInteriorDesign(THREE, { zones = null, anisotropy = 4, detai
       [-23.68, -23.476, 'g569-737 n768-941 g988-1257 a1301-1474 g1536-1751 d1818-2064'],
       [-23.378, -23.19, 'o586-777 w828-1071 n1113-1308 b1359-1632 h1676-1828 o1881-2095']];
     const Z0 = -30.479, Z1 = -23.115, Y0 = .459, Y1 = 2.284, Wm = Z1 - Z0, Hm = Y1 - Y0;
-    const W = px(3072), H = px(768), c = canvas(W, H), x = c.getContext('2d'), mx = W / Wm, my = H / Hm, k = W / 3072;
-    cloth(x, 0, 0, W, H, srgb(LIN.linen), { cell: Math.max(1.5, 2 * k), seed: 601, slub: .05, mottle: .03, contrast: .35 });
-    let n = 0;
+    const W = px(3072), H = px(768), mx = W / Wm, my = H / Hm, pieces = [];
     for (const [z0, z1, list] of BOARD) for (const item of list.split(' ')) {
-      const code = item[0], [y0, y1] = item.slice(1).split('-').map(v => v / 1000);
-      const X0 = (Z1 - z1) * mx, X1 = (Z1 - z0) * mx, T = (Y1 - y1) * my, B = (Y1 - y0) * my;   // seen from the room, south is on the left
-      if (code === 'p') boardSheet(x, X0, T, X1, B, n, k); else boardSwatch(x, code, X0, T, X1, B, n, k);
-      n++;
+      const [y0, y1] = item.slice(1).split('-').map(v => v / 1000);
+      pieces.push([item[0], (Z1 - z1) * mx, (Y1 - y1) * my, (Z1 - z0) * mx, (Y1 - y0) * my]);   // seen from the room, south is on the left
     }
-    const face = std('ds_board', { map: texture(c, { clamp: true }), roughness: .92 });
+    const face = std('ds_board', { map: texture(pinnedBoard(W, H, mx, pieces, 0), { clamp: true }), roughness: .92 });
     mesh(group, new THREE.PlaneGeometry(Wm, Hm), face, 29.434, (Y0 + Y1) / 2, (Z0 + Z1) / 2, 0, Math.PI / 2);   // 3 mm in front of the swatches
     // its five track spots LT082-LT086 (x 29.73-29.86, y 2.40-2.60) are 0.3-0.45 m off the board, as at the Reception oak wall
     const scallop = scallopMaterial('ds_scallop', .26);
@@ -761,6 +767,65 @@ export function buildInteriorDesign(THREE, { zones = null, anisotropy = 4, detai
     lay(trim, .12, .08, 31.2, -16.33, .03, .0012, 'review_trim');
     const buttonMat = std('review_button', { color: '#4f3422', roughness: .32 });
     for (let i = 0; i < 6; i++) mesh(g, new THREE.CylinderGeometry(.0085, .0085, .003, 18), buttonMat, 31.165 + (i % 3) * .035, TOP + .0027, -16.348 + Math.floor(i / 3) * .032);
+  }
+  // ---------------------------------------------------------------- Merchandising (Z07): fit forms and the approval board
+  if (want('MR_FIT_FORMS')) {
+    // dress forms F265 / F266 (centres x 17.323 / 18.237, z -18.923): elliptical rings of the form, read from the model,
+    // [y, half-width x, half-depth z]. The garment shell sits 6 mm outside them from the hip line to the base of the neck;
+    // u runs round the body with the front centre (+z, towards the room) at u 0.5, v from the hem (0) to the neck (1)
+    const RINGS = [[.93, .1613, .1105], [.96, .176, .1205], [1.02, .184, .126], [1.12, .1655, .1135], [1.22, .1385, .095], [1.30, .1495, .1025],
+      [1.38, .176, .1205], [1.44, .1815, .1245], [1.50, .160, .1095], [1.53, .1041, .0713], [1.545, .0761, .0521]];
+    const yLo = RINGS[0][0], yHi = RINGS[RINGS.length - 1][0], off = .006, seg = 48;
+    function shell(cx, cz) {
+      const pos = [], uv = [], index = [];
+      RINGS.forEach(([y, rx, rz]) => { for (let i = 0; i <= seg; i++) { const u = i / seg, t = Math.PI * 2 * (u - .5); pos.push(cx + (rx + off) * Math.sin(t), y, cz + (rz + off) * Math.cos(t)); uv.push(u, (y - yLo) / (yHi - yLo)); } });
+      for (let j = 0; j < RINGS.length - 1; j++) for (let i = 0; i < seg; i++) { const a = j * (seg + 1) + i, b = a + 1, c = a + seg + 1, d = c + 1; index.push(a, b, d, a, d, c); }
+      const geo = new THREE.BufferGeometry(); geo.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); geo.setAttribute('uv', new THREE.Float32BufferAttribute(uv, 2));
+      geo.setIndex(index); geo.computeVertexNormals(); return geo;
+    }
+    const W = px(1024), H = px(640), yOf = y => (1 - (y - yLo) / (yHi - yLo)) * H;   // canvas row of a height
+    // 1. calico fit toile: style lines traced in marker (centre front, bust, waist, hip, princess seams, side seams), pinned
+    const toile = (() => {
+      const c = canvas(W, H), x = c.getContext('2d'), k = W / 1024;
+      cloth(x, 0, 0, W, H, '#e6dcc4', { cell: Math.max(1.5, 2 * k), seed: 801, slub: .07, mottle: .04, contrast: .4 });
+      const curve = (pts, color, width, dash) => { x.strokeStyle = color; x.lineWidth = width * k; x.setLineDash(dash ? dash.map(d => d * k) : []); x.beginPath(); pts.forEach(([u, y], i) => i ? x.lineTo(u * W, yOf(y)) : x.moveTo(u * W, yOf(y))); x.stroke(); x.setLineDash([]); };
+      for (const y of [1.44, 1.22, 1.02]) curve([[0, y], [1, y]], '#2f4f86', 5);                               // style tape: bust, waist, hip
+      curve([[.5, yHi], [.5, yLo]], '#b03030', 6);                                                              // centre front
+      for (const u of [.25, .75]) curve([[u, 1.52], [u, yLo]], '#3b3b3b', 4, [12, 7]);                         // side seams
+      for (const s of [-1, 1]) {                                                                               // princess seams
+        const pts = [[1.53, .09], [1.47, .085], [1.44, .078], [1.33, .066], [1.22, .058], [1.12, .066], [1.02, .074], [yLo, .078]].map(([y, d]) => [.5 + s * d, y]);
+        curve(pts, '#b03030', 4.5, [14, 8]);
+        pts.forEach(([u, y], i) => { if (i % 2) return; const X = u * W, Y = yOf(y); x.strokeStyle = '#9aa0a6'; x.lineWidth = 1.4 * k; x.beginPath(); x.moveTo(X - 9 * k, Y + 4 * k); x.lineTo(X + 9 * k, Y - 4 * k); x.stroke(); pinHead(x, X - 9 * k, Y + 4 * k, 3 * k, '#e7e2d8', '#7d776c'); });
+      }
+      curve([[0, yLo + .012], [1, yLo + .012]], '#6b6355', 1.4, [7, 5]);                                         // turned hem, tacked
+      return c; })();
+    // 2. knitted body sample: indigo jersey, a cable panel down the centre front between purl columns, rib at the hem and neck
+    const knitBody = (() => {
+      const c = canvas(W, H), x = c.getContext('2d'), pxm = W / 1.03;                                         // about 1.03 m round the bust
+      const knit = (name, size, alpha, X, Y, w, h) => { x.globalCompositeOperation = 'multiply'; x.globalAlpha = alpha; x.fillStyle = stitchPattern(x, name, size); x.fillRect(X, Y, w, h); x.globalAlpha = 1; x.globalCompositeOperation = 'source-over'; };
+      x.fillStyle = PAL.indigo; x.fillRect(0, 0, W, H); knit('jersey', .018 * pxm, .55, 0, 0, W, H);
+      x.fillStyle = PAL.indigo; x.fillRect(W * .455, 0, W * .09, H); knit('cable', .09 * pxm, .65, W * .455, 0, W * .09, H);
+      for (const u of [.445, .545]) { x.fillStyle = PAL.indigo; x.fillRect(W * u, 0, W * .01, H); knit('moss', .016 * pxm, .6, W * u, 0, W * .01, H); }
+      for (const [Y, h] of [[H * .93, H * .07], [0, H * .035]]) { x.fillStyle = PAL.indigo; x.fillRect(0, Y, W, h); knit('rib', .04 * pxm, .65, 0, Y, W, h); }
+      return c; })();
+    const g = new THREE.Group(); g.name = 'MR_FIT_FORMS'; group.add(g);
+    [[toile, 17.323, 'mr_toile'], [knitBody, 18.237, 'mr_knit_body']].forEach(([c, cx, name]) => {
+      const t = texture(c, { clamp: true }); t.wrapS = THREE.RepeatWrapping;
+      const m = mesh(g, shell(cx, -18.923), std(name, { map: t, roughness: .93, side: THREE.DoubleSide, emissive: '#ffffff', emissiveMap: t, emissiveIntensity: .04 }));
+      m.userData.interiorItem = 'MR_FIT_FORMS';
+    });
+  }
+  if (want('MR_APPROVAL_BOARD')) {
+    // approval board F258 on the south wall: linen face z -10.910 (room on its -z side), pieces 4 mm proud at z -10.914,
+    // board x 9.653-11.479, y 1.170-2.183. [code, x0, x1, y0, y1] from the model; seen from the room, east is on the left
+    const X0 = 9.653, X1 = 11.479, Y0 = 1.17, Y1 = 2.183, Wm = X1 - X0, Hm = Y1 - Y0;
+    const P = [['g', 9.876, 10.095, 1.315, 1.551], ['p', 10.844, 11.104, 1.348, 1.565], ['a', 11.154, 11.405, 1.35, 1.606], ['a', 10.477, 10.749, 1.379, 1.618],
+      ['w', 10.165, 10.384, 1.383, 1.662], ['w', 9.876, 10.095, 1.596, 1.772], ['p', 10.844, 11.104, 1.617, 1.826], ['g', 11.154, 11.405, 1.656, 1.92],
+      ['p', 10.477, 10.749, 1.69, 1.913], ['r', 10.165, 10.384, 1.725, 1.893], ['p', 9.876, 10.095, 1.842, 2.041], ['a', 10.844, 11.104, 1.884, 2.074]];
+    const W = px(1024), H = Math.round(W * Hm / Wm), mx = W / Wm, my = H / Hm;
+    const pieces = P.map(([code, x0, x1, y0, y1]) => [code, (X1 - x1) * mx, (Y1 - y1) * my, (X1 - x0) * mx, (Y1 - y0) * my]);
+    const face = std('mr_board', { map: texture(pinnedBoard(W, H, mx, pieces, 200), { clamp: true }), roughness: .92 });
+    mesh(group, new THREE.PlaneGeometry(Wm, Hm), face, (X0 + X1) / 2, (Y0 + Y1) / 2, -10.917, 0, Math.PI);   // 3 mm in front of the pieces
   }
   // the approved rug keeps its baked Cycles light; only the woven design (albedo) changes when the Reception atlas is live
   function prepareRoom(room) {

@@ -1,0 +1,32 @@
+{
+  "scope": "LOCAL Chromium (SwiftShader); viewer walk-QA hooks at visitor eye height 1.6 m; UI hidden; not live or MacBook proof",
+  "shots": [
+    {
+      "spot": "mr_forms",
+      "xz": [
+        19.5,
+        -18.0
+      ],
+      "yaw": 1.08,
+      "pitch": -0.18,
+      "fov": 55,
+      "file": "visitor_mr_forms.png",
+      "sha256": "e8365243a3900830717ef656bc4d23333907cf8b5f5e22ae79ea1ab2a2d6be6b",
+      "room": "Z07"
+    },
+    {
+      "spot": "mr_board",
+      "xz": [
+        10.5,
+        -12.0
+      ],
+      "yaw": 3.141592653589793,
+      "pitch": 0.05,
+      "fov": 60,
+      "file": "visitor_mr_board.png",
+      "sha256": "f4dbc437f6ed80d2598d092669118e737cd14e60161ab1fa5ae7e9d4db6e7207",
+      "room": "Z07"
+    }
+  ],
+  "errors": []
+}
