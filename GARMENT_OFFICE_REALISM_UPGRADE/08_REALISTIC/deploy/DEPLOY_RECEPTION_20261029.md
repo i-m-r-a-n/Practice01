@@ -1,4 +1,21 @@
-# Deploying the Reception interior release (prepared by Claude, not yet deployed)
+# Deploying the interior releases (prepared by Claude, not yet deployed)
+
+## Latest: Reception + Experience Centre
+
+`worker-realistic.js` is built for source commit `de424c0e5161dcc98cbff569cba670bf1c4f677e`.
+
+- Size and SHA-256: 7621 bytes, `bbe5425b372e0152b2c7afee27ec795bdd95fd276c7a83accd732c3b214da862`.
+- It adds the Experience Centre redesign:
+  - knitwear on the forms
+  - handloom fins
+  - the materials library on the material table
+  - green handloom bay panels
+  - gallery light pools
+- Verify: `/realistic/health` shows `de424c0e5161dcc98cbff569cba670bf1c4f677e`.
+- Checks: `node test_worker.mjs` passes 41 checks, and the changed dist files at that commit match on raw.githubusercontent.com.
+- Evidence: `qa/interior-20261029/experience/`.
+
+## Reception release (superseded by the one above)
 
 `worker-realistic.js` in this folder is built for source commit `0cda894f3e4b11edc64f9dc97f481b8e5986f003` (branch `claude/realistic-sprint-20261028`).
 
