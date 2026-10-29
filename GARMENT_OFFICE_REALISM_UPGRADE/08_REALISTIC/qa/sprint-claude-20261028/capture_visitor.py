@@ -16,6 +16,9 @@ SPOTS = {
     'reception_sofa': (9.6, 2.9, math.pi, -0.38, 60),
     'warp_weft': (11.55, 2.5, -2.988, -0.05, 62),
     'sofa_corner': (11.0, 3.6, 2.6, -0.42, 58),
+    'ec_library': (16.2, -7.6, -0.661, -0.58, 55),
+    'ec_forms': (12.7, -7.3, 0.0, -0.22, 62),
+    'ec_ceiling': (10.6, -6.9, -1.45, 0.22, 66),
     'merch_typing': (12.9, -16.2, 0.55, -0.35, 60),
 }
 p = argparse.ArgumentParser()

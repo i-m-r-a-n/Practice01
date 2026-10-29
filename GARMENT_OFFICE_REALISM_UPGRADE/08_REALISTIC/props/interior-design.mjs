@@ -6,6 +6,8 @@
  * Usage: buildInteriorDesign(THREE, { zones, anisotropy, detail }) -> { group, items, stats, textures, prepareRoom(room), dispose }
  * Coordinates: viewer metres, x east, y up, z south (as office-props-manifest.json).
  */
+import { knitTile } from './knit-tiles.mjs';
+
 export const INTERIOR_ITEMS = [
   { id: 'RC_WARP_WEFT', zone: 'Z02', note: 'Warp & weft: five handloom hangings (khadi with Jamdani-style butis, indigo with kantha running stitch, undyed jute, madder, striped khadi) on an oak rail, washed with warm light.' },
   { id: 'RC_RUG_KANTHA', zone: 'Z02', note: 'The approved rug, redesigned as jute with an indigo border, kantha-style running stitch and a lotus centre. Same footprint and baked light.' },
@@ -13,6 +15,9 @@ export const INTERIOR_ITEMS = [
   { id: 'RC_PANEL_LIGHT', zone: 'Z02', note: 'Brass picture light over the Jamdani-inspired panel.' },
   { id: 'RC_WELCOME_SWATCHES', zone: 'Z02', note: 'Fabric rolls and a bowl of coconut-shell buttons on the visitor ledge, for buyers to touch on arrival.' },
   { id: 'RC_SCALLOPS', zone: 'Z02', note: 'Warm scallops of the four existing track spots on the fluted oak wall, as in the Cycles render (vertex light cannot hold them).' },
+  { id: 'EC_MATERIALS_LIBRARY', zone: 'Z30', note: 'Tactile materials library on the west end of the material table: yarn cones, knit stitch swatches, and coconut-shell buttons from shell to blank to finished button. Fibre, origin, weight and test data: pending supplier records.' },
+  { id: 'EC_TEXTILE_BAFFLES', zone: 'Z30', note: 'Handloom cloth fins under the deck between the two track rails (khadi and jute with woven indigo and madder bands), clear of the spot beams, the AC unit and the smoke detector.' },
+  { id: 'EC_GALLERY_LIGHT', zone: 'Z30', note: 'Warm pools of the existing track spots on the plinth and of the linear pendant on the material table.' },
 ];
 
 const PAL = { khadi: '#e6dccb', khadiShade: '#cfc1a8', jute: '#b39867', juteDark: '#7e6440', indigo: '#33486a', indigoDeep: '#24344f',
@@ -326,6 +331,91 @@ export function buildInteriorDesign(THREE, { zones = null, anisotropy = 4, detai
     const scallop = std('scallop', { color: '#000000', emissive: '#ffc488', emissiveMap: texture(c, { clamp: true }), transparent: true, opacity: .32, depthWrite: false, blending: THREE.AdditiveBlending, roughness: 1, polygonOffset: true, polygonOffsetFactor: -2, polygonOffsetUnits: -2 });
     for (const z of [2.41, 3.43, 4.445, 5.46]) mesh(group, new THREE.PlaneGeometry(.85, 1.9), scallop, 14.262, 2.62 - .95, z, 0, -Math.PI / 2);
   }
+  if (want('EC_MATERIALS_LIBRARY')) {
+    // material table F026: top y 0.863 over x 16.55-20.15, z -8.95..-8.05. Its west end already holds two rows of standing rolls
+    // (z -8.67..-8.58 and -8.37..-8.28, x 16.65-17.6), so the library uses the free north strip (z -9.0..-8.70) and south strip
+    // (z -8.25..-8.05); both are clear of the
+    // existing garment stacks, notebook and tape measure, and of the three people (x 18.5-20.3)
+    const g = new THREE.Group(); g.name = 'EC_MATERIALS_LIBRARY'; group.add(g); const TOP = .863;
+    const oak = std('lib_oak', { color: '#b28a59', roughness: .5 }), walnut = std('lib_walnut', { color: '#5a3d27', roughness: .42 });
+    const box = (mat, x, y, z, w, h, d, ry = 0) => mesh(g, new THREE.BoxGeometry(w, h, d), mat, x, y + h / 2, z, 0, ry);
+    // 1. yarn cones on an oak board: cross-wound thread, paper core at the tip
+    const yarn = (() => { const c = canvas(64, 64), x = c.getContext('2d'); x.fillStyle = '#fff'; x.fillRect(0, 0, 64, 64);
+      for (let y = 0; y < 64; y += 3) { x.strokeStyle = 'rgba(0,0,0,.16)'; x.lineWidth = 1.2; x.beginPath(); x.moveTo(0, y); for (let s = 0; s <= 64; s += 8) x.lineTo(s, y + Math.sin(s * .2 + y) * .8); x.stroke(); }
+      for (let s = -64; s < 64; s += 9) { x.strokeStyle = 'rgba(0,0,0,.07)'; x.beginPath(); x.moveTo(s, 0); x.lineTo(s + 64, 64); x.stroke(); }
+      return texture(c, { repeat: [5, 8] }); })();
+    const paper = std('cone_core', { color: '#c9a86e', roughness: .8 });
+    box(oak, 16.93, TOP, -8.84, .64, .018, .2);
+    [PAL.khadi, '#d6c3a0', PAL.indigo, PAL.madder, PAL.ochre, '#6f7a4c', '#9a9a96', '#3b3d40'].forEach((cc, i) => {
+      const cx = 16.69 + (i % 4) * .16, cz = -8.89 + Math.floor(i / 4) * .1, base = TOP + .018;
+      mesh(g, new THREE.CylinderGeometry(.011, .033, .16, 28), std('yarn_' + i, { color: cc, map: yarn, roughness: .9 }), cx, base + .08, cz);
+      mesh(g, new THREE.CylinderGeometry(.008, .0105, .024, 16), paper, cx, base + .172, cz);
+    });
+    // 2. knit stitch swatches on an oak tray, each stitch at its true scale
+    box(oak, 17.96, TOP, -8.84, .66, .012, .2);
+    [['jersey', '#e1d6c2', .026], ['rib', PAL.indigo, .05], ['cable', '#d6c3a0', .09], ['moss', '#6f7a4c', .035], ['waffle', PAL.khadi, .05], ['pointelle', PAL.madder, .026]].forEach(([stitch, cc, scale], i) => {
+      const t = texture(knitTile(stitch), { srgb: false, repeat: [.13 / scale, .13 / scale * (stitch === 'cable' ? 128 / 192 : 1)] });
+      const sw = mesh(g, new THREE.BoxGeometry(.13, .006, .13), std('swatch_' + stitch, { color: cc, map: t, roughness: .96, emissive: '#ffffff', emissiveMap: t, emissiveIntensity: .05 }), 17.7 + i * .104, TOP + .012 + .003 + (i % 2) * .001, -8.84, 0, (i - 2.5) * .05);
+      sw.userData.stitch = stitch;
+    });
+    // 3. coconut shell to button: raw shell pieces, blanks, finished buttons, buttons sewn on a knit swatch
+    box(walnut, 16.93, TOP, -8.15, .44, .014, .13);
+    for (const dx of [-.11, 0, .11]) box(walnut, 16.93 + dx, TOP + .014, -8.15, .006, .016, .12);
+    const hole = std('lib_hole', { color: '#1d130c', roughness: 1 }), shellOut = std('lib_shell_out', { color: '#4a2f1c', roughness: .55 }), shellIn = std('lib_shell_in', { color: '#a68a63', roughness: .8 }), blankMat = std('lib_blank', { color: '#b8956a', roughness: .6 }), buttonMat = std('lib_button', { color: '#4f3422', roughness: .32 });
+    for (let k = 0; k < 3; k++) { const s = mesh(g, new THREE.SphereGeometry(.03, 16, 8, 0, 1.6, 0, 1.1), shellOut, 16.765 + (k - 1) * .022, TOP + .02, -8.15 + (k - 1) * .03, -.4, k * 1.9, .3); s.scale.set(1, .6, 1);
+      const s2 = mesh(g, new THREE.SphereGeometry(.0295, 16, 8, 0, 1.6, 0, 1.1), shellIn, s.position.x, s.position.y, s.position.z, -.4, k * 1.9, .3); s2.scale.set(1, .6, 1); s2.material.side = THREE.BackSide; }
+    const r = rng(141);
+    for (let k = 0; k < 9; k++) mesh(g, new THREE.CylinderGeometry(.011, .011, .003, 18), blankMat, 16.875 + (k % 3) * .027 - .027, TOP + .016 + Math.floor(k / 3) * .0005, -8.18 + Math.floor(k / 3) * .03, (r() - .5) * .2, 0, (r() - .5) * .2);
+    for (let k = 0; k < 9; k++) { const bx = 16.985 + (k % 3) * .027 - .027, bz = -8.18 + Math.floor(k / 3) * .03;
+      mesh(g, new THREE.CylinderGeometry(.0105, .0105, .0035, 20), buttonMat, bx, TOP + .016, bz);
+      for (const [hx, hz] of [[-.0025, -.0025], [.0025, -.0025], [-.0025, .0025], [.0025, .0025]]) mesh(g, new THREE.CircleGeometry(.0011, 8), hole, bx + hx, TOP + .0179, bz + hz, -Math.PI / 2); }
+    const knitPatch = texture(knitTile('jersey'), { srgb: false, repeat: [4, 4] });
+    box(std('lib_patch', { color: PAL.indigo, map: knitPatch, roughness: .96 }), 17.095, TOP + .014, -8.15, .1, .004, .1);
+    for (let k = 0; k < 3; k++) mesh(g, new THREE.CylinderGeometry(.0095, .0095, .003, 20), buttonMat, 17.095, TOP + .0195, -8.18 + k * .03);
+    // a small concept card: what each sample will carry once suppliers provide it
+    const card = (() => { const c = canvas(512, 300), x = c.getContext('2d'); x.fillStyle = '#f4f0e8'; x.fillRect(0, 0, 512, 300); x.fillStyle = '#26302b';
+      x.font = '700 34px Inter, Arial, sans-serif'; x.fillText('Materials library', 28, 58); x.font = '400 22px Inter, Arial, sans-serif'; x.fillStyle = '#4b5a52';
+      ['Yarn · stitch · coconut-shell buttons', 'Each sample: fibre, origin, weight,', 'wash and test reports.', 'Concept display: supplier data pending.'].forEach((s, i) => x.fillText(s, 28, 108 + i * 40));
+      const t = texture(c, { clamp: true }); return std('lib_card', { map: t, roughness: .88, emissive: '#ffffff', emissiveMap: t, emissiveIntensity: .3 }); })();
+    box(oak, 17.36, TOP, -8.84, .03, .018, .17);
+    const cm = mesh(g, new THREE.PlaneGeometry(.17, .1), card, 17.36, TOP + .018 + .05 * Math.cos(.15), -8.84); cm.rotation.set(-.15, -Math.PI / 2, 0, 'YXZ');
+  }
+  // ceiling-hung items join the model's overhead group (the app hides it with the ceiling in the dollhouse views)
+  const overhead = new THREE.Group(); overhead.name = 'INTERIOR_DESIGN_OVERHEAD';
+  if (want('EC_TEXTILE_BAFFLES')) {
+    // deck underside y 2.90; beams with track rails at z -9.05 / -7.31 (spots reach z -9.24 / -7.14): fins span z -8.85..-7.60,
+    // hang to y 2.49, skip the AC unit (x 15.05-16.24) and the smoke detector (x 15.59-15.71)
+    const W = px(256), H = px(1024), c = canvas(W * 3, H), x = c.getContext('2d'), m = H / 1.25;
+    [[PAL.khadi, PAL.indigo, 201], ['#cdbb94', PAL.madder, 202], [PAL.jute, PAL.indigo, 203]].forEach(([base, band, seed], k) => {
+      // the cloth hangs with its long side along z: the woven bands sit near the hem (canvas left = fin bottom)
+      cloth(x, k * W, 0, W, H, base, { cell: 3, seed, slub: .14 });
+      for (const [f, wdt, col] of [[.10, .07, band], [.20, .015, PAL.madder], [.235, .015, band]]) cloth(x, k * W + W * f, 0, W * wdt, H, col, { cell: 3, seed: seed + f * 100 });
+    });
+    const atlas = texture(c, { clamp: true });
+    const fins = std('baffle_cloth', { map: atlas, roughness: .95, side: THREE.DoubleSide, emissive: '#ffffff', emissiveMap: atlas, emissiveIntensity: .12 });
+    const oak = std('baffle_oak', { color: PAL.oak, roughness: .55 });
+    const xs = [10.1, 10.7, 11.3, 11.9, 12.5, 13.1, 13.7, 14.3, 16.7, 17.3, 17.9, 18.5, 19.1, 19.7, 20.3, 20.9, 21.5];
+    xs.forEach((fx, i) => {
+      const k = i % 3, geom = new THREE.PlaneGeometry(1.25, .38, 12, 2), uv = geom.attributes.uv, p = geom.attributes.position;
+      for (let v = 0; v < uv.count; v++) {         // canvas column k: u across the fin height (hem at canvas left), v along z
+        const along = uv.getX(v), up = uv.getY(v); uv.setXY(v, (k + up * .999) / 3, along);
+        p.setZ(v, .012 * Math.sin(along * Math.PI * 3 + i) * (1 - up));   // a soft ripple at the hem
+      }
+      geom.computeVertexNormals();
+      const fin = mesh(overhead, geom, fins, fx, 2.87 - .19, -8.225, 0, Math.PI / 2);
+      fin.userData.interiorItem = 'EC_TEXTILE_BAFFLES';
+      mesh(overhead, new THREE.BoxGeometry(.024, .03, 1.27), oak, fx, 2.885, -8.225);
+    });
+  }
+  if (want('EC_GALLERY_LIGHT')) {
+    const pool = (() => { const c = canvas(256, 256), x = c.getContext('2d'); x.fillStyle = '#000'; x.fillRect(0, 0, 256, 256);
+      const g = x.createRadialGradient(128, 128, 6, 128, 128, 126); g.addColorStop(0, 'rgba(255,255,255,1)'); g.addColorStop(.55, 'rgba(255,255,255,.4)'); g.addColorStop(1, 'rgba(255,255,255,0)'); x.fillStyle = g; x.fillRect(0, 0, 256, 256);
+      return texture(c, { clamp: true }); })();
+    const warm = (op, name) => std(name, { color: '#000000', emissive: '#ffc488', emissiveMap: pool, transparent: true, opacity: op, depthWrite: false, blending: THREE.AdditiveBlending, roughness: 1, polygonOffset: true, polygonOffsetFactor: -2, polygonOffsetUnits: -2 });
+    const plinthPool = warm(.3, 'pool_plinth'), tablePool = warm(.22, 'pool_table');
+    for (const fx of [11.635, 12.345, 13.055, 13.765]) mesh(group, new THREE.PlaneGeometry(.78, .6), plinthPool, fx, .2015, -8.56, -Math.PI / 2);   // plinth top y 0.20
+    mesh(group, new THREE.PlaneGeometry(3.3, .86), tablePool, 18.33, .8636, -8.5, -Math.PI / 2);                                               // table top y 0.863
+  }
   // the approved rug keeps its baked Cycles light; only the woven design (albedo) changes when the Reception atlas is live
   function prepareRoom(room) {
     if (room.id !== 'Z02' || !rugTexture) return;
@@ -339,7 +429,7 @@ export function buildInteriorDesign(THREE, { zones = null, anisotropy = 4, detai
     });
   }
   return {
-    group, items: items.map(i => ({ id: i.id, zone: i.zone, note: i.note })), prepareRoom,
+    group, overhead, items: items.map(i => ({ id: i.id, zone: i.zone, note: i.note })), prepareRoom,
     stats: { items: items.length, meshes: geometries.length, textures: textures.length, detail },
     textures: () => textures,
     dispose() { geometries.forEach(g => g.dispose()); materials.forEach(m => m.dispose()); textures.forEach(t => t.dispose()); },

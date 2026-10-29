@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import { knitTile } from '../props/knit-tiles.mjs';
 
 // Release-mode finish refinement on the vertex-lit base model. The shared terrazzo floor (lobby, reception, visitor
 // passage, experience centre, corridors) takes the approved CC0 Terrazzo019M basecolour at its native 2K, with the
@@ -28,4 +29,56 @@ export async function refineReleaseFinishes({ root, ktx, anisotropy = 8, changed
   }
   changed?.();
   return { refined: [...targets].map(m => m.name), source: url };
+}
+
+// ------------------------------------------------------------------------------------------------ knitwear and cloth
+// The client knits garments: shared garment materials (g_*) get a world-space knit structure, but only inside the
+// display boxes below, so a fire extinguisher that shares g_rust is left alone. The four dress forms on the
+// Experience Centre plinth each get a chunky stitch (cable, rib, moss, waffle); the bay back panels become a green
+// handloom weave. Self-made canvas tiles; only the albedo is modulated, the baked light stays as it is.
+const KNIT_BOXES = [            // [x0, y0, z0, x1, y1, z1] in viewer metres; Experience Centre (Z30)
+  [9.75, 0, -10.78, 20.57, 2.44, -10.10],     // the four display bays (hanging and folded garments)
+  [16.50, .86, -9.02, 20.20, 1.10, -8.00],    // folded garments on the material table
+];
+const FORMS = [11.40, .20, -8.78, 14.00, 1.87, -8.34];   // dress forms F022-F025, 0.71 m apart along x
+export function refineKnitwear({ root, THREE: T = THREE, anisotropy = 8, changed }) {
+  const tex = name => { const t = new T.CanvasTexture(knitTile(name)); t.wrapS = t.wrapT = T.RepeatWrapping; t.colorSpace = T.NoColorSpace; t.anisotropy = anisotropy; t.needsUpdate = true; return t; };
+  const maps = Object.fromEntries(['jersey', 'rib', 'moss', 'waffle', 'cable', 'weave'].map(k => [k, tex(k)]));
+  const boxes = KNIT_BOXES.map(b => new T.Vector4(...b.slice(0, 3), 0)).concat(KNIT_BOXES.map(b => new T.Vector4(...b.slice(3), 0)));
+  const touched = [];
+  root.traverse(o => {
+    if (!o.isMesh) return;
+    for (const m of [o.material].flat()) {
+      if (m.userData.knitwear || !/^(g_[a-z]+|paint_green)(_baked)?$/.test(m.name)) continue;   // furniture has no vertex light: plain PBR names
+      const cloth = m.name.startsWith('paint_green'); m.userData.knitwear = true; touched.push(m.name);
+      m.onBeforeCompile = shader => {
+        Object.assign(shader.uniforms, { knitJersey: { value: maps.jersey }, knitRib: { value: maps.rib }, knitMoss: { value: maps.moss }, knitWaffle: { value: maps.waffle }, knitCable: { value: maps.cable }, knitWeave: { value: maps.weave }, knitBoxes: { value: boxes } });
+        shader.vertexShader = 'varying vec3 vKnitWorld; varying vec3 vKnitNormal;\n' + shader.vertexShader.replace('#include <project_vertex>',
+          '#include <project_vertex>\nvKnitWorld = (modelMatrix * vec4(transformed, 1.0)).xyz; vKnitNormal = normalize(mat3(modelMatrix) * normal);');
+        shader.fragmentShader = `varying vec3 vKnitWorld; varying vec3 vKnitNormal;
+uniform sampler2D knitJersey, knitRib, knitMoss, knitWaffle, knitCable, knitWeave; uniform vec4 knitBoxes[${KNIT_BOXES.length * 2}];
+float knitTri(sampler2D t, vec3 p, vec3 w, vec2 s) { return texture2D(t, p.zy / s).r * w.x + texture2D(t, p.xz / s.xx).r * w.y + texture2D(t, p.xy / s).r * w.z; }
+` + shader.fragmentShader.replace('#include <color_fragment>', `#include <color_fragment>
+{
+  vec3 p = vKnitWorld, w = pow(abs(normalize(vKnitNormal)), vec3(4.0)); w /= (w.x + w.y + w.z);
+  ${cloth ? `float k = knitTri(knitWeave, p, w, vec2(.25, .25)); diffuseColor.rgb *= mix(1.0, k * 1.15, .85);` : `
+  bool form = p.x > ${FORMS[0].toFixed(2)} && p.x < ${FORMS[3].toFixed(2)} && p.y > ${FORMS[1].toFixed(2)} && p.y < ${FORMS[4].toFixed(2)} && p.z > ${FORMS[2].toFixed(2)} && p.z < ${FORMS[5].toFixed(2)};
+  bool shown = form;
+  for (int i = 0; i < ${KNIT_BOXES.length}; i++) { vec3 a = knitBoxes[i].xyz, b = knitBoxes[i + ${KNIT_BOXES.length}].xyz; shown = shown || all(greaterThan(p, a)) && all(lessThan(p, b)); }
+  if (shown) {
+    float k;
+    if (form) { int f = int(floor((p.x - ${FORMS[0].toFixed(2)}) / .71));
+      if (f == 0) k = knitTri(knitCable, p, w, vec2(.09, .135)); else if (f == 1) k = knitTri(knitRib, p, w, vec2(.05, .05));
+      else if (f == 2) k = knitTri(knitMoss, p, w, vec2(.05, .05)); else k = knitTri(knitWaffle, p, w, vec2(.07, .07));
+      diffuseColor.rgb *= mix(1.0, k * 1.2, f < 2 ? .75 : .85);
+    } else { k = knitTri(knitJersey, p, w, vec2(.026, .03)); diffuseColor.rgb *= mix(1.0, k * 1.15, .5); }
+  }`}
+}`);
+      };
+      m.customProgramCacheKey = () => `release-knitwear-v1-${cloth ? 'cloth' : 'garment'}`;
+      m.needsUpdate = true;
+    }
+  });
+  changed?.();
+  return { knitwear: touched, textures: Object.values(maps) };
 }
