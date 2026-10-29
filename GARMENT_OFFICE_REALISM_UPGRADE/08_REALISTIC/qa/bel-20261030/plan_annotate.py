@@ -14,7 +14,7 @@ cx, cz = cam['position'][0], cam['position'][2]  # up = -z (model orientation; t
 P = lambda x, z: ((x - cx) * k + W / 2, (z - cz) * k + H / 2)
 polys = {r['zone']: r['polygon_xz'] for r in meta['rooms']}
 GREEN, ORANGE, TEAL = (120, 200, 140), (240, 160, 70), (110, 190, 210)
-groups = [(GREEN, ['Z01', 'Z02', 'Z03', 'Z30', 'Z08', 'Z18', 'Z12']), (TEAL, ['Z15', 'Z16', 'Z17', 'Z22']), (ORANGE, ['Z07', 'Z06'])]
+groups = [(GREEN, ['Z01', 'Z02', 'Z03', 'Z30', 'Z08', 'Z18', 'Z12', 'Z21', 'Z20', 'Z09']), (TEAL, ['Z15', 'Z16', 'Z17', 'Z22']), (ORANGE, ['Z07', 'Z06'])]
 canvas = Image.new('RGB', (W + 520, H + 120), (22, 32, 27)); canvas.paste(im, (0, 120))
 d = ImageDraw.Draw(canvas)
 F = lambda s, b=False: ImageFont.truetype(f"/usr/share/fonts/truetype/crosextra/Carlito-{'Bold' if b else 'Regular'}.ttf", s)
@@ -26,6 +26,7 @@ labels = [   # (text, x, z of the anchor, colour)
     ('1 Arrival gallery', 3.8, 3.2, GREEN), ('2 Reception, tea, rural instruments', 11.0, 3.0, GREEN), ('3 Earth & Sun passage', 10.0, -3.0, GREEN),
     ('4 Earth to product, Future of Bengal', 15.5, -8.2, GREEN), ('5 Negotiation suite', 17.0, -3.0, GREEN), ('6 Collaborative studio, sunning shelf', 31.0, -22.0, GREEN),
     ('7 Making line (design-wing entrance)', 24.3, -22.1, TEAL), ('8 Living materials library', 24.3, -9.0, TEAL), ('9 Materials lab', 24.3, -13.2, TEAL), ('10 Prototype workshop', 24.3, -18.2, TEAL),
+    ('11 Academy annex (pilot academy)', 24.6, -35.6, GREEN), ('12 Staff and artisan dining', 25.15, -27.8, GREEN), ('13 Records room', 4.45, -20.0, GREEN),
     ('A Green Uthan, artisan corner, room-sets', 15.6, -16.1, ORANGE), ('B Design academy (20 seats)', 5.0, -12.5, ORANGE),
 ]
 x0 = W + 30; y = 150
@@ -43,5 +44,5 @@ d.text((x0 + 38, y - 4), 'accounts teams move (owner decision)', font=F(22), fil
 for t in ['Oriented as the model; true north is not yet', 'confirmed. The viewer\'s own top view of the', 'proposal route; concept proposal, no people.', 'Walls, doors, windows and the approved floor', 'are unchanged. Not a measured survey.']:
     d.text((x0, y), t, font=F(20), fill=(190, 200, 194)); y += 28
 d.text((24, 26), 'Bengal Earth Lab · /bengal-earth-lab/ proposal on the approved Stage II floor', font=F(36, True), fill=(241, 234, 220))
-d.text((24, 74), 'Plan view from the 3D viewer, 30 Oct 2026 (source commit 1a838d8)', font=F(24), fill=(200, 210, 204))
+d.text((24, 74), 'Plan view from the 3D viewer, 30 Oct 2026 (source commit 1592542)', font=F(24), fill=(200, 210, 204))
 canvas.save(out, quality=88); print(out, canvas.size)
