@@ -27,7 +27,7 @@ UK rows with an **explicit single** GBP price in this sample range from **£3.99
 ## Specific observations grounded in the linked listings
 
 1. **Storage systems:** repeat shelf-module dimensions appear at IKEA, including water-hyacinth/seagrass baskets around **32–35 cm** wide/deep (I04–I06), and compact woven organisers (H08). This suggests exploring **modular storage geometry**, but buyer acceptance of a Bangladeshi version remains untested.
-2. **Dry-use limits matter:** IKEA's TÄTING and LUSTIGKURRE descriptions explicitly specify dry indoor use. Design product-care labels and moisture tests; do not assume water-hyacinth or grass baskets are suitable for wet bathrooms.
+2. **Dry-use limits matter:** IKEA's TÄTING explicitly excludes bathrooms/high humidity, while LABBSAL advises a dry, cool environment. Design product-care labels and moisture tests; do not assume water-hyacinth or grass baskets are suitable for wet bathrooms.
 3. **Materials are often mixed:** e.g. TÄTING uses a steel inner frame; LABBSAL combines water hyacinth with rattan, timber and felt; H&M's seagrass laundry basket includes an iron frame. A '100% Bangladeshi-produced' promise therefore requires evidence for **every component**, not merely the outer fibre.
 4. **Neutral natural tones dominate this deliberately selected sample**, with exceptions such as green terracotta and dark-blue tableware (H23/H26/H27). The sample was selected by material keywords; it does **not** prove that all European buyers prefer beige or green.
 5. **Low-priced and premium-price examples coexist** (I01 vs H05 or Z05; I02 vs H17). Competing only on lowest displayed retail price is not a sound export strategy without sourced costs, buyer segment and channel margins.
