@@ -7,7 +7,8 @@
   "releaseMode": "rooms",
   "stage": 4,
   "interiorZones": [
-    "Z01"
+    "Z01",
+    "Z14"
   ],
   "releaseZones": [
     "Z02",
@@ -100,6 +101,7 @@
   "peopleAccepted": true,
   "baseModel": "revised-model/Optimized_Office_Interior_web_baked.glb (Z06/Z07 option B; documentation only, routed by the Worker as ./model_web_baked.glb)",
   "roomNotes": {
+    "Z14": "Concept: the CAD screens, the tech-pack pinboard and the layout table follow one illustrative development exercise for a knit cardigan (sketch, flats, pattern, grading, marker, stitch chart, fit notes, approval). Generic self-drawn graphics: no software interface, buyer or measurements; not an actual collection.",
     "Z01": "Concept: warm light from the existing track spots on the oak brand wall, warmer walnut and oak, and one narrow handloom hanging between the windows on the way to Reception (design reference; maker to be identified).",
     "Z02": "Handloom references throughout: the Jamdani-inspired panel under a brass picture light, five 'warp and weft' hangings (khadi, indigo with kantha running stitch, undyed jute, madder, striped khadi), a kantha-stitched jute rug, stitched cushions, and fabric rolls with coconut-shell buttons on the visitor ledge. Design references only: makers and fibres are to be identified and credited; nothing here is claimed as artisan-made.",
     "Z30": "Illustrative knitwear on the four forms (cable, rib, moss and waffle stitches; not an actual collection) and a tactile materials library on the material table: yarn cones, stitch swatches, and coconut-shell buttons from shell to blank to finished button; fibre, origin and test data: pending supplier records. Water & Wellbeing refill point at the counter: the drinking water is client-stated to come from a deep tube well; no laboratory results are available yet, so none are shown. The client states the building runs on solar power; energy figures will appear only with real monitoring data.",

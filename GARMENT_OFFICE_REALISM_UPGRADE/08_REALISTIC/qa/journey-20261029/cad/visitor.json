@@ -1,0 +1,58 @@
+{
+  "scope": "LOCAL Chromium (SwiftShader); viewer walk-QA hooks at visitor eye height 1.6 m; UI hidden; not live or MacBook proof",
+  "shots": [
+    {
+      "spot": "cad_desks",
+      "xz": [
+        24.2,
+        -4.6
+      ],
+      "yaw": 1.5707963267948966,
+      "pitch": -0.31,
+      "fov": 62,
+      "file": "visitor_cad_desks.png",
+      "sha256": "c5390f84d370a7121d7cc5c3d8efcdf77f85dbe20007f467b4c083de2f8e5fc0",
+      "room": "Z14"
+    },
+    {
+      "spot": "cad_table",
+      "xz": [
+        24.2,
+        -3.4
+      ],
+      "yaw": -1.5707963267948966,
+      "pitch": -0.52,
+      "fov": 58,
+      "file": "visitor_cad_table.png",
+      "sha256": "82ed88a5073d563f12368fa5ef3e8facc05b2511a0273832abc0bfd5eb78086c",
+      "room": "Z14"
+    },
+    {
+      "spot": "cad_pinboard",
+      "xz": [
+        24.6,
+        -2.0
+      ],
+      "yaw": 3.141592653589793,
+      "pitch": 0.05,
+      "fov": 66,
+      "file": "visitor_cad_pinboard.png",
+      "sha256": "67c5a7d2e87840ebe05252037a35780fffb5dc8ad87f106d3ac5dee813b5a11b",
+      "room": "Z14"
+    },
+    {
+      "spot": "cad_wall",
+      "xz": [
+        25.0,
+        -5.2
+      ],
+      "yaw": 0.0,
+      "pitch": -0.1,
+      "fov": 60,
+      "file": "visitor_cad_wall.png",
+      "sha256": "c12ebb27cd9f21d7d2776b53e43b53c15e463b4989af1a97346db2683440b72f",
+      "room": "Z14"
+    }
+  ],
+  "errors": []
+}

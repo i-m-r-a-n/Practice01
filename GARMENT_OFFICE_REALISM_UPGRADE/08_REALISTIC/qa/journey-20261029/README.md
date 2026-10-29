@@ -45,3 +45,33 @@ The brief came from ChatGPT's review: "complete the buyer's design-to-sample jou
   - One 256 × 1011 canvas, about 1.4 MB with mipmaps at full detail (a quarter of that on low quality).
   - Four shared materials get a position test in their shader: `oak_slat_baked`, `walnut`, `walnut_baked`, `oak`.
 - **Bug fixed on the way:** the place-patch program cache key now carries the boxes. Before, two materials of the same type could share one compiled program and apply the wrong box.
+
+## 2. CAD / technical design (Z14, CAM_15): `cad/`
+One illustrative development exercise for a knit cardigan runs through the room. All graphics are self-drawn and generic: no software interface, buyer, brand or measurement.
+- **Screens (`CAD_SCREENS`):** the six monitors of the three CAD desks and the north wall screen. The overlays sit 3 mm in front of the existing screen faces.
+  - Monitors: front and back technical flats with callouts, pattern pieces on a grid, a grading nest, a marker, and a knit stitch chart.
+  - The wall screen shows the exercise in four steps: sketch, technical flat, pattern, knit swatch. It is titled "Development exercise: knit cardigan (illustrative)".
+- **Pinboard (`CAD_PINBOARD`):** the felt tech-pack board keeps its 18 sheet positions. It reads left to right as the exercise runs: sketch, flats and stitch chart, pattern and grading, marker, fit notes, approval. Knit swatches and a coconut-shell button card are pinned among the sheets.
+- **Layout table (`CAD_LAYOUT_TABLE`):**
+  - a kraft marker sheet (1.2 × 0.75 m) with an L-square, three pattern weights and a pencil
+  - a small folded knit reference set and a header card at the west end
+  - the east third stays clear for work
+- **Checks:**
+  - CAM_15 before/after at identical framing.
+  - A walk along the free aisle (x 24.2), north to south: 4.93 m.
+  - No page or HTTP errors and no failed requests.
+  - Nothing stands on the floor, so chair and desk clearance are unchanged.
+- **Tabletop support:**
+  - The table-top height was ray-cast in the viewer: 0.9145 m. The GLB query rounds it to 0.91, and at first the sheet sat 3 mm inside the top, unseen.
+  - Every flat item now rests on the measured top.
+- **Texture and memory, at full detail (half each side on low quality):**
+
+  | Texture | Size | Memory with mipmaps |
+  |---|---|---|
+  | Screen atlas (all seven screens) | 1536 × 1164 | about 9.5 MB |
+  | Pinboard | 1280 × 553 | about 3.8 MB |
+  | Kraft sheet | 1024 × 640 | about 3.5 MB |
+  | Header card | small | – |
+
+  The knit textures reuse the shared stitch tiles.
+- **Bug fixed on the way:** a temporal-dead-zone error (`LIN` / `srgb` used before their declaration) stopped the page loading. A full page-load check caught it, and the constants now sit with the other helpers.

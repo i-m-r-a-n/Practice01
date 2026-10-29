@@ -1,0 +1,226 @@
+{
+  "url": "http://127.0.0.1:8784/realistic/?welcome=0",
+  "scope": "LOCAL Chromium (SwiftShader) via serve_preview.py; not live or MacBook proof",
+  "checks": [
+    {
+      "name": "interior layer built",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "walk moves on free floor",
+      "passed": true,
+      "detail": {
+        "start": [
+          24.2,
+          -6.0
+        ],
+        "yaw": 3.1416,
+        "end": [
+          24.2,
+          1.6,
+          -1.0734795883220045
+        ],
+        "collisions": 125,
+        "distance": 4.926520411677968,
+        "room": "Z14"
+      }
+    },
+    {
+      "name": "walk never ends inside geometry or a wall",
+      "passed": true,
+      "detail": [
+        [
+          24.2,
+          1.6,
+          -1.0734795883220045
+        ],
+        [
+          24.2,
+          1.6,
+          -1.0734795883220045
+        ],
+        [
+          24.2,
+          1.6,
+          -1.0734795883220045
+        ]
+      ]
+    },
+    {
+      "name": "no page or console errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "no HTTP errors",
+      "passed": true,
+      "detail": []
+    }
+  ],
+  "errors": [],
+  "http_errors": [],
+  "failed_requests": [],
+  "finishes": {
+    "refined": [
+      "fl_terrazzo_baked"
+    ],
+    "source": "./textures/pbr2k/ktx2/Terrazzo019M/basecolor.ktx2"
+  },
+  "interior": {
+    "items": [
+      {
+        "id": "RC_WARP_WEFT",
+        "zone": "Z02",
+        "note": "Warp & weft: five handloom hangings (khadi with Jamdani-style butis, indigo with kantha running stitch, undyed jute, madder, striped khadi) on an oak rail, washed with warm light."
+      },
+      {
+        "id": "RC_RUG_KANTHA",
+        "zone": "Z02",
+        "note": "The approved rug, redesigned as jute with an indigo border, kantha-style running stitch and a lotus centre. Same footprint and baked light."
+      },
+      {
+        "id": "RC_SOFTS",
+        "zone": "Z02",
+        "note": "Kantha-stitched cushions on the sofa corners and lounge chairs, a stitched throw over the sofa arm."
+      },
+      {
+        "id": "RC_PANEL_LIGHT",
+        "zone": "Z02",
+        "note": "Brass picture light over the Jamdani-inspired panel."
+      },
+      {
+        "id": "RC_WELCOME_SWATCHES",
+        "zone": "Z02",
+        "note": "Fabric rolls and a bowl of coconut-shell buttons on the visitor ledge, for buyers to touch on arrival."
+      },
+      {
+        "id": "RC_SCALLOPS",
+        "zone": "Z02",
+        "note": "Warm scallops of the four existing track spots on the fluted oak wall, as in the Cycles render (vertex light cannot hold them)."
+      },
+      {
+        "id": "EC_MATERIALS_LIBRARY",
+        "zone": "Z30",
+        "note": "Tactile materials library on the west end of the material table: yarn cones, knit stitch swatches, and coconut-shell buttons from shell to blank to finished button. Fibre, origin, weight and test data: pending supplier records."
+      },
+      {
+        "id": "EC_TEXTILE_BAFFLES",
+        "zone": "Z30",
+        "note": "Handloom cloth fins under the deck between the two track rails (khadi and jute with woven indigo and madder bands), clear of the spot beams, the AC unit and the smoke detector."
+      },
+      {
+        "id": "EC_GALLERY_LIGHT",
+        "zone": "Z30",
+        "note": "Warm pools of the existing track spots on the plinth and of the linear pendant on the material table."
+      },
+      {
+        "id": "MD_RUG_SOFTS",
+        "zone": "Z12",
+        "note": "MD lounge: the approved rug redesigned as an indigo kantha weave (same footprint); stitched cushions on the sofa and armchair."
+      },
+      {
+        "id": "MD_KANTHA_PANEL",
+        "zone": "Z12",
+        "note": "A framed nakshi-kantha-inspired panel on the free east wall behind the desk, under a brass picture light (design reference)."
+      },
+      {
+        "id": "BR_KANTHA_PANEL",
+        "zone": "Z08",
+        "note": "A tall kantha-inspired panel on the free wall between the reception glass and the executive-suite door, under a picture light (design reference)."
+      },
+      {
+        "id": "BR_DESK_PADS",
+        "zone": "Z08",
+        "note": "Khadi desk pads with a kantha running-stitch edge and a stitched leaf at the eight places with a notebook and a glass, clear of the cable channel."
+      },
+      {
+        "id": "BR_TABLE_LIGHT",
+        "zone": "Z08",
+        "note": "Warm pool of the existing linear pendants along the boardroom table."
+      },
+      {
+        "id": "LB_BRAND_LIGHT",
+        "zone": "Z01",
+        "note": "Warm scallops of the three existing track spots on the oak slats of the brand wall, which falls off softly towards the floor; the white logo panel and the logos keep their look."
+      },
+      {
+        "id": "LB_WOVEN_PIER",
+        "zone": "Z01",
+        "note": "One narrow handloom hanging (khadi with sparse Jamdani-style butis and indigo selvedge stripes) on the blank pier between the two windows, on the way to the Reception door. Design reference; maker to be identified."
+      },
+      {
+        "id": "LB_WOOD_WARMTH",
+        "zone": "Z01",
+        "note": "The walnut of the check-in desk and the oak of the two north doors read warmer (lobby only, same textures)."
+      },
+      {
+        "id": "MR_FIT_FORMS",
+        "zone": "Z07",
+        "note": "The two dress forms dressed for fit development: a calico toile with marker-traced style lines and pinned princess seams, and a knitted body sample in indigo jersey with a cable panel (illustrative, not an actual collection)."
+      },
+      {
+        "id": "MR_APPROVAL_BOARD",
+        "zone": "Z07",
+        "note": "The approved approval board with the same swatch layout and colours, shown as pinned cloth with garment flats on its sheets."
+      },
+      {
+        "id": "CAD_SCREENS",
+        "zone": "Z14",
+        "note": "The six CAD monitors and the wall screen show one illustrative development exercise for a knit cardigan: technical flats, pattern pieces, a grading nest, a marker and a stitch chart. Self-drawn, generic graphics: no software interface, buyer or measurements."
+      },
+      {
+        "id": "CAD_PINBOARD",
+        "zone": "Z14",
+        "note": "The tech-pack pinboard keeps its sheet positions, ordered left to right from sketch to flats, pattern, marker, fit notes and approval, with knit swatches and a coconut-shell button card."
+      },
+      {
+        "id": "CAD_LAYOUT_TABLE",
+        "zone": "Z14",
+        "note": "A pattern marker on the layout table with an L-square, pattern weights and a pencil, and a small folded knit reference set; the east third of the table stays clear."
+      },
+      {
+        "id": "DS_DAYLIGHT",
+        "zone": "Z18",
+        "note": "Overcast daylight in the three existing east windows and its soft spill on the floor; true north, sun angles and glare are still to be measured on site."
+      },
+      {
+        "id": "DS_FABRIC_BOARD",
+        "zone": "Z18",
+        "note": "The approved mood board with the same swatch layout and colours, shown as pinned cloth (pinked edges, pins, weave and knit, Jamdani-style butis on the whites) and garment flats on its paper sheets, lit by the scallops of its five existing track spots."
+      },
+      {
+        "id": "DS_REVIEW_TABLE",
+        "zone": "Z18",
+        "note": "A sample-review set on the presentation table for teaching and fit reviews: a knit sample laid flat, drafted pattern pieces, swatch header cards, a tape measure, a sketchbook of garment flats and a card of coconut-shell buttons (illustrative, not an actual collection)."
+      }
+    ],
+    "meshes": 272,
+    "textures": 71,
+    "detail": 1,
+    "rugMaterials": [
+      "oak",
+      "walnut",
+      "oak_slat_baked",
+      "walnut_baked",
+      "rug_wool"
+    ]
+  },
+  "walk": {
+    "start": [
+      24.2,
+      -6.0
+    ],
+    "yaw": 3.1416,
+    "end": [
+      24.2,
+      1.6,
+      -1.0734795883220045
+    ],
+    "collisions": 125,
+    "distance": 4.926520411677968,
+    "room": "Z14"
+  },
+  "seconds": 135.7,
+  "passed": true
+}

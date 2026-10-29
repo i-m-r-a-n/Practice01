@@ -28,6 +28,9 @@ export const INTERIOR_ITEMS = [
   { id: 'LB_WOOD_WARMTH', zone: 'Z01', note: 'The walnut of the check-in desk and the oak of the two north doors read warmer (lobby only, same textures).' },
   { id: 'MR_FIT_FORMS', zone: 'Z07', note: 'The two dress forms dressed for fit development: a calico toile with marker-traced style lines and pinned princess seams, and a knitted body sample in indigo jersey with a cable panel (illustrative, not an actual collection).' },
   { id: 'MR_APPROVAL_BOARD', zone: 'Z07', note: 'The approved approval board with the same swatch layout and colours, shown as pinned cloth with garment flats on its sheets.' },
+  { id: 'CAD_SCREENS', zone: 'Z14', note: 'The six CAD monitors and the wall screen show one illustrative development exercise for a knit cardigan: technical flats, pattern pieces, a grading nest, a marker and a stitch chart. Self-drawn, generic graphics: no software interface, buyer or measurements.' },
+  { id: 'CAD_PINBOARD', zone: 'Z14', note: 'The tech-pack pinboard keeps its sheet positions, ordered left to right from sketch to flats, pattern, marker, fit notes and approval, with knit swatches and a coconut-shell button card.' },
+  { id: 'CAD_LAYOUT_TABLE', zone: 'Z14', note: 'A pattern marker on the layout table with an L-square, pattern weights and a pencil, and a small folded knit reference set; the east third of the table stays clear.' },
   { id: 'DS_DAYLIGHT', zone: 'Z18', note: 'Overcast daylight in the three existing east windows and its soft spill on the floor; true north, sun angles and glare are still to be measured on site.' },
   { id: 'DS_FABRIC_BOARD', zone: 'Z18', note: 'The approved mood board with the same swatch layout and colours, shown as pinned cloth (pinked edges, pins, weave and knit, Jamdani-style butis on the whites) and garment flats on its paper sheets, lit by the scallops of its five existing track spots.' },
   { id: 'DS_REVIEW_TABLE', zone: 'Z18', note: 'A sample-review set on the presentation table for teaching and fit reviews: a knit sample laid flat, drafted pattern pieces, swatch header cards, a tape measure, a sketchbook of garment flats and a card of coconut-shell buttons (illustrative, not an actual collection).' },
@@ -111,6 +114,10 @@ export function buildInteriorDesign(THREE, { zones = null, anisotropy = 4, detai
   const wave = (x0, x1, y, amp, period, n = 120) => Array.from({ length: n }, (_, i) => { const t = x0 + (x1 - x0) * i / (n - 1); return [t, y + amp * Math.sin((t - x0) / period * Math.PI * 2)]; });
   const ring = (cx, cy, rx, ry = rx, n = 96) => Array.from({ length: n + 1 }, (_, i) => [cx + rx * Math.cos(i / n * Math.PI * 2), cy + ry * Math.sin(i / n * Math.PI * 2)]);
   const rect = (x0, y0, x1, y1) => [[x0, y0], [x1, y0], [x1, y1], [x0, y1], [x0, y0]];
+  // linear base colours of the model's swatch materials (and the board's linen), as canvas sRGB
+  const LIN = { o: [.109, .127, .063], g: [.028, .147, .06], s: [.27, .376, .275], a: [.578, .462, .301], h: [.323, .323, .314], k: [.012, .012, .013],
+    p: [.913, .896, .855], b: [.694, .456, .381], w: [.839, .823, .776], d: [.047, .091, .171], n: [.019, .032, .068], r: [.323, .082, .037], linen: [.768, .73, .651] };
+  const srgb = l => '#' + l.map(v => Math.round(255 * (v <= .0031308 ? v * 12.92 : 1.055 * Math.pow(v, 1 / 2.4) - .055)).toString(16).padStart(2, '0')).join('');
   // Jamdani-style buti on the weaving grid: every '1' / '2' cell is one supplementary-weft float
   const BUTI = ['....1....', '...111...', '..1.1.1..', '.1112111.', '1.12221.1', '.1112111.', '..1.1.1..', '...111...', '....1....'];
   const LEAF = ['...1...', '..121..', '.12221.', '1222221', '.12221.', '..121..', '...1...'];
@@ -628,11 +635,156 @@ export function buildInteriorDesign(THREE, { zones = null, anisotropy = 4, detai
     for (const s of [-1, 1]) { mesh(g, new THREE.SphereGeometry(.014, 14, 10), brass, face - .05, top + .012, zc + s * (Wd / 2 + .035));
       mesh(g, new THREE.BoxGeometry(.05, .012, .012), brass, face - .025, top + .012, zc + s * (Wd / 2 + .012)); }
   }
+  // ---------------------------------------------------------------- CAD / technical design (Z14): one development exercise
+  // An illustrative knit cardigan runs through the room: technical flats and pattern work on the screens, a pattern sheet on
+  // the layout table, and the pinboard ordered from sketch to approval. Generic, self-drawn graphics: no software interface,
+  // buyer, brand or measurement is shown.
+  const INK = '#2f3134', LINE = '#3c3d40';
+  function devDrawing(x, kind, X, Y, w, h, lw) {          // the drawings shared by screens, pinboard sheets and the table sheet
+    const P = (u, v) => [X + u * w, Y + v * h];
+    const poly = (pts, close = true, stroke = LINE, width = lw, dash = null, fill = null) => { x.setLineDash(dash || []); x.beginPath(); pts.forEach(([u, v], i) => { const [px0, py0] = P(u, v); i ? x.lineTo(px0, py0) : x.moveTo(px0, py0); }); if (close) x.closePath(); if (fill) { x.fillStyle = fill; x.fill(); } x.strokeStyle = stroke; x.lineWidth = width; x.stroke(); x.setLineDash([]); };
+    const front = [[.30, .08], [.14, .14], [.02, .44], [.10, .48], [.20, .30], [.20, .95], [.80, .95], [.80, .30], [.90, .48], [.98, .44], [.86, .14], [.70, .08], [.5, .40]];
+    const bodice = [[.06, .06], [.06, .94], [.50, .94], [.52, .40], [.44, .30], [.42, .12], [.40, .04], [.22, .07]];
+    const sleeve = Array.from({ length: 13 }, (_, i) => { const t = i / 12; return [.06 + .88 * t, .22 - .2 * Math.sin(t * Math.PI)]; }).concat([[.82, .96], [.18, .96]]);
+    const callout = (u, v, r, bu, bv) => { const [cx, cy] = P(u, v); x.strokeStyle = '#b03030'; x.lineWidth = lw; x.beginPath(); x.arc(cx, cy, r * w, 0, Math.PI * 2); x.stroke(); const [bx, by] = P(bu, bv); x.beginPath(); x.moveTo(cx + r * w * Math.sign(bx - cx), cy); x.lineTo(bx, by); x.stroke(); x.strokeStyle = '#8a8d90'; x.lineWidth = Math.max(1, lw * .7); for (let i = 0; i < 2; i++) { x.beginPath(); x.moveTo(bx + (bx > cx ? 4 : -4 - w * .14), by + i * lw * 4); x.lineTo(bx + (bx > cx ? 4 + w * .14 : -4), by + i * lw * 4); x.stroke(); } };
+    if (kind === 'flatF' || kind === 'flatB') {
+      const box = [.18, .06, .64, .88], q = ([u, v]) => [box[0] + u * box[2], box[1] + v * box[3]];
+      poly(front.slice(0, kind === 'flatF' ? 13 : 12).map(q), true, LINE, lw, null, '#fbfbf9');
+      if (kind === 'flatB') poly([[.30, .08], [.5, .12], [.70, .08]].map(q), false);
+      poly([[.20, .88], [.80, .88]].map(q), false); for (let u = .23; u < .79; u += .025) poly([[u, .88], [u, .95]].map(q), false, LINE, lw * .6);
+      if (kind === 'flatF') { poly([[.5, .40], [.5, .95]].map(q), false); for (let i = 0; i < 5; i++) { const [bx, by] = P(...q([.535, .47 + i * .085])); x.beginPath(); x.arc(bx, by, lw * 1.8, 0, Math.PI * 2); x.stroke(); }
+        callout(...q([.5, .2]), .05, .9, .14); callout(...q([.535, .55]), .04, .9, .5); callout(...q([.3, .91]), .05, .06, .82); }
+      else { poly([[.5, .12], [.5, .95]].map(q), false, LINE, lw * .7, [lw * 3, lw * 2]); callout(...q([.5, .1]), .05, .9, .14); callout(...q([.9, .46]), .04, .92, .62); }
+    } else if (kind === 'pattern') {
+      x.strokeStyle = 'rgba(70,90,110,.18)'; x.lineWidth = 1; for (let g = 0; g <= 24; g++) { x.beginPath(); x.moveTo(X + g * w / 24, Y); x.lineTo(X + g * w / 24, Y + h); x.stroke(); } for (let g = 0; g <= 14; g++) { x.beginPath(); x.moveTo(X, Y + g * h / 14); x.lineTo(X + w, Y + g * h / 14); x.stroke(); }
+      const sub = (pts, bx, by, bw, bh) => pts.map(([u, v]) => [bx + u * bw, by + v * bh]);
+      poly(sub(bodice, .04, .08, .30, .84), true, '#2c6fb3', lw * 1.3, null, 'rgba(44,111,179,.06)'); poly(sub(bodice, .36, .08, .30, .84), true);
+      poly(sub(sleeve, .68, .10, .28, .80), true);
+      for (const [u, v] of sub(bodice, .04, .08, .30, .84)) { const [hx, hy] = P(u, v); x.fillStyle = '#2c6fb3'; x.fillRect(hx - lw * 1.5, hy - lw * 1.5, lw * 3, lw * 3); }
+      for (const bx of [.17, .49, .82]) { poly([[bx, .3], [bx, .75]], false, LINE, lw * .8); poly([[bx - .012, .33], [bx, .3], [bx + .012, .33]], false, LINE, lw * .8); poly([[bx - .012, .72], [bx, .75], [bx + .012, .72]], false, LINE, lw * .8); }
+    } else if (kind === 'grading') {
+      ['#9db7d6', '#7aa0cc', '#4f82bf', '#2c6fb3', '#1f4f86'].forEach((c, i) => { const s = .72 + i * .07; poly(bodice.map(([u, v]) => [.12 + u * s * .9, .9 - (1 - v) * s * .9]), true, c, lw * 1.1); });
+      x.fillStyle = '#b03030'; const [ox, oy] = P(.12 + .06 * .65, .9); x.beginPath(); x.arc(ox, oy, lw * 2.4, 0, Math.PI * 2); x.fill();
+    } else if (kind === 'marker') {
+      x.fillStyle = 'rgba(255,255,255,.35)'; x.fillRect(X + w * .03, Y + h * .12, w * .94, h * .76); x.strokeStyle = LINE; x.lineWidth = lw; x.strokeRect(X + w * .03, Y + h * .12, w * .94, h * .76);
+      const fills = ['#c3d3e6', '#e3cfa8', '#cddcc2', '#e6c6bb'];
+      const place = (pts, bx, by, bw, bh, k) => poly(pts.map(([u, v]) => [bx + u * bw, by + v * bh]), true, LINE, lw * .9, null, fills[k % 4]);
+      place(bodice, .05, .14, .17, .72, 0); place(bodice.map(([u, v]) => [1 - u, v]), .21, .14, .17, .72, 1); place(bodice, .38, .14, .17, .72, 0);
+      place(sleeve, .56, .14, .2, .36, 2); place(sleeve.map(([u, v]) => [u, 1 - v]), .56, .5, .2, .36, 2); place([[0, 0], [1, 0], [1, 1], [0, 1]], .78, .16, .17, .12, 3); place([[0, 0], [1, 0], [1, 1], [0, 1]], .78, .32, .17, .12, 3);
+      x.strokeStyle = '#b03030'; x.lineWidth = lw * .8; x.setLineDash([lw * 3, lw * 2]); x.beginPath(); x.moveTo(X + w * .03, Y + h * .5); x.lineTo(X + w * .97, Y + h * .5); x.stroke(); x.setLineDash([]);
+    } else if (kind === 'chart') {
+      const cols = 24, rows = 16, cw = w * .9 / cols, ch = h * .86 / rows, ox = X + w * .05, oy = Y + h * .07;
+      for (let r = 0; r < rows; r++) for (let c = 0; c < cols; c++) {
+        const gx = ox + c * cw, gy = oy + r * ch, purl = c % 12 === 0 || c % 12 === 1 || c % 12 === 10 || c % 12 === 11, cable = c % 12 >= 4 && c % 12 <= 7;
+        x.fillStyle = cable ? '#e6edf5' : '#ffffff'; x.fillRect(gx, gy, cw, ch); x.strokeStyle = '#c9ccd0'; x.lineWidth = 1; x.strokeRect(gx, gy, cw, ch);
+        if (purl) { x.fillStyle = INK; x.beginPath(); x.arc(gx + cw / 2, gy + ch / 2, Math.min(cw, ch) * .13, 0, Math.PI * 2); x.fill(); }
+      }
+      x.strokeStyle = INK; x.lineWidth = lw * 1.1;
+      for (let r = 2; r < rows; r += 6) for (const c0 of [4, 16]) { const gx = ox + c0 * cw, gy = oy + r * ch; x.beginPath(); x.moveTo(gx, gy + ch); x.lineTo(gx + 4 * cw, gy); x.moveTo(gx, gy); x.lineTo(gx + 1.6 * cw, gy + ch * .4); x.moveTo(gx + 2.4 * cw, gy + ch * .6); x.lineTo(gx + 4 * cw, gy + ch); x.stroke(); }
+    } else if (kind === 'sketch') {
+      x.strokeStyle = 'rgba(60,60,66,.75)'; x.lineCap = 'round';
+      for (let k = 0; k < 3; k++) { x.lineWidth = lw * (1.1 - k * .3); poly(front.map(([u, v]) => [.18 + u * .64 + (k - 1) * .006, .08 + v * .84 + (k - 1) * .004]), true, 'rgba(60,60,66,.55)', lw * (1.1 - k * .3)); }
+      for (let i = 0; i < 9; i++) poly([[.25 + i * .05, .62], [.21 + i * .05, .9]], false, 'rgba(60,60,66,.25)', lw * .6);
+    } else if (kind === 'notes') {
+      x.strokeStyle = 'rgba(60,60,66,.55)'; x.lineWidth = Math.max(1, lw * .7);
+      for (let i = 0; i < 7; i++) { x.beginPath(); for (let s = 0; s <= 24; s++) { const px0 = X + w * (.1 + s / 24 * (.55 + (i % 3) * .1)), py0 = Y + h * (.12 + i * .11) + Math.sin(s * 1.7 + i) * lw * .6; s ? x.lineTo(px0, py0) : x.moveTo(px0, py0); } x.stroke(); }
+      for (const v of [.12, .45, .78]) { x.strokeStyle = '#b03030'; x.strokeRect(X + w * .82, Y + h * (v - .04), w * .06, w * .06); }
+    } else if (kind === 'approval') {
+      for (let i = 0; i < 5; i++) { const v = .14 + i * .16; x.strokeStyle = LINE; x.lineWidth = lw; x.strokeRect(X + w * .1, Y + h * v, w * .08, w * .08); if (i < 3) { x.strokeStyle = '#2e7d4f'; x.lineWidth = lw * 1.4; x.beginPath(); x.moveTo(X + w * .115, Y + h * v + w * .04); x.lineTo(X + w * .135, Y + h * v + w * .065); x.lineTo(X + w * .17, Y + h * v + w * .012); x.stroke(); }
+        x.strokeStyle = 'rgba(60,60,66,.5)'; x.lineWidth = Math.max(1, lw * .7); x.beginPath(); x.moveTo(X + w * .25, Y + h * v + w * .04); x.lineTo(X + w * (.62 + (i % 2) * .2), Y + h * v + w * .04); x.stroke(); }
+    }
+  }
+  function uiScreen(x, kind, X, Y, w, h) {                 // a neutral drawing application frame: bars and icons, no product UI
+    x.fillStyle = '#e9ece9'; x.fillRect(X, Y, w, h); x.fillStyle = '#2f3a36'; x.fillRect(X, Y, w, h * .075);
+    for (let i = 0; i < 3; i++) { x.fillStyle = ['#d9dedb', '#aeb6b2', '#7f8a85'][i]; x.beginPath(); x.arc(X + w * (.025 + i * .025), Y + h * .0375, h * .013, 0, Math.PI * 2); x.fill(); }
+    x.fillStyle = '#dde1de'; x.fillRect(X, Y + h * .075, w * .055, h * .925);
+    for (let i = 0; i < 7; i++) { x.fillStyle = i === 2 ? '#2c6fb3' : '#9aa39f'; x.fillRect(X + w * .015, Y + h * (.11 + i * .085), w * .025, w * .025); }
+    x.fillStyle = '#ffffff'; x.fillRect(X + w * .075, Y + h * .11, w * .9, h * .85);
+    devDrawing(x, kind, X + w * .085, Y + h * .125, w * .88, h * .82, Math.max(1.2, w / 260));
+  }
+  if (want('CAD_SCREENS')) {
+    // CAD desks F120 / F122 / F124 (west wall): two monitors each, faces x 22.463 facing +x, 0.534 x 0.311 m (y 0.884-1.195);
+    // wall screen F129 on the north wall: face z -6.471 facing +z, x 24.432-25.86, y 1.077-1.869. One atlas for all seven.
+    const mW = px(512), mH = Math.round(mW * .311 / .534), wW = px(1024), wH = Math.round(wW * .792 / 1.428), AW = mW * 3, AH = mH * 2 + wH;
+    const c = canvas(AW, AH), x = c.getContext('2d');
+    const kinds = ['flatF', 'flatB', 'pattern', 'grading', 'marker', 'chart'];
+    kinds.forEach((k, i) => uiScreen(x, k, (i % 3) * mW, Math.floor(i / 3) * mH, mW, mH));
+    { const X = 0, Y = mH * 2, w = wW, h = wH, m2 = w / 1.428;                         // the wall screen: the whole exercise in four steps
+      x.fillStyle = '#f4f3ef'; x.fillRect(X, Y, w, h); x.fillStyle = '#20302a'; x.fillRect(X, Y, w, h * .14);
+      x.fillStyle = '#f1eadc'; x.font = `600 ${Math.round(h * .062)}px Inter, Arial, sans-serif`; x.fillText('Development exercise: knit cardigan (illustrative)', X + w * .03, Y + h * .095);
+      ['Sketch', 'Technical flat', 'Pattern', 'Knit swatch'].forEach((t, i) => {
+        const bx = X + w * (.03 + i * .245), by = Y + h * .2, bw = w * .22, bh = h * .7;
+        x.fillStyle = '#ffffff'; x.fillRect(bx, by, bw, bh); x.strokeStyle = '#d4d6d2'; x.lineWidth = 2; x.strokeRect(bx, by, bw, bh);
+        x.fillStyle = '#3b4742'; x.font = `600 ${Math.round(h * .045)}px Inter, Arial, sans-serif`; x.fillText(t, bx + bw * .06, by + bh * .1);
+        if (i < 3) devDrawing(x, ['sketch', 'flatF', 'pattern'][i], bx + bw * .05, by + bh * .14, bw * .9, bh * .82, Math.max(1.5, m2 / 260));
+        else { x.save(); x.beginPath(); x.rect(bx + bw * .08, by + bh * .16, bw * .84, bh * .76); x.clip(); x.fillStyle = PAL.indigo; x.fillRect(bx, by, bw, bh); x.globalCompositeOperation = 'multiply'; x.globalAlpha = .6; x.fillStyle = stitchPattern(x, 'cable', bw * .5); x.fillRect(bx, by, bw, bh); x.restore(); }
+        if (i < 3) { x.fillStyle = '#9aa39f'; x.beginPath(); const ax = bx + bw + w * .006, ay = by + bh / 2; x.moveTo(ax, ay - h * .025); x.lineTo(ax + w * .013, ay); x.lineTo(ax, ay + h * .025); x.fill(); }
+      }); }
+    const atlas = texture(c, { clamp: true });
+    const screenMat = std('cad_screens', { map: atlas, emissive: '#ffffff', emissiveMap: atlas, emissiveIntensity: .3, roughness: .3 });
+    const region = (geo, u0, v0, u1, v1) => { const uv = geo.attributes.uv; for (let i = 0; i < uv.count; i++) uv.setXY(i, u0 + uv.getX(i) * (u1 - u0), 1 - (v1 - uv.getY(i) * (v1 - v0))); return geo; };
+    const g = new THREE.Group(); g.name = 'CAD_SCREENS'; group.add(g); g.userData = { interiorItem: 'CAD_SCREENS', zone: 'Z14' };
+    [-6.007, -5.423, -4.229, -3.645, -2.451, -1.867].forEach((zc, i) => {
+      const k = [0, 1, 2, 3, 4, 5][i], cx0 = (k % 3) * mW / AW, cy0 = Math.floor(k / 3) * mH / AH;
+      mesh(g, region(new THREE.PlaneGeometry(.534, .311), cx0, cy0, cx0 + mW / AW, cy0 + mH / AH), screenMat, 22.466, 1.0395, zc, 0, Math.PI / 2);
+    });
+    mesh(g, region(new THREE.PlaneGeometry(1.428, .792), 0, mH * 2 / AH, wW / AW, 1), screenMat, 25.146, 1.473, -6.468);
+  }
+  if (want('CAD_PINBOARD')) {
+    // felt pinboard F130 on the south wall: face z -0.292 (room on its -z side), x 23.242-26.288, y 1.018-2.335; its 18 sheets
+    // (z -0.297) keep their places and are ordered by column from sketch to approval
+    const X0 = 23.242, X1 = 26.288, Y0 = 1.018, Y1 = 2.335, Wm = X1 - X0, Hm = Y1 - Y0;
+    // seen from the room the east end is on the left, so the exercise reads left to right from the east column
+    const SHEETS = [[25.9, 26.213, [[1.892, 2.134, 'sketch'], [1.575, 1.785, 'sketch'], [1.137, 1.39, 'swatch:k']]],
+      [25.417, 25.72, [[1.891, 2.098, 'flatF'], [1.51, 1.73, 'flatB'], [1.188, 1.395, 'chart']]],
+      [24.881, 25.166, [[2.04, 2.257, 'pattern'], [1.608, 1.855, 'grading'], [1.227, 1.452, 'swatch:b']]],
+      [24.441, 24.731, [[2.012, 2.251, 'marker'], [1.577, 1.832, 'swatch:n'], [1.208, 1.454, 'buttons']]],
+      [23.985, 24.283, [[1.998, 2.248, 'notes'], [1.581, 1.851, 'flatF'], [1.217, 1.426, 'notes']]],
+      [23.449, 23.805, [[1.946, 2.216, 'approval'], [1.577, 1.786, 'swatch:w'], [1.137, 1.377, 'swatch:a']]]];
+    const W = px(1280), H = Math.round(W * Hm / Wm), c = canvas(W, H), x = c.getContext('2d'), mx = W / Wm, my = H / Hm, k = mx / 417;
+    x.fillStyle = '#2f5d48'; x.fillRect(0, 0, W, H);                                             // brand-green felt
+    const r = rng(611); for (let i = 0; i < W * H / 18; i++) { x.fillStyle = r() > .5 ? 'rgba(255,255,255,.05)' : 'rgba(0,0,0,.07)'; x.fillRect(r() * W, r() * H, 1 + r() * 1.5, 1 + r() * 1.5); }
+    let n = 0;
+    for (const [x0, x1, rows] of SHEETS) for (const [y0, y1, kind] of rows) {
+      const PX0 = (X1 - x1) * mx, PX1 = (X1 - x0) * mx, PY0 = (Y1 - y1) * my, PY1 = (Y1 - y0) * my;   // seen from the room, east is on the left
+      if (kind.startsWith('swatch')) boardSwatch(x, kind.slice(7), PX0, PY0, PX1, PY1, 300 + n, k);
+      else {
+        const w = PX1 - PX0, h = PY1 - PY0;
+        x.save(); x.shadowColor = 'rgba(20,20,15,.5)'; x.shadowBlur = 6 * k; x.shadowOffsetX = 1.5 * k; x.shadowOffsetY = 3 * k; x.fillStyle = '#f6f4ee'; x.fillRect(PX0, PY0, w, h); x.restore();
+        if (kind === 'buttons') { for (let i = 0; i < 6; i++) { const bx = PX0 + w * (.25 + (i % 3) * .25), by = PY0 + h * (.35 + Math.floor(i / 3) * .35); x.fillStyle = '#5a3b26'; x.beginPath(); x.arc(bx, by, w * .07, 0, Math.PI * 2); x.fill(); x.fillStyle = '#1d130c'; for (const [dx, dy] of [[-1, -1], [1, -1], [-1, 1], [1, 1]]) { x.beginPath(); x.arc(bx + dx * w * .018, by + dy * w * .018, w * .008, 0, Math.PI * 2); x.fill(); } } }
+        else devDrawing(x, kind, PX0 + w * .06, PY0 + h * .08, w * .88, h * .84, Math.max(1, 1.1 * k));
+        for (const u of [.12, .88]) pinHead(x, PX0 + w * u, PY0 + 5 * k, 2.6 * k, '#efe9dc', '#8f887a');
+      }
+      n++;
+    }
+    mesh(group, new THREE.PlaneGeometry(Wm, Hm), std('cad_pinboard', { map: texture(c, { clamp: true }), roughness: .93 }), (X0 + X1) / 2, (Y0 + Y1) / 2, -.3, 0, Math.PI);   // 3 mm in front of the sheets
+  }
+  if (want('CAD_LAYOUT_TABLE')) {
+    // layout / digitiser table F127: top y 0.9145 (ray-cast in the viewer; the GLB query rounds it to 0.91) over x 24.49-26.31,
+    // z -4.16..-2.95. A pattern sheet in the middle, tools at its edges and a small fabric reference set at the west end; the
+    // east third stays clear for work
+    const g = new THREE.Group(); g.name = 'CAD_LAYOUT_TABLE'; group.add(g); g.userData = { interiorItem: 'CAD_LAYOUT_TABLE', zone: 'Z14' }; const TOP = .9145;
+    const lay = (c, w, d, cx, cz, yaw, lift, name, props = {}) => mesh(g, new THREE.PlaneGeometry(w, d), std(name, { map: texture(c, { clamp: true }), roughness: .9, polygonOffset: true, polygonOffsetFactor: -1, polygonOffsetUnits: -1, ...props }), cx, TOP + lift, cz, -Math.PI / 2, 0, yaw);
+    const sheet = (() => { const W = px(1024), H = Math.round(W * .75 / 1.2), c = canvas(W, H), x = c.getContext('2d');   // kraft marker paper
+      cloth(x, 0, 0, W, H, '#cdb58d', { cell: 1.5, seed: 651, slub: .02, mottle: .05, contrast: .15 });
+      x.fillStyle = 'rgba(70,55,35,.35)'; const inch = W / 1.2 * .0254; for (let i = 0; i * inch < W; i++) for (let j = 0; j * inch < H; j++) x.fillRect(i * inch + inch / 2 - 1, j * inch + inch / 2 - 1, 2, 2);
+      devDrawing(x, 'marker', W * .02, H * .02, W * .96, H * .96, 3); return c; })();
+    lay(sheet, 1.2, .75, 25.2, -3.555, .02, .0012, 'cad_sheet');
+    const alu = std('cad_alu', { color: '#c9ccce', roughness: .35, metalness: .7 }), weight = std('cad_weight', { color: '#2b2d2f', roughness: .5, metalness: .4 });
+    mesh(g, new THREE.BoxGeometry(.6, .003, .04), alu, 25.3, TOP + .0027, -3.3);                                    // L-square on the sheet
+    mesh(g, new THREE.BoxGeometry(.04, .003, .36), alu, 25.62, TOP + .0027, -3.48);
+    for (const [wx, wz] of [[24.78, -3.8], [25.6, -3.86], [24.86, -3.28]]) { const m0 = mesh(g, new THREE.BoxGeometry(.07, .022, .045), weight, wx, TOP + .0012 + .011, wz); m0.rotation.y = wx * 3; }   // pattern weights
+    mesh(g, new THREE.CylinderGeometry(.0035, .0035, .17, 8), std('cad_pencil', { color: '#2f5d50', roughness: .5 }), 25.05, TOP + .0047, -3.31, 0, .4, Math.PI / 2);
+    // fabric reference set at the west end: three folded knit samples with a header card
+    [[PAL.indigo, 'jersey'], [PAL.khadi, 'cable'], ['#6f7a4c', 'rib']].forEach(([col, stitchName], i) => {
+      const t = texture(knitTile(stitchName), { srgb: false, repeat: [3, 3] });
+      mesh(g, new THREE.BoxGeometry(.2, .018, .16), std('cad_fold_' + i, { color: col, map: t, roughness: .95 }), 24.62, TOP + .009 + i * .018, -3.13, 0, (i - 1) * .05);
+    });
+    const card = (() => { const c = canvas(256, 160), x = c.getContext('2d'); x.fillStyle = '#f2ede2'; x.fillRect(0, 0, 256, 160); x.fillStyle = '#9a8f7a'; x.beginPath(); x.arc(128, 18, 7, 0, Math.PI * 2); x.fill();
+      x.fillStyle = 'rgba(60,60,66,.55)'; for (let i = 0; i < 3; i++) x.fillRect(24, 50 + i * 30, 150 + (i % 2) * 50, 4); return c; })();
+    lay(card, .12, .075, 24.62, -3.28, .1, .0015, 'cad_card');
+  }
   // ---------------------------------------------------------------- Global Design Studio (Z18): mood board and review table
-  // linear base colours of the model's swatch materials (and the board's linen), as canvas sRGB
-  const LIN = { o: [.109, .127, .063], g: [.028, .147, .06], s: [.27, .376, .275], a: [.578, .462, .301], h: [.323, .323, .314], k: [.012, .012, .013],
-    p: [.913, .896, .855], b: [.694, .456, .381], w: [.839, .823, .776], d: [.047, .091, .171], n: [.019, .032, .068], r: [.323, .082, .037], linen: [.768, .73, .651] };
-  const srgb = l => '#' + l.map(v => Math.round(255 * (v <= .0031308 ? v * 12.92 : 1.055 * Math.pow(v, 1 / 2.4) - .055)).toString(16).padStart(2, '0')).join('');
   // a stitch tile resized so one tile spans `size` pixels, as a repeating pattern of context x
   function stitchPattern(x, name, size) {
     const t = knitTile(name), s = canvas(Math.max(4, Math.round(size)), Math.max(4, Math.round(size * t.height / t.width)));

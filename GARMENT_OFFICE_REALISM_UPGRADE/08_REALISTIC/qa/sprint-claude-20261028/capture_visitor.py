@@ -27,6 +27,10 @@ SPOTS = {
     'mr_board': (10.5, -12.0, math.pi, 0.05, 60),
     'lobby_arrival': (6.0, 5.2, 0.0, -0.05, 66),
     'lobby_pier': (6.6, 3.9, -0.937, -0.19, 60),
+    'cad_desks': (24.2, -4.6, math.pi / 2, -0.31, 62),
+    'cad_table': (24.2, -3.4, -math.pi / 2, -0.52, 58),
+    'cad_pinboard': (24.6, -2.0, math.pi, 0.05, 66),
+    'cad_wall': (25.0, -5.2, 0.0, -0.1, 60),
 }
 p = argparse.ArgumentParser()
 p.add_argument('--url', default='http://127.0.0.1:8784/realistic/?welcome=0')
