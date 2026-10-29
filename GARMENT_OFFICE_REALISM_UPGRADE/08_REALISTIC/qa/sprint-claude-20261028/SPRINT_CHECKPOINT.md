@@ -7,10 +7,10 @@ Resume from this file if the session is interrupted. Newest state first.
 - **Branch:** `claude/realistic-sprint-20261028` (worktree `/home/user/rs`).
   - Based on GPT's `chatgpt/realistic-sprint-20261028` @ `3ed3b41`, which carries GPT's QA notes and the direct-drag sign fix.
   - Nothing of GPT's was changed or removed.
-- **Latest release (interior phase):**
+- **Live release (interior phase), deployed and verified:**
   - **Source:** `d5939f9ef3928340908459efc440259df0d34b6d`.
   - **Worker:** `deploy/worker-realistic.js` from the commit after it; 7621 bytes, SHA-256 `f6e4730f…ffff922`, 41 / 41 worker tests pass.
-  - **Status:** ready, not yet deployed (live still `bcb92b0` at 07:38 UTC). Steps, guard and rollback: `deploy/DEPLOY_RECEPTION_20261029.md`.
+  - **Status:** the owner deployed it on 29 Oct 2026. Verified at 16:29 UTC, details below under Live. Steps, guard and rollback: `deploy/DEPLOY_RECEPTION_20261029.md`.
   - **Contains:** the sprint release below, plus the interior phase (`qa/interior-20261029/`):
     - Reception, built at `0cda894`
     - Experience Centre, built at `de424c0`
@@ -18,7 +18,7 @@ Resume from this file if the session is interrupted. Newest state first.
     - Design Studio second pass (fabric mood board, sample-review table), built at `3126dbf`
     - Merchandising second pass (fit toile and knitted body on the dress forms, approval board as pinned cloth), built at `92a5965`
     - Boardroom second pass (khadi desk pads), built at `d5939f9`
-  - **Earlier workers:** never deployed; each is superseded by the next.
+  - **Earlier interior workers:** never deployed; each was superseded by the next.
 - **Sprint release (superseded, never deployed):** source `e98ecb5`, worker `6edce19`, `deploy/DEPLOY_SPRINT_20261029.md`.
 - **Checks passed on the release build** (`r2/`, local Chromium, software WebGL):
   - `ui_check`: 34 / 34 at 1440, 390 and 360
@@ -30,8 +30,21 @@ Resume from this file if the session is interrupted. Newest state first.
   - public bytes of the changed dist files at the source commit match
   - live guard checked at 05:10 UTC: `/realistic/health` shows `bcb92b0`; `/` returns 200 with SHA-256 `ff75beb5…`
 - **Live:**
-  - `/realistic/` = source `bcb92b00963fa51906676f8cca22da88f841dc64` (Cloudflare version `bcfea6b5`) until the owner deploys this release.
+  - `/realistic/` = source `d5939f9ef3928340908459efc440259df0d34b6d`, deployed by the owner on 29 Oct 2026.
+    - The previous source was `bcb92b0` (Cloudflare version `bcfea6b5`).
+    - The rollback is still the worker from `cdf0e3e`.
   - `/` = original tour, byte-identical, never touched.
+  - **Verification at 16:29 UTC:**
+    - `/realistic/health` shows `d5939f9…`.
+    - `/`, `/health` and `/realistic/` return 200, and `/` keeps SHA-256 `ff75beb5…`.
+    - `deploy/public-interior-20261029-verification.json`: 13 / 13 checks pass. The live files match the commit byte for byte, and the original tour is unchanged.
+    - **Live browser check** (`qa/interior-20261029/live-d5939f9/`):
+      - The live page was loaded in this container's Chromium (software WebGL); the container's NSS store trusts the proxy CA.
+      - Interior layer: 19 items.
+      - Six tour-stop frames: 5 are pixel-identical to the local build, and Design Studio differs in 95 px.
+      - A walk at the Reception hangings works.
+      - No page or console errors, HTTP errors or failed requests.
+      - Not Safari or MacBook proof.
 - **Deploying:** this session cannot deploy, because its Cloudflare account has no Workers. The owner's desktop session deploys by pasting the worker script in the Cloudflare dashboard. Steps, guard and rollback: `deploy/DEPLOY_SPRINT_20261029.md`.
 
 ## Local test harness
@@ -92,11 +105,11 @@ Everything is additive and self-made. Nothing stands on the floor, so walk paths
 
 ## Release steps
 
-Steps 1–4 are done for H = `d5939f9` (the latest release; they were also done for the earlier, superseded commits). **Exact next action:**
+All six steps are done for H = `d5939f9`: the owner deployed it, and it was verified at 16:29 UTC. **Next action:**
 
-- **Step 5 (the owner's desktop session).** The prompt is in the chat. It repeats the guard, the hash checks and the rollback.
-- **Step 6 (this session, after the deploy).** Run the public verification with `Design_Studio d5939f9ef3928340908459efc440259df0d34b6d`. If it fails and the owner has not already rolled back, ask for the rollback.
-- **Meanwhile:** continue the interior design, room by room, on this branch.
+- Continue the interior design on this branch.
+- The Entrance Lobby (the first tour stop, outside the six rooms) is proposed next, only if the client asks for it.
+- Each new release repeats steps 1–6.
 
 1. Commit and push the source + dist. That gives source commit H.
 2. Run `python3 qa/sprint-claude-20261028/request_list.py H` and `python3 deploy/build_worker.py H`.
@@ -109,7 +122,7 @@ Steps 1–4 are done for H = `d5939f9` (the latest release; they were also done 
 
 ## Open items
 
-- **No live browser QA.** Live-site browser QA is impossible from this container (TLS proxy), so only public byte checks are possible.
+- **Live browser QA.** It is now possible from this container: Chromium trusts the proxy CA through the NSS store, which was not the case earlier. It is still software WebGL.
 - **Not tested:** Safari, a real MacBook GPU, live load time.
 - **People detail.** People are low-detail game-style figures, an inherent asset limit. Seated gaps of up to 3.4 cm are not visible at tour distances.
 - **ERR_ABORTED reports.** With the local Python preview server, Chromium sometimes reports `net::ERR_ABORTED` for a GLB request, for example `panjabi.glb`, `shirt.glb` or `model_web_baked.glb`.

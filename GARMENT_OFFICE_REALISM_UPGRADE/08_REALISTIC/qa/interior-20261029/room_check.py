@@ -18,7 +18,9 @@ p.add_argument('--size', default='1440x900')
 a = p.parse_args(); out = Path(a.out); out.mkdir(parents=True, exist_ok=True)
 w, h = map(int, a.size.split('x'))
 HIDE = '#top,#side,#info,#viewbar,#tourbar,#disclaimer,#labels,#minimap,#walkhint,#pad,#dock,#welcome,#dissolve,#photo{display:none!important}'
-R = {'scope': 'LOCAL Chromium (SwiftShader) via serve_preview.py; not live or MacBook proof', 'checks': [], 'errors': [], 'http_errors': [], 'failed_requests': []}
+local = a.url.startswith('http://127.0.0.1')
+R = {'url': a.url, 'scope': ('LOCAL Chromium (SwiftShader) via serve_preview.py; not live or MacBook proof' if local else
+     'LIVE site in Chromium (SwiftShader software WebGL) in this container; not Safari or MacBook proof'), 'checks': [], 'errors': [], 'http_errors': [], 'failed_requests': []}
 check = lambda name, ok, detail=None: (R['checks'].append({'name': name, 'passed': bool(ok), 'detail': detail}), print(('PASS ' if ok else 'FAIL ') + name, flush=True))
 with sync_playwright() as pw:
     b = pw.chromium.launch(executable_path='/usr/bin/chromium', headless=True, args=['--use-gl=angle', '--use-angle=swiftshader', '--enable-unsafe-swiftshader'])

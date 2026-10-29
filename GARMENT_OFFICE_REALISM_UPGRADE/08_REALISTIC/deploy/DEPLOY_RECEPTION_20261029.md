@@ -1,4 +1,12 @@
-# Deploying the interior releases (prepared by Claude, not yet deployed)
+# Deploying the interior releases (prepared by Claude)
+
+**Live since 29 Oct 2026:** `d5939f9` (the release below), deployed by the owner.
+- **Verified at 16:29 UTC:**
+  - health source `d5939f9…`
+  - `/` unchanged (`ff75beb5…`)
+  - `public-interior-20261029-verification.json` 13 / 13
+  - live browser frames in `qa/interior-20261029/live-d5939f9/`
+- **Rollback:** worker from `cdf0e3e`.
 
 ## Latest: Merchandising and Boardroom second passes
 
