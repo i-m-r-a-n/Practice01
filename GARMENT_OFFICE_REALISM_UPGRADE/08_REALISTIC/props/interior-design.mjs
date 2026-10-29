@@ -21,6 +21,7 @@ export const INTERIOR_ITEMS = [
   { id: 'MD_RUG_SOFTS', zone: 'Z12', note: 'MD lounge: the approved rug redesigned as an indigo kantha weave (same footprint); stitched cushions on the sofa and armchair.' },
   { id: 'MD_KANTHA_PANEL', zone: 'Z12', note: 'A framed nakshi-kantha-inspired panel on the free east wall behind the desk, under a brass picture light (design reference).' },
   { id: 'BR_KANTHA_PANEL', zone: 'Z08', note: 'A tall kantha-inspired panel on the free wall between the reception glass and the executive-suite door, under a picture light (design reference).' },
+  { id: 'BR_DESK_PADS', zone: 'Z08', note: 'Khadi desk pads with a kantha running-stitch edge and a stitched leaf at the eight places with a notebook and a glass, clear of the cable channel.' },
   { id: 'BR_TABLE_LIGHT', zone: 'Z08', note: 'Warm pool of the existing linear pendants along the boardroom table.' },
   { id: 'MR_FIT_FORMS', zone: 'Z07', note: 'The two dress forms dressed for fit development: a calico toile with marker-traced style lines and pinned princess seams, and a knitted body sample in indigo jersey with a cable panel (illustrative, not an actual collection).' },
   { id: 'MR_APPROVAL_BOARD', zone: 'Z07', note: 'The approved approval board with the same swatch layout and colours, shown as pinned cloth with garment flats on its sheets.' },
@@ -479,6 +480,20 @@ export function buildInteriorDesign(THREE, { zones = null, anisotropy = 4, detai
     // boardroom south wall (room face z -0.25): free between the reception glass (x < 14.35) and the walnut door D20 (x > 15.71)
     wallPanel('BR_KANTHA_PANEL', 'Z08', 1.0, 1.25, 15.03, 1.58, -.25 - .014, Math.PI, (x, w, h) => kanthaArt(x, w, h,
       { ground: PAL.indigo, ripple: 'rgba(236,228,210,.45)', border: PAL.ochre, disc: PAL.indigoDeep, lotus: [PAL.thread, PAL.ochre, PAL.thread], leaf: { 1: PAL.ochre, 2: PAL.khadi } }, 311), PAL.oak);
+  }
+  if (want('BR_DESK_PADS')) {
+    // walnut table F031 (top y 0.749, z -3.442..-2.248, round ends from x 14.69 / 19.60): the eight places with a notebook and a
+    // glass (notebooks x 15.01 / 16.23 / 17.86 / 19.08 + 0.2, z -2.56..-2.32 and -3.37..-3.13). Each gets a khadi desk pad with a
+    // kantha running-stitch edge, clear of the cable channel (z -2.908..-2.781) and 2 cm inside the table edge
+    const W = px(512), H = Math.round(W * .3 / .5), c = canvas(W, H), x = c.getContext('2d'), m = W / .5;
+    cloth(x, 0, 0, W, H, PAL.khadi, { cell: 2.5, seed: 321, slub: .12 });
+    x.strokeStyle = 'rgba(80,60,35,.35)'; x.lineWidth = 2; x.strokeRect(1, 1, W - 2, H - 2);
+    for (const [d, col] of [[.018, PAL.indigo], [.03, PAL.indigo], [.042, PAL.madder]]) stitch(x, rect(d * m, d * m, W - d * m, H - d * m), { color: col, dash: m * .008, gap: m * .005, width: Math.max(1.6, m * .0035), seed: 322 + d * 1000 });
+    buti(x, LEAF, W - .075 * m, H - .075 * m, m * .006, { 1: PAL.indigo, 2: PAL.madder });
+    const pad = std('board_pad', { map: texture(c, { clamp: true }), normalMap: weaveNormal, normalScale: new THREE.Vector2(.25, .25), roughness: .95, polygonOffset: true, polygonOffsetFactor: -1, polygonOffsetUnits: -1 });
+    for (const px0 of [15.245, 16.465, 18.09, 19.31]) for (const [pz, yaw] of [[-2.42, 0], [-3.27, Math.PI]]) {   // the stitched leaf sits at each sitter's right hand
+      mesh(group, new THREE.PlaneGeometry(.5, .3), pad, px0, .7505, pz, -Math.PI / 2, 0, yaw).userData.interiorItem = 'BR_DESK_PADS';
+    }
   }
   if (want('BR_TABLE_LIGHT')) {
     // walnut table F031: x 14.10-20.19, z -3.44..-2.25, top y 0.75; its centre line carries the trays, jug and phone (they occlude the pool)
