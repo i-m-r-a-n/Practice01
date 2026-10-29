@@ -35,6 +35,10 @@ export const BEL_ITEMS = [
   { id: 'BEL_MATERIALS_LIBRARY', zone: 'Z15', note: 'The living materials library: eight labelled boxes of natural materials on the low shelf (jute, hogla, cane, bamboo, water hyacinth, kaisa grass, coconut shell, terracotta) and Material Passport cards on the review table, with fields still to be documented. The D65 colour booth and the approved fabric library stay.' },
   { id: 'BEL_TEST_LAB', zone: 'Z16', note: 'Materials lab: a moisture and mould test set-up on the post-processing bench (sealed sample boxes, a scale, a moisture meter) and an empty test log. Methods to be agreed with an accredited laboratory; no results are shown. The 3D printers stay for trims and moulds.' },
   { id: 'BEL_PROTOTYPE_WORKSHOP', zone: 'Z17', note: 'Prototype workshop: cane and bamboo prototyping on the pattern table (a basket on its mould, split bamboo, a steam-bent hoop and hand tools) under a dust-extraction hood marked "to be engineered", and a steam-bending jig. The sample machines and forms stay.' },
+  // pilot rooms (increment 4): the small academy, staff and artisan dining, the records room
+  { id: 'BEL_ACADEMY_ANNEX', zone: 'Z21', note: 'The pilot academy in the training room: a small class of six at the approved table (fibre samples, a frame loom, yarn cones) and a craft wall of pinned samples and sketches. The lounge stays.' },
+  { id: 'BEL_ARTISAN_DINING', zone: 'Z20', note: 'Staff and artisan dining with the same care as the buyer rooms: clay plates, cups and jugs on hogla runners, and water and tea in clay on the pantry counter. Glazes to be tested before use.' },
+  { id: 'BEL_RECORDS_ROOM', zone: 'Z09', note: 'The records room: the originals behind every claim on the floor. Labelled evidence files on the table and an Open Record index on the wall; every line still reads "none yet" or "to be collected" until documents arrive.' },
   // option A only (full conversion): shown on this route if the merchandising and accounts teams move; the owner decides
   { id: 'BEL_UTHAN', zone: 'Z07', note: 'Option A only. The Green Uthan: a Bengali courtyard in Merchandising, with a bot-tola seat of handmade terracotta around the steel column, two small fig trees and a banyan bonsai under grow lights (this room has no daylight), split-granite stone seats and an open split-bamboo canopy (fire treatment and smoke-detector coverage to be checked). Natural jute carpet over the whole room.' },
   { id: 'BEL_ARTISAN_CORNER', zone: 'Z07', note: 'Option A only. Artisan corner in the Uthan, by invitation and never as a spectacle: a Chakma back-strap loom (bain) shown only with the consent and participation of Chakma weavers, a Marma weaving and basketry stand (the same consent rule), a nakshi kantha frame, cane basketry and painted terracotta on a sitalpati mat. Quiet, clean crafts only; dusty work stays in the prototype workshop.' },
@@ -1167,6 +1171,65 @@ export function buildBengalEarthLab(THREE, { zones = null, drinkware = [], aniso
     const jig = new THREE.Group(); jig.position.set(23.62, .8636, -15.47); g.add(jig); box(jig, M.oak, 0, 0, 0, .5, .025, .3);
     for (let k = 0; k < 6; k++) { const a = Math.PI * (k / 5); add(jig, new THREE.CylinderGeometry(.008, .008, .06, 8), M.wood, Math.cos(a) * .16, .055, -Math.sin(a) * .1 + .05); }
     add(jig, new THREE.TorusGeometry(.15, .006, 6, 24, Math.PI), std('cane_coil', () => ({})), 0, .045, .05, -Math.PI / 2, 0, 0);
+  }
+  // ---------------------------------------------------------------- pilot rooms: academy annex, staff and artisan dining, records room
+  if (want('BEL_ACADEMY_ANNEX')) {
+    const g = item('BEL_ACADEMY_ANNEX'); const T = .7493;   // training table F219 (top 0.7493): x 23.55-25.98, z -34.24..-33.32; six chairs on its long sides
+    [23.99, 24.77, 25.53].forEach((x, i) => { for (const [z, s] of [[-34.0, 1], [-33.56, -1]]) {
+      swatch(g, x, T, z, ['jute', 'hogla', 'cane'][i], ['twill', 'plain', 'lattice'][i], .12, s * .1);
+      add(g, new THREE.PlaneGeometry(.15, .21), std('notebook', () => ({ color: '#efe8da', roughness: .9 })), x + .16, T + .002, z, -Math.PI / 2, 0, s * .12); } });
+    const fl = new THREE.Group(); fl.position.set(24.77, T, -33.78); g.add(fl);
+    for (const s of [-1, 1]) box(fl, M.oak, s * .2, 0, 0, .025, .32, .025); box(fl, M.oak, 0, .3, 0, .43, .02, .02); box(fl, M.oak, 0, .05, 0, .43, .02, .02);
+    for (let k = 0; k < 13; k++) add(fl, new THREE.CylinderGeometry(.0012, .0012, .24, 4), std('warp', () => ({ color: '#e7dcc4', roughness: .8 })), -.18 + k * .03, .18, 0);
+    add(fl, new THREE.PlaneGeometry(.38, .09), wovenMaterial('jute_band', 'twill', FIBRE.jute, [3, 1]), 0, .11, .003);
+    [['#8f4a3a', -.06], ['#c9a565', .06]].forEach(([col, dz]) => add(g, new THREE.CylinderGeometry(.035, .05, .17, 20), std('cone_' + col, () => ({ color: col, roughness: .9, map: weaveMap('coil', [3, 6]) })), 23.72, T + .085, -33.78 + dz));
+    standingCard(g, ['Academy annex · pilot', 'A class of six at this table', 'Fibres, weaves and finishes'], 25.85, T, -33.78, Math.PI / 2, { w: .18, h: .09 });
+    // craft wall on the solid west wall (face x 22.2513), clear of the screen (z -36.40..-34.72)
+    const cw = new THREE.Group(); cw.position.set(22.262, 1.0, -33.25); cw.rotation.y = Math.PI / 2; g.add(cw);
+    box(cw, std('felt_board', () => ({ color: '#6f6658', roughness: 1, map: weaveMap('plain', [6, 8]) })), 0, 0, .012, 1.5, .95, .024);
+    [['jute', 'twill'], ['cane', 'lattice'], ['hyacinth', 'plait'], ['hogla', 'plain'], ['bamboo', 'twill'], ['kaisa', 'coil']].forEach(([f, k], i) =>
+      add(cw, new THREE.PlaneGeometry(.17, .17), wovenMaterial(`sw_${f}${k}`, k, FIBRE[f], [2, 2]), -.55 + (i % 3) * .22, .7 - Math.floor(i / 3) * .24, .026));
+    add(cw, new THREE.PlaneGeometry(.36, .25), std('sketch', () => ({ color: '#f4efe4', roughness: .9 })), .35, .66, .026);
+    add(cw, new THREE.PlaneGeometry(.3, .36), textileMat('kantha_pin', (x, w, h) => drawKantha(x, w, h, 17), [192, 230]), .4, .26, .026);
+    add(cw, new THREE.PlaneGeometry(.44, .12), card(['Craft wall · student work (illustrative)'], { w: .44, h: .12, scale: 1 }), -.33, .14, .026);
+  }
+  if (want('BEL_ARTISAN_DINING')) {
+    const g = item('BEL_ARTISAN_DINING'); const T = .7493;   // dining tables F194 (z -30.18..-29.26) and F203 (z -26.37..-25.45), x 23.93-26.37; four chairs a side
+    for (const zc of [-29.72, -25.91]) {
+      box(g, wovenMaterial('runner_hogla', 'twill', FIBRE.hogla, [10, 1]), 25.15, T, zc, 2.2, .004, .3);
+      for (const x of [24.235, 24.84, 25.45, 26.06]) for (const s of [-1, 1]) {
+        const z = zc + s * .3; clayPlate(g, x, T, z, .1, M.clayCream); cup(g, x + .14, T, z - s * .02, 'tumbler');
+      }
+      jug(g, 24.7, T + .004, zc, .4); add(g, lathe([[0, 0], [.07, 0], [.14, .045], [.15, .08], [.13, .08], [.06, .028], [0, .028]], 36), M.clay, 25.6, T + .004, zc);
+    }
+    // water and tea in clay on the pantry counter (top 0.9018 at x 22.25-22.91)
+    const P = .9018; add(g, new THREE.TorusGeometry(.085, .02, 10, 28), M.wood, 22.58, P + .02, -28.2, Math.PI / 2);
+    add(g, lathe([[0, 0], [.07, 0], [.12, .05], [.135, .13], [.12, .2], [.07, .245], [.05, .28], [.062, .3], [.055, .305], [.042, .28], [0, .27]], 40), M.clay, 22.58, P + .015, -28.2);
+    tray(g, 22.58, P, -28.7, .22, .3, Math.PI / 2); for (const dz of [-.08, 0, .08]) cup(g, 22.58, P + .012, -28.7 + dz, 'tumbler', M.clayCream);
+    teapot(g, 22.58, P, -29.3, Math.PI / 2); cup(g, 22.5, P, -29.6, 'teacup', M.clayCream); cup(g, 22.66, P, -29.62, 'teacup', M.clayCream);
+    standingCard(g, ['Staff and artisan dining', 'The same clay and wood as the buyer rooms', 'Glazes to be tested before use'], 22.75, P, -29.95, Math.PI / 2, { w: .2, h: .1 });
+  }
+  if (want('BEL_RECORDS_ROOM')) {
+    const g = item('BEL_RECORDS_ROOM'); const T = .7493;   // audit table F073 (top 0.7493): x 3.68-5.21, z -21.16..-20.24; north wall solid (face z -22.6323)
+    ['01 Water', '02 Energy', '03 Makers', '04 Materials', '05 Tests'].forEach((t, i) => {
+      const x = 3.95 + i * .26, b = new THREE.Group(); b.position.set(x, T, -20.98); g.add(b);
+      box(b, std('box_file', () => ({ color: '#3d4a42', roughness: .7 })), 0, 0, 0, .08, .32, .28);
+      add(b, new THREE.PlaneGeometry(.06, .2), card([t], { w: .06, h: .2, scale: .5 }), 0, .17, .141);
+    });
+    add(g, new THREE.PlaneGeometry(.3, .21), card(['Evidence register', 'Each claim, its document and date', 'Entries to be added'], { w: .3, h: .21, scale: 1 }), 4.45, T + .002, -20.5, -Math.PI / 2);
+    const ic = canvas(px(600), px(840)), ix = ic.getContext('2d'), W = ic.width, H = ic.height; ix.fillStyle = '#f4efe4'; ix.fillRect(0, 0, W, H);
+    ix.fillStyle = '#3c2a1e'; ix.font = `600 ${W * .07}px system-ui, sans-serif`; ix.fillText('The Open Record', W * .07, H * .1);
+    ix.font = `400 ${W * .036}px system-ui, sans-serif`; ix.fillStyle = '#5b4636'; ix.fillText('Every claim on this floor, its evidence and its status', W * .07, H * .15);
+    [['Claim', 'Evidence', 'Status'], ['Drinking water quality', 'Dated lab reports', 'None yet'], ['Solar generation', 'Metered data', 'Not connected'], ['Makers paid and credited', 'Agreements, receipts', 'To be collected'],
+     ['Material origins', 'Supplier documents', 'To be collected'], ['Product tests', 'Accredited lab reports', 'None yet'], ['Glaze safety', 'Lead and cadmium tests', 'None yet']].forEach((row, r) => {
+      const y = H * (.25 + r * .095); ix.font = `${r ? 400 : 600} ${W * .036}px system-ui, sans-serif`;
+      row.forEach((c, k) => { ix.fillStyle = k === 2 && r ? '#9c3b2a' : '#3c2a1e'; ix.fillText(c, W * [.07, .45, .76][k], y); });
+      ix.fillStyle = 'rgba(60,40,25,.2)'; ix.fillRect(W * .07, y + W * .02, W * .86, 2);
+    });
+    ix.fillStyle = '#5b4636'; ix.font = `400 ${W * .032}px system-ui, sans-serif`; ix.fillText('Originals are kept in this room and shown on request.', W * .07, H * .93);
+    const fr = new THREE.Group(); fr.position.set(4.3, 1.5, -22.62); g.add(fr);
+    box(fr, M.oak, 0, -.45, .01, .66, .9, .02); add(fr, new THREE.PlaneGeometry(.6, .84), std('open_record', () => ({ map: tex(ic, { clamp: true }), roughness: .8 })), 0, 0, .021);
+    standingCard(g, ['Records room', 'The originals behind every claim', 'Open to auditors and buyers on request'], 5.05, T, -20.35, 0, { w: .2, h: .1 });
   }
   // the floor finishes go in last, so their occlusion maps hold the contact shadows of everything above
   if (want('BEL_UTHAN')) floorOverlay(group.getObjectByName('BEL_UTHAN'), 'Z07', [9.32, -21.29, 22.0, -10.87], { map: juteFloor('z07', '#cdbb94', 81), repeat: [25, 21], color: '#cfc8bd' });

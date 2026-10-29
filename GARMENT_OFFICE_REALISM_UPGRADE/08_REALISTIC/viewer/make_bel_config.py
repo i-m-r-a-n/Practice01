@@ -9,7 +9,7 @@ base = json.loads((HERE / 'release-config.json').read_text())
 manifest = json.loads((HERE.parent / 'props' / 'office-props-manifest.json').read_text())
 
 RELEASE_ZONES = ['Z01', 'Z02', 'Z08', 'Z30', 'Z12', 'Z18']          # props (small office items) stay in these rooms
-CONCEPT_ZONES = ['Z01', 'Z02', 'Z03', 'Z30', 'Z08', 'Z12', 'Z18', 'Z22', 'Z15', 'Z16', 'Z17', 'Z07', 'Z06']   # rooms with Bengal Earth Lab items (Z07, Z06: option A only)
+CONCEPT_ZONES = ['Z01', 'Z02', 'Z03', 'Z30', 'Z08', 'Z12', 'Z18', 'Z22', 'Z15', 'Z16', 'Z17', 'Z21', 'Z20', 'Z09', 'Z07', 'Z06']   # rooms with Bengal Earth Lab items (Z07, Z06: option A only)
 DRINK = {'glass', 'jug', 'teacup', 'tray', 'mug', 'bottle'}
 TEA_SET = {'PROP_0006', 'PROP_0008'}                                 # reception tray and teacup: replaced by the clay tea set
 drink = [p for p in manifest['props'] if p['zone'] in RELEASE_ZONES and p['type'] in DRINK]
@@ -57,14 +57,16 @@ cameras = [
     # the design wing
     look('BEL_CAM_MAKING_LINE', 'Design-wing corridor', 'Z22', [22.33, 1.6, -22.78], [24.7, 1.15, -21.4], 16.0),   # read from the hallway end: steps 1 to 6
     look('BEL_CAM_LAB', '3D printing lab', 'Z16', [24.0, 1.5, -13.4], [22.5, 0.8, -13.35], 22.0),
+    # pilot rooms
+    look('BEL_CAM_RECORDS', 'Audit room', 'Z09', [5.7, 1.55, -19.25], [3.9, 1.05, -22.4], 18.0),
 ]
 
 names = {
     'Z01': 'Arrival gallery', 'Z02': 'Reception · tea lounge', 'Z03': 'Earth & Sun passage', 'Z30': 'Earth to product',
     'Z08': 'Negotiation suite', 'Z18': 'Collaborative studio', 'Z07': 'Green Uthan · room-sets (option A)', 'Z06': 'Design academy (option A)',
     'Z15': 'Living materials library', 'Z16': 'Materials lab', 'Z17': 'Prototype workshop', 'Z22': 'Design wing · the making line', 'Z14': 'Digital design lab (planned)',
-    'Z05': 'Export & order centre (planned)', 'Z04': 'Buyer project room (planned)', 'Z09': 'Records room (planned)',
-    'Z20': 'Staff & artisan dining (planned)', 'Z21': 'Academy annex (planned)', 'Z10': 'Exec reception · tea point',
+    'Z05': 'Export & order centre (planned)', 'Z04': 'Buyer project room (planned)', 'Z09': 'Records room',
+    'Z20': 'Staff & artisan dining', 'Z21': 'Academy annex (pilot academy)', 'Z10': 'Exec reception · tea point',
 }
 in3d = 'In this 3D proposal: '
 notes = {
@@ -82,6 +84,9 @@ notes = {
     'Z17': in3d + 'cane and bamboo prototyping on the pattern table under a dust-extraction hood marked "to be engineered", and a steam-bending jig. The sample machines and forms stay. Seen from the Uthan through the interior glass in option A.',
     'Z22': in3d + 'the making line on the only solid wall of the design-wing entrance (the corridor walls are glass, so the labs behind them are the exhibit): one River to Home basket in six steps, from hogla leaves to the collection. Illustrative objects.',
     'Z05': 'Planned: digital export and order centre beside reception.',
+    'Z21': in3d + 'the pilot academy: a class of six at the approved table with fibre samples, a frame loom and yarn cones, and a craft wall of pinned samples and sketches. The lounge stays.',
+    'Z20': in3d + 'staff and artisan dining with the same care as the buyer rooms: clay plates, cups and jugs on hogla runners, and water and tea in clay on the pantry counter. Glazes to be tested before use.',
+    'Z09': in3d + 'the records room: the originals behind every claim. Labelled evidence files and an Open Record index whose lines all read "none yet" or "to be collected" until documents arrive.',
 }
 tour = [
     {'stop': 1, 'zone': None, 'camera': 'CAM_ISO_SE', 'title': 'The Living Bengal Factory',
@@ -108,14 +113,18 @@ tour = [
      'description': 'At the entrance to the design wing: one basket in six steps, from hogla leaves to the collection. Illustrative objects; real samples and records replace them.'},
     {'stop': 12, 'zone': 'Z16', 'camera': 'BEL_CAM_LAB', 'title': 'The labs behind the glass',
      'description': 'A moisture and mould test bench with an empty log (no results until tests are done), the living materials library next door and the cane and bamboo prototype workshop.'},
-    {'stop': 13, 'zone': 'Z18', 'camera': 'CAM_13_Design_Studio_A', 'title': 'Collaborative studio',
+    {'stop': 13, 'zone': 'Z21', 'camera': 'CAM_21_Lounge_Training', 'title': 'Academy annex (pilot)',
+     'description': 'The pilot academy before any room changes: a class of six at the training table and a craft wall of student work.'},
+    {'stop': 14, 'zone': 'Z18', 'camera': 'CAM_13_Design_Studio_A', 'title': 'Collaborative studio',
      'description': 'The only room with daylight: basket prototypes and form sketches on the co-creation table.'},
-    {'stop': 14, 'zone': 'Z18', 'camera': 'BEL_CAM_SUN_SHELF', 'title': 'The sunning shelf',
+    {'stop': 15, 'zone': 'Z18', 'camera': 'BEL_CAM_SUN_SHELF', 'title': 'The sunning shelf',
      'description': 'Bonsai and tulsi take turns in the daylight of window W10.'},
-    {'stop': 15, 'zone': 'Z08', 'camera': 'CAM_09_Boardroom_A', 'title': 'Negotiation suite',
+    {'stop': 16, 'zone': 'Z09', 'camera': 'BEL_CAM_RECORDS', 'title': 'The records room',
+     'description': 'The originals behind every claim. Until documents arrive, every line of the Open Record reads none yet or to be collected.'},
+    {'stop': 17, 'zone': 'Z08', 'camera': 'CAM_09_Boardroom_A', 'title': 'Negotiation suite',
      'description': 'The visit ends here: tea in clay at every place, woven samples on wooden trays, a bonsai in the corner.'},
-    {'stop': 16, 'zone': None, 'camera': 'CAM_ISO_SW', 'title': 'Designed for a Solar-Powered Future',
-     'description': 'Every claim on this floor waits for its evidence: makers, tests, water reports and measured energy. Next: the cafe, the academy annex and the export and order centre.'},
+    {'stop': 18, 'zone': None, 'camera': 'CAM_ISO_SW', 'title': 'Designed for a Solar-Powered Future',
+     'description': 'Every claim on this floor waits for its evidence: makers, tests, water reports and measured energy. Next: the export and order centre and the buyer project room.'},
 ]
 
 config = {

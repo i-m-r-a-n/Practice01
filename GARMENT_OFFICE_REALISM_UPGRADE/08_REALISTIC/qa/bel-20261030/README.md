@@ -1,5 +1,23 @@
 # Bengal Earth Lab: 3D proposal route
 
+## Increment 4: pilot rooms (30 Oct 2026)
+
+These rooms work in every option. Approved furniture stays.
+
+| Room | Items |
+|---|---|
+| Training room Z21, the pilot academy | A class of six at the approved training table (top 0.7493): fibre samples, notebooks, a frame loom and yarn cones. A craft wall of pinned samples and sketches on the solid west wall, clear of the screen. The lounge stays. |
+| Staff cafe Z20 | Staff and artisan dining with the same care as the buyer rooms: clay plates, cups, jugs and bowls on hogla runners. Water in a clay kolshi and tea in clay on the pantry counter (top 0.9018). Glazes to be tested before use. |
+| Audit room Z09, the records room | Five labelled evidence files and an evidence register on the table. An Open Record index on the solid north wall, listing each claim, its evidence and its status. Every status reads "none yet", "not connected" or "to be collected". |
+
+- **Tour:** 18 stops, adding the academy annex and the records room. The records room comes just before the negotiation suite: evidence before the deal.
+- **Checks:**
+  - `after-tour18/`: all 18 stops, without errors.
+  - `after-inc4/`: CAM_20, CAM_21, CAM_27 and `BEL_CAM_RECORDS`.
+  - `before-inc4/`: the same approved cameras.
+  - `compare/inc4_pilot_rooms.jpg`
+- **Memory:** 53.2 MB of textures at full detail (235 textures, mostly printed cards and panels). Low quality halves every canvas.
+
 ## Increment 3: the design wing (30 Oct 2026)
 
 These rooms work in every option, including the pilot (option C). Approved furniture stays; the proposal only adds items on existing surfaces and walls.
