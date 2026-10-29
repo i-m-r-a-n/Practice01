@@ -110,5 +110,5 @@ Steps 1–4 are done for H = `e98ecb5`. **Exact next action:**
 - **Visitor frames:** the `merch_typing` spot in `capture_visitor.py` is not on free floor, so the viewer refuses it. This is a capture-spot error, not a tour defect.
 - **Next candidates:**
   - **Coconut-shell story placement.** Seen from the passage, a white vertical element in front of the counter hides part of the card. A quick GLB query near that spot found no model geometry, so it may be a runtime prop. Check what it is before moving anything.
-  - A lighter carpet in Merchandising (the concept says "at renewal").
+  - A lighter carpet in Merchandising. Correction: an earlier note said the concept proposes this "at renewal", but no document in the repository says so. The interior phase (`qa/interior-20261029/`) now shows it as a design proposal.
   - More rooms, only after this release is live and verified.

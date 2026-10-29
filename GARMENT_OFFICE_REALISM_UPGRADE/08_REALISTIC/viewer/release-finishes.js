@@ -36,9 +36,18 @@ export async function refineReleaseFinishes({ root, ktx, anisotropy = 8, changed
 // display boxes below, so a fire extinguisher that shares g_rust is left alone. The four dress forms on the
 // Experience Centre plinth each get a chunky stitch (cable, rib, moss, waffle); the bay back panels become a green
 // handloom weave. Self-made canvas tiles; only the albedo is modulated, the baked light stays as it is.
-const KNIT_BOXES = [            // [x0, y0, z0, x1, y1, z1] in viewer metres; Experience Centre (Z30)
-  [9.75, 0, -10.78, 20.57, 2.44, -10.10],     // the four display bays (hanging and folded garments)
-  [16.50, .86, -9.02, 20.20, 1.10, -8.00],    // folded garments on the material table
+const KNIT_BOXES = [            // [x0, y0, z0, x1, y1, z1] in viewer metres
+  [9.75, 0, -10.78, 20.57, 2.44, -10.10],     // Experience Centre (Z30): the four display bays (hanging and folded garments)
+  [16.50, .86, -9.02, 20.20, 1.10, -8.00],    //   folded garments on the material table
+  [15.95, 0, -20.80, 19.50, 1.70, -20.10],    // Merchandising (Z07): rolling sample rails
+  [17.15, .74, -17.75, 18.40, 1.10, -15.27],  //   inspection island
+  [9.65, .74, -19.10, 15.20, .90, -17.68],    //   samples on the desk benches
+  [9.65, .74, -16.17, 15.20, .90, -14.76],
+  [17.40, .74, -14.15, 18.08, 1.00, -12.27],  //   buyer review table
+  [9.65, 0, -21.30, 15.20, .72, -20.92],      //   swatch shelves
+  [9.64, 1.16, -10.92, 17.54, 2.19, -10.86],  //   approval board and pin-up board
+  [29.38, .45, -30.49, 29.44, 2.30, -23.10],  // Global Design Studio (Z18): mood-board swatches
+  [33.03, 0, -17.28, 33.72, 2.44, -14.21],    //   collection display bay
 ];
 const FORMS = [11.40, .20, -8.78, 14.00, 1.87, -8.34];   // dress forms F022-F025, 0.71 m apart along x
 export function refineKnitwear({ root, THREE: T = THREE, anisotropy = 8, changed }) {
@@ -81,4 +90,28 @@ float knitTri(sampler2D t, vec3 p, vec3 w, vec2 s) { return texture2D(t, p.zy / 
   });
   changed?.();
   return { knitwear: touched, textures: Object.values(maps) };
+}
+
+// Merchandising carpet: the dark tile (fl_carpet) reads heavy under 132 m2 of desks. Inside the Z07 floor only, a lighter,
+// warmer heather tone is proposed (same texture and baked light); the CAD room that shares the material keeps its colour.
+export function refineCarpet({ root, changed }) {
+  const touched = [];
+  root.traverse(o => {
+    if (!o.isMesh) return;
+    for (const m of [o.material].flat()) {
+      if (m.userData.carpet || !/^fl_carpet(_baked)?$/.test(m.name)) continue;
+      m.userData.carpet = true; touched.push(m.name);
+      const previous = m.onBeforeCompile;
+      m.onBeforeCompile = (shader, r) => {
+        previous?.call(m, shader, r);
+        shader.vertexShader = 'varying vec3 vCarpetWorld;\n' + shader.vertexShader.replace('#include <project_vertex>', '#include <project_vertex>\nvCarpetWorld = (modelMatrix * vec4(transformed, 1.0)).xyz;');
+        shader.fragmentShader = 'varying vec3 vCarpetWorld;\n' + shader.fragmentShader.replace('#include <map_fragment>', `#include <map_fragment>
+if (vCarpetWorld.x > 9.32 && vCarpetWorld.x < 22.0 && vCarpetWorld.z > -21.29 && vCarpetWorld.z < -10.87 && vCarpetWorld.y < .05) diffuseColor.rgb *= vec3(6.2, 5.8, 5.2);`);
+      };
+      m.customProgramCacheKey = () => 'release-carpet-v1';
+      m.needsUpdate = true;
+    }
+  });
+  changed?.();
+  return touched;
 }

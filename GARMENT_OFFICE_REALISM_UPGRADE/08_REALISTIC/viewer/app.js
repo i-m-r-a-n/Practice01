@@ -19,7 +19,7 @@ import { createRoomProbes } from './room-probes.js';
 import { createPostProcessing } from './phase-post.js';
 import { createOfficeDressing } from './phase-dressing.js';
 import { estimateGpuMemory } from './gpu-memory.js';
-import { refineReleaseFinishes, refineKnitwear } from './release-finishes.js';
+import { refineReleaseFinishes, refineKnitwear, refineCarpet } from './release-finishes.js';
 import approvedFloor from './approved-floor-footprint.json';
 
 window.__viewerStarted = true;
@@ -286,6 +286,7 @@ if (SIMPLE_RELEASE && BAKED && qs.get('finishes') !== '0') refineReleaseFinishes
 if (SIMPLE_RELEASE && BAKED && qs.get('finishes') !== '0') {
   try { S.knitwear = refineKnitwear({ root: model, anisotropy: Math.min(8, renderer.capabilities.getMaxAnisotropy()), changed: () => { needsRender = true; } }).knitwear; }
   catch (error) { S.errors.push('Knitwear: ' + error.message); }
+  try { S.carpet = refineCarpet({ root: model, changed: () => { needsRender = true; } }); } catch (error) { S.errors.push('Carpet: ' + error.message); }
 }
 lightmaps.disposeMaterial = material => materialUpgrade?.release(material);
 lightmaps.prepareRoom = async room => {

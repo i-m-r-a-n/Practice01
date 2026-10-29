@@ -18,6 +18,11 @@ export const INTERIOR_ITEMS = [
   { id: 'EC_MATERIALS_LIBRARY', zone: 'Z30', note: 'Tactile materials library on the west end of the material table: yarn cones, knit stitch swatches, and coconut-shell buttons from shell to blank to finished button. Fibre, origin, weight and test data: pending supplier records.' },
   { id: 'EC_TEXTILE_BAFFLES', zone: 'Z30', note: 'Handloom cloth fins under the deck between the two track rails (khadi and jute with woven indigo and madder bands), clear of the spot beams, the AC unit and the smoke detector.' },
   { id: 'EC_GALLERY_LIGHT', zone: 'Z30', note: 'Warm pools of the existing track spots on the plinth and of the linear pendant on the material table.' },
+  { id: 'MD_RUG_SOFTS', zone: 'Z12', note: 'MD lounge: the approved rug redesigned as an indigo kantha weave (same footprint); stitched cushions on the sofa and armchair.' },
+  { id: 'MD_KANTHA_PANEL', zone: 'Z12', note: 'A framed nakshi-kantha-inspired panel on the free east wall behind the desk, under a brass picture light (design reference).' },
+  { id: 'BR_KANTHA_PANEL', zone: 'Z08', note: 'A tall kantha-inspired panel on the free wall between the reception glass and the executive-suite door, under a picture light (design reference).' },
+  { id: 'BR_TABLE_LIGHT', zone: 'Z08', note: 'Warm pool of the existing linear pendants along the boardroom table.' },
+  { id: 'DS_DAYLIGHT', zone: 'Z18', note: 'Overcast daylight in the three existing east windows and its soft spill on the floor; true north, sun angles and glare are still to be measured on site.' },
 ];
 
 const PAL = { khadi: '#e6dccb', khadiShade: '#cfc1a8', jute: '#b39867', juteDark: '#7e6440', indigo: '#33486a', indigoDeep: '#24344f',
@@ -169,28 +174,38 @@ export function buildInteriorDesign(THREE, { zones = null, anisotropy = 4, detai
   // ---------------------------------------------------------------- Reception (Z02): south wall face z 6.2738, room on its -z side
   const WALL_S = 6.2738;
   let rugTexture = null;
+  // a kantha-stitched handloom rug drawn at true size (Wm x Hm metres): binding, a dyed border band with running-stitch rows
+  // and waves, a thin accent line, a field of stitched crosses, a lotus at the centre and leaf butis in the corners
+  function kanthaRug(Wm, Hm, P, seed = 21) {
+    const W = px(2048), H = Math.round(W * Hm / Wm), c = canvas(W, H), x = c.getContext('2d'), m = W / Wm;   // pixels per metre
+    const fine = Math.max(1.6, m * .0024), thin = Math.max(1.4, m * .002);
+    cloth(x, 0, 0, W, H, P.ground, { cell: Math.max(3, Math.round(m * .006)), seed, slub: .16, mottle: .07, contrast: .8 });
+    const band = (d0, d1, color, sd) => { const a = d0 * m, b = d1 * m; x.save(); x.beginPath(); x.rect(a, a, W - 2 * a, H - 2 * a); x.rect(b, H - b, W - 2 * b, -(H - 2 * b)); x.clip('evenodd'); cloth(x, 0, 0, W, H, color, { cell: Math.max(3, Math.round(m * .005)), seed: sd, slub: .08, mottle: .05, contrast: .6 }); x.restore(); };
+    band(0, .035, P.binding, seed + 1); band(.07, .23, P.band, seed + 2); band(.255, .272, P.line, seed + 3);
+    const inset = d => rect(d * m, d * m, W - d * m, H - d * m);
+    stitch(x, inset(.095), { color: P.thread, dash: m * .008, gap: m * .006, width: fine, seed: seed + 10 });
+    stitch(x, inset(.205), { color: P.thread, dash: m * .008, gap: m * .006, width: fine, seed: seed + 11 });
+    for (const [y, sg] of [[.15, 1], [Hm - .15, -1]]) stitch(x, wave(.15 * m, W - .15 * m, y * m, m * .018 * sg, m * .09, 260), { color: P.wave, dash: m * .007, gap: m * .005, width: fine, seed: seed + 12 + sg });
+    for (const [xx, sg] of [[.15, 1], [Wm - .15, -1]]) { const pts = wave(.15 * m, H - .15 * m, 0, m * .018 * sg, m * .09, 200).map(([a, b]) => [xx * m + b, a]); stitch(x, pts, { color: P.wave, dash: m * .007, gap: m * .005, width: fine, seed: seed + 15 + sg }); }
+    stitch(x, inset(.31), { color: P.accent, dash: m * .007, gap: m * .006, width: thin, seed: seed + 17 });
+    for (let gx = .5; gx < Wm - .45; gx += .2) for (let gy = .5; gy < Hm - .45; gy += .2) {
+      if (Math.hypot(gx - Wm / 2, (gy - Hm / 2) * 1.1) < .52) continue;
+      const cx = gx * m, cy = gy * m, d = m * .018;
+      stitch(x, line(cx - d, cy, cx + d, cy), { color: P.cross, dash: m * .006, gap: m * .004, width: thin, seed: gx * 97 + gy });
+      stitch(x, line(cx, cy - d, cx, cy + d), { color: P.cross, dash: m * .006, gap: m * .004, width: thin, seed: gx * 31 + gy * 7 });
+    }
+    x.fillStyle = P.disc; x.beginPath(); x.arc(W / 2, H / 2, m * .1, 0, Math.PI * 2); x.fill();
+    lotus(x, W / 2, H / 2, m * .42, P.lotus, seed + 20, m * .008);
+    for (const [cx, cy] of [[.52, .52], [Wm - .52, .52], [.52, Hm - .52], [Wm - .52, Hm - .52]]) buti(x, LEAF, cx * m, cy * m, m * .016, P.leaf);
+    return c;
+  }
+  const RECEPTION_RUG = { ground: PAL.jute, binding: PAL.juteDark, band: PAL.indigo, line: PAL.madder, thread: PAL.thread, wave: PAL.khadi, accent: PAL.ochre,
+    cross: 'rgba(240,229,205,.75)', disc: PAL.indigo, lotus: [PAL.thread, PAL.madder, PAL.indigoDeep], leaf: { 1: PAL.indigo, 2: PAL.madder } };
+  let rugCanvas = null;
   if (want('RC_RUG_KANTHA')) {
     // rug F013: 2.74 x 1.98 m (x 8.28-11.02, z 3.96-5.94); its UV0 is metric (u -1.37..1.37, v 0.011..1.989) -> normalised below
-    const W = px(2048), H = Math.round(W * 1.978 / 2.74), c = canvas(W, H), x = c.getContext('2d'), m = W / 2.74;   // pixels per metre
-    cloth(x, 0, 0, W, H, PAL.jute, { cell: Math.max(3, Math.round(m * .006)), seed: 21, slub: .16, mottle: .07, contrast: .8 });
-    const band = (d0, d1, color, seed) => { const a = d0 * m, b = d1 * m; x.save(); x.beginPath(); x.rect(a, a, W - 2 * a, H - 2 * a); x.rect(b, H - b, W - 2 * b, -(H - 2 * b)); x.clip('evenodd'); cloth(x, 0, 0, W, H, color, { cell: Math.max(3, Math.round(m * .005)), seed, slub: .08, mottle: .05, contrast: .6 }); x.restore(); };
-    band(0, .035, PAL.juteDark, 22); band(.07, .23, PAL.indigo, 23); band(.255, .272, PAL.madder, 24);
-    const inset = d => rect(d * m, d * m, W - d * m, H - d * m);
-    stitch(x, inset(.095), { color: PAL.thread, dash: m * .008, gap: m * .006, width: Math.max(1.6, m * .0024), seed: 31 });
-    stitch(x, inset(.205), { color: PAL.thread, dash: m * .008, gap: m * .006, width: Math.max(1.6, m * .0024), seed: 32 });
-    for (const [y, s] of [[.15, 1], [H / m - .15, -1]]) stitch(x, wave(.15 * m, W - .15 * m, y * m, m * .018 * s, m * .09, 260), { color: PAL.khadi, dash: m * .007, gap: m * .005, width: Math.max(1.6, m * .0022), seed: 33 + s });
-    for (const [xx, s] of [[.15, 1], [W / m - .15, -1]]) { const pts = wave(.15 * m, H - .15 * m, 0, m * .018 * s, m * .09, 200).map(([a, b]) => [xx * m + b, a]); stitch(x, pts, { color: PAL.khadi, dash: m * .007, gap: m * .005, width: Math.max(1.6, m * .0022), seed: 35 + s }); }
-    stitch(x, inset(.31), { color: PAL.ochre, dash: m * .007, gap: m * .006, width: Math.max(1.6, m * .002), seed: 37 });
-    // field: a quiet lattice of stitched crosses in undyed thread, and the lotus at the centre
-    for (let gx = .5; gx < 2.74 - .45; gx += .2) for (let gy = .5; gy < 1.978 - .45; gy += .2) {
-      if (Math.hypot(gx - 1.37, (gy - .989) * 1.1) < .52) continue;
-      const cx = gx * m, cy = gy * m, s = m * .018; stitch(x, line(cx - s, cy, cx + s, cy), { color: 'rgba(240,229,205,.75)', dash: m * .006, gap: m * .004, width: Math.max(1.4, m * .002), seed: gx * 97 + gy });
-      stitch(x, line(cx, cy - s, cx, cy + s), { color: 'rgba(240,229,205,.75)', dash: m * .006, gap: m * .004, width: Math.max(1.4, m * .002), seed: gx * 31 + gy * 7 });
-    }
-    x.fillStyle = PAL.indigo; x.beginPath(); x.arc(W / 2, H / 2, m * .1, 0, Math.PI * 2); x.fill();
-    lotus(x, W / 2, H / 2, m * .42, [PAL.thread, PAL.madder, PAL.indigoDeep], 41, m * .008);
-    for (const [cx, cy] of [[.52, .52], [2.74 - .52, .52], [.52, 1.978 - .52], [2.74 - .52, 1.978 - .52]]) buti(x, LEAF, cx * m, cy * m, m * .016, { 1: PAL.indigo, 2: PAL.madder });
-    rugTexture = texture(c, { clamp: true });
+    rugCanvas = kanthaRug(2.74, 1.978, RECEPTION_RUG, 21);
+    rugTexture = texture(rugCanvas, { clamp: true });
     rugTexture.repeat.set(1 / 2.74, 1 / 1.978); rugTexture.offset.set(.5, -.011 / 1.978);
   }
   if (want('RC_WARP_WEFT')) {
@@ -416,6 +431,113 @@ export function buildInteriorDesign(THREE, { zones = null, anisotropy = 4, detai
     for (const fx of [11.635, 12.345, 13.055, 13.765]) mesh(group, new THREE.PlaneGeometry(.78, .6), plinthPool, fx, .2015, -8.56, -Math.PI / 2);   // plinth top y 0.20
     mesh(group, new THREE.PlaneGeometry(3.3, .86), tablePool, 18.33, .8636, -8.5, -Math.PI / 2);                                               // table top y 0.863
   }
+  // a framed textile panel on a wall: canvas art, slim frame, brass picture light and the warm pool it throws.
+  // (cx, cy, cz): centre of the cloth face; yaw turns the face (local +z) towards the room
+  function wallPanel(id, zone, W, H, cx, cy, cz, yaw, draw, frameColor) {
+    const g = new THREE.Group(); g.name = id; g.position.set(cx, cy, cz); g.rotation.y = yaw; group.add(g);
+    const c = canvas(px(Math.round(1400 * W / Math.max(W, H))), px(Math.round(1400 * H / Math.max(W, H)))), x = c.getContext('2d'); draw(x, c.width, c.height);
+    const t = texture(c, { clamp: true });
+    mesh(g, new THREE.BoxGeometry(W + .06, H + .06, .024), std(id + '_frame', { color: frameColor, roughness: .5 }), 0, 0, -.013);
+    mesh(g, new THREE.PlaneGeometry(W, H), std(id + '_cloth', { map: t, normalMap: weaveNormal, normalScale: new THREE.Vector2(.3, .3), roughness: .95, emissive: '#ffffff', emissiveMap: t, emissiveIntensity: .12 }), 0, 0, .001);
+    const brass = std(id + '_brass', { color: PAL.brass, roughness: .3, metalness: .85 }), led = std(id + '_led', { color: '#000000', emissive: '#ffd6a6', emissiveIntensity: 2.4 });
+    mesh(g, new THREE.CylinderGeometry(.013, .013, Math.min(.9, W * .6), 18), brass, 0, H / 2 + .1, .13, 0, 0, Math.PI / 2);
+    mesh(g, new THREE.PlaneGeometry(Math.min(.86, W * .58), .012), led, 0, H / 2 + .0865, .13, Math.PI / 2);
+    for (const s of [-1, 1]) mesh(g, new THREE.CylinderGeometry(.006, .006, .13, 8), brass, s * Math.min(.3, W * .2), H / 2 + .1, .065, Math.PI / 2);
+    mesh(g, new THREE.PlaneGeometry(W + .5, H * .9 + .3), glowMaterial(id + '_pool', W + .5, H, 'pool', '#f4b47a', .2), 0, H * .1, .004);
+    g.userData = { interiorItem: id, zone };
+    return g;
+  }
+  // nakshi-kantha-inspired composition: dense running-stitch ripples, a lotus medallion, kalka (leaf) corners, a wave border
+  function kanthaArt(x, w, h, P, seed) {
+    cloth(x, 0, 0, w, h, P.ground, { cell: 3, seed, slub: .12 });
+    const m = Math.min(w, h);
+    for (let y = m * .06; y < h - m * .06; y += m * .022) stitch(x, wave(m * .06, w - m * .06, y, m * .004, m * .3, 80), { color: P.ripple, dash: m * .012, gap: m * .008, width: Math.max(1.6, m * .003), seed: seed + y });
+    stitch(x, rect(m * .035, m * .035, w - m * .035, h - m * .035), { color: P.border, dash: m * .012, gap: m * .007, width: Math.max(2, m * .005), seed: seed + 1 });
+    for (const yy of [m * .055, h - m * .055]) stitch(x, wave(m * .06, w - m * .06, yy, m * .01, m * .06, 160), { color: P.border, dash: m * .01, gap: m * .006, width: Math.max(2, m * .004), seed: seed + yy });
+    x.fillStyle = P.disc; x.beginPath(); x.arc(w / 2, h / 2, m * .12, 0, Math.PI * 2); x.fill();
+    lotus(x, w / 2, h / 2, m * .3, P.lotus, seed + 3, m * .014);
+    for (const [cx, cy] of [[.16, .18], [.84, .18], [.16, .82], [.84, .82]]) buti(x, LEAF, w * cx, h * cy, m * .02, P.leaf);
+  }
+  if (want('MD_KANTHA_PANEL')) {
+    // MD east wall (room face x 27.64) is free between the planter (z < 2.29) and the credenza (z > 5.74); the desk ends at x 27.23
+    wallPanel('MD_KANTHA_PANEL', 'Z12', 1.6, .9, 27.64 - .014, 1.62, 3.85, -Math.PI / 2, (x, w, h) => kanthaArt(x, w, h,
+      { ground: PAL.khadi, ripple: 'rgba(51,72,106,.55)', border: PAL.madder, disc: PAL.indigo, lotus: [PAL.thread, PAL.ochre, PAL.madder], leaf: { 1: PAL.indigo, 2: PAL.madder } }, 301), '#5a3d27');
+  }
+  if (want('BR_KANTHA_PANEL')) {
+    // boardroom south wall (room face z -0.25): free between the reception glass (x < 14.35) and the walnut door D20 (x > 15.71)
+    wallPanel('BR_KANTHA_PANEL', 'Z08', 1.0, 1.25, 15.03, 1.58, -.25 - .014, Math.PI, (x, w, h) => kanthaArt(x, w, h,
+      { ground: PAL.indigo, ripple: 'rgba(236,228,210,.45)', border: PAL.ochre, disc: PAL.indigoDeep, lotus: [PAL.thread, PAL.ochre, PAL.thread], leaf: { 1: PAL.ochre, 2: PAL.khadi } }, 311), PAL.oak);
+  }
+  if (want('BR_TABLE_LIGHT')) {
+    // walnut table F031: x 14.10-20.19, z -3.44..-2.25, top y 0.75; its centre line carries the trays, jug and phone (they occlude the pool)
+    const c = canvas(512, 128), x = c.getContext('2d'); x.fillStyle = '#000'; x.fillRect(0, 0, 512, 128);
+    const g2 = x.createRadialGradient(256, 64, 4, 256, 64, 250); g2.addColorStop(0, '#fff'); g2.addColorStop(.6, 'rgba(255,255,255,.5)'); g2.addColorStop(1, 'rgba(255,255,255,0)');
+    x.setTransform(1, 0, 0, .3, 0, 44.8); x.fillStyle = g2; x.fillRect(0, 0, 512, 427); x.setTransform(1, 0, 0, 1, 0, 0);
+    const pool = std('board_pool', { color: '#000000', emissive: '#ffc488', emissiveMap: texture(c, { clamp: true }), transparent: true, opacity: .34, depthWrite: false, blending: THREE.AdditiveBlending, roughness: 1, polygonOffset: true, polygonOffsetFactor: -2, polygonOffsetUnits: -2 });
+    mesh(group, new THREE.PlaneGeometry(5.9, 1.1), pool, 17.145, .7515, -2.845, -Math.PI / 2);
+  }
+  if (want('MD_RUG_SOFTS')) {
+    // sofa F068 faces east: back cushions' face x ~22.25, seat top 0.444 over z 3.35-4.75; armchair F070 faces west: back face x ~24.42
+    const S = px(512), c = canvas(S * 2, S), x = c.getContext('2d'), m = S / .45;
+    x.save(); x.beginPath(); x.rect(0, 0, S, S); x.clip(); cloth(x, 0, 0, S, S, PAL.ochre, { cell: 4, seed: 401 });
+    for (let i = 0; i < 7; i++) for (let k = 0; k < 2; k++) stitch(x, wave(14, S - 14, S * (.1 + i * .133) + k * S * .02, m * .008, m * .07, 60), { color: i % 2 ? PAL.indigo : PAL.thread, dash: m * .009, gap: m * .005, width: 3.2, seed: 402 + i * 2 + k }); x.restore();
+    x.save(); x.beginPath(); x.rect(S, 0, S, S); x.clip(); cloth(x, S, 0, S, S, PAL.indigo, { cell: 4, seed: 403 });
+    lotus(x, S * 1.5, S / 2, S * .3, [PAL.thread, PAL.ochre, PAL.thread], 404, m * .008); x.restore();
+    const atlas = texture(c, { clamp: true }), half = k => { const t = atlas.clone(); t.repeat.set(.5, 1); t.offset.set(k * .5, 0); t.needsUpdate = true; textures.push(t); return t; };
+    const soft = k => std('md_cushion_' + k, { map: half(k), normalMap: weaveNormal, normalScale: new THREE.Vector2(.4, .4), roughness: .95, emissive: '#ffffff', emissiveMap: half(k), emissiveIntensity: .06 });
+    const g = new THREE.Group(); g.name = 'MD_SOFTS'; group.add(g);
+    const pillow = (mat, w, h, t, px2, py, pz, yaw, tilt) => { const p = mesh(g, pillowGeometry(w, h, t), mat); p.position.set(px2, py, pz); p.rotation.set(tilt, yaw, 0, 'YXZ'); return p; };
+    pillow(soft(0), .42, .42, .15, 22.345, .65, 3.6, Math.PI / 2 + .25, -.2);
+    pillow(soft(1), .42, .42, .15, 22.345, .65, 4.5, Math.PI / 2 - .25, -.2);
+    pillow(soft(1), .42, .28, .13, 24.335, .63, 4.06, -Math.PI / 2, -.22);
+  }
+  // world-projected rug designs for approved rugs drawn by the shared base material (MD rug; Reception rug before its atlas)
+  const rugBoxes = [];
+  if (want('MD_RUG_SOFTS')) rugBoxes.push({ box: [22.10, 3.15, 24.54, 4.98], canvas: kanthaRug(2.44, 1.83, { ground: PAL.indigo, binding: PAL.indigoDeep, band: PAL.khadi, line: PAL.madder,
+    thread: PAL.indigo, wave: PAL.madder, accent: PAL.ochre, cross: 'rgba(236,228,210,.5)', disc: PAL.khadi, lotus: [PAL.indigo, PAL.madder, PAL.thread], leaf: { 1: PAL.khadi, 2: PAL.ochre } }, 501) });
+  if (rugCanvas) rugBoxes.push({ box: [8.28, 3.96, 11.02, 5.94], canvas: rugCanvas });
+  const rugMaps = rugBoxes.map(r => texture(r.canvas, { clamp: true }));
+  function prepareBase(root) {
+    if (!rugBoxes.length) return [];
+    const touched = [];
+    root.traverse(o => {
+      if (!o.isMesh) return;
+      for (const material of [o.material].flat()) {
+        if (material.name !== 'rug_wool' || material.userData.cyclesLightmap || material.userData.interiorRugs) continue;
+        material.userData.interiorRugs = true; touched.push(material.name);
+        const previous = material.onBeforeCompile;
+        material.onBeforeCompile = (shader, r) => {
+          previous?.call(material, shader, r);
+          rugMaps.forEach((t, i) => { shader.uniforms['interiorRug' + i] = { value: t }; shader.uniforms['interiorRugBox' + i] = { value: new THREE.Vector4(...rugBoxes[i].box) }; });
+          shader.vertexShader = 'varying vec3 vInteriorWorld;\n' + shader.vertexShader.replace('#include <project_vertex>', '#include <project_vertex>\nvInteriorWorld = (modelMatrix * vec4(transformed, 1.0)).xyz;');
+          shader.fragmentShader = 'varying vec3 vInteriorWorld;\n' + rugMaps.map((_, i) => `uniform sampler2D interiorRug${i}; uniform vec4 interiorRugBox${i};\n`).join('') +
+            shader.fragmentShader.replace('#include <map_fragment>', '#include <map_fragment>\n' + rugMaps.map((_, i) =>
+              `if (vInteriorWorld.x > interiorRugBox${i}.x && vInteriorWorld.x < interiorRugBox${i}.z && vInteriorWorld.z > interiorRugBox${i}.y && vInteriorWorld.z < interiorRugBox${i}.w)
+                 diffuseColor.rgb = texture2D(interiorRug${i}, vec2((vInteriorWorld.x - interiorRugBox${i}.x) / (interiorRugBox${i}.z - interiorRugBox${i}.x), 1.0 - (vInteriorWorld.z - interiorRugBox${i}.y) / (interiorRugBox${i}.w - interiorRugBox${i}.y))).rgb;`).join('\n'));
+        };
+        material.customProgramCacheKey = () => 'interior-rugs-v1-' + rugMaps.length;
+        material.needsUpdate = true;
+      }
+    });
+    return touched;
+  }
+  if (want('DS_DAYLIGHT')) {
+    // east windows W08 / W09 / W10 (glass x 33.81, sill y 0.76, head 2.13; roller blinds cover y 1.57-2.18 inside): an overcast
+    // sky just outside each, and a soft spill on the floor fading 2 m into the room. No sun patches: orientation is not measured.
+    const sky = (() => { const c = canvas(64, 256), x = c.getContext('2d'), g = x.createLinearGradient(0, 0, 0, 256);
+      g.addColorStop(0, '#f4f7fa'); g.addColorStop(.6, '#e4ebf0'); g.addColorStop(1, '#d6dcd8'); x.fillStyle = g; x.fillRect(0, 0, 64, 256); return texture(c, { clamp: true }); })();
+    const skyMat = new THREE.MeshBasicMaterial({ name: 'interior_daylight_sky', map: sky, color: new THREE.Color(1.5, 1.52, 1.56) }); materials.push(skyMat);   // reads as bright overcast after tone mapping
+    const spill = (() => { const c = canvas(256, 64), x = c.getContext('2d'); x.fillStyle = '#000'; x.fillRect(0, 0, 256, 64);
+      const g = x.createLinearGradient(256, 0, 0, 0); g.addColorStop(0, 'rgba(255,255,255,1)'); g.addColorStop(.4, 'rgba(255,255,255,.45)'); g.addColorStop(1, 'rgba(255,255,255,0)'); x.fillStyle = g; x.fillRect(0, 0, 256, 64);   // brightest at the wall
+      const e = x.createLinearGradient(0, 0, 0, 64); e.addColorStop(0, 'rgba(0,0,0,1)'); e.addColorStop(.2, 'rgba(0,0,0,0)'); e.addColorStop(.8, 'rgba(0,0,0,0)'); e.addColorStop(1, 'rgba(0,0,0,1)'); x.fillStyle = e; x.fillRect(0, 0, 256, 64);
+      return texture(c, { clamp: true }); })();
+    const spillMat = std('daylight_spill', { color: '#000000', emissive: '#e9eff5', emissiveMap: spill, transparent: true, opacity: .2, depthWrite: false, blending: THREE.AdditiveBlending, roughness: 1, polygonOffset: true, polygonOffsetFactor: -2, polygonOffsetUnits: -2 });
+    for (const [z0, z1] of [[-29.87, -26.97], [-24.79, -21.89], [-20.40, -17.50]]) {
+      const zc = (z0 + z1) / 2, w = z1 - z0;
+      mesh(group, new THREE.PlaneGeometry(w + .2, 1.6), skyMat, 34.06, 1.445, zc, 0, -Math.PI / 2);
+      mesh(group, new THREE.PlaneGeometry(2.2, w + .8), spillMat, 33.68 - 1.1, .013, zc, -Math.PI / 2);
+    }
+  }
   // the approved rug keeps its baked Cycles light; only the woven design (albedo) changes when the Reception atlas is live
   function prepareRoom(room) {
     if (room.id !== 'Z02' || !rugTexture) return;
@@ -429,7 +551,7 @@ export function buildInteriorDesign(THREE, { zones = null, anisotropy = 4, detai
     });
   }
   return {
-    group, overhead, items: items.map(i => ({ id: i.id, zone: i.zone, note: i.note })), prepareRoom,
+    group, overhead, items: items.map(i => ({ id: i.id, zone: i.zone, note: i.note })), prepareRoom, prepareBase,
     stats: { items: items.length, meshes: geometries.length, textures: textures.length, detail },
     textures: () => textures,
     dispose() { geometries.forEach(g => g.dispose()); materials.forEach(m => m.dispose()); textures.forEach(t => t.dispose()); },

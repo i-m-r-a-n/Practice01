@@ -24,8 +24,9 @@ export async function createOfficeDressing({ scene, renderer, metadata, grid, pr
   // Interior design layer (textiles, light pools, material displays); restyles the approved rug when its room atlas is live.
   const interior = buildInteriorDesign(THREE, { zones: activeZones, anisotropy: Math.min(8, renderer.capabilities.getMaxAnisotropy()), detail });
   scene.add(interior.group);
+  const interiorRugs = interior.prepareBase(scene);   // approved rugs drawn by the shared base material get their redesign by position
   let atlas, people = null, peoplePromise = null;
-  const status = { enabled: true, props: props.stats, identity: { ...identity.stats, items: identity.items }, interior: { ...interior.stats, items: interior.items }, screens: {}, peopleAccepted, errors: [], dynamicLighting: probes ? 'Room SH for actors; instance SH for additive props; static lightmaps exclude both.' : 'Existing scene hemisphere/directional lighting for added props and static people; not a calibrated dynamic-lighting bake.' };
+  const status = { enabled: true, props: props.stats, identity: { ...identity.stats, items: identity.items }, interior: { ...interior.stats, items: interior.items, rugMaterials: interiorRugs }, screens: {}, peopleAccepted, errors: [], dynamicLighting: probes ? 'Room SH for actors; instance SH for additive props; static lightmaps exclude both.' : 'Existing scene hemisphere/directional lighting for added props and static people; not a calibrated dynamic-lighting bake.' };
   const zones = metadata.rooms.map(r => r.zone), rows = new Float32Array(9 * zones.length * 4);
   const shTexture = new THREE.DataTexture(rows, 9, zones.length, THREE.RGBAFormat, THREE.FloatType);
   shTexture.minFilter = shTexture.magFilter = THREE.NearestFilter; shTexture.generateMipmaps = false;
