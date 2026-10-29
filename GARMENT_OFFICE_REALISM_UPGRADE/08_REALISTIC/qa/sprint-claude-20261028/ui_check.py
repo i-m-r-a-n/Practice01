@@ -81,6 +81,15 @@ with sync_playwright() as pw:
             target = out / f'{w}_interactive_reception.png'
             page.screenshot(path=str(target), timeout=90000)
             v['screenshot'] = target.name; v['sha256'] = hashlib.sha256(target.read_bytes()).hexdigest()
+            if w < 700:   # phones: the room card (with its concept note folded to two lines) must leave most of the room visible
+                card = page.evaluate("""() => { const i = document.getElementById('info'), n = document.getElementById('infoNote'), r = i.getBoundingClientRect();
+                  return {cardHeight: Math.round(r.height), viewportHeight: innerHeight, share: +(r.height / innerHeight).toFixed(3), noteShown: !n.classList.contains('hidden'),
+                    noteLines: Math.round(n.getBoundingClientRect().height / parseFloat(getComputedStyle(n).lineHeight))}; }""")
+                check(f'{w}: room card with its concept note uses at most 40% of the screen height', card['noteShown'] and card['share'] <= 0.40, card)
+                page.locator('#infoNote').click(); page.wait_for_timeout(250)
+                opened = page.evaluate("document.getElementById('infoNote').classList.contains('open')")
+                page.locator('#infoNote').click(); page.wait_for_timeout(250)
+                check(f'{w}: tapping the concept note opens and folds it', opened and not page.evaluate("document.getElementById('infoNote').classList.contains('open')"))
             x, y = (w // 2 + 200, h // 2 - 100) if w > 600 else (w // 2, h // 2 - 40)
             # the first drag in a room view takes yaw / pitch from the camera; prime it so 'before' is the real look state
             page.mouse.move(x, y); page.mouse.down(); page.mouse.move(x + 2, y, steps=1); page.mouse.up()

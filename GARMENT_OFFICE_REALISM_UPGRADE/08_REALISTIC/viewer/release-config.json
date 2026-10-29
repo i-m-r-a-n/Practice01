@@ -102,11 +102,14 @@
     "Z08": "Fabric review trays on the table for material discussions with buyers and visiting designers.",
     "Z12": "Current development samples and a swatch study on the credenza, beside the existing frame and books.",
     "Z07": "Monitors show generic placeholder screens, not real buyer data.",
-    "Z18": "Daylight from the east windows. True north, sun angles and glare at the desks are still to be measured on site."
+    "Z18": "Daylight from the east windows; pin-up and review surfaces suit workshops with visiting designers. True north, sun angles and glare at the desks are still to be measured on site."
   },
   "screenZones": [
     "Z07",
     "Z12",
     "Z18"
-  ]
+  ],
+  "cameraOverrides": {
+    "Z18": "CAM_14_Design_Studio_B"
+  }
 }

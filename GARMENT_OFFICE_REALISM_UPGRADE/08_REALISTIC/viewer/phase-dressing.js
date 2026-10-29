@@ -134,7 +134,7 @@ vec3 officeSH(vec3 n){
   function update(dt, options) { if (people?.stats().enabled) { people.update(frozenPeople ? 0 : dt, options); if (!frozenPeople) changed(); } }
   return { status, props, prepareRoom, prepareSourceScreen, applyProbe, prepareView, propDiagnostics, textures: () => [shTexture, atlas, ...identity.textures()].filter(Boolean), setPeopleEnabled, update,
     peopleStats: () => people?.stats() || { enabled: false, loaded: false, total: 0, visible: 0, illustrative: true, accepted: peopleAccepted },
-    peopleDiagnostics: () => people?.diagnostics() || [], blocksMovement: (x, z, radius) => people?.blocksMovement(x, z, radius) || false,
+    peopleDiagnostics: () => people?.diagnostics() || [], peopleContacts: stride => people?.contactDiagnostics(stride) || [], blocksMovement: (x, z, radius) => people?.blocksMovement(x, z, radius) || false,
     hiddenDuringProbe: () => people ? [people.group] : [],
     dispose() { people?.dispose(); props.group.traverse(o => o.geometry?.dispose()); props.dispose(); identity.dispose(); atlas?.dispose(); shTexture.dispose(); },
   };

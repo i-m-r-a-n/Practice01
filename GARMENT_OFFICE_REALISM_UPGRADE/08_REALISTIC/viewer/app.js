@@ -389,6 +389,12 @@ function sizeAO() { if (AO) { AO.composer.setPixelRatio(renderer.getPixelRatio()
 const cams = Object.fromEntries(meta.cameras.map((c) => [c.name, c]));
 const rooms = meta.rooms;
 const byZone = Object.fromEntries(rooms.map((r) => [r.zone, r]));
+// release-specific presentation camera (an existing approved camera), used by the room list and the tour stop
+for (const [zone, cam] of Object.entries(CFG.cameraOverrides || {})) {
+  if (!cams[cam] || !byZone[zone]) { S.errors.push(`camera override skipped: ${zone} -> ${cam}`); continue; }
+  byZone[zone].primary_camera = cam;
+  for (const st of meta.tour) if (st.zone === zone && cams[st.camera]?.type !== 'ORTHO') st.camera = cam;
+}
 let minX = Infinity, maxX = -Infinity, minZ = Infinity, maxZ = -Infinity;
 for (const r of rooms) for (const [x, z] of r.polygon_xz) { minX = Math.min(minX, x); maxX = Math.max(maxX, x); minZ = Math.min(minZ, z); maxZ = Math.max(maxZ, z); }
 const C = new THREE.Vector3((minX + maxX) / 2, 0, (minZ + maxZ) / 2);
@@ -618,7 +624,7 @@ function showInfo(r, kicker, hint = '') {
   $('infoTitle').textContent = r ? r.name : '';
   $('infoText').textContent = r ? r.description : '';
   const note = r && CFG.roomNotes?.[r.zone];                       // concept additions + evidence still pending (release-config.json)
-  $('infoNote').classList.toggle('hidden', !note);
+  $('infoNote').classList.toggle('hidden', !note); $('infoNote').classList.remove('open');
   $('infoNote').innerHTML = note ? '<b>Concept</b> \u00b7 ' + note.replace(/[<>&]/g, c => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;' }[c])) : '';
   $('infoHint').textContent = hint;
   updateInfoButtons();
@@ -926,6 +932,8 @@ function hidePhoto() {
   setTimeout(() => { if (!S.photo) $('photo').classList.add('hidden'); }, 700);
 }
 $('bPhoto').onclick = () => photoCam() && showPhoto(photoCam());
+// phones show a room's concept note folded to two lines; a tap opens or folds it
+for (const id of ['infoNote', 'tNote']) $(id).onclick = () => $(id).classList.toggle('open');
 $('photoClose').onclick = () => { hidePhoto(); if (S.tour) S.tour.photoSkip = true; };
 function preload(camName) { if (camName && cams[camName]) { const i = new Image(); i.src = RENDERS + camName + '.jpg'; } }
 
@@ -959,7 +967,7 @@ function goStop(i) {
   $('tKicker').textContent = S.room ? `${S.room.group}  ·  approx. ${S.room.area_sft.toLocaleString('en-US')} sft` : 'The whole floor';
   $('tTitle').textContent = st.title; $('tText').textContent = st.description;
   const tNote = st.zone && CFG.roomNotes?.[st.zone];
-  $('tNote').classList.toggle('hidden', !tNote); $('tNote').textContent = tNote ? 'Concept \u00b7 ' + tNote : '';
+  $('tNote').classList.toggle('hidden', !tNote); $('tNote').classList.remove('open'); $('tNote').textContent = tNote ? 'Concept \u00b7 ' + tNote : '';
   $('tPrev').disabled = T.i === 0; $('tNext').disabled = T.i === stops.length - 1;
   preload(st.camera); preload(st.also_camera);
   const p = stopPose(st);
@@ -1105,7 +1113,7 @@ if (USE_DRESSING) setTimeout(() => ensureDressing().then(() => { if (PEOPLE_ACCE
 }
 let meshes = 0; model.traverse((o) => { if (o.isMesh) meshes++; });
 S.counts = { quality, stage: STAGE, floorTopTriangles: floorTriangles.length, meshes, drawCallsMerged: drawCalls, rooms: rooms.length, cameras: meta.cameras.length, stops: stops.length, model: gltf.scene.getObjectByName('WEB_INTERIOR') ? 'web' : 'original', bakedLight: BAKED, shadows: SHADOWS, ambientOcclusion: !!AO };
-S.api = { frameCamera, gpuInfo, gpuMemoryEstimate: () => estimateGpuMemory({ scene, textures: [...(materialUpgrade?.textures() || []), ...(dressing?.textures() || [])], targets: [...(POST?.targets() || []), ...(probes?.targets() || []), ...(AO ? [AO.composer.renderTarget1, AO.composer.renderTarget2, ...Object.values(AO.gtao).filter(o => o?.isWebGLRenderTarget)] : [])] }), setPeopleEnabled, peopleStats: () => dressing?.peopleStats() || { enabled: false, loaded: false, total: 0, visible: 0 }, peopleDiagnostics: () => dressing?.peopleDiagnostics() || [], officePropDiagnostics: zone => dressing?.propDiagnostics(zone) || null, setBakeIsolation, lookState: () => ({ yaw: walk.yaw, pitch: walk.pitch, pointerLocked: document.pointerLockElement === el, eye: walk.eye }), previewLightmap: (id,url,format) => lightmaps.previewTexture(id,url,format), setWalkQAStart, stepWalkQA, walkState: () => walking.state(), loadRoomLightmap: (id) => loadVisualRoom(id), lighting: () => lightmaps.status, renderStats: () => ({ ...renderer.info.render, memory: { ...renderer.info.memory }, phase: STAGE, capturePostProcessing: !!POST, post: POST?.status || null }), setLightmapIntensity: (id, intensity) => { const room = lightmaps.rooms.get(id); if (room?.ownedMaterials) { room.ownedMaterials.forEach(m => { m.lightMapIntensity = intensity; }); needsRender = true; } }, setLightmapFlip: (id, flip) => { const texture = lightmaps.rooms.get(id)?.texture; if (texture) { texture.repeat.y = flip ? -1 : 1; texture.offset.y = flip ? 1 : 0; texture.updateMatrix(); needsRender = true; } }, selectRoom: (z) => selectRoom(byZone[z]), goOverview, startWalk, startTour, goStop, nextStop, togglePlay, stopTour, showPhoto, hidePhoto,
+S.api = { frameCamera, gpuInfo, gpuMemoryEstimate: () => estimateGpuMemory({ scene, textures: [...(materialUpgrade?.textures() || []), ...(dressing?.textures() || [])], targets: [...(POST?.targets() || []), ...(probes?.targets() || []), ...(AO ? [AO.composer.renderTarget1, AO.composer.renderTarget2, ...Object.values(AO.gtao).filter(o => o?.isWebGLRenderTarget)] : [])] }), setPeopleEnabled, peopleStats: () => dressing?.peopleStats() || { enabled: false, loaded: false, total: 0, visible: 0 }, peopleDiagnostics: () => dressing?.peopleDiagnostics() || [], peopleContacts: (stride = 2) => dressing?.peopleContacts(stride) || [], officePropDiagnostics: zone => dressing?.propDiagnostics(zone) || null, setBakeIsolation, lookState: () => ({ yaw: walk.yaw, pitch: walk.pitch, pointerLocked: document.pointerLockElement === el, eye: walk.eye }), previewLightmap: (id,url,format) => lightmaps.previewTexture(id,url,format), setWalkQAStart, stepWalkQA, walkState: () => walking.state(), loadRoomLightmap: (id) => loadVisualRoom(id), lighting: () => lightmaps.status, renderStats: () => ({ ...renderer.info.render, memory: { ...renderer.info.memory }, phase: STAGE, capturePostProcessing: !!POST, post: POST?.status || null }), setLightmapIntensity: (id, intensity) => { const room = lightmaps.rooms.get(id); if (room?.ownedMaterials) { room.ownedMaterials.forEach(m => { m.lightMapIntensity = intensity; }); needsRender = true; } }, setLightmapFlip: (id, flip) => { const texture = lightmaps.rooms.get(id)?.texture; if (texture) { texture.repeat.y = flip ? -1 : 1; texture.offset.y = flip ? 1 : 0; texture.updateMatrix(); needsRender = true; } }, selectRoom: (z) => selectRoom(byZone[z]), goOverview, startWalk, startTour, goStop, nextStop, togglePlay, stopTour, showPhoto, hidePhoto,
   blocked, state: () => ({ mode: S.mode, room: S.room && S.room.zone, atCam: S.atCam, flying: !!flight, flightT: flight ? +flight.t.toFixed(3) : null, fps: S.fps, overhead: overhead.visible,
     tour: S.tour && { i: S.tour.i, phase: S.tour.phase, playing: S.tour.playing, sub: S.tour.sub, done: !!S.tour.done }, photo: S.photo, aoFrames: S.aoFrames || 0, pos: camera.position.toArray().map((v) => +v.toFixed(3)) }) };
 
@@ -1179,7 +1187,9 @@ function setWalkQAStart(x, z) {
 }
 function stepWalkQA(input) {
   if (!USE_WALKING || !S.qaWalking) throw new Error('Start a stage=5 movement review first');
-  walk.yaw = input.yaw || 0; applyWalkLook();
+  walk.yaw = input.yaw || 0; if (Number.isFinite(input.pitch)) walk.pitch = input.pitch;
+  if (Number.isFinite(input.fov)) { camera.fov = input.fov; camera.updateProjectionMatrix(); }
+  applyWalkLook();
   const state = walking.step(input);
   afterWalking();
   return { ...state, blocked: blocked(camera.position.x, camera.position.z), room: roomAt(camera.position.x, camera.position.z)?.zone || null, startCount: S.qaStartCount };

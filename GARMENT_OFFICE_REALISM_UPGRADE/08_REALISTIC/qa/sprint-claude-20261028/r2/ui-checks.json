@@ -1,0 +1,637 @@
+{
+  "scope": "LOCAL Chromium (SwiftShader) via serve_preview.py; not live, Safari or MacBook proof",
+  "url": "http://127.0.0.1:8784/realistic/?room=Z02&welcome=0",
+  "views": [
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "errors": [],
+      "failed_requests": [],
+      "http_errors": [],
+      "model_ready_seconds_local": 2.499,
+      "settled_seconds_local": 34.126,
+      "state": {
+        "mode": "rooms",
+        "room": "Z02",
+        "atCam": "CAM_01_Reception_A",
+        "flying": false,
+        "flightT": null,
+        "fps": 0.9812579727209386,
+        "overhead": true,
+        "tour": null,
+        "photo": null,
+        "aoFrames": 0,
+        "pos": [
+          8.077,
+          1.524,
+          0.66
+        ]
+      },
+      "controls": {
+        "mTour": {
+          "x": 873.828125,
+          "y": 15,
+          "width": 121.515625,
+          "height": 34,
+          "right": 995.34375,
+          "bottom": 49,
+          "color": "rgb(27, 20, 8)",
+          "background": "rgb(194, 154, 85)",
+          "display": "block",
+          "visibility": "visible",
+          "pressed": null,
+          "text": "\u25b6 Guided tourTour"
+        },
+        "mOverview": {
+          "x": 1008.34375,
+          "y": 17,
+          "width": 86.34375,
+          "height": 30,
+          "right": 1094.6875,
+          "bottom": 47,
+          "color": "rgb(246, 243, 238)",
+          "background": "rgba(0, 0, 0, 0)",
+          "display": "block",
+          "visibility": "visible",
+          "pressed": null,
+          "text": "Overview"
+        },
+        "mRooms": {
+          "x": 1096.6875,
+          "y": 17,
+          "width": 70.65625,
+          "height": 30,
+          "right": 1167.34375,
+          "bottom": 47,
+          "color": "rgb(246, 243, 238)",
+          "background": "rgb(38, 103, 61)",
+          "display": "block",
+          "visibility": "visible",
+          "pressed": null,
+          "text": "Rooms"
+        },
+        "mWalk": {
+          "x": 1169.34375,
+          "y": 17,
+          "width": 56.890625,
+          "height": 30,
+          "right": 1226.234375,
+          "bottom": 47,
+          "color": "rgb(246, 243, 238)",
+          "background": "rgba(0, 0, 0, 0)",
+          "display": "block",
+          "visibility": "visible",
+          "pressed": null,
+          "text": "Walk"
+        },
+        "mPeople": {
+          "x": 1239.234375,
+          "y": 14,
+          "width": 90.765625,
+          "height": 36,
+          "right": 1330,
+          "bottom": 50,
+          "color": "rgb(246, 243, 238)",
+          "background": "rgb(38, 103, 61)",
+          "display": "flex",
+          "visibility": "visible",
+          "pressed": "true",
+          "text": "People"
+        },
+        "mHelp": {
+          "x": 1338,
+          "y": 13,
+          "width": 38,
+          "height": 38,
+          "right": 1376,
+          "bottom": 51,
+          "color": "rgb(246, 243, 238)",
+          "background": "rgba(20, 27, 23, 0.86)",
+          "display": "block",
+          "visibility": "visible",
+          "pressed": null,
+          "text": "?"
+        },
+        "mFull": {
+          "x": 1384,
+          "y": 13,
+          "width": 38,
+          "height": 38,
+          "right": 1422,
+          "bottom": 51,
+          "color": "rgb(246, 243, 238)",
+          "background": "rgba(20, 27, 23, 0.86)",
+          "display": "block",
+          "visibility": "visible",
+          "pressed": null,
+          "text": "\u26f6"
+        }
+      },
+      "screenshot": "1440_interactive_reception.png",
+      "sha256": "5fd5a025cbefabad48b0a7cb218bd3e793daeba2fa5e6cd8e471dfd098884abf",
+      "status": "checked"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "errors": [],
+      "failed_requests": [],
+      "http_errors": [],
+      "model_ready_seconds_local": 1.787,
+      "settled_seconds_local": 22.312,
+      "state": {
+        "mode": "rooms",
+        "room": "Z02",
+        "atCam": "CAM_01_Reception_A",
+        "flying": false,
+        "flightT": null,
+        "fps": 0.9876543209876544,
+        "overhead": true,
+        "tour": null,
+        "photo": null,
+        "aoFrames": 0,
+        "pos": [
+          8.077,
+          1.524,
+          0.66
+        ]
+      },
+      "controls": {
+        "mTour": {
+          "x": 10,
+          "y": 52,
+          "width": 60.78125,
+          "height": 36,
+          "right": 70.78125,
+          "bottom": 88,
+          "color": "rgb(27, 20, 8)",
+          "background": "rgb(194, 154, 85)",
+          "display": "block",
+          "visibility": "visible",
+          "pressed": null,
+          "text": "\u25b6 Guided tourTour"
+        },
+        "mOverview": {
+          "x": 81.78125,
+          "y": 55,
+          "width": 82.34375,
+          "height": 30,
+          "right": 164.125,
+          "bottom": 85,
+          "color": "rgb(246, 243, 238)",
+          "background": "rgba(0, 0, 0, 0)",
+          "display": "block",
+          "visibility": "visible",
+          "pressed": null,
+          "text": "Overview"
+        },
+        "mRooms": {
+          "x": 166.125,
+          "y": 55,
+          "width": 67.8125,
+          "height": 30,
+          "right": 233.9375,
+          "bottom": 85,
+          "color": "rgb(246, 243, 238)",
+          "background": "rgb(38, 103, 61)",
+          "display": "block",
+          "visibility": "visible",
+          "pressed": null,
+          "text": "Rooms"
+        },
+        "mWalk": {
+          "x": 235.9375,
+          "y": 55,
+          "width": 55.0625,
+          "height": 30,
+          "right": 291,
+          "bottom": 85,
+          "color": "rgb(246, 243, 238)",
+          "background": "rgba(0, 0, 0, 0)",
+          "display": "block",
+          "visibility": "visible",
+          "pressed": null,
+          "text": "Walk"
+        },
+        "mPeople": {
+          "x": 302,
+          "y": 52,
+          "width": 78,
+          "height": 36,
+          "right": 380,
+          "bottom": 88,
+          "color": "rgb(246, 243, 238)",
+          "background": "rgb(38, 103, 61)",
+          "display": "flex",
+          "visibility": "visible",
+          "pressed": "true",
+          "text": "People"
+        },
+        "mHelp": {
+          "x": 302,
+          "y": 8,
+          "width": 36,
+          "height": 36,
+          "right": 338,
+          "bottom": 44,
+          "color": "rgb(246, 243, 238)",
+          "background": "rgba(20, 27, 23, 0.86)",
+          "display": "block",
+          "visibility": "visible",
+          "pressed": null,
+          "text": "?"
+        },
+        "mFull": {
+          "x": 344,
+          "y": 8,
+          "width": 36,
+          "height": 36,
+          "right": 380,
+          "bottom": 44,
+          "color": "rgb(246, 243, 238)",
+          "background": "rgba(20, 27, 23, 0.86)",
+          "display": "block",
+          "visibility": "visible",
+          "pressed": null,
+          "text": "\u26f6"
+        }
+      },
+      "screenshot": "390_interactive_reception.png",
+      "sha256": "baad53efc7175a1b58ab1cb24792e0941643efce6dcdec47c8fd409ca9696add",
+      "status": "checked"
+    },
+    {
+      "viewport": [
+        360,
+        740
+      ],
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "http://127.0.0.1:8784/realistic/people/assets/panjabi.glb",
+          "failure": "net::ERR_ABORTED"
+        }
+      ],
+      "http_errors": [],
+      "model_ready_seconds_local": 1.695,
+      "settled_seconds_local": 21.938,
+      "state": {
+        "mode": "rooms",
+        "room": "Z02",
+        "atCam": "CAM_01_Reception_A",
+        "flying": false,
+        "flightT": null,
+        "fps": 0.9900990099009901,
+        "overhead": true,
+        "tour": null,
+        "photo": null,
+        "aoFrames": 0,
+        "pos": [
+          8.077,
+          1.524,
+          0.66
+        ]
+      },
+      "controls": {
+        "mTour": {
+          "x": 10,
+          "y": 52,
+          "width": 60.78125,
+          "height": 36,
+          "right": 70.78125,
+          "bottom": 88,
+          "color": "rgb(27, 20, 8)",
+          "background": "rgb(194, 154, 85)",
+          "display": "block",
+          "visibility": "visible",
+          "pressed": null,
+          "text": "\u25b6 Guided tourTour"
+        },
+        "mOverview": {
+          "x": 81.78125,
+          "y": 55,
+          "width": 72.34375,
+          "height": 30,
+          "right": 154.125,
+          "bottom": 85,
+          "color": "rgb(246, 243, 238)",
+          "background": "rgba(0, 0, 0, 0)",
+          "display": "block",
+          "visibility": "visible",
+          "pressed": null,
+          "text": "Overview"
+        },
+        "mRooms": {
+          "x": 156.125,
+          "y": 55,
+          "width": 57.8125,
+          "height": 30,
+          "right": 213.9375,
+          "bottom": 85,
+          "color": "rgb(246, 243, 238)",
+          "background": "rgb(38, 103, 61)",
+          "display": "block",
+          "visibility": "visible",
+          "pressed": null,
+          "text": "Rooms"
+        },
+        "mWalk": {
+          "x": 215.9375,
+          "y": 55,
+          "width": 45.0625,
+          "height": 30,
+          "right": 261,
+          "bottom": 85,
+          "color": "rgb(246, 243, 238)",
+          "background": "rgba(0, 0, 0, 0)",
+          "display": "block",
+          "visibility": "visible",
+          "pressed": null,
+          "text": "Walk"
+        },
+        "mPeople": {
+          "x": 272,
+          "y": 52,
+          "width": 78,
+          "height": 36,
+          "right": 350,
+          "bottom": 88,
+          "color": "rgb(246, 243, 238)",
+          "background": "rgb(38, 103, 61)",
+          "display": "flex",
+          "visibility": "visible",
+          "pressed": "true",
+          "text": "People"
+        },
+        "mHelp": {
+          "x": 272,
+          "y": 8,
+          "width": 36,
+          "height": 36,
+          "right": 308,
+          "bottom": 44,
+          "color": "rgb(246, 243, 238)",
+          "background": "rgba(20, 27, 23, 0.86)",
+          "display": "block",
+          "visibility": "visible",
+          "pressed": null,
+          "text": "?"
+        },
+        "mFull": {
+          "x": 314,
+          "y": 8,
+          "width": 36,
+          "height": 36,
+          "right": 350,
+          "bottom": 44,
+          "color": "rgb(246, 243, 238)",
+          "background": "rgba(20, 27, 23, 0.86)",
+          "display": "block",
+          "visibility": "visible",
+          "pressed": null,
+          "text": "\u26f6"
+        }
+      },
+      "screenshot": "360_interactive_reception.png",
+      "sha256": "7351845723c5cfe00ba0757dc7797028c7ae2531546233a8a8118cbc238b1553",
+      "status": "checked"
+    }
+  ],
+  "checks": [
+    {
+      "name": "1440: every toolbar control fully inside the viewport and at least 30 px",
+      "passed": true,
+      "value": {
+        "mTour": true,
+        "mOverview": true,
+        "mRooms": true,
+        "mWalk": true,
+        "mPeople": true,
+        "mHelp": true,
+        "mFull": true
+      }
+    },
+    {
+      "name": "1440: toolbar controls do not overlap",
+      "passed": true,
+      "value": []
+    },
+    {
+      "name": "1440: People button text contrast >= 4.5",
+      "passed": true,
+      "value": 6.14
+    },
+    {
+      "name": "1440: concept + illustrative-people notice visible (>= 11 px)",
+      "passed": true,
+      "value": {
+        "text": "Concept proposal \u00b7 final dimensions and technical details subject to site verification. People shown are illustrative, not real staff.",
+        "fontSize": 12,
+        "visible": true,
+        "peopleNoteHidden": false
+      }
+    },
+    {
+      "name": "1440: drag right/down moves the room with the pointer (yaw and pitch increase)",
+      "passed": true,
+      "value": {
+        "yaw": 0.20999999999999974,
+        "pitch": 0.14
+      }
+    },
+    {
+      "name": "1440: People off",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "1440: People on",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "1440: Help opens",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "1440: no page/console errors",
+      "passed": true,
+      "value": []
+    },
+    {
+      "name": "1440: no HTTP errors",
+      "passed": true,
+      "value": []
+    },
+    {
+      "name": "390: every toolbar control fully inside the viewport and at least 30 px",
+      "passed": true,
+      "value": {
+        "mTour": true,
+        "mOverview": true,
+        "mRooms": true,
+        "mWalk": true,
+        "mPeople": true,
+        "mHelp": true,
+        "mFull": true
+      }
+    },
+    {
+      "name": "390: toolbar controls do not overlap",
+      "passed": true,
+      "value": []
+    },
+    {
+      "name": "390: People button text contrast >= 4.5",
+      "passed": true,
+      "value": 6.14
+    },
+    {
+      "name": "390: concept + illustrative-people notice visible (>= 11 px)",
+      "passed": true,
+      "value": {
+        "text": "Concept proposal \u00b7 final dimensions and technical details subject to site verification. People shown are illustrative, not real staff.",
+        "fontSize": 11,
+        "visible": true,
+        "peopleNoteHidden": false
+      }
+    },
+    {
+      "name": "390: room card with its concept note uses at most 40% of the screen height",
+      "passed": true,
+      "value": {
+        "cardHeight": 283,
+        "viewportHeight": 844,
+        "share": 0.335,
+        "noteShown": true,
+        "noteLines": 3
+      }
+    },
+    {
+      "name": "390: tapping the concept note opens and folds it",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "390: drag right/down moves the room with the pointer (yaw and pitch increase)",
+      "passed": true,
+      "value": {
+        "yaw": 0.20999999999999974,
+        "pitch": 0.14
+      }
+    },
+    {
+      "name": "390: People off",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "390: People on",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "390: Help opens",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "390: no page/console errors",
+      "passed": true,
+      "value": []
+    },
+    {
+      "name": "390: no HTTP errors",
+      "passed": true,
+      "value": []
+    },
+    {
+      "name": "360: every toolbar control fully inside the viewport and at least 30 px",
+      "passed": true,
+      "value": {
+        "mTour": true,
+        "mOverview": true,
+        "mRooms": true,
+        "mWalk": true,
+        "mPeople": true,
+        "mHelp": true,
+        "mFull": true
+      }
+    },
+    {
+      "name": "360: toolbar controls do not overlap",
+      "passed": true,
+      "value": []
+    },
+    {
+      "name": "360: People button text contrast >= 4.5",
+      "passed": true,
+      "value": 6.14
+    },
+    {
+      "name": "360: concept + illustrative-people notice visible (>= 11 px)",
+      "passed": true,
+      "value": {
+        "text": "Concept proposal \u00b7 final dimensions and technical details subject to site verification. People shown are illustrative, not real staff.",
+        "fontSize": 11,
+        "visible": true,
+        "peopleNoteHidden": false
+      }
+    },
+    {
+      "name": "360: room card with its concept note uses at most 40% of the screen height",
+      "passed": true,
+      "value": {
+        "cardHeight": 296,
+        "viewportHeight": 740,
+        "share": 0.4,
+        "noteShown": true,
+        "noteLines": 3
+      }
+    },
+    {
+      "name": "360: tapping the concept note opens and folds it",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "360: drag right/down moves the room with the pointer (yaw and pitch increase)",
+      "passed": true,
+      "value": {
+        "yaw": 0.20999999999999974,
+        "pitch": 0.14
+      }
+    },
+    {
+      "name": "360: People off",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "360: People on",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "360: Help opens",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "360: no page/console errors",
+      "passed": true,
+      "value": []
+    },
+    {
+      "name": "360: no HTTP errors",
+      "passed": true,
+      "value": []
+    }
+  ],
+  "passed": true
+}

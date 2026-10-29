@@ -1,7 +1,7 @@
 """Verify published bytes and unchanged original tour after each room deployment."""
 import argparse,concurrent.futures,hashlib,json,urllib.request,time
 from pathlib import Path
-p=argparse.ArgumentParser();p.add_argument('room');p.add_argument('commit');a=p.parse_args()
+p=argparse.ArgumentParser();p.add_argument('room');p.add_argument('commit');p.add_argument('--report',help='report file name in this folder (default public-<room>-verification.json)');a=p.parse_args()
 here=Path(__file__).resolve().parent;real=here.parent;repo=here.parents[2]
 site='https://stage2-office-virtual-tour.imranahmedjh611.workers.dev'
 health=[];deadline=time.monotonic()+50
@@ -34,6 +34,6 @@ def check(item):
  except Exception as e:return {'url':url,'passed':False,'error':str(e)}
 with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool:results=list(pool.map(check,items))
 report={'room':a.room,'commit':a.commit,'passed':all(r['passed'] for r in results),'deployment_health':health,'checks':results,'limits':'HTTPS/source bytes verified; browser WebGL capture blocked by environment CA trust. Native MacBook performance untested.'}
-(here/('public-'+a.room.lower()+'-verification.json')).write_text(json.dumps(report,indent=2)+'\n')
+(here/(a.report or 'public-'+a.room.lower()+'-verification.json')).write_text(json.dumps(report,indent=2)+'\n')
 print(json.dumps({'room':a.room,'passed':report['passed'],'checks':len(results),'failures':[r for r in results if not r['passed']]}))
 raise SystemExit(0 if report['passed'] else 1)

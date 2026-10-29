@@ -21,6 +21,9 @@ export async function createPeopleLayer({THREE:T,loader,scene,metadata,walkGrid,
  function blockedGrid(x,z){let c=Math.floor((x-OX)/R),r=Math.floor((z-OZ)/R);if(c<0||r<0||c>=W||r>=H)return true;const i=r*W+c;return !!(bits[i>>3]&(1<<(i&7)))||noPeople.some(p=>inPoly(x,z,p))}
  function capsuleClear(x,z,a){if(extraBlocked&&extraBlocked(x,z,a.def.radius))return false;const grow=Math.max(0,a.def.radius-(walkGrid.walker_radius_m||.15));for(const [dx,dz] of [[0,0],[grow,0],[-grow,0],[0,grow],[0,-grow]])if(blockedGrid(x+dx,z+dz))return false;return true}
  const skinTint=c=>new T.Color(c);
+ const contactTexture=(()=>{const c=document.createElement('canvas');c.width=c.height=128;const x=c.getContext('2d'),g=x.createRadialGradient(64,64,4,64,64,62);g.addColorStop(0,'rgba(0,0,0,.85)');g.addColorStop(.55,'rgba(0,0,0,.4)');g.addColorStop(1,'rgba(0,0,0,0)');x.fillStyle=g;x.fillRect(0,0,128,128);const t=new T.CanvasTexture(c);t.colorSpace=T.SRGBColorSpace;t.name='Contact_shadow_blob';return t;})();
+ const contactGeometry=new T.PlaneGeometry(1,1).rotateX(-Math.PI/2);
+ const contactMaterial=o=>{const m=new T.MeshBasicMaterial({map:contactTexture,transparent:true,opacity:o,depthWrite:false,polygonOffset:true,polygonOffsetFactor:-2,polygonOffsetUnits:-2,toneMapped:false});m.name='Contact_shadow';colors.push(m);return m;};
  async function load(){
   if(loaded)return;if(loading)return loading;
   loading=(async()=>{
@@ -71,6 +74,17 @@ export async function createPeopleLayer({THREE:T,loader,scene,metadata,walkGrid,
     }
     if(def.owner){group.updateMatrixWorld(true);const owner=group.getObjectByName(def.owner+'_placement');if(owner)owner.attach(holder);}
    }
+   // Soft static contact shadows (the viewer has no real-time shadow maps here): one under the feet, measured from the
+   // posed foot bones, and a fainter one under a seated person's chair. Drawn 1 mm above the reception rug (y 0.02).
+   group.updateMatrixWorld(true);
+   const feetMat=contactMaterial(.5),seatMat=contactMaterial(.26);
+   for(const a of actors){
+    const feet=[a.bones.foot_L,a.bones.foot_R].filter(Boolean).map(b=>b.getWorldPosition(new T.Vector3())),pos=a.pivot.position;
+    const blob=(cx,cz,sx,sz,mat)=>{const m=new T.Mesh(contactGeometry,mat);m.name='Contact_shadow';m.position.set(cx,.021,cz);m.rotation.y=a.def.yaw||0;m.scale.set(sx,1,sz);m.renderOrder=-1;m.userData.contactShadow=true;a.pivot.attach(m);};
+    if(feet.length){const cx=feet.reduce((t,v)=>t+v.x,0)/feet.length,cz=feet.reduce((t,v)=>t+v.z,0)/feet.length,span=feet.length>1?Math.hypot(feet[0].x-feet[1].x,feet[0].z-feet[1].z):.2;blob(cx,cz,Math.max(.36,span+.26),.34,feetMat);}
+    else blob(pos.x,pos.z,.5,.4,feetMat);
+    if(a.def.seated)blob(pos.x,pos.z,.62,.62,seatMat);
+   }
    loaded=true;group.visible=enabled;
   })();return loading;
  }
@@ -120,7 +134,12 @@ export async function createPeopleLayer({THREE:T,loader,scene,metadata,walkGrid,
  async function setEnabled(value,playerPosition){enabled=!!value;group.visible=enabled;if(enabled){await load();if(playerPosition)for(const a of actors)a.hiddenForVisitor=overlapsActor(a,playerPosition.x,playerPosition.z,.18);}return stats()}
  function blocksMovement(x,z,radius=.15){return enabled&&loaded&&occupied(x,z,radius,null)}
  function diagnostics(){return actors.map(a=>({id:a.def.id,zone:a.def.zone,task:a.def.task,radius:a.def.radius,seated:a.def.seated,pathIndex:a.pathIndex,pathDir:a.pathDir,moving:a.moving,hiddenForVisitor:a.hiddenForVisitor,wait:a.wait,walkDistance:a.walkDistance,position:a.pivot.position.toArray(),visible:a.pivot.visible,low:a.lod1.some(o=>o.visible),parts:[...a.lod0,...a.lod1].filter(o=>o.visible).map(o=>({name:o.name,lod:o.userData.peopleLOD,materials:(Array.isArray(o.material)?o.material:[o.material]).map(m=>m.name),skinned:!!o.isSkinnedMesh,vertices:o.geometry.attributes.position.count})),phone:!!a.root.getObjectByName('Generic_phone'),pose:a.def.pose,bones:Object.fromEntries(['root','upperleg01_L','lowerleg01_L','foot_L','head','wrist_R'].map(n=>[n,a.bones[n]?.getWorldPosition(new T.Vector3()).toArray()]))}));}
- function stats(){return{enabled,loaded,frozen,total:manifest.count,visible:actors.filter(a=>a.pivot.visible).length,walkers:manifest.actors.filter(a=>a.path).length,illustrative:true,forbiddenZoneViolations:actors.filter(a=>noPeople.some(p=>inPoly(a.pivot.position.x,a.pivot.position.z,p))).length,status:manifest.status,nativeMacPerformanceTested:false}}
- function dispose(){disposed=true;scene.remove(group);colors.forEach(m=>m.dispose());for(const root of originals)root.traverse(o=>{if(o.geometry)o.geometry.dispose()});actors=[]}
- return{update,setEnabled,blocksMovement,stats,diagnostics,dispose,manifest,group,ready:()=>loading||Promise.resolve()};
+ // Geometric contact review on the actual skinned vertices (world space): lowest point vs the floor (y = 0),
+ // vertices below the floor, and for seated actors the lowest point near the pelvis vs the documented seat top.
+ function contactDiagnostics(stride=2){const v=new T.Vector3(),root=new T.Vector3();group.updateMatrixWorld(true);return actors.map(a=>{let minY=Infinity,below=0,n=0,seatMin=Infinity;a.bones.root?.getWorldPosition(root);
+  for(const o of a.lod0){if(o.userData.peopleAllowed===false||!o.geometry?.attributes?.position)continue;const c=o.geometry.attributes.position.count;for(let i=0;i<c;i+=stride){o.getVertexPosition(i,v);v.applyMatrix4(o.matrixWorld);n++;if(v.y<minY)minY=v.y;if(v.y<-.01)below++;if(a.def.seated&&Math.hypot(v.x-root.x,v.z-root.z)<.2&&v.y>.25&&v.y<.75&&v.y<seatMin)seatMin=v.y;}}
+  const seatTop=a.def.support?.seatTopY;return{id:a.def.id,zone:a.def.zone,seated:!!a.def.seated,pose:a.def.pose,samples:n,minY:+minY.toFixed(4),verticesBelowFloor:below,seatTopY:seatTop??null,pelvisLowY:Number.isFinite(seatMin)?+seatMin.toFixed(4):null,seatGap:Number.isFinite(seatMin)&&seatTop!=null?+(seatMin-seatTop).toFixed(4):null};});}
+ function stats(){return{enabled,loaded,frozen,total:manifest.count,visible:actors.filter(a=>a.pivot.visible).length,walkers:manifest.actors.filter(a=>a.path).length,illustrative:true,forbiddenZoneViolations:actors.filter(a=>noPeople.some(p=>inPoly(a.pivot.position.x,a.pivot.position.z,p))).length,status:manifest.status,contactShadows:actors.reduce((n,a)=>n+a.pivot.children.filter(c=>c.userData.contactShadow).length,0),nativeMacPerformanceTested:false}}
+ function dispose(){disposed=true;scene.remove(group);colors.forEach(m=>m.dispose());contactGeometry.dispose();contactTexture.dispose();for(const root of originals)root.traverse(o=>{if(o.geometry)o.geometry.dispose()});actors=[]}
+ return{update,setEnabled,blocksMovement,stats,diagnostics,contactDiagnostics,dispose,manifest,group,ready:()=>loading||Promise.resolve()};
 }

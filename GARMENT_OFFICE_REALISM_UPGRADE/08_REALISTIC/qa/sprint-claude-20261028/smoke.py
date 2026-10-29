@@ -17,7 +17,7 @@ a = p.parse_args()
 out = Path(a.out); out.mkdir(parents=True, exist_ok=True)
 w, h = map(int, a.size.split('x')); touch = w < 700
 R = {'scope': 'LOCAL Chromium (SwiftShader) via serve_preview.py; real UI events; not live, Safari or MacBook proof', 'url': a.url, 'viewport': [w, h], 'checks': [], 'errors': [], 'failed_requests': [], 'http_errors': []}
-ROOMS = {'Z02': 'CAM_01_Reception_A', 'Z30': 'CAM_04_Experience_Centre_A', 'Z08': 'CAM_09_Boardroom_A', 'Z12': 'CAM_07_MD_Office_A', 'Z07': 'CAM_34_Merchandising_Sample_Hub', 'Z18': 'CAM_13_Design_Studio_A'}
+ROOMS = {'Z02': 'CAM_01_Reception_A', 'Z30': 'CAM_04_Experience_Centre_A', 'Z08': 'CAM_09_Boardroom_A', 'Z12': 'CAM_07_MD_Office_A', 'Z07': 'CAM_34_Merchandising_Sample_Hub', 'Z18': 'CAM_14_Design_Studio_B'}
 
 
 def check(name, ok, detail=None):
