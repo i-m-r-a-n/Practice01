@@ -8,14 +8,16 @@ Resume from this file if the session is interrupted. Newest state first.
   - Based on GPT's `chatgpt/realistic-sprint-20261028` @ `3ed3b41`, which carries GPT's QA notes and the direct-drag sign fix.
   - Nothing of GPT's was changed or removed.
 - **Latest release (interior phase):**
-  - **Source:** `3126dbf2b3a0d5a8fd2d4d2c042024fe8c487b5a`.
-  - **Worker:** `deploy/worker-realistic.js` from the commit after it; 7621 bytes, SHA-256 `356d21dc…1af316`, 41 / 41 worker tests pass.
-  - **Status:** ready, not yet deployed (live still `bcb92b0` at 07:13 UTC). Steps, guard and rollback: `deploy/DEPLOY_RECEPTION_20261029.md`.
+  - **Source:** `d5939f9ef3928340908459efc440259df0d34b6d`.
+  - **Worker:** `deploy/worker-realistic.js` from the commit after it; 7621 bytes, SHA-256 `f6e4730f…ffff922`, 41 / 41 worker tests pass.
+  - **Status:** ready, not yet deployed (live still `bcb92b0` at 07:38 UTC). Steps, guard and rollback: `deploy/DEPLOY_RECEPTION_20261029.md`.
   - **Contains:** the sprint release below, plus the interior phase (`qa/interior-20261029/`):
     - Reception, built at `0cda894`
     - Experience Centre, built at `de424c0`
     - MD Office, Boardroom, Merchandising and Design Studio, built at `8643898`
     - Design Studio second pass (fabric mood board, sample-review table), built at `3126dbf`
+    - Merchandising second pass (fit toile and knitted body on the dress forms, approval board as pinned cloth), built at `92a5965`
+    - Boardroom second pass (khadi desk pads), built at `d5939f9`
   - **Earlier workers:** never deployed; each is superseded by the next.
 - **Sprint release (superseded, never deployed):** source `e98ecb5`, worker `6edce19`, `deploy/DEPLOY_SPRINT_20261029.md`.
 - **Checks passed on the release build** (`r2/`, local Chromium, software WebGL):
@@ -90,10 +92,10 @@ Everything is additive and self-made. Nothing stands on the floor, so walk paths
 
 ## Release steps
 
-Steps 1–4 are done for H = `3126dbf` (the latest release; they were also done for the earlier, superseded commits). **Exact next action:**
+Steps 1–4 are done for H = `d5939f9` (the latest release; they were also done for the earlier, superseded commits). **Exact next action:**
 
 - **Step 5 (the owner's desktop session).** The prompt is in the chat. It repeats the guard, the hash checks and the rollback.
-- **Step 6 (this session, after the deploy).** Run the public verification with `Design_Studio 3126dbf2b3a0d5a8fd2d4d2c042024fe8c487b5a`. If it fails and the owner has not already rolled back, ask for the rollback.
+- **Step 6 (this session, after the deploy).** Run the public verification with `Design_Studio d5939f9ef3928340908459efc440259df0d34b6d`. If it fails and the owner has not already rolled back, ask for the rollback.
 - **Meanwhile:** continue the interior design, room by room, on this branch.
 
 1. Commit and push the source + dist. That gives source commit H.
