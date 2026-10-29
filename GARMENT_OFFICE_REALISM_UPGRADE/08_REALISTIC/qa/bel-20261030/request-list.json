@@ -1,0 +1,50 @@
+{
+  "scope": "LOCAL Chromium via serve_preview.py; request paths checked against the release commit tree",
+  "commit": "60351b0c712c581d5f90a70d99f64e54f320a65b",
+  "requests": 8,
+  "missing": [],
+  "seconds": 77.6,
+  "rows": [
+    {
+      "request": "/bengal-earth-lab/",
+      "repo_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/viewer/dist-bel/index.html",
+      "in_commit": true
+    },
+    {
+      "request": "/bengal-earth-lab/app.js",
+      "repo_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/viewer/dist-bel/app.js",
+      "in_commit": true
+    },
+    {
+      "request": "/bengal-earth-lab/lighting-v2/manifest-hybrid.json",
+      "repo_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/lighting-v2/manifest-hybrid.json",
+      "in_commit": true
+    },
+    {
+      "request": "/bengal-earth-lab/model_web_baked.glb",
+      "repo_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/revised-model/Optimized_Office_Interior_web_baked.glb",
+      "in_commit": true
+    },
+    {
+      "request": "/bengal-earth-lab/props/office-props-manifest.json",
+      "repo_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/props/office-props-manifest.json",
+      "in_commit": true
+    },
+    {
+      "request": "/bengal-earth-lab/textures/codecs/three_r169/examples/jsm/libs/basis/basis_transcoder.js",
+      "repo_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/textures/codecs/three_r169/examples/jsm/libs/basis/basis_transcoder.js",
+      "in_commit": true
+    },
+    {
+      "request": "/bengal-earth-lab/textures/codecs/three_r169/examples/jsm/libs/basis/basis_transcoder.wasm",
+      "repo_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/textures/codecs/three_r169/examples/jsm/libs/basis/basis_transcoder.wasm",
+      "in_commit": true
+    },
+    {
+      "request": "/bengal-earth-lab/textures/pbr2k/ktx2/Terrazzo019M/basecolor.ktx2",
+      "repo_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/textures/pbr2k/ktx2/Terrazzo019M/basecolor.ktx2",
+      "in_commit": true
+    }
+  ],
+  "passed": true
+}
