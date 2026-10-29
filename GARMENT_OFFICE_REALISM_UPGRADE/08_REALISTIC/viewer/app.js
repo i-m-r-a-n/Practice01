@@ -303,7 +303,7 @@ async function loadVisualRoom(id) {
 }
 async function ensureDressing() {
   if (!USE_DRESSING) return null;
-  if (!dressingPromise) dressingPromise = createOfficeDressing({ scene, renderer, metadata: meta, grid, probes, staticBlocked, changed: () => { needsRender = true; }, peopleAccepted: PEOPLE_ACCEPTED, activeZones: SIMPLE_RELEASE ? (CFG.releaseZones || ['Z02']) : null, frozenPeople: SIMPLE_RELEASE, peopleManifest: CFG.peopleManifest, excludedProps: CFG.excludedProps || [], detail: quality === 'low' ? .5 : 1 }).then(value => { dressing = value; S.dressing = value.status; if (value.interiorOverhead) overhead.add(value.interiorOverhead); return value; });
+  if (!dressingPromise) dressingPromise = createOfficeDressing({ scene, renderer, metadata: meta, grid, probes, staticBlocked, changed: () => { needsRender = true; }, peopleAccepted: PEOPLE_ACCEPTED, activeZones: SIMPLE_RELEASE ? (CFG.releaseZones || ['Z02']) : null, interiorZones: SIMPLE_RELEASE ? (CFG.interiorZones || []) : [], frozenPeople: SIMPLE_RELEASE, peopleManifest: CFG.peopleManifest, excludedProps: CFG.excludedProps || [], detail: quality === 'low' ? .5 : 1 }).then(value => { dressing = value; S.dressing = value.status; if (value.interiorOverhead) overhead.add(value.interiorOverhead); return value; });
   return dressingPromise;
 }
 async function setPeopleEnabled(enabled) {

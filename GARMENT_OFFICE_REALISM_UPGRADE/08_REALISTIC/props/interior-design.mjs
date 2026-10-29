@@ -23,6 +23,9 @@ export const INTERIOR_ITEMS = [
   { id: 'BR_KANTHA_PANEL', zone: 'Z08', note: 'A tall kantha-inspired panel on the free wall between the reception glass and the executive-suite door, under a picture light (design reference).' },
   { id: 'BR_DESK_PADS', zone: 'Z08', note: 'Khadi desk pads with a kantha running-stitch edge and a stitched leaf at the eight places with a notebook and a glass, clear of the cable channel.' },
   { id: 'BR_TABLE_LIGHT', zone: 'Z08', note: 'Warm pool of the existing linear pendants along the boardroom table.' },
+  { id: 'LB_BRAND_LIGHT', zone: 'Z01', note: 'Warm scallops of the three existing track spots on the oak slats of the brand wall, which falls off softly towards the floor; the white logo panel and the logos keep their look.' },
+  { id: 'LB_WOVEN_PIER', zone: 'Z01', note: 'One narrow handloom hanging (khadi with sparse Jamdani-style butis and indigo selvedge stripes) on the blank pier between the two windows, on the way to the Reception door. Design reference; maker to be identified.' },
+  { id: 'LB_WOOD_WARMTH', zone: 'Z01', note: 'The walnut of the check-in desk and the oak of the two north doors read warmer (lobby only, same textures).' },
   { id: 'MR_FIT_FORMS', zone: 'Z07', note: 'The two dress forms dressed for fit development: a calico toile with marker-traced style lines and pinned princess seams, and a knitted body sample in indigo jersey with a cable panel (illustrative, not an actual collection).' },
   { id: 'MR_APPROVAL_BOARD', zone: 'Z07', note: 'The approved approval board with the same swatch layout and colours, shown as pinned cloth with garment flats on its sheets.' },
   { id: 'DS_DAYLIGHT', zone: 'Z18', note: 'Overcast daylight in the three existing east windows and its soft spill on the floor; true north, sun angles and glare are still to be measured on site.' },
@@ -524,9 +527,46 @@ export function buildInteriorDesign(THREE, { zones = null, anisotropy = 4, detai
     thread: PAL.indigo, wave: PAL.madder, accent: PAL.ochre, cross: 'rgba(236,228,210,.5)', disc: PAL.khadi, lotus: [PAL.indigo, PAL.madder, PAL.thread], leaf: { 1: PAL.khadi, 2: PAL.ochre } }, 501) });
   if (rugCanvas) rugBoxes.push({ box: [8.28, 3.96, 11.02, 5.94], canvas: rugCanvas });
   const rugMaps = rugBoxes.map(r => texture(r.canvas, { clamp: true }));
-  function prepareBase(root) {
-    if (!rugBoxes.length) return [];
+  // Entrance lobby (Z01): light and wood of the arrival view, applied by position to shared model materials, so the same
+  // materials elsewhere keep their look. Each patch: material name pattern, world box [x0, y0, z0, x1, y1, z1], GLSL using p.
+  const placePatches = [];
+  if (want('LB_BRAND_LIGHT')) placePatches.push({ id: 'LB_BRAND_LIGHT', names: /^oak_slat(_baked)?$/, box: [4.25, -.01, -.03, 7.55, 2.76, .09],
+    // track spots LT003-LT005 (x 4.83 / 5.89 / 6.96, y 2.63-2.81, z 0.86-1.03) light the slat faces (z 0.07) in soft scallops;
+    // the gaps (plinth) stay dark, so the relief reads; the wall falls off a little towards the floor
+    glsl: `float lobbyLight = 0.0;
+      for (int i = 0; i < 3; i++) { float sx = i == 0 ? 4.83 : (i == 1 ? 5.89 : 6.96);
+        float X = (p.x - sx) / .62, Y = (2.66 - p.y) / 2.3, top = .03 + .28 * X * X;
+        float d = (Y - .24) / .44;   // squared by hand: pow() of a negative base is undefined in GLSL
+        lobbyLight += clamp((Y - top) / .07, 0.0, 1.0) * exp(-d * d) * pow(max(0.0, 1.0 - X * X), 1.6); }
+      diffuseColor.rgb *= (1.0 + vec3(.78, .58, .36) * min(lobbyLight, 1.2)) * mix(.84, 1.0, smoothstep(.15, 1.5, p.y));` });
+  if (want('LB_WOOD_WARMTH')) for (const [names, box, tint] of [[/^walnut(_baked)?$/, [5.15, .55, 2.68, 6.5, .82, 3.42], '1.22, 1.06, .86'], [/^oak(_baked)?$/, [1.5, -.01, -.32, 4.05, 2.2, .06], '1.12, 1.03, .9']])
+    placePatches.push({ id: 'LB_WOOD_WARMTH', names, box, glsl: `diffuseColor.rgb *= vec3(${tint});` });   // check-in desk top; north doors D02 / D17
+  function patchPlaces(root) {
     const touched = [];
+    root.traverse(o => {
+      if (!o.isMesh) return;
+      for (const material of [o.material].flat()) {
+        const mine = placePatches.filter(q => q.names.test(material.userData.sourceMaterial || material.name));
+        if (!mine.length || material.userData.interiorPlaces || material.userData.cyclesLightmap) continue;
+        material.userData.interiorPlaces = true; touched.push(material.name);
+        const previous = material.onBeforeCompile, previousKey = material.customProgramCacheKey?.bind(material);
+        material.onBeforeCompile = (shader, r) => {
+          previous?.call(material, shader, r);
+          shader.vertexShader = 'varying vec3 vPlaceWorld;\n' + shader.vertexShader.replace('#include <project_vertex>', '#include <project_vertex>\nvPlaceWorld = (modelMatrix * vec4(transformed, 1.0)).xyz;');
+          shader.fragmentShader = 'varying vec3 vPlaceWorld;\n' + shader.fragmentShader.replace('#include <color_fragment>', '#include <color_fragment>\n{ vec3 p = vPlaceWorld;\n' +
+            mine.map(q => `if (all(greaterThan(p, vec3(${q.box.slice(0, 3).map(v => v.toFixed(3)).join(', ')}))) && all(lessThan(p, vec3(${q.box.slice(3).map(v => v.toFixed(3)).join(', ')})))) { ${q.glsl} }`).join('\n') + '\n}');
+        };
+        const key = '|places-v2-' + mine.map(q => q.id + ':' + q.box.join(',')).join('+');   // the boxes live in the closure, so they must be in the key
+        material.customProgramCacheKey = () => (previousKey ? previousKey() : '') + key;
+        material.needsUpdate = true;
+      }
+    });
+    return touched;
+  }
+  function prepareBase(root) {
+    const places = placePatches.length ? patchPlaces(root) : [];
+    if (!rugBoxes.length) return places;
+    const touched = [...places];
     root.traverse(o => {
       if (!o.isMesh) return;
       for (const material of [o.material].flat()) {
@@ -564,6 +604,29 @@ export function buildInteriorDesign(THREE, { zones = null, anisotropy = 4, detai
       mesh(group, new THREE.PlaneGeometry(w + .2, 1.6), skyMat, 34.06, 1.445, zc, 0, -Math.PI / 2);
       mesh(group, new THREE.PlaneGeometry(2.2, w + .8), spillMat, 33.68 - 1.1, .013, zc, -Math.PI / 2);
     }
+  }
+  // ---------------------------------------------------------------- Entrance lobby (Z01): one woven detail on the route
+  if (want('LB_WOVEN_PIER')) {
+    // the blank pier of the east wall (face x 7.62, lobby on its -x side) between the interior windows W11 (z 1.52-2.84) and
+    // W12 (z 3.45-4.78), on the way to the Reception door D04 (z 0.39-1.56). Top on the window-head line (2.13), hem near the
+    // sill line (0.61), 0.15 m / 0.10 m clear of the window frames; an oak rod on two brackets holds it 5 cm off the wall
+    // 2.5 cm south of the pier's centre: it hangs 5 cm proud of the wall, so seen from the arrival side it otherwise crowds W11
+    const Wd = .36, L = 1.42, top = 2.06, zc = (2.84 + 3.45) / 2 + .025, face = 7.62;
+    const W = px(256), H = Math.round(W * L / Wd), c = canvas(W, H), x = c.getContext('2d'), m = W / Wd;
+    cloth(x, 0, 0, W, H, PAL.khadi, { cell: 2.5, seed: 901, slub: .14 });
+    for (const [u, w] of [[.05, .03], [.1, .012], [.888, .012], [.92, .03]]) cloth(x, W * u, 0, W * w, H * .965, PAL.indigo, { cell: 2.5, seed: 902 + u * 100 });   // selvedge stripes
+    for (const [v, col] of [[.86, PAL.madder], [.875, PAL.indigo], [.89, PAL.madder]]) cloth(x, W * .15, H * v, W * .7, H * .006, col, { cell: 2, seed: 905 + v * 100 });
+    for (let j = 0; j < 9; j++) for (let i = 0; i < 2; i++) buti(x, BUTI, W * (.35 + i * .3 + (j % 2 ? .15 : 0) - .075), H * (.07 + j * .085), m * .0045, { 1: 'rgba(250,246,236,.95)', 2: PAL.indigo });   // sparse Jamdani-style butis
+    fringe(x, 0, H * .965, W, H * .035, PAL.khadiShade, 903);
+    const t = texture(c, { clamp: true });
+    const cloth3d = std('lobby_hanging', { map: t, normalMap: weaveNormal, normalScale: new THREE.Vector2(.35, .35), roughness: .95, side: THREE.DoubleSide, alphaTest: .4, emissive: '#ffffff', emissiveMap: t, emissiveIntensity: .2 });
+    const g = new THREE.Group(); g.name = 'LB_WOVEN_PIER'; group.add(g); g.userData = { interiorItem: 'LB_WOVEN_PIER', zone: 'Z01' };
+    const hang = mesh(g, hangingGeometry(Wd, L, 0, 1, 1, 2.5, 904), cloth3d, face - .05, top - L / 2, zc, 0, -Math.PI / 2);
+    hang.userData.interiorItem = 'LB_WOVEN_PIER';
+    const oak = std('lobby_rod', { color: PAL.oak, roughness: .5 }), brass = std('lobby_brass', { color: PAL.brass, roughness: .3, metalness: .85 });
+    mesh(g, new THREE.CylinderGeometry(.011, .011, Wd + .07, 18), oak, face - .05, top + .012, zc, Math.PI / 2);
+    for (const s of [-1, 1]) { mesh(g, new THREE.SphereGeometry(.014, 14, 10), brass, face - .05, top + .012, zc + s * (Wd / 2 + .035));
+      mesh(g, new THREE.BoxGeometry(.05, .012, .012), brass, face - .025, top + .012, zc + s * (Wd / 2 + .012)); }
   }
   // ---------------------------------------------------------------- Global Design Studio (Z18): mood board and review table
   // linear base colours of the model's swatch materials (and the board's linen), as canvas sRGB

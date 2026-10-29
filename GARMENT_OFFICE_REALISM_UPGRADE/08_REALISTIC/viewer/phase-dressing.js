@@ -8,7 +8,7 @@ import { buildInteriorDesign } from '../props/interior-design.mjs';
 
 // Phase 4 is deliberately dormant in stages 1–3. Source objects remain untouched;
 // additive props, screen artwork and fictional actors have separate provenance.
-export async function createOfficeDressing({ scene, renderer, metadata, grid, probes, staticBlocked, changed, peopleAccepted = false, activeZones = null, frozenPeople = false, peopleManifest = null, excludedProps = [], detail = 1 }) {
+export async function createOfficeDressing({ scene, renderer, metadata, grid, probes, staticBlocked, changed, peopleAccepted = false, activeZones = null, interiorZones = [], frozenPeople = false, peopleManifest = null, excludedProps = [], detail = 1 }) {
   const base = new URL('./', location.href);
   const response = await fetch(new URL('props/office-props-manifest.json', base));
   if (!response.ok) throw new Error(`Props manifest HTTP ${response.status}`);
@@ -22,7 +22,8 @@ export async function createOfficeDressing({ scene, renderer, metadata, grid, pr
   const identity = buildIdentityProps(THREE, { zones: activeZones, anisotropy: Math.min(8, renderer.capabilities.getMaxAnisotropy()) });
   scene.add(identity.group);
   // Interior design layer (textiles, light pools, material displays); restyles the approved rug when its room atlas is live.
-  const interior = buildInteriorDesign(THREE, { zones: activeZones, anisotropy: Math.min(8, renderer.capabilities.getMaxAnisotropy()), detail });
+  // interiorZones: tour rooms outside the release zones that get only the interior layer (no props, people or screens)
+  const interior = buildInteriorDesign(THREE, { zones: activeZones ? [...activeZones, ...interiorZones] : null, anisotropy: Math.min(8, renderer.capabilities.getMaxAnisotropy()), detail });
   scene.add(interior.group);
   const interiorRugs = interior.prepareBase(scene);   // approved rugs drawn by the shared base material get their redesign by position
   let atlas, people = null, peoplePromise = null;

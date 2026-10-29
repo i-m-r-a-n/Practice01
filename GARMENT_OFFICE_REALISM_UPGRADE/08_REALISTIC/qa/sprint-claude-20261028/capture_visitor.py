@@ -25,6 +25,8 @@ SPOTS = {
     'ds_review_close': (29.0, -16.8, -1.5708, -0.78, 52),
     'mr_forms': (19.5, -18.0, 1.08, -0.18, 55),
     'mr_board': (10.5, -12.0, math.pi, 0.05, 60),
+    'lobby_arrival': (6.0, 5.2, 0.0, -0.05, 66),
+    'lobby_pier': (6.6, 3.9, -0.937, -0.19, 60),
 }
 p = argparse.ArgumentParser()
 p.add_argument('--url', default='http://127.0.0.1:8784/realistic/?welcome=0')
