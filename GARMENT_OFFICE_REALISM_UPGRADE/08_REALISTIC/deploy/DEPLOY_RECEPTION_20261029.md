@@ -8,7 +8,22 @@
   - live browser frames in `qa/interior-20261029/live-d5939f9/`
 - **Rollback:** worker from `cdf0e3e`.
 
-## Prepared, not yet deployed: Entrance Lobby (buyer-journey increment 1)
+## Prepared, not yet deployed: Entrance Lobby + CAD room (buyer-journey increments 1–2)
+
+`worker-realistic.js` is built for source commit `72571634cb78949d81b2bd80b08d4dd4670a0f51`.
+
+- Size and SHA-256: 7621 bytes, `b17e9b466901fd655b7a495cd83f464c21537b53a8ebafb484c2e2cc92bf6491`.
+- **Affected rooms:**
+  - Entrance Lobby (Z01, CAM_03): as in the section below
+  - CAD / Technical Design (Z14, CAM_15): screens, pinboard and layout table follow one illustrative development exercise
+- **Guard, original-route hashes and rollback:** as in the section below. Expected live source: `d5939f9…`. Rollback first to worker `01fac69`.
+- **Checks:**
+  - `node test_worker.mjs` passes 41 checks
+  - all 22 requested files are in the commit
+  - the changed dist files match on raw.githubusercontent.com
+- **Evidence:** `qa/journey-20261029/cad/` and `lobby/`.
+
+## Superseded before deployment: Entrance Lobby (buyer-journey increment 1)
 
 `worker-realistic.js` is built for source commit `2a451939f48253cdfbb9a85c48f6ec16306389e1`.
 

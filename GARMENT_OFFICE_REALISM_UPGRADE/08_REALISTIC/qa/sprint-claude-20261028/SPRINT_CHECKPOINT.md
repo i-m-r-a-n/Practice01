@@ -20,8 +20,8 @@ Resume from this file if the session is interrupted. Newest state first.
     - Boardroom second pass (khadi desk pads), built at `d5939f9`
   - **Earlier interior workers:** never deployed; each was superseded by the next.
 - **Prepared next release (buyer journey, not yet deployed):**
-  - source `2a45193` (Entrance Lobby)
-  - worker SHA-256 `fde89e17…94e7b4`
+  - source `7257163` (Entrance Lobby + CAD room; it supersedes `2a45193`)
+  - worker SHA-256 `b17e9b46…bf6491`
   - notes and evidence: `deploy/DEPLOY_RECEPTION_20261029.md` and `qa/journey-20261029/`
   - The next increments are CAD, Sample room, Lounge / Training and Experience Centre, in that order.
 - **Sprint release (superseded, never deployed):** source `e98ecb5`, worker `6edce19`, `deploy/DEPLOY_SPRINT_20261029.md`.
