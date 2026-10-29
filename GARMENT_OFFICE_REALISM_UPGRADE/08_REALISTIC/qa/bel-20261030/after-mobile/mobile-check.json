@@ -1,0 +1,40 @@
+{
+  "url": "http://127.0.0.1:8790/bengal-earth-lab/?welcome=0",
+  "scope": "LOCAL Chromium (SwiftShader), 390 x 844 touch viewport at 2x; layout and load only, not phone speed",
+  "errors": [],
+  "http_errors": [],
+  "failed_requests": [],
+  "frames": [
+    "mobile_BEL_CAM_UTHAN.jpg",
+    "mobile_BEL_CAM_MAKING_LINE.jpg",
+    "mobile_BEL_CAM_RECORDS.jpg",
+    "mobile_CAM_01_Reception_A.jpg",
+    "mobile_CAM_09_Boardroom_A.jpg"
+  ],
+  "load_seconds": 8.9,
+  "quality": "low",
+  "concept": {
+    "name": "bengal-earth-lab",
+    "items": null,
+    "meshes": 1313,
+    "instancedLeaves": 13096,
+    "textures": 244,
+    "textureMB": 15.6
+  },
+  "gpu_memory": {
+    "estimatedTotalBytes": 467036037,
+    "geometryBytes": 32768540,
+    "textureBytes": 434267497,
+    "attachmentBytes": 0,
+    "textureSources": 240,
+    "attributeBuffers": 6252,
+    "renderTargets": 0,
+    "method": "Scene/cached allocation estimate including hidden fallback, compressed mip payload and render attachments; not measured driver VRAM. Probe peak allocations and browser overhead are excluded."
+  },
+  "passed": true,
+  "comparison": {
+    "note": "Same 390 x 844 touch viewport, low quality, viewer estimate (not driver VRAM)",
+    "approved_realistic_route_d5939f9_MB": 733.6,
+    "bengal_earth_lab_route_MB": 467.0
+  }
+}

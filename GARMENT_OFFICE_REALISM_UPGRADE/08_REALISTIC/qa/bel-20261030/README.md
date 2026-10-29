@@ -16,6 +16,11 @@ These rooms work in every option. Approved furniture stays.
   - `compare/inc5_lab_b_and_buyer_room.jpg`
 - **Memory:** 58 MB of textures at full detail (244 textures). Low quality halves every canvas.
 - **Presentation:** `presentation/` holds the contact sheet and a 75-second captioned slideshow of the 19 stops. They are made from these frames by `tour_slideshow.py`.
+- **Phone check** (`after-mobile/`, from `bel_mobile_check.py`):
+  - A 390 x 844 touch viewport at 2x loads with no page or HTTP errors, and the viewer picks low quality.
+  - The layer uses 15.6 MB of textures.
+  - The viewer estimates 467 MB of GPU memory for the whole scene, against 734 MB for the live approved `/realistic/` route at the same size. The proposal route shows no people and no render photos.
+  - This is software WebGL in Chromium, so it does not measure phone speed.
 
 ## Increment 4: pilot rooms (30 Oct 2026)
 
