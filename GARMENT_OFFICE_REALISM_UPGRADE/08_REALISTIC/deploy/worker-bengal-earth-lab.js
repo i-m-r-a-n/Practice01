@@ -98,7 +98,7 @@ async function realisticRoute(req) {
 }
 
 // Isolated Bengal Earth Lab concept proposal (its own page, bundle and config; the routes above are unchanged).
-const BEL_COMMIT = '1a838d85b43d08fe0b1b7f7b2826ecc44046b3dc';
+const BEL_COMMIT = '1592542dba0a7910c638fba978cc4ddb21fb6e0f';
 const BEL_ROOT = 'https://raw.githubusercontent.com/i-m-r-a-n/Practice01/'+BEL_COMMIT+'/';
 async function belRoute(req) {
   if(req.method!=='GET'&&req.method!=='HEAD')return new Response('Method not allowed',{status:405,headers:{Allow:'GET, HEAD'}});

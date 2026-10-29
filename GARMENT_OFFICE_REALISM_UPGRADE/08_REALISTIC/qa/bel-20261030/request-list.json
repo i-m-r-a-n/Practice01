@@ -1,9 +1,9 @@
 {
   "scope": "LOCAL Chromium via serve_preview.py; request paths checked against the release commit tree",
-  "commit": "1a838d85b43d08fe0b1b7f7b2826ecc44046b3dc",
+  "commit": "1592542dba0a7910c638fba978cc4ddb21fb6e0f",
   "requests": 8,
   "missing": [],
-  "seconds": 93.3,
+  "seconds": 95.8,
   "rows": [
     {
       "request": "/bengal-earth-lab/",
