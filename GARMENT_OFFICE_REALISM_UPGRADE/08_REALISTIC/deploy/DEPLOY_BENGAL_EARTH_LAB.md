@@ -1,6 +1,8 @@
 # Deploying the Bengal Earth Lab proposal route (prepared by Claude, 30 Oct 2026; updated after the owner chose option C)
 
-**Status: tested locally, authorised by the owner on 30 Oct 2026, not deployed yet.** The owner wrote "C, deploy, if u cant tell chatgpt to deploy". Claude's Cloudflare token can see the account but has no Workers permission (the script list is empty and the script's settings return "No access to the specified resource"), so the upload is handed to ChatGPT or the owner's desktop session. Whoever deploys records it in a `LIVE_DEPLOY_<date>.md`, as for the 28 Oct release.
+**Status: live since 30 Oct 2026, 09:15 UTC.** ChatGPT deployed it (Cloudflare version `d9f95025-89f6-4e7a-9ae5-071dba5f082a`), and Claude checked it independently. The record is `LIVE_DEPLOY_2026-10-30.md`.
+
+The owner authorised the deploy on 30 Oct 2026 ("C, deploy, if u cant tell chatgpt to deploy"). Claude's Cloudflare token can see the account but has no Workers permission: the script list is empty, and the script's settings return "No access to the specified resource". So the upload was handed to ChatGPT.
 
 ## What it adds
 
