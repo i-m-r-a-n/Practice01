@@ -1,5 +1,19 @@
 # Bengal Earth Lab: 3D proposal route
 
+## Option C: the pilot first (30 Oct 2026)
+
+The owner, 30 Oct: "C, deploy, if u cant tell chatgpt to deploy". At commit `109aec2` the option A rooms read as a later phase: their names end "(later phase)", their menu group is "Option A · later phase", the Z07 and Z06 notes and the option A tour stops say the pilot (option C) comes first, and the welcome tour says so too. No 3D item changed.
+
+- **Checks** (local Chromium, software WebGL):
+  - The page loads with no page errors.
+  - `after-tour-play-c/`: all 23 stops match the config, the stills switch is not displayed, and the menu shows the two option A rooms under "Option A · later phase".
+  - `request-list.json`: all eight files the page requests exist in `109aec2`.
+- **Worker:**
+  - Rebuilt with `--bel 109aec2`, SHA-256 `3424e88b…abd3`.
+  - `test_worker_bel.mjs` (54 checks) and `test_worker.mjs` (41 checks) pass against the live Worker from `01fac69`.
+  - `index.html`, `app.js`, `release-config.json`, `phase-dressing.js` and the layer match byte for byte on raw.githubusercontent.com.
+- **Deploy:** authorised by the owner. Claude's Cloudflare token has no Workers permission, so the upload is handed to ChatGPT (issue #12). See `deploy/DEPLOY_BENGAL_EARTH_LAB.md`.
+
 ## Increment 6b: living wall, painted kettles, jute curtains, rural tools (30 Oct 2026)
 
 From the owner's later references, at commit `0b239f6`:
