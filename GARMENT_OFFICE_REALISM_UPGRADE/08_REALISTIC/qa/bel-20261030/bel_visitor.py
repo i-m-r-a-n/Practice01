@@ -23,7 +23,7 @@ SPOTS = {
     'tea_stall': (24.1, -24.35, 1.5708, -0.12, 66),
     # option A rooms (increment 2)
     'uthan_botola': (18.6, -15.5, 1.5708, -0.2, 62),   # off the east lantern post's line of sight
-    'living_wall': (31.6, -28.2, 0.0, -0.05, 66),
+    'living_wall': (32.0, -29.7, 0.25, 0.08, 70),   # free floor between the studio desks and the wall (probed)
     'uthan_loom': (12.2, -14.25, 0.70, -0.42, 62),
     'circle_wear': (12.2, -14.05, 3.14159, -0.25, 64),
     'circle_remake': (12.9, -17.9, 0.58, -0.3, 62),
@@ -66,6 +66,8 @@ with sync_playwright() as pw:
             R['shots'].append({'spot': name, 'xz': [x, z], 'yaw': yaw, 'pitch': pitch, 'fov': fov, 'file': f.name, 'sha256': hashlib.sha256(f.read_bytes()).hexdigest(), 'room': st.get('room')}); print(name, st.get('room'), flush=True)
         except Exception as e:
             R['shots'].append({'spot': name, 'error': str(e)[:300]}); print(name, 'ERROR', str(e)[:200], flush=True)
+    R['refused'] = [x['spot'] for x in R['shots'] if 'error' in x]   # a refused spot is a failure: blocked or off the floor
+    R['passed'] = not R['errors'] and not R['refused']
     (out / 'visitor.json').write_text(json.dumps(R, indent=2))
     b.close()
-print(json.dumps({'shots': len(R['shots']), 'errors': R['errors'][:5]}))
+print(json.dumps({'shots': len(R['shots']), 'refused': R['refused'], 'errors': R['errors'][:5], 'passed': R['passed']}))

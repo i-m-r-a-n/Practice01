@@ -1,5 +1,24 @@
 # Bengal Earth Lab: 3D proposal route
 
+## Increment 6b: living wall, painted kettles, jute curtains, rural tools (30 Oct 2026)
+
+From the owner's later references, at commit `0b239f6`:
+
+| Room | Option | Items |
+|---|---|---|
+| Studio Z18 | every | A living wall on the solid north wall (face z -30.7341, x 29.43 to 33.80, clear above 0.6 m; a steel beam at 2.6). It has eight organic wooden niches with a warm backlight, holding snake plant, money plant and peace lily, and a small fig tree either side. No medical claim. |
+| Dining Z20 | every | Four painted kettles on jute cords either side of the tea stall. |
+| Merchandising Z07 | option A | Jute curtains on the north glass above the solid 1.22 m wall; the hallway opening stays clear and the flame-retardant treatment is still to be specified. A mathal, a jute shika with a clay pot and a jute bag on the craft-corner trellis. Slimmer yarn hanks and quieter bands on the lantern posts. |
+
+- **Tour:** 23 stops. The new stop 20 is the living wall.
+- **Fixes:**
+  - The stills switch is now really hidden on this route. The tour card's label style had overridden `[hidden]`; `display: none` now hides it, and `bel_tour_play.py` checks the computed style.
+  - `bel_visitor.py` now fails on a refused spot. The first living-wall spot stood inside the studio desks; it moved to free floor at x 32.0, z -29.7.
+- **Worker:**
+  - Rebuilt with `--bel 0b239f6`, SHA-256 `19824644…3916`.
+  - `test_worker_bel.mjs` (54 checks) and `test_worker.mjs` (41 checks) pass against the live Worker from `01fac69`.
+  - `index.html`, `app.js`, `release-config.json` and the layer match byte for byte on raw.githubusercontent.com.
+
 ## Increment 6: knitwear first, Bengal craft added (30 Oct 2026)
 
 The owner, 30 Oct: "its a rmg factory. so the idea is there will be fabric that is sourced from earth and sustainable, reuseable. the kutir shilpo is an addition to the rmg sector to represent bangaldesh", then "even the fabrics could be recycled fabric". The route now puts the knitwear core first. Bengal craft is added around it, following the owner's reference photos.
