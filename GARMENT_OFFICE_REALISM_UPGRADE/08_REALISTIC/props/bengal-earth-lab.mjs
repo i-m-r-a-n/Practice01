@@ -35,6 +35,7 @@ export const BEL_ITEMS = [
   { id: 'BEL_BOARD_BONSAI', zone: 'Z08', note: 'A bonsai on a jute-wrapped stand in the corner by the screen, in place of the approved planter; it rotates to the studio windows for light.' },
   { id: 'BEL_STUDIO_SUN_SHELF', zone: 'Z18', note: 'The sunning shelf at the east window W10: three bonsai and a tulsi pot take turns in daylight. Grower and species to be confirmed.' },
   { id: 'BEL_STUDIO_TREE', zone: 'Z18', note: 'A small fig tree in daylight by window W09, in place of the approved potted tree and on its footprint.' },
+  { id: 'BEL_PLANT_WALL', zone: 'Z18', note: 'A living wall on the studio\'s solid north wall: organic wooden niches with a warm backlight holding snake plant, money plant and peace lily, and a small fig tree either side. Plants traditionally kept indoors; no medical claim. Grower to be identified.' },
   { id: 'BEL_CLAY_DRINKWARE', zone: '*', note: 'Every glass, mug, cup, jug, bottle and tray on the route is clay or wood (glazes to be tested; wood with food-safe finishes).' },
   // the design wing in every option: the labs behind the glass of the studio street are the exhibit
   { id: 'BEL_MAKING_LINE', zone: 'Z22', note: 'The making line on the solid wall of the design-wing entrance (the corridor walls are glass): one knit T-shirt in six steps on oak ledges, from fibre (cotton, jute, fibre recovered from cutting waste) to yarn, knit fabric, cut and sew, testing, and wear, repair and return. Illustrative objects; real samples and dated records replace them.' },
@@ -43,7 +44,7 @@ export const BEL_ITEMS = [
   { id: 'BEL_PROTOTYPE_WORKSHOP', zone: 'Z17', note: 'Remake and repair on the pattern table: paper pattern pieces, cutting waste sorted by colour, a panel pieced from offcuts and a T-shirt mended in kantha stitch. The sample machines and forms stay.' },
   // pilot rooms: the small academy, staff and artisan dining, the records room, the buyer project room
   { id: 'BEL_ACADEMY_ANNEX', zone: 'Z21', note: 'The pilot academy in the training room: a class of six at the approved table (knit swatches, yarn cones, a mending kit) and a craft wall of pinned swatches, a kantha mend and sketches. The lounge stays.' },
-  { id: 'BEL_TEA_STALL', zone: 'Z20', note: 'The tong, the Bengali tea stall, as the tea point on the free west wall of the dining room: a wall-mounted cart front on two wheels with a painted canopy (rickshaw-art colours), a kettle on a clay stove, clay cups, biscuit jars, an electric lantern in the hurricane form (no kerosene indoors) and three wood-slice stools.' },
+  { id: 'BEL_TEA_STALL', zone: 'Z20', note: 'The tong, the Bengali tea stall, as the tea point on the free west wall of the dining room: a wall-mounted cart front on two wheels with a painted canopy (rickshaw-art colours), a kettle on a clay stove, clay cups, biscuit jars, an electric lantern in the hurricane form (no kerosene indoors), four painted kettles on jute cords and three wood-slice stools.' },
   { id: 'BEL_ARTISAN_DINING', zone: 'Z20', note: 'Staff and artisan dining with the same care as the buyer rooms: clay plates, cups and jugs on hogla runners, and water and tea in clay on the pantry counter. Glazes to be tested before use.' },
   { id: 'BEL_RECORDS_ROOM', zone: 'Z09', note: 'The records room: the originals behind every claim on the floor, fibre origins and recycled content first. Labelled evidence files on the table and an Open Record index on the wall; every line still reads "none yet" or "to be collected" until documents arrive.' },
   { id: 'BEL_BUYER_PROJECT', zone: 'Z04', note: 'Buyer project room, which in the pilot is also the export and order desk: knit swatches on a wooden tray, clay water, an order checklist with the fabric passport and a project board whose dates are all "to be agreed".' },
@@ -51,8 +52,9 @@ export const BEL_ITEMS = [
   { id: 'BEL_UTHAN', zone: 'Z07', note: 'Option A only. The Green Uthan: a Bengali courtyard in Merchandising, with a bot-tola seat of handmade terracotta around the steel column, two small fig trees and a banyan bonsai under grow lights (this room has no daylight), split-granite stone seats and an open split-bamboo canopy (fire treatment and smoke-detector coverage to be checked). Natural jute carpet over the whole room.' },
   { id: 'BEL_ARTISAN_CORNER', zone: 'Z07', note: 'Option A only. Artisan corner in the Uthan, by invitation and never as a spectacle: a Chakma back-strap loom (bain) shown only with the consent and participation of Chakma weavers, a Marma weaving and basketry stand (the same consent rule), a nakshi kantha frame, cane basketry and painted terracotta on a sitalpati mat. Quiet, clean crafts only; dusty work stays in the workshop.' },
   { id: 'BEL_UTHAN_CRAFT', zone: 'Z07', note: 'Option A only. The Uthan dressed by hand: kula and dala laid over the bamboo canopy, alpana in rice-paste white around the courtyard (to be painted by rural women artists), four painted bamboo posts with electric lanterns in the hurricane form, natural indigo and undyed yarn and small clay pots hanging from the canopy.' },
-  { id: 'BEL_CRAFT_CORNER', zone: 'Z07', note: 'Option A only. A craft corner on the solid south wall: a bamboo trellis with a gamchha, a kantha, a kula and a framed painting by a rural artist (placeholder, to be commissioned), a cane bowl chair on a round sitalpati, a jute pouf and a snake plant in clay.' },
+  { id: 'BEL_CRAFT_CORNER', zone: 'Z07', note: 'Option A only. A craft corner on the solid south wall: a bamboo trellis with a gamchha, a kantha, a kula and a framed painting by a rural artist (placeholder, to be commissioned), a mathal, a jute shika with a clay pot and a jute bag, a cane bowl chair on a round sitalpati, a jute pouf and a snake plant in clay.' },
   { id: 'BEL_CRAFT_SHELF', zone: 'Z07', note: 'Option A only. A low bamboo shelf on the solid lower west wall: painted pots in the shokher hari tradition (Rajshahi), tepa putul clay dolls, a dholak and a khol, and a polo (bamboo fish trap) beside it. Makers to be identified, paid and credited.' },
+  { id: 'BEL_JUTE_CURTAINS', zone: 'Z07', note: 'Option A only. Jute curtains on the north glass above the solid 1.22 m wall, on a bamboo pole; the hallway opening stays clear. Flame-retardant treatment to be specified.' },
   { id: 'BEL_CIRCLE_WEAR', zone: 'Z07', note: 'Option A only. Circular knitwear studio, 1 · Wear: two bamboo rails of knitwear in earth and recycled fabrics and a low table of folded samples. Illustrative garments, not products on sale.' },
   { id: 'BEL_CIRCLE_REMAKE', zone: 'Z07', note: 'Option A only. Circular knitwear studio, 2 · Remake: cutting waste (jhut) sorted by colour on a sorting table under a basket lamp and in jute sacks, recycled yarn cones and a roll of recycled jersey. Recycling partners to be identified; recycled shares to be certified.' },
   { id: 'BEL_CIRCLE_REPAIR', zone: 'Z07', note: 'Option A only. Circular knitwear studio, 3 · Repair: a live-edge mending table with wood-slice stools under a basket lamp, where knitwear is repaired in kantha running stitch, the Bengal tradition of stitching old cloth into new use. Embroiderers to be invited, paid and credited.' },
@@ -972,7 +974,7 @@ export function buildBengalEarthLab(THREE, { zones = null, drinkware = [], aniso
     add(g, new THREE.CylinderGeometry(.068, .07, .055, 24), m, 0, -.285, 0); return g;
   }
   const bambooPainted = std('bamboo_painted', () => { const c = canvas(32, 256), x = c.getContext('2d'); x.fillStyle = '#c9a868'; x.fillRect(0, 0, 32, 256);
-    for (let y = 0; y < 256; y += 64) { x.fillStyle = '#2b2420'; x.fillRect(0, y + 8, 32, 14); x.fillRect(0, y + 40, 32, 5); x.fillStyle = '#8f2f24'; x.fillRect(0, y + 26, 32, 4); x.fillStyle = 'rgba(80,55,25,.5)'; x.fillRect(0, y, 32, 2); }
+    for (let y = 0; y < 256; y += 64) { x.fillStyle = '#3a2c22'; x.fillRect(0, y + 10, 32, 7); x.fillRect(0, y + 40, 32, 3); x.fillStyle = '#8f2f24'; x.fillRect(0, y + 22, 32, 2); x.fillStyle = 'rgba(80,55,25,.5)'; x.fillRect(0, y, 32, 2); }
     return { map: tex(c, { repeat: [1, 3] }), roughness: .55 }; });
   const bambooNatural = std('bamboo_natural', () => { const c = canvas(32, 256), x = c.getContext('2d'); x.fillStyle = '#cfae6b'; x.fillRect(0, 0, 32, 256);   // culm with nodes
     for (let y = 0; y < 256; y += 64) { x.fillStyle = 'rgba(110,80,35,.55)'; x.fillRect(0, y, 32, 3); x.fillStyle = 'rgba(255,240,200,.35)'; x.fillRect(0, y + 3, 32, 2); } for (let i = 0; i < 40; i++) { x.fillStyle = 'rgba(120,90,40,.12)'; x.fillRect((i * 7) % 32, 0, 1, 256); }
@@ -1504,6 +1506,19 @@ export function buildBengalEarthLab(THREE, { zones = null, drinkware = [], aniso
     const glassJar = std('jar_glass', () => ({ color: '#dfeae6', roughness: .08, transparent: true, opacity: .4, depthWrite: false }));
     [['#d9a35f', .32], ['#f2e8d6', .45], ['#b8642f', .58]].forEach(([col, dx]) => { add(f, new THREE.CylinderGeometry(.055, .055, .1, 20), std('jar_fill_' + col, () => ({ color: col, roughness: .8 })), dx, T + .05, .2); add(f, new THREE.CylinderGeometry(.06, .06, .16, 20), glassJar, dx, T + .08, .2); add(f, new THREE.CylinderGeometry(.064, .064, .02, 20), red, dx, T + .17, .2); });
     hurricaneLantern(f, .55, 1.98, .38, '#2b5f9e');
+    // painted kettles on jute cords either side of the stall, after the owner's reference (hung from the ceiling, y 2.895, near the wall)
+    const kettlePaint = (key, base, ink, kind) => std('kettle_' + key, () => { const W = px(256), H = px(128), c = canvas(W, H), x = c.getContext('2d'); x.fillStyle = base; x.fillRect(0, 0, W, H); x.fillStyle = x.strokeStyle = ink;
+      if (kind === 'dots') for (let j = 0; j < 6; j++) for (let i = 0; i < 16; i++) { x.beginPath(); x.arc((i + (j % 2) * .5) * W / 16, (j + .5) * H / 6, H / 40, 0, 7); x.fill(); }
+      if (kind === 'flowers') for (let k = 0; k < 6; k++) { const cx = (k + .5) * W / 6, cy = H * .55; for (let p = 0; p < 6; p++) { const a = p / 6 * Math.PI * 2; x.beginPath(); x.ellipse(cx + Math.cos(a) * H * .09, cy + Math.sin(a) * H * .09, H * .08, H * .035, a, 0, 7); x.fill(); } }
+      if (kind === 'stripes') for (let j = 0; j < 8; j++) { x.fillRect(0, j * H / 8, W, H / 40); }
+      if (kind === 'stars') for (let k = 0; k < 10; k++) { const cx = (k + .5) * W / 10, cy = H * (k % 2 ? .35 : .7); x.beginPath(); for (let p = 0; p < 10; p++) { const a = p / 10 * Math.PI * 2, r = p % 2 ? H * .03 : H * .07; x.lineTo(cx + Math.cos(a) * r, cy + Math.sin(a) * r); } x.fill(); }
+      return { map: tex(c, { clamp: true }), roughness: .35, metalness: .25 }; });
+    const hangKettle = (lx, ly, lz, mat, ry) => { const k = new THREE.Group(); k.position.set(lx, ly, lz); k.rotation.y = ry; f.add(k);
+      add(k, lathe([[0, 0], [.08, 0], [.09, .045], [.075, .11], [.035, .135], [0, .14]], 28), mat); add(k, taperedTube([[.07, .04, 0], [.115, .085, 0], [.14, .12, 0]], .012, .006, 8, 6), mat);
+      add(k, new THREE.TorusGeometry(.06, .005, 6, 18, Math.PI), std('kettle_handle', () => ({ color: '#1c1c1e', roughness: .5 })), 0, .135, 0);
+      add(k, new THREE.CylinderGeometry(.002, .002, 2.895 - ly - .195, 4), std('jute_cord', () => ({ color: '#b39867', roughness: .9 })), 0, .195 + (2.895 - ly - .195) / 2, 0); };
+    hangKettle(-.95, 1.72, .22, kettlePaint('red', '#c62828', '#fff6e0', 'dots'), .5); hangKettle(-1.06, 1.38, .3, kettlePaint('yellow', '#f2c230', '#c62828', 'flowers'), -.3);
+    hangKettle(.95, 1.58, .24, kettlePaint('teal', '#1f8a84', '#fff6e0', 'stripes'), 2.6); hangKettle(1.06, 1.86, .3, kettlePaint('blue', '#2b5f9e', '#ffd23f', 'stars'), 3.4);
     standingCard(f, ['The tong: tea in clay cups', 'For staff, artisans and visiting buyers', 'Electric lantern: no kerosene indoors'], .05, T, .4, 0, { w: .2, h: .1 });
     footprint(22.25, -25.15, 22.85, -23.55);
     for (const [x, z] of [[23.25, -23.75], [23.35, -24.5], [23.2, -25.2]]) woodSliceStool(g, x, z, { r: .16, h: .45 });
@@ -1536,7 +1551,7 @@ export function buildBengalEarthLab(THREE, { zones = null, drinkware = [], aniso
     lanternPost(g, CX, -18.32, 0); lanternPost(g, CX, -13.84, Math.PI); lanternPost(g, 13.42, CZ, Math.PI / 2); lanternPost(g, 17.88, CZ, -Math.PI / 2);
     const hank = (x, z, col, k) => { const hg = new THREE.Group(); hg.position.set(x, 2.3, z); hg.rotation.y = k * .7; g.add(hg);
       const m2 = std('hank_' + col, () => { const c = canvas(32, 128), xx = c.getContext('2d'); xx.fillStyle = col; xx.fillRect(0, 0, 32, 128); for (let i = 0; i < 32; i += 2) { xx.fillStyle = `rgba(${i % 4 ? '255,255,255' : '0,0,0'},.12)`; xx.fillRect(i, 0, 1, 128); } return { map: tex(c), roughness: .95 }; });
-      const t = add(hg, new THREE.TorusGeometry(.045, .02, 8, 20), m2, 0, -.22, 0); t.scale.set(1, 3.4, .7);
+      const t = add(hg, new THREE.TorusGeometry(.04, .012, 8, 20), m2, 0, -.204, 0); t.scale.set(.55, 4.5, .6);
       add(hg, new THREE.CylinderGeometry(.002, .002, .04, 4), std('cord', () => ({ color: '#2a2a2a', roughness: .6 })), 0, .0, 0); };
     ['#1d3254', '#2c4a7a', '#5a7aa8', '#93abc9', '#efe6d2', '#1d3254', '#2c4a7a', '#efe6d2'].forEach((col, k) => hank(13.98, -15.15 - k * .3, col, k));
     ['#2c4a7a', '#efe6d2', '#5a7aa8', '#1d3254', '#93abc9', '#efe6d2'].forEach((col, k) => hank(14.35 + k * .4, -17.82, col, k + 3));
@@ -1564,6 +1579,13 @@ export function buildBengalEarthLab(THREE, { zones = null, drinkware = [], aniso
     ar.fillStyle = '#1d1a18'; ar.font = `500 ${AW * .06}px system-ui, sans-serif`; ar.fillText('Placeholder · rural artist', AW * .1, AH * .88); ar.fillText('to be commissioned', AW * .1, AH * .95);
     box(tr, M.oak, .35, 1.0, .01, .4, .48, .03); add(tr, new THREE.PlaneGeometry(.34, .42), std('corner_art', () => ({ map: tex(art, { clamp: true }), roughness: .8 })), .35, 1.24, .042);
     add(tr, new THREE.CircleGeometry(.24, 36), TRAY[3], -.42, .95, .03); add(tr, new THREE.TorusGeometry(.24, .01, 6, 36), std('tray_rim', () => ({})), -.42, .95, .03);
+    // rural tools on the trellis, after the owner's reference: a mathal (the farmer's palm-leaf hat), a jute shika holding a clay pot, a jute bag
+    add(tr, lathe([[0, .09], [.04, .085], [.22, .012], [.25, 0], [.235, -.004], [0, .075]], 32), wovenMaterial('mathal', 'twill', '#c9a565', [10, 2]), -.08, 2.1, .06, Math.PI / 2, 0, 0);
+    add(tr, new THREE.TorusGeometry(.02, .004, 6, 14), juteBraid, .72, 2.28, .1);
+    for (let k = 0; k < 4; k++) { const a = k / 4 * Math.PI * 2 + .4, ex = .72 + Math.cos(a) * .075, ez = .12 + Math.sin(a) * .075; add(tr, taperedTube([[.72, 2.27, .1], [(ex + .72) / 2, 1.98, (ez + .1) / 2], [ex, 1.7, ez]], .0035, .0035, 8, 4), juteBraid); }
+    add(tr, lathe([[0, 0], [.05, 0], [.085, .06], [.08, .11], [.05, .14], [.055, .15], [.045, .15], [0, .14]], 28), M.clayRaw, .72, 1.58, .12);
+    add(tr, new THREE.ConeGeometry(.02, .1, 8), juteBraid, .72, 1.52, .12, Math.PI, 0, 0);
+    box(tr, juteBraid, -.05, 1.28, .05, .26, .3, .06); for (const s of [-1, 1]) add(tr, new THREE.TorusGeometry(.05, .006, 6, 16, Math.PI), juteBraid, -.05 + s * .07, 1.58, .05);
     const rug = textileMat('pati_round', (x, w, h) => { x.fillStyle = '#d6c393'; x.fillRect(0, 0, w, h); for (const [r0, col] of [[.47, '#8f2f24'], [.42, '#1e5a4c'], [.3, '#8f2f24'], [.12, '#1e5a4c']]) { x.strokeStyle = col; x.lineWidth = w / 40; x.beginPath(); x.arc(w / 2, h / 2, w * r0, 0, 7); x.stroke(); } }, [256, 256]);
     add(g, new THREE.CircleGeometry(.78, 48), rug, 14.25, RUG + .001, -11.85, -Math.PI / 2);
     caneMoonChair(g, 14.55, -11.62, Math.PI + .35); shade('Z07', 14.05, -12.1, 15.05, -11.15, .45);
@@ -1591,6 +1613,48 @@ export function buildBengalEarthLab(THREE, { zones = null, drinkware = [], aniso
       const geo = new THREE.CylinderGeometry(.006, .006, d.length(), 5); geo.applyQuaternion(new THREE.Quaternion().setFromUnitVectors(new THREE.Vector3(0, 1, 0), d.normalize())); geo.translate((A.x + Bv.x) / 2, (A.y + Bv.y) / 2, (A.z + Bv.z) / 2); PP.push([geo]); }
     for (const [y, rr] of [[.02, .3], [.25, .2], [.48, .105]]) PP.push([new THREE.TorusGeometry(rr, .008, 6, 28), 0, y, 0, Math.PI / 2]);
     const polo = new THREE.Group(); polo.position.set(10.1, 0, -18.95); g.add(polo); add(polo, merged(PP), M.bamboo); footprint(9.78, -19.27, 10.42, -18.63);
+  }
+  if (want('BEL_JUTE_CURTAINS')) {
+    // jute curtains on the north glass above the solid 1.22 m wall (to the hallway), on a bamboo pole under the deck; the hallway opening
+    // D11 (x 19.85-21.25) stays clear. Flame-retardant treatment to be specified before use
+    const g = item('BEL_JUTE_CURTAINS'), Z = -21.2, Y0 = 1.25, Y1 = 2.84, mat = std('jute_curtain', () => ({ color: '#cdb68a', map: weaveMap('plain', [1, 1]), roughness: .96, side: THREE.DoubleSide }));
+    for (const [x0, x1] of [[9.45, 14.3], [14.4, 19.7]]) {
+      const len = x1 - x0, geo = new THREE.PlaneGeometry(len, Y1 - Y0, Math.round(len * 28), 2), p = geo.attributes.position;
+      for (let i = 0; i < p.count; i++) p.setZ(i, .028 * Math.sin((p.getX(i) + len / 2) / .24 * Math.PI));   // pleats every 0.24 m
+      geo.computeVertexNormals(); scaleUV(geo, len * 3, (Y1 - Y0) * 3); add(g, geo, mat, (x0 + x1) / 2, (Y0 + Y1) / 2, Z);
+      add(g, new THREE.CylinderGeometry(.016, .016, len + .1, 10), bambooNatural, (x0 + x1) / 2, Y1 + .02, Z - .02, 0, 0, Math.PI / 2);
+    }
+  }
+  if (want('BEL_PLANT_WALL')) {
+    // the studio's solid north wall (face z -30.7341, x 29.43-33.80, probed clear above 0.6 m; a steel beam at 2.6): organic wooden niches with
+    // a warm backlight holding snake plant, money plant and peace lily, after the owner's reference; plants traditionally kept indoors, no medical claim
+    const g = item('BEL_PLANT_WALL'), WZ = -30.7341, CX = 31.6, n = noise3(23);
+    add(g, new THREE.PlaneGeometry(4.3, 2.5), std('sage_paint', () => ({ color: '#9aa585', roughness: .95 })), CX, 1.3, WZ + .003);
+    const blob = (rx, ry, seed, k = 1) => { const s = new THREE.Shape(), N = 40; for (let i = 0; i <= N; i++) { const a = i / N * Math.PI * 2, d = k * (1 + .13 * n(Math.cos(a) * 1.5 + seed, Math.sin(a) * 1.5, seed * .7));
+      const X = Math.cos(a) * rx * d, Y = Math.sin(a) * ry * d * (a > Math.PI ? 1 : .9); i ? s.lineTo(X, Y) : s.moveTo(X, Y); } return s; };
+    const wood = std('niche_wood', () => ({ color: '#e0c39c', map: M.oak.map, roughness: .5 })), back = std('niche_glow', () => ({ color: '#f3dcb3', emissive: '#ffcf8a', emissiveIntensity: .55, roughness: .8 }));
+    const potW = std('pot_white', () => ({ color: '#f1efea', roughness: .45 })), pot = (p, x, y, z, s = 1) => add(p, lathe([[0, 0], [.045, 0], [.055, .09], [.06, .1], [.052, .1], [0, .09]].map(([a, b]) => [a * s, b * s]), 24), potW, x, y, z);
+    const snake = (p, x, y, z, s = 1) => { pot(p, x, y, z, s); for (let k = 0; k < 9; k++) { const a = k * 2.4, l = (.22 + (k % 4) * .06) * s, geo = new THREE.ConeGeometry(.018 * s, l, 4, 1); geo.translate(0, l / 2, 0); geo.scale(1, 1, .25);
+      const leaf = add(p, geo, std('snake_plant', () => ({ color: '#3f6b3a', roughness: .5 })), x + Math.cos(a) * .02 * s, y + .09 * s, z + Math.sin(a) * .02 * s); leaf.rotation.set(Math.sin(a) * .15, -a, Math.cos(a) * .15); } };
+    const pothos = (p, x, y, z, drop = .6, seed = 1) => { pot(p, x, y, z); const r = rng(seed), pads = [];
+      for (let v = 0; v < 3; v++) { const a = v * 2.1 + r(), x0 = x + Math.cos(a) * .04, z0 = z + .03 + Math.abs(Math.sin(a)) * .03, L = drop * (.6 + r() * .5), pts = [[x0, y + .09, z0], [x0 + Math.cos(a) * .06, y + .05, z0 + .05], [x0 + Math.cos(a) * .09 + (r() - .5) * .05, y - L * .5, z0 + .07], [x0 + Math.cos(a) * .07, y - L, z0 + .06]];
+        add(p, taperedTube(pts, .003, .002, 16, 4), std('vine', () => ({ color: '#4f6b2f', roughness: .7 })));
+        for (let t = 1; t < 7; t++) { const P = pts[Math.min(3, Math.floor(t / 2))]; pads.push({ c: [P[0], P[1] - (t % 2) * .05, P[2] + .01], r: [.04, .04, .025], n: 10 }); } }
+      pads.push({ c: [x, y + .14, z + .02], r: [.08, .05, .06], n: 26 }); scatterLeaves(p, pads, { kind: 'fig', size: .045, hue: .26, sat: .55, light: .34, seed: seed + 3 }); };
+    const lily = (p, x, y, z) => { pot(p, x, y, z); scatterLeaves(p, [{ c: [x, y + .2, z + .02], r: [.1, .1, .07], n: 30 }], { kind: 'fig', size: .1, hue: .32, sat: .5, light: .18, seed: 77 });
+      for (let k = 0; k < 3; k++) add(p, new THREE.ConeGeometry(.018, .06, 8, 1, true), std('lily_spathe', () => ({ color: '#f6f4ec', roughness: .6, side: THREE.DoubleSide })), x - .04 + k * .04, y + .3 + (k % 2) * .03, z + .03, .3, 0, 0); };
+    const niches = [[-1.45, 2.0, .34, .25, 'pothos'], [-.55, 2.18, .3, .22, 'snake'], [.4, 2.06, .37, .28, 'lily'], [1.35, 2.16, .3, .24, 'pothos'], [-1.2, 1.28, .28, .32, 'snake'], [-.22, 1.42, .38, .3, 'pothos'], [.88, 1.36, .3, .34, 'snake'], [1.62, 1.58, .2, .2, 'lily']];
+    niches.forEach(([dx, cy, rx, ry, plant], i) => {
+      const outer = blob(rx, ry, i * 3.1 + 1), hole = blob(rx * .84, ry * .8, i * 3.1 + 1); outer.holes.push(hole);
+      const fr = add(g, new THREE.ExtrudeGeometry(outer, { depth: .2, bevelEnabled: true, bevelThickness: .008, bevelSize: .008, bevelSegments: 2, curveSegments: 6 }), wood, CX + dx, cy, WZ + .004);
+      void fr; add(g, new THREE.ShapeGeometry(blob(rx * .86, ry * .82, i * 3.1 + 1), 6), back, CX + dx, cy, WZ + .006);
+      const by = cy - ry * .8 * .9 + .01;   // the niche floor, inside the hole
+      add(g, new THREE.BoxGeometry(rx * 1.2, .012, .17), wood, CX + dx, by - .006, WZ + .1);
+      if (plant === 'snake') snake(g, CX + dx, by, WZ + .11, .9); else if (plant === 'lily') lily(g, CX + dx, by, WZ + .11); else pothos(g, CX + dx, by, WZ + .11, .55, i + 5);
+    });
+    smallTree(g, { x: 29.75, z: -30.3, seed: 31, height: 1.6 }); smallTree(g, { x: 33.48, z: -30.3, seed: 37, height: 1.7 });
+    footprint(29.5, -30.73, 33.7, -30.45); footprint(29.5, -30.55, 30.0, -30.05); footprint(33.23, -30.55, 33.73, -30.05);
+    add(g, new THREE.PlaneGeometry(.3, .1), card(['Living wall', 'Snake plant, money plant, peace lily', 'Kept indoors by tradition; no medical claim'], { w: .3, h: .1, scale: .8 }), CX, .78, WZ + .006);
   }
   // the floor finishes go in last, so their occlusion maps hold the contact shadows of everything above
   if (want('BEL_UTHAN')) floorOverlay(group.getObjectByName('BEL_UTHAN'), 'Z07', [9.32, -21.29, 22.0, -10.87], { map: juteFloor('z07', '#cdbb94', 81), repeat: [25, 21], color: '#cfc8bd' });

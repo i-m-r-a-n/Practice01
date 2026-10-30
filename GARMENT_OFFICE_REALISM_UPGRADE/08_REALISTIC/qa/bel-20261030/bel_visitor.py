@@ -22,7 +22,8 @@ SPOTS = {
     'studio_review': (29.0, -15.4, -0.927, -0.35, 58),
     'tea_stall': (24.1, -24.35, 1.5708, -0.12, 66),
     # option A rooms (increment 2)
-    'uthan_botola': (18.6, -16.2, 1.5708, -0.2, 62),
+    'uthan_botola': (18.6, -15.5, 1.5708, -0.2, 62),   # off the east lantern post's line of sight
+    'living_wall': (31.6, -28.2, 0.0, -0.05, 66),
     'uthan_loom': (12.2, -14.25, 0.70, -0.42, 62),
     'circle_wear': (12.2, -14.05, 3.14159, -0.25, 64),
     'circle_remake': (12.9, -17.9, 0.58, -0.3, 62),

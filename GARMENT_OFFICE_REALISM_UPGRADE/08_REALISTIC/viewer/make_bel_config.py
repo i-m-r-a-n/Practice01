@@ -58,6 +58,7 @@ cameras = [
     # experience centre and dining (every option)
     look('BEL_CAM_JHUT', 'Experience centre', 'Z30', [17.0, 1.55, -7.0], [15.2, 0.45, -8.6], 18.0),
     look('BEL_CAM_TEA', 'Staff & artisan dining', 'Z20', [25.0, 1.55, -23.15], [22.4, 1.45, -24.45], 17.0),
+    look('BEL_CAM_PLANT_WALL', 'Global Design Studio', 'Z18', [31.6, 1.5, -27.3], [31.6, 1.55, -30.7], 18.0),
     look('BEL_CAM_ACADEMY', 'Commercial & accounts', 'Z06', [6.25, 1.6, -8.05], [4.7, 1.0, -16.8], 18.0),
     # the design wing
     look('BEL_CAM_MAKING_LINE', 'Design-wing corridor', 'Z22', [22.33, 1.6, -22.78], [24.7, 1.15, -21.4], 16.0),   # read from the hallway end: steps 1 to 6
@@ -81,9 +82,9 @@ notes = {
     'Z03': in3d + 'the Sun wall (sun, solar generation, use and storage, operations, with grid and backup shown) and a terracotta earth wall whose clay bowls hold the raw side of the fabric story: cotton, jute, recycled fibre and indigo. Concept demonstration, not live factory data: "Designed for a Solar-Powered Future" until measured evidence exists.',
     'Z30': in3d + 'the approved knitwear stays (garments in the four bays, the four forms, sample cards, the materials library and the coconut-shell button story). Each form and bay adds its fabric story: cotton, a jute and cotton blend (research only), cutting waste (jhut) sorted by colour and spun again, used garments taken back and mended in kantha stitch. Drinking water from a clay kolshi (source client-stated; no laboratory results yet). Illustrative stories: fibre origins, recycled shares and tests are still to be documented.',
     'Z08': in3d + 'clay cups at every place and a clay jug instead of glass, the approved knitwear review trays, and a bonsai in the corner by the screen.',
-    'Z18': in3d + 'the only room with exterior windows: three bonsai and a tulsi pot take turns on the sunning shelf at window W10, a small fig tree by W09, and the approved sample-review table.',
+    'Z18': in3d + 'the only room with exterior windows: three bonsai and a tulsi pot take turns on the sunning shelf at window W10, a small fig tree by W09, the approved sample-review table, and a living wall of plant niches on the north wall (no medical claim).',
     'Z12': in3d + 'tea in clay cups. The approved development shelf stays.',
-    'Z07': 'Option A only (the merchandising team moves first; owner decision). In this 3D proposal: the Green Uthan, a Bengali courtyard with a bot-tola seat around the column, two small fig trees and a bonsai under grow lights (no daylight here), stone seats and an open bamboo canopy; an artisan corner (Chakma back-strap loom and Marma weaving and basketry, both only with community consent; nakshi kantha, cane, painted terracotta); and a circular knitwear studio in four steps: wear (knitwear on bamboo rails), remake (cutting waste sorted by colour, recycled yarn), repair (kantha mending) and return (take-back bins). Every approved item that moves is in the relocation ledger.',
+    'Z07': 'Option A only (the merchandising team moves first; owner decision). In this 3D proposal: the Green Uthan, a Bengali courtyard with a bot-tola seat around the column, two small fig trees and a bonsai under grow lights (no daylight here), stone seats and an open bamboo canopy; an artisan corner (Chakma back-strap loom and Marma weaving and basketry, both only with community consent; nakshi kantha, cane, painted terracotta); and a circular knitwear studio in four steps: wear (knitwear on bamboo rails), remake (cutting waste sorted by colour, recycled yarn), repair (kantha mending) and return (take-back bins); a craft corner with rural tools, a shelf of painted clay and drums, and jute curtains on the north glass. Every approved item that moves is in the relocation ledger.',
     'Z06': 'Option A only (the accounts team moves first; owner decision). In this 3D proposal: the design education academy inside the existing glass accounts suite, 20 seats, a demonstration bench with a sewing machine and a hands camera, a mobile screen and a pin-up board; the discussion room becomes the tutor room. The fire engineer sets the capacity.',
     'Z15': in3d + 'eight labelled fibre boxes on the low shelf (cotton, jhut, used garments, jute, banana and pineapple leaf fibre and natural indigo as research only, coconut-shell buttons) and product passport cards on the review table, every field still to be documented, ready for the EU ecodesign rules for apparel that are still being drafted. The D65 colour booth and the approved fabric library stay.',
     'Z16': in3d + 'a fabric lab on the post-processing bench (a GSM cutter, a balance, knit swatches marked for wash shrinkage, a grey scale) with an empty durability log. Methods to be agreed with an accredited laboratory; no results are shown. The 3D printers stay.',
@@ -93,7 +94,7 @@ notes = {
     'Z14': 'The approved CAD dressing, as on the live tour: one illustrative knit cardigan from flats to pattern, grading, marker and stitch chart. In the concept every style also carries a product passport (fibre origin, recycled share, durability, repair and recyclability), still to be designed.',
     'Z04': in3d + 'the buyer project room, also the export and order desk in the pilot: knit swatches on a tray, clay water, an order checklist with the product passport, and a project board (brief, fabric, lab dip, fit, tests, order) whose dates are all to be agreed.',
     'Z21': in3d + 'the pilot academy: a class of six at the approved table with knit swatches, yarn cones and a mending kit, and a craft wall of student work. The lounge stays.',
-    'Z20': in3d + 'staff and artisan dining with the same care as the buyer rooms: clay plates, cups and jugs on hogla runners, and water and tea in clay on the pantry counter. Glazes to be tested before use.',
+    'Z20': in3d + 'the tong, a Bengali tea stall, on the free west wall: a cart front on two wheels with a painted canopy, tea in clay cups, painted kettles on jute cords, an electric lantern in the hurricane form (no kerosene indoors) and wood-slice stools. Staff and artisan dining has the same care as the buyer rooms: clay plates, cups and jugs on hogla runners. Glazes to be tested before use.',
     'Z09': in3d + 'the records room: the originals behind every claim, fibre origins and recycled content first. Labelled evidence files and an Open Record index whose lines all read "none yet", "to prepare" or "to be collected" until documents arrive.',
 }
 tour = [
@@ -135,11 +136,13 @@ tour = [
      'description': 'The only room with daylight: the approved sample-review table, and a small fig tree by the window.'},
     {'stop': 19, 'zone': 'Z18', 'camera': 'BEL_CAM_SUN_SHELF', 'title': 'The sunning shelf',
      'description': 'Bonsai and tulsi take turns in the daylight of window W10.'},
-    {'stop': 20, 'zone': 'Z09', 'camera': 'BEL_CAM_RECORDS', 'title': 'The records room',
+    {'stop': 20, 'zone': 'Z18', 'camera': 'BEL_CAM_PLANT_WALL', 'title': 'The living wall',
+     'description': 'At the north end of the studio: organic wooden niches with a warm backlight, snake plant, money plant and peace lily, and a small fig tree either side. No medical claim.'},
+    {'stop': 21, 'zone': 'Z09', 'camera': 'BEL_CAM_RECORDS', 'title': 'The records room',
      'description': 'The originals behind every claim, fibre origins and recycled content first. Until documents arrive, every line of the Open Record reads none yet, to prepare or to be collected.'},
-    {'stop': 21, 'zone': 'Z08', 'camera': 'CAM_09_Boardroom_A', 'title': 'Negotiation suite',
+    {'stop': 22, 'zone': 'Z08', 'camera': 'CAM_09_Boardroom_A', 'title': 'Negotiation suite',
      'description': 'The visit ends here: tea in clay at every place, the approved knitwear review trays, a bonsai in the corner.'},
-    {'stop': 22, 'zone': None, 'camera': 'CAM_ISO_SW', 'title': 'Designed for a Solar-Powered Future',
+    {'stop': 23, 'zone': None, 'camera': 'CAM_ISO_SW', 'title': 'Designed for a Solar-Powered Future',
      'description': 'Every claim on this floor waits for its evidence: fibre origins, recycled shares, durability tests, makers, water reports and measured energy. Next: the full export and order centre once HR moves.'},
 ]
 

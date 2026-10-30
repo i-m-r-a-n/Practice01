@@ -34,10 +34,10 @@ with sync_playwright() as pw:
         R['stops'].append({'stop': k + 1, 'camera': st['camera'], 'counter': count, 'title': title, 'kicker': kicker, 'matches_config': ok, 'flight_seconds': round(time.monotonic() - t0, 1)})
         if k in (0, 6, 10, 16, len(cfg['tour']) - 1): page.screenshot(path=str(out / f'tour_stop_{k + 1:02d}.png'))
         print(k + 1, ok, title, flush=True)
-    R['stills_switch_hidden'] = page.evaluate("document.getElementById('tPhoto').closest('label').hidden")
+    R['stills_switch_hidden'] = page.evaluate("getComputedStyle(document.getElementById('tPhoto').closest('label')).display === 'none'")   # what the presenter sees, not the attribute
     R['menu_groups'] = page.evaluate("[...document.querySelectorAll('#roomList .grp')].map(x => x.textContent)")
     R['option_a_rooms_in_menu'] = page.evaluate("[...document.querySelectorAll('#roomList .room')].filter(b => ['Z07','Z06'].includes(b.dataset.zone)).map(b => b.textContent)")
     b.close()
-R['passed'] = all(s['matches_config'] for s in R['stops']) and len(R['stops']) == len(cfg['tour']) and not R['errors'] and not R['http_errors']
+R['passed'] = all(s['matches_config'] for s in R['stops']) and len(R['stops']) == len(cfg['tour']) and not R['errors'] and not R['http_errors'] and R['stills_switch_hidden']
 (out / 'tour-play.json').write_text(json.dumps(R, indent=2) + '\n')
 print(json.dumps({'passed': R['passed'], 'stops': len(R['stops']), 'errors': R['errors'][:3]}))

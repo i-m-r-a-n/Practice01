@@ -4019,6 +4019,49 @@
    "proposal_view": true
   },
   {
+   "name": "BEL_CAM_PLANT_WALL",
+   "room": "Global Design Studio",
+   "zone": "Z18",
+   "priority": 2,
+   "type": "PERSP",
+   "position": [
+    31.6,
+    1.5,
+    -27.3
+   ],
+   "direction": [
+    0.0,
+    0.014704292441876175,
+    -0.9998918860475786
+   ],
+   "up": [
+    0.0,
+    0.9998918860475786,
+    0.014704292441876175
+   ],
+   "quaternion_xyzw": [
+    0.007352,
+    -0.0,
+    -0.0,
+    0.999973
+   ],
+   "clip": [
+    0.05,
+    300.0
+   ],
+   "shift_x": 0.0,
+   "shift_y": 0.0,
+   "sensor_fit": "AUTO",
+   "lens": 18.0,
+   "sensor_width": 36.0,
+   "render": {
+    "file": null,
+    "width": 1920,
+    "height": 1080
+   },
+   "proposal_view": true
+  },
+  {
    "name": "BEL_CAM_ACADEMY",
    "room": "Commercial & accounts",
    "zone": "Z06",
@@ -4370,20 +4413,27 @@
   },
   {
    "stop": 20,
+   "zone": "Z18",
+   "camera": "BEL_CAM_PLANT_WALL",
+   "title": "The living wall",
+   "description": "At the north end of the studio: organic wooden niches with a warm backlight, snake plant, money plant and peace lily, and a small fig tree either side. No medical claim."
+  },
+  {
+   "stop": 21,
    "zone": "Z09",
    "camera": "BEL_CAM_RECORDS",
    "title": "The records room",
    "description": "The originals behind every claim, fibre origins and recycled content first. Until documents arrive, every line of the Open Record reads none yet, to prepare or to be collected."
   },
   {
-   "stop": 21,
+   "stop": 22,
    "zone": "Z08",
    "camera": "CAM_09_Boardroom_A",
    "title": "Negotiation suite",
    "description": "The visit ends here: tea in clay at every place, the approved knitwear review trays, a bonsai in the corner."
   },
   {
-   "stop": 22,
+   "stop": 23,
    "zone": null,
    "camera": "CAM_ISO_SW",
    "title": "Designed for a Solar-Powered Future",
@@ -4417,9 +4467,9 @@
   "Z03": "In this 3D proposal: the Sun wall (sun, solar generation, use and storage, operations, with grid and backup shown) and a terracotta earth wall whose clay bowls hold the raw side of the fabric story: cotton, jute, recycled fibre and indigo. Concept demonstration, not live factory data: \"Designed for a Solar-Powered Future\" until measured evidence exists.",
   "Z30": "In this 3D proposal: the approved knitwear stays (garments in the four bays, the four forms, sample cards, the materials library and the coconut-shell button story). Each form and bay adds its fabric story: cotton, a jute and cotton blend (research only), cutting waste (jhut) sorted by colour and spun again, used garments taken back and mended in kantha stitch. Drinking water from a clay kolshi (source client-stated; no laboratory results yet). Illustrative stories: fibre origins, recycled shares and tests are still to be documented.",
   "Z08": "In this 3D proposal: clay cups at every place and a clay jug instead of glass, the approved knitwear review trays, and a bonsai in the corner by the screen.",
-  "Z18": "In this 3D proposal: the only room with exterior windows: three bonsai and a tulsi pot take turns on the sunning shelf at window W10, a small fig tree by W09, and the approved sample-review table.",
+  "Z18": "In this 3D proposal: the only room with exterior windows: three bonsai and a tulsi pot take turns on the sunning shelf at window W10, a small fig tree by W09, the approved sample-review table, and a living wall of plant niches on the north wall (no medical claim).",
   "Z12": "In this 3D proposal: tea in clay cups. The approved development shelf stays.",
-  "Z07": "Option A only (the merchandising team moves first; owner decision). In this 3D proposal: the Green Uthan, a Bengali courtyard with a bot-tola seat around the column, two small fig trees and a bonsai under grow lights (no daylight here), stone seats and an open bamboo canopy; an artisan corner (Chakma back-strap loom and Marma weaving and basketry, both only with community consent; nakshi kantha, cane, painted terracotta); and a circular knitwear studio in four steps: wear (knitwear on bamboo rails), remake (cutting waste sorted by colour, recycled yarn), repair (kantha mending) and return (take-back bins). Every approved item that moves is in the relocation ledger.",
+  "Z07": "Option A only (the merchandising team moves first; owner decision). In this 3D proposal: the Green Uthan, a Bengali courtyard with a bot-tola seat around the column, two small fig trees and a bonsai under grow lights (no daylight here), stone seats and an open bamboo canopy; an artisan corner (Chakma back-strap loom and Marma weaving and basketry, both only with community consent; nakshi kantha, cane, painted terracotta); and a circular knitwear studio in four steps: wear (knitwear on bamboo rails), remake (cutting waste sorted by colour, recycled yarn), repair (kantha mending) and return (take-back bins); a craft corner with rural tools, a shelf of painted clay and drums, and jute curtains on the north glass. Every approved item that moves is in the relocation ledger.",
   "Z06": "Option A only (the accounts team moves first; owner decision). In this 3D proposal: the design education academy inside the existing glass accounts suite, 20 seats, a demonstration bench with a sewing machine and a hands camera, a mobile screen and a pin-up board; the discussion room becomes the tutor room. The fire engineer sets the capacity.",
   "Z15": "In this 3D proposal: eight labelled fibre boxes on the low shelf (cotton, jhut, used garments, jute, banana and pineapple leaf fibre and natural indigo as research only, coconut-shell buttons) and product passport cards on the review table, every field still to be documented, ready for the EU ecodesign rules for apparel that are still being drafted. The D65 colour booth and the approved fabric library stay.",
   "Z16": "In this 3D proposal: a fabric lab on the post-processing bench (a GSM cutter, a balance, knit swatches marked for wash shrinkage, a grey scale) with an empty durability log. Methods to be agreed with an accredited laboratory; no results are shown. The 3D printers stay.",
@@ -4429,7 +4479,7 @@
   "Z14": "The approved CAD dressing, as on the live tour: one illustrative knit cardigan from flats to pattern, grading, marker and stitch chart. In the concept every style also carries a product passport (fibre origin, recycled share, durability, repair and recyclability), still to be designed.",
   "Z04": "In this 3D proposal: the buyer project room, also the export and order desk in the pilot: knit swatches on a tray, clay water, an order checklist with the product passport, and a project board (brief, fabric, lab dip, fit, tests, order) whose dates are all to be agreed.",
   "Z21": "In this 3D proposal: the pilot academy: a class of six at the approved table with knit swatches, yarn cones and a mending kit, and a craft wall of student work. The lounge stays.",
-  "Z20": "In this 3D proposal: staff and artisan dining with the same care as the buyer rooms: clay plates, cups and jugs on hogla runners, and water and tea in clay on the pantry counter. Glazes to be tested before use.",
+  "Z20": "In this 3D proposal: the tong, a Bengali tea stall, on the free west wall: a cart front on two wheels with a painted canopy, tea in clay cups, painted kettles on jute cords, an electric lantern in the hurricane form (no kerosene indoors) and wood-slice stools. Staff and artisan dining has the same care as the buyer rooms: clay plates, cups and jugs on hogla runners. Glazes to be tested before use.",
   "Z09": "In this 3D proposal: the records room: the originals behind every claim, fibre origins and recycled content first. Labelled evidence files and an Open Record index whose lines all read \"none yet\", \"to prepare\" or \"to be collected\" until documents arrive."
  },
  "roomGroups": {

@@ -157,7 +157,7 @@ if (CFG.roomDescriptions) for (const r of meta.rooms) if (CFG.roomDescriptions[r
 if (CFG.roomGroups) for (const r of meta.rooms) if (CFG.roomGroups[r.zone]) {   // rooms menu, info and tour card kicker
   r.group = CFG.roomGroups[r.zone]; if (!meta.room_groups.includes(r.group)) meta.room_groups.push(r.group);
 }
-if (CFG.noRenderPhotos) $('tPhoto').closest('label').hidden = true;   // no approved stills on this route: no stills switch
+if (CFG.noRenderPhotos) $('tPhoto').closest('label').style.display = 'none';   // no approved stills on this route: no stills switch (the card's label style overrides [hidden])
 if (CFG.extraCameras) meta.cameras.push(...CFG.extraCameras);   // proposal viewpoints that have no approved render
 if (CFG.tour) meta.tour = CFG.tour;
 if (CFG.branding) {
