@@ -70,7 +70,7 @@ cameras = [
 
 names = {
     'Z01': 'Arrival gallery', 'Z02': 'Reception · tea lounge', 'Z03': 'Earth & Sun passage', 'Z30': 'Experience centre · fabric stories',
-    'Z08': 'Negotiation suite', 'Z18': 'Collaborative studio', 'Z07': 'Green Uthan · circular knitwear studio (option A)', 'Z06': 'Design academy (option A)',
+    'Z08': 'Negotiation suite', 'Z18': 'Collaborative studio', 'Z07': 'Green Uthan · circular knitwear studio (later phase)', 'Z06': 'Design academy (later phase)',
     'Z15': 'Fibre library', 'Z16': 'Fabric lab', 'Z17': 'Sample room · remake and repair', 'Z22': 'Design wing · the making line', 'Z14': 'CAD · knitwear development',
     'Z05': 'Export & order centre (planned)', 'Z04': 'Buyer project room · order desk', 'Z09': 'Records room',
     'Z20': 'Staff & artisan dining', 'Z21': 'Academy annex (pilot academy)', 'Z10': 'Exec reception · tea point',
@@ -84,8 +84,8 @@ notes = {
     'Z08': in3d + 'clay cups at every place and a clay jug instead of glass, the approved knitwear review trays, and a bonsai in the corner by the screen.',
     'Z18': in3d + 'the only room with exterior windows: three bonsai and a tulsi pot take turns on the sunning shelf at window W10, a small fig tree by W09, the approved sample-review table, and a living wall of plant niches on the north wall (no medical claim).',
     'Z12': in3d + 'tea in clay cups. The approved development shelf stays.',
-    'Z07': 'Option A only (the merchandising team moves first; owner decision). In this 3D proposal: the Green Uthan, a Bengali courtyard with a bot-tola seat around the column, two small fig trees and a bonsai under grow lights (no daylight here), stone seats and an open bamboo canopy; an artisan corner (Chakma back-strap loom and Marma weaving and basketry, both only with community consent; nakshi kantha, cane, painted terracotta); and a circular knitwear studio in four steps: wear (knitwear on bamboo rails), remake (cutting waste sorted by colour, recycled yarn), repair (kantha mending) and return (take-back bins); a craft corner with rural tools, a shelf of painted clay and drums, and jute curtains on the north glass. Every approved item that moves is in the relocation ledger.',
-    'Z06': 'Option A only (the accounts team moves first; owner decision). In this 3D proposal: the design education academy inside the existing glass accounts suite, 20 seats, a demonstration bench with a sewing machine and a hands camera, a mobile screen and a pin-up board; the discussion room becomes the tutor room. The fire engineer sets the capacity.',
+    'Z07': 'Option A, a later phase: the owner chose the pilot (option C) first on 30 Oct 2026; this room changes only if the merchandising team moves later. In this 3D proposal: the Green Uthan, a Bengali courtyard with a bot-tola seat around the column, two small fig trees and a bonsai under grow lights (no daylight here), stone seats and an open bamboo canopy; an artisan corner (Chakma back-strap loom and Marma weaving and basketry, both only with community consent; nakshi kantha, cane, painted terracotta); and a circular knitwear studio in four steps: wear (knitwear on bamboo rails), remake (cutting waste sorted by colour, recycled yarn), repair (kantha mending) and return (take-back bins); a craft corner with rural tools, a shelf of painted clay and drums, and jute curtains on the north glass. Every approved item that moves is in the relocation ledger.',
+    'Z06': 'Option A, a later phase: the owner chose the pilot (option C) first on 30 Oct 2026; this room changes only if the accounts team moves later. In this 3D proposal: the design education academy inside the existing glass accounts suite, 20 seats, a demonstration bench with a sewing machine and a hands camera, a mobile screen and a pin-up board; the discussion room becomes the tutor room. The fire engineer sets the capacity.',
     'Z15': in3d + 'eight labelled fibre boxes on the low shelf (cotton, jhut, used garments, jute, banana and pineapple leaf fibre and natural indigo as research only, coconut-shell buttons) and product passport cards on the review table, every field still to be documented, ready for the EU ecodesign rules for apparel that are still being drafted. The D65 colour booth and the approved fabric library stay.',
     'Z16': in3d + 'a fabric lab on the post-processing bench (a GSM cutter, a balance, knit swatches marked for wash shrinkage, a grey scale) with an empty durability log. Methods to be agreed with an accredited laboratory; no results are shown. The 3D printers stay.',
     'Z17': in3d + 'remake and repair on the pattern table: a T-shirt pattern in kraft paper, offcuts sorted by colour, a panel pieced from offcuts and a T-shirt mended in kantha stitch. The sample machines and forms stay. Seen from the Uthan through the interior glass in option A.',
@@ -99,7 +99,7 @@ notes = {
 }
 tour = [
     {'stop': 1, 'zone': None, 'camera': 'CAM_ISO_SE', 'title': 'The Living Bengal Factory',
-     'description': 'A knitwear factory whose fabric comes from the earth and from what was already made, with Bengal craft as its signature: a concept proposal on the approved Stage II floor. The front rooms, the design wing and the studio work in every option; Merchandising and the accounts suite are option A only.'},
+     'description': 'A knitwear factory whose fabric comes from the earth and from what was already made, with Bengal craft as its signature: a concept proposal on the approved Stage II floor. The owner chose the pilot (option C) first: the front rooms, the design wing, the studio and the pilot rooms. Merchandising and the accounts suite are shown as option A, a possible later phase.'},
     {'stop': 2, 'zone': 'Z01', 'camera': 'CAM_03_Entrance_Lobby', 'title': 'Arrival gallery',
      'description': 'A banyan bonsai on granite by the glass gate, three stones, terracotta on the check-in desk and terracotta plaques by a rural artist (to be commissioned).'},
     {'stop': 3, 'zone': 'Z02', 'camera': 'CAM_01_Reception_A', 'title': 'Reception and Bengali tea',
@@ -113,7 +113,7 @@ tour = [
     {'stop': 7, 'zone': 'Z30', 'camera': 'BEL_CAM_JHUT', 'title': 'The jhut river',
      'description': 'A sewing machine and a river of patchwork pieced from cutting waste, running off the table and across the floor, under natural indigo cloths. An installation: makers to be credited.'},
     {'stop': 8, 'zone': 'Z07', 'camera': 'BEL_CAM_UTHAN', 'title': 'Option A · the Green Uthan',
-     'description': 'Only if the merchandising team moves: a Bengali courtyard around the column, a bot-tola seat, small trees under grow lights, kula and dala over a bamboo canopy, alpana, hurricane-form lanterns (electric) and natural indigo yarn.'},
+     'description': 'A later phase, only if the merchandising team moves: a Bengali courtyard around the column, a bot-tola seat, small trees under grow lights, kula and dala over a bamboo canopy, alpana, hurricane-form lanterns (electric) and natural indigo yarn.'},
     {'stop': 9, 'zone': 'Z07', 'camera': 'BEL_CAM_ARTISAN', 'title': 'Option A · artisan corner',
      'description': 'Demonstrations by invitation: a Chakma back-strap loom and Marma weaving and basketry, shown only with the weavers\' consent; nakshi kantha, cane, painted shokher hari pots, tepa putul dolls and drums.'},
     {'stop': 10, 'zone': 'Z07', 'camera': 'BEL_CAM_CIRCULAR', 'title': 'Option A · circular knitwear studio',
@@ -121,7 +121,7 @@ tour = [
     {'stop': 11, 'zone': 'Z07', 'camera': 'BEL_CAM_CRAFT', 'title': 'Option A · craft corner',
      'description': 'A bamboo trellis with a gamchha, a kantha, a kula and a painting by a rural artist (to be commissioned), a cane bowl chair, a jute pouf and bamboo armchairs. Makers to be identified, paid and credited.'},
     {'stop': 12, 'zone': 'Z06', 'camera': 'BEL_CAM_ACADEMY', 'title': 'Option A · design academy',
-     'description': 'Only if the accounts team moves: 20 seats inside the existing glass suite, a demonstration bench with a sewing machine and a tutor room. The fire engineer sets the capacity.'},
+     'description': 'A later phase, only if the accounts team moves: 20 seats inside the existing glass suite, a demonstration bench with a sewing machine and a tutor room. The fire engineer sets the capacity.'},
     {'stop': 13, 'zone': 'Z22', 'camera': 'BEL_CAM_MAKING_LINE', 'title': 'The making line',
      'description': 'At the entrance to the design wing: one T-shirt in six steps, from fibre to yarn, knit fabric, cut and sew, test, and wear and return. Illustrative objects; real samples and records replace them.'},
     {'stop': 14, 'zone': 'Z16', 'camera': 'BEL_CAM_LAB', 'title': 'The labs behind the glass',
@@ -160,13 +160,13 @@ config = {
     'peopleManifest': base.get('peopleManifest'), 'peopleAccepted': False,
     'hideNodes': HIDE + OPTION_A_HIDE, 'walkRelease': ledger['walk_release']['runs'], 'noRenderPhotos': True,
     'extraCameras': cameras, 'tour': tour, 'roomNames': names, 'roomNotes': notes,
-    'roomGroups': {'Z07': 'Option A · proposed', 'Z06': 'Option A · proposed'},   # their own menu group and tour-card kicker
+    'roomGroups': {'Z07': 'Option A · later phase', 'Z06': 'Option A · later phase'},   # their own menu group and tour-card kicker (option C, the pilot, was chosen first)
     'branding': {
         'pageTitle': 'Bengal Earth Lab - concept proposal',
         'eyebrow': 'Bengal Earth Lab · Earth and recycled fabric, Bengal craft',
         'headline': 'The Living Bengal Factory · concept proposal',
         'welcomeTitle': 'Explore the Bengal Earth Lab proposal',
-        'welcomeTour': 'A guided tour of the proposal, including the option A rooms. Pause, go back or skip at any time.',
+        'welcomeTour': 'A guided tour of the proposal: the pilot first, then the option A rooms as a possible later phase. Pause, go back or skip at any time.',
         'disclaimerHtml': '<b>Concept proposal</b> on the approved Stage II floor &middot; fibre origins, recycled shares, tests, makers, artists, growers, stone sources and energy data are still to be identified &middot; no people shown.',
     },
 }
