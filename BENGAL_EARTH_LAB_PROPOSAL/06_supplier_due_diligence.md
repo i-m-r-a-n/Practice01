@@ -8,7 +8,7 @@
 
 - **verified exists (19):** a current publicly accessible official organisation/site, trade body, credible WFTO member page, or named-programme description was found. This **only corroborates an identifiable public lead**. It does **not** establish current manufacturing availability, financial/legal standing, authenticity of claimed raw-material origin, product safety, fair-wage delivery for a particular order, export-readiness, certification of individual products, or maker consent.
 - **unverified (1):** a reported instrument-maker lead appears in an **April 2018** article only. It may no longer operate. No phone number, maker name permission, or commercial capacity has been verified.
-- **Referral/intermediary is not supplier:** six entries should only help locate individual makers, clarify rights or check legality. Their presence must never be counted as an actual purchase-ready manufacturer.
+- **Referral/intermediary is not supplier:** five entries should only help locate individual makers, clarify rights or check legality. Their presence must never be counted as an actual purchase-ready manufacturer.
 - WFTO's *current member-page status* is independent organisation-level evidence for Prokritee, Dhaka Handicrafts, CORR and BaSE. WFTO membership is **not** automatically a transferable product label, origin certificate, EU conformity assessment or evidence that this project may use the logo. BaSE's separate WFTO brand profile says “Renewal in Progress”; request current enterprise/brand status before any claim [S1–S5].
 
 ## 2. Practical sourcing order — concept/sample exploration only
@@ -16,7 +16,7 @@
 | Package | Starting leads | Why inspect; bounded next step |
 | --- | --- | --- |
 | Natural-fibre storage, small P01/P02 products | Prokritee, Dhaka Handicrafts, CORR, BaSE, Palli Crafts, Teesta Craft | Ask, if outreach is subsequently authorised, for *one* representative sample workflow, confirmed fibre species, raw-origin chain and weaving/finish location. A website basket is not permission to copy its design. |
-| Commissioned handloom / embroidery accents | Artefact, Palli Crafts, BaSE, Sreepur-type partners via referral | Document original design rights, credited maker consent, fabric composition, finish and wash/colourfastness. No unsigned Jamdani or Indigenous motifs marketed as authorised. |
+| Commissioned handloom / embroidery accents | Artefact, Palli Crafts, BaSE | Document original design rights, credited maker consent, fabric composition, finish and wash/colourfastness. No unsigned Jamdani or Indigenous motifs marketed as authorised. |
 | Terracotta decorative plinths and replaceable planter sleeves | Kaaruk, Bhola Mritshilpa, Ayaz Exports, Klay Art Studio | First check decorative-only prototype dimensional repeatability and moisture containment. A clay cup/bowl stays **DISPLAY ONLY / FOOD-CONTACT HOLD** until SKU-specific tested migration and documentation. |
 | Bamboo/cane replaceable furniture inserts | Nurnobi Bamboo Craft; BaSE/Palli as alternatives | Identify species, grown/harvested location, drying/treatment, joints, repairability, insect risk and potential fire performance. Domestic assembly does not establish BD-grown raw input. |
 | A few bonsai rather than an internal garden | Bonsai Nursery | Site light, species and lawful origin check; pot saturation load, maintenance owner and grow-light load need review. Never place watering above electronics, samples or exit paths. |
