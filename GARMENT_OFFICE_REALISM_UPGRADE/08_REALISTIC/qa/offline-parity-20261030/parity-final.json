@@ -1,0 +1,39 @@
+{
+  "status": "passed",
+  "source_commit": "d5939f9ef3928340908459efc440259df0d34b6d",
+  "packed_assets": 23,
+  "viewer_dist": [
+    {
+      "path": "index.html",
+      "source_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/viewer/dist/index.html",
+      "bytes": 73485,
+      "sha256": "fe6cda033cac7cc9ea908ebb50523825e3e91ad4bd200db07fe57dd7a3804f2c"
+    },
+    {
+      "path": "app.js",
+      "source_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/viewer/dist/app.js",
+      "bytes": 1256002,
+      "sha256": "87db5ebb83f672b1cd46f0f1fdf1a7b0922c9c286de1ad9e6118393c48d74edd"
+    },
+    {
+      "path": "release-config.json",
+      "source_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/viewer/dist/release-config.json",
+      "bytes": 4698,
+      "sha256": "a7dc7ddf3b51823d8c9dbdaf277116404f5b91fd8ea2efd310721bef417c4846"
+    }
+  ],
+  "render_files": 43,
+  "package_files": 62,
+  "release_zones": [
+    "Z02",
+    "Z08",
+    "Z30",
+    "Z12",
+    "Z07",
+    "Z18"
+  ],
+  "archive_sha256": "6b3cf6aa1d8dfb810d6d7ff671dd7047e3933f29fee11095767aae28334416c3",
+  "archive_bytes": 73868332,
+  "inline_app_exact": true,
+  "zip_roundtrip_exact": true
+}

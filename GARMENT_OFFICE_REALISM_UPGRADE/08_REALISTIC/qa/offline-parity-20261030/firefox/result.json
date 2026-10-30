@@ -1,0 +1,12 @@
+{
+  "executable": "/workspace/tools/playwright/firefox-1538/firefox/firefox",
+  "url": "file:///tmp/offline-firefox-check-20261030/probe.html",
+  "options": {
+    "headless": true,
+    "timeout": 25000
+  },
+  "started": 1793327064.3147182,
+  "ok": false,
+  "error": "BrowserType.launch: Timeout 25000ms exceeded.\nCall log:\n  - <launching> /workspace/tools/playwright/firefox-1538/firefox/firefox -no-remote -headless -profile /tmp/playwright_firefoxdev_profile-RicM59 -juggler-pipe -silent\n  - <launched> pid=1313\n  - [pid=1313][err] *** You are running in headless mode.\n  - [pid=1313][err] Fontconfig error: No writable cache directories\n  - [pid=1313][err] [1351] Sandbox: writing /proc/self/uid_map: EROFS\n  - [pid=1313][out] Crash Annotation GraphicsCriticalError: |[0][GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt (t=0.416322) [GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt\n",
+  "seconds": 25.33
+}

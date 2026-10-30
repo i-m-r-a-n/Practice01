@@ -1,0 +1,6 @@
+{
+  "status": "passed",
+  "purpose": "Reject a current bundle packaged under the old live source SHA",
+  "exit_code": 1,
+  "error": "ValueError: Input differs from pinned source: GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/viewer/dist/index.html"
+}

@@ -1,0 +1,757 @@
+{
+  "room_completed": "Six_Room_Interiors",
+  "file": "Six_Room_Interiors_Realistic_Offline.zip",
+  "bytes": 73868332,
+  "sha256": "6b3cf6aa1d8dfb810d6d7ff671dd7047e3933f29fee11095767aae28334416c3",
+  "base_model_sha256": "06f13e5311f4f78008a15ab8b7d97c3284d52411cf22c231d522d2c26ed196c3",
+  "runtime_manifest": {
+    "source_commit": "d5939f9ef3928340908459efc440259df0d34b6d",
+    "viewer_dist": [
+      {
+        "path": "index.html",
+        "source_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/viewer/dist/index.html",
+        "bytes": 73485,
+        "sha256": "fe6cda033cac7cc9ea908ebb50523825e3e91ad4bd200db07fe57dd7a3804f2c"
+      },
+      {
+        "path": "app.js",
+        "source_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/viewer/dist/app.js",
+        "bytes": 1256002,
+        "sha256": "87db5ebb83f672b1cd46f0f1fdf1a7b0922c9c286de1ad9e6118393c48d74edd"
+      },
+      {
+        "path": "release-config.json",
+        "source_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/viewer/dist/release-config.json",
+        "bytes": 4698,
+        "sha256": "a7dc7ddf3b51823d8c9dbdaf277116404f5b91fd8ea2efd310721bef417c4846"
+      }
+    ],
+    "source_files": [
+      {
+        "path": "lighting-v2/Z02-furniture.glb",
+        "source_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/lighting-v2/Z02-furniture.glb",
+        "bytes": 1725000,
+        "sha256": "a0d6b957d815402d750b3037a09707557974f130a28fc3fc562266617df314c8"
+      },
+      {
+        "path": "lighting-v2/Z02.exr",
+        "source_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/lighting-v2/Z02.exr",
+        "bytes": 14345283,
+        "sha256": "966513336c6de93ec2e7a1e3c567269bb845db9f28a312c047f4074c9076f6dd"
+      },
+      {
+        "path": "lighting-v2/Z02.ktx2",
+        "source_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/lighting-v2/Z02.ktx2",
+        "bytes": 18938140,
+        "sha256": "1eec0b7f3e08f42d7bde75c49a7716e1d520c90beb96ee0c7998daf5402c02d0"
+      },
+      {
+        "path": "lighting-v2/manifest-hybrid.json",
+        "source_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/lighting-v2/manifest-hybrid.json",
+        "bytes": 25011,
+        "sha256": "2ea818b15323e03ec96949d5c74d7273f8568cedc31a560c61f115a37c698abd"
+      },
+      {
+        "path": "model_web_baked.glb",
+        "source_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/revised-model/Optimized_Office_Interior_web_baked.glb",
+        "bytes": 19973644,
+        "sha256": "06f13e5311f4f78008a15ab8b7d97c3284d52411cf22c231d522d2c26ed196c3"
+      },
+      {
+        "path": "people/assets/panjabi.glb",
+        "source_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/people/assets/panjabi.glb",
+        "bytes": 4099060,
+        "sha256": "31f9e208986c064a3776991690d12925ed5fda59889765df06930d66c054d257"
+      },
+      {
+        "path": "people/assets/salwar.glb",
+        "source_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/people/assets/salwar.glb",
+        "bytes": 5159776,
+        "sha256": "cd2c4c458dd59532cc28408b98ae8d544a971fe4e069fab2413bbf4f4d90b5e4"
+      },
+      {
+        "path": "people/assets/salwar_braid.glb",
+        "source_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/people/assets/salwar_braid.glb",
+        "bytes": 4689540,
+        "sha256": "68f3384b625f59d8d4a9c1ddce671126dba394f7ca9aaae383ac0d5aa08e398d"
+      },
+      {
+        "path": "people/assets/shirt.glb",
+        "source_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/people/assets/shirt.glb",
+        "bytes": 4411128,
+        "sha256": "7430996e4368aa3e54d39c77f93d69a7ce31a089977714e2e7ed56dd846f7c1e"
+      },
+      {
+        "path": "people/room-release/people-manifest.json",
+        "source_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/people/room-release/people-manifest.json",
+        "bytes": 25860,
+        "sha256": "be4556ac5fd1057a5d7fe19e15b0f25c7d6ca2eae0b6a87eb8122bdc06dd0884"
+      },
+      {
+        "path": "people/room-release/poses.json",
+        "source_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/people/room-release/poses.json",
+        "bytes": 33042,
+        "sha256": "500e30099762c78a20f4d151e060478e886b98779ebf1cfa09a6fa2e4861ccd2"
+      },
+      {
+        "path": "props/office-props-manifest.json",
+        "source_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/props/office-props-manifest.json",
+        "bytes": 167943,
+        "sha256": "4b93095d048f658bcdff957f56b41dac78e2287d727af9eb4312647593a9e3dd"
+      },
+      {
+        "path": "release-config.json",
+        "source_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/viewer/dist/release-config.json",
+        "bytes": 4698,
+        "sha256": "a7dc7ddf3b51823d8c9dbdaf277116404f5b91fd8ea2efd310721bef417c4846"
+      },
+      {
+        "path": "textures/codecs/third_party_licenses/sources.json",
+        "source_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/textures/codecs/third_party_licenses/sources.json",
+        "bytes": 922,
+        "sha256": "70ac590a05a7fe2ccb830d994dcbdbc7d4b6e309fe07fdad60c9910d049dad8a"
+      },
+      {
+        "path": "textures/codecs/three_r169/examples/jsm/libs/basis/basis_transcoder.js",
+        "source_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/textures/codecs/three_r169/examples/jsm/libs/basis/basis_transcoder.js",
+        "bytes": 57529,
+        "sha256": "8478b5b6d6b74e7d3082b89f6417321d8d1dc0307f2b30d4484bb11b441696a1"
+      },
+      {
+        "path": "textures/codecs/three_r169/examples/jsm/libs/basis/basis_transcoder.wasm",
+        "source_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/textures/codecs/three_r169/examples/jsm/libs/basis/basis_transcoder.wasm",
+        "bytes": 527333,
+        "sha256": "6cf17dc889352c42e9acf8897107978d127005fe3386c36a0e3845e27967630a"
+      },
+      {
+        "path": "textures/codecs/three_r169/examples/jsm/libs/ktx-parse.module.js",
+        "source_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/textures/codecs/three_r169/examples/jsm/libs/ktx-parse.module.js",
+        "bytes": 19440,
+        "sha256": "34a3a68f08db30a353802c5a762c5dcd89a168a1b56567019ef4a7563ceaf4d4"
+      },
+      {
+        "path": "textures/codecs/three_r169/examples/jsm/libs/zstddec.module.js",
+        "source_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/textures/codecs/three_r169/examples/jsm/libs/zstddec.module.js",
+        "bytes": 39754,
+        "sha256": "5cbf818e842628a4464e748594a6deae18ceddda3c2f541e7b3a0ff5fc7611e2"
+      },
+      {
+        "path": "textures/codecs/three_r169/examples/jsm/loaders/KTX2Loader.js",
+        "source_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/textures/codecs/three_r169/examples/jsm/loaders/KTX2Loader.js",
+        "bytes": 23627,
+        "sha256": "68a9bc3a01170cf4c840ae025715fd661f0a929019231e61128a64fa12608fd7"
+      },
+      {
+        "path": "textures/codecs/three_r169/examples/jsm/utils/WorkerPool.js",
+        "source_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/textures/codecs/three_r169/examples/jsm/utils/WorkerPool.js",
+        "bytes": 1712,
+        "sha256": "94ff7b608caf3b827ffa95bd6092b9d174732b856915b38ed006b4f049f95675"
+      },
+      {
+        "path": "textures/codecs/three_r169/manifest.json",
+        "source_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/textures/codecs/three_r169/manifest.json",
+        "bytes": 2125,
+        "sha256": "8d9947f6d69b53233b38a9254191a96224ca39ff6006e057a6c3551b603f64c6"
+      },
+      {
+        "path": "textures/pbr2k/index.json",
+        "source_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/textures/pbr2k/index.json",
+        "bytes": 10478,
+        "sha256": "e1d529b494e688d6a2545b4fdb581c9f686f5b25e1a5100f8d57d73d37683c19"
+      },
+      {
+        "path": "textures/pbr2k/ktx2/Terrazzo019M/basecolor.ktx2",
+        "source_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/textures/pbr2k/ktx2/Terrazzo019M/basecolor.ktx2",
+        "bytes": 785456,
+        "sha256": "e16352c3c2076a0e4ca75f31117a25dbc947b9d905d9b4ed6bd881ee5ef9b7b8"
+      }
+    ],
+    "source_bytes": 75066501,
+    "resource_packs": [
+      "asset-pack-000.js",
+      "asset-pack-001.js",
+      "asset-pack-002.js",
+      "asset-pack-003.js",
+      "asset-pack-004.js",
+      "asset-pack-005.js"
+    ],
+    "render_files": [
+      {
+        "path": "renders/CAM_01_Reception_A.jpg",
+        "source_path": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_01_Reception_A.jpg",
+        "bytes": 223716,
+        "sha256": "5b3c4df1ea311333a206c83fa1609f88562577196c8e8331f1227b9dda25f11e"
+      },
+      {
+        "path": "renders/CAM_02_Reception_B.jpg",
+        "source_path": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_02_Reception_B.jpg",
+        "bytes": 250856,
+        "sha256": "33bcd213ac1f4b364a2d511e7d3e0936946773991b6aaef5dbf74b4f0356ca7b"
+      },
+      {
+        "path": "renders/CAM_03_Entrance_Lobby.jpg",
+        "source_path": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_03_Entrance_Lobby.jpg",
+        "bytes": 189553,
+        "sha256": "e32a9f2c7974dc4a7c4d47cc8b209a1fc900533a70b030bc807aeae1a86e2c5f"
+      },
+      {
+        "path": "renders/CAM_04_Experience_Centre_A.jpg",
+        "source_path": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_04_Experience_Centre_A.jpg",
+        "bytes": 258765,
+        "sha256": "d509f9a181317f118bd1b9c52dd5bf04295fbe82ce599e0bf1099c54cdc2f94c"
+      },
+      {
+        "path": "renders/CAM_05_Experience_Centre_B.jpg",
+        "source_path": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_05_Experience_Centre_B.jpg",
+        "bytes": 329067,
+        "sha256": "54e88279a1dd9fbbe87e4b03af56600a365100c79914e62403382a6050fe139f"
+      },
+      {
+        "path": "renders/CAM_06_Experience_Centre_Detail.jpg",
+        "source_path": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_06_Experience_Centre_Detail.jpg",
+        "bytes": 183668,
+        "sha256": "b9617bc2ef13100164c6f9682b20e29c0fb9851a893b1415a9f5dae40dcf3bd0"
+      },
+      {
+        "path": "renders/CAM_07_MD_Office_A.jpg",
+        "source_path": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_07_MD_Office_A.jpg",
+        "bytes": 182544,
+        "sha256": "f4fde834803a20078f0b096051e5a422887067bf5d9ad725008476121b62a3aa"
+      },
+      {
+        "path": "renders/CAM_08_MD_Office_B.jpg",
+        "source_path": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_08_MD_Office_B.jpg",
+        "bytes": 255750,
+        "sha256": "a678f51edc906687937027549b65990a5d46fb86a8dddd34d0fd4aaf827fde4f"
+      },
+      {
+        "path": "renders/CAM_09_Boardroom_A.jpg",
+        "source_path": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_09_Boardroom_A.jpg",
+        "bytes": 265607,
+        "sha256": "891ecee12f6da88f79d9130f7f8530c1ee8c49254c457fcb756c5701e58b45e1"
+      },
+      {
+        "path": "renders/CAM_10_Boardroom_B.jpg",
+        "source_path": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_10_Boardroom_B.jpg",
+        "bytes": 218032,
+        "sha256": "a5e67a3b5a049b0bbb5fa5098cd060db184a06ad58b27377b7b1b6e81f0e2d1d"
+      },
+      {
+        "path": "renders/CAM_11_Merchandising_A.jpg",
+        "source_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/revised-model/renders/CAM_11_Merchandising_A.jpg",
+        "bytes": 228737,
+        "sha256": "3257a566e63b9d2f49296782c652d6ec54d5b0c2d315fe315c59c1128e2d51d2"
+      },
+      {
+        "path": "renders/CAM_12_Merchandising_B.jpg",
+        "source_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/revised-model/renders/CAM_12_Merchandising_B.jpg",
+        "bytes": 231364,
+        "sha256": "4c3a398ede589777ecaaa615c55e33c98fc3f3e15c1853dfce5d63762f3fd23a"
+      },
+      {
+        "path": "renders/CAM_13_Design_Studio_A.jpg",
+        "source_path": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_13_Design_Studio_A.jpg",
+        "bytes": 189841,
+        "sha256": "dfc5c9f88df76e2df7046917ea51e630066ebfb9c184a18246d4ecbcdc021dbb"
+      },
+      {
+        "path": "renders/CAM_14_Design_Studio_B.jpg",
+        "source_path": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_14_Design_Studio_B.jpg",
+        "bytes": 175363,
+        "sha256": "557fa6e6e383f068d4551d60a9ed8679a74dea3df1f6b26ac1ce2eeb2f316c97"
+      },
+      {
+        "path": "renders/CAM_15_CAD_Room.jpg",
+        "source_path": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_15_CAD_Room.jpg",
+        "bytes": 129443,
+        "sha256": "3572850363e9eb03ce491f8359378ef48bbd38dd5f4e710f0f5cf00772748263"
+      },
+      {
+        "path": "renders/CAM_16_Commercial_Accounts.jpg",
+        "source_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/revised-model/renders/CAM_16_Commercial_Accounts.jpg",
+        "bytes": 180068,
+        "sha256": "ff2980e406a18355bc193b451799db09d08445e25e31d8027221e8c092406351"
+      },
+      {
+        "path": "renders/CAM_17_Executive_Reception.jpg",
+        "source_path": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_17_Executive_Reception.jpg",
+        "bytes": 169326,
+        "sha256": "325263f8baf02f6d27d64ee8f1721e17dac2cd0f3a4f08a9addc58c54fdfe44a"
+      },
+      {
+        "path": "renders/CAM_18_Director.jpg",
+        "source_path": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_18_Director.jpg",
+        "bytes": 197172,
+        "sha256": "82757d0b1cc67382614b85f1293a91969a3969ec92093ba184f5891059efee9f"
+      },
+      {
+        "path": "renders/CAM_19_HR_Admin.jpg",
+        "source_path": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_19_HR_Admin.jpg",
+        "bytes": 189763,
+        "sha256": "277d330c743263e0411d1813ca009c5b3a989a6b9a8b832847b2cf1f34dc686b"
+      },
+      {
+        "path": "renders/CAM_20_Staff_Cafe.jpg",
+        "source_path": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_20_Staff_Cafe.jpg",
+        "bytes": 187354,
+        "sha256": "b62bf006e4401f25593622c4f453c83c1e3165bec63885108a260e807767584e"
+      },
+      {
+        "path": "renders/CAM_21_Lounge_Training.jpg",
+        "source_path": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_21_Lounge_Training.jpg",
+        "bytes": 135690,
+        "sha256": "ab4f7ddb6f2e44b349778d070efcd12940c8632c1238a4420150395e749ed10e"
+      },
+      {
+        "path": "renders/CAM_22_Prayer_Male.jpg",
+        "source_path": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_22_Prayer_Male.jpg",
+        "bytes": 114910,
+        "sha256": "8fbf7798feb16b1dcb0b7c0273198ad92d5acd663be26ea741b24040a76860dd"
+      },
+      {
+        "path": "renders/CAM_23_Sample_Room.jpg",
+        "source_path": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_23_Sample_Room.jpg",
+        "bytes": 119624,
+        "sha256": "a6a1397d7edc383b79dd6cdf8c50a88a85a30b993b2611cfc900b5e34d226218"
+      },
+      {
+        "path": "renders/CAM_24_3D_Printing_Lab.jpg",
+        "source_path": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_24_3D_Printing_Lab.jpg",
+        "bytes": 149382,
+        "sha256": "c0596723344ea3aca93c692d8c47a0284e6656f0ab5a0c0dd6494758c99829d2"
+      },
+      {
+        "path": "renders/CAM_25_Fabric_Library.jpg",
+        "source_path": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_25_Fabric_Library.jpg",
+        "bytes": 153894,
+        "sha256": "c6af4841792dc14034ad3a5c7d71caefe99346a9c2871771d7791f0a68286852"
+      },
+      {
+        "path": "renders/CAM_26_Guest_Workspace.jpg",
+        "source_path": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_26_Guest_Workspace.jpg",
+        "bytes": 98861,
+        "sha256": "62dbc7a8672740aae2fdba2e9dc44431b876e20c7a7f49b499e9fcb5af3397e3"
+      },
+      {
+        "path": "renders/CAM_27_Audit_Room.jpg",
+        "source_path": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_27_Audit_Room.jpg",
+        "bytes": 85026,
+        "sha256": "4f55e57b18436fbefc90fbd023eee2f87738bbd57b9603135e8556e8594e290d"
+      },
+      {
+        "path": "renders/CAM_28_Washroom_Male.jpg",
+        "source_path": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_28_Washroom_Male.jpg",
+        "bytes": 267912,
+        "sha256": "fc019d935fe6922234ee7bda133530e84275ffc065258c3dbe0d79b5e0a465df"
+      },
+      {
+        "path": "renders/CAM_29_Washroom_Female.jpg",
+        "source_path": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_29_Washroom_Female.jpg",
+        "bytes": 269279,
+        "sha256": "dd87c57e8c4fb4c38ba07d4ea7ff5e5dc594946925205159afe53f4f04e5869e"
+      },
+      {
+        "path": "renders/CAM_30_Prayer_Female.jpg",
+        "source_path": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_30_Prayer_Female.jpg",
+        "bytes": 88060,
+        "sha256": "4f619943ad8c4c6dd61a565885a581490460b6fe20435ba0923a612b2e9de578"
+      },
+      {
+        "path": "renders/CAM_31_Executive_Corridor.jpg",
+        "source_path": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_31_Executive_Corridor.jpg",
+        "bytes": 237581,
+        "sha256": "2f83fcec831a24ce26cd0e58eeee53a6bb0748f52e365f65399606dbf1cb94e3"
+      },
+      {
+        "path": "renders/CAM_32_Design_Corridor.jpg",
+        "source_path": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_32_Design_Corridor.jpg",
+        "bytes": 194799,
+        "sha256": "66f97f07370d23dc35fdd22324dc57c3b9d484e73fe085eb977b9bce742e0ae9"
+      },
+      {
+        "path": "renders/CAM_33_Wudu_Male.jpg",
+        "source_path": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_33_Wudu_Male.jpg",
+        "bytes": 264384,
+        "sha256": "88528192d98f2af1fe7f517d429df6dfa767548d33779b5c027731285ba7a92b"
+      },
+      {
+        "path": "renders/CAM_34_Merchandising_Sample_Hub.jpg",
+        "source_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/revised-model/renders/CAM_34_Merchandising_Sample_Hub.jpg",
+        "bytes": 237081,
+        "sha256": "939aeced450477af4b2266bf16ca0fb57be8133be6a54407351e7ff8c07b0bc2"
+      },
+      {
+        "path": "renders/CAM_35_Merchandising_Desks.jpg",
+        "source_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/revised-model/renders/CAM_35_Merchandising_Desks.jpg",
+        "bytes": 224937,
+        "sha256": "3a3a781220e3eea37c122e76ffd8d534b001547d12d15b9f0cad3a6856c66a22"
+      },
+      {
+        "path": "renders/CAM_36_Accounts_Suite.jpg",
+        "source_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/revised-model/renders/CAM_36_Accounts_Suite.jpg",
+        "bytes": 194537,
+        "sha256": "25d7425b24258a3108300c0f619951044d8e3c13791235872a44445b9ae44781"
+      },
+      {
+        "path": "renders/CAM_37_Accounts_Records_Discussion.jpg",
+        "source_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/revised-model/renders/CAM_37_Accounts_Records_Discussion.jpg",
+        "bytes": 190970,
+        "sha256": "4576cd4bdd844c21d9504be152392b1db371785d19b6d47faf4d8c0c6ad73c9d"
+      },
+      {
+        "path": "renders/CAM_38_Accounts_Public_Corridor.jpg",
+        "source_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/revised-model/renders/CAM_38_Accounts_Public_Corridor.jpg",
+        "bytes": 107854,
+        "sha256": "dd39dc5cea45bf66d9df06f0671a9b419e9c13eb26a9a72d29c7f4a72a3f7c06"
+      },
+      {
+        "path": "renders/CAM_ISO_Design_Wing.jpg",
+        "source_path": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_ISO_Design_Wing.jpg",
+        "bytes": 292497,
+        "sha256": "6b9a469bfbaf036bffa9b6317698ede1a55014a3c785554e5cc5f8024d1b7778"
+      },
+      {
+        "path": "renders/CAM_ISO_Front_Zone.jpg",
+        "source_path": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_ISO_Front_Zone.jpg",
+        "bytes": 375591,
+        "sha256": "f043c5d1c46f81d91312c03083feb72c72c117043e41a413116fa2cd9f618594"
+      },
+      {
+        "path": "renders/CAM_ISO_SE.jpg",
+        "source_path": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_ISO_SE.jpg",
+        "bytes": 291472,
+        "sha256": "b9232b675390fbbe49550c99fde16713956b2e31864704182e0d5918630d8c53"
+      },
+      {
+        "path": "renders/CAM_ISO_SW.jpg",
+        "source_path": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_ISO_SW.jpg",
+        "bytes": 225789,
+        "sha256": "316acd888cee68970f370dbf2ad4c67b3be69ddb00b0edc3bacc86b33b8a0a92"
+      },
+      {
+        "path": "renders/CAM_TOP_Plan.jpg",
+        "source_path": "GARMENT_OFFICE_FINAL_PRESENTATION/02_RENDERED_IMAGES/final/CAM_TOP_Plan.jpg",
+        "bytes": 258153,
+        "sha256": "65aa97ab053f13583ac1a1a14f774090bfe997a1261941ad1375050361e33954"
+      }
+    ],
+    "camera_renders": 43,
+    "package_files": [
+      {
+        "path": "Office_Realistic_Tour.html",
+        "bytes": 1331014,
+        "sha256": "a44b61b6bffccaf32eff3b63b8338a52df1683287da2a83b91393ba7d427cae0"
+      },
+      {
+        "path": "READ_ME.txt",
+        "bytes": 755,
+        "sha256": "9794cc81cdfe533c09d50d95a7cedac1a2165f636f1913f93cc46dd4b6c350c1"
+      },
+      {
+        "path": "asset-pack-000.js",
+        "bytes": 21427194,
+        "sha256": "ba2e600adc72cedbaded739fa1da845b9725622223959282d06ca37bdeb98968"
+      },
+      {
+        "path": "asset-pack-001.js",
+        "bytes": 25250923,
+        "sha256": "8f7f1844a806abac27e5ab87f3e78fb4bdded45d4583639d0c3363b6839b22a4"
+      },
+      {
+        "path": "asset-pack-002.js",
+        "bytes": 33433,
+        "sha256": "bfdc3e0789abe45b7b0517d1582d87315206dd74df07f360d4a62b331804ad25"
+      },
+      {
+        "path": "asset-pack-003.js",
+        "bytes": 26631601,
+        "sha256": "561b953a7fbaa36f9a39d23671e8d727558a69871b727b759726d395f68e0599"
+      },
+      {
+        "path": "asset-pack-004.js",
+        "bytes": 24866883,
+        "sha256": "238187eda023b0156bb8a98b81a72262843cc6fc13c05a74351789d24d867d8d"
+      },
+      {
+        "path": "asset-pack-005.js",
+        "bytes": 1880756,
+        "sha256": "a5f28cdcc3955c19a911e4259c5d36e84cb71fca2202e90f0ffe00ddd660462c"
+      },
+      {
+        "path": "licenses/GARMENT_OFFICE_FINAL_PRESENTATION/01_EDITABLE_3D/assets/LICENSES.md",
+        "bytes": 2908,
+        "sha256": "5b178bcf5bf408aebb9dbfdadcf3d09a68458661a5c3c0187816d76a64b4e9fd"
+      },
+      {
+        "path": "licenses/GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/people/LICENSES.md",
+        "bytes": 3450,
+        "sha256": "9a7fe4bfb1bff210c897aeac2dd5c6d30a2d103195b83565b1dd78c0cea725ec"
+      },
+      {
+        "path": "licenses/GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/people/source/LICENSE.ASSETS.md",
+        "bytes": 6962,
+        "sha256": "f6089cba01cb570a24712b41ab8a586ccd3cc5ef53dc266ca50b95c288956d2c"
+      },
+      {
+        "path": "licenses/GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/props/LICENSES.md",
+        "bytes": 1346,
+        "sha256": "49aa15063eaefb7bf1d1aa72e1be3bd2856d47ed882e15146d9d4daa4120bf81"
+      },
+      {
+        "path": "licenses/GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/textures/LICENSES.md",
+        "bytes": 3938,
+        "sha256": "d51db0bd9515391dacc98167f37acc930d98e503cc0c5d2b961000e3008fd72a"
+      },
+      {
+        "path": "licenses/GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/textures/codecs/third_party_licenses/basis-universal-Apache-2.0.txt",
+        "bytes": 11347,
+        "sha256": "065fcf48d6af21c0b75e23be5ed5753aee75c892e1c2cf178fa6736305614a5c"
+      },
+      {
+        "path": "licenses/GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/textures/codecs/third_party_licenses/ktx-parse-MIT.txt",
+        "bytes": 1078,
+        "sha256": "79847431f9ecef9cf399085cb863452e71a6dab99738f4f0c1ea06c6484b5692"
+      },
+      {
+        "path": "licenses/GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/textures/codecs/third_party_licenses/sources.json",
+        "bytes": 922,
+        "sha256": "70ac590a05a7fe2ccb830d994dcbdbc7d4b6e309fe07fdad60c9910d049dad8a"
+      },
+      {
+        "path": "licenses/GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/textures/codecs/third_party_licenses/zstd-BSD.txt",
+        "bytes": 1549,
+        "sha256": "7055266497633c9025b777c78eb7235af13922117480ed5c674677adc381c9d8"
+      },
+      {
+        "path": "licenses/GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/textures/codecs/third_party_licenses/zstddec-MIT.txt",
+        "bytes": 2617,
+        "sha256": "8d078b49fc02bd63c1beaf4ddc629a8b48e4ba6a435415408c8209e2a5c3aacf"
+      },
+      {
+        "path": "licenses/GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/viewer/vendor/three/LICENSE",
+        "bytes": 1081,
+        "sha256": "4c40a1ef62450b857c3b2aaf294936304cd552d965fbcd9d32d4c5bcf4ba4454"
+      },
+      {
+        "path": "renders/CAM_01_Reception_A.jpg",
+        "bytes": 223716,
+        "sha256": "5b3c4df1ea311333a206c83fa1609f88562577196c8e8331f1227b9dda25f11e"
+      },
+      {
+        "path": "renders/CAM_02_Reception_B.jpg",
+        "bytes": 250856,
+        "sha256": "33bcd213ac1f4b364a2d511e7d3e0936946773991b6aaef5dbf74b4f0356ca7b"
+      },
+      {
+        "path": "renders/CAM_03_Entrance_Lobby.jpg",
+        "bytes": 189553,
+        "sha256": "e32a9f2c7974dc4a7c4d47cc8b209a1fc900533a70b030bc807aeae1a86e2c5f"
+      },
+      {
+        "path": "renders/CAM_04_Experience_Centre_A.jpg",
+        "bytes": 258765,
+        "sha256": "d509f9a181317f118bd1b9c52dd5bf04295fbe82ce599e0bf1099c54cdc2f94c"
+      },
+      {
+        "path": "renders/CAM_05_Experience_Centre_B.jpg",
+        "bytes": 329067,
+        "sha256": "54e88279a1dd9fbbe87e4b03af56600a365100c79914e62403382a6050fe139f"
+      },
+      {
+        "path": "renders/CAM_06_Experience_Centre_Detail.jpg",
+        "bytes": 183668,
+        "sha256": "b9617bc2ef13100164c6f9682b20e29c0fb9851a893b1415a9f5dae40dcf3bd0"
+      },
+      {
+        "path": "renders/CAM_07_MD_Office_A.jpg",
+        "bytes": 182544,
+        "sha256": "f4fde834803a20078f0b096051e5a422887067bf5d9ad725008476121b62a3aa"
+      },
+      {
+        "path": "renders/CAM_08_MD_Office_B.jpg",
+        "bytes": 255750,
+        "sha256": "a678f51edc906687937027549b65990a5d46fb86a8dddd34d0fd4aaf827fde4f"
+      },
+      {
+        "path": "renders/CAM_09_Boardroom_A.jpg",
+        "bytes": 265607,
+        "sha256": "891ecee12f6da88f79d9130f7f8530c1ee8c49254c457fcb756c5701e58b45e1"
+      },
+      {
+        "path": "renders/CAM_10_Boardroom_B.jpg",
+        "bytes": 218032,
+        "sha256": "a5e67a3b5a049b0bbb5fa5098cd060db184a06ad58b27377b7b1b6e81f0e2d1d"
+      },
+      {
+        "path": "renders/CAM_11_Merchandising_A.jpg",
+        "bytes": 228737,
+        "sha256": "3257a566e63b9d2f49296782c652d6ec54d5b0c2d315fe315c59c1128e2d51d2"
+      },
+      {
+        "path": "renders/CAM_12_Merchandising_B.jpg",
+        "bytes": 231364,
+        "sha256": "4c3a398ede589777ecaaa615c55e33c98fc3f3e15c1853dfce5d63762f3fd23a"
+      },
+      {
+        "path": "renders/CAM_13_Design_Studio_A.jpg",
+        "bytes": 189841,
+        "sha256": "dfc5c9f88df76e2df7046917ea51e630066ebfb9c184a18246d4ecbcdc021dbb"
+      },
+      {
+        "path": "renders/CAM_14_Design_Studio_B.jpg",
+        "bytes": 175363,
+        "sha256": "557fa6e6e383f068d4551d60a9ed8679a74dea3df1f6b26ac1ce2eeb2f316c97"
+      },
+      {
+        "path": "renders/CAM_15_CAD_Room.jpg",
+        "bytes": 129443,
+        "sha256": "3572850363e9eb03ce491f8359378ef48bbd38dd5f4e710f0f5cf00772748263"
+      },
+      {
+        "path": "renders/CAM_16_Commercial_Accounts.jpg",
+        "bytes": 180068,
+        "sha256": "ff2980e406a18355bc193b451799db09d08445e25e31d8027221e8c092406351"
+      },
+      {
+        "path": "renders/CAM_17_Executive_Reception.jpg",
+        "bytes": 169326,
+        "sha256": "325263f8baf02f6d27d64ee8f1721e17dac2cd0f3a4f08a9addc58c54fdfe44a"
+      },
+      {
+        "path": "renders/CAM_18_Director.jpg",
+        "bytes": 197172,
+        "sha256": "82757d0b1cc67382614b85f1293a91969a3969ec92093ba184f5891059efee9f"
+      },
+      {
+        "path": "renders/CAM_19_HR_Admin.jpg",
+        "bytes": 189763,
+        "sha256": "277d330c743263e0411d1813ca009c5b3a989a6b9a8b832847b2cf1f34dc686b"
+      },
+      {
+        "path": "renders/CAM_20_Staff_Cafe.jpg",
+        "bytes": 187354,
+        "sha256": "b62bf006e4401f25593622c4f453c83c1e3165bec63885108a260e807767584e"
+      },
+      {
+        "path": "renders/CAM_21_Lounge_Training.jpg",
+        "bytes": 135690,
+        "sha256": "ab4f7ddb6f2e44b349778d070efcd12940c8632c1238a4420150395e749ed10e"
+      },
+      {
+        "path": "renders/CAM_22_Prayer_Male.jpg",
+        "bytes": 114910,
+        "sha256": "8fbf7798feb16b1dcb0b7c0273198ad92d5acd663be26ea741b24040a76860dd"
+      },
+      {
+        "path": "renders/CAM_23_Sample_Room.jpg",
+        "bytes": 119624,
+        "sha256": "a6a1397d7edc383b79dd6cdf8c50a88a85a30b993b2611cfc900b5e34d226218"
+      },
+      {
+        "path": "renders/CAM_24_3D_Printing_Lab.jpg",
+        "bytes": 149382,
+        "sha256": "c0596723344ea3aca93c692d8c47a0284e6656f0ab5a0c0dd6494758c99829d2"
+      },
+      {
+        "path": "renders/CAM_25_Fabric_Library.jpg",
+        "bytes": 153894,
+        "sha256": "c6af4841792dc14034ad3a5c7d71caefe99346a9c2871771d7791f0a68286852"
+      },
+      {
+        "path": "renders/CAM_26_Guest_Workspace.jpg",
+        "bytes": 98861,
+        "sha256": "62dbc7a8672740aae2fdba2e9dc44431b876e20c7a7f49b499e9fcb5af3397e3"
+      },
+      {
+        "path": "renders/CAM_27_Audit_Room.jpg",
+        "bytes": 85026,
+        "sha256": "4f55e57b18436fbefc90fbd023eee2f87738bbd57b9603135e8556e8594e290d"
+      },
+      {
+        "path": "renders/CAM_28_Washroom_Male.jpg",
+        "bytes": 267912,
+        "sha256": "fc019d935fe6922234ee7bda133530e84275ffc065258c3dbe0d79b5e0a465df"
+      },
+      {
+        "path": "renders/CAM_29_Washroom_Female.jpg",
+        "bytes": 269279,
+        "sha256": "dd87c57e8c4fb4c38ba07d4ea7ff5e5dc594946925205159afe53f4f04e5869e"
+      },
+      {
+        "path": "renders/CAM_30_Prayer_Female.jpg",
+        "bytes": 88060,
+        "sha256": "4f619943ad8c4c6dd61a565885a581490460b6fe20435ba0923a612b2e9de578"
+      },
+      {
+        "path": "renders/CAM_31_Executive_Corridor.jpg",
+        "bytes": 237581,
+        "sha256": "2f83fcec831a24ce26cd0e58eeee53a6bb0748f52e365f65399606dbf1cb94e3"
+      },
+      {
+        "path": "renders/CAM_32_Design_Corridor.jpg",
+        "bytes": 194799,
+        "sha256": "66f97f07370d23dc35fdd22324dc57c3b9d484e73fe085eb977b9bce742e0ae9"
+      },
+      {
+        "path": "renders/CAM_33_Wudu_Male.jpg",
+        "bytes": 264384,
+        "sha256": "88528192d98f2af1fe7f517d429df6dfa767548d33779b5c027731285ba7a92b"
+      },
+      {
+        "path": "renders/CAM_34_Merchandising_Sample_Hub.jpg",
+        "bytes": 237081,
+        "sha256": "939aeced450477af4b2266bf16ca0fb57be8133be6a54407351e7ff8c07b0bc2"
+      },
+      {
+        "path": "renders/CAM_35_Merchandising_Desks.jpg",
+        "bytes": 224937,
+        "sha256": "3a3a781220e3eea37c122e76ffd8d534b001547d12d15b9f0cad3a6856c66a22"
+      },
+      {
+        "path": "renders/CAM_36_Accounts_Suite.jpg",
+        "bytes": 194537,
+        "sha256": "25d7425b24258a3108300c0f619951044d8e3c13791235872a44445b9ae44781"
+      },
+      {
+        "path": "renders/CAM_37_Accounts_Records_Discussion.jpg",
+        "bytes": 190970,
+        "sha256": "4576cd4bdd844c21d9504be152392b1db371785d19b6d47faf4d8c0c6ad73c9d"
+      },
+      {
+        "path": "renders/CAM_38_Accounts_Public_Corridor.jpg",
+        "bytes": 107854,
+        "sha256": "dd39dc5cea45bf66d9df06f0671a9b419e9c13eb26a9a72d29c7f4a72a3f7c06"
+      },
+      {
+        "path": "renders/CAM_ISO_Design_Wing.jpg",
+        "bytes": 292497,
+        "sha256": "6b9a469bfbaf036bffa9b6317698ede1a55014a3c785554e5cc5f8024d1b7778"
+      },
+      {
+        "path": "renders/CAM_ISO_Front_Zone.jpg",
+        "bytes": 375591,
+        "sha256": "f043c5d1c46f81d91312c03083feb72c72c117043e41a413116fa2cd9f618594"
+      },
+      {
+        "path": "renders/CAM_ISO_SE.jpg",
+        "bytes": 291472,
+        "sha256": "b9232b675390fbbe49550c99fde16713956b2e31864704182e0d5918630d8c53"
+      },
+      {
+        "path": "renders/CAM_ISO_SW.jpg",
+        "bytes": 225789,
+        "sha256": "316acd888cee68970f370dbf2ad4c67b3be69ddb00b0edc3bacc86b33b8a0a92"
+      },
+      {
+        "path": "renders/CAM_TOP_Plan.jpg",
+        "bytes": 258153,
+        "sha256": "65aa97ab053f13583ac1a1a14f774090bfe997a1261941ad1375050361e33954"
+      }
+    ],
+    "status": "Built package; see external file-protocol QA before claiming acceptance."
+  },
+  "validation": "Static source/ZIP parity passed; all six cameras passed with 27 illustrative figures and no external requests/errors through Linux Chromium loopback. Firefox launch blocked by executor; Chromium file:// blocked by administrator; native MacBook/Firefox/Safari/file:// performance not tested.",
+  "source_commit": "d5939f9ef3928340908459efc440259df0d34b6d",
+  "qa_report": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/qa/offline-parity-20261030/README.md",
+  "offline_manifest_sha256": "078bb6bd2e93aff80114f6a93cbe39b61c2f983b9e1123ef9924e50413263966"
+}

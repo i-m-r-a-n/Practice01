@@ -1,0 +1,11 @@
+{
+  "status": "failed",
+  "protocol": "file",
+  "scope": "Linux Chromium software WebGL; not native Mac or Safari acceptance",
+  "page_errors": [],
+  "console_errors": [],
+  "outside_requests": [],
+  "failed_requests": [],
+  "shots": [],
+  "exception": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at file:///workspace/office-offline-package-20261030/Six_Room_Interiors_Realistic_Offline/Office_Realistic_Tour.html?welcome=0\nCall log:\n  - navigating to \"file:///workspace/office-offline-package-20261030/Six_Room_Interiors_Realistic_Offline/Office_Realistic_Tour.html?welcome=0\", waiting until \"domcontentloaded\"\n"
+}

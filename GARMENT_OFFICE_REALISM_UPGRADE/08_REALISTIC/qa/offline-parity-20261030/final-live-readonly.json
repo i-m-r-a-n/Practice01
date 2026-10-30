@@ -1,0 +1,14 @@
+{
+  "checked_at_utc": "2026-10-30T02:32:28.518127+00:00",
+  "live_health": {
+    "ok": true,
+    "source": "d5939f9ef3928340908459efc440259df0d34b6d",
+    "route": "/realistic",
+    "fallback": "/",
+    "status": "review preview; see acceptance report"
+  },
+  "original_root_sha256": "ff75beb54b3134b3e1eee7d29d0f6016ed1bf5895777c715f3815ebe3dcd2675",
+  "worker_mutated": false,
+  "remote_claude_tip_observed": "533d6985587445e77299832212b8fa9e434a9f63",
+  "prepared_lobby_cad_excluded": true
+}

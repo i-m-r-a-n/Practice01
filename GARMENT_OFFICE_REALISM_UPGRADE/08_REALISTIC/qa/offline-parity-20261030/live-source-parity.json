@@ -1,0 +1,37 @@
+{
+  "checked_at_utc": "2026-10-30T02:25:46.974312+00:00",
+  "live_source": "d5939f9ef3928340908459efc440259df0d34b6d",
+  "files": [
+    {
+      "file": "index.html",
+      "bytes": 73485,
+      "sha256": "fe6cda033cac7cc9ea908ebb50523825e3e91ad4bd200db07fe57dd7a3804f2c",
+      "matches_pinned_dist": true
+    },
+    {
+      "file": "app.js",
+      "bytes": 1256002,
+      "sha256": "87db5ebb83f672b1cd46f0f1fdf1a7b0922c9c286de1ad9e6118393c48d74edd",
+      "matches_pinned_dist": true
+    },
+    {
+      "file": "release-config.json",
+      "bytes": 4698,
+      "sha256": "a7dc7ddf3b51823d8c9dbdaf277116404f5b91fd8ea2efd310721bef417c4846",
+      "matches_pinned_dist": true
+    }
+  ],
+  "initial_urllib_error": "HTTP 403; ordinary curl succeeded with inherited proxy and TLS verification",
+  "old_archives": [
+    {
+      "path": "GARMENT_OFFICE_WALKTHROUGH_FINAL/09_MAC_OFFLINE_TOUR/realistic-design_studio/Design_Studio_Realistic_Offline.zip",
+      "bytes": 73034188,
+      "sha256": "8c86264151392b77087556c5d20fdc4b56be7b3c7e8024a2d73b3d50af98893a"
+    }
+  ],
+  "old_config": {
+    "path": "release-config.json",
+    "bytes": 1842,
+    "sha256": "ca2cbbf76a0ea4c5303a65c4ddc52b41559c17c211e4829aaf033390b467d884"
+  }
+}
