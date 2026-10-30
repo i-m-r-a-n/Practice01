@@ -1,0 +1,859 @@
+{
+  "title": "Bengal Earth Lab original furniture concepts",
+  "date_checked": "2026-10-30",
+  "status": "UNTESTED / CONCEPT ONLY",
+  "models": [
+    {
+      "id": "F01",
+      "room": "Z02",
+      "collection": "reception",
+      "name": "Matir Duar counter",
+      "bengali_inspiration": {
+        "text": "Bengali courtyard threshold, original design",
+        "source_url": "https://ich.unesco.org/en/RL/traditional-art-of-shital-pati-weaving-of-sylhet-01112"
+      },
+      "design_explanation": "Bengali courtyard threshold, original design",
+      "dimensions_mm": {
+        "w": 1800,
+        "d": 700,
+        "h": 1050,
+        "note": "Proposed concept envelope; not for manufacture, installation, code/accessible fit or print scale"
+      },
+      "parts": [
+        {
+          "part": "legal",
+          "material": "legal timber frame",
+          "bd_raw_material": "to verify",
+          "bd_processing": "to verify",
+          "bd_component_manufacture": "to verify",
+          "bd_assembly": "to verify",
+          "evidence_url": ""
+        },
+        {
+          "part": "consented",
+          "material": "consented Murta weave",
+          "bd_raw_material": "to verify",
+          "bd_processing": "to verify",
+          "bd_component_manufacture": "to verify",
+          "bd_assembly": "to verify",
+          "evidence_url": ""
+        },
+        {
+          "part": "local",
+          "material": "local terracotta accent",
+          "bd_raw_material": "to verify",
+          "bd_processing": "to verify",
+          "bd_component_manufacture": "to verify",
+          "bd_assembly": "to verify",
+          "evidence_url": ""
+        },
+        {
+          "part": "fasteners",
+          "material": "fasteners",
+          "bd_raw_material": "to verify",
+          "bd_processing": "to verify",
+          "bd_component_manufacture": "to verify",
+          "bd_assembly": "to verify",
+          "evidence_url": ""
+        }
+      ],
+      "joinery": "removable panels, bolted frame",
+      "ergonomics": "staff/public ledge heights and accessible use need physical review",
+      "maker_type": "maker to be identified; consent and quote required",
+      "skills": "qualified relevant Bangladesh craft and fabrication skills to verify",
+      "maintenance": "Develop tested cleaning, repair and replacement procedure for final materials",
+      "expected_durability": "unverified; no service-life claim",
+      "fire_safety_notes": "Qualified site fire/structural/electrical review and intended-market product standards required; no test done.",
+      "testing": "tip, edge, abrasion, finish safety, cables",
+      "cost": "to be quoted",
+      "export_potential": "unverified original prototype only",
+      "drawing_svg": "05_drawings/F01.svg",
+      "conflicts_with_100pct_local": "Unknown: full raw/processing/manufacture/assembly trace required; electrical, metal, board, finish and liner origins may conflict.",
+      "notes": "Do not move existing walls, desks, services or other users.",
+      "form": "desk",
+      "status": "concept-only",
+      "date_checked": "2026-10-30"
+    },
+    {
+      "id": "F02",
+      "room": "Z02",
+      "collection": "buyer lounge",
+      "name": "Uthan bench",
+      "bengali_inspiration": {
+        "text": "original courtyard social seat",
+        "source_url": "https://ich.unesco.org/en/RL/traditional-art-of-shital-pati-weaving-of-sylhet-01112"
+      },
+      "design_explanation": "original courtyard social seat",
+      "dimensions_mm": {
+        "w": 1600,
+        "d": 520,
+        "h": 820,
+        "note": "Proposed concept envelope; not for manufacture, installation, code/accessible fit or print scale"
+      },
+      "parts": [
+        {
+          "part": "traceable",
+          "material": "traceable timber",
+          "bd_raw_material": "to verify",
+          "bd_processing": "to verify",
+          "bd_component_manufacture": "to verify",
+          "bd_assembly": "to verify",
+          "evidence_url": ""
+        },
+        {
+          "part": "jute",
+          "material": "jute or Murta back",
+          "bd_raw_material": "to verify",
+          "bd_processing": "to verify",
+          "bd_component_manufacture": "to verify",
+          "bd_assembly": "to verify",
+          "evidence_url": ""
+        },
+        {
+          "part": "removable",
+          "material": "removable cotton pad",
+          "bd_raw_material": "to verify",
+          "bd_processing": "to verify",
+          "bd_component_manufacture": "to verify",
+          "bd_assembly": "to verify",
+          "evidence_url": ""
+        },
+        {
+          "part": "feet",
+          "material": "feet",
+          "bd_raw_material": "to verify",
+          "bd_processing": "to verify",
+          "bd_component_manufacture": "to verify",
+          "bd_assembly": "to verify",
+          "evidence_url": ""
+        }
+      ],
+      "joinery": "replaceable weave and padded seat",
+      "ergonomics": "450 mm proposed seat height, comfort and access unverified",
+      "maker_type": "maker to be identified; consent and quote required",
+      "skills": "qualified relevant Bangladesh craft and fabrication skills to verify",
+      "maintenance": "Develop tested cleaning, repair and replacement procedure for final materials",
+      "expected_durability": "unverified; no service-life claim",
+      "fire_safety_notes": "Qualified site fire/structural/electrical review and intended-market product standards required; no test done.",
+      "testing": "seat/back loads, stability, wear, textile and applicable upholstery fire tests",
+      "cost": "to be quoted",
+      "export_potential": "unverified original prototype only",
+      "drawing_svg": "05_drawings/F02.svg",
+      "conflicts_with_100pct_local": "Unknown: full raw/processing/manufacture/assembly trace required; electrical, metal, board, finish and liner origins may conflict.",
+      "notes": "Do not move existing walls, desks, services or other users.",
+      "form": "bench",
+      "status": "concept-only",
+      "date_checked": "2026-10-30"
+    },
+    {
+      "id": "F03",
+      "room": "Z08",
+      "collection": "negotiation",
+      "name": "Nouka review table",
+      "bengali_inspiration": {
+        "text": "abstract boat-frame joinery, not a copied vessel",
+        "source_url": "to verify"
+      },
+      "design_explanation": "abstract boat-frame joinery, not a copied vessel",
+      "dimensions_mm": {
+        "w": 2200,
+        "d": 1000,
+        "h": 745,
+        "note": "Proposed concept envelope; not for manufacture, installation, code/accessible fit or print scale"
+      },
+      "parts": [
+        {
+          "part": "timber",
+          "material": "timber top",
+          "bd_raw_material": "to verify",
+          "bd_processing": "to verify",
+          "bd_component_manufacture": "to verify",
+          "bd_assembly": "to verify",
+          "evidence_url": ""
+        },
+        {
+          "part": "timber",
+          "material": "timber trestles",
+          "bd_raw_material": "to verify",
+          "bd_processing": "to verify",
+          "bd_component_manufacture": "to verify",
+          "bd_assembly": "to verify",
+          "evidence_url": ""
+        },
+        {
+          "part": "jute",
+          "material": "jute accent",
+          "bd_raw_material": "to verify",
+          "bd_processing": "to verify",
+          "bd_component_manufacture": "to verify",
+          "bd_assembly": "to verify",
+          "evidence_url": ""
+        },
+        {
+          "part": "optional",
+          "material": "optional cable tray",
+          "bd_raw_material": "to verify",
+          "bd_processing": "to verify",
+          "bd_component_manufacture": "to verify",
+          "bd_assembly": "to verify",
+          "evidence_url": ""
+        }
+      ],
+      "joinery": "dismantlable trestle joints",
+      "ergonomics": "table height is trial, chair and knee clearance unverified",
+      "maker_type": "maker to be identified; consent and quote required",
+      "skills": "qualified relevant Bangladesh craft and fabrication skills to verify",
+      "maintenance": "Develop tested cleaning, repair and replacement procedure for final materials",
+      "expected_durability": "unverified; no service-life claim",
+      "fire_safety_notes": "Qualified site fire/structural/electrical review and intended-market product standards required; no test done.",
+      "testing": "racking, deflection, edge, splash, emissions, cables",
+      "cost": "to be quoted",
+      "export_potential": "unverified original prototype only",
+      "drawing_svg": "05_drawings/F03.svg",
+      "conflicts_with_100pct_local": "Unknown: full raw/processing/manufacture/assembly trace required; electrical, metal, board, finish and liner origins may conflict.",
+      "notes": "Do not move existing walls, desks, services or other users.",
+      "form": "table",
+      "status": "concept-only",
+      "date_checked": "2026-10-30"
+    },
+    {
+      "id": "F04",
+      "room": "Z15",
+      "collection": "R&D lab",
+      "name": "Murta passport cabinet",
+      "bengali_inspiration": {
+        "text": "consent-led Sylhet Shital Pati infill",
+        "source_url": "https://ich.unesco.org/en/RL/traditional-art-of-shital-pati-weaving-of-sylhet-01112"
+      },
+      "design_explanation": "consent-led Sylhet Shital Pati infill",
+      "dimensions_mm": {
+        "w": 1100,
+        "d": 500,
+        "h": 1800,
+        "note": "Proposed concept envelope; not for manufacture, installation, code/accessible fit or print scale"
+      },
+      "parts": [
+        {
+          "part": "timber",
+          "material": "timber or board case",
+          "bd_raw_material": "to verify",
+          "bd_processing": "to verify",
+          "bd_component_manufacture": "to verify",
+          "bd_assembly": "to verify",
+          "evidence_url": ""
+        },
+        {
+          "part": "Murta",
+          "material": "Murta woven inserts",
+          "bd_raw_material": "to verify",
+          "bd_processing": "to verify",
+          "bd_component_manufacture": "to verify",
+          "bd_assembly": "to verify",
+          "evidence_url": ""
+        },
+        {
+          "part": "trays",
+          "material": "trays",
+          "bd_raw_material": "to verify",
+          "bd_processing": "to verify",
+          "bd_component_manufacture": "to verify",
+          "bd_assembly": "to verify",
+          "evidence_url": ""
+        },
+        {
+          "part": "hinges",
+          "material": "hinges",
+          "bd_raw_material": "to verify",
+          "bd_processing": "to verify",
+          "bd_component_manufacture": "to verify",
+          "bd_assembly": "to verify",
+          "evidence_url": ""
+        }
+      ],
+      "joinery": "replaceable doors and trays; anti-tip detail not yet engineered",
+      "ergonomics": "real sample reach and aisle access unknown",
+      "maker_type": "maker to be identified; consent and quote required",
+      "skills": "qualified relevant Bangladesh craft and fabrication skills to verify",
+      "maintenance": "Develop tested cleaning, repair and replacement procedure for final materials",
+      "expected_durability": "unverified; no service-life claim",
+      "fire_safety_notes": "Qualified site fire/structural/electrical review and intended-market product standards required; no test done.",
+      "testing": "loaded shelves, tip/anchors, door cycles, moisture and pest controls",
+      "cost": "to be quoted",
+      "export_potential": "unverified original prototype only",
+      "drawing_svg": "05_drawings/F04.svg",
+      "conflicts_with_100pct_local": "Unknown: full raw/processing/manufacture/assembly trace required; electrical, metal, board, finish and liner origins may conflict.",
+      "notes": "Do not move existing walls, desks, services or other users.",
+      "form": "cabinet",
+      "status": "concept-only",
+      "date_checked": "2026-10-30"
+    },
+    {
+      "id": "F05",
+      "room": "Z03",
+      "collection": "exhibition",
+      "name": "Sun Flow evidence panel",
+      "bengali_inspiration": {
+        "text": "original sun-to-work energy story without live data claims",
+        "source_url": "to verify"
+      },
+      "design_explanation": "original sun-to-work energy story without live data claims",
+      "dimensions_mm": {
+        "w": 900,
+        "d": 110,
+        "h": 1400,
+        "note": "Proposed concept envelope; not for manufacture, installation, code/accessible fit or print scale"
+      },
+      "parts": [
+        {
+          "part": "locally",
+          "material": "locally made backer",
+          "bd_raw_material": "to verify",
+          "bd_processing": "to verify",
+          "bd_component_manufacture": "to verify",
+          "bd_assembly": "to verify",
+          "evidence_url": ""
+        },
+        {
+          "part": "clay/print",
+          "material": "clay/print signage",
+          "bd_raw_material": "to verify",
+          "bd_processing": "to verify",
+          "bd_component_manufacture": "to verify",
+          "bd_assembly": "to verify",
+          "evidence_url": ""
+        },
+        {
+          "part": "optional",
+          "material": "optional display electronics",
+          "bd_raw_material": "to verify",
+          "bd_processing": "to verify",
+          "bd_component_manufacture": "to verify",
+          "bd_assembly": "to verify",
+          "evidence_url": ""
+        },
+        {
+          "part": "fixings",
+          "material": "fixings",
+          "bd_raw_material": "to verify",
+          "bd_processing": "to verify",
+          "bd_component_manufacture": "to verify",
+          "bd_assembly": "to verify",
+          "evidence_url": ""
+        }
+      ],
+      "joinery": "flush removable wall panel",
+      "ergonomics": "wall projection into 7.0 m² passage must be checked",
+      "maker_type": "maker to be identified; consent and quote required",
+      "skills": "qualified relevant Bangladesh craft and fabrication skills to verify",
+      "maintenance": "Develop tested cleaning, repair and replacement procedure for final materials",
+      "expected_durability": "unverified; no service-life claim",
+      "fire_safety_notes": "Qualified site fire/structural/electrical review and intended-market product standards required; no test done.",
+      "testing": "anchor, route and electrical checks, stale/missing data behaviour",
+      "cost": "to be quoted",
+      "export_potential": "unverified original prototype only",
+      "drawing_svg": "05_drawings/F05.svg",
+      "conflicts_with_100pct_local": "Unknown: full raw/processing/manufacture/assembly trace required; electrical, metal, board, finish and liner origins may conflict.",
+      "notes": "Must show Concept demonstration — not live factory data.",
+      "form": "wall",
+      "status": "concept-only",
+      "date_checked": "2026-10-30"
+    },
+    {
+      "id": "F06",
+      "room": "Z30",
+      "collection": "exhibition",
+      "name": "Polder clay-stone plinth",
+      "bengali_inspiration": {
+        "text": "original river-earth layers",
+        "source_url": "to verify"
+      },
+      "design_explanation": "original river-earth layers",
+      "dimensions_mm": {
+        "w": 650,
+        "d": 650,
+        "h": 850,
+        "note": "Proposed concept envelope; not for manufacture, installation, code/accessible fit or print scale"
+      },
+      "parts": [
+        {
+          "part": "hollow",
+          "material": "hollow terracotta body",
+          "bd_raw_material": "to verify",
+          "bd_processing": "to verify",
+          "bd_component_manufacture": "to verify",
+          "bd_assembly": "to verify",
+          "evidence_url": ""
+        },
+        {
+          "part": "legally",
+          "material": "legally sourced stone cap",
+          "bd_raw_material": "to verify",
+          "bd_processing": "to verify",
+          "bd_component_manufacture": "to verify",
+          "bd_assembly": "to verify",
+          "evidence_url": ""
+        },
+        {
+          "part": "light",
+          "material": "light frame",
+          "bd_raw_material": "to verify",
+          "bd_processing": "to verify",
+          "bd_component_manufacture": "to verify",
+          "bd_assembly": "to verify",
+          "evidence_url": ""
+        },
+        {
+          "part": "anti-slip",
+          "material": "anti-slip feet",
+          "bd_raw_material": "to verify",
+          "bd_processing": "to verify",
+          "bd_component_manufacture": "to verify",
+          "bd_assembly": "to verify",
+          "evidence_url": ""
+        }
+      ],
+      "joinery": "lightweight separate cap and body",
+      "ergonomics": "display reach and knock-over risk unknown",
+      "maker_type": "maker to be identified; consent and quote required",
+      "skills": "qualified relevant Bangladesh craft and fabrication skills to verify",
+      "maintenance": "Develop tested cleaning, repair and replacement procedure for final materials",
+      "expected_durability": "unverified; no service-life claim",
+      "fire_safety_notes": "Qualified site fire/structural/electrical review and intended-market product standards required; no test done.",
+      "testing": "floor weight, tip, edge, spalling, surface finish",
+      "cost": "to be quoted",
+      "export_potential": "unverified original prototype only",
+      "drawing_svg": "05_drawings/F06.svg",
+      "conflicts_with_100pct_local": "Unknown: full raw/processing/manufacture/assembly trace required; electrical, metal, board, finish and liner origins may conflict.",
+      "notes": "Do not move existing walls, desks, services or other users.",
+      "form": "plinth",
+      "status": "concept-only",
+      "date_checked": "2026-10-30"
+    },
+    {
+      "id": "F07",
+      "room": "Z18",
+      "collection": "design studio",
+      "name": "Alo bonsai stand",
+      "bengali_inspiration": {
+        "text": "earth and woven tray, not an interior garden",
+        "source_url": "to verify"
+      },
+      "design_explanation": "earth and woven tray, not an interior garden",
+      "dimensions_mm": {
+        "w": 720,
+        "d": 520,
+        "h": 900,
+        "note": "Proposed concept envelope; not for manufacture, installation, code/accessible fit or print scale"
+      },
+      "parts": [
+        {
+          "part": "timber",
+          "material": "timber frame",
+          "bd_raw_material": "to verify",
+          "bd_processing": "to verify",
+          "bd_component_manufacture": "to verify",
+          "bd_assembly": "to verify",
+          "evidence_url": ""
+        },
+        {
+          "part": "removable",
+          "material": "removable terracotta tray",
+          "bd_raw_material": "to verify",
+          "bd_processing": "to verify",
+          "bd_component_manufacture": "to verify",
+          "bd_assembly": "to verify",
+          "evidence_url": ""
+        },
+        {
+          "part": "watertight",
+          "material": "watertight liner",
+          "bd_raw_material": "to verify",
+          "bd_processing": "to verify",
+          "bd_component_manufacture": "to verify",
+          "bd_assembly": "to verify",
+          "evidence_url": ""
+        },
+        {
+          "part": "woven",
+          "material": "woven shelf",
+          "bd_raw_material": "to verify",
+          "bd_processing": "to verify",
+          "bd_component_manufacture": "to verify",
+          "bd_assembly": "to verify",
+          "evidence_url": ""
+        }
+      ],
+      "joinery": "sealed removable water catch tray",
+      "ergonomics": "plant choice, wet mass, daylight and grow-light energy unknown",
+      "maker_type": "maker to be identified; consent and quote required",
+      "skills": "qualified relevant Bangladesh craft and fabrication skills to verify",
+      "maintenance": "Develop tested cleaning, repair and replacement procedure for final materials",
+      "expected_durability": "unverified; no service-life claim",
+      "fire_safety_notes": "Qualified site fire/structural/electrical review and intended-market product standards required; no test done.",
+      "testing": "wet-load tip, leak, insects, PPFD, photoperiod",
+      "cost": "to be quoted",
+      "export_potential": "unverified original prototype only",
+      "drawing_svg": "05_drawings/F07.svg",
+      "conflicts_with_100pct_local": "Unknown: full raw/processing/manufacture/assembly trace required; electrical, metal, board, finish and liner origins may conflict.",
+      "notes": "No garden; few plants subject to actual light and maintenance checks.",
+      "form": "plant",
+      "status": "concept-only",
+      "date_checked": "2026-10-30"
+    },
+    {
+      "id": "F08",
+      "room": "Z30",
+      "collection": "exhibition",
+      "name": "Banglar Baadyo instrument rail",
+      "bengali_inspiration": {
+        "text": "credit-first ektara, dotara, dhol, banshi interpretation",
+        "source_url": "to verify"
+      },
+      "design_explanation": "credit-first ektara, dotara, dhol, banshi interpretation",
+      "dimensions_mm": {
+        "w": 1500,
+        "d": 300,
+        "h": 1900,
+        "note": "Proposed concept envelope; not for manufacture, installation, code/accessible fit or print scale"
+      },
+      "parts": [
+        {
+          "part": "timber",
+          "material": "timber support",
+          "bd_raw_material": "to verify",
+          "bd_processing": "to verify",
+          "bd_component_manufacture": "to verify",
+          "bd_assembly": "to verify",
+          "evidence_url": ""
+        },
+        {
+          "part": "padded",
+          "material": "padded clamps",
+          "bd_raw_material": "to verify",
+          "bd_processing": "to verify",
+          "bd_component_manufacture": "to verify",
+          "bd_assembly": "to verify",
+          "evidence_url": ""
+        },
+        {
+          "part": "maker-label",
+          "material": "maker-label cards",
+          "bd_raw_material": "to verify",
+          "bd_processing": "to verify",
+          "bd_component_manufacture": "to verify",
+          "bd_assembly": "to verify",
+          "evidence_url": ""
+        },
+        {
+          "part": "approved",
+          "material": "approved instruments",
+          "bd_raw_material": "to verify",
+          "bd_processing": "to verify",
+          "bd_component_manufacture": "to verify",
+          "bd_assembly": "to verify",
+          "evidence_url": ""
+        }
+      ],
+      "joinery": "detachable holders with anti-fall restraint",
+      "ergonomics": "visitor reach and instrument handling need review",
+      "maker_type": "maker to be identified; consent and quote required",
+      "skills": "qualified relevant Bangladesh craft and fabrication skills to verify",
+      "maintenance": "Develop tested cleaning, repair and replacement procedure for final materials",
+      "expected_durability": "unverified; no service-life claim",
+      "fire_safety_notes": "Qualified site fire/structural/electrical review and intended-market product standards required; no test done.",
+      "testing": "anchors, instrument fall, vibration, preservation, permission",
+      "cost": "to be quoted",
+      "export_potential": "unverified original prototype only",
+      "drawing_svg": "05_drawings/F08.svg",
+      "conflicts_with_100pct_local": "Unknown: full raw/processing/manufacture/assembly trace required; electrical, metal, board, finish and liner origins may conflict.",
+      "notes": "Do not move existing walls, desks, services or other users.",
+      "form": "rack",
+      "status": "concept-only",
+      "date_checked": "2026-10-30"
+    },
+    {
+      "id": "F09",
+      "room": "Z18",
+      "collection": "design studio",
+      "name": "Jamdani swatch grid",
+      "bengali_inspiration": {
+        "text": "commissioned genuine Jamdani weaving, not printed imitation",
+        "source_url": "https://ich.unesco.org/en/RL/traditional-skills-of-weaving-jamdani-00879"
+      },
+      "design_explanation": "commissioned genuine Jamdani weaving, not printed imitation",
+      "dimensions_mm": {
+        "w": 1400,
+        "d": 250,
+        "h": 1700,
+        "note": "Proposed concept envelope; not for manufacture, installation, code/accessible fit or print scale"
+      },
+      "parts": [
+        {
+          "part": "timber/metal",
+          "material": "timber/metal frame",
+          "bd_raw_material": "to verify",
+          "bd_processing": "to verify",
+          "bd_component_manufacture": "to verify",
+          "bd_assembly": "to verify",
+          "evidence_url": ""
+        },
+        {
+          "part": "consented",
+          "material": "consented woven swatches",
+          "bd_raw_material": "to verify",
+          "bd_processing": "to verify",
+          "bd_component_manufacture": "to verify",
+          "bd_assembly": "to verify",
+          "evidence_url": ""
+        },
+        {
+          "part": "safe",
+          "material": "safe clips",
+          "bd_raw_material": "to verify",
+          "bd_processing": "to verify",
+          "bd_component_manufacture": "to verify",
+          "bd_assembly": "to verify",
+          "evidence_url": ""
+        },
+        {
+          "part": "credit",
+          "material": "credit labels",
+          "bd_raw_material": "to verify",
+          "bd_processing": "to verify",
+          "bd_component_manufacture": "to verify",
+          "bd_assembly": "to verify",
+          "evidence_url": ""
+        }
+      ],
+      "joinery": "removable no-pierce swatch cards",
+      "ergonomics": "view height, accessibility and light exposure unverified",
+      "maker_type": "maker to be identified; consent and quote required",
+      "skills": "qualified relevant Bangladesh craft and fabrication skills to verify",
+      "maintenance": "Develop tested cleaning, repair and replacement procedure for final materials",
+      "expected_durability": "unverified; no service-life claim",
+      "fire_safety_notes": "Qualified site fire/structural/electrical review and intended-market product standards required; no test done.",
+      "testing": "clip loads, UV/fade, tip, flammability, rights",
+      "cost": "to be quoted",
+      "export_potential": "unverified original prototype only",
+      "drawing_svg": "05_drawings/F09.svg",
+      "conflicts_with_100pct_local": "Unknown: full raw/processing/manufacture/assembly trace required; electrical, metal, board, finish and liner origins may conflict.",
+      "notes": "Do not move existing walls, desks, services or other users.",
+      "form": "grid",
+      "status": "concept-only",
+      "date_checked": "2026-10-30"
+    },
+    {
+      "id": "F10",
+      "room": "Z21",
+      "collection": "academy",
+      "name": "Chalkol foldable training table",
+      "bengali_inspiration": {
+        "text": "original handloom-frame rhythm interpreted as folding support",
+        "source_url": "to verify"
+      },
+      "design_explanation": "original handloom-frame rhythm interpreted as folding support",
+      "dimensions_mm": {
+        "w": 1200,
+        "d": 600,
+        "h": 740,
+        "note": "Proposed concept envelope; not for manufacture, installation, code/accessible fit or print scale"
+      },
+      "parts": [
+        {
+          "part": "timber",
+          "material": "timber top",
+          "bd_raw_material": "to verify",
+          "bd_processing": "to verify",
+          "bd_component_manufacture": "to verify",
+          "bd_assembly": "to verify",
+          "evidence_url": ""
+        },
+        {
+          "part": "foldable",
+          "material": "foldable legs",
+          "bd_raw_material": "to verify",
+          "bd_processing": "to verify",
+          "bd_component_manufacture": "to verify",
+          "bd_assembly": "to verify",
+          "evidence_url": ""
+        },
+        {
+          "part": "locking",
+          "material": "locking hinges",
+          "bd_raw_material": "to verify",
+          "bd_processing": "to verify",
+          "bd_component_manufacture": "to verify",
+          "bd_assembly": "to verify",
+          "evidence_url": ""
+        },
+        {
+          "part": "feet",
+          "material": "feet",
+          "bd_raw_material": "to verify",
+          "bd_processing": "to verify",
+          "bd_component_manufacture": "to verify",
+          "bd_assembly": "to verify",
+          "evidence_url": ""
+        }
+      ],
+      "joinery": "positive locking folding mechanism, detail unresolved",
+      "ergonomics": "one table in 6-seat pilot; no extra class capacity claimed",
+      "maker_type": "maker to be identified; consent and quote required",
+      "skills": "qualified relevant Bangladesh craft and fabrication skills to verify",
+      "maintenance": "Develop tested cleaning, repair and replacement procedure for final materials",
+      "expected_durability": "unverified; no service-life claim",
+      "fire_safety_notes": "Qualified site fire/structural/electrical review and intended-market product standards required; no test done.",
+      "testing": "fold lock, pinch, cyclic loads, stability, indoor finish",
+      "cost": "to be quoted",
+      "export_potential": "unverified original prototype only",
+      "drawing_svg": "05_drawings/F10.svg",
+      "conflicts_with_100pct_local": "Unknown: full raw/processing/manufacture/assembly trace required; electrical, metal, board, finish and liner origins may conflict.",
+      "notes": "Z21 has no verified 20–30-person capacity.",
+      "form": "fold",
+      "status": "concept-only",
+      "date_checked": "2026-10-30"
+    },
+    {
+      "id": "F11",
+      "room": "Z20",
+      "collection": "hospitality",
+      "name": "Matir Chaa display tray and clay/wood set",
+      "bengali_inspiration": {
+        "text": "contemporary Bangladeshi clay-and-wood prototype",
+        "source_url": "to verify"
+      },
+      "design_explanation": "contemporary Bangladeshi clay-and-wood prototype",
+      "dimensions_mm": {
+        "w": 600,
+        "d": 380,
+        "h": 75,
+        "note": "Proposed concept envelope; not for manufacture, installation, code/accessible fit or print scale"
+      },
+      "parts": [
+        {
+          "part": "timber",
+          "material": "timber tray",
+          "bd_raw_material": "to verify",
+          "bd_processing": "to verify",
+          "bd_component_manufacture": "to verify",
+          "bd_assembly": "to verify",
+          "evidence_url": ""
+        },
+        {
+          "part": "fired",
+          "material": "fired clay cups",
+          "bd_raw_material": "to verify",
+          "bd_processing": "to verify",
+          "bd_component_manufacture": "to verify",
+          "bd_assembly": "to verify",
+          "evidence_url": ""
+        },
+        {
+          "part": "wood",
+          "material": "wood utensils",
+          "bd_raw_material": "to verify",
+          "bd_processing": "to verify",
+          "bd_component_manufacture": "to verify",
+          "bd_assembly": "to verify",
+          "evidence_url": ""
+        },
+        {
+          "part": "unverified",
+          "material": "unverified food-contact finishes",
+          "bd_raw_material": "to verify",
+          "bd_processing": "to verify",
+          "bd_component_manufacture": "to verify",
+          "bd_assembly": "to verify",
+          "evidence_url": ""
+        }
+      ],
+      "joinery": "removable display-only items",
+      "ergonomics": "NOT for serving food/drink; hold release",
+      "maker_type": "maker to be identified; consent and quote required",
+      "skills": "qualified relevant Bangladesh craft and fabrication skills to verify",
+      "maintenance": "Develop tested cleaning, repair and replacement procedure for final materials",
+      "expected_durability": "unverified; no service-life claim",
+      "fire_safety_notes": "Qualified site fire/structural/electrical review and intended-market product standards required; no test done.",
+      "testing": "ceramic lead/cadmium migration and wood finish legal scope, cleaning, thermal shock",
+      "cost": "to be quoted",
+      "export_potential": "unverified original prototype only",
+      "drawing_svg": null,
+      "conflicts_with_100pct_local": "Unknown: full raw/processing/manufacture/assembly trace required; electrical, metal, board, finish and liner origins may conflict.",
+      "notes": "DISPLAY ONLY / food-contact HOLD; link FOOD_CONTACT_CLAY_WOOD_TEST_BRIEF.md",
+      "form": "tray",
+      "status": "concept-only",
+      "date_checked": "2026-10-30"
+    },
+    {
+      "id": "F12",
+      "room": "Z30",
+      "collection": "exhibition",
+      "name": "Shilpir Golpo art rail",
+      "bengali_inspiration": {
+        "text": "rotating consenting rural-artist commissions",
+        "source_url": "to verify"
+      },
+      "design_explanation": "rotating consenting rural-artist commissions",
+      "dimensions_mm": {
+        "w": 1600,
+        "d": 120,
+        "h": 200,
+        "note": "Proposed concept envelope; not for manufacture, installation, code/accessible fit or print scale"
+      },
+      "parts": [
+        {
+          "part": "timber/metal",
+          "material": "timber/metal rail",
+          "bd_raw_material": "to verify",
+          "bd_processing": "to verify",
+          "bd_component_manufacture": "to verify",
+          "bd_assembly": "to verify",
+          "evidence_url": ""
+        },
+        {
+          "part": "reusable",
+          "material": "reusable clips",
+          "bd_raw_material": "to verify",
+          "bd_processing": "to verify",
+          "bd_component_manufacture": "to verify",
+          "bd_assembly": "to verify",
+          "evidence_url": ""
+        },
+        {
+          "part": "credit",
+          "material": "credit labels",
+          "bd_raw_material": "to verify",
+          "bd_processing": "to verify",
+          "bd_component_manufacture": "to verify",
+          "bd_assembly": "to verify",
+          "evidence_url": ""
+        },
+        {
+          "part": "separately",
+          "material": "separately licensed art",
+          "bd_raw_material": "to verify",
+          "bd_processing": "to verify",
+          "bd_component_manufacture": "to verify",
+          "bd_assembly": "to verify",
+          "evidence_url": ""
+        }
+      ],
+      "joinery": "non-damaging artwork clips and engineered anchors pending",
+      "ergonomics": "actual mounted height, viewing and wall capacity unverified",
+      "maker_type": "maker to be identified; consent and quote required",
+      "skills": "qualified relevant Bangladesh craft and fabrication skills to verify",
+      "maintenance": "Develop tested cleaning, repair and replacement procedure for final materials",
+      "expected_durability": "unverified; no service-life claim",
+      "fire_safety_notes": "Qualified site fire/structural/electrical review and intended-market product standards required; no test done.",
+      "testing": "hung-load, falling object, mounting substrate, artist permissions",
+      "cost": "to be quoted",
+      "export_potential": "unverified original prototype only",
+      "drawing_svg": null,
+      "conflicts_with_100pct_local": "Unknown: full raw/processing/manufacture/assembly trace required; electrical, metal, board, finish and liner origins may conflict.",
+      "notes": "Do not move existing walls, desks, services or other users.",
+      "form": "wall",
+      "status": "concept-only",
+      "date_checked": "2026-10-30"
+    }
+  ]
+}

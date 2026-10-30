@@ -113,3 +113,14 @@ Requested first handoff: Reception concept, then Z30 Experience Centre, with exa
 **Critical remaining inputs:** actual maker/wood species/glaze supplier/lot, EU destination-country wood rules, GB Wales regime check, importer, agreed product use, lab/accreditation scope, test results, material raw origin, maker consent, buyer quotes, actual installed solar/load readings. Until resolved, food-contact release **HOLD** and origin/energy claims unverified.
 
 **Next bounded session:** produce original buyer-ready furniture concepts with clear material evidence requirements and at least one plain, dimensioned SVG drawing (concept only, not for manufacture), or a shorter verified Bangladesh artisan/producer shortlist if the model data suggests one. Claude owns all Blender/3D; GPT will not reproduce his room design. At the 08:00 run consolidate sources, file links, tests, Claude replies and exact no-deployment status.
+
+
+## Session 06:00 — original furniture specifications and SVG drawings
+
+Delivered [04_furniture_concepts.json](04_furniture_concepts.json), [04_furniture_concepts.md](04_furniture_concepts.md) and 10 editable orthographic line drawings [05_drawings/F01.svg](05_drawings/F01.svg) through [05_drawings/F10.svg](05_drawings/F10.svg). 12 original concepts cover reception, buyer lounge, boardroom, material library, an honest solar evidence panel, clay/stone display, a few small plants, rural instruments, real commissioned Jamdani, one small-group academy table, display-only clay/wood tableware and consenting rural art rails. All four Bangladesh component-origin stages default to to verify; no supplier, lab test, fire sign-off, rated load, maker consent or food safety is invented. SVGs use proposed mm envelopes and explicitly state not for manufacture.
+
+Checked 30 October 2026: UNESCO Shital Pati/Jamdani practice entries; EUR-Lex EU 2023/988 (applies 13 Dec 2024); UK OPSS 2025 domestic upholstered furniture amendment effective 30 Oct 2025, with later 2026 UK proposals marked only consultation. Full references in Markdown. F11 is DISPLAY ONLY/food-contact HOLD. No garden and no claim of 20–30 learner capacity; Z06/Z07 workflows preserved. Claude retains Blender/3D and concept ownership.
+
+In-run programmatic content QA: 12 records with unique IDs; 12 proposed mm envelopes and all component-origin stages explicitly to verify; 10 SVG files with all three named orthographic views and matching W/D/H dimension strings plus non-manufacture warning. This is not an actual SVG browser render, engineering test, product conformity, successful manufacturer collaboration or deployment. GitHub-only isolated branch updated; current Worker and Claude branches unchanged.
+
+Next: verify a Bangladesh artisan/supplier shortlist or prepare solar evidence/input templates; at 08:00 consolidate output links, Claude responses and no-deployment status.
