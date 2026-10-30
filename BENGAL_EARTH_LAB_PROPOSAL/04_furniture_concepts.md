@@ -2,6 +2,8 @@
 
 **30 October 2026. 12 original concepts; 10 editable front/side/top orthographic SVG line drawings. Concept drawing — not for manufacture.** Sizes are proposed external envelopes (mm), never tested joinery, safe clearance, load limits or construction details. Claude controls 3D and existing live route; this research branch changes no original asset.
 
+**Source attribution correction (Claude review):** F01 and F02 are original courtyard/threshold design ideas without a verified matching cultural source; UNESCO Shital Pati supports the specific Sylhet weaving tradition only, not the counter shape or courtyard-seating precedent. F08 moved from Z30 to Z02 to match Claude's `BEL_INSTRUMENTS` visual. All JSON component `part` names now identify actual components rather than the first adjective in a material phrase. This is documentation review, not geometric approval.
+
 **Fixed controls:** No garden; a few small trees or bonsai only where light/PPFD, water and maintenance are realistic. Z06 finance and Z07 merchandising stay operational unless replacement workplaces and approvals are resolved. Existing Z21 6-seat pilot is not a 20–30-person classroom. All local raw-material, processing, manufacture and assembly evidence fields are still **to verify**. No claim of verified solar, maker partnership, certificate or local quarry. F11 clay/wood is **DISPLAY ONLY** pending food-contact release tests.
 
 | ID | Room | Concept | W x D x H (mm) | Main test question | SVG |
@@ -13,7 +15,7 @@
 | F05 | Z03 | Sun Flow evidence panel | 900 x 110 x 1400 | anchor | [Drawing](05_drawings/F05.svg) |
 | F06 | Z30 | Polder clay-stone plinth | 650 x 650 x 850 | floor weight | [Drawing](05_drawings/F06.svg) |
 | F07 | Z18 | Alo bonsai stand | 720 x 520 x 900 | wet-load tip | [Drawing](05_drawings/F07.svg) |
-| F08 | Z30 | Banglar Baadyo instrument rail | 1500 x 300 x 1900 | anchors | [Drawing](05_drawings/F08.svg) |
+| F08 | Z02 | Banglar Baadyo instrument rail | 1500 x 300 x 1900 | anchors | [Drawing](05_drawings/F08.svg) |
 | F09 | Z18 | Jamdani swatch grid | 1400 x 250 x 1700 | clip loads | [Drawing](05_drawings/F09.svg) |
 | F10 | Z21 | Chalkol foldable training table | 1200 x 600 x 740 | fold lock | [Drawing](05_drawings/F10.svg) |
 | F11 | Z20 | Matir Chaa display tray and clay/wood set | 600 x 380 x 75 | ceramic lead/cadmium migration and wood finish legal scope | Not drawn yet |
@@ -50,6 +52,8 @@
 **Intent:** earth and woven tray, not an interior garden. **Parts:** timber frame; removable terracotta tray; watertight liner; woven shelf. **Joinery:** sealed removable water catch tray. **Use and ergonomics:** plant choice, wet mass, daylight and grow-light energy unknown. **Tests needed:** wet-load tip, leak, insects, PPFD, photoperiod. **Status:** No garden; few plants subject to actual light and maintenance checks.; maker, local provenance, loads, finish, fire and market suitability remain unverified. Quote required; no FOB, MOQ or lead time provided.
 
 ### F08 — Banglar Baadyo instrument rail
+
+**Coordination correction (Claude review):** primary proposed room Z02 Reception, matching `BEL_INSTRUMENTS` above-console 3D. The 1500 x 300 x 1900 mm orthographic scheme remains a separate unapproved envelope, **not** the current above-console mounting detail. Site wall capacity, anchor, interference and display consent require review; do not install from SVG.
 
 **Intent:** credit-first ektara, dotara, dhol, banshi interpretation. **Parts:** timber support; padded clamps; maker-label cards; approved instruments. **Joinery:** detachable holders with anti-fall restraint. **Use and ergonomics:** visitor reach and instrument handling need review. **Tests needed:** anchors, instrument fall, vibration, preservation, permission. **Status:** Do not move existing walls, desks, services or other users.; maker, local provenance, loads, finish, fire and market suitability remain unverified. Quote required; no FOB, MOQ or lead time provided.
 
