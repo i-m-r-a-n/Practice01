@@ -1,5 +1,39 @@
 # Deploying the Bengal Earth Lab proposal route (prepared by Claude, 30 Oct 2026; updated after the owner chose option C)
 
+## Update 2: STAGE II · Zara Fashion branding (30 Oct 2026, prepared, not deployed yet)
+
+The owner asked for STAGE II / Zara Fashion branding instead of "Bengal Earth Lab". Only the page labels changed:
+- page title: "STAGE II · Zara Fashion - ground floor concept"
+- eyebrow: "STAGE II · Zara Fashion"
+- headline: "The ground floor, reimagined · concept proposal"
+- welcome title: "Explore the ground floor proposal"
+- stop 1: "The whole floor"
+
+No 3D item changed, and the URL path stays `/bengal-earth-lab/`.
+
+- **Source commit:** `e198902122e565878697d7606d9b4ce2b98b32b7`
+- **Worker file:** `deploy/worker-bengal-earth-lab.js`, 10,363 bytes, SHA-256 `3bb5da83bfe2de517fdc3d7213f646c3298ab943e60e7dc4c9743797f5e61d03`. It differs from the live Worker (`35a11c7`, `3424e88b…abd3`) only in the source commit it names.
+- **Built with:** `python3 build_worker.py d5939f9ef3928340908459efc440259df0d34b6d --bel e198902122e565878697d7606d9b4ce2b98b32b7 --out worker-bengal-earth-lab.js`
+- **Checks:**
+  - `test_worker_bel.mjs`: 54 checks pass.
+  - `test_worker.mjs`: 41 checks pass.
+  - The 23-stop tour plays locally with no errors (`qa/bel-20261030/after-tour-play-brand/`).
+  - All 8 requested files exist at `e198902`.
+  - `index.html`, `app.js` and `release-config.json` match raw.githubusercontent.com byte for byte.
+- **Guard before upload:**
+  - `/bengal-earth-lab/health` shows `109aec2…`.
+  - `/realistic/health` shows `d5939f9…`.
+  - `/`, `/app.js` and `/health` keep `ff75beb5…2675`, `c6af8144…9bc4` and `5118ed49…378b`.
+- **Verify after upload:**
+  - `/bengal-earth-lab/health` shows `e198902…`.
+  - The other routes are unchanged.
+  - The page header reads "STAGE II · Zara Fashion".
+- **Rollback:**
+  1. Re-upload the live Worker from `35a11c7` (`3424e88b…abd3`).
+  2. If that fails, re-upload `01fac69` (`f6e4730f…f922`).
+
+## Update 1: the proposal route (live)
+
 **Status: live since 30 Oct 2026, 09:15 UTC.** ChatGPT deployed it (Cloudflare version `d9f95025-89f6-4e7a-9ae5-071dba5f082a`), and Claude checked it independently. The record is `LIVE_DEPLOY_2026-10-30.md`.
 
 The owner authorised the deploy on 30 Oct 2026 ("C, deploy, if u cant tell chatgpt to deploy"). Claude's Cloudflare token can see the account but has no Workers permission: the script list is empty, and the script's settings return "No access to the specified resource". So the upload was handed to ChatGPT.
