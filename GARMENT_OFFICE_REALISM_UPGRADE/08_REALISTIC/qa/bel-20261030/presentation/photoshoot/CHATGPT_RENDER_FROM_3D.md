@@ -1,4 +1,4 @@
-# Bengal Earth Lab · renders based on the 3D model (ChatGPT kit)
+# STAGE II · Zara Fashion · renders based on the 3D model (ChatGPT kit)
 
 Prepared by Claude, 30 October 2026. ChatGPT turns each 3D view into a photograph (A) and adds one closer moment in the same room (B): 46 images, then a PDF.
 
@@ -23,7 +23,7 @@ Each frame is at `refs/stopNN_ref.jpg` in this folder, or at `https://raw.github
 ```text
 You are the best architectural and editorial photoshoot director and composition designer in the world.
 
-We will make 46 photorealistic renders of Bengal Earth Lab, a concept for the ground floor of STAGE II / Zara Fashion, a knitwear (RMG) factory in Bangladesh: knitwear made from earth fibres and recycled fabric, with Bengal craft as its signature. Every render is BASED ON OUR 3D MODEL. In each next message I attach one view from the 3D model and ask for two images:
+We will make 46 photorealistic renders of the ground-floor concept of STAGE II Knitting Apparel Ltd. / Zara Fashion, a knitwear (RMG) factory in Bangladesh. Use only this branding (STAGE II · Zara Fashion) and invent no other brand or project name. The concept: knitwear made from earth fibres and recycled fabric, with Bengal craft as its signature. Every render is BASED ON OUR 3D MODEL. In each next message I attach one view from the 3D model and ask for two images:
 
 A = THE SAME VIEW, MADE REAL. Edit the attached 3D image into a photograph. Keep the exact camera angle and framing, and keep the walls, glass, ceiling beams, lights, doors, furniture and objects in the same places. Change only the look: real materials, real light and a few people. Do not move, add or remove architecture. Do not add windows, outdoor views or extra plants.
 B = A CLOSER MOMENT IN THE SAME ROOM. The same room, materials and light as A, with a closer camera (lens given) and one human moment.
@@ -51,10 +51,10 @@ Name the images S01A, S01B ... S23A, S23B. After each pair, tell me in one line 
 Reply only "Ready". I will then send stop 01 with its 3D image.
 ```
 
-## Stop 01 · The Living Bengal Factory (attach `refs/stop01_ref.jpg`)
+## Stop 01 · The whole floor (attach `refs/stop01_ref.jpg`)
 
 ```text
-Stop 01 · The Living Bengal Factory. Attached: our 3D view of this stop.
+Stop 01 · The whole floor. Attached: our 3D view of this stop.
 
 A (the same view, made real): Turn this 3D cutaway into a photograph of a museum-quality 1:50 architectural model of the same floor, roof off, in exactly this layout and from this angle: every room, glass partitions as clear acrylic, miniature furniture, tiny knitwear forms, terracotta, jute and indigo details, tiny trees. It stands on a walnut plinth against a deep green background, in soft studio light. No people.
 
@@ -332,7 +332,7 @@ Caption for the PDF: Every claim on this floor waits for its evidence: fibre ori
 ```text
 Now build the PDF from all 46 images.
 - A4 landscape, 26 pages, English digits 0-9 only. Background #F7F3EA, text #1F3A2E, accent #B5532D. Images as JPEG quality 85 at full size; the PDF stays under 40 MB.
-- Page 1, cover: S07A full page. Title "Bengal Earth Lab". Subtitle "A buyer's visit in 46 pictures". Line: "Knitwear from the earth and from recycled fabric, with Bengal craft · a concept for the STAGE II ground floor · October 2026".
+- Page 1, cover: S07A full page. Title "STAGE II · Zara Fashion". Subtitle "The ground floor, reimagined: a buyer's visit in 46 pictures". Line: "Knitwear from the earth and from recycled fabric, with Bengal craft · a concept for the STAGE II ground floor · October 2026".
 - Page 2: "How to read this book: this book follows one buyer team through the 23 stops of the guided tour of our 3D proposal. Each stop has two pictures: A, the room as the 3D model shows it, made real; B, a moment in it. Stops 8 to 12 show option A, a possible later phase." Then a list of the 23 stops.
 - Pages 3 to 25, one page per stop:
   - "STOP 05 / 23", the stop title and the caption I gave;
