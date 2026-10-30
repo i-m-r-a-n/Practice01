@@ -1,0 +1,370 @@
+{
+  "scope": "LOCAL Chromium (SwiftShader); viewer walk-QA hooks at visitor eye height 1.6 m; UI hidden; not live or MacBook proof",
+  "shots": [
+    {
+      "spot": "lobby_gate",
+      "xz": [
+        4.6,
+        2.2
+      ],
+      "yaw": -2.404,
+      "pitch": -0.18,
+      "fov": 62,
+      "file": "visitor_lobby_gate.png",
+      "sha256": "afca749164037a9b1aba3e52a97c761d29765b1ab4a6455d2de77d41d96c6051",
+      "room": "Z01"
+    },
+    {
+      "spot": "lobby_relief",
+      "xz": [
+        2.3,
+        1.45
+      ],
+      "yaw": 1.5707963267948966,
+      "pitch": -0.05,
+      "fov": 60,
+      "file": "visitor_lobby_relief.png",
+      "sha256": "bfcdf525bef7b1221bd940575195809bc3d633b75eb127f29b78bef6aa419c48",
+      "room": "Z01"
+    },
+    {
+      "spot": "reception_instruments",
+      "xz": [
+        11.6,
+        1.7
+      ],
+      "yaw": 0.0,
+      "pitch": -0.08,
+      "fov": 62,
+      "file": "visitor_reception_instruments.png",
+      "sha256": "83f053405f7eb34db68e0fd94b45c5fdf405f789767e7b6a3ab312781cbed8ac",
+      "room": "Z02"
+    },
+    {
+      "spot": "reception_tea",
+      "xz": [
+        10.9,
+        3.6
+      ],
+      "yaw": 2.379,
+      "pitch": -0.55,
+      "fov": 58,
+      "file": "visitor_reception_tea.png",
+      "sha256": "1d34b66070582f8dffbd386286d73a036e037507b9ef0f2cfa194238e34be688",
+      "room": "Z02"
+    },
+    {
+      "spot": "passage_sun",
+      "xz": [
+        10.05,
+        -1.05
+      ],
+      "yaw": -0.34,
+      "pitch": -0.1,
+      "fov": 64,
+      "file": "visitor_passage_sun.png",
+      "sha256": "b4fd06775088cfc14bab9fbdb09353288ec94abe26f72b44489b4fd3b2964064",
+      "room": "Z03"
+    },
+    {
+      "spot": "passage_earth",
+      "xz": [
+        10.25,
+        -2.2
+      ],
+      "yaw": 0.586,
+      "pitch": -0.42,
+      "fov": 62,
+      "file": "visitor_passage_earth.png",
+      "sha256": "b5f416e6fd91f217c306bcdacb5d369e2801d4d38baa68c8cbb267cba9885cc2",
+      "room": "Z03"
+    },
+    {
+      "spot": "ec_plinth",
+      "xz": [
+        12.6,
+        -7.0
+      ],
+      "yaw": 0.0,
+      "pitch": -0.42,
+      "fov": 64,
+      "file": "visitor_ec_plinth.png",
+      "sha256": "e9a85474c49e4cb8f059648b9dee8f57b77412c758ce0fb0fab905988499568e",
+      "room": "Z30"
+    },
+    {
+      "spot": "ec_jhut_river",
+      "xz": [
+        15.45,
+        -7.5
+      ],
+      "yaw": 0.0,
+      "pitch": -0.32,
+      "fov": 68,
+      "file": "visitor_ec_jhut_river.png",
+      "sha256": "4d51894a545845fe80286cdae81761812332df1aa2eda8d878bc960d90e62ac7",
+      "room": "Z30"
+    },
+    {
+      "spot": "ec_tree",
+      "xz": [
+        20.9,
+        -9.2
+      ],
+      "yaw": 0.857,
+      "pitch": -0.12,
+      "fov": 62,
+      "file": "visitor_ec_tree.png",
+      "sha256": "eb42ef1d4bc88507defa6be2f7c55922af7661c091d355b66702b702c26c4972",
+      "room": "Z30"
+    },
+    {
+      "spot": "ec_water",
+      "xz": [
+        11.55,
+        -6.75
+      ],
+      "yaw": 3.141592653589793,
+      "pitch": -0.42,
+      "fov": 58,
+      "file": "visitor_ec_water.png",
+      "sha256": "390d465819c90e8ae9d1bcd94be71695ce6a1b48455179de4e6330fc39c4d178",
+      "room": "Z30"
+    },
+    {
+      "spot": "board_review",
+      "xz": [
+        17.25,
+        -0.95
+      ],
+      "yaw": 0.0,
+      "pitch": -0.55,
+      "fov": 64,
+      "file": "visitor_board_review.png",
+      "sha256": "6abc4453520a510541f33389bf5dba8b719ad9bb94f22127b98aa5a49b8aa057",
+      "room": "Z08"
+    },
+    {
+      "spot": "board_bonsai",
+      "xz": [
+        14.2,
+        -1.4
+      ],
+      "yaw": 0.4,
+      "pitch": -0.25,
+      "fov": 60,
+      "file": "visitor_board_bonsai.png",
+      "sha256": "7f2e6c802077594a7c2fc6f7ec380502e4c91fb8f96384ab242b2217c1e0db75",
+      "room": "Z08"
+    },
+    {
+      "spot": "studio_shelf",
+      "xz": [
+        32.35,
+        -18.95
+      ],
+      "yaw": -1.523,
+      "pitch": -0.35,
+      "fov": 62,
+      "file": "visitor_studio_shelf.png",
+      "sha256": "d0a7d7d311ff88e1a47928ab5c417d5e779234f3c577e64916d006fb09df8898",
+      "room": "Z18"
+    },
+    {
+      "spot": "studio_review",
+      "xz": [
+        29.0,
+        -15.4
+      ],
+      "yaw": -0.927,
+      "pitch": -0.35,
+      "fov": 58,
+      "file": "visitor_studio_review.png",
+      "sha256": "8fc917631310f83cd10ba1f0b1b7763ec9813e8b0568c9c2279cf7f63afd86fa",
+      "room": "Z18"
+    },
+    {
+      "spot": "tea_stall",
+      "xz": [
+        24.1,
+        -24.35
+      ],
+      "yaw": 1.5708,
+      "pitch": -0.12,
+      "fov": 66,
+      "file": "visitor_tea_stall.png",
+      "sha256": "8d6fb149cc1e04db7ab8fbe9a7474c99fb29be7c59d68b6b62100ea6ab1c73c8",
+      "room": "Z20"
+    },
+    {
+      "spot": "uthan_botola",
+      "xz": [
+        18.6,
+        -16.2
+      ],
+      "yaw": 1.5708,
+      "pitch": -0.2,
+      "fov": 62,
+      "file": "visitor_uthan_botola.png",
+      "sha256": "706d1097410dbe792722706aeb0fc439ac65566332f8eda58af723be67a777a9",
+      "room": "Z07"
+    },
+    {
+      "spot": "uthan_loom",
+      "xz": [
+        12.2,
+        -14.25
+      ],
+      "yaw": 0.7,
+      "pitch": -0.42,
+      "fov": 62,
+      "file": "visitor_uthan_loom.png",
+      "sha256": "6a1a810ca01368e47bd701efd7b53d5e388fad986b741b54faebf36b69c9c43a",
+      "room": "Z07"
+    },
+    {
+      "spot": "circle_wear",
+      "xz": [
+        12.2,
+        -14.05
+      ],
+      "yaw": 3.14159,
+      "pitch": -0.25,
+      "fov": 64,
+      "file": "visitor_circle_wear.png",
+      "sha256": "be6c1fc5e33e1f60f8ce0f519f707529b0239e0cc4a3ccddf635139812ca3abf",
+      "room": "Z07"
+    },
+    {
+      "spot": "circle_remake",
+      "xz": [
+        12.9,
+        -17.9
+      ],
+      "yaw": 0.58,
+      "pitch": -0.3,
+      "fov": 62,
+      "file": "visitor_circle_remake.png",
+      "sha256": "f56aa9fd1f8b8d1e1f32f3f1976ba76dbad4e06ee90d995d360fc88454e01df3",
+      "room": "Z07"
+    },
+    {
+      "spot": "circle_repair",
+      "xz": [
+        16.1,
+        -17.95
+      ],
+      "yaw": 0.0,
+      "pitch": -0.3,
+      "fov": 64,
+      "file": "visitor_circle_repair.png",
+      "sha256": "48ed9acbc3ea1e6da97d1fff57ab4995dd17e83cc514cd4ca1c6f8e82c0e25db",
+      "room": "Z07"
+    },
+    {
+      "spot": "circle_return",
+      "xz": [
+        16.4,
+        -13.65
+      ],
+      "yaw": 3.14159,
+      "pitch": -0.12,
+      "fov": 64,
+      "file": "visitor_circle_return.png",
+      "sha256": "cdc4bf6f18babed3fa7677a4749798b6b30c1128261d647089c486922474d38c",
+      "room": "Z07"
+    },
+    {
+      "spot": "craft_corner",
+      "xz": [
+        14.6,
+        -13.25
+      ],
+      "yaw": 3.14159,
+      "pitch": -0.2,
+      "fov": 66,
+      "file": "visitor_craft_corner.png",
+      "sha256": "195725a3cb7daf36ea8af34e07c62c33c1dc3338bb5dfbe8222010da82047daf",
+      "room": "Z07"
+    },
+    {
+      "spot": "craft_shelf",
+      "xz": [
+        10.95,
+        -18.3
+      ],
+      "yaw": 1.5708,
+      "pitch": -0.3,
+      "fov": 64,
+      "file": "visitor_craft_shelf.png",
+      "sha256": "f8dd721fd34fa6e294b443c381604ee7fa4f3a4148dea3289b0c7cddd85584fc",
+      "room": "Z07"
+    },
+    {
+      "spot": "academy_rows",
+      "xz": [
+        5.0,
+        -8.95
+      ],
+      "yaw": 0.0,
+      "pitch": -0.12,
+      "fov": 64,
+      "file": "visitor_academy_rows.png",
+      "sha256": "ef901bf66233bb7ed5fd7770f35acb5dd88116809e82fe2bf2091b6e3eae61de",
+      "room": "Z06"
+    },
+    {
+      "spot": "academy_teaching",
+      "xz": [
+        8.35,
+        -15.6
+      ],
+      "yaw": 1.5708,
+      "pitch": -0.18,
+      "fov": 66,
+      "file": "visitor_academy_teaching.png",
+      "sha256": "46c6860efec6b0ad0749fc30027d355d0ac2c79dac869740684322e3e3a751c7",
+      "room": "Z06"
+    },
+    {
+      "spot": "making_line",
+      "xz": [
+        22.55,
+        -22.2
+      ],
+      "yaw": -1.91,
+      "pitch": -0.15,
+      "fov": 66,
+      "file": "visitor_making_line.png",
+      "sha256": "04cf75d0b411d68a20484ede8fa6e99b467620b5698dec84011aad95d2035b0c",
+      "room": "Z22"
+    },
+    {
+      "spot": "library_boxes",
+      "xz": [
+        23.3,
+        -8.0
+      ],
+      "yaw": 1.5708,
+      "pitch": -0.45,
+      "fov": 64,
+      "file": "visitor_library_boxes.png",
+      "sha256": "c8c156ba19b27b651a60c67465f8e4b795ae99f3fd4667e936c15f7a3029a635",
+      "room": "Z15"
+    },
+    {
+      "spot": "workshop_table",
+      "xz": [
+        24.4,
+        -19.3
+      ],
+      "yaw": -1.5708,
+      "pitch": -0.4,
+      "fov": 64,
+      "file": "visitor_workshop_table.png",
+      "sha256": "bc84385e5140f73fd2e022128da64339b533261d242f3b7b52cf982400e35be6",
+      "room": "Z17"
+    }
+  ],
+  "errors": []
+}
