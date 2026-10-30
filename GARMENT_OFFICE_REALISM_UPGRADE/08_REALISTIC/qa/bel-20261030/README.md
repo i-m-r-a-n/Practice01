@@ -44,6 +44,16 @@ The owner, 30 Oct: "its a rmg factory. so the idea is there will be fabric that 
 - stop 11: the option A craft corner
 - stop 17: the tea stall
 
+**Checks** (local Chromium, software WebGL; not live, Safari, MacBook or phone-speed proof):
+- `after-inc6/`: 18 room frames, with no page, console or HTTP errors.
+- `visitor-inc6/`: visitor-eye frames at 28 free floor spots, with no errors. The viewer refuses a blocked spot, so every spot is walkable.
+- `after-tour-play-inc6/`: all 22 stops played through the tour's own buttons. Every counter and title matches the config, with no errors.
+- `after-mobile-inc6/`: a 390 x 844 touch viewport loads at low quality with no errors.
+  - The layer uses 19.8 MB of textures, up from 15.6 MB.
+  - The viewer estimates 489 MB of GPU memory for the scene, against 734 MB for the live `/realistic/` route.
+- Found while checking: the stills switch was flagged hidden, but the tour card's label style kept it visible. It is fixed in the next commit, and `bel_tour_play.py` now checks the computed style.
+- The full layer uses 74.8 MB of textures at full detail. Since then, the alpana canvas is smaller (640 px) and the tea-stall sign shares one texture for its colour and its glow.
+
 **Measured for placement** (`ray_probe.py`, `node_boxes.py`):
 - the forms: x 11.63, 12.34, 13.06, 13.77, z -8.56, bases r 0.19
 - the bay garments: from y 0.90 up
