@@ -1,0 +1,99 @@
+{
+  "scope": "LOCAL Chromium (SwiftShader); viewer walk-QA hooks at visitor eye height 1.6 m; UI hidden; not live or MacBook proof",
+  "shots": [
+    {
+      "spot": "tea_stall",
+      "xz": [
+        24.1,
+        -24.35
+      ],
+      "yaw": 1.5708,
+      "pitch": -0.12,
+      "fov": 66,
+      "file": "visitor_tea_stall.png",
+      "sha256": "606263bfe4f8c9f2d7d74e046c61c8d7311995a7faf284707c45647671faa6d8",
+      "room": "Z20"
+    },
+    {
+      "spot": "uthan_botola",
+      "xz": [
+        18.6,
+        -15.5
+      ],
+      "yaw": 1.5708,
+      "pitch": -0.2,
+      "fov": 62,
+      "file": "visitor_uthan_botola.png",
+      "sha256": "4c21aec13bfdd911b9e89f9e7570b5e2706f3ee62717050b08a1c0292ba2179f",
+      "room": "Z07"
+    },
+    {
+      "spot": "living_wall",
+      "xz": [
+        32.0,
+        -29.7
+      ],
+      "yaw": 0.25,
+      "pitch": 0.08,
+      "fov": 70,
+      "file": "visitor_living_wall.png",
+      "sha256": "a55eb45bc1f006864a595f44567bbe72dd94c2bb862724714dc155ac341d1251",
+      "room": "Z18"
+    },
+    {
+      "spot": "circle_remake",
+      "xz": [
+        12.9,
+        -17.9
+      ],
+      "yaw": 0.58,
+      "pitch": -0.3,
+      "fov": 62,
+      "file": "visitor_circle_remake.png",
+      "sha256": "3722e6935a364c426f292540346990779ffa23eeb7a0b37ad3ba407d2b66a70c",
+      "room": "Z07"
+    },
+    {
+      "spot": "circle_repair",
+      "xz": [
+        16.1,
+        -17.95
+      ],
+      "yaw": 0.0,
+      "pitch": -0.3,
+      "fov": 64,
+      "file": "visitor_circle_repair.png",
+      "sha256": "059cd9a62cd8b975a3394a04442d2af1aa6e445c6a5f03d4183d9d6fbbb25925",
+      "room": "Z07"
+    },
+    {
+      "spot": "circle_return",
+      "xz": [
+        16.4,
+        -13.65
+      ],
+      "yaw": 3.14159,
+      "pitch": -0.12,
+      "fov": 64,
+      "file": "visitor_circle_return.png",
+      "sha256": "fe61aec83a853aaec7051cdf0841a1b1635a33d82171e82240fa627297325744",
+      "room": "Z07"
+    },
+    {
+      "spot": "craft_corner",
+      "xz": [
+        14.6,
+        -13.25
+      ],
+      "yaw": 3.14159,
+      "pitch": -0.2,
+      "fov": 66,
+      "file": "visitor_craft_corner.png",
+      "sha256": "898322c00b347a1ba181555e9ca31f664a90106b76f6f080c35b2bcdb32e890e",
+      "room": "Z07"
+    }
+  ],
+  "errors": [],
+  "refused": [],
+  "passed": true
+}

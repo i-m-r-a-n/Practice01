@@ -22,7 +22,8 @@
   - 14 `/realistic/` requests (redirect, health, page, bundle, model, renders, Range, POST, path traversal) match the live `/realistic/` Worker. Each makes the same upstream fetch and returns the same status, headers and body.
   - The proposal route maps to `viewer/dist-bel/` and its assets at `0b239f6`, with health, redirect, 405, 400, 404 and Range handling. The live Worker for the comparison is `deploy/worker-realistic.js` at `01fac69`.
 - `node test_worker.mjs`: 41 checks, unchanged.
-- `qa/bel-20261030/request-list.json`: every file the proposal page requests on its 19-stop tour exists in `a83153c`.
+- `qa/bel-20261030/request-list.json`: every file the proposal page requests on its 23-stop tour (eight files) exists in `0b239f6`.
+- The guided tour plays all 23 stops through its own buttons with no errors (`qa/bel-20261030/after-tour-play-inc6b/`).
 - `index.html`, `app.js`, `release-config.json` and the concept layer match byte for byte on raw.githubusercontent.com.
 
 ## Deploy steps (desktop session, or Claude once the Cloudflare token can see the account)

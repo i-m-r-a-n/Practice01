@@ -14,6 +14,12 @@ From the owner's later references, at commit `0b239f6`:
 - **Fixes:**
   - The stills switch is now really hidden on this route. The tour card's label style had overridden `[hidden]`; `display: none` now hides it, and `bel_tour_play.py` checks the computed style.
   - `bel_visitor.py` now fails on a refused spot. The first living-wall spot stood inside the studio desks; it moved to free floor at x 32.0, z -29.7.
+- **Checks** (local Chromium, software WebGL):
+  - `after-inc6b/`: five frames, no errors.
+  - `visitor-inc6b/`: seven spots, none refused, no errors.
+  - `after-tour-play-inc6b/`: all 23 stops match the config, and the stills switch is not displayed.
+  - `after-mobile-inc6b/`: low quality, 20 MB of layer textures, no errors.
+  - `request-list.json`: all eight files the page requests exist in `0b239f6`.
 - **Worker:**
   - Rebuilt with `--bel 0b239f6`, SHA-256 `19824644…3916`.
   - `test_worker_bel.mjs` (54 checks) and `test_worker.mjs` (41 checks) pass against the live Worker from `01fac69`.
