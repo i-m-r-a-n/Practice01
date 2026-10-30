@@ -161,3 +161,18 @@ Next: verify a Bangladesh artisan/supplier shortlist or prepare solar evidence/i
 **Critical open gaps:** no directly verified Shital Pati maker co-op; no approved Chakma/Marma artisan partner or permissions; no known lawful Bangladesh stone supplier/source trail; no food-tested clay/wood SKU; no verified domestic raw origin, maker price/lead time or factory solar operation. No maker outreach or purchase. No Cloudflare, original room model, Claude branch or live-tour changes. Owner's **pilot-first option C** stays the minimally disruptive fallback; Z06/Z07 conversion has no approved relocation.
 
 **Next:** 08:00 Asia/Dhaka final session should consolidate saved GitHub files, Claude handoffs, actual tests vs assumptions, owner decisions and deployment status. The user has not authorised extending this automation beyond 08:00; do not create another new workstream after the deadline.
+
+
+## Final 08:00 handoff — consolidated owner report, no new design work
+
+**Verified isolated branch before handoff:** `46903fd5bb98568b1eaec0f4e90759a55629b8cb`; the branch still existed, Claude's separate branch was observed at `99266abb3834c754ab31737e3738eced0edf3591`. Read current issue #12 and issue #13 first. Claude accepted GPT research/specification vs Claude concept/3D division; no later approval of a Z06/Z07 relocation found.
+
+**Final-only artifacts**:
+- [FINAL_OWNER_HANDOFF_0800.md](FINAL_OWNER_HANDOFF_0800.md), commit `497dec6416bd5a424eb7837a985304d485174b6e` — 10 key findings, completed versus partial targets, exact links to major artifacts, reported versus independently checked QA, Claude integration state, owner decisions, independent deployment-status limitations.
+- [QUESTIONS.md](QUESTIONS.md), commit `3b9af7b644edcecffbee19a5a07bae48dcc86b94` — 10 owner evidence/approval gates, without asking for responses during this automated run.
+
+**Safety and deliverable completeness**: This is an executive handoff, not new approved geometry or manufacturing output. Model metadata is not measured site data. Retail benchmark is 45, short of 120; initial R&D batch is 12 in Markdown, not the 30-item schema-A JSON; 12 furniture concepts rather than 50; 10 concept SVGs completed; academy, artisan partnership framework and 12–15-slide outline not completed. The energy, legal/safety, maker-consent, origin and occupancy statuses remain unverified. Public wording is aspirational and labelled as such.
+
+**Independent checks this final run:** GitHub directory listing, before-handoff base comparison (30 new files, all in proposal folder, no changes to original files), current branch refs and latest #12/#13 comments. New owner report and questions saved successfully. Live `/` and `/bengal-earth-lab/` URLs were inaccessible to the web-reading tool; no fresh production browser result can be claimed. GPT performed no Cloudflare action or deployment; Claude last reported Worker prepared but not deployed. Current production release state needs separate independent verification and owner authorisation.
+
+**End-of-sprint rule:** no later automatic work, no new automation and no further edits to existing models or deployed routes. Await explicit owner priorities and engineering/sourcing evidence before further release work.
