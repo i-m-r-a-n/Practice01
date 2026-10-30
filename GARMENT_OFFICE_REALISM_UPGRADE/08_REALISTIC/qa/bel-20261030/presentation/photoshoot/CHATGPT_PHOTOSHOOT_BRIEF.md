@@ -5,9 +5,14 @@ Prepared by Claude for the owner of STAGE II / Zara Fashion, 30 October 2026.
 
 ---
 
-## How to start (the owner pastes this into ChatGPT, with this file and the 3 reference sheets attached)
+## How to start
 
-> You are the best architectural and editorial photoshoot director and composition designer in the world. Read the attached brief (CHATGPT_PHOTOSHOOT_BRIEF.md) and the three reference sheets from our 3D model. Then follow the brief step by step: first the casting sheet, then the 46 photorealistic images (2 for each tour stop), then the PDF. Ask me only if something in the brief is unclear.
+The owner pastes a short message into ChatGPT and attaches nothing. Every file is on GitHub, in the public repository `i-m-r-a-n/Practice01`:
+- **Branch:** `claude/bengal-earth-lab-20261029`
+- **Folder:** `GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/qa/bel-20261030/presentation/photoshoot/`
+- **Direct links:** section 3.
+
+If you cannot open a link, say which one. Then work from the written description of that stop in section 7.
 
 ---
 
@@ -40,9 +45,22 @@ Your pictures must make the owner and a European buyer feel: "this is what the p
    - in tour order.
 3. **One PDF** as specified in section 8, plus a ZIP of the 46 images.
 
-## 3. Reference images (attached by the owner)
+## 3. Reference images (open them from these links; nothing is attached)
 
-- `reference_sheet_1_of_3.jpg` (stops 1 to 8), `reference_sheet_2_of_3.jpg` (stops 9 to 16), `reference_sheet_3_of_3.jpg` (stops 17 to 23). Each panel is the view of that stop from our 3D model of the approved floor. The owner may also attach the single frames `stop01_ref.jpg` to `stop23_ref.jpg`.
+Each panel and frame is the view of that stop from our 3D model of the approved floor. Open the three sheets before you start. Before each batch, open the single frames of its stops.
+
+**Reference sheets:**
+- Stops 1 to 8: https://raw.githubusercontent.com/i-m-r-a-n/Practice01/3306380a4b4bfa2e2d506c98635d0b09ef7fa2da/GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/qa/bel-20261030/presentation/photoshoot/reference_sheet_1_of_3.jpg
+- Stops 9 to 16: https://raw.githubusercontent.com/i-m-r-a-n/Practice01/3306380a4b4bfa2e2d506c98635d0b09ef7fa2da/GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/qa/bel-20261030/presentation/photoshoot/reference_sheet_2_of_3.jpg
+- Stops 17 to 23: https://raw.githubusercontent.com/i-m-r-a-n/Practice01/3306380a4b4bfa2e2d506c98635d0b09ef7fa2da/GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/qa/bel-20261030/presentation/photoshoot/reference_sheet_3_of_3.jpg
+
+**Single frames, 1440 × 810.** Each one is at this address, with NN = 01 to 23:
+
+`https://raw.githubusercontent.com/i-m-r-a-n/Practice01/3306380a4b4bfa2e2d506c98635d0b09ef7fa2da/GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/qa/bel-20261030/presentation/photoshoot/refs/stopNN_ref.jpg`
+
+For example, stop 7: https://raw.githubusercontent.com/i-m-r-a-n/Practice01/3306380a4b4bfa2e2d506c98635d0b09ef7fa2da/GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/qa/bel-20261030/presentation/photoshoot/refs/stop07_ref.jpg
+
+**The same folder on GitHub,** for the GitHub connector: https://github.com/i-m-r-a-n/Practice01/tree/claude/bengal-earth-lab-20261029/GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/qa/bel-20261030/presentation/photoshoot
 - **Shot A follows the reference.**
   - Keep the same room, walls, glass, ceiling, furniture positions and key objects.
   - Keep the same viewpoint. You may move the camera up to 1 m and adjust the lens to make a better photograph.
@@ -424,7 +442,7 @@ Captions are for the PDF (section 8); copy them exactly. Each shot names its ref
    - confirm the brief in 5 lines;
    - name any stop whose reference is unclear;
    - make the casting sheet.
-2. Then work in batches of two stops (four images). The owner may attach the matching `stopNN_ref.jpg` frames for each batch.
+2. Then work in batches of two stops (four images). Open the matching `stopNN_ref.jpg` frames (section 3) before each batch.
 3. Check every image against this list and regenerate it if any line fails:
    - the room, walls, glass and furniture match the reference;
    - no readable text, logos, marks, numbers or QR codes;
