@@ -98,7 +98,7 @@ notes = {
     'Z09': in3d + 'the records room: the originals behind every claim, fibre origins and recycled content first. Labelled evidence files and an Open Record index whose lines all read "none yet", "to prepare" or "to be collected" until documents arrive.',
 }
 tour = [
-    {'stop': 1, 'zone': None, 'camera': 'CAM_ISO_SE', 'title': 'The Living Bengal Factory',
+    {'stop': 1, 'zone': None, 'camera': 'CAM_ISO_SE', 'title': 'The whole floor',
      'description': 'A knitwear factory whose fabric comes from the earth and from what was already made, with Bengal craft as its signature: a concept proposal on the approved Stage II floor. The owner chose the pilot (option C) first: the front rooms, the design wing, the studio and the pilot rooms. Merchandising and the accounts suite are shown as option A, a possible later phase.'},
     {'stop': 2, 'zone': 'Z01', 'camera': 'CAM_03_Entrance_Lobby', 'title': 'Arrival gallery',
      'description': 'A banyan bonsai on granite by the glass gate, three stones, terracotta on the check-in desk and terracotta plaques by a rural artist (to be commissioned).'},
@@ -162,10 +162,10 @@ config = {
     'extraCameras': cameras, 'tour': tour, 'roomNames': names, 'roomNotes': notes,
     'roomGroups': {'Z07': 'Option A · later phase', 'Z06': 'Option A · later phase'},   # their own menu group and tour-card kicker (option C, the pilot, was chosen first)
     'branding': {
-        'pageTitle': 'Bengal Earth Lab - concept proposal',
-        'eyebrow': 'Bengal Earth Lab · Earth and recycled fabric, Bengal craft',
-        'headline': 'The Living Bengal Factory · concept proposal',
-        'welcomeTitle': 'Explore the Bengal Earth Lab proposal',
+        'pageTitle': 'STAGE II · Zara Fashion - ground floor concept',   # the owner, 30 Oct: STAGE II / Zara Fashion branding only
+        'eyebrow': 'STAGE II · Zara Fashion',
+        'headline': 'The ground floor, reimagined · concept proposal',
+        'welcomeTitle': 'Explore the ground floor proposal',
         'welcomeTour': 'A guided tour of the proposal: the pilot first, then the option A rooms as a possible later phase. Pause, go back or skip at any time.',
         'disclaimerHtml': '<b>Concept proposal</b> on the approved Stage II floor &middot; fibre origins, recycled shares, tests, makers, artists, growers, stone sources and energy data are still to be identified &middot; no people shown.',
     },

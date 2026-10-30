@@ -1,0 +1,232 @@
+{
+  "url": "http://127.0.0.1:8790/bengal-earth-lab/?welcome=0",
+  "scope": "LOCAL Chromium (SwiftShader); the tour played through its own buttons",
+  "stops": [
+    {
+      "stop": 1,
+      "camera": "CAM_ISO_SE",
+      "counter": "Stop 1 of 23",
+      "title": "The whole floor",
+      "kicker": "THE WHOLE FLOOR",
+      "matches_config": true,
+      "flight_seconds": 7.4
+    },
+    {
+      "stop": 2,
+      "camera": "CAM_03_Entrance_Lobby",
+      "counter": "Stop 2 of 23",
+      "title": "Arrival gallery",
+      "kicker": "ARRIVAL & VISITORS \u00b7 APPROX. 515 SFT",
+      "matches_config": true,
+      "flight_seconds": 21.3
+    },
+    {
+      "stop": 3,
+      "camera": "CAM_01_Reception_A",
+      "counter": "Stop 3 of 23",
+      "title": "Reception and Bengali tea",
+      "kicker": "ARRIVAL & VISITORS \u00b7 APPROX. 446 SFT",
+      "matches_config": true,
+      "flight_seconds": 20.8
+    },
+    {
+      "stop": 4,
+      "camera": "BEL_CAM_SUN_WALL",
+      "counter": "Stop 4 of 23",
+      "title": "Earth and Sun passage",
+      "kicker": "ARRIVAL & VISITORS \u00b7 APPROX. 75 SFT",
+      "matches_config": true,
+      "flight_seconds": 14.6
+    },
+    {
+      "stop": 5,
+      "camera": "CAM_04_Experience_Centre_A",
+      "counter": "Stop 5 of 23",
+      "title": "Fabric from the earth, and from waste",
+      "kicker": "EXPERIENCE & MEETING \u00b7 APPROX. 707 SFT",
+      "matches_config": true,
+      "flight_seconds": 19.6
+    },
+    {
+      "stop": 6,
+      "camera": "CAM_06_Experience_Centre_Detail",
+      "counter": "Stop 6 of 23",
+      "title": "Second life in the bays",
+      "kicker": "EXPERIENCE & MEETING \u00b7 APPROX. 707 SFT",
+      "matches_config": true,
+      "flight_seconds": 23.4
+    },
+    {
+      "stop": 7,
+      "camera": "BEL_CAM_JHUT",
+      "counter": "Stop 7 of 23",
+      "title": "The jhut river",
+      "kicker": "EXPERIENCE & MEETING \u00b7 APPROX. 707 SFT",
+      "matches_config": true,
+      "flight_seconds": 23.1
+    },
+    {
+      "stop": 8,
+      "camera": "BEL_CAM_UTHAN",
+      "counter": "Stop 8 of 23",
+      "title": "Option A \u00b7 the Green Uthan",
+      "kicker": "OPTION A \u00b7 LATER PHASE \u00b7 APPROX. 1,421 SFT",
+      "matches_config": true,
+      "flight_seconds": 13.8
+    },
+    {
+      "stop": 9,
+      "camera": "BEL_CAM_ARTISAN",
+      "counter": "Stop 9 of 23",
+      "title": "Option A \u00b7 artisan corner",
+      "kicker": "OPTION A \u00b7 LATER PHASE \u00b7 APPROX. 1,421 SFT",
+      "matches_config": true,
+      "flight_seconds": 10.6
+    },
+    {
+      "stop": 10,
+      "camera": "BEL_CAM_CIRCULAR",
+      "counter": "Stop 10 of 23",
+      "title": "Option A \u00b7 circular knitwear studio",
+      "kicker": "OPTION A \u00b7 LATER PHASE \u00b7 APPROX. 1,421 SFT",
+      "matches_config": true,
+      "flight_seconds": 11.4
+    },
+    {
+      "stop": 11,
+      "camera": "BEL_CAM_CRAFT",
+      "counter": "Stop 11 of 23",
+      "title": "Option A \u00b7 craft corner",
+      "kicker": "OPTION A \u00b7 LATER PHASE \u00b7 APPROX. 1,421 SFT",
+      "matches_config": true,
+      "flight_seconds": 15.2
+    },
+    {
+      "stop": 12,
+      "camera": "BEL_CAM_ACADEMY",
+      "counter": "Stop 12 of 23",
+      "title": "Option A \u00b7 design academy",
+      "kicker": "OPTION A \u00b7 LATER PHASE \u00b7 APPROX. 1,283 SFT",
+      "matches_config": true,
+      "flight_seconds": 20.0
+    },
+    {
+      "stop": 13,
+      "camera": "BEL_CAM_MAKING_LINE",
+      "counter": "Stop 13 of 23",
+      "title": "The making line",
+      "kicker": "DESIGN DEVELOPMENT \u00b7 APPROX. 412 SFT",
+      "matches_config": true,
+      "flight_seconds": 16.4
+    },
+    {
+      "stop": 14,
+      "camera": "BEL_CAM_LAB",
+      "counter": "Stop 14 of 23",
+      "title": "The labs behind the glass",
+      "kicker": "DESIGN DEVELOPMENT \u00b7 APPROX. 171 SFT",
+      "matches_config": true,
+      "flight_seconds": 17.7
+    },
+    {
+      "stop": 15,
+      "camera": "BEL_CAM_CAD",
+      "counter": "Stop 15 of 23",
+      "title": "CAD \u00b7 knitwear development",
+      "kicker": "DESIGN DEVELOPMENT \u00b7 APPROX. 281 SFT",
+      "matches_config": true,
+      "flight_seconds": 23.6
+    },
+    {
+      "stop": 16,
+      "camera": "CAM_21_Lounge_Training",
+      "counter": "Stop 16 of 23",
+      "title": "Academy annex (pilot)",
+      "kicker": "STAFF FACILITIES \u00b7 APPROX. 389 SFT",
+      "matches_config": true,
+      "flight_seconds": 21.5
+    },
+    {
+      "stop": 17,
+      "camera": "BEL_CAM_TEA",
+      "counter": "Stop 17 of 23",
+      "title": "The tong \u00b7 tea in clay",
+      "kicker": "STAFF FACILITIES \u00b7 APPROX. 465 SFT",
+      "matches_config": true,
+      "flight_seconds": 4.9
+    },
+    {
+      "stop": 18,
+      "camera": "CAM_13_Design_Studio_A",
+      "counter": "Stop 18 of 23",
+      "title": "Collaborative studio",
+      "kicker": "DESIGN DEVELOPMENT \u00b7 APPROX. 936 SFT",
+      "matches_config": true,
+      "flight_seconds": 7.1
+    },
+    {
+      "stop": 19,
+      "camera": "BEL_CAM_SUN_SHELF",
+      "counter": "Stop 19 of 23",
+      "title": "The sunning shelf",
+      "kicker": "DESIGN DEVELOPMENT \u00b7 APPROX. 936 SFT",
+      "matches_config": true,
+      "flight_seconds": 8.8
+    },
+    {
+      "stop": 20,
+      "camera": "BEL_CAM_PLANT_WALL",
+      "counter": "Stop 20 of 23",
+      "title": "The living wall",
+      "kicker": "DESIGN DEVELOPMENT \u00b7 APPROX. 936 SFT",
+      "matches_config": true,
+      "flight_seconds": 9.6
+    },
+    {
+      "stop": 21,
+      "camera": "BEL_CAM_RECORDS",
+      "counter": "Stop 21 of 23",
+      "title": "The records room",
+      "kicker": "EXPERIENCE & MEETING \u00b7 APPROX. 153 SFT",
+      "matches_config": true,
+      "flight_seconds": 16.9
+    },
+    {
+      "stop": 22,
+      "camera": "CAM_09_Boardroom_A",
+      "counter": "Stop 22 of 23",
+      "title": "Negotiation suite",
+      "kicker": "EXPERIENCE & MEETING \u00b7 APPROX. 540 SFT",
+      "matches_config": true,
+      "flight_seconds": 7.5
+    },
+    {
+      "stop": 23,
+      "camera": "CAM_ISO_SW",
+      "counter": "Stop 23 of 23",
+      "title": "Designed for a Solar-Powered Future",
+      "kicker": "THE WHOLE FLOOR",
+      "matches_config": true,
+      "flight_seconds": 29.1
+    }
+  ],
+  "errors": [],
+  "http_errors": [],
+  "stills_switch_hidden": true,
+  "menu_groups": [
+    "Arrival & visitors",
+    "Experience & meeting",
+    "Executive suite",
+    "Workplace",
+    "Design development",
+    "Staff facilities",
+    "Prayer & wudu",
+    "Washrooms",
+    "Option A \u00b7 later phase"
+  ],
+  "option_a_rooms_in_menu": [
+    "Design academy (later phase)1,283 sft",
+    "Green Uthan \u00b7 circular knitwear studio (later phase)1,421 sft"
+  ],
+  "passed": true
+}
