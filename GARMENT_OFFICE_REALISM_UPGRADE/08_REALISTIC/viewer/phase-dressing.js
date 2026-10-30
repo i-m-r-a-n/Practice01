@@ -29,6 +29,7 @@ export async function createOfficeDressing({ scene, renderer, metadata, grid, pr
   // Concept proposal layer (the /bengal-earth-lab/ route): replaces approved planters in place and adds its own items.
   const conceptLayer = concept === 'bengal-earth-lab' ? buildBengalEarthLab(THREE, { zones: conceptZones, ...conceptOptions, anisotropy: Math.min(8, renderer.capabilities.getMaxAnisotropy()), detail }) : null;
   if (conceptLayer) scene.add(conceptLayer.group);
+  if (conceptLayer?.overhead?.children.length) interior.overhead.add(conceptLayer.overhead);   // ceiling-hung concept items hide with the ceiling
   const interiorRugs = interior.prepareBase(scene);   // approved rugs drawn by the shared base material get their redesign by position
   let atlas, people = null, peoplePromise = null;
   const status = { enabled: true, props: props.stats, identity: { ...identity.stats, items: identity.items }, interior: { ...interior.stats, items: interior.items, rugMaterials: interiorRugs }, concept: conceptLayer ? { name: concept, ...conceptLayer.stats, items: conceptLayer.items } : null, screens: {}, peopleAccepted, errors: [], dynamicLighting: probes ? 'Room SH for actors; instance SH for additive props; static lightmaps exclude both.' : 'Existing scene hemisphere/directional lighting for added props and static people; not a calibrated dynamic-lighting bake.' };

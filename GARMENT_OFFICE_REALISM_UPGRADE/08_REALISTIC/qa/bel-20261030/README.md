@@ -1,5 +1,58 @@
 # Bengal Earth Lab: 3D proposal route
 
+## Increment 6: knitwear first, Bengal craft added (30 Oct 2026)
+
+The owner, 30 Oct: "its a rmg factory. so the idea is there will be fabric that is sourced from earth and sustainable, reuseable. the kutir shilpo is an addition to the rmg sector to represent bangaldesh", then "even the fabrics could be recycled fabric". The route now puts the knitwear core first. Bengal craft is added around it, following the owner's reference photos.
+
+**The approved knitwear dressing is back on this route.**
+- The garments and hangers are back in the four bays: `hideParts` and `trimParts` are gone.
+- The four forms are back on the plinth: F022 to F025 are out of `hideNodes`.
+- These approved items return:
+  - the materials library (yarn cones, knit stitches, coconut-shell buttons)
+  - the sample cards and the boardroom review trays
+  - the MD development shelf
+  - the studio sample-review table
+  - the CAD dressing (Z14 is an interior zone again, as on `/realistic/`)
+- Two approved items stay off, and something takes each one's place:
+  - the water point (the clay kolshi now stands on its spot)
+  - the experience-centre cloth fins (natural indigo swags replace them)
+
+**Concept items:**
+
+| Room | Option | Items |
+|---|---|---|
+| Experience centre Z30 | every | A fibre dish and a fabric-story card at the foot of each form. A low story at the foot of each bay: Earth (cotton), Golden fibre (jute and cotton, research), Second life from cutting waste (jhut in jute sacks, sorted by colour), Second life from used garments (take-back crate, a kantha mend). Natural indigo swags under the deck, clear of the AC unit and smoke detector. The jhut river: a sewing machine and patchwork across the free floor between the plinth and the material table (probed: open terrazzo). A small fig tree on the approved potted tree's footprint. |
+| Design wing Z22, Z15, Z16, Z17 | every | The making line: one T-shirt in six steps. A fibre library of eight boxes and product passport cards, "ready for the EU ecodesign rules for apparel, still being drafted". A fabric lab with a GSM cutter, a balance, swatches marked for shrinkage, a grey scale and an empty durability log. Remake and repair: a kraft pattern, sorted offcuts, a pieced panel, a kantha mend. |
+| Pilot rooms Z04, Z09, Z21, Z20 | every | Buyer room: knit swatches, product passport on the checklist, a board reading brief, fabric, lab dip, fit, tests, order. Records room: fibre origins, recycled content, durability tests and the product passport first, all "none yet", "to prepare" or "to be collected". Annex: knit swatches, a mending kit. Dining: the tong, a wall-mounted Bengali tea stall on the free west wall (probed clear, floor to ceiling), with "চা CHA · TEA" on its sign, clay cups, an electric lantern in the hurricane form and wood-slice stools. |
+| Merchandising Z07 | option A | A circular knitwear studio. Wear: knitwear on bamboo rails. Remake: jhut sorted by colour, a basket lamp hung from the steel (underside 2.59, probed). Repair: a live-edge table, wood-slice stools, a basket lamp. Return: take-back sacks, bamboo armchairs and a bent-bamboo table. The Uthan: kula and dala over the canopy, alpana, four painted bamboo lantern posts, indigo yarn and small pots. A craft corner on the solid south wall. A low bamboo shelf of shokher hari pots, tepa putul and drums on the solid lower west wall (glass above 1.22 m), with a polo beside it. |
+| Accounts suite Z06 | option A | The academy: a sewing machine on the demonstration bench, knit swatches, and a lesson on fibre, yarn, knit and reuse. |
+
+**Removed concept items:**
+- Earth-to-Product plinth
+- craft material table
+- the four home-goods collections in the bays
+- bamboo lamp
+- woven boardroom samples
+- co-creation baskets
+- Lab B basket screen
+- the four home room-sets
+
+**Overhead:** ceiling-hung concept items (the indigo swags) go into the interior overhead group, so they hide with the ceiling in the dollhouse views (`viewer/phase-dressing.js`).
+
+**Tour:** 22 stops. Three are new:
+- stop 7: the jhut river
+- stop 11: the option A craft corner
+- stop 17: the tea stall
+
+**Measured for placement** (`ray_probe.py`, `node_boxes.py`):
+- the forms: x 11.63, 12.34, 13.06, 13.77, z -8.56, bases r 0.19
+- the bay garments: from y 0.90 up
+- the dining ceiling lamps over both tables: so no new pendants there
+- Z07 ceilings:
+  - felt at 2.58 over x 10.2 and 13.45
+  - steel at 2.59 over the remake table
+  - steel at 2.49 over x 15.6, z -20.25
+
 ## Presenter polish (30 Oct 2026)
 
 - **Option A in the rooms menu.** Merchandising and the accounts suite now sit under their own rooms-menu group, "Option A · proposed" (`roomGroups` in the config, read by `viewer/app.js`). Their tour cards say so in the line above the title.

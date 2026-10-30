@@ -1,14 +1,20 @@
 /** Bengal Earth Lab proposal layer, used only by the /bengal-earth-lab/ route (Claude, 29-30 Oct 2026).
- * "The Living Bengal Factory": a few small trees, bonsai and stones in place of the approved planters, work by rural
- * artists, rural instruments, tea in clay and wood, the Sun wall (a concept demonstration with no data) and the
- * Earth-to-Product gallery. Self-made procedural geometry and canvas artwork only. Makers, artists, growers, stone
- * sources, test records and energy data are still to be identified: nothing here is claimed as made, tested or measured.
+ * "The Living Bengal Factory": a knitwear (RMG) factory whose fabric comes from the earth (cotton, jute) and from what
+ * was already made (cutting waste and used garments, spun again), with Bengal craft (kutir shilpo) as the addition that
+ * represents Bangladesh: a few small trees, bonsai and stones, work by rural artists, rural instruments, kantha, clay and
+ * wood tableware, the Sun wall (a concept demonstration with no data). The approved knitwear dressing stays (garments,
+ * forms, sample cards, review sets); this layer adds the fabric story around it. Self-made procedural geometry and canvas
+ * artwork only. Makers, artists, growers, suppliers, recycling partners, fibre origins, certificates, test records and
+ * energy data are still to be identified: nothing here is claimed as made, recycled, tested or measured.
  * The route config hides the approved items this layer replaces (hideNodes) and every replacement keeps the same
  * footprint, so the approved walk grid stays valid; new floor items report their footprint through blocksMovement().
  * Usage: buildBengalEarthLab(THREE, { zones, drinkware, anisotropy, detail }) -> { group, items, stats, textures, blocksMovement, dispose }
  * Coordinates: viewer metres, x east, y up, z south (as office_web_metadata.json).
  */
+import { knitTile } from './knit-tiles.mjs';
+
 export const BEL_ITEMS = [
+  // arrival: Bengal craft, a few living trees, rural art and music, the Sun wall
   { id: 'BEL_GATE_BONSAI', zone: 'Z01', note: 'A banyan bonsai on a granite plinth beside the glass gate, in place of the approved potted tree and on its footprint. Grower, species and stone source to be confirmed; it takes turns in daylight at the studio windows.' },
   { id: 'BEL_LOBBY_STONES', zone: 'Z01', note: 'Three granite stones in place of the approved small planter, on its footprint. Stone only from a documented legal source, never from illegal river extraction.' },
   { id: 'BEL_EARTH_DESK', zone: 'Z01', note: 'Handmade terracotta tiles on the visitor face of the check-in desk (proposal; potter to be identified).' },
@@ -18,41 +24,45 @@ export const BEL_ITEMS = [
   { id: 'BEL_INSTRUMENTS', zone: 'Z02', note: 'Rural instruments above the console: ektara, dotara and banshi on an oak rail, a dhol on the console. Makers to be identified and credited; played at events, never used as props.' },
   { id: 'BEL_TEA_CLAY', zone: 'Z02', note: 'Tea in clay cups from a clay pot on a wooden tray, in place of the porcelain props. Glazes to be tested for lead and cadmium release before use.' },
   { id: 'BEL_SUN_WALL', zone: 'Z03', note: 'The Sun wall: sun, solar generation, direct use and storage, operations, with grid and backup shown. Concept demonstration, not live factory data. The message stays "Designed for a Solar-Powered Future" until measured evidence exists.' },
-  { id: 'BEL_EARTH_WALL', zone: 'Z03', note: 'Handmade terracotta tiles between the guest WC doors, with a narrow oak ledge of clay bowls holding clay, jute, hogla, cane and rice straw (proposal).' },
-  { id: 'BEL_EARTH_TO_PRODUCT', zone: 'Z30', note: 'The Earth-to-Product gallery on the plinth (the four forms are removed): raw material, craft technique, prototype, testing, collection. Illustrative objects; real samples and test records replace them.' },
-  { id: 'BEL_MATERIAL_TABLE', zone: 'Z30', note: 'Living materials on the material table: woven jute, hogla, cane, water hyacinth, bamboo and kaisa samples and terracotta tiles, each with its card. Origins to be documented.' },
-  { id: 'BEL_COLLECTION_BAYS', zone: 'Z30', note: 'The four display bays (garments removed on this route) show three illustrative collections and the experimental work: Bengal Nordic (handloom textiles), River to Home (hogla, water hyacinth, terracotta), Second Life Bangladesh (garment offcuts, kantha patchwork) and Future of Bengal (bamboo, cane, jute composite). Concept objects, not products on sale.' },
-  { id: 'BEL_FUTURE_LAMP', zone: 'Z30', note: 'Future of Bengal: an experimental bamboo and handmade-paper lamp on a granite plinth beside the boardroom door, in place of the approved potted tree and on its footprint.' },
-  { id: 'BEL_WATER_KOLSHI', zone: 'Z30', note: 'Drinking water from a clay kolshi with clay cups. The source is client-stated (deep tube well); only dated laboratory reports will ever be shown, and none are available yet.' },
-  { id: 'BEL_BOARD_SAMPLES', zone: 'Z08', note: 'Wooden sample trays on the table centre line with woven samples, a terracotta tile and a small basket (illustrative).' },
+  { id: 'BEL_EARTH_WALL', zone: 'Z03', note: 'Handmade terracotta tiles between the guest WC doors, with a narrow oak ledge of clay bowls holding the raw side of the fabric story: cotton, jute, fibre recovered from cutting waste and natural indigo, beside clay (proposal).' },
+  // the experience centre: the approved knitwear stays; the fabric story is added around it
+  { id: 'BEL_FABRIC_STORIES', zone: 'Z30', note: 'The four approved forms keep their knitwear. At the foot of each, a dish of the fibre and a fabric story card: cutting waste sorted by colour and spun again, a jute and cotton blend (research), used garments taken back, cotton. Illustrative stories: fibre origins, recycled shares and tests are still to be documented.' },
+  { id: 'BEL_BAY_STORIES', zone: 'Z30', note: 'The four approved garment bays, each with a fabric story at its foot: Earth (cotton), Golden fibre (a jute and cotton blend, research only), Second life from cutting waste (jhut sorted by colour and spun again) and Second life from used garments (take-back, repair in kantha stitch, recycling). Recycling partners, certificates and tests are still to be identified.' },
+  { id: 'BEL_EC_TREE', zone: 'Z30', note: 'A small fig tree in a handmade terracotta planter beside the boardroom door, in place of the approved potted tree and on its footprint.' },
+  { id: 'BEL_INDIGO_SWAGS', zone: 'Z30', note: 'Natural indigo overhead: three resist-dyed cloths in shallow swags under the deck, in place of the approved cloth fins on this route and clear of the AC unit and the smoke detector. Indigo dyer to be identified; colourfastness to be tested.' },
+  { id: 'BEL_JHUT_RIVER', zone: 'Z30', note: 'An installation between the forms and the material table: a sewing machine on a wooden table and a river of patchwork pieced from cutting waste, running off the table and across the floor. Makers to be credited; not a product.' },
+  { id: 'BEL_WATER_KOLSHI', zone: 'Z30', note: 'Drinking water from a clay kolshi with clay cups, in place of the approved water point and on its spot. The source is client-stated (deep tube well); only dated laboratory reports will ever be shown, and none are available yet.' },
   { id: 'BEL_BOARD_BONSAI', zone: 'Z08', note: 'A bonsai on a jute-wrapped stand in the corner by the screen, in place of the approved planter; it rotates to the studio windows for light.' },
   { id: 'BEL_STUDIO_SUN_SHELF', zone: 'Z18', note: 'The sunning shelf at the east window W10: three bonsai and a tulsi pot take turns in daylight. Grower and species to be confirmed.' },
   { id: 'BEL_STUDIO_TREE', zone: 'Z18', note: 'A small fig tree in daylight by window W09, in place of the approved potted tree and on its footprint.' },
-  { id: 'BEL_COCREATION', zone: 'Z18', note: 'Co-creation set on the presentation table: basket prototypes, woven samples, a colour fan and form sketches (illustrative).' },
   { id: 'BEL_CLAY_DRINKWARE', zone: '*', note: 'Every glass, mug, cup, jug, bottle and tray on the route is clay or wood (glazes to be tested; wood with food-safe finishes).' },
-  // the design wing in every option (increment 3): the labs behind the glass of the studio street are the exhibit
-  { id: 'BEL_MAKING_LINE', zone: 'Z22', note: 'The making line on the solid wall of the design-wing entrance (the corridor walls are glass): one River to Home basket in six steps on oak ledges, from hogla leaves to the collection. Illustrative objects; real samples and dated records replace them.' },
-  { id: 'BEL_MATERIALS_LIBRARY', zone: 'Z15', note: 'The living materials library: eight labelled boxes of natural materials on the low shelf (jute, hogla, cane, bamboo, water hyacinth, kaisa grass, coconut shell, terracotta) and Material Passport cards on the review table, with fields still to be documented. The D65 colour booth and the approved fabric library stay.' },
-  { id: 'BEL_TEST_LAB', zone: 'Z16', note: 'Materials lab: a moisture and mould test set-up on the post-processing bench (sealed sample boxes, a scale, a moisture meter) and an empty test log. Methods to be agreed with an accredited laboratory; no results are shown. The 3D printers stay for trims and moulds.' },
-  { id: 'BEL_PROTOTYPE_WORKSHOP', zone: 'Z17', note: 'Prototype workshop: cane and bamboo prototyping on the pattern table (a basket on its mould, split bamboo, a steam-bent hoop and hand tools) under a dust-extraction hood marked "to be engineered", and a steam-bending jig. The sample machines and forms stay.' },
-  // pilot rooms (increment 4): the small academy, staff and artisan dining, the records room
-  { id: 'BEL_ACADEMY_ANNEX', zone: 'Z21', note: 'The pilot academy in the training room: a small class of six at the approved table (fibre samples, a frame loom, yarn cones) and a craft wall of pinned samples and sketches. The lounge stays.' },
+  // the design wing in every option: the labs behind the glass of the studio street are the exhibit
+  { id: 'BEL_MAKING_LINE', zone: 'Z22', note: 'The making line on the solid wall of the design-wing entrance (the corridor walls are glass): one knit T-shirt in six steps on oak ledges, from fibre (cotton, jute, fibre recovered from cutting waste) to yarn, knit fabric, cut and sew, testing, and wear, repair and return. Illustrative objects; real samples and dated records replace them.' },
+  { id: 'BEL_MATERIALS_LIBRARY', zone: 'Z15', note: 'The fibre library on the low shelf: eight labelled boxes (cotton, recycled cotton from cutting waste, recycled fibre from used garments, jute, banana fibre, pineapple leaf fibre, natural indigo, coconut-shell buttons) and Fabric Passport cards on the review table, every field still to be documented. Banana, pineapple and indigo are research only. The D65 colour booth and the approved fabric library stay.' },
+  { id: 'BEL_TEST_LAB', zone: 'Z16', note: 'Fabric lab on the post-processing bench: a GSM cutter and a balance, knit swatches marked for wash shrinkage, a grey scale for colourfastness and an empty test log. Methods to be agreed with an accredited laboratory; no results are shown. The 3D printers stay for trims and moulds.' },
+  { id: 'BEL_PROTOTYPE_WORKSHOP', zone: 'Z17', note: 'Remake and repair on the pattern table: paper pattern pieces, cutting waste sorted by colour, a panel pieced from offcuts and a T-shirt mended in kantha stitch. The sample machines and forms stay.' },
+  // pilot rooms: the small academy, staff and artisan dining, the records room, the buyer project room
+  { id: 'BEL_ACADEMY_ANNEX', zone: 'Z21', note: 'The pilot academy in the training room: a class of six at the approved table (knit swatches, yarn cones, a mending kit) and a craft wall of pinned swatches, a kantha mend and sketches. The lounge stays.' },
+  { id: 'BEL_TEA_STALL', zone: 'Z20', note: 'The tong, the Bengali tea stall, as the tea point on the free west wall of the dining room: a wall-mounted cart front on two wheels with a painted canopy (rickshaw-art colours), a kettle on a clay stove, clay cups, biscuit jars, an electric lantern in the hurricane form (no kerosene indoors) and three wood-slice stools.' },
   { id: 'BEL_ARTISAN_DINING', zone: 'Z20', note: 'Staff and artisan dining with the same care as the buyer rooms: clay plates, cups and jugs on hogla runners, and water and tea in clay on the pantry counter. Glazes to be tested before use.' },
-  { id: 'BEL_RECORDS_ROOM', zone: 'Z09', note: 'The records room: the originals behind every claim on the floor. Labelled evidence files on the table and an Open Record index on the wall; every line still reads "none yet" or "to be collected" until documents arrive.' },
-  { id: 'BEL_DIGITAL_LAB', zone: 'Z14', note: 'Lab B, digital product design, in the CAD room: a natural-fibre basket on the wall screen, its technical drawing on the layout table and a pinboard of fibre swatches and colour chips. Illustrative design; no product or dimensions are claimed.' },
-  { id: 'BEL_BUYER_PROJECT', zone: 'Z04', note: 'Buyer project room, which in the pilot is also the export and order desk: a sample tray, clay water, an order checklist and a project board whose dates are all "to be agreed".' },
+  { id: 'BEL_RECORDS_ROOM', zone: 'Z09', note: 'The records room: the originals behind every claim on the floor, fibre origins and recycled content first. Labelled evidence files on the table and an Open Record index on the wall; every line still reads "none yet" or "to be collected" until documents arrive.' },
+  { id: 'BEL_BUYER_PROJECT', zone: 'Z04', note: 'Buyer project room, which in the pilot is also the export and order desk: knit swatches on a wooden tray, clay water, an order checklist with the fabric passport and a project board whose dates are all "to be agreed".' },
   // option A only (full conversion): shown on this route if the merchandising and accounts teams move; the owner decides
   { id: 'BEL_UTHAN', zone: 'Z07', note: 'Option A only. The Green Uthan: a Bengali courtyard in Merchandising, with a bot-tola seat of handmade terracotta around the steel column, two small fig trees and a banyan bonsai under grow lights (this room has no daylight), split-granite stone seats and an open split-bamboo canopy (fire treatment and smoke-detector coverage to be checked). Natural jute carpet over the whole room.' },
-  { id: 'BEL_ARTISAN_CORNER', zone: 'Z07', note: 'Option A only. Artisan corner in the Uthan, by invitation and never as a spectacle: a Chakma back-strap loom (bain) shown only with the consent and participation of Chakma weavers, a Marma weaving and basketry stand (the same consent rule), a nakshi kantha frame, cane basketry and painted terracotta on a sitalpati mat. Quiet, clean crafts only; dusty work stays in the prototype workshop.' },
-  { id: 'BEL_ROOMSET_LIVING', zone: 'Z07', note: 'Option A only. Bengal Nordic living room-set: a mango-wood sofa in handloom, a cane armchair, a jute rug, a bamboo and paper lamp and a framed kantha. Illustrative concept, not products on sale.' },
-  { id: 'BEL_ROOMSET_DINING', zone: 'Z07', note: 'Option A only. River to Home dining room-set: a mango-wood table with cane chairs on a hogla rug, clay tableware on hogla mats, a cane pendant and a sideboard with terracotta. Illustrative concept.' },
-  { id: 'BEL_ROOMSET_BEDROOM', zone: 'Z07', note: 'Option A only. Second Life Bangladesh bedroom room-set: a kantha patchwork quilt made from garment offcuts, a cane headboard and a rag rug. Illustrative concept.' },
-  { id: 'BEL_ROOMSET_HOSPITALITY', zone: 'Z07', note: 'Option A only. Future of Bengal hospitality corner for hotel buyers: cane lounge chairs, a bamboo and jute table, dried kash flowers in clay and a large nakshi kantha by a rural embroiderer (placeholder; to be commissioned, paid and credited).' },
-  { id: 'BEL_ACADEMY', zone: 'Z06', note: 'Option A only. The design education academy inside the existing glass accounts suite: 20 seats shown at mango-wood tables, a demonstration bench with a hands camera, a mobile screen, a pin-up board and a materials shelf; the discussion room becomes the tutor room. Capacity is set by the fire engineer, not by this drawing.' },
+  { id: 'BEL_ARTISAN_CORNER', zone: 'Z07', note: 'Option A only. Artisan corner in the Uthan, by invitation and never as a spectacle: a Chakma back-strap loom (bain) shown only with the consent and participation of Chakma weavers, a Marma weaving and basketry stand (the same consent rule), a nakshi kantha frame, cane basketry and painted terracotta on a sitalpati mat. Quiet, clean crafts only; dusty work stays in the workshop.' },
+  { id: 'BEL_UTHAN_CRAFT', zone: 'Z07', note: 'Option A only. The Uthan dressed by hand: kula and dala laid over the bamboo canopy, alpana in rice-paste white around the courtyard (to be painted by rural women artists), four painted bamboo posts with electric lanterns in the hurricane form, natural indigo and undyed yarn and small clay pots hanging from the canopy.' },
+  { id: 'BEL_CRAFT_CORNER', zone: 'Z07', note: 'Option A only. A craft corner on the solid south wall: a bamboo trellis with a gamchha, a kantha, a kula and a framed painting by a rural artist (placeholder, to be commissioned), a cane bowl chair on a round sitalpati, a jute pouf and a snake plant in clay.' },
+  { id: 'BEL_CRAFT_SHELF', zone: 'Z07', note: 'Option A only. A low bamboo shelf on the solid lower west wall: painted pots in the shokher hari tradition (Rajshahi), tepa putul clay dolls, a dholak and a khol, and a polo (bamboo fish trap) beside it. Makers to be identified, paid and credited.' },
+  { id: 'BEL_CIRCLE_WEAR', zone: 'Z07', note: 'Option A only. Circular knitwear studio, 1 · Wear: two bamboo rails of knitwear in earth and recycled fabrics and a low table of folded samples. Illustrative garments, not products on sale.' },
+  { id: 'BEL_CIRCLE_REMAKE', zone: 'Z07', note: 'Option A only. Circular knitwear studio, 2 · Remake: cutting waste (jhut) sorted by colour on a sorting table under a basket lamp and in jute sacks, recycled yarn cones and a roll of recycled jersey. Recycling partners to be identified; recycled shares to be certified.' },
+  { id: 'BEL_CIRCLE_REPAIR', zone: 'Z07', note: 'Option A only. Circular knitwear studio, 3 · Repair: a live-edge mending table with wood-slice stools under a basket lamp, where knitwear is repaired in kantha running stitch, the Bengal tradition of stitching old cloth into new use. Embroiderers to be invited, paid and credited.' },
+  { id: 'BEL_CIRCLE_RETURN', zone: 'Z07', note: 'Option A only. Circular knitwear studio, 4 · Return: take-back bins for worn garments (repair, resale, recycling) beside two bamboo armchairs, a bent-bamboo table and a large nakshi kantha by a rural embroiderer (placeholder; to be commissioned, paid and credited). The take-back pilot is still to be designed.' },
+  { id: 'BEL_ACADEMY', zone: 'Z06', note: 'Option A only. The design education academy inside the existing glass accounts suite: 20 seats shown at mango-wood tables, a demonstration bench with a sewing machine and a hands camera, a mobile screen, a pin-up board and a materials shelf; the discussion room becomes the tutor room. Capacity is set by the fire engineer, not by this drawing.' },
 ];
 
 export function buildBengalEarthLab(THREE, { zones = null, drinkware = [], anisotropy = 4, detail = 1 } = {}) {
   const group = new THREE.Group(); group.name = 'BENGAL_EARTH_LAB';
+  const overhead = new THREE.Group(); overhead.name = 'BENGAL_EARTH_LAB_OVERHEAD';   // ceiling-hung items: the app hides them with the ceiling in the dollhouse views
   const geometries = [], materials = [], textures = [], footprints = [];
   const items = BEL_ITEMS.filter(i => !zones || i.zone === '*' || zones.includes(i.zone));
   const want = id => items.some(i => i.id === id);
@@ -449,6 +459,128 @@ export function buildBengalEarthLab(THREE, { zones = null, drinkware = [], aniso
     for (const s of [-1, 1]) box(g, M.wood, s * .12, -.0, 0, .04, .03, .2);   // cradle feet
     void body; return g;
   }
+  // knitwear and fibre (self-made): the RMG core of the fabric story. Knit fabric uses the approved stitch tiles
+  // (props/knit-tiles.mjs), one GPU texture per stitch tinted per colour; fabric UVs are in metres so every piece knits at one scale
+  const scaleUV = (g, su, sv) => { const uv = g.attributes.uv; for (let i = 0; i < uv.count; i++) uv.setXY(i, uv.getX(i) * su, uv.getY(i) * sv); return g; };
+  const knitBase = {};
+  function knitMap(stitch = 'jersey', repeat = [36, 36]) { if (!knitBase[stitch]) knitBase[stitch] = tex(knitTile(stitch), { srgb: false }); const t = clone(knitBase[stitch]); t.repeat.set(...repeat); return t; }
+  const knit = (color, stitch = 'jersey') => std(`knit_${stitch}_${color}`, () => ({ color, map: knitMap(stitch, stitch === 'rib' ? [30, 30] : [36, 36]), roughness: .96, side: THREE.DoubleSide }));
+  function melange(key, base, flecks) {   // recycled fabric: a melange of the colours it was spun from, flecks baked into one small canvas
+    return std('melange_' + key, () => { const s = px(128), c = canvas(s, s), x = c.getContext('2d'), r = rng(key.length * 53 + 11); x.fillStyle = base; x.fillRect(0, 0, s, s);
+      for (let i = 0; i < s * s / 8; i++) { x.fillStyle = flecks[Math.floor(r() * flecks.length)]; x.fillRect(r() * s, r() * s, 1 + r() * 2.4, .7 + r() * .8); }
+      x.globalCompositeOperation = 'multiply'; x.scale(1 / 3, 1 / 3); x.fillStyle = x.createPattern(knitTile('jersey'), 'repeat'); x.fillRect(0, 0, s * 3, s * 3); x.setTransform(1, 0, 0, 1, 0, 0); x.globalCompositeOperation = 'source-over';
+      return { map: tex(c, { repeat: [12, 12] }), roughness: .96, side: THREE.DoubleSide }; });
+  }
+  const KN = {   // the fabric palette: earth fibres in natural and dyed colours, recycled melanges
+    ecru: knit('#e9e1d0'), oat: knit('#d6c7a8'), indigo: knit('#3a4d6e'), madder: knit('#8f4a3a'), moss: knit('#6f7a4c'), charcoal: knit('#45474a'),
+    juteBlend: knit('#c7ae7c', 'rib'), ecruRib: knit('#e9e1d0', 'rib'),
+    recNavy: melange('navy', '#3f4c66', ['#55688a', '#2a3448', '#8a97ad', '#e6dccb']), recGrey: melange('grey', '#8e8b86', ['#5f5d5a', '#b9b5ad', '#3d5170', '#8f4a3a']),
+    recRed: melange('red', '#8a4a3e', ['#a8604f', '#5e2f27', '#d9cdb4']), recOlive: melange('olive', '#6d744f', ['#8a9166', '#4b5136', '#c9a565']),
+  };
+  function fibreMat(key, base, flecks = []) {   // loose fibre: short curled strokes over a base colour
+    return std('fibre_' + key, () => { const s = 128, c = canvas(s, s), x = c.getContext('2d'), r = rng(key.length * 41 + 3); x.fillStyle = base; x.fillRect(0, 0, s, s);
+      for (let i = 0; i < 900; i++) { const fl = flecks.length && r() < .45; x.strokeStyle = fl ? flecks[Math.floor(r() * flecks.length)] : (r() > .5 ? 'rgba(255,255,255,.45)' : 'rgba(60,45,30,.18)'); x.lineWidth = .7 + r() * .6;
+        const X = r() * s, Y = r() * s, A = r() * Math.PI * 2, L = 4 + r() * 9; x.beginPath(); x.moveTo(X, Y); x.quadraticCurveTo(X + Math.cos(A + .6) * L * .5, Y + Math.sin(A + .6) * L * .5, X + Math.cos(A) * L, Y + Math.sin(A) * L); x.stroke(); }
+      return { map: tex(c, { repeat: [2, 2] }), roughness: 1 }; });
+  }
+  const FB = {
+    cotton: fibreMat('cotton', '#f2eee6'), jute: fibreMat('jute', '#c9a565'), banana: fibreMat('banana', '#d8c7a1'), pineapple: fibreMat('pineapple', '#e6e0d0'),
+    jhutNavy: fibreMat('jhut_navy', '#4a5875', ['#6b7c9c', '#2a3448', '#8a97ad']), usedMix: fibreMat('used_mix', '#9a948b', ['#8f4a3a', '#3d5170', '#c9a565', '#6f7a4c', '#e6dccb', '#3b3d40']),
+    indigo: std('indigo_cake', () => ({ color: '#24345a', roughness: .9, map: M.soil.map })),
+    juteHank: std('jute_fibre', () => { const c = canvas(64, 256), x = c.getContext('2d'), r = rng(23); x.fillStyle = FIBRE.jute; x.fillRect(0, 0, 64, 256); for (let i = 0; i < 160; i++) { x.strokeStyle = r() > .5 ? 'rgba(255,235,190,.35)' : 'rgba(110,80,35,.3)'; x.lineWidth = .8; x.beginPath(); const X = r() * 64; x.moveTo(X, 0); x.lineTo(X + (r() - .5) * 4, 256); x.stroke(); } return { map: tex(c), roughness: .95 }; }),
+  };
+  const fibreHeap = (parent, x, y, z, r, mat, seed = 1) => add(parent, rockGeometry(r, seed, 1.25, .55, 1.25), mat, x, y, z);
+  function cottonStems(parent, x, y, z, { n = 5, h = .55, seed = 1 } = {}) {   // dried cotton stems with open bolls, merged per material
+    const r = rng(seed), J = a => (r() - .5) * a, stems = [], fluff = [], bracts = [];
+    for (let s = 0; s < n; s++) {
+      const a0 = s / n * Math.PI * 2 + J(.4), lean = .03 + r() * .05, H = h * (.8 + r() * .3), top = [Math.cos(a0) * lean * 3, H, Math.sin(a0) * lean * 3];
+      stems.push([taperedTube([[0, 0, 0], [top[0] * .4 + J(.02), H * .5, top[2] * .4 + J(.02)], top], .004, .0025, 10, 5)]);
+      for (let k = 0; k < 3; k++) {
+        const t = .55 + k * .2, a = a0 + k * 2.1 + J(.6), L = .035 + r() * .03, by = H * t, cx = top[0] * t, cz = top[2] * t, bx = cx + Math.cos(a) * L, bz = cz + Math.sin(a) * L;
+        stems.push([taperedTube([[cx, by - .04, cz], [cx + Math.cos(a) * L * .5, by - .01, cz + Math.sin(a) * L * .5], [bx, by + .01, bz]], .0025, .0018, 6, 4)]);
+        for (let q = 0; q < 4; q++) { const qa = q / 4 * Math.PI * 2 + a; fluff.push([new THREE.SphereGeometry(.016, 10, 7), bx + Math.cos(qa) * .011, by + .03, bz + Math.sin(qa) * .011]);
+          bracts.push([new THREE.ConeGeometry(.011, .028, 4), bx + Math.cos(qa + .4) * .015, by + .018, bz + Math.sin(qa + .4) * .015, Math.sin(qa + .4) * 2.3, 0, -Math.cos(qa + .4) * 2.3]); }
+      }
+    }
+    const g = new THREE.Group(); g.position.set(x, y, z); parent.add(g);
+    add(g, merged(stems), std('cotton_stem', () => ({ color: '#5b4330', roughness: .85 }))); add(g, merged(fluff), FB.cotton); add(g, merged(bracts), std('cotton_bract', () => ({ color: '#4a3524', roughness: .8 })));
+    return g;
+  }
+  const coneMat = col => std('cone_' + col, () => ({ color: col, roughness: .9, map: weaveMap('coil', [3, 6]) }));
+  function yarnCone(parent, x, y, z, mat) { add(parent, new THREE.CylinderGeometry(.03, .05, .17, 24), mat, x, y + .085, z); add(parent, new THREE.CylinderGeometry(.011, .015, .02, 12), std('cone_core', () => ({ color: '#c9a86e', roughness: .8 })), x, y + .18, z); }
+  function fabricRoll(parent, x, y, z, mat, { len = .6, r = .06, ry = 0 } = {}) {   // a roll lying along local x, resting on y
+    const g = new THREE.Group(); g.position.set(x, y + r, z); g.rotation.y = ry; parent.add(g);
+    add(g, scaleUV(new THREE.CylinderGeometry(r, r, len, 32), 2 * Math.PI * r, len), mat, 0, 0, 0, 0, 0, Math.PI / 2);
+    add(g, new THREE.CylinderGeometry(.02, .02, len + .03, 12), std('cone_core', () => ({})), 0, 0, 0, 0, 0, Math.PI / 2); return g;
+  }
+  const foldGeo = scaleUV(pillowGeometry(.3, .24, .045, 10), .3, .24); geometries.push(foldGeo);
+  function foldedStack(parent, x, y, z, mats, ry = 0) {   // folded knitwear, one piece per material, bottom at y
+    mats.forEach((m, k) => { const p = new THREE.Mesh(foldGeo, m); p.position.set(x + (k % 2 ? .006 : -.004), y + .0225 + k * .04, z); p.rotation.set(-Math.PI / 2, 0, ry + (k - (mats.length - 1) / 2) * .03); parent.add(p); });
+  }
+  function garmentOutline(kind) {   // front silhouette, shoulder seam at y 0, x across; tee or long-sleeved sweat
+    const R = kind === 'sweat' ? [[.2, -.035], [.29, -.15], [.37, -.58], [.31, -.61], [.245, -.25], [.235, -.66], [.225, -.69]] : [[.2, -.035], [.33, -.17], [.275, -.245], [.235, -.2], [.24, -.7]];
+    const s = new THREE.Shape(); s.moveTo(-.085, 0); s.quadraticCurveTo(0, -.075, .085, 0);
+    for (const [x, y] of R) s.lineTo(x, y); for (const [x, y] of R.slice().reverse()) s.lineTo(-x, y); s.closePath(); return s;
+  }
+  const garmentGeos = {};
+  function garmentGeometry(kind) {
+    if (!garmentGeos[kind]) { const g = new THREE.ExtrudeGeometry(garmentOutline(kind), { depth: .02, bevelEnabled: true, bevelThickness: .014, bevelSize: .012, bevelSegments: 2, curveSegments: 8 }); g.translate(0, 0, -.01); geometries.push(g); garmentGeos[kind] = g; }
+    return garmentGeos[kind];
+  }
+  function hangingGarment(parent, x, y, z, ry, mat, kind = 'tee') {   // y = rail centre; the garment faces local +z, the rail runs along local z
+    const g = new THREE.Group(); g.position.set(x, y, z); g.rotation.y = ry; parent.add(g);
+    const wire = std('hook_steel', () => ({ color: '#c9cdcf', metalness: .85, roughness: .25 }));
+    add(g, new THREE.TorusGeometry(.016, .0022, 6, 14, Math.PI * 1.5), wire, 0, 0, 0, 0, 0, -Math.PI / 2);
+    add(g, new THREE.CylinderGeometry(.0022, .0022, .04, 6), wire, 0, -.036, 0);
+    for (const s of [-1, 1]) box(g, M.oak, s * .1, -.082, 0, .21, .012, .014, 0).rotation.z = s * -.2;
+    const m = new THREE.Mesh(garmentGeometry(kind), mat); m.position.set(0, -.07, 0); g.add(m); return g;
+  }
+  function sewingMachine(parent, x, y, z, ry = 0) {   // a simple lockstitch machine (bed, pillar, arm, head, handwheel); front is local +z
+    const g = new THREE.Group(); g.position.set(x, y, z); g.rotation.y = ry; parent.add(g);
+    const body = std('machine_body', () => ({ color: '#e8e4da', roughness: .35 })), dark = std('machine_dark', () => ({ color: '#2e2e30', roughness: .4 }));
+    box(g, body, 0, 0, 0, .42, .05, .18); box(g, body, .15, .05, -.03, .08, .22, .1); box(g, body, .01, .25, -.03, .36, .075, .09); box(g, body, -.17, .13, -.03, .08, .195, .09);
+    add(g, new THREE.CylinderGeometry(.0025, .0025, .06, 6), std('hook_steel', () => ({})), -.17, .105, -.01);
+    add(g, new THREE.CylinderGeometry(.055, .055, .025, 24), dark, .205, .2, -.03, 0, 0, Math.PI / 2);
+    add(g, new THREE.CylinderGeometry(.013, .013, .03, 12), std('thread_madder', () => ({ color: '#8f4a3a', roughness: .8 })), .03, .34, -.03);
+    return g;
+  }
+  let offcutGeo = null;
+  function offcutHeap(parent, x, y, z, { r = .16, h = .1, n = 110, colors = ['#3d5170'], seed = 1 } = {}) {   // a dome of knit offcuts (jhut) in one colour family
+    if (!offcutGeo) { offcutGeo = new THREE.PlaneGeometry(1, 1); geometries.push(offcutGeo); }
+    const mat = std('offcut', () => ({ color: '#ffffff', roughness: .96, side: THREE.DoubleSide, map: knitMap('jersey', [2, 2]) }));
+    const inst = new THREE.InstancedMesh(offcutGeo, mat, n), m4 = new THREE.Matrix4(), q = new THREE.Quaternion(), e = new THREE.Euler(), P = new THREE.Vector3(), S = new THREE.Vector3(), col = new THREE.Color(), rr = rng(seed);
+    for (let i = 0; i < n; i++) {
+      const a = rr() * Math.PI * 2, d = Math.sqrt(rr()) * r, top = h * (1 - (d / r) ** 2);
+      P.set(x + Math.cos(a) * d, y + top * (.75 + rr() * .3), z + Math.sin(a) * d); e.set(-Math.PI / 2 + (rr() - .5) * 1.1, rr() * 6.3, (rr() - .5) * 1.1); q.setFromEuler(e);
+      S.set(.035 + rr() * .08, .018 + rr() * .045, 1); inst.setMatrixAt(i, m4.compose(P, q, S)); col.set(colors[Math.floor(rr() * colors.length)]).offsetHSL(0, 0, (rr() - .5) * .1); inst.setColorAt(i, col);
+    }
+    inst.instanceMatrix.needsUpdate = true; inst.instanceColor.needsUpdate = true; inst.computeBoundingSphere(); parent.add(inst);
+    add(parent, rockGeometry(r * .92, seed + 7, 1, Math.min(.9, h / r * 1.1), 1), knit(colors[0]), x, y, z);   // the body under the loose pieces
+    return inst;
+  }
+  function juteSack(parent, x, z, { r = .19, h = .4, y = 0 } = {}) {   // an open jute sack with a rolled rim
+    const g = new THREE.Group(); g.position.set(x, y, z); parent.add(g);
+    add(g, lathe([[0, .004], [r * .9, 0], [r, .04], [r * 1.03, h * .6], [r * .98, h], [r * 1.06, h + .02], [r * 1.09, h - .035], [r * .96, h - .05], [0, h - .06]], 28), wovenMaterial('sack_jute', 'plain', FIBRE.jute, [8, 6]));
+    return g;
+  }
+  function mendMat(key, base, patch, seed = 3) {   // a knit with a patch darned in kantha running stitch (for folded pieces: the canvas spans one fold top)
+    return std('mend_' + key, () => { const s = px(256), c = canvas(s, Math.round(s * .8)), x = c.getContext('2d'), H = c.height, r = rng(seed); x.fillStyle = base; x.fillRect(0, 0, s, H);
+      x.save(); x.translate(s * .56, H * .5); x.rotate(-.12); x.fillStyle = patch; x.fillRect(-s * .16, -H * .15, s * .32, H * .3);
+      x.strokeStyle = '#f2ead8'; x.lineWidth = Math.max(1.5, s / 150); x.setLineDash([s / 55, s / 85]); x.lineCap = 'round';
+      for (let k = -2; k <= 2; k++) { x.beginPath(); x.moveTo(-s * .2, k * H * .065); x.lineTo(s * .2, k * H * .065 + (r() - .5) * 2); x.stroke(); }
+      x.strokeRect(-s * .18, -H * .17, s * .36, H * .34); x.setLineDash([]);
+      x.strokeStyle = '#c9a565'; x.setLineDash([s / 70, s / 100]); for (let p = 0; p < 6; p++) { const a = p / 6 * Math.PI * 2; x.beginPath(); x.ellipse(Math.cos(a) * s * .045, Math.sin(a) * s * .045, s * .04, s * .015, a, 0, 7); x.stroke(); } x.restore(); x.setLineDash([]);
+      x.globalCompositeOperation = 'multiply'; x.scale(.25, .25); x.fillStyle = x.createPattern(knitTile('jersey'), 'repeat'); x.fillRect(0, 0, s * 4, H * 4); x.setTransform(1, 0, 0, 1, 0, 0); x.globalCompositeOperation = 'source-over';
+      return { map: tex(c, { repeat: [1 / .3, 1 / .24] }), roughness: .95, side: THREE.DoubleSide }; });
+  }
+  const kraft = std('kraft', () => ({ color: '#c9a878', roughness: .85, side: THREE.DoubleSide }));
+  function patternPieces(parent, x, y, z, ry = 0, scale = 1) {   // kraft-paper pattern of a tee: front, back and a sleeve, flat on a table at y
+    const g = new THREE.Group(); g.position.set(x, y + .001, z); g.rotation.y = ry; g.scale.setScalar(scale); parent.add(g);
+    for (const [dx, dz, a] of [[-.27, .02, .05], [.27, -.02, -.04]]) add(g, new THREE.ShapeGeometry(garmentOutline('tee'), 6), kraft, dx, 0, dz - .35, -Math.PI / 2, 0, a);
+    const sl = new THREE.Shape(); sl.moveTo(-.16, 0); sl.quadraticCurveTo(0, .1, .16, 0); sl.lineTo(.12, -.2); sl.lineTo(-.12, -.2); sl.closePath();
+    add(g, new THREE.ShapeGeometry(sl, 6), kraft, 0, .0005, .2, -Math.PI / 2, 0, .3);
+    return g;
+  }
 
   // ---------------------------------------------------------------- Z01 Entrance lobby
   if (want('BEL_GATE_BONSAI')) {
@@ -596,140 +728,74 @@ export function buildBengalEarthLab(THREE, { zones = null, drinkware = [], aniso
     band.map.repeat.set(7, 2.2); band.normalMap.repeat.set(7, 2.2); band.map.needsUpdate = band.normalMap.needsUpdate = true; textures.push(band.map, band.normalMap);
     box(g, band, 9.334, .04, -3.45, .018, 1.12, 3.8);
     box(g, M.oak, 9.37, 1.16, -3.45, .07, .025, 3.8);
-    [['#8f4a2c', 'clay'], [FIBRE.jute, 'jute'], [FIBRE.hogla, 'hogla'], [FIBRE.cane, 'cane'], ['#d9c58e', 'rice straw']].forEach(([col, nm], i) => {
+    [['#8f4a2c', 'clay'], ['#efe9dc', 'cotton'], [FIBRE.jute, 'jute'], ['#8e8b86', 'recycled fibre'], ['#2f4363', 'indigo']].forEach(([col, nm], i) => {
       const z = -4.9 + i * .78; add(g, lathe([[0, 0], [.04, 0], [.06, .035], [.055, .04], [.035, .012], [0, .012]], 24), M.clay, 9.37, 1.185, z);
-      add(g, new THREE.CircleGeometry(.05, 20), std('earth_' + i, () => ({ color: col, roughness: 1, map: i ? weaveMap('plain') : M.soil.map })), 9.37, 1.215, z, -Math.PI / 2);
+      add(g, new THREE.CircleGeometry(.05, 20), [std('earth_0', () => ({ color: col, roughness: 1, map: M.soil.map })), FB.cotton, FB.jute, FB.usedMix, FB.indigo][i], 9.37, 1.215, z, -Math.PI / 2);
       add(g, new THREE.PlaneGeometry(.1, .03), card([nm], { w: .1, h: .03, scale: .4 }), 9.4065, 1.165, z, 0, Math.PI / 2);
     });
   }
 
-  // ---------------------------------------------------------------- Z30 Experience centre
-  if (want('BEL_EARTH_TO_PRODUCT')) {
-    const g = item('BEL_EARTH_TO_PRODUCT'); const T = .2032, ZC = -8.5, front = -8.02;   // plinth F021: x 11.05-14.35, z -9.07..-7.95, top 0.20
-    // 1 raw material: a jute bundle, a hogla bundle, a clay lump on a board, a cane coil
-    const jute = std('jute_fibre', () => { const c = canvas(64, 256), x = c.getContext('2d'), r = rng(23); x.fillStyle = FIBRE.jute; x.fillRect(0, 0, 64, 256); for (let i = 0; i < 160; i++) { x.strokeStyle = r() > .5 ? 'rgba(255,235,190,.35)' : 'rgba(110,80,35,.3)'; x.lineWidth = .8; x.beginPath(); const X = r() * 64; x.moveTo(X, 0); x.lineTo(X + (r() - .5) * 4, 256); x.stroke(); } return { map: tex(c), roughness: .95 }; });
-    add(g, new THREE.CylinderGeometry(.045, .065, .52, 20, 1), jute, 11.3, T + .26, ZC - .2);
-    add(g, new THREE.TorusGeometry(.052, .008, 6, 20), std('band', () => ({ color: '#6b4a2b', roughness: .9 })), 11.3, T + .3, ZC - .2, Math.PI / 2);
-    for (let k = 0; k < 7; k++) add(g, new THREE.BoxGeometry(.62, .006, .022), wovenMaterial('hogla_leaf', 'plain', FIBRE.hogla, [6, 1]), 11.42, T + .004 + k * .006, ZC + .14 + (k - 3) * .018, 0, (k - 3) * .03);
-    box(g, M.wood, 11.25, T, ZC + .3, .22, .02, .16); add(g, rockGeometry(.07, 401, 1.2, .6, 1), std('wet_clay', () => ({ color: '#8f5134', roughness: .55 })), 11.25, T + .02, ZC + .3);
-    const helix = new THREE.CatmullRomCurve3(Array.from({ length: 60 }, (_, i) => { const a = i / 59 * Math.PI * 2 * 3; return new THREE.Vector3(Math.cos(a) * .09, i / 59 * .03, Math.sin(a) * .09); }));
-    add(g, new THREE.TubeGeometry(helix, 180, .005, 6, false), std('cane_coil', () => ({ color: FIBRE.cane, roughness: .5 })), 11.5, T + .006, ZC - .3);
-    // 2 craft technique: a small frame with warp threads and a half-woven hogla mat; a coiled basket in progress
-    const fr = new THREE.Group(); fr.position.set(12.0, T, ZC - .1); fr.rotation.y = .15; g.add(fr);
-    for (const s of [-1, 1]) { box(fr, M.oak, s * .22, 0, 0, .025, .5, .025); box(fr, M.oak, s * .22, 0, 0, .025, .015, .16); }
-    box(fr, M.oak, 0, .1, 0, .465, .02, .02); box(fr, M.oak, 0, .48, 0, .465, .02, .02);
-    for (let k = 0; k < 15; k++) add(fr, new THREE.CylinderGeometry(.0012, .0012, .36, 4), std('warp', () => ({ color: '#e7dcc4', roughness: .8 })), -.196 + k * .028, .3, 0);
-    add(fr, new THREE.PlaneGeometry(.4, .16), wovenMaterial('hogla_mat', 'twill', FIBRE.hogla, [3, 1.2]), 0, .19, .002);
-    basket(g, 12.08, T, ZC + .22, { r: .13, h: .22, kind: 'coil', fibre: 'jute', partial: .55 });
-    // 3 prototype: one basket form with a paper tag
-    basket(g, 12.72, T, ZC - .05, { r: .15, h: .25, kind: 'twill', fibre: 'hogla', handles: true });
-    add(g, new THREE.PlaneGeometry(.05, .03), card(['prototype'], { w: .05, h: .03, scale: .4 }), 12.86, T + .2, ZC + .11, 0, .4);
-    // 4 testing: the same form beside its (empty) test card
-    basket(g, 13.36, T, ZC - .05, { r: .15, h: .25, kind: 'twill', fibre: 'hogla', handles: true, ry: .6 });
-    standingCard(g, ['Test step', 'Moisture, mould, strength', 'Records to be added'], 13.36, T, ZC + .25, 0, { w: .16, h: .1 });
-    // 5 collection: nested baskets, a handloom cushion, a bamboo and paper lamp
-    basket(g, 13.9, T, ZC - .18, { r: .17, h: .2, kind: 'plait', fibre: 'hyacinth' });
-    basket(g, 13.9, T + .02, ZC - .18, { r: .12, h: .2, kind: 'plait', fibre: 'hyacinth' });
-    add(g, pillowGeometry(.4, .4, .12), handloomCushion, 14.08, T + .2, ZC + .12, -.25, -.5, 0);
-    bambooLamp(g, 14.2, T, ZC - .22, { r: .09, h: .3 });
-    ['1 · Raw material', '2 · Craft technique', '3 · Prototype', '4 · Testing', '5 · Collection'].forEach((t, i) =>
-      standingCard(g, [t], 11.38 + i * .665, T, front - .03, 0, { w: .17, h: .055 }));
-    standingCard(g, ['From earth to product', 'Illustrative objects', 'Real samples and records to follow'], 11.13, T, -8.06, -.5, { w: .2, h: .11 });
-  }
-  if (want('BEL_MATERIAL_TABLE')) {
-    const g = item('BEL_MATERIAL_TABLE'); const TOP = .863;   // material table top 0.863; free north strip z -9.0..-8.7 east of x 17.7; notebook 19.15 and tape 19.79 at z -8.865
-    [['jute', 'twill', 'Jute'], ['hogla', 'plain', 'Hogla'], ['cane', 'lattice', 'Cane'], ['hyacinth', 'plait', 'Water hyacinth'], ['bamboo', 'twill', 'Bamboo'], ['kaisa', 'coil', 'Kaisa grass']].forEach(([fibre, kind, name], i) => {
-      const x = 17.78 + i * .19; swatch(g, x, TOP, -8.86, fibre, kind, .15, (i - 2.5) * .04);
-      add(g, new THREE.PlaneGeometry(.12, .035), card([name], { w: .12, h: .035, scale: .5 }), x, TOP + .002, -8.74, -Math.PI / 2);
+  // ---------------------------------------------------------------- Z30 Experience centre: the approved knitwear stays, the fabric story is added around it
+  if (want('BEL_FABRIC_STORIES')) {
+    // plinth F021: top 0.2032, x 11.05-14.35, z -9.07..-7.95. The approved forms F022-F025 stand at x 11.63 / 12.34 / 13.06 / 13.77 on
+    // bases of radius 0.19 at z -8.56 (measured in the scene), so the front strip z -8.33..-7.97 takes a fibre dish and a card per form
+    const g = item('BEL_FABRIC_STORIES'), T = .2032;
+    [[11.633, FB.jhutNavy, ['Second life · cutting waste', 'Jhut sorted by colour, spun again', 'Recycled share: to be certified']],
+     [12.344, FB.jute, ['Golden fibre · research', 'A jute and cotton blend', 'Trials only, not in production']],
+     [13.056, FB.usedMix, ['Second life · used garments', 'Taken back, sorted, recycled', 'Partners: to be identified']],
+     [13.767, FB.cotton, ['Earth · cotton', 'Fibre origin: to be documented', 'Organic only with a certificate']]].forEach(([x, mat, lines], i) => {
+      add(g, lathe([[0, 0], [.05, 0], [.075, .03], [.07, .036], [.045, .012], [0, .012]], 28), M.clay, x - .1, T, -8.2);
+      fibreHeap(g, x - .1, T + .012, -8.2, .05, mat, 431 + i);
+      standingCard(g, lines, x + .09, T, -8.06, -.12, { w: .17, h: .09 });
     });
-    for (let i = 0; i < 3; i++) tile(g, 16.98 + i * .14, TOP, -8.18, .1, (i - 1) * .1);
-    add(g, new THREE.PlaneGeometry(.12, .035), card(['Terracotta'], { w: .12, h: .035, scale: .5 }), 17.12, TOP + .002, -8.105, -Math.PI / 2);
+    standingCard(g, ['Ecodesign, fibre to fibre', 'Earth fibres and recycled fabric', 'Made to last, repair and recycle', 'Illustrative · records to follow'], 11.22, T, -8.12, -.45, { w: .19, h: .12 });
   }
-  if (want('BEL_COLLECTION_BAYS')) {
-    // bays F017-F020 (measured in the scene): base top 0.1016, top shelf 1.8592, green back z -10.7251, front edge z -10.1347,
-    // brass rail y 1.676 at z -10.44; the garments and hangers are hidden on this route (hideParts)
-    const g = item('BEL_COLLECTION_BAYS'); const BASE = .1016, SHELF = 1.8592, BACK = -10.7251, RAIL = 1.676, RZ = -10.44;
-    const textile = (key, draw) => std('tx_' + key, () => { const c = canvas(px(256), px(256)), x = c.getContext('2d'); draw(x, c.width, c.height); x.globalCompositeOperation = 'multiply'; x.globalAlpha = .3; x.fillStyle = x.createPattern(weave.plain.map, 'repeat'); x.fillRect(0, 0, c.width, c.height); x.globalAlpha = 1; x.globalCompositeOperation = 'source-over'; return { map: tex(c), roughness: .95, side: THREE.DoubleSide }; });
-    const T = {
-      khadi: textile('khadi_buti', (x, w, h) => { x.fillStyle = '#e6dccb'; x.fillRect(0, 0, w, h); x.fillStyle = '#7d8a9c'; for (let j = 0; j < 6; j++) for (let i = 0; i < 6; i++) { const cx = (i + .5 + (j % 2) * .5) * w / 6, cy = (j + .5) * h / 6; x.beginPath(); for (let k = 0; k < 4; k++) { const A = k / 4 * Math.PI * 2; x.ellipse(cx + Math.cos(A) * w * .02, cy + Math.sin(A) * w * .02, w * .012, w * .006, A, 0, 7); } x.fill(); } x.fillStyle = '#3d5170'; x.fillRect(0, h * .9, w, h * .03); }),
-      indigo: textile('indigo', (x, w, h) => { x.fillStyle = '#2f4363'; x.fillRect(0, 0, w, h); x.fillStyle = '#e8e0cf'; for (const y of [.12, .16, .84, .88]) x.fillRect(0, h * y, w, h * .012); }),
-      patch: textile('kantha_patch', (x, w, h) => { const r = rng(77), cols = ['#8f4a3a', '#3d5170', '#c9a565', '#6f7a4c', '#d9cdb4', '#a36b4f', '#4a4a52', '#b88c5c']; for (let j = 0; j < 5; j++) { let X = 0; while (X < w) { const ww = w * (.12 + r() * .2); x.fillStyle = cols[Math.floor(r() * cols.length)]; x.fillRect(X, j * h / 5, ww, h / 5); X += ww; } }
-        x.strokeStyle = 'rgba(245,238,225,.85)'; x.lineWidth = w / 220; x.setLineDash([w / 70, w / 110]); for (let y = h / 20; y < h; y += h / 14) { x.beginPath(); x.moveTo(0, y); x.lineTo(w, y + (r() - .5) * 3); x.stroke(); } x.setLineDash([]); }),
-      rope: textile('rope_multi', (x, w, h) => { const cols = ['#8f4a3a', '#d9cdb4', '#3d5170', '#c9a565', '#6f7a4c']; for (let j = 0; j < 16; j++) { x.fillStyle = cols[j % cols.length]; x.fillRect(0, j * h / 16, w, h / 16); } }),
-    };
-    function drape(parent, x, w, h, mat) {   // a throw hung over the rail: soft vertical folds, rolled over the bar
-      const geo = new THREE.PlaneGeometry(w, h, 24, 10), pp = geo.attributes.position;
-      for (let i = 0; i < pp.count; i++) { const X = pp.getX(i), Y = pp.getY(i), down = .5 - Y / h; pp.setZ(i, (.008 + .02 * down) * Math.sin((X / w + .5) * 5 * Math.PI) + .004); }
-      geo.computeVertexNormals(); add(parent, geo, mat, x, RAIL - h / 2 - .01, RZ + .015);
-      add(parent, new THREE.CylinderGeometry(.016, .016, w, 16, 1, false, 0, Math.PI), mat, x, RAIL, RZ, 0, 0, Math.PI / 2);
-    }
-    const folded = (parent, x, y, z, mat, n = 3) => { for (let k = 0; k < n; k++) box(parent, mat, x + (k % 2) * .008, y + k * .045, z, .34, .042, .26, (k - 1) * .03); };
-    const vase = (parent, x, y, z, prof, mat = M.clayRaw) => add(parent, lathe(prof, 36), mat, x, y, z);
-    const VASE_A = [[0, 0], [.06, 0], [.1, .08], [.105, .16], [.06, .26], [.045, .3], [.055, .32], [.045, .32], [.035, .3], [0, .29]];
-    const VASE_B = [[0, 0], [.05, 0], [.075, .05], [.06, .12], [.07, .2], [.06, .2], [.05, .12], [0, .11]];
-    const header = (x0, name, sub) => standingCard(g, [name, sub, 'Illustrative collection · concept'], x0 + .2, BASE, -10.22, 0, { w: .2, h: .1 });
-    // 1 Bengal Nordic (x 9.79-12.36)
-    let x0 = 9.7917; drape(g, x0 + .55, .62, .72, T.khadi); drape(g, x0 + 1.32, .55, .64, T.indigo);
-    add(g, pillowGeometry(.42, .42, .13), handloomCushion, x0 + .55, BASE + .2, -10.6, -.38, .12, 0);
-    add(g, pillowGeometry(.4, .4, .13), T.indigo, x0 + 1.0, BASE + .19, -10.62, -.38, -.1, 0);
-    basket(g, x0 + 1.75, BASE, -10.45, { r: .16, h: .3, kind: 'twill', fibre: 'jute' }); folded(g, x0 + 2.2, BASE, -10.45, T.khadi, 2);
-    folded(g, x0 + .55, SHELF, -10.45, T.indigo); vase(g, x0 + 1.35, SHELF, -10.45, VASE_B, M.clayCream); basket(g, x0 + 2.0, SHELF, -10.45, { r: .12, h: .16, kind: 'twill', fibre: 'jute' });
-    header(x0, 'Bengal Nordic', 'Handloom textiles, quiet colour');
-    // 2 River to Home (x 12.53-15.10)
-    x0 = 12.5349; add(g, new THREE.PlaneGeometry(.72, .8, 1, 1), wovenMaterial('hogla_panel', 'twill', FIBRE.hogla, [5, 6]), x0 + .95, RAIL - .42, RZ + .012);
-    add(g, new THREE.CylinderGeometry(.016, .016, .72, 12), M.oak, x0 + .95, RAIL, RZ, 0, 0, Math.PI / 2);
-    basket(g, x0 + .45, BASE, -10.42, { r: .2, h: .32, kind: 'plait', fibre: 'hyacinth' });
-    basket(g, x0 + 1.05, BASE, -10.42, { r: .17, h: .4, kind: 'twill', fibre: 'hogla', handles: true });
-    add(g, new THREE.CylinderGeometry(.065, .065, .7, 24), wovenMaterial('hogla_roll', 'plain', FIBRE.hogla, [4, 1]), x0 + 1.75, BASE + .065, -10.45, 0, 0, Math.PI / 2);
-    vase(g, x0 + 2.25, BASE, -10.45, VASE_A);
-    basket(g, x0 + .6, SHELF, -10.45, { r: .15, h: .14, kind: 'twill', fibre: 'hogla' }); basket(g, x0 + .6, SHELF + .015, -10.45, { r: .11, h: .14, kind: 'twill', fibre: 'hogla' });
-    vase(g, x0 + 1.4, SHELF, -10.45, VASE_B); vase(g, x0 + 1.68, SHELF, -10.45, VASE_A.map(([r, y]) => [r * .7, y * .8]));
-    basket(g, x0 + 2.2, SHELF, -10.45, { r: .13, h: .12, kind: 'coil', fibre: 'kaisa' });
-    header(x0, 'River to Home', 'Hogla, water hyacinth, terracotta');
-    // 3 Second Life Bangladesh (x 16.14-18.25)
-    x0 = 16.1417; drape(g, x0 + .75, .8, .8, T.patch);
-    const ropeBasket = (x, y, z, r, h) => { const gg = new THREE.Group(); gg.position.set(x, y, z); g.add(gg); add(gg, lathe([[0, .004], [r * .86, 0], [r, h * .12], [r * 1.04, h], [r, h], [r * .95, h * .1], [0, .012]], 36), T.rope); add(gg, new THREE.TorusGeometry(r * 1.02, .012, 8, 36), T.rope, 0, h, 0, Math.PI / 2); };
-    ropeBasket(x0 + .4, BASE, -10.42, .17, .28); ropeBasket(x0 + .85, BASE, -10.42, .13, .22);
-    add(g, pillowGeometry(.4, .4, .13), T.patch, x0 + 1.45, BASE + .19, -10.62, -.38, 0, 0);
-    folded(g, x0 + 1.85, BASE, -10.45, T.patch, 3);
-    [['#8f4a3a', -.12], ['#3d5170', 0], ['#c9a565', .12]].forEach(([cc, dx]) => add(g, new THREE.CylinderGeometry(.03, .045, .17, 24), std('yarn_rec_' + cc, () => ({ color: cc, roughness: .9, map: weaveMap('coil', [3, 6]) })), x0 + .7 + dx, SHELF + .085, -10.45));
-    ropeBasket(x0 + 1.55, SHELF, -10.45, .1, .13);
-    header(x0, 'Second Life Bangladesh', 'Garment offcuts, kantha patchwork');
-    // 4 Future of Bengal (x 18.43-20.54), next to the doors to merchandising and the boardroom
-    x0 = 18.4277; const pend = new THREE.Group(); pend.position.set(x0 + 1.0, 1.08, -10.44); g.add(pend);
-    add(pend, new THREE.CylinderGeometry(.002, .002, RAIL - 1.08 - .3, 4), std('cord', () => ({ color: '#2a2a2a', roughness: .6 })), 0, .3 + (RAIL - 1.08 - .3) / 2, 0);
-    bambooLamp(pend, 0, 0, 0, { r: .12, h: .3, glow: 0 });
-    const stool = new THREE.Group(); stool.position.set(x0 + .5, BASE, -10.42); g.add(stool);
-    add(stool, new THREE.CylinderGeometry(.17, .17, .04, 28), std('jute_composite', () => { const c = canvas(128, 128), xx = c.getContext('2d'), rr = rng(97); xx.fillStyle = '#a98b58'; xx.fillRect(0, 0, 128, 128); for (let i = 0; i < 700; i++) { xx.strokeStyle = `rgba(${rr() > .5 ? '80,55,25' : '230,205,150'},.35)`; xx.lineWidth = .8; xx.beginPath(); const X = rr() * 128, Y = rr() * 128, A = rr() * 6.3; xx.moveTo(X, Y); xx.lineTo(X + Math.cos(A) * 8, Y + Math.sin(A) * 8); xx.stroke(); } return { map: tex(c), roughness: .7 }; }), 0, .43, 0);
-    for (let k = 0; k < 3; k++) { const a = k / 3 * Math.PI * 2; add(stool, new THREE.CylinderGeometry(.014, .016, .43, 10), M.bamboo, Math.cos(a) * .11, .215, Math.sin(a) * .11, Math.sin(a) * .08, 0, -Math.cos(a) * .08); }
-    bambooLamp(g, x0 + 1.65, BASE, -10.45, { r: .1, h: .34 });
-    for (let k = 0; k < 3; k++) box(g, std('jute_composite', () => ({})), x0 + .45 + k * .14, SHELF, -10.5, .12, .12, .012, 0);
-    vase(g, x0 + 1.4, SHELF, -10.45, VASE_A.map(([r, y]) => [r * .8, y * .9]), M.clay);
-    header(x0, 'Future of Bengal', 'Experiments in bamboo, cane, jute');
+  if (want('BEL_BAY_STORIES')) {
+    // bays F017-F020 (measured): base top 0.1016, green back z -10.7251, front edge z -10.1347. The approved garments hang from
+    // y 0.90 up and folded stacks fill the top shelves, so the story stays low on the base below the garments (under 0.8 m)
+    const g = item('BEL_BAY_STORIES'), BASE = .1016, Z = -10.45;
+    const header = (x, lines) => standingCard(g, [...lines, 'Illustrative · records to follow'], x, BASE, -10.21, 0, { w: .22, h: .14 });
+    // 1 Earth (F017, x 9.79-12.36): dried cotton stems in a clay vase, raw cotton and cones on a tray, a hogla gift box by rural weavers
+    let x0 = 9.7917;
+    add(g, lathe([[0, 0], [.07, 0], [.1, .08], [.09, .2], [.05, .27], [.055, .3], [.045, .3], [0, .28]], 32), M.clayRaw, x0 + .45, BASE, Z);
+    cottonStems(g, x0 + .45, BASE + .27, Z, { n: 5, h: .38, seed: 3 });
+    tray(g, x0 + 1.05, BASE, Z, .42, .26, 0); fibreHeap(g, x0 + .96, BASE + .012, Z, .07, FB.cotton, 501);
+    yarnCone(g, x0 + 1.14, BASE + .012, Z - .05, coneMat('#efe8da')); yarnCone(g, x0 + 1.2, BASE + .012, Z + .06, coneMat('#d6c7a8'));
+    box(g, wovenMaterial('hogla_box', 'twill', FIBRE.hogla, [3, 2]), x0 + 1.68, BASE, Z, .34, .12, .26); box(g, wovenMaterial('hogla_lid', 'twill', '#a99a63', [3, 2]), x0 + 1.68, BASE + .12, Z, .36, .03, .28);
+    add(g, new THREE.PlaneGeometry(.1, .06), card(['Hogla box', 'rural weavers, to credit'], { w: .1, h: .06, scale: .5 }), x0 + 1.68, BASE + .08, Z + .131);
+    header(x0 + 2.25, ['Earth', 'Cotton knitwear', 'Fibre origin: to be documented']);
+    // 2 Golden fibre (F018, x 12.53-15.10): a jute hank, jute and cotton cones, a rib swatch of the blend
+    x0 = 12.5349;
+    add(g, new THREE.CylinderGeometry(.045, .065, .5, 20, 1), FB.juteHank, x0 + .45, BASE + .25, Z); add(g, new THREE.TorusGeometry(.052, .008, 6, 20), std('band', () => ({ color: '#6b4a2b', roughness: .9 })), x0 + .45, BASE + .32, Z, Math.PI / 2);
+    for (const [dx, dz, col] of [[0, -.06, '#c7ae7c'], [.13, .05, '#e6dccb'], [.26, -.04, '#b39867']]) yarnCone(g, x0 + .95 + dx, BASE, Z + dz, coneMat(col));
+    box(g, M.oak, x0 + 1.62, BASE, Z, .28, .02, .22); add(g, scaleUV(new THREE.BoxGeometry(.24, .006, .18), .24, .18), KN.juteBlend, x0 + 1.62, BASE + .023, Z, 0, .08);
+    header(x0 + 2.25, ['Golden fibre · research', 'A jute and cotton blend knit', 'Trials only, not in production']);
+    // 3 Second life from cutting waste (F019, x 16.14-18.25): jute sacks of offcuts sorted by colour, cones spun from them
+    x0 = 16.1417;
+    [['#3d5170', '#4a5f80', '#33445f'], ['#8f4a3a', '#a35a48', '#7a3d30'], ['#8e8b86', '#a9a59e', '#6f6c68']].forEach((cols, i) => {
+      const x = x0 + .3 + i * .42; juteSack(g, x, Z, { r: .16, h: .34, y: BASE }); offcutHeap(g, x, BASE + .28, Z, { r: .15, h: .08, n: 90, colors: cols, seed: 600 + i });
+    });
+    yarnCone(g, x0 + 1.55, BASE, Z - .06, KN.recNavy); yarnCone(g, x0 + 1.66, BASE, Z + .07, KN.recRed);
+    header(x0 + 1.95, ['Second life · cutting waste', 'Jhut sorted by colour, spun again', 'Recycled share: to be certified']);
+    // 4 Second life from used garments (F020, x 18.43-20.54): a take-back crate, a garment mended in kantha stitch, recycled fibre
+    x0 = 18.4277;
+    box(g, wovenMaterial('crate_jute', 'plain', FIBRE.jute, [4, 3]), x0 + .4, BASE, Z, .5, .3, .34);
+    foldedStack(g, x0 + .4, BASE + .3, Z, [KN.charcoal, KN.madder, KN.indigo], .1);
+    add(g, new THREE.PlaneGeometry(.2, .08), card(['Take-back', 'worn knitwear comes home'], { w: .2, h: .08, scale: .6 }), x0 + .4, BASE + .16, Z + .171);
+    foldedStack(g, x0 + 1.05, BASE, Z, [KN.oat, mendMat('indigo', '#3a4d6e', '#8a97ad')], -.08);
+    add(g, lathe([[0, 0], [.06, 0], [.09, .035], [.085, .042], [.055, .014], [0, .014]], 28), M.clay, x0 + 1.55, BASE, Z); fibreHeap(g, x0 + 1.55, BASE + .014, Z, .062, FB.usedMix, 611);
+    header(x0 + 1.95, ['Second life · used garments', 'Take back, mend in kantha stitch,', 'resell or recycle']);
   }
-  if (want('BEL_FUTURE_LAMP')) {
-    const g = item('BEL_FUTURE_LAMP');   // approved potted tree F029/PL029: x 21.34-21.84, z -7.87..-7.37
-    plinth(g, 21.59, -7.62, .46, .46, .86);
-    bambooLamp(g, 21.59, .86, -7.62, { r: .15, h: .42 });
-    standingCard(g, ['Future of Bengal', 'Experimental lamp: bamboo and handmade paper', 'Prototype, not tested'], 21.41, .86, -7.5, -Math.PI / 2 + .35, { w: .2, h: .09 });
-  }
+  if (want('BEL_EC_TREE')) { const g = item('BEL_EC_TREE'); smallTree(g, { x: 21.59, z: -7.62, seed: 23, height: 1.7 }); }   // approved F029/PL029: x 21.34-21.84, z -7.87..-7.37
   if (want('BEL_WATER_KOLSHI')) {
-    const g = item('BEL_WATER_KOLSHI');  // counter top 0.889, x 10.91-20.07, z -6.08..-5.56 (room side -z); identity water point at x 11.40 is excluded on this route
-    const T = .889, X = 13.0; add(g, new THREE.TorusGeometry(.085, .02, 10, 28), M.wood, X, T + .02, -5.84, Math.PI / 2);
+    const g = item('BEL_WATER_KOLSHI');  // counter top 0.889, x 10.91-20.07, z -6.08..-5.56 (room side -z): on the spot of the approved water point (x 11.40), not shown on this route
+    const T = .889, X = 11.2; add(g, new THREE.TorusGeometry(.085, .02, 10, 28), M.wood, X, T + .02, -5.84, Math.PI / 2);
     add(g, lathe([[0, 0], [.07, 0], [.12, .05], [.135, .13], [.12, .2], [.07, .245], [.05, .28], [.062, .3], [.055, .305], [.042, .28], [0, .27]], 40), M.clay, X, T + .015, -5.84);
     tray(g, X + .28, T, -5.84, .22, .16, 0); for (const dx of [-.06, 0, .06]) cup(g, X + .28 + dx, T + .012, -5.84, 'tumbler', M.clayCream);
     standingCard(g, ['Drinking water', 'Source stated by the client: deep tube well', 'Laboratory results: none yet', 'Only dated reports will be shown'], X + .52, T, -5.8, Math.PI, { w: .2, h: .12 });
   }
 
   // ---------------------------------------------------------------- Z08 Boardroom
-  if (want('BEL_BOARD_SAMPLES')) {
-    const g = item('BEL_BOARD_SAMPLES'); const T = .749;   // table centre line z -2.845 (identity review trays excluded on this route)
-    for (const [x, ry] of [[16.3, 0], [18.33, Math.PI]]) {
-      const t = tray(g, x, T, -2.845, .38, .24, ry);
-      swatch(t, -.12, .012, -.03, 'jute', 'twill', .1, .1); swatch(t, -.01, .012, .03, 'hogla', 'plain', .1, -.1); tile(t, .1, .012, -.04, .09, .2);
-      basket(t, .12, .012, .06, { r: .045, h: .06, kind: 'coil', fibre: 'kaisa' });
-    }
-  }
   if (want('BEL_BOARD_BONSAI')) {
     const g = item('BEL_BOARD_BONSAI');  // approved planter F050/PL050: x 12.50-12.90, z -5.16..-4.75
     const jt = std('jute_rope', () => { const c = canvas(64, 64), x = c.getContext('2d'); x.fillStyle = FIBRE.jute; x.fillRect(0, 0, 64, 64); for (let y = 0; y < 64; y += 4) { x.fillStyle = 'rgba(90,60,25,.35)'; x.fillRect(0, y, 64, 1.2); x.fillStyle = 'rgba(255,240,200,.25)'; x.fillRect(0, y + 2, 64, 1); } return { map: tex(c, { repeat: [3, 14] }), roughness: .95 }; });
@@ -756,21 +822,6 @@ export function buildBengalEarthLab(THREE, { zones = null, drinkware = [], aniso
     standingCard(g, ['Sunning shelf', 'The bonsai take turns in daylight', 'Tulsi: traditionally kept in Bengali homes'], X0 + .07, H, -18.65, -Math.PI / 2, { w: .18, h: .09 });
   }
   if (want('BEL_STUDIO_TREE')) { const g = item('BEL_STUDIO_TREE'); smallTree(g, { x: 33.02, z: -22.355, seed: 19, height: 1.7 }); }   // approved F186/PL186: x 32.77-33.27, z -22.61..-22.10
-  if (want('BEL_COCREATION')) {
-    const g = item('BEL_COCREATION'); const T = .7493;   // presentation table F175: x 30.25-31.47, z -18.29..-15.24; notebooks at x 31.105, mugs at x 30.581 (z -15.911, -17.617)
-    basket(g, 30.9, T, -16.75, { r: .11, h: .18, kind: 'coil', fibre: 'jute' });
-    basket(g, 30.9, T, -16.35, { r: .09, h: .14, kind: 'twill', fibre: 'hogla', ry: .5 });
-    [['cane', 'lattice'], ['hyacinth', 'plait'], ['jute', 'plain'], ['bamboo', 'twill']].forEach(([f, k], i) => swatch(g, 30.52 + (i % 2) * .155, T, -16.95 + Math.floor(i / 2) * .18, f, k, .13, (i - 1.5) * .12));
-    const sk = canvas(px(384), px(512)), sx = sk.getContext('2d'); sx.fillStyle = '#f4efe4'; sx.fillRect(0, 0, sk.width, sk.height);
-    sx.strokeStyle = '#3c2a1e'; sx.lineWidth = sk.width / 180; const U = sk.width;
-    for (let k = 0; k < 3; k++) { const cx = U * (.25 + (k % 2) * .5), cy = U * (.3 + Math.floor(k / 2) * .55), w = U * .17, h = U * (.14 + k * .03);
-      sx.beginPath(); sx.ellipse(cx, cy - h / 2, w, w * .25, 0, 0, 7); sx.moveTo(cx - w, cy - h / 2); sx.lineTo(cx - w * .8, cy + h / 2); sx.lineTo(cx + w * .8, cy + h / 2); sx.lineTo(cx + w, cy - h / 2); sx.stroke();
-      for (let q = 1; q < 4; q++) { sx.beginPath(); sx.moveTo(cx - w + q * w * .05, cy - h / 2 + q * h / 4); sx.lineTo(cx + w - q * w * .05, cy - h / 2 + q * h / 4); sx.stroke(); } }
-    sx.fillStyle = '#3c2a1e'; sx.font = `400 ${U / 22}px system-ui, sans-serif`; sx.fillText('Basket forms · sketch (illustrative)', U * .06, sk.height * .95);
-    add(g, new THREE.PlaneGeometry(.21, .28), std('sketch', () => ({ map: tex(sk, { clamp: true }), roughness: .9 })), 30.98, T + .002, -17.25, -Math.PI / 2, 0, .12);
-    const fan = new THREE.Group(); fan.position.set(30.62, T + .004, -17.3); g.add(fan);
-    ['#b4613c', '#c9a565', '#3d5170', '#4f6a31', '#d9cdb4', '#7a3b22', '#8a6b47'].forEach((col, i) => add(fan, new THREE.BoxGeometry(.03, .002, .17), std('fan_' + i, () => ({ color: col, roughness: .8 })), 0, i * .0021, -.07, 0, (i - 3) * .14));
-  }
 
   // ---------------------------------------------------------------- option A: Merchandising Z07 and the accounts suite in Z06
   // The full-conversion option only (owner decision). The route config hides every approved item that the relocation
@@ -878,6 +929,153 @@ export function buildBengalEarthLab(THREE, { zones = null, drinkware = [], aniso
     footprint(x - .17, z - .17, x + .17, z + .17); return g;
   }
 
+  // Bengal craft helpers from the owner's references (30 Oct 2026), shared by the option A rooms and the craft items further down
+  const hexRGB = h => [1, 3, 5].map(i => parseInt(h.slice(i, i + 2), 16));
+  function shiboriMat(key, seed, ombre = false) {   // natural indigo, resist-dyed: rings and blots on a deep blue ground (or dip-dyed, pale to deep)
+    return std('indigo_' + key, () => { const W = px(512), H = px(256), c = canvas(W, H), x = c.getContext('2d'), r = rng(seed);
+      const gr = x.createLinearGradient(0, 0, W, 0); if (ombre) { gr.addColorStop(0, '#e6ebef'); gr.addColorStop(.4, '#7d97b8'); gr.addColorStop(1, '#1d3254'); } else { gr.addColorStop(0, '#22385b'); gr.addColorStop(1, '#1b2f4f'); }
+      x.fillStyle = gr; x.fillRect(0, 0, W, H);
+      for (let k = 0; k < (ombre ? 3 : 7); k++) { const cx = (ombre ? .55 + r() * .4 : r()) * W, cy = r() * H, R = H * (.12 + r() * .18);
+        for (let q = 0; q < 5; q++) { x.strokeStyle = `rgba(233,238,242,${.6 - q * .09})`; x.lineWidth = H * .014; x.beginPath(); x.arc(cx, cy, R * (1 - q * .18), 0, 7); x.stroke(); }
+        x.fillStyle = 'rgba(233,238,242,.65)'; x.beginPath(); x.arc(cx, cy, R * .12, 0, 7); x.fill(); }
+      for (let k = 0; k < 50; k++) { x.fillStyle = `rgba(233,238,242,${.12 + r() * .25})`; x.beginPath(); x.ellipse(r() * W, r() * H, 2 + r() * 12, 1 + r() * 4, r() * 3, 0, 7); x.fill(); }
+      x.globalCompositeOperation = 'multiply'; x.globalAlpha = .25; x.fillStyle = x.createPattern(weave.plain.map, 'repeat'); x.fillRect(0, 0, W, H); x.globalAlpha = 1; x.globalCompositeOperation = 'source-over';
+      const t = tex(c); return { map: t, roughness: .95, side: THREE.DoubleSide, emissive: '#ffffff', emissiveMap: t, emissiveIntensity: .14 }; });
+  }
+  function trayWeave(key, base, paint = null) {   // the face of a round woven bamboo tray (kula, dala): spokes and weavers in over-under, optionally painted
+    return std('tray_' + key, () => { const s = px(256), c = canvas(s, s), x = c.getContext('2d'), img = x.createImageData(s, s), [br, bg, bb] = hexRGB(base), h = s / 2;
+      for (let j = 0; j < s; j++) for (let i = 0; i < s; i++) {
+        const dx = i - h + .5, dy = j - h + .5, rho = Math.hypot(dx, dy) / h, th = Math.atan2(dy, dx), ring = rho * 30, spoke = (th / (Math.PI * 2) + .5) * 64;
+        const f = (Math.floor(ring) + Math.floor(spoke)) % 2 ? .82 + .18 * Math.sin((ring % 1) * Math.PI) : .6 + .2 * Math.sin((spoke % 1) * Math.PI), k = (j * s + i) * 4;
+        img.data[k] = br * f; img.data[k + 1] = bg * f; img.data[k + 2] = bb * f; img.data[k + 3] = 255;
+      }
+      x.putImageData(img, 0, 0);
+      if (paint) { x.globalCompositeOperation = 'multiply'; paint(x, s); x.globalCompositeOperation = 'source-over'; }
+      return { map: tex(c, { clamp: true }), roughness: .85, side: THREE.DoubleSide }; });
+  }
+  const TRAY = [trayWeave('natural', '#d9b779'), trayWeave('honey', '#c69a5a'),
+    trayWeave('red', '#d9b779', (x, s) => { x.strokeStyle = '#b8352a'; x.lineWidth = s / 40; for (let k = -6; k <= 6; k++) { x.beginPath(); x.moveTo(s / 2 + k * s / 8 - s, 0); x.lineTo(s / 2 + k * s / 8 + s, s * 2); x.stroke(); x.beginPath(); x.moveTo(s / 2 + k * s / 8 + s, 0); x.lineTo(s / 2 + k * s / 8 - s, s * 2); x.stroke(); } }),
+    trayWeave('green', '#d9b779', (x, s) => { for (const [r0, col] of [[.42, '#2f7a5a'], [.3, '#b8352a'], [.18, '#2f7a5a']]) { x.strokeStyle = col; x.lineWidth = s / 22; x.beginPath(); x.arc(s / 2, s / 2, s * r0, 0, 7); x.stroke(); } })];
+  function trayCloud(parent, list) {   // [x, y, z, r, k, rx, ry] per tray: one merged mesh per face material and one for all rims
+    const faces = TRAY.map(() => []), rims = [];
+    for (const [x, y, z, r, k, rx = 0, ry = 0] of list) { faces[k].push([new THREE.CircleGeometry(r, 36), x, y, z, rx, ry, 0]); rims.push([new THREE.TorusGeometry(r, .009, 6, 36), x, y, z, rx, ry, 0]); }
+    faces.forEach((f, k) => { if (f.length) add(parent, merged(f), TRAY[k]); });
+    add(parent, merged(rims), std('tray_rim', () => ({ color: '#b48a52', roughness: .7 })));
+  }
+  const glow = std('lantern_glow', () => ({ color: '#fff4dc', emissive: '#ffc47a', emissiveIntensity: 1.3, roughness: .2, transparent: true, opacity: .92 }));
+  function hurricaneLantern(parent, x, y, z, enamel = '#25332b') {   // an electric lamp in the form of the hurricane lantern; y = top of the handle
+    const g = new THREE.Group(); g.position.set(x, y, z); parent.add(g); const m = std('lantern_' + enamel, () => ({ color: enamel, metalness: .45, roughness: .45 }));
+    add(g, new THREE.TorusGeometry(.055, .004, 6, 18, Math.PI), m, 0, -.055, 0);
+    add(g, new THREE.ConeGeometry(.065, .05, 20), m, 0, -.085, 0); add(g, new THREE.CylinderGeometry(.03, .03, .03, 16), m, 0, -.06, 0);
+    add(g, lathe([[.032, 0], [.05, .03], [.058, .07], [.05, .11], [.034, .14]], 24), glow, 0, -.25, 0);
+    for (let k = 0; k < 4; k++) { const a = k / 4 * Math.PI * 2 + .4; add(g, new THREE.CylinderGeometry(.0025, .0025, .15, 4), m, Math.cos(a) * .062, -.18, Math.sin(a) * .062); }
+    add(g, new THREE.CylinderGeometry(.068, .07, .055, 24), m, 0, -.285, 0); return g;
+  }
+  const bambooPainted = std('bamboo_painted', () => { const c = canvas(32, 256), x = c.getContext('2d'); x.fillStyle = '#c9a868'; x.fillRect(0, 0, 32, 256);
+    for (let y = 0; y < 256; y += 64) { x.fillStyle = '#2b2420'; x.fillRect(0, y + 8, 32, 14); x.fillRect(0, y + 40, 32, 5); x.fillStyle = '#8f2f24'; x.fillRect(0, y + 26, 32, 4); x.fillStyle = 'rgba(80,55,25,.5)'; x.fillRect(0, y, 32, 2); }
+    return { map: tex(c, { repeat: [1, 3] }), roughness: .55 }; });
+  const bambooNatural = std('bamboo_natural', () => { const c = canvas(32, 256), x = c.getContext('2d'); x.fillStyle = '#cfae6b'; x.fillRect(0, 0, 32, 256);   // culm with nodes
+    for (let y = 0; y < 256; y += 64) { x.fillStyle = 'rgba(110,80,35,.55)'; x.fillRect(0, y, 32, 3); x.fillStyle = 'rgba(255,240,200,.35)'; x.fillRect(0, y + 3, 32, 2); } for (let i = 0; i < 40; i++) { x.fillStyle = 'rgba(120,90,40,.12)'; x.fillRect((i * 7) % 32, 0, 1, 256); }
+    return { map: tex(c, { repeat: [1, 3] }), roughness: .45 }; });
+  function lanternPost(parent, x, z, ry, h = 2.15) {   // a painted bamboo post with an arm; the lantern hangs over local +z
+    const g = new THREE.Group(); g.position.set(x, 0, z); g.rotation.y = ry; parent.add(g);
+    add(g, new THREE.CylinderGeometry(.13, .15, .05, 20), M.graniteRough, 0, .025, 0);
+    add(g, new THREE.CylinderGeometry(.035, .04, h, 12), bambooPainted, 0, h / 2, 0);
+    add(g, new THREE.CylinderGeometry(.025, .025, .5, 10), bambooPainted, 0, h - .1, .22, Math.PI / 2 - .25, 0, 0);
+    add(g, new THREE.CylinderGeometry(.015, .015, .3, 8), bambooPainted, 0, h - .3, .1, .75, 0, 0);
+    hurricaneLantern(g, 0, h - .02, .42); footprint(x - .15, z - .15, x + .15, z + .15); return g;
+  }
+  function basketLamp(parent, x, y, z, { r = .26, h = .24, top = 2.895 } = {}) {   // an upturned woven basket as a lamp shade; y = the open rim
+    const g = new THREE.Group(); g.position.set(x, y, z); parent.add(g); const wv = weaveMap('coil', [9, 3]);
+    add(g, lathe([[r, 0], [r * 1.03, .015], [r * .97, h * .5], [r * .72, h * .88], [.035, h], [0, h]], 40), std('basket_lamp', () => ({ color: '#c9975a', map: wv, emissive: '#ffb766', emissiveMap: wv, emissiveIntensity: .35, roughness: .85, side: THREE.DoubleSide })));
+    add(g, new THREE.SphereGeometry(.035, 16, 10), std('bulb_warm', () => ({ color: '#fff3d6', emissive: '#ffc070', emissiveIntensity: 1.6 })), 0, h * .35, 0);
+    add(g, new THREE.CylinderGeometry(.003, .003, top - y - h, 4), std('cord', () => ({ color: '#2a2a2a', roughness: .6 })), 0, h + (top - y - h) / 2, 0); return g;
+  }
+  function bambooArmchair(parent, x, z, ry) {   // round bamboo frame, a fan back of split bamboo, a thick dark cushion; front is local +z
+    const g = new THREE.Group(); g.position.set(x, 0, z); g.rotation.y = ry; parent.add(g);
+    const rod = (a, b, r) => { const A = new THREE.Vector3(...a), Bv = new THREE.Vector3(...b), d = Bv.clone().sub(A), geo = new THREE.CylinderGeometry(r, r, d.length(), 10);
+      geo.applyQuaternion(new THREE.Quaternion().setFromUnitVectors(new THREE.Vector3(0, 1, 0), d.normalize())); geo.translate((A.x + Bv.x) / 2, (A.y + Bv.y) / 2, (A.z + Bv.z) / 2); return [geo]; };
+    const P = [];
+    for (const s of [-1, 1]) { P.push(rod([s * .31, 0, .27], [s * .31, .66, .27], .028), rod([s * .31, 0, -.27], [s * .31, .7, -.27], .028), rod([s * .34, .64, .32], [s * .34, .64, -.3], .026), rod([s * .31, .4, .27], [s * .31, .4, -.27], .02)); }
+    P.push(rod([-.31, .4, .27], [.31, .4, .27], .022), rod([-.31, .4, -.27], [.31, .4, -.27], .022), rod([-.31, .12, .27], [.31, .12, .27], .016));
+    P.push([new THREE.TorusGeometry(.31, .024, 8, 28, Math.PI), 0, .7, -.27]);
+    for (let k = 1; k < 8; k++) { const a = k / 8 * Math.PI; P.push(rod([0, .43, -.27], [Math.cos(a) * .3, .7 + Math.sin(a) * .3, -.27], .011)); }
+    add(g, merged(P), bambooNatural);
+    add(g, pillowGeometry(.58, .52, .1), std('cushion_dark', () => ({ color: '#2b2c30', roughness: .95, map: weaveMap('plain', [6, 6]) })), 0, .47, .01, -Math.PI / 2, 0, 0);
+    add(g, pillowGeometry(.42, .36, .12), handloomCushion, 0, .66, -.2, -.25, 0, 0); return g;
+  }
+  function hourglassTable(parent, x, z, { r = .42, h = .5, n = 28, twist = 2.2 } = {}) {   // bent bamboo slats between two rings: a waisted base, a round top
+    const g = new THREE.Group(); g.position.set(x, 0, z); parent.add(g); const P = [], R = .28;
+    for (let k = 0; k < n; k++) { const a = k / n * Math.PI * 2, A = new THREE.Vector3(Math.cos(a) * R, 0, Math.sin(a) * R), Bv = new THREE.Vector3(Math.cos(a + twist) * R, h - .04, Math.sin(a + twist) * R), d = Bv.clone().sub(A);
+      const geo = new THREE.CylinderGeometry(.009, .009, d.length(), 6); geo.applyQuaternion(new THREE.Quaternion().setFromUnitVectors(new THREE.Vector3(0, 1, 0), d.normalize())); geo.translate((A.x + Bv.x) / 2, (A.y + Bv.y) / 2, (A.z + Bv.z) / 2); P.push([geo]); }
+    P.push([new THREE.TorusGeometry(R, .014, 6, 36), 0, .012, 0, Math.PI / 2], [new THREE.TorusGeometry(R, .014, 6, 36), 0, h - .045, 0, Math.PI / 2]);
+    add(g, merged(P), bambooNatural);
+    const top = std('bamboo_laminate', () => { const c = canvas(256, 256), xx = c.getContext('2d'); for (let i = 0; i < 16; i++) { xx.fillStyle = i % 2 ? '#d3b06e' : '#c8a35f'; xx.fillRect(i * 16, 0, 16, 256); xx.fillStyle = 'rgba(90,60,25,.25)'; for (let y = 20 + i * 7 % 40; y < 256; y += 64) xx.fillRect(i * 16, y, 16, 2); } return { map: tex(c), roughness: .4 }; });
+    add(g, new THREE.CylinderGeometry(r, r, .03, 40), top, 0, h - .015, 0); return g;
+  }
+  const sliceTop = std('wood_slice', () => { const s = px(256), c = canvas(s, s), x = c.getContext('2d'), r = rng(311); x.fillStyle = '#a8653a'; x.fillRect(0, 0, s, s);
+    for (let k = 0; k < 34; k++) { x.strokeStyle = `rgba(${k % 3 ? '120,60,30' : '210,150,100'},${.25 + r() * .2})`; x.lineWidth = 1 + r() * 2; x.beginPath(); x.ellipse(s / 2 + (r() - .5) * 4, s / 2 + (r() - .5) * 4, k * s / 72, k * s / 76, r(), 0, 7); x.stroke(); }
+    x.strokeStyle = '#4a2a18'; x.lineWidth = s / 30; x.beginPath(); x.arc(s / 2, s / 2, s * .48, 0, 7); x.stroke(); return { map: tex(c, { clamp: true }), roughness: .35 }; });
+  const hairpin = std('hairpin_black', () => ({ color: '#1c1c1e', metalness: .6, roughness: .45 }));
+  function woodSliceStool(parent, x, z, { r = .17, h = .45 } = {}) {   // a cross-cut wood slice on three hairpin legs
+    const g = new THREE.Group(); g.position.set(x, 0, z); parent.add(g);
+    add(g, new THREE.CylinderGeometry(r, r * 1.02, .05, 28), [std('bark', () => ({})), sliceTop, sliceTop], 0, h - .025, 0);
+    for (let k = 0; k < 3; k++) { const a = k / 3 * Math.PI * 2; add(g, new THREE.CylinderGeometry(.006, .006, h - .05, 6), hairpin, Math.cos(a) * r * .55, (h - .05) / 2, Math.sin(a) * r * .55, Math.sin(a) * .12, 0, -Math.cos(a) * .12); }
+    footprint(x - r, z - r, x + r, z + r); return g;
+  }
+  function liveEdgeTable(parent, x, z, { len = 1.8, w = .62, h = .74, ry = 0, seed = 5 } = {}) {   // a live-edge slab on hairpin legs, its outline following the tree
+    const g = new THREE.Group(); g.position.set(x, 0, z); g.rotation.y = ry; parent.add(g); const n = noise3(seed), s = new THREE.Shape(), N = 48;
+    for (let i = 0; i <= N; i++) { const t = i / N, X = -len / 2 + t * len, Wd = w / 2 * (.82 + .25 * n(t * 3, .5, 1) + .1 * Math.sin(t * Math.PI)); i ? s.lineTo(X, Wd) : s.moveTo(X, Wd); }
+    for (let i = N; i >= 0; i--) { const t = i / N, X = -len / 2 + t * len, Wd = w / 2 * (.8 + .25 * n(t * 3, 2.5, 4) + .1 * Math.sin(t * Math.PI)); s.lineTo(X, -Wd); }
+    const geo = new THREE.ExtrudeGeometry(s, { depth: .05, bevelEnabled: true, bevelThickness: .006, bevelSize: .006, bevelSegments: 1 }); geo.rotateX(-Math.PI / 2); geo.translate(0, h - .056, 0);
+    const slab = std('live_edge', () => { const c = canvas(px(512), px(128)), xx = c.getContext('2d'), r = rng(seed * 7); xx.fillStyle = '#8f4f2c'; xx.fillRect(0, 0, c.width, c.height);
+      for (let i = 0; i < 70; i++) { const Y = r() * c.height; xx.strokeStyle = `rgba(${r() > .5 ? '70,32,15' : '200,130,80'},${.12 + r() * .15})`; xx.lineWidth = .8 + r() * 1.8; xx.beginPath(); xx.moveTo(0, Y); for (let X = 0; X <= c.width; X += 24) xx.lineTo(X, Y + Math.sin(X * .02 + i) * 4); xx.stroke(); }
+      return { map: tex(c, { repeat: [1 / len, 1 / w] }), roughness: .35 }; });
+    add(g, geo, slab);
+    for (const sx of [-1, 1]) for (const sz of [-1, 1]) add(g, new THREE.CylinderGeometry(.007, .007, h - .06, 6), hairpin, sx * (len / 2 - .2), (h - .06) / 2, sz * w * .25, sz * .14, 0, 0);
+    return g;
+  }
+  function caneMoonChair(parent, x, z, ry) {   // a round cane bowl chair on a wooden ring stand, a handloom cushion; it faces local +z
+    const g = new THREE.Group(); g.position.set(x, 0, z); g.rotation.y = ry; parent.add(g);
+    const bowl = new THREE.Group(); bowl.position.set(0, .4, 0); bowl.rotation.x = -.32; g.add(bowl);
+    add(bowl, lathe(Array.from({ length: 10 }, (_, i) => { const a = i / 9 * Math.PI * .5; return [Math.max(.01, Math.sin(a) * .5), (1 - Math.cos(a)) * .3]; }), 36), wovenMaterial('cane_bowl', 'lattice', FIBRE.cane, [10, 4]), 0, -.02, 0);
+    add(bowl, new THREE.TorusGeometry(.5, .02, 8, 40), M.bamboo, 0, .28, 0, Math.PI / 2);
+    add(bowl, new THREE.CylinderGeometry(.42, .42, .1, 32), std('cushion_cream', () => ({ color: '#e8dfcf', roughness: .95, map: weaveMap('plain', [8, 8]) })), 0, .09, 0);
+    for (const [dx, m] of [[-.16, handloomCushion], [.16, textileMat('kantha_cushion', (xx, w, hh) => drawKantha(xx, w, hh, 27), [192, 192])]]) add(bowl, pillowGeometry(.34, .34, .12), m, dx, .3, -.28, .5, 0, 0);
+    add(g, new THREE.TorusGeometry(.28, .015, 6, 28), M.wood, 0, .02, 0, Math.PI / 2);
+    for (let k = 0; k < 4; k++) { const a = k / 4 * Math.PI * 2 + .78; add(g, new THREE.CylinderGeometry(.015, .018, .4, 8), M.wood, Math.cos(a) * .22, .2, Math.sin(a) * .22, Math.sin(a) * .25, 0, -Math.cos(a) * .25); }
+    footprint(x - .52, z - .52, x + .52, z + .52); return g;
+  }
+  function shokherHari(parent, x, y, z, { h = .34, seed = 1 } = {}) {   // a painted pot in the shokher hari tradition: fish, lotus, rice stalks on an ochre ground
+    const mat = std('hari_' + seed, () => { const W = px(512), H = px(256), c = canvas(W, H), xx = c.getContext('2d'), r = rng(seed * 13); xx.fillStyle = seed % 2 ? '#d9832f' : '#e0a33a'; xx.fillRect(0, 0, W, H);
+      xx.fillStyle = '#b3261e'; xx.fillRect(0, 0, W, H * .14); xx.fillStyle = '#1d1a18'; for (const yy of [.14, .38, .7]) xx.fillRect(0, H * yy, W, H * .012);
+      for (let k = 0; k < 5; k++) { const cx = (k + .5) * W / 5, cy = H * .26; xx.fillStyle = '#f2e8d6'; xx.beginPath(); xx.ellipse(cx, cy, W * .045, H * .06, 0, 0, 7); xx.fill(); xx.strokeStyle = '#1d1a18'; xx.lineWidth = 2; xx.stroke();
+        xx.beginPath(); xx.moveTo(cx + W * .04, cy); xx.lineTo(cx + W * .07, cy - H * .05); xx.lineTo(cx + W * .07, cy + H * .05); xx.closePath(); xx.fillStyle = '#b3261e'; xx.fill(); xx.stroke(); xx.fillStyle = '#1d1a18'; xx.beginPath(); xx.arc(cx - W * .025, cy - H * .01, 2.5, 0, 7); xx.fill(); }
+      for (let k = 0; k < 4; k++) { const cx = (k + .5) * W / 4, cy = H * .55; for (let p = 0; p < 7; p++) { const a = -Math.PI / 2 + (p - 3) * .32; xx.fillStyle = p % 2 ? '#b3261e' : '#f2e8d6'; xx.beginPath(); xx.ellipse(cx + Math.cos(a) * W * .03, cy + Math.sin(a) * H * .08, W * .012, H * .07, a + Math.PI / 2, 0, 7); xx.fill(); xx.strokeStyle = '#1d1a18'; xx.lineWidth = 1.5; xx.stroke(); }
+        xx.strokeStyle = '#2f6b3a'; xx.lineWidth = 3; xx.beginPath(); xx.moveTo(cx, cy + H * .02); xx.lineTo(cx, cy + H * .13); xx.stroke(); }
+      for (let i = 0; i < W; i += W / 40) { xx.strokeStyle = '#2f6b3a'; xx.lineWidth = 2; xx.beginPath(); xx.moveTo(i, H * .95); xx.quadraticCurveTo(i + W / 80, H * .8, i + W / 50 + r() * 3, H * .74); xx.stroke(); }
+      return { map: tex(c, { clamp: true }), roughness: .5 }; });
+    const s = h / .34; return add(parent, lathe([[0, 0], [.08, 0], [.13, .05], [.15, .14], [.13, .24], [.08, .29], [.065, .31], [.075, .335], [.08, .345], [.07, .345], [.058, .32], [0, .31]].map(([a, b]) => [a * s, b * s]), 40), mat, x, y, z);
+  }
+  function tepaPutul(parent, x, y, z, seed = 1) {   // a pinched clay doll painted in red earth with white dots
+    const g = new THREE.Group(); g.position.set(x, y, z); g.rotation.y = seed * 1.3; parent.add(g); const r = rng(seed * 31), h = .14 + r() * .08;
+    const body = std('tepa_' + (seed % 3), () => { const c = canvas(64, 128), xx = c.getContext('2d'); xx.fillStyle = ['#a8452a', '#b8642f', '#8f3a22'][seed % 3]; xx.fillRect(0, 0, 64, 128); xx.fillStyle = '#f2e8d6'; for (let k = 0; k < 40; k++) { xx.beginPath(); xx.arc((k * 13) % 64, 20 + Math.floor(k / 5) * 12, 2, 0, 7); xx.fill(); } xx.fillStyle = '#1d1a18'; xx.fillRect(0, 10, 64, 4); return { map: tex(c), roughness: .8 }; });
+    add(g, lathe([[0, 0], [.04, 0], [.045, .02], [.03, h * .6], [.018, h * .8], [0, h * .82]], 20), body);
+    add(g, new THREE.SphereGeometry(.024, 16, 10), body, 0, h * .9, 0);
+    for (const s of [-1, 1]) add(g, new THREE.CylinderGeometry(.007, .009, .06, 8), body, s * .03, h * .62, .01, .3, 0, s * .7); return g;
+  }
+  function drum(parent, kind, x, y, z, ry = 0) {   // dholak (painted barrel, rope lacing) or khol (Bengal's clay drum, one end narrow); lying on its side
+    const g = new THREE.Group(); g.position.set(x, y, z); g.rotation.y = ry; parent.add(g);
+    const L = kind === 'khol' ? .56 : .42, R0 = kind === 'khol' ? .1 : .12, R1 = kind === 'khol' ? .065 : .12, Rm = kind === 'khol' ? .15 : .145;
+    const shell = kind === 'khol' ? M.clayRaw : std('dholak_paint', () => { const c = canvas(128, 64), xx = c.getContext('2d'); ['#b3261e', '#e0a33a', '#2f6b3a', '#1d3a6b', '#e0a33a', '#b3261e'].forEach((col, i) => { xx.fillStyle = col; xx.fillRect(i * 128 / 6, 0, 128 / 6, 64); }); return { map: tex(c), roughness: .4 }; });
+    add(g, lathe([[R0, -L / 2], [Rm * .95, -L / 4], [Rm, 0], [Rm * .95, L / 4], [R1, L / 2]], 28), shell, 0, Rm, 0, 0, 0, Math.PI / 2);
+    const skin = std('dhol_skin', () => ({ color: '#d7c2a0', roughness: .85, side: THREE.DoubleSide }));
+    add(g, new THREE.CircleGeometry(R0, 24), skin, -L / 2, Rm, 0, 0, -Math.PI / 2); add(g, new THREE.CircleGeometry(R1, 24), skin, L / 2, Rm, 0, 0, Math.PI / 2);
+    for (let k = 0; k < 10; k++) { const a = k / 10 * Math.PI * 2; add(g, taperedTube([[-L / 2 + .01, Rm + Math.sin(a) * R0, Math.cos(a) * R0], [0, Rm + Math.sin(a + .3) * Rm * 1.01, Math.cos(a + .3) * Rm * 1.01], [L / 2 - .01, Rm + Math.sin(a + .6) * R1, Math.cos(a + .6) * R1]], .0025, .0025, 8, 4), std('dhol_rope', () => ({ color: '#d9cdb2', roughness: .9 }))); }
+    return g;
+  }
+  const juteBraid = std('jute_braid', () => { const c = canvas(64, 64), x = c.getContext('2d'); x.fillStyle = FIBRE.jute; x.fillRect(0, 0, 64, 64); for (let y = 0; y < 64; y += 8) for (let i = 0; i < 64; i += 8) { x.fillStyle = 'rgba(90,60,25,.35)'; x.beginPath(); x.ellipse(i + 4, y + 4, 3.5, 2, ((y / 8) % 2 ? .6 : -.6), 0, 7); x.fill(); } return { map: tex(c, { repeat: [6, 3] }), roughness: .95 }; });
+
   if (want('BEL_UTHAN')) {
     const g = item('BEL_UTHAN'), CX = 15.65, CZ = -16.08;   // steel column COL07 (survey, photo-estimated) at the room centre
     // bot-tola: a seat platform of handmade terracotta around the column, oak top at seat height (free-standing, not fixed to the steel)
@@ -965,91 +1163,79 @@ export function buildBengalEarthLab(THREE, { zones = null, drinkware = [], aniso
     footprint(10.75, -15.22, 11.45, -14.74); shade('Z07', 10.78, -15.2, 11.42, -14.76, .3);
     standingCard(g, ['Artisan corner', 'Demonstrations by invitation, never as a spectacle', 'Quiet crafts only: dusty work stays in the workshop', 'Option A only'], 11.2, .36, -14.83, .25, { w: .22, h: .13 });
   }
-  if (want('BEL_ROOMSET_LIVING')) {
-    const g = item('BEL_ROOMSET_LIVING');   // south-west corner; fire extinguisher at x 9.35-9.52, z -12.80..-12.60 stays clear
-    box(g, wovenMaterial('rug_jute', 'twill', '#cdb68a', [14, 10]), 11.5, RUG, -12.55, 2.6, .01, 1.9);
-    const sofa = new THREE.Group(); sofa.position.set(11.5, 0, -11.42); sofa.rotation.y = Math.PI; g.add(sofa);
-    const upholstery = wovenMaterial('upholstery_khadi', 'plain', '#d8ccb4', [10, 10]), W = 2.1, D = .88;
-    add(sofa, merged([B(W, .12, D, 0, .1, 0), ...[[-1, -1], [1, -1], [-1, 1], [1, 1]].map(([a, b]) => B(.05, .1, .05, a * (W / 2 - .06), 0, b * (D / 2 - .06)))]), M.wood);
-    add(sofa, merged([B(.15, .32, D, -(W / 2 - .075), .22, 0), B(.15, .32, D, W / 2 - .075, .22, 0), B(W, .5, .14, 0, .22, -D / 2 + .07)]), upholstery);
-    for (let k = 0; k < 3; k++) { const cx = -W / 2 + .15 + (W - .3) * (k + .5) / 3; add(sofa, pillowGeometry((W - .3) / 3 - .02, D - .2, .16), upholstery, cx, .32, .06, -Math.PI / 2, 0, 0); add(sofa, pillowGeometry((W - .3) / 3 - .03, .44, .16), upholstery, cx, .6, -D / 2 + .2, -.14, 0, 0); }
-    add(sofa, pillowGeometry(.42, .42, .13), handloomCushion, -.62, .58, -.14, -.3, .25, 0); add(sofa, pillowGeometry(.4, .4, .13), textileMat('indigo_plain', (x, w, h) => { x.fillStyle = '#2f4363'; x.fillRect(0, 0, w, h); x.fillStyle = '#e8e0cf'; for (const y of [.14, .2, .8, .86]) x.fillRect(0, h * y, w, h * .015); }, [256, 256]), .64, .58, -.14, -.3, -.25, 0);
-    footprint(10.43, -11.88, 12.57, -10.95); shade('Z07', 10.4, -11.9, 12.6, -10.95, .5);
-    const ct = new THREE.Group(); ct.position.set(11.5, 0, -12.5); g.add(ct); add(ct, tableWood(1.0, .55, .4), M.wood); box(ct, cane, 0, .1, 0, .88, .014, .43);
-    basket(ct, -.25, .4, 0, { r: .1, h: .1, kind: 'coil', fibre: 'kaisa' }); add(ct, lathe([[0, 0], [.05, 0], [.08, .06], [.06, .14], [.035, .17], [.04, .18], [.03, .18], [0, .16]], 28), M.clayCream, .22, .4, .05);
-    footprint(10.98, -12.8, 12.02, -12.2); shade('Z07', 11.0, -12.78, 12.0, -12.22, .4);
-    caneArmchair(g, 13.08, -12.55, -Math.PI / 2 - .25); footprint(12.68, -12.95, 13.48, -12.15); shade('Z07', 12.72, -12.92, 13.45, -12.18, .45);
-    floorLamp(g, 12.86, -11.25); footprint(12.7, -11.4, 13.0, -11.1);
-    const st = new THREE.Group(); st.position.set(10.1, 0, -11.3); g.add(st); add(st, tableWood(.42, .42, .5), M.wood); bambooLamp(st, 0, .5, 0, { r: .08, h: .22 }); footprint(9.87, -11.53, 10.33, -11.07);
-    basket(g, 12.84, 0, -11.75, { r: .17, h: .34, kind: 'twill', fibre: 'jute', handles: true });
-    const fr = new THREE.Group(); fr.position.set(11.5, 1.25, -10.885); fr.rotation.y = Math.PI; g.add(fr);   // local z -.015 = the wall face
-    box(fr, M.wood, 0, 0, 0, .96, .66, .03); add(fr, new THREE.PlaneGeometry(.86, .56), textileMat('kantha_living', (x, w, h) => drawKantha(x, w, h, 11), [384, 250]), 0, .33, .017);
-    signStand(g, ['Bengal Nordic · living', 'Mango wood, cane, jute and handloom', 'Illustrative room-set · option A'], 10.0, -13.85, Math.PI / 2);
+  // the circular knitwear studio around the Uthan: wear, remake, repair, return (option A only)
+  if (want('BEL_CIRCLE_WEAR')) {
+    const g = item('BEL_CIRCLE_WEAR');   // south-west corner; the fire extinguisher on the west wall (x 9.35-9.52, z -12.80..-12.60) stays clear
+    const bamboo = (x0, z0, x1, z1, y = 1.5) => {   // a free-standing bamboo rail on oak feet, from (x0, z0) to (x1, z1)
+      const len = Math.hypot(x1 - x0, z1 - z0), a = Math.atan2(z1 - z0, x1 - x0);
+      for (const [x, z] of [[x0, z0], [x1, z1]]) { add(g, new THREE.CylinderGeometry(.018, .02, y + .03, 10), M.bamboo, x, (y + .03) / 2, z); box(g, M.oak, x, 0, z, .07, .03, .42, -a); }
+      add(g, new THREE.CylinderGeometry(.014, .014, len + .06, 10), M.bamboo, (x0 + x1) / 2, y, (z0 + z1) / 2, 0, -a, Math.PI / 2);
+    };
+    const wear = [[KN.ecru, 'tee'], [KN.recNavy, 'sweat'], [KN.oat, 'tee'], [KN.recGrey, 'sweat'], [KN.indigo, 'tee'], [KN.moss, 'sweat'], [KN.ecruRib, 'tee'], [KN.recRed, 'tee'], [KN.charcoal, 'sweat'], [KN.juteBlend, 'tee'], [KN.recOlive, 'sweat'], [KN.madder, 'tee']];
+    bamboo(9.95, -11.38, 12.05, -11.38);   // along the solid south wall (face z -10.87): garments hang side-on, sleeves clear of the wall
+    wear.forEach(([m, k], i) => hangingGarment(g, 10.08 + i * .165, 1.5, -11.38, Math.PI / 2, m, k));
+    footprint(9.9, -11.78, 12.1, -10.98); shade('Z07', 9.9, -11.75, 12.1, -11.0, .45);
+    bamboo(12.86, -11.4, 12.86, -12.95);   // a second rail at right angles, garments facing the room
+    for (let i = 0; i < 9; i++) hangingGarment(g, 12.86, 1.5, -11.55 - i * .165, 0, wear[(i + 5) % wear.length][0], wear[(i + 3) % wear.length][1]);
+    footprint(12.45, -13.15, 13.27, -11.2); shade('Z07', 12.47, -13.1, 13.25, -11.25, .45);
+    const lt = new THREE.Group(); lt.position.set(11.0, 0, -12.55); g.add(lt); add(lt, tableWood(1.2, .6, .45), M.wood);
+    foldedStack(lt, -.38, .45, 0, [KN.ecru, KN.oat, KN.juteBlend], .05); foldedStack(lt, 0, .45, .02, [KN.recNavy, KN.recGrey, KN.indigo], -.06); foldedStack(lt, .38, .45, 0, [KN.recRed, KN.madder], .1);
+    footprint(10.38, -12.87, 11.62, -12.23); shade('Z07', 10.4, -12.85, 11.6, -12.25, .4);
+    signStand(g, ['1 · Wear', 'Knitwear in earth and recycled fabrics', 'Made to last: durability tests to come', 'Illustrative garments · option A'], 10.0, -13.85, Math.PI / 2);
   }
-  if (want('BEL_ROOMSET_DINING')) {
-    const g = item('BEL_ROOMSET_DINING');   // north-west corner
-    box(g, wovenMaterial('rug_hogla', 'plain', FIBRE.hogla, [16, 12]), 11.85, RUG, -19.5, 2.8, .01, 2.2);
-    const TX = 11.85, TZ = -19.5, TH = .75; const t = new THREE.Group(); t.position.set(TX, 0, TZ); g.add(t); add(t, tableWood(1.8, .9, TH), M.wood);
+  if (want('BEL_CIRCLE_REMAKE')) {
+    const g = item('BEL_CIRCLE_REMAKE');   // north-west corner: a sorting table, sacks of offcuts along the west wall, recycled yarn on a low shelf
+    const TX = 11.85, TZ = -19.5, TH = .86; const t = new THREE.Group(); t.position.set(TX, 0, TZ); g.add(t); add(t, tableWood(1.8, .9, TH), M.wood);
+    basketLamp(g, TX, 1.66, TZ, { r: .32, h: .28, top: 2.59 });   // hung from the steel above the table (underside y 2.59, probed)
     footprint(TX - .92, TZ - .47, TX + .92, TZ + .47); shade('Z07', TX - .9, TZ - .45, TX + .9, TZ + .45, .4);
-    const seats = [-.6, 0, .6].flatMap(dx => [[TX + dx, 0, TZ - .68, 0], [TX + dx, 0, TZ + .68, Math.PI]]);
-    instances(g, chairWood, M.wood, seats); instances(g, chairCane, cane, seats);
-    for (const [x, , z] of seats) { footprint(x - .23, z - .23, x + .23, z + .23); shade('Z07', x - .22, z - .22, x + .22, z + .22, .3); }
-    for (const [x, , z, ry] of seats) {
-      const pz = z + (ry ? -.36 : .36);   // the place setting on the table edge in front of each chair box(t, wovenMaterial('mat_hogla', 'twill', FIBRE.hogla, [3, 2]), x - TX, TH, pz - TZ, .4, .006, .28);
-      clayPlate(t, x - TX, TH + .006, pz - TZ, .12); cup(t, x - TX + .17, TH + .006, pz - TZ + (ry ? -.06 : .06), 'tumbler'); }
-    jug(t, -.2, TH, 0, .5); add(t, lathe([[0, 0], [.08, 0], [.16, .05], [.17, .09], [.15, .09], [.07, .03], [0, .03]], 36), M.clay, .25, TH, 0);
-    const pend = new THREE.Group(); pend.position.set(TX, 1.62, TZ); g.add(pend);
-    add(pend, lathe([[.02, .28], [.12, .26], [.24, .14], [.29, 0], [.27, 0], [.22, .12], [.11, .24], [.02, .26]], 40), wovenMaterial('cane_shade', 'lattice', FIBRE.cane, [8, 3]));
-    const bulb = new THREE.MeshBasicMaterial({ name: 'bel_bulb', color: '#ffe2b0' }); materials.push(bulb); add(pend, new THREE.SphereGeometry(.05, 16, 10), bulb, 0, .14, 0);
-    add(pend, new THREE.CylinderGeometry(.003, .003, 2.895 - 1.9, 4), std('cord', () => ({ color: '#2a2a2a', roughness: .6 })), 0, .28 + (2.895 - 1.9) / 2, 0);
-    // sideboard along the west wall (solid to 1.22 m)
-    const sb = new THREE.Group(); sb.position.set(9.6, 0, -19.9); sb.rotation.y = Math.PI / 2; g.add(sb);
-    add(sb, merged([B(2.0, .66, .44, 0, .12, 0), ...[[-1, -1], [1, -1], [-1, 1], [1, 1]].map(([a, b]) => B(.05, .12, .05, a * .94, 0, b * .18))]), M.wood);
-    for (let k = 0; k < 4; k++) add(sb, new THREE.PlaneGeometry(.44, .56), cane, -.72 + k * .48, .45, .221);
-    add(sb, lathe([[0, 0], [.07, 0], [.11, .1], [.1, .22], [.05, .32], [.06, .36], [.045, .36], [0, .3]], 32), M.clayRaw, -.6, .78, 0);
-    add(sb, lathe([[0, 0], [.05, 0], [.08, .06], [.06, .2], [.07, .26], [.055, .26], [0, .24]], 32), M.clay, -.35, .78, 0);
-    basket(sb, .4, .78, 0, { r: .14, h: .14, kind: 'plait', fibre: 'hyacinth' }); bambooLamp(sb, .78, .78, 0, { r: .07, h: .2 });
-    footprint(9.36, -20.92, 9.84, -18.88); shade('Z07', 9.36, -20.9, 9.84, -18.9, .45);
-    signStand(g, ['River to Home · dining', 'Hogla, water hyacinth and terracotta', 'Illustrative room-set · option A'], 13.45, -18.05, Math.PI * .8);
+    const sorted = [['#3d5170', '#4a5f80', '#33445f'], ['#8f4a3a', '#a35a48', '#7a3d30'], ['#8e8b86', '#a9a59e', '#6f6c68'], ['#6f7a4c', '#86905f', '#5a6340']];
+    sorted.forEach((cols, i) => { const x = -.6 + i * .4; basket(t, x, TH, -.2, { r: .14, h: .12, kind: 'twill', fibre: 'hogla' }); offcutHeap(t, x, TH + .07, -.2, { r: .13, h: .07, n: 70, colors: cols, seed: 640 + i }); });
+    offcutHeap(t, .1, TH, .18, { r: .3, h: .06, n: 160, colors: ['#3d5170', '#8f4a3a', '#8e8b86', '#6f7a4c', '#e6dccb', '#c9a565'], seed: 650 });   // the mixed pile still to sort
+    [[9.78, -20.55, 0], [9.78, -20.0, 1], [9.78, -19.45, 2]].forEach(([x, z, i]) => { juteSack(g, x, z, { r: .19, h: .46 }); offcutHeap(g, x, .4, z, { r: .18, h: .1, n: 100, colors: sorted[i], seed: 660 + i }); footprint(x - .21, z - .21, x + .21, z + .21); shade('Z07', x - .2, z - .2, x + .2, z + .2, .35); });
+    const sh = new THREE.Group(); sh.position.set(11.7, 0, -21.07); g.add(sh);   // low shelf on the solid lower part of the north wall (glass above 1.22 m)
+    add(sh, merged([B(1.9, .03, .38, 0, 0, 0), B(1.9, .03, .38, 0, .42, 0), B(1.9, .03, .38, 0, .84, 0), B(.03, .87, .38, -.95, 0, 0), B(.03, .87, .38, .95, 0, 0)]), M.wood);
+    [KN.recNavy, KN.recRed, KN.recGrey, KN.recOlive, KN.recNavy, KN.recGrey].forEach((m, i) => yarnCone(sh, -.75 + i * .2, .87, 0, m));
+    fabricRoll(sh, -.45, .45, 0, KN.recGrey, { len: .8, r: .07 }); fabricRoll(sh, .45, .45, 0, KN.recNavy, { len: .8, r: .065 });
+    for (let k = 0; k < 3; k++) box(sh, wovenMaterial('bale_jute', 'plain', FIBRE.jute, [3, 2]), -.6 + k * .6, .03, 0, .5, .3, .32);
+    footprint(10.73, -21.27, 12.67, -20.86); shade('Z07', 10.75, -21.27, 12.65, -20.88, .4);
+    signStand(g, ['2 · Remake', 'Cutting waste (jhut) sorted by colour', 'and spun into new yarn', 'Partners to be identified · option A'], 13.45, -18.05, Math.PI * .8);
   }
-  if (want('BEL_ROOMSET_BEDROOM')) {
-    const g = item('BEL_ROOMSET_BEDROOM');   // headboard on the north wall (solid to 1.22 m, glass above to the hallway)
-    const BX = 16.15, BZ = -20.17, linen = std('linen', () => ({ color: '#ece6da', roughness: .9, map: weaveMap('plain', [10, 10]) }));
-    const quilt = textileMat('quilt_offcuts', (x, w, h) => { const r = rng(79), cols = ['#8a5a4a', '#4a5a72', '#b8a070', '#6f7558', '#d9cdb4', '#9c7a62', '#5a5a60', '#b89a78', '#7d8a9c', '#cfc2a8', '#e2d8c4'];
-      for (let j = 0; j < 14; j++) { let X = 0; while (X < w) { const ww = w * (.04 + r() * .08); x.fillStyle = cols[Math.floor(r() * cols.length)]; x.fillRect(X, j * h / 14, ww, h / 14); X += ww; } }
-      stitch(x, w, 'rgba(245,238,225,.85)'); for (let y = h / 40; y < h; y += h / 22) { x.beginPath(); x.moveTo(0, y); x.lineTo(w, y + (r() - .5) * 4); x.stroke(); } x.setLineDash([]); });
-    box(g, textileMat('rag_rug', (x, w, h) => { const r = rng(89), cols = ['#8a5a4a', '#4a5a72', '#b8a070', '#6f7558', '#cfc2a8', '#9c7a62', '#5a5a60']; for (let j = 0; j < 48; j++) { x.fillStyle = cols[Math.floor(r() * cols.length)]; x.fillRect(0, j * h / 48, w, h / 48 + 1); }
-      x.fillStyle = 'rgba(40,30,20,.25)'; for (let j = 0; j < 48; j++) for (let i = 0; i < w; i += w / 64) x.fillRect(i, j * h / 48, w / 200, h / 48); }, [256, 256]), BX, RUG, -18.95, 2.0, .012, 1.15);
-    const bed = new THREE.Group(); bed.position.set(BX, 0, BZ); g.add(bed);
-    add(bed, merged([B(1.72, .26, 2.1, 0, .1, 0), ...[[-1, -1], [1, -1], [-1, 1], [1, 1]].map(([a, b]) => B(.06, .1, .06, a * .8, 0, b * .99))]), M.wood);
-    box(bed, linen, 0, .36, 0, 1.6, .2, 2.0);
-    add(bed, merged([B(1.76, .03, 1.2, 0, .56, .42), B(.02, .26, 1.2, -.87, .33, .42), B(.02, .26, 1.2, .87, .33, .42), B(1.76, .26, .02, 0, .33, 1.02)]), quilt);
-    for (const s of [-1, 1]) add(bed, pillowGeometry(.62, .4, .14), linen, s * .38, .64, -.78, -1.2, 0, 0);
-    add(bed, pillowGeometry(.42, .42, .13), quilt, -.2, .7, -.55, -1.0, .2, 0);
-    const hb = new THREE.Group(); hb.position.set(0, 0, -1.07); bed.add(hb);
-    add(hb, merged([B(.06, 1.15, .06, -.9, 0, 0), B(.06, 1.15, .06, .9, 0, 0), B(1.86, .06, .06, 0, 1.12, 0), B(1.86, .05, .05, 0, .42, 0)]), M.wood);
-    add(hb, new THREE.PlaneGeometry(1.74, .68), cane, 0, .79, .01);
-    footprint(BX - .88, -21.25, BX + .88, -19.1); shade('Z07', BX - .87, -21.25, BX + .87, -19.1, .45);
-    for (const s of [-1, 1]) { const nx = BX + s * 1.12, n = new THREE.Group(); n.position.set(nx, 0, -20.98); g.add(n); add(n, merged([B(.44, .5, .38, 0, 0, 0)]), M.wood);
-      add(n, new THREE.PlaneGeometry(.38, .14), cane, 0, .36, .191); bambooLamp(n, 0, .5, 0, { r: .075, h: .2 }); footprint(nx - .23, -21.2, nx + .23, -20.77); shade('Z07', nx - .22, -21.2, nx + .22, -20.78, .35); }
-    signStand(g, ['Second Life Bangladesh · bedroom', 'Kantha patchwork from garment offcuts', 'Illustrative room-set · option A'], 14.55, -18.75, Math.PI * .25);
+  if (want('BEL_CIRCLE_REPAIR')) {
+    const g = item('BEL_CIRCLE_REPAIR');   // a mending table by the north wall (solid to 1.22 m, glass above to the hallway)
+    const TX = 16.15, TZ = -20.25, TH = .74; const t = liveEdgeTable(g, TX, TZ, { len: 1.7, w: .7, h: TH, seed: 7 });   // a live-edge slab on hairpin legs
+    footprint(TX - .87, TZ - .4, TX + .87, TZ + .4); shade('Z07', TX - .85, TZ - .36, TX + .85, TZ + .36, .4);
+    for (const dx of [-.55, 0, .55]) { woodSliceStool(g, TX + dx, TZ + .6, { r: .17, h: .46 }); shade('Z07', TX + dx - .17, TZ + .43, TX + dx + .17, TZ + .77, .3); }
+    basketLamp(g, TX, 1.62, TZ, { r: .3, h: .26 });
+    foldedStack(t, -.5, TH, .05, [KN.charcoal, mendMat('charcoal', '#45474a', '#8e8b86', 5)], .1);
+    foldedStack(t, .55, TH, .02, [mendMat('madder', '#8f4a3a', '#d6c7a8', 7)], -.15);
+    const hoop = new THREE.Group(); hoop.position.set(.05, TH + .012, .02); t.add(hoop);
+    add(hoop, new THREE.CircleGeometry(.14, 32), textileMat('kantha_hoop', (x, w, h) => drawKantha(x, w, h, 21), [256, 256]), 0, .002, 0, -Math.PI / 2);
+    add(hoop, new THREE.TorusGeometry(.145, .008, 8, 36), M.oak, 0, .006, 0, Math.PI / 2);
+    [['#8f4a3a', -.25], ['#2f4a6b', -.18], ['#c9a565', -.11], ['#efe5cf', -.04]].forEach(([col, dz]) => add(t, new THREE.CylinderGeometry(.014, .014, .035, 12), std('thread_' + col, () => ({ color: col, roughness: .8 })), .3, TH + .0175, dz - .1));
+    const kp = new THREE.Group(); kp.position.set(14.75, .58, -21.265); g.add(kp);   // a kantha panel on the solid lower wall
+    box(kp, M.wood, 0, -.3, .01, .86, .6, .02); add(kp, new THREE.PlaneGeometry(.78, .52), textileMat('kantha_repair', (x, w, h) => drawKantha(x, w, h, 23), [384, 256]), 0, 0, .021);
+    signStand(g, ['3 · Repair', 'Kantha: the Bengal tradition of', 'stitching old cloth into new use', 'Embroiderers paid and credited · option A'], 14.55, -18.75, Math.PI * .25);
   }
-  if (want('BEL_ROOMSET_HOSPITALITY')) {
-    const g = item('BEL_ROOMSET_HOSPITALITY');   // along the solid south wall (behind it: the experience-centre bays)
+  if (want('BEL_CIRCLE_RETURN')) {
+    const g = item('BEL_CIRCLE_RETURN');   // along the solid south wall (behind it: the experience-centre bays); the east strip to door D49 stays clear
     const hang = new THREE.Group(); hang.position.set(16.4, .82, -10.885); hang.rotation.y = Math.PI; g.add(hang);
     add(hang, new THREE.PlaneGeometry(2.4, 1.28), textileMat('kantha_hanging', (x, w, h) => drawKantha(x, w, h, 13), [768, 410]), 0, .66, .004);
     add(hang, new THREE.CylinderGeometry(.018, .018, 2.55, 12), M.bamboo, 0, 1.32, .025, 0, 0, Math.PI / 2);
     standingCard(g, ['Nakshi kantha', 'By a rural embroiderer: placeholder,', 'to be commissioned, paid and credited'], 17.75, 0, -11.12, Math.PI + .3, { w: .18, h: .1 });
     box(g, wovenMaterial('rug_jute_hosp', 'twill', '#bfa577', [12, 7]), 16.4, RUG, -11.95, 2.5, .01, 1.45);
-    caneArmchair(g, 15.55, -12.0, Math.PI - .35); caneArmchair(g, 17.25, -12.0, Math.PI + .35);
+    bambooArmchair(g, 15.55, -12.0, Math.PI - .35); bambooArmchair(g, 17.25, -12.0, Math.PI + .35);
     for (const x of [15.55, 17.25]) { footprint(x - .4, -12.4, x + .4, -11.6); shade('Z07', x - .38, -12.38, x + .38, -11.62, .45); }
-    const rt = new THREE.Group(); rt.position.set(16.4, 0, -11.75); g.add(rt);
-    add(rt, new THREE.CylinderGeometry(.32, .32, .035, 40), std('jute_composite_top', () => ({ color: '#b39463', roughness: .7, map: weaveMap('twill', [4, 4]) })), 0, .405, 0);
-    for (let k = 0; k < 3; k++) { const a = k / 3 * Math.PI * 2 + .5; add(rt, new THREE.CylinderGeometry(.016, .02, .4, 10), M.bamboo, Math.cos(a) * .2, .2, Math.sin(a) * .2); }
-    cup(rt, -.08, .42, .05, 'teacup', M.clayCream); cup(rt, .1, .42, -.04, 'teacup', M.clayCream); teapot(rt, 0, .42, .12, .6);
+    const rt = hourglassTable(g, 16.4, -11.75, { r: .34, h: .48 });   // bent bamboo slats, after the owner's reference
+    cup(rt, -.08, .48, .05, 'teacup', M.clayCream); cup(rt, .1, .48, -.04, 'teacup', M.clayCream); teapot(rt, 0, .48, .12, .6);
     footprint(16.06, -12.09, 16.74, -11.41); shade('Z07', 16.08, -12.07, 16.72, -11.43, .35);
-    kashVase(g, 14.45, -11.35); kashVase(g, 18.45, -11.3, .5);
-    signStand(g, ['Future of Bengal · hospitality', 'Cane, bamboo and jute composite for hotels', 'Illustrative room-set · option A'], 14.05, -12.6, Math.PI * .2);
+    kashVase(g, 18.45, -11.3, .5);
+    [['Repair', [KN.charcoal, KN.indigo]], ['Resell', [KN.oat, KN.moss]], ['Recycle', [KN.recGrey, KN.madder]]].forEach(([label, mats], i) => {   // take-back sacks, labels facing the room
+      const x = 18.98 + i * .48, z = -11.17; juteSack(g, x, z, { r: .19, h: .5 }); foldedStack(g, x, .44, z, mats, i * .4);
+      add(g, new THREE.PlaneGeometry(.15, .07), card([label], { w: .15, h: .07, scale: .6 }), x, .36, z - .2, 0, Math.PI);
+      footprint(x - .21, z - .21, x + .21, z + .21); shade('Z07', x - .2, z - .2, x + .2, z + .2, .35);
+    });
+    signStand(g, ['4 · Return', 'Worn knitwear comes back:', 'repair, resell or recycle', 'Take-back pilot to be designed · option A'], 20.2, -11.5, Math.PI * 1.2);   // beside door D49, clear of its swing
+    signStand(g, ['Circular knitwear studio', '1 Wear · 2 Remake · 3 Repair · 4 Return', 'Around the Green Uthan', 'Option A only'], 21.75, -14.5, -Math.PI / 2);   // by the east wall, facing the room; the walking strip x 19.85-21.55 stays clear
   }
   if (want('BEL_ACADEMY')) {
     const g = item('BEL_ACADEMY');   // inside the glass accounts suite: every partition and door stays (D50 entrance, D51 to the north corridor)
@@ -1059,25 +1245,23 @@ export function buildBengalEarthLab(THREE, { zones = null, drinkware = [], aniso
     for (const [x, , z] of desks) { footprint(x - .77, z - .32, x + .77, z + .32); shade('Z06', x - .75, z - .3, x + .75, z + .3, .4); }
     for (const [x, , z] of seats) { footprint(x - .23, z - .23, x + .23, z + .23); shade('Z06', x - .21, z - .21, x + .21, z + .21, .28); }
     for (const [x, , z] of desks) for (const dx of [-.37, .37]) { const k = Math.round((x + dx) * 10 + z) % 3;
-      if (k === 0) swatch(g, x + dx, .74, z - .05, 'jute', 'twill', .13, .2); else if (k === 1) add(g, new THREE.PlaneGeometry(.21, .28), std('notebook', () => ({ color: '#efe8da', roughness: .9 })), x + dx, .742, z - .02, -Math.PI / 2, 0, .15); else swatch(g, x + dx, .74, z - .05, 'hogla', 'plain', .12, -.15); }
+      if (k === 1) add(g, new THREE.PlaneGeometry(.21, .28), std('notebook', () => ({ color: '#efe8da', roughness: .9 })), x + dx, .742, z - .02, -Math.PI / 2, 0, .15);
+      else add(g, scaleUV(new THREE.BoxGeometry(.13, .005, .13), .13, .13), k ? KN.recNavy : KN.ecru, x + dx, .7425, z - .05, 0, k ? -.15 : .2); }
     // teaching zone at the north glass: demonstration bench with a hands camera, a mobile screen, a pin-up board
     const db = new THREE.Group(); db.position.set(5.1, 0, -16.6); db.rotation.y = Math.PI; g.add(db);
     add(db, tableWood(2.0, .7, .9), M.oak); box(db, M.wood, 0, .12, 0, 1.86, .02, .56);
     add(db, merged([B(.04, .8, .04, .8, .9, .3), B(.04, .04, .5, .8, 1.68, .08)]), std('steel_dark', () => ({ color: '#2e2e30', metalness: .6, roughness: .45 }))); box(db, std('cam_body', () => ({ color: '#151515', roughness: .4 })), .8, 1.6, -.15, .09, .07, .12);
-    const fl = new THREE.Group(); fl.position.set(-.35, .9, 0); db.add(fl);
-    for (const s of [-1, 1]) box(fl, M.oak, s * .2, 0, 0, .025, .32, .025); box(fl, M.oak, 0, .3, 0, .43, .02, .02); box(fl, M.oak, 0, .06, 0, .43, .02, .02);
-    for (let k = 0; k < 13; k++) add(fl, new THREE.CylinderGeometry(.0012, .0012, .24, 4), std('warp', () => ({ color: '#e7dcc4', roughness: .8 })), -.18 + k * .03, .18, 0);
-    add(fl, new THREE.PlaneGeometry(.38, .08), wovenMaterial('jute_band', 'twill', FIBRE.jute, [3, 1]), 0, .11, .003);
+    sewingMachine(db, -.3, .9, .02, 0); foldedStack(db, -.3, .95, .14, [KN.recNavy], 0);   // a knit piece under the presser foot
     for (const [dx, col] of [[.2, '#8f4a3a'], [.32, '#c9a565'], [.44, '#3d5170']]) add(db, new THREE.CylinderGeometry(.035, .05, .17, 20), std('cone_' + col, () => ({ color: col, roughness: .9, map: weaveMap('coil', [3, 6]) })), dx, .985, .1);
-    basket(db, -.75, .9, .05, { r: .13, h: .16, kind: 'coil', fibre: 'jute' });
+    basket(db, -.78, .9, .05, { r: .13, h: .14, kind: 'twill', fibre: 'hogla' }); offcutHeap(db, -.78, .99, .05, { r: .12, h: .05, n: 60, colors: ['#3d5170', '#8f4a3a', '#8e8b86'], seed: 680 });
     footprint(4.07, -16.97, 6.13, -16.23); shade('Z06', 4.1, -16.95, 6.1, -16.25, .45);
     const scr = new THREE.Group(); scr.position.set(3.35, 0, -16.95); g.add(scr);
     add(scr, merged([B(.6, .03, .5, 0, 0, 0), B(.06, 1.75, .06, 0, .03, -.05)]), std('steel_dark', () => ({})));
     box(scr, std('screen_bezel', () => ({ color: '#111', roughness: .35 })), 0, .95, .0, 1.47, .85, .05);
     const slide = std('lesson_slide', () => { const c = canvas(px(640), px(360)), x = c.getContext('2d'), W = c.width, H = c.height; x.fillStyle = '#f3ede2'; x.fillRect(0, 0, W, H);
-      x.fillStyle = '#3c2a1e'; x.font = `600 ${H * .085}px system-ui, sans-serif`; x.fillText('Lesson 1 · From fibre to product', W * .06, H * .17);
+      x.fillStyle = '#3c2a1e'; x.font = `600 ${H * .085}px system-ui, sans-serif`; x.font = `600 ${H * .075}px system-ui, sans-serif`; x.fillText('Lesson 1 · Fibre to garment, and back', W * .06, H * .17);
       x.fillStyle = '#9c5534'; x.fillRect(W * .06, H * .22, W * .1, H * .012);
-      [['Fibre', '#c9a565'], ['Technique', '#8f4a3a'], ['Prototype', '#3d5170'], ['Test', '#6f7a4c']].forEach(([t, col], i) => { const X = W * (.06 + i * .23); x.fillStyle = col; x.fillRect(X, H * .36, W * .19, H * .3); x.fillStyle = '#fff'; x.font = `500 ${H * .06}px system-ui, sans-serif`; x.fillText(t, X + W * .02, H * .53);
+      [['Fibre', '#c9a565'], ['Yarn', '#8f4a3a'], ['Knit', '#3d5170'], ['Reuse', '#6f7a4c']].forEach(([t, col], i) => { const X = W * (.06 + i * .23); x.fillStyle = col; x.fillRect(X, H * .36, W * .19, H * .3); x.fillStyle = '#fff'; x.font = `500 ${H * .06}px system-ui, sans-serif`; x.fillText(t, X + W * .02, H * .53);
         if (i < 3) { x.fillStyle = '#3c2a1e'; x.fillText('›', X + W * .2, H * .53); } });
       x.fillStyle = '#5b4636'; x.font = `400 ${H * .05}px system-ui, sans-serif`; x.fillText('Illustrative lesson · Design Education Academy (option A)', W * .06, H * .85);
       const t = tex(c, { clamp: true }); return { map: t, emissive: '#ffffff', emissiveMap: t, emissiveIntensity: .55, roughness: .4 }; });
@@ -1086,13 +1270,14 @@ export function buildBengalEarthLab(THREE, { zones = null, drinkware = [], aniso
     const pin = new THREE.Group(); pin.position.set(6.95, 0, -16.95); g.add(pin);
     add(pin, merged([B(.04, 1.75, .04, -.42, 0, 0), B(.04, 1.75, .04, .42, 0, 0), B(.9, .04, .3, 0, 0, 0)]), M.oak);
     box(pin, std('felt_board', () => ({ color: '#6f6658', roughness: 1, map: weaveMap('plain', [6, 8]) })), 0, .55, 0, .82, 1.15, .03);
-    [['jute', 'twill'], ['cane', 'lattice'], ['hyacinth', 'plait'], ['hogla', 'plain'], ['bamboo', 'twill'], ['kaisa', 'coil']].forEach(([f, k], i) => add(pin, new THREE.PlaneGeometry(.17, .17), wovenMaterial(`sw_${f}${k}`, k, FIBRE[f], [2, 2]), -.25 + (i % 3) * .25, 1.42 - Math.floor(i / 3) * .25, .017));
+    [KN.ecru, KN.recNavy, KN.juteBlend, KN.recGrey, KN.indigo, KN.recRed].forEach((m, i) => add(pin, scaleUV(new THREE.PlaneGeometry(.17, .17), .17, .17), m, -.25 + (i % 3) * .25, 1.42 - Math.floor(i / 3) * .25, .017));
     add(pin, new THREE.PlaneGeometry(.36, .25), std('sketch', () => ({ color: '#f4efe4', roughness: .9 })), -.15, .82, .017); add(pin, new THREE.PlaneGeometry(.25, .3), textileMat('kantha_pin', (x, w, h) => drawKantha(x, w, h, 17), [192, 230]), .22, .8, .017);
     footprint(6.48, -17.12, 7.42, -16.78); shade('Z06', 6.5, -17.1, 7.4, -16.8, .35);
     // materials shelf at the south end, tutor room in the old discussion room
     const sh = new THREE.Group(); sh.position.set(5.35, 0, -6.08); sh.rotation.y = Math.PI; g.add(sh);
     add(sh, merged([B(2.0, .03, .34, 0, 0, 0), B(2.0, .03, .34, 0, .4, 0), B(2.0, .03, .34, 0, .8, 0), B(2.0, .03, .34, 0, 1.17, 0), B(.03, 1.2, .34, -1.0, 0, 0), B(.03, 1.2, .34, 1.0, 0, 0)]), M.wood);
-    basket(sh, -.7, .03, 0, { r: .14, h: .2, kind: 'twill', fibre: 'jute' }); basket(sh, -.25, .03, 0, { r: .13, h: .2, kind: 'plait', fibre: 'hyacinth' }); basket(sh, .3, .03, 0, { r: .14, h: .18, kind: 'coil', fibre: 'kaisa' });
+    foldedStack(sh, -.7, .03, 0, [KN.ecru, KN.oat, KN.juteBlend]); foldedStack(sh, -.25, .03, 0, [KN.recNavy, KN.recGrey]);
+    basket(sh, .3, .03, 0, { r: .14, h: .18, kind: 'twill', fibre: 'hogla' }); offcutHeap(sh, .3, .16, 0, { r: .13, h: .05, n: 60, colors: ['#6f7a4c', '#8f4a3a', '#8e8b86'], seed: 690 });
     for (let k = 0; k < 8; k++) box(sh, std('book_' + (k % 4), () => ({ color: ['#8f4a3a', '#3d5170', '#c9a565', '#6f7a4c'][k % 4], roughness: .8 })), -.8 + k * .07, .43, 0, .05, .26, .2);
     for (const [dx, col] of [[.25, '#8f4a3a'], [.37, '#c9a565'], [.49, '#3d5170'], [.61, '#6f7a4c']]) add(sh, new THREE.CylinderGeometry(.035, .05, .17, 20), std('cone_' + col, () => ({ color: col, roughness: .9, map: weaveMap('coil', [3, 6]) })), dx, .915, 0);
     tile(sh, -.6, .83, 0, .12); tile(sh, -.42, .83, 0, .12, .3); bambooLamp(sh, .75, .43, 0, { r: .08, h: .24 });
@@ -1104,93 +1289,98 @@ export function buildBengalEarthLab(THREE, { zones = null, drinkware = [], aniso
     standingCard(g, ['Tutor room', 'One-to-one sessions and course planning'], 8.85, .74, -6.55, Math.PI + .3, { w: .16, h: .07 });
     signStand(g, ['Design Education Academy', 'Option A only: if the accounts team moves', '20 seats shown; the fire engineer sets', 'the capacity, not this drawing'], 3.3, -8.15, -.25);
   }
-  // ---------------------------------------------------------------- the design wing (every option): making line, library, lab, workshop
+  // ---------------------------------------------------------------- the design wing (every option): making line, fibre library, fabric lab, remake and repair
   if (want('BEL_MAKING_LINE')) {
     // the solid south wall of the corridor's north strip (face z -21.4104; the strip's north side and the corridor are glass)
     const g = item('BEL_MAKING_LINE'), WZ = -21.4104, LY = .98, xs = [22.85, 23.5, 24.15, 24.8, 25.45, 26.1];
     for (const x of xs) box(g, M.oak, x, LY, WZ - .066, .6, .03, .13);
     footprint(22.5, WZ - .14, 26.42, WZ);
     const step = (i, lines) => add(g, new THREE.PlaneGeometry(.5, .26), card(lines, { w: .5, h: .26, scale: 1.1 }), xs[i], 1.47, WZ - .004, 0, Math.PI);
-    const Y = LY + .03, Z = WZ - .07;
-    for (let k = 0; k < 9; k++) add(g, new THREE.BoxGeometry(.5, .005, .02), wovenMaterial('hogla_leaf', 'plain', FIBRE.hogla, [6, 1]), xs[0], Y + .003 + Math.floor(k / 3) * .006, Z + (k % 3 - 1) * .022, 0, (k - 4) * .02);
-    add(g, new THREE.TorusGeometry(.04, .006, 6, 20), std('band', () => ({ color: '#6b4a2b', roughness: .9 })), xs[0] - .12, Y + .012, Z, Math.PI / 2);
-    for (let k = 0; k < 3; k++) add(g, new THREE.TorusGeometry(.05 - k * .005, .008, 8, 28), std('hogla_rope', () => ({ color: FIBRE.hogla, roughness: .9, map: weaveMap('coil', [8, 1]) })), xs[1] - .14 + k * .14, Y + .008, Z, Math.PI / 2);
-    const fr = new THREE.Group(); fr.position.set(xs[2], Y, Z); fr.rotation.y = Math.PI; g.add(fr); box(fr, M.wood, 0, 0, 0, .3, .02, .1);   // faces the strip box(fr, M.wood, 0, .02, -.03, .28, .2, .02);
-    add(fr, new THREE.PlaneGeometry(.24, .16), wovenMaterial('hogla_mat', 'twill', FIBRE.hogla, [3, 1.2]), 0, .12, -.019);
-    basket(g, xs[3], Y, Z, { r: .1, h: .14, kind: 'twill', fibre: 'hogla', handles: true });
-    add(g, new THREE.PlaneGeometry(.05, .03), card(['prototype'], { w: .05, h: .03, scale: .4 }), xs[3] + .12, Y + .1, Z + .02, 0, Math.PI - .3);
-    basket(g, xs[4], Y, Z, { r: .1, h: .14, kind: 'twill', fibre: 'hogla', handles: true, ry: .6 });
-    basket(g, xs[5] - .08, Y, Z, { r: .11, h: .13, kind: 'twill', fibre: 'hogla' }); basket(g, xs[5] - .08, Y + .012, Z, { r: .08, h: .13, kind: 'twill', fibre: 'hogla' }); basket(g, xs[5] + .14, Y, Z, { r: .06, h: .09, kind: 'plait', fibre: 'hyacinth' });
-    step(0, ['1 · Raw material', 'Hogla leaves, cut and sun-dried']); step(1, ['2 · Preparation', 'Twisted into rope']); step(2, ['3 · Technique', 'Coiling and stitching']);
-    step(3, ['4 · Prototype', 'Form, size and handles']); step(4, ['5 · Testing', 'Moisture, mould, strength', 'Records to be added']); step(5, ['6 · Collection', 'River to Home (illustrative)']);
+    const Y = LY + .03, Z = WZ - .07, small = (x, mats) => { const f = new THREE.Group(); f.position.set(x, Y, Z); f.scale.setScalar(.5); g.add(f); foldedStack(f, 0, 0, 0, mats, .1); };
+    // 1 fibre: cotton bolls, a jute hank, a tuft recovered from cutting waste
+    cottonStems(g, xs[0] - .17, Y, Z, { n: 2, h: .26, seed: 9 });
+    add(g, new THREE.CylinderGeometry(.03, .04, .22, 16, 1), FB.juteHank, xs[0] + .02, Y + .11, Z);
+    fibreHeap(g, xs[0] + .18, Y, Z, .045, FB.jhutNavy, 701);
+    // 2 yarn: cotton, a jute and cotton blend, a recycled melange
+    yarnCone(g, xs[1] - .16, Y, Z, coneMat('#efe8da')); yarnCone(g, xs[1], Y, Z, coneMat('#c7ae7c')); yarnCone(g, xs[1] + .16, Y, Z, KN.recNavy);
+    // 3 knit fabric: a roll of recycled jersey and a rib swatch
+    fabricRoll(g, xs[2] - .08, Y, Z, KN.recNavy, { len: .3, r: .045 }); add(g, scaleUV(new THREE.BoxGeometry(.16, .005, .1), .16, .1), KN.ecruRib, xs[2] + .17, Y + .0025, Z, 0, .1);
+    // 4 cut and sew: a cut front panel pinned to the wall, its offcuts kept and sorted
+    add(g, new THREE.ShapeGeometry(garmentOutline('tee'), 6), KN.recNavy, xs[3] - .06, 1.315, WZ - .006, 0, Math.PI).scale.setScalar(.4);
+    offcutHeap(g, xs[3] + .16, Y, Z, { r: .05, h: .03, n: 30, colors: ['#3f4c66', '#55688a', '#33445f'], seed: 702 });
+    // 5 test: the knitted tee beside its (empty) test card
+    small(xs[4] - .14, [KN.recNavy]); standingCard(g, ['Test', 'Durability: to be measured', 'Records to be added'], xs[4] + .14, Y, Z + .01, Math.PI, { w: .16, h: .09 });
+    // 6 wear and return: the tee mended in kantha stitch, with its take-back tag
+    small(xs[5] - .12, [mendMat('navy', '#3f4c66', '#8a97ad', 9)]); standingCard(g, ['Take-back'], xs[5] + .13, Y, Z + .01, Math.PI, { w: .09, h: .045 });
+    step(0, ['1 · Fibre', 'Cotton, jute, and fibre', 'recovered from cutting waste']); step(1, ['2 · Yarn', 'Spun from one fibre or a blend', 'Spinner to be identified']); step(2, ['3 · Knit fabric', 'Single jersey and rib']);
+    step(3, ['4 · Cut and sew', 'Offcuts kept, sorted by colour']); step(4, ['5 · Test', 'Durability: GSM, shrinkage,', 'colourfastness: to add']); step(5, ['6 · Wear and return', 'Mended in kantha stitch;', 'at the end, back to fibre']);
     const tc = canvas(px(1280), px(64)), tx = tc.getContext('2d'); tx.fillStyle = '#b88c5c'; tx.fillRect(0, 0, tc.width, tc.height); tx.fillStyle = '#3c2a1e'; tx.font = `600 ${tc.height * .46}px system-ui, 'Segoe UI', sans-serif`; tx.textBaseline = 'middle';
-    tx.fillText('The making line · from rural hands to global homes · one basket in six steps (illustrative)', tc.width * .02, tc.height * .54);
+    tx.fillText('The making line · ecodesign from fibre to garment and back · one T-shirt in six steps (illustrative)', tc.width * .02, tc.height * .54);
     add(g, new THREE.PlaneGeometry(3.9, .195), std('making_title', () => ({ map: tex(tc, { clamp: true }), roughness: .6 })), (xs[0] + xs[5]) / 2, 1.9, WZ - .004, 0, Math.PI);
   }
   if (want('BEL_MATERIALS_LIBRARY')) {
     const g = item('BEL_MATERIALS_LIBRARY');   // low shelf F132 top 0.7112 (x 22.25-22.61, z -9.41..-6.74); review table F134 top 0.9144, D65 booth at x 23.98-24.79
-    const T = .7112, X = 22.43, fibres = [['jute', 'twill', 'Jute'], ['hogla', 'plain', 'Hogla'], ['cane', 'lattice', 'Cane'], ['bamboo', 'twill', 'Bamboo'], ['hyacinth', 'plait', 'Water hyacinth'], ['kaisa', 'coil', 'Kaisa grass'], ['coconut', null, 'Coconut shell'], ['terracotta', null, 'Terracotta']];
-    fibres.forEach(([f, k, name], i) => {
+    const T = .7112, X = 22.43;
+    [[FB.cotton, 'Cotton'], [FB.jhutNavy, 'Jhut (recycled)'], [FB.usedMix, 'Used garments'], [FB.jute, 'Jute'], [FB.banana, 'Banana · R&D'], [FB.pineapple, 'Pineapple · R&D'], [FB.indigo, 'Indigo · R&D'], [null, 'Coconut buttons']].forEach(([mat, name], i) => {
       const z = -9.25 + i * .32, b = new THREE.Group(); b.position.set(X, T, z); g.add(b);
-      const side = k ? wovenMaterial(`box_${f}`, k, FIBRE[f], [2, 1]) : f === 'coconut' ? std('coconut_shell', () => ({ color: '#5a3b24', roughness: .7, map: M.bark.map })) : M.terracotta;
       add(b, merged([B(.3, .14, .015, 0, 0, -.135), B(.3, .14, .015, 0, 0, .135), B(.015, .14, .27, -.143, 0, 0), B(.015, .14, .27, .143, 0, 0), B(.3, .012, .3, 0, 0, 0)]), M.oak);
-      add(b, new THREE.BoxGeometry(.27, .1, .25), side, 0, .07, 0);
+      if (mat) fibreHeap(b, 0, .012, 0, .1, mat, 720 + i);
+      else for (let k = 0; k < 14; k++) add(b, new THREE.CylinderGeometry(.012, .012, .004, 18), std('coconut_button', () => ({ color: '#4f3422', roughness: .35 })), -.09 + (k % 5) * .045, .016 + Math.floor(k / 5) * .002, -.06 + Math.floor(k / 5) * .06, (k % 3 - 1) * .2, 0, (k % 2 - .5) * .3);
       add(b, new THREE.PlaneGeometry(.2, .05), card([name], { w: .2, h: .05, scale: .6 }), .152, .07, 0, 0, Math.PI / 2);
     });
-    const RT = .9144; [[24.97, -9.2, .1], [24.97, -8.88, -.05], [23.8, -9.15, .08]].forEach(([x, z, ry], i) =>
-      add(g, new THREE.PlaneGeometry(.15, .21), card(['Material Passport', ['Material: hogla', 'Material: jute', 'Material: cane'][i], 'Origin: to be documented', 'Maker: to be identified', 'Tests: none yet'], { w: .15, h: .21, scale: .8 }), x, RT + .002, z, -Math.PI / 2, 0, ry));
-    add(g, new THREE.TorusGeometry(.04, .005, 8, 24), std('brass', () => ({ color: '#b08d57', metalness: .8, roughness: .35 })), 23.8, RT + .006, -8.7, Math.PI / 2);
-    add(g, new THREE.CylinderGeometry(.008, .008, .09, 8), M.wood, 23.8 + .07, RT + .008, -8.66, Math.PI / 2, .5, 0);
+    const RT = .9144; [[24.97, -9.2, .1, 'Fibre: recycled cotton (jhut)'], [24.97, -8.88, -.05, 'Fibre: cotton'], [23.8, -9.15, .08, 'Fibre: jute and cotton, R&D']].forEach(([x, z, ry, fibre]) =>
+      add(g, new THREE.PlaneGeometry(.15, .21), card(['Product passport', fibre, 'Origin: to be documented', 'Recycled share: to certify', 'Durability tests: none yet', 'Repair and care: to write', 'Recyclability: to assess'], { w: .15, h: .21, scale: .8 }), x, RT + .002, z, -Math.PI / 2, 0, ry));
+    standingCard(g, ['Product passport · concept', 'Ready for the EU ecodesign rules', 'for apparel, still being drafted'], 23.85, RT, -8.72, Math.PI / 2, { w: .19, h: .09 });
   }
   if (want('BEL_TEST_LAB')) {
     const g = item('BEL_TEST_LAB'); const T = .7874, X = 22.56;   // post-processing bench F143 (terrazzo top 0.7874), x 22.25-22.88, z -14.87..-12.06
-    const clear = std('clear_box', () => ({ color: '#e8f0f2', roughness: .1, transparent: true, opacity: .35, depthWrite: false }));
-    [['jute', 'twill'], ['hogla', 'plain'], ['cane', 'lattice'], ['hyacinth', 'plait']].forEach(([f, k], i) => {
-      const z = -14.55 + i * .3; swatch(g, X, T, z, f, k, .14, i * .2);
-      add(g, new THREE.BoxGeometry(.22, .16, .22), clear, X, T + .08, z);
-      add(g, new THREE.PlaneGeometry(.1, .03), card([`Sample ${i + 1}`], { w: .1, h: .03, scale: .4 }), X + .111, T + .12, z, 0, Math.PI / 2);
+    const marked = (key, base) => std('shrink_' + key, () => { const s = px(128), c = canvas(s, s), x = c.getContext('2d'); x.fillStyle = base; x.fillRect(0, 0, s, s);   // a knit swatch marked for wash shrinkage
+      x.globalCompositeOperation = 'multiply'; x.scale(1 / 3, 1 / 3); x.fillStyle = x.createPattern(knitTile('jersey'), 'repeat'); x.fillRect(0, 0, s * 3, s * 3); x.setTransform(1, 0, 0, 1, 0, 0); x.globalCompositeOperation = 'source-over';
+      x.strokeStyle = '#f4efe4'; x.lineWidth = s / 90; x.strokeRect(s * .15, s * .15, s * .7, s * .7); for (const [a, b] of [[.15, .15], [.85, .15], [.15, .85], [.85, .85]]) { x.beginPath(); x.arc(s * a, s * b, s / 40, 0, 7); x.stroke(); }
+      return { map: tex(c, { clamp: true }), roughness: .95 }; });
+    [['ecru', '#e9e1d0'], ['navy', '#3f4c66'], ['jute', '#c7ae7c'], ['grey', '#8e8b86']].forEach(([k, col], i) => {
+      const z = -14.62 + i * .27; add(g, new THREE.BoxGeometry(.18, .005, .18), marked(k, col), X - .02, T + .0025, z, 0, (i - 1.5) * .06);
+      add(g, new THREE.PlaneGeometry(.08, .025), card([`Sample ${i + 1}`], { w: .08, h: .025, scale: .35 }), X + .22, T + .002, z, -Math.PI / 2, 0, Math.PI / 2);
     });
+    const cutter = new THREE.Group(); cutter.position.set(X, T, -13.55); g.add(cutter);   // a round GSM cutter
+    add(cutter, new THREE.CylinderGeometry(.08, .08, .02, 32), std('cutter_pad', () => ({ color: '#3a3d40', roughness: .6 })), 0, .01, 0);
+    add(cutter, new THREE.CylinderGeometry(.052, .052, .05, 32), std('steel', () => ({ color: '#c8c8c8', metalness: .8, roughness: .3 })), 0, .045, 0);
+    add(cutter, new THREE.CylinderGeometry(.01, .01, .12, 10), std('machine_dark', () => ({ color: '#2e2e30', roughness: .4 })), 0, .1, 0, 0, 0, Math.PI / 2);
     box(g, std('scale_body', () => ({ color: '#dfe2e4', roughness: .4 })), X, T, -13.2, .24, .05, .26); box(g, std('lcd', () => ({ color: '#1b1f22', roughness: .3 })), X + .121, T + .015, -13.2, .002, .025, .08);
-    box(g, std('meter_body', () => ({ color: '#e0b43a', roughness: .5 })), X, T, -12.9, .07, .03, .15); for (const dz of [-.015, .015]) add(g, new THREE.CylinderGeometry(.002, .002, .05, 6), std('steel', () => ({ color: '#c8c8c8', metalness: .8, roughness: .3 })), X, T + .015, -12.9 - .1 + dz, Math.PI / 2, 0, 0);
-    add(g, new THREE.PlaneGeometry(.21, .29), card(['Test log', 'Moisture and mould', 'Method: to agree with an accredited lab', 'Records to be added'], { w: .21, h: .29, scale: .9 }), X, T + .004, -12.48, -Math.PI / 2, 0, -.1);
-    standingCard(g, ['Materials lab', 'No results shown until tests are done'], X + .2, T, -12.2, Math.PI / 2, { w: .18, h: .07 });
+    const gs = canvas(px(256), px(96)), gx = gs.getContext('2d'); gx.fillStyle = '#f4efe4'; gx.fillRect(0, 0, gs.width, gs.height);   // grey scale for colourfastness
+    for (let k = 0; k < 9; k++) { const v = Math.round(70 + k * 20); gx.fillStyle = `rgb(${v},${v},${v})`; gx.fillRect(gs.width * (.05 + k * .1), gs.height * .2, gs.width * .09, gs.height * .45); }
+    gx.fillStyle = '#3c2a1e'; gx.font = `500 ${gs.height * .16}px system-ui, sans-serif`; gx.fillText('Grey scale · colourfastness', gs.width * .05, gs.height * .88);
+    add(g, new THREE.PlaneGeometry(.2, .075), std('grey_scale', () => ({ map: tex(gs, { clamp: true }), roughness: .7 })), X, T + .002, -12.88, -Math.PI / 2, 0, Math.PI / 2);
+    add(g, new THREE.PlaneGeometry(.21, .29), card(['Durability test log', 'GSM · shrinkage · spirality', 'Colourfastness · pilling', 'Method: to agree with an accredited lab', 'Records to be added'], { w: .21, h: .29, scale: .9 }), X, T + .004, -12.48, -Math.PI / 2, 0, -.1);
+    standingCard(g, ['Fabric lab', 'No results shown until tests are done'], X + .2, T, -12.2, Math.PI / 2, { w: .18, h: .07 });
   }
   if (want('BEL_PROTOTYPE_WORKSHOP')) {
     const g = item('BEL_PROTOTYPE_WORKSHOP'); const T = .9145, X = 25.53;   // pattern table F151 top 0.9145, x 24.92-26.14, z -20.52..-18.08; steam station F155 top 0.8636
-    add(g, lathe([[0, 0], [.13, 0], [.12, .2], [.1, .22], [0, .22]], 32), M.wood, X, T, -19.85);
-    basket(g, X, T + .02, -19.85, { r: .15, h: .22, kind: 'lattice', fibre: 'cane', partial: .55 });
-    for (let k = 0; k < 9; k++) box(g, M.bamboo, X - .1 + (k % 3) * .03, T + Math.floor(k / 3) * .012, -19.15, .02, .01, .9, (k - 4) * .01);
-    add(g, new THREE.TorusGeometry(.17, .007, 8, 40), std('cane_coil', () => ({ color: FIBRE.cane, roughness: .5 })), X - .05, T + .007, -18.45, Math.PI / 2);
-    const mallet = new THREE.Group(); mallet.position.set(X + .35, T, -18.55); mallet.rotation.y = .6; g.add(mallet);
-    add(mallet, new THREE.CylinderGeometry(.035, .035, .1, 16), M.wood, 0, .035, 0, 0, 0, Math.PI / 2); add(mallet, new THREE.CylinderGeometry(.01, .01, .25, 8), M.oak, 0, .035, .13, Math.PI / 2, 0, 0);
-    standingCard(g, ['Prototype workshop', 'Cane and bamboo', 'Dust extraction: to be engineered'], X - .45, T, -18.35, Math.PI / 2, { w: .18, h: .09 });
-    // a dust-extraction hood over the table, marked as not yet designed
-    const hood = std('hood_steel', () => ({ color: '#b9bec2', metalness: .55, roughness: .45 }));
-    add(g, new THREE.CylinderGeometry(.12, .45, .3, 4, 1, true), std('hood_steel_2s', () => ({ color: '#b9bec2', metalness: .55, roughness: .45, side: THREE.DoubleSide })), X, 2.0, -19.3, 0, Math.PI / 4, 0);   // capture 0.64 m square at 1.85 m
-    add(g, new THREE.CylinderGeometry(.09, .09, 2.895 - 2.15, 16), hood, X, (2.15 + 2.895) / 2, -19.3);
-    add(g, new THREE.PlaneGeometry(.34, .08), card(['Dust extraction: to be engineered'], { w: .34, h: .08, scale: .8 }), X + .335, 1.95, -19.3, 0, Math.PI / 2);
-    // steam bending: a cane strip around a pegged board on the steam station
-    const jig = new THREE.Group(); jig.position.set(23.62, .8636, -15.47); g.add(jig); box(jig, M.oak, 0, 0, 0, .5, .025, .3);
-    for (let k = 0; k < 6; k++) { const a = Math.PI * (k / 5); add(jig, new THREE.CylinderGeometry(.008, .008, .06, 8), M.wood, Math.cos(a) * .16, .055, -Math.sin(a) * .1 + .05); }
-    add(jig, new THREE.TorusGeometry(.15, .006, 6, 24, Math.PI), std('cane_coil', () => ({})), 0, .045, .05, -Math.PI / 2, 0, 0);
+    patternPieces(g, X - .05, T, -19.75, Math.PI / 2, .85);   // a tee pattern in kraft paper
+    [['#3d5170', '#4a5f80'], ['#8f4a3a', '#a35a48'], ['#8e8b86', '#a9a59e']].forEach((cols, i) => offcutHeap(g, X - .32 + i * .3, T, -18.95, { r: .11, h: .05, n: 50, colors: cols, seed: 730 + i }));
+    const pieced = textileMat('pieced_offcuts', (x, w, h) => { const r = rng(83), cols = ['#3f4c66', '#55688a', '#8f4a3a', '#a35a48', '#8e8b86', '#6f7a4c', '#d6c7a8', '#45474a'];
+      for (let j = 0; j < 6; j++) { let X0 = 0; while (X0 < w) { const ww = w * (.1 + r() * .18); x.fillStyle = cols[Math.floor(r() * cols.length)]; x.fillRect(X0, j * h / 6, ww, h / 6); X0 += ww; } }
+      x.strokeStyle = 'rgba(245,238,225,.9)'; x.lineWidth = Math.max(1.5, w / 170); x.setLineDash([w / 70, w / 110]); for (let y = h / 12; y < h; y += h / 6) { x.beginPath(); x.moveTo(0, y); x.lineTo(w, y + (r() - .5) * 3); x.stroke(); } x.setLineDash([]); }, [256, 200]);
+    add(g, new THREE.PlaneGeometry(.5, .4), pieced, X - .12, T + .002, -18.42, -Math.PI / 2, 0, .05);
+    foldedStack(g, X + .32, T, -18.4, [mendMat('charcoal', '#45474a', '#8e8b86', 5)], .2);
+    standingCard(g, ['Remake and repair', 'Offcuts pieced into panels', 'Repairs in kantha stitch'], X - .45, T, -18.3, Math.PI / 2, { w: .18, h: .09 });
+    foldedStack(g, 23.62, .8636, -15.47, [KN.ecru, KN.recNavy], .1);   // pressed on the steam station, ready for the fit review
   }
   // ---------------------------------------------------------------- pilot rooms: academy annex, staff and artisan dining, records room
   if (want('BEL_ACADEMY_ANNEX')) {
     const g = item('BEL_ACADEMY_ANNEX'); const T = .7493;   // training table F219 (top 0.7493): x 23.55-25.98, z -34.24..-33.32; six chairs on its long sides
     [23.99, 24.77, 25.53].forEach((x, i) => { for (const [z, s] of [[-34.0, 1], [-33.56, -1]]) {
-      swatch(g, x, T, z, ['jute', 'hogla', 'cane'][i], ['twill', 'plain', 'lattice'][i], .12, s * .1);
+      add(g, scaleUV(new THREE.BoxGeometry(.12, .005, .12), .12, .12), [KN.ecru, KN.recNavy, KN.juteBlend][i], x, T + .0025, z, 0, s * .1);
       add(g, new THREE.PlaneGeometry(.15, .21), std('notebook', () => ({ color: '#efe8da', roughness: .9 })), x + .16, T + .002, z, -Math.PI / 2, 0, s * .12); } });
-    const fl = new THREE.Group(); fl.position.set(24.77, T, -33.78); g.add(fl);
-    for (const s of [-1, 1]) box(fl, M.oak, s * .2, 0, 0, .025, .32, .025); box(fl, M.oak, 0, .3, 0, .43, .02, .02); box(fl, M.oak, 0, .05, 0, .43, .02, .02);
-    for (let k = 0; k < 13; k++) add(fl, new THREE.CylinderGeometry(.0012, .0012, .24, 4), std('warp', () => ({ color: '#e7dcc4', roughness: .8 })), -.18 + k * .03, .18, 0);
-    add(fl, new THREE.PlaneGeometry(.38, .09), wovenMaterial('jute_band', 'twill', FIBRE.jute, [3, 1]), 0, .11, .003);
+    foldedStack(g, 24.72, T, -33.78, [KN.oat, mendMat('madder', '#8f4a3a', '#d6c7a8', 7)], .15);   // the mending kit: a tee mended in kantha stitch and thread
+    [['#8f4a3a', -.06], ['#2f4a6b', 0], ['#c9a565', .06]].forEach(([col, dz]) => add(g, new THREE.CylinderGeometry(.014, .014, .035, 12), std('thread_' + col, () => ({ color: col, roughness: .8 })), 24.98, T + .0175, -33.78 + dz));
     [['#8f4a3a', -.06], ['#c9a565', .06]].forEach(([col, dz]) => add(g, new THREE.CylinderGeometry(.035, .05, .17, 20), std('cone_' + col, () => ({ color: col, roughness: .9, map: weaveMap('coil', [3, 6]) })), 23.72, T + .085, -33.78 + dz));
-    standingCard(g, ['Academy annex · pilot', 'A class of six at this table', 'Fibres, weaves and finishes'], 25.85, T, -33.78, Math.PI / 2, { w: .18, h: .09 });
+    standingCard(g, ['Academy annex · pilot', 'A class of six at this table', 'Fibre, knit and repair'], 25.85, T, -33.78, Math.PI / 2, { w: .18, h: .09 });
     // craft wall on the solid west wall (face x 22.2513), clear of the screen (z -36.40..-34.72)
     const cw = new THREE.Group(); cw.position.set(22.262, 1.0, -33.25); cw.rotation.y = Math.PI / 2; g.add(cw);
     box(cw, std('felt_board', () => ({ color: '#6f6658', roughness: 1, map: weaveMap('plain', [6, 8]) })), 0, 0, .012, 1.5, .95, .024);
-    [['jute', 'twill'], ['cane', 'lattice'], ['hyacinth', 'plait'], ['hogla', 'plain'], ['bamboo', 'twill'], ['kaisa', 'coil']].forEach(([f, k], i) =>
-      add(cw, new THREE.PlaneGeometry(.17, .17), wovenMaterial(`sw_${f}${k}`, k, FIBRE[f], [2, 2]), -.55 + (i % 3) * .22, .7 - Math.floor(i / 3) * .24, .026));
+    [KN.ecru, KN.recNavy, KN.juteBlend, KN.recGrey, KN.ecruRib, KN.recRed].forEach((m, i) =>
+      add(cw, scaleUV(new THREE.PlaneGeometry(.17, .17), .17, .17), m, -.55 + (i % 3) * .22, .7 - Math.floor(i / 3) * .24, .026));
     add(cw, new THREE.PlaneGeometry(.36, .25), std('sketch', () => ({ color: '#f4efe4', roughness: .9 })), .35, .66, .026);
     add(cw, new THREE.PlaneGeometry(.3, .36), textileMat('kantha_pin', (x, w, h) => drawKantha(x, w, h, 17), [192, 230]), .4, .26, .026);
     add(cw, new THREE.PlaneGeometry(.44, .12), card(['Craft wall · student work (illustrative)'], { w: .44, h: .12, scale: 1 }), -.33, .14, .026);
@@ -1213,8 +1403,8 @@ export function buildBengalEarthLab(THREE, { zones = null, drinkware = [], aniso
   }
   if (want('BEL_RECORDS_ROOM')) {
     const g = item('BEL_RECORDS_ROOM'); const T = .7493;   // audit table F073 (top 0.7493): x 3.68-5.21, z -21.16..-20.24; north wall solid (face z -22.6323)
-    ['01 Water', '02 Energy', '03 Makers', '04 Materials', '05 Tests'].forEach((t, i) => {
-      const x = 3.95 + i * .26, b = new THREE.Group(); b.position.set(x, T, -20.98); g.add(b);
+    ['01 Fibre', '02 Recycled', '03 Tests', '04 Water', '05 Energy', '06 Makers'].forEach((t, i) => {
+      const x = 3.9 + i * .22, b = new THREE.Group(); b.position.set(x, T, -20.98); g.add(b);
       box(b, std('box_file', () => ({ color: '#3d4a42', roughness: .7 })), 0, 0, 0, .08, .32, .28);
       add(b, new THREE.PlaneGeometry(.06, .2), card([t], { w: .06, h: .2, scale: .5 }), 0, .17, .141);
     });
@@ -1222,65 +1412,185 @@ export function buildBengalEarthLab(THREE, { zones = null, drinkware = [], aniso
     const ic = canvas(px(600), px(840)), ix = ic.getContext('2d'), W = ic.width, H = ic.height; ix.fillStyle = '#f4efe4'; ix.fillRect(0, 0, W, H);
     ix.fillStyle = '#3c2a1e'; ix.font = `600 ${W * .07}px system-ui, sans-serif`; ix.fillText('The Open Record', W * .07, H * .1);
     ix.font = `400 ${W * .036}px system-ui, sans-serif`; ix.fillStyle = '#5b4636'; ix.fillText('Every claim on this floor, its evidence and its status', W * .07, H * .15);
-    [['Claim', 'Evidence', 'Status'], ['Drinking water quality', 'Dated lab reports', 'None yet'], ['Solar generation', 'Metered data', 'Not connected'], ['Makers paid and credited', 'Agreements, receipts', 'To be collected'],
-     ['Material origins', 'Supplier documents', 'To be collected'], ['Product tests', 'Accredited lab reports', 'None yet'], ['Glaze safety', 'Lead and cadmium tests', 'None yet']].forEach((row, r) => {
-      const y = H * (.25 + r * .095); ix.font = `${r ? 400 : 600} ${W * .036}px system-ui, sans-serif`;
-      row.forEach((c, k) => { ix.fillStyle = k === 2 && r ? '#9c3b2a' : '#3c2a1e'; ix.fillText(c, W * [.07, .45, .76][k], y); });
+    [['Claim', 'Evidence', 'Status'], ['Fibre origins', 'Supplier papers', 'To be collected'], ['Recycled content', 'Certificates', 'None yet'], ['Durability tests', 'Accredited lab', 'None yet'],
+     ['Product passport', 'Passport data set', 'To prepare'], ['Drinking water', 'Dated lab reports', 'None yet'], ['Solar generation', 'Metered data', 'Not connected'],
+     ['Makers paid, credited', 'Agreements, receipts', 'To be collected'], ['Glaze safety', 'Lead, cadmium tests', 'None yet']].forEach((row, r) => {
+      const y = H * (.25 + r * .075); ix.font = `${r ? 400 : 600} ${W * .03}px system-ui, sans-serif`;
+      row.forEach((c, k) => { ix.fillStyle = k === 2 && r ? '#9c3b2a' : '#3c2a1e'; ix.fillText(c, W * [.05, .4, .72][k], y); });
       ix.fillStyle = 'rgba(60,40,25,.2)'; ix.fillRect(W * .07, y + W * .02, W * .86, 2);
     });
-    ix.fillStyle = '#5b4636'; ix.font = `400 ${W * .032}px system-ui, sans-serif`; ix.fillText('Originals are kept in this room and shown on request.', W * .07, H * .93);
+    ix.fillStyle = '#5b4636'; ix.font = `400 ${W * .028}px system-ui, sans-serif`; ix.fillText('Passport fields follow the EU apparel rules once adopted.', W * .05, H * .91); ix.fillText('Originals are kept in this room and shown on request.', W * .05, H * .95);
     const fr = new THREE.Group(); fr.position.set(4.3, 1.5, -22.62); g.add(fr);
     box(fr, M.oak, 0, -.45, .01, .66, .9, .02); add(fr, new THREE.PlaneGeometry(.6, .84), std('open_record', () => ({ map: tex(ic, { clamp: true }), roughness: .8 })), 0, 0, .021);
     standingCard(g, ['Records room', 'The originals behind every claim', 'Open to auditors and buyers on request'], 5.05, T, -20.35, 0, { w: .2, h: .1 });
   }
-  // ---------------------------------------------------------------- pilot rooms: Lab B (digital product design), buyer project room
+  // ---------------------------------------------------------------- pilot rooms: buyer project room (the approved CAD dressing stays in Z14)
   const screenMat = (key, draw) => std('screen_' + key, () => { const c = canvas(px(640), px(360)), x = c.getContext('2d'); draw(x, c.width, c.height);
     const t = tex(c, { clamp: true }); return { map: t, emissive: '#ffffff', emissiveMap: t, emissiveIntensity: .6, roughness: .35 }; });
-  function basketDrawing(x, cx, cy, s, col, lw) {   // front view of a tapered basket with handles (line art)
-    x.strokeStyle = col; x.lineWidth = lw; x.beginPath(); x.ellipse(cx, cy - s * .5, s * .5, s * .1, 0, 0, 7); x.stroke();
-    x.beginPath(); x.moveTo(cx - s * .5, cy - s * .5); x.lineTo(cx - s * .38, cy + s * .45); x.moveTo(cx + s * .5, cy - s * .5); x.lineTo(cx + s * .38, cy + s * .45); x.stroke();
-    x.beginPath(); x.ellipse(cx, cy + s * .45, s * .38, s * .07, 0, 0, Math.PI); x.stroke();
-    for (let k = 1; k < 6; k++) { const t = k / 6, hw = s * (.5 - .12 * t); x.beginPath(); x.ellipse(cx, cy - s * .5 + t * s * .95, hw, s * (.1 - .03 * t), 0, 0, Math.PI); x.stroke(); }
-    for (const sgn of [-1, 1]) { x.beginPath(); x.arc(cx + sgn * s * .5, cy - s * .38, s * .08, Math.PI / 2 * (sgn > 0 ? -1 : 1), Math.PI / 2 * (sgn > 0 ? 1 : 3)); x.stroke(); }
-  }
-  if (want('BEL_DIGITAL_LAB')) {
-    const g = item('BEL_DIGITAL_LAB');   // wall screen F129 (face z -6.4707, x 24.42-25.87, y 1.07-1.88); layout table F127 top 0.9145 (x 24.49-26.31, z -4.17..-2.95); pinboard F130 face z -0.2972
-    add(g, new THREE.PlaneGeometry(1.4, .77), screenMat('cad_basket', (x, w, h) => {
-      x.fillStyle = '#1f2a33'; x.fillRect(0, 0, w, h); x.strokeStyle = 'rgba(120,160,190,.18)'; x.lineWidth = 1;
-      for (let i = 0; i < w * .66; i += w / 32) { x.beginPath(); x.moveTo(i, 0); x.lineTo(i, h); x.stroke(); } for (let j = 0; j < h; j += w / 32) { x.beginPath(); x.moveTo(0, j); x.lineTo(w * .66, j); x.stroke(); }
-      basketDrawing(x, w * .33, h * .52, h * .62, '#d8c49a', w / 300);
-      x.fillStyle = '#26323c'; x.fillRect(w * .68, 0, w * .32, h); x.fillStyle = '#e8eef2'; x.font = `600 ${h * .065}px system-ui, sans-serif`; x.fillText('Basket B-01', w * .71, h * .14);
-      x.font = `400 ${h * .05}px system-ui, sans-serif`; ['Material: hogla', 'Weave: twill', 'Handles: cane', 'Size: to be set', 'Tests: none yet'].forEach((t, i) => x.fillText(t, w * .71, h * (.27 + i * .1)));
-      x.fillStyle = '#9fb3c2'; x.font = `400 ${h * .042}px system-ui, sans-serif`; x.fillText('Lab B · digital product design (illustrative)', w * .02, h * .95); }), 25.145, 1.475, -6.462);
-    const T = .9145, sheet = std('tech_drawing', () => { const c = canvas(px(560), px(394)), x = c.getContext('2d'), W = c.width, H = c.height; x.fillStyle = '#f6f2ea'; x.fillRect(0, 0, W, H);
-      x.strokeStyle = '#3c2a1e'; x.lineWidth = W / 400; x.strokeRect(W * .02, H * .03, W * .96, H * .94); basketDrawing(x, W * .3, H * .5, H * .58, '#3c2a1e', W / 420);
-      x.beginPath(); x.ellipse(W * .72, H * .45, H * .28, H * .28, 0, 0, 7); x.stroke(); x.beginPath(); x.ellipse(W * .72, H * .45, H * .21, H * .21, 0, 0, 7); x.stroke();
-      x.setLineDash([W / 120, W / 160]); x.beginPath(); x.moveTo(W * .1, H * .82); x.lineTo(W * .5, H * .82); x.moveTo(W * .56, H * .82); x.lineTo(W * .88, H * .82); x.stroke(); x.setLineDash([]);
-      x.fillStyle = '#3c2a1e'; x.font = `600 ${H * .055}px system-ui, sans-serif`; x.fillText('Basket B-01 · technical drawing', W * .05, H * .1);
-      x.font = `400 ${H * .04}px system-ui, sans-serif`; x.fillText('Front and top views · dimensions to be set · illustrative', W * .05, H * .92); return { map: tex(c, { clamp: true }), roughness: .9 }; });
-    add(g, new THREE.PlaneGeometry(.84, .59), sheet, 25.4, T + .002, -3.56, -Math.PI / 2, 0, .04);
-    box(g, std('ruler', () => ({ color: '#d9d4c8', roughness: .5 })), 25.05, T + .002, -3.1, .5, .004, .04, .1);
-    add(g, new THREE.CylinderGeometry(.004, .004, .17, 8), std('pencil', () => ({ color: '#c9a565', roughness: .6 })), 25.95, T + .006, -3.2, Math.PI / 2, .6, 0);
-    swatch(g, 25.95, T, -3.85, 'hogla', 'twill', .13, .2);
-    standingCard(g, ['Lab B · digital product design', 'CAD for natural-fibre products'], 24.7, T, -3.05, -.45, { w: .18, h: .07 });
-    // pinboard: fibre swatches, colour chips, a sketch
-    const pb = new THREE.Group(); pb.position.set(24.75, 0, -.305); pb.rotation.y = Math.PI; g.add(pb);
-    [['jute', 'twill'], ['hogla', 'plain'], ['cane', 'lattice'], ['hyacinth', 'plait']].forEach(([f, k], i) => add(pb, new THREE.PlaneGeometry(.17, .17), wovenMaterial(`sw_${f}${k}`, k, FIBRE[f], [2, 2]), -.9 + i * .24, 1.95, 0));
-    ['#b4613c', '#c9a565', '#3d5170', '#4f6a31', '#d9cdb4', '#7a3b22'].forEach((col, i) => add(pb, new THREE.PlaneGeometry(.06, .09), std('fan_' + i, () => ({ color: col, roughness: .8 })), .15 + i * .085, 1.98, 0));
-    add(pb, new THREE.PlaneGeometry(.36, .25), std('sketch', () => ({ color: '#f4efe4', roughness: .9 })), .45, 1.55, 0);
-    add(pb, new THREE.PlaneGeometry(.44, .1), card(['Lab B pinboard (illustrative)'], { w: .44, h: .1, scale: 1 }), -.55, 1.55, 0);
-  }
   if (want('BEL_BUYER_PROJECT')) {
     const g = item('BEL_BUYER_PROJECT'); const T = .7494;   // guest table F091: x -0.81-1.32, z -2.74..-1.73; screen F098 face z -3.8036 (x -0.25-0.97, y 0.97-1.65)
     add(g, new THREE.PlaneGeometry(1.18, .64), screenMat('project_board', (x, w, h) => {
       x.fillStyle = '#f3ede2'; x.fillRect(0, 0, w, h); x.fillStyle = '#3c2a1e'; x.font = `600 ${h * .085}px system-ui, sans-serif`; x.fillText('Buyer project board', w * .05, h * .16);
-      ['Brief', 'Samples', 'Tests', 'Approval', 'Order'].forEach((t, i) => { const X = w * (.05 + i * .185); x.fillStyle = ['#c9a565', '#8f4a3a', '#3d5170', '#6f7a4c', '#b88c5c'][i]; x.fillRect(X, h * .32, w * .165, h * .2);
-        x.fillStyle = '#fff'; x.font = `500 ${h * .058}px system-ui, sans-serif`; x.fillText(t, X + w * .012, h * .45); x.fillStyle = '#5b4636'; x.font = `400 ${h * .05}px system-ui, sans-serif`; x.fillText('date to agree', X + w * .01, h * .62); });
+      ['Brief', 'Fabric', 'Lab dip', 'Fit', 'Tests', 'Order'].forEach((t, i) => { const X = w * (.05 + i * .153); x.fillStyle = ['#c9a565', '#8f4a3a', '#3d5170', '#6f7a4c', '#b88c5c', '#45474a'][i]; x.fillRect(X, h * .32, w * .14, h * .2);
+        x.fillStyle = '#fff'; x.font = `500 ${h * .055}px system-ui, sans-serif`; x.fillText(t, X + w * .01, h * .45); x.fillStyle = '#5b4636'; x.font = `400 ${h * .042}px system-ui, sans-serif`; x.fillText('date to agree', X + w * .005, h * .62); });
       x.fillStyle = '#5b4636'; x.font = `400 ${h * .05}px system-ui, sans-serif`; x.fillText('Export and order desk (pilot) · illustrative', w * .05, h * .88); }), .36, 1.31, -3.795);
-    tray(g, .1, T, -2.2, .4, .26, 0); [['jute', 'twill'], ['hogla', 'plain'], ['cane', 'lattice']].forEach(([f, k], i) => swatch(g, -.03 + i * .13, T + .012, -2.2, f, k, .1, (i - 1) * .1));
+    tray(g, .1, T, -2.2, .4, .26, 0); [KN.ecru, KN.recNavy, KN.juteBlend].forEach((m, i) => add(g, scaleUV(new THREE.BoxGeometry(.1, .005, .1), .1, .1), m, -.03 + i * .13, T + .0145, -2.2, 0, (i - 1) * .1));
     jug(g, .85, T, -2.05, -.5); cup(g, .7, T, -2.35, 'tumbler'); cup(g, .98, T, -2.38, 'tumbler');
-    add(g, new THREE.PlaneGeometry(.21, .29), card(['Order checklist', 'Specification · sample approval', 'Test plan · packaging · delivery', 'All to be agreed with the buyer'], { w: .21, h: .29, scale: .9 }), -.5, T + .002, -2.25, -Math.PI / 2, 0, .1);
+    add(g, new THREE.PlaneGeometry(.21, .29), card(['Order checklist', 'Tech pack · product passport', 'Lab dip · fit sample · tests', 'Artisan packaging (to agree)', 'All to be agreed with the buyer'], { w: .21, h: .29, scale: .9 }), -.5, T + .002, -2.25, -Math.PI / 2, 0, .1);
     standingCard(g, ['Buyer project room', 'Private desks for visiting buyer teams', 'Export and order desk in the pilot'], .45, T, -1.85, 0, { w: .2, h: .1 });
+  }
+  // ---------------------------------------------------------------- Bengal craft from the owner's references (30 Oct 2026): natural indigo, jhut patchwork,
+  // the tea stall, hurricane lanterns (electric), alpana, kula and dala, cane and bamboo, painted clay, jute. Self-made forms; makers to be identified.
+  if (want('BEL_INDIGO_SWAGS')) {
+    // the experience-centre deck (underside y 2.90) between the track rails (spots reach z -9.24 / -7.14): three cloths of natural indigo in
+    // shallow swags, in place of the approved cloth fins on this route, clear of the AC unit (x 15.05-16.24) and its smoke detector
+    const g = item('BEL_INDIGO_SWAGS'); overhead.add(g); const span = 1.2;
+    for (const [x0, x1] of [[9.85, 14.85], [16.45, 21.75]]) [[-8.6, 0, 'a', false], [-8.22, .6, 'b', true], [-7.84, .3, 'c', false]].forEach(([zc, ph, key, ombre]) => {
+      const len = x1 - x0, geo = new THREE.PlaneGeometry(len, .34, Math.round(len * 24), 3), p = geo.attributes.position, uv = geo.attributes.uv;
+      for (let i = 0; i < p.count; i++) { const X = p.getX(i) + len / 2, Zs = p.getY(i), t = (((x0 + X + ph) % span) + span) % span / span, sag = Math.pow(Math.sin(Math.PI * t), .85);
+        p.setXYZ(i, X - len / 2, -(.035 + .32 * sag) + Zs * .1 * Math.sin((x0 + X) * 1.7 + ph), Zs); }
+      for (let i = 0; i < uv.count; i++) uv.setX(i, uv.getX(i) * len / 1.8);
+      geo.computeVertexNormals(); add(g, geo, shiboriMat(key, 300 + key.charCodeAt(0), ombre), (x0 + x1) / 2, 2.895, zc);
+      for (let k = Math.ceil((x0 + ph) / span); k * span - ph <= x1; k++) add(g, new THREE.CylinderGeometry(.006, .006, .04, 6), std('brass', () => ({ color: '#a57c3c', metalness: .85, roughness: .32 })), k * span - ph, 2.875, zc);
+    });
+  }
+  if (want('BEL_JHUT_RIVER')) {
+    // the free floor between the forms' plinth (x 14.35) and the material table (x 16.51), z -9.0..-8.0 (probed: open terrazzo): a sewing table
+    // and a river of patchwork pieced from cutting waste, running off the table and across the floor. An installation, not a product
+    const g = item('BEL_JHUT_RIVER'), ZC = -8.58;
+    const st = new THREE.Group(); st.position.set(14.9, 0, -8.5); g.add(st); add(st, tableWood(.9, .5, .76), M.wood); sewingMachine(st, -.1, .76, -.03, 0);
+    const pieced = textileMat('jhut_river', (x, w, h) => { const r = rng(91), cols = ['#3f4c66', '#55688a', '#8f4a3a', '#a35a48', '#8e8b86', '#6f7a4c', '#d6c7a8', '#45474a', '#c9a565', '#2f6b5a', '#b8352a', '#e6dccb'];
+      for (let j = 0; j < 8; j++) { let X0 = 0; while (X0 < w) { const ww = w * (.05 + r() * .09); x.fillStyle = cols[Math.floor(r() * cols.length)]; x.fillRect(X0, j * h / 8, ww, h / 8); X0 += ww; } }
+      x.strokeStyle = 'rgba(245,238,225,.8)'; x.lineWidth = Math.max(1.5, w / 260); x.setLineDash([w / 120, w / 180]); for (let y = h / 16; y < h; y += h / 8) { x.beginPath(); x.moveTo(0, y); x.lineTo(w, y + (r() - .5) * 3); x.stroke(); } x.setLineDash([]); }, [768, 256]);
+    const path = new THREE.CatmullRomCurve3([[14.66, .772, ZC], [15.05, .776, ZC], [15.36, .77, ZC], [15.47, .6, ZC], [15.52, .3, ZC + .02], [15.6, .06, ZC + .03], [15.85, .018, ZC], [16.1, .018, ZC - .05], [16.33, .018, ZC + .02]].map(v => new THREE.Vector3(...v)), false, 'centripetal');
+    const N = 90, pts = path.getSpacedPoints(N), pos = [], uv = [], idx = [], L = path.getLength();
+    pts.forEach((P, i) => { const t = i / N, w = .5 + .42 * Math.max(0, (t - .45) / .55), wob = P.y < .05 ? .004 + .004 * Math.sin(i * 1.3) : 0;
+      for (const s of [-1, 1]) { pos.push(P.x, P.y + wob + (P.y < .05 ? .004 * (1 + s) : 0), P.z + s * w / 2); uv.push(t * L / .9, s > 0 ? 1 : 0); } });
+    for (let i = 0; i < N; i++) idx.push(i * 2, i * 2 + 1, i * 2 + 2, i * 2 + 1, i * 2 + 3, i * 2 + 2);
+    const rg = new THREE.BufferGeometry(); rg.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); rg.setAttribute('uv', new THREE.Float32BufferAttribute(uv, 2)); rg.setIndex(idx); rg.computeVertexNormals();
+    add(g, rg, pieced);
+    standingCard(g, ['Jhut patchwork', 'Cutting waste pieced back into cloth', 'An installation · makers to be credited'], 15.22, .76, -8.31, 0, { w: .19, h: .1 });
+    footprint(14.43, -9.0, 16.4, -8.0);
+  }
+  if (want('BEL_TEA_STALL')) {
+    // the free solid west wall of the dining room (face x 22.2513, z -23.3..-25.4, probed clear from the floor to the ceiling): a wall-mounted
+    // tong, the Bengali tea stall, as the tea point: a cart front on two wheels, a painted canopy, an electric hurricane lantern, kettle and clay cups
+    const g = item('BEL_TEA_STALL'), f = new THREE.Group(); f.position.set(22.2513, 0, -24.35); f.rotation.y = Math.PI / 2; g.add(f);   // local +z: into the room
+    const blue = std('stall_blue', () => ({ color: '#2b5f9e', roughness: .5 })), red = std('stall_red', () => ({ color: '#b3261e', roughness: .5 }));
+    box(f, M.wood, 0, .82, .23, 1.5, .06, .44); box(f, M.wood, 0, .5, .05, 1.46, .32, .06);
+    const skirt = std('stall_skirt', () => { const W = px(512), H = px(96), c = canvas(W, H), x = c.getContext('2d'); x.fillStyle = '#c2185b'; x.fillRect(0, 0, W, H);
+      for (let k = 0; k < 10; k++) { const cx = (k + .5) * W / 10, cy = H / 2; for (let p = 0; p < 8; p++) { const a = p / 8 * Math.PI * 2; x.fillStyle = p % 2 ? '#ffd23f' : '#ff7a1a'; x.beginPath(); x.ellipse(cx + Math.cos(a) * H * .16, cy + Math.sin(a) * H * .16, H * .14, H * .06, a, 0, 7); x.fill(); } x.fillStyle = '#1e8a4c'; x.beginPath(); x.arc(cx, cy, H * .08, 0, 7); x.fill(); }
+      x.fillStyle = '#ffd23f'; x.fillRect(0, 0, W, H * .08); x.fillRect(0, H * .92, W, H * .08); return { map: tex(c, { clamp: true }), roughness: .55 }; });
+    add(f, new THREE.PlaneGeometry(1.5, .26), skirt, 0, .7, .452);
+    for (const sx of [-.72, .72]) for (const sz of [.05, .42]) add(f, new THREE.CylinderGeometry(.018, .02, 1.25, 10), blue, sx, .82 + .625, sz);
+    const sign = std('stall_sign', () => { const W = px(640), H = px(200), c = canvas(W, H), x = c.getContext('2d'); x.fillStyle = '#c62828'; x.fillRect(0, 0, W, H);
+      x.fillStyle = '#ffd23f'; x.fillRect(0, H * .86, W, H * .14); for (let k = 0; k < 16; k++) { x.fillStyle = k % 2 ? '#1e8a4c' : '#ffd23f'; x.beginPath(); x.arc((k + .5) * W / 16, H * .93, H * .045, 0, 7); x.fill(); }
+      for (const cx of [W * .09, W * .92]) for (let p = 0; p < 10; p++) { const a = p / 10 * Math.PI * 2; x.fillStyle = p % 2 ? '#ffd23f' : '#ff9ec7'; x.beginPath(); x.ellipse(cx + Math.cos(a) * H * .14, H * .42 + Math.sin(a) * H * .14, H * .12, H * .05, a, 0, 7); x.fill(); }
+      x.fillStyle = '#fff6e0'; x.textAlign = 'center'; x.textBaseline = 'middle'; x.font = `700 ${H * .5}px 'Noto Sans Bengali', 'Lohit Bengali', 'Kohinoor Bangla', 'Bangla Sangam MN', 'Nirmala UI', 'Vrinda', sans-serif`; x.fillText('চা', W * .33, H * .43);
+      x.font = `700 ${H * .22}px system-ui, sans-serif`; x.fillText('CHA · TEA', W * .6, H * .43); x.font = `500 ${H * .1}px system-ui, sans-serif`; x.fillText('the tong, the Bengali tea stall', W * .5, H * .74);
+      const t = tex(c, { clamp: true }); return { map: t, emissive: '#ffffff', emissiveMap: t, emissiveIntensity: .25, roughness: .5 }; });
+    box(f, red, 0, 2.06, .2, 1.62, .04, .5); add(f, new THREE.PlaneGeometry(1.6, .5), sign, 0, 2.36, .46); box(f, red, 0, 2.1, .44, 1.62, .52, .02);
+    for (let k = 0; k < 13; k++) add(f, new THREE.ConeGeometry(.02, .07, 8), std(k % 2 ? 'tassel_y' : 'tassel_g', () => ({ color: k % 2 ? '#ffd23f' : '#1e8a4c', roughness: .7 })), -.72 + k * .12, 2.03, .455, Math.PI, 0, 0);
+    for (const sx of [-.42, .42]) {   // the cart wheels: rim, spokes, hub, in rickshaw-art colours
+      add(f, new THREE.TorusGeometry(.3, .02, 8, 40), std('wheel_rim', () => ({ color: '#1c1c1e', roughness: .5 })), sx, .31, .5);
+      for (let k = 0; k < 12; k++) add(f, new THREE.CylinderGeometry(.006, .006, .58, 6), std('wheel_spoke', () => ({ color: '#1e8a4c', roughness: .5 })), sx, .31, .5, 0, 0, k / 12 * Math.PI);
+      add(f, new THREE.CylinderGeometry(.05, .05, .05, 16), red, sx, .31, .5, Math.PI / 2, 0, 0);
+    }
+    const T = .88;   // on the counter: a kettle on a clay stove, clay cups (bhar), biscuit jars, the lantern on its hook
+    add(f, lathe([[0, 0], [.12, 0], [.13, .1], [.1, .14], [0, .14]], 28), M.clayRaw, -.45, T, .24);
+    const kt = new THREE.Group(); kt.position.set(-.45, T + .14, .24); f.add(kt); const alu = std('alu_kettle', () => ({ color: '#c9ccce', metalness: .85, roughness: .3 }));
+    add(kt, lathe([[0, 0], [.09, 0], [.1, .05], [.085, .12], [.04, .15], [0, .155]], 28), alu); add(kt, taperedTube([[.08, .05, 0], [.13, .1, 0], [.16, .14, 0]], .014, .007, 8, 6), alu); add(kt, new THREE.TorusGeometry(.07, .006, 6, 18, Math.PI), std('kettle_handle', () => ({ color: '#1c1c1e', roughness: .5 })), 0, .15, 0);
+    for (let k = 0; k < 4; k++) for (let q = 0; q < 3 - Math.floor(k / 2); q++) cup(f, -.05 + k * .08, T + q * .02, .3 - (k % 2) * .08, 'tumbler', M.clayRaw);
+    const glassJar = std('jar_glass', () => ({ color: '#dfeae6', roughness: .08, transparent: true, opacity: .4, depthWrite: false }));
+    [['#d9a35f', .32], ['#f2e8d6', .45], ['#b8642f', .58]].forEach(([col, dx]) => { add(f, new THREE.CylinderGeometry(.055, .055, .1, 20), std('jar_fill_' + col, () => ({ color: col, roughness: .8 })), dx, T + .05, .2); add(f, new THREE.CylinderGeometry(.06, .06, .16, 20), glassJar, dx, T + .08, .2); add(f, new THREE.CylinderGeometry(.064, .064, .02, 20), red, dx, T + .17, .2); });
+    hurricaneLantern(f, .55, 1.98, .38, '#2b5f9e');
+    standingCard(f, ['The tong: tea in clay cups', 'For staff, artisans and visiting buyers', 'Electric lantern: no kerosene indoors'], .05, T, .4, 0, { w: .2, h: .1 });
+    footprint(22.25, -25.15, 22.85, -23.55);
+    for (const [x, z] of [[23.25, -23.75], [23.35, -24.5], [23.2, -25.2]]) woodSliceStool(g, x, z, { r: .16, h: .45 });
+  }
+  if (want('BEL_UTHAN_CRAFT')) {
+    // the Uthan dressed by hand: kula and dala laid over the bamboo canopy (seen from below through the lattice), alpana in rice-paste white
+    // around the courtyard, four painted bamboo posts with hurricane-form lanterns (electric), indigo and undyed yarn and small pots hanging
+    const g = item('BEL_UTHAN_CRAFT'), CX = 15.65, CZ = -16.08, r = rng(808), list = [];
+    for (let i = 0; i < 8; i++) for (let j = 0; j < 8; j++) {
+      const x = 13.85 + i * .53 + (r() - .5) * .18, z = -17.9 + j * .53 + (r() - .5) * .18, rad = .26 + r() * .1;
+      if (Math.hypot(x - CX, z - CZ) < .45 + rad * .5) continue;
+      list.push([x, 2.362 + r() * .045, z, rad, Math.floor(r() * 10) % 4 === 3 ? 2 + Math.floor(r() * 2) : Math.floor(r() * 2), Math.PI / 2 + (r() - .5) * .14, r() * 6.3]);
+    }
+    trayCloud(g, list);
+    const al = canvas(px(640), px(640)), ax = al.getContext('2d'), S = al.width, m = S / 4.2, C = S / 2;   // alpana on the courtyard tiles (4.2 m square), ~7 mm a pixel
+    ax.clearRect(0, 0, S, S); ax.strokeStyle = ax.fillStyle = 'rgba(247,242,232,.9)'; ax.lineCap = 'round'; ax.lineWidth = S / 260;
+    const petalChain = (half, n, size) => { for (let s = 0; s < 4; s++) for (let k = 0; k <= n; k++) { const t = -half + k * (2 * half / n), [px2, py2] = [[t, -half], [half, t], [-t, half], [-half, -t]][s]; ax.beginPath(); ax.ellipse(C + px2 * m, C + py2 * m, size * m, size * m * .45, s % 2 ? 0 : Math.PI / 2, 0, 7); ax.stroke(); } };
+    petalChain(1.98, 40, .045); petalChain(1.24, 26, .035);
+    for (let k = 0; k < 4 * 60; k++) { const s = Math.floor(k / 60), t = -1.3 + (k % 60) / 59 * 2.6, [px2, py2] = [[t, -1.32], [1.32, t], [-t, 1.32], [-1.32, -t]][s]; ax.beginPath(); ax.arc(C + px2 * m, C + py2 * m, S / 500, 0, 7); ax.fill(); }
+    const lotus = (cx, cy, R) => { for (let k = 0; k < 8; k++) { const a = k / 8 * Math.PI * 2; ax.beginPath(); ax.ellipse(cx + Math.cos(a) * R * .55, cy + Math.sin(a) * R * .55, R * .45, R * .18, a, 0, 7); ax.stroke(); }
+      for (let k = 0; k < 8; k++) { const a = (k + .5) / 8 * Math.PI * 2; ax.beginPath(); ax.ellipse(cx + Math.cos(a) * R * .3, cy + Math.sin(a) * R * .3, R * .25, R * .1, a, 0, 7); ax.stroke(); } ax.beginPath(); ax.arc(cx, cy, R * .12, 0, 7); ax.fill(); };
+    for (const [sx, sy] of [[-1, -1], [1, -1], [1, 1], [-1, 1]]) lotus(C + sx * 1.62 * m, C + sy * 1.62 * m, .3 * m);
+    const paddy = (cx, cy, ang) => { ax.save(); ax.translate(cx, cy); ax.rotate(ang); for (let k = -2; k <= 2; k++) { ax.beginPath(); ax.moveTo(k * .05 * m, .25 * m); ax.quadraticCurveTo(k * .09 * m, 0, k * .16 * m, -.25 * m); ax.stroke();
+      for (let q = 0; q < 5; q++) { ax.beginPath(); ax.ellipse(k * (.1 + q * .012) * m + k * .02 * m, (-.05 - q * .045) * m, .012 * m, .022 * m, k * .3, 0, 7); ax.fill(); } } ax.restore(); };
+    for (const [px2, py2, a] of [[0, -1.62, 0], [1.62, 0, Math.PI / 2], [0, 1.62, Math.PI], [-1.62, 0, -Math.PI / 2]]) paddy(C + px2 * m, C + py2 * m, a);
+    const fishPair = (cx, cy, ang) => { ax.save(); ax.translate(cx, cy); ax.rotate(ang); for (const s of [-1, 1]) { ax.save(); ax.scale(s, 1); ax.beginPath(); ax.ellipse(.17 * m, 0, .12 * m, .045 * m, 0, 0, 7); ax.moveTo(.29 * m, 0); ax.lineTo(.36 * m, -.04 * m); ax.lineTo(.36 * m, .04 * m); ax.closePath(); ax.stroke(); ax.restore(); } ax.restore(); };
+    for (const [px2, py2, a] of [[-.8, -1.62, 0], [.8, -1.62, 0], [1.62, -.8, Math.PI / 2], [1.62, .8, Math.PI / 2], [.8, 1.62, 0], [-.8, 1.62, 0], [-1.62, .8, Math.PI / 2], [-1.62, -.8, Math.PI / 2]]) fishPair(C + px2 * m, C + py2 * m, a);
+    const alp = new THREE.MeshBasicMaterial({ name: 'bel_alpana', map: tex(al, { clamp: true }), transparent: true, depthWrite: false, polygonOffset: true, polygonOffsetFactor: -2 }); materials.push(alp);
+    add(g, new THREE.PlaneGeometry(4.2, 4.2), alp, CX, .0205, CZ, -Math.PI / 2);
+    lanternPost(g, CX, -18.32, 0); lanternPost(g, CX, -13.84, Math.PI); lanternPost(g, 13.42, CZ, Math.PI / 2); lanternPost(g, 17.88, CZ, -Math.PI / 2);
+    const hank = (x, z, col, k) => { const hg = new THREE.Group(); hg.position.set(x, 2.3, z); hg.rotation.y = k * .7; g.add(hg);
+      const m2 = std('hank_' + col, () => { const c = canvas(32, 128), xx = c.getContext('2d'); xx.fillStyle = col; xx.fillRect(0, 0, 32, 128); for (let i = 0; i < 32; i += 2) { xx.fillStyle = `rgba(${i % 4 ? '255,255,255' : '0,0,0'},.12)`; xx.fillRect(i, 0, 1, 128); } return { map: tex(c), roughness: .95 }; });
+      const t = add(hg, new THREE.TorusGeometry(.045, .02, 8, 20), m2, 0, -.22, 0); t.scale.set(1, 3.4, .7);
+      add(hg, new THREE.CylinderGeometry(.002, .002, .04, 4), std('cord', () => ({ color: '#2a2a2a', roughness: .6 })), 0, .0, 0); };
+    ['#1d3254', '#2c4a7a', '#5a7aa8', '#93abc9', '#efe6d2', '#1d3254', '#2c4a7a', '#efe6d2'].forEach((col, k) => hank(13.98, -15.15 - k * .3, col, k));
+    ['#2c4a7a', '#efe6d2', '#5a7aa8', '#1d3254', '#93abc9', '#efe6d2'].forEach((col, k) => hank(14.35 + k * .4, -17.82, col, k + 3));
+    add(g, new THREE.CylinderGeometry(.016, .016, 2.6, 10), M.bamboo, 13.98, 2.31, -16.2, Math.PI / 2, 0, 0); add(g, new THREE.CylinderGeometry(.016, .016, 2.3, 10), M.bamboo, 15.35, 2.31, -17.82, 0, 0, Math.PI / 2);
+    for (const [x, z, y, s] of [[16.95, -14.35, 1.98, 1], [17.2, -14.62, 2.12, .8], [17.42, -14.3, 1.92, .9], [16.85, -14.8, 2.08, .7], [17.35, -14.95, 1.97, .85]]) {   // small pots on cords
+      add(g, lathe([[0, 0], [.05, 0], [.08, .05], [.075, .1], [.045, .14], [.05, .16], [.04, .16], [0, .15]].map(([a, b]) => [a * s, b * s]), 24), M.clayRaw, x, y, z);
+      add(g, new THREE.CylinderGeometry(.0015, .0015, 2.34 - y - .16 * s, 4), std('cord', () => ({})), x, (2.34 + y + .16 * s) / 2, z); }
+    standingCard(g, ['Alpana, kula and dala, natural indigo', 'Rice-paste white, painted by rural women artists', 'Lanterns: electric, no kerosene indoors', 'Option A only'], CX - .55, .47, CZ + .85, .3, { w: .22, h: .13 });
+  }
+  if (want('BEL_CRAFT_CORNER')) {
+    // the solid south wall between the wear rail (x 13.27) and the kantha hanging (x 15.2): a bamboo trellis with gamchha, kantha, a kula and framed
+    // work by a rural artist (placeholder), a cane bowl chair on a round sitalpati, a jute pouf and a snake plant in clay
+    const g = item('BEL_CRAFT_CORNER'), WZ = -10.8725, tr = new THREE.Group(); tr.position.set(14.22, 0, WZ - .03); tr.rotation.y = Math.PI; g.add(tr);   // local +z faces the room
+    const P = [], X0 = -.85, X1 = .85, Y0 = .55, Y1 = 2.35;
+    for (const x of [X0, X1]) P.push([new THREE.CylinderGeometry(.02, .02, Y1 - Y0 + .1, 10), x, (Y0 + Y1) / 2, 0]); for (const y of [Y0, Y1]) P.push([new THREE.CylinderGeometry(.02, .02, X1 - X0 + .1, 10), 0, y, 0, 0, 0, Math.PI / 2]);
+    for (let k = -6; k <= 6; k++) for (const s of [-1, 1]) {   // diagonal split bamboo, clipped to the frame
+      const c0 = k * .3, pts = []; for (let t = -2; t <= 2; t += .01) { const x = c0 + t, y = (Y0 + Y1) / 2 + s * t; if (x > X0 && x < X1 && y > Y0 && y < Y1) pts.push([x, y]); }
+      if (pts.length > 2) { const [a, b] = [pts[0], pts[pts.length - 1]], L = Math.hypot(b[0] - a[0], b[1] - a[1]); P.push([new THREE.BoxGeometry(L, .022, .006), (a[0] + b[0]) / 2, (a[1] + b[1]) / 2, s * .004 - .006, 0, 0, Math.atan2(b[1] - a[1], b[0] - a[0])]); } }
+    add(tr, merged(P), M.bamboo);
+    const gamchha = textileMat('gamchha', (x, w, h) => { x.fillStyle = '#b8352a'; x.fillRect(0, 0, w, h); for (let i = 0; i < 12; i++) { x.fillStyle = i % 3 ? '#1e7a4c' : '#f2ead8'; x.fillRect(i * w / 12, 0, w / 36, h); x.fillRect(0, i * h / 12, w, h / 36); } }, [192, 256]);
+    add(tr, new THREE.PlaneGeometry(.36, .78), gamchha, -.52, 1.75, .03); add(tr, new THREE.CylinderGeometry(.012, .012, .44, 8), M.bamboo, -.52, 2.15, .035, 0, 0, Math.PI / 2);
+    add(tr, new THREE.PlaneGeometry(.48, .48), textileMat('kantha_corner', (x, w, h) => drawKantha(x, w, h, 31), [256, 256]), .4, 1.85, .03);
+    const art = canvas(px(256), px(320)), ar = art.getContext('2d'), AW = art.width, AH = art.height; ar.fillStyle = '#f1e6cf'; ar.fillRect(0, 0, AW, AH);   // placeholder: a commissioned painting goes here
+    ar.fillStyle = '#c0392b'; ar.beginPath(); ar.ellipse(AW * .5, AH * .5, AW * .3, AH * .14, 0, 0, 7); ar.fill(); ar.fillStyle = '#1e7a4c'; for (let k = 0; k < 7; k++) { ar.beginPath(); ar.ellipse(AW * (.2 + k * .1), AH * .28, AW * .03, AH * .08, (k - 3) * .2, 0, 7); ar.fill(); }
+    ar.fillStyle = '#1d1a18'; ar.font = `500 ${AW * .06}px system-ui, sans-serif`; ar.fillText('Placeholder · rural artist', AW * .1, AH * .88); ar.fillText('to be commissioned', AW * .1, AH * .95);
+    box(tr, M.oak, .35, 1.0, .01, .4, .48, .03); add(tr, new THREE.PlaneGeometry(.34, .42), std('corner_art', () => ({ map: tex(art, { clamp: true }), roughness: .8 })), .35, 1.24, .042);
+    add(tr, new THREE.CircleGeometry(.24, 36), TRAY[3], -.42, .95, .03); add(tr, new THREE.TorusGeometry(.24, .01, 6, 36), std('tray_rim', () => ({})), -.42, .95, .03);
+    const rug = textileMat('pati_round', (x, w, h) => { x.fillStyle = '#d6c393'; x.fillRect(0, 0, w, h); for (const [r0, col] of [[.47, '#8f2f24'], [.42, '#1e5a4c'], [.3, '#8f2f24'], [.12, '#1e5a4c']]) { x.strokeStyle = col; x.lineWidth = w / 40; x.beginPath(); x.arc(w / 2, h / 2, w * r0, 0, 7); x.stroke(); } }, [256, 256]);
+    add(g, new THREE.CircleGeometry(.78, 48), rug, 14.25, RUG + .001, -11.85, -Math.PI / 2);
+    caneMoonChair(g, 14.55, -11.62, Math.PI + .35); shade('Z07', 14.05, -12.1, 15.05, -11.15, .45);
+    const pf = add(g, new THREE.CylinderGeometry(.22, .22, .38, 28), juteBraid, 13.72, .19, -12.12); void pf; footprint(13.5, -12.34, 13.94, -11.9); shade('Z07', 13.5, -12.34, 13.94, -11.9, .35);
+    const sp = new THREE.Group(); sp.position.set(13.55, 0, -11.12); g.add(sp); add(sp, lathe([[0, .005], [.1, 0], [.13, .2], [.14, .24], [.12, .24], [0, .22]], 28), M.clayRaw);
+    for (let k = 0; k < 11; k++) { const a = k * 2.4, l = .45 + (k % 4) * .1, geo = new THREE.ConeGeometry(.03, l, 4, 1); geo.translate(0, l / 2, 0); geo.scale(1, 1, .25);
+      const leaf = add(sp, geo, std('snake_plant', () => ({ color: '#3f6b3a', roughness: .5 })), Math.cos(a) * .04, .22, Math.sin(a) * .04); leaf.rotation.set(Math.sin(a) * .15, -a, Math.cos(a) * .15); }
+    footprint(13.4, -11.27, 13.7, -10.97);
+    standingCard(g, ['Craft corner', 'Gamchha, kantha, kula and a rural painting', 'Cane, sitalpati and jute by named makers', 'Option A only'], 13.95, 0, -12.55, Math.PI + .5, { w: .2, h: .12 });
+  }
+  if (want('BEL_CRAFT_SHELF')) {
+    // a low bamboo shelf on the solid lower part of the west wall (glass above 1.22 m), between the Marma stand and the remake sacks: painted pots in
+    // the shokher hari tradition of Rajshahi, tepa putul clay dolls, a dholak and a khol; a polo (bamboo fish trap) beside it. Makers to be identified
+    const g = item('BEL_CRAFT_SHELF'), sh = new THREE.Group(); sh.position.set(9.56, 0, -18.32); sh.rotation.y = Math.PI / 2; g.add(sh);   // local +z: into the room
+    const P = []; for (const x of [-.73, .73]) for (const z of [-.16, .16]) P.push([new THREE.CylinderGeometry(.02, .02, 1.08, 10), x, .54, z]);
+    for (const y of [.06, .5, .94]) for (let k = 0; k < 6; k++) P.push([new THREE.BoxGeometry(1.5, .016, .05), 0, y, -.15 + k * .06]);
+    add(sh, merged(P), M.bamboo);
+    shokherHari(sh, -.5, .952, 0, { h: .34, seed: 1 }); shokherHari(sh, .02, .952, .02, { h: .28, seed: 2 }); shokherHari(sh, .45, .952, -.01, { h: .31, seed: 3 });
+    for (let k = 0; k < 5; k++) tepaPutul(sh, -.62 + k * .13, .508, (k % 2) * .05, k + 1);
+    shokherHari(sh, .4, .508, 0, { h: .2, seed: 4 });
+    drum(sh, 'dholak', -.35, .068, 0, 0); drum(sh, 'khol', .35, .068, 0, 0);
+    standingCard(sh, ['Painted clay and drums', 'Shokher hari (Rajshahi), tepa putul,', 'a dholak and a khol', 'Makers to be identified and credited'], .62, .508, .12, 0, { w: .19, h: .11 });
+    footprint(9.35, -19.1, 9.77, -17.54); shade('Z07', 9.35, -19.1, 9.77, -17.54, .4);
+    const PP = []; for (let k = 0; k < 18; k++) { const a = k / 18 * Math.PI * 2, A = new THREE.Vector3(Math.cos(a) * .3, 0, Math.sin(a) * .3), Bv = new THREE.Vector3(Math.cos(a) * .1, .5, Math.sin(a) * .1), d = Bv.clone().sub(A);
+      const geo = new THREE.CylinderGeometry(.006, .006, d.length(), 5); geo.applyQuaternion(new THREE.Quaternion().setFromUnitVectors(new THREE.Vector3(0, 1, 0), d.normalize())); geo.translate((A.x + Bv.x) / 2, (A.y + Bv.y) / 2, (A.z + Bv.z) / 2); PP.push([geo]); }
+    for (const [y, rr] of [[.02, .3], [.25, .2], [.48, .105]]) PP.push([new THREE.TorusGeometry(rr, .008, 6, 28), 0, y, 0, Math.PI / 2]);
+    const polo = new THREE.Group(); polo.position.set(10.1, 0, -18.95); g.add(polo); add(polo, merged(PP), M.bamboo); footprint(9.78, -19.27, 10.42, -18.63);
   }
   // the floor finishes go in last, so their occlusion maps hold the contact shadows of everything above
   if (want('BEL_UTHAN')) floorOverlay(group.getObjectByName('BEL_UTHAN'), 'Z07', [9.32, -21.29, 22.0, -10.87], { map: juteFloor('z07', '#cdbb94', 81), repeat: [25, 21], color: '#cfc8bd' });
@@ -1308,13 +1618,13 @@ export function buildBengalEarthLab(THREE, { zones = null, drinkware = [], aniso
   }
 
   // ---------------------------------------------------------------- bookkeeping
-  group.traverse(o => { if (o.isMesh) { o.castShadow = false; o.receiveShadow = false; o.userData.conceptLayer = true; } });
+  for (const root of [group, overhead]) root.traverse(o => { if (o.isMesh) { o.castShadow = false; o.receiveShadow = false; o.userData.conceptLayer = true; } });
   const sources = new Set(), pixels = textures.reduce((s, t) => sources.has(t.source) ? s : (sources.add(t.source), s + (t.image?.width || 0) * (t.image?.height || 0)), 0);   // clones share their source's GPU memory
   const stats = { items: items.length, meshes: 0, instancedLeaves: 0, textures: textures.length, textureMB: Math.round(pixels * 4 * 1.33 / 1e5) / 10 };
-  group.traverse(o => { if (o.isInstancedMesh) stats.instancedLeaves += o.count; else if (o.isMesh) stats.meshes++; });
+  for (const root of [group, overhead]) root.traverse(o => { if (o.isInstancedMesh) stats.instancedLeaves += o.count; else if (o.isMesh) stats.meshes++; });
   function blocksMovement(x, z, radius = .15) { return footprints.some(([x0, z0, x1, z1]) => x > x0 - radius && x < x1 + radius && z > z0 - radius && z < z1 + radius); }
   return {
-    group, stats, items: items.map(i => ({ id: i.id, zone: i.zone, note: i.note })), footprints,
+    group, overhead, stats, items: items.map(i => ({ id: i.id, zone: i.zone, note: i.note })), footprints,
     textures: () => textures, blocksMovement,
     dispose() { geometries.forEach(g => g.dispose()); materials.forEach(m => m.dispose()); textures.forEach(t => t.dispose()); },
   };
