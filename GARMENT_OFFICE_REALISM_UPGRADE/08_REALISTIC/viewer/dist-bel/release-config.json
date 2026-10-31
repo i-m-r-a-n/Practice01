@@ -4487,12 +4487,30 @@
   "Z07": "Option A · later phase",
   "Z06": "Option A · later phase"
  },
+ "conceptStills": {
+  "CAM_03_Entrance_Lobby": "concept-images/CAM_03_Entrance_Lobby.jpg",
+  "CAM_01_Reception_A": "concept-images/CAM_01_Reception_A.jpg",
+  "BEL_CAM_SUN_WALL": "concept-images/BEL_CAM_SUN_WALL.jpg",
+  "BEL_CAM_UTHAN": "concept-images/BEL_CAM_UTHAN.jpg",
+  "BEL_CAM_LAB": "concept-images/BEL_CAM_LAB.jpg",
+  "BEL_CAM_CAD": "concept-images/BEL_CAM_CAD.jpg",
+  "BEL_CAM_TEA": "concept-images/BEL_CAM_TEA.jpg",
+  "BEL_CAM_PLANT_WALL": "concept-images/BEL_CAM_PLANT_WALL.jpg",
+  "CAM_09_Boardroom_A": "concept-images/CAM_09_Boardroom_A.jpg",
+  "CAM_07_MD_Office_A": "concept-images/CAM_07_MD_Office_A.jpg",
+  "CAM_25_Fabric_Library": "concept-images/CAM_25_Fabric_Library.jpg",
+  "CAM_23_Sample_Room": "concept-images/CAM_23_Sample_Room.jpg"
+ },
+ "stillsLabel": "Show concept images",
+ "stillsButton": "Concept image",
+ "stillsDefaultOn": true,
+ "stillsTag": "AI CONCEPT IMAGE &middot; made from the 3D views &middot; people are fictional &middot; not a photograph",
  "branding": {
   "pageTitle": "STAGE II · Zara Fashion - ground floor concept",
   "eyebrow": "STAGE II · Zara Fashion",
   "headline": "The ground floor, reimagined · concept proposal",
   "welcomeTitle": "Explore the ground floor proposal",
   "welcomeTour": "A guided tour of the proposal: the pilot first, then the option A rooms as a possible later phase. Pause, go back or skip at any time.",
-  "disclaimerHtml": "<b>Concept proposal</b> on the approved Stage II floor &middot; fibre origins, recycled shares, tests, makers, artists, growers, stone sources and energy data are still to be identified &middot; no people shown."
+  "disclaimerHtml": "<b>Concept proposal</b> on the approved Stage II floor &middot; fibre origins, recycled shares, tests, makers, artists, growers, stone sources and energy data are still to be identified &middot; no people in the 3D; the concept images show fictional people."
  }
 }

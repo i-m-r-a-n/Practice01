@@ -10,8 +10,8 @@
       "overview_again_hidden": true,
       "room_mode": "rooms",
       "room_shown": true,
-      "room_speed_while_held": 0.64,
-      "room_moved_m": 0.02,
+      "room_speed_while_held": 1.4,
+      "room_moved_m": 1.53,
       "after_room_press_mode": "walk",
       "tour_hidden": true,
       "passed": true

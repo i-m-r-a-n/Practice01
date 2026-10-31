@@ -115,6 +115,16 @@ body.side-open #dock { left: calc(var(--gap) + var(--side-w) + 14px) }
 #pad { display: grid; grid-template-columns: repeat(3, 52px); grid-template-rows: repeat(2, 52px); gap: 5px }
 #pad button { background: var(--glass); border: 1px solid var(--line); border-radius: 12px; font-size: 17px; touch-action: none; user-select: none; -webkit-user-select: none }
 #pad button[data-k="KeyW"] { grid-column: 2 } #pad button[data-k="KeyA"] { grid-column: 1; grid-row: 2 } #pad button[data-k="KeyS"] { grid-column: 2; grid-row: 2 } #pad button[data-k="KeyD"] { grid-column: 3; grid-row: 2 }
+#pad { pointer-events: none } #pad button { pointer-events: auto }   /* taps between the arrows reach the model */
+#pad button.on { background: var(--green); border-color: var(--green) }
+#bGyro.on { border-color: var(--green); background: rgba(46, 125, 79, .35) }
+body.walk-compact #info:not(.open) #infoText, body.walk-compact #info:not(.open) #infoNote, body.walk-compact #info:not(.open) #infoKicker, body.walk-compact #info:not(.open) #infoHint { display: none }
+body.walk-compact #info { padding: 9px 12px } body.walk-compact #info h2 { margin: 0; font-size: 16px; cursor: pointer }
+body.walk-compact #info h2::after { content: "  \25BE"; color: var(--mint); font-size: 12px } body.walk-compact #info.open h2::after { content: "  \25B4" }
+body.walk-compact #info .row { margin-top: 8px } body.walk-compact #info .row button { padding: 6px 10px; font-size: 12.5px }
+#walkhelp { position: fixed; top: calc(var(--top-h) + 48px); left: 50%; transform: translateX(-50%); z-index: 12; width: min(360px, calc(100vw - 2 * var(--gap))); padding: 16px 18px 14px }
+#walkhelp h3 { margin: 0 0 8px; font-size: 16px }
+#walkhelp ul { margin: 0 0 12px; padding-left: 18px; display: grid; gap: 6px; font-size: 13.5px; line-height: 1.4 }
 #walkhint { position: fixed; top: calc(var(--top-h) + 6px); left: 50%; transform: translateX(-50%); z-index: 9; font-size: 12.5px; background: rgba(0, 0, 0, .5); padding: 7px 13px;
   border-radius: 9px; color: #e6ece8; white-space: nowrap; max-width: calc(100vw - 2 * var(--gap)); overflow: hidden; text-overflow: ellipsis }
 
@@ -122,6 +132,7 @@ body.side-open #dock { left: calc(var(--gap) + var(--side-w) + 14px) }
 #photo { position: fixed; inset: 0; z-index: 8; background: #000; display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity .7s ease }
 #photo.show { opacity: 1 }
 #photo img { width: 100%; height: 100%; object-fit: cover }
+@media (orientation: portrait) { body.concept-stills #photo img { object-fit: contain; object-position: 50% 34% } }   /* a phone held upright sees the whole concept image, above the tour card */
 .photo-tag { position: fixed; top: calc(var(--top-h) + 8px); left: 50%; transform: translateX(-50%); font-size: 11px; letter-spacing: .12em; background: rgba(0, 0, 0, .6);
   border: 1px solid rgba(194, 154, 85, .65); color: #f1d7a4; padding: 6px 11px; border-radius: 7px; white-space: nowrap }
 #photoClose { position: fixed; right: var(--gap); top: calc(var(--top-h) + 6px); background: var(--glass); border: 1px solid var(--line); border-radius: 9px; padding: 8px 13px; font-size: 13px; z-index: 9 }

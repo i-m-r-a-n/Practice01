@@ -157,7 +157,15 @@ if (CFG.roomDescriptions) for (const r of meta.rooms) if (CFG.roomDescriptions[r
 if (CFG.roomGroups) for (const r of meta.rooms) if (CFG.roomGroups[r.zone]) {   // rooms menu, info and tour card kicker
   r.group = CFG.roomGroups[r.zone]; if (!meta.room_groups.includes(r.group)) meta.room_groups.push(r.group);
 }
-if (CFG.noRenderPhotos) $('tPhoto').closest('label').style.display = 'none';   // no approved stills on this route: no stills switch (the card's label style overrides [hidden])
+const STILLS = CFG.conceptStills || null;            // a concept route's own images, by camera (none: no stills on a concept route)
+if (CFG.noRenderPhotos && !STILLS) $('tPhoto').closest('label').style.display = 'none';   // no approved stills on this route: no stills switch (the card's label style overrides [hidden])
+if (STILLS) {
+  const label = $('tPhoto').closest('label'); label.lastChild.textContent = ' ' + (CFG.stillsLabel || 'Show concept images'); label.title = 'At stops that have one, fade into the concept image of the same view';
+  if (CFG.stillsDefaultOn) $('tPhoto').checked = true;
+  $('bPhoto').textContent = CFG.stillsButton || 'Concept image'; $('bPhoto').title = 'The concept image of this view';
+  if (CFG.stillsTag) document.querySelector('#photo .photo-tag').innerHTML = CFG.stillsTag;
+  document.body.classList.add('concept-stills');
+}
 if (CFG.extraCameras) meta.cameras.push(...CFG.extraCameras);   // proposal viewpoints that have no approved render
 if (CFG.tour) meta.tour = CFG.tour;
 if (CFG.branding) {
@@ -683,19 +691,21 @@ function showInfo(r, kicker, hint = '') {
   $('infoHint').textContent = hint;
   updateInfoButtons();
 }
-const photoCam = () => CFG.noRenderPhotos ? null : (S.atCam || (S.mode === 'rooms' && !flight && S.room && S.room.primary_camera) || null);
+const photoCam = () => { const c = (S.atCam || (S.mode === 'rooms' && !flight && S.room && S.room.primary_camera) || null); return STILLS ? (c && STILLS[c] ? c : null) : CFG.noRenderPhotos ? null : c; };
 function updatePad() {
   $('pad').classList.toggle('hidden', !(S.mode === 'walk' ? (COARSE || WALK_ARROWS) : WALK_ARROWS && S.mode === 'rooms' && eyeLevel()));
 }
 function updateInfoButtons() {
   $('bPhoto').classList.toggle('hidden', !photoCam());
   $('bWalkHere').classList.toggle('hidden', !(S.mode === 'rooms' && !flight && camera.position.y < 2.4));
+  $('bGyro').classList.toggle('hidden', !(GYRO_OK && (S.mode === 'walk' || (S.mode === 'rooms' && !flight && camera.position.y < 2.4))));
   $('bBack').innerHTML = S.mode === 'walk' ? '&larr; Leave walk mode' : '&larr; Back to overview';
 }
 
 // ------------------------------------------------------------------ modes
 const WALK_ARROWS = !!CFG.walkArrows;   // the on-screen arrows on every device (the proposal route), not only on touch screens
-const WALK_HINT = USE_WALKING && !COARSE && WALK_ARROWS ? 'Hold an arrow below or use W A S D to walk  ·  drag to look around  ·  Shift = faster  ·  Esc leaves walk'
+const GYRO_OK = WALK_ARROWS && COARSE && 'DeviceOrientationEvent' in window;   // look by moving the phone (the proposal route, touch screens)
+const WALK_HINT = USE_WALKING && WALK_ARROWS ? (COARSE ? 'Hold the arrows to walk  ·  drag to look  ·  tap the floor to go there' : 'Hold an arrow or W A S D to walk  ·  drag to look around  ·  click the floor to go there  ·  Esc leaves walk')
   : USE_WALKING && !COARSE ? 'W A S D to walk · click to capture mouse · Shift = faster · Esc releases mouse / leaves walk' : COARSE ? 'Use the arrows below to walk  ·  drag to look around  ·  tap the map to jump'
   : 'W A S D or arrow keys to walk  ·  drag to look  ·  Shift = faster  ·  double-click the floor to go there  ·  Esc to leave';
 function setMode(m) {
@@ -713,6 +723,10 @@ function setMode(m) {
   $('walkhint').classList.toggle('hidden', m !== 'walk');
   $('walkhint').textContent = WALK_HINT;
   updatePad();
+  if (m !== 'walk' && S.walkTarget) clearWalkTarget();
+  if (m !== 'walk' && m !== 'rooms' && S.gyro?.on) toggleGyro();
+  if (m === 'walk') showWalkHelp();
+  document.body.classList.toggle('walk-compact', WALK_ARROWS && COARSE && m === 'walk');
   $('minimap').classList.toggle('hidden', !(m === 'walk' || m === 'tour'));
   if (m === 'tour' || m === 'walk') closeSide();
   controls.enabled = m === 'overview' && !flight;
@@ -775,8 +789,8 @@ let down = null;
 const el = renderer.domElement;
 const eyeLevel = () => !flight && camera.position.y < 2.4;
 el.addEventListener('pointerdown', (e) => {
-  down = { x: e.clientX, y: e.clientY, t: performance.now() };
-  if (USE_WALKING && S.mode === 'walk' && !COARSE && !document.pointerLockElement && !S.pointerLockUnavailable && el.requestPointerLock) {
+  down = { x: e.clientX, y: e.clientY, t: e.timeStamp };   // input time, so a slow frame between down and up cannot turn a tap into a long press
+  if (USE_WALKING && S.mode === 'walk' && !COARSE && !WALK_ARROWS && !document.pointerLockElement && !S.pointerLockUnavailable && el.requestPointerLock) {
     try {
       const request = el.requestPointerLock();
       request?.catch?.(error => { S.pointerLockUnavailable = true; S.errors.push('Mouse capture unavailable; drag to look: ' + error.message); });
@@ -792,10 +806,12 @@ el.addEventListener('pointerdown', (e) => {
 });
 el.addEventListener('pointerup', (e) => {
   walk.drag = null;
-  if (!down || Math.hypot(e.clientX - down.x, e.clientY - down.y) > 5 || performance.now() - down.t > 600) return;
+  if (!down || Math.hypot(e.clientX - down.x, e.clientY - down.y) > 5 || e.timeStamp - down.t > 600) return;
   if (S.mode === 'overview' || (S.mode === 'rooms' && camera.position.y > 3)) {
     const p = floorPoint(e); const r = p && roomAt(p.x, p.z);
     if (r) selectRoom(r);
+  } else if (WALK_ARROWS && USE_WALKING && S.mode === 'walk') {
+    const p = floorPoint(e); if (p) setWalkTarget(p.x, p.z);
   }
 });
 el.addEventListener('pointermove', (e) => {
@@ -804,8 +820,9 @@ el.addEventListener('pointermove', (e) => {
     applyWalkLook(); return;
   }
   if ((S.mode === 'walk' || S.mode === 'rooms') && walk.drag) {
-    walk.yaw += (e.clientX - walk.drag.x) * 0.0035;
-    walk.pitch = THREE.MathUtils.clamp(walk.pitch + (e.clientY - walk.drag.y) * 0.0035, -1.2, 1.2);
+    const turnBy = (e.clientX - walk.drag.x) * 0.0035;
+    walk.yaw += turnBy; if (S.gyro?.on) S.gyro.offset += turnBy;
+    if (!S.gyro?.on) walk.pitch = THREE.MathUtils.clamp(walk.pitch + (e.clientY - walk.drag.y) * 0.0035, -1.2, 1.2);
     walk.drag = { x: e.clientX, y: e.clientY };
     applyWalkLook(); S.atCam = null; updateInfoButtons();
   } else if (S.mode === 'overview' && !flight) {
@@ -841,6 +858,7 @@ function enterWalkFromCamera() {
   }
   camera.position.y = walk.eye;
   lookFromCamera();
+  if (WALK_ARROWS && COARSE) { walk.pitch = THREE.MathUtils.clamp(walk.pitch, -0.35, -0.12); applyWalkLook(); }   // phones: look slightly down, so the floor ahead shows above the card
 }
 const walkCard = (r) => { loadVisualRoom(r.zone); showInfo(r, `You are in  ·  ${r.group}  ·  approx. ${r.area_sft.toLocaleString('en-US')} sft`); };
 function startWalk(here = false) {
@@ -859,7 +877,10 @@ function walkStep(dt) {
   if (USE_WALKING) {
     const k = walk.keys;
     const previousX = camera.position.x, previousZ = camera.position.z;
-    walking.step({ forward: (k.KeyW || k.ArrowUp ? 1 : 0) - (k.KeyS || k.ArrowDown ? 1 : 0), strafe: (k.KeyD || k.ArrowRight ? 1 : 0) - (k.KeyA || k.ArrowLeft ? 1 : 0), yaw: walk.yaw, dt, fast: k.ShiftLeft || k.ShiftRight });
+    let forward = (k.KeyW || k.ArrowUp ? 1 : 0) - (k.KeyS || k.ArrowDown ? 1 : 0), strafe = (k.KeyD || k.ArrowRight ? 1 : 0) - (k.KeyA || k.ArrowLeft ? 1 : 0);
+    if (forward || strafe) { if (S.walkTarget) clearWalkTarget(); }
+    else if (S.walkTarget) [forward, strafe] = steerToTarget(dt);
+    walking.step({ forward, strafe, yaw: walk.yaw, dt, fast: k.ShiftLeft || k.ShiftRight });
     afterWalking();
     if (camera.position.x !== previousX || camera.position.z !== previousZ) needsRender = true;
     return;
@@ -922,11 +943,99 @@ addEventListener('keydown', (e) => {
 });
 addEventListener('keyup', (e) => { walk.keys[e.code] = false; });
 addEventListener('blur', () => { walk.keys = {}; });
-for (const b of document.querySelectorAll('#pad button')) {
+if (!WALK_ARROWS) for (const b of document.querySelectorAll('#pad button')) {
   const k = b.dataset.k;
   b.addEventListener('pointerdown', (e) => { e.preventDefault(); if (S.mode === 'rooms' && eyeLevel()) startWalk(true); walk.keys[k] = true; });
   for (const ev of ['pointerup', 'pointerleave', 'pointercancel']) b.addEventListener(ev, () => { walk.keys[k] = false; });
+} else {
+  const pad = $('pad'); let padPointer = null, padKey = null;
+  const setPadKey = (k) => {
+    if (padKey === k) return;
+    if (padKey) walk.keys[padKey] = false;
+    padKey = k; if (k) { walk.keys[k] = true; if (S.walkTarget) clearWalkTarget(); }
+    for (const b of pad.querySelectorAll('button')) b.classList.toggle('on', b.dataset.k === k);
+  };
+  pad.addEventListener('pointerdown', (e) => {
+    const b = e.target.closest('button'); if (!b) return;
+    e.preventDefault();
+    if (S.mode === 'rooms' && eyeLevel()) startWalk(true);   // walk on from the room view
+    padPointer = e.pointerId;
+    try { b.setPointerCapture(e.pointerId); } catch { /* without capture the arrows still work one at a time */ }
+    setPadKey(b.dataset.k);
+  });
+  pad.addEventListener('pointermove', (e) => {             // slide the finger to another arrow to change direction
+    if (e.pointerId !== padPointer) return;
+    const t = document.elementFromPoint(e.clientX, e.clientY), b = t?.closest ? t.closest('#pad button') : null;
+    if (b) setPadKey(b.dataset.k);
+  });
+  for (const ev of ['pointerup', 'pointercancel', 'lostpointercapture']) pad.addEventListener(ev, (e) => { if (e.pointerId === padPointer) { padPointer = null; setPadKey(null); } });
 }
+
+// walk to a point: a tap or click on the floor, or the minimap (the proposal route)
+function setWalkTarget(x, z) {
+  const p = camera.position, d = Math.hypot(x - p.x, z - p.z);
+  if (d < 0.4 || d > 30) return;
+  let tx = x, tz = z;                                          // a free point: walk there (the walk slides along anything on the way and stops if stuck)
+  if (blocked(x, z)) {                                          // a tap on furniture or a wall: the free floor just in front of it, towards the visitor
+    const n = Math.ceil(d / 0.08); let found = false;
+    for (let i = 1; i <= n && !found; i++) { const ax = x + (p.x - x) * i / n, az = z + (p.z - z) * i / n; if (!blocked(ax, az)) { tx = ax; tz = az; found = true; } }
+    if (!found) return;
+  }
+  if (Math.hypot(tx - p.x, tz - p.z) < 0.4) return;
+  S.walkTarget = { x: tx, z: tz, best: Infinity, still: 0 };
+  if (!S.targetRing) {
+    S.targetRing = new THREE.Mesh(new THREE.RingGeometry(0.16, 0.23, 40), new THREE.MeshBasicMaterial({ color: 0x6fd39a, transparent: true, opacity: 0.85, depthWrite: false }));
+    S.targetRing.rotation.x = -Math.PI / 2; S.targetRing.renderOrder = 5; scene.add(S.targetRing);
+  }
+  S.targetRing.position.set(tx, 0.03, tz); S.targetRing.visible = true; needsRender = true;
+}
+function clearWalkTarget() { S.walkTarget = null; if (S.targetRing) S.targetRing.visible = false; needsRender = true; }
+function steerToTarget(dt) {                                 // turn towards the target like a person, then walk; stop on arrival or when blocked
+  const T = S.walkTarget, dx = T.x - camera.position.x, dz = T.z - camera.position.z, d = Math.hypot(dx, dz);
+  if (d < 0.25) { clearWalkTarget(); return [0, 0]; }
+  if (d < T.best - 0.01) { T.best = d; T.still = 0; } else if ((T.still += dt) > 0.9) { clearWalkTarget(); return [0, 0]; }
+  const ux = dx / d, uz = dz / d;
+  if (!S.gyro?.on) {
+    let turn = Math.atan2(-ux, -uz) - walk.yaw; turn = Math.atan2(Math.sin(turn), Math.cos(turn));
+    walk.yaw += THREE.MathUtils.clamp(turn, -2.4 * dt, 2.4 * dt); applyWalkLook();
+  }
+  const sy = Math.sin(walk.yaw), cy = Math.cos(walk.yaw), slow = Math.min(1, d / 0.8);
+  return [-(ux * sy + uz * cy) * slow, (ux * cy - uz * sy) * slow];
+}
+
+// look by moving the phone (device orientation; iOS asks for permission on the first tap)
+S.gyro = { on: false, offset: 0, have: false };
+const _gq = new THREE.Quaternion(), _gx = new THREE.Quaternion(-Math.sqrt(0.5), 0, 0, Math.sqrt(0.5)), _gz = new THREE.Vector3(0, 0, 1), _go = new THREE.Quaternion(), _ge = new THREE.Euler();
+function onPhoneTurn(ev) {
+  if (!S.gyro.on || ev.alpha == null) return;
+  const D = THREE.MathUtils.DEG2RAD, orient = (screen.orientation?.angle ?? window.orientation ?? 0) * D;
+  _ge.set(ev.beta * D, ev.alpha * D, -ev.gamma * D, 'YXZ'); _gq.setFromEuler(_ge).multiply(_gx).multiply(_go.setFromAxisAngle(_gz, -orient));
+  _ge.setFromQuaternion(_gq, 'YXZ');
+  if (!S.gyro.have) { S.gyro.offset = walk.yaw - _ge.y; S.gyro.have = true; }
+  walk.yaw = _ge.y + S.gyro.offset; walk.pitch = THREE.MathUtils.clamp(_ge.x, -1.2, 1.2);
+  if (S.mode === 'walk' || (S.mode === 'rooms' && eyeLevel())) { if (S.mode === 'rooms' && !S.freeLook) S.freeLook = true; applyWalkLook(); }
+}
+async function toggleGyro() {
+  if (!S.gyro.on) {
+    try {
+      if (typeof DeviceOrientationEvent.requestPermission === 'function' && (await DeviceOrientationEvent.requestPermission()) !== 'granted') { S.errors.push('Phone look: permission not given'); return; }
+    } catch (e) { S.errors.push('Phone look: ' + e.message); return; }
+    if (S.mode === 'rooms' && eyeLevel() && !S.freeLook) { lookFromCamera(); S.freeLook = true; }
+    S.gyro.on = true; S.gyro.have = false; addEventListener('deviceorientation', onPhoneTurn);
+  } else { S.gyro.on = false; removeEventListener('deviceorientation', onPhoneTurn); }
+  $('bGyro').classList.toggle('on', S.gyro.on); $('bGyro').textContent = S.gyro.on ? 'Stop phone look' : 'Look by moving the phone';
+}
+$('bGyro').onclick = toggleGyro;
+$('infoTitle').addEventListener('click', () => { if (document.body.classList.contains('walk-compact')) $('info').classList.toggle('open'); });   // phones walking: tap the room name for the room text
+
+// a short help card the first time a phone walks
+function showWalkHelp() {
+  if (!WALK_ARROWS || !COARSE) return;
+  try { if (localStorage.getItem('stage2-walk-help')) return; } catch { /* no storage: show it each time */ }
+  $('whGyro').classList.toggle('hidden', !GYRO_OK);
+  $('walkhelp').classList.remove('hidden');
+}
+$('whOk').onclick = () => { $('walkhelp').classList.add('hidden'); try { localStorage.setItem('stage2-walk-help', '1'); } catch { /* the card simply returns next time */ } };
 
 // minimap (walk grid)
 const mm = $('minimap'), mctx = mm.getContext('2d');
@@ -963,23 +1072,23 @@ mm.addEventListener('click', (e) => {
   const x = grid.origin_xz[0] + (e.clientX - rc.left - 5) / mmScale, z = grid.origin_xz[1] + (e.clientY - rc.top - 5) / mmScale;
   if (blocked(x, z)) return;
   const to = new THREE.Vector3(x, walk.eye, z);
-  if (pathClear(camera.position, to)) walk.glide = { from: camera.position.clone(), to, t: 0, dur: Math.max(0.5, camera.position.distanceTo(to) / 2.2) };
+  if (pathClear(camera.position, to)) { if (USE_WALKING && WALK_ARROWS) setWalkTarget(x, z); else walk.glide = { from: camera.position.clone(), to, t: 0, dur: Math.max(0.5, camera.position.distanceTo(to) / 2.2) }; }
   else flyTo({ pos: to, quat: camera.quaternion.clone(), fov: camera.fov, shift: 0 }, { inside: true, onDone: () => { setMode('walk'); setOverhead(true, true); enterWalkFromCamera(); } });
   S.room = roomAt(x, z); if (S.room) walkCard(S.room);
 });
 
 // ------------------------------------------------------------------ photoreal render panel
 function showPhoto(camName) {
-  const c = cams[camName]; if (!c || CFG.noRenderPhotos) return;   // a concept route never shows the approved renders as its design
+  const c = cams[camName]; if (!c || (CFG.noRenderPhotos && !(STILLS && STILLS[camName]))) return;   // a concept route never shows the approved renders as its design, only its own images
   if (!S.photo) S.sideWasOpen = $('side').classList.contains('open');
   closeSide();
   const img = $('photoImg');
   img.onload = () => { $('photo').classList.add('show'); };
-  img.onerror = () => { hidePhoto(); S.errors.push('render not found: ' + c.render.file); };
-  img.alt = `Photoreal render ${camName}`;
+  img.onerror = () => { hidePhoto(); S.errors.push('render not found: ' + (STILLS?.[camName] || c.render.file)); };
+  img.alt = STILLS ? `AI concept image of the view ${camName}; people are fictional` : `Photoreal render ${camName}`;
   $('photo').classList.remove('hidden');
   $('photo').classList.remove('show');
-  img.src = RENDERS + camName + '.jpg';
+  img.src = STILLS?.[camName] || RENDERS + camName + '.jpg';
   S.photo = camName;
 }
 function hidePhoto() {
@@ -994,7 +1103,10 @@ $('bPhoto').onclick = () => photoCam() && showPhoto(photoCam());
 // phones show a room's concept note folded to two lines; a tap opens or folds it
 for (const id of ['infoNote', 'tNote']) $(id).onclick = () => $(id).classList.toggle('open');
 $('photoClose').onclick = () => { hidePhoto(); if (S.tour) S.tour.photoSkip = true; };
-function preload(camName) { if (camName && cams[camName] && !CFG.noRenderPhotos) { const i = new Image(); i.src = RENDERS + camName + '.jpg'; } }
+function preload(camName) {
+  if (camName && STILLS?.[camName]) { const i = new Image(); i.src = STILLS[camName]; }
+  else if (camName && cams[camName] && !CFG.noRenderPhotos && !STILLS) { const i = new Image(); i.src = RENDERS + camName + '.jpg'; }
+}
 
 // ------------------------------------------------------------------ guided tour (16 stops)
 const stops = meta.tour;

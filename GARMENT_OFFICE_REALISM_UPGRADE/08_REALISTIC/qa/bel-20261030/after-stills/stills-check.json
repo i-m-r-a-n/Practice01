@@ -1,0 +1,59 @@
+{
+  "url": "http://127.0.0.1:8790/stage2-concept/?welcome=0",
+  "scope": "LOCAL Chromium (SwiftShader) via serve_preview.py",
+  "runs": {
+    "desktop": {
+      "switch_label": "Show concept images",
+      "switch_on": true,
+      "images_load": {
+        "CAM_03_Entrance_Lobby": 1536,
+        "CAM_01_Reception_A": 1536,
+        "BEL_CAM_SUN_WALL": 1536,
+        "BEL_CAM_UTHAN": 1536,
+        "BEL_CAM_LAB": 1536,
+        "BEL_CAM_CAD": 1536,
+        "BEL_CAM_TEA": 1536,
+        "BEL_CAM_PLANT_WALL": 1536,
+        "CAM_09_Boardroom_A": 1536,
+        "CAM_07_MD_Office_A": 1536,
+        "CAM_25_Fabric_Library": 1536,
+        "CAM_23_Sample_Room": 1536
+      },
+      "stop2_image": true,
+      "stop2_src": "concept-images/CAM_03_Entrance_Lobby.jpg",
+      "tag": "AI CONCEPT IMAGE \u00b7 made from the 3D views \u00b7 people are fictional \u00b7 not a photograph",
+      "stop5_no_image": true,
+      "room_button": "Concept image",
+      "room_image": "concept-images/CAM_07_MD_Office_A.jpg",
+      "passed": true
+    },
+    "phone": {
+      "switch_label": "Show concept images",
+      "switch_on": true,
+      "images_load": {
+        "CAM_03_Entrance_Lobby": 1536,
+        "CAM_01_Reception_A": 1536,
+        "BEL_CAM_SUN_WALL": 1536,
+        "BEL_CAM_UTHAN": 1536,
+        "BEL_CAM_LAB": 1536,
+        "BEL_CAM_CAD": 1536,
+        "BEL_CAM_TEA": 1536,
+        "BEL_CAM_PLANT_WALL": 1536,
+        "CAM_09_Boardroom_A": 1536,
+        "CAM_07_MD_Office_A": 1536,
+        "CAM_25_Fabric_Library": 1536,
+        "CAM_23_Sample_Room": 1536
+      },
+      "stop2_image": true,
+      "stop2_src": "concept-images/CAM_03_Entrance_Lobby.jpg",
+      "tag": "AI CONCEPT IMAGE \u00b7 made from the 3D views \u00b7 people are fictional \u00b7 not a photograph",
+      "stop5_no_image": true,
+      "room_button": "Concept image",
+      "room_image": "concept-images/CAM_07_MD_Office_A.jpg",
+      "passed": true
+    }
+  },
+  "errors": [],
+  "http_errors": [],
+  "passed": true
+}

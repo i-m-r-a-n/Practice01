@@ -59,6 +59,7 @@
     <div class="row">
       <button id="bPhoto" class="ghost gold hidden" title="The offline Cycles render of this room (P)">Photoreal render</button>
       <button id="bWalkHere" class="ghost hidden" title="Walk on from this spot">Walk from here</button>
+      <button id="bGyro" class="ghost hidden" title="Turn the view by turning your phone">Look by moving the phone</button>
       <button id="bBack" class="ghost">&larr; Back to overview</button>
     </div>
   </section>
@@ -101,6 +102,16 @@
 </div>
 
 <div id="walkhint" class="hidden"></div>
+<div id="walkhelp" class="card hidden" role="dialog" aria-label="How to walk">
+  <h3>Walk through the floor</h3>
+  <ul>
+    <li>Hold an arrow to walk. Slide your finger to another arrow to change direction.</li>
+    <li>Drag the screen to look around.</li>
+    <li>Tap the floor to walk there.</li>
+    <li id="whGyro">Or tap <b>Look by moving the phone</b> and turn with your phone.</li>
+  </ul>
+  <button id="whOk" class="ghost gold">Got it</button>
+</div>
 <div id="labels"></div>
 
 <footer id="disclaimer"><b>Concept proposal</b> &middot; final dimensions and technical details subject to site verification. <span id="peopleNote" hidden><b>People shown are illustrative</b>, not real staff.</span></footer>

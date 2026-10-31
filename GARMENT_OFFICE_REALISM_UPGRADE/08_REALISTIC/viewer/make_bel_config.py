@@ -160,14 +160,21 @@ config = {
     'peopleManifest': base.get('peopleManifest'), 'peopleAccepted': False,
     'hideNodes': HIDE + OPTION_A_HIDE, 'walkRelease': ledger['walk_release']['runs'], 'noRenderPhotos': True, 'walkArrows': True,   # on-screen walk arrows on every device (the owner, 31 Oct)
     'extraCameras': cameras, 'tour': tour, 'roomNames': names, 'roomNotes': notes,
-    'roomGroups': {'Z07': 'Option A · later phase', 'Z06': 'Option A · later phase'},   # their own menu group and tour-card kicker (option C, the pilot, was chosen first)
+    'roomGroups': {'Z07': 'Option A · later phase', 'Z06': 'Option A · later phase'},
+    # the owner's AI concept images (made with ChatGPT from this route's 3D frames, 31 Oct 2026), shown at their tour stops and rooms,
+    # labelled as AI images with fictional people; the 3D itself shows no people
+    'conceptStills': {cam: 'concept-images/' + cam + '.jpg' for cam in [
+        'CAM_03_Entrance_Lobby', 'CAM_01_Reception_A', 'BEL_CAM_SUN_WALL', 'BEL_CAM_UTHAN', 'BEL_CAM_LAB', 'BEL_CAM_CAD', 'BEL_CAM_TEA',
+        'BEL_CAM_PLANT_WALL', 'CAM_09_Boardroom_A', 'CAM_07_MD_Office_A', 'CAM_25_Fabric_Library', 'CAM_23_Sample_Room']},
+    'stillsLabel': 'Show concept images', 'stillsButton': 'Concept image', 'stillsDefaultOn': True,
+    'stillsTag': 'AI CONCEPT IMAGE &middot; made from the 3D views &middot; people are fictional &middot; not a photograph',   # their own menu group and tour-card kicker (option C, the pilot, was chosen first)
     'branding': {
         'pageTitle': 'STAGE II · Zara Fashion - ground floor concept',   # the owner, 30 Oct: STAGE II / Zara Fashion branding only
         'eyebrow': 'STAGE II · Zara Fashion',
         'headline': 'The ground floor, reimagined · concept proposal',
         'welcomeTitle': 'Explore the ground floor proposal',
         'welcomeTour': 'A guided tour of the proposal: the pilot first, then the option A rooms as a possible later phase. Pause, go back or skip at any time.',
-        'disclaimerHtml': '<b>Concept proposal</b> on the approved Stage II floor &middot; fibre origins, recycled shares, tests, makers, artists, growers, stone sources and energy data are still to be identified &middot; no people shown.',
+        'disclaimerHtml': '<b>Concept proposal</b> on the approved Stage II floor &middot; fibre origins, recycled shares, tests, makers, artists, growers, stone sources and energy data are still to be identified &middot; no people in the 3D; the concept images show fictional people.',
     },
 }
 out = HERE / 'bel-config.json'
