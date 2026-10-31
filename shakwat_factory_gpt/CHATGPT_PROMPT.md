@@ -1,3 +1,6 @@
+REDO ROOMS: none
+(To remake some rooms, replace "none" with their numbers, for example: REDO ROOMS: 07, 12. Otherwise leave it.)
+
 # ROLE
 You are the world's best architectural and interior photographer, working together with a top architectural visualisation artist. Your work is published in Architectural Digest, Dezeen and Frame and on the best architecture and interior design Instagram accounts. Every frame you deliver is calm, precise, beautifully lit and true to the design.
 
@@ -6,18 +9,31 @@ The ground floor of a knitwear company's corporate headquarters and design devel
 
 # YOUR TASK
 There are 34 rooms in the ROOM LIST below. Each room has one source picture at a public web address (no login needed).
-Save every finished image in this Google Drive folder: https://drive.google.com/drive/folders/1wz3ORRlypiBOW44hfKOoQuguP_bj3vjX
+Save every finished image in this Google Drive folder (the OUTPUT FOLDER): https://drive.google.com/drive/folders/1wz3ORRlypiBOW44hfKOoQuguP_bj3vjX
 (If Google asks you to sign in, ask me to take over the browser, I will sign in, then continue.)
 
-Work through all 34 rooms in order, one room at a time, without waiting for me between rooms:
+I paste this same prompt every time, so it must work whether this is the first run or a later one.
+
+STEP A - Find out what is already done:
+- Open the OUTPUT FOLDER and list the files in it.
+- A room is DONE if a file with exactly its "Save as" name is already there.
+- Rooms named in "REDO ROOMS" at the top are NOT done, even if their file exists. Their old file must be replaced, so delete it or overwrite it.
+- If you cannot open the folder, treat every room as not done.
+- Tell me in one line which room numbers are done and which you will make now.
+
+STEP B - Make the rooms that are not done, in ROOM LIST order, one room at a time, without waiting for me between rooms:
 1. Download the room's source picture from its "Source picture" address.
 2. Create ONE photorealistic image from it, using it as the reference image and following the RULES and the room card.
 3. Run the SELF-CHECK. If any point fails, generate again (up to 3 tries). If it still fails, keep the best try and note the problem.
-4. Upload the image to the Google Drive folder above with exactly the file name given in "Save as".
+4. Upload the image to the OUTPUT FOLDER with exactly the file name given in "Save as". Never create a second copy with the same name.
 5. Write one short line: room number, file uploaded, any problem. Then go straight to the next room.
 
-Only stop to ask me if you cannot continue at all. If you cannot upload to Google Drive, still make every image and give me each one as a download with its exact "Save as" file name.
-When all 34 rooms are done, give me a table: number, room, uploaded file name, status or notes.
+STEP C - Finish:
+- Open the OUTPUT FOLDER again and check that all 34 "Save as" files are there. Make any that are missing.
+- Give me a table: number, room, file name, status or notes.
+
+If you must stop early, for example because of an image limit or a time limit, end with exactly: "Paused after room NN. Paste the same prompt again to continue." Next time, STEP A will skip the finished rooms.
+Only stop to ask me if you cannot continue at all. If you cannot upload to Google Drive, still make the images and give me each one as a download with its exact "Save as" file name.
 
 # RULES
 LOCK - never change:
@@ -295,4 +311,4 @@ SELF-CHECK before every upload (compare with the source picture):
 - Materials and light: Carpet floor. Felt baffles between the beams; grow lights over the plants.
 - Objects (show only those visible in the source): A courtyard around the column with a raised bot-tola seat; small fig trees and a bonsai; stone seats; an open bamboo canopy hung with woven kula and dala trays and clay pots; alpana floor art; electric lanterns in the hurricane form; knitwear on bamboo rails; colour-sorted offcuts; kantha textiles; take-back bins; artisan and craft corners with cane and bamboo furniture.
 
-Start now with room 01 and continue until all 34 rooms are done.
+Start now with STEP A, then STEP B and STEP C, and keep going until every room is done.
