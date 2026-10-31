@@ -68,3 +68,13 @@
   - Phones get two columns of 640 px copies of the images, about 48 KB each (`concept-images/thumbs/`, made by `viewer/make_concept_thumbs.py`).
   - Check: `bel_gallery_check.py`, desktop and phone.
 - **While a phone walks, the footer note is one line;** a tap shows the whole note. This gives the view about 40 px more on a phone; a computer keeps the whole note. `bel_phone_walk_check.py` checks it.
+- **About 22:50 UTC, phones held sideways** (844 × 390, 667 × 375):
+  - Before, the two-row header, the stacked room card and arrows, and a two-line footer left the 3D only a thin band in the middle.
+  - Now the header is one row and the footer is one line (a tap shows the whole note).
+  - While walking, the room card sits at the left and the arrows under the right thumb.
+  - The welcome card shows its four ways in two columns.
+  - Check: `bel_landscape_check.py`.
+- **Fixes:**
+  - On a phone, the walk help card stayed over the tour when "Got it" was not pressed. It now leaves with walking and returns next time.
+  - A stop image's alt text named the camera id. It now names the kind and the stop or room.
+- **`run_checks.sh`** runs all the browser checks of this route one after another and saves their screenshots as JPEG.
