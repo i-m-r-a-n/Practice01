@@ -728,7 +728,7 @@ function setMode(m) {
   updatePad();
   if (m !== 'walk' && S.walkTarget) clearWalkTarget();
   if (m !== 'walk' && m !== 'rooms' && S.gyro?.on) toggleGyro();
-  if (m === 'walk') showWalkHelp();
+  if (m === 'walk') showWalkHelp(); else $('walkhelp').classList.add('hidden');   // the help card belongs to walking; it returns next time until "Got it"
   document.body.classList.toggle('walk-compact', WALK_ARROWS && COARSE && m === 'walk');
   $('disclaimer').classList.remove('open'); measureChrome();   // the footer is one line while a phone walks
   $('minimap').classList.toggle('hidden', !(m === 'walk' || m === 'tour'));

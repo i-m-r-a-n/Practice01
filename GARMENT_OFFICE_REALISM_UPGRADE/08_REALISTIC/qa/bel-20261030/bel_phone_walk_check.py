@@ -1,6 +1,6 @@
 """Phone walking on the proposal route (the owner, 31 Oct: "walk the factory with a phone"), LOCAL Chromium via serve_preview.py.
 Phone (390 x 844, touch) and desktop runs:
-- the help card shows the first time a phone walks, and "Got it" closes it;
+- the help card shows the first time a phone walks, and "Got it" closes it; without "Got it" it leaves with walking and returns next time;
 - while a phone walks, the footer note is one line and a tap shows the whole note (a computer keeps the whole note);
 - a finger slides from the up arrow to the right arrow and the held direction follows it;
 - a tap (phone) or click (desktop) on the floor ahead sets a walk target and the visitor walks towards it;
@@ -74,10 +74,17 @@ with sync_playwright() as pw:
             y1 = page.evaluate("new (window.__dbg().THREE.Euler)().setFromQuaternion(window.__dbg().camera.quaternion, 'YXZ').y")
             run['gyro_turned_deg'] = round(math.degrees(math.atan2(math.sin(y1 - y0), math.cos(y1 - y0))), 1)
             page.click('#bGyro'); page.wait_for_timeout(200); run['gyro_off_again'] = not page.evaluate("window.__viewer.gyro.on")
+        if name == 'phone':   # the help card leaves with walking when "Got it" was not pressed, and returns next time
+            page.evaluate("try { localStorage.removeItem('stage2-walk-help'); } catch (e) {}")
+            page.evaluate("__viewer.api.goOverview()"); page.wait_for_timeout(500)
+            page.evaluate("__viewer.api.startWalk()"); page.wait_for_function("document.body.dataset.mode === 'walk'", timeout=60000); page.wait_for_timeout(500)
+            again = page.evaluate(f"({shown})('walkhelp')")
+            page.evaluate("__viewer.api.goOverview()"); page.wait_for_timeout(500)
+            run['help_leaves_with_walk'] = again and not page.evaluate(f"({shown})('walkhelp')")
         ctx.close()
         ok = run['help_closed'] and run['held_first'] == ['KeyW'] and run['held_after_slide'] == ['KeyD'] and run['released'] and run['target_set'] and run.get('closer_to_target_m', 0) > 0.02
         if name == 'phone': ok = (ok and run['help_shown'] and run['gyro_button_shown'] and run.get('gyro_on') and abs(run.get('gyro_turned_deg', 0)) > 20 and run.get('gyro_off_again')
-                                  and run['footer_px'] < 30 and run['footer_open_px'] > run['footer_px'] + 10 and run['footer_closed_again_px'] == run['footer_px'])
+                                  and run['footer_px'] < 30 and run['footer_open_px'] > run['footer_px'] + 10 and run['footer_closed_again_px'] == run['footer_px'] and run['help_leaves_with_walk'])
         else: ok = ok and not run['help_shown'] and not run['gyro_button_shown']
         run['passed'] = bool(ok); R['runs'][name] = run; print(name, json.dumps(run), flush=True)
     b.close()
