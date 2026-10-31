@@ -73,6 +73,7 @@ renderer.setSize(innerWidth, innerHeight);
 renderer.setClearColor(0x000000, 0);
 renderer.outputColorSpace = THREE.SRGBColorSpace;
 renderer.toneMapping = THREE.AgXToneMapping;        // the renders use Blender's AgX view transform
+if (CFG.canvasFilter) renderer.domElement.style.filter = CFG.canvasFilter;   // a route's own colour grade (the proposal: a little warmer, like its renders)
 $('app').appendChild(renderer.domElement);
 const scene = new THREE.Scene();
 scene.environment = new THREE.PMREMGenerator(renderer).fromScene(new RoomEnvironment(), 0.04).texture;
@@ -158,12 +159,13 @@ if (CFG.roomGroups) for (const r of meta.rooms) if (CFG.roomGroups[r.zone]) {   
   r.group = CFG.roomGroups[r.zone]; if (!meta.room_groups.includes(r.group)) meta.room_groups.push(r.group);
 }
 const STILLS = CFG.conceptStills || null;            // a concept route's own images, by camera (none: no stills on a concept route)
+const stillSrc = (cam) => { const v = STILLS?.[cam]; return typeof v === 'string' ? v : v?.src || null; };
+const stillTag = (cam) => { const v = STILLS?.[cam]; return (v && typeof v === 'object' && CFG.stillsTags?.[v.kind]) || CFG.stillsTag || null; };
 if (CFG.noRenderPhotos && !STILLS) $('tPhoto').closest('label').style.display = 'none';   // no approved stills on this route: no stills switch (the card's label style overrides [hidden])
 if (STILLS) {
   const label = $('tPhoto').closest('label'); label.lastChild.textContent = ' ' + (CFG.stillsLabel || 'Show concept images'); label.title = 'At stops that have one, fade into the concept image of the same view';
   if (CFG.stillsDefaultOn) $('tPhoto').checked = true;
   $('bPhoto').textContent = CFG.stillsButton || 'Concept image'; $('bPhoto').title = 'The concept image of this view';
-  if (CFG.stillsTag) document.querySelector('#photo .photo-tag').innerHTML = CFG.stillsTag;
   document.body.classList.add('concept-stills');
 }
 if (CFG.extraCameras) meta.cameras.push(...CFG.extraCameras);   // proposal viewpoints that have no approved render
@@ -173,6 +175,7 @@ if (CFG.branding) {
   if (b.pageTitle) document.title = b.pageTitle;
   set('#top .eyebrow', b.eyebrow); set('#top h1', b.headline); set('#welcome .eyebrow, #loading .eyebrow', b.headline);
   set('#wTitle', b.welcomeTitle); set('#wTour span', b.welcomeTour);
+  set('#wWalk span', matchMedia('(pointer: coarse)').matches ? b.welcomeWalkTouch : b.welcomeWalk);   // a phone gets the phone wording
   if (b.disclaimerHtml) $('disclaimer').innerHTML = b.disclaimerHtml;
 }
 
@@ -1084,11 +1087,12 @@ function showPhoto(camName) {
   closeSide();
   const img = $('photoImg');
   img.onload = () => { $('photo').classList.add('show'); };
-  img.onerror = () => { hidePhoto(); S.errors.push('render not found: ' + (STILLS?.[camName] || c.render.file)); };
-  img.alt = STILLS ? `AI concept image of the view ${camName}; people are fictional` : `Photoreal render ${camName}`;
+  img.onerror = () => { hidePhoto(); S.errors.push('render not found: ' + (stillSrc(camName) || c.render.file)); };
+  img.alt = STILLS ? `Image of the view ${camName}` : `Photoreal render ${camName}`;
+  if (STILLS && stillTag(camName)) document.querySelector('#photo .photo-tag').innerHTML = stillTag(camName);
   $('photo').classList.remove('hidden');
   $('photo').classList.remove('show');
-  img.src = STILLS?.[camName] || RENDERS + camName + '.jpg';
+  img.src = stillSrc(camName) || RENDERS + camName + '.jpg';
   S.photo = camName;
 }
 function hidePhoto() {
@@ -1104,7 +1108,7 @@ $('bPhoto').onclick = () => photoCam() && showPhoto(photoCam());
 for (const id of ['infoNote', 'tNote']) $(id).onclick = () => $(id).classList.toggle('open');
 $('photoClose').onclick = () => { hidePhoto(); if (S.tour) S.tour.photoSkip = true; };
 function preload(camName) {
-  if (camName && STILLS?.[camName]) { const i = new Image(); i.src = STILLS[camName]; }
+  if (camName && stillSrc(camName)) { const i = new Image(); i.src = stillSrc(camName); }
   else if (camName && cams[camName] && !CFG.noRenderPhotos && !STILLS) { const i = new Image(); i.src = RENDERS + camName + '.jpg'; }
 }
 

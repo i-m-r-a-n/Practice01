@@ -160,20 +160,26 @@ config = {
     'peopleManifest': base.get('peopleManifest'), 'peopleAccepted': False,
     'hideNodes': HIDE + OPTION_A_HIDE, 'walkRelease': ledger['walk_release']['runs'], 'noRenderPhotos': True, 'walkArrows': True,   # on-screen walk arrows on every device (the owner, 31 Oct)
     'extraCameras': cameras, 'tour': tour, 'roomNames': names, 'roomNotes': notes,
-    'roomGroups': {'Z07': 'Option A · later phase', 'Z06': 'Option A · later phase'},
-    # the owner's AI concept images (made with ChatGPT from this route's 3D frames, 31 Oct 2026), shown at their tour stops and rooms,
-    # labelled as AI images with fictional people; the 3D itself shows no people
-    'conceptStills': {cam: 'concept-images/' + cam + '.jpg' for cam in [
+    'roomGroups': {'Z07': 'Option A · later phase', 'Z06': 'Option A · later phase'},   # their own menu group and tour-card kicker (option C, the pilot, was chosen first)
+    # images at the tour stops and rooms, by camera, each labelled for what it is:
+    # 'ai'     - the owner's AI concept images, made with ChatGPT from this route's 3D frames (31 Oct 2026); people are fictional
+    # 'render' - Blender Cycles renders of this route's own 3D scene (qa/bel-20261030/cycles-render/); no people
+    'conceptStills': {**{cam: {'src': 'concept-images/' + cam + '.jpg', 'kind': 'ai'} for cam in [
         'CAM_03_Entrance_Lobby', 'CAM_01_Reception_A', 'BEL_CAM_SUN_WALL', 'BEL_CAM_UTHAN', 'BEL_CAM_LAB', 'BEL_CAM_CAD', 'BEL_CAM_TEA',
         'BEL_CAM_PLANT_WALL', 'CAM_09_Boardroom_A', 'CAM_07_MD_Office_A', 'CAM_25_Fabric_Library', 'CAM_23_Sample_Room']},
+        **{f.stem[len('render_'):]: {'src': 'concept-images/' + f.name, 'kind': 'render'} for f in sorted((HERE.parent / 'concept-images').glob('render_*.jpg'))}},
+    'stillsTags': {'ai': 'AI CONCEPT IMAGE &middot; made from the 3D views &middot; people are fictional &middot; not a photograph',
+                   'render': 'RENDERED FROM THE 3D MODEL &middot; Blender Cycles, simulated light &middot; no people &middot; not a photograph'},
     'stillsLabel': 'Show concept images', 'stillsButton': 'Concept image', 'stillsDefaultOn': True,
-    'stillsTag': 'AI CONCEPT IMAGE &middot; made from the 3D views &middot; people are fictional &middot; not a photograph',   # their own menu group and tour-card kicker (option C, the pilot, was chosen first)
+    'canvasFilter': 'saturate(1.07) sepia(0.06) contrast(1.03) brightness(1.03)',   # warmer, closer to the renders and concept images (A/B on reception and the tea stall, 31 Oct)
     'branding': {
         'pageTitle': 'STAGE II · Zara Fashion - ground floor concept',   # the owner, 30 Oct: STAGE II / Zara Fashion branding only
         'eyebrow': 'STAGE II · Zara Fashion',
         'headline': 'The ground floor, reimagined · concept proposal',
         'welcomeTitle': 'Explore the ground floor proposal',
         'welcomeTour': 'A guided tour of the proposal: the pilot first, then the option A rooms as a possible later phase. Pause, go back or skip at any time.',
+        'welcomeWalk': 'Walk at eye level: hold the on-screen arrows or W A S D, drag to look, click the floor to go there. Walls, glass and furniture stop you.',
+        'welcomeWalkTouch': 'Walk through the floor on your phone: hold the arrows, drag to look, tap the floor to go there, or turn the view by moving your phone.',
         'disclaimerHtml': '<b>Concept proposal</b> on the approved Stage II floor &middot; fibre origins, recycled shares, tests, makers, artists, growers, stone sources and energy data are still to be identified &middot; no people in the 3D; the concept images show fictional people.',
     },
 }

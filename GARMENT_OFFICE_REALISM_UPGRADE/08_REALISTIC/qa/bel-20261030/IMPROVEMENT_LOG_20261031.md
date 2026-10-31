@@ -48,3 +48,11 @@
   - On upright phones the image fits whole, above the tour card.
   - The footer now says the 3D has no people and the concept images show fictional people.
   - Checks: `bel_stills_check.py` passes on desktop and phone (`after-stills/`); all 12 images load. The 23-stop tour passes with the images on (`after-tour-play-stills/`).
+- **About 22:05 UTC, renders from the 3D for the stops without an AI image:**
+  - Each view is exported from the page (three.js GLTFExporter) and rendered in Blender 5.2 Cycles with the camera's own lens and shift.
+  - Interior views are lit only by the 3D's real light fittings (`led_3000`, `led_3500`, bulbs, lanterns, niche lights). The web view's painted light pools are hidden and the self-lit helpers are switched off. A warm, soft fill stands in for light bouncing off the walls.
+  - Stop 1 uses the whole-floor render (`render_CAM_ISO_SE.jpg`).
+  - Batch 1: stops 5, 6, 7, 9, 10, 11 and 12. Batch 2: stops 13, 16, 18, 19, 21 and 23.
+  - The renders get their own label ("RENDERED FROM THE 3D MODEL · … · no people"); the AI images keep theirs.
+  - `concept-images/README.md` explains both kinds.
+- **The welcome screen's Walk choice** has phone wording on touch screens. The link `?walk=1` starts walking straight away; this is useful to send to a phone.

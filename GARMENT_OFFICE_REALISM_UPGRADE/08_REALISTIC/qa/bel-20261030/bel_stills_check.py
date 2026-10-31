@@ -1,6 +1,7 @@
 """The owner's AI concept images on the proposal route (31 Oct 2026), LOCAL Chromium via serve_preview.py.
 - the tour's switch reads "Show concept images" and starts on;
-- a tour stop that has an image fades into it (stop 2, the arrival gallery), with the AI label; a stop without one does not (stop 5);
+- a tour stop with an AI image fades into it with the AI label (stop 2, the arrival gallery); stop 5 shows its Cycles render with the
+  render label when the route has one, or no image;
 - a room view that has an image offers it on its card (the MD office, Z12) and shows it;
 - every configured image loads.
 python3 -I bel_stills_check.py --out DIR [--url URL]"""
@@ -26,7 +27,7 @@ with sync_playwright() as pw:
         run['switch_label'] = page.evaluate("document.getElementById('tPhoto').closest('label').textContent.trim()")
         run['switch_on'] = page.evaluate("document.getElementById('tPhoto').checked")
         stills = page.evaluate("window.__TOUR_CONFIG.conceptStills")
-        run['images_load'] = page.evaluate("""async (s) => { const r = {}; for (const [k, u] of Object.entries(s)) r[k] = await new Promise(ok => { const i = new Image(); i.onload = () => ok(i.naturalWidth); i.onerror = () => ok(0); i.src = u; }); return r; }""", stills)
+        run['images_load'] = page.evaluate("""async (s) => { const r = {}; for (const [k, v] of Object.entries(s)) { const u = typeof v === 'string' ? v : v.src; r[k] = await new Promise(ok => { const i = new Image(); i.onload = () => ok(i.naturalWidth); i.onerror = () => ok(0); i.src = u; }); } return r; }""", stills)
         # tour: stop 2 has an image
         page.evaluate("__viewer.api.startTour(1)")
         try: page.wait_for_function(photo_on, timeout=90000); run['stop2_image'] = True
@@ -34,9 +35,14 @@ with sync_playwright() as pw:
         run['stop2_src'] = page.evaluate("document.getElementById('photoImg').getAttribute('src')")
         run['tag'] = page.evaluate("document.querySelector('#photo .photo-tag').textContent")
         page.wait_for_timeout(1200); page.screenshot(path=str(out / f'{name}_stop2_image.png'), timeout=120000)
-        # stop 5 has none
-        page.evaluate("__viewer.api.goStop(4)"); page.wait_for_timeout(12000)
-        run['stop5_no_image'] = not page.evaluate(photo_on)
+        # stop 5: its Cycles render if the route has one, else no image
+        page.evaluate("__viewer.api.goStop(4)")
+        if 'CAM_04_Experience_Centre_A' in stills:
+            try: page.wait_for_function(photo_on + " && document.getElementById('photoImg').getAttribute('src').includes('render_CAM_04')", timeout=90000); run['stop5_ok'] = 'RENDERED FROM THE 3D MODEL' in page.evaluate("document.querySelector('#photo .photo-tag').textContent")
+            except Exception: run['stop5_ok'] = False
+            page.wait_for_timeout(1000); page.screenshot(path=str(out / f'{name}_stop5_render.png'), timeout=120000)
+        else:
+            page.wait_for_timeout(12000); run['stop5_ok'] = not page.evaluate(photo_on)
         page.evaluate("__viewer.api.stopTour()"); page.wait_for_timeout(1500)
         # a room view with an image: the MD office
         page.evaluate("__viewer.api.selectRoom('Z12')")
@@ -46,7 +52,7 @@ with sync_playwright() as pw:
         except Exception as e: run['room_button'] = None; run['room_image'] = None
         ctx.close()
         run['passed'] = (run['switch_label'] == 'Show concept images' and run['switch_on'] and all(v > 0 for v in run['images_load'].values()) and run['stop2_image']
-                         and run['stop2_src'].endswith('CAM_03_Entrance_Lobby.jpg') and 'AI CONCEPT IMAGE' in run['tag'] and run['stop5_no_image']
+                         and run['stop2_src'].endswith('CAM_03_Entrance_Lobby.jpg') and 'AI CONCEPT IMAGE' in run['tag'] and run['stop5_ok']
                          and run['room_button'] == 'Concept image' and (run['room_image'] or '').endswith('CAM_07_MD_Office_A.jpg'))
         R['runs'][name] = run; print(name, json.dumps({k: v for k, v in run.items() if k != 'images_load'}), 'images', sum(1 for v in run['images_load'].values() if v > 0), '/', len(run['images_load']), flush=True)
     b.close()
