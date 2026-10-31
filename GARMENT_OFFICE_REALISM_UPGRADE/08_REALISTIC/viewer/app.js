@@ -1092,7 +1092,8 @@ function showPhoto(camName) {
   const img = $('photoImg');
   img.onload = () => { $('photo').classList.add('show'); };
   img.onerror = () => { hidePhoto(); S.errors.push('render not found: ' + (stillSrc(camName) || c.render.file)); };
-  img.alt = STILLS ? `Image of the view ${camName}` : `Photoreal render ${camName}`;
+  const where = (S.tour && stops[S.tour.i]?.camera === camName && stops[S.tour.i].title) || S.room?.name || camName, sv = STILLS?.[camName];
+  img.alt = STILLS ? `${sv && typeof sv === 'object' && sv.kind === 'render' ? 'Render of the 3D model' : 'AI concept image'}: ${where}` : `Photoreal render ${camName}`;   // what a screen reader says
   if (STILLS && stillTag(camName)) document.querySelector('#photo .photo-tag').innerHTML = stillTag(camName);
   $('photo').classList.remove('hidden');
   $('photo').classList.remove('show');
