@@ -42,6 +42,9 @@ with sync_playwright() as pw:
         run['titles_ok'] = all(c['title'] == cfg['tour'][c['stop'] - 1]['title'] for c in cards)
         run['thumbs_used'] = sum(1 for c in cards if '/thumbs/' in c['src'])
         run['note_ok'] = page.evaluate("document.getElementById('gNote').textContent") == cfg['galleryNote']
+        # every card shows its whole image (16:9) and its three text lines inside the card, not cut off
+        run['cards_whole'] = page.evaluate("""[...document.querySelectorAll('#gGrid .gcard')].every(c => { const r = c.getBoundingClientRect(), i = c.querySelector('img').getBoundingClientRect(), t = c.querySelector('em').getBoundingClientRect();
+          return Math.abs(i.height - i.width * 9 / 16) < 2 && t.height > 0 && t.bottom <= r.bottom + 0.5 && t.top >= i.bottom; })""")
         loaded = page.evaluate("""async () => Promise.all([...document.querySelectorAll('#gGrid img')].map(img => new Promise(ok => { const i = new Image(); i.onload = () => ok(i.naturalWidth); i.onerror = () => ok(0); i.src = img.src; })))""")
         run['thumbs_loaded'] = sum(1 for w in loaded if w > 0)
         page.wait_for_timeout(1500); page.screenshot(path=str(out / f'{name}_gallery.png'), timeout=120000)
@@ -79,7 +82,7 @@ with sync_playwright() as pw:
         run['link_opens'] = page.evaluate(f"({shown})('gallery')") and not page.evaluate(f"({shown})('welcome')")
         ctx.close()
         ok = (run['welcome_way'] and run['toolbar_button'] and run['opened_from_welcome'] and run['cards'] == len(expected) > 0 and run['order_ok'] and run['kinds_ok']
-              and run['titles_ok'] and run['note_ok'] and run['thumbs_loaded'] == run['cards'] and run['thumbs_used'] == run['cards'] and not geo['sideways'] and not geo['page_sideways']
+              and run['titles_ok'] and run['note_ok'] and run['cards_whole'] and run['thumbs_loaded'] == run['cards'] and run['thumbs_used'] == run['cards'] and not geo['sideways'] and not geo['page_sideways']
               and run['closed'] and run['opened_from_toolbar'] and run['gallery_closed_on_tap'] and run['tour_stop'].startswith('Stop 5 of') and run['mode'] == 'tour'
               and (run['stop5_image'] or '').endswith('render_CAM_04_Experience_Centre_A.jpg') and 'RENDERED FROM THE 3D MODEL' in (run['stop5_tag'] or '') and run['link_opens'])
         if name == 'phone': ok = ok and geo['cols'] == 2

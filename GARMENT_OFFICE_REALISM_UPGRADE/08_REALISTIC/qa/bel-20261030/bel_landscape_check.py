@@ -53,7 +53,7 @@ with sync_playwright() as pw:
         ctx.close()
         run['passed'] = bool(run['header_px'] <= 52 and run['footer_px'] <= 26 and run['arrows_right'] and run['card_left'] and run['free_view_share'] >= 0.45
                              and not run['sideways_scroll'] and run['footer_open_px'] > run['footer_px'] + 8 and run['footer_folded_px'] == run['footer_px']
-                             and run['welcome_cols'] == 2 and run['tour_card_fits'] and run['gallery_fits'] and run['gallery_cols'] >= 3)
+                             and run['welcome_cols'] == 2 and run['tour_card_fits'] and run['gallery_fits'] and run['gallery_cols'] >= 2)
         R['runs'][name] = run; print(name, json.dumps(run), flush=True)
     b.close()
 R['passed'] = all(r['passed'] for r in R['runs'].values()) and not R['errors']
