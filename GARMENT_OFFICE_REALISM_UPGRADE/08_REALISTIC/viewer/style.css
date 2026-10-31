@@ -122,6 +122,7 @@ body.walk-compact #info:not(.open) #infoText, body.walk-compact #info:not(.open)
 body.walk-compact #info { padding: 9px 12px } body.walk-compact #info h2 { margin: 0; font-size: 16px; cursor: pointer }
 body.walk-compact #info h2::after { content: "  \25BE"; color: var(--mint); font-size: 12px } body.walk-compact #info.open h2::after { content: "  \25B4" }
 body.walk-compact #info .row { margin-top: 8px } body.walk-compact #info .row button { padding: 6px 10px; font-size: 12.5px }
+body.walk-compact #disclaimer:not(.open) { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; cursor: pointer }   /* phones walking: one line, tap for the whole note */
 #walkhelp { position: fixed; top: calc(var(--top-h) + 48px); left: 50%; transform: translateX(-50%); z-index: 12; width: min(360px, calc(100vw - 2 * var(--gap))); padding: 16px 18px 14px }
 #walkhelp h3 { margin: 0 0 8px; font-size: 16px }
 #walkhelp ul { margin: 0 0 12px; padding-left: 18px; display: grid; gap: 6px; font-size: 13.5px; line-height: 1.4 }

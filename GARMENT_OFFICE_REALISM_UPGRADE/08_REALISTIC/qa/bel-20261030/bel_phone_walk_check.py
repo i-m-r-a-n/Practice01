@@ -1,6 +1,7 @@
 """Phone walking on the proposal route (the owner, 31 Oct: "walk the factory with a phone"), LOCAL Chromium via serve_preview.py.
 Phone (390 x 844, touch) and desktop runs:
 - the help card shows the first time a phone walks, and "Got it" closes it;
+- while a phone walks, the footer note is one line and a tap shows the whole note (a computer keeps the whole note);
 - a finger slides from the up arrow to the right arrow and the held direction follows it;
 - a tap (phone) or click (desktop) on the floor ahead sets a walk target and the visitor walks towards it;
 - "Look by moving the phone" shows on the phone, turns on, and a device-orientation event turns the view.
@@ -34,6 +35,12 @@ with sync_playwright() as pw:
             page.screenshot(path=str(out / f'{name}_help.png'), timeout=120000)
             page.click('#whOk'); page.wait_for_timeout(300)
         run['help_closed'] = not page.evaluate(f"({shown})('walkhelp')")
+        # the footer note: one line while a phone walks, the whole note on a tap (a computer keeps the whole note)
+        foot = "document.getElementById('disclaimer').offsetHeight"
+        run['footer_px'] = page.evaluate(foot)
+        if name == 'phone':
+            page.click('#disclaimer'); page.wait_for_timeout(200); run['footer_open_px'] = page.evaluate(foot)
+            page.click('#disclaimer'); page.wait_for_timeout(200); run['footer_closed_again_px'] = page.evaluate(foot)
         # slide from the up arrow to the right arrow
         up = page.locator('#pad button[data-k="KeyW"]').bounding_box(); right = page.locator('#pad button[data-k="KeyD"]').bounding_box()
         page.mouse.move(up['x'] + up['width'] / 2, up['y'] + up['height'] / 2); page.mouse.down(); page.wait_for_timeout(400)
@@ -69,7 +76,8 @@ with sync_playwright() as pw:
             page.click('#bGyro'); page.wait_for_timeout(200); run['gyro_off_again'] = not page.evaluate("window.__viewer.gyro.on")
         ctx.close()
         ok = run['help_closed'] and run['held_first'] == ['KeyW'] and run['held_after_slide'] == ['KeyD'] and run['released'] and run['target_set'] and run.get('closer_to_target_m', 0) > 0.02
-        if name == 'phone': ok = ok and run['help_shown'] and run['gyro_button_shown'] and run.get('gyro_on') and abs(run.get('gyro_turned_deg', 0)) > 20 and run.get('gyro_off_again')
+        if name == 'phone': ok = (ok and run['help_shown'] and run['gyro_button_shown'] and run.get('gyro_on') and abs(run.get('gyro_turned_deg', 0)) > 20 and run.get('gyro_off_again')
+                                  and run['footer_px'] < 30 and run['footer_open_px'] > run['footer_px'] + 10 and run['footer_closed_again_px'] == run['footer_px'])
         else: ok = ok and not run['help_shown'] and not run['gyro_button_shown']
         run['passed'] = bool(ok); R['runs'][name] = run; print(name, json.dumps(run), flush=True)
     b.close()

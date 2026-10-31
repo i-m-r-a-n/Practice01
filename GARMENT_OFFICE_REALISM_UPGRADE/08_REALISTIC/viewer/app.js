@@ -730,6 +730,7 @@ function setMode(m) {
   if (m !== 'walk' && m !== 'rooms' && S.gyro?.on) toggleGyro();
   if (m === 'walk') showWalkHelp();
   document.body.classList.toggle('walk-compact', WALK_ARROWS && COARSE && m === 'walk');
+  $('disclaimer').classList.remove('open'); measureChrome();   // the footer is one line while a phone walks
   $('minimap').classList.toggle('hidden', !(m === 'walk' || m === 'tour'));
   if (m === 'tour' || m === 'walk') closeSide();
   controls.enabled = m === 'overview' && !flight;
@@ -1032,6 +1033,7 @@ async function toggleGyro() {
 }
 $('bGyro').onclick = toggleGyro;
 $('infoTitle').addEventListener('click', () => { if (document.body.classList.contains('walk-compact')) $('info').classList.toggle('open'); });   // phones walking: tap the room name for the room text
+$('disclaimer').addEventListener('click', () => { if (document.body.classList.contains('walk-compact')) { $('disclaimer').classList.toggle('open'); measureChrome(); } });   // and tap the footer for the whole note
 
 // a short help card the first time a phone walks
 function showWalkHelp() {
