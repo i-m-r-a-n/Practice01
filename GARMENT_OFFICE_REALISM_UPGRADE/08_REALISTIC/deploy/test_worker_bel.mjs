@@ -45,7 +45,9 @@ for (const [from, to] of [[P + '?x=1', P + '/?x=1'], ['/bengal-earth-lab?x=1', P
 const health = await (await bel.run(new Request('https://tour.example' + P + '/health'))).json(); assert.equal(health.source, commit); assert.equal(health.route, P); count++;
 for (const [path, type, target] of [[P + '/', 'text/html', B + 'viewer/dist-bel/index.html'], [P + '/app.js', 'text/javascript', B + 'viewer/dist-bel/app.js'],
   [P + '/release-config.json', 'application/json', B + 'viewer/dist-bel/release-config.json'], [P + '/model_web_baked.glb', 'model/gltf-binary', B + 'revised-model/Optimized_Office_Interior_web_baked.glb'],
-  [P + '/lighting-v2/manifest-hybrid.json', 'application/json', B + 'lighting-v2/manifest-hybrid.json'], [P + '/textures/pbr2k/ktx2/Terrazzo019M/basecolor.ktx2', 'image/ktx2', B + 'textures/pbr2k/ktx2/Terrazzo019M/basecolor.ktx2']]) {
+  [P + '/lighting-v2/manifest-hybrid.json', 'application/json', B + 'lighting-v2/manifest-hybrid.json'], [P + '/textures/pbr2k/ktx2/Terrazzo019M/basecolor.ktx2', 'image/ktx2', B + 'textures/pbr2k/ktx2/Terrazzo019M/basecolor.ktx2'],
+  // the tour-stop images: the owner's AI concept images and the Cycles renders, from the same commit
+  [P + '/concept-images/CAM_03_Entrance_Lobby.jpg', 'image/jpeg', B + 'concept-images/CAM_03_Entrance_Lobby.jpg'], [P + '/concept-images/render_CAM_ISO_SE.jpg', 'image/jpeg', B + 'concept-images/render_CAM_ISO_SE.jpg']]) {
   const res = await bel.run(new Request('https://tour.example' + path)); assert.equal(res.status, 200, path); assert.ok(res.headers.get('content-type').startsWith(type), path);
   assert.equal(res.headers.get('x-bel-source'), commit); assert.equal(bel.calls.at(-1).url, `https://raw.githubusercontent.com/i-m-r-a-n/Practice01/${commit}/${target}`); count++;
 }
