@@ -1,0 +1,310 @@
+{
+  "scope": "LOCAL Chromium via serve_preview.py; request paths checked against the release commit tree",
+  "commit": "3d0e7796dfdf440a2d1e9ccaa25bb710725197b5",
+  "requests": 60,
+  "missing": [],
+  "seconds": 130.4,
+  "rows": [
+    {
+      "request": "/stage2-concept/",
+      "repo_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/viewer/dist-bel/index.html",
+      "in_commit": true
+    },
+    {
+      "request": "/stage2-concept/app.js",
+      "repo_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/viewer/dist-bel/app.js",
+      "in_commit": true
+    },
+    {
+      "request": "/stage2-concept/concept-images/BEL_CAM_CAD.jpg",
+      "repo_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/concept-images/BEL_CAM_CAD.jpg",
+      "in_commit": true
+    },
+    {
+      "request": "/stage2-concept/concept-images/BEL_CAM_LAB.jpg",
+      "repo_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/concept-images/BEL_CAM_LAB.jpg",
+      "in_commit": true
+    },
+    {
+      "request": "/stage2-concept/concept-images/BEL_CAM_PLANT_WALL.jpg",
+      "repo_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/concept-images/BEL_CAM_PLANT_WALL.jpg",
+      "in_commit": true
+    },
+    {
+      "request": "/stage2-concept/concept-images/BEL_CAM_SUN_WALL.jpg",
+      "repo_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/concept-images/BEL_CAM_SUN_WALL.jpg",
+      "in_commit": true
+    },
+    {
+      "request": "/stage2-concept/concept-images/BEL_CAM_TEA.jpg",
+      "repo_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/concept-images/BEL_CAM_TEA.jpg",
+      "in_commit": true
+    },
+    {
+      "request": "/stage2-concept/concept-images/BEL_CAM_UTHAN.jpg",
+      "repo_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/concept-images/BEL_CAM_UTHAN.jpg",
+      "in_commit": true
+    },
+    {
+      "request": "/stage2-concept/concept-images/CAM_01_Reception_A.jpg",
+      "repo_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/concept-images/CAM_01_Reception_A.jpg",
+      "in_commit": true
+    },
+    {
+      "request": "/stage2-concept/concept-images/CAM_03_Entrance_Lobby.jpg",
+      "repo_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/concept-images/CAM_03_Entrance_Lobby.jpg",
+      "in_commit": true
+    },
+    {
+      "request": "/stage2-concept/concept-images/CAM_07_MD_Office_A.jpg",
+      "repo_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/concept-images/CAM_07_MD_Office_A.jpg",
+      "in_commit": true
+    },
+    {
+      "request": "/stage2-concept/concept-images/CAM_09_Boardroom_A.jpg",
+      "repo_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/concept-images/CAM_09_Boardroom_A.jpg",
+      "in_commit": true
+    },
+    {
+      "request": "/stage2-concept/concept-images/CAM_23_Sample_Room.jpg",
+      "repo_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/concept-images/CAM_23_Sample_Room.jpg",
+      "in_commit": true
+    },
+    {
+      "request": "/stage2-concept/concept-images/CAM_25_Fabric_Library.jpg",
+      "repo_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/concept-images/CAM_25_Fabric_Library.jpg",
+      "in_commit": true
+    },
+    {
+      "request": "/stage2-concept/concept-images/render_BEL_CAM_ACADEMY.jpg",
+      "repo_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/concept-images/render_BEL_CAM_ACADEMY.jpg",
+      "in_commit": true
+    },
+    {
+      "request": "/stage2-concept/concept-images/render_BEL_CAM_ARTISAN.jpg",
+      "repo_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/concept-images/render_BEL_CAM_ARTISAN.jpg",
+      "in_commit": true
+    },
+    {
+      "request": "/stage2-concept/concept-images/render_BEL_CAM_CIRCULAR.jpg",
+      "repo_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/concept-images/render_BEL_CAM_CIRCULAR.jpg",
+      "in_commit": true
+    },
+    {
+      "request": "/stage2-concept/concept-images/render_BEL_CAM_CRAFT.jpg",
+      "repo_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/concept-images/render_BEL_CAM_CRAFT.jpg",
+      "in_commit": true
+    },
+    {
+      "request": "/stage2-concept/concept-images/render_BEL_CAM_JHUT.jpg",
+      "repo_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/concept-images/render_BEL_CAM_JHUT.jpg",
+      "in_commit": true
+    },
+    {
+      "request": "/stage2-concept/concept-images/render_BEL_CAM_MAKING_LINE.jpg",
+      "repo_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/concept-images/render_BEL_CAM_MAKING_LINE.jpg",
+      "in_commit": true
+    },
+    {
+      "request": "/stage2-concept/concept-images/render_BEL_CAM_RECORDS.jpg",
+      "repo_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/concept-images/render_BEL_CAM_RECORDS.jpg",
+      "in_commit": true
+    },
+    {
+      "request": "/stage2-concept/concept-images/render_BEL_CAM_SUN_SHELF.jpg",
+      "repo_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/concept-images/render_BEL_CAM_SUN_SHELF.jpg",
+      "in_commit": true
+    },
+    {
+      "request": "/stage2-concept/concept-images/render_CAM_04_Experience_Centre_A.jpg",
+      "repo_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/concept-images/render_CAM_04_Experience_Centre_A.jpg",
+      "in_commit": true
+    },
+    {
+      "request": "/stage2-concept/concept-images/render_CAM_06_Experience_Centre_Detail.jpg",
+      "repo_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/concept-images/render_CAM_06_Experience_Centre_Detail.jpg",
+      "in_commit": true
+    },
+    {
+      "request": "/stage2-concept/concept-images/render_CAM_13_Design_Studio_A.jpg",
+      "repo_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/concept-images/render_CAM_13_Design_Studio_A.jpg",
+      "in_commit": true
+    },
+    {
+      "request": "/stage2-concept/concept-images/render_CAM_21_Lounge_Training.jpg",
+      "repo_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/concept-images/render_CAM_21_Lounge_Training.jpg",
+      "in_commit": true
+    },
+    {
+      "request": "/stage2-concept/concept-images/render_CAM_ISO_SE.jpg",
+      "repo_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/concept-images/render_CAM_ISO_SE.jpg",
+      "in_commit": true
+    },
+    {
+      "request": "/stage2-concept/concept-images/render_CAM_ISO_SW.jpg",
+      "repo_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/concept-images/render_CAM_ISO_SW.jpg",
+      "in_commit": true
+    },
+    {
+      "request": "/stage2-concept/concept-images/thumbs/BEL_CAM_CAD.jpg",
+      "repo_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/concept-images/thumbs/BEL_CAM_CAD.jpg",
+      "in_commit": true
+    },
+    {
+      "request": "/stage2-concept/concept-images/thumbs/BEL_CAM_LAB.jpg",
+      "repo_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/concept-images/thumbs/BEL_CAM_LAB.jpg",
+      "in_commit": true
+    },
+    {
+      "request": "/stage2-concept/concept-images/thumbs/BEL_CAM_PLANT_WALL.jpg",
+      "repo_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/concept-images/thumbs/BEL_CAM_PLANT_WALL.jpg",
+      "in_commit": true
+    },
+    {
+      "request": "/stage2-concept/concept-images/thumbs/BEL_CAM_SUN_WALL.jpg",
+      "repo_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/concept-images/thumbs/BEL_CAM_SUN_WALL.jpg",
+      "in_commit": true
+    },
+    {
+      "request": "/stage2-concept/concept-images/thumbs/BEL_CAM_TEA.jpg",
+      "repo_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/concept-images/thumbs/BEL_CAM_TEA.jpg",
+      "in_commit": true
+    },
+    {
+      "request": "/stage2-concept/concept-images/thumbs/BEL_CAM_UTHAN.jpg",
+      "repo_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/concept-images/thumbs/BEL_CAM_UTHAN.jpg",
+      "in_commit": true
+    },
+    {
+      "request": "/stage2-concept/concept-images/thumbs/CAM_01_Reception_A.jpg",
+      "repo_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/concept-images/thumbs/CAM_01_Reception_A.jpg",
+      "in_commit": true
+    },
+    {
+      "request": "/stage2-concept/concept-images/thumbs/CAM_03_Entrance_Lobby.jpg",
+      "repo_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/concept-images/thumbs/CAM_03_Entrance_Lobby.jpg",
+      "in_commit": true
+    },
+    {
+      "request": "/stage2-concept/concept-images/thumbs/CAM_07_MD_Office_A.jpg",
+      "repo_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/concept-images/thumbs/CAM_07_MD_Office_A.jpg",
+      "in_commit": true
+    },
+    {
+      "request": "/stage2-concept/concept-images/thumbs/CAM_09_Boardroom_A.jpg",
+      "repo_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/concept-images/thumbs/CAM_09_Boardroom_A.jpg",
+      "in_commit": true
+    },
+    {
+      "request": "/stage2-concept/concept-images/thumbs/CAM_23_Sample_Room.jpg",
+      "repo_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/concept-images/thumbs/CAM_23_Sample_Room.jpg",
+      "in_commit": true
+    },
+    {
+      "request": "/stage2-concept/concept-images/thumbs/CAM_25_Fabric_Library.jpg",
+      "repo_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/concept-images/thumbs/CAM_25_Fabric_Library.jpg",
+      "in_commit": true
+    },
+    {
+      "request": "/stage2-concept/concept-images/thumbs/render_BEL_CAM_ACADEMY.jpg",
+      "repo_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/concept-images/thumbs/render_BEL_CAM_ACADEMY.jpg",
+      "in_commit": true
+    },
+    {
+      "request": "/stage2-concept/concept-images/thumbs/render_BEL_CAM_ARTISAN.jpg",
+      "repo_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/concept-images/thumbs/render_BEL_CAM_ARTISAN.jpg",
+      "in_commit": true
+    },
+    {
+      "request": "/stage2-concept/concept-images/thumbs/render_BEL_CAM_CIRCULAR.jpg",
+      "repo_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/concept-images/thumbs/render_BEL_CAM_CIRCULAR.jpg",
+      "in_commit": true
+    },
+    {
+      "request": "/stage2-concept/concept-images/thumbs/render_BEL_CAM_CRAFT.jpg",
+      "repo_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/concept-images/thumbs/render_BEL_CAM_CRAFT.jpg",
+      "in_commit": true
+    },
+    {
+      "request": "/stage2-concept/concept-images/thumbs/render_BEL_CAM_JHUT.jpg",
+      "repo_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/concept-images/thumbs/render_BEL_CAM_JHUT.jpg",
+      "in_commit": true
+    },
+    {
+      "request": "/stage2-concept/concept-images/thumbs/render_BEL_CAM_MAKING_LINE.jpg",
+      "repo_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/concept-images/thumbs/render_BEL_CAM_MAKING_LINE.jpg",
+      "in_commit": true
+    },
+    {
+      "request": "/stage2-concept/concept-images/thumbs/render_BEL_CAM_RECORDS.jpg",
+      "repo_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/concept-images/thumbs/render_BEL_CAM_RECORDS.jpg",
+      "in_commit": true
+    },
+    {
+      "request": "/stage2-concept/concept-images/thumbs/render_BEL_CAM_SUN_SHELF.jpg",
+      "repo_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/concept-images/thumbs/render_BEL_CAM_SUN_SHELF.jpg",
+      "in_commit": true
+    },
+    {
+      "request": "/stage2-concept/concept-images/thumbs/render_CAM_04_Experience_Centre_A.jpg",
+      "repo_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/concept-images/thumbs/render_CAM_04_Experience_Centre_A.jpg",
+      "in_commit": true
+    },
+    {
+      "request": "/stage2-concept/concept-images/thumbs/render_CAM_06_Experience_Centre_Detail.jpg",
+      "repo_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/concept-images/thumbs/render_CAM_06_Experience_Centre_Detail.jpg",
+      "in_commit": true
+    },
+    {
+      "request": "/stage2-concept/concept-images/thumbs/render_CAM_13_Design_Studio_A.jpg",
+      "repo_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/concept-images/thumbs/render_CAM_13_Design_Studio_A.jpg",
+      "in_commit": true
+    },
+    {
+      "request": "/stage2-concept/concept-images/thumbs/render_CAM_21_Lounge_Training.jpg",
+      "repo_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/concept-images/thumbs/render_CAM_21_Lounge_Training.jpg",
+      "in_commit": true
+    },
+    {
+      "request": "/stage2-concept/concept-images/thumbs/render_CAM_ISO_SE.jpg",
+      "repo_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/concept-images/thumbs/render_CAM_ISO_SE.jpg",
+      "in_commit": true
+    },
+    {
+      "request": "/stage2-concept/concept-images/thumbs/render_CAM_ISO_SW.jpg",
+      "repo_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/concept-images/thumbs/render_CAM_ISO_SW.jpg",
+      "in_commit": true
+    },
+    {
+      "request": "/stage2-concept/lighting-v2/manifest-hybrid.json",
+      "repo_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/lighting-v2/manifest-hybrid.json",
+      "in_commit": true
+    },
+    {
+      "request": "/stage2-concept/model_web_baked.glb",
+      "repo_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/revised-model/Optimized_Office_Interior_web_baked.glb",
+      "in_commit": true
+    },
+    {
+      "request": "/stage2-concept/props/office-props-manifest.json",
+      "repo_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/props/office-props-manifest.json",
+      "in_commit": true
+    },
+    {
+      "request": "/stage2-concept/textures/codecs/three_r169/examples/jsm/libs/basis/basis_transcoder.js",
+      "repo_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/textures/codecs/three_r169/examples/jsm/libs/basis/basis_transcoder.js",
+      "in_commit": true
+    },
+    {
+      "request": "/stage2-concept/textures/codecs/three_r169/examples/jsm/libs/basis/basis_transcoder.wasm",
+      "repo_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/textures/codecs/three_r169/examples/jsm/libs/basis/basis_transcoder.wasm",
+      "in_commit": true
+    },
+    {
+      "request": "/stage2-concept/textures/pbr2k/ktx2/Terrazzo019M/basecolor.ktx2",
+      "repo_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/textures/pbr2k/ktx2/Terrazzo019M/basecolor.ktx2",
+      "in_commit": true
+    }
+  ],
+  "passed": true
+}

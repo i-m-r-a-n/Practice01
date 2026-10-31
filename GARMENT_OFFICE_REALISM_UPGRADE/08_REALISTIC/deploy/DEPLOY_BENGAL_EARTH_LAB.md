@@ -30,7 +30,7 @@ All of it is behind route-config flags that only `bel-config.json` sets, so `/re
     - `arrows`;
     - `gallery`: 23 cards, the tap to stop 5, `?images=1`;
     - `tour-play`: 23 stops, no page or HTTP errors.
-  - The request-list check (every file the page asks for exists at `3d0e779`) is running.
+  - All 60 files the page requests exist at `3d0e779` (`after-1031c-requests/`). They include the 26 stop images and their 26 thumbnails.
   - `index.html`, `app.js`, `release-config.json` and three images match raw.githubusercontent.com at `3d0e779` byte for byte.
 - **Guard before upload:**
   - `/bengal-earth-lab/health` shows `e198902…`.

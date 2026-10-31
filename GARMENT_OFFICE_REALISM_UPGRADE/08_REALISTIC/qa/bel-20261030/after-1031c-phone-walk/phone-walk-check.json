@@ -6,6 +6,7 @@
       "help_shown": true,
       "help_closed": true,
       "footer_px": 31,
+      "footer_one_line_px": 31,
       "footer_open_px": 75,
       "footer_closed_again_px": 31,
       "held_first": [
@@ -23,7 +24,7 @@
       "gyro_turned_deg": 40.0,
       "gyro_off_again": true,
       "help_leaves_with_walk": true,
-      "passed": false
+      "passed": true
     },
     "desktop": {
       "help_shown": false,
@@ -44,5 +45,5 @@
     }
   },
   "errors": [],
-  "passed": false
+  "passed": true
 }
