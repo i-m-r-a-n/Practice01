@@ -14,4 +14,6 @@ Each image belongs to one 3D view and is named after that view's camera. `viewer
 - **AI images by view:**
   - stops 2, 3, 4, 8, 14, 15, 17, 20 and 22;
   - the MD office (Z12), the fibre library (Z15) and the sample room (Z17).
-- **Renders:** the other tour stops, where one has been made.
+- **Renders:** the other tour stops (1, 5, 6, 7, 9 to 13, 16, 18, 19, 21 and 23).
+- **`thumbs/`** holds 640 px copies, about 48 KB each, for the tour in images: the grid behind the page's "Images" button. `viewer/make_concept_thumbs.py` makes them; run it before `viewer/make_bel_config.py` whenever an image changes.
+- **`qa/bel-20261030/stop_images_film.py`** makes a short film of the same images in tour order. Each shot has its stop number, title and kind label burned in.
