@@ -1,9 +1,9 @@
 {
   "scope": "LOCAL Chromium via serve_preview.py; request paths checked against the release commit tree",
-  "commit": "e198902122e565878697d7606d9b4ce2b98b32b7",
+  "commit": "1d0f4121d689a4f635345fb4dd6ac29edda947ee",
   "requests": 8,
   "missing": [],
-  "seconds": 124.4,
+  "seconds": 163.6,
   "rows": [
     {
       "request": "/stage2-concept/",

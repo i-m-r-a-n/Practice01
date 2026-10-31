@@ -1,6 +1,37 @@
 # Deploying the Bengal Earth Lab proposal route (prepared by Claude, 30 Oct 2026; updated after the owner chose option C)
 
-## Update 3: the new address /stage2-concept/ (31 Oct 2026, prepared, not deployed yet)
+## Update 4: the new address and the on-screen walk arrows (31 Oct 2026, prepared, not deployed yet)
+
+This replaces update 3. It has the same new address `/stage2-concept/`, with the old address redirecting there. The page also gets the owner's on-screen walk arrows: the ▲ ◀ ▼ ▶ pad, until now shown only on touch screens while walking, now shows on every device while walking and in a room view at eye level. Pressing an arrow in a room view walks on from there, like W A S D. The route config flag `walkArrows` turns this on; `/realistic/` does not set it.
+
+- **Source commit:** `1d0f4121d689a4f635345fb4dd6ac29edda947ee`
+- **Worker file:** `deploy/worker-bengal-earth-lab.js`, 10,742 bytes, SHA-256 `56d4a7494b51560f661e765adc391a43f39c4f38001b644d694b43392276930c`
+- **Built with:** `python3 build_worker.py d5939f9ef3928340908459efc440259df0d34b6d --bel 1d0f4121d689a4f635345fb4dd6ac29edda947ee --out worker-bengal-earth-lab.js`
+- **Checks:**
+  - `test_worker_bel.mjs`: 62 checks against the live Worker `d11321e`. They include the redirects from the old address and two near-miss prefixes.
+  - `test_worker.mjs`: 41 checks.
+  - `bel_arrows_check.py`, on desktop and phone (`qa/bel-20261030/after-arrows/`):
+    - the arrows are hidden in the overview and the tour;
+    - they show and work while walking and in a room view;
+    - there are no page errors.
+  - The 23-stop tour plays (`after-tour-play-arrows/`).
+  - All 8 requested files exist at `1d0f412`.
+  - `index.html`, `app.js` and `release-config.json` match raw.githubusercontent.com byte for byte.
+- **Guard before upload:**
+  - `/bengal-earth-lab/health` shows `e198902…`.
+  - `/realistic/health` shows `d5939f9…`.
+  - `/`, `/app.js` and `/health` keep their hashes.
+  - The live script is `d11321e` (`3bb5da83…1d03`).
+- **Verify after upload:**
+  - `/stage2-concept/health` shows `1d0f412…` with route `/stage2-concept`.
+  - `/bengal-earth-lab/` answers 307 to `/stage2-concept/`.
+  - The other routes are unchanged.
+  - In walk mode, the arrows show on a computer.
+- **Rollback:**
+  1. Re-upload `d11321e` (`3bb5da83…1d03`).
+  2. If that fails, re-upload `35a11c7` (`3424e88b…abd3`).
+
+## Update 3: the new address /stage2-concept/ (31 Oct 2026; replaced by update 4 before it was deployed)
 
 The owner asked for the old name to go from the address too. The proposal is now served at `/stage2-concept/`.
 

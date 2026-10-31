@@ -99,7 +99,7 @@ async function realisticRoute(req) {
 
 // Isolated STAGE II ground-floor concept proposal (its own page, bundle and config; the routes above are unchanged).
 // It is served at /stage2-concept/; its earlier address /bengal-earth-lab/ redirects there.
-const BEL_COMMIT = 'e198902122e565878697d7606d9b4ce2b98b32b7';
+const BEL_COMMIT = '1d0f4121d689a4f635345fb4dd6ac29edda947ee';
 const BEL_ROOT = 'https://raw.githubusercontent.com/i-m-r-a-n/Practice01/'+BEL_COMMIT+'/';
 const BEL_PATH = '/stage2-concept', BEL_OLD_PATH = '/bengal-earth-lab';
 async function belRoute(req) {
