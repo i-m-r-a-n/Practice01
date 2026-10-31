@@ -25,7 +25,7 @@
 ## Progress
 
 - 20:35 UTC: plan written.
-- **About 22:40 UTC, phone walking done:**
+- **21:54 UTC (commit `3f4ca1e`), phone walking done:**
   - A finger slides from one arrow to another to change direction. Taps between the arrows reach the model.
   - A tap on the floor (a click on a computer) walks there:
     - the view turns towards the point like a person;
@@ -38,7 +38,7 @@
   - Computers drag to look; mouse capture is off on this route.
   - Taps are timed by input time, not frame time.
   - Checks: `bel_phone_walk_check.py` passes on phone and desktop (`after-phone-walk/`). The arrows check passes, and the 23-stop tour passes.
-- **About 23:10 UTC, the owner's images in the tour:**
+- **21:54 UTC (the same commit), the owner's images in the tour:**
   - 12 images in `concept-images/`, named by camera:
     - 9 tour stops: 2, 3, 4, 8, 14, 15, 17, 20 and 22;
     - 3 rooms: MD office Z12, fibre library Z15, sample room Z17.
@@ -48,11 +48,15 @@
   - On upright phones the image fits whole, above the tour card.
   - The footer now says the 3D has no people and the concept images show fictional people.
   - Checks: `bel_stills_check.py` passes on desktop and phone (`after-stills/`); all 12 images load. The 23-stop tour passes with the images on (`after-tour-play-stills/`).
-- **About 22:05 UTC, renders from the 3D for the stops without an AI image:**
+- **From 22:05 UTC, renders from the 3D for the stops without an AI image:**
   - Each view is exported from the page (three.js GLTFExporter) and rendered in Blender 5.2 Cycles with the camera's own lens and shift.
   - Interior views are lit only by the 3D's real light fittings (`led_3000`, `led_3500`, bulbs, lanterns, niche lights). The web view's painted light pools are hidden and the self-lit helpers are switched off. A warm, soft fill stands in for light bouncing off the walls.
   - Stop 1 uses the whole-floor render (`render_CAM_ISO_SE.jpg`).
   - Batch 1: stops 5, 6, 7, 9, 10, 11 and 12. Batch 2: stops 13, 16, 18, 19, 21 and 23.
   - The renders get their own label ("RENDERED FROM THE 3D MODEL · … · no people"); the AI images keep theirs.
   - `concept-images/README.md` explains both kinds.
+  - Batch 1 finished at 22:32 UTC: stops 5, 6, 7, 9, 10, 11 and 12, each 214 to 254 seconds.
+  - 22:38 UTC: the leaves rendered grey, because Blender's importer drops three.js instance colours. The export now bakes them into vertex colours, so the trees, bonsai and tulsi are green, and the sorted offcuts keep their colours. Stop 10 is rendered again.
+  - Batch 2 started at 22:39 UTC: stops 19, 10 (again), 13, 16, 18, 21 and 23, and stop 1 again (green trees).
+  - The render tools and their README are in `qa/bel-20261030/cycles-render/`.
 - **The welcome screen's Walk choice** has phone wording on touch screens. The link `?walk=1` starts walking straight away; this is useful to send to a phone.
