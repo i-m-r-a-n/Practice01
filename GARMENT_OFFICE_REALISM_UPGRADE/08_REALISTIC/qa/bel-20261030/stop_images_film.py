@@ -26,11 +26,6 @@ def cover(im, w, h):   # fit to w:h by centre-cropping, no stretching
     return im.crop((x, y, x + w, y + h))
 
 
-def shade(img, box, alpha):   # a dark band behind the captions
-    o = Image.new('RGBA', img.size, (0, 0, 0, 0)); ImageDraw.Draw(o).rectangle(box, fill=(8, 12, 10, alpha))
-    return Image.alpha_composite(img.convert('RGBA'), o).convert('RGB')
-
-
 def card(lines):   # an opening or closing card: brand green, centred lines (text, size, bold, colour)
     im = Image.new('RGB', (W, H), GREEN_BG); d = ImageDraw.Draw(im)
     total = sum(round(s * S * 1.45) for _, s, _, _ in lines); y = (H - total) // 2
@@ -49,16 +44,16 @@ for i, st in enumerate(tour):
 print(len(shots), 'of', len(tour), 'stops have an image', flush=True)
 
 
-def caption(frame, stop, title, kind):
-    frame = shade(frame, (0, H - round(150 * S), W, H), 150); frame = shade(frame, (0, 0, W, round(56 * S)), 120)
-    d = ImageDraw.Draw(frame)
+def overlay(stop, title, kind):   # one transparent layer per shot: dark bands, stop number, title, kind label and brand line
+    o = Image.new('RGBA', (W, H), (0, 0, 0, 0)); d = ImageDraw.Draw(o)
+    d.rectangle((0, H - round(150 * S), W, H), fill=(8, 12, 10, 150)); d.rectangle((0, 0, W, round(56 * S)), fill=(8, 12, 10, 120))
     d.text((round(60 * S), H - round(128 * S)), f'STOP {stop} OF {len(tour)}', font=F(26, True), fill=MINT)
     d.text((round(60 * S), H - round(94 * S)), title, font=F(52, True), fill=INK)
     label, col = KIND[kind]; f = F(22, True); w = d.textlength(label, font=f)
     d.text(((W - w) / 2, round(16 * S)), label, font=f, fill=col)
     brand = 'STAGE II · Zara Fashion  ·  concept proposal'; f2 = F(22); w2 = d.textlength(brand, font=f2)
     d.text((W - w2 - round(60 * S), H - round(46 * S)), brand, font=f2, fill=(200, 210, 204))
-    return frame
+    return o
 
 
 opening = card([('STAGE II  ·  Zara Fashion', 40, True, MINT), ('The ground floor, reimagined', 76, True, INK), ('A concept proposal: the guided tour in images', 40, False, INK),
@@ -76,11 +71,12 @@ fade = round(0.6 * FPS)
 
 
 def frames_of(k):   # the frames of shot k: a slow zoom from 1.06x to 1.0x of the frame, centred, with captions
-    base, stop, title, kind = shots[k]; n = round(a.seconds * FPS)
+    base, stop, title, kind = shots[k]; n = round(a.seconds * FPS); ov = overlay(stop, title, kind)
     for j in range(n):
         z = 1.06 - 0.06 * j / max(1, n - 1); w, h = round(W * z), round(H * z)
         x, y = (base.width - w) // 2, (base.height - h) // 2
-        yield caption(base.crop((x, y, x + w, y + h)).resize((W, H), Image.BILINEAR), stop, title, kind)
+        fr = base.crop((x, y, x + w, y + h)).resize((W, H), Image.BILINEAR).convert('RGBA'); fr.alpha_composite(ov)
+        yield fr.convert('RGB')
 
 
 def hold(im, sec):
