@@ -34,6 +34,7 @@
       <button id="mRooms" title="Show or hide the list of rooms (R)">Rooms</button>
       <button id="mWalk" title="Walk through the office at eye level (W)">Walk</button>
     </div>
+    <button id="mGallery" hidden title="Every tour stop as one image; tap one to go there in 3D (I)"><span class="lg">Images</span><span class="sm">Images</span></button>
     <button id="mPeople" hidden aria-pressed="false" title="Show or hide the illustrative people (they are not real staff)"><span class="dot" aria-hidden="true"></span>People</button>
     <button id="mHelp" class="icon" title="How to use this tour (H)" aria-label="Help">?</button>
     <button id="mFull" class="icon" title="Full screen for a projector or large display (F)" aria-label="Full screen">&#x26F6;</button>
@@ -116,6 +117,17 @@
 
 <footer id="disclaimer"><b>Concept proposal</b> &middot; final dimensions and technical details subject to site verification. <span id="peopleNote" hidden><b>People shown are illustrative</b>, not real staff.</span></footer>
 
+<div id="gallery" class="hidden" role="dialog" aria-modal="true" aria-labelledby="gTitle">
+  <div class="gbox">
+    <div class="ghead">
+      <div><div class="eyebrow">Ground floor &middot; interactive design experience</div><h2 id="gTitle">The tour in images</h2></div>
+      <button id="gClose" class="icon" title="Back to the 3D model (Esc)" aria-label="Close the images">&times;</button>
+    </div>
+    <p id="gNote" class="gnote"></p>
+    <div id="gGrid"></div>
+  </div>
+</div>
+
 <div id="welcome" class="hidden" role="dialog" aria-modal="true" aria-labelledby="wTitle">
   <div class="wbox">
     <div class="eyebrow">Ground floor &middot; interactive design experience</div>
@@ -124,6 +136,7 @@
       <button class="way primary" id="wTour"><b>&#9654; Guided tour</b><span>16 stops through the floor. It plays by itself: pause, go back or skip at any time.</span></button>
       <button class="way" id="wRooms"><b>Rooms</b><span>Choose any of the 34 rooms from the list, or click a room on the model.</span></button>
       <button class="way" id="wWalk"><b>Walk</b><span>Move at eye level with W A S D or the arrow keys and drag to look. Walls, glass and furniture stop you.</span></button>
+      <button class="way hidden" id="wGallery"><b>Images</b><span>Every tour stop as one image. Tap an image to go there in 3D.</span></button>
     </div>
     <p class="tips"><b>Trackpad or mouse:</b> drag to turn, <b>Shift</b> + drag to move, scroll or pinch to zoom. <b>Esc</b> brings you back to the overview. <b>F</b> or the &#x26F6; button: full screen.</p>
     <div class="wfoot">

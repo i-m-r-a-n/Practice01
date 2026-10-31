@@ -928,6 +928,7 @@ const MOVE_KEYS = new Set(['KeyW', 'KeyA', 'KeyS', 'KeyD', 'ArrowUp', 'ArrowDown
 addEventListener('keydown', (e) => {
   if (e.target.tagName === 'INPUT' || e.target.tagName === 'SELECT') return;
   if (!$('welcome').classList.contains('hidden')) { if (e.code === 'Escape' || e.code === 'KeyH') closeWelcome(); return; }
+  if (!$('gallery').classList.contains('hidden')) { if (e.code === 'Escape' || e.code === 'KeyI') closeGallery(); return; }   // the tour in images is open
   walk.keys[e.code] = true;
   if (e.code === 'Escape') { if (!$('photo').classList.contains('hidden')) { hidePhoto(); if (S.tour) S.tour.photoSkip = true; } else if (S.mode !== 'overview') goOverview(); }
   else if (e.code === 'Space' && S.mode === 'tour') { e.preventDefault(); togglePlay(); }
@@ -936,6 +937,7 @@ addEventListener('keydown', (e) => {
   else if (S.mode === 'rooms' && MOVE_KEYS.has(e.code) && eyeLevel()) startWalk(true);   // walk on from the room view
   else if (e.code === 'KeyF') toggleFullscreen();
   else if (e.code === 'KeyH' || e.key === '?') openWelcome();
+  else if (e.code === 'KeyI' && !$('mGallery').hidden) openGallery();
   else if (S.mode !== 'walk' && S.mode !== 'tour') {
     if (e.code === 'KeyO') goOverview(); else if (e.code === 'KeyT') startTour(0); else if (e.code === 'KeyW') startWalk();
     else if (e.code === 'KeyR') $('mRooms').click();
@@ -1221,6 +1223,39 @@ $('wTour').onclick = () => startTour(0);
 $('wWalk').onclick = () => startWalk();
 $('wRooms').onclick = () => { closeWelcome(); openSide(); };
 $('welcome').addEventListener('click', (e) => { if (e.target === $('welcome')) closeWelcome(); });
+// ------------------------------------------------------------------ the tour in images (concept routes): every stop's image in one grid; a tap goes there in 3D
+const GALLERY = !!(STILLS && CFG.stillsGallery);
+if (GALLERY) {
+  $('mGallery').hidden = false; $('wGallery').classList.remove('hidden'); $('wGallery').closest('.ways').classList.add('four');
+  if (CFG.galleryNote) $('gNote').textContent = CFG.galleryNote;
+  if (CFG.branding?.welcomeGallery) $('wGallery').querySelector('span').textContent = CFG.branding.welcomeGallery;
+  $('mGallery').onclick = () => ($('gallery').classList.contains('hidden') ? openGallery() : closeGallery());
+  $('wGallery').onclick = () => openGallery();
+  $('gClose').onclick = () => closeGallery();
+  $('gallery').addEventListener('click', (e) => { if (e.target === $('gallery')) closeGallery(); });
+}
+function buildGallery() {
+  const grid = $('gGrid'); if (grid.childElementCount) return;
+  stops.forEach((st, i) => {
+    const v = STILLS[st.camera]; if (!v) return;
+    const kind = typeof v === 'object' && v.kind === 'render' ? 'render' : 'ai';
+    const card = document.createElement('button'); card.type = 'button'; card.className = 'gcard ' + kind; card.dataset.stop = String(i + 1);
+    const img = document.createElement('img'); img.loading = 'lazy'; img.decoding = 'async'; img.alt = `Image of the view at stop ${i + 1}: ${st.title}`;
+    img.src = (typeof v === 'object' && v.thumb) || stillSrc(st.camera);
+    const num = document.createElement('span'); num.className = 'gnum'; num.textContent = `Stop ${i + 1}`;
+    const title = document.createElement('b'); title.textContent = st.title;
+    const tag = document.createElement('em'); tag.textContent = CFG.galleryKinds?.[kind] || (kind === 'render' ? 'Rendered from the 3D model' : 'AI concept image');
+    card.append(img, num, title, tag);
+    card.onclick = () => { closeGallery(); startTour(i); };
+    grid.appendChild(card);
+  });
+}
+function openGallery() {
+  if (!GALLERY) return;
+  buildGallery(); closeWelcome();
+  $('gallery').classList.remove('hidden'); $('mGallery').classList.add('on'); $('gClose').focus({ preventScroll: true });
+}
+function closeGallery() { $('gallery').classList.add('hidden'); $('mGallery').classList.remove('on'); }
 const clock = new THREE.Clock();
 let frames = 0, fpsT = 0;
 function renderScene() {
@@ -1277,18 +1312,19 @@ S.ready = true; window.__viewerReady = true;
 $('mPeople').hidden = !(USE_DRESSING && PEOPLE_ACCEPTED);
 $('mPeople').onclick = () => setPeopleEnabled(!dressing?.peopleStats().enabled).catch(e => { S.errors.push('People: ' + e.message); });
 if (USE_DRESSING) setTimeout(() => ensureDressing().then(() => { if (PEOPLE_ACCEPTED && qs.get('people') !== '0') return setPeopleEnabled(true); }).catch(e => { S.errors.push('Dressing: ' + e.message); }), 0);
-// links: ?room=Z08 opens a room, ?tour=1 starts the tour, ?walk=1 starts walking; ?welcome=0 / 1 hides / forces the help card
+// links: ?room=Z08 opens a room, ?tour=1 starts the tour, ?walk=1 starts walking, ?images=1 opens the tour in images (concept routes); ?welcome=0 / 1 hides / forces the help card
 {
   const z = qs.get('room'), w = qs.get('welcome');
   let seen = false; try { seen = localStorage.getItem('tourWelcomeSeen') === '1'; } catch (e) { /* storage blocked */ }
   if (z && byZone[z]) selectRoom(byZone[z]);
   else if (qs.get('tour') === '1') startTour(0);
   else if (qs.get('walk') === '1') startWalk();
+  else if (qs.get('images') === '1' && GALLERY) openGallery();
   else if (w === '1' || (w !== '0' && !seen)) openWelcome();
 }
 let meshes = 0; model.traverse((o) => { if (o.isMesh) meshes++; });
 S.counts = { quality, stage: STAGE, floorTopTriangles: floorTriangles.length, meshes, drawCallsMerged: drawCalls, rooms: rooms.length, cameras: meta.cameras.length, stops: stops.length, model: gltf.scene.getObjectByName('WEB_INTERIOR') ? 'web' : 'original', bakedLight: BAKED, shadows: SHADOWS, ambientOcclusion: !!AO };
-S.api = { frameCamera, gpuInfo, gpuMemoryEstimate: () => estimateGpuMemory({ scene, textures: [...(materialUpgrade?.textures() || []), ...(dressing?.textures() || [])], targets: [...(POST?.targets() || []), ...(probes?.targets() || []), ...(AO ? [AO.composer.renderTarget1, AO.composer.renderTarget2, ...Object.values(AO.gtao).filter(o => o?.isWebGLRenderTarget)] : [])] }), setPeopleEnabled, peopleStats: () => dressing?.peopleStats() || { enabled: false, loaded: false, total: 0, visible: 0 }, peopleDiagnostics: () => dressing?.peopleDiagnostics() || [], peopleContacts: (stride = 2) => dressing?.peopleContacts(stride) || [], officePropDiagnostics: zone => dressing?.propDiagnostics(zone) || null, setBakeIsolation, lookState: () => ({ yaw: walk.yaw, pitch: walk.pitch, pointerLocked: document.pointerLockElement === el, eye: walk.eye }), previewLightmap: (id,url,format) => lightmaps.previewTexture(id,url,format), setWalkQAStart, stepWalkQA, walkState: () => walking.state(), loadRoomLightmap: (id) => loadVisualRoom(id), lighting: () => lightmaps.status, renderStats: () => ({ ...renderer.info.render, memory: { ...renderer.info.memory }, phase: STAGE, capturePostProcessing: !!POST, post: POST?.status || null }), setLightmapIntensity: (id, intensity) => { const room = lightmaps.rooms.get(id); if (room?.ownedMaterials) { room.ownedMaterials.forEach(m => { m.lightMapIntensity = intensity; }); needsRender = true; } }, setLightmapFlip: (id, flip) => { const texture = lightmaps.rooms.get(id)?.texture; if (texture) { texture.repeat.y = flip ? -1 : 1; texture.offset.y = flip ? 1 : 0; texture.updateMatrix(); needsRender = true; } }, selectRoom: (z) => selectRoom(byZone[z]), goOverview, startWalk, startTour, goStop, nextStop, togglePlay, stopTour, showPhoto, hidePhoto,
+S.api = { frameCamera, gpuInfo, gpuMemoryEstimate: () => estimateGpuMemory({ scene, textures: [...(materialUpgrade?.textures() || []), ...(dressing?.textures() || [])], targets: [...(POST?.targets() || []), ...(probes?.targets() || []), ...(AO ? [AO.composer.renderTarget1, AO.composer.renderTarget2, ...Object.values(AO.gtao).filter(o => o?.isWebGLRenderTarget)] : [])] }), setPeopleEnabled, peopleStats: () => dressing?.peopleStats() || { enabled: false, loaded: false, total: 0, visible: 0 }, peopleDiagnostics: () => dressing?.peopleDiagnostics() || [], peopleContacts: (stride = 2) => dressing?.peopleContacts(stride) || [], officePropDiagnostics: zone => dressing?.propDiagnostics(zone) || null, setBakeIsolation, lookState: () => ({ yaw: walk.yaw, pitch: walk.pitch, pointerLocked: document.pointerLockElement === el, eye: walk.eye }), previewLightmap: (id,url,format) => lightmaps.previewTexture(id,url,format), setWalkQAStart, stepWalkQA, walkState: () => walking.state(), loadRoomLightmap: (id) => loadVisualRoom(id), lighting: () => lightmaps.status, renderStats: () => ({ ...renderer.info.render, memory: { ...renderer.info.memory }, phase: STAGE, capturePostProcessing: !!POST, post: POST?.status || null }), setLightmapIntensity: (id, intensity) => { const room = lightmaps.rooms.get(id); if (room?.ownedMaterials) { room.ownedMaterials.forEach(m => { m.lightMapIntensity = intensity; }); needsRender = true; } }, setLightmapFlip: (id, flip) => { const texture = lightmaps.rooms.get(id)?.texture; if (texture) { texture.repeat.y = flip ? -1 : 1; texture.offset.y = flip ? 1 : 0; texture.updateMatrix(); needsRender = true; } }, selectRoom: (z) => selectRoom(byZone[z]), goOverview, startWalk, startTour, goStop, nextStop, togglePlay, stopTour, showPhoto, hidePhoto, openGallery, closeGallery,
   blocked, state: () => ({ mode: S.mode, room: S.room && S.room.zone, atCam: S.atCam, flying: !!flight, flightT: flight ? +flight.t.toFixed(3) : null, fps: S.fps, overhead: overhead.visible,
     tour: S.tour && { i: S.tour.i, phase: S.tour.phase, playing: S.tour.playing, sub: S.tour.sub, done: !!S.tour.done }, photo: S.photo, aoFrames: S.aoFrames || 0, pos: camera.position.toArray().map((v) => +v.toFixed(3)) }) };
 
