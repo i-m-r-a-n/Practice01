@@ -6,7 +6,7 @@ HERE=$(cd "$(dirname "$0")" && pwd); PREFIX=$1; PORT=${2:-8790}; shift $(( $# < 
 CHECKS=${@:-stills phone-walk arrows gallery landscape tour-play}
 URL=http://127.0.0.1:$PORT/stage2-concept/
 for c in $CHECKS; do
-  out=$HERE/$PREFIX-$c; t0=$(date +%s)
+  out=${CHECK_TMP:-/tmp/stage2-checks}/$PREFIX-$c; rm -rf $out; t0=$(date +%s)   # written outside the repository, copied in when the check ends
   case $c in
     stills)     python3 -I $HERE/bel_stills_check.py --out $out --url "${URL}?welcome=0" ;;
     phone-walk) python3 -I $HERE/bel_phone_walk_check.py --out $out --url "${URL}?welcome=0" ;;
@@ -20,5 +20,6 @@ for c in $CHECKS; do
 import sys; from pathlib import Path; from PIL import Image
 for f in Path(sys.argv[1]).glob('*.png'): Image.open(f).convert('RGB').save(f.with_suffix('.jpg'), quality=82, optimize=True); f.unlink()
 " $out 2>/dev/null
+  rm -rf $HERE/$PREFIX-$c; cp -r $out $HERE/$PREFIX-$c
   echo "CHECK $c exit=$rc $(( $(date +%s) - t0 ))s $(tail -n 1 /tmp/check_$c.log | cut -c1-300)"
 done
