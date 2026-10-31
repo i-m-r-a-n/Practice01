@@ -158,7 +158,7 @@ config = {
                          'EC_TEXTILE_BAFFLES'],                    # the cloth fins: natural indigo swags take their place on this route
     'excludedIdentity': ['ID_WATER_POINT'],                      # replaced in place by the clay kolshi
     'peopleManifest': base.get('peopleManifest'), 'peopleAccepted': False,
-    'hideNodes': HIDE + OPTION_A_HIDE, 'walkRelease': ledger['walk_release']['runs'], 'noRenderPhotos': True,
+    'hideNodes': HIDE + OPTION_A_HIDE, 'walkRelease': ledger['walk_release']['runs'], 'noRenderPhotos': True, 'walkArrows': True,   # on-screen walk arrows on every device (the owner, 31 Oct)
     'extraCameras': cameras, 'tour': tour, 'roomNames': names, 'roomNotes': notes,
     'roomGroups': {'Z07': 'Option A · later phase', 'Z06': 'Option A · later phase'},   # their own menu group and tour-card kicker (option C, the pilot, was chosen first)
     'branding': {

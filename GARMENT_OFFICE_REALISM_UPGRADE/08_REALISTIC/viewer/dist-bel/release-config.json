@@ -3630,6 +3630,7 @@
   ]
  ],
  "noRenderPhotos": true,
+ "walkArrows": true,
  "extraCameras": [
   {
    "name": "BEL_CAM_SUN_WALL",

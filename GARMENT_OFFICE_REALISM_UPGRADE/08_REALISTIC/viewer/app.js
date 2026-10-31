@@ -589,7 +589,7 @@ function flightStep(dt) {
     flight = null;
     applyPose(f.target, f.toFov);
     if (f.target.cam) S.atCam = f.target.cam;
-    updateInfoButtons();
+    updateInfoButtons(); updatePad();
     if (f.onDone) f.onDone();
   }
 }
@@ -684,6 +684,9 @@ function showInfo(r, kicker, hint = '') {
   updateInfoButtons();
 }
 const photoCam = () => CFG.noRenderPhotos ? null : (S.atCam || (S.mode === 'rooms' && !flight && S.room && S.room.primary_camera) || null);
+function updatePad() {
+  $('pad').classList.toggle('hidden', !(S.mode === 'walk' ? (COARSE || WALK_ARROWS) : WALK_ARROWS && S.mode === 'rooms' && eyeLevel()));
+}
 function updateInfoButtons() {
   $('bPhoto').classList.toggle('hidden', !photoCam());
   $('bWalkHere').classList.toggle('hidden', !(S.mode === 'rooms' && !flight && camera.position.y < 2.4));
@@ -691,7 +694,9 @@ function updateInfoButtons() {
 }
 
 // ------------------------------------------------------------------ modes
-const WALK_HINT = USE_WALKING && !COARSE ? 'W A S D to walk · click to capture mouse · Shift = faster · Esc releases mouse / leaves walk' : COARSE ? 'Use the arrows below to walk  ·  drag to look around  ·  tap the map to jump'
+const WALK_ARROWS = !!CFG.walkArrows;   // the on-screen arrows on every device (the proposal route), not only on touch screens
+const WALK_HINT = USE_WALKING && !COARSE && WALK_ARROWS ? 'Hold an arrow below or use W A S D to walk  ·  drag to look around  ·  Shift = faster  ·  Esc leaves walk'
+  : USE_WALKING && !COARSE ? 'W A S D to walk · click to capture mouse · Shift = faster · Esc releases mouse / leaves walk' : COARSE ? 'Use the arrows below to walk  ·  drag to look around  ·  tap the map to jump'
   : 'W A S D or arrow keys to walk  ·  drag to look  ·  Shift = faster  ·  double-click the floor to go there  ·  Esc to leave';
 function setMode(m) {
   if (m !== 'walk' && document.pointerLockElement) document.exitPointerLock();
@@ -707,7 +712,7 @@ function setMode(m) {
   if (m === 'tour' || m === 'overview') $('info').classList.add('hidden');      // the tour card carries the stop text
   $('walkhint').classList.toggle('hidden', m !== 'walk');
   $('walkhint').textContent = WALK_HINT;
-  $('pad').classList.toggle('hidden', !(m === 'walk' && COARSE));
+  updatePad();
   $('minimap').classList.toggle('hidden', !(m === 'walk' || m === 'tour'));
   if (m === 'tour' || m === 'walk') closeSide();
   controls.enabled = m === 'overview' && !flight;
@@ -726,7 +731,7 @@ function selectRoom(r, then) {
   setMode('rooms'); S.room = r; highlight(r); buildList($('search').value);
   if (narrow()) closeSide();
   const c = r.primary_camera && cams[r.primary_camera];
-  showInfo(r, null, c ? (COARSE ? 'Drag to look around  ·  tap Walk from here to move' : 'Drag to look around  ·  W A S D or arrows to walk on') : 'Drag to turn  ·  Shift + drag to move  ·  scroll or pinch to zoom');
+  showInfo(r, null, c ? (WALK_ARROWS ? (COARSE ? 'Drag to look around  ·  hold an arrow below to walk' : 'Drag to look around  ·  hold an arrow below or use W A S D to walk') : COARSE ? 'Drag to look around  ·  tap Walk from here to move' : 'Drag to look around  ·  W A S D or arrows to walk on') : 'Drag to turn  ·  Shift + drag to move  ·  scroll or pinch to zoom');
   const target = c ? poseFromCamera(c) : roomAerialPose(r);
   flyTo(target, { onDone: () => {
     if (!c) {                                         // no render camera: orbit around the room from above
@@ -919,7 +924,7 @@ addEventListener('keyup', (e) => { walk.keys[e.code] = false; });
 addEventListener('blur', () => { walk.keys = {}; });
 for (const b of document.querySelectorAll('#pad button')) {
   const k = b.dataset.k;
-  b.addEventListener('pointerdown', (e) => { e.preventDefault(); walk.keys[k] = true; });
+  b.addEventListener('pointerdown', (e) => { e.preventDefault(); if (S.mode === 'rooms' && eyeLevel()) startWalk(true); walk.keys[k] = true; });
   for (const ev of ['pointerup', 'pointerleave', 'pointercancel']) b.addEventListener(ev, () => { walk.keys[k] = false; });
 }
 
