@@ -1,6 +1,52 @@
 # Deploying the Bengal Earth Lab proposal route (prepared by Claude, 30 Oct 2026; updated after the owner chose option C)
 
-## Update 4: the new address and the on-screen walk arrows (31 Oct 2026, prepared, not deployed yet)
+## Update 5: walking with a phone, an image at every stop, the new address (31 Oct 2026, prepared, not deployed yet)
+
+This replaces updates 3 and 4. Like them, it serves the route at `/stage2-concept/` and redirects the old `/bengal-earth-lab/` there, and it shows the walk arrows on every device. It adds the owner's request of 31 Oct: "make it as beautiful as these images, and make it possible to walk the factory with a phone".
+
+- **Walking with a phone:**
+  - slide a finger between the arrows to change direction;
+  - tap the floor to walk there;
+  - "Look by moving the phone";
+  - a help card the first time, and a compact room card;
+  - a one-line footer while walking;
+  - a phone held sideways gets a one-row header and the arrows under the right thumb.
+- **Images at the stops:**
+  - An image at every one of the 23 stops: 9 of the owner's AI concept images, 14 Cycles renders of the 3D, and 3 rooms. Each image carries the label of its kind.
+  - "Images" shows them all in one grid. `?images=1` opens the grid and `?walk=1` starts walking.
+- **Colour:** a slightly warmer grade.
+
+All of it is behind route-config flags that only `bel-config.json` sets, so `/realistic/` and `/` do not change.
+
+- **Source commit:** `3d0e7796dfdf440a2d1e9ccaa25bb710725197b5`
+- **Worker file:** `deploy/worker-bengal-earth-lab.js`, 10,742 bytes, SHA-256 `2bbb532500a5d065bab39f6cd50476159f1fb991f3143c264385384324860062`. It differs from update 4's file only in the source commit.
+- **Built with:** `python3 build_worker.py d5939f9ef3928340908459efc440259df0d34b6d --bel 3d0e7796dfdf440a2d1e9ccaa25bb710725197b5 --out worker-bengal-earth-lab.js`
+- **Checks:**
+  - `test_worker_bel.mjs`: 64 checks against the live Worker `d11321e`. They include the redirects, two near-miss prefixes and two stop images. `test_worker.mjs`: 41 checks.
+  - Browser checks in local Chromium (software WebGL), on desktop and phone, all passed, in `qa/bel-20261030/after-1031c-*/`:
+    - `landscape`: 844 × 390 and 667 × 375;
+    - `phone-walk`;
+    - `stills`: all 26 images load;
+    - `arrows`;
+    - `gallery`: 23 cards, the tap to stop 5, `?images=1`;
+    - `tour-play`: 23 stops, no page or HTTP errors.
+  - The request-list check (every file the page asks for exists at `3d0e779`) is running.
+  - `index.html`, `app.js`, `release-config.json` and three images match raw.githubusercontent.com at `3d0e779` byte for byte.
+- **Guard before upload:**
+  - `/bengal-earth-lab/health` shows `e198902…`.
+  - `/realistic/health` shows `d5939f9…`.
+  - `/`, `/app.js` and `/health` keep their hashes.
+  - The live script is `d11321e` (`3bb5da83…1d03`).
+- **Verify after upload:**
+  - `/stage2-concept/health` shows `3d0e779…` with route `/stage2-concept`.
+  - `/stage2-concept/concept-images/render_CAM_ISO_SE.jpg` answers 200 as `image/jpeg`.
+  - `/bengal-earth-lab/` answers 307 to `/stage2-concept/`.
+  - The other routes are unchanged.
+- **Rollback:**
+  1. Re-upload `d11321e` (`3bb5da83…1d03`).
+  2. If that fails, re-upload `35a11c7` (`3424e88b…abd3`).
+
+## Update 4: the new address and the on-screen walk arrows (31 Oct 2026; replaced by update 5 before it was deployed)
 
 This replaces update 3. It has the same new address `/stage2-concept/`, with the old address redirecting there. The page also gets the owner's on-screen walk arrows: the ▲ ◀ ▼ ▶ pad, until now shown only on touch screens while walking, now shows on every device while walking and in a room view at eye level. Pressing an arrow in a room view walks on from there, like W A S D. The route config flag `walkArrows` turns this on; `/realistic/` does not set it.
 
