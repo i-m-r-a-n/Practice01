@@ -60,3 +60,11 @@
   - Batch 2 started at 22:39 UTC: stops 19, 10 (again), 13, 16, 18, 21 and 23, and stop 1 again (green trees).
   - The render tools and their README are in `qa/bel-20261030/cycles-render/`.
 - **The welcome screen's Walk choice** has phone wording on touch screens. The link `?walk=1` starts walking straight away; this is useful to send to a phone.
+- **About 22:45 UTC, the tour in images:**
+  - It is one grid of every tour stop's image, in tour order. Each card shows its stop number, title and kind: gold for "AI concept image · fictional people", green for "Rendered from the 3D model · no people".
+  - A note above the grid says what both kinds are, and that none of them is a photograph.
+  - A tap on a card starts the tour at that stop, so the image leads straight into the 3D.
+  - It opens from the toolbar ("Images"), as a fourth choice on the welcome card, with the key I, or with the link `?images=1` (useful to send to a phone).
+  - Phones get two columns of 640 px copies of the images, about 48 KB each (`concept-images/thumbs/`, made by `viewer/make_concept_thumbs.py`).
+  - Check: `bel_gallery_check.py`, desktop and phone.
+- **While a phone walks, the footer note is one line;** a tap shows the whole note. This gives the view about 40 px more on a phone; a computer keeps the whole note. `bel_phone_walk_check.py` checks it.
