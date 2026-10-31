@@ -1,0 +1,206 @@
+[
+ {
+  "order": 1,
+  "zone": "Z01",
+  "name": "Arrival gallery",
+  "group": "Arrival & visitors"
+ },
+ {
+  "order": 2,
+  "zone": "Z02",
+  "name": "Reception · tea lounge",
+  "group": "Arrival & visitors"
+ },
+ {
+  "order": 3,
+  "zone": "Z03",
+  "name": "Earth & Sun passage",
+  "group": "Arrival & visitors"
+ },
+ {
+  "order": 4,
+  "zone": "Z28",
+  "name": "Guest WCs",
+  "group": "Arrival & visitors"
+ },
+ {
+  "order": 5,
+  "zone": "Z08",
+  "name": "Negotiation suite",
+  "group": "Experience & meeting"
+ },
+ {
+  "order": 6,
+  "zone": "Z09",
+  "name": "Records room",
+  "group": "Experience & meeting"
+ },
+ {
+  "order": 7,
+  "zone": "Z30",
+  "name": "Experience centre · fabric stories",
+  "group": "Experience & meeting"
+ },
+ {
+  "order": 8,
+  "zone": "Z10",
+  "name": "Exec reception · tea point",
+  "group": "Executive suite"
+ },
+ {
+  "order": 9,
+  "zone": "Z11",
+  "name": "Director",
+  "group": "Executive suite"
+ },
+ {
+  "order": 10,
+  "zone": "Z12",
+  "name": "Managing Director",
+  "group": "Executive suite"
+ },
+ {
+  "order": 11,
+  "zone": "Z13",
+  "name": "Executive corridor",
+  "group": "Executive suite"
+ },
+ {
+  "order": 12,
+  "zone": "Z04",
+  "name": "Buyer project room · order desk",
+  "group": "Workplace"
+ },
+ {
+  "order": 13,
+  "zone": "Z05",
+  "name": "Export & order centre (planned)",
+  "group": "Workplace"
+ },
+ {
+  "order": 14,
+  "zone": "Z31",
+  "name": "Staff corridor",
+  "group": "Workplace"
+ },
+ {
+  "order": 15,
+  "zone": "Z14",
+  "name": "CAD · knitwear development",
+  "group": "Design development"
+ },
+ {
+  "order": 16,
+  "zone": "Z15",
+  "name": "Fibre library",
+  "group": "Design development"
+ },
+ {
+  "order": 17,
+  "zone": "Z16",
+  "name": "Fabric lab",
+  "group": "Design development"
+ },
+ {
+  "order": 18,
+  "zone": "Z17",
+  "name": "Sample room · remake and repair",
+  "group": "Design development"
+ },
+ {
+  "order": 19,
+  "zone": "Z18",
+  "name": "Collaborative studio",
+  "group": "Design development"
+ },
+ {
+  "order": 20,
+  "zone": "Z19",
+  "name": "Sample & material store",
+  "group": "Design development"
+ },
+ {
+  "order": 21,
+  "zone": "Z22",
+  "name": "Design wing · the making line",
+  "group": "Design development"
+ },
+ {
+  "order": 22,
+  "zone": "Z20",
+  "name": "Staff & artisan dining",
+  "group": "Staff facilities"
+ },
+ {
+  "order": 23,
+  "zone": "Z21",
+  "name": "Academy annex (pilot academy)",
+  "group": "Staff facilities"
+ },
+ {
+  "order": 24,
+  "zone": "Z32",
+  "name": "North corridor",
+  "group": "Staff facilities"
+ },
+ {
+  "order": 25,
+  "zone": "Z33",
+  "name": "Hallway",
+  "group": "Staff facilities"
+ },
+ {
+  "order": 26,
+  "zone": "Z23",
+  "name": "Prayer room (male)",
+  "group": "Prayer & wudu"
+ },
+ {
+  "order": 27,
+  "zone": "Z24",
+  "name": "Wudu (male)",
+  "group": "Prayer & wudu"
+ },
+ {
+  "order": 28,
+  "zone": "Z25",
+  "name": "Prayer room (female)",
+  "group": "Prayer & wudu"
+ },
+ {
+  "order": 29,
+  "zone": "Z34",
+  "name": "Wudu (female)",
+  "group": "Prayer & wudu"
+ },
+ {
+  "order": 30,
+  "zone": "Z26",
+  "name": "Washroom (female)",
+  "group": "Washrooms"
+ },
+ {
+  "order": 31,
+  "zone": "Z27",
+  "name": "Washroom (male)",
+  "group": "Washrooms"
+ },
+ {
+  "order": 32,
+  "zone": "Z29",
+  "name": "Guest workspace WC",
+  "group": "Washrooms"
+ },
+ {
+  "order": 33,
+  "zone": "Z06",
+  "name": "Design academy (later phase)",
+  "group": "Option A · later phase"
+ },
+ {
+  "order": 34,
+  "zone": "Z07",
+  "name": "Green Uthan · circular knitwear studio (later phase)",
+  "group": "Option A · later phase"
+ }
+]
