@@ -4573,6 +4573,16 @@
    "kind": "render",
    "thumb": "concept-images/thumbs/render_BEL_CAM_JHUT.jpg"
   },
+  "BEL_CAM_MAKING_LINE": {
+   "src": "concept-images/render_BEL_CAM_MAKING_LINE.jpg",
+   "kind": "render",
+   "thumb": "concept-images/thumbs/render_BEL_CAM_MAKING_LINE.jpg"
+  },
+  "BEL_CAM_RECORDS": {
+   "src": "concept-images/render_BEL_CAM_RECORDS.jpg",
+   "kind": "render",
+   "thumb": "concept-images/thumbs/render_BEL_CAM_RECORDS.jpg"
+  },
   "BEL_CAM_SUN_SHELF": {
    "src": "concept-images/render_BEL_CAM_SUN_SHELF.jpg",
    "kind": "render",
@@ -4588,10 +4598,25 @@
    "kind": "render",
    "thumb": "concept-images/thumbs/render_CAM_06_Experience_Centre_Detail.jpg"
   },
+  "CAM_13_Design_Studio_A": {
+   "src": "concept-images/render_CAM_13_Design_Studio_A.jpg",
+   "kind": "render",
+   "thumb": "concept-images/thumbs/render_CAM_13_Design_Studio_A.jpg"
+  },
+  "CAM_21_Lounge_Training": {
+   "src": "concept-images/render_CAM_21_Lounge_Training.jpg",
+   "kind": "render",
+   "thumb": "concept-images/thumbs/render_CAM_21_Lounge_Training.jpg"
+  },
   "CAM_ISO_SE": {
    "src": "concept-images/render_CAM_ISO_SE.jpg",
    "kind": "render",
    "thumb": "concept-images/thumbs/render_CAM_ISO_SE.jpg"
+  },
+  "CAM_ISO_SW": {
+   "src": "concept-images/render_CAM_ISO_SW.jpg",
+   "kind": "render",
+   "thumb": "concept-images/thumbs/render_CAM_ISO_SW.jpg"
   }
  },
  "stillsTags": {

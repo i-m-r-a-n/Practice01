@@ -131,6 +131,7 @@ body.walk-compact #info:not(.open) #infoText, body.walk-compact #info:not(.open)
 body.walk-compact #info { padding: 9px 12px } body.walk-compact #info h2 { margin: 0; font-size: 16px; cursor: pointer }
 body.walk-compact #info h2::after { content: "  \25BE"; color: var(--mint); font-size: 12px } body.walk-compact #info.open h2::after { content: "  \25B4" }
 body.walk-compact #info .row { margin-top: 8px } body.walk-compact #info .row button { padding: 6px 10px; font-size: 12.5px }
+body.walk-compact #disclaimer:not(.open) { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; cursor: pointer }   /* phones walking: one line, tap for the whole note */
 #walkhelp { position: fixed; top: calc(var(--top-h) + 48px); left: 50%; transform: translateX(-50%); z-index: 12; width: min(360px, calc(100vw - 2 * var(--gap))); padding: 16px 18px 14px }
 #walkhelp h3 { margin: 0 0 8px; font-size: 16px }
 #walkhelp ul { margin: 0 0 12px; padding-left: 18px; display: grid; gap: 6px; font-size: 13.5px; line-height: 1.4 }
@@ -172,6 +173,31 @@ body.walk-compact #info .row { margin-top: 8px } body.walk-compact #info .row bu
 .q select { background: rgba(255, 255, 255, .07); border: 1px solid var(--line); border-radius: 8px; padding: 6px 8px; font-size: 13px; color: var(--white) }
 .q select option { color: #111 }
 
+/* ---------------------------------------------------------------- the tour in images (concept routes with stillsGallery) */
+#mGallery { display: inline-flex; align-items: center; background: var(--glass); border: 1px solid var(--line); color: var(--white); font-weight: 600 }
+#mGallery[hidden] { display: none }
+#mGallery:hover { background: rgba(255, 255, 255, .14) }
+#mGallery.on { background: var(--green); border-color: rgba(169, 216, 184, .55) }
+.ways.four { grid-template-columns: repeat(2, 1fr) }
+#gallery { position: fixed; inset: 0; z-index: 21; display: flex; align-items: center; justify-content: center; padding: 16px;
+  background: rgba(8, 12, 10, .62); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px) }
+.gbox { display: flex; flex-direction: column; width: min(1180px, 100%); max-height: 100%; background: rgba(20, 27, 23, .97); border: 1px solid var(--line); border-radius: 18px;
+  padding: 18px 20px 0; box-shadow: 0 20px 60px rgba(0, 0, 0, .45) }
+.ghead { flex: none; display: flex; justify-content: space-between; align-items: flex-start; gap: 12px }
+.ghead h2 { margin: 6px 0 0; font-size: 22px; font-weight: 650 }
+#gClose { flex: none; width: 40px; height: 40px; border-radius: 10px; background: rgba(255, 255, 255, .07); border: 1px solid var(--line); font-size: 22px; line-height: 1 }
+#gClose:hover { background: rgba(255, 255, 255, .15) }
+.gnote { flex: none; margin: 6px 0 12px; font-size: 12.5px; line-height: 1.5; color: var(--muted) }
+#gGrid { flex: 1 1 auto; min-height: 0; overflow: auto; overscroll-behavior: contain; display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 12px;
+  align-content: start; padding: 2px 2px 20px }
+.gcard { display: flex; flex-direction: column; gap: 3px; text-align: left; padding: 0 0 10px; background: rgba(255, 255, 255, .05); border: 1px solid var(--line); border-radius: 12px; overflow: hidden }
+.gcard:hover, .gcard:focus-visible { background: rgba(255, 255, 255, .11); border-color: var(--brass) }
+.gcard img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; background: #0d120f; margin-bottom: 4px }
+.gcard .gnum { margin: 0 10px; font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--mint); font-weight: 650 }
+.gcard b { margin: 0 10px; font-size: 14px; font-weight: 650; line-height: 1.3 }
+.gcard em { margin: 0 10px; font-style: normal; font-size: 11px; line-height: 1.35; color: #e2c48c }   /* AI concept image: gold, as on the contact sheet */
+.gcard.render em { color: var(--mint) }                                                               /* rendered from the 3D: green */
+
 /* ---------------------------------------------------------------- footer, loading */
 #disclaimer { position: fixed; left: 0; right: 0; bottom: 0; z-index: 9; text-align: center; font-size: 12px; color: #e3e9e5; padding: 9px 12px 11px;
   background: linear-gradient(0deg, rgba(10, 14, 12, .9), rgba(10, 14, 12, .25)) }
@@ -212,7 +238,8 @@ body.walk-compact #info .row { margin-top: 8px } body.walk-compact #info .row bu
   #dock { grid-template-columns: minmax(0, 1fr); gap: 8px }
   #info, #center { grid-column: 1 } #info { width: 100% }
   #minimap { display: none }
-  .ways { grid-template-columns: 1fr }
+  .ways, .ways.four { grid-template-columns: 1fr }
+  #mGallery { grid-area: people; justify-self: stretch; justify-content: center }
 }
 @media (max-width: 640px) {
   :root { --gap: 10px }
@@ -230,6 +257,9 @@ body.walk-compact #info .row { margin-top: 8px } body.walk-compact #info .row bu
   #walkhint { font-size: 11.5px }
   .photo-tag { white-space: normal; width: calc(100vw - 2 * var(--gap)); text-align: center } #photoClose { top: calc(var(--top-h) + 52px) }
   .wbox { padding: 18px 16px 16px } .wbox h2 { font-size: 20px }
+  #gallery { padding: 8px } .gbox { padding: 14px 12px 0; border-radius: 14px } .ghead h2 { font-size: 19px } .gnote { font-size: 11.5px; margin: 4px 0 10px }
+  #gGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; padding-bottom: 14px } .gcard { padding-bottom: 8px } .gcard .gnum { margin: 0 8px; font-size: 9.5px }
+  .gcard b { margin: 0 8px; font-size: 12.5px } .gcard em { margin: 0 8px; font-size: 10px }
   #disclaimer { font-size: 11px; line-height: 1.35; padding: 7px 10px 9px }
 }
 @media (max-width: 359px) {
@@ -239,6 +269,26 @@ body.walk-compact #info .row { margin-top: 8px } body.walk-compact #info .row bu
 .tb-row button:disabled { opacity: .38; cursor: default; background: rgba(255, 255, 255, .04) }
 
 body[data-mode="capture"] > :not(#app):not(script) { display:none !important; }
+
+/* ---------------------------------------------------------------- phones held sideways (short landscape screens): one header row, the room card left and
+   the arrows under the right thumb, the tour card centred, a one-line footer (a tap shows the whole note) */
+@media (orientation: landscape) and (max-height: 520px) {
+  #top { display: flex; padding: 6px 10px; gap: 8px }
+  .ttl { display: none }
+  .modes { display: flex; gap: 5px }
+  .logos { padding: 4px 7px; gap: 7px } .logos img { height: 16px }
+  .modes .lg { display: none } .modes .sm { display: inline }
+  .modes button { padding: 6px 9px; font-size: 12px; min-height: 30px } .seg { padding: 3px } .seg button { padding: 5px 8px; min-height: 26px } .modes .icon { width: 32px; height: 32px }
+  #dock { grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); gap: 8px }
+  #info { grid-column: 1 } #center { grid-column: 2 }
+  body[data-mode="walk"] #center { grid-column: 3; justify-self: end }
+  #info { padding: 9px 12px } #info h2 { font-size: 16px; margin: 2px 0 4px } #info p { max-height: 3em }
+  #tourbar { padding: 9px 12px 8px } #tTitle { font-size: 16px; margin: 2px 0 3px } #tText { -webkit-line-clamp: 1 } .segs { margin: 6px 0 }
+  #disclaimer:not(.open) { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; cursor: pointer; padding: 5px 10px 6px; font-size: 11px }
+  .ways, .ways.four { grid-template-columns: repeat(2, 1fr) } .wbox { padding: 14px 16px } .wbox h2 { font-size: 18px; margin: 4px 0 10px } .way { padding: 10px } .way span { font-size: 12px }
+  #walkhelp { top: calc(var(--top-h) + 6px); max-height: calc(100vh - var(--top-h) - 12px); overflow: auto }
+  #gGrid { grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)) }
+}
 </style>
 </head>
 <body data-mode="loading">
@@ -264,6 +314,7 @@ body[data-mode="capture"] > :not(#app):not(script) { display:none !important; }
       <button id="mRooms" title="Show or hide the list of rooms (R)">Rooms</button>
       <button id="mWalk" title="Walk through the office at eye level (W)">Walk</button>
     </div>
+    <button id="mGallery" hidden title="Every tour stop as one image; tap one to go there in 3D (I)"><span class="lg">Images</span><span class="sm">Images</span></button>
     <button id="mPeople" hidden aria-pressed="false" title="Show or hide the illustrative people (they are not real staff)"><span class="dot" aria-hidden="true"></span>People</button>
     <button id="mHelp" class="icon" title="How to use this tour (H)" aria-label="Help">?</button>
     <button id="mFull" class="icon" title="Full screen for a projector or large display (F)" aria-label="Full screen">&#x26F6;</button>
@@ -346,6 +397,17 @@ body[data-mode="capture"] > :not(#app):not(script) { display:none !important; }
 
 <footer id="disclaimer"><b>Concept proposal</b> &middot; final dimensions and technical details subject to site verification. <span id="peopleNote" hidden><b>People shown are illustrative</b>, not real staff.</span></footer>
 
+<div id="gallery" class="hidden" role="dialog" aria-modal="true" aria-labelledby="gTitle">
+  <div class="gbox">
+    <div class="ghead">
+      <div><div class="eyebrow">Ground floor &middot; interactive design experience</div><h2 id="gTitle">The tour in images</h2></div>
+      <button id="gClose" class="icon" title="Back to the 3D model (Esc)" aria-label="Close the images">&times;</button>
+    </div>
+    <p id="gNote" class="gnote"></p>
+    <div id="gGrid"></div>
+  </div>
+</div>
+
 <div id="welcome" class="hidden" role="dialog" aria-modal="true" aria-labelledby="wTitle">
   <div class="wbox">
     <div class="eyebrow">Ground floor &middot; interactive design experience</div>
@@ -354,6 +416,7 @@ body[data-mode="capture"] > :not(#app):not(script) { display:none !important; }
       <button class="way primary" id="wTour"><b>&#9654; Guided tour</b><span>16 stops through the floor. It plays by itself: pause, go back or skip at any time.</span></button>
       <button class="way" id="wRooms"><b>Rooms</b><span>Choose any of the 34 rooms from the list, or click a room on the model.</span></button>
       <button class="way" id="wWalk"><b>Walk</b><span>Move at eye level with W A S D or the arrow keys and drag to look. Walls, glass and furniture stop you.</span></button>
+      <button class="way hidden" id="wGallery"><b>Images</b><span>Every tour stop as one image. Tap an image to go there in 3D.</span></button>
     </div>
     <p class="tips"><b>Trackpad or mouse:</b> drag to turn, <b>Shift</b> + drag to move, scroll or pinch to zoom. <b>Esc</b> brings you back to the overview. <b>F</b> or the &#x26F6; button: full screen.</p>
     <div class="wfoot">
