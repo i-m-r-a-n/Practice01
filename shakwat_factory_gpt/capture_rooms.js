@@ -1,4 +1,4 @@
-// Captures every room of the Bengal Earth Lab virtual tour from several angles (headless Chromium).
+// Captures every room of the office virtual tour from several angles (headless Chromium).
 // Usage: node capture_rooms.js [output_dir]   (resumable: finished rooms are skipped)
 const { chromium } = require('playwright');
 const fs = require('fs');

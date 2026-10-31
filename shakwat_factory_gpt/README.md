@@ -1,7 +1,7 @@
 # Shakwat factory: realistic room images with GPT
 
-Pictures of every room of the Bengal Earth Lab virtual tour, turned into photorealistic images by
-OpenAI's image model. Source tour: https://stage2-office-virtual-tour.imranahmedjh611.workers.dev/bengal-earth-lab/
+Pictures of every room of the office virtual tour, turned into photorealistic images by
+OpenAI's image model. The tour address is set in `capture_rooms.js`.
 
 Drive: `Imran — Main Folder / shakwat factory / <NN room name>` (folder ids in `drive_folders.json`).
 
@@ -11,7 +11,12 @@ Drive: `Imran — Main Folder / shakwat factory / <NN room name>` (folder ids in
   or as the environment variable `OPENAI_API_KEY`. A new session picks it up. Never paste the key in chat.
 - Node with Playwright (pre-installed in Claude Code cloud sessions), Python 3 with `requests` and `Pillow`.
 
-## Steps
+## ChatGPT (Agent mode)
+
+`CHATGPT_PROMPT.md` holds the full prompt: one photorealistic image per room, saved to the Drive
+folder `shakwat factory / chatgpt`.
+
+## Steps (API script)
 
 1. Capture the rooms (about 45 minutes, resumable):
    `node capture_rooms.js shots`
