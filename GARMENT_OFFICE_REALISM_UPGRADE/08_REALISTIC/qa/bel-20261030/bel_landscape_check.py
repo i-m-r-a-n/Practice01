@@ -4,6 +4,7 @@ Sizes: 844 x 390 (a common phone) and 667 x 375 (a small phone).
 - while walking, the room card sits at the left and the arrows at the right, and the view above them is at least 45% of the height;
 - a tap on the footer shows the whole note and a second tap folds it;
 - the welcome card shows its four ways in two columns; the tour card and the tour in images fit;
+- at a stop with an image, the kind label stays clear of the Back to 3D button, and the concept note is one line (a tap opens it);
 - no page errors, and nothing makes the page scroll sideways.
 python3 -I bel_landscape_check.py --out DIR [--url URL]"""
 import argparse, json
@@ -41,7 +42,13 @@ with sync_playwright() as pw:
         page.click('#disclaimer'); page.wait_for_timeout(200); run['footer_open_px'] = page.evaluate(f"({box})('disclaimer').h")
         page.click('#disclaimer'); page.wait_for_timeout(200); run['footer_folded_px'] = page.evaluate(f"({box})('disclaimer').h")
         # the tour at stop 2 (an AI image) and the tour in images
-        page.evaluate("__viewer.api.startTour(1)"); page.wait_for_timeout(9000)
+        page.evaluate("__viewer.api.startTour(1)"); page.wait_for_timeout(3000)
+        try: page.wait_for_function("(() => { const p = document.getElementById('photo'); return !p.classList.contains('hidden') && p.classList.contains('show'); })()", timeout=90000); run['stop2_image'] = True
+        except Exception: run['stop2_image'] = False
+        page.wait_for_timeout(1500)
+        tag, close = page.evaluate("document.querySelector('#photo .photo-tag').getBoundingClientRect().toJSON()"), page.evaluate("document.getElementById('photoClose').getBoundingClientRect().toJSON()")
+        run['label_clear_of_back_button'] = tag['right'] <= close['left'] or tag['bottom'] <= close['top'] or tag['top'] >= close['bottom']
+        run['tour_note_px'] = page.evaluate("(() => { const n = document.getElementById('tNote'); return n.classList.contains('hidden') ? 0 : n.getBoundingClientRect().height; })()")
         tb = page.evaluate(f"({box})('tourbar')"); run['tour_card'] = tb
         run['tour_card_fits'] = bool(tb and tb['top'] > top['bottom'] and tb['bottom'] <= H)
         page.screenshot(path=str(out / f'{name}_tour_stop2.png'), timeout=120000)
@@ -53,7 +60,8 @@ with sync_playwright() as pw:
         ctx.close()
         run['passed'] = bool(run['header_px'] <= 52 and run['footer_px'] <= 26 and run['arrows_right'] and run['card_left'] and run['free_view_share'] >= 0.45
                              and not run['sideways_scroll'] and run['footer_open_px'] > run['footer_px'] + 8 and run['footer_folded_px'] == run['footer_px']
-                             and run['welcome_cols'] == 2 and run['tour_card_fits'] and run['gallery_fits'] and run['gallery_cols'] >= 2)
+                             and run['welcome_cols'] == 2 and run['tour_card_fits'] and run['gallery_fits'] and run['gallery_cols'] >= 2
+                             and run['stop2_image'] and run['label_clear_of_back_button'] and run['tour_note_px'] < 30)
         R['runs'][name] = run; print(name, json.dumps(run), flush=True)
     b.close()
 R['passed'] = all(r['passed'] for r in R['runs'].values()) and not R['errors']

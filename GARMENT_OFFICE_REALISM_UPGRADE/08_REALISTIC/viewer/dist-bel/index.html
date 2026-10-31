@@ -146,6 +146,9 @@ body.walk-compact #disclaimer:not(.open) { white-space: nowrap; overflow: hidden
 .photo-tag { position: fixed; top: calc(var(--top-h) + 8px); left: 50%; transform: translateX(-50%); font-size: 11px; letter-spacing: .12em; background: rgba(0, 0, 0, .6);
   border: 1px solid rgba(194, 154, 85, .65); color: #f1d7a4; padding: 6px 11px; border-radius: 7px; white-space: nowrap }
 #photoClose { position: fixed; right: var(--gap); top: calc(var(--top-h) + 6px); background: var(--glass); border: 1px solid var(--line); border-radius: 9px; padding: 8px 13px; font-size: 13px; z-index: 9 }
+@media (min-width: 641px) and (max-width: 1100px) {   /* a long label wraps before it reaches the Back to 3D button */
+  .photo-tag { width: max-content; max-width: calc(100vw - 2 * var(--gap) - 280px); white-space: normal; text-align: center; line-height: 1.4 }
+}
 
 /* ---------------------------------------------------------------- room names on the model */
 #labels { position: fixed; inset: 0; pointer-events: none; z-index: 5 }
@@ -288,6 +291,9 @@ body[data-mode="capture"] > :not(#app):not(script) { display:none !important; }
   .ways, .ways.four { grid-template-columns: repeat(2, 1fr) } .wbox { padding: 14px 16px } .wbox h2 { font-size: 18px; margin: 4px 0 10px } .way { padding: 10px } .way span { font-size: 12px }
   #walkhelp { top: calc(var(--top-h) + 6px); max-height: calc(100vh - var(--top-h) - 12px); overflow: auto }
   #gGrid { grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)) }
+  #tourbar .note, #info .note { display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden; max-height: none; cursor: pointer; margin-top: 5px; padding: 4px 8px }
+  #tourbar .note.open, #info .note.open { display: block; max-height: 4.6em; overflow: auto }   /* the concept note is one line; a tap opens it */
+  .photo-tag { font-size: 10px; padding: 5px 9px }
 }
 </style>
 </head>

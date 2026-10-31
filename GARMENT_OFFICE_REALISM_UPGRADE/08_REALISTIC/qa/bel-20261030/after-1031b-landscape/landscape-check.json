@@ -1,0 +1,80 @@
+{
+  "url": "http://127.0.0.1:8790/stage2-concept/",
+  "scope": "LOCAL Chromium (SwiftShader) via serve_preview.py; touch emulated; not a real phone or Safari",
+  "runs": {
+    "844x390": {
+      "welcome_cols": 2,
+      "header_px": 46,
+      "footer_px": 25,
+      "info": {
+        "left": 16,
+        "right": 414,
+        "top": 282,
+        "bottom": 359,
+        "h": 77
+      },
+      "pad": {
+        "left": 662,
+        "right": 828,
+        "top": 250,
+        "bottom": 359,
+        "h": 109
+      },
+      "arrows_right": true,
+      "card_left": true,
+      "free_view_share": 0.52,
+      "sideways_scroll": false,
+      "footer_open_px": 50,
+      "footer_folded_px": 25,
+      "tour_card": {
+        "left": 82,
+        "right": 762,
+        "top": 155.328125,
+        "bottom": 359,
+        "h": 203.671875
+      },
+      "tour_card_fits": true,
+      "gallery_cols": 3,
+      "gallery_fits": true,
+      "passed": true
+    },
+    "667x375": {
+      "welcome_cols": 2,
+      "header_px": 46,
+      "footer_px": 25,
+      "info": {
+        "left": 16,
+        "right": 325.5,
+        "top": 232,
+        "bottom": 344,
+        "h": 112
+      },
+      "pad": {
+        "left": 485,
+        "right": 651,
+        "top": 235,
+        "bottom": 344,
+        "h": 109
+      },
+      "arrows_right": true,
+      "card_left": true,
+      "free_view_share": 0.5,
+      "sideways_scroll": false,
+      "footer_open_px": 65,
+      "footer_folded_px": 25,
+      "tour_card": {
+        "left": 24,
+        "right": 643,
+        "top": 140.328125,
+        "bottom": 344,
+        "h": 203.671875
+      },
+      "tour_card_fits": true,
+      "gallery_cols": 2,
+      "gallery_fits": true,
+      "passed": true
+    }
+  },
+  "errors": [],
+  "passed": true
+}
