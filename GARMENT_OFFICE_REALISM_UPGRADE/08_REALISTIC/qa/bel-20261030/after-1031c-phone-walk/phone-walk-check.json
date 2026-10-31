@@ -1,0 +1,48 @@
+{
+  "url": "http://127.0.0.1:8790/stage2-concept/?welcome=0",
+  "scope": "LOCAL Chromium (SwiftShader) via serve_preview.py; touch emulated; not a real phone or Safari",
+  "runs": {
+    "phone": {
+      "help_shown": true,
+      "help_closed": true,
+      "footer_px": 31,
+      "footer_open_px": 75,
+      "footer_closed_again_px": 31,
+      "held_first": [
+        "KeyW"
+      ],
+      "held_after_slide": [
+        "KeyD"
+      ],
+      "released": true,
+      "target_set": true,
+      "moved_m": 0.27,
+      "closer_to_target_m": 0.25,
+      "gyro_button_shown": true,
+      "gyro_on": true,
+      "gyro_turned_deg": 40.0,
+      "gyro_off_again": true,
+      "help_leaves_with_walk": true,
+      "passed": false
+    },
+    "desktop": {
+      "help_shown": false,
+      "help_closed": true,
+      "footer_px": 35,
+      "held_first": [
+        "KeyW"
+      ],
+      "held_after_slide": [
+        "KeyD"
+      ],
+      "released": true,
+      "target_set": true,
+      "moved_m": 0.29,
+      "closer_to_target_m": 0.27,
+      "gyro_button_shown": false,
+      "passed": true
+    }
+  },
+  "errors": [],
+  "passed": false
+}

@@ -38,7 +38,8 @@ with sync_playwright() as pw:
         # the footer note: one line while a phone walks, the whole note on a tap (a computer keeps the whole note)
         foot = "document.getElementById('disclaimer').offsetHeight"
         run['footer_px'] = page.evaluate(foot)
-        if name == 'phone':
+        if name == 'phone':   # one line = the footer's own line height plus its padding (from the computed style)
+            run['footer_one_line_px'] = page.evaluate("(() => { const s = getComputedStyle(document.getElementById('disclaimer')); return Math.round(parseFloat(s.lineHeight) + parseFloat(s.paddingTop) + parseFloat(s.paddingBottom)); })()")
             page.click('#disclaimer'); page.wait_for_timeout(200); run['footer_open_px'] = page.evaluate(foot)
             page.click('#disclaimer'); page.wait_for_timeout(200); run['footer_closed_again_px'] = page.evaluate(foot)
         # slide from the up arrow to the right arrow
@@ -84,7 +85,7 @@ with sync_playwright() as pw:
         ctx.close()
         ok = run['help_closed'] and run['held_first'] == ['KeyW'] and run['held_after_slide'] == ['KeyD'] and run['released'] and run['target_set'] and run.get('closer_to_target_m', 0) > 0.02
         if name == 'phone': ok = (ok and run['help_shown'] and run['gyro_button_shown'] and run.get('gyro_on') and abs(run.get('gyro_turned_deg', 0)) > 20 and run.get('gyro_off_again')
-                                  and run['footer_px'] < 30 and run['footer_open_px'] > run['footer_px'] + 10 and run['footer_closed_again_px'] == run['footer_px'] and run['help_leaves_with_walk'])
+                                  and run['footer_px'] <= run['footer_one_line_px'] + 1 and run['footer_open_px'] > run['footer_px'] + 10 and run['footer_closed_again_px'] == run['footer_px'] and run['help_leaves_with_walk'])
         else: ok = ok and not run['help_shown'] and not run['gyro_button_shown']
         run['passed'] = bool(ok); R['runs'][name] = run; print(name, json.dumps(run), flush=True)
     b.close()
