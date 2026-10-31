@@ -1,0 +1,65 @@
+{
+  "url": "http://127.0.0.1:8790/stage2-concept/",
+  "scope": "LOCAL Chromium (SwiftShader) via serve_preview.py; touch emulated; not a real phone or Safari",
+  "runs": {
+    "desktop": {
+      "welcome_way": true,
+      "toolbar_button": true,
+      "opened_from_welcome": true,
+      "cards": 23,
+      "stops_with_images": 23,
+      "order_ok": true,
+      "kinds_ok": true,
+      "titles_ok": true,
+      "thumbs_used": 23,
+      "note_ok": true,
+      "cards_whole": true,
+      "thumbs_loaded": 23,
+      "grid": {
+        "cols": 4,
+        "sideways": false,
+        "page_sideways": false
+      },
+      "closed": true,
+      "opened_from_toolbar": true,
+      "gallery_closed_on_tap": true,
+      "tour_stop": "Stop 5 of 23",
+      "mode": "tour",
+      "stop5_image": "concept-images/render_CAM_04_Experience_Centre_A.jpg",
+      "stop5_tag": "RENDERED FROM THE 3D MODEL \u00b7 Blender Cycles, simulated light \u00b7 no people \u00b7 not a photograph",
+      "link_opens": true,
+      "passed": true
+    },
+    "phone": {
+      "welcome_way": true,
+      "toolbar_button": true,
+      "opened_from_welcome": true,
+      "cards": 23,
+      "stops_with_images": 23,
+      "order_ok": true,
+      "kinds_ok": true,
+      "titles_ok": true,
+      "thumbs_used": 23,
+      "note_ok": true,
+      "cards_whole": true,
+      "thumbs_loaded": 23,
+      "grid": {
+        "cols": 2,
+        "sideways": false,
+        "page_sideways": false
+      },
+      "closed": true,
+      "opened_from_toolbar": true,
+      "gallery_closed_on_tap": true,
+      "tour_stop": "Stop 5 of 23",
+      "mode": "tour",
+      "stop5_image": "concept-images/render_CAM_04_Experience_Centre_A.jpg",
+      "stop5_tag": "RENDERED FROM THE 3D MODEL \u00b7 Blender Cycles, simulated light \u00b7 no people \u00b7 not a photograph",
+      "link_opens": true,
+      "passed": true
+    }
+  },
+  "errors": [],
+  "http_errors": [],
+  "passed": true
+}
