@@ -13,8 +13,10 @@ Drive: `Imran — Main Folder / shakwat factory / <NN room name>` (folder ids in
 
 ## ChatGPT (Agent mode)
 
-`CHATGPT_PROMPT.md` holds the full prompt: one photorealistic image per room, saved to the Drive
-folder `shakwat factory / chatgpt`.
+`CHATGPT_PROMPT.md` is one paste for ChatGPT Agent mode: one photorealistic image per room, saved to
+the Drive folder `shakwat factory / chatgpt`. The 34 source pictures are served by the Cloudflare Pages
+project `shakwat-factory-rooms`, built from `../shakwat_rooms_site` on this branch (noindex). Delete that
+Pages project when the images are done.
 
 ## Steps (API script)
 
