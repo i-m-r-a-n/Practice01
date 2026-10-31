@@ -78,3 +78,16 @@
   - On a phone, the walk help card stayed over the tour when "Got it" was not pressed. It now leaves with walking and returns next time.
   - A stop image's alt text named the camera id. It now names the kind and the stop or room.
 - **`run_checks.sh`** runs all the browser checks of this route one after another and saves their screenshots as JPEG.
+- **23:07 UTC, renders done:** all 23 stops have an image: 9 AI images and 14 renders, plus the 3 room images. `qa/bel-20261030/stop-images-contact-sheet.jpg` shows them in tour order, and was sent to the owner.
+- **Two layout fixes, found in the screenshots of the checks:**
+  - **The cards of "Images":** the grid squeezed its rows and cut off each card's stop, title and kind. Now the rows keep whole cards and the grid scrolls; the check measures each card.
+  - **A phone held sideways:** the image label ran under "Back to 3D", and the tour's concept note covered most of the image. Now the label wraps clear of the button on screens 641 to 1100 px wide, and the note is one line (a tap opens it).
+- **23:20 to 23:52 UTC, checks on the final build** (`3d0e779`), in `after-1031c-*/`:
+  - landscape, stills (26 of 26 images), arrows, gallery and the 23-stop tour passed on the first run;
+  - phone walk failed only on a guessed 30 px limit for the one-line footer (it is 31 px). The check now measures one line from the computed style, and passed on a second run;
+  - all 60 requested files exist at the commit.
+- **23:58 UTC, deploy request 5** is on [issue 12](https://github.com/i-m-r-a-n/Practice01/issues/12#issuecomment-6550846984) and replaces requests 3 and 4:
+  - Worker `97e778d`, 10,742 bytes, SHA-256 `2bbb5325…0062`, source `3d0e779`;
+  - 64 + 41 Worker checks pass;
+  - the raw bytes on GitHub match.
+

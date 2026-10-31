@@ -2,6 +2,8 @@
 
 ## Update 5: walking with a phone, an image at every stop, the new address (31 Oct 2026, prepared, not deployed yet)
 
+Deploy request 5 is on [issue 12](https://github.com/i-m-r-a-n/Practice01/issues/12#issuecomment-6550846984), posted 31 Oct at about 23:58 UTC. It replaces requests 3 and 4.
+
 This replaces updates 3 and 4. Like them, it serves the route at `/stage2-concept/` and redirects the old `/bengal-earth-lab/` there, and it shows the walk arrows on every device. It adds the owner's request of 31 Oct: "make it as beautiful as these images, and make it possible to walk the factory with a phone".
 
 - **Walking with a phone:**
