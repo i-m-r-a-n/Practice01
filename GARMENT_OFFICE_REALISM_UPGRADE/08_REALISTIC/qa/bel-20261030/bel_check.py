@@ -11,7 +11,7 @@ from pathlib import Path
 from playwright.sync_api import sync_playwright
 
 p = argparse.ArgumentParser()
-p.add_argument('--url', default='http://127.0.0.1:8790/bengal-earth-lab/?welcome=0')
+p.add_argument('--url', default='http://127.0.0.1:8790/stage2-concept/?welcome=0')
 p.add_argument('--out', required=True)
 p.add_argument('--cams', required=True)
 p.add_argument('--walk', help='start x,z, yaw (rad), number of 0.25 s steps')

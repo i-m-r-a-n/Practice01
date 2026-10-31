@@ -3,45 +3,45 @@
   "commit": "e198902122e565878697d7606d9b4ce2b98b32b7",
   "requests": 8,
   "missing": [],
-  "seconds": 122.9,
+  "seconds": 124.4,
   "rows": [
     {
-      "request": "/bengal-earth-lab/",
+      "request": "/stage2-concept/",
       "repo_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/viewer/dist-bel/index.html",
       "in_commit": true
     },
     {
-      "request": "/bengal-earth-lab/app.js",
+      "request": "/stage2-concept/app.js",
       "repo_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/viewer/dist-bel/app.js",
       "in_commit": true
     },
     {
-      "request": "/bengal-earth-lab/lighting-v2/manifest-hybrid.json",
+      "request": "/stage2-concept/lighting-v2/manifest-hybrid.json",
       "repo_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/lighting-v2/manifest-hybrid.json",
       "in_commit": true
     },
     {
-      "request": "/bengal-earth-lab/model_web_baked.glb",
+      "request": "/stage2-concept/model_web_baked.glb",
       "repo_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/revised-model/Optimized_Office_Interior_web_baked.glb",
       "in_commit": true
     },
     {
-      "request": "/bengal-earth-lab/props/office-props-manifest.json",
+      "request": "/stage2-concept/props/office-props-manifest.json",
       "repo_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/props/office-props-manifest.json",
       "in_commit": true
     },
     {
-      "request": "/bengal-earth-lab/textures/codecs/three_r169/examples/jsm/libs/basis/basis_transcoder.js",
+      "request": "/stage2-concept/textures/codecs/three_r169/examples/jsm/libs/basis/basis_transcoder.js",
       "repo_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/textures/codecs/three_r169/examples/jsm/libs/basis/basis_transcoder.js",
       "in_commit": true
     },
     {
-      "request": "/bengal-earth-lab/textures/codecs/three_r169/examples/jsm/libs/basis/basis_transcoder.wasm",
+      "request": "/stage2-concept/textures/codecs/three_r169/examples/jsm/libs/basis/basis_transcoder.wasm",
       "repo_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/textures/codecs/three_r169/examples/jsm/libs/basis/basis_transcoder.wasm",
       "in_commit": true
     },
     {
-      "request": "/bengal-earth-lab/textures/pbr2k/ktx2/Terrazzo019M/basecolor.ktx2",
+      "request": "/stage2-concept/textures/pbr2k/ktx2/Terrazzo019M/basecolor.ktx2",
       "repo_path": "GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/textures/pbr2k/ktx2/Terrazzo019M/basecolor.ktx2",
       "in_commit": true
     }

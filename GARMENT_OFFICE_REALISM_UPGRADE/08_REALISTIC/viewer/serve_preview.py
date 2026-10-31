@@ -11,8 +11,8 @@ REPO = HERE.parents[2]
 class Handler(SimpleHTTPRequestHandler):
     def translate_path(self, path):
         raw = unquote(urlparse(path).path)
-        dist = 'dist-bel' if raw.startswith('/bengal-earth-lab/') else 'dist'   # the /bengal-earth-lab/ proposal has its own page and bundle
-        name = raw.removeprefix('/realistic/').removeprefix('/bengal-earth-lab/').lstrip('/')
+        dist = 'dist-bel' if raw.startswith(('/stage2-concept/', '/bengal-earth-lab/')) else 'dist'   # the proposal (now /stage2-concept/) has its own page and bundle
+        name = raw.removeprefix('/realistic/').removeprefix('/stage2-concept/').removeprefix('/bengal-earth-lab/').lstrip('/')
         if name in ('', 'index.html', 'app.js'):
             return str(HERE / dist / (name or 'index.html'))
         if name in ('model_web.glb', 'model_web_baked.glb'):

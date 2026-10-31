@@ -1,5 +1,30 @@
 # Deploying the Bengal Earth Lab proposal route (prepared by Claude, 30 Oct 2026; updated after the owner chose option C)
 
+## Update 3: the new address /stage2-concept/ (31 Oct 2026, prepared, not deployed yet)
+
+The owner asked for the old name to go from the address too. The proposal is now served at `/stage2-concept/`.
+
+The earlier address keeps working: `/bengal-earth-lab/` and everything under it redirects (307) to the same path under `/stage2-concept/`, so links already shared still open. The page itself is unchanged (source `e198902`). Only the Worker changed.
+
+- **Worker file:** `deploy/worker-bengal-earth-lab.js`, 10,742 bytes, SHA-256 `3ead6824f99aba567eceb14e06c4bcede3eeba8c22493b129f39fea3f4edc7b9`.
+- **Built with:** `python3 build_worker.py d5939f9ef3928340908459efc440259df0d34b6d --bel e198902122e565878697d7606d9b4ce2b98b32b7 --out worker-bengal-earth-lab.js`
+- **Checks:**
+  - `test_worker_bel.mjs`: 62 checks pass. They include the 5 redirects from the old address, the health route at the new address, and two near-miss prefixes (`/stage2-concepts`, `/bengal-earth-labs`) that still go to the original tour unchanged.
+  - `test_worker.mjs`: 41 checks pass.
+  - The 23-stop tour plays at `/stage2-concept/` locally (`qa/bel-20261030/after-tour-play-path/`).
+  - All 8 requested files at the new address exist at `e198902` (`request-list.json`).
+- **Guard before upload:**
+  - `/bengal-earth-lab/health` shows `e198902…`.
+  - `/realistic/health` shows `d5939f9…`.
+  - `/`, `/app.js` and `/health` keep `ff75beb5…2675`, `c6af8144…9bc4` and `5118ed49…378b`.
+- **Verify after upload:**
+  - `/stage2-concept/health` shows `e198902…` with route `/stage2-concept`.
+  - `/bengal-earth-lab/` answers 307 to `/stage2-concept/`.
+  - The other routes are unchanged.
+- **Rollback:**
+  1. Re-upload the live Worker from `d11321e` (`3bb5da83…1d03`).
+  2. If that fails, re-upload `35a11c7` (`3424e88b…abd3`).
+
 ## Update 2: STAGE II · Zara Fashion branding (live since 30 Oct 2026, 17:52 UTC; Cloudflare version `8bef92a5-5acf-42a9-8d82-2a1efcef6b71`; see `LIVE_DEPLOY_2026-10-30.md`)
 
 The owner asked for STAGE II / Zara Fashion branding instead of "Bengal Earth Lab". Only the page labels changed:

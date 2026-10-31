@@ -5,7 +5,7 @@ import argparse, json
 from playwright.sync_api import sync_playwright
 
 p = argparse.ArgumentParser()
-p.add_argument('--url', default='http://127.0.0.1:8790/bengal-earth-lab/?welcome=0&debug=1')
+p.add_argument('--url', default='http://127.0.0.1:8790/stage2-concept/?welcome=0&debug=1')
 p.add_argument('--probes', required=True)
 a = p.parse_args()
 probes = json.load(open(a.probes))

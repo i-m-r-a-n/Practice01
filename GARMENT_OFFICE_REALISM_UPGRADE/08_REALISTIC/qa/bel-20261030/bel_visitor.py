@@ -39,7 +39,7 @@ SPOTS = {
     'workshop_table': (24.4, -19.3, -1.5708, -0.4, 64),
 }
 p = argparse.ArgumentParser()
-p.add_argument('--url', default='http://127.0.0.1:8790/bengal-earth-lab/?welcome=0')
+p.add_argument('--url', default='http://127.0.0.1:8790/stage2-concept/?welcome=0')
 p.add_argument('--out', required=True)
 p.add_argument('--only', default='')
 p.add_argument('--size', default='1280x800')

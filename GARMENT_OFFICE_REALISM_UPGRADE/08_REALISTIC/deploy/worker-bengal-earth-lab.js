@@ -8,7 +8,7 @@ addEventListener('fetch',e=>e.respondWith(route(e.request)));
 async function route(req){
   const p=new URL(req.url).pathname;
   if(p==='/realistic'||p.startsWith('/realistic/'))return realisticRoute(req);
-  if(p==='/bengal-earth-lab'||p.startsWith('/bengal-earth-lab/'))return belRoute(req);
+  if(p==='/stage2-concept'||p.startsWith('/stage2-concept/')||p==='/bengal-earth-lab'||p.startsWith('/bengal-earth-lab/'))return belRoute(req);
   let base=ASSETS,path,type;
   if(p==='/'||p==='/index.html'){path='GARMENT_OFFICE_WALKTHROUGH_FINAL/08_WORKER_READY_TOUR/index.html';type='text/html; charset=utf-8'}
   else if(p==='/app.js'){path='GARMENT_OFFICE_WALKTHROUGH_FINAL/08_WORKER_READY_TOUR/app.js';type='text/javascript; charset=utf-8';base=CODE}
@@ -97,19 +97,25 @@ async function realisticRoute(req) {
   return new Response(req.method==='HEAD'||remote.status===304?null:remote.body,{status:remote.status,headers:h});
 }
 
-// Isolated Bengal Earth Lab concept proposal (its own page, bundle and config; the routes above are unchanged).
+// Isolated STAGE II ground-floor concept proposal (its own page, bundle and config; the routes above are unchanged).
+// It is served at /stage2-concept/; its earlier address /bengal-earth-lab/ redirects there.
 const BEL_COMMIT = 'e198902122e565878697d7606d9b4ce2b98b32b7';
 const BEL_ROOT = 'https://raw.githubusercontent.com/i-m-r-a-n/Practice01/'+BEL_COMMIT+'/';
+const BEL_PATH = '/stage2-concept', BEL_OLD_PATH = '/bengal-earth-lab';
 async function belRoute(req) {
   if(req.method!=='GET'&&req.method!=='HEAD')return new Response('Method not allowed',{status:405,headers:{Allow:'GET, HEAD'}});
   const url=new URL(req.url);
-  if(url.pathname==='/bengal-earth-lab') {
-    url.pathname='/bengal-earth-lab/';
+  if(url.pathname===BEL_OLD_PATH||url.pathname.startsWith(BEL_OLD_PATH+'/')) {
+    url.pathname=BEL_PATH+'/'+url.pathname.slice(BEL_OLD_PATH.length+1);
     return Response.redirect(url.href,307);
   }
-  if(url.pathname==='/bengal-earth-lab/health')return Response.json({ok:true,source:BEL_COMMIT,route:'/bengal-earth-lab',fallback:'/',status:'concept proposal preview'});
+  if(url.pathname===BEL_PATH) {
+    url.pathname=BEL_PATH+'/';
+    return Response.redirect(url.href,307);
+  }
+  if(url.pathname===BEL_PATH+'/health')return Response.json({ok:true,source:BEL_COMMIT,route:BEL_PATH,fallback:'/',status:'concept proposal preview'});
   let rel;
-  try { rel=decodeURIComponent(url.pathname.slice('/bengal-earth-lab/'.length)) || 'index.html'; }
+  try { rel=decodeURIComponent(url.pathname.slice(BEL_PATH.length+1)) || 'index.html'; }
   catch { return new Response('Bad path',{status:400}); }
   if(!/^[A-Za-z0-9_./-]+$/.test(rel)||rel.split('/').some(s=>s==='.'||s==='..'))return new Response('Bad path',{status:400});
   const ext=rel.split('.').pop().toLowerCase();

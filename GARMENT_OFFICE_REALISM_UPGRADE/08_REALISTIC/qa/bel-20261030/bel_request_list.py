@@ -12,7 +12,7 @@ from playwright.sync_api import sync_playwright
 
 p = argparse.ArgumentParser()
 p.add_argument('commit')
-p.add_argument('--url', default='http://127.0.0.1:8790/bengal-earth-lab/')
+p.add_argument('--url', default='http://127.0.0.1:8790/stage2-concept/')
 p.add_argument('--out', required=True)
 a = p.parse_args()
 A = 'GARMENT_OFFICE_REALISM_UPGRADE/08_REALISTIC/'
@@ -31,7 +31,7 @@ seen = {}
 with sync_playwright() as pw:
     b = pw.chromium.launch(executable_path='/usr/bin/chromium', headless=True, args=['--use-gl=angle', '--use-angle=swiftshader', '--enable-unsafe-swiftshader'])
     page = b.new_page(viewport={'width': 1280, 'height': 800})
-    page.on('request', lambda q: seen.setdefault(unquote(urlparse(q.url).path), q.url) if urlparse(q.url).path.startswith('/bengal-earth-lab/') else None)
+    page.on('request', lambda q: seen.setdefault(unquote(urlparse(q.url).path), q.url) if urlparse(q.url).path.startswith('/stage2-concept/') else None)
     t0 = time.monotonic()
     page.goto(a.url + '?welcome=0', wait_until='domcontentloaded', timeout=60000)
     page.wait_for_function('window.__viewer?.ready', timeout=180000)
@@ -43,7 +43,7 @@ with sync_playwright() as pw:
 
 rows = []
 for path in sorted(seen):
-    rel = path[len('/bengal-earth-lab/'):]
+    rel = path[len('/stage2-concept/'):]
     target = repo_path(rel)
     ok = subprocess.run(['git', 'cat-file', '-e', f'{a.commit}:{target}'], capture_output=True).returncode == 0
     rows.append({'request': path, 'repo_path': target, 'in_commit': ok})

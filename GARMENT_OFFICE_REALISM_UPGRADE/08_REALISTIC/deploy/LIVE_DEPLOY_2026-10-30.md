@@ -60,3 +60,4 @@ Claude's check, 12:05 to 12:12 UTC, in Chromium with software WebGL in the cloud
   - eyebrow "STAGE II · Zara Fashion";
   - headline "The ground floor, reimagined · concept proposal";
   - welcome title "Explore the ground floor proposal".
+- The guided tour plays all 23 stops on the live page with no page or HTTP errors (`qa/bel-20261030/live-tour-play-20261031/`, about 15:40 UTC, Chromium with software WebGL in the cloud container).

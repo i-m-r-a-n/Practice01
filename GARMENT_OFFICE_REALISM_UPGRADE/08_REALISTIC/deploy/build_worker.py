@@ -2,7 +2,8 @@
 
 Usage: python build_worker.py <pushed 40-character source commit> [--bel <pushed commit>] [--out FILE]
 The existing root tour, PDFs, videos and health route remain unchanged.
---bel also adds the isolated /bengal-earth-lab/ proposal route, served from that commit's viewer/dist-bel.
+--bel also adds the isolated /stage2-concept/ proposal route, served from that commit's viewer/dist-bel;
+its earlier address /bengal-earth-lab/ redirects there.
 """
 from pathlib import Path
 import argparse, re
@@ -15,7 +16,7 @@ if not re.fullmatch(r'[0-9a-f]{40}', commit) or (args.bel and not re.fullmatch(r
 original = (here/'production-worker-before.js').read_text()
 hook = "  const p=new URL(req.url).pathname;"
 assert original.count(hook) == 1
-original = original.replace(hook, hook+"\n  if(p==='/realistic'||p.startsWith('/realistic/'))return realisticRoute(req);"+("\n  if(p==='/bengal-earth-lab'||p.startsWith('/bengal-earth-lab/'))return belRoute(req);" if args.bel else ''),1)
+original = original.replace(hook, hook+"\n  if(p==='/realistic'||p.startsWith('/realistic/'))return realisticRoute(req);"+("\n  if(p==='/stage2-concept'||p.startsWith('/stage2-concept/')||p==='/bengal-earth-lab'||p.startsWith('/bengal-earth-lab/'))return belRoute(req);" if args.bel else ''),1)
 addition = r'''
 // Isolated realism preview. The original route function above is preserved apart from its prefix dispatch.
 const REALISTIC_COMMIT = '__COMMIT__';
@@ -70,19 +71,25 @@ async function realisticRoute(req) {
 }
 '''.replace('__COMMIT__',commit)
 bel = r'''
-// Isolated Bengal Earth Lab concept proposal (its own page, bundle and config; the routes above are unchanged).
+// Isolated STAGE II ground-floor concept proposal (its own page, bundle and config; the routes above are unchanged).
+// It is served at /stage2-concept/; its earlier address /bengal-earth-lab/ redirects there.
 const BEL_COMMIT = '__BEL__';
 const BEL_ROOT = 'https://raw.githubusercontent.com/i-m-r-a-n/Practice01/'+BEL_COMMIT+'/';
+const BEL_PATH = '/stage2-concept', BEL_OLD_PATH = '/bengal-earth-lab';
 async function belRoute(req) {
   if(req.method!=='GET'&&req.method!=='HEAD')return new Response('Method not allowed',{status:405,headers:{Allow:'GET, HEAD'}});
   const url=new URL(req.url);
-  if(url.pathname==='/bengal-earth-lab') {
-    url.pathname='/bengal-earth-lab/';
+  if(url.pathname===BEL_OLD_PATH||url.pathname.startsWith(BEL_OLD_PATH+'/')) {
+    url.pathname=BEL_PATH+'/'+url.pathname.slice(BEL_OLD_PATH.length+1);
     return Response.redirect(url.href,307);
   }
-  if(url.pathname==='/bengal-earth-lab/health')return Response.json({ok:true,source:BEL_COMMIT,route:'/bengal-earth-lab',fallback:'/',status:'concept proposal preview'});
+  if(url.pathname===BEL_PATH) {
+    url.pathname=BEL_PATH+'/';
+    return Response.redirect(url.href,307);
+  }
+  if(url.pathname===BEL_PATH+'/health')return Response.json({ok:true,source:BEL_COMMIT,route:BEL_PATH,fallback:'/',status:'concept proposal preview'});
   let rel;
-  try { rel=decodeURIComponent(url.pathname.slice('/bengal-earth-lab/'.length)) || 'index.html'; }
+  try { rel=decodeURIComponent(url.pathname.slice(BEL_PATH.length+1)) || 'index.html'; }
   catch { return new Response('Bad path',{status:400}); }
   if(!/^[A-Za-z0-9_./-]+$/.test(rel)||rel.split('/').some(s=>s==='.'||s==='..'))return new Response('Bad path',{status:400});
   const ext=rel.split('.').pop().toLowerCase();

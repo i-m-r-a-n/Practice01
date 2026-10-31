@@ -7,7 +7,7 @@ from pathlib import Path
 from playwright.sync_api import sync_playwright
 
 p = argparse.ArgumentParser()
-p.add_argument('--url', default='http://127.0.0.1:8790/bengal-earth-lab/?welcome=0')
+p.add_argument('--url', default='http://127.0.0.1:8790/stage2-concept/?welcome=0')
 p.add_argument('--out', required=True)
 a = p.parse_args(); out = Path(a.out); out.mkdir(parents=True, exist_ok=True)
 cfg = json.loads((Path(__file__).resolve().parents[2] / 'viewer' / 'bel-config.json').read_text())
