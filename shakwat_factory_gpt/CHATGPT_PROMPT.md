@@ -168,56 +168,56 @@ SELF-CHECK before every upload (compare with the source picture):
 - Objects (show only those visible in the source): Black-framed glass partitions on both sides, looking into a meeting room with green chairs and an open office.
 
 ## 15. CAD - knitwear development
-- Source: "CAD - knitwear development - room view.jpg" in the room folder https://drive.google.com/drive/folders/1-2Q_rhRYGKDt83l2c0ZJFjozwsoFO8Ku
+- Source: "CAD - knitwear development - room view.jpg" in the room folder https://drive.google.com/drive/folders/1-2Q_rhRYGKDt83l2c0ZJFjozwsoFO8Ku (direct link: https://drive.google.com/file/d/12qdPJZ7kmxKHWe_zcmeq2hVKeZktakk2/view)
 - Save as: "15 CAD - knitwear development.png"
 - What it is: CAD and knitwear development room.
 - Materials and light: Grey carpet tiles. Black linear pendants, neutral 4000 K light.
 - Objects (show only those visible in the source): Three CAD workstations with two monitors each; large-format plotter; layout and digitiser table with paper patterns; brand-green felt pinboard with tech packs; interior window.
 
 ## 16. Fibre library
-- Source: "Fibre library - corner 3.jpg" in the room folder https://drive.google.com/drive/folders/1y84O9fYsFpsa5t5LRR6UBKa93xdbLP0s
+- Source: "Fibre library - corner 3.jpg" in the room folder https://drive.google.com/drive/folders/1y84O9fYsFpsa5t5LRR6UBKa93xdbLP0s (direct link: https://drive.google.com/file/d/1KAI7lhxpJyHCdxU426xZPXFybVZ799O1/view)
 - Save as: "16 Fibre library.png"
 - What it is: Fibre and fabric library with a colour-matching booth.
 - Materials and light: Light concrete floor. Black linear pendants.
 - Objects (show only those visible in the source): Timber shelving with fabric binders and books; low swatch shelving with labelled fibre boxes; garment rail; black D65 colour-viewing booth on a white review table; round stools; glass wall to the experience centre.
 
 ## 17. Fabric lab
-- Source: "Fabric lab - corner 3.jpg" in the room folder https://drive.google.com/drive/folders/13hkWXqEd2QCTbSHEoCF0NYiucuBkLLrC
+- Source: "Fabric lab - corner 3.jpg" in the room folder https://drive.google.com/drive/folders/13hkWXqEd2QCTbSHEoCF0NYiucuBkLLrC (direct link: https://drive.google.com/file/d/13pyYLqhtUBzFAatrY44mW_YAbNCuD_0E/view)
 - Save as: "17 Fabric lab.png"
 - What it is: Fabric lab with 3D printers.
 - Materials and light: Light concrete floor. Black linear pendants.
 - Objects (show only those visible in the source): Four enclosed black-framed 3D printers on a bench over white cabinets; post-processing bench; desk with chair and monitor; interior window to the next room.
 
 ## 18. Sample room - remake and repair
-- Source: "Sample room - remake and repair - corner 2.jpg" in the room folder https://drive.google.com/drive/folders/15e43WPvSAlnbB1zDkREo0XZ4CSIclu9y
+- Source: "Sample room - remake and repair - corner 2.jpg" in the room folder https://drive.google.com/drive/folders/15e43WPvSAlnbB1zDkREo0XZ4CSIclu9y (direct link: https://drive.google.com/file/d/1DlnUhTw4zpN84d0I07NcUTg4FPnUKKcK/view)
 - Save as: "18 Sample room - remake and repair.png"
 - What it is: Sample room for remake and repair.
 - Materials and light: Light concrete floor. Black linear pendants.
 - Objects (show only those visible in the source): Pattern and cutting table with a kraft-paper T-shirt pattern and offcuts sorted by colour; a pieced patchwork panel; two sample sewing-machine stations; white dress forms on timber stands; garment rail; interior window.
 
 ## 19. Collaborative studio
-- Source: "Collaborative studio - angle 000.jpg" in the room folder https://drive.google.com/drive/folders/1vzzrtbGGJixCV9wfWvKRC9R4rVj_Cy_w
+- Source: "Collaborative studio - angle 000.jpg" in the room folder https://drive.google.com/drive/folders/1vzzrtbGGJixCV9wfWvKRC9R4rVj_Cy_w (direct link: https://drive.google.com/file/d/1fRxmAlcpdxk-xyc63nKh7RtF325EAaJ0/view)
 - Save as: "19 Collaborative studio.png"
 - What it is: Collaborative design studio, the only room with windows to the outside.
 - Materials and light: Oak plank floor. Black linear pendants and track spots on the mood-board wall.
 - Objects (show only those visible in the source): Creative workstations with monitors; long mood-board wall covered in fabric swatches; living wall of wooden plant niches with warm backlight (snake plant, money plant, peace lily); bonsai and a tulsi pot on the window shelf; small fig tree; clay pieces on the desks; east windows with roller blinds.
 
 ## 20. Sample & material store
-- Source: "Sample & material store - corner 4.jpg" in the room folder https://drive.google.com/drive/folders/1jbHo7ABMKJ3mTpUJN2XRfEvjyWzfDP-P
+- Source: "Sample & material store - corner 4.jpg" in the room folder https://drive.google.com/drive/folders/1jbHo7ABMKJ3mTpUJN2XRfEvjyWzfDP-P (direct link: https://drive.google.com/file/d/1m6tqU7U_NMZ-n5epFUSmNm4rC7S4_qUK/view)
 - Save as: "20 Sample & material store.png"
 - What it is: Sample and material store.
 - Materials and light: Light concrete floor. Batten lights.
 - Objects (show only those visible in the source): Tall timber shelving with sample boxes and folders along an aisle; door at the end.
 
 ## 21. Design wing - the making line
-- Source: "Design wing - the making line - corner 1.jpg" in the room folder https://drive.google.com/drive/folders/1ASebQa_0ZbqL7U_bCTeR7hn9O4GCXGWs
+- Source: "Design wing - the making line - corner 1.jpg" in the room folder https://drive.google.com/drive/folders/1ASebQa_0ZbqL7U_bCTeR7hn9O4GCXGWs (direct link: https://drive.google.com/file/d/1IyEzuTFCoBK3Qi6_BGblr0haYh6NJLkd/view)
 - Save as: "21 Design wing - the making line.png"
 - What it is: Design-wing corridor with the making-line display.
 - Materials and light: Terrazzo floor. Downlights.
 - Objects (show only those visible in the source): A long wall shelf showing one T-shirt in six steps (fibre, yarn, knit fabric, cut and sew, testing, wear and return) with small labels under a wooden header; glass partitions to the labs. Keep the text exactly as shown or as unreadable print.
 
 ## 22. Staff & artisan dining
-- Source: "Staff & artisan dining - room view.jpg" in the room folder https://drive.google.com/drive/folders/1_dOoKCTSfhAPiKE_09nAF8O1qOY0uL53
+- Source: "Staff & artisan dining - room view.jpg" in the room folder https://drive.google.com/drive/folders/1_dOoKCTSfhAPiKE_09nAF8O1qOY0uL53 (direct link: https://drive.google.com/file/d/1QMbo9BuIx64oi60TxKLU6GnWcauxd_dL/view)
 - Save as: "22 Staff & artisan dining.png"
 - What it is: Staff and artisan dining with a Bengali tea stall.
 - Materials and light: Oak plank floor. White dome pendants.
