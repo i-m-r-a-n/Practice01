@@ -1,9 +1,9 @@
-"""Pre-deploy check for /bengal-earth-lab/: every file the proposal page requests exists in the release commit
-(same path rules as belRoute() in deploy/build_worker.py). Copy of qa/sprint-claude-20261028/request_list.py.
+"""Pre-deploy check for /stage2-concept/: every file the proposal page requests exists in the release commit
+(same path rules as belRoute() in deploy/build_worker.py).
 
-Loads the page through serve_preview.py (LOCAL Chromium), opens the six rooms and their photoreal stills with People on,
-records every /realistic/ request, maps it to its repository path and checks it with `git cat-file` at COMMIT.
-python3 request_list.py COMMIT --out FILE [--url URL]
+Loads the page through serve_preview.py (LOCAL Chromium), frames every tour camera, fetches every stop image and its 640 px copy,
+records every /stage2-concept/ request, maps it to its repository path and checks it with `git cat-file` at COMMIT.
+python3 -I bel_request_list.py COMMIT --out FILE [--url URL]
 """
 import argparse, json, re, subprocess, time
 from pathlib import Path
@@ -38,6 +38,9 @@ with sync_playwright() as pw:
     page.wait_for_function('__viewer.dressing && __viewer.dressing.concept', timeout=240000)
     for cam in json.loads(page.evaluate('JSON.stringify((window.__TOUR_CONFIG?.tour || []).map(s => s.camera))')):
         page.evaluate('n => __viewer.api.frameCamera(n)', cam); page.wait_for_timeout(600)   # frameCamera waits for the room's light to load
+    # every stop image and its 640 px copy: the tour, the room cards and the tour in images load them
+    page.evaluate("""async () => { for (const v of Object.values(window.__TOUR_CONFIG?.conceptStills || {}))
+      for (const u of [typeof v === 'string' ? v : v.src, v?.thumb].filter(Boolean)) await fetch(u).then(r => r.arrayBuffer()).catch(() => null); }""")
     page.wait_for_timeout(1500)
     b.close()
 
