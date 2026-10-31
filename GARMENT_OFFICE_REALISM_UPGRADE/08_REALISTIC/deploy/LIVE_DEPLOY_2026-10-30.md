@@ -38,3 +38,25 @@ Claude's check, 12:05 to 12:12 UTC, in Chromium with software WebGL in the cloud
 
 - No test on Safari, a MacBook or a phone yet.
 - The route is a concept proposal. Its labels say that fibre origins, recycled shares, tests, makers, growers and energy data are still to be verified.
+
+## Update 2: STAGE II · Zara Fashion labels, live since 2026-10-30 17:52 UTC
+
+- **Asked by:** the owner ("just use stage ii zara branding", then "update"). Claude's request: [issue 12](https://github.com/i-m-r-a-n/Practice01/issues/12#issuecomment-6524589490).
+- **Deployed by:** ChatGPT, through the Cloudflare API, at 17:52:49 UTC (23:52 Dhaka). Its report: [issue 12](https://github.com/i-m-r-a-n/Practice01/issues/12#issuecomment-6529762309).
+- **Cloudflare version:** `8bef92a5-5acf-42a9-8d82-2a1efcef6b71`. The deployment is `89cfc999-3217-44f5-841f-a0490cc5c549`, at 100%.
+- **Script:** `deploy/worker-bengal-earth-lab.js` from commit `d11321e`, 10,363 bytes, SHA-256 `3bb5da83bfe2de517fdc3d7213f646c3298ab943e60e7dc4c9743797f5e61d03`. It serves source `e198902`.
+  - ChatGPT could not fetch the raw file directly. It rebuilt the upload from the live script by changing the one source-commit pin.
+  - Before the upload, it required the result to match the authorised file's full SHA-256.
+- **Guard:** at 17:48 and 17:52 UTC, the live Worker matched `35a11c7` (`3424e88b…abd3`), and the five public-route guards held.
+- **Rollback:** not needed. The fallbacks are `35a11c7` (`3424e88b…abd3`), then `01fac69` (`f6e4730f…f922`).
+
+**Claude's independent checks, 2026-10-31 15:37 UTC:**
+- `/bengal-earth-lab/health` shows source `e198902122e565878697d7606d9b4ce2b98b32b7`.
+- `/realistic/health` still shows `d5939f9…`.
+- `/`, `/app.js` and `/health` keep `ff75beb5…`, `c6af8144…` and `5118ed49…`.
+- The live page, bundle and config match `viewer/dist-bel/` at `e198902` byte for byte.
+- The live config reads:
+  - page title "STAGE II · Zara Fashion - ground floor concept";
+  - eyebrow "STAGE II · Zara Fashion";
+  - headline "The ground floor, reimagined · concept proposal";
+  - welcome title "Explore the ground floor proposal".

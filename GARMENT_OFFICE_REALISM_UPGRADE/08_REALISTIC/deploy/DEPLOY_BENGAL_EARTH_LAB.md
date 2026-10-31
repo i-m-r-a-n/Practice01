@@ -1,6 +1,6 @@
 # Deploying the Bengal Earth Lab proposal route (prepared by Claude, 30 Oct 2026; updated after the owner chose option C)
 
-## Update 2: STAGE II · Zara Fashion branding (30 Oct 2026, prepared, not deployed yet)
+## Update 2: STAGE II · Zara Fashion branding (live since 30 Oct 2026, 17:52 UTC; Cloudflare version `8bef92a5-5acf-42a9-8d82-2a1efcef6b71`; see `LIVE_DEPLOY_2026-10-30.md`)
 
 The owner asked for STAGE II / Zara Fashion branding instead of "Bengal Earth Lab". Only the page labels changed:
 - page title: "STAGE II · Zara Fashion - ground floor concept"
