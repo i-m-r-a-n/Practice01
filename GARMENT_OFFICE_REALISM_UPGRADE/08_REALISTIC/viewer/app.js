@@ -1033,7 +1033,9 @@ async function toggleGyro() {
 }
 $('bGyro').onclick = toggleGyro;
 $('infoTitle').addEventListener('click', () => { if (document.body.classList.contains('walk-compact')) $('info').classList.toggle('open'); });   // phones walking: tap the room name for the room text
-$('disclaimer').addEventListener('click', () => { if (document.body.classList.contains('walk-compact')) { $('disclaimer').classList.toggle('open'); measureChrome(); } });   // and tap the footer for the whole note
+$('disclaimer').addEventListener('click', () => {   // a footer cut to one line (a phone walking, or held sideways): a tap shows the whole note
+  const d = $('disclaimer'); if (d.classList.contains('open') || getComputedStyle(d).whiteSpace === 'nowrap') { d.classList.toggle('open'); measureChrome(); }
+});
 
 // a short help card the first time a phone walks
 function showWalkHelp() {
