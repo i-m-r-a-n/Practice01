@@ -90,4 +90,17 @@
   - Worker `97e778d`, 10,742 bytes, SHA-256 `2bbb5325…0062`, source `3d0e779`;
   - 64 + 41 Worker checks pass;
   - the raw bytes on GitHub match.
+- **00:02 UTC, the film:** `qa/bel-20261030/presentation/stage2-tour-in-images.mp4` (1080p) and `stage2-tour-in-images-720p.mp4` (12.5 MB, sent to the owner).
+  - It shows the 23 stop images in tour order, each with its stop number, title and kind label.
+  - Opening and closing cards carry the link and the honesty note.
+- **00:03 to 00:48 UTC, the 3D model view of every AI image:**
+  - The 12 AI cameras were rendered from the 3D (`concept-images/model/`).
+  - At an AI image, "3D model view" swaps in that render with the render label; "AI concept image" swaps back.
+  - `qa/bel-20261030/ai-vs-3d-sheet.jpg` puts the pairs side by side, and was sent to the owner. Some AI images move or add things, for example the desk at stop 2 and the size of the lab at stop 14.
+- **00:49 to 01:57 UTC, checks on build `f4346cc`** (`after-1101-*/`): all pass, and all 72 requested files exist.
+  - The local preview server stopped once at its 2-hour limit and was restarted.
+  - The desktop walk to a tapped target looked stuck for 4 s. A frame trace showed software WebGL now draws one desktop frame in 2 to 4 s, and update 5's build behaves the same. The check now waits up to 20 s for steps towards the target.
+- **01:59 UTC, deploy request 6** is on [issue 12](https://github.com/i-m-r-a-n/Practice01/issues/12#issuecomment-6552051876): update 5 plus the 3D model view.
+  - Worker `793d4e7`, SHA-256 `bba1bcc4…6d49`, source `f4346cc`.
+  - It replaces request 5 if that is not live yet. Its guard covers both cases.
 

@@ -6,6 +6,8 @@ This has everything in update 5, and adds one thing. At every stop or room with 
 
 If update 5 is not live yet, deploy this one instead. If update 5 is live, this is the next step.
 
+Deploy request 6 is on [issue 12](https://github.com/i-m-r-a-n/Practice01/issues/12#issuecomment-6552051876), posted 1 Nov at about 01:59 UTC. Its guard has two cases: update 5 live or not live.
+
 - **Source commit:** `f4346cc98f1d040e83e975b15eb41a4c659b5fd0`
 - **Worker file:** `deploy/worker-bengal-earth-lab.js`, 10,742 bytes, SHA-256 `bba1bcc42433bede7904a0b31d0534a683269aecd2c7c475e944a149d4c56d49`. It differs from update 5's file only in the source commit.
 - **Checks:**
