@@ -3,6 +3,7 @@
 - a tour stop with an AI image fades into it with the AI label (stop 2, the arrival gallery); stop 5 shows its Cycles render with the
   render label when the route has one, or no image;
 - a room view that has an image offers it on its card (the MD office, Z12) and shows it;
+- when an AI image has a render of the same view in the 3D model, "3D model view" shows it with the render label and "AI concept image" goes back;
 - every configured image loads.
 python3 -I bel_stills_check.py --out DIR [--url URL]"""
 import argparse, json
@@ -27,7 +28,8 @@ with sync_playwright() as pw:
         run['switch_label'] = page.evaluate("document.getElementById('tPhoto').closest('label').textContent.trim()")
         run['switch_on'] = page.evaluate("document.getElementById('tPhoto').checked")
         stills = page.evaluate("window.__TOUR_CONFIG.conceptStills")
-        run['images_load'] = page.evaluate("""async (s) => { const r = {}; for (const [k, v] of Object.entries(s)) { const u = typeof v === 'string' ? v : v.src; r[k] = await new Promise(ok => { const i = new Image(); i.onload = () => ok(i.naturalWidth); i.onerror = () => ok(0); i.src = u; }); } return r; }""", stills)
+        run['images_load'] = page.evaluate("""async (s) => { const r = {}; for (const [k, v] of Object.entries(s)) for (const [n, u] of [[k, typeof v === 'string' ? v : v.src], [k + ' (3D view)', v?.model]]) if (u)
+          r[n] = await new Promise(ok => { const i = new Image(); i.onload = () => ok(i.naturalWidth); i.onerror = () => ok(0); i.src = u; }); return r; }""", stills)
         # tour: stop 2 has an image
         page.evaluate("__viewer.api.startTour(1)")
         try: page.wait_for_function(photo_on, timeout=90000); run['stop2_image'] = True
@@ -35,6 +37,22 @@ with sync_playwright() as pw:
         run['stop2_src'] = page.evaluate("document.getElementById('photoImg').getAttribute('src')")
         run['tag'] = page.evaluate("document.querySelector('#photo .photo-tag').textContent")
         page.wait_for_timeout(1200); page.screenshot(path=str(out / f'{name}_stop2_image.png'), timeout=120000)
+        # an AI image with a render of the same view in the 3D model: the switch shows the render with its own label, and back
+        if isinstance(stills.get('CAM_03_Entrance_Lobby'), dict) and stills['CAM_03_Entrance_Lobby'].get('model'):
+            paused = page.evaluate("(() => { const t = __viewer.api.state().tour; if (t && t.playing) { __viewer.api.togglePlay(); return true; } return false; })()")
+            loaded = "(() => { const i = document.getElementById('photoImg'); return i.complete && i.naturalWidth > 0; })()"
+            run['model_button'] = page.evaluate("document.getElementById('photoAlt').textContent")
+            page.click('#photoAlt'); page.wait_for_timeout(300)
+            try:
+                page.wait_for_function("document.getElementById('photoImg').getAttribute('src').includes('model/render_CAM_03') && " + loaded, timeout=60000)
+                run['model_tag'] = page.evaluate("document.querySelector('#photo .photo-tag').textContent"); run['model_button_after'] = page.evaluate("document.getElementById('photoAlt').textContent")
+                page.wait_for_timeout(800); page.screenshot(path=str(out / f'{name}_stop2_model_view.png'), timeout=120000)
+                page.click('#photoAlt'); page.wait_for_function("document.getElementById('photoImg').getAttribute('src').endsWith('CAM_03_Entrance_Lobby.jpg') && " + loaded, timeout=60000)
+                run['model_switch_ok'] = ('RENDERED FROM THE 3D MODEL' in run['model_tag'] and run['model_button'] == '3D model view' and run['model_button_after'] == 'AI concept image'
+                                          and 'AI CONCEPT IMAGE' in page.evaluate("document.querySelector('#photo .photo-tag').textContent"))
+            except Exception: run['model_switch_ok'] = False
+            if paused: page.evaluate("__viewer.api.togglePlay()")
+        else: run['model_switch_ok'] = None   # no 3D view of this AI image yet
         # stop 5: its Cycles render if the route has one, else no image
         page.evaluate("__viewer.api.goStop(4)")
         if 'CAM_04_Experience_Centre_A' in stills:
@@ -53,7 +71,7 @@ with sync_playwright() as pw:
         ctx.close()
         run['passed'] = (run['switch_label'] == 'Show concept images' and run['switch_on'] and all(v > 0 for v in run['images_load'].values()) and run['stop2_image']
                          and run['stop2_src'].endswith('CAM_03_Entrance_Lobby.jpg') and 'AI CONCEPT IMAGE' in run['tag'] and run['stop5_ok']
-                         and run['room_button'] == 'Concept image' and (run['room_image'] or '').endswith('CAM_07_MD_Office_A.jpg'))
+                         and run['room_button'] == 'Concept image' and (run['room_image'] or '').endswith('CAM_07_MD_Office_A.jpg') and run['model_switch_ok'] is not False)
         R['runs'][name] = run; print(name, json.dumps({k: v for k, v in run.items() if k != 'images_load'}), 'images', sum(1 for v in run['images_load'].values() if v > 0), '/', len(run['images_load']), flush=True)
     b.close()
 R['passed'] = all(r['passed'] for r in R['runs'].values()) and not R['errors'] and not R['http_errors']

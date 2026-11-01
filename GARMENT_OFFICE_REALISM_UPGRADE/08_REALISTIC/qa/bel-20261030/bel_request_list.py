@@ -1,7 +1,7 @@
 """Pre-deploy check for /stage2-concept/: every file the proposal page requests exists in the release commit
 (same path rules as belRoute() in deploy/build_worker.py).
 
-Loads the page through serve_preview.py (LOCAL Chromium), frames every tour camera, fetches every stop image and its 640 px copy,
+Loads the page through serve_preview.py (LOCAL Chromium), frames every tour camera, fetches every stop image, its 640 px copy and any 3D view of an AI image,
 records every /stage2-concept/ request, maps it to its repository path and checks it with `git cat-file` at COMMIT.
 python3 -I bel_request_list.py COMMIT --out FILE [--url URL]
 """
@@ -40,7 +40,7 @@ with sync_playwright() as pw:
         page.evaluate('n => __viewer.api.frameCamera(n)', cam); page.wait_for_timeout(600)   # frameCamera waits for the room's light to load
     # every stop image and its 640 px copy: the tour, the room cards and the tour in images load them
     page.evaluate("""async () => { for (const v of Object.values(window.__TOUR_CONFIG?.conceptStills || {}))
-      for (const u of [typeof v === 'string' ? v : v.src, v?.thumb].filter(Boolean)) await fetch(u).then(r => r.arrayBuffer()).catch(() => null); }""")
+      for (const u of [typeof v === 'string' ? v : v.src, v?.thumb, v?.model].filter(Boolean)) await fetch(u).then(r => r.arrayBuffer()).catch(() => null); }""")
     page.wait_for_timeout(1500)
     b.close()
 

@@ -1096,6 +1096,8 @@ function showPhoto(camName) {
   img.onerror = () => { hidePhoto(); S.errors.push('render not found: ' + (stillSrc(camName) || c.render.file)); };
   const where = (S.tour && stops[S.tour.i]?.camera === camName && stops[S.tour.i].title) || S.room?.name || camName, sv = STILLS?.[camName];
   img.alt = STILLS ? `${sv && typeof sv === 'object' && sv.kind === 'render' ? 'Render of the 3D model' : 'AI concept image'}: ${where}` : `Photoreal render ${camName}`;   // what a screen reader says
+  S.photoWhere = where; S.photoAlt = false;
+  $('photoAlt').classList.toggle('hidden', !stillModel(camName)); $('photoAlt').classList.remove('on'); $('photoAlt').textContent = '3D model view';
   if (STILLS && stillTag(camName)) document.querySelector('#photo .photo-tag').innerHTML = stillTag(camName);
   $('photo').classList.remove('hidden');
   $('photo').classList.remove('show');
@@ -1114,6 +1116,17 @@ $('bPhoto').onclick = () => photoCam() && showPhoto(photoCam());
 // phones show a room's concept note folded to two lines; a tap opens or folds it
 for (const id of ['infoNote', 'tNote']) $(id).onclick = () => $(id).classList.toggle('open');
 $('photoClose').onclick = () => { hidePhoto(); if (S.tour) S.tour.photoSkip = true; };
+// an AI image can also show the render of the same view in the 3D model (concept-images/model/), so a visitor sees what the 3D really has
+function stillModel(cam) { const v = STILLS?.[cam]; return v && typeof v === 'object' && v.kind === 'ai' && v.model ? v.model : null; }
+function setPhotoAlt(on) {
+  const cam = S.photo; if (!cam || !stillModel(cam)) return;
+  S.photoAlt = on;
+  const img = $('photoImg'); img.src = on ? stillModel(cam) : stillSrc(cam);
+  img.alt = `${on ? 'Render of the 3D model' : 'AI concept image'}: ${S.photoWhere || cam}`;
+  document.querySelector('#photo .photo-tag').innerHTML = on ? (CFG.stillsTags?.render || 'RENDERED FROM THE 3D MODEL') : stillTag(cam);
+  $('photoAlt').textContent = on ? 'AI concept image' : '3D model view'; $('photoAlt').classList.toggle('on', on);
+}
+$('photoAlt').onclick = () => setPhotoAlt(!S.photoAlt);
 function preload(camName) {
   if (camName && stillSrc(camName)) { const i = new Image(); i.src = stillSrc(camName); }
   else if (camName && cams[camName] && !CFG.noRenderPhotos && !STILLS) { const i = new Image(); i.src = RENDERS + camName + '.jpg'; }

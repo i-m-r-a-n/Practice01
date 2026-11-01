@@ -148,9 +148,12 @@ tour = [
 
 STILLS_DIR = HERE.parent / 'concept-images'
 def still(name, kind):
-    """One stop image: its file, its kind, and its 640 px copy for the tour in images when make_concept_thumbs.py has made one."""
+    """One stop image: its file, its kind, its 640 px copy for the tour in images when make_concept_thumbs.py has made one,
+    and for an AI image the render of the same view in the 3D model when one is in concept-images/model/."""
     entry = {'src': 'concept-images/' + name, 'kind': kind}
     if (STILLS_DIR / 'thumbs' / name).exists(): entry['thumb'] = 'concept-images/thumbs/' + name
+    if kind == 'ai' and (STILLS_DIR / 'model' / ('render_' + name)).exists():   # the same view rendered from the 3D model (Cycles), shown on request
+        entry['model'] = 'concept-images/model/render_' + name
     return entry
 config = {
     'models': base['models'], 'renders': base['renders'], 'lightmapManifest': base['lightmapManifest'],
