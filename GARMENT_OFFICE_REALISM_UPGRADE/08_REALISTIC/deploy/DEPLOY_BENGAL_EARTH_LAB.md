@@ -15,7 +15,7 @@ Deploy it instead of update 5 or 6 if those are not live, or after them if they 
   - `test_worker_bel.mjs`: 66 checks, against the live `d11321e` and against the Workers of updates 5 and 6. They include the images page and a 3D model view. `test_worker.mjs`: 41 checks.
   - Browser checks on desktop and phone, in `qa/bel-20261030/after-1101b-*/`:
     - `stills`, `gallery`, `landscape`, `images-page`, `phone-walk` and `tour-play` (23 stops) pass.
-    - `arrows` is being run again. Its desktop run checked the room view before the slow software flight had landed, and then walked with the arrow; the check now waits for the flight to end.
+    - `arrows` passes. The first desktop run checked the room view before the slow software flight had landed, and then walked with the arrow; the check now waits for the flight to end.
   - All 72 files the 3D page requests exist at `a43fd96`, and so does `images.html`.
   - The page files, `images.html` and a 3D model view match raw.githubusercontent.com.
 

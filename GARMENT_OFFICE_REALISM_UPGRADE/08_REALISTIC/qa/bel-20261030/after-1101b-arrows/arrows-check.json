@@ -9,28 +9,28 @@
       "walk_moved_m": 0.06,
       "overview_again_hidden": true,
       "room_mode": "rooms",
-      "room_shown": false,
-      "room_speed_while_held": 1.38,
-      "room_moved_m": 0.39,
+      "room_shown": true,
+      "room_speed_while_held": 1.4,
+      "room_moved_m": 0.69,
       "after_room_press_mode": "walk",
       "tour_hidden": true,
-      "passed": false
+      "passed": true
     },
     "phone": {
       "overview_hidden": true,
       "walk_shown": true,
-      "walk_speed_while_held": 0.14,
-      "walk_moved_m": 0.06,
+      "walk_speed_while_held": 0.15,
+      "walk_moved_m": 0.09,
       "overview_again_hidden": true,
       "room_mode": "rooms",
       "room_shown": true,
       "room_speed_while_held": 1.37,
-      "room_moved_m": 0.34,
+      "room_moved_m": 0.33,
       "after_room_press_mode": "walk",
       "tour_hidden": true,
       "passed": true
     }
   },
   "errors": [],
-  "passed": false
+  "passed": true
 }
