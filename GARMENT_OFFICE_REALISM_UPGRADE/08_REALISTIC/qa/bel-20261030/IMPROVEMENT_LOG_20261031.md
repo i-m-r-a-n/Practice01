@@ -131,3 +131,12 @@
 
 Checked at 04:25 UTC: at a stop the tour uses the camera's own lens (`poseFromCamera` and `vfovFor` in `app.js`), the same lens as the Cycles renders. The 3D at a stop and its render therefore share one framing, and no FOV change is needed.
 - **05:13 UTC:** the doc ([link](https://claude.ai/artifact/4LZBNf9omr7hr8x4ED3po8)) has a short note under its status. It says the run's work is ready and waits for deploy request 7, and that the address moves to `/stage2-concept/` after the deploy. The doc's live link stays until then.
+
+## End of the run (1 Nov, 06:16 UTC)
+
+The work is built, checked and pushed; nothing of it is live yet.
+- [Deploy request 7](https://github.com/i-m-r-a-n/Practice01/issues/12#issuecomment-6553087659) is waiting. It replaces requests 3 to 6.
+- The live site is as before: `/bengal-earth-lab/` serves `e198902`, and `/stage2-concept/` answers 404. `/`, `/app.js`, `/health` and `/realistic/` keep their values.
+- No reply on issue 12 since request 7.
+- **Next:** once ChatGPT reports the deploy, run `deploy/verify_bel_live.py a43fd96e2358c3a4e7a6b73bbf77ef18f97844bb` and a live 23-stop tour, then update the doc's link.
+
