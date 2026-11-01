@@ -13,7 +13,7 @@ If update 5 is not live yet, deploy this one instead. If update 5 is live, this 
   - Browser checks on desktop and phone, in `qa/bel-20261030/after-1101-*/`:
     - `stills`: the 3D model view switch at stop 2; 38 of 38 images load.
     - `gallery`, `landscape`, `arrows` and `tour-play` (23 stops) pass.
-    - `phone-walk`: the phone run passes. The desktop run is being repeated, because the local preview server restarted during it.
+    - `phone-walk` passes on phone and desktop. The tapped target is now awaited for up to 20 s, because software WebGL draws a desktop frame in 2 to 4 s at the moment; update 5's build behaved the same.
   - All 72 requested files exist at `f4346cc` (`after-1101-requests/`).
   - `index.html`, `app.js`, `release-config.json` and three of the images match raw.githubusercontent.com.
 

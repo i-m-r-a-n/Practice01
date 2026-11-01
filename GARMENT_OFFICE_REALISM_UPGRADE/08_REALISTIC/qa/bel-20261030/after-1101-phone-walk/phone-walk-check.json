@@ -17,15 +17,15 @@
       ],
       "released": true,
       "target_set": true,
-      "seconds_to_first_steps": 1,
-      "moved_m": 0.11,
-      "closer_to_target_m": 0.0,
+      "seconds_to_first_steps": 2,
+      "moved_m": 0.92,
+      "closer_to_target_m": 0.92,
       "gyro_button_shown": true,
       "gyro_on": true,
       "gyro_turned_deg": 40.0,
       "gyro_off_again": true,
       "help_leaves_with_walk": true,
-      "passed": false
+      "passed": true
     },
     "desktop": {
       "help_shown": false,
@@ -39,13 +39,13 @@
       ],
       "released": true,
       "target_set": true,
-      "seconds_to_first_steps": 3,
-      "moved_m": 0.63,
-      "closer_to_target_m": 0.62,
+      "seconds_to_first_steps": 6,
+      "moved_m": 0.6,
+      "closer_to_target_m": 0.6,
       "gyro_button_shown": false,
       "passed": true
     }
   },
   "errors": [],
-  "passed": false
+  "passed": true
 }
