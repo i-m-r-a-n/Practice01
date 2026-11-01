@@ -101,3 +101,26 @@ Phase 4 functional Chromium smoke loaded 323 props / 1,473 instances / 49 instan
 A second actual Chromium stage4 smoke loaded the full Reception atlas and room SH/probe, projected two readable screen components with zero skipped faces, and rendered 255 calls / 1.771M triangles in its diagnostic frame. The one-time probe capture cost 1,412 calls / 10.525M triangles across all cube/PMREM passes; it is not a per-frame count. Shared-wall coverage was intentionally absent in this functional test, and guided512 remained an unaccepted diagnostic.
 
 Final Reception contact evidence: `../qa/props-independent/reception-static4-final2-prop-contacts.json` reports zero reader hand/book and badge/skin intersections and1.98006mm book/lap clearance. Runtime uses fixed poses; no task gestures or walking actors.
+
+## The proposal route (`/stage2-concept/`): rebuild and check
+
+The proposal has its own page, bundle and config: `dist-bel/`, built from `bel-config.json`. Its features sit behind route-config flags that only `bel-config.json` sets, so the `/realistic/` build is unchanged. The flags are `walkArrows`, `conceptStills`, `stillsGallery`, `imagesPage`, `canvasFilter` and `branding`. After any change to the source, the images or the config, run these steps in order (Python with `-I`):
+
+1. Renders, if the 3D changed: `qa/bel-20261030/cycles-render/render_batch.sh` (see its README).
+   - The stop renders go to `concept-images/render_<CAMERA>.jpg`.
+   - With `OUT_DIR=concept-images/model`, the 3D views of the AI images go to `concept-images/model/`.
+2. `python3 -I make_concept_thumbs.py` makes the 640 px copies in `concept-images/thumbs/`.
+3. `python3 -I make_bel_config.py` writes `bel-config.json`.
+4. `python3 -I make_images_page.py` writes the light page `../images.html`.
+5. `RELEASE_CONFIG=bel-config.json node build.mjs dist-bel` builds the bundle.
+6. Checks, with `python3 serve_preview.py --port 8790` running (it stops after 2 hours in the cloud session):
+   - `../qa/bel-20261030/run_checks.sh PREFIX 8790` runs stills, phone walk, arrows, gallery, landscape, images page and the 23-stop tour.
+   - `python3 -I ../qa/bel-20261030/bel_request_list.py COMMIT --out FILE` checks that every requested file exists at the commit.
+7. Worker:
+   - `python3 ../deploy/build_worker.py d5939f9ef3928340908459efc440259df0d34b6d --bel COMMIT --out worker-bengal-earth-lab.js`, run in `deploy/`;
+   - then `node test_worker_bel.mjs LIVE_WORKER.js worker-bengal-earth-lab.js` and `node test_worker.mjs`;
+   - the deploy note is `../deploy/DEPLOY_BENGAL_EARTH_LAB.md`.
+8. After a deploy, `python3 -I ../deploy/verify_bel_live.py COMMIT --out FILE` checks the live route byte for byte.
+
+Software WebGL in the cloud container can take 2 to 4 s per desktop frame. The checks therefore wait on the viewer's own state, such as flights and steps towards a target, instead of fixed times.
+
