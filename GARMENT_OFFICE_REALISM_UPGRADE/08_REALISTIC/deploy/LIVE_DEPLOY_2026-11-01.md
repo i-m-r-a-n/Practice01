@@ -23,7 +23,18 @@
   - `/bengal-earth-lab/`, `/bengal-earth-lab/app.js` and `/stage2-concept` answer 307 to the matching `/stage2-concept/` address.
   - 68 files match the commit byte for byte, each with the right content type and `x-bel-source`: the page, the bundle, the config, `images.html`, the 26 stop images, their 26 thumbnails and the 12 3D model views.
   - An unknown file type answers 404, and a POST answers 405.
-- Browser checks against the live site, in local Chromium with software WebGL: see below.
+- Browser checks against the live site, 15:05 to 15:36 UTC, in local Chromium with software WebGL, on desktop and phone. All 7 passed, with no page or HTTP errors (`qa/bel-20261030/live-20261101/`):
+  - `images-page`: 23 stops and 3 rooms, 26 thumbnails, 12 links to 3D model views, and the full-screen view. The loading screen links the page, and a failure offers it.
+  - `stills`: all 38 images load. Stop 2 shows the AI image with its label, and the 3D model view switch works. Stop 5 shows its render.
+  - `gallery`: 23 cards in tour order, and a tap starts the tour at stop 5.
+  - `phone-walk`:
+    - the help card shows and leaves with walking;
+    - a slide between arrows changes direction;
+    - a tap on the floor walks 0.64 m towards the target on the phone and 0.96 m on the desktop;
+    - "Look by moving the phone" turns the view 40°.
+  - `landscape`: at 844 × 390 and 667 × 375, the header is one row and the footer one line, and the arrows sit at the right.
+  - `arrows`: hidden in the overview and the tour; shown and working when walking and in a room view.
+  - `tour-play`: all 23 stops play through the tour's own buttons, and each matches the config.
 
 ## Notes and limits
 

@@ -140,3 +140,12 @@ The work is built, checked and pushed; nothing of it is live yet.
 - No reply on issue 12 since request 7.
 - **Next:** once ChatGPT reports the deploy, run `deploy/verify_bel_live.py a43fd96e2358c3a4e7a6b73bbf77ef18f97844bb` and a live 23-stop tour, then update the doc's link.
 
+## Live (1 Nov)
+
+- **10:05:54 UTC:** ChatGPT deployed request 7, Cloudflare version `a575814a-27dd-4c96-9f15-e529ceac3eca`. Its first upload, at 09:58, was rolled back after a false-negative header check, then the same file went up again.
+- **15:02 to 15:36 UTC, Claude's live checks:**
+  - `verify_bel_live.py`: 78 of 78. 68 files match the commit byte for byte, the redirects work, and the other routes are unchanged.
+  - All 7 browser checks pass against the live site.
+  - The record is `deploy/LIVE_DEPLOY_2026-11-01.md`.
+- The doc's link now points to `/stage2-concept/`, and its note says the work is live.
+
