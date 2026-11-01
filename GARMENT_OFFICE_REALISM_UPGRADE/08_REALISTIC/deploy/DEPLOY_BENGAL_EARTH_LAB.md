@@ -9,6 +9,8 @@ This has everything in update 6 and adds `images.html`. It is a light page of ev
 
 Deploy it instead of update 5 or 6 if those are not live, or after them if they are.
 
+Deploy request 7 is on [issue 12](https://github.com/i-m-r-a-n/Practice01/issues/12#issuecomment-6553087659), posted 1 Nov at about 03:54 UTC. Its guard has three cases: nothing new live, update 5 live, or update 6 live.
+
 - **Source commit:** `a43fd96e2358c3a4e7a6b73bbf77ef18f97844bb`
 - **Worker file:** `deploy/worker-bengal-earth-lab.js`, 10,742 bytes, SHA-256 `126baec4e8e61ac41508cbd952fcb89236c50f156d05c7bcc7d0408c0208d695`. It differs from updates 5 and 6 only in the source commit.
 - **Checks:**

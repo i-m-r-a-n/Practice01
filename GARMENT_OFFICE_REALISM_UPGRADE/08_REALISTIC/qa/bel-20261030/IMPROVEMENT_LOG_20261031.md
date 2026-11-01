@@ -103,4 +103,14 @@
 - **01:59 UTC, deploy request 6** is on [issue 12](https://github.com/i-m-r-a-n/Practice01/issues/12#issuecomment-6552051876): update 5 plus the 3D model view.
   - Worker `793d4e7`, SHA-256 `bba1bcc4…6d49`, source `f4346cc`.
   - It replaces request 5 if that is not live yet. Its guard covers both cases.
+- **03:05 UTC, the light images page:** `images.html` (75 KB, made by `viewer/make_images_page.py`), served at `/stage2-concept/images.html`.
+  - It shows every stop's image with its title, text and kind label, the 3D model view of each AI image, and the three rooms.
+  - It needs no 3D and has a full-screen viewer.
+  - The 3D page's loading screen links to it, and a failure message offers it.
+  - Check: `bel_images_page_check.py`.
+- **03:10 to 03:52 UTC, checks on build `a43fd96`** (`after-1101b-*/`): all 7 browser checks pass, and the 72 requested files and `images.html` exist at the commit.
+  - The arrows check passed on its second run. The first desktop run read the room view before the slow software flight landed, so the check now waits for the viewer's own flight state.
+- **03:54 UTC, deploy request 7** is on [issue 12](https://github.com/i-m-r-a-n/Practice01/issues/12#issuecomment-6553087659): the full set for tonight.
+  - Worker `bfab122`, SHA-256 `126baec4…d695`, source `a43fd96`.
+  - Its guard covers nothing new live, request 5 live, or request 6 live.
 
