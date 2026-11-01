@@ -1,7 +1,7 @@
 """After a deploy of the proposal route, check the live Worker against the release commit:
 - /stage2-concept/health names the commit and the route; /realistic/health and the original tour's /, /app.js and /health are unchanged;
 - /bengal-earth-lab/ (and below) and /stage2-concept without a slash answer 307 to /stage2-concept/;
-- the page, its bundle, its config and every stop image (with its thumbnail and any 3D view) match the commit's files byte for byte,
+- the page, its bundle, its config, the images page and every stop image (with its thumbnail and any 3D view) match the commit's files byte for byte,
   with the right content type and the x-bel-source header;
 - refusals: an unknown file type is 404 and a POST is 405.
 python3 -I verify_bel_live.py SOURCE_COMMIT [--out FILE]   (run from anywhere inside the repository)"""
@@ -55,6 +55,7 @@ for path, to in (('/bengal-earth-lab/', '/stage2-concept/'), ('/bengal-earth-lab
     s, h, b = get(path, follow=False); check(f'{path} redirects', s == 307 and h.get('location', '').endswith(to), f"{s} {h.get('location')}")
 cfg = json.loads(blob('viewer/dist-bel/release-config.json'))
 files = [('', 'viewer/dist-bel/index.html', 'text/html'), ('app.js', 'viewer/dist-bel/app.js', 'text/javascript'), ('release-config.json', 'viewer/dist-bel/release-config.json', 'application/json')]
+if cfg.get('imagesPage'): files.append((cfg['imagesPage'], cfg['imagesPage'], 'text/html'))   # the light images page, from the commit's 08_REALISTIC folder
 for v in cfg.get('conceptStills', {}).values():
     for key in ('src', 'thumb', 'model'):
         if isinstance(v, dict) and v.get(key): files.append((v[key], v[key], 'image/jpeg'))
