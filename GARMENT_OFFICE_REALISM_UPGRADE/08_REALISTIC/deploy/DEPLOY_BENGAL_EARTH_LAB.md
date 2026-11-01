@@ -1,6 +1,6 @@
 # Deploying the Bengal Earth Lab proposal route (prepared by Claude, 30 Oct 2026; updated after the owner chose option C)
 
-## Update 7: update 6 plus the light images page (1 Nov 2026, prepared, not deployed yet)
+## Update 7: update 6 plus the light images page (live since 1 Nov 2026, 10:05:54 UTC; Cloudflare version `a575814a-27dd-4c96-9f15-e529ceac3eca`; see `LIVE_DEPLOY_2026-11-01.md`)
 
 This has everything in update 6 and adds `images.html`. It is a light page of every stop's image: its title, text and kind label, the 3D model view of each AI image, and the three room images. It needs no 3D, so it works on phones that cannot run the 3D or are on slow data.
 - The 3D page's loading screen links to it.
@@ -21,7 +21,7 @@ Deploy request 7 is on [issue 12](https://github.com/i-m-r-a-n/Practice01/issues
   - All 72 files the 3D page requests exist at `a43fd96`, and so does `images.html`.
   - The page files, `images.html` and a 3D model view match raw.githubusercontent.com.
 
-## Update 6: update 5 plus the 3D model view of every AI image (1 Nov 2026; prepared, not deployed yet; update 7 includes it)
+## Update 6: update 5 plus the 3D model view of every AI image (1 Nov 2026; not deployed on its own; live as part of update 7)
 
 This has everything in update 5, and adds one thing. At every stop or room with an AI concept image, the button "3D model view" swaps in a render of the same camera in the 3D model, labelled as a render. "AI concept image" swaps back. There are 12 such renders, in `concept-images/model/`.
 
@@ -40,7 +40,7 @@ Deploy request 6 is on [issue 12](https://github.com/i-m-r-a-n/Practice01/issues
   - All 72 requested files exist at `f4346cc` (`after-1101-requests/`).
   - `index.html`, `app.js`, `release-config.json` and three of the images match raw.githubusercontent.com.
 
-## Update 5: walking with a phone, an image at every stop, the new address (31 Oct 2026; prepared, not deployed yet; update 6 includes it)
+## Update 5: walking with a phone, an image at every stop, the new address (31 Oct 2026; not deployed on its own; live as part of update 7)
 
 Deploy request 5 is on [issue 12](https://github.com/i-m-r-a-n/Practice01/issues/12#issuecomment-6550846984), posted 31 Oct at about 23:58 UTC. It replaces requests 3 and 4.
 

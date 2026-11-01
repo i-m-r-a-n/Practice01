@@ -1,0 +1,400 @@
+{
+  "site": "https://stage2-office-virtual-tour.imranahmedjh611.workers.dev",
+  "commit": "a43fd96e2358c3a4e7a6b73bbf77ef18f97844bb",
+  "time_utc": "2026-11-01 15:02:49",
+  "checks": [
+    {
+      "check": "/stage2-concept/health",
+      "ok": true,
+      "detail": "200 {'ok': True, 'source': 'a43fd96e2358c3a4e7a6b73bbf77ef18f97844bb', 'route': '/stage2-concept', 'fallback': '/', 'status': 'concept proposal preview'}"
+    },
+    {
+      "check": "/realistic/health unchanged",
+      "ok": true,
+      "detail": "200"
+    },
+    {
+      "check": "/ unchanged",
+      "ok": true,
+      "detail": "200 ff75beb5"
+    },
+    {
+      "check": "/app.js unchanged",
+      "ok": true,
+      "detail": "200 c6af8144"
+    },
+    {
+      "check": "/health unchanged",
+      "ok": true,
+      "detail": "200 5118ed49"
+    },
+    {
+      "check": "/bengal-earth-lab/ redirects",
+      "ok": true,
+      "detail": "307 https://stage2-office-virtual-tour.imranahmedjh611.workers.dev/stage2-concept/"
+    },
+    {
+      "check": "/bengal-earth-lab/app.js redirects",
+      "ok": true,
+      "detail": "307 https://stage2-office-virtual-tour.imranahmedjh611.workers.dev/stage2-concept/app.js"
+    },
+    {
+      "check": "/stage2-concept redirects",
+      "ok": true,
+      "detail": "307 https://stage2-office-virtual-tour.imranahmedjh611.workers.dev/stage2-concept/"
+    },
+    {
+      "check": "/stage2-concept/",
+      "ok": true,
+      "detail": "200 text/html; charset=utf-8 83278 bytes"
+    },
+    {
+      "check": "/stage2-concept/app.js",
+      "ok": true,
+      "detail": "200 text/javascript; charset=utf-8 1464212 bytes"
+    },
+    {
+      "check": "/stage2-concept/release-config.json",
+      "ok": true,
+      "detail": "200 application/json 59742 bytes"
+    },
+    {
+      "check": "/stage2-concept/images.html",
+      "ok": true,
+      "detail": "200 text/html; charset=utf-8 74950 bytes"
+    },
+    {
+      "check": "/stage2-concept/concept-images/CAM_03_Entrance_Lobby.jpg",
+      "ok": true,
+      "detail": "200 image/jpeg 281192 bytes"
+    },
+    {
+      "check": "/stage2-concept/concept-images/thumbs/CAM_03_Entrance_Lobby.jpg",
+      "ok": true,
+      "detail": "200 image/jpeg 53674 bytes"
+    },
+    {
+      "check": "/stage2-concept/concept-images/model/render_CAM_03_Entrance_Lobby.jpg",
+      "ok": true,
+      "detail": "200 image/jpeg 175288 bytes"
+    },
+    {
+      "check": "/stage2-concept/concept-images/CAM_01_Reception_A.jpg",
+      "ok": true,
+      "detail": "200 image/jpeg 308324 bytes"
+    },
+    {
+      "check": "/stage2-concept/concept-images/thumbs/CAM_01_Reception_A.jpg",
+      "ok": true,
+      "detail": "200 image/jpeg 54619 bytes"
+    },
+    {
+      "check": "/stage2-concept/concept-images/model/render_CAM_01_Reception_A.jpg",
+      "ok": true,
+      "detail": "200 image/jpeg 197792 bytes"
+    },
+    {
+      "check": "/stage2-concept/concept-images/BEL_CAM_SUN_WALL.jpg",
+      "ok": true,
+      "detail": "200 image/jpeg 251998 bytes"
+    },
+    {
+      "check": "/stage2-concept/concept-images/thumbs/BEL_CAM_SUN_WALL.jpg",
+      "ok": true,
+      "detail": "200 image/jpeg 49570 bytes"
+    },
+    {
+      "check": "/stage2-concept/concept-images/model/render_BEL_CAM_SUN_WALL.jpg",
+      "ok": true,
+      "detail": "200 image/jpeg 179772 bytes"
+    },
+    {
+      "check": "/stage2-concept/concept-images/BEL_CAM_UTHAN.jpg",
+      "ok": true,
+      "detail": "200 image/jpeg 359697 bytes"
+    },
+    {
+      "check": "/stage2-concept/concept-images/thumbs/BEL_CAM_UTHAN.jpg",
+      "ok": true,
+      "detail": "200 image/jpeg 56819 bytes"
+    },
+    {
+      "check": "/stage2-concept/concept-images/model/render_BEL_CAM_UTHAN.jpg",
+      "ok": true,
+      "detail": "200 image/jpeg 238887 bytes"
+    },
+    {
+      "check": "/stage2-concept/concept-images/BEL_CAM_LAB.jpg",
+      "ok": true,
+      "detail": "200 image/jpeg 202836 bytes"
+    },
+    {
+      "check": "/stage2-concept/concept-images/thumbs/BEL_CAM_LAB.jpg",
+      "ok": true,
+      "detail": "200 image/jpeg 40911 bytes"
+    },
+    {
+      "check": "/stage2-concept/concept-images/model/render_BEL_CAM_LAB.jpg",
+      "ok": true,
+      "detail": "200 image/jpeg 157514 bytes"
+    },
+    {
+      "check": "/stage2-concept/concept-images/BEL_CAM_CAD.jpg",
+      "ok": true,
+      "detail": "200 image/jpeg 293668 bytes"
+    },
+    {
+      "check": "/stage2-concept/concept-images/thumbs/BEL_CAM_CAD.jpg",
+      "ok": true,
+      "detail": "200 image/jpeg 54237 bytes"
+    },
+    {
+      "check": "/stage2-concept/concept-images/model/render_BEL_CAM_CAD.jpg",
+      "ok": true,
+      "detail": "200 image/jpeg 110721 bytes"
+    },
+    {
+      "check": "/stage2-concept/concept-images/BEL_CAM_TEA.jpg",
+      "ok": true,
+      "detail": "200 image/jpeg 273705 bytes"
+    },
+    {
+      "check": "/stage2-concept/concept-images/thumbs/BEL_CAM_TEA.jpg",
+      "ok": true,
+      "detail": "200 image/jpeg 55317 bytes"
+    },
+    {
+      "check": "/stage2-concept/concept-images/model/render_BEL_CAM_TEA.jpg",
+      "ok": true,
+      "detail": "200 image/jpeg 153514 bytes"
+    },
+    {
+      "check": "/stage2-concept/concept-images/BEL_CAM_PLANT_WALL.jpg",
+      "ok": true,
+      "detail": "200 image/jpeg 300060 bytes"
+    },
+    {
+      "check": "/stage2-concept/concept-images/thumbs/BEL_CAM_PLANT_WALL.jpg",
+      "ok": true,
+      "detail": "200 image/jpeg 55408 bytes"
+    },
+    {
+      "check": "/stage2-concept/concept-images/model/render_BEL_CAM_PLANT_WALL.jpg",
+      "ok": true,
+      "detail": "200 image/jpeg 148083 bytes"
+    },
+    {
+      "check": "/stage2-concept/concept-images/CAM_09_Boardroom_A.jpg",
+      "ok": true,
+      "detail": "200 image/jpeg 304147 bytes"
+    },
+    {
+      "check": "/stage2-concept/concept-images/thumbs/CAM_09_Boardroom_A.jpg",
+      "ok": true,
+      "detail": "200 image/jpeg 58983 bytes"
+    },
+    {
+      "check": "/stage2-concept/concept-images/model/render_CAM_09_Boardroom_A.jpg",
+      "ok": true,
+      "detail": "200 image/jpeg 213716 bytes"
+    },
+    {
+      "check": "/stage2-concept/concept-images/CAM_07_MD_Office_A.jpg",
+      "ok": true,
+      "detail": "200 image/jpeg 258890 bytes"
+    },
+    {
+      "check": "/stage2-concept/concept-images/thumbs/CAM_07_MD_Office_A.jpg",
+      "ok": true,
+      "detail": "200 image/jpeg 48518 bytes"
+    },
+    {
+      "check": "/stage2-concept/concept-images/model/render_CAM_07_MD_Office_A.jpg",
+      "ok": true,
+      "detail": "200 image/jpeg 158393 bytes"
+    },
+    {
+      "check": "/stage2-concept/concept-images/CAM_25_Fabric_Library.jpg",
+      "ok": true,
+      "detail": "200 image/jpeg 274819 bytes"
+    },
+    {
+      "check": "/stage2-concept/concept-images/thumbs/CAM_25_Fabric_Library.jpg",
+      "ok": true,
+      "detail": "200 image/jpeg 53734 bytes"
+    },
+    {
+      "check": "/stage2-concept/concept-images/model/render_CAM_25_Fabric_Library.jpg",
+      "ok": true,
+      "detail": "200 image/jpeg 122129 bytes"
+    },
+    {
+      "check": "/stage2-concept/concept-images/CAM_23_Sample_Room.jpg",
+      "ok": true,
+      "detail": "200 image/jpeg 244962 bytes"
+    },
+    {
+      "check": "/stage2-concept/concept-images/thumbs/CAM_23_Sample_Room.jpg",
+      "ok": true,
+      "detail": "200 image/jpeg 51071 bytes"
+    },
+    {
+      "check": "/stage2-concept/concept-images/model/render_CAM_23_Sample_Room.jpg",
+      "ok": true,
+      "detail": "200 image/jpeg 109314 bytes"
+    },
+    {
+      "check": "/stage2-concept/concept-images/render_BEL_CAM_ACADEMY.jpg",
+      "ok": true,
+      "detail": "200 image/jpeg 172957 bytes"
+    },
+    {
+      "check": "/stage2-concept/concept-images/thumbs/render_BEL_CAM_ACADEMY.jpg",
+      "ok": true,
+      "detail": "200 image/jpeg 34645 bytes"
+    },
+    {
+      "check": "/stage2-concept/concept-images/render_BEL_CAM_ARTISAN.jpg",
+      "ok": true,
+      "detail": "200 image/jpeg 216590 bytes"
+    },
+    {
+      "check": "/stage2-concept/concept-images/thumbs/render_BEL_CAM_ARTISAN.jpg",
+      "ok": true,
+      "detail": "200 image/jpeg 37683 bytes"
+    },
+    {
+      "check": "/stage2-concept/concept-images/render_BEL_CAM_CIRCULAR.jpg",
+      "ok": true,
+      "detail": "200 image/jpeg 283678 bytes"
+    },
+    {
+      "check": "/stage2-concept/concept-images/thumbs/render_BEL_CAM_CIRCULAR.jpg",
+      "ok": true,
+      "detail": "200 image/jpeg 49834 bytes"
+    },
+    {
+      "check": "/stage2-concept/concept-images/render_BEL_CAM_CRAFT.jpg",
+      "ok": true,
+      "detail": "200 image/jpeg 223626 bytes"
+    },
+    {
+      "check": "/stage2-concept/concept-images/thumbs/render_BEL_CAM_CRAFT.jpg",
+      "ok": true,
+      "detail": "200 image/jpeg 43030 bytes"
+    },
+    {
+      "check": "/stage2-concept/concept-images/render_BEL_CAM_JHUT.jpg",
+      "ok": true,
+      "detail": "200 image/jpeg 259922 bytes"
+    },
+    {
+      "check": "/stage2-concept/concept-images/thumbs/render_BEL_CAM_JHUT.jpg",
+      "ok": true,
+      "detail": "200 image/jpeg 46598 bytes"
+    },
+    {
+      "check": "/stage2-concept/concept-images/render_BEL_CAM_MAKING_LINE.jpg",
+      "ok": true,
+      "detail": "200 image/jpeg 154363 bytes"
+    },
+    {
+      "check": "/stage2-concept/concept-images/thumbs/render_BEL_CAM_MAKING_LINE.jpg",
+      "ok": true,
+      "detail": "200 image/jpeg 33236 bytes"
+    },
+    {
+      "check": "/stage2-concept/concept-images/render_BEL_CAM_RECORDS.jpg",
+      "ok": true,
+      "detail": "200 image/jpeg 78719 bytes"
+    },
+    {
+      "check": "/stage2-concept/concept-images/thumbs/render_BEL_CAM_RECORDS.jpg",
+      "ok": true,
+      "detail": "200 image/jpeg 18515 bytes"
+    },
+    {
+      "check": "/stage2-concept/concept-images/render_BEL_CAM_SUN_SHELF.jpg",
+      "ok": true,
+      "detail": "200 image/jpeg 185170 bytes"
+    },
+    {
+      "check": "/stage2-concept/concept-images/thumbs/render_BEL_CAM_SUN_SHELF.jpg",
+      "ok": true,
+      "detail": "200 image/jpeg 34759 bytes"
+    },
+    {
+      "check": "/stage2-concept/concept-images/render_CAM_04_Experience_Centre_A.jpg",
+      "ok": true,
+      "detail": "200 image/jpeg 187278 bytes"
+    },
+    {
+      "check": "/stage2-concept/concept-images/thumbs/render_CAM_04_Experience_Centre_A.jpg",
+      "ok": true,
+      "detail": "200 image/jpeg 37636 bytes"
+    },
+    {
+      "check": "/stage2-concept/concept-images/render_CAM_06_Experience_Centre_Detail.jpg",
+      "ok": true,
+      "detail": "200 image/jpeg 155649 bytes"
+    },
+    {
+      "check": "/stage2-concept/concept-images/thumbs/render_CAM_06_Experience_Centre_Detail.jpg",
+      "ok": true,
+      "detail": "200 image/jpeg 32433 bytes"
+    },
+    {
+      "check": "/stage2-concept/concept-images/render_CAM_13_Design_Studio_A.jpg",
+      "ok": true,
+      "detail": "200 image/jpeg 162689 bytes"
+    },
+    {
+      "check": "/stage2-concept/concept-images/thumbs/render_CAM_13_Design_Studio_A.jpg",
+      "ok": true,
+      "detail": "200 image/jpeg 33873 bytes"
+    },
+    {
+      "check": "/stage2-concept/concept-images/render_CAM_21_Lounge_Training.jpg",
+      "ok": true,
+      "detail": "200 image/jpeg 132586 bytes"
+    },
+    {
+      "check": "/stage2-concept/concept-images/thumbs/render_CAM_21_Lounge_Training.jpg",
+      "ok": true,
+      "detail": "200 image/jpeg 28222 bytes"
+    },
+    {
+      "check": "/stage2-concept/concept-images/render_CAM_ISO_SE.jpg",
+      "ok": true,
+      "detail": "200 image/jpeg 187212 bytes"
+    },
+    {
+      "check": "/stage2-concept/concept-images/thumbs/render_CAM_ISO_SE.jpg",
+      "ok": true,
+      "detail": "200 image/jpeg 37369 bytes"
+    },
+    {
+      "check": "/stage2-concept/concept-images/render_CAM_ISO_SW.jpg",
+      "ok": true,
+      "detail": "200 image/jpeg 177700 bytes"
+    },
+    {
+      "check": "/stage2-concept/concept-images/thumbs/render_CAM_ISO_SW.jpg",
+      "ok": true,
+      "detail": "200 image/jpeg 35538 bytes"
+    },
+    {
+      "check": "unknown type is 404",
+      "ok": true,
+      "detail": "404"
+    },
+    {
+      "check": "POST is 405",
+      "ok": true,
+      "detail": "405"
+    }
+  ],
+  "failed": [],
+  "files_checked": 68,
+  "passed": true
+}
