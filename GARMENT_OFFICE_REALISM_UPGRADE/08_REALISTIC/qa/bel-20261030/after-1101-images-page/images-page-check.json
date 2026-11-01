@@ -1,0 +1,45 @@
+{
+  "base": "http://127.0.0.1:8790/stage2-concept/",
+  "scope": "LOCAL Chromium via serve_preview.py; touch emulated; not a real phone or Safari",
+  "runs": {
+    "desktop": {
+      "stops": 23,
+      "rooms": 3,
+      "order_ok": true,
+      "labels_ok": true,
+      "model_links": 12,
+      "thumbs_loaded": 26,
+      "sideways": false,
+      "links": [
+        "./",
+        "./?walk=1"
+      ],
+      "viewer_label": "Rendered from the 3D model \u00b7 Blender Cycles, simulated light \u00b7 no people \u00b7 not a photograph",
+      "viewer_closed": true,
+      "loading_link": true,
+      "fail_offer": "See the tour in images instead",
+      "passed": true
+    },
+    "phone": {
+      "stops": 23,
+      "rooms": 3,
+      "order_ok": true,
+      "labels_ok": true,
+      "model_links": 12,
+      "thumbs_loaded": 26,
+      "sideways": false,
+      "links": [
+        "./",
+        "./?walk=1"
+      ],
+      "viewer_label": "Rendered from the 3D model \u00b7 Blender Cycles, simulated light \u00b7 no people \u00b7 not a photograph",
+      "viewer_closed": true,
+      "loading_link": true,
+      "fail_offer": "See the tour in images instead",
+      "passed": true
+    }
+  },
+  "errors": [],
+  "http_errors": [],
+  "passed": true
+}
