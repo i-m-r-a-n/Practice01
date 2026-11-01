@@ -113,4 +113,20 @@
 - **03:54 UTC, deploy request 7** is on [issue 12](https://github.com/i-m-r-a-n/Practice01/issues/12#issuecomment-6553087659): the full set for tonight.
   - Worker `bfab122`, SHA-256 `126baec4…d695`, source `a43fd96`.
   - Its guard covers nothing new live, request 5 live, or request 6 live.
+- **04:14 UTC, a PDF for buyers:** `qa/bel-20261030/presentation/stage2-tour-in-images.pdf` (28 pages, made by `tour_pdf.py`), sent to the owner.
+  - A cover page, then one page per stop and room with the image, text and kind label.
+  - Each AI image has a small render of the same camera in the 3D.
+  - A closing page with the link and the honesty note.
+- **04:20 UTC:** `viewer/README.md` now says how to rebuild and check the proposal route.
+
+## Next (after this run)
+
+1. **Once deploy request 7 is live:**
+   - run `deploy/verify_bel_live.py a43fd96…` and a live 23-stop tour;
+   - update the doc's link to `/stage2-concept/`.
+2. **The owner on a real phone:** an iPhone with Safari and an Android phone with Chrome.
+   - Check walking with the arrows, tapping the floor, and "Look by moving the phone" (iOS asks for permission).
+   - Check the images page on mobile data.
+3. **Renders at the tour's own field of view** (35° vertical), so the 3D dissolves into an image with exactly its framing. The renders now use the approved Blender lenses (18 to 22 mm), which are wider.
+4. **The artisan corner's frosted partition** shows streaks in the 3D's own baked light: rebake that panel.
 
