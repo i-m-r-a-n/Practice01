@@ -1,6 +1,25 @@
 # Deploying the Bengal Earth Lab proposal route (prepared by Claude, 30 Oct 2026; updated after the owner chose option C)
 
-## Update 6: update 5 plus the 3D model view of every AI image (1 Nov 2026, prepared, not deployed yet)
+## Update 7: update 6 plus the light images page (1 Nov 2026, prepared, not deployed yet)
+
+This has everything in update 6 and adds `images.html`. It is a light page of every stop's image: its title, text and kind label, the 3D model view of each AI image, and the three room images. It needs no 3D, so it works on phones that cannot run the 3D or are on slow data.
+- The 3D page's loading screen links to it.
+- When the 3D cannot be shown, the page offers it instead.
+- `/stage2-concept/images.html` is served from the source commit's `08_REALISTIC/images.html`.
+
+Deploy it instead of update 5 or 6 if those are not live, or after them if they are.
+
+- **Source commit:** `a43fd96e2358c3a4e7a6b73bbf77ef18f97844bb`
+- **Worker file:** `deploy/worker-bengal-earth-lab.js`, 10,742 bytes, SHA-256 `126baec4e8e61ac41508cbd952fcb89236c50f156d05c7bcc7d0408c0208d695`. It differs from updates 5 and 6 only in the source commit.
+- **Checks:**
+  - `test_worker_bel.mjs`: 66 checks, against the live `d11321e` and against the Workers of updates 5 and 6. They include the images page and a 3D model view. `test_worker.mjs`: 41 checks.
+  - Browser checks on desktop and phone, in `qa/bel-20261030/after-1101b-*/`:
+    - `stills`, `gallery`, `landscape`, `images-page`, `phone-walk` and `tour-play` (23 stops) pass.
+    - `arrows` is being run again. Its desktop run checked the room view before the slow software flight had landed, and then walked with the arrow; the check now waits for the flight to end.
+  - All 72 files the 3D page requests exist at `a43fd96`, and so does `images.html`.
+  - The page files, `images.html` and a 3D model view match raw.githubusercontent.com.
+
+## Update 6: update 5 plus the 3D model view of every AI image (1 Nov 2026; prepared, not deployed yet; update 7 includes it)
 
 This has everything in update 5, and adds one thing. At every stop or room with an AI concept image, the button "3D model view" swaps in a render of the same camera in the 3D model, labelled as a render. "AI concept image" swaps back. There are 12 such renders, in `concept-images/model/`.
 
