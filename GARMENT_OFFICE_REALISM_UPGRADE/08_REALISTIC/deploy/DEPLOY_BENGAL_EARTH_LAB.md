@@ -1,6 +1,23 @@
 # Deploying the Bengal Earth Lab proposal route (prepared by Claude, 30 Oct 2026; updated after the owner chose option C)
 
-## Update 5: walking with a phone, an image at every stop, the new address (31 Oct 2026, prepared, not deployed yet)
+## Update 6: update 5 plus the 3D model view of every AI image (1 Nov 2026, prepared, not deployed yet)
+
+This has everything in update 5, and adds one thing. At every stop or room with an AI concept image, the button "3D model view" swaps in a render of the same camera in the 3D model, labelled as a render. "AI concept image" swaps back. There are 12 such renders, in `concept-images/model/`.
+
+If update 5 is not live yet, deploy this one instead. If update 5 is live, this is the next step.
+
+- **Source commit:** `f4346cc98f1d040e83e975b15eb41a4c659b5fd0`
+- **Worker file:** `deploy/worker-bengal-earth-lab.js`, 10,742 bytes, SHA-256 `bba1bcc42433bede7904a0b31d0534a683269aecd2c7c475e944a149d4c56d49`. It differs from update 5's file only in the source commit.
+- **Checks:**
+  - `test_worker_bel.mjs`: 64 checks, against the live `d11321e` and against update 5's Worker. `test_worker.mjs`: 41 checks.
+  - Browser checks on desktop and phone, in `qa/bel-20261030/after-1101-*/`:
+    - `stills`: the 3D model view switch at stop 2; 38 of 38 images load.
+    - `gallery`, `landscape`, `arrows` and `tour-play` (23 stops) pass.
+    - `phone-walk`: the phone run passes. The desktop run is being repeated, because the local preview server restarted during it.
+  - All 72 requested files exist at `f4346cc` (`after-1101-requests/`).
+  - `index.html`, `app.js`, `release-config.json` and three of the images match raw.githubusercontent.com.
+
+## Update 5: walking with a phone, an image at every stop, the new address (31 Oct 2026; prepared, not deployed yet; update 6 includes it)
 
 Deploy request 5 is on [issue 12](https://github.com/i-m-r-a-n/Practice01/issues/12#issuecomment-6550846984), posted 31 Oct at about 23:58 UTC. It replaces requests 3 and 4.
 
