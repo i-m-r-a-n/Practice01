@@ -44,9 +44,10 @@ with sync_playwright() as pw:
         page.evaluate("__viewer.api.goOverview()"); page.wait_for_timeout(3000)
         run['overview_again_hidden'] = not page.evaluate(visible)
         page.evaluate("__viewer.api.selectRoom('Z30')"); page.wait_for_timeout(1500)
-        page.wait_for_function("(() => { const c = window.__dbg().camera.position; const k = c.toArray().join(); const ok = c.y < 2.4 && window.__lastK === k; window.__lastK = k; return ok; })()", polling=700, timeout=90000); page.wait_for_timeout(1000)
+        # landed: the viewer's own flight state, not a still camera (software WebGL can pause seconds between frames mid-flight)
+        page.wait_for_function("!__viewer.api.state().flying && window.__dbg().camera.position.y < 2.4", polling=700, timeout=180000); page.wait_for_timeout(1000)
         run['room_mode'] = page.evaluate("document.body.dataset.mode")
-        try: page.wait_for_function(visible, timeout=8000); run['room_shown'] = True   # the arrows appear when the camera lands at eye level
+        try: page.wait_for_function(visible, timeout=60000); run['room_shown'] = True   # the arrows appear when the camera lands at eye level
         except Exception: run['room_shown'] = False
         page.screenshot(path=str(out / f'{name}_room.png'))
         p0 = page.evaluate(pos); run['room_speed_while_held'] = hold(page, '#pad button[data-k="KeyW"]')
