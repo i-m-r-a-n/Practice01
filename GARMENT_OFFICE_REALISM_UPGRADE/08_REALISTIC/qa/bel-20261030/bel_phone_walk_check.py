@@ -5,7 +5,8 @@ Phone (390 x 844, touch) and desktop runs:
 - a finger slides from the up arrow to the right arrow and the held direction follows it;
 - a tap (phone) or click (desktop) on the floor ahead sets a walk target and the visitor walks towards it;
 - "Look by moving the phone" shows on the phone, turns on, and a device-orientation event turns the view.
-Software WebGL draws few frames a second, so distances are small; the checks are the state changes and the direction of movement.
+Software WebGL draws few frames a second (at desktop size sometimes one in 2 to 4 seconds), so the walk to a target is awaited for up to 20 s and
+distances are small; the checks are the state changes and the direction of movement.
 python3 -I bel_phone_walk_check.py --out DIR [--url URL]"""
 import argparse, json, math
 from pathlib import Path
@@ -57,8 +58,12 @@ with sync_playwright() as pw:
         page.wait_for_timeout(300)
         run['target_set'] = page.evaluate("!!window.__viewer.walkTarget")
         tgt = page.evaluate("window.__viewer.walkTarget && [window.__viewer.walkTarget.x, window.__viewer.walkTarget.z]")
-        page.wait_for_timeout(4000)
-        p1 = page.evaluate(pos)
+        # software WebGL can take seconds per frame at desktop size: wait for the first steps (up to 20 s), then one more second
+        p1, waited = p0, 0
+        while waited < 20:
+            page.wait_for_timeout(1000); waited += 1; p1 = page.evaluate(pos)
+            if math.hypot(p1[0] - p0[0], p1[2] - p0[2]) > 0.05: page.wait_for_timeout(1000); p1 = page.evaluate(pos); break
+        run['seconds_to_first_steps'] = waited
         run['moved_m'] = round(math.hypot(p1[0] - p0[0], p1[2] - p0[2]), 2)
         if tgt:
             d0 = math.hypot(tgt[0] - p0[0], tgt[1] - p0[2]); d1 = math.hypot(tgt[0] - p1[0], tgt[1] - p1[2])
