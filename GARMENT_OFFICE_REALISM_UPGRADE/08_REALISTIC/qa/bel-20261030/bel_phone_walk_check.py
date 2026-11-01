@@ -58,11 +58,12 @@ with sync_playwright() as pw:
         page.wait_for_timeout(300)
         run['target_set'] = page.evaluate("!!window.__viewer.walkTarget")
         tgt = page.evaluate("window.__viewer.walkTarget && [window.__viewer.walkTarget.x, window.__viewer.walkTarget.z]")
-        # software WebGL can take seconds per frame at desktop size: wait for the first steps (up to 20 s), then one more second
+        # software WebGL can take seconds per frame at desktop size: wait (up to 20 s) until the visitor is 5 cm closer to the target,
+        # then one more second; drift left over from the slide test does not count, only steps towards the target
         p1, waited = p0, 0
-        while waited < 20:
+        while waited < 20 and tgt:
             page.wait_for_timeout(1000); waited += 1; p1 = page.evaluate(pos)
-            if math.hypot(p1[0] - p0[0], p1[2] - p0[2]) > 0.05: page.wait_for_timeout(1000); p1 = page.evaluate(pos); break
+            if math.hypot(tgt[0] - p0[0], tgt[1] - p0[2]) - math.hypot(tgt[0] - p1[0], tgt[1] - p1[2]) > 0.05: page.wait_for_timeout(1000); p1 = page.evaluate(pos); break
         run['seconds_to_first_steps'] = waited
         run['moved_m'] = round(math.hypot(p1[0] - p0[0], p1[2] - p0[2]), 2)
         if tgt:
