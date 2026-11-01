@@ -4639,6 +4639,7 @@
  "stillsButton": "Concept image",
  "stillsDefaultOn": true,
  "stillsGallery": true,
+ "imagesPage": "images.html",
  "galleryNote": "Gold: AI concept images made from the 3D views; the people in them are fictional and details can differ from the 3D. Green: rendered from the 3D model itself, with simulated light and no people. None of them is a photograph. Tap an image to go there in 3D.",
  "galleryKinds": {
   "ai": "AI concept image · fictional people",

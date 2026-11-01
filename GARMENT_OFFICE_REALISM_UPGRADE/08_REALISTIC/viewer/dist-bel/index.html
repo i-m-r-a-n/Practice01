@@ -213,6 +213,7 @@ body.walk-compact #disclaimer:not(.open) { white-space: nowrap; overflow: hidden
 .track { height: 4px; background: rgba(255, 255, 255, .12); border-radius: 2px; overflow: hidden }
 #loadBar { height: 100%; width: 0; background: var(--brass); transition: width .2s }
 #loadText { margin-top: 9px; font-size: 12px; color: var(--muted) }
+#loadAlt { display: inline-block; margin-top: 16px; font-size: 13.5px; color: var(--mint); text-decoration: underline; text-underline-offset: 3px }
 #loadError { margin-top: 14px; font-size: 13px; color: #ffd3c4; line-height: 1.5; background: rgba(120, 30, 20, .35); border: 1px solid rgba(255, 140, 120, .4); border-radius: 8px; padding: 10px 12px }
 .noscript { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; background: #101511; z-index: 40 }
 
@@ -443,6 +444,7 @@ body[data-mode="capture"] > :not(#app):not(script) { display:none !important; }
     <div class="track"><div id="loadBar"></div></div>
     <div id="loadText">Starting&hellip;</div>
     <div id="loadError" class="hidden"></div>
+    <a id="loadAlt" class="hidden" href="images.html">See the tour in images while the 3D loads</a>
   </div>
 </div>
 <noscript><div class="noscript">This 3D tour needs JavaScript and WebGL.</div></noscript>
@@ -453,6 +455,8 @@ body[data-mode="capture"] > :not(#app):not(script) { display:none !important; }
     document.getElementById('loading').style.display = 'flex';
     e.className = ''; e.textContent = msg;
     document.getElementById('loadTitle').textContent = 'The 3D model could not be shown';
+    var alt = document.getElementById('loadAlt'), cfg = window.__TOUR_CONFIG;   // a concept route offers its images page instead
+    if (alt && cfg && cfg.imagesPage) { alt.href = cfg.imagesPage; alt.textContent = 'See the tour in images instead'; alt.className = ''; }
   };
   window.addEventListener('error', function (ev) { if (!window.__viewerReady) window.__fail('Error: ' + (ev.message || ev.type) + (ev.filename ? ' (' + ev.filename.split('/').pop() + ':' + ev.lineno + ')' : '')); });
   window.addEventListener('unhandledrejection', function (ev) { if (!window.__viewerReady) window.__fail('Error: ' + (ev.reason && ev.reason.message || ev.reason)); });

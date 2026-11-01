@@ -1,9 +1,9 @@
 #!/bin/bash
 # Runs the proposal route's browser checks one after another against a local serve_preview.py (port 8790 by default),
 # writes each check's evidence to qa/bel-20261030/<prefix>-<check>/ (screenshots as JPEG) and prints one line per check.
-# ./run_checks.sh PREFIX [PORT] [CHECK ...]     checks: stills phone-walk arrows gallery landscape tour-play
+# ./run_checks.sh PREFIX [PORT] [CHECK ...]     checks: stills phone-walk arrows gallery landscape images-page tour-play
 HERE=$(cd "$(dirname "$0")" && pwd); PREFIX=$1; PORT=${2:-8790}; shift $(( $# < 2 ? $# : 2 ))
-CHECKS=${@:-stills phone-walk arrows gallery landscape tour-play}
+CHECKS=${@:-stills phone-walk arrows gallery landscape images-page tour-play}
 URL=http://127.0.0.1:$PORT/stage2-concept/
 for c in $CHECKS; do
   out=${CHECK_TMP:-/tmp/stage2-checks}/$PREFIX-$c; rm -rf $out; t0=$(date +%s)   # written outside the repository, copied in when the check ends
@@ -14,6 +14,7 @@ for c in $CHECKS; do
     gallery)    python3 -I $HERE/bel_gallery_check.py --out $out --url "$URL" ;;
     landscape)  python3 -I $HERE/bel_landscape_check.py --out $out --url "$URL" ;;
     tour-play)  python3 -I $HERE/bel_tour_play.py --out $out --url "${URL}?welcome=0" ;;
+    images-page) python3 -I $HERE/bel_images_page_check.py --out $out --base "$URL" ;;
   esac > /tmp/check_$c.log 2>&1
   rc=$?
   python3 -I -c "

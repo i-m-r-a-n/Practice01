@@ -27,6 +27,7 @@ const $ = (id) => document.getElementById(id);
 const qs = new URLSearchParams(location.search);
 // Paths: repository layout by default; a deployment bundle sets window.__TOUR_CONFIG (and window.__TOUR_DATA = { meta, grid }).
 const CFG = window.__TOUR_CONFIG || {};
+if (CFG.imagesPage && $('loadAlt')) { $('loadAlt').href = CFG.imagesPage; $('loadAlt').classList.remove('hidden'); }   // a concept route: its images page while the 3D loads (slow phones, mobile data)
 const SIMPLE_RELEASE = ['reception', 'rooms'].includes(CFG.releaseMode) || ['reception', 'rooms'].includes(qs.get('release'));
 const STAGE = Math.max(1, Math.min(5, Number(qs.get('stage') || CFG.stage || (SIMPLE_RELEASE ? 4 : 1))));
 const USE_WALKING = SIMPLE_RELEASE || STAGE >= 5;

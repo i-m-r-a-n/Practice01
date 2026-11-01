@@ -204,6 +204,7 @@ body.walk-compact #disclaimer:not(.open) { white-space: nowrap; overflow: hidden
 .track { height: 4px; background: rgba(255, 255, 255, .12); border-radius: 2px; overflow: hidden }
 #loadBar { height: 100%; width: 0; background: var(--brass); transition: width .2s }
 #loadText { margin-top: 9px; font-size: 12px; color: var(--muted) }
+#loadAlt { display: inline-block; margin-top: 16px; font-size: 13.5px; color: var(--mint); text-decoration: underline; text-underline-offset: 3px }
 #loadError { margin-top: 14px; font-size: 13px; color: #ffd3c4; line-height: 1.5; background: rgba(120, 30, 20, .35); border: 1px solid rgba(255, 140, 120, .4); border-radius: 8px; padding: 10px 12px }
 .noscript { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; background: #101511; z-index: 40 }
 

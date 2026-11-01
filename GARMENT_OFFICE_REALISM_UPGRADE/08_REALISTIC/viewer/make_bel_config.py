@@ -182,6 +182,7 @@ config = {
     'stillsLabel': 'Show concept images', 'stillsButton': 'Concept image', 'stillsDefaultOn': True,
     # the tour in images: every stop's image in one grid (toolbar "Images", the welcome card, ?images=1); a tap starts the tour at that stop
     'stillsGallery': True,
+    'imagesPage': 'images.html',   # the light page of the same images (make_images_page.py): linked from the loading screen and from a failure message
     'galleryNote': 'Gold: AI concept images made from the 3D views; the people in them are fictional and details can differ from the 3D. Green: rendered from the 3D model itself, with simulated light and no people. None of them is a photograph. Tap an image to go there in 3D.',
     'galleryKinds': {'ai': 'AI concept image · fictional people', 'render': 'Rendered from the 3D model · no people'},
     'canvasFilter': 'saturate(1.07) sepia(0.06) contrast(1.03) brightness(1.03)',   # warmer, closer to the renders and concept images (A/B on reception and the tea stall, 31 Oct)

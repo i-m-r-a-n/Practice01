@@ -155,6 +155,7 @@
     <div class="track"><div id="loadBar"></div></div>
     <div id="loadText">Starting&hellip;</div>
     <div id="loadError" class="hidden"></div>
+    <a id="loadAlt" class="hidden" href="images.html">See the tour in images while the 3D loads</a>
   </div>
 </div>
 <noscript><div class="noscript">This 3D tour needs JavaScript and WebGL.</div></noscript>
@@ -165,6 +166,8 @@
     document.getElementById('loading').style.display = 'flex';
     e.className = ''; e.textContent = msg;
     document.getElementById('loadTitle').textContent = 'The 3D model could not be shown';
+    var alt = document.getElementById('loadAlt'), cfg = window.__TOUR_CONFIG;   // a concept route offers its images page instead
+    if (alt && cfg && cfg.imagesPage) { alt.href = cfg.imagesPage; alt.textContent = 'See the tour in images instead'; alt.className = ''; }
   };
   window.addEventListener('error', function (ev) { if (!window.__viewerReady) window.__fail('Error: ' + (ev.message || ev.type) + (ev.filename ? ' (' + ev.filename.split('/').pop() + ':' + ev.lineno + ')' : '')); });
   window.addEventListener('unhandledrejection', function (ev) { if (!window.__viewerReady) window.__fail('Error: ' + (ev.reason && ev.reason.message || ev.reason)); });
