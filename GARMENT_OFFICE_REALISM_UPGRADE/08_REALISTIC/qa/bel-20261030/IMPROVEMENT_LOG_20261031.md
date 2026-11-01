@@ -127,6 +127,6 @@
 2. **The owner on a real phone:** an iPhone with Safari and an Android phone with Chrome.
    - Check walking with the arrows, tapping the floor, and "Look by moving the phone" (iOS asks for permission).
    - Check the images page on mobile data.
-3. **Renders at the tour's own field of view** (35° vertical), so the 3D dissolves into an image with exactly its framing. The renders now use the approved Blender lenses (18 to 22 mm), which are wider.
-4. **The artisan corner's frosted partition** shows streaks in the 3D's own baked light: rebake that panel.
+3. **The artisan corner's frosted partition** shows streaks in the 3D's own baked light: rebake that panel.
 
+Checked at 04:25 UTC: at a stop the tour uses the camera's own lens (`poseFromCamera` and `vfovFor` in `app.js`), the same lens as the Cycles renders. The 3D at a stop and its render therefore share one framing, and no FOV change is needed.
