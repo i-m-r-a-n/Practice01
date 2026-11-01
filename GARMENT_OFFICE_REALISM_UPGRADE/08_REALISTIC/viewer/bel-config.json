@@ -4491,62 +4491,74 @@
   "CAM_03_Entrance_Lobby": {
    "src": "concept-images/CAM_03_Entrance_Lobby.jpg",
    "kind": "ai",
-   "thumb": "concept-images/thumbs/CAM_03_Entrance_Lobby.jpg"
+   "thumb": "concept-images/thumbs/CAM_03_Entrance_Lobby.jpg",
+   "model": "concept-images/model/render_CAM_03_Entrance_Lobby.jpg"
   },
   "CAM_01_Reception_A": {
    "src": "concept-images/CAM_01_Reception_A.jpg",
    "kind": "ai",
-   "thumb": "concept-images/thumbs/CAM_01_Reception_A.jpg"
+   "thumb": "concept-images/thumbs/CAM_01_Reception_A.jpg",
+   "model": "concept-images/model/render_CAM_01_Reception_A.jpg"
   },
   "BEL_CAM_SUN_WALL": {
    "src": "concept-images/BEL_CAM_SUN_WALL.jpg",
    "kind": "ai",
-   "thumb": "concept-images/thumbs/BEL_CAM_SUN_WALL.jpg"
+   "thumb": "concept-images/thumbs/BEL_CAM_SUN_WALL.jpg",
+   "model": "concept-images/model/render_BEL_CAM_SUN_WALL.jpg"
   },
   "BEL_CAM_UTHAN": {
    "src": "concept-images/BEL_CAM_UTHAN.jpg",
    "kind": "ai",
-   "thumb": "concept-images/thumbs/BEL_CAM_UTHAN.jpg"
+   "thumb": "concept-images/thumbs/BEL_CAM_UTHAN.jpg",
+   "model": "concept-images/model/render_BEL_CAM_UTHAN.jpg"
   },
   "BEL_CAM_LAB": {
    "src": "concept-images/BEL_CAM_LAB.jpg",
    "kind": "ai",
-   "thumb": "concept-images/thumbs/BEL_CAM_LAB.jpg"
+   "thumb": "concept-images/thumbs/BEL_CAM_LAB.jpg",
+   "model": "concept-images/model/render_BEL_CAM_LAB.jpg"
   },
   "BEL_CAM_CAD": {
    "src": "concept-images/BEL_CAM_CAD.jpg",
    "kind": "ai",
-   "thumb": "concept-images/thumbs/BEL_CAM_CAD.jpg"
+   "thumb": "concept-images/thumbs/BEL_CAM_CAD.jpg",
+   "model": "concept-images/model/render_BEL_CAM_CAD.jpg"
   },
   "BEL_CAM_TEA": {
    "src": "concept-images/BEL_CAM_TEA.jpg",
    "kind": "ai",
-   "thumb": "concept-images/thumbs/BEL_CAM_TEA.jpg"
+   "thumb": "concept-images/thumbs/BEL_CAM_TEA.jpg",
+   "model": "concept-images/model/render_BEL_CAM_TEA.jpg"
   },
   "BEL_CAM_PLANT_WALL": {
    "src": "concept-images/BEL_CAM_PLANT_WALL.jpg",
    "kind": "ai",
-   "thumb": "concept-images/thumbs/BEL_CAM_PLANT_WALL.jpg"
+   "thumb": "concept-images/thumbs/BEL_CAM_PLANT_WALL.jpg",
+   "model": "concept-images/model/render_BEL_CAM_PLANT_WALL.jpg"
   },
   "CAM_09_Boardroom_A": {
    "src": "concept-images/CAM_09_Boardroom_A.jpg",
    "kind": "ai",
-   "thumb": "concept-images/thumbs/CAM_09_Boardroom_A.jpg"
+   "thumb": "concept-images/thumbs/CAM_09_Boardroom_A.jpg",
+   "model": "concept-images/model/render_CAM_09_Boardroom_A.jpg"
   },
   "CAM_07_MD_Office_A": {
    "src": "concept-images/CAM_07_MD_Office_A.jpg",
    "kind": "ai",
-   "thumb": "concept-images/thumbs/CAM_07_MD_Office_A.jpg"
+   "thumb": "concept-images/thumbs/CAM_07_MD_Office_A.jpg",
+   "model": "concept-images/model/render_CAM_07_MD_Office_A.jpg"
   },
   "CAM_25_Fabric_Library": {
    "src": "concept-images/CAM_25_Fabric_Library.jpg",
    "kind": "ai",
-   "thumb": "concept-images/thumbs/CAM_25_Fabric_Library.jpg"
+   "thumb": "concept-images/thumbs/CAM_25_Fabric_Library.jpg",
+   "model": "concept-images/model/render_CAM_25_Fabric_Library.jpg"
   },
   "CAM_23_Sample_Room": {
    "src": "concept-images/CAM_23_Sample_Room.jpg",
    "kind": "ai",
-   "thumb": "concept-images/thumbs/CAM_23_Sample_Room.jpg"
+   "thumb": "concept-images/thumbs/CAM_23_Sample_Room.jpg",
+   "model": "concept-images/model/render_CAM_23_Sample_Room.jpg"
   },
   "BEL_CAM_ACADEMY": {
    "src": "concept-images/render_BEL_CAM_ACADEMY.jpg",

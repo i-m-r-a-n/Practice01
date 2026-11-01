@@ -146,6 +146,8 @@ body.walk-compact #disclaimer:not(.open) { white-space: nowrap; overflow: hidden
 .photo-tag { position: fixed; top: calc(var(--top-h) + 8px); left: 50%; transform: translateX(-50%); font-size: 11px; letter-spacing: .12em; background: rgba(0, 0, 0, .6);
   border: 1px solid rgba(194, 154, 85, .65); color: #f1d7a4; padding: 6px 11px; border-radius: 7px; white-space: nowrap }
 #photoClose { position: fixed; right: var(--gap); top: calc(var(--top-h) + 6px); background: var(--glass); border: 1px solid var(--line); border-radius: 9px; padding: 8px 13px; font-size: 13px; z-index: 9 }
+#photoAlt { position: fixed; right: var(--gap); top: calc(var(--top-h) + 50px); background: var(--glass); border: 1px solid rgba(169, 216, 184, .55); color: var(--mint); border-radius: 9px; padding: 8px 13px; font-size: 13px; z-index: 9 }
+#photoAlt.on { border-color: rgba(194, 154, 85, .65); color: #f1d7a4 }   /* showing the render: the button leads back to the AI image */
 @media (min-width: 641px) and (max-width: 1100px) {   /* a long label wraps before it reaches the Back to 3D button */
   .photo-tag { width: max-content; max-width: calc(100vw - 2 * var(--gap) - 280px); white-space: normal; text-align: center; line-height: 1.4 }
 }
@@ -258,7 +260,7 @@ body.walk-compact #disclaimer:not(.open) { white-space: nowrap; overflow: hidden
   .tb-row button { padding: 7px 9px; font-size: 12.5px } .tb-row button.play { min-width: 92px } .chk { font-size: 12px }
   .bar button { padding: 7px 9px; font-size: 12.5px }
   #walkhint { font-size: 11.5px }
-  .photo-tag { white-space: normal; width: calc(100vw - 2 * var(--gap)); text-align: center } #photoClose { top: calc(var(--top-h) + 52px) }
+  .photo-tag { white-space: normal; width: calc(100vw - 2 * var(--gap)); text-align: center } #photoClose { top: calc(var(--top-h) + 52px) } #photoAlt { top: calc(var(--top-h) + 96px) }
   .wbox { padding: 18px 16px 16px } .wbox h2 { font-size: 20px }
   #gallery { padding: 8px } .gbox { padding: 14px 12px 0; border-radius: 14px } .ghead h2 { font-size: 19px } .gnote { font-size: 11.5px; margin: 4px 0 10px }
   #gGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; padding-bottom: 14px } .gcard { padding-bottom: 8px } .gcard .gnum { margin: 0 8px; font-size: 9.5px }
@@ -293,7 +295,7 @@ body[data-mode="capture"] > :not(#app):not(script) { display:none !important; }
   #gGrid { grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)) }
   #tourbar .note, #info .note { display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden; max-height: none; cursor: pointer; margin-top: 5px; padding: 4px 8px }
   #tourbar .note.open, #info .note.open { display: block; max-height: 4.6em; overflow: auto }   /* the concept note is one line; a tap opens it */
-  .photo-tag { font-size: 10px; padding: 5px 9px }
+  .photo-tag { font-size: 10px; padding: 5px 9px } #photoAlt { top: calc(var(--top-h) + 46px) }
 }
 </style>
 </head>
@@ -386,6 +388,7 @@ body[data-mode="capture"] > :not(#app):not(script) { display:none !important; }
   <img id="photoImg" alt="">
   <div class="photo-tag">PHOTOREAL RENDER &middot; offline Cycles still &middot; not real-time</div>
   <button id="photoClose" title="Back to the real-time 3D model (Esc)">&larr; Back to 3D</button>
+  <button id="photoAlt" class="hidden" title="Switch between the AI concept image and the render of the same view in the 3D model">3D model view</button>
 </div>
 
 <div id="walkhint" class="hidden"></div>
