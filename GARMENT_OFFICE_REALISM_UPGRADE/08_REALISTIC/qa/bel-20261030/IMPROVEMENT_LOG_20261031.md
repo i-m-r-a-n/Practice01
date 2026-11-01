@@ -130,3 +130,4 @@
 3. **The artisan corner's frosted partition** shows streaks in the 3D's own baked light: rebake that panel.
 
 Checked at 04:25 UTC: at a stop the tour uses the camera's own lens (`poseFromCamera` and `vfovFor` in `app.js`), the same lens as the Cycles renders. The 3D at a stop and its render therefore share one framing, and no FOV change is needed.
+- **05:13 UTC:** the doc ([link](https://claude.ai/artifact/4LZBNf9omr7hr8x4ED3po8)) has a short note under its status. It says the run's work is ready and waits for deploy request 7, and that the address moves to `/stage2-concept/` after the deploy. The doc's live link stays until then.
