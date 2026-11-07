@@ -52,7 +52,7 @@ with sync_playwright() as pw:
         run['fail_offer'] = page.evaluate("(() => { const l = document.getElementById('loadAlt'); return !l.classList.contains('hidden') && l.textContent; })()")
         ctx.close()
         run['passed'] = bool(run['stops'] == len(titles) == 23 and run['rooms'] == 3 and run['order_ok'] and run['labels_ok'] and run['model_links'] == models
-                             and run['woven'] == len(woven) == 8 and run['woven_ok'] and run['thumbs_loaded'] == 23 + 3 + len(woven) and not run['sideways'] and run['links'] == ['./', './?walk=1'] and run['viewer_label'].startswith(('AI concept image', 'Rendered from the 3D model'))
+                             and run['woven'] == len(woven) >= 9 and run['woven_ok'] and run['thumbs_loaded'] == 23 + 3 + len(woven) and not run['sideways'] and run['links'] == ['./', './?walk=1'] and run['viewer_label'].startswith(('AI concept image', 'Rendered from the 3D model'))
                              and run['viewer_closed'] and run['loading_link'] and run['fail_offer'] == 'See the tour in images instead')
         R['runs'][name] = run; print(name, json.dumps(run), flush=True)
     b.close()

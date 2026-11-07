@@ -4,8 +4,10 @@
      west of the east glass, clear of the brand-wall spots, the linear lights and the smoke detector, below the deck
   3. the exit sign over the entrance stays in view from the route under the threshold (ray casts against the real scene)
   4. the bench and the stool block walking, and the route under the threshold, the way in and the space in front of the bench stay free
-  5. the terracotta wall sits on the free west wall, the fibre display on the reception console, the three fittings carry their light
-  6. no page errors
+  5. the terracotta wall sits on the free west wall, the fibre display on the reception console, the fittings carry their light
+  6. the middle of the arrival is open (the owner, 7 Nov): the security desk and its chair are hidden and their floor walkable; the curved
+     check-in counter stands under the stair, below 1.1 m, and the brand wall stays in view from the arrival camera
+  7. no page errors
 python3 -I woven_check.py OUT_DIR [BASE_URL]"""
 import json, sys
 from pathlib import Path
@@ -13,7 +15,7 @@ from playwright.sync_api import sync_playwright
 
 OUT = Path(sys.argv[1]); OUT.mkdir(parents=True, exist_ok=True)
 BASE = sys.argv[2] if len(sys.argv) > 2 else 'http://127.0.0.1:8790'
-WANT = {'Z01': ['BEL_WOVEN_THRESHOLD', 'BEL_TERRACOTTA_SURFACE', 'BEL_RECLAIMED_BENCH', 'BEL_ARRIVAL_FIG'], 'Z02': ['BEL_RECEPTION_TREE', 'BEL_FIBRE_DISPLAY', 'BEL_TEA_CLAY']}
+WANT = {'Z01': ['BEL_WOVEN_THRESHOLD', 'BEL_TERRACOTTA_SURFACE', 'BEL_RECLAIMED_BENCH', 'BEL_EARTH_COUNTER', 'BEL_ARRIVAL_FIG'], 'Z02': ['BEL_RECEPTION_TREE', 'BEL_FIBRE_DISPLAY', 'BEL_TEA_CLAY']}
 RETIRED = ['BEL_GATE_BONSAI', 'BEL_LOBBY_STONES', 'BEL_EARTH_DESK', 'BEL_LOBBY_RELIEF', 'BEL_RECEPTION_ALOE', 'BEL_INSTRUMENTS']
 PROBE = r"""() => {
   const { scene, THREE } = window.__dbg(), box = new THREE.Box3(), tmp = new THREE.Box3();
@@ -25,11 +27,13 @@ PROBE = r"""() => {
   const out = {
     canopy: bounds(o => canopy.has(mat(o))),
     swags: bounds(o => mat(o) === 'bel_we_swags'),
-    canopySteel: bounds(o => mat(o) === 'bel_we_steel' && !under(o, 'BEL_TERRACOTTA_SURFACE')),
+    canopySteel: bounds(o => mat(o) === 'bel_we_steel' && !under(o, 'BEL_TERRACOTTA_SURFACE') && !under(o, 'BEL_EARTH_COUNTER')),   // the wall-washer and the counter plinth share the steel
     terracotta: bounds(o => under(o, 'BEL_TERRACOTTA_SURFACE') && mat(o).startsWith('bel_we_t')),
     bench: bounds(o => under(o, 'BEL_RECLAIMED_BENCH')),
     fibre: bounds(o => under(o, 'BEL_FIBRE_DISPLAY')),
     fig: bounds(o => under(o, 'BEL_ARRIVAL_FIG')),
+    counter: bounds(o => under(o, 'BEL_EARTH_COUNTER')),
+    deskVisible: (() => { let v = false; scene.traverse(o => { if (o.isMesh && /^F00[12]_/.test(o.name)) { let s = o.visible; for (let q = o.parent; q; q = q.parent) s = s && q.visible; v = v || s; } }); return v; })(),
     lights: [], exitSight: [],
   };
   scene.traverse(o => { if (o.userData?.light) { const p = new THREE.Vector3(); o.getWorldPosition(p); out.lights.push({ name: o.name, type: o.userData.light.type, at: p.toArray().map(v => +v.toFixed(3)) }); } });
@@ -40,6 +44,9 @@ PROBE = r"""() => {
     const hit = ray.intersectObjects(meshes, false).find(h => h.object.visible);
     out.exitSight.push({ from: p, clear: !hit, first: hit ? { material: mat(hit.object), name: hit.object.name, distance: +hit.distance.toFixed(2), of: +dist.toFixed(2) } : null });
   }
+  // the brand wall from the arrival camera's eye: the first thing a ray meets on its way to the logo
+  { const eye = new THREE.Vector3(6.2484, 1.6256, 5.7404), logo = new THREE.Vector3(5.89, 1.62, .12), dir = logo.clone().sub(eye), d = dir.length(); ray.set(eye, dir.normalize()); ray.far = d + .1;
+    const hit = ray.intersectObjects(meshes, false).find(h => h.object.visible); out.logoSight = hit ? { material: mat(hit.object), distance: +hit.distance.toFixed(2), of: +d.toFixed(2) } : null; }
   return out;
 }"""
 with sync_playwright() as pw:
@@ -55,7 +62,8 @@ with sync_playwright() as pw:
     walk = {}
     for name, (x, z) in {'bench_seat': (.30, 1.40), 'bench_front': (.60, 1.40), 'stool': (.62, .30), 'fig': (7.115, 4.955),
                          'route_under_threshold_n': (6.9, 1.6), 'route_under_threshold_m': (6.9, 2.6), 'route_under_threshold_s': (6.95, 3.6),
-                         'way_in': (6.3, 4.6), 'before_bench': (1.05, 1.4), 'between_bench_and_doors': (1.3, .45), 'reception_door': (7.3, .8)}.items():
+                         'way_in': (6.3, 4.6), 'before_bench': (1.05, 1.4), 'between_bench_and_doors': (1.3, .45), 'reception_door': (7.3, .8),
+                         'old_desk_spot': (5.8, 3.05), 'old_chair_spot': (5.8, 2.3), 'before_counter': (4.75, 3.1), 'counter': (3.9, 3.1)}.items():
         try: pg.evaluate('([x, z]) => __viewer.api.setWalkQAStart(x, z)', [x, z]); walk[name] = 'free'
         except Exception as e: walk[name] = 'blocked' if 'blocked' in str(e) else 'error: ' + str(e)[:120]
     pg.screenshot(path=str(OUT / 'woven_check_last.png'))
@@ -79,7 +87,11 @@ checks = {
     'terracotta_on_west_wall': geo['terracotta']['n'] > 0 and geo['terracotta']['max'][0] <= .07 and geo['terracotta']['min'][2] >= .25 and geo['terracotta']['max'][2] <= 2.47,
     'bench_off_the_route': geo['bench']['n'] > 0 and geo['bench']['max'][0] <= .9 and geo['bench']['max'][2] <= 2.3,
     'fibre_display_on_console': geo['fibre']['n'] > 0 and geo['fibre']['min'][0] >= 10.69 and geo['fibre']['max'][0] <= 12.53 and geo['fibre']['min'][2] >= .03 and geo['fibre']['max'][2] <= .45 and geo['fibre']['min'][1] >= .786,
-    'three_fittings_carry_light': sorted(l['type'] for l in geo['lights']) == ['AREA', 'SPOT', 'SPOT'],
+    'fittings_carry_light': sorted(l['type'] for l in geo['lights']) == ['AREA'] * 6 + ['SPOT', 'SPOT'],   # the wall-washer, five ledge grazers, two spots
+    'desk_hidden_middle_open': not geo['deskVisible'] and all(walk[k] == 'free' for k in ('old_desk_spot', 'old_chair_spot', 'before_counter')),
+    'counter_under_the_stair': geo['counter']['n'] > 0 and walk['counter'] == 'blocked' and geo['counter']['min'][0] >= 2.3 and geo['counter']['max'][0] <= 4.25
+                               and geo['counter']['min'][2] >= 2.2 and geo['counter']['max'][2] <= 4.05 and geo['counter']['max'][1] <= 1.1,
+    'brand_wall_in_view': bool(geo.get('logoSight')) and not geo['logoSight']['material'].startswith('bel_') and geo['logoSight']['distance'] >= 5.3,
     'no_page_errors': not errs,
 }
 report = {'checks': checks, 'passed': all(checks.values()), 'items': ids, 'geometry': geo, 'walk': walk, 'errors': errs[:10]}

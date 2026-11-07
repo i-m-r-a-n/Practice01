@@ -22,6 +22,7 @@ export const BEL_ITEMS = [
   { id: 'BEL_WOVEN_THRESHOLD', zone: 'Z01', note: 'The Woven Threshold: six handwoven swags of cleaned cutting waste (jhut) with natural jute and cotton, on a loom-like frame of laminated bamboo and straight bamboo culms hung from the deck on black steel rods, above the route between the check-in desk and the east glass. Ecru and sand, with olive, indigo and a little clay as accents; one strip carries a kantha repair. Lowest point 2.30 m; clear of the linear lights, the AC unit (its service side and underside stay free), the smoke detector and the brand-wall spots, and lit by two narrow spots. Each swag lifts off its culm for cleaning. Concept: fibre sources, makers and fire performance are still to be identified and tested; structure, sprinkler and detector coverage (the existing smoke detector is in the next bay, west of the steel beam), egress and maintenance to be confirmed by the architect and the structural and fire engineers before anything is made.' },
   { id: 'BEL_TERRACOTTA_SURFACE', zone: 'Z01', note: 'One hand-pressed terracotta surface on the free west wall, in place of the six plaques: a field of square tiles whose raised diamonds follow the repeat logic of Jamdani, drawn by a linear wall-washer rather than printed motifs. Local fabricator to be identified; tile weight and fixing to be checked.' },
   { id: 'BEL_RECLAIMED_BENCH', zone: 'Z01', note: 'A bench of salvaged hardwood (legally salvaged and seasoned, documented, never fresh-felled) on two laminated-bamboo trestles with through-tenons, wedges and dowels, and a light bamboo stool with a cane seat, along the west wall under the terracotta and off the route. Timber source and moisture, bamboo supplier, treatment and load test to be documented.' },
+  { id: 'BEL_EARTH_COUNTER', zone: 'Z01', note: 'The check-in moves out of the middle of the arrival (the owner, 7 Nov 2026): the approved security desk and its chair are hidden on this route, and a curved counter stands under the high end of the stair instead, its face turned to the entrance. Hand-pressed terracotta flutes, a reclaimed-hardwood ledge and work top, the screen below the ledge and a warm linear light under it. The middle of the arrival is left open under the woven threshold. Fabricator and timber source to be identified; the new position and its view of the entrance to be confirmed against the security plan.' },
   { id: 'BEL_ARRIVAL_FIG', zone: 'Z01', note: 'One fig tree in a terracotta planter by the glass entrance, in the daylight of the entrance glass, in place of the approved potted tree and on its footprint. Grower to be identified.' },
   { id: 'BEL_GATE_BONSAI', zone: 'Z01', retired: 'Woven Earth brief, 7 Nov 2026: one plant only, and the bonsai read accessory-sized; the fig tree BEL_ARRIVAL_FIG takes the footprint.', note: 'A banyan bonsai on a granite plinth beside the glass gate, in place of the approved potted tree and on its footprint. Grower, species and stone source to be confirmed; it takes turns in daylight at the studio windows.' },
   { id: 'BEL_LOBBY_STONES', zone: 'Z01', retired: 'Woven Earth brief, 7 Nov 2026: accessory-sized; the arrival stays uncluttered.', note: 'Three granite stones in place of the approved small planter, on its footprint. Stone only from a documented legal source, never from illegal river extraction.' },
@@ -1837,6 +1838,39 @@ export function buildBengalEarthLab(THREE, { zones = null, drinkware = [], aniso
     add(st, merged(sl), laminated('leg', 'v')); add(st, merged(sr), laminated('trestle', 'u'));
     add(st, new THREE.BoxGeometry(.33, .012, .33), cane, 0, .425, 0);
     footprint(BX - DEP / 2 - .02, BZ - LEN / 2 - .02, BX + DEP / 2 + .02, BZ + LEN / 2 + .02); footprint(.42, .1, .82, .5);
+  }
+  if (want('BEL_EARTH_COUNTER')) {
+    // the check-in leaves the middle of the arrival (the approved security desk F001 and chair F002 are hidden on this route) for a curved counter under
+    // the high end of the stair's return flight: free floor x 2.1-4.0, z 2.4-4.0, soffit 2.62 m falling to 2.09 m, the steel beam x 3.05 above. Its visitor
+    // face turns to the entrance; the receptionist sits behind it under the flight and still sees the entrance doors
+    const g = item('BEL_EARTH_COUNTER'), CX = 2.6, CZ = 2.9, R0 = 1.0, R1 = 1.52, A0 = -25 * Math.PI / 180, A1 = 45 * Math.PI / 180, PL = .08, H = 1.03, DA = A1 - A0;
+    const at = (r, a, y = 0) => [CX + r * Math.cos(a), y, CZ + r * Math.sin(a)];
+    const band = (r0, r1, y0, y1, mat) => {   // a curved band (annular sector) between radii r0 and r1, from y0 to y1
+      const sh = new THREE.Shape(); sh.absarc(0, 0, r1, A0, A1, false); sh.absarc(0, 0, r0, A1, A0, true); sh.closePath();
+      const geo = new THREE.ExtrudeGeometry(sh, { depth: y1 - y0, bevelEnabled: false, curveSegments: 48 }); geo.rotateX(Math.PI / 2); geo.translate(0, y1, 0);
+      return add(g, geo, mat, CX, 0, CZ); };
+    const timber = std('we_salvaged', () => ({ color: '#6d4b31', roughness: .62 }));   // the bench's salvaged hardwood
+    band(R0 + .04, R1 - .05, 0, PL, weSteel);                                                                      // recessed plinth
+    band(R0, R1, PL, H, std('we_counter_body', () => ({ color: '#8a4a2e', roughness: .9 })));                  // the body behind the flutes
+    band(R1 - .22, R1 + .035, H, H + .045, timber);                                                              // the visitor ledge
+    band(R0 - .02, R1 - .22, .715, .75, timber);                                                                 // the work top, below the ledge
+    band(R1 + .006, R1 + .03, H - .007, H - .001, std('counter_ledge_led', () => ({ color: '#fff3e0', emissive: '#ffd6a0', emissiveIntensity: .8, roughness: .4 })));   // warm linear light under the ledge
+    // hand-pressed terracotta flutes on the visitor face, three firings of the same clay
+    const NF = 30, flutes = [[], [], []], rr = rng(613);
+    for (let k = 0; k < NF; k++) { const a = A0 + (k + .5) / NF * DA, [fx, , fz] = at(R1, a);
+      flutes[Math.floor(rr() * 3)].push([new THREE.CylinderGeometry(.026, .026, H - PL - .012, 14, 1, false, 0, Math.PI), fx, PL + (H - PL) / 2, fz, 0, -a, 0]); }
+    ['#ffffff', '#efdccd', '#fff1e2'].forEach((col, i) => flutes[i].length && add(g, merged(flutes[i]), std('we_flute_' + i, () => ({ map: M.clayRaw.map, color: col, roughness: .88 }))));   // tints over the fired-clay map
+    // the receptionist's side: a screen on the work top below the ledge, and a bamboo chair with a cane seat
+    const sa = 10 * Math.PI / 180, [sx, , sz] = at(1.2, sa);
+    add(g, new THREE.BoxGeometry(.46, .26, .018), std('we_screen', () => ({ color: '#121315', roughness: .3, metalness: .2 })), sx, .75 + .02 + .13, sz, -.08, -(Math.PI / 2 + sa), 0);
+    add(g, new THREE.BoxGeometry(.16, .02, .12), weSteel, sx - .06 * Math.cos(sa), .76, sz - .06 * Math.sin(sa), 0, -sa, 0);
+    const ch = new THREE.Group(); ch.position.set(...at(.62, 5 * Math.PI / 180)); ch.rotation.y = Math.PI / 2; g.add(ch);
+    add(ch, chairWood, laminated('leg', 'v')); add(ch, chairCane, cane);
+    for (let i = 0; i < 5; i++) {   // the ledge light, as five short wall-grazers for the renders
+      const a = A0 + (i + .5) / 5 * DA, [lx, , lz] = at(R1 + .018, a), [tx, , tz] = at(R1 + .02, a);
+      lightMarker('BEL_LIGHT_COUNTER_LEDGE', [lx, H - .01, lz], { type: 'AREA', size: [.34, .02], watts: 3, kelvin: 3000, target: [tx, .35, tz], long: [-Math.sin(a), 0, Math.cos(a)] });
+    }
+    footprint(2.3, 2.2, 4.2, 4.05);   // the counter and the staff side under the flight
   }
   if (want('BEL_FIBRE_DISPLAY')) {
     // the reception console F014 (x 10.69-12.53, z 0.03-0.45, top 0.787), between the approved books (x 11.06) and frame (x 12.10): one oak tray, five steps

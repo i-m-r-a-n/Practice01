@@ -30,17 +30,6 @@
  "conceptOptions": {
   "drinkware": [
    {
-    "id": "PROP_0002",
-    "zone": "Z01",
-    "type": "mug",
-    "position": [
-     5.334,
-     0.7493,
-     3.048
-    ],
-    "rotationY": 3.4906585
-   },
-   {
     "id": "PROP_0019",
     "zone": "Z08",
     "type": "glass",
@@ -386,6 +375,7 @@
  "screenZones": [],
  "cameraOverrides": {},
  "excludedProps": [
+  "PROP_0001",
   "PROP_0002",
   "PROP_0006",
   "PROP_0008",
@@ -507,6 +497,8 @@
  "peopleManifest": "room-release/people-manifest.json",
  "peopleAccepted": false,
  "hideNodes": [
+  "F001_",
+  "F002_",
   "F003_",
   "PL003_",
   "F004_",
@@ -3627,6 +3619,91 @@
    344,
    112,
    114
+  ],
+  [
+   424,
+   81,
+   88
+  ],
+  [
+   425,
+   81,
+   88
+  ],
+  [
+   426,
+   81,
+   88
+  ],
+  [
+   427,
+   80,
+   88
+  ],
+  [
+   428,
+   80,
+   88
+  ],
+  [
+   429,
+   80,
+   88
+  ],
+  [
+   430,
+   80,
+   88
+  ],
+  [
+   431,
+   80,
+   88
+  ],
+  [
+   432,
+   77,
+   91
+  ],
+  [
+   433,
+   77,
+   91
+  ],
+  [
+   434,
+   77,
+   91
+  ],
+  [
+   435,
+   77,
+   91
+  ],
+  [
+   436,
+   77,
+   91
+  ],
+  [
+   437,
+   77,
+   91
+  ],
+  [
+   438,
+   77,
+   91
+  ],
+  [
+   439,
+   77,
+   91
+  ],
+  [
+   440,
+   77,
+   91
   ]
  ],
  "noRenderPhotos": true,
@@ -4491,6 +4568,49 @@
     "height": 1080
    },
    "proposal_view": true
+  },
+  {
+   "name": "BEL_CAM_WOVEN_COUNTER",
+   "room": "Arrival gallery",
+   "zone": "Z01",
+   "priority": 2,
+   "type": "PERSP",
+   "position": [
+    6.4,
+    1.5,
+    4.3
+   ],
+   "direction": [
+    -0.894427190999916,
+    0.0,
+    -0.4472135954999578
+   ],
+   "up": [
+    0.0,
+    1.0,
+    0.0
+   ],
+   "quaternion_xyzw": [
+    0.0,
+    0.525731,
+    0.0,
+    0.850651
+   ],
+   "clip": [
+    0.05,
+    300.0
+   ],
+   "shift_x": 0.0,
+   "shift_y": -0.15,
+   "sensor_fit": "AUTO",
+   "lens": 28.0,
+   "sensor_width": 36.0,
+   "render": {
+    "file": null,
+    "width": 1920,
+    "height": 1080
+   },
+   "proposal_view": true
   }
  ],
  "tour": [
@@ -4506,7 +4626,7 @@
    "zone": "Z01",
    "camera": "CAM_03_Entrance_Lobby",
    "title": "Arrival gallery · the Woven Threshold",
-   "description": "Arrive under six handwoven swags of cleaned cutting waste, jute and cotton on a bamboo frame, above the route between the check-in desk and the glass. One terracotta wall, a salvaged-wood bench and one fig tree. Makers, sources and fire tests to be identified."
+   "description": "An open arrival under six handwoven swags of cleaned cutting waste, jute and cotton on a bamboo frame. Check-in at a curved terracotta counter under the stair; one terracotta wall, a salvaged-wood bench and one fig tree. Makers, sources and fire tests to be identified."
   },
   {
    "stop": 3,
@@ -4678,7 +4798,7 @@
   "Z10": "Exec reception · tea point"
  },
  "roomNotes": {
-  "Z01": "In this 3D proposal: Woven Earth, from the owner's brief: the Woven Threshold, six handwoven swags of cleaned cutting waste (jhut) with jute and cotton on a laminated-bamboo frame over the route beside the check-in desk, between the desk and the east glass, lowest point 2.30 m, clear of the lights, the AC unit and the detector, with two narrow spots; one hand-pressed terracotta wall whose raised diamonds follow the Jamdani repeat; a salvaged-hardwood bench on bamboo trestles and a bamboo stool with a cane seat, off the route; one fig tree by the glass entrance. The approved desk, logos and brand wall are unchanged. Makers, fibre sources, the timber and bamboo suppliers and fire performance are still to be identified and tested; the suspension needs the architect's and the structural and fire engineers' review.",
+  "Z01": "In this 3D proposal: Woven Earth, from the owner's brief: the Woven Threshold, six handwoven swags of cleaned cutting waste (jhut) with jute and cotton on a laminated-bamboo frame over the route beside the check-in desk, between the desk and the east glass, lowest point 2.30 m, clear of the lights, the AC unit and the detector, with two narrow spots; one hand-pressed terracotta wall whose raised diamonds follow the Jamdani repeat; a salvaged-hardwood bench on bamboo trestles and a bamboo stool with a cane seat, off the route; one fig tree by the glass entrance. The check-in leaves the middle (the owner, 7 Nov): a curved counter of hand-pressed terracotta flutes and reclaimed hardwood stands under the high end of the stair, the screen below its ledge, and the middle of the arrival stays open. The approved logos and brand wall are unchanged. Makers, fibre sources, the timber and bamboo suppliers and fire performance are still to be identified and tested; the suspension needs the architect's and the structural and fire engineers' review.",
   "Z02": "In this 3D proposal: tea in clay cups on wooden trays, the fibre story on the console (from fibre to second life: cotton, jute, cutting waste sorted by colour, recycled yarn and its knit; illustrative samples), a small fig tree, and the handloom pieces of the approved redesign.",
   "Z03": "In this 3D proposal: the Sun wall (sun, solar generation, use and storage, operations, with grid and backup shown) and a terracotta earth wall whose clay bowls hold the raw side of the fabric story: cotton, jute, recycled fibre and indigo. Concept demonstration, not live factory data: \"Designed for a Solar-Powered Future\" until measured evidence exists.",
   "Z30": "In this 3D proposal: the approved knitwear stays (garments in the four bays, the four forms, sample cards, the materials library and the coconut-shell button story). Each form and bay adds its fabric story: cotton, a jute and cotton blend (research only), cutting waste (jhut) sorted by colour and spun again, used garments taken back and mended in kantha stitch. Drinking water from a clay kolshi (source client-stated; no laboratory results yet). Illustrative stories: fibre origins, recycled shares and tests are still to be documented.",

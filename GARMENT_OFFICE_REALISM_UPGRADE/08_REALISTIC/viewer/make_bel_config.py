@@ -12,11 +12,13 @@ RELEASE_ZONES = ['Z01', 'Z02', 'Z08', 'Z30', 'Z12', 'Z18']          # props (sma
 CONCEPT_ZONES = ['Z01', 'Z02', 'Z03', 'Z30', 'Z08', 'Z12', 'Z18', 'Z22', 'Z15', 'Z16', 'Z17', 'Z21', 'Z20', 'Z09', 'Z04', 'Z07', 'Z06']   # rooms with Bengal Earth Lab items (Z07, Z06: option A only)
 DRINK = {'glass', 'jug', 'teacup', 'tray', 'mug', 'bottle'}
 TEA_SET = {'PROP_0006', 'PROP_0008'}                                 # reception tray and teacup: replaced by the clay tea set
+DESK_PROPS = {'PROP_0001', 'PROP_0002'}                              # the notebook and mug on the security desk, which this route hides (the owner, 7 Nov)
 drink = [p for p in manifest['props'] if p['zone'] in RELEASE_ZONES and p['type'] in DRINK]
 
 # approved items replaced in place (same footprint). The garments, the four forms and the approved knitwear dressing
 # stay: this is a knitwear (RMG) factory, and the concept adds the fabric story and Bengal craft around them.
-HIDE = ['F003_', 'PL003_', 'F004_', 'PL004_',      # lobby potted tree and small planter
+HIDE = ['F001_', 'F002_',                         # the security desk and its chair in the middle of the arrival (the owner, 7 Nov: not wanted; the curved counter under the stair takes the check-in)
+        'F003_', 'PL003_', 'F004_', 'PL004_',      # lobby potted tree and small planter
         'F015_', 'PL015_', 'F016_', 'PL016_',      # reception potted tree and small planter
         'F029_', 'PL029_',                         # experience-centre potted tree
         'F050_', 'PL050_',                         # boardroom planter
@@ -24,6 +26,18 @@ HIDE = ['F003_', 'PL003_', 'F004_', 'PL004_',      # lobby potted tree and small
 # option A rooms (Merchandising Z07, the Accounts suite in Z06): everything the relocation ledger moves off this floor
 ledger = json.loads((HERE / 'option-a-ledger.json').read_text())
 OPTION_A_HIDE = [n + '_' for m in ledger['moves_off_this_floor'] for n in m['nodes']]
+# the walk-grid cells the hidden security desk and chair blocked (the open floor x 4.95-6.75, z 1.7-3.55 holds nothing else)
+import base64
+_g = json.loads((HERE.parent / 'revised-model' / 'walk_grid.json').read_text()); _bits = base64.b64decode(_g['blocked_bits_base64'])
+_ox, _oz = _g['origin_xz']; _res = _g['res']; _cols = _g['cols']
+def _blocked(i, j): k = j * _cols + i; return (_bits[k >> 3] >> (k & 7)) & 1
+DESK_RELEASE = []
+for _j in range(math.floor((1.7 - _oz) / _res), math.floor((3.55 - _oz) / _res) + 1):
+    _run = None
+    for _i in range(math.floor((4.95 - _ox) / _res), math.floor((6.75 - _ox) / _res) + 1):
+        if _blocked(_i, _j): _run = [_j, _run[1] if _run else _i, _i]
+        elif _run: DESK_RELEASE.append(_run); _run = None
+    if _run: DESK_RELEASE.append(_run)
 
 
 def look(name, room, zone, pos, target, lens, shift_y=0.0):   # shift_y: a rising lens, so a level camera frames upwards with verticals straight
@@ -73,6 +87,7 @@ cameras = [
     look('BEL_CAM_WOVEN_TOUCH', 'Arrival gallery', 'Z01', [4.2, 1.45, 1.3], [0.0, 1.45, 1.38], 28.0, -0.03),       # the terracotta wall and the bench (the second view)
     look('BEL_CAM_WOVEN_BENCH', 'Arrival gallery', 'Z01', [1.0, 0.52, 2.48], [0.34, 0.52, 1.92], 50.0, -0.19),     # the bench's south end: end grain, the trestle joint
     look('BEL_CAM_WOVEN_FIBRE', 'Reception', 'Z02', [11.58, 1.0, 1.25], [11.58, 1.0, 0.25], 50.0, -0.17),          # the fibre story on the console (for the materials board)
+    look('BEL_CAM_WOVEN_COUNTER', 'Arrival gallery', 'Z01', [6.4, 1.5, 4.3], [4.0, 1.5, 3.1], 28.0, -0.15),        # the curved check-in counter under the stair
 ]
 
 names = {
@@ -84,7 +99,7 @@ names = {
 }
 in3d = 'In this 3D proposal: '
 notes = {
-    'Z01': in3d + 'Woven Earth, from the owner\'s brief: the Woven Threshold, six handwoven swags of cleaned cutting waste (jhut) with jute and cotton on a laminated-bamboo frame over the route beside the check-in desk, between the desk and the east glass, lowest point 2.30 m, clear of the lights, the AC unit and the detector, with two narrow spots; one hand-pressed terracotta wall whose raised diamonds follow the Jamdani repeat; a salvaged-hardwood bench on bamboo trestles and a bamboo stool with a cane seat, off the route; one fig tree by the glass entrance. The approved desk, logos and brand wall are unchanged. Makers, fibre sources, the timber and bamboo suppliers and fire performance are still to be identified and tested; the suspension needs the architect\'s and the structural and fire engineers\' review.',
+    'Z01': in3d + 'Woven Earth, from the owner\'s brief: the Woven Threshold, six handwoven swags of cleaned cutting waste (jhut) with jute and cotton on a laminated-bamboo frame over the route beside the check-in desk, between the desk and the east glass, lowest point 2.30 m, clear of the lights, the AC unit and the detector, with two narrow spots; one hand-pressed terracotta wall whose raised diamonds follow the Jamdani repeat; a salvaged-hardwood bench on bamboo trestles and a bamboo stool with a cane seat, off the route; one fig tree by the glass entrance. The check-in leaves the middle (the owner, 7 Nov): a curved counter of hand-pressed terracotta flutes and reclaimed hardwood stands under the high end of the stair, the screen below its ledge, and the middle of the arrival stays open. The approved logos and brand wall are unchanged. Makers, fibre sources, the timber and bamboo suppliers and fire performance are still to be identified and tested; the suspension needs the architect\'s and the structural and fire engineers\' review.',
     'Z02': in3d + 'tea in clay cups on wooden trays, the fibre story on the console (from fibre to second life: cotton, jute, cutting waste sorted by colour, recycled yarn and its knit; illustrative samples), a small fig tree, and the handloom pieces of the approved redesign.',
     'Z03': in3d + 'the Sun wall (sun, solar generation, use and storage, operations, with grid and backup shown) and a terracotta earth wall whose clay bowls hold the raw side of the fabric story: cotton, jute, recycled fibre and indigo. Concept demonstration, not live factory data: "Designed for a Solar-Powered Future" until measured evidence exists.',
     'Z30': in3d + 'the approved knitwear stays (garments in the four bays, the four forms, sample cards, the materials library and the coconut-shell button story). Each form and bay adds its fabric story: cotton, a jute and cotton blend (research only), cutting waste (jhut) sorted by colour and spun again, used garments taken back and mended in kantha stitch. Drinking water from a clay kolshi (source client-stated; no laboratory results yet). Illustrative stories: fibre origins, recycled shares and tests are still to be documented.',
@@ -108,7 +123,7 @@ tour = [
     {'stop': 1, 'zone': None, 'camera': 'CAM_ISO_SE', 'title': 'The whole floor',
      'description': 'A knitwear factory whose fabric comes from the earth and from what was already made, with Bengal craft as its signature: a concept proposal on the approved Stage II floor. The owner chose the pilot (option C) first: the front rooms, the design wing, the studio and the pilot rooms. Merchandising and the accounts suite are shown as option A, a possible later phase.'},
     {'stop': 2, 'zone': 'Z01', 'camera': 'CAM_03_Entrance_Lobby', 'title': 'Arrival gallery · the Woven Threshold',
-     'description': 'Arrive under six handwoven swags of cleaned cutting waste, jute and cotton on a bamboo frame, above the route between the check-in desk and the glass. One terracotta wall, a salvaged-wood bench and one fig tree. Makers, sources and fire tests to be identified.'},
+     'description': 'An open arrival under six handwoven swags of cleaned cutting waste, jute and cotton on a bamboo frame. Check-in at a curved terracotta counter under the stair; one terracotta wall, a salvaged-wood bench and one fig tree. Makers, sources and fire tests to be identified.'},
     {'stop': 3, 'zone': 'Z02', 'camera': 'CAM_01_Reception_A', 'title': 'Reception and Bengali tea',
      'description': 'Tea in clay, the fibre story on the console (cotton, jute, cutting waste, recycled yarn and its knit), handloom on the walls and a small fig tree.'},
     {'stop': 4, 'zone': 'Z03', 'camera': 'BEL_CAM_SUN_WALL', 'title': 'Earth and Sun passage',
@@ -178,6 +193,8 @@ WOVEN = [   # the owner's entrance brief (Woven Earth, 7 Nov 2026): its views, a
      'The arrival camera with no daylight, in the evening scene: the approved linear lights and brand-wall spots, the terracotta wall-washer, and the two narrow spots at full output (by day they run at half). Finding: the front swags glow warm, but the inner layers fall into shadow; a low-angle wash for them is still to be designed by a lighting designer.'),
     ('render_BEL_CAM_WOVEN_TOUCH.jpg', 'render', 'Terracotta wall and bench',
      'One hand-pressed terracotta surface whose raised diamonds follow the Jamdani repeat, drawn by the wall-washer, with the salvaged bench and the bamboo stool off the route.'),
+    ('render_BEL_CAM_WOVEN_COUNTER.jpg', 'render', 'The check-in counter under the stair',
+     'The check-in leaves the middle of the arrival: a curved counter of hand-pressed terracotta flutes and reclaimed hardwood under the high end of the stair, a warm light under its ledge, the screen out of sight below it. 28 mm, eye height.'),
     ('woven-earth/08_materials_board.jpg', 'board', 'Materials, sources, makers and upkeep',
      'What each element is made of, where it would come from and how it is kept. Every source, maker and test is still to be identified: nothing is claimed.'),
 ]
@@ -191,14 +208,14 @@ config = {
     'releaseMode': 'rooms', 'stage': base.get('stage', 4), 'baseModel': base.get('baseModel'),
     'concept': 'bengal-earth-lab', 'conceptZones': CONCEPT_ZONES,
     'conceptOptions': {'drinkware': [{'id': p['id'], 'zone': p['zone'], 'type': p['type'], 'position': p['position'], 'rotationY': p.get('rotationY', 0)}
-                                     for p in drink if p['id'] not in TEA_SET]},
+                                     for p in drink if p['id'] not in TEA_SET | DESK_PROPS]},
     'releaseZones': RELEASE_ZONES, 'interiorZones': ['Z14'], 'screenZones': [], 'cameraOverrides': {},   # Z14: the approved CAD knitwear dressing, as on /realistic/
-    'excludedProps': sorted(set(base.get('excludedProps', [])) | {p['id'] for p in drink}),
+    'excludedProps': sorted(set(base.get('excludedProps', [])) | {p['id'] for p in drink} | DESK_PROPS),
     'excludedInterior': ['MR_FIT_FORMS', 'MR_APPROVAL_BOARD',     # Merchandising items: they move with the team in option A
                          'EC_TEXTILE_BAFFLES'],                    # the cloth fins: natural indigo swags take their place on this route
     'excludedIdentity': ['ID_WATER_POINT'],                      # replaced in place by the clay kolshi
     'peopleManifest': base.get('peopleManifest'), 'peopleAccepted': False,
-    'hideNodes': HIDE + OPTION_A_HIDE, 'walkRelease': ledger['walk_release']['runs'], 'noRenderPhotos': True, 'walkArrows': True,   # on-screen walk arrows on every device (the owner, 31 Oct)
+    'hideNodes': HIDE + OPTION_A_HIDE, 'walkRelease': ledger['walk_release']['runs'] + DESK_RELEASE, 'noRenderPhotos': True, 'walkArrows': True,   # on-screen walk arrows on every device (the owner, 31 Oct)
     'extraCameras': cameras, 'tour': tour, 'roomNames': names, 'roomNotes': notes,
     'roomGroups': {'Z07': 'Option A · later phase', 'Z06': 'Option A · later phase'},   # their own menu group and tour-card kicker (option C, the pilot, was chosen first)
     # images at the tour stops and rooms, by camera, each labelled for what it is:
