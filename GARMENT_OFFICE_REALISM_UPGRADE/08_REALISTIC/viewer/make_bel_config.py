@@ -26,7 +26,7 @@ ledger = json.loads((HERE / 'option-a-ledger.json').read_text())
 OPTION_A_HIDE = [n + '_' for m in ledger['moves_off_this_floor'] for n in m['nodes']]
 
 
-def look(name, room, zone, pos, target, lens):
+def look(name, room, zone, pos, target, lens, shift_y=0.0):   # shift_y: a rising lens, so a level camera frames upwards with verticals straight
     f = [t - p for p, t in zip(pos, target)]; n = math.hypot(*f); f = [v / n for v in f]
     up = [0.0, 1.0, 0.0]
     r = [f[1] * up[2] - f[2] * up[1], f[2] * up[0] - f[0] * up[2], f[0] * up[1] - f[1] * up[0]]; n = math.hypot(*r); r = [v / n for v in r]
@@ -42,7 +42,7 @@ def look(name, room, zone, pos, target, lens):
     else:
         s = math.sqrt(1 + m[2][2] - m[0][0] - m[1][1]) * 2; q = [(m[0][2] + m[2][0]) / s, (m[1][2] + m[2][1]) / s, s / 4, (m[1][0] - m[0][1]) / s]
     return {'name': name, 'room': room, 'zone': zone, 'priority': 2, 'type': 'PERSP', 'position': pos, 'direction': f, 'up': u,
-            'quaternion_xyzw': [round(v, 6) for v in q], 'clip': [0.05, 300.0], 'shift_x': 0.0, 'shift_y': 0.0,
+            'quaternion_xyzw': [round(v, 6) for v in q], 'clip': [0.05, 300.0], 'shift_x': 0.0, 'shift_y': shift_y,
             'sensor_fit': 'AUTO', 'lens': lens, 'sensor_width': 36.0, 'render': {'file': None, 'width': 1920, 'height': 1080}, 'proposal_view': True}
 
 
@@ -66,6 +66,12 @@ cameras = [
     # pilot rooms
     look('BEL_CAM_RECORDS', 'Audit room', 'Z09', [5.7, 1.55, -19.25], [3.9, 1.05, -22.4], 18.0),
     look('BEL_CAM_CAD', 'CAD / technical design', 'Z14', [23.7, 1.55, -1.1], [25.1, 1.3, -6.4], 18.0),
+    # Woven Earth (the owner's brief, 7 Nov 2026): its views besides the arrival camera CAM_03 and the reception camera CAM_01 (reception and its
+    # brand wall): level cameras at eye height with a rising lens where they look up, 28-50 mm
+    look('BEL_CAM_WOVEN_REVERSE', 'Arrival gallery', 'Z01', [7.05, 1.55, 0.32], [6.3, 1.55, 6.27], 28.0, 0.07),    # back towards the entrance
+    look('BEL_CAM_WOVEN_CLOSE', 'Arrival gallery', 'Z01', [5.75, 1.6, 4.25], [7.0, 1.6, 2.4], 35.0, 0.5),          # the woven threshold and its fixings
+    look('BEL_CAM_WOVEN_TOUCH', 'Arrival gallery', 'Z01', [4.2, 1.45, 1.3], [0.0, 1.45, 1.38], 28.0, -0.03),       # the terracotta wall and the bench (the second view)
+    look('BEL_CAM_WOVEN_BENCH', 'Arrival gallery', 'Z01', [1.2, 0.62, 1.3], [0.33, 0.62, 0.68], 50.0, -0.22),      # the bench and its bamboo joinery
 ]
 
 names = {
@@ -77,8 +83,8 @@ names = {
 }
 in3d = 'In this 3D proposal: '
 notes = {
-    'Z01': in3d + 'a banyan bonsai on granite by the glass gate, three stones, handmade terracotta on the check-in desk and six terracotta plaques by a rural artist (placeholder; to be commissioned and credited). The approved logos and brand wall are unchanged.',
-    'Z02': in3d + 'tea in clay cups on wooden trays, rural instruments above the console (ektara, dotara, banshi, dhol; makers to be identified), a small fig tree and ghritokumari, with the handloom pieces of the approved redesign.',
+    'Z01': in3d + 'Woven Earth, from the owner\'s brief: the Woven Threshold, six handwoven swags of cleaned cutting waste (jhut) with jute and cotton on a laminated-bamboo frame over the route beside the check-in desk, between the desk and the east glass, lowest point 2.30 m, clear of the lights, the AC unit and the detector, with two narrow spots; one hand-pressed terracotta wall whose raised diamonds follow the Jamdani repeat; a salvaged-hardwood bench on bamboo trestles and a bamboo stool with a cane seat, off the route; one fig tree by the glass entrance. The approved desk, logos and brand wall are unchanged. Makers, fibre sources, the timber and bamboo suppliers and fire performance are still to be identified and tested; the suspension needs the architect\'s and the structural and fire engineers\' review.',
+    'Z02': in3d + 'tea in clay cups on wooden trays, the fibre story on the console (from fibre to second life: cotton, jute, cutting waste sorted by colour, recycled yarn and its knit; illustrative samples), a small fig tree, and the handloom pieces of the approved redesign.',
     'Z03': in3d + 'the Sun wall (sun, solar generation, use and storage, operations, with grid and backup shown) and a terracotta earth wall whose clay bowls hold the raw side of the fabric story: cotton, jute, recycled fibre and indigo. Concept demonstration, not live factory data: "Designed for a Solar-Powered Future" until measured evidence exists.',
     'Z30': in3d + 'the approved knitwear stays (garments in the four bays, the four forms, sample cards, the materials library and the coconut-shell button story). Each form and bay adds its fabric story: cotton, a jute and cotton blend (research only), cutting waste (jhut) sorted by colour and spun again, used garments taken back and mended in kantha stitch. Drinking water from a clay kolshi (source client-stated; no laboratory results yet). Illustrative stories: fibre origins, recycled shares and tests are still to be documented.',
     'Z08': in3d + 'clay cups at every place and a clay jug instead of glass, the approved knitwear review trays, and a bonsai in the corner by the screen.',
@@ -100,10 +106,10 @@ notes = {
 tour = [
     {'stop': 1, 'zone': None, 'camera': 'CAM_ISO_SE', 'title': 'The whole floor',
      'description': 'A knitwear factory whose fabric comes from the earth and from what was already made, with Bengal craft as its signature: a concept proposal on the approved Stage II floor. The owner chose the pilot (option C) first: the front rooms, the design wing, the studio and the pilot rooms. Merchandising and the accounts suite are shown as option A, a possible later phase.'},
-    {'stop': 2, 'zone': 'Z01', 'camera': 'CAM_03_Entrance_Lobby', 'title': 'Arrival gallery',
-     'description': 'A banyan bonsai on granite by the glass gate, three stones, terracotta on the check-in desk and terracotta plaques by a rural artist (to be commissioned).'},
+    {'stop': 2, 'zone': 'Z01', 'camera': 'CAM_03_Entrance_Lobby', 'title': 'Arrival gallery · the Woven Threshold',
+     'description': 'Arrive under six handwoven swags of cleaned cutting waste, jute and cotton on a bamboo frame, above the route between the check-in desk and the glass. One terracotta wall, a salvaged-wood bench and one fig tree. Makers, sources and fire tests to be identified.'},
     {'stop': 3, 'zone': 'Z02', 'camera': 'CAM_01_Reception_A', 'title': 'Reception and Bengali tea',
-     'description': 'Tea in clay, rural instruments above the console, handloom on the walls, a small fig tree and ghritokumari.'},
+     'description': 'Tea in clay, the fibre story on the console (cotton, jute, cutting waste, recycled yarn and its knit), handloom on the walls and a small fig tree.'},
     {'stop': 4, 'zone': 'Z03', 'camera': 'BEL_CAM_SUN_WALL', 'title': 'Earth and Sun passage',
      'description': 'The Sun wall shows the energy story with grid and backup included (concept, not live data); the earth wall holds the raw side of the fabric story: cotton, jute, recycled fibre and indigo beside clay.'},
     {'stop': 5, 'zone': 'Z30', 'camera': 'CAM_04_Experience_Centre_A', 'title': 'Fabric from the earth, and from waste',
@@ -171,10 +177,11 @@ config = {
     'extraCameras': cameras, 'tour': tour, 'roomNames': names, 'roomNotes': notes,
     'roomGroups': {'Z07': 'Option A · later phase', 'Z06': 'Option A · later phase'},   # their own menu group and tour-card kicker (option C, the pilot, was chosen first)
     # images at the tour stops and rooms, by camera, each labelled for what it is:
-    # 'ai'     - the owner's AI concept images, made with ChatGPT from this route's 3D frames (31 Oct 2026); people are fictional
+    # 'ai'     - the owner's AI concept images, made with ChatGPT from this route's 3D frames (31 Oct 2026); people are fictional. The arrival and
+    #            reception images (CAM_03, CAM_01) show the design before the Woven Earth brief, so those stops now show renders; the files stay
     # 'render' - Blender Cycles renders of this route's own 3D scene (qa/bel-20261030/cycles-render/); no people
     'conceptStills': {**{cam: still(cam + '.jpg', 'ai') for cam in [
-        'CAM_03_Entrance_Lobby', 'CAM_01_Reception_A', 'BEL_CAM_SUN_WALL', 'BEL_CAM_UTHAN', 'BEL_CAM_LAB', 'BEL_CAM_CAD', 'BEL_CAM_TEA',
+        'BEL_CAM_SUN_WALL', 'BEL_CAM_UTHAN', 'BEL_CAM_LAB', 'BEL_CAM_CAD', 'BEL_CAM_TEA',
         'BEL_CAM_PLANT_WALL', 'CAM_09_Boardroom_A', 'CAM_07_MD_Office_A', 'CAM_25_Fabric_Library', 'CAM_23_Sample_Room']},
         **{f.stem[len('render_'):]: still(f.name, 'render') for f in sorted(STILLS_DIR.glob('render_*.jpg'))}},
     'stillsTags': {'ai': 'AI CONCEPT IMAGE &middot; made from the 3D views &middot; people are fictional &middot; not a photograph',

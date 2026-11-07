@@ -4276,6 +4276,178 @@
     "height": 1080
    },
    "proposal_view": true
+  },
+  {
+   "name": "BEL_CAM_WOVEN_REVERSE",
+   "room": "Arrival gallery",
+   "zone": "Z01",
+   "priority": 2,
+   "type": "PERSP",
+   "position": [
+    7.05,
+    1.55,
+    0.32
+   ],
+   "direction": [
+    -0.12506080823181867,
+    0.0,
+    0.9921490786390946
+   ],
+   "up": [
+    0.0,
+    1.0,
+    0.0
+   ],
+   "quaternion_xyzw": [
+    0.0,
+    0.998035,
+    0.0,
+    0.062653
+   ],
+   "clip": [
+    0.05,
+    300.0
+   ],
+   "shift_x": 0.0,
+   "shift_y": 0.07,
+   "sensor_fit": "AUTO",
+   "lens": 28.0,
+   "sensor_width": 36.0,
+   "render": {
+    "file": null,
+    "width": 1920,
+    "height": 1080
+   },
+   "proposal_view": true
+  },
+  {
+   "name": "BEL_CAM_WOVEN_CLOSE",
+   "room": "Arrival gallery",
+   "zone": "Z01",
+   "priority": 2,
+   "type": "PERSP",
+   "position": [
+    5.75,
+    1.6,
+    4.25
+   ],
+   "direction": [
+    0.5598574112779866,
+    0.0,
+    -0.8285889686914203
+   ],
+   "up": [
+    0.0,
+    1.0,
+    0.0
+   ],
+   "quaternion_xyzw": [
+    0.0,
+    -0.292755,
+    -0.0,
+    0.956187
+   ],
+   "clip": [
+    0.05,
+    300.0
+   ],
+   "shift_x": 0.0,
+   "shift_y": 0.5,
+   "sensor_fit": "AUTO",
+   "lens": 35.0,
+   "sensor_width": 36.0,
+   "render": {
+    "file": null,
+    "width": 1920,
+    "height": 1080
+   },
+   "proposal_view": true
+  },
+  {
+   "name": "BEL_CAM_WOVEN_TOUCH",
+   "room": "Arrival gallery",
+   "zone": "Z01",
+   "priority": 2,
+   "type": "PERSP",
+   "position": [
+    4.2,
+    1.45,
+    1.3
+   ],
+   "direction": [
+    -0.9998186434515374,
+    0.0,
+    0.019044164637172102
+   ],
+   "up": [
+    0.0,
+    1.0000000000000002,
+    0.0
+   ],
+   "quaternion_xyzw": [
+    0.0,
+    0.713808,
+    0.0,
+    0.700341
+   ],
+   "clip": [
+    0.05,
+    300.0
+   ],
+   "shift_x": 0.0,
+   "shift_y": -0.03,
+   "sensor_fit": "AUTO",
+   "lens": 28.0,
+   "sensor_width": 36.0,
+   "render": {
+    "file": null,
+    "width": 1920,
+    "height": 1080
+   },
+   "proposal_view": true
+  },
+  {
+   "name": "BEL_CAM_WOVEN_BENCH",
+   "room": "Arrival gallery",
+   "zone": "Z01",
+   "priority": 2,
+   "type": "PERSP",
+   "position": [
+    1.2,
+    0.62,
+    1.3
+   ],
+   "direction": [
+    -0.8143654571940346,
+    0.0,
+    -0.5803523947819558
+   ],
+   "up": [
+    0.0,
+    1.0,
+    0.0
+   ],
+   "quaternion_xyzw": [
+    0.0,
+    0.458065,
+    0.0,
+    0.888919
+   ],
+   "clip": [
+    0.05,
+    300.0
+   ],
+   "shift_x": 0.0,
+   "shift_y": -0.22,
+   "sensor_fit": "AUTO",
+   "lens": 50.0,
+   "sensor_width": 36.0,
+   "render": {
+    "file": null,
+    "width": 1920,
+    "height": 1080
+   },
+   "proposal_view": true
   }
  ],
  "tour": [
@@ -4290,15 +4462,15 @@
    "stop": 2,
    "zone": "Z01",
    "camera": "CAM_03_Entrance_Lobby",
-   "title": "Arrival gallery",
-   "description": "A banyan bonsai on granite by the glass gate, three stones, terracotta on the check-in desk and terracotta plaques by a rural artist (to be commissioned)."
+   "title": "Arrival gallery · the Woven Threshold",
+   "description": "Arrive under six handwoven swags of cleaned cutting waste, jute and cotton on a bamboo frame, above the route between the check-in desk and the glass. One terracotta wall, a salvaged-wood bench and one fig tree. Makers, sources and fire tests to be identified."
   },
   {
    "stop": 3,
    "zone": "Z02",
    "camera": "CAM_01_Reception_A",
    "title": "Reception and Bengali tea",
-   "description": "Tea in clay, rural instruments above the console, handloom on the walls, a small fig tree and ghritokumari."
+   "description": "Tea in clay, the fibre story on the console (cotton, jute, cutting waste, recycled yarn and its knit), handloom on the walls and a small fig tree."
   },
   {
    "stop": 4,
@@ -4463,8 +4635,8 @@
   "Z10": "Exec reception · tea point"
  },
  "roomNotes": {
-  "Z01": "In this 3D proposal: a banyan bonsai on granite by the glass gate, three stones, handmade terracotta on the check-in desk and six terracotta plaques by a rural artist (placeholder; to be commissioned and credited). The approved logos and brand wall are unchanged.",
-  "Z02": "In this 3D proposal: tea in clay cups on wooden trays, rural instruments above the console (ektara, dotara, banshi, dhol; makers to be identified), a small fig tree and ghritokumari, with the handloom pieces of the approved redesign.",
+  "Z01": "In this 3D proposal: Woven Earth, from the owner's brief: the Woven Threshold, six handwoven swags of cleaned cutting waste (jhut) with jute and cotton on a laminated-bamboo frame over the route beside the check-in desk, between the desk and the east glass, lowest point 2.30 m, clear of the lights, the AC unit and the detector, with two narrow spots; one hand-pressed terracotta wall whose raised diamonds follow the Jamdani repeat; a salvaged-hardwood bench on bamboo trestles and a bamboo stool with a cane seat, off the route; one fig tree by the glass entrance. The approved desk, logos and brand wall are unchanged. Makers, fibre sources, the timber and bamboo suppliers and fire performance are still to be identified and tested; the suspension needs the architect's and the structural and fire engineers' review.",
+  "Z02": "In this 3D proposal: tea in clay cups on wooden trays, the fibre story on the console (from fibre to second life: cotton, jute, cutting waste sorted by colour, recycled yarn and its knit; illustrative samples), a small fig tree, and the handloom pieces of the approved redesign.",
   "Z03": "In this 3D proposal: the Sun wall (sun, solar generation, use and storage, operations, with grid and backup shown) and a terracotta earth wall whose clay bowls hold the raw side of the fabric story: cotton, jute, recycled fibre and indigo. Concept demonstration, not live factory data: \"Designed for a Solar-Powered Future\" until measured evidence exists.",
   "Z30": "In this 3D proposal: the approved knitwear stays (garments in the four bays, the four forms, sample cards, the materials library and the coconut-shell button story). Each form and bay adds its fabric story: cotton, a jute and cotton blend (research only), cutting waste (jhut) sorted by colour and spun again, used garments taken back and mended in kantha stitch. Drinking water from a clay kolshi (source client-stated; no laboratory results yet). Illustrative stories: fibre origins, recycled shares and tests are still to be documented.",
   "Z08": "In this 3D proposal: clay cups at every place and a clay jug instead of glass, the approved knitwear review trays, and a bonsai in the corner by the screen.",
@@ -4488,18 +4660,6 @@
   "Z06": "Option A · later phase"
  },
  "conceptStills": {
-  "CAM_03_Entrance_Lobby": {
-   "src": "concept-images/CAM_03_Entrance_Lobby.jpg",
-   "kind": "ai",
-   "thumb": "concept-images/thumbs/CAM_03_Entrance_Lobby.jpg",
-   "model": "concept-images/model/render_CAM_03_Entrance_Lobby.jpg"
-  },
-  "CAM_01_Reception_A": {
-   "src": "concept-images/CAM_01_Reception_A.jpg",
-   "kind": "ai",
-   "thumb": "concept-images/thumbs/CAM_01_Reception_A.jpg",
-   "model": "concept-images/model/render_CAM_01_Reception_A.jpg"
-  },
   "BEL_CAM_SUN_WALL": {
    "src": "concept-images/BEL_CAM_SUN_WALL.jpg",
    "kind": "ai",

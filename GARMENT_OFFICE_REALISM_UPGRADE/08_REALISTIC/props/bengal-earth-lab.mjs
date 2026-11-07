@@ -10,18 +10,27 @@
  * footprint, so the approved walk grid stays valid; new floor items report their footprint through blocksMovement().
  * Usage: buildBengalEarthLab(THREE, { zones, drinkware, anisotropy, detail }) -> { group, items, stats, textures, blocksMovement, dispose }
  * Coordinates: viewer metres, x east, y up, z south (as office_web_metadata.json).
+ * Woven Earth (the owner's entrance brief, 7 Nov 2026): the arrival gallery (Z01) and reception (Z02) follow "Woven Earth / The Woven
+ * Threshold": one woven hero overhead, one terracotta surface, one salvaged-timber bench with a bamboo stool, one plant, a minimal desk.
+ * Items the brief replaces carry `retired` (the reason) and are not built; their code stays, so any of them returns by deleting that line.
+ * Fixtures whose light the Cycles renders simulate carry userData.light ({ type, deg, watts, kelvin, target }); the web view shows the fittings.
  */
 import { knitTile } from './knit-tiles.mjs';
 
 export const BEL_ITEMS = [
-  // arrival: Bengal craft, a few living trees, rural art and music, the Sun wall
-  { id: 'BEL_GATE_BONSAI', zone: 'Z01', note: 'A banyan bonsai on a granite plinth beside the glass gate, in place of the approved potted tree and on its footprint. Grower, species and stone source to be confirmed; it takes turns in daylight at the studio windows.' },
-  { id: 'BEL_LOBBY_STONES', zone: 'Z01', note: 'Three granite stones in place of the approved small planter, on its footprint. Stone only from a documented legal source, never from illegal river extraction.' },
-  { id: 'BEL_EARTH_DESK', zone: 'Z01', note: 'Handmade terracotta tiles on the visitor face of the check-in desk (proposal; potter to be identified).' },
-  { id: 'BEL_LOBBY_RELIEF', zone: 'Z01', note: 'Six terracotta plaques by a rural artist on the free west wall: sun, river boat, shapla, fish, rice and a doel bird. Placeholder composition: the artist is to be commissioned, paid and credited by name.' },
+  // arrival: Woven Earth (the owner's brief, 7 Nov 2026): one woven hero, one terracotta surface, one bench, one plant
+  { id: 'BEL_WOVEN_THRESHOLD', zone: 'Z01', note: 'The Woven Threshold: six handwoven swags of cleaned cutting waste (jhut) with natural jute and cotton, on a loom-like frame of laminated bamboo and straight bamboo culms hung from the deck on black steel rods, above the route between the check-in desk and the east glass. Ecru and sand, with olive, indigo and a little clay as accents; one strip carries a kantha repair. Lowest point 2.30 m; clear of the linear lights, the AC unit, the smoke detector and the brand-wall spots, and lit by two narrow spots. Each swag lifts off its culm for cleaning. Concept: fibre sources, makers and fire performance are still to be identified and tested; structure, sprinkler and detector coverage, egress and maintenance to be confirmed by the architect and the structural and fire engineers before anything is made.' },
+  { id: 'BEL_TERRACOTTA_SURFACE', zone: 'Z01', note: 'One hand-pressed terracotta surface on the free west wall, in place of the six plaques: a field of square tiles whose raised diamonds follow the repeat logic of Jamdani, drawn by a linear wall-washer rather than printed motifs. Local fabricator to be identified; tile weight and fixing to be checked.' },
+  { id: 'BEL_RECLAIMED_BENCH', zone: 'Z01', note: 'A bench of salvaged hardwood (legally salvaged and seasoned, documented, never fresh-felled) on two laminated-bamboo trestles with through-tenons, wedges and dowels, and a light bamboo stool with a cane seat, along the west wall under the terracotta and off the route. Timber source and moisture, bamboo supplier, treatment and load test to be documented.' },
+  { id: 'BEL_ARRIVAL_FIG', zone: 'Z01', note: 'One fig tree in a terracotta planter by the glass entrance, in the daylight of the entrance glass, in place of the approved potted tree and on its footprint. Grower to be identified.' },
+  { id: 'BEL_GATE_BONSAI', zone: 'Z01', retired: 'Woven Earth brief, 7 Nov 2026: one plant only, and the bonsai read accessory-sized; the fig tree BEL_ARRIVAL_FIG takes the footprint.', note: 'A banyan bonsai on a granite plinth beside the glass gate, in place of the approved potted tree and on its footprint. Grower, species and stone source to be confirmed; it takes turns in daylight at the studio windows.' },
+  { id: 'BEL_LOBBY_STONES', zone: 'Z01', retired: 'Woven Earth brief, 7 Nov 2026: accessory-sized; the arrival stays uncluttered.', note: 'Three granite stones in place of the approved small planter, on its footprint. Stone only from a documented legal source, never from illegal river extraction.' },
+  { id: 'BEL_EARTH_DESK', zone: 'Z01', retired: 'Woven Earth brief, 7 Nov 2026: a minimalist check-in desk; the approved desk returns.', note: 'Handmade terracotta tiles on the visitor face of the check-in desk (proposal; potter to be identified).' },
+  { id: 'BEL_LOBBY_RELIEF', zone: 'Z01', retired: 'Woven Earth brief, 7 Nov 2026: culture as method, not motifs; one terracotta surface (BEL_TERRACOTTA_SURFACE) takes the wall.', note: 'Six terracotta plaques by a rural artist on the free west wall: sun, river boat, shapla, fish, rice and a doel bird. Placeholder composition: the artist is to be commissioned, paid and credited by name.' },
   { id: 'BEL_RECEPTION_TREE', zone: 'Z02', note: 'A small fig tree in a handmade terracotta planter, in place of the approved potted tree and on its footprint.' },
-  { id: 'BEL_RECEPTION_ALOE', zone: 'Z02', note: 'Ghritokumari (aloe) in a clay pot on a low stone, in place of the approved small planter: a plant traditionally kept in Bengali homes; no medical claim.' },
-  { id: 'BEL_INSTRUMENTS', zone: 'Z02', note: 'Rural instruments above the console: ektara, dotara and banshi on an oak rail, a dhol on the console. Makers to be identified and credited; played at events, never used as props.' },
+  { id: 'BEL_FIBRE_DISPLAY', zone: 'Z02', note: 'From fibre to second life, on the reception console: raw cotton, jute fibre, cutting waste sorted by colour, recycled yarn and the knit it becomes, on one oak tray. Illustrative samples: fibre sources and recycled shares are still to be documented.' },
+  { id: 'BEL_RECEPTION_ALOE', zone: 'Z02', retired: 'Woven Earth brief, 7 Nov 2026: one plant per space; the approved small planter stays hidden.', note: 'Ghritokumari (aloe) in a clay pot on a low stone, in place of the approved small planter: a plant traditionally kept in Bengali homes; no medical claim.' },
+  { id: 'BEL_INSTRUMENTS', zone: 'Z02', retired: 'Woven Earth brief, 7 Nov 2026: no folk-object clusters; the console shows the fibre story (BEL_FIBRE_DISPLAY). The instruments return on request.', note: 'Rural instruments above the console: ektara, dotara and banshi on an oak rail, a dhol on the console. Makers to be identified and credited; played at events, never used as props.' },
   { id: 'BEL_TEA_CLAY', zone: 'Z02', note: 'Tea in clay cups from a clay pot on a wooden tray, in place of the porcelain props. Glazes to be tested for lead and cadmium release before use.' },
   { id: 'BEL_SUN_WALL', zone: 'Z03', note: 'The Sun wall: sun, solar generation, direct use and storage, operations, with grid and backup shown. Concept demonstration, not live factory data. The message stays "Designed for a Solar-Powered Future" until measured evidence exists.' },
   { id: 'BEL_EARTH_WALL', zone: 'Z03', note: 'Handmade terracotta tiles between the guest WC doors, with a narrow oak ledge of clay bowls holding the raw side of the fabric story: cotton, jute, fibre recovered from cutting waste and natural indigo, beside clay (proposal).' },
@@ -66,7 +75,7 @@ export function buildBengalEarthLab(THREE, { zones = null, drinkware = [], aniso
   const group = new THREE.Group(); group.name = 'BENGAL_EARTH_LAB';
   const overhead = new THREE.Group(); overhead.name = 'BENGAL_EARTH_LAB_OVERHEAD';   // ceiling-hung items: the app hides them with the ceiling in the dollhouse views
   const geometries = [], materials = [], textures = [], footprints = [];
-  const items = BEL_ITEMS.filter(i => !zones || i.zone === '*' || zones.includes(i.zone));
+  const items = BEL_ITEMS.filter(i => !i.retired && (!zones || i.zone === '*' || zones.includes(i.zone)));
   const want = id => items.some(i => i.id === id);
   const px = n => Math.max(32, Math.round(n * detail));
   // ---------------------------------------------------------------- helpers (deterministic, self-made)
@@ -584,7 +593,7 @@ export function buildBengalEarthLab(THREE, { zones = null, drinkware = [], aniso
     return g;
   }
 
-  // ---------------------------------------------------------------- Z01 Entrance lobby
+  // ---------------------------------------------------------------- Z01 Entrance lobby (the Woven Earth items are built further down, after the textile helpers)
   if (want('BEL_GATE_BONSAI')) {
     const g = item('BEL_GATE_BONSAI');   // approved potted tree F003/PL003: x 6.86-7.37, z 4.70-5.21
     plinth(g, 7.115, 4.955, .46, .46, .62);
@@ -1655,6 +1664,189 @@ export function buildBengalEarthLab(THREE, { zones = null, drinkware = [], aniso
     smallTree(g, { x: 29.75, z: -30.3, seed: 31, height: 1.6 }); smallTree(g, { x: 33.48, z: -30.3, seed: 37, height: 1.7 });
     footprint(29.5, -30.73, 33.7, -30.45); footprint(29.5, -30.55, 30.0, -30.05); footprint(33.23, -30.55, 33.73, -30.05);
     add(g, new THREE.PlaneGeometry(.3, .1), card(['Living wall', 'Snake plant, money plant, peace lily', 'Kept indoors by tradition; no medical claim'], { w: .3, h: .1, scale: .8 }), CX, .78, WZ + .006);
+  }
+
+  // ---------------------------------------------------------------- Woven Earth: arrival gallery (Z01) and reception (Z02), the owner's brief of 7 Nov 2026
+  // Arrive under one woven hero, touch timber, bamboo and terracotta, discover the fibre's second life at reception. Geometry lock: the column
+  // grid, beams, deck, glazing, doors, check-in desk, brand wall, linear lights, AC unit and detectors stay exactly as approved.
+  const WE = { ecru: '#ddd2ba', chalk: '#e7dfcd', oat: '#cfbd99', sand: '#bfa57c', jute: '#b8975c', olive: '#636841', indigo: '#4f6187', charcoal: '#333a4f', clay: '#94523a' };
+  const weSteel = std('we_steel', () => ({ color: '#1e1e20', metalness: .55, roughness: .42 }));
+  function laminated(key, along, base = '#c39f63') {   // laminated (engineered) bamboo: pressed strips running along the member ('u' or 'v' of its faces), node marks
+    return std('we_lam_' + key, () => { const S = px(256), c = canvas(S, S), x = c.getContext('2d'), r = rng(401 + key.length * 7);
+      x.fillStyle = base; x.fillRect(0, 0, S, S);
+      const line = (p, w) => along === 'u' ? x.fillRect(0, p, S, w) : x.fillRect(p, 0, w, S), mark = (p, a) => along === 'u' ? x.fillRect(a, p + 2, S / 40, S / 14) : x.fillRect(p + 2, a, S / 14, S / 40);
+      for (let p = 0; p < S; p += Math.round(S / 10 + r() * S / 14)) { x.fillStyle = `rgba(${r() > .5 ? '112,76,32' : '238,208,152'},${.12 + r() * .12})`; line(p, 1.5 + r() * 2); x.fillStyle = 'rgba(100,62,26,.3)'; for (let q = 0; q < 3; q++) mark(p, r() * S); }
+      for (let i = 0; i < S * 2; i++) { x.fillStyle = `rgba(${r() > .5 ? '255,240,210' : '80,52,20'},.05)`; along === 'u' ? x.fillRect(r() * S, r() * S, 6 + r() * 14, 1) : x.fillRect(r() * S, r() * S, 1, 6 + r() * 14); }
+      return { map: tex(c), roughness: .46 }; });
+  }
+  const culm = std('we_culm', () => {   // a straight bamboo culm: fine fibres along it and a node every 0.31 m (texture repeat 4 along a 1.24 m culm)
+    const c = canvas(64, px(256)), x = c.getContext('2d'), r = rng(409), H = c.height; x.fillStyle = '#c9aa6b'; x.fillRect(0, 0, 64, H);
+    for (let X = 0; X < 64; X += 2 + Math.floor(r() * 3)) { x.fillStyle = `rgba(${r() > .5 ? '128,94,44' : '242,216,162'},${.07 + r() * .1})`; x.fillRect(X, 0, 1, H); }
+    const ng = x.createLinearGradient(0, H * .45, 0, H * .55); ng.addColorStop(0, 'rgba(96,64,26,0)'); ng.addColorStop(.5, 'rgba(96,64,26,.6)'); ng.addColorStop(1, 'rgba(96,64,26,0)'); x.fillStyle = ng; x.fillRect(0, H * .45, 64, H * .1);
+    return { map: tex(c, { repeat: [1, 4] }), roughness: .4 }; });
+  const fittingLens = std('spot_lens_led', () => ({ color: '#fff7ea', emissive: '#ffdcae', emissiveIntensity: .9, roughness: .3 }));   // the name marks a real fitting for the Cycles renders
+  // the light a fitting gives, for the Cycles renders: an empty node at the lens carrying userData.light (the page merges the ceiling-hung meshes,
+  // so the definition cannot ride on the lens mesh itself)
+  function lightMarker(name, [x, y, z], light) { const o = new THREE.Object3D(); o.name = name; o.position.set(x, y, z); o.userData.light = light; group.add(o); return o; }
+
+  if (want('BEL_WOVEN_THRESHOLD')) {
+    // the clear ceiling bay between the steel beam (x 6.03-6.16, underside 2.59) and the bulkhead over the east glass (x 7.62), deck 2.895, beside the
+    // check-in desk (z 2.74-3.35): the linear lights (x 5.34), the AC unit (x 5.51-6.17, z 0.93-2.12; its service side stays clear), the smoke detector
+    // (5.89, 3.05) and the brand-wall spots (z 0.9) all lie outside it. The route to reception passes underneath (lowest point 2.30 m); the exit
+    // sign over the entrance stays in view below it, and the whole piece sits inside the arrival camera's first view
+    const g = item('BEL_WOVEN_THRESHOLD'); overhead.add(g);
+    const XW = 6.32, XE = 7.42, ZN = 1.27, ZS = 3.88, YR = 2.74, DECK = 2.895, YT = 2.705, ZK = [1.45, 1.9, 2.35, 2.8, 3.25, 3.7];
+    // the loom-like frame: two laminated-bamboo rails, six straight culms through them, steel collars, saddles, drop rods and deck plates
+    add(g, merged([XW, XE].map(x => [new THREE.BoxGeometry(ZS - ZN, .06, .04), x, YR, (ZN + ZS) / 2, 0, Math.PI / 2, 0])), laminated('rail', 'u'));
+    const culms = []; for (const z of ZK) { culms.push([new THREE.CylinderGeometry(.018, .018, 1.24, 20), (XW + XE) / 2, YR, z, 0, 0, Math.PI / 2]);
+      for (const d of [-.465, -.155, .155, .465]) culms.push([new THREE.CylinderGeometry(.0193, .0193, .008, 20), (XW + XE) / 2 + d, YR, z, 0, 0, Math.PI / 2]); }
+    add(g, merged(culms), culm);
+    const steel = [];
+    for (const z of ZK) for (const x of [XW - .027, XE + .027]) steel.push([new THREE.CylinderGeometry(.021, .021, .012, 16), x, YR, z, 0, 0, Math.PI / 2]);
+    for (const z of [1.675, 2.575, 3.475]) for (const x of [XW, XE]) {
+      steel.push([new THREE.CylinderGeometry(.005, .005, DECK - YR - .036, 8), x, (YR + .03 + DECK - .006) / 2, z], [new THREE.BoxGeometry(.07, .006, .07), x, DECK - .003, z], [new THREE.BoxGeometry(.05, .072, .03), x, YR, z]);
+    }
+    add(g, merged(steel), weSteel);
+    // six swags of handwoven strips: a heading band, 30 warp strips (34 mm) per swag interlaced by four thin weft rows, free hemmed ends. One restrained
+    // rhythm: ecru and sand, with one accent block moving a little further west in each swag (olive, olive, indigo, charcoal indigo, a little clay), then quiet
+    const SW = [
+      { s: .08, L: .25, acc: ['olive', 21, 4], weft: 'ecru', base: ['ecru', 'chalk', 'oat'] },
+      { s: .10, L: .27, acc: ['olive', 16, 5], weft: 'chalk', base: ['sand', 'oat', 'jute', 'oat'] },
+      { s: .12, L: .28, acc: ['indigo', 11, 5], weft: 'sand', base: ['ecru', 'chalk', 'ecru'] },
+      { s: .13, L: .27, acc: ['charcoal', 7, 4], weft: 'ecru', base: ['oat', 'ecru'], mend: 20 },
+      { s: .11, L: .26, acc: ['clay', 4, 3], weft: 'oat', base: ['ecru', 'sand', 'chalk'] },
+      { s: .08, L: .24, acc: null, weft: 'jute', base: ['chalk', 'ecru'] },
+    ];
+    const NS = 30, AW = px(1024), RH = px(176), atlas = canvas(AW, RH * SW.length), hgt = canvas(AW, RH * SW.length), x = atlas.getContext('2d'), h = hgt.getContext('2d'), r = rng(433);
+    h.fillStyle = '#000000'; h.fillRect(0, 0, AW, hgt.height);
+    const pitch = AW / NS, sw = pitch * .88, gapw = (pitch - sw) / 2, head = RH * .06;
+    const threads = (X, Y, w, hh) => { for (let y = Y; y < Y + hh; y += 2) { x.fillStyle = `rgba(${r() > .5 ? '255,250,238' : '58,42,28'},${.035 + r() * .07})`; x.fillRect(X, y, w, 1); } };
+    SW.forEach((sp, k) => {
+      const Y0 = k * RH;
+      for (let i = 0; i < NS; i++) {
+        const accent = sp.acc && i >= sp.acc[1] && i < sp.acc[1] + sp.acc[2], col = WE[accent ? sp.acc[0] : sp.base[Math.floor(r() * sp.base.length)]];
+        const X = i * pitch + gapw + (r() - .5) * 1.2, w = sw * (.97 + r() * .05), end = RH * (1 - r() * .05);
+        x.fillStyle = col; x.fillRect(X, Y0, w, end); threads(X, Y0, w, end);
+        for (let q = 0; q < 5; q++) { x.fillStyle = 'rgba(255,248,230,.22)'; x.fillRect(X + r() * w * .85, Y0 + r() * end, 3 + r() * 6, 1.4); }   // slubs of the handspun weft
+        x.fillStyle = 'rgba(40,28,16,.16)'; x.fillRect(X, Y0, 1.2, end); x.fillRect(X + w - 1.2, Y0, 1.2, end);   // folded selvedges
+        x.fillStyle = 'rgba(42,30,18,.2)'; x.fillRect(X, Y0 + end - 6, w, 6);   // the hem, with its running stitch
+        x.strokeStyle = 'rgba(248,242,226,.75)'; x.lineWidth = 1; x.setLineDash([3, 3]); x.beginPath(); x.moveTo(X + 2, Y0 + end - 9); x.lineTo(X + w - 2, Y0 + end - 9); x.stroke(); x.setLineDash([]);
+        h.fillStyle = '#8c8c8c'; h.fillRect(X, Y0, w, end); h.fillStyle = '#5a5a5a'; h.fillRect(X, Y0, 1.2, end); h.fillRect(X + w - 1.2, Y0, 1.2, end);
+        if (sp.mend === i) {   // a kantha repair: a darned patch held by rows of running stitch in indigo thread
+          const py = Y0 + RH * .66, ph = RH * .16; x.fillStyle = '#dbcfb4'; x.fillRect(X + 2, py, w - 4, ph);
+          x.strokeStyle = WE.indigo; x.lineWidth = 1.4; x.setLineDash([4, 3]); for (let q = 0; q < 5; q++) { x.beginPath(); x.moveTo(X + 3, py + 3 + q * (ph - 6) / 4); x.lineTo(X + w - 3, py + 3 + q * (ph - 6) / 4); x.stroke(); }
+          x.setLineDash([]); h.fillStyle = '#a2a2a2'; h.fillRect(X + 2, py, w - 4, ph);
+        }
+      }
+      x.fillStyle = WE[sp.weft]; x.fillRect(0, Y0, AW, head); threads(0, Y0, AW, head); x.fillStyle = 'rgba(36,26,16,.22)'; x.fillRect(0, Y0 + head, AW, 1.5); h.fillStyle = '#d2d2d2'; h.fillRect(0, Y0, AW, head);
+      for (const [t, bh, shift] of [[.16, .045, 0], [.31, .045, 1], [.46, .045, 0], [.61, .04, 1]]) for (let i = 0; i < NS; i++) {   // weft over one strip and under the next, bridging the gaps
+        const X = i * pitch, y0 = Y0 + RH * t, hh = RH * bh, over = (i + shift) % 2 === 0; x.fillStyle = WE[sp.weft];
+        if (over) { x.fillRect(X, y0, pitch, hh); threads(X, y0, pitch, hh); x.fillStyle = 'rgba(36,26,16,.2)'; x.fillRect(X + gapw, y0 + hh, sw, 1.5); h.fillStyle = '#ffffff'; h.fillRect(X, y0, pitch, hh); }
+        else { x.fillRect(X, y0, gapw + 1, hh); x.fillRect(X + pitch - gapw - 1, y0, gapw + 1, hh); h.fillStyle = '#6e6e6e'; h.fillRect(X, y0, gapw + 1, hh); h.fillRect(X + pitch - gapw - 1, y0, gapw + 1, hh); }
+      }
+    });
+    const swagMat = std('we_swags', () => ({ map: tex(atlas, { clamp: true }), normalMap: tex(normalFromHeight(hgt, 2.2), { srgb: false, clamp: true }), alphaTest: .5, side: THREE.DoubleSide, roughness: .95 }));
+    const XA = XW + .04, WS = XE - XW - .08;   // each swag hangs between the rails' inner faces (x 6.36-7.38), its top edge a shallow catenary under the culm
+    SW.forEach((sp, k) => {
+      const geo = new THREE.PlaneGeometry(1, 1, NS * 6, 6), p = geo.attributes.position, uv = geo.attributes.uv;
+      for (let i = 0; i < p.count; i++) {
+        const u = uv.getX(i), t = 1 - uv.getY(i), c = 1 - (2 * u - 1) ** 2, f = u * NS;
+        const dz = .005 * Math.sin(f * Math.PI * 2) * (.3 + .7 * t) + .012 * Math.sin(u * 7.3 + k * 1.7) * Math.max(0, (t - .6) / .4);   // strips cup a little; free ends waver
+        p.setXYZ(i, XA + u * WS, YT - sp.s * c - t * sp.L, ZK[k] + dz); uv.setXY(i, u, 1 - (k + t) / SW.length);
+      }
+      geo.computeVertexNormals(); add(g, geo, swagMat);
+    });
+    const tapes = [];   // cotton tapes tie each swag to its culm: a wrap at each end and three drops along the sag
+    SW.forEach((sp, k) => { for (const u of [0, .25, .5, .75, 1]) { const c = 1 - (2 * u - 1) ** 2, len = (YR - .018) - (YT - sp.s * c) + .01, X = XA + u * WS;
+      tapes.push([new THREE.CylinderGeometry(.0205, .0205, .016, 16), X, YR, ZK[k], 0, 0, Math.PI / 2]); if (len > .025) tapes.push([new THREE.BoxGeometry(.014, len, .003), X, YR - .018 - len / 2 + .008, ZK[k]]); } });
+    add(g, merged(tapes), std('we_tape', () => ({ color: WE.ecru, roughness: .95, map: weaveMap('plain', [3, 3]) })));
+    // two narrow-beam spots on the deck light the swags from the south (the arrival) and the north (the way out); the beams are simulated in the renders
+    for (const [sx, sz, t, deg, watts] of [[6.87, 4.45, [6.87, 2.4, 2.6], 28, 30], [6.6, 1.05, [6.87, 2.42, 2.3], 28, 20]]) {
+      const f = new THREE.Group(); f.position.set(sx, DECK, sz); g.add(f);
+      add(f, new THREE.CylinderGeometry(.032, .032, .008, 20), weSteel, 0, -.004, 0); add(f, new THREE.CylinderGeometry(.007, .007, .05, 8), weSteel, 0, -.033, 0);
+      const hd = new THREE.Group(); hd.position.set(0, -.085, 0); f.add(hd);
+      hd.quaternion.setFromUnitVectors(new THREE.Vector3(0, -1, 0), new THREE.Vector3(t[0] - sx, t[1] - (DECK - .085), t[2] - sz).normalize());
+      add(hd, new THREE.CylinderGeometry(.03, .026, .1, 20), weSteel);
+      add(hd, new THREE.CircleGeometry(.021, 20), fittingLens, 0, -.0505, 0, Math.PI / 2, 0, 0);
+      const d = new THREE.Vector3(t[0] - sx, t[1] - (DECK - .085), t[2] - sz).normalize();
+      lightMarker('BEL_LIGHT_WOVEN_SPOT', [sx + d.x * .0505, DECK - .085 + d.y * .0505, sz + d.z * .0505], { type: 'SPOT', deg, blend: .5, watts, kelvin: 3000, target: t });
+    }
+  }
+  if (want('BEL_ARRIVAL_FIG')) { const g = item('BEL_ARRIVAL_FIG'); smallTree(g, { x: 7.115, z: 4.955, seed: 29, height: 1.78 }); footprint(6.86, 4.70, 7.37, 5.21); }   // approved F003/PL003: x 6.86-7.37, z 4.70-5.21
+  if (want('BEL_TERRACOTTA_SURFACE')) {
+    // the free west wall (face x 0.0) from the north corner to the stair, z 0.27-2.45, floor to 2.62: 14 x 16 hand-pressed tiles (150 mm, 6 mm lime joints).
+    // Jamdani's repeat (small motifs on a staggered diagonal grid) becomes raised diamonds on single tiles, drawn by a linear wall-washer on the deck
+    const g = item('BEL_TERRACOTTA_SURFACE'), C = 14, R = 16, P = .156, W = C * P, H = R * P, Z0 = .27, Y0 = .124, ZC = Z0 + W / 2, YC = Y0 + H / 2, FACE = .028, DECK = 2.895;
+    const tw = px(1024), th = Math.round(tw * H / W), c = canvas(tw, th), x = c.getContext('2d'), hc = canvas(tw, th), hx = hc.getContext('2d'), r = rng(503), u = tw / C, v = th / R, jt = u * .006 / P;
+    x.fillStyle = '#b7a58a'; x.fillRect(0, 0, tw, th); hx.fillStyle = '#404040'; hx.fillRect(0, 0, tw, th);
+    const inks = ['#95522f', '#8b4b2d', '#a05b38', '#80432a', '#9a583a', '#884b31', '#a6633e', '#8f4f33'];
+    for (let j = 0; j < R; j++) for (let i = 0; i < C; i++) {
+      const X = i * u + jt / 2, Y = j * v + jt / 2, w = u - jt, hh = v - jt; x.fillStyle = inks[Math.floor(r() * inks.length)]; x.fillRect(X, Y, w, hh);
+      const gr = x.createRadialGradient(X + w * (.3 + r() * .4), Y + hh * (.3 + r() * .4), 0, X + w / 2, Y + hh / 2, w * .8); gr.addColorStop(0, 'rgba(255,225,190,.10)'); gr.addColorStop(1, 'rgba(60,22,8,.16)'); x.fillStyle = gr; x.fillRect(X, Y, w, hh);
+      for (let k = 0; k < w * hh / 40; k++) { x.fillStyle = r() > .5 ? 'rgba(62,22,8,.16)' : 'rgba(255,226,192,.12)'; x.fillRect(X + r() * w, Y + r() * hh, 1 + r() * 1.6, 1 + r() * 1.6); }
+      x.strokeStyle = 'rgba(64,26,10,.3)'; x.lineWidth = 1.2; x.strokeRect(X + .6, Y + .6, w - 1.2, hh - 1.2);   // pressed edges
+      hx.fillStyle = '#c8c8c8'; hx.fillRect(X, Y, w, hh); for (let k = 0; k < w * hh / 160; k++) { hx.fillStyle = '#a4a4a4'; hx.beginPath(); hx.arc(X + r() * w, Y + r() * hh, .7 + r() * 1.4, 0, 7); hx.fill(); }
+    }
+    add(g, new THREE.BoxGeometry(FACE - .001, H, W), std('we_tc_body', () => ({ color: '#8d4c2e', roughness: .9 })), (FACE - .001) / 2, YC, ZC);
+    add(g, new THREE.PlaneGeometry(W, H), std('we_terracotta', () => ({ map: tex(c, { clamp: true }), normalMap: tex(normalFromHeight(hc, 2.6), { srgb: false, clamp: true }), roughness: .88 })), FACE, YC, ZC, 0, Math.PI / 2, 0);
+    const relief = [];   // the motif tiles stand 6 mm proud with a raised diamond: rows 2, 4 ... 16 from the floor, every fourth tile, each row shifted by two (a half-drop)
+    for (let m = 0; m < R / 2; m++) for (let a = (m % 2) * 2; a < C; a += 4) {
+      const zt = Z0 + (a + .5) * P, yt = Y0 + (2 * m + 1.5) * P;
+      relief.push([new THREE.BoxGeometry(.006, P - .008, P - .008), FACE + .003, yt, zt], [new THREE.ConeGeometry(.062, .026, 4, 1), FACE + .006 + .013, yt, zt, 0, 0, -Math.PI / 2]);
+    }
+    add(g, merged(relief), std('we_tc_relief', () => ({ color: '#9a5537', roughness: .86, flatShading: true })));
+    // a surface-mounted linear wall-washer on the deck, 0.32 m off the wall: it grazes the tiles from above so the diamonds draw in light and shadow
+    const ww = new THREE.Group(); ww.position.set(.32, DECK, ZC); g.add(ww);
+    add(ww, new THREE.BoxGeometry(.07, .05, W - .1), weSteel, 0, -.025, 0);
+    add(ww, new THREE.PlaneGeometry(.03, W - .14), std('wallwash_led', () => ({ color: '#fff6e6', emissive: '#ffd9a8', emissiveIntensity: .85, roughness: .4, side: THREE.DoubleSide })), -.012, -.0505, 0, Math.PI / 2, 0, 0);
+    lightMarker('BEL_LIGHT_TERRACOTTA_WASH', [.308, DECK - .052, ZC], { type: 'AREA', size: [W - .14, .03], watts: 36, kelvin: 3000, target: [0, 1.05, ZC], long: [0, 0, 1] });
+  }
+  if (want('BEL_RECLAIMED_BENCH')) {
+    // along the west wall under the terracotta, off the route and clear of the north doors (x 1.6-3.8): a 1.70 m salvaged slab, seat 0.45 m,
+    // on two laminated-bamboo trestles (through-tenons with hardwood wedges, the slab fixed with dowels); a light bamboo stool with a cane seat at the corner
+    const g = item('BEL_RECLAIMED_BENCH'), BX = .30, BZ = 1.40, LEN = 1.70, DEP = .40, TH = .075, SEAT = .45;
+    const grain = std('we_salvaged', () => { const c = canvas(px(1024), px(256)), x = c.getContext('2d'), W = c.width, H = c.height, r = rng(521);
+      x.fillStyle = '#6d4b31'; x.fillRect(0, 0, W, H);
+      for (let i = 0; i < 90; i++) { const Y = r() * H; x.strokeStyle = `rgba(${r() > .5 ? '40,24,12' : '170,124,82'},${.1 + r() * .16})`; x.lineWidth = .6 + r() * 2; x.beginPath(); x.moveTo(0, Y); for (let X = 0; X <= W; X += 24) x.lineTo(X, Y + Math.sin(X * .006 + i) * 4 + Math.sin(X * .021 + i * 3) * 1.5); x.stroke(); }
+      for (let k = 0; k < 7; k++) { const X = r() * W, Y = r() * H; x.fillStyle = 'rgba(60,40,26,.35)'; x.beginPath(); x.arc(X, Y, 6, 0, 7); x.fill(); x.fillStyle = 'rgba(25,16,10,.85)'; x.beginPath(); x.arc(X, Y, 2.2 + r() * 1.5, 0, 7); x.fill(); }   // its old fixing holes, kept
+      for (let k = 0; k < 4; k++) { const Y = H * (.2 + r() * .6), X0 = k % 2 ? 0 : W; x.strokeStyle = 'rgba(20,12,6,.7)'; x.lineWidth = 1.6; x.beginPath(); x.moveTo(X0, Y); x.lineTo(X0 + (X0 ? -1 : 1) * W * (.05 + r() * .07), Y + (r() - .5) * 6); x.stroke(); }   // checks running in from the ends
+      return { map: tex(c), roughness: .62 }; });
+    const endGrain = std('we_end_grain', () => { const W = px(512), H = Math.round(W * TH / DEP), c = canvas(W, H), x = c.getContext('2d'), r = rng(523); x.fillStyle = '#7a5537'; x.fillRect(0, 0, W, H);
+      const cx = W * .46, cy = H + W * .9;   // the pith lies below the slab, so the rings arc across the end
+      for (let k = 0; k < 60; k++) { x.strokeStyle = `rgba(${k % 3 ? '58,36,20' : '150,108,70'},${.28 + r() * .2})`; x.lineWidth = 1 + r() * 1.4; x.beginPath(); x.arc(cx, cy, W * .9 + k * H * .045 + r() * 1.5, 0, 7); x.stroke(); }
+      x.strokeStyle = 'rgba(16,9,4,.9)'; x.lineWidth = 2; for (const dx of [-.12, .05, .21]) { x.beginPath(); x.moveTo(cx + dx * W, H); x.lineTo(cx + dx * W * 1.04, H * .25); x.stroke(); }   // controlled checks
+      return { map: tex(c, { clamp: true }), roughness: .8 }; });
+    add(g, new THREE.BoxGeometry(LEN, TH, DEP), [endGrain, endGrain, grain, grain, grain, grain], BX, SEAT - TH / 2, BZ, 0, Math.PI / 2, 0);
+    const bow = new THREE.Shape(); bow.moveTo(-.045, -.022); bow.lineTo(-.045, .022); bow.lineTo(-.012, .009); bow.lineTo(.012, .009); bow.lineTo(.045, .022); bow.lineTo(.045, -.022); bow.lineTo(.012, -.009); bow.lineTo(-.012, -.009); bow.closePath();
+    add(g, new THREE.ShapeGeometry(bow), M.wood, BX + .03, SEAT + .0006, BZ - LEN / 2 + .1, -Math.PI / 2, 0, 0);   // a butterfly key across a check at the north end
+    const legs = [], rails = [], wedges = [], plugs = [];
+    for (const zt of [BZ - LEN / 2 + .26, BZ + LEN / 2 - .26]) {
+      for (const xl of [BX - .13, BX + .13]) legs.push([new THREE.BoxGeometry(.045, SEAT - TH, .06), xl, (SEAT - TH) / 2, zt]);
+      for (const [yr, hr] of [[SEAT - TH - .025, .05], [.08, .04]]) {
+        rails.push([new THREE.BoxGeometry(DEP - .04, hr, .045), BX, yr, zt]);   // through the legs: the tenons stand 27 mm proud, split by a wedge
+        for (const s of [-1, 1]) wedges.push([new THREE.BoxGeometry(.004, hr * .8, .03), BX + s * (DEP / 2 - .021), yr, zt]);
+      }
+      for (const xp of [BX - .08, BX + .08]) plugs.push([new THREE.CylinderGeometry(.008, .008, .002, 14), xp, SEAT + .0005, zt]);
+    }
+    add(g, merged(legs), laminated('leg', 'v')); add(g, merged(rails), laminated('trestle', 'u')); add(g, merged(wedges), M.wood); add(g, merged(plugs), std('we_dowel', () => ({ color: '#9c7552', roughness: .6 })));
+    const st = new THREE.Group(); st.position.set(.62, 0, .30); st.rotation.y = .12; g.add(st);   // the stool: 0.34 m square, seat 0.44 m
+    const sl = [], sr = [];
+    for (const [a, b] of [[-1, -1], [1, -1], [-1, 1], [1, 1]]) sl.push([new THREE.BoxGeometry(.032, .43, .032), a * .152, .215, b * .152]);
+    for (const yy of [.405, .12]) for (const s of [-1, 1]) { sr.push([new THREE.BoxGeometry(.3, .028, .022), 0, yy, s * .152], [new THREE.BoxGeometry(.3, .028, .022), s * .152, yy, 0, 0, Math.PI / 2, 0]); }
+    add(st, merged(sl), laminated('leg', 'v')); add(st, merged(sr), laminated('trestle', 'u'));
+    add(st, new THREE.BoxGeometry(.33, .012, .33), cane, 0, .425, 0);
+    footprint(BX - DEP / 2 - .02, BZ - LEN / 2 - .02, BX + DEP / 2 + .02, BZ + LEN / 2 + .02); footprint(.42, .1, .82, .5);
+  }
+  if (want('BEL_FIBRE_DISPLAY')) {
+    // the reception console F014 (x 10.69-12.53, z 0.03-0.45, top 0.787), between the approved books (x 11.06) and frame (x 12.10): one oak tray, five steps
+    const g = item('BEL_FIBRE_DISPLAY'), T = .787, ZC = .25, Y = T + .012;
+    tray(g, 11.58, T, ZC, .58, .2, 0);
+    add(g, lathe([[0, 0], [.045, 0], [.05, .012], [.055, .022], [.05, .022], [.045, .014], [0, .012]], 24), M.clayRaw, 11.36, Y, ZC); fibreHeap(g, 11.36, Y + .012, ZC, .036, FB.cotton, 5);
+    fibreHeap(g, 11.47, Y, ZC, .034, FB.jute, 7);
+    offcutHeap(g, 11.58, Y, ZC, { r: .045, h: .035, n: 36, colors: ['#3f4c66', '#55688a', '#2a3448'], seed: 9 });
+    yarnCone(g, 11.69, Y, ZC, coneMat('#4a587a'));
+    add(g, new THREE.BoxGeometry(.09, .018, .09), KN.recNavy, 11.8, Y + .009, ZC);
+    standingCard(g, ['From fibre to second life', 'Cotton · jute · cutting waste · yarn · knit', 'Illustrative samples · sources to be documented'], 11.58, T, ZC + .15, 0, { w: .2, h: .09 });
   }
   // the floor finishes go in last, so their occlusion maps hold the contact shadows of everything above
   if (want('BEL_UTHAN')) floorOverlay(group.getObjectByName('BEL_UTHAN'), 'Z07', [9.32, -21.29, 22.0, -10.87], { map: juteFloor('z07', '#cdbb94', 81), repeat: [25, 21], color: '#cfc8bd' });
