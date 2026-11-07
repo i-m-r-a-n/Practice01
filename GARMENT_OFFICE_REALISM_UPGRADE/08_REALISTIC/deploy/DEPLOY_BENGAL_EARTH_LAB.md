@@ -11,7 +11,7 @@ After update 8 the owner wrote: "I don't want that random desk with a computer i
 - **New renders:** the arrival by day and by night, the reverse view, and a view of the counter.
 - **The Woven Earth set** has 9 images.
 
-Deploy request 9 replaces request 8 and goes on issue 12. Its guard has two cases:
+Deploy request 9 replaces request 8. It is on [issue 12](https://github.com/i-m-r-a-n/Practice01/issues/12#issuecomment-6708269353), posted 7 Nov at about 14:40 UTC. Its guard has two cases:
 - A: request 7 live (`a43fd96`, `126baec4…d695`);
 - B: request 8 live (`9565734`, `59ff3d4b…d576`).
 

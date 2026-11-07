@@ -100,8 +100,8 @@ The brief asks for a night lighting check. At night, with no daylight, the two n
 
 ## Release
 
-- **Deploy request 8** is on [issue 12](https://github.com/i-m-r-a-n/Practice01/issues/12#issuecomment-6707393498).
-- **Worker:** `6959ac9`, 10,742 bytes, SHA-256 `59ff3d4b…d576`, serving source `9565734`.
+- **Deploy request 9** is on [issue 12](https://github.com/i-m-r-a-n/Practice01/issues/12#issuecomment-6708269353). It replaces [request 8](https://github.com/i-m-r-a-n/Practice01/issues/12#issuecomment-6707393498) and adds the open arrival.
+- **Worker:** `e97a883`, 10,742 bytes, SHA-256 `4ba0af4a…9ffb`, serving source `8cd621f`.
 - **Checks:** all of them passed before the request (`deploy/DEPLOY_BENGAL_EARTH_LAB.md`, update 8).
 - **Live:** once ChatGPT deploys it, `/stage2-concept/` shows the Woven Earth arrival and `images.html` shows the set.
 
