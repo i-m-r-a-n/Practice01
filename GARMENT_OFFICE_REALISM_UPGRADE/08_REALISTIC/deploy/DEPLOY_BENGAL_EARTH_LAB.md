@@ -24,7 +24,14 @@ Deploy request 8 goes on issue 12. Its guard: request 7 live (source `a43fd96`, 
     - the exit sign in view;
     - walking around the bench and the route;
     - no page errors.
-  - Browser checks on desktop and phone: `qa/bel-20261030/after-1107-*/`.
+  - Browser checks on desktop and phone, all passed (`qa/bel-20261030/after-1107-*/`):
+    - `stills`: stop 2 shows its render; stop 4's AI image and its 3D model view switch; 41 of 41 images load.
+    - `images-page`: 23 stops, 3 rooms and the 8 Woven Earth images; 34 of 34 thumbnails.
+    - `gallery`, `landscape`, `phone-walk` and `arrows` pass.
+    - `tour-play`: all 23 stops.
+  - All 87 files the page requests exist at `9565734` (`after-1107-requests/`).
+  - The Worker file, the page files, `images.html` and two of the new images match raw.githubusercontent.com byte for byte.
+  - The guard held at 12:50 UTC: request 7 live (`a43fd96`); `/realistic/`, `/`, `/app.js` and `/health` unchanged.
 
 ## Update 7: update 6 plus the light images page (live since 1 Nov 2026, 10:05:54 UTC; Cloudflare version `a575814a-27dd-4c96-9f15-e529ceac3eca`; see `LIVE_DEPLOY_2026-11-01.md`)
 
