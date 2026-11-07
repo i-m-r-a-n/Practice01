@@ -1847,7 +1847,7 @@ export function buildBengalEarthLab(THREE, { zones = null, drinkware = [], aniso
     ['#3f4c66', '#55688a', '#2a3448', '#46557a'].forEach((col, k) => add(g, new THREE.BoxGeometry(.075 - k * .006, .005, .055 - k * .004), knit(col), 11.58 + (k % 2 ? .004 : -.003), Y + .0025 + k * .005, ZC + (k % 2 ? -.003 : .002), 0, k * .35, 0));   // offcuts folded and sorted by colour
     yarnCone(g, 11.69, Y, ZC, coneMat('#4a587a'));
     add(g, new THREE.BoxGeometry(.09, .018, .09), KN.recNavy, 11.8, Y + .009, ZC);
-    standingCard(g, ['From fibre to second life', 'Cotton · jute · cutting waste · yarn · knit', 'Illustrative samples · sources to be documented'], 11.58, T, ZC + .15, 0, { w: .2, h: .09 });
+    standingCard(g, ['Second life', 'Cotton, jute, offcuts, yarn', 'and the knit they become', 'Illustrative samples', 'Sources to be documented'], 11.58, T, ZC + .15, 0, { w: .2, h: .13 });   // short lines: the card's type is sized to its width
   }
   // the floor finishes go in last, so their occlusion maps hold the contact shadows of everything above
   if (want('BEL_UTHAN')) floorOverlay(group.getObjectByName('BEL_UTHAN'), 'Z07', [9.32, -21.29, 22.0, -10.87], { map: juteFloor('z07', '#cdbb94', 81), repeat: [25, 21], color: '#cfc8bd' });

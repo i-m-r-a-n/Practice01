@@ -11,14 +11,14 @@ C = R / 'concept-images'; W = C / 'woven-earth'; T = W / 'thumbs'; T.mkdir(paren
 F = lambda s, b=False: ImageFont.truetype(f"/usr/share/fonts/truetype/crosextra/Carlito-{'Bold' if b else 'Regular'}.ttf", s)
 
 before, after = Image.open(C / 'model' / 'render_CAM_03_Entrance_Lobby.jpg').convert('RGB'), Image.open(C / 'render_CAM_03_Entrance_Lobby.jpg').convert('RGB')
-PW = 1200; PH = round(PW * 9 / 16); M = 24; TOP = 96; LB = 64
+PW = 1200; PH = round(PW * 9 / 16); M = 24; TOP = 96; LB = 92
 sheet = Image.new('RGB', (2 * PW + 3 * M, TOP + PH + LB + M), (20, 26, 22)); d = ImageDraw.Draw(sheet)
 d.text((M, 22), 'STAGE II · Zara Fashion · the arrival camera, before and after the Woven Earth brief', font=F(40, True), fill=(240, 235, 222))
 for k, (im, head, sub, col) in enumerate([
         (before, 'Before · the proposal of 1 Nov 2026', 'Bonsai on granite, three stones, six plaques, terracotta on the desk', (226, 196, 140)),
         (after, 'After · Woven Earth, 7 Nov 2026', 'The Woven Threshold beside the check-in desk; one terracotta wall, one bench, one fig tree', (169, 216, 184))]):
     x = M + k * (PW + M); sheet.paste(im.resize((PW, PH), Image.LANCZOS), (x, TOP))
-    d.text((x, TOP + PH + 8), head, font=F(30, True), fill=col); d.text((x + 470 if k == 0 else x + 430, TOP + PH + 12), sub, font=F(24), fill=(214, 222, 216))
+    d.text((x, TOP + PH + 8), head, font=F(30, True), fill=col); d.text((x, TOP + PH + 46), sub, font=F(24), fill=(214, 222, 216))
 d.text((M, TOP - 34), 'Both rendered from the 3D model with the same camera and the same Cycles light (simulated, no people); not photographs.', font=F(24), fill=(190, 200, 194))
 out = W / '01_arrival_before_after.jpg'; sheet.save(out, quality=88, optimize=True, progressive=True); print(out, sheet.size)
 

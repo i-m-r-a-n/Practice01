@@ -72,6 +72,7 @@ cameras = [
     look('BEL_CAM_WOVEN_CLOSE', 'Arrival gallery', 'Z01', [5.75, 1.6, 4.25], [7.0, 1.6, 2.4], 35.0, 0.5),          # the woven threshold and its fixings
     look('BEL_CAM_WOVEN_TOUCH', 'Arrival gallery', 'Z01', [4.2, 1.45, 1.3], [0.0, 1.45, 1.38], 28.0, -0.03),       # the terracotta wall and the bench (the second view)
     look('BEL_CAM_WOVEN_BENCH', 'Arrival gallery', 'Z01', [1.0, 0.52, 2.48], [0.34, 0.52, 1.92], 50.0, -0.19),     # the bench's south end: end grain, the trestle joint
+    look('BEL_CAM_WOVEN_FIBRE', 'Reception', 'Z02', [11.58, 1.0, 1.25], [11.58, 1.0, 0.25], 50.0, -0.17),          # the fibre story on the console (for the materials board)
 ]
 
 names = {
@@ -174,7 +175,7 @@ WOVEN = [   # the owner's entrance brief (Woven Earth, 7 Nov 2026): its views, a
     ('render_CAM_01_Reception_A.jpg', 'render', 'Reception and its brand wall',
      'The approved reception desk and brand wall, tea in clay, the fibre story on the console and a small fig tree.'),
     ('render_CAM_03_Entrance_Lobby_night.jpg', 'render', 'Night check',
-     'The arrival camera with no daylight: the approved linear lights and brand-wall spots, the two narrow spots on the threshold and the wall-washer on the terracotta.'),
+     'The arrival camera with no daylight, in the evening scene: the approved linear lights and brand-wall spots, the terracotta wall-washer, and the two narrow spots at full output (by day they run at half). Finding: the front swags glow warm, but the inner layers fall into shadow; a low-angle wash for them is still to be designed by a lighting designer.'),
     ('render_BEL_CAM_WOVEN_TOUCH.jpg', 'render', 'Terracotta wall and bench',
      'One hand-pressed terracotta surface whose raised diamonds follow the Jamdani repeat, drawn by the wall-washer, with the salvaged bench and the bamboo stool off the route.'),
     ('woven-earth/08_materials_board.jpg', 'board', 'Materials, sources, makers and upkeep',

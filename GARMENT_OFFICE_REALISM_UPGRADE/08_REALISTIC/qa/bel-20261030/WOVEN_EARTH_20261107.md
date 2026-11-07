@@ -76,6 +76,15 @@ All views are rendered from the 3D model in Blender Cycles: simulated light, no 
 - Stops 2 and 3 of the tour now show the renders of CAM_03 and CAM_01.
 - The owner's AI images of those two stops show the design before the brief. They stay in `concept-images/`.
 
+## What the night check found
+
+The brief asks for a night lighting check. At night, with no daylight, the two narrow spots run at full output; by day they run at half.
+
+- The front swags glow warm.
+- The inner layers fall into shadow, because a light from one end of six layered swags is blocked by the swags in front of it.
+- A low-angle wash for the inner layers is still to be designed by a lighting designer. One option is a third spot from the reception side; another is a slim linear wash.
+- The renders show the design as it stands, without a hidden extra light.
+
 ## Honesty and compliance
 
 - Nothing here is claimed as made, sourced, tested or certified. That covers the makers, weavers, fabricator, timber and bamboo suppliers, jhut sources, fibre origins and recycled shares, and the fire tests.

@@ -20,21 +20,22 @@ ROWS = [
      'One hand-pressed terracotta surface on the free west wall: 150 mm square tiles in lime joints; raised diamonds follow the repeat logic of Jamdani. A linear wall-washer (3000 K) on the deck draws them in light and shadow.',
      'Local fabricator: to be identified.',
      'Dusting. Tile weight, fixing and anchorage: to be checked.'),
-    ('Salvaged bench and bamboo stool', 'render_BEL_CAM_WOVEN_BENCH.jpg', (.1, .05, .9, .95),
+    ('Salvaged bench and bamboo stool', 'render_BEL_CAM_WOVEN_BENCH.jpg', (0.0, .3, .65, .99),
      'A salvaged hardwood slab, its end grain, checks and old fixing holes kept, a butterfly key across one check; two laminated-bamboo trestles with through-tenons, hardwood wedges and dowels. A light bamboo stool with a cane seat.',
      'Timber: legally salvaged, seasoned and documented, never fresh-felled; source and moisture content to be documented. Bamboo: verified supplier to be identified.',
      'Low-VOC oil finish, repairable fasteners. Bamboo durability, pest treatment and load test: to be done.'),
-    ('One fig tree', 'render_BEL_CAM_WOVEN_REVERSE.jpg', (.08, .3, .45, 1.0),
+    ('One fig tree', 'render_BEL_CAM_WOVEN_REVERSE.jpg', (.2, .58, .6, .98),
      'One fig tree in a terracotta planter by the glass entrance, on the approved potted tree\'s footprint.',
      'Grower: to be identified.',
      'Daylight from the existing entrance glass only; watering and turning to a care schedule.'),
-    ('From fibre to second life', 'render_CAM_01_Reception_A.jpg', (0.0, .42, .36, .9),
+    ('From fibre to second life', 'render_BEL_CAM_WOVEN_FIBRE.jpg', (0.0, 0.0, 1.0, 1.0),
      'On the reception console, one oak tray: raw cotton, jute fibre, cutting waste sorted by colour, recycled yarn and the knit it becomes.',
      'Illustrative samples. Fibre sources and recycled shares: to be documented.',
      'Samples replaced by documented ones as records arrive.'),
 ]
 LIGHT = ('Light: daylight only through the existing entrance glass; the approved linear lights (3500 K) and brand-wall spots (3000 K) stay; '
-         'two narrow spots (3000 K) on the threshold and one linear wall-washer (3000 K) on the terracotta are the only additions.')
+         'two narrow spots (3000 K) on the threshold and one linear wall-washer (3000 K) on the terracotta are the only additions, '
+         'dimmable: half output by day, full in the evening.')
 FOOT = ('Concept proposal on the approved Stage II floor. The geometry is locked: column grid, beams, ceiling height, glazing, doors, '
         'check-in desk, brand wall and circulation are unchanged. Final design requires architect / engineer review, local fire and '
         'building compliance, and actual contractor quotations. Images rendered from the 3D model (Blender Cycles, simulated light, no people).')
