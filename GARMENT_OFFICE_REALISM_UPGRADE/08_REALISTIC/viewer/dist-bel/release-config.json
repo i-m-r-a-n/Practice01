@@ -4933,6 +4933,11 @@
    "kind": "render",
    "thumb": "concept-images/thumbs/render_BEL_CAM_WOVEN_CLOSE.jpg"
   },
+  "BEL_CAM_WOVEN_COUNTER": {
+   "src": "concept-images/render_BEL_CAM_WOVEN_COUNTER.jpg",
+   "kind": "render",
+   "thumb": "concept-images/thumbs/render_BEL_CAM_WOVEN_COUNTER.jpg"
+  },
   "BEL_CAM_WOVEN_FIBRE": {
    "src": "concept-images/render_BEL_CAM_WOVEN_FIBRE.jpg",
    "kind": "render",
@@ -5008,7 +5013,7 @@
    "src": "concept-images/woven-earth/01_arrival_before_after.jpg",
    "kind": "render",
    "title": "The arrival camera, before and after",
-   "text": "The same camera and light before the brief (the proposal of 1 Nov 2026: bonsai, stones, plaques, terracotta on the desk) and after it: the Woven Threshold beside the check-in desk, over the route to reception.",
+   "text": "The same camera and light before the brief (the proposal of 1 Nov 2026: bonsai, stones, plaques, terracotta on the desk) and after it: the Woven Threshold over the route to reception, the middle of the arrival open, and check-in at a curved terracotta counter under the stair.",
    "thumb": "concept-images/woven-earth/thumbs/01_arrival_before_after.jpg"
   },
   {
@@ -5052,6 +5057,13 @@
    "title": "Terracotta wall and bench",
    "text": "One hand-pressed terracotta surface whose raised diamonds follow the Jamdani repeat, drawn by the wall-washer, with the salvaged bench and the bamboo stool off the route.",
    "thumb": "concept-images/thumbs/render_BEL_CAM_WOVEN_TOUCH.jpg"
+  },
+  {
+   "src": "concept-images/render_BEL_CAM_WOVEN_COUNTER.jpg",
+   "kind": "render",
+   "title": "The check-in counter under the stair",
+   "text": "The check-in leaves the middle of the arrival: a curved counter of hand-pressed terracotta flutes and reclaimed hardwood under the high end of the stair, a warm light under its ledge, the screen out of sight below it. 28 mm, eye height.",
+   "thumb": "concept-images/thumbs/render_BEL_CAM_WOVEN_COUNTER.jpg"
   },
   {
    "src": "concept-images/woven-earth/08_materials_board.jpg",

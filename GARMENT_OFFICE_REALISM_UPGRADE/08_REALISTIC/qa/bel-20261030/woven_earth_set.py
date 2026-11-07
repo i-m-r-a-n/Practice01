@@ -16,7 +16,7 @@ sheet = Image.new('RGB', (2 * PW + 3 * M, TOP + PH + LB + M), (20, 26, 22)); d =
 d.text((M, 22), 'STAGE II · Zara Fashion · the arrival camera, before and after the Woven Earth brief', font=F(40, True), fill=(240, 235, 222))
 for k, (im, head, sub, col) in enumerate([
         (before, 'Before · the proposal of 1 Nov 2026', 'Bonsai on granite, three stones, six plaques, terracotta on the desk', (226, 196, 140)),
-        (after, 'After · Woven Earth, 7 Nov 2026', 'The Woven Threshold beside the check-in desk; one terracotta wall, one bench, one fig tree', (169, 216, 184))]):
+        (after, 'After · Woven Earth, 7 Nov 2026', 'An open arrival under the Woven Threshold; check-in at a terracotta counter under the stair', (169, 216, 184))]):
     x = M + k * (PW + M); sheet.paste(im.resize((PW, PH), Image.LANCZOS), (x, TOP))
     d.text((x, TOP + PH + 8), head, font=F(30, True), fill=col); d.text((x, TOP + PH + 46), sub, font=F(24), fill=(214, 222, 216))
 d.text((M, TOP - 34), 'Both rendered from the 3D model with the same camera and the same Cycles light (simulated, no people); not photographs.', font=F(24), fill=(190, 200, 194))

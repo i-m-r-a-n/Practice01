@@ -180,7 +180,7 @@ def still(name, kind):
     return entry
 WOVEN = [   # the owner's entrance brief (Woven Earth, 7 Nov 2026): its views, all rendered from this 3D model (Cycles), and the materials board
     ('woven-earth/01_arrival_before_after.jpg', 'render', 'The arrival camera, before and after',
-     'The same camera and light before the brief (the proposal of 1 Nov 2026: bonsai, stones, plaques, terracotta on the desk) and after it: the Woven Threshold beside the check-in desk, over the route to reception.'),
+     'The same camera and light before the brief (the proposal of 1 Nov 2026: bonsai, stones, plaques, terracotta on the desk) and after it: the Woven Threshold over the route to reception, the middle of the arrival open, and check-in at a curved terracotta counter under the stair.'),
     ('render_BEL_CAM_WOVEN_REVERSE.jpg', 'render', 'Back towards the entrance',
      'The swags overhead from the reception door, the fig tree in the daylight of the entrance glass, and the exit sign in view below the threshold. 28 mm, eye height.'),
     ('render_BEL_CAM_WOVEN_CLOSE.jpg', 'render', 'The threshold and its fixings',

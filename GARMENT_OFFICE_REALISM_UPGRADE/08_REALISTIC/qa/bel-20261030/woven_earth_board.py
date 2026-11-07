@@ -16,6 +16,10 @@ ROWS = [
      'Six handwoven swags: cleaned cutting waste (jhut) in strips, with natural jute and cotton. Ecru and sand, accents of olive, indigo and a little clay; one strip mended in kantha stitch. A frame of laminated bamboo rails and straight bamboo culms on black steel rods from the deck.',
      'Jhut: traceable, cleaned and sorted by fibre and colour, with a material passport, source to be identified. Weavers: to be identified, paid and credited. Bamboo and steel: suppliers to be identified.',
      'Each swag lifts off its culm for cleaning. Fire suitability of the textile, anchors in the deck, sprinkler and detector coverage, egress and maintenance access: to be confirmed by the fire and structural engineers.'),
+    ('Check-in counter', 'render_BEL_CAM_WOVEN_COUNTER.jpg', (.2, .25, .8, .95),
+     'A curved counter under the high end of the stair: hand-pressed terracotta flutes on the visitor face, a reclaimed-hardwood ledge and work top, the screen below the ledge, a warm linear light under it.',
+     'Local terracotta fabricator and timber source: to be identified.',
+     'Oil the hardwood; dust the flutes. Position and view of the entrance to be confirmed against the security plan.'),
     ('Terracotta wall', 'render_BEL_CAM_WOVEN_TOUCH.jpg', (.28, .02, .78, .92),
      'One hand-pressed terracotta surface on the free west wall: 150 mm square tiles in lime joints; raised diamonds follow the repeat logic of Jamdani. A linear wall-washer (3000 K) on the deck draws them in light and shadow.',
      'Local fabricator: to be identified.',
@@ -34,10 +38,10 @@ ROWS = [
      'Samples replaced by documented ones as records arrive.'),
 ]
 LIGHT = ('Light: daylight only through the existing entrance glass; the approved linear lights (3500 K) and brand-wall spots (3000 K) stay; '
-         'two narrow spots (3000 K) on the threshold and one linear wall-washer (3000 K) on the terracotta are the only additions, '
+         'two narrow spots (3000 K) on the threshold, one linear wall-washer (3000 K) on the terracotta and a warm linear light under the counter ledge are the only additions, '
          'dimmable: half output by day, full in the evening.')
 FOOT = ('Concept proposal on the approved Stage II floor. The geometry is locked: column grid, beams, ceiling height, glazing, doors, '
-        'check-in desk, brand wall and circulation are unchanged. Final design requires architect / engineer review, local fire and '
+        'brand wall and circulation are unchanged; at the owner\'s request the security desk leaves the middle for the counter under the stair. Final design requires architect / engineer review, local fire and '
         'building compliance, and actual contractor quotations. Images rendered from the 3D model (Blender Cycles, simulated light, no people).')
 
 
@@ -57,13 +61,13 @@ def main(dst):
     * {{ box-sizing: border-box }}
     body {{ margin: 0; width: 2480px; height: 1754px; background: #f3efe6; color: #1d2a22; font-family: Inter, "Helvetica Neue", Arial, sans-serif; padding: 70px 90px }}
     .eyebrow {{ margin: 0; font-size: 24px; letter-spacing: .2em; text-transform: uppercase; color: #9a5a3c; font-weight: 700 }}
-    h1 {{ margin: 8px 0 6px; font-size: 64px; line-height: 1.05 }}
-    .lead {{ margin: 0 0 26px; font-size: 27px; color: #45534a }}
-    .row {{ display: grid; grid-template-columns: 330px 300px 1fr 1fr 1fr; gap: 26px; align-items: start; padding: 18px 0; border-top: 2px solid rgba(29, 42, 34, .14) }}
-    .pic img {{ width: 330px; height: 186px; object-fit: cover; border-radius: 10px; display: block }}
+    h1 {{ margin: 6px 0 4px; font-size: 58px; line-height: 1.05 }}
+    .lead {{ margin: 0 0 16px; font-size: 25px; color: #45534a }}
+    .row {{ display: grid; grid-template-columns: 300px 290px 1fr 1fr 1fr; gap: 24px; align-items: start; padding: 12px 0; border-top: 2px solid rgba(29, 42, 34, .14) }}
+    .pic img {{ width: 300px; height: 169px; object-fit: cover; border-radius: 10px; display: block }}
     h2 {{ margin: 6px 0 0; font-size: 33px; line-height: 1.15 }}
     b {{ font-size: 18px; letter-spacing: .14em; text-transform: uppercase; color: #6a6f47 }}
-    p {{ margin: 6px 0 0; font-size: 22px; line-height: 1.38; color: #26332b }}
+    p {{ margin: 4px 0 0; font-size: 20px; line-height: 1.34; color: #26332b }}
     .light {{ margin: 16px 0 0; padding: 14px 20px; border-left: 6px solid #c29a55; background: rgba(194, 154, 85, .14); font-size: 23px; line-height: 1.4 }}
     .foot {{ margin: 14px 0 0; font-size: 20px; line-height: 1.45; color: #4b5850 }}
     </style></head><body>

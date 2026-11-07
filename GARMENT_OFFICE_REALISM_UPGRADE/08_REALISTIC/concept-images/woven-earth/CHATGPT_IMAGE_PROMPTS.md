@@ -16,9 +16,10 @@ The owner's book "Woven Earth" is an AI render brief. These prompts let ChatGPT 
 Use the attached image as the geometric ground truth. It is a render of the 3D model of the ZF Zara Fashion
 Stage II arrival gallery and reception. Make a photoreal editorial interior photograph of exactly this view.
 
-Geometry lock: keep the camera, column grid, steel beams, ceiling height, glazing, doors, check-in desk, brand
-wall and its sign, corridors, floor boundaries and circulation exactly as shown. Do not add, move or remove any
-opening, column, desk, sign or light fitting.
+Geometry lock: keep the camera, column grid, steel beams, ceiling height, glazing, doors, brand wall and its
+sign, corridors, floor boundaries and circulation exactly as shown. The middle of the arrival stays open: check-in
+is the curved terracotta counter under the stair. Do not add, move or remove any opening, column, desk, sign or
+light fitting.
 
 The design is "Woven Earth / The Woven Threshold": serene, modern Bangladeshi industrial interior; gallery-grade,
 quietly monumental; not bohemian, not ethnic-themed, not luxury hotel.
@@ -32,6 +33,8 @@ quietly monumental; not bohemian, not ethnic-themed, not luxury hotel.
 - One salvaged-hardwood bench on laminated-bamboo trestles (through-tenons, hardwood wedges, dowels), a light
   bamboo stool with a cane seat.
 - One real fig tree in a terracotta planter by the entrance glass.
+- A curved check-in counter under the high end of the stair: hand-pressed terracotta flutes, a reclaimed-hardwood
+  ledge, a warm linear light under the ledge, the screen out of sight.
 - Terrazzo floor as shown; off-white plaster; matte black metal; clear glass.
 
 Lighting: daylight only from the existing entrance glass; soft daylight plus linear light at 3000-3500 K; two
@@ -57,15 +60,17 @@ be where it is in the render. Fix any difference first.
 | 4 | A 50 mm detail of the bench and bamboo connection | `render_BEL_CAM_WOVEN_BENCH.jpg` |
 | 5 | Reception and brand wall | `render_CAM_01_Reception_A.jpg` |
 | 6 | A night lighting check | `render_CAM_03_Entrance_Lobby_night.jpg` |
+| + | The check-in counter under the stair | `render_BEL_CAM_WOVEN_COUNTER.jpg` |
 
 ### Prompts for each view (paste after the shared rules)
 
-1. **The arrival camera:** "The first view on entry: the woven swags fill the upper right, framed by the steel beam and the brand wall. Keep the 19 mm framing of the base image."
+1. **The arrival camera:** "The first view on entry: the middle open, the woven swags in the upper right framed by the steel beam and the brand wall, the curved terracotta counter at the left under the stair. Keep the 19 mm framing of the base image."
 2. **Reverse view:** "Looking back towards the glass entrance from the reception door: the swags overhead, the fig tree in the entrance daylight, the exit sign visible below the swags."
 3. **Close view:** "Looking up at the swags and their fixings at eye level: the culms through the rails, the steel saddles and drop rods, the cotton tapes, the weave and the hems sharp. One strip carries a small kantha repair in indigo running stitch."
 4. **Bench detail:** "A 50 mm detail at seat height: the end grain and checks of the salvaged slab, a butterfly key across one check, the bamboo through-tenon split by a hardwood wedge, the dowels. The terracotta wall softly behind."
 5. **Reception:** "The approved reception desk and its brand wall as they are; tea in clay cups on the coffee table; on the console, one oak tray of raw cotton, jute fibre, folded offcuts sorted by colour, recycled yarn and a knit swatch."
-6. **Night check:** "The same arrival view at night: no daylight; the glass is dark; only the linear lights, the brand-wall spots, the two narrow spots on the swags and the terracotta wall-washer light the room. Calm, not theatrical."
+6. **Night check:** "The same arrival view at night: no daylight; the glass is dark; only the linear lights, the brand-wall spots, the two narrow spots on the swags, the counter's ledge light and the terracotta wall-washer light the room. Calm, not theatrical."
++. **Counter:** "The curved check-in counter under the stair, its terracotta flutes grazed by the warm light under the hardwood ledge; the terracotta wall and the stair behind; no people."
 
 ## Correction prompt (from the brief)
 

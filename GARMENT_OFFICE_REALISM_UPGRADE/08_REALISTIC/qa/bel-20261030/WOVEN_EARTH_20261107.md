@@ -40,7 +40,11 @@ It also sets three rules: culture as method, not motifs; sustainability as proof
   - The trestles use through-tenons with hardwood wedges, and dowels fix the slab.
 - **Bamboo stool:** a light laminated-bamboo stool with a cane seat, at the corner beside the bench.
 - **One fig tree:** by the glass entrance, in its daylight, on the approved potted tree's footprint.
-- **Check-in desk:** the approved desk, back to its original face.
+- **Check-in, moved (the owner, 7 Nov, after the brief):** "I don't want that random desk with a computer in the middle of the room at the entrance, I want something else that is eye catching".
+  - The security desk and its chair are hidden on this route. Their floor is walkable again.
+  - Check-in moves to a curved counter under the high end of the stair's return flight. That position follows the owner's own AI image of this view (31 Oct).
+  - The counter has hand-pressed terracotta flutes, a reclaimed-hardwood ledge and work top, the screen below the ledge, and a warm light under it.
+  - The middle of the arrival stays open, so the brand wall reads in full.
 
 ### Reception (Z02)
 
@@ -71,7 +75,8 @@ All views are rendered from the 3D model in Blender Cycles: simulated light, no 
 | 5 | Reception and its brand wall (the approved reception camera) | `render_CAM_01_Reception_A.jpg` |
 | 6 | Night check (the arrival camera, fittings only) | `render_CAM_03_Entrance_Lobby_night.jpg` |
 | 7 | Terracotta wall and bench (the brief's second view) | `render_BEL_CAM_WOVEN_TOUCH.jpg` |
-| 8 | Materials, sources, makers and upkeep (the brief's optional diagram) | `woven-earth/08_materials_board.jpg` |
+| 8 | The check-in counter under the stair (28 mm; the owner's request of 7 Nov) | `render_BEL_CAM_WOVEN_COUNTER.jpg` |
+| 9 | Materials, sources, makers and upkeep (the brief's optional diagram) | `woven-earth/08_materials_board.jpg` |
 
 - Stops 2 and 3 of the tour now show the renders of CAM_03 and CAM_01.
 - The owner's AI images of those two stops show the design before the brief. They stay in `concept-images/`.
