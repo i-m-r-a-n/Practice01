@@ -71,7 +71,7 @@ cameras = [
     look('BEL_CAM_WOVEN_REVERSE', 'Arrival gallery', 'Z01', [7.05, 1.45, 0.32], [6.3, 1.45, 6.27], 28.0, 0.1),     # back towards the entrance
     look('BEL_CAM_WOVEN_CLOSE', 'Arrival gallery', 'Z01', [5.75, 1.6, 4.25], [7.0, 1.6, 2.4], 35.0, 0.5),          # the woven threshold and its fixings
     look('BEL_CAM_WOVEN_TOUCH', 'Arrival gallery', 'Z01', [4.2, 1.45, 1.3], [0.0, 1.45, 1.38], 28.0, -0.03),       # the terracotta wall and the bench (the second view)
-    look('BEL_CAM_WOVEN_BENCH', 'Arrival gallery', 'Z01', [1.2, 0.62, 1.3], [0.33, 0.62, 0.68], 50.0, -0.22),      # the bench and its bamboo joinery
+    look('BEL_CAM_WOVEN_BENCH', 'Arrival gallery', 'Z01', [1.0, 0.52, 2.48], [0.34, 0.52, 1.92], 50.0, -0.19),     # the bench's south end: end grain, the trestle joint
 ]
 
 names = {

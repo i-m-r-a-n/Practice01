@@ -72,7 +72,7 @@ checks = {
     'east_of_beam_and_ac_unit': c['min'][0] >= 6.27 and st['min'][0] >= 6.17,                   # beam x 6.03-6.16, AC unit x 5.51-6.17
     'west_of_east_glass': c['max'][0] <= 7.55 and st['max'][0] <= 7.58,                          # bulkhead over the glass at x 7.62
     'clear_of_brand_wall_spots': c['min'][2] >= 1.2,                                             # spots at z 0.86-1.03
-    'clear_of_linear_lights_and_detector': c['min'][0] - 5.37 >= .8 and c['min'][0] - 5.95 >= .3,  # pendants x 5.30-5.37; detector x 5.83-5.95, z 2.99-3.11
+    'clear_of_linear_lights_and_detector': c['min'][0] - 5.37 >= .8 and c['min'][0] - 5.95 >= .3,  # pendants x 5.30-5.37; detector x 5.83-5.95, z 2.99-3.11 (in the next bay, west of the beam)
     'exit_sign_in_view_from_the_route': all(e['clear'] for e in geo['exitSight']),
     'bench_and_stool_block_walking': all(walk[k] == 'blocked' for k in ('bench_seat', 'bench_front', 'stool', 'fig')),
     'route_and_bench_approach_free': all(walk[k] == 'free' for k in ('route_under_threshold_n', 'route_under_threshold_m', 'route_under_threshold_s', 'way_in', 'before_bench', 'between_bench_and_doors', 'reception_door')),

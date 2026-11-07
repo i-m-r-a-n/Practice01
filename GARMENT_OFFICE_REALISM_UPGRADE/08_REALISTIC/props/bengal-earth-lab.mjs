@@ -19,7 +19,7 @@ import { knitTile } from './knit-tiles.mjs';
 
 export const BEL_ITEMS = [
   // arrival: Woven Earth (the owner's brief, 7 Nov 2026): one woven hero, one terracotta surface, one bench, one plant
-  { id: 'BEL_WOVEN_THRESHOLD', zone: 'Z01', note: 'The Woven Threshold: six handwoven swags of cleaned cutting waste (jhut) with natural jute and cotton, on a loom-like frame of laminated bamboo and straight bamboo culms hung from the deck on black steel rods, above the route between the check-in desk and the east glass. Ecru and sand, with olive, indigo and a little clay as accents; one strip carries a kantha repair. Lowest point 2.30 m; clear of the linear lights, the AC unit, the smoke detector and the brand-wall spots, and lit by two narrow spots. Each swag lifts off its culm for cleaning. Concept: fibre sources, makers and fire performance are still to be identified and tested; structure, sprinkler and detector coverage, egress and maintenance to be confirmed by the architect and the structural and fire engineers before anything is made.' },
+  { id: 'BEL_WOVEN_THRESHOLD', zone: 'Z01', note: 'The Woven Threshold: six handwoven swags of cleaned cutting waste (jhut) with natural jute and cotton, on a loom-like frame of laminated bamboo and straight bamboo culms hung from the deck on black steel rods, above the route between the check-in desk and the east glass. Ecru and sand, with olive, indigo and a little clay as accents; one strip carries a kantha repair. Lowest point 2.30 m; clear of the linear lights, the AC unit (its service side and underside stay free), the smoke detector and the brand-wall spots, and lit by two narrow spots. Each swag lifts off its culm for cleaning. Concept: fibre sources, makers and fire performance are still to be identified and tested; structure, sprinkler and detector coverage (the existing smoke detector is in the next bay, west of the steel beam), egress and maintenance to be confirmed by the architect and the structural and fire engineers before anything is made.' },
   { id: 'BEL_TERRACOTTA_SURFACE', zone: 'Z01', note: 'One hand-pressed terracotta surface on the free west wall, in place of the six plaques: a field of square tiles whose raised diamonds follow the repeat logic of Jamdani, drawn by a linear wall-washer rather than printed motifs. Local fabricator to be identified; tile weight and fixing to be checked.' },
   { id: 'BEL_RECLAIMED_BENCH', zone: 'Z01', note: 'A bench of salvaged hardwood (legally salvaged and seasoned, documented, never fresh-felled) on two laminated-bamboo trestles with through-tenons, wedges and dowels, and a light bamboo stool with a cane seat, along the west wall under the terracotta and off the route. Timber source and moisture, bamboo supplier, treatment and load test to be documented.' },
   { id: 'BEL_ARRIVAL_FIG', zone: 'Z01', note: 'One fig tree in a terracotta planter by the glass entrance, in the daylight of the entrance glass, in place of the approved potted tree and on its footprint. Grower to be identified.' },
@@ -1679,7 +1679,7 @@ export function buildBengalEarthLab(THREE, { zones = null, drinkware = [], aniso
       for (let i = 0; i < S * 2; i++) { x.fillStyle = `rgba(${r() > .5 ? '255,240,210' : '80,52,20'},.05)`; along === 'u' ? x.fillRect(r() * S, r() * S, 6 + r() * 14, 1) : x.fillRect(r() * S, r() * S, 1, 6 + r() * 14); }
       return { map: tex(c), roughness: .46 }; });
   }
-  const culm = std('we_culm', () => {   // a straight bamboo culm: fine fibres along it and a node every 0.31 m (texture repeat 4 along a 1.24 m culm)
+  const culm = std('we_culm', () => {   // a straight bamboo culm: fine fibres along it and a node every 0.30 m (texture repeat 4 along a 1.19 m culm)
     const c = canvas(64, px(256)), x = c.getContext('2d'), r = rng(409), H = c.height; x.fillStyle = '#c9aa6b'; x.fillRect(0, 0, 64, H);
     for (let X = 0; X < 64; X += 2 + Math.floor(r() * 3)) { x.fillStyle = `rgba(${r() > .5 ? '128,94,44' : '242,216,162'},${.07 + r() * .1})`; x.fillRect(X, 0, 1, H); }
     const ng = x.createLinearGradient(0, H * .45, 0, H * .55); ng.addColorStop(0, 'rgba(96,64,26,0)'); ng.addColorStop(.5, 'rgba(96,64,26,.6)'); ng.addColorStop(1, 'rgba(96,64,26,0)'); x.fillStyle = ng; x.fillRect(0, H * .45, 64, H * .1);
@@ -1698,8 +1698,8 @@ export function buildBengalEarthLab(THREE, { zones = null, drinkware = [], aniso
     const XW = 6.32, XE = 7.42, ZN = 1.27, ZS = 3.73, YR = 2.74, DECK = 2.895, YT = 2.705, ZK = [1.45, 1.87, 2.29, 2.71, 3.13, 3.55];
     // the loom-like frame: two laminated-bamboo rails, six straight culms through them, steel collars, saddles, drop rods and deck plates
     add(g, merged([XW, XE].map(x => [new THREE.BoxGeometry(ZS - ZN, .06, .04), x, YR, (ZN + ZS) / 2, 0, Math.PI / 2, 0])), laminated('rail', 'u'));
-    const culms = []; for (const z of ZK) { culms.push([new THREE.CylinderGeometry(.018, .018, 1.24, 20), (XW + XE) / 2, YR, z, 0, 0, Math.PI / 2]);
-      for (const d of [-.465, -.155, .155, .465]) culms.push([new THREE.CylinderGeometry(.0193, .0193, .008, 20), (XW + XE) / 2 + d, YR, z, 0, 0, Math.PI / 2]); }
+    const culms = []; for (const z of ZK) { culms.push([new THREE.CylinderGeometry(.018, .018, 1.19, 20), (XW + XE) / 2, YR, z, 0, 0, Math.PI / 2]);   // 25 mm proud of each rail
+      for (const d of [-.446, -.149, .149, .446]) culms.push([new THREE.CylinderGeometry(.0193, .0193, .008, 20), (XW + XE) / 2 + d, YR, z, 0, 0, Math.PI / 2]); }
     add(g, merged(culms), culm);
     const steel = [];
     for (const z of ZK) for (const x of [XW - .027, XE + .027]) steel.push([new THREE.CylinderGeometry(.021, .021, .012, 16), x, YR, z, 0, 0, Math.PI / 2]);
@@ -1759,7 +1759,7 @@ export function buildBengalEarthLab(THREE, { zones = null, drinkware = [], aniso
     const tapes = [];   // cotton tapes tie each swag to its culm: a wrap at each end and three drops along the sag
     SW.forEach((sp, k) => { for (const u of [0, .25, .5, .75, 1]) { const c = 1 - (2 * u - 1) ** 2, len = (YR - .018) - (YT - sp.s * c) + .01, X = XA + u * WS;
       tapes.push([new THREE.CylinderGeometry(.0205, .0205, .016, 16), X, YR, ZK[k], 0, 0, Math.PI / 2]); if (len > .025) tapes.push([new THREE.BoxGeometry(.014, len, .003), X, YR - .018 - len / 2 + .008, ZK[k]]); } });
-    add(g, merged(tapes), std('we_tape', () => ({ color: WE.ecru, roughness: .95, map: weaveMap('plain', [3, 3]) })));
+    add(g, merged(tapes), std('we_tape', () => ({ color: '#fbf4e4', roughness: .95, map: weaveMap('plain', [3, 3]) })));   // unbleached cotton tape (the weave map darkens it)
     // two narrow-beam spots on the deck light the swags from the south (the arrival) and the north (the way out), aimed down onto the cloth so no
     // beam grazes the deck; the beams are simulated in the renders
     for (const [sx, sz, t, deg, watts] of [[6.87, 4.45, [6.87, 2.3, 3.2], 26, 30], [6.6, 1.05, [6.87, 2.32, 2.0], 26, 20]]) {
@@ -1786,10 +1786,10 @@ export function buildBengalEarthLab(THREE, { zones = null, drinkware = [], aniso
       const gr = x.createRadialGradient(X + w * (.3 + r() * .4), Y + hh * (.3 + r() * .4), 0, X + w / 2, Y + hh / 2, w * .8); gr.addColorStop(0, 'rgba(255,225,190,.10)'); gr.addColorStop(1, 'rgba(60,22,8,.16)'); x.fillStyle = gr; x.fillRect(X, Y, w, hh);
       for (let k = 0; k < w * hh / 40; k++) { x.fillStyle = r() > .5 ? 'rgba(62,22,8,.16)' : 'rgba(255,226,192,.12)'; x.fillRect(X + r() * w, Y + r() * hh, 1 + r() * 1.6, 1 + r() * 1.6); }
       x.strokeStyle = 'rgba(64,26,10,.3)'; x.lineWidth = 1.2; x.strokeRect(X + .6, Y + .6, w - 1.2, hh - 1.2);   // pressed edges
-      hx.fillStyle = '#c8c8c8'; hx.fillRect(X, Y, w, hh); for (let k = 0; k < w * hh / 160; k++) { hx.fillStyle = '#a4a4a4'; hx.beginPath(); hx.arc(X + r() * w, Y + r() * hh, .7 + r() * 1.4, 0, 7); hx.fill(); }
+      hx.fillStyle = '#c8c8c8'; hx.fillRect(X, Y, w, hh); for (let k = 0; k < w * hh / 700; k++) { hx.fillStyle = '#b4b4b4'; hx.beginPath(); hx.arc(X + r() * w, Y + r() * hh, .5 + r() * .8, 0, 7); hx.fill(); }   // a few fine pits
     }
     add(g, new THREE.BoxGeometry(FACE - .001, H, W), std('we_tc_body', () => ({ color: '#8d4c2e', roughness: .9 })), (FACE - .001) / 2, YC, ZC);
-    add(g, new THREE.PlaneGeometry(W, H), std('we_terracotta', () => ({ map: tex(c, { clamp: true }), normalMap: tex(normalFromHeight(hc, 2.6), { srgb: false, clamp: true }), roughness: .88 })), FACE, YC, ZC, 0, Math.PI / 2, 0);
+    add(g, new THREE.PlaneGeometry(W, H), std('we_terracotta', () => ({ map: tex(c, { clamp: true }), normalMap: tex(normalFromHeight(hc, 1.6), { srgb: false, clamp: true }), roughness: .88 })), FACE, YC, ZC, 0, Math.PI / 2, 0);
     const relief = [];   // the motif tiles stand 6 mm proud with a raised diamond: rows 2, 4 ... 16 from the floor, every fourth tile, each row shifted by two (a half-drop)
     for (let m = 0; m < R / 2; m++) for (let a = (m % 2) * 2; a < C; a += 4) {
       const zt = Z0 + (a + .5) * P, yt = Y0 + (2 * m + 1.5) * P;
@@ -1819,7 +1819,7 @@ export function buildBengalEarthLab(THREE, { zones = null, drinkware = [], aniso
       return { map: tex(c, { clamp: true }), roughness: .8 }; });
     add(g, new THREE.BoxGeometry(LEN, TH, DEP), [endGrain, endGrain, grain, grain, grain, grain], BX, SEAT - TH / 2, BZ, 0, Math.PI / 2, 0);
     const bow = new THREE.Shape(); bow.moveTo(-.045, -.022); bow.lineTo(-.045, .022); bow.lineTo(-.012, .009); bow.lineTo(.012, .009); bow.lineTo(.045, .022); bow.lineTo(.045, -.022); bow.lineTo(.012, -.009); bow.lineTo(-.012, -.009); bow.closePath();
-    add(g, new THREE.ShapeGeometry(bow), M.wood, BX + .03, SEAT + .0006, BZ - LEN / 2 + .1, -Math.PI / 2, 0, 0);   // a butterfly key across a check at the north end
+    add(g, new THREE.ShapeGeometry(bow), M.wood, BX + .03, SEAT + .0006, BZ + LEN / 2 - .1, -Math.PI / 2, 0, 0);   // a butterfly key across a check at the south end
     const legs = [], rails = [], wedges = [], plugs = [];
     for (const zt of [BZ - LEN / 2 + .26, BZ + LEN / 2 - .26]) {
       for (const xl of [BX - .13, BX + .13]) legs.push([new THREE.BoxGeometry(.045, SEAT - TH, .06), xl, (SEAT - TH) / 2, zt]);
@@ -1844,7 +1844,7 @@ export function buildBengalEarthLab(THREE, { zones = null, drinkware = [], aniso
     tray(g, 11.58, T, ZC, .58, .2, 0);
     add(g, lathe([[0, 0], [.045, 0], [.05, .012], [.055, .022], [.05, .022], [.045, .014], [0, .012]], 24), M.clayRaw, 11.36, Y, ZC); fibreHeap(g, 11.36, Y + .012, ZC, .036, FB.cotton, 5);
     fibreHeap(g, 11.47, Y, ZC, .034, FB.jute, 7);
-    offcutHeap(g, 11.58, Y, ZC, { r: .045, h: .035, n: 36, colors: ['#3f4c66', '#55688a', '#2a3448'], seed: 9 });
+    ['#3f4c66', '#55688a', '#2a3448', '#46557a'].forEach((col, k) => add(g, new THREE.BoxGeometry(.075 - k * .006, .005, .055 - k * .004), knit(col), 11.58 + (k % 2 ? .004 : -.003), Y + .0025 + k * .005, ZC + (k % 2 ? -.003 : .002), 0, k * .35, 0));   // offcuts folded and sorted by colour
     yarnCone(g, 11.69, Y, ZC, coneMat('#4a587a'));
     add(g, new THREE.BoxGeometry(.09, .018, .09), KN.recNavy, 11.8, Y + .009, ZC);
     standingCard(g, ['From fibre to second life', 'Cotton · jute · cutting waste · yarn · knit', 'Illustrative samples · sources to be documented'], 11.58, T, ZC + .15, 0, { w: .2, h: .09 });
