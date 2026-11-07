@@ -1,6 +1,6 @@
 """A light page of the proposal's tour in images, for phones that cannot run the 3D or are on slow data.
 - Every tour stop's image (an AI concept image or a render of the 3D) with its stop, title, text and kind label.
-- The 3D model view of each AI image, the three room images, and links into the 3D.
+- The 3D model view of each AI image, the three room images, the Woven Earth set (the owner's entrance brief) and links into the 3D.
 - No script is needed; a small one adds a full-screen viewer.
 Written to 08_REALISTIC/images.html and served at /stage2-concept/images.html (the page's loading screen links to it).
 Run after make_concept_thumbs.py and make_bel_config.py:  python3 -I make_images_page.py"""
@@ -13,7 +13,8 @@ HERE = Path(__file__).resolve().parent
 cfg = json.loads((HERE / 'bel-config.json').read_text())
 stills, tour, b = cfg['conceptStills'], cfg['tour'], cfg.get('branding', {})
 KIND = {'ai': ('AI concept image · made from the 3D views · people are fictional · not a photograph', 'ai'),
-        'render': ('Rendered from the 3D model · Blender Cycles, simulated light · no people · not a photograph', 'render')}
+        'render': ('Rendered from the 3D model · Blender Cycles, simulated light · no people · not a photograph', 'render'),
+        'board': ('Diagram · materials, sources, makers and upkeep · nothing here is claimed', 'render')}
 ROOMS = [('CAM_07_MD_Office_A', 'Z12'), ('CAM_25_Fabric_Library', 'Z15'), ('CAM_23_Sample_Room', 'Z17')]
 
 
@@ -23,13 +24,14 @@ def logo(name):   # the client logos, 48 px high (sharp at 24 px), inline so the
 
 
 def card(head, title, text, cam):
-    v = stills[cam]; kind = v.get('kind', 'ai'); label, cls = KIND[kind]
+    v = stills[cam] if isinstance(cam, str) else cam; kind = v.get('kind', 'ai'); label, cls = KIND[kind]
     thumb, full = v.get('thumb') or v['src'], v['src']
-    alt = f"{'AI concept image' if kind == 'ai' else 'Render of the 3D model'}: {title}"
+    with Image.open(HERE.parent / thumb) as im: fit = ' class="fit"' if abs(im.width / im.height - 16 / 9) > .05 else ''   # a wide or tall image shows whole
+    alt = f"{ {'ai': 'AI concept image', 'render': 'Render of the 3D model', 'board': 'Diagram'}[kind]}: {title}"
     model = (f'<a class="model full" href="{escape(v["model"])}" data-label="{escape(KIND["render"][0])}" data-kind="render">'
              '3D model view: the same camera in the 3D</a>') if kind == 'ai' and v.get('model') else ''
     return (f'<article class="card {cls}"><a class="full" href="{escape(full)}" data-label="{escape(label)}" data-kind="{cls}">'
-            f'<img src="{escape(thumb)}" loading="lazy" decoding="async" alt="{escape(alt)}" width="640" height="360"></a>'
+            f'<img{fit} src="{escape(thumb)}" loading="lazy" decoding="async" alt="{escape(alt)}" width="640" height="360"></a>'
             f'<div class="txt"><span class="num">{escape(head)}</span><h2>{escape(title)}</h2>'
             + (f'<p>{escape(text)}</p>' if text else '') + f'<span class="kind">{escape(label)}</span>{model}</div></article>')
 
@@ -38,6 +40,8 @@ stops = ''.join(card(f'Stop {i + 1} of {len(tour)}', t['title'], t.get('descript
 names = {r['zone']: r['name'] for r in json.loads((HERE.parent / 'revised-model' / 'office_web_metadata.json').read_text())['rooms']}
 names.update(cfg.get('roomNames', {}))   # this route's own names first, as on the page
 rooms = ''.join(card('Room', names.get(z, cam), '', cam) for cam, z in ROOMS if cam in stills)
+woven = cfg.get('wovenEarth', [])
+wovens = ''.join(card(f'Woven Earth · {i + 1} of {len(woven)}', w['title'], w.get('text', ''), w) for i, w in enumerate(woven))
 note = cfg.get('galleryNote', '').replace('Tap an image to go there in 3D.', 'Tap an image to see it full screen.')
 foot = re.sub(r'<[^>]+>', '', b.get('disclaimerHtml', '')).replace('&middot;', '·')
 logos = ''.join(f'<img src="{logo(f)}" alt="{a}">' for f, a in (('logo_zara_fashion_profile.png', 'Zara Fashion'), ('logo_stage2_ltd.png', 'Stage II Knitting Apparel Ltd.'),
@@ -70,6 +74,7 @@ h3 {{ margin: 22px 0 10px; font-size: 13px; letter-spacing: .14em; text-transfor
 .grid {{ display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 14px }}
 .card {{ background: var(--card); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column }}
 .card img {{ display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; background: #0d120f }}
+.card img.fit {{ object-fit: contain }}
 .txt {{ padding: 10px 12px 12px; display: flex; flex-direction: column; gap: 4px }}
 .num {{ font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--mint); font-weight: 650 }}
 .card h2 {{ margin: 0; font-size: 17px; line-height: 1.3 }}
@@ -100,6 +105,7 @@ footer {{ margin-top: 26px; padding-bottom: 28px; font-size: 12.5px; color: var(
   <div class="grid">{stops}</div>
   <h3>Rooms with their own image</h3>
   <div class="grid">{rooms}</div>
+  {'<h3>Woven Earth · the arrival from the owner&#39;s entrance brief</h3><div class="grid">' + wovens + '</div>' if wovens else ''}
 </main>
 <footer>{escape(foot)}</footer>
 <div id="view" role="dialog" aria-modal="true" aria-label="Image"><p class="tag"></p><img alt=""><button type="button" aria-label="Close">&times;</button></div>
@@ -119,4 +125,4 @@ footer {{ margin-top: 26px; padding-bottom: 28px; font-size: 12.5px; color: var(
 """
 out = HERE.parent / 'images.html'
 out.write_text(page)
-print(out, len(page), 'bytes,', stops.count('<article'), 'stops,', rooms.count('<article'), 'rooms')
+print(out, len(page), 'bytes,', stops.count('<article'), 'stops,', rooms.count('<article'), 'rooms,', wovens.count('<article'), 'Woven Earth images')

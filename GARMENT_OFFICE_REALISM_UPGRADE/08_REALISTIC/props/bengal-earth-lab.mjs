@@ -1695,7 +1695,7 @@ export function buildBengalEarthLab(THREE, { zones = null, drinkware = [], aniso
     // (5.89, 3.05) and the brand-wall spots (z 0.9) all lie outside it. The route to reception passes underneath (lowest point 2.30 m); the exit
     // sign over the entrance stays in view below it, and the whole piece sits inside the arrival camera's first view
     const g = item('BEL_WOVEN_THRESHOLD'); overhead.add(g);
-    const XW = 6.32, XE = 7.42, ZN = 1.27, ZS = 3.88, YR = 2.74, DECK = 2.895, YT = 2.705, ZK = [1.45, 1.9, 2.35, 2.8, 3.25, 3.7];
+    const XW = 6.32, XE = 7.42, ZN = 1.27, ZS = 3.73, YR = 2.74, DECK = 2.895, YT = 2.705, ZK = [1.45, 1.87, 2.29, 2.71, 3.13, 3.55];
     // the loom-like frame: two laminated-bamboo rails, six straight culms through them, steel collars, saddles, drop rods and deck plates
     add(g, merged([XW, XE].map(x => [new THREE.BoxGeometry(ZS - ZN, .06, .04), x, YR, (ZN + ZS) / 2, 0, Math.PI / 2, 0])), laminated('rail', 'u'));
     const culms = []; for (const z of ZK) { culms.push([new THREE.CylinderGeometry(.018, .018, 1.24, 20), (XW + XE) / 2, YR, z, 0, 0, Math.PI / 2]);
@@ -1703,7 +1703,7 @@ export function buildBengalEarthLab(THREE, { zones = null, drinkware = [], aniso
     add(g, merged(culms), culm);
     const steel = [];
     for (const z of ZK) for (const x of [XW - .027, XE + .027]) steel.push([new THREE.CylinderGeometry(.021, .021, .012, 16), x, YR, z, 0, 0, Math.PI / 2]);
-    for (const z of [1.675, 2.575, 3.475]) for (const x of [XW, XE]) {
+    for (const z of [1.66, 2.5, 3.34]) for (const x of [XW, XE]) {
       steel.push([new THREE.CylinderGeometry(.005, .005, DECK - YR - .036, 8), x, (YR + .03 + DECK - .006) / 2, z], [new THREE.BoxGeometry(.07, .006, .07), x, DECK - .003, z], [new THREE.BoxGeometry(.05, .072, .03), x, YR, z]);
     }
     add(g, merged(steel), weSteel);
@@ -1760,8 +1760,9 @@ export function buildBengalEarthLab(THREE, { zones = null, drinkware = [], aniso
     SW.forEach((sp, k) => { for (const u of [0, .25, .5, .75, 1]) { const c = 1 - (2 * u - 1) ** 2, len = (YR - .018) - (YT - sp.s * c) + .01, X = XA + u * WS;
       tapes.push([new THREE.CylinderGeometry(.0205, .0205, .016, 16), X, YR, ZK[k], 0, 0, Math.PI / 2]); if (len > .025) tapes.push([new THREE.BoxGeometry(.014, len, .003), X, YR - .018 - len / 2 + .008, ZK[k]]); } });
     add(g, merged(tapes), std('we_tape', () => ({ color: WE.ecru, roughness: .95, map: weaveMap('plain', [3, 3]) })));
-    // two narrow-beam spots on the deck light the swags from the south (the arrival) and the north (the way out); the beams are simulated in the renders
-    for (const [sx, sz, t, deg, watts] of [[6.87, 4.45, [6.87, 2.4, 2.6], 28, 30], [6.6, 1.05, [6.87, 2.42, 2.3], 28, 20]]) {
+    // two narrow-beam spots on the deck light the swags from the south (the arrival) and the north (the way out), aimed down onto the cloth so no
+    // beam grazes the deck; the beams are simulated in the renders
+    for (const [sx, sz, t, deg, watts] of [[6.87, 4.45, [6.87, 2.3, 3.2], 26, 30], [6.6, 1.05, [6.87, 2.32, 2.0], 26, 20]]) {
       const f = new THREE.Group(); f.position.set(sx, DECK, sz); g.add(f);
       add(f, new THREE.CylinderGeometry(.032, .032, .008, 20), weSteel, 0, -.004, 0); add(f, new THREE.CylinderGeometry(.007, .007, .05, 8), weSteel, 0, -.033, 0);
       const hd = new THREE.Group(); hd.position.set(0, -.085, 0); f.add(hd);

@@ -68,7 +68,7 @@ cameras = [
     look('BEL_CAM_CAD', 'CAD / technical design', 'Z14', [23.7, 1.55, -1.1], [25.1, 1.3, -6.4], 18.0),
     # Woven Earth (the owner's brief, 7 Nov 2026): its views besides the arrival camera CAM_03 and the reception camera CAM_01 (reception and its
     # brand wall): level cameras at eye height with a rising lens where they look up, 28-50 mm
-    look('BEL_CAM_WOVEN_REVERSE', 'Arrival gallery', 'Z01', [7.05, 1.55, 0.32], [6.3, 1.55, 6.27], 28.0, 0.07),    # back towards the entrance
+    look('BEL_CAM_WOVEN_REVERSE', 'Arrival gallery', 'Z01', [7.05, 1.45, 0.32], [6.3, 1.45, 6.27], 28.0, 0.1),     # back towards the entrance
     look('BEL_CAM_WOVEN_CLOSE', 'Arrival gallery', 'Z01', [5.75, 1.6, 4.25], [7.0, 1.6, 2.4], 35.0, 0.5),          # the woven threshold and its fixings
     look('BEL_CAM_WOVEN_TOUCH', 'Arrival gallery', 'Z01', [4.2, 1.45, 1.3], [0.0, 1.45, 1.38], 28.0, -0.03),       # the terracotta wall and the bench (the second view)
     look('BEL_CAM_WOVEN_BENCH', 'Arrival gallery', 'Z01', [1.2, 0.62, 1.3], [0.33, 0.62, 0.68], 50.0, -0.22),      # the bench and its bamboo joinery
@@ -153,6 +153,7 @@ tour = [
 ]
 
 STILLS_DIR = HERE.parent / 'concept-images'
+CAMERA_NAMES = {c['name'] for c in json.loads((HERE.parent / 'revised-model' / 'office_web_metadata.json').read_text())['cameras']} | {c['name'] for c in cameras}
 def still(name, kind):
     """One stop image: its file, its kind, its 640 px copy for the tour in images when make_concept_thumbs.py has made one,
     and for an AI image the render of the same view in the 3D model when one is in concept-images/model/."""
@@ -161,6 +162,29 @@ def still(name, kind):
     if kind == 'ai' and (STILLS_DIR / 'model' / ('render_' + name)).exists():   # the same view rendered from the 3D model (Cycles), shown on request
         entry['model'] = 'concept-images/model/render_' + name
     return entry
+WOVEN = [   # the owner's entrance brief (Woven Earth, 7 Nov 2026): its views, all rendered from this 3D model (Cycles), and the materials board
+    ('woven-earth/01_arrival_before_after.jpg', 'render', 'The arrival camera, before and after',
+     'The same camera and light before the brief (the proposal of 1 Nov 2026: bonsai, stones, plaques, terracotta on the desk) and after it: the Woven Threshold beside the check-in desk, over the route to reception.'),
+    ('render_BEL_CAM_WOVEN_REVERSE.jpg', 'render', 'Back towards the entrance',
+     'The swags overhead from the reception door, the fig tree in the daylight of the entrance glass, and the exit sign in view below the threshold. 28 mm, eye height.'),
+    ('render_BEL_CAM_WOVEN_CLOSE.jpg', 'render', 'The threshold and its fixings',
+     'Handwoven strips of cleaned cutting waste, jute and cotton on straight bamboo culms through laminated-bamboo rails, black steel rods to deck plates and cotton tapes; one strip mended in kantha stitch. 35 mm.'),
+    ('render_BEL_CAM_WOVEN_BENCH.jpg', 'render', 'The bench and its bamboo joint',
+     'Salvaged hardwood with its end grain, checks and a butterfly key on a laminated-bamboo trestle: a through-tenon split by a hardwood wedge, the slab fixed with dowels, and the bamboo stool with a cane seat. 50 mm.'),
+    ('render_CAM_01_Reception_A.jpg', 'render', 'Reception and its brand wall',
+     'The approved reception desk and brand wall, tea in clay, the fibre story on the console and a small fig tree.'),
+    ('render_CAM_03_Entrance_Lobby_night.jpg', 'render', 'Night check',
+     'The arrival camera with no daylight: the approved linear lights and brand-wall spots, the two narrow spots on the threshold and the wall-washer on the terracotta.'),
+    ('render_BEL_CAM_WOVEN_TOUCH.jpg', 'render', 'Terracotta wall and bench',
+     'One hand-pressed terracotta surface whose raised diamonds follow the Jamdani repeat, drawn by the wall-washer, with the salvaged bench and the bamboo stool off the route.'),
+    ('woven-earth/08_materials_board.jpg', 'board', 'Materials, sources, makers and upkeep',
+     'What each element is made of, where it would come from and how it is kept. Every source, maker and test is still to be identified: nothing is claimed.'),
+]
+def woven(f, kind, title, text):
+    p = STILLS_DIR / f; th = p.parent / 'thumbs' / p.name
+    e = {'src': 'concept-images/' + f, 'kind': kind, 'title': title, 'text': text}
+    if th.exists(): e['thumb'] = th.relative_to(HERE.parent).as_posix()
+    return e
 config = {
     'models': base['models'], 'renders': base['renders'], 'lightmapManifest': base['lightmapManifest'],
     'releaseMode': 'rooms', 'stage': base.get('stage', 4), 'baseModel': base.get('baseModel'),
@@ -183,7 +207,7 @@ config = {
     'conceptStills': {**{cam: still(cam + '.jpg', 'ai') for cam in [
         'BEL_CAM_SUN_WALL', 'BEL_CAM_UTHAN', 'BEL_CAM_LAB', 'BEL_CAM_CAD', 'BEL_CAM_TEA',
         'BEL_CAM_PLANT_WALL', 'CAM_09_Boardroom_A', 'CAM_07_MD_Office_A', 'CAM_25_Fabric_Library', 'CAM_23_Sample_Room']},
-        **{f.stem[len('render_'):]: still(f.name, 'render') for f in sorted(STILLS_DIR.glob('render_*.jpg'))}},
+        **{f.stem[len('render_'):]: still(f.name, 'render') for f in sorted(STILLS_DIR.glob('render_*.jpg')) if f.stem[len('render_'):] in CAMERA_NAMES}},   # a variant (e.g. _night) is no camera's still
     'stillsTags': {'ai': 'AI CONCEPT IMAGE &middot; made from the 3D views &middot; people are fictional &middot; not a photograph',
                    'render': 'RENDERED FROM THE 3D MODEL &middot; Blender Cycles, simulated light &middot; no people &middot; not a photograph'},
     'stillsLabel': 'Show concept images', 'stillsButton': 'Concept image', 'stillsDefaultOn': True,
@@ -192,6 +216,7 @@ config = {
     'imagesPage': 'images.html',   # the light page of the same images (make_images_page.py): linked from the loading screen and from a failure message
     'galleryNote': 'Gold: AI concept images made from the 3D views; the people in them are fictional and details can differ from the 3D. Green: rendered from the 3D model itself, with simulated light and no people. None of them is a photograph. Tap an image to go there in 3D.',
     'galleryKinds': {'ai': 'AI concept image · fictional people', 'render': 'Rendered from the 3D model · no people'},
+    'wovenEarth': [woven(*w) for w in WOVEN if (STILLS_DIR / w[0]).exists()],   # the light images page and the PDF show this set after the tour
     'canvasFilter': 'saturate(1.07) sepia(0.06) contrast(1.03) brightness(1.03)',   # warmer, closer to the renders and concept images (A/B on reception and the tea stall, 31 Oct)
     'branding': {
         'pageTitle': 'STAGE II · Zara Fashion - ground floor concept',   # the owner, 30 Oct: STAGE II / Zara Fashion branding only
