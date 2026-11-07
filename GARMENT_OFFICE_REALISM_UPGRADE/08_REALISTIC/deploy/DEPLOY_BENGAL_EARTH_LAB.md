@@ -12,7 +12,7 @@ The owner sent the "Woven Earth" entrance brief (19 pages): "Use this as the pro
 - **Images page and PDF:** both carry the 8-image Woven Earth set.
 - Only the proposal route changes.
 
-Deploy request 8 goes on issue 12. Its guard: request 7 live (source `a43fd96`, script `126baec4…d695`).
+Deploy request 8 is on [issue 12](https://github.com/i-m-r-a-n/Practice01/issues/12#issuecomment-6707393498), posted 7 Nov at about 13:05 UTC. Its guard: request 7 live (source `a43fd96`, script `126baec4…d695`).
 
 - **Source commit:** `95657348a950b57652065dc352a7e9b7ac67d76e`
 - **Worker file:** `deploy/worker-bengal-earth-lab.js`, 10,742 bytes, SHA-256 `59ff3d4bf626a5b92075aaef8f22c0dd02071eb5dc6f73621c510f8b9cd9d576`. It differs from update 7's file only in the source commit.

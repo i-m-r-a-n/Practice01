@@ -93,6 +93,13 @@ The brief asks for a night lighting check. At night, with no daylight, the two n
 - The textile needs a fire-suitability test.
 - Sprinkler and detector coverage, egress and maintenance access need the fire engineer.
 
+## Release
+
+- **Deploy request 8** is on [issue 12](https://github.com/i-m-r-a-n/Practice01/issues/12#issuecomment-6707393498).
+- **Worker:** `6959ac9`, 10,742 bytes, SHA-256 `59ff3d4b…d576`, serving source `9565734`.
+- **Checks:** all of them passed before the request (`deploy/DEPLOY_BENGAL_EARTH_LAB.md`, update 8).
+- **Live:** once ChatGPT deploys it, `/stage2-concept/` shows the Woven Earth arrival and `images.html` shows the set.
+
 ## Files
 
 - **3D:** `props/bengal-earth-lab.mjs` (the Woven Earth section, the `retired` flags and `lightMarker`) and `viewer/make_bel_config.py` (notes, stop texts, the four new cameras, the `wovenEarth` set).
