@@ -1,0 +1,290 @@
+{
+ "checks": {
+  "items_z01_z02_exactly_the_brief": true,
+  "retired_items_absent": true,
+  "threshold_built": true,
+  "lowest_point_at_least_2_30": true,
+  "below_the_deck": true,
+  "east_of_beam_and_ac_unit": true,
+  "west_of_east_glass": true,
+  "clear_of_brand_wall_spots": true,
+  "clear_of_linear_lights_and_detector": true,
+  "exit_sign_in_view_from_the_route": true,
+  "bench_and_stool_block_walking": true,
+  "route_and_bench_approach_free": true,
+  "terracotta_on_west_wall": true,
+  "bench_off_the_route": true,
+  "fibre_display_on_console": true,
+  "fittings_carry_light": true,
+  "desk_hidden_middle_open": true,
+  "counter_under_the_stair": true,
+  "brand_wall_in_view": true,
+  "no_page_errors": true
+ },
+ "passed": true,
+ "items": {
+  "Z01": [
+   "BEL_ARRIVAL_FIG",
+   "BEL_EARTH_COUNTER",
+   "BEL_RECLAIMED_BENCH",
+   "BEL_TERRACOTTA_SURFACE",
+   "BEL_WOVEN_THRESHOLD"
+  ],
+  "Z02": [
+   "BEL_FIBRE_DISPLAY",
+   "BEL_RECEPTION_TREE",
+   "BEL_TEA_CLAY"
+  ]
+ },
+ "geometry": {
+  "canopy": {
+   "n": 4,
+   "min": [
+    6.275,
+    2.305,
+    1.27
+   ],
+   "max": [
+    7.465,
+    2.77,
+    3.73
+   ]
+  },
+  "swags": {
+   "n": 1,
+   "min": [
+    6.36,
+    2.305,
+    1.434
+   ],
+   "max": [
+    7.38,
+    2.705,
+    3.566
+   ]
+  },
+  "canopySteel": {
+   "n": 2,
+   "min": [
+    6.285,
+    2.704,
+    0.992
+   ],
+   "max": [
+    7.455,
+    2.895,
+    5.056
+   ]
+  },
+  "terracotta": {
+   "n": 3,
+   "min": [
+    -0.0,
+    0.124,
+    0.27
+   ],
+   "max": [
+    0.06,
+    2.62,
+    2.454
+   ]
+  },
+  "bench": {
+   "n": 9,
+   "min": [
+    0.1,
+    -0.0,
+    0.113
+   ],
+   "max": [
+    0.807,
+    0.451,
+    2.25
+   ]
+  },
+  "fibre": {
+   "n": 17,
+   "min": [
+    11.29,
+    0.787,
+    0.15
+   ],
+   "max": [
+    11.87,
+    0.989,
+    0.412
+   ]
+  },
+  "fig": {
+   "n": 6,
+   "min": [
+    6.745,
+    0,
+    4.609
+   ],
+   "max": [
+    7.485,
+    1.868,
+    5.329
+   ]
+  },
+  "counter": {
+   "n": 12,
+   "min": [
+    3.003,
+    -0.0,
+    2.243
+   ],
+   "max": [
+    4.155,
+    1.075,
+    4
+   ]
+  },
+  "deskVisible": false,
+  "lights": [
+   {
+    "name": "BEL_LIGHT_WOVEN_SPOT",
+    "type": "SPOT",
+    "at": [
+     6.87,
+     2.798,
+     4.951
+    ]
+   },
+   {
+    "name": "BEL_LIGHT_WOVEN_SPOT",
+    "type": "SPOT",
+    "at": [
+     6.612,
+     2.788,
+     1.094
+    ]
+   },
+   {
+    "name": "BEL_LIGHT_TERRACOTTA_WASH",
+    "type": "AREA",
+    "at": [
+     0.308,
+     2.843,
+     1.362
+    ]
+   },
+   {
+    "name": "BEL_LIGHT_COUNTER_LEDGE",
+    "type": "AREA",
+    "at": [
+     4.063,
+     1.02,
+     2.425
+    ]
+   },
+   {
+    "name": "BEL_LIGHT_COUNTER_LEDGE",
+    "type": "AREA",
+    "at": [
+     4.134,
+     1.02,
+     2.793
+    ]
+   },
+   {
+    "name": "BEL_LIGHT_COUNTER_LEDGE",
+    "type": "AREA",
+    "at": [
+     4.115,
+     1.02,
+     3.167
+    ]
+   },
+   {
+    "name": "BEL_LIGHT_COUNTER_LEDGE",
+    "type": "AREA",
+    "at": [
+     4.005,
+     1.02,
+     3.526
+    ]
+   },
+   {
+    "name": "BEL_LIGHT_COUNTER_LEDGE",
+    "type": "AREA",
+    "at": [
+     3.812,
+     1.02,
+     3.847
+    ]
+   }
+  ],
+  "exitSight": [
+   {
+    "from": [
+     7.3,
+     1.6,
+     1.2
+    ],
+    "clear": true,
+    "first": null
+   },
+   {
+    "from": [
+     6.9,
+     1.6,
+     2
+    ],
+    "clear": true,
+    "first": null
+   },
+   {
+    "from": [
+     6.9,
+     1.6,
+     2.9
+    ],
+    "clear": true,
+    "first": null
+   },
+   {
+    "from": [
+     6.8,
+     1.6,
+     3.6
+    ],
+    "clear": true,
+    "first": null
+   },
+   {
+    "from": [
+     5.8,
+     1.6,
+     2.3
+    ],
+    "clear": true,
+    "first": null
+   }
+  ],
+  "logoSight": {
+   "material": "logo_zf",
+   "distance": 5.64,
+   "of": 5.63
+  }
+ },
+ "walk": {
+  "bench_seat": "blocked",
+  "bench_front": "blocked",
+  "stool": "blocked",
+  "fig": "blocked",
+  "route_under_threshold_n": "free",
+  "route_under_threshold_m": "free",
+  "route_under_threshold_s": "free",
+  "way_in": "free",
+  "before_bench": "free",
+  "between_bench_and_doors": "free",
+  "reception_door": "free",
+  "old_desk_spot": "free",
+  "old_chair_spot": "free",
+  "before_counter": "free",
+  "counter": "blocked"
+ },
+ "errors": []
+}

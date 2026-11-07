@@ -19,7 +19,15 @@ Deploy request 9 replaces request 8 and goes on issue 12. Its guard has two case
 - **Worker file:** `deploy/worker-bengal-earth-lab.js`, 10,742 bytes, SHA-256 `4ba0af4aeeb5ca293bec5c793749c9e72ed50c33180fc727c798c3a4024c9ffb`. It differs from updates 7 and 8 only in the source commit.
 - **Checks:**
   - `test_worker_bel.mjs`: 67 checks, against the Workers of update 7 and update 8. `test_worker.mjs`: 41 checks.
-  - Browser checks: `qa/bel-20261030/after-1107c-*/`.
+  - `woven_check.py`: 20 of 20 (`after-1107c-woven/`). It adds the open middle, the counter under the stair and the brand wall in view.
+  - Browser checks on desktop and phone, all passed (`qa/bel-20261030/after-1107c-*/`):
+    - `stills`: 42 of 42 images load.
+    - `images-page`: 9 Woven Earth images.
+    - `gallery`, `landscape`, `phone-walk` and `arrows` pass.
+    - `tour-play`: all 23 stops.
+  - All 89 files the page requests exist at `8cd621f` (`after-1107c-requests/`).
+  - The Worker file, the page files, `images.html` and two of the new images match raw.githubusercontent.com.
+  - The guard held at 14:02 UTC: request 7 live (case A).
 
 ## Update 8: Woven Earth at the arrival gallery and reception (prepared 7 Nov 2026; not yet live)
 

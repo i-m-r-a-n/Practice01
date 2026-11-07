@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8790/stage2-concept/?welcome=0",
+  "scope": "LOCAL Chromium (SwiftShader) via serve_preview.py; not live, Safari or phone hardware proof",
+  "runs": {
+    "desktop": {
+      "overview_hidden": true,
+      "walk_shown": true,
+      "walk_speed_while_held": 0.14,
+      "walk_moved_m": 0.06,
+      "overview_again_hidden": true,
+      "room_mode": "rooms",
+      "room_shown": true,
+      "room_speed_while_held": 1.4,
+      "room_moved_m": 1.56,
+      "after_room_press_mode": "walk",
+      "tour_hidden": true,
+      "passed": true
+    },
+    "phone": {
+      "overview_hidden": true,
+      "walk_shown": true,
+      "walk_speed_while_held": 0.75,
+      "walk_moved_m": 0.07,
+      "overview_again_hidden": true,
+      "room_mode": "rooms",
+      "room_shown": true,
+      "room_speed_while_held": 1.37,
+      "room_moved_m": 0.33,
+      "after_room_press_mode": "walk",
+      "tour_hidden": true,
+      "passed": true
+    }
+  },
+  "errors": [],
+  "passed": true
+}
