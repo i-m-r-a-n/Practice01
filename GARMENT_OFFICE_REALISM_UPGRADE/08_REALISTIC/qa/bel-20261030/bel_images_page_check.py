@@ -1,5 +1,7 @@
 """The light images page of the proposal route (images.html, 1 Nov 2026), LOCAL Chromium via serve_preview.py, desktop and phone:
-- 23 stop cards in tour order and 3 room cards, each with its title and kind label; every thumbnail loads; the 12 AI images link their 3D model view;
+- 23 stop cards in tour order and 3 room cards, each with its title and kind label; every thumbnail loads; each AI image links its 3D model view;
+- the Woven Earth set (the owner's entrance brief, 7 Nov 2026) follows in its own grid, in the config's order, renders labelled as renders
+  and the materials board as a diagram;
 - a tap opens the full image with its label, and Esc (desktop) or the close button (phone) closes it; no sideways scrolling on a phone;
 - the 3D page links the images page while it loads, and offers it instead when the 3D cannot be shown.
 python3 -I bel_images_page_check.py --out DIR [--base URL]"""
@@ -14,6 +16,7 @@ a = p.parse_args(); out = Path(a.out); out.mkdir(parents=True, exist_ok=True)
 cfg = json.loads((Path(__file__).resolve().parents[2] / 'viewer' / 'bel-config.json').read_text())
 titles = [t['title'] for t in cfg['tour'] if t['camera'] in cfg['conceptStills']]
 models = sum(1 for v in cfg['conceptStills'].values() if v.get('kind') == 'ai' and v.get('model'))
+woven = cfg.get('wovenEarth', [])
 R = {'base': a.base, 'scope': 'LOCAL Chromium via serve_preview.py; touch emulated; not a real phone or Safari', 'runs': {}, 'errors': [], 'http_errors': []}
 with sync_playwright() as pw:
     b = pw.chromium.launch(executable_path='/usr/bin/chromium', headless=True, args=['--use-gl=angle', '--use-angle=swiftshader', '--enable-unsafe-swiftshader'])
@@ -24,7 +27,9 @@ with sync_playwright() as pw:
         page.on('response', lambda r: R['http_errors'].append({'url': r.url, 'status': r.status}) if r.status >= 400 else None)
         page.goto(a.base + 'images.html', wait_until='load', timeout=60000)
         cards = page.evaluate("[...document.querySelectorAll('main .grid')].map(g => [...g.querySelectorAll('.card')].map(c => ({ title: c.querySelector('h2').textContent, kind: c.querySelector('.kind').textContent, model: !!c.querySelector('a.model') })))")
-        run['stops'], run['rooms'] = len(cards[0]), len(cards[1])
+        run['stops'], run['rooms'], run['woven'] = len(cards[0]), len(cards[1]), len(cards[2]) if len(cards) > 2 else 0
+        run['woven_ok'] = len(cards) > 2 and [c['title'] for c in cards[2]] == [w['title'] for w in woven] and all(
+            ('Diagram' in c['kind']) if w['kind'] == 'board' else ('Rendered from the 3D model' in c['kind']) for c, w in zip(cards[2], woven))
         run['order_ok'] = [c['title'] for c in cards[0]] == titles
         run['labels_ok'] = all(('AI concept image' in c['kind']) != ('Rendered from the 3D model' in c['kind']) for c in cards[0] + cards[1])
         run['model_links'] = sum(c['model'] for c in cards[0] + cards[1])
@@ -46,8 +51,8 @@ with sync_playwright() as pw:
         page.evaluate("window.__fail('Test of the failure message')")
         run['fail_offer'] = page.evaluate("(() => { const l = document.getElementById('loadAlt'); return !l.classList.contains('hidden') && l.textContent; })()")
         ctx.close()
-        run['passed'] = bool(run['stops'] == len(titles) == 23 and run['rooms'] == 3 and run['order_ok'] and run['labels_ok'] and run['model_links'] == models == 12
-                             and run['thumbs_loaded'] == 26 and not run['sideways'] and run['links'] == ['./', './?walk=1'] and run['viewer_label'].startswith(('AI concept image', 'Rendered from the 3D model'))
+        run['passed'] = bool(run['stops'] == len(titles) == 23 and run['rooms'] == 3 and run['order_ok'] and run['labels_ok'] and run['model_links'] == models
+                             and run['woven'] == len(woven) == 8 and run['woven_ok'] and run['thumbs_loaded'] == 23 + 3 + len(woven) and not run['sideways'] and run['links'] == ['./', './?walk=1'] and run['viewer_label'].startswith(('AI concept image', 'Rendered from the 3D model'))
                              and run['viewer_closed'] and run['loading_link'] and run['fail_offer'] == 'See the tour in images instead')
         R['runs'][name] = run; print(name, json.dumps(run), flush=True)
     b.close()

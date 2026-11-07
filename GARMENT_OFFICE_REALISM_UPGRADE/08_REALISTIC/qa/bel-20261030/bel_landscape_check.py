@@ -41,7 +41,7 @@ with sync_playwright() as pw:
         page.screenshot(path=str(out / f'{name}_walk.png'), timeout=120000)
         page.click('#disclaimer'); page.wait_for_timeout(200); run['footer_open_px'] = page.evaluate(f"({box})('disclaimer').h")
         page.click('#disclaimer'); page.wait_for_timeout(200); run['footer_folded_px'] = page.evaluate(f"({box})('disclaimer').h")
-        # the tour at stop 2 (an AI image) and the tour in images
+        # the tour at stop 2 (its image: the Woven Earth render since 7 Nov 2026) and the tour in images
         page.evaluate("__viewer.api.startTour(1)"); page.wait_for_timeout(3000)
         try: page.wait_for_function("(() => { const p = document.getElementById('photo'); return !p.classList.contains('hidden') && p.classList.contains('show'); })()", timeout=90000); run['stop2_image'] = True
         except Exception: run['stop2_image'] = False

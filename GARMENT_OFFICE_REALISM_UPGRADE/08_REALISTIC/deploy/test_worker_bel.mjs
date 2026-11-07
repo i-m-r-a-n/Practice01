@@ -49,7 +49,9 @@ for (const [path, type, target] of [[P + '/', 'text/html', B + 'viewer/dist-bel/
   // the tour-stop images: the owner's AI concept images and the Cycles renders, from the same commit
   [P + '/concept-images/CAM_03_Entrance_Lobby.jpg', 'image/jpeg', B + 'concept-images/CAM_03_Entrance_Lobby.jpg'], [P + '/concept-images/render_CAM_ISO_SE.jpg', 'image/jpeg', B + 'concept-images/render_CAM_ISO_SE.jpg'],
   // the light images page and a 3D model view of an AI image
-  [P + '/images.html', 'text/html', B + 'images.html'], [P + '/concept-images/model/render_CAM_03_Entrance_Lobby.jpg', 'image/jpeg', B + 'concept-images/model/render_CAM_03_Entrance_Lobby.jpg']]) {
+  [P + '/images.html', 'text/html', B + 'images.html'], [P + '/concept-images/model/render_CAM_03_Entrance_Lobby.jpg', 'image/jpeg', B + 'concept-images/model/render_CAM_03_Entrance_Lobby.jpg'],
+  // the Woven Earth set (7 Nov 2026): a file one folder deeper
+  [P + '/concept-images/woven-earth/08_materials_board.jpg', 'image/jpeg', B + 'concept-images/woven-earth/08_materials_board.jpg']]) {
   const res = await bel.run(new Request('https://tour.example' + path)); assert.equal(res.status, 200, path); assert.ok(res.headers.get('content-type').startsWith(type), path);
   assert.equal(res.headers.get('x-bel-source'), commit); assert.equal(bel.calls.at(-1).url, `https://raw.githubusercontent.com/i-m-r-a-n/Practice01/${commit}/${target}`); count++;
 }

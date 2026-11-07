@@ -1762,7 +1762,7 @@ export function buildBengalEarthLab(THREE, { zones = null, drinkware = [], aniso
     add(g, merged(tapes), std('we_tape', () => ({ color: '#fbf4e4', roughness: .95, map: weaveMap('plain', [3, 3]) })));   // unbleached cotton tape (the weave map darkens it)
     // two narrow-beam spots on the deck light the swags from the south (the arrival) and the north (the way out), aimed down onto the cloth so no
     // beam grazes the deck; the beams are simulated in the renders
-    for (const [sx, sz, t, deg, watts] of [[6.87, 4.45, [6.87, 2.3, 3.2], 26, 30], [6.6, 1.05, [6.87, 2.32, 2.0], 26, 20]]) {
+    for (const [sx, sz, t, deg, watts] of [[6.87, 5.0, [6.87, 2.32, 3.0], 26, 30], [6.6, 1.05, [6.87, 2.32, 2.0], 26, 20]]) {   // the south spot over the landing, 1.45 m from the nearest swag
       const f = new THREE.Group(); f.position.set(sx, DECK, sz); g.add(f);
       add(f, new THREE.CylinderGeometry(.032, .032, .008, 20), weSteel, 0, -.004, 0); add(f, new THREE.CylinderGeometry(.007, .007, .05, 8), weSteel, 0, -.033, 0);
       const hd = new THREE.Group(); hd.position.set(0, -.085, 0); f.add(hd);
