@@ -39,8 +39,9 @@ with sync_playwright() as pw:
     for cam in json.loads(page.evaluate('JSON.stringify((window.__TOUR_CONFIG?.tour || []).map(s => s.camera))')):
         page.evaluate('n => __viewer.api.frameCamera(n)', cam); page.wait_for_timeout(600)   # frameCamera waits for the room's light to load
     # every stop image and its 640 px copy: the tour, the room cards and the tour in images load them
-    page.evaluate("""async () => { for (const v of Object.values(window.__TOUR_CONFIG?.conceptStills || {}))
-      for (const u of [typeof v === 'string' ? v : v.src, v?.thumb, v?.model].filter(Boolean)) await fetch(u).then(r => r.arrayBuffer()).catch(() => null); }""")
+    page.evaluate("""async () => { for (const v of [...Object.values(window.__TOUR_CONFIG?.conceptStills || {}), ...(window.__TOUR_CONFIG?.wovenEarth || [])])   // the Woven Earth set is on the images page
+      for (const u of [typeof v === 'string' ? v : v.src, v?.thumb, v?.model].filter(Boolean)) await fetch(u).then(r => r.arrayBuffer()).catch(() => null);
+      if (window.__TOUR_CONFIG?.imagesPage) await fetch(window.__TOUR_CONFIG.imagesPage).then(r => r.text()).catch(() => null); }""")
     page.wait_for_timeout(1500)
     b.close()
 

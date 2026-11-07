@@ -1,5 +1,31 @@
 # Deploying the Bengal Earth Lab proposal route (prepared by Claude, 30 Oct 2026; updated after the owner chose option C)
 
+## Update 8: Woven Earth at the arrival gallery and reception (prepared 7 Nov 2026; not yet live)
+
+The owner sent the "Woven Earth" entrance brief (19 pages): "Use this as the prompt and regenerate the files". The record is `qa/bel-20261030/WOVEN_EARTH_20261107.md`.
+- **Arrival gallery (Z01):**
+  - The Woven Threshold: six handwoven swags on a laminated-bamboo frame, beside the check-in desk, lowest point 2.30 m.
+  - One terracotta wall, a salvaged bench with a bamboo stool, and one fig tree.
+- **Reception (Z02):** the fibre story on the console.
+- **Retired:** the bonsai, the stones, the plaques, the desk front, the aloe and the instruments. Their code stays.
+- **Stops 2 and 3** show Cycles renders.
+- **Images page and PDF:** both carry the 8-image Woven Earth set.
+- Only the proposal route changes.
+
+Deploy request 8 goes on issue 12. Its guard: request 7 live (source `a43fd96`, script `126baec4…d695`).
+
+- **Source commit:** `95657348a950b57652065dc352a7e9b7ac67d76e`
+- **Worker file:** `deploy/worker-bengal-earth-lab.js`, 10,742 bytes, SHA-256 `59ff3d4bf626a5b92075aaef8f22c0dd02071eb5dc6f73621c510f8b9cd9d576`. It differs from update 7's file only in the source commit.
+- **Checks:**
+  - `test_worker_bel.mjs`: 67 checks against the live Worker of update 7 (`bfab122`). They add a file in `concept-images/woven-earth/`. `test_worker.mjs`: 41 checks.
+  - `qa/bel-20261030/woven_check.py`, 17 of 17 (`after-1107-woven/`). It covers:
+    - the brief's items;
+    - headroom and the clearances to the lights, the AC unit, the detector, the beam and the spots;
+    - the exit sign in view;
+    - walking around the bench and the route;
+    - no page errors.
+  - Browser checks on desktop and phone: `qa/bel-20261030/after-1107-*/`.
+
 ## Update 7: update 6 plus the light images page (live since 1 Nov 2026, 10:05:54 UTC; Cloudflare version `a575814a-27dd-4c96-9f15-e529ceac3eca`; see `LIVE_DEPLOY_2026-11-01.md`)
 
 This has everything in update 6 and adds `images.html`. It is a light page of every stop's image: its title, text and kind label, the 3D model view of each AI image, and the three room images. It needs no 3D, so it works on phones that cannot run the 3D or are on slow data.
