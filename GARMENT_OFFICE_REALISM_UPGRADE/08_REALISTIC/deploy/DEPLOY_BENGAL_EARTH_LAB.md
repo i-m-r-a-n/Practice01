@@ -1,5 +1,26 @@
 # Deploying the Bengal Earth Lab proposal route (prepared by Claude, 30 Oct 2026; updated after the owner chose option C)
 
+## Update 9: update 8 plus the open arrival (prepared 7 Nov 2026; not yet live)
+
+After update 8 the owner wrote: "I don't want that random desk with a computer in the middle of the room at the entrance, I want something else that is eye catching".
+- **Arrival:** the security desk, its computer and its chair are hidden on the proposal route. Their floor is walkable again.
+- **New check-in counter:** a curved counter under the high end of the stair takes the check-in. It follows the owner's own AI image of this view.
+  - Hand-pressed terracotta flutes and a reclaimed-hardwood ledge.
+  - The screen sits out of sight below the ledge, with a warm light under it.
+- **The middle stays open,** so the brand wall reads in full.
+- **New renders:** the arrival by day and by night, the reverse view, and a view of the counter.
+- **The Woven Earth set** has 9 images.
+
+Deploy request 9 replaces request 8 and goes on issue 12. Its guard has two cases:
+- A: request 7 live (`a43fd96`, `126baec4…d695`);
+- B: request 8 live (`9565734`, `59ff3d4b…d576`).
+
+- **Source commit:** `8cd621fe3a49438259053f1b91dcbadc082b0089`
+- **Worker file:** `deploy/worker-bengal-earth-lab.js`, 10,742 bytes, SHA-256 `4ba0af4aeeb5ca293bec5c793749c9e72ed50c33180fc727c798c3a4024c9ffb`. It differs from updates 7 and 8 only in the source commit.
+- **Checks:**
+  - `test_worker_bel.mjs`: 67 checks, against the Workers of update 7 and update 8. `test_worker.mjs`: 41 checks.
+  - Browser checks: `qa/bel-20261030/after-1107c-*/`.
+
 ## Update 8: Woven Earth at the arrival gallery and reception (prepared 7 Nov 2026; not yet live)
 
 The owner sent the "Woven Earth" entrance brief (19 pages): "Use this as the prompt and regenerate the files". The record is `qa/bel-20261030/WOVEN_EARTH_20261107.md`.
